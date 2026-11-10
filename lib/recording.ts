@@ -57,7 +57,7 @@ interface RecordTurnParams {
   promptVersion: string;
   /** What Whisper heard; absent on the opening line */
   learnerSaid?: string;
-  reply: { line: string; en: string; parts?: { kind: string; text: string }[] };
+  reply: { line: string; en: string; parts?: { kind: string; text: string; en?: string; gloss?: string }[] };
   /** The server's time to the whole reply, in ms; saved with a reply (not an opening) for the scorecard */
   replyMs?: number;
   /** What the character remembered at the start, kept with a new conversation */
@@ -73,7 +73,8 @@ export function exchangeTurns(p: Pick<RecordTurnParams, 'learnerSaid' | 'reply' 
       text: p.reply.line,
       en: p.reply.en,
       at,
-      ...(p.reply.parts ? { parts: p.reply.parts.map((x) => ({ kind: x.kind, text: x.text })) } : {}),
+      // Each part with its English and its gloss, so a transcript shows what was heard (2026-11-09: glosses were spoken but not kept)
+      ...(p.reply.parts ? { parts: p.reply.parts.map((x) => ({ kind: x.kind, text: x.text, ...(x.en ? { en: x.en } : {}), ...(x.gloss ? { gloss: x.gloss } : {}) })) } : {}),
       ...(p.learnerSaid && typeof p.replyMs === 'number' ? { ms: p.replyMs } : {}),
     },
   ];

@@ -220,6 +220,8 @@ export function buildBeginnerPrompt(p: {
   now?: Date;
   /** The path's stage (lib/path.ts → stageText): leveling.md blocks added after the system prompt */
   stageText?: string;
+  /** Said next to the learner's latest message, where the model weighs it most (Beginner 2's setup line, 2026-11-09: in the system prompt it lost to the pattern of the character's own recent turns) */
+  turnNote?: string;
   /** The prompt file; beginner.md unless given. scaffolding.md is Beginner 2's: the dialogue is then the Intermediate prompt itself, this file's system block after it (docs/beginner-2.md) */
   promptFile?: string;
 }): { system: string; messages: { role: 'user' | 'assistant'; content: string }[] } {
@@ -264,6 +266,11 @@ export function buildBeginnerPrompt(p: {
     const lastNpc = [...p.transcript].reverse().find((t) => t.who === 'npc');
     const heard = readHeard(p.learnerSaid, lastNpc?.offered ?? []);
     push('user', heard ? `${p.learnerSaid}\n${heardNote(heard)}` : p.learnerSaid);
+  }
+  if (p.turnNote) {
+    const last = messages[messages.length - 1];
+    if (last?.role === 'user') last.content = `${last.content}\n\n(${p.turnNote})`;
+    else messages.push({ role: 'user', content: `(${p.turnNote})` });
   }
   return { system, messages };
 }

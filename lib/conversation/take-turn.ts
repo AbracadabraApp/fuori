@@ -17,7 +17,7 @@ import { loadAddressedAs } from '@/lib/learner-address';
 import { tutor } from '@/content';
 import { onboardingState } from '@/lib/onboarding';
 import { runBeginnerTurn, beginnerPromptVersion, lineFromParts } from '@/lib/beginner';
-import { BEGINNER_2_FILE, CLUSTER_1, pickSetup, setupText, shownParts, beginner2Version, type Setup } from '@/lib/beginner-2';
+import { BEGINNER_2_FILE, CLUSTER_1, pickSetup, levelText, setupLine, shownParts, beginner2Version, type Setup } from '@/lib/beginner-2';
 import { stageFor, stageTag, stageText, type Stage } from '@/lib/path';
 import { pathState } from '@/lib/conversation-record';
 import { welcomeContent, welcomed, welcomeVersion, welcomeStep, welcomeBrief, learnerLines, addressAnswers, welcomeTurnFlags } from '@/lib/welcome';
@@ -174,7 +174,7 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
     ? // Beginner 2: the parts are rewritten after the reply (glosses, English, the answer said inside), so the
       // spoken line is rebuilt from them, and the voice waits for the whole reply (no early first sentence:
       // it would be spoken from the parts before they were rewritten, then again)
-      await runBeginnerTurn({ character, transcript, learnerSaid, memory, addressedAs, laps: p.laps, canRetry: p.canRetry, promptFile: BEGINNER_2_FILE, stageText: setupText(setup, p.beginnerCluster ?? CLUSTER_1), maxAnswers: setup.maxAnswers, withDone: true }).then((r) => {
+      await runBeginnerTurn({ character, transcript, learnerSaid, memory, addressedAs, laps: p.laps, canRetry: p.canRetry, promptFile: BEGINNER_2_FILE, stageText: levelText(p.beginnerCluster ?? CLUSTER_1), turnNote: setupLine(setup), maxAnswers: setup.maxAnswers, withDone: true }).then((r) => {
         const parts = shownParts(r.parts, setup, p.beginnerCluster ?? CLUSTER_1);
         return { ...r, ...lineFromParts(parts), parts };
       })

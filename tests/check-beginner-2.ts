@@ -4,10 +4,11 @@
 // prompt file, the language-only rung hides the answers' English, the turn
 // code takes the switch, and Beginner 2 turns don't move the Beginner 1 path.
 import { readFileSync } from 'fs';
-import { beginnerVersionFrom, pickSetup, setupText, shownParts, beginner2Version, glossAll, questionEcho, GOODBYE, CLUSTER_1, CLUSTERS, RUNGS, clusterFrom } from '@/lib/beginner-2';
+import { beginnerVersionFrom, pickSetup, setupText, levelText, setupLine, fullerGlosses, shownParts, beginner2Version, glossAll, questionEcho, GOODBYE, CLUSTER_1, CLUSTERS, RUNGS, clusterFrom } from '@/lib/beginner-2';
 import { stageInVersion } from '@/lib/conversation-record';
 import { lineFromParts, type Part } from '@/lib/beginner';
 import { buildBeginnerPrompt, SCAFFOLDING_FILE, dialogueWithoutFormat } from '@/lib/beginner';
+import { exchangeTurns } from '@/lib/recording';
 import { buildTurnPrompt } from '@/lib/prompts/build-turn-prompt';
 import { cities } from '@/content';
 import { characterForPlace } from '@/lib/characters/for-place';
@@ -70,6 +71,21 @@ check(pickSetup({ conversationId: 'c', turn: 8, characterId: 'x' }).id === 'good
 check(setupText(GOODBYE).includes('goodbye'), 'the goodbye setup line comes from scaffolding.md');
 const noAsk = shownParts([{ kind: 'question', text: '¿De dónde es usted?', en: 'Where are you from?', gloss: '' }], RUNGS.find((r) => r.id === 'ask-en')!, CLUSTER_1);
 check(noAsk.some((x) => x.kind === 'english' && /English/.test(x.text)), 'questions to ask with none given becomes an invited English answer');
+// The four of 2026-11-09 evening
+check(pickSetup({ conversationId: null, turn: 0, learnerId: 'L', characterId: 'x' }, CLUSTER_1).id === 'two-en', 'the opener is two answers to read');
+const thin: Part[] = [{ kind: 'word', text: 'Estoy preparando las velas.', en: "I'm preparing the candles.", gloss: 'candles' }, { kind: 'word', text: 'La iglesia.', en: 'The church.', gloss: 'church' }];
+const fuller = fullerGlosses(thin);
+check(fuller[0].gloss === "I'm preparing the candles." && fuller[1].gloss === 'church', 'Level 1: a one-word gloss on a longer phrase becomes its English; a short phrase keeps its word (Lupita)');
+{
+  const city0 = cities.find((c) => c.places.some((p) => p.characterId))!;
+  const ch0 = characterForPlace(city0, city0.places.find((p) => p.characterId)!)!;
+  const built = buildBeginnerPrompt({ character: ch0, transcript: [{ who: 'npc', transcript: 'Hola.' }], learnerSaid: 'Hola', promptFile: SCAFFOLDING_FILE, stageText: levelText(CLUSTER_1), turnNote: setupLine(RUNGS[0]) });
+  check(built.messages[built.messages.length - 1].content.endsWith(`(${setupLine(RUNGS[0])})`) && !built.system.includes(setupLine(RUNGS[0])), 'the setup line is said next to the latest message, not in the system prompt');
+  check(built.system.includes(levelText(CLUSTER_1)), 'the level text stays in the system prompt');
+}
+check(/turnNote: setupLine\(setup\)/.test(readFileSync('lib/conversation/take-turn.ts', 'utf8')), 'the game puts the setup next to the latest message');
+const stored = exchangeTurns({ reply: { line: 'x', en: 'y', parts: [{ kind: 'word', text: 'Preparo las velas.', en: 'I prepare the candles.', gloss: 'preparing the candles' }] } } as never, new Date().toISOString());
+check((stored[0] as { parts?: { gloss?: string; en?: string }[] }).parts?.[0].gloss === 'preparing the candles' && (stored[0] as { parts?: { en?: string }[] }).parts?.[0].en === 'I prepare the candles.', 'stored parts keep their gloss and English');
 const inside = shownParts(parts, RUNGS.find((r) => r.id === 'inside-en')!);
 check(!inside.some((x) => x.kind === 'answer') && inside.some((x) => x.kind === 'word' && x.text === 'Sì, grazie.' && x.gloss === 'Yes, thanks.'), 'rung 4: the answer is in her speech with its English heard, no bubble');
 check(shownParts(parts, RUNGS.find((r) => r.id === 'inside')!).some((x) => x.kind === 'word' && x.text === 'Sì, grazie.' && !x.gloss), 'rung 6: the answer in her speech, no English');

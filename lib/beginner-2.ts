@@ -102,6 +102,8 @@ function seedOf(s: string): number {
  */
 export function pickSetup(p: { conversationId?: string | null; turn: number; learnerId?: string | null; characterId: string; now?: Date }, cluster: Setup[] = CLUSTER_1): Setup {
   if (p.turn >= GOODBYE_AFTER) return GOODBYE;
+  // The opener is two answers to read when the cluster has them (Arturo, 2026-11-09: an invited-English opener set a pattern the character copied all visit)
+  if (p.turn === 0 && cluster.some((s) => s.id === 'two-en')) return R('two-en');
   const day = (p.now ?? new Date()).toISOString().slice(0, 10);
   const key = p.conversationId ? `${p.conversationId}|${p.turn}` : `${p.learnerId ?? ''}|${p.characterId}|${day}`;
   return cluster[seedOf(key) % cluster.length];
@@ -110,7 +112,17 @@ export function pickSetup(p: { conversationId?: string | null; turn: number; lea
 /** The level text per cluster (scaffolding.md "Level: 1–3", from Beginner 1's stages S1–S3): clusters 1–2 S1, 3–4 S2, 5–6 S3 */
 export const LEVEL_OF_CLUSTER = ['Level: 1', 'Level: 1', 'Level: 2', 'Level: 2', 'Level: 3', 'Level: 3'];
 
-/** What the character gets each turn after the shared rules: the cluster's level, then this turn's setup (a misspelt block fails loudly) */
+/** The cluster's level text, in the system prompt after the shared rules */
+export function levelText(cluster: Setup[] = CLUSTER_1): string {
+  return fill(readPromptFile(SCAFFOLDING_FILE).block(LEVEL_OF_CLUSTER[Math.max(0, CLUSTERS.indexOf(cluster))]), { language: language.name }).trim();
+}
+
+/** This turn's setup line, said next to the learner's latest message (lib/beginner.ts → turnNote) */
+export function setupLine(setup: Setup): string {
+  return fill(readPromptFile(SCAFFOLDING_FILE).block(setup.block), { language: language.name }).trim();
+}
+
+/** Both together (scripts and looks); the game puts them in different places */
 export function setupText(setup: Setup, cluster: Setup[] = CLUSTER_1): string {
   const f = readPromptFile(SCAFFOLDING_FILE);
   const level = LEVEL_OF_CLUSTER[Math.max(0, CLUSTERS.indexOf(cluster))];
@@ -183,6 +195,16 @@ export const QUESTION_ECHO = [true, true, false, false, false, false];
  * not as its gloss: with answers shown a question's gloss isn't spoken (lib/beginner.ts → lineFromParts,
  * mirrored by the app), while an English piece is spoken by both
  */
+/**
+ * Level 1: a gloss of one word on a phrase of three or more words becomes the phrase's English, so the
+ * sentence is understood (Josh, 2026-11-09, Lupita: "Estoy preparando las velas. candles." against
+ * the second time's "preparing the candles", which explained what she was doing)
+ */
+export function fullerGlosses(parts: Part[]): Part[] {
+  const words = (s: string) => s.trim().split(/\s+/).filter(Boolean).length;
+  return parts.map((x) => (x.kind === 'word' && x.gloss?.trim() && words(x.gloss) === 1 && words(x.text) >= 3 && x.en.trim() ? { ...x, gloss: x.en } : x));
+}
+
 export function questionEcho(parts: Part[]): Part[] {
   const i = parts.findIndex((x) => x.kind === 'question');
   if (i < 0) return parts;
@@ -202,11 +224,11 @@ export function shownParts(raw: Part[], setup: Setup, cluster: Setup[] = CLUSTER
   const parts = withEnglish(GLOSS_ALL[Math.max(0, CLUSTERS.indexOf(cluster))] ? glossAll(raw) : raw);
   const at = Math.max(0, CLUSTERS.indexOf(cluster));
   if (setup.inside) return insideSpeech(parts, setup);
-  if (setup.invite) return invited(QUESTION_ECHO[at] ? questionEcho(parts) : parts);
+  if (setup.invite) return invited(QUESTION_ECHO[at] ? questionEcho(fullerGlosses(parts)) : parts);
   // Questions to ask, and none came (the character asked its own, deep in a visit): treated as an invited
   // English answer, so the learner always has a way to answer (2026-11-09, a twelve-turn look: 4 of 5)
-  if (setup.id === 'ask-en' && !parts.some((x) => x.kind === 'answer' && x.text.trim())) return invited(QUESTION_ECHO[at] ? questionEcho(parts) : parts);
-  if (QUESTION_ECHO[at]) return questionEcho(parts);
+  if (setup.id === 'ask-en' && !parts.some((x) => x.kind === 'answer' && x.text.trim())) return invited(QUESTION_ECHO[at] ? questionEcho(fullerGlosses(parts)) : parts);
+  if (QUESTION_ECHO[at]) return questionEcho(fullerGlosses(parts));
   return setup.english ? parts : parts.map((x) => (x.kind === 'answer' ? { ...x, en: '' } : x));
 }
 
