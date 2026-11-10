@@ -2,6 +2,10 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
 
+### 2026-11-10k: "newcomer" out of the learner line
+- **Changed:** "You know enough English to help a newcomer." → "You know enough English to help them follow."
+- **Why:** Josh, 2026-11-09: "want to address newcomer". "Is it your first time here? / Are you new?" came up in almost every opener (Lupita, Chayo, Arturo, Chuy; Josh in play: "Everyone asks if you're new", "I tell everyone yes because everyone asks"), and Chuy even said "A newcomer gets asked everything". Naming the learner a newcomer invites the question. The dialogue's own cue (character.md: "They're living in {country} for a while" with "You haven't met them before") is shared with Intermediate and left as is, logged in docs/dialogue-ideas.md.
+
 ### 2026-11-10j: cluster 1 is each sentence then its English (B); cluster 2 the language-led, English as little as needed (C)
 - **Changed:** "Level: 1" (cluster 1) is pattern B: short sentences in the language, each a word part followed by its English, which the code speaks (glossAll on in cluster 1). The 2026-11-10i text (English as little as needed, or a brief check) is now "Level: 1b", for cluster 2. The ladder's English: B → C → S2 → S3.
 - **Why:** Josh, 2026-11-09, after three patterns (A English-led with echoes, B each sentence then its English, C language-led, English as little as needed): "I'm not sure Spanish/English or … are bad patterns — needs to be tested"; then "b for s1".

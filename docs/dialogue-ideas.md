@@ -2,6 +2,10 @@
 
 Ideas about how conversations with characters should go: what they say, when the learner speaks, how the scene moves. Started by Josh on 2026-11-04, after playing Florence (Ardit at Trattoria Mario, Lorenzo in Piazza Santa Croce). Nothing here is scheduled. An idea moves to the roadmap once Josh decides it. Josh's words are quoted; anything else is marked as Claude's proposal.
 
+## "Are you new here?" in almost every opener (2026-11-09)
+
+Beginner 2, Mexico: Lupita "Are you new in Tlaquepaque?", Doña Chayo "¿Es su primera vez en Puebla?", Arturo "¿Usted es nuevo en Oaxaca?", Chuy "¿Es su primera vez en Puebla?". Josh in play: "Everyone asks if you're new"; "I tell everyone yes because everyone asks". Cues in what the character reads: Beginner 2's scaffolding called the learner "a newcomer" twice (removed 2026-11-10i and 10k); the dialogue's character.md says "They're living in {country} for a while" with "You haven't met them before" (a first meeting with someone who lives here invites "are you new?"). The dialogue line is shared with Intermediate: noted, not changed, until the scaffolding change has been played.
+
 ## "Stay within your job" turns away a question about the town (2026-11-09)
 
 Lupita, the sacristan in Tlaquepaque, invited a question about "the church, my work, or Tlaquepaque"; asked "What do people eat here for breakfast?", the character answered "Good question, but I'm the church lady, not a cook! For breakfast, ask at the market…" (a look, Beginner 2). The shared rule ("Stay within your job: never serve, sell or take an order for what it doesn't give") is about selling; telling a newcomer what people eat in town is a local's knowledge, not a sale. Dialogue layer (dialogue.md, every level): noted, not fixed.

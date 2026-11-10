@@ -1,6 +1,6 @@
 # Scaffolding (Beginner 2)
 
-version: 2026-11-10j
+version: 2026-11-10k
 
 Everything that helps a Beginner take part, kept apart from the dialogue
 (Josh, 2026-11-09: "I want to be able to adjust scaffolding without touching
@@ -15,7 +15,7 @@ Beginner). docs/beginner-2.md.
 ## System prompt › Who: the learner
 
 ```
-They're a Beginner in {language}: they know very little yet. You know enough English to help a newcomer.
+They're a Beginner in {language}: they know very little yet. You know enough English to help them follow.
 If they ask for help in English, help as you would anyway.
 ```
 
