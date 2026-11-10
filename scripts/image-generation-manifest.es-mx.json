@@ -777,27 +777,27 @@
       "type": "portrait"
     },
     "guanajuato/calle-subterranea-hidalgo": {
-      "timestamp": "2026-11-10T05:23:30.135Z",
+      "timestamp": "2026-11-10T06:00:25.231Z",
       "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/calle-subterranea-hidalgo.jpg",
       "type": "place"
     },
     "merida/serenata-santa-lucia": {
-      "timestamp": "2026-11-10T05:23:58.391Z",
+      "timestamp": "2026-11-10T06:06:12.866Z",
       "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/serenata-santa-lucia.jpg",
       "type": "place"
     },
     "patzcuaro/muelle-a-janitzio": {
-      "timestamp": "2026-11-10T05:24:26.961Z",
+      "timestamp": "2026-11-10T06:10:56.942Z",
       "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/muelle-a-janitzio.jpg",
       "type": "place"
     },
     "san-cristobal-de-las-casas/templo-de-san-juan-chamula": {
-      "timestamp": "2026-11-10T05:24:48.864Z",
+      "timestamp": "2026-11-10T06:15:28.890Z",
       "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/templo-de-san-juan-chamula.jpg",
       "type": "place"
     },
     "veracruz/gran-cafe-de-la-parroquia": {
-      "timestamp": "2026-11-10T05:25:16.713Z",
+      "timestamp": "2026-11-10T06:19:32.486Z",
       "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/gran-cafe-de-la-parroquia.jpg",
       "type": "place"
     },
@@ -825,13 +825,488 @@
       "timestamp": "2026-11-10T05:52:23.215Z",
       "path": "/Users/joshpetersen/fuori/public/images/es-mx/cities/veracruz.jpg",
       "type": "city"
+    },
+    "guanajuato/jardin-de-la-union": {
+      "timestamp": "2026-11-10T06:00:57.392Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/jardin-de-la-union.jpg",
+      "type": "place"
+    },
+    "guanajuato/teatro-juarez": {
+      "timestamp": "2026-11-10T06:01:25.665Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/teatro-juarez.jpg",
+      "type": "place"
+    },
+    "guanajuato/monumento-al-pipila": {
+      "timestamp": "2026-11-10T06:02:02.366Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/monumento-al-pipila.jpg",
+      "type": "place"
+    },
+    "guanajuato/alhondiga-de-granaditas": {
+      "timestamp": "2026-11-10T06:02:34.743Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/alhondiga-de-granaditas.jpg",
+      "type": "place"
+    },
+    "guanajuato/escalinata-universidad-guanajuato": {
+      "timestamp": "2026-11-10T06:03:07.011Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/escalinata-universidad-guanajuato.jpg",
+      "type": "place"
+    },
+    "guanajuato/templo-de-san-cayetano": {
+      "timestamp": "2026-11-10T06:03:40.248Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/templo-de-san-cayetano.jpg",
+      "type": "place"
+    },
+    "guanajuato/casa-diego-rivera": {
+      "timestamp": "2026-11-10T06:04:14.006Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/casa-diego-rivera.jpg",
+      "type": "place"
+    },
+    "guanajuato/enchiladas-baratillo": {
+      "timestamp": "2026-11-10T06:05:20.096Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/enchiladas-baratillo.jpg",
+      "type": "place"
+    },
+    "guanajuato/terminal-guanajuato": {
+      "timestamp": "2026-11-10T06:05:41.262Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/terminal-guanajuato.jpg",
+      "type": "place"
+    },
+    "merida/palacio-de-gobierno-merida": {
+      "timestamp": "2026-11-10T06:06:40.039Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/palacio-de-gobierno-merida.jpg",
+      "type": "place"
+    },
+    "merida/paseo-de-montejo": {
+      "timestamp": "2026-11-10T06:07:09.070Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/paseo-de-montejo.jpg",
+      "type": "place"
+    },
+    "merida/gran-museo-mundo-maya": {
+      "timestamp": "2026-11-10T06:07:41.419Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/gran-museo-mundo-maya.jpg",
+      "type": "place"
+    },
+    "merida/centro-de-lengua-maya": {
+      "timestamp": "2026-11-10T06:08:10.654Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/centro-de-lengua-maya.jpg",
+      "type": "place"
+    },
+    "merida/cochinita-mercado-santiago": {
+      "timestamp": "2026-11-10T06:08:40.416Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/cochinita-mercado-santiago.jpg",
+      "type": "place"
+    },
+    "merida/kibis-santiago": {
+      "timestamp": "2026-11-10T06:09:11.890Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/kibis-santiago.jpg",
+      "type": "place"
+    },
+    "merida/ermita-de-santa-isabel": {
+      "timestamp": "2026-11-10T06:09:40.915Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/ermita-de-santa-isabel.jpg",
+      "type": "place"
+    },
+    "merida/taller-de-hamacas": {
+      "timestamp": "2026-11-10T06:10:03.908Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/taller-de-hamacas.jpg",
+      "type": "place"
+    },
+    "merida/terminal-merida-came": {
+      "timestamp": "2026-11-10T06:10:29.143Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/terminal-merida-came.jpg",
+      "type": "place"
+    },
+    "patzcuaro/panteon-de-janitzio": {
+      "timestamp": "2026-11-10T06:11:25.793Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/panteon-de-janitzio.jpg",
+      "type": "place"
+    },
+    "patzcuaro/plaza-vasco-de-quiroga": {
+      "timestamp": "2026-11-10T06:11:53.751Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/plaza-vasco-de-quiroga.jpg",
+      "type": "place"
+    },
+    "patzcuaro/biblioteca-gertrudis-bocanegra": {
+      "timestamp": "2026-11-10T06:12:23.476Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/biblioteca-gertrudis-bocanegra.jpg",
+      "type": "place"
+    },
+    "patzcuaro/casa-de-los-once-patios": {
+      "timestamp": "2026-11-10T06:12:54.812Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/casa-de-los-once-patios.jpg",
+      "type": "place"
+    },
+    "patzcuaro/basilica-de-la-salud": {
+      "timestamp": "2026-11-10T06:13:21.449Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/basilica-de-la-salud.jpg",
+      "type": "place"
+    },
+    "patzcuaro/danza-de-los-viejitos": {
+      "timestamp": "2026-11-10T06:13:49.941Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/danza-de-los-viejitos.jpg",
+      "type": "place"
+    },
+    "patzcuaro/nieves-de-pasta": {
+      "timestamp": "2026-11-10T06:14:12.478Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/nieves-de-pasta.jpg",
+      "type": "place"
+    },
+    "patzcuaro/yacatas-de-tzintzuntzan": {
+      "timestamp": "2026-11-10T06:14:34.201Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/yacatas-de-tzintzuntzan.jpg",
+      "type": "place"
+    },
+    "patzcuaro/terminal-patzcuaro": {
+      "timestamp": "2026-11-10T06:15:01.405Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/terminal-patzcuaro.jpg",
+      "type": "place"
+    },
+    "san-cristobal-de-las-casas/mercado-santo-domingo": {
+      "timestamp": "2026-11-10T06:15:50.529Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/mercado-santo-domingo.jpg",
+      "type": "place"
+    },
+    "san-cristobal-de-las-casas/kiosko-plaza-31-de-marzo": {
+      "timestamp": "2026-11-10T06:16:21.683Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/kiosko-plaza-31-de-marzo.jpg",
+      "type": "place"
+    },
+    "san-cristobal-de-las-casas/templo-de-guadalupe-sancris": {
+      "timestamp": "2026-11-10T06:16:43.461Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/templo-de-guadalupe-sancris.jpg",
+      "type": "place"
+    },
+    "san-cristobal-de-las-casas/museo-del-cafe-sancris": {
+      "timestamp": "2026-11-10T06:17:06.188Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/museo-del-cafe-sancris.jpg",
+      "type": "place"
+    },
+    "san-cristobal-de-las-casas/na-bolom": {
+      "timestamp": "2026-11-10T06:17:27.962Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/na-bolom.jpg",
+      "type": "place"
+    },
+    "san-cristobal-de-las-casas/centro-de-escritores-tsotsil": {
+      "timestamp": "2026-11-10T06:17:51.710Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/centro-de-escritores-tsotsil.jpg",
+      "type": "place"
+    },
+    "san-cristobal-de-las-casas/tamales-barrio-de-mexicanos": {
+      "timestamp": "2026-11-10T06:18:20.197Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/tamales-barrio-de-mexicanos.jpg",
+      "type": "place"
+    },
+    "san-cristobal-de-las-casas/catedral-de-san-cristobal": {
+      "timestamp": "2026-11-10T06:18:45.317Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/catedral-de-san-cristobal.jpg",
+      "type": "place"
+    },
+    "san-cristobal-de-las-casas/terminal-san-cristobal": {
+      "timestamp": "2026-11-10T06:19:08.769Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/terminal-san-cristobal.jpg",
+      "type": "place"
+    },
+    "veracruz/zocalo-de-veracruz": {
+      "timestamp": "2026-11-10T06:19:57.287Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/zocalo-de-veracruz.jpg",
+      "type": "place"
+    },
+    "veracruz/san-juan-de-ulua": {
+      "timestamp": "2026-11-10T06:20:22.259Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/san-juan-de-ulua.jpg",
+      "type": "place"
+    },
+    "veracruz/malecon-de-veracruz": {
+      "timestamp": "2026-11-10T06:20:46.438Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/malecon-de-veracruz.jpg",
+      "type": "place"
+    },
+    "veracruz/fandango-la-huaca": {
+      "timestamp": "2026-11-10T06:21:07.525Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/fandango-la-huaca.jpg",
+      "type": "place"
+    },
+    "veracruz/baluarte-de-santiago": {
+      "timestamp": "2026-11-10T06:21:30.924Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/baluarte-de-santiago.jpg",
+      "type": "place"
+    },
+    "veracruz/casita-blanca-agustin-lara": {
+      "timestamp": "2026-11-10T06:21:55.507Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/casita-blanca-agustin-lara.jpg",
+      "type": "place"
+    },
+    "veracruz/lanchas-boca-del-rio": {
+      "timestamp": "2026-11-10T06:22:20.066Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/lanchas-boca-del-rio.jpg",
+      "type": "place"
+    },
+    "veracruz/picadas-mercado-hidalgo": {
+      "timestamp": "2026-11-10T06:22:50.316Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/picadas-mercado-hidalgo.jpg",
+      "type": "place"
+    },
+    "veracruz/terminal-veracruz": {
+      "timestamp": "2026-11-10T06:23:14.658Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/terminal-veracruz.jpg",
+      "type": "place"
+    },
+    "guanajuato/raymundo-chofer-tuneles": {
+      "timestamp": "2026-11-10T06:23:50.179Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/raymundo-chofer-tuneles.jpg",
+      "type": "portrait"
+    },
+    "guanajuato/ruben-estudiantino": {
+      "timestamp": "2026-11-10T06:24:18.310Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/ruben-estudiantino.jpg",
+      "type": "portrait"
+    },
+    "guanajuato/claudia-teatro-juarez": {
+      "timestamp": "2026-11-10T06:24:42.155Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/claudia-teatro-juarez.jpg",
+      "type": "portrait"
+    },
+    "guanajuato/hugo-fotografo-pipila": {
+      "timestamp": "2026-11-10T06:25:06.668Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/hugo-fotografo-pipila.jpg",
+      "type": "portrait"
+    },
+    "guanajuato/marisol-guia-alhondiga": {
+      "timestamp": "2026-11-10T06:25:33.104Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/marisol-guia-alhondiga.jpg",
+      "type": "portrait"
+    },
+    "guanajuato/fernanda-estudiante-derecho": {
+      "timestamp": "2026-11-10T06:25:58.987Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/fernanda-estudiante-derecho.jpg",
+      "type": "portrait"
+    },
+    "guanajuato/isidro-minero": {
+      "timestamp": "2026-11-10T06:26:26.837Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/isidro-minero.jpg",
+      "type": "portrait"
+    },
+    "guanajuato/monica-profesora-pintura": {
+      "timestamp": "2026-11-10T06:26:56.570Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/monica-profesora-pintura.jpg",
+      "type": "portrait"
+    },
+    "guanajuato/lupe-enchiladera": {
+      "timestamp": "2026-11-10T06:27:24.447Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/lupe-enchiladera.jpg",
+      "type": "portrait"
+    },
+    "guanajuato/diego-taquillero-guanajuato": {
+      "timestamp": "2026-11-10T06:27:52.632Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/diego-taquillero-guanajuato.jpg",
+      "type": "portrait"
+    },
+    "merida/wilberth-trovador": {
+      "timestamp": "2026-11-10T06:28:17.997Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/wilberth-trovador.jpg",
+      "type": "portrait"
+    },
+    "merida/leydi-oficinista": {
+      "timestamp": "2026-11-10T06:28:42.790Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/leydi-oficinista.jpg",
+      "type": "portrait"
+    },
+    "merida/josue-guia-montejo": {
+      "timestamp": "2026-11-10T06:29:03.761Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/josue-guia-montejo.jpg",
+      "type": "portrait"
+    },
+    "merida/ana-arqueologa": {
+      "timestamp": "2026-11-10T06:29:33.070Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/ana-arqueologa.jpg",
+      "type": "portrait"
+    },
+    "merida/socorro-maestra-maya": {
+      "timestamp": "2026-11-10T06:29:57.501Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/socorro-maestra-maya.jpg",
+      "type": "portrait"
+    },
+    "merida/rosy-cochinitera": {
+      "timestamp": "2026-11-10T06:30:24.118Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/rosy-cochinitera.jpg",
+      "type": "portrait"
+    },
+    "merida/jorge-kibis": {
+      "timestamp": "2026-11-10T06:30:48.892Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/jorge-kibis.jpg",
+      "type": "portrait"
+    },
+    "merida/genaro-sacristan": {
+      "timestamp": "2026-11-10T06:31:20.388Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/genaro-sacristan.jpg",
+      "type": "portrait"
+    },
+    "merida/gaspar-hamaquero": {
+      "timestamp": "2026-11-10T06:31:47.035Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/gaspar-hamaquero.jpg",
+      "type": "portrait"
+    },
+    "merida/raul-taquillero-merida": {
+      "timestamp": "2026-11-10T06:32:16.297Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/raul-taquillero-merida.jpg",
+      "type": "portrait"
+    },
+    "patzcuaro/salvador-lanchero": {
+      "timestamp": "2026-11-10T06:32:51.479Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/salvador-lanchero.jpg",
+      "type": "portrait"
+    },
+    "patzcuaro/elvira-veladora-janitzio": {
+      "timestamp": "2026-11-10T06:33:17.231Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/elvira-veladora-janitzio.jpg",
+      "type": "portrait"
+    },
+    "patzcuaro/gerardo-profe-jubilado": {
+      "timestamp": "2026-11-10T06:33:40.286Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/gerardo-profe-jubilado.jpg",
+      "type": "portrait"
+    },
+    "patzcuaro/marta-bibliotecaria": {
+      "timestamp": "2026-11-10T06:34:06.479Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/marta-bibliotecaria.jpg",
+      "type": "portrait"
+    },
+    "patzcuaro/lucia-maquera": {
+      "timestamp": "2026-11-10T06:34:31.408Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/lucia-maquera.jpg",
+      "type": "portrait"
+    },
+    "patzcuaro/sor-guadalupe-achoques": {
+      "timestamp": "2026-11-10T06:34:57.798Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/sor-guadalupe-achoques.jpg",
+      "type": "portrait"
+    },
+    "patzcuaro/juan-carlos-danzante": {
+      "timestamp": "2026-11-10T06:35:22.349Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/juan-carlos-danzante.jpg",
+      "type": "portrait"
+    },
+    "patzcuaro/martin-nevero": {
+      "timestamp": "2026-11-10T06:35:53.705Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/martin-nevero.jpg",
+      "type": "portrait"
+    },
+    "patzcuaro/beatriz-arqueologa": {
+      "timestamp": "2026-11-10T06:36:18.282Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/beatriz-arqueologa.jpg",
+      "type": "portrait"
+    },
+    "patzcuaro/omar-taquillero-patzcuaro": {
+      "timestamp": "2026-11-10T06:36:49.756Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/omar-taquillero-patzcuaro.jpg",
+      "type": "portrait"
+    },
+    "san-cristobal-de-las-casas/mariano-guia-chamula": {
+      "timestamp": "2026-11-10T06:37:18.396Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/mariano-guia-chamula.jpg",
+      "type": "portrait"
+    },
+    "san-cristobal-de-las-casas/petrona-tejedora": {
+      "timestamp": "2026-11-10T06:37:46.244Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/petrona-tejedora.jpg",
+      "type": "portrait"
+    },
+    "san-cristobal-de-las-casas/efrain-marimbista": {
+      "timestamp": "2026-11-10T06:38:15.560Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/efrain-marimbista.jpg",
+      "type": "portrait"
+    },
+    "san-cristobal-de-las-casas/chayo-vecina-guadalupe": {
+      "timestamp": "2026-11-10T06:38:43.910Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/chayo-vecina-guadalupe.jpg",
+      "type": "portrait"
+    },
+    "san-cristobal-de-las-casas/elena-cafetalera": {
+      "timestamp": "2026-11-10T06:39:11.153Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/elena-cafetalera.jpg",
+      "type": "portrait"
+    },
+    "san-cristobal-de-las-casas/itzel-guia-na-bolom": {
+      "timestamp": "2026-11-10T06:39:38.255Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/itzel-guia-na-bolom.jpg",
+      "type": "portrait"
+    },
+    "san-cristobal-de-las-casas/rosa-poeta-tsotsil": {
+      "timestamp": "2026-11-10T06:40:11.955Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/rosa-poeta-tsotsil.jpg",
+      "type": "portrait"
+    },
+    "san-cristobal-de-las-casas/juana-tamalera": {
+      "timestamp": "2026-11-10T06:40:46.332Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/juana-tamalera.jpg",
+      "type": "portrait"
+    },
+    "san-cristobal-de-las-casas/arnulfo-sacristan": {
+      "timestamp": "2026-11-10T06:41:17.061Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/arnulfo-sacristan.jpg",
+      "type": "portrait"
+    },
+    "san-cristobal-de-las-casas/andrea-taquillera-sancris": {
+      "timestamp": "2026-11-10T06:41:49.534Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/andrea-taquillera-sancris.jpg",
+      "type": "portrait"
+    },
+    "veracruz/arturo-mesero-parroquia": {
+      "timestamp": "2026-11-10T06:42:18.725Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/arturo-mesero-parroquia.jpg",
+      "type": "portrait"
+    },
+    "veracruz/mercedes-danzonera": {
+      "timestamp": "2026-11-10T06:42:51.813Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/mercedes-danzonera.jpg",
+      "type": "portrait"
+    },
+    "veracruz/rodrigo-guia-ulua": {
+      "timestamp": "2026-11-10T06:43:23.333Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/rodrigo-guia-ulua.jpg",
+      "type": "portrait"
+    },
+    "veracruz/chema-estibador": {
+      "timestamp": "2026-11-10T06:43:52.946Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/chema-estibador.jpg",
+      "type": "portrait"
+    },
+    "veracruz/yesenia-jaranera": {
+      "timestamp": "2026-11-10T06:44:25.635Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/yesenia-jaranera.jpg",
+      "type": "portrait"
+    },
+    "veracruz/ignacio-historiador": {
+      "timestamp": "2026-11-10T06:44:49.811Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/ignacio-historiador.jpg",
+      "type": "portrait"
+    },
+    "veracruz/lorena-guia-lara": {
+      "timestamp": "2026-11-10T06:45:14.606Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/lorena-guia-lara.jpg",
+      "type": "portrait"
+    },
+    "veracruz/lalo-pescador": {
+      "timestamp": "2026-11-10T06:45:48.148Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/lalo-pescador.jpg",
+      "type": "portrait"
+    },
+    "veracruz/rosario-picadera": {
+      "timestamp": "2026-11-10T06:46:15.451Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/rosario-picadera.jpg",
+      "type": "portrait"
+    },
+    "veracruz/karla-taquillera-veracruz": {
+      "timestamp": "2026-11-10T06:46:38.181Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/karla-taquillera-veracruz.jpg",
+      "type": "portrait"
     }
   },
   "failed": {},
   "stats": {
-    "total": 165,
-    "completed": 165,
+    "total": 260,
+    "completed": 260,
     "failed": 0,
-    "lastRun": "2026-11-10T05:52:26.218Z"
+    "lastRun": "2026-11-10T06:46:41.185Z"
   }
 }
