@@ -2,6 +2,10 @@
 
 Ideas about how conversations with characters should go: what they say, when the learner speaks, how the scene moves. Started by Josh on 2026-11-04, after playing Florence (Ardit at Trattoria Mario, Lorenzo in Piazza Santa Croce). Nothing here is scheduled. An idea moves to the roadmap once Josh decides it. Josh's words are quoted; anything else is marked as Claude's proposal.
 
+## The same invitation every other turn (Renata, Palacio Nacional, 2026-11-10; Beginner 2 cluster 1)
+
+5 of 9 turns after the opener were "Is there anything you'd like to know about my work, this palace, or the town?" in near-identical words; Josh: "Creo que preguntaste esa pregunta antes", "Usted me hizo esa pregunta tres veces". Causes, all scaffolding: cluster 1 picks evenly among two answers, questions to ask and the invitation to ask, so two turns in three invite curiosity; both setup lines name "your place, your work or the town", which the character repeats; and after the learner's own question the setup forces another invitation instead of a follow-up. Fix prepared on a branch (setup mix weighted to two answers, no invitation twice in a row or right after the learner asked, lines without the list), held until Josh's round on 2026-11-10k is done.
+
 ## "Are you new here?" in almost every opener (2026-11-09)
 
 Beginner 2, Mexico: Lupita "Are you new in Tlaquepaque?", Doña Chayo "¿Es su primera vez en Puebla?", Arturo "¿Usted es nuevo en Oaxaca?", Chuy "¿Es su primera vez en Puebla?". Josh in play: "Everyone asks if you're new"; "I tell everyone yes because everyone asks". Cues in what the character reads: Beginner 2's scaffolding called the learner "a newcomer" twice (removed 2026-11-10i and 10k); the dialogue's character.md says "They're living in {country} for a while" with "You haven't met them before" (a first meeting with someone who lives here invites "are you new?"). The dialogue line is shared with Intermediate: noted, not changed, until the scaffolding change has been played.
