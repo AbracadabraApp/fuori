@@ -135,7 +135,7 @@ export const sanCristobalDeLasCasas: CityPantry = {
       placeId: 'kiosko-plaza-31-de-marzo',
       personality: ['jovial', 'proud of Chiapas', 'plays with his whole body'],
       portraitPrompt: 'Gouache portrait of a man of 64 with a round face, a grey moustache and a big smile, in a white shirt, holding two rubber-tipped mallets, who plays the marimba under the bandstand in the main plaza of San Cristóbal de las Casas. Include the long wooden marimba and the yellow cathedral. Bold, saturated colour: wood brown, cathedral yellow and red. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You play in a marimba group under the bandstand of the main plaza in the evenings. The marimba is the instrument of Chiapas, an official symbol of the state: a long wooden keyboard with resonators underneath, played by three or four people at once. San Cristóbal sits high in the mountains, at about 2,200 metres, so evenings are cold and people come out in jackets.",
+      here: "You play in a marimba group under the bandstand of the main plaza in the evenings. The marimba is the instrument of Chiapas and a symbol of the state: a long wooden keyboard with resonators underneath, played by three or four people at once. San Cristóbal sits high in the mountains, at about 2,200 metres, so evenings are cold and people come out in jackets.",
     },
     {
       id: 'chayo-vecina-guadalupe',
@@ -159,7 +159,7 @@ export const sanCristobalDeLasCasas: CityPantry = {
       placeId: 'museo-del-cafe-sancris',
       personality: ["passionate", "practical", "a coffee snob"],
       portraitPrompt: "Gouache portrait of a woman of 31 with her hair tied in a scarf, an apron over a sweater and a scoop of roasted beans in her hand, smiling with enthusiasm, who roasts coffee at the coffee museum in San Cristóbal de las Casas. Include the sacks of green beans and the drum roaster. Bold, saturated colour: coffee red, sack beige and forest green. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
-      here: "You roast the coffee at the coffee museum in San Cristóbal, run with small growers' cooperatives, and today you are roasting your family's beans. Chiapas produces more coffee than any other state in Mexico, most of it grown by Indigenous families on small plots in the mountains, in the shade of taller trees. The cherries are picked red by hand, from about November to March. Your family grows coffee near the border with Guatemala.",
+      here: "You roast the coffee at the coffee museum in San Cristóbal, linked to the region's small growers, and today you are roasting your family's beans. Chiapas produces more coffee than any other state in Mexico, most of it grown by Indigenous families on small plots in the mountains, in the shade of taller trees. The cherries are picked red by hand, from about November to March. Your family grows coffee near the border with Guatemala.",
     },
     {
       id: 'itzel-guia-na-bolom',
@@ -195,7 +195,7 @@ export const sanCristobalDeLasCasas: CityPantry = {
       placeId: 'tamales-barrio-de-mexicanos',
       personality: ['motherly', 'chatty', 'worries you are cold'],
       portraitPrompt: "Gouache portrait of a woman of 62 with a round face, a woollen shawl over her shoulders and an apron, holding a steaming tamale, smiling kindly, who runs a small comedor in San Cristóbal de las Casas. Include the wooden tables and the big steaming pot. Bold, saturated colour: leaf green, shawl red and steam white. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
-      here: "You run a small comedor in your house, and your regulars come every morning for breakfast when the town is still cold. You make tamales the Chiapas way: de chipilín, with a green herb in the dough; de bola, round and filled with pork and plum; and de hoja de plátano, wrapped in banana leaf. At midday there is sopa de pan, a layered soup of bread, broth and vegetables that coletos eat at fiestas. You serve hot atole and local coffee.",
+      here: "You run a small comedor in your house, and your regulars come every morning for breakfast when the town is still cold. You make tamales the Chiapas way: de chipilín, with a green herb in the dough; de bola, round and filled with pork, prunes and raisins; and de hoja de plátano, wrapped in banana leaf. At midday there is sopa de pan, a layered soup of bread, broth and vegetables that coletos eat at fiestas. You serve hot atole and local coffee.",
     },
     {
       id: 'samuel-pintor-arco',
@@ -207,7 +207,7 @@ export const sanCristobalDeLasCasas: CityPantry = {
       placeId: 'arco-del-carmen',
       personality: ['dreamy', 'philosophical', 'easily distracted'],
       portraitPrompt: 'Gouache portrait of a man of 45 with long greying hair, a paint-spattered jacket and a brush behind his ear, with a dreamy look, who paints at his easel by the Arco del Carmen, San Cristóbal de las Casas. Include the red and white arched tower. Bold, saturated colour: arch red, white and mountain blue. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You paint at your easel by the Arco del Carmen, the old arched tower at the south end of the centre, next to the church of El Carmen. Its white decoration is in Mudéjar style, a Spanish style with roots in Islamic art. The arch once marked an entrance to the city. San Cristóbal has long drawn painters and writers from all over the world, and many stayed.",
+      here: "You paint at your easel by the Arco del Carmen, the old arched tower on the Andador del Carmen, next to the church of El Carmen. Its white decoration is in Mudéjar style, a Spanish style with roots in Islamic art. The arch once marked an entrance to the city. San Cristóbal has long drawn painters and writers from all over the world, and many stayed.",
     },
     {
       id: 'andrea-taquillera-sancris',
@@ -219,7 +219,7 @@ export const sanCristobalDeLasCasas: CityPantry = {
       placeId: 'terminal-san-cristobal',
       personality: ['quick', 'friendly', 'warns about the road'],
       portraitPrompt: 'Gouache portrait of a woman of 36 with a high ponytail, a company fleece jacket and a cheerful face, who sells tickets at the bus terminal of San Cristóbal de las Casas. Include the counter and the departure screen. Bold, saturated colour: travel blue, mountain green and orange. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You sell tickets at the bus terminal of San Cristóbal, on the Pan-American Highway. The nearest airport is at Tuxtla Gutiérrez, about an hour away down the mountain. Buses leave for Palenque, Oaxaca, Mérida and Mexico City, and the mountain roads are slow.",
+      here: "You sell tickets at the bus terminal of San Cristóbal, on the Pan-American Highway. The nearest airport serves Tuxtla Gutiérrez, a little over an hour away down the mountain. Buses leave for Palenque, Oaxaca, Mérida and Mexico City, and the mountain roads are slow.",
     },
   ],
   food: [

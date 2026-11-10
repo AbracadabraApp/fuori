@@ -111,7 +111,7 @@ export const merida: CityPantry = {
       placeId: 'serenata-santa-lucia',
       personality: ['romantic', 'courtly', 'remembers every song'],
       portraitPrompt: 'Gouache portrait of a slim man of 66 with neat white hair, a thin moustache and a gentle smile, in a white guayabera, holding a guitar, who sings Yucatecan trova at the Thursday serenata in the Parque de Santa Lucía, Mérida. Include the stone arcades and the facing white love seats. Bold, saturated colour: night blue, white and warm gold. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You sing in a trio of trova at the Serenata Yucateca, held every Thursday evening in the Parque de Santa Lucía since the 1960s. Trova yucateca is romantic song for two guitars and voices, with boleros, claves and bambucos; Guty Cárdenas is its most famous composer. The park has confidentes, white seats in an S shape where two people sit facing each other.",
+      here: "You sing in a trio of trova at the Serenata Yucateca, held every Thursday evening in the Parque de Santa Lucía since the 1960s. Trova yucateca is romantic song for two guitars and voices, with boleros, claves and bambucos; Guty Cárdenas is one of its most famous composers. The park has confidentes, white seats in an S shape where two people sit facing each other.",
     },
     {
       id: 'leydi-jaranera',
@@ -183,7 +183,7 @@ export const merida: CityPantry = {
       placeId: 'marquesitas-santiago',
       personality: ['cheeky', 'quick with a joke', 'saving for university'],
       portraitPrompt: 'Gouache portrait of a young man of 23 with spiky black hair, a white t-shirt and a cheeky grin, rolling a crisp crepe at his cart, who sells marquesitas in the Parque de Santiago, Mérida. Include the white cart with its iron presses at night. Bold, saturated colour: cart white, cheese yellow and night violet. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You sell marquesitas from your cart in the Parque de Santiago in the evenings. A marquesita is a thin crepe cooked crisp in a round iron press and rolled around grated queso de bola, a Dutch Edam cheese that has been eaten in Yucatán since the days of the port trade, with cajeta or Nutella if you want. People argue about whether cheese with something sweet is the right way. You are studying engineering in the mornings.",
+      here: "You sell marquesitas from your cart in the Parque de Santiago in the evenings. A marquesita is a thin crepe cooked crisp in a round iron press and rolled around grated queso de bola, a Dutch Edam cheese Yucatán has imported for well over a century, with cajeta or Nutella if you want. People argue about whether cheese with something sweet is the right way. You are studying engineering in the mornings.",
     },
     {
       id: 'genaro-sacristan',
@@ -195,7 +195,7 @@ export const merida: CityPantry = {
       placeId: 'ermita-de-santa-isabel',
       personality: ['calm', 'devout', 'fond of the old stories'],
       portraitPrompt: 'Gouache portrait of an elderly man of 74 with white hair, a lined kind face and a white guayabera, holding a watering can, who looks after the Ermita de Santa Isabel, Mérida. Include the small stone chapel and its garden. Bold, saturated colour: stone grey, garden green and white. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You look after the Ermita de Santa Isabel, a small chapel from the eighteenth century at the edge of the old centre. Travellers leaving Mérida for Campeche on the royal road used to stop here to pray for a safe journey, so it is also called the chapel of the good journey. Behind it there is a quiet garden. In the evenings there are sometimes concerts of trova here.",
+      here: "You look after the Ermita de Santa Isabel, a small chapel from the eighteenth century at the edge of the old centre. Travellers leaving Mérida for Campeche on the royal road used to stop here to pray for a safe journey, so it is also called the chapel of the good journey. Behind it there is a quiet garden.",
     },
     {
       id: 'gaspar-hamaquero',

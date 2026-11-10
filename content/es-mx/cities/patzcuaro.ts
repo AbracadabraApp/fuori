@@ -135,7 +135,7 @@ export const patzcuaro: CityPantry = {
       placeId: 'plaza-vasco-de-quiroga',
       personality: ['talkative', 'courteous', 'loves to explain'],
       portraitPrompt: 'Gouache portrait of a man of 69 with a white moustache, a felt hat and a tweed jacket, a folded newspaper on his knee, with a courteous smile, who is a retired schoolteacher sitting in the Plaza Vasco de Quiroga, Pátzcuaro. Include the huge ash trees and the white and red arcades. Bold, saturated colour: ash-tree green, wall red and white. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You taught history for forty years and you spend your mornings in the Plaza Vasco de Quiroga, one of the largest plazas in Mexico. Vasco de Quiroga, the first bishop of Michoacán in the 1530s, is still called Tata Vasco here. He organised the Purépecha towns around the lake so that each one specialised in a craft: copper in Santa Clara del Cobre, pottery in Tzintzuntzan, guitars in Paracho, lacquer in Pátzcuaro. Many still do.",
+      here: "You taught history for forty years and you spend your mornings in the Plaza Vasco de Quiroga, one of the largest plazas in Mexico. Vasco de Quiroga, the first bishop of Michoacán in the 1530s, is still called Tata Vasco here. He is credited with organising the Purépecha towns around the lake so that each one specialised in a craft: copper in Santa Clara del Cobre, pottery in Tzintzuntzan, guitars in Paracho, lacquer in Pátzcuaro. Many still do.",
     },
     {
       id: 'marta-bibliotecaria',

@@ -147,7 +147,7 @@ export const guanajuato: CityPantry = {
       placeId: 'monumento-al-pipila',
       personality: ['easy-going', 'flattering', 'knows the best light'],
       portraitPrompt: 'Gouache portrait of a man of 37 with a ponytail, a trimmed beard and a camera on a strap, in a denim shirt, with a relaxed smile, who takes photographs at the Monumento al Pípila lookout above Guanajuato. Include the colourful city in the ravine below. Bold, saturated colour: house colours of pink, yellow and blue, and stone rose. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You take photographs of visitors at the lookout under the Monumento al Pípila, the best view of Guanajuato, which fills a narrow ravine. Most people come up on the funicular. El Pípila was a miner who, the story goes, tied a flat stone to his back and set fire to the door of the Alhóndiga in 1810, so the insurgents could take it. Below, many of the city's streets run in tunnels, some built along the old riverbed.",
+      here: "You take photographs of visitors at the lookout under the Monumento al Pípila, the best view of Guanajuato, which fills a narrow ravine. Many people come up on the funicular. El Pípila was a miner who, the story goes, tied a flat stone to his back and set fire to the door of the Alhóndiga in 1810, so the insurgents could take it. Below, many of the city's streets run in tunnels, some built along the old riverbed.",
     },
     {
       id: 'marisol-guia-alhondiga',
