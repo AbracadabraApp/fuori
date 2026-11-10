@@ -32,15 +32,16 @@
 
 import type { ConversationScore } from './quality';
 
-export const GRADE_VERSION = '2026-11-10b';
+export const GRADE_VERSION = '2026-11-10c';
 
-export type VariableKey = 'responsive' | 'content' | 'character' | 'ending';
+export type VariableKey = 'responsive' | 'support' | 'content' | 'character' | 'ending';
 
 export const VARIABLES: { key: VariableKey; label: string; weight: number; what: string }[] = [
-  { key: 'responsive', label: 'Responsive', weight: 30, what: 'handled what was said: nothing that doesn\'t follow, nothing left unanswered, no assumptions, pulled back when they were lost' },
-  { key: 'content', label: 'Content', weight: 30, what: 'real facts about the place, the country and the language, per reply' },
-  { key: 'character', label: 'Character', weight: 20, what: 'comes across as a real local, judged from his lines alone' },
-  { key: 'ending', label: 'Ending', weight: 20, what: 'closes when the talk is done: no cut-off over a question, no conversation that won\'t end' },
+  { key: 'responsive', label: 'Responsive', weight: 25, what: 'handled what was said: nothing that doesn\'t follow, nothing left unanswered, no tourist questions, no repeating or forgetting' },
+  { key: 'support', label: 'Support', weight: 20, what: 'Beginner only: English and answers to work from, and an easier reply when they were lost' },
+  { key: 'content', label: 'Content', weight: 25, what: 'real facts about the place, the country and the language, per reply' },
+  { key: 'character', label: 'Character', weight: 15, what: 'comes across as a real local, judged from his lines alone' },
+  { key: 'ending', label: 'Ending', weight: 15, what: 'closes when the talk is done: no cut-off over a question, no conversation that won\'t end' },
 ];
 
 /** A failure of quality that caps the total whatever the variables say */
@@ -69,10 +70,16 @@ export function variablesOf(s: ConversationScore): Record<VariableKey, number | 
   const j = s.judge;
   const replies = Math.max(1, s.stats.replies);
 
-  // Responsive: each reply that doesn't follow, question left unanswered or assumption about who they are costs
-  // 40 points of rate (one in 18 replies is about 2.2 points); a lost learner who got no easier reply costs up to 3
+  // Responsive: each reply that doesn't follow, question left unanswered costs 40 points of rate, a tourist question 16, a repeat 30 (one in 18 replies is about 2.2 points). Saved scores before touristAsked existed use newcomerAssumed.
+  const tourist = (j.touristAsked ?? j.newcomerAssumed ?? 0) * 0.4;
+  const responsive = j.incoherent === undefined ? null : clamp(10 - (40 * (j.incoherent + (j.unanswered ?? 0) + tourist + 0.75 * (j.repeatedInTalk ?? 0))) / replies);
+
+  // Support (Beginner only): the share of the character's phrases and answers that carried their English, counted from the
+  // parts (none = 1, all = 10), and a lost learner who got no easier reply costs up to 3
   const lostShare = s.lost.length ? s.lost.filter((l) => l.pulledBack && l.shorter).length / s.lost.length : 1;
-  const responsive = j.incoherent === undefined ? null : clamp(10 - (40 * (j.incoherent + (j.unanswered ?? 0) + 0.6 * (j.newcomerAssumed ?? 0))) / replies - 3 * (1 - lostShare));
+  const e = s.english;
+  const cover = e && e.phrases + e.answers > 0 ? (e.withEnglish + e.answersWithEnglish) / (e.phrases + e.answers) : null;
+  const support = !s.beginner || cover === null ? null : clamp(1 + 9 * cover - 3 * (1 - lostShare));
 
   // Content: facts per reply; one every two replies is 10
   const content = j.placeFacts === undefined ? null : clamp(1 + (18 * j.placeFacts) / replies);
@@ -84,7 +91,7 @@ export function variablesOf(s: ConversationScore): Record<VariableKey, number | 
   // Ending: a close over a question costs 3, a conversation that won't end 5
   const ending = j.cutOffByGoodbye === undefined && j.keepsClosing === undefined ? null : clamp(10 - (j.cutOffByGoodbye ? 3 : 0) - (j.keepsClosing ? 5 : 0));
 
-  return { responsive, content, character, ending };
+  return { responsive, support, content, character, ending };
 }
 
 export function gradeConversation(s: ConversationScore): Grade {

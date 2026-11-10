@@ -25,7 +25,8 @@ const g = gradeConversation(good);
 check(g.total >= 8.5 && g.total <= 10, `a clean conversation grades 8.5 or more (got ${g.total})`);
 check(g.capped.length === 0, 'nothing capped on a clean conversation');
 check(VARIABLES.reduce((n, v) => n + v.weight, 0) === 100, 'weights add to 100');
-check(VARIABLES.length === 4, 'four quality variables');
+check(VARIABLES.length === 5, 'five quality variables (support is Beginner only)');
+check(g.variables.support === null, 'support is not measured outside Beginner');
 
 // The learner can't move it: heard and followable are readings, not variables
 const messy = gradeConversation({ ...good, learnerLines: 2, judge: { ...good.judge, garbled: 6, garbledMissed: 0, pronunciationCorrections: 0 } });
@@ -95,3 +96,8 @@ check(gradeTrendAsText([]) === 'No scored conversations yet.', 'nothing scored: 
 
 if (problems.length) { console.error(problems.map((p) => '✗ ' + p).join('\n')); process.exit(1); }
 console.log('grade checks passed');
+
+// A Beginner conversation that gave no English to a lost learner, asked tourist questions and repeated itself (Josh graded one 2; the rule gave 6)
+const noSupport = gradeConversation({ ...good, beginner: true, lost: [{ line: 1, shorter: false, pulledBack: false }, { line: 2, shorter: false, pulledBack: false }], judge: { ...good.judge, touristAsked: 2, repeatedInTalk: 2 }, english: { phrases: 10, withEnglish: 0, answers: 20, answersWithEnglish: 0 } });
+check(noSupport.variables.support !== null && (noSupport.variables.support as number) < 4, `no English for a lost learner scores support low (got ${noSupport.variables.support})`);
+check(noSupport.total < g.total - 2.5, `and drags the grade down (clean ${g.total}, this ${noSupport.total})`);

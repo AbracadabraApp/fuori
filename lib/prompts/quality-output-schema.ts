@@ -30,6 +30,8 @@ export const qualityOutputJsonSchema = {
     keepsClosing: { type: 'boolean' },
     placeFacts: count,
     newcomerAssumed: count,
+    touristAsked: count,
+    repeatedInTalk: count,
     words: {
       additionalProperties: false,
       type: 'object',
@@ -62,6 +64,8 @@ export const qualityOutputJsonSchema = {
     'keepsClosing',
     'placeFacts',
     'newcomerAssumed',
+    'touristAsked',
+    'repeatedInTalk',
     'words',
     'note',
   ],

@@ -28,7 +28,7 @@ export interface ScoredTurn {
   who: 'npc' | 'learner';
   text: string;
   /** Beginner replies saved with their parts (from 2026-10-27) */
-  parts?: { kind: string; text: string }[];
+  parts?: { kind: string; text: string; en?: string; gloss?: string }[];
   /** A reply's server time in ms, kept with real turns (lib/memory.ts ConversationTurn) */
   ms?: number;
   /** When the turn was said (ISO), kept with real turns */
@@ -77,6 +77,8 @@ const JudgeSchema = z.object({
   keepsClosing: z.boolean().optional(),
   placeFacts: z.number().int().min(0).optional(),
   newcomerAssumed: z.number().int().min(0).optional(),
+  touristAsked: z.number().int().min(0).optional(),
+  repeatedInTalk: z.number().int().min(0).optional(),
   // Added 2026-10-27 (judge version 2026-10-27): how much each side spoke the
   // language and English (Josh: "both are important, character and speaker";
   // for the character, total words, not a share, and "the length of phrase and
@@ -114,6 +116,8 @@ export interface ConversationScore {
   phrases?: ReturnType<typeof phraseStats>;
   /** How the visit closed, counted from the setups the code played and the turns' times (not judged) */
   closing?: Closing;
+  /** How much of a Beginner's reply carried its English, counted from the saved parts (Josh, 2026-11-10: "no english to work from") */
+  english?: EnglishCover;
   /** How long each character reply took, in ms (the replay test times them; real play doesn't yet) */
   replyMs?: number[];
   /** Level of the character's lines (lib/level.ts; the replay scores every line, real play a sample of them) */
@@ -226,6 +230,33 @@ export function shorterAfterLost(turns: ScoredTurn[], lostLines: number[]): Map<
   return out;
 }
 
+export interface EnglishCover {
+  /** The character's phrases and questions in the language, and how many had their English beside them (en or gloss) */
+  phrases: number;
+  withEnglish: number;
+  /** The answers offered to say back, and how many had their English */
+  answers: number;
+  answersWithEnglish: number;
+}
+
+/** Counted exactly from the parts of a Beginner conversation; null when no reply was saved with parts */
+export function englishOf(turns: ScoredTurn[]): EnglishCover | null {
+  const e: EnglishCover = { phrases: 0, withEnglish: 0, answers: 0, answersWithEnglish: 0 };
+  let seen = false;
+  for (const t of turns) {
+    if (t.who !== 'npc' || !t.parts?.length) continue;
+    seen = true;
+    // A reply with English spoken in it (an english part) gave the learner something to follow
+    const spoken = t.parts.some((p) => p.kind === 'english' && p.text.trim());
+    for (const p of t.parts) {
+      const has = spoken || !!(p.en?.trim() || p.gloss?.trim());
+      if (p.kind === 'word' || p.kind === 'question') { e.phrases++; if (has) e.withEnglish++; }
+      else if (p.kind === 'answer') { e.answers++; if (p.en?.trim()) e.answersWithEnglish++; }
+    }
+  }
+  return seen ? e : null;
+}
+
 /** The code's reading of how a visit ended (Josh, 2026-11-10: the closing has an instrument piece): counted from the setups recorded with each reply */
 export interface Closing {
   /** The learner turn after which the code first played the goodbye setup; null when it never did */
@@ -268,6 +299,7 @@ export async function scoreConversation(
     ...(opts.beginner ? { beginner: true } : {}),
     learnerLines: turns.filter((t) => t.who === 'learner').length,
     closing: closingOf(turns),
+    ...(opts.beginner ? (() => { const english = englishOf(turns); return english ? { english } : {}; })() : {}),
     stats: turnStats(turns.filter((t) => t.who === 'npc').map((t) => t.text)),
     lost: j.lost.map((l) => ({ line: l.line, shorter: shorter.get(l.line) ?? false, pulledBack: l.pulledBack })),
     judge: j,

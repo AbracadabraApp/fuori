@@ -2,7 +2,7 @@
 
 > Copied from `content/it/prompts/quality.md` on 2026-10-12 for the Mexico pack. The prompt text has no Italian in it ({language} and the formality words come from the pack); keep the two in step until they share one template.
 
-version: 2026-11-10r
+version: 2026-11-10s
 
 When a conversation ends, after the memory call, one Claude call reads the
 transcript and counts the things on the dialogue scorecard that code can't
@@ -40,6 +40,8 @@ Count what {name} does. Count only what is clearly there; when unsure, don't cou
 - keepsClosing: true if, after a first farewell, {name} closes again in three or more further replies (more farewells, thanks, well-wishes) without the conversation ending: a conversation that won't end.
 - placeFacts: distinct real facts {name} gave about the place, the country, its food, people, history or traditions, or about the {language}. A fact counts once however often it is said; small talk and opinions don't count.
 - newcomerAssumed: {name}'s lines that assume something about who the person is, where they're from, whether they're new or how long they are staying, that the person had not said.
+- touristAsked: {name}'s questions or lines that only make sense for a visitor or newcomer, asked before the person said so: where they're from, how long they're staying, whether they're new, whether they like the city, what they've seen so far. A question about what's here or what {name} is doing doesn't count.
+- repeatedInTalk: {name}'s lines that repeat something {name} already said in this conversation, or ask again something the person already answered.
 - words: how much each side spoke {language} and English. Count words, roughly but honestly, over the whole conversation: characterPhrases is how many phrases or sentences {name} said in {language} (a short phrase, a question and a full sentence each count once; a single word on its own counts too); characterLanguage and characterEnglish are {name}'s words in {language} and in English (totals, not a share); personLanguage and personEnglish are the person's; personLinesLanguage, personLinesEnglish and personLinesMixed count the person's lines that were mostly {language}, mostly English, or a real mix. A name or a borrowed word (pizza, ok) doesn't change a line's language.
 - note: the single biggest problem with {name}'s side of the conversation, in one sentence. "None" if nothing stands out.
 

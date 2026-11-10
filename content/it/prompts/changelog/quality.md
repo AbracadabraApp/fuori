@@ -4,6 +4,12 @@ Newest first. One entry per version: what changed, why, what prompted it. The pr
 
 Newest first. Each entry: what changed, why, and what prompted it.
 
+### 2026-11-10s: three counts for what Josh marked down
+- **Changed:** `touristAsked` (visitor-only questions asked before the person said so) and `repeatedInTalk` (repeats or re-asks within the conversation). English for a Beginner is counted by code from the saved parts (`english` on the score), not by the judge: a first judge count of it found none where Josh heard none.
+- **Why:** Josh graded ten conversations by ear (2026-11-10); the grade rule was within 1.0 on 4 of 10 and too generous, worst on a Beginner conversation that gave no English (rule 6, Josh 2). He marked down tourist questions, no English to work from, and repeating or forgetting; the scorecard counted the first only as an assumption about who they are, the second not at all, and the third only against earlier visits.
+- **Prompted by:** Josh's blind grades (card Q1), his "does the scorecard catch these".
+- **Tested:** card Q1, the same ten conversations re-graded.
+
 ### 2026-11-10r: the grade restructured (quality only, one-sided Character)
 - **Changed:** `extraGoodbyes` (a count the code can make exactly from the recorded setups) became `keepsClosing`, a yes or no for a conversation that won't end. A reply that offers answers now ends with "[Answers shown on screen: …]" in the transcript the judge reads.
 - **Added:** a separate Character call (`## Character`), which sees only the character's lines and grades how much he comes across as a real local, 1–10, so the learner cannot affect it.

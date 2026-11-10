@@ -22,14 +22,16 @@ for (const r of rows.slice().reverse()) {
   const character = findCharacter(r.city_id, r.character_id);
   const label = `${r.started_at.slice(5, 16).replace('T', ' ')} ${r.character_id} (${r.prompt_version.slice(0, 22)})`;
   if (!character) continue; // another country's pack
-  if (learnerLines < 1) { console.log(`${label}: opener only, no learner line; not graded`); results.push({ id: r.id, label, grade: null, why: 'opener only' }); continue; }
+  // Magda's lessons and the lesson pages aren't graded: correcting is her job (lib/remember.ts), and scoring needs two learner lines like real play
+  if (/^(magda|lesson)/.test(r.prompt_version)) continue;
+  if (learnerLines < 2) { console.log(`${label}: fewer than two learner lines; not graded`); results.push({ id: r.id, label, grade: null, why: 'fewer than two learner lines' }); continue; }
   try {
     const score = await scoreConversation(character, r.turns, undefined, { beginner: r.prompt_version.startsWith('beginner-') });
     if (r.quality?.level) score.level = r.quality.level;
     if (r.quality?.repeats) score.repeats = r.quality.repeats;
     const g = gradeConversation(score);
     console.log(`${label}\n  ${gradeLine(g)}\n  ${instrumentLine(instrumentsOf(score))}\n  ${score.character ? `Character: ${score.character.note}\n  ` : ''}${score.judge.note}`);
-    results.push({ id: r.id, label, learnerLines, grade: g, instruments: instrumentsOf(score), note: score.judge.note, counts: { unanswered: score.judge.unanswered, cutOff: score.judge.cutOffByGoodbye, keepsClosing: score.judge.keepsClosing, placeFacts: score.judge.placeFacts, newcomerAssumed: score.judge.newcomerAssumed } });
+    results.push({ id: r.id, at: r.started_at, character: r.character_id, promptVersion: r.prompt_version, label, learnerLines, grade: g, instruments: instrumentsOf(score), note: score.judge.note, score, counts: { ...score.judge, lost: undefined, words: undefined, note: undefined, replies: score.stats.replies, lostLines: score.lost} });
   } catch (e) {
     console.log(`${label}: FAILED ${(e as Error).message}`);
     results.push({ id: r.id, label, grade: null, why: (e as Error).message });
