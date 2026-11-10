@@ -103,7 +103,7 @@ const median = (xs: number[]) => {
 function cleanup(learnerId: string) {
   if (keep || !/^[0-9a-f-]{36}$/.test(learnerId)) return console.log(`Test learner kept: ${learnerId}`);
   try {
-    const js = `const {Pool}=require('pg');const p=new Pool({connectionString:process.env.DATABASE_URL,ssl:/railway\\.internal/.test(process.env.DATABASE_URL)?false:{rejectUnauthorized:false}});p.query("DELETE FROM learners WHERE id='${learnerId}'").then(r=>{console.log(r.rowCount);return p.end()})`;
+    const js = `const {Pool}=require('pg');const p=new Pool({connectionString:process.env.DATABASE_URL,ssl:/railway\\.internal/.test(process.env.DATABASE_URL)?false:{rejectUnauthorized:false}});p.query("DELETE FROM conversations WHERE learner_id='${learnerId}'").then(()=>p.query("DELETE FROM character_memories WHERE learner_id='${learnerId}'")).then(()=>p.query("DELETE FROM learners WHERE id='${learnerId}'")).then(r=>{console.log(r.rowCount);return p.end()})`;
     const out = execFileSync('railway', ['ssh', '--service', country === 'it' ? 'Fuori' : 'Afuera', '--', 'node', '-e', js], { encoding: 'utf8', stdio: ['ignore', 'pipe', 'ignore'] });
     if (out.trim().split('\n').pop() !== '1') throw new Error('not deleted');
     console.log(`Test learner deleted (${learnerId})`);

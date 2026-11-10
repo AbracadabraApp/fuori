@@ -27,7 +27,7 @@ export const qualityOutputJsonSchema = {
     alive: count,
     unanswered: count,
     cutOffByGoodbye: { type: 'boolean' },
-    extraGoodbyes: count,
+    keepsClosing: { type: 'boolean' },
     placeFacts: count,
     newcomerAssumed: count,
     words: {
@@ -59,10 +59,18 @@ export const qualityOutputJsonSchema = {
     'alive',
     'unanswered',
     'cutOffByGoodbye',
-    'extraGoodbyes',
+    'keepsClosing',
     'placeFacts',
     'newcomerAssumed',
     'words',
     'note',
   ],
+};
+
+/** The separate Character call (content/<country>/prompts/quality.md → Character): one grade from the character's lines alone */
+export const characterOutputJsonSchema = {
+  additionalProperties: false,
+  type: 'object',
+  properties: { character: count, note: { type: 'string' } },
+  required: ['character', 'note'],
 };

@@ -56,6 +56,9 @@ ALTER TABLE conversations ADD COLUMN IF NOT EXISTS memory_at_start jsonb;
 
 -- Dialogue scorecard numbers for the conversation (lib/quality.ts), written when it ends
 ALTER TABLE conversations ADD COLUMN IF NOT EXISTS quality jsonb;
+-- Every earlier score of a conversation, oldest first, so a re-score keeps the judge versions' numbers
+-- comparable (2026-11-10; lib/quality.ts saveConversationScore)
+ALTER TABLE conversations ADD COLUMN IF NOT EXISTS quality_history jsonb NOT NULL DEFAULT '[]'::jsonb;
 
 -- M2: Review analysis (added 2026-10-13)
 ALTER TABLE conversations ADD COLUMN IF NOT EXISTS review JSONB;
@@ -128,6 +131,20 @@ CREATE TABLE IF NOT EXISTS say_it_log (
   prompt_version  text
 );
 CREATE INDEX IF NOT EXISTS idx_say_it_log_at ON say_it_log(at DESC);
+
+-- Nothing is deleted with a learner (Josh, 2026-11-10: "we shouldn't delete"): a learner who has conversations
+-- or character memories can't be deleted until those are removed on purpose. Sign-in tokens still go with the learner.
+DO $$
+BEGIN
+  IF EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'conversations_learner_id_fkey' AND confdeltype <> 'r') THEN
+    ALTER TABLE conversations DROP CONSTRAINT conversations_learner_id_fkey;
+    ALTER TABLE conversations ADD CONSTRAINT conversations_learner_id_fkey FOREIGN KEY (learner_id) REFERENCES learners(id) ON DELETE RESTRICT;
+  END IF;
+  IF EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'character_memories_learner_id_fkey' AND confdeltype <> 'r') THEN
+    ALTER TABLE character_memories DROP CONSTRAINT character_memories_learner_id_fkey;
+    ALTER TABLE character_memories ADD CONSTRAINT character_memories_learner_id_fkey FOREIGN KEY (learner_id) REFERENCES learners(id) ON DELETE RESTRICT;
+  END IF;
+END $$;
 
 -- Indexes for common queries
 CREATE INDEX IF NOT EXISTS idx_conversations_learner ON conversations(learner_id);

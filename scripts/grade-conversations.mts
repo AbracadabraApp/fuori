@@ -10,6 +10,7 @@ import { readFileSync, writeFileSync } from 'fs';
 import { findCharacter } from '@/lib/remember';
 import { scoreConversation, type ConversationScore, type ScoredTurn } from '@/lib/quality';
 import { gradeConversation, gradeLine, VARIABLES } from '@/lib/grade';
+import { instrumentsOf, instrumentLine } from '@/lib/instruments';
 
 const [file, out] = [process.argv[2], process.argv[3]];
 if (!file) { console.error('usage: grade-conversations.mts <conversations.json> [out.json]'); process.exit(1); }
@@ -27,8 +28,8 @@ for (const r of rows.slice().reverse()) {
     if (r.quality?.level) score.level = r.quality.level;
     if (r.quality?.repeats) score.repeats = r.quality.repeats;
     const g = gradeConversation(score);
-    console.log(`${label} · ${learnerLines} learner lines\n  ${gradeLine(g)}\n  ${score.judge.note}`);
-    results.push({ id: r.id, label, learnerLines, grade: g, note: score.judge.note, counts: { unanswered: score.judge.unanswered, cutOff: score.judge.cutOffByGoodbye, extraGoodbyes: score.judge.extraGoodbyes, placeFacts: score.judge.placeFacts, newcomerAssumed: score.judge.newcomerAssumed } });
+    console.log(`${label}\n  ${gradeLine(g)}\n  ${instrumentLine(instrumentsOf(score))}\n  ${score.character ? `Character: ${score.character.note}\n  ` : ''}${score.judge.note}`);
+    results.push({ id: r.id, label, learnerLines, grade: g, instruments: instrumentsOf(score), note: score.judge.note, counts: { unanswered: score.judge.unanswered, cutOff: score.judge.cutOffByGoodbye, keepsClosing: score.judge.keepsClosing, placeFacts: score.judge.placeFacts, newcomerAssumed: score.judge.newcomerAssumed } });
   } catch (e) {
     console.log(`${label}: FAILED ${(e as Error).message}`);
     results.push({ id: r.id, label, grade: null, why: (e as Error).message });

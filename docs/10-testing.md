@@ -6,6 +6,15 @@ Testing a voice-first language game means validating not just code, but conversa
 
 **For a one-person prototype, what matters now is section 4 (level rules and the simulated learner) and testing on your phone (section 9).** The rest is reference for later milestones.
 
+## The one grade per conversation (2026-11-10)
+
+Josh, 2026-11-10: "a scorecard that scores every conversation on several variables and one total score… 1-10… all variables are important but not equal… the overall grade should allow an overall view of progress"; quality is about the character and the conversation, never the learner; instrument readings are reported accurately and never graded.
+
+- **The grade** (`lib/grade.ts`, rule 2026-11-10b), 1–10, computed from the saved score on read (a changed weight regrades the history): four quality variables, each a rate over the character's replies: responsive (30), content (30), character (20, judged from his lines alone by a separate call that never sees the learner), ending (20). A weighted mean, capped at 5 or 6 for a conversation that won't end, a closing over a question, or three or more replies that don't follow.
+- **Instrument readings** (`lib/instruments.ts`): heard (garbled lines handled and missed, pronunciation comments), followable (the share of lines a beginner knows, lost lines pulled back on), the closing counted by code from the setups played (the learner turn the goodbye setup started and how many goodbye replies followed), minutes, reply words and time, repeats, unasked English, the learner's share. Never scored 1–10, never in the grade, never a cap: each is judged on its accuracy.
+- **Where it shows:** `GRADE:` and `READINGS:` lines in the admin text (`format=text`), an "Overall grade" row on the scorecard, `format=grade` (by week and by prompt version, the view of progress), `npm run test:grade`.
+- **Keeping everything:** nothing is deleted with a learner (the migration restricts it), a re-score keeps the score it replaces in `quality_history`, `scripts/archive-conversations.mjs` writes a private dated copy to `~/fuori-archive/` (never git), `scripts/score-missing.mts` scores conversations that slipped through, `scripts/grade-conversations.mts` grades saved conversations offline, and `scripts/gold-set.mts` packs ten conversations for Josh to grade blind and checks the rule against his grades (card Q1).
+
 ## Dialogue quality (decided 2026-10-12)
 
 Josh will never test at scale himself, and he doesn't read transcripts: automated review does, and he asks for a transcript when he wants one. One loop covers measuring, grading, testing and prompt changes, so prompts are never adjusted ad hoc.

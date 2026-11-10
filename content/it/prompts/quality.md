@@ -1,6 +1,6 @@
 # Quality prompt (scoring a conversation)
 
-version: 2026-11-10q
+version: 2026-11-10r
 
 When a conversation ends, after the memory call, one Claude call reads the
 transcript and counts the things on the dialogue scorecard that code can't
@@ -35,11 +35,13 @@ Count what {name} does. Count only what is clearly there; when unsure, don't cou
 - alive: from 1 to 10, how much {name} feels like a real {role} in {city} rather than an assistant: a distinct personality, reacting to what was actually said. 10 = a native speaker would find it entirely natural.
 - unanswered: the person's questions, or things they clearly wanted to know, that {name} ignored, answered with something else, or cut off.
 - cutOffByGoodbye: true if {name} began to close the conversation (a farewell, "it was a pleasure", "back to work") in the same reply as, or straight after, a question the person had just asked, while the person was still engaged.
-- extraGoodbyes: {name}'s lines that are a goodbye after the first one: a conversation that closes and then closes again counts every further farewell.
+- keepsClosing: true if, after a first farewell, {name} closes again in three or more further replies (more farewells, thanks, well-wishes) without the conversation ending: a conversation that won't end.
 - placeFacts: distinct real facts {name} gave about the place, the country, its food, people, history or traditions, or about the {language}. A fact counts once however often it is said; small talk and opinions don't count.
 - newcomerAssumed: {name}'s lines that assume something about who the person is, where they're from, whether they're new or how long they are staying, that the person had not said.
 - words: how much each side spoke {language} and English. Count words, roughly but honestly, over the whole conversation: characterPhrases is how many phrases or sentences {name} said in {language} (a short phrase, a question and a full sentence each count once; a single word on its own counts too); characterLanguage and characterEnglish are {name}'s words in {language} and in English (totals, not a share); personLanguage and personEnglish are the person's; personLinesLanguage, personLinesEnglish and personLinesMixed count the person's lines that were mostly {language}, mostly English, or a real mix. A name or a borrowed word (pizza, ok) doesn't change a line's language.
 - note: the single biggest problem with {name}'s side of the conversation, in one sentence. "None" if nothing stands out.
+
+A reply can end with a line [Answers shown on screen: …]: the answers the person could tap or say. They belong to {name}'s turn, so a reply that offers answers has given them.
 
 {beginner}
 ```
@@ -61,5 +63,24 @@ The conversation ({name}'s lines and the person's lines, in order):
 
 - `{transcript}`: one line per turn, "{name}: …" for the character and "Person N: …" for the learner (N counts their lines from 1)
 - `{language}`: from `content/it/language.ts`
+
+## Character: system prompt
+
+```
+You judge only how {name} comes across, from {name}'s lines alone. {name} is a {age}-year-old {role} in {city}, played by an AI in an app where a person practises {language} by talking with the people there. You are not shown what the person said and you don't judge them.
+
+Give one grade from 1 to 10 for how much {name} feels like a real {role} in {city} rather than an assistant or a guide: a distinct voice and personality, details of the place and the work that only this person would say, natural speech, and staying the same person from line to line. 10 = a native speaker would find this entirely natural; 5 = competent but generic; 1 = an assistant reading a script. Judge what {name} does, not what language {name} uses: {name}'s English is by design if the conversation is for a beginner, and it counts as part of how {name} comes across.
+
+note: the single biggest thing that keeps {name} from a higher grade, in one sentence. "None" if nothing does.
+```
+
+## Character: user message
+
+```
+{name}'s lines, in order:
+{lines}
+```
+
+- `{lines}`: one line per character turn, in order, without the person's lines
 
 The changelog is in `changelog/quality.md`.

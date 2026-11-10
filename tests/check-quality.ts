@@ -90,6 +90,8 @@ async function main() {
       const found = (await recentConversations(50)).find((c) => c.id === id);
       check(found?.quality?.judge.correctionsUnprompted === 3, 'saved score should come back with the conversation');
     } finally {
+      await query('DELETE FROM conversations WHERE learner_id = $1', [me]);
+      await query('DELETE FROM character_memories WHERE learner_id = $1', [me]);
       await query('DELETE FROM learners WHERE id = $1', [me]);
       await closePool();
     }

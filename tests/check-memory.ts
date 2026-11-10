@@ -108,6 +108,8 @@ async function dbChecks() {
     check((await loadCharacterMemory(me, person.id)).visits === 2, 'second conversation did not count as a second visit');
     check((await loadMemoryAtStart(id2, me))?.visits === 1, 'second conversation should start knowing one visit');
   } finally {
+    await query('DELETE FROM conversations WHERE learner_id = $1', [me]);
+    await query('DELETE FROM character_memories WHERE learner_id = $1', [me]);
     await query('DELETE FROM learners WHERE id = $1', [me]);
     await closePool();
   }

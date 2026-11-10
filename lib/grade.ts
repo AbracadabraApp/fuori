@@ -4,40 +4,50 @@
  * average of variables but a total grade"; "all variables are important but
  * not equal"; "the overall grade should allow an overall view of progress").
  *
- * Six variables, each 1–10, come from the conversation's score
- * (lib/quality.ts). The total is a weighted mean of the variables that could
- * be measured (a conversation scored before a variable existed leaves it out
- * and the weights are shared out again), then capped when the conversation
- * has a serious failure, so a good conversation with a bad ending can't
- * average its way to a good grade. Computed from the saved score on read,
- * never stored: changing a weight or cap regrades the whole history, and
- * GRADE_VERSION says which rule a number came from.
+ * The grade is conversation quality about the character and the conversation,
+ * never the learner: "if the system is a 10 a bad learner shouldn't tank the
+ * grade". Four variables, each 1–10 and each a rate over the character's
+ * replies, not a count, so a long or short visit compares:
+ *  - responsive: handled what was said (replies that don't follow, questions
+ *    left unanswered, assumptions about who they are, a lost learner left lost)
+ *  - content: real facts about the place, the country and the language
+ *  - character: comes across as a real local; judged from his lines alone
+ *    (a separate call that never sees the learner; scores saved before it
+ *    existed use the main judge's "alive")
+ *  - ending: closes when the talk is done: no cut-off over a question, no
+ *    conversation that won't end
+ * The total is a weighted mean of the variables a score can measure, capped
+ * when the conversation has a serious failure, so a good conversation with a
+ * bad ending can't average its way to a good grade.
  *
- * Weights and caps are Claude's proposal from "what the learner learns"
- * (CLAUDE.md), set to be changed by Josh. No database or Claude calls here.
+ * Instrument readings (heard, followable, the closing counts, lengths, repeats)
+ * are reported beside the grade (lib/instruments.ts), never graded and never
+ * capping: a reading is judged on its accuracy only.
+ *
+ * Computed from the saved score on read, never stored: changing a weight or a
+ * cap regrades the whole history, and GRADE_VERSION says which rule a number
+ * came from. Weights and caps are Claude's proposal from "what the learner
+ * learns" (CLAUDE.md), for Josh to change. No database or Claude calls here.
  */
 
 import type { ConversationScore } from './quality';
 
-export const GRADE_VERSION = '2026-11-10a';
+export const GRADE_VERSION = '2026-11-10b';
 
-export type VariableKey = 'followable' | 'heard' | 'responsive' | 'content' | 'ending' | 'inRole';
+export type VariableKey = 'responsive' | 'content' | 'character' | 'ending';
 
 export const VARIABLES: { key: VariableKey; label: string; weight: number; what: string }[] = [
-  { key: 'content', label: 'Content', weight: 25, what: 'real facts about the place, the country and the language were said' },
-  { key: 'responsive', label: 'Responsive', weight: 20, what: 'answers what the learner said or asked, leaves nothing hanging' },
-  { key: 'followable', label: 'Followable', weight: 20, what: 'a beginner could follow the lines; pulls back when lost' },
-  { key: 'ending', label: 'Ending', weight: 15, what: 'closes when the talk is done: no cut-off question, no goodbye loop' },
-  { key: 'heard', label: 'Heard', weight: 10, what: 'garbled speech understood; no pronunciation comments' },
-  { key: 'inRole', label: 'In role', weight: 10, what: 'a distinct local: no repeats, no unasked English, no assumptions about who they are' },
+  { key: 'responsive', label: 'Responsive', weight: 30, what: 'handled what was said: nothing that doesn\'t follow, nothing left unanswered, no assumptions, pulled back when they were lost' },
+  { key: 'content', label: 'Content', weight: 30, what: 'real facts about the place, the country and the language, per reply' },
+  { key: 'character', label: 'Character', weight: 20, what: 'comes across as a real local, judged from his lines alone' },
+  { key: 'ending', label: 'Ending', weight: 20, what: 'closes when the talk is done: no cut-off over a question, no conversation that won\'t end' },
 ];
 
-/** A failure that caps the total whatever the variables say */
+/** A failure of quality that caps the total whatever the variables say */
 export const CAPS: { key: string; cap: number; label: string; applies: (s: ConversationScore) => boolean }[] = [
-  { key: 'goodbyeLoop', cap: 5, label: 'goodbye loop: three or more goodbyes after the first', applies: (s) => (s.judge.extraGoodbyes ?? 0) >= 3 },
+  { key: 'wontEnd', cap: 5, label: 'a conversation that won\'t end', applies: (s) => s.judge.keepsClosing === true },
   { key: 'cutOff', cap: 6, label: 'closed over a question the learner had just asked', applies: (s) => s.judge.cutOffByGoodbye === true },
   { key: 'incoherent', cap: 5, label: 'three or more replies that don\'t follow', applies: (s) => (s.judge.incoherent ?? 0) >= 3 },
-  { key: 'ignoredLost', cap: 6, label: 'the learner was lost and the character did not pull back', applies: (s) => s.lost.length > 0 && s.lost.every((l) => !l.pulledBack) },
 ];
 
 export interface Grade {
@@ -54,34 +64,27 @@ export interface Grade {
 
 const clamp = (n: number) => Math.max(1, Math.min(10, n));
 const round1 = (n: number) => Math.round(n * 10) / 10;
-const mean = (a: number[]) => (a.length ? a.reduce((x, y) => x + y, 0) / a.length : null);
 
 export function variablesOf(s: ConversationScore): Record<VariableKey, number | null> {
   const j = s.judge;
+  const replies = Math.max(1, s.stats.replies);
 
-  // Followable: the share of lines a beginner knows (90%+ of the words), and pulling back when lost
-  const known = s.level?.beginnerKnows ?? [];
-  const knownShare = known.length ? known.filter((k) => k >= 0.9).length / known.length : null;
-  const pulled = s.lost.length ? s.lost.filter((l) => l.pulledBack && l.shorter).length / s.lost.length : null;
-  const followable = mean([knownShare, pulled].filter((x): x is number => x !== null).map((x) => 1 + 9 * x));
+  // Responsive: each reply that doesn't follow, question left unanswered or assumption about who they are costs
+  // 40 points of rate (one in 18 replies is about 2.2 points); a lost learner who got no easier reply costs up to 3
+  const lostShare = s.lost.length ? s.lost.filter((l) => l.pulledBack && l.shorter).length / s.lost.length : 1;
+  const responsive = j.incoherent === undefined ? null : clamp(10 - (40 * (j.incoherent + (j.unanswered ?? 0) + 0.6 * (j.newcomerAssumed ?? 0))) / replies - 3 * (1 - lostShare));
 
-  // Heard: how much of the garbled speech was understood, less 2 for each pronunciation comment
-  const understood = j.garbled ? 1 - Math.min(j.garbledMissed, j.garbled) / j.garbled : 1;
-  const heard = clamp(1 + 9 * understood - 2 * j.pronunciationCorrections);
+  // Content: facts per reply; one every two replies is 10
+  const content = j.placeFacts === undefined ? null : clamp(1 + (18 * j.placeFacts) / replies);
 
-  // Responsive: replies that don't follow and learner questions left unanswered
-  const responsive = j.incoherent === undefined ? null : clamp(10 - 2.5 * j.incoherent - 2 * (j.unanswered ?? 0));
+  // Character: the one-sided call; an older score's "alive". Each repeat from an earlier visit costs 1, up to 3
+  const base = s.character?.character ?? j.alive;
+  const character = base === undefined ? null : clamp(base - Math.min(3, s.repeats?.length ?? 0));
 
-  // Content: distinct real facts about the place, the country or the language
-  const content = j.placeFacts === undefined ? null : clamp([2, 4, 6, 8, 10][Math.min(j.placeFacts, 4)]);
+  // Ending: a close over a question costs 3, a conversation that won't end 5
+  const ending = j.cutOffByGoodbye === undefined && j.keepsClosing === undefined ? null : clamp(10 - (j.cutOffByGoodbye ? 3 : 0) - (j.keepsClosing ? 5 : 0));
 
-  // Ending: a close over a question costs 3, and each goodbye after the first 1.5
-  const ending = j.extraGoodbyes === undefined && j.cutOffByGoodbye === undefined ? null : clamp(10 - (j.cutOffByGoodbye ? 3 : 0) - 1.5 * (j.extraGoodbyes ?? 0));
-
-  // In role: "alive" (1–10), less 1 for each repeat, each stretch of unasked English and 1.5 for each assumption about who they are
-  const inRole = j.alive === undefined ? null : clamp(j.alive - (s.repeats?.length ?? 0) - j.englishUnasked - 1.5 * (j.newcomerAssumed ?? 0));
-
-  return { followable: followable === null ? null : clamp(followable), heard, responsive, content, ending, inRole };
+  return { responsive, content, character, ending };
 }
 
 export function gradeConversation(s: ConversationScore): Grade {
@@ -91,7 +94,13 @@ export function gradeConversation(s: ConversationScore): Grade {
   const weighted = weight ? measured.reduce((n, v) => n + v.weight * (variables[v.key] as number), 0) / weight : 5;
   const capped = CAPS.filter((c) => c.applies(s));
   const total = Math.min(weighted, ...capped.map((c) => c.cap));
-  return { version: GRADE_VERSION, total: round1(clamp(total)), weighted: round1(clamp(weighted)), variables: Object.fromEntries(Object.entries(variables).map(([k, v]) => [k, v === null ? null : round1(v)])) as Grade['variables'], capped: capped.map((c) => c.label) };
+  return {
+    version: GRADE_VERSION,
+    total: round1(clamp(total)),
+    weighted: round1(clamp(weighted)),
+    variables: Object.fromEntries(Object.entries(variables).map(([k, v]) => [k, v === null ? null : round1(v)])) as Grade['variables'],
+    capped: capped.map((c) => c.label),
+  };
 }
 
 /** One line for the admin text and the replay report */

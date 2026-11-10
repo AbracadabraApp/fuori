@@ -85,6 +85,9 @@ async function main() {
   if (says.length !== 2 || !sayText.includes('→ to the character as said') || !sayText.includes('→ say this: Vorrei un tavolo.')) problems.push(`say it log not kept or read back: ${sayText}`);
   await query("DELETE FROM say_it_log WHERE prompt_version = 'test'");
 
+  // Learners can't be deleted while they have conversations or memories (the migration restricts it): clear the test's own rows first
+  await query('DELETE FROM conversations WHERE learner_id = ANY($1)', [[me, other]]);
+  await query('DELETE FROM character_memories WHERE learner_id = ANY($1)', [[me, other]]);
   await query('DELETE FROM learners WHERE id = ANY($1)', [[me, other]]);
 }
 

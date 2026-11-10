@@ -4,6 +4,12 @@ Newest first. One entry per version: what changed, why, what prompted it. The pr
 
 Newest first. Each entry: what changed, why, and what prompted it.
 
+### 2026-11-10r: the grade restructured (quality only, one-sided Character)
+- **Changed:** `extraGoodbyes` (a count the code can make exactly from the recorded setups) became `keepsClosing`, a yes or no for a conversation that won't end. A reply that offers answers now ends with "[Answers shown on screen: …]" in the transcript the judge reads.
+- **Added:** a separate Character call (`## Character`), which sees only the character's lines and grades how much he comes across as a real local, 1–10, so the learner cannot affect it.
+- **Why:** Josh, 2026-11-10: the grade is conversation quality, one-sided for the character; instrument readings (the goodbye turn count, heard, followable) are reported by code and not graded. The judge had been faulting "here are two things you could ask me" followed by nothing in 8 of 20 conversations, because the stored text left out the answers.
+- **Not run yet:** card Q1 (`docs/prompt-trials.md`).
+
 ### 2026-11-10q: five counts for the one grade (lib/grade.ts)
 - **Added** `unanswered`, `cutOffByGoodbye`, `extraGoodbyes`, `placeFacts`, `newcomerAssumed`. They feed the Responsive, Content, Ending and In role variables of the one 1–10 grade per conversation. Optional in the saved score, so older scores still read and the grade leaves out what they can't measure.
 - **Why:** the scorecard had no way to see how a conversation ends or whether the learner learned anything real: the Chuy conversation at the Plaza de los Mariachis (2026-11-10 17:40 UTC) closed over the learner's question about charro suits, then said goodbye eight more times, and scored 33.5-word replies, 0 problems.

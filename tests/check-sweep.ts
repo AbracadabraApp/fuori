@@ -45,6 +45,8 @@ import { sweepIdleConversations } from '@/lib/conversation/sweep';
   const again = await sweepIdleConversations(async () => 'saved');
   if (again.some((d) => d.id === idle)) problems.push('the same conversation was swept twice');
 
+  await query('DELETE FROM conversations WHERE learner_id = $1', [learner]);
+  await query('DELETE FROM character_memories WHERE learner_id = $1', [learner]);
   await query('DELETE FROM learners WHERE id = $1', [learner]);
   await closePool();
   if (problems.length) {

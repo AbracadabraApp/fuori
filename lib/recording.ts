@@ -17,6 +17,7 @@ import type { CharacterSheet, Turn } from './types';
 import { turnStats, wordCount, REPEATS_LOOKBACK } from './dialogue-stats';
 import type { ConversationScore } from './quality';
 import { gradeConversation, gradeLine } from './grade';
+import { instrumentsOf, instrumentLine } from './instruments';
 import type { TurnSteps } from './beginner-2';
 
 export function recordingEnabled(): boolean {
@@ -179,21 +180,23 @@ export interface RecordedConversation {
   notes: string[] | null;
   /** Dialogue scorecard numbers (lib/quality.ts), written when it ended; null until then */
   quality: ConversationScore | null;
+  /** Every earlier score of this conversation, oldest first (a re-score keeps the one it replaces) */
+  quality_history?: ConversationScore[] | null;
 }
 
 /**
  * Most recent conversations, newest first (for review). `since` limits it to
  * conversations started after that time, so a daily job only reads new ones.
  */
-export async function recentConversations(limit = 20, since?: Date): Promise<RecordedConversation[]> {
+export async function recentConversations(limit = 20, since?: Date, until?: Date): Promise<RecordedConversation[]> {
   const result = await query<RecordedConversation>(
     `SELECT c.id, c.learner_id, c.character_id, c.place_id, c.city_id, c.prompt_version, c.started_at, c.ended_at, c.turns,
-            c.review, m.notes, to_jsonb(c)->'quality' AS quality
+            c.review, m.notes, to_jsonb(c)->'quality' AS quality, to_jsonb(c)->'quality_history' AS quality_history
      FROM conversations c
      LEFT JOIN character_memories m ON m.learner_id = c.learner_id AND m.character_id = c.character_id
-     WHERE ($2::timestamptz IS NULL OR c.started_at > $2)
+     WHERE ($2::timestamptz IS NULL OR c.started_at > $2) AND ($3::timestamptz IS NULL OR c.started_at <= $3)
      ORDER BY c.started_at DESC LIMIT $1`,
-    [Math.min(Math.max(limit, 1), 200), since ?? null]
+    [Math.min(Math.max(limit, 1), 200), since ?? null, until ?? null]
   );
   return result.rows;
 }
@@ -228,6 +231,7 @@ export function conversationAsText(c: RecordedConversation): string {
         '',
         `SCORE: median reply ${q.stats.wordsMedian} words · opener ${q.stats.openerWords} · corrections ${q.judge.correctionsUnprompted} unprompted, ${q.judge.correctionsAsked} asked · pronunciation ${q.judge.pronunciationCorrections} · lost ${q.lost.length} (pulled back ${q.lost.filter((l) => l.pulledBack && l.shorter).length})`,
         gradeLine(gradeConversation(q)),
+        instrumentLine(instrumentsOf(q)),
         ...(q.judge.note && q.judge.note !== 'None' ? [`  ${q.judge.note}`] : []),
       ]
     : [];

@@ -8,6 +8,9 @@
  * plain transcripts that are easy to read on a phone and paste into a chat;
  * the default is JSON. format=scorecard gives the dialogue scorecard
  * (lib/scorecard.ts) for the scored conversations, one block per prompt version.
+ * format=grade gives the one 1–10 grade (lib/grade.ts) by week and by prompt
+ * version, to watch overall progress. until=… bounds the list from above, so
+ * a long history can be read in pages of 200 (the dated archive, scripts/archive-conversations.mjs).
  * format=study&learner=<id>&since=…&until=… gives the study export for one
  * learner (lib/study-export.ts, docs/study-export-demo.md): a Markdown file
  * for Gemini Notebook, by default the last 14 days. format=learners lists
@@ -22,6 +25,7 @@ import { NextRequest, NextResponse } from 'next/server';
 import { timingSafeEqual } from 'crypto';
 import { recentConversations, conversationAsText, conversationStats, recordingEnabled } from '@/lib/recording';
 import { scorecard, scorecardAsText } from '@/lib/scorecard';
+import { gradeTrendAsText } from '@/lib/grade-trend';
 import type { ConversationScore } from '@/lib/quality';
 import { learnersWithConversations, loadStudyExport, studyExportMarkdown } from '@/lib/study-export';
 import { recentAppErrors, appErrorsAsText } from '@/lib/app-errors';
@@ -87,7 +91,14 @@ export async function GET(request: NextRequest) {
   const limit = Number(url.searchParams.get('limit') ?? 20) || 20;
   const sinceParam = url.searchParams.get('since');
   const since = sinceParam && !isNaN(Date.parse(sinceParam)) ? new Date(sinceParam) : undefined;
-  const conversations = await recentConversations(limit, since);
+  const untilParam = url.searchParams.get('until');
+  const until = untilParam && !isNaN(Date.parse(untilParam)) ? new Date(untilParam) : undefined;
+  const conversations = await recentConversations(limit, since, until);
+  if (url.searchParams.get('format') === 'grade') {
+    return new NextResponse(gradeTrendAsText(conversations.map((c) => ({ at: new Date(c.started_at), promptVersion: c.prompt_version, score: c.quality }))), {
+      headers: { 'Content-Type': 'text/plain; charset=utf-8', 'Cache-Control': 'no-store' },
+    });
+  }
   if (url.searchParams.get('format') === 'scorecard') {
     const scored = conversations.filter((c) => c.quality);
     const versions = [...new Set(scored.map((c) => c.prompt_version))];

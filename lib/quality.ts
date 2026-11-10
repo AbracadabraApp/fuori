@@ -18,7 +18,7 @@
 import { z } from 'zod';
 import { anthropic, CLAUDE_MODEL, replyText } from './claude';
 import { readPromptFile, fill } from './prompts/template';
-import { qualityOutputJsonSchema } from './prompts/quality-output-schema';
+import { qualityOutputJsonSchema, characterOutputJsonSchema } from './prompts/quality-output-schema';
 import { turnStats, wordCount, learnerStats, repeatsFromEarlier, type TurnStats } from './dialogue-stats';
 import { query } from './db';
 import { language } from '@/content';
@@ -31,6 +31,10 @@ export interface ScoredTurn {
   parts?: { kind: string; text: string }[];
   /** A reply's server time in ms, kept with real turns (lib/memory.ts ConversationTurn) */
   ms?: number;
+  /** When the turn was said (ISO), kept with real turns */
+  at?: string;
+  /** What the code played for a Beginner 2 reply: the setup ('goodbye' once the visit winds down) */
+  steps?: { setup: string };
 }
 
 /**
@@ -70,7 +74,7 @@ const JudgeSchema = z.object({
   // Added 2026-11-10 (judge version 2026-11-10q), for the one grade (lib/grade.ts); optional so older scores still read
   unanswered: z.number().int().min(0).optional(),
   cutOffByGoodbye: z.boolean().optional(),
-  extraGoodbyes: z.number().int().min(0).optional(),
+  keepsClosing: z.boolean().optional(),
   placeFacts: z.number().int().min(0).optional(),
   newcomerAssumed: z.number().int().min(0).optional(),
   // Added 2026-10-27 (judge version 2026-10-27): how much each side spoke the
@@ -104,8 +108,12 @@ export interface ConversationScore {
   /** For each "I'm lost" line: was the next reply shorter than the one before (code), simpler and shorter (judge) */
   lost: { line: number; shorter: boolean; pulledBack: boolean }[];
   judge: QualityJudgement;
+  /** The Character grade, from his lines alone (judge 2026-11-10r on); older scores don't have it */
+  character?: CharacterJudgement;
   /** Beginner replies' phrases in the language, counted exactly from their parts (phraseStats) */
   phrases?: ReturnType<typeof phraseStats>;
+  /** How the visit closed, counted from the setups the code played and the turns' times (not judged) */
+  closing?: Closing;
   /** How long each character reply took, in ms (the replay test times them; real play doesn't yet) */
   replyMs?: number[];
   /** Level of the character's lines (lib/level.ts; the replay scores every line, real play a sample of them) */
@@ -120,6 +128,15 @@ export function qualityPromptVersion(): string {
   return readPromptFile('quality.md').version;
 }
 
+/**
+ * The answers a Beginner reply offered on screen, which the saved text leaves out (the judge faulted
+ * "here are two things you could ask me" with nothing after it in 8 of 20 conversations, 2026-11-10)
+ */
+export function answersShown(t: ScoredTurn): string {
+  const answers = (t.parts ?? []).filter((x) => x.kind === 'answer' && x.text.trim()).map((x) => x.text.trim());
+  return answers.length ? ` [Answers shown on screen: ${answers.join(' | ')}]` : '';
+}
+
 export function buildQualityPrompt(character: ScoredCharacter, turns: ScoredTurn[], opts: { beginner?: boolean } = {}): { system: string; user: string } {
   const f = readPromptFile('quality.md');
   const values = {
@@ -131,21 +148,24 @@ export function buildQualityPrompt(character: ScoredCharacter, turns: ScoredTurn
   };
   const withBeginner = { ...values, beginner: opts.beginner ? fill(f.block('Beginner'), values) : '' };
   let n = 0;
-  const transcript = turns.map((t) => (t.who === 'npc' ? `${character.name}: ${t.text}` : `Person ${++n}: ${t.text}`)).join('\n');
+  const transcript = turns.map((t) => (t.who === 'npc' ? `${character.name}: ${t.text}${answersShown(t)}` : `Person ${++n}: ${t.text}`)).join('\n');
   return { system: fill(f.block('System prompt'), withBeginner), user: fill(f.block('User message'), { ...values, transcript }) };
 }
 
 /** Counts the judged items. Tests pass a fake. */
 export type Judge = (character: ScoredCharacter, turns: ScoredTurn[], opts?: { beginner?: boolean }) => Promise<QualityJudgement>;
 
-export const judgeWithClaude: Judge = async (character, turns, opts = {}) => {
+export const judgeWithClaude: Judge = (character, turns, opts = {}) => twice(() => judgeOnce(character, turns, opts));
+
+const judgeOnce: Judge = async (character, turns, opts = {}) => {
   const prompt = buildQualityPrompt(character, turns, opts);
   const response = await anthropic.messages.create({
     model: CLAUDE_MODEL,
     // The model thinks before answering and the thinking counts toward this
     // limit: at 1024, about one conversation in four came back cut off
     // (replay, 2026-10-16) once the judge also wrote coherence and "alive"
-    max_tokens: 4000,
+    // 31-turn visits ran out at 4000 (the Dona Tere fonda visit, 2026-11-10, was never scored): the thinking counts toward it
+    max_tokens: 12000,
     system: prompt.system,
     messages: [{ role: 'user', content: prompt.user }],
     output_config: { format: { type: 'json_schema', schema: qualityOutputJsonSchema } },
@@ -153,6 +173,40 @@ export const judgeWithClaude: Judge = async (character, turns, opts = {}) => {
   if (response.stop_reason === 'max_tokens') throw new Error(`Quality judge hit max_tokens (${response.usage.output_tokens} tokens)`);
   return JudgeSchema.parse(JSON.parse(replyText(response)));
 };
+
+/** The Character grade: 1–10 from the character's lines alone, so nothing the learner says or does can move it */
+export interface CharacterJudgement { character: number; note: string }
+export type CharacterJudge = (character: ScoredCharacter, turns: ScoredTurn[]) => Promise<CharacterJudgement>;
+const CharacterSchema = z.object({ character: z.number().int().min(1).max(10), note: z.string() });
+
+export function buildCharacterPrompt(character: ScoredCharacter, turns: ScoredTurn[]): { system: string; user: string } {
+  const f = readPromptFile('quality.md');
+  const values = { name: character.name, age: String(character.age), role: character.role, city: character.city, language: language.name };
+  const lines = turns.filter((t) => t.who === 'npc').map((t) => `${character.name}: ${t.text}`).join('\n');
+  return { system: fill(f.block('Character: system prompt'), values), user: fill(f.block('Character: user message'), { ...values, lines }) };
+}
+
+export const characterWithClaude: CharacterJudge = async (character, turns) => {
+  const prompt = buildCharacterPrompt(character, turns);
+  const response = await anthropic.messages.create({
+    model: CLAUDE_MODEL,
+    max_tokens: 2000,
+    system: prompt.system,
+    messages: [{ role: 'user', content: prompt.user }],
+    output_config: { format: { type: 'json_schema', schema: characterOutputJsonSchema } },
+  });
+  if (response.stop_reason === 'max_tokens') throw new Error(`Character judge hit max_tokens (${response.usage.output_tokens} tokens)`);
+  return CharacterSchema.parse(JSON.parse(replyText(response)));
+};
+
+/** One more try when a judge call comes back cut off or malformed: a conversation scored once, not left without a score (Dona Tere's, 2026-11-10, had none) */
+async function twice<T>(f: () => Promise<T>): Promise<T> {
+  try {
+    return await f();
+  } catch {
+    return f();
+  }
+}
 
 /**
  * For each learner line the judge marked as lost, did the character's next
@@ -172,13 +226,40 @@ export function shorterAfterLost(turns: ScoredTurn[], lostLines: number[]): Map<
   return out;
 }
 
+/** The code's reading of how a visit ended (Josh, 2026-11-10: the closing has an instrument piece): counted from the setups recorded with each reply */
+export interface Closing {
+  /** The learner turn after which the code first played the goodbye setup; null when it never did */
+  goodbyeAtLearnerTurn: number | null;
+  /** Character replies played in the goodbye setup (1 is a single close; more is a conversation that would not end) */
+  goodbyeReplies: number;
+  /** Minutes from the first turn to the last, when the turns carry times */
+  minutes: number | null;
+}
+
+export function closingOf(turns: ScoredTurn[]): Closing {
+  let learner = 0;
+  let goodbyeAt: number | null = null;
+  let goodbyeReplies = 0;
+  for (const t of turns) {
+    if (t.who === 'learner') learner++;
+    else if (t.steps?.setup === 'goodbye') {
+      goodbyeAt ??= learner;
+      goodbyeReplies++;
+    }
+  }
+  const times = turns.map((t) => (t.at ? Date.parse(t.at) : NaN)).filter((n) => !isNaN(n));
+  return { goodbyeAtLearnerTurn: goodbyeAt, goodbyeReplies, minutes: times.length > 1 ? Math.round((10 * (Math.max(...times) - Math.min(...times))) / 60000) / 10 : null };
+}
+
 export async function scoreConversation(
   character: ScoredCharacter,
   turns: ScoredTurn[],
   judge: Judge = judgeWithClaude,
-  opts: { beginner?: boolean; earlier?: string[] } = {}
+  opts: { beginner?: boolean; earlier?: string[]; characterJudge?: CharacterJudge } = {}
 ): Promise<ConversationScore> {
-  const j = await judge(character, turns, opts);
+  // The Character call runs beside the main one. Tests that pass a fake judge get no Claude call unless they pass a fake for it too
+  const characterJudge = opts.characterJudge ?? (judge === judgeWithClaude ? characterWithClaude : undefined);
+  const [j, c] = await Promise.all([judge(character, turns, opts), characterJudge ? twice(() => characterJudge(character, turns)) : Promise.resolve(undefined)]);
   const shorter = shorterAfterLost(turns, j.lost.map((l) => l.line));
   // Real play: the server's time per reply, saved with each turn; the replay test fills this itself
   const replyMs = turns.filter((t) => t.who === 'npc' && typeof t.ms === 'number').map((t) => t.ms as number);
@@ -186,9 +267,11 @@ export async function scoreConversation(
     judgeVersion: qualityPromptVersion(),
     ...(opts.beginner ? { beginner: true } : {}),
     learnerLines: turns.filter((t) => t.who === 'learner').length,
+    closing: closingOf(turns),
     stats: turnStats(turns.filter((t) => t.who === 'npc').map((t) => t.text)),
     lost: j.lost.map((l) => ({ line: l.line, shorter: shorter.get(l.line) ?? false, pulledBack: l.pulledBack })),
     judge: j,
+    ...(c ? { character: c } : {}),
     ...(phraseStats(turns) ? { phrases: phraseStats(turns) } : {}),
     ...(replyMs.length ? { replyMs } : {}),
     learner: learnerStats(turns),
@@ -203,11 +286,19 @@ let columnReady = false;
 async function ensureColumn() {
   if (columnReady) return;
   await query('ALTER TABLE conversations ADD COLUMN IF NOT EXISTS quality jsonb');
+  await query("ALTER TABLE conversations ADD COLUMN IF NOT EXISTS quality_history jsonb NOT NULL DEFAULT '[]'::jsonb");
   columnReady = true;
 }
 
 /** Save a conversation's score. Callers catch errors: scoring must never break anything. */
 export async function saveConversationScore(conversationId: string, score: ConversationScore): Promise<void> {
   await ensureColumn();
-  await query('UPDATE conversations SET quality = $1 WHERE id = $2', [JSON.stringify(score), conversationId]);
+  // A re-score keeps the score it replaces (oldest first), so the numbers of each judge version stay comparable
+  await query(
+    `UPDATE conversations
+        SET quality_history = quality_history || CASE WHEN quality IS NULL THEN '[]'::jsonb ELSE jsonb_build_array(quality) END,
+            quality = $1
+      WHERE id = $2`,
+    [JSON.stringify(score), conversationId]
+  );
 }

@@ -99,6 +99,8 @@ async function database() {
     check(judged.every((n) => n <= LEVEL_CHECKS), 'Magda\'s lessons are never read');
   } finally {
     delete process.env.LEVEL_CHECK;
+    await query('DELETE FROM conversations WHERE learner_id = $1', [me]).catch(() => {});
+    await query('DELETE FROM character_memories WHERE learner_id = $1', [me]).catch(() => {});
     await query('DELETE FROM learners WHERE id = $1', [me]).catch(() => {});
     await closePool();
   }
