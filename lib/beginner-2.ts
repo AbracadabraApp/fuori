@@ -153,7 +153,9 @@ export function insideSpeech(parts: Part[], setup: Setup): Part[] {
 export function glossAll(parts: Part[]): Part[] {
   const english = parts.filter((x) => x.kind === 'english').map((x) => x.text).join(' ');
   return parts.map((x) => {
-    if ((x.kind !== 'word' && x.kind !== 'question') || x.gloss?.trim() || !x.en.trim()) return x;
+    // A gloss shorter than the full English (a clipped one: "Vengo al Zócalo cada tarde. every afternoon") is replaced too
+    const clipped = !!x.gloss?.trim() && x.gloss.trim().split(/\s+/).length < x.en.trim().split(/\s+/).length;
+    if ((x.kind !== 'word' && x.kind !== 'question') || (x.gloss?.trim() && !clipped) || !x.en.trim()) return x;
     if (glossEchoes(x.en, x.text) || (english && glossEchoes(x.en, english))) return x;
     return { ...x, gloss: x.en };
   });

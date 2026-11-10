@@ -86,6 +86,8 @@ check(fuller[0].gloss === "I'm preparing the candles." && fuller[1].gloss === 'c
 check(/turnNote: setupLine\(setup\)/.test(readFileSync('lib/conversation/take-turn.ts', 'utf8')), 'the game puts the setup next to the latest message');
 const stored = exchangeTurns({ reply: { line: 'x', en: 'y', parts: [{ kind: 'word', text: 'Preparo las velas.', en: 'I prepare the candles.', gloss: 'preparing the candles' }] } } as never, new Date().toISOString());
 check((stored[0] as { parts?: { gloss?: string; en?: string }[] }).parts?.[0].gloss === 'preparing the candles' && (stored[0] as { parts?: { en?: string }[] }).parts?.[0].en === 'I prepare the candles.', 'stored parts keep their gloss and English');
+check(glossAll([{ kind: 'word', text: 'Vengo al Zócalo cada tarde.', en: 'I come to the Zócalo every afternoon.', gloss: 'every afternoon' }])[0].gloss === 'I come to the Zócalo every afternoon.', 'pattern B: a clipped gloss becomes the full English');
+check(glossAll([{ kind: 'word', text: 'Buenas tardes.', en: 'Good afternoon.', gloss: 'Good afternoon.' }])[0].gloss === 'Good afternoon.', 'pattern B: a full gloss is kept');
 const inside = shownParts(parts, RUNGS.find((r) => r.id === 'inside-en')!);
 check(!inside.some((x) => x.kind === 'answer') && inside.some((x) => x.kind === 'word' && x.text === 'Sì, grazie.' && x.gloss === 'Yes, thanks.'), 'rung 4: the answer is in her speech with its English heard, no bubble');
 check(shownParts(parts, RUNGS.find((r) => r.id === 'inside')!).some((x) => x.kind === 'word' && x.text === 'Sì, grazie.' && !x.gloss), 'rung 6: the answer in her speech, no English');
