@@ -43,7 +43,13 @@ const minutes = (len) => {
   return p.length === 3 ? p[0] * 60 + p[1] : p.length === 2 ? p[0] : 0;
 };
 // Uploads that aren't the film: reviews, trailers, recaps, audiobooks, sequels named in the title
-const NOT_THE_FILM = /review|recensione|recensit|podcast|audiolibro|curiosita|spiegat|behind the scenes|trailer|scene|streaming|puntata|asmr|full story|recap|explained|conferenza|dossier|reaction|analisi|making of|documentario|watch along/;
+// Each learned language's words for a YouTube search (a full film) and for uploads that aren't the film.
+// Italian first (2026-11-06); Spanish for Mexico (2026-11-09: "feature to feature like Italy")
+const WORDS = {
+  it: { full: ['film completo', 'film intero'], notTheFilm: 'recensione|recensit|audiolibro|curiosita|spiegat|puntata|conferenza|analisi|documentario' },
+  es: { full: ['pelicula completa', 'película completa en español'], notTheFilm: 'resena|critica|audiolibro|curiosidades|explicad|capitulo|episodio|conferencia|analisis|documental|resumen|detras de camaras' },
+}[LANG];
+const NOT_THE_FILM = new RegExp(`review|podcast|behind the scenes|trailer|scene|streaming|asmr|full story|recap|explained|dossier|reaction|making of|watch along|${WORDS.notTheFilm}`);
 
 async function tmdb(path, params = {}) {
   const url = new URL(`https://api.themoviedb.org/3${path}`);
@@ -116,7 +122,7 @@ async function check(line) {
   const runtime = details.runtime || 100;
   const names = [norm(details.title), norm(details.original_title)];
   const seen = new Map();
-  for (const q of [`${details.original_title} ${year} film completo`, `${details.original_title} film intero`, `${details.title} ${year} full movie`]) {
+  for (const q of [`${details.original_title} ${year} ${WORDS.full[0]}`, `${details.original_title} ${WORDS.full[1]}`, `${details.title} ${year} full movie`]) {
     for (const v of await youtubeSearch(q)) seen.set(v.id, v);
     await sleep(1200);
   }
@@ -133,6 +139,10 @@ async function check(line) {
     year: (details.release_date || '').slice(0, 4),
     runtime,
     poster: Boolean(details.poster_path),
+    posterUrl: details.poster_path ? `https://image.tmdb.org/t/p/w500${details.poster_path}` : null,
+    adult: Boolean(details.adult),
+    // The library's videos: the learned language's trailers first, then the rest (as in cinema-library.json)
+    videos: [...new Map([...trailers(local), ...trailers(all)].map((v) => [v.key, { youtube: v.key, type: v.type, name: v.name, language: v.iso_639_1 }])).values()],
     localTrailer: trailers(local).length > 0,
     anyTrailer: trailers(local).length + trailers(all).length > 0,
     fullFilm: full && { youtube: full.id, channel: full.channel, length: full.length, title: full.title, language: await spokenLanguage(full.id) },
