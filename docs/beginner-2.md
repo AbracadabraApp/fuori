@@ -1,6 +1,6 @@
 # Beginner 2
 
-**Status (2026-11-09):** playable behind a hidden switch (Settings → touch and hold Version → Beginner 1 · 2; 86cc802), cluster 1 only, the offers to move up not built; Josh plays it against Beginner 1. The plan, from Josh's decisions of 2026-11-09 (the handoff `~/.claude/plans/graceful-stirring-rossum.md`, and the session after it). Nothing is built. Supersedes the direction of [beginner-plan.md](beginner-plan.md) (the turn-shape spec, kept as the record); the facts behind it are in [beginner-deep-dive.md](beginner-deep-dive.md).
+**Status (2026-11-10):** playable behind a hidden switch (Settings → touch and hold Version → Beginner 1 · 2, with a Cluster 1–6 stepper); Josh plays it against Beginner 1, which stays production. Built: the six clusters of the reply ladder, the setups picked per turn, the scaffolding prompt (`scaffolding.md`) over the unchanged Intermediate prompt, the code's fixes to the parts (each turn records which fired, 7ce4181), replies written ahead, records by reply rank. Not built: the offer to move up (Progression below), placing learners into a cluster. The plan came from Josh's decisions of 2026-11-09 (the handoff `~/.claude/plans/graceful-stirring-rossum.md`, and the session after it). Supersedes the direction of [beginner-plan.md](beginner-plan.md) (the turn-shape spec, kept as the record); the facts behind it are in [beginner-deep-dive.md](beginner-deep-dive.md).
 
 ## Rules for the work
 
