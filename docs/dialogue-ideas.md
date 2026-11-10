@@ -2,6 +2,10 @@
 
 Ideas about how conversations with characters should go: what they say, when the learner speaks, how the scene moves. Started by Josh on 2026-11-04, after playing Florence (Ardit at Trattoria Mario, Lorenzo in Piazza Santa Croce). Nothing here is scheduled. An idea moves to the roadmap once Josh decides it. Josh's words are quoted; anything else is marked as Claude's proposal.
 
+## "Stay within your job" turns away a question about the town (2026-11-09)
+
+Lupita, the sacristan in Tlaquepaque, invited a question about "the church, my work, or Tlaquepaque"; asked "What do people eat here for breakfast?", the character answered "Good question, but I'm the church lady, not a cook! For breakfast, ask at the market…" (a look, Beginner 2). The shared rule ("Stay within your job: never serve, sell or take an order for what it doesn't give") is about selling; telling a newcomer what people eat in town is a local's knowledge, not a sale. Dialogue layer (dialogue.md, every level): noted, not fixed.
+
 ## Managing the lesson out loud (Josh, 2026-11-09)
 
 Lupita, the sacristan in Tlaquepaque (Beginner 2, cluster 1), after the learner's garbled line ("El rey es latino"): "Sorry, Joshua, I didn't quite catch that. Maybe the words got mixed up. No problem! Let me ask something easy about the church." Josh: "unnatural speech… It sounds like a teacher managing the lesson rather than a local." The other case, "Here are two things you could ask me:", came from Beginner 2's setup line and was rewritten in role (scaffolding.md 2026-11-10g; Josh's model: "Are you wondering about the church? about my job? about the city?"). This one is the character's own recovery from a garbled line: dialogue layer, noted, not fixed.

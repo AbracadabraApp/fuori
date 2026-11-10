@@ -75,7 +75,7 @@ export const CLUSTERS: Setup[][] = [
 // The answer set up inside the character's line (rungs inside-en and inside) is out of every cluster until it
 // has a screen design (Josh, 2026-11-09: "I can't tell what the dialogue is that goes with 'You could answer me
 // with: …'": the lead is heard, not shown, and the answer sits unmarked inside the character's bubble)
-/** Whole-phrase glossing per cluster: off everywhere (2026-11-10c: Beginner 1's S1 text glosses well on its own, Josh); kept to switch on if play shows the need */
+/** Whole-phrase glossing per cluster: off (Josh, 2026-11-09: English "as little as needed", not every sentence; glossing every one read like a phrasebook) */
 export const GLOSS_ALL = [false, false, false, false, false, false];
 export const CLUSTER_1 = CLUSTERS[0];
 
@@ -181,7 +181,7 @@ export function invited(parts: Part[]): Part[] {
   // Anywhere in what's said: the character sometimes writes the invitation into the question itself (Hugo, 2026-11-09)
   const english = parts.filter((x) => x.kind !== 'answer').map((x) => `${x.text} ${x.gloss ?? ''} ${x.kind === 'question' ? x.en : ''}`).join(' ').toLowerCase();
   // Already invited, in the character's own words ("ask me in English", "you can ask me anything")
-  const already = /ask me (anything|in english)|in english or/.test(english);
+  const already = /ask me (anything|in english|in spanish|in italian)|in (english|spanish|italian) or/.test(english);
   const echoed = parts.some((x, i) => x.kind === 'question' && parts[i + 1]?.kind === 'english');
   const out = echoed ? parts : parts.map((x) => (x.kind === 'question' && !x.gloss?.trim() && x.en.trim() ? { ...x, gloss: x.en } : x));
   return already ? out : [...out.filter((x) => x.kind !== 'answer'), { kind: 'english', text: lead, en: '', gloss: '' }];

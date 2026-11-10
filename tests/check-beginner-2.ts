@@ -27,7 +27,7 @@ const day = new Date('2026-11-09T10:00:00Z');
 check(pickSetup({ turn: 0, learnerId: 'L', characterId: 'luisa', now: day }).id === pickSetup({ turn: 0, learnerId: 'L', characterId: 'luisa', now: day }).id, 'an opening is seeded by learner, place and day');
 
 for (const setup of RUNGS) check(setupText(setup).includes('This turn,') && !/\{\w+\}/.test(setupText(setup)), `${setup.block}: its line is read from scaffolding.md, filled`);
-check(setupText(CLUSTER_1[0], CLUSTER_1).startsWith('Where they are now: at the very start') && setupText(CLUSTERS[2][0], CLUSTERS[2]).startsWith('Where they are now: they know a little') && setupText(CLUSTERS[5][0], CLUSTERS[5]).startsWith('Where they are now: finding their feet'), 'each cluster gets its level text (S1, S2, S3) before the setup');
+check(setupText(CLUSTER_1[0], CLUSTER_1).startsWith("They're at the very start") && setupText(CLUSTERS[2][0], CLUSTERS[2]).startsWith('Where they are now: they know a little') && setupText(CLUSTERS[5][0], CLUSTERS[5]).startsWith('Where they are now: finding their feet'), 'each cluster gets its level text (S1, S2, S3) before the setup');
 check(!/Every turn has some English|When you first see them|explain something in English when it helps/.test(readFileSync(`content/${process.env.COUNTRY ?? 'it'}/prompts/scaffolding.md`, 'utf8')), 'the English lines added one per play are gone from the prompt');
 check(CLUSTERS.length === 6, 'six clusters');
 check(CLUSTERS.flat().filter((r) => !r.inside).every((r) => r.maxAnswers === 0 || (r.maxAnswers === 2 && r.english)), 'bubbles are two, always with English (Josh: reading Spanish you don\'t understand is coercive; one answer feels weird)');
@@ -51,8 +51,8 @@ const para: Part[] = [{ kind: 'english', text: 'Welcome to the barrio.', en: '',
 const g1 = glossAll(para);
 check(g1[1].gloss === 'I paint here every day.' && g1[3].gloss === 'Do you like the murals?', 'glossAll (off for now): every phrase gets its English');
 check(g1[2].gloss === '', 'glossAll: not when the turn\'s own English already said it');
-check(shownParts(para, CLUSTER_1[0], CLUSTER_1)[1].gloss === '', 'cluster 1 leaves glossing to the S1 text (Josh: Beginner 1\'s S1 glossing works)');
-check(/echoes your English/.test(setupText(CLUSTER_1[0], CLUSTER_1)) && !/never says what your/.test(setupText(CLUSTER_1[0], CLUSTER_1)), 'Level 1: English with echoes in the language, without the rule keeping the two apart');
+check(shownParts(para, CLUSTER_1[0], CLUSTER_1)[1].gloss === '', 'cluster 1: no gloss on every sentence (Josh: English as little as needed)');
+check(/as little as needed/.test(setupText(CLUSTER_1[0], CLUSTER_1)), 'Level 1: short sentences in the language, English as little as needed');
 const inv = shownParts([{ kind: 'english', text: 'Sit anywhere.', en: '', gloss: '' }, { kind: 'question', text: '¿Es su primera vez en Puebla?', en: 'Is it your first time in Puebla?', gloss: '' }], RUNGS.find((r) => r.id === 'invite-en')!, CLUSTER_1);
 { const qi = inv.findIndex((x) => x.kind === 'question'); check(inv[qi + 1]?.text === 'Is it your first time in Puebla?' && inv[inv.length - 1].kind === 'english' && /ask me in English or/.test(inv[inv.length - 1].text), 'the invitation to ask is said, in code'); }
 check(shownParts(para, CLUSTERS[3][0], CLUSTERS[3])[1].gloss === '', 'later clusters leave glossing to the character');

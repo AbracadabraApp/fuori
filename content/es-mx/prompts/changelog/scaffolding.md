@@ -2,6 +2,10 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
 
+### 2026-11-10i: Level 1 relies on the language and clarifies in English as little as needed
+- **Changed:** "Level: 1" now describes the speaker: short, simple sentences in the language, one idea each, "and English as little as needed for them to follow, or a brief check that they've understood". Whole-phrase glossing stays off; the code keeps English beside every question, the English safety net, and a one-word gloss on a phrase of three or more words becomes its English.
+- **Why:** Josh, 2026-11-09: the aim is someone "who relies on Spanish but clarifies in English, or describes in English but uses Spanish echoes, key phrases, idioms" (his model: "El Andador es el corazón de la ciudad, the heart of the city…"); then "not dictating the method but 'as little as needed', or a brief check on understanding". A look with every sentence glossed in code read like a phrasebook ("Soy Hugo. I'm Hugo."). The English-led wordings before gave English paragraphs with the language at the edges (up to 46 English words a turn).
+
 ### 2026-11-10h: the invitation is to ask, not to answer in English
 - **Changed:** "Setup: invite English" now has the character ask, in English, whether there's anything they'd like to know (the place, the work, the town), and "Line: invite English" is "You can ask me in English or {language}." It was "ask what they think… they can answer in English".
 - **Why:** Josh, 2026-11-09: "I'm not sure this answer helps - especially English to English - maybe if it was do you want to ask anything about the town? not do you like the Zócalo". Across today's five conversations he answered the invited-English turns in Spanish anyway (Arturo: 0 of 9 in English). An open question from the learner makes the character's answer the teaching moment.
