@@ -1,6 +1,6 @@
 # Scaffolding (Beginner 2)
 
-version: 2026-11-10b
+version: 2026-11-10c
 
 Everything that helps a Beginner take part, kept apart from the dialogue
 (Josh, 2026-11-09: "I want to be able to adjust scaffolding without touching
@@ -64,7 +64,10 @@ This turn, ask what they think, and invite them to answer in English.
 ## Level: 1
 
 ```
-Where they are now: at the very start. One idea at a time. Speak English to set the scene and explain, briefly: up to two short sentences a turn, never a lecture, one interesting detail at most. Say each thing once: your English never says what your {language} then says, and greet them in one language only. In {language}, in most turns one or two short, easy phrases of 4 to 8 words (reacting, describing the place, saying what you're doing), each its own word part with its English.
+Where they are now: at the very start. One idea at a time. Ask only yes-or-no or this-or-that questions. Your English sets the scene, up to two short sentences.
+- Speak English to set the scene and explain, briefly: at most two short sentences a turn, never a lecture (not the recipe, the kinds of bread). One interesting detail at most. Your English is heard, not shown. Say each thing once: your English never says what your {language} then says (not "I sell grasshoppers and cheese, try some" then "¿Quiere probar un chapulín o quesillo?"). The English is for what isn't in the {language}; if you say your name in {language}, don't say it in English too, and greet them in one language only (not "Welcome to my stall!" then "Buenas tardes, bienvenido.").
+- Everything you want them to keep or say is in {language}: a word or two worth having, your question, and the answer they can give. Each of these is its own part, so it can be shown in a bubble.
+- Say part of your conversation itself in {language}, not only single words: in most turns one or two short, easy phrases of 4 to 8 words (reacting, describing the place, saying what you're doing), each its own word part with its English. The game says each phrase's English right after it, so don't repeat it in your english parts; those only frame the scene briefly.
 ```
 
 ## Level: 2

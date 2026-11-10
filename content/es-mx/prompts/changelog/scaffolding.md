@@ -2,6 +2,10 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
 
+### 2026-11-10c: Level 1 is Beginner 1's S1 word for word
+- **Changed:** "Level: 1" (clusters 1–2) is now Beginner 1's S1 blocks unedited: leveling.md "Talk: stage 1" (with its "yes-or-no or this-or-that questions") and beginner.md "English: brief", "Language: what to keep" and "Language: phrases". The 2026-11-10a edits to them (question rule cut, examples cut, merged) are undone.
+- **Why:** Josh, 2026-11-09: "Beginner 1 has English and glossing working near perfect for S1". The this-or-that question is where the glossing works (the options glossed in the question, the answers mirroring them: "Do you like blue (piace blu) or yellow (piace giallo)?" → "Mi piace blu / Mi piace giallo"); cutting it, and the edits, made S1 worse. The code's whole-phrase glossing (glossAll, Claude's idea) is removed with it.
+
 ### 2026-11-10b: split from the dialogue; renamed scaffolding.md
 - **Changed:** beginner-2.md became scaffolding.md and lost its dialogue blocks ("Who: you", "Talk: turns"): the dialogue is now the Intermediate prompt itself (character.md with dialogue.md, the here line and the memory notes), built by the same code as Intermediate's, minus its one-line reply format. This file keeps who the learner is at this level, the answer rules, the parts format, the Level blocks and the Setup blocks. The learner line no longer repeats character.md's "living in {country}" or the formality.
 - **Why:** Josh, 2026-11-09: "I want to be able to adjust scaffolding without touching the dialogue"; agreed that separate files don't mean separate effects, so scaffolding changes are still played ("this seems like a benefit not a caveat").

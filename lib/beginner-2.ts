@@ -63,8 +63,8 @@ export const CLUSTERS: Setup[][] = [
   [R('invite-en'), R('inside'), R('free')],
   [R('invite-en'), R('free')],
 ];
-/** Clusters 1–2: every phrase in the language followed by its English, spoken (glossAll) */
-export const GLOSS_ALL = [true, true, false, false, false, false];
+/** Whole-phrase glossing per cluster: off everywhere (2026-11-10c: Beginner 1's S1 text glosses well on its own, Josh); kept to switch on if play shows the need */
+export const GLOSS_ALL = [false, false, false, false, false, false];
 export const CLUSTER_1 = CLUSTERS[0];
 
 /** The app's hidden cluster picker: header `x-fuori-cluster: 1`–`6`; cluster 1 otherwise */

@@ -4,7 +4,7 @@
 // prompt file, the language-only rung hides the answers' English, the turn
 // code takes the switch, and Beginner 2 turns don't move the Beginner 1 path.
 import { readFileSync } from 'fs';
-import { beginnerVersionFrom, pickSetup, setupText, shownParts, beginner2Version, CLUSTER_1, CLUSTERS, RUNGS, clusterFrom } from '@/lib/beginner-2';
+import { beginnerVersionFrom, pickSetup, setupText, shownParts, beginner2Version, glossAll, CLUSTER_1, CLUSTERS, RUNGS, clusterFrom } from '@/lib/beginner-2';
 import { stageInVersion } from '@/lib/conversation-record';
 import type { Part } from '@/lib/beginner';
 import { buildBeginnerPrompt, SCAFFOLDING_FILE, dialogueWithoutFormat } from '@/lib/beginner';
@@ -45,9 +45,11 @@ check(fixed.find((x) => x.kind === 'question')!.gloss === 'Which do you like bes
 const glossed: Part[] = [{ kind: 'question', text: '¿Le gustan?', en: 'Do you like them?', gloss: 'like them?' }];
 check(shownParts(glossed, CLUSTER_1[0])[0].gloss === 'like them?', 'a turn that already has English is left alone');
 const para: Part[] = [{ kind: 'english', text: 'Welcome to the barrio.', en: '', gloss: '' }, { kind: 'word', text: 'Aquí pinto todos los días.', en: 'I paint here every day.', gloss: '' }, { kind: 'word', text: 'Bienvenido al barrio.', en: 'Welcome to the barrio.', gloss: '' }, { kind: 'question', text: '¿Le gustan los murales?', en: 'Do you like the murals?', gloss: '' }];
-const g1 = shownParts(para, CLUSTER_1[0], CLUSTER_1);
-check(g1[1].gloss === 'I paint here every day.' && g1[3].gloss === 'Do you like the murals?', 'cluster 1: every phrase gets its English spoken');
-check(g1[2].gloss === '', 'not when the turn\'s own English already said it');
+const g1 = glossAll(para);
+check(g1[1].gloss === 'I paint here every day.' && g1[3].gloss === 'Do you like the murals?', 'glossAll (off for now): every phrase gets its English');
+check(g1[2].gloss === '', 'glossAll: not when the turn\'s own English already said it');
+check(shownParts(para, CLUSTER_1[0], CLUSTER_1)[1].gloss === '', 'cluster 1 leaves glossing to the S1 text (Josh: Beginner 1\'s S1 glossing works)');
+check(/yes-or-no or this-or-that/.test(setupText(CLUSTER_1[0], CLUSTER_1)), 'Level 1 is Beginner 1\'s S1 word for word, this-or-that included');
 check(shownParts(para, CLUSTERS[3][0], CLUSTERS[3])[1].gloss === '', 'later clusters leave glossing to the character');
 const inside = shownParts(parts, RUNGS.find((r) => r.id === 'inside-en')!);
 check(!inside.some((x) => x.kind === 'answer') && inside.some((x) => x.kind === 'word' && x.text === 'Sì, grazie.' && x.gloss === 'Yes, thanks.'), 'rung 4: the answer is in her speech with its English heard, no bubble');
