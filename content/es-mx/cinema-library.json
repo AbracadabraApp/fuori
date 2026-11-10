@@ -225,7 +225,6 @@
     43344,
     772515,
     123793,
-    28968,
     29871
    ]
   },
@@ -595,7 +594,7 @@
    ],
    "fullFilm": {
     "youtube": "BUksg8jxJZA",
-    "language": "en"
+    "language": "es"
    }
   },
   {
@@ -954,7 +953,7 @@
      "youtube": "ZriH9uEDgsI",
      "type": "Trailer",
      "name": "LA DICTADURA PERFECTA - Tráiler oficial - Disponible en BR - DVD y Plataformas Digitales",
-     "language": "en"
+     "language": "es"
     }
    ],
    "fullFilm": {
@@ -1004,7 +1003,7 @@
    ],
    "fullFilm": {
     "youtube": "bc_n1hye_WE",
-    "language": "en"
+    "language": "es"
    }
   },
   {
@@ -1022,7 +1021,7 @@
    ],
    "fullFilm": {
     "youtube": "_9OdD0mtAOk",
-    "language": "en"
+    "language": "es"
    }
   },
   {
@@ -1074,12 +1073,12 @@
      "youtube": "17TlRpteXWE",
      "type": "Trailer",
      "name": "Sin señas particulares - Tráiler",
-     "language": "en"
+     "language": "es"
     }
    ],
    "fullFilm": {
     "youtube": "-4U208CXMSY",
-    "language": "en"
+    "language": "es"
    }
   },
   {
@@ -1127,7 +1126,7 @@
    ],
    "fullFilm": {
     "youtube": "nYzMaXpeNTc",
-    "language": "en"
+    "language": "es"
    }
   },
   {
@@ -1579,7 +1578,7 @@
    ],
    "fullFilm": {
     "youtube": "evf5cS9_YEk",
-    "language": null
+    "language": "es"
    },
    "original": "es"
   },
@@ -1593,7 +1592,7 @@
      "youtube": "nmJVyecb_JY",
      "type": "Trailer",
      "name": "Aventurera Ninón Sevilla Trailer",
-     "language": "en"
+     "language": "es"
     }
    ],
    "fullFilm": {
@@ -1636,21 +1635,21 @@
    "posterUrl": "https://image.tmdb.org/t/p/w500/uoObXx53SjSLLtAavMSIe02zizs.jpg",
    "videos": [
     {
-     "youtube": "nXftxeXPwKQ",
-     "type": "Teaser",
-     "name": "AMORES PERROS is a timeless mosaic of Mexico City in the year 2000. [Subtitled]",
-     "language": "en"
-    },
-    {
      "youtube": "_P29GF_NbDc",
      "type": "Trailer",
      "name": "Official Trailer",
-     "language": "en"
+     "language": "es"
     },
     {
      "youtube": "A5HTBYR7m0o",
      "type": "Trailer",
      "name": "AMORES PERROS - HQ  Trailer ( 2000 )",
+     "language": "es"
+    },
+    {
+     "youtube": "nXftxeXPwKQ",
+     "type": "Teaser",
+     "name": "AMORES PERROS is a timeless mosaic of Mexico City in the year 2000. [Subtitled]",
      "language": "en"
     }
    ],
@@ -1667,7 +1666,7 @@
      "youtube": "inc0vS58ZKg",
      "type": "Trailer",
      "name": "Original Trailer",
-     "language": "en"
+     "language": "es"
     }
    ],
    "fullFilm": null,
@@ -1683,7 +1682,7 @@
      "youtube": "ieeZ0mviFKc",
      "type": "Trailer",
      "name": "I'm No Longer Here | Official Trailer | Netflix",
-     "language": "en"
+     "language": "es"
     }
    ],
    "fullFilm": null,
@@ -1699,7 +1698,7 @@
      "youtube": "nRq7niwEgSM",
      "type": "Trailer",
      "name": "Official Trailer [Subtitled]",
-     "language": "en"
+     "language": "es"
     },
     {
      "youtube": "bbsz-ip1GAI",
@@ -1721,7 +1720,7 @@
      "youtube": "ifgdRVfoYeM",
      "type": "Trailer",
      "name": "Official UK Trailer",
-     "language": "en"
+     "language": "es"
     }
    ],
    "fullFilm": null,
@@ -1737,23 +1736,7 @@
      "youtube": "7neRc0katgc",
      "type": "Teaser",
      "name": "El analfabeto 1",
-     "language": "en"
-    }
-   ],
-   "fullFilm": null,
-   "original": "es"
-  },
-  {
-   "tmdbId": 28968,
-   "title": "Veneno para las hadas",
-   "year": 1984,
-   "posterUrl": "https://image.tmdb.org/t/p/w500/b4bOVSACDvRxfXYWI7bCtLqm51g.jpg",
-   "videos": [
-    {
-     "youtube": "IAWOBQ9wt9E",
-     "type": "Trailer",
-     "name": "Veneno para las hadas (1984) Trailer",
-     "language": "en"
+     "language": "es"
     }
    ],
    "fullFilm": null,
@@ -1765,6 +1748,11 @@
    "tmdbId": 120303,
    "title": "El vampiro",
    "why": "its only full upload is a different film (El vampiro sangriento, 1962), and no video was heard in Spanish"
+  },
+  {
+   "tmdbId": 28968,
+   "title": "Veneno para las hadas",
+   "why": "no video could be heard: in once someone confirms one is in the learned language"
   }
  ]
 }

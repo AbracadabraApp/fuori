@@ -6,7 +6,7 @@
  "XXtGWU9V6VY": {
   "language": null,
   "how": null,
-  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *0"
+  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *6"
  },
  "3hUu2Ew-0FQ": {
   "language": "es",
@@ -45,9 +45,8 @@
   "how": "captions"
  },
  "7neRc0katgc": {
-  "language": null,
-  "how": null,
-  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *0"
+  "language": "es",
+  "how": "whisper"
  },
  "ThQaEQNDjdQ": {
   "language": "es",
@@ -76,7 +75,7 @@
  "S-A71sv6pYw": {
   "language": null,
   "how": null,
-  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *0"
+  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *6"
  },
  "Ia-VHeKf_Ys": {
   "language": "es",
@@ -95,11 +94,11 @@
   "how": "captions"
  },
  "nmJVyecb_JY": {
-  "language": "en",
+  "language": "es",
   "how": "whisper"
  },
  "pGBDfAWExAw": {
-  "language": "en",
+  "language": "es",
   "how": "whisper"
  },
  "RxJZL8h7GK8": {
@@ -107,7 +106,7 @@
   "how": "captions"
  },
  "v14E2zBWbFA": {
-  "language": "en",
+  "language": "es",
   "how": "whisper"
  },
  "FHBG7g5oWRw": {
@@ -148,7 +147,7 @@
   "how": "captions"
  },
  "BUksg8jxJZA": {
-  "language": "en",
+  "language": "es",
   "how": "whisper"
  },
  "rCmkUk_MQYc": {
@@ -180,13 +179,14 @@
   "how": "captions"
  },
  "ca2X2Ztj_MA": {
-  "language": "en",
-  "how": "whisper"
+  "language": null,
+  "how": "whisper",
+  "note": "too little speech"
  },
  "8F_LXMvSN5g": {
   "language": null,
   "how": null,
-  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *0"
+  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *6"
  },
  "EkvgSTJkKGI": {
   "language": "en",
@@ -205,8 +205,9 @@
   "how": "whisper"
  },
  "xFTJ2FqLmH8": {
-  "language": "en",
-  "how": "whisper"
+  "language": null,
+  "how": "whisper",
+  "note": "too little speech"
  },
  "1imr_3nvCoU": {
   "language": "en",
@@ -219,7 +220,7 @@
  "os4jSiu3Gtk": {
   "language": null,
   "how": null,
-  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *0"
+  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *6"
  },
  "h9-SqFDT010": {
   "language": "es",
@@ -236,7 +237,7 @@
  "wR1YDM9yhBg": {
   "language": null,
   "how": null,
-  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *0"
+  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *6"
  },
  "VZYQ1qiMJ_o": {
   "language": "es",
@@ -244,23 +245,20 @@
  },
  "nXftxeXPwKQ": {
   "language": null,
-  "how": null,
-  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *0"
+  "how": "whisper",
+  "note": "too little speech"
  },
  "_P29GF_NbDc": {
-  "language": null,
-  "how": null,
-  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *0"
+  "language": "es",
+  "how": "whisper"
  },
  "A5HTBYR7m0o": {
-  "language": null,
-  "how": null,
-  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *0"
+  "language": "es",
+  "how": "whisper"
  },
  "inc0vS58ZKg": {
-  "language": null,
-  "how": null,
-  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *0"
+  "language": "es",
+  "how": "whisper"
  },
  "P4dRlQoxh38": {
   "language": "es",
@@ -275,8 +273,9 @@
   "how": "captions"
  },
  "4-X6iN-d_B4": {
-  "language": "en",
-  "how": "whisper"
+  "language": null,
+  "how": "whisper",
+  "note": "too little speech"
  },
  "Fv-keQeafzw": {
   "language": "es",
@@ -325,12 +324,12 @@
  "t2E74K113G4": {
   "language": null,
   "how": null,
-  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *0"
+  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *6"
  },
  "jXkQad-OTMU": {
   "language": null,
   "how": null,
-  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *0"
+  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *1"
  },
  "zAMlwcJchoQ": {
   "language": "es",
@@ -347,7 +346,7 @@
  "bg7A7_uGBIs": {
   "language": null,
   "how": null,
-  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *0"
+  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *6"
  },
  "ynA5nXZyZxU": {
   "language": "es",
@@ -364,10 +363,10 @@
  "HqLdMPlyRZ0": {
   "language": null,
   "how": null,
-  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *0"
+  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *6"
  },
  "ZriH9uEDgsI": {
-  "language": "en",
+  "language": "es",
   "how": "whisper"
  },
  "Q3BHyQX7FWg": {
@@ -395,7 +394,7 @@
   "how": "captions"
  },
  "bc_n1hye_WE": {
-  "language": "en",
+  "language": "es",
   "how": "whisper"
  },
  "KyoE0mSJXO8": {
@@ -403,25 +402,27 @@
   "how": "captions"
  },
  "_9OdD0mtAOk": {
-  "language": "en",
+  "language": "es",
   "how": "whisper"
  },
  "IzqcQrFit24": {
-  "language": "en",
-  "how": "whisper"
+  "language": null,
+  "how": "whisper",
+  "note": "too little speech"
  },
  "6BS27ngZtxg": {
   "language": "en",
   "how": "whisper"
  },
  "6UlmQDB3vqQ": {
-  "language": "en",
-  "how": "whisper"
+  "language": null,
+  "how": "whisper",
+  "note": "too little speech"
  },
  "evf5cS9_YEk": {
   "language": null,
   "how": null,
-  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *0"
+  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *6"
  },
  "0paBosD04mM": {
   "language": "es",
@@ -436,12 +437,11 @@
   "how": "captions"
  },
  "ieeZ0mviFKc": {
-  "language": null,
-  "how": null,
-  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *0"
+  "language": "es",
+  "how": "whisper"
  },
  "17TlRpteXWE": {
-  "language": "en",
+  "language": "es",
   "how": "whisper"
  },
  "eMUypshyFKE": {
@@ -449,7 +449,7 @@
   "how": "captions"
  },
  "-4U208CXMSY": {
-  "language": "en",
+  "language": "es",
   "how": "whisper"
  },
  "6bQjFZ8mhU4": {
@@ -477,12 +477,13 @@
   "how": "whisper"
  },
  "nYzMaXpeNTc": {
-  "language": "en",
+  "language": "es",
   "how": "whisper"
  },
  "j-5A65dmn3E": {
-  "language": "es",
-  "how": "whisper"
+  "language": null,
+  "how": "whisper",
+  "note": "too little speech"
  },
  "hUwh3w6lv-E": {
   "language": "es",
@@ -491,22 +492,21 @@
  "mlLqfk_OFAA": {
   "language": null,
   "how": null,
-  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *0"
+  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *1"
  },
  "j5Oa0WWw1T4": {
   "language": null,
   "how": null,
-  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *0"
+  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *6"
  },
  "nRq7niwEgSM": {
-  "language": null,
-  "how": null,
-  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *0"
+  "language": "es",
+  "how": "whisper"
  },
  "bbsz-ip1GAI": {
   "language": null,
-  "how": null,
-  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *0"
+  "how": "whisper",
+  "note": "too little speech"
  },
  "AaE5J9-CCdo": {
   "language": "es",
@@ -547,7 +547,7 @@
  "OOBjZtqYqMA": {
   "language": null,
   "how": null,
-  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *0"
+  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *6"
  },
  "sKCzmFYNgcQ": {
   "language": "es",
@@ -586,7 +586,7 @@
   "how": "captions"
  },
  "u8_ZMPjYdes": {
-  "language": "en",
+  "language": "es",
   "how": "whisper"
  },
  "RN3oJ-GT4cA": {
@@ -604,12 +604,11 @@
  "FeuHkSOYSMY": {
   "language": null,
   "how": null,
-  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *0"
+  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *6"
  },
  "ifgdRVfoYeM": {
-  "language": null,
-  "how": null,
-  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *0"
+  "language": "es",
+  "how": "whisper"
  },
  "5hAx8KwryrY": {
   "language": "es",
@@ -618,7 +617,7 @@
  "oUDs5dyXMgY": {
   "language": null,
   "how": null,
-  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *0"
+  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *6"
  },
  "O_gNEFkQ17Y": {
   "language": "es",
@@ -642,7 +641,7 @@
  },
  "IAWOBQ9wt9E": {
   "language": null,
-  "how": null,
-  "error": "Command failed: yt-dlp -q -f bestaudio[ext=m4a]/bestaudio --download-sections *0"
+  "how": "whisper",
+  "note": "too little speech"
  }
 }
