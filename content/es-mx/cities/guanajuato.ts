@@ -52,7 +52,7 @@ export const guanajuato: CityPantry = {
       neighbourhood: 'Centro',
       real: true,
       characterId: 'marisol-guia-alhondiga',
-      imagePrompt: 'the Alhóndiga de Granaditas in Guanajuato. A massive square stone granary with few windows and plain walls, iron hooks high on its corners. Inside, a stairway painted with a vast fiery mural of the War of Independence, and a guide pointing up at it for a group of schoolchildren in uniform.',
+      imagePrompt: "the Alhóndiga de Granaditas in Guanajuato. A massive square stone granary with few windows and plain walls, iron hooks high on its corners. Inside, a stairway painted with a vast fiery mural of the War of Independence, and a restorer on a scaffold with a fine brush working on a corner of the mural.",
     },
     {
       id: 'museo-de-las-momias',
@@ -83,12 +83,12 @@ export const guanajuato: CityPantry = {
     },
     {
       id: 'enchiladas-baratillo',
-      name: 'Enchiladas mineras de la Plazuela del Baratillo',
-      kind: 'street-food',
+      name: "Cocina Doña Lupe",
+      kind: "fonda",
       neighbourhood: 'Centro',
       real: false,
       characterId: 'lupe-enchiladera',
-      imagePrompt: 'a small open-air food stall in the Plazuela del Baratillo, Guanajuato, by its bronze fountain. A griddle and a big pot of red chile sauce, plates of folded red enchiladas covered with diced potatoes, carrots, lettuce and crumbled cheese. A cook in an apron serves a plate to a student at a plastic table.',
+      imagePrompt: "a small family fonda by the Plazuela del Baratillo, Guanajuato. A narrow room with oilcloth tables, a few regulars eating, a kitchen at the back with clay pots of red chile sauce, and plates of folded red enchiladas covered with diced potatoes, carrots, lettuce and crumbled cheese. A cook in a red-checked apron sets a plate in front of a student.",
     },
     {
       id: 'terminal-guanajuato',
@@ -155,11 +155,11 @@ export const guanajuato: CityPantry = {
       gender: 'f',
       age: 33,
       voice: 'm7yTemJqdIqrcNleANfX', // Ana María
-      role: 'guía del museo',
+      role: "restauradora",
       placeId: 'alhondiga-de-granaditas',
-      personality: ['clear', 'serious', 'good with children'],
-      portraitPrompt: 'Gouache portrait of a woman of 33 with long straight hair, a museum badge and a navy blazer, pointing upward with a confident expression, who guides visitors at the Alhóndiga de Granaditas, Guanajuato. Include the stairway mural of fire and battle. Bold, saturated colour: fire orange, stone grey and navy. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You guide visitors at the Alhóndiga de Granaditas, a grain store where the Spanish took refuge when Miguel Hidalgo's insurgents reached Guanajuato in September 1810, in the first great battle of the War of Independence. After Hidalgo, Allende, Aldama and Jiménez were executed, their heads hung in cages from the corners of the building for ten years. The stairway murals are by José Chávez Morado. Today it is a regional museum.",
+      personality: ["patient", "precise", "talks to the mural while she works"],
+      portraitPrompt: "Gouache portrait of a woman of 33 with long straight hair tied up, a dust mask round her neck, magnifying glasses pushed up on her head and a fine brush in her hand, who restores the murals at the Alhóndiga de Granaditas, Guanajuato. Include the scaffold and the stairway mural of fire and battle. Bold, saturated colour: fire orange, stone grey and navy. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
+      here: "You are a restorer and this month you are on a scaffold in the Alhóndiga de Granaditas, cleaning the stairway murals that José Chávez Morado painted from the 1950s. The building was a grain store where the Spanish took refuge when Miguel Hidalgo's insurgents reached Guanajuato in September 1810, in the first great battle of the War of Independence. After Hidalgo, Allende, Aldama and Jiménez were executed, their heads hung in cages from its corners for ten years. Today it is a regional museum.",
     },
     {
       id: 'fermin-guardia-momias',
@@ -204,10 +204,10 @@ export const guanajuato: CityPantry = {
       age: 59,
       voice: '1VQaMRazTeAqnqdb5C33', // Monica Mendez
       role: 'cocinera',
-      placeId: 'enchiladas-baratillo',
+      placeId: "enchiladas-baratillo",
       personality: ['bossy', 'generous', 'feeds students for less'],
-      portraitPrompt: 'Gouache portrait of a sturdy woman of 59 with her hair in a bun, a red-checked apron and a no-nonsense smile, holding a plate of red enchiladas, who cooks at a stall in the Plazuela del Baratillo, Guanajuato. Include the bronze fountain of the plaza. Bold, saturated colour: chile red, potato gold and fountain green. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You make enchiladas mineras at your stall in the Plazuela del Baratillo, a little square whose bronze fountain is said to have come from Florence. Enchiladas mineras are tortillas dipped in guajillo chile sauce, filled with cheese and onion and covered with fried potatoes and carrots; they are said to have been the miners' food, cheap and filling. Students from the university are your best customers.",
+      portraitPrompt: "Gouache portrait of a sturdy woman of 59 with her hair in a bun, a red-checked apron and a no-nonsense smile, holding a plate of red enchiladas, who runs a small fonda by the Plazuela del Baratillo, Guanajuato. Include the oilcloth tables and the clay pots. Bold, saturated colour: chile red, potato gold and oilcloth green. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
+      here: "You run a small fonda by the Plazuela del Baratillo, a little square whose bronze fountain is said to have come from Florence. Your regulars come every day for the comida corrida, and you know who wants extra salsa. Your enchiladas mineras are the house dish: tortillas dipped in guajillo chile sauce, filled with cheese and onion and covered with fried potatoes and carrots; they are said to have been the miners' food, cheap and filling. Students from the university eat here for less.",
     },
     {
       id: 'diego-taquillero-guanajuato',

@@ -16,7 +16,7 @@ export const sanCristobalDeLasCasas: CityPantry = {
       neighbourhood: 'San Juan Chamula',
       real: true,
       characterId: 'mariano-guia-chamula',
-      imagePrompt: 'the church of San Juan Chamula, in the highlands near San Cristóbal de las Casas, seen from its wide plaza. A white church with a doorway framed by a painted arch of green, blue and orange flowers, under a misty sky, with pine boughs at the door. Men in thick black and white woollen tunics talk in the plaza, and a guide in a jacket waits at the door with two visitors.',
+      imagePrompt: "the church of San Juan Chamula, in the highlands near San Cristóbal de las Casas, seen from its wide plaza. A white church with a doorway framed by a painted arch of green, blue and orange flowers, under a misty sky, with pine boughs at the door. A man in a thick black woollen tunic and a ribboned hat carries an armful of pine boughs toward the door while others talk in the plaza.",
     },
     {
       id: 'mercado-santo-domingo',
@@ -52,7 +52,7 @@ export const sanCristobalDeLasCasas: CityPantry = {
       neighbourhood: 'Centro',
       real: true,
       characterId: 'elena-cafetalera',
-      imagePrompt: 'the coffee museum in an old colonial house in San Cristóbal de las Casas. A courtyard with wooden pillars, sacks of green coffee beans, old roasting drums and photographs of coffee pickers on the walls. A young woman in an apron shows a handful of red coffee cherries to a visitor.',
+      imagePrompt: "the coffee museum in an old colonial house in San Cristóbal de las Casas. A courtyard with wooden pillars, sacks of green coffee beans and a small drum roaster turning, with the smell almost visible as smoke. A young woman in an apron checks the colour of the beans with a scoop.",
     },
     {
       id: 'na-bolom',
@@ -61,7 +61,7 @@ export const sanCristobalDeLasCasas: CityPantry = {
       neighbourhood: 'Centro',
       real: true,
       characterId: 'itzel-guia-na-bolom',
-      imagePrompt: 'Casa Na Bolom in San Cristóbal de las Casas. An old house with deep yellow walls around a garden courtyard full of flowers, a library of old books and black and white photographs of people from the rainforest. A guide in a woollen sweater leads two visitors through the garden.',
+      imagePrompt: "Casa Na Bolom in San Cristóbal de las Casas. An old house with deep yellow walls around a garden full of flowers, and behind it a tree nursery with rows of seedlings in black bags. A young woman in a woollen sweater and rubber boots waters the seedlings.",
     },
     {
       id: 'centro-de-escritores-tsotsil',
@@ -74,12 +74,12 @@ export const sanCristobalDeLasCasas: CityPantry = {
     },
     {
       id: 'tamales-barrio-de-mexicanos',
-      name: 'Tamales de chipilín de Doña Juana',
-      kind: 'street-food',
+      name: "Comedor Doña Juana",
+      kind: "fonda",
       neighbourhood: 'Centro',
       real: false,
       characterId: 'juana-tamalera',
-      imagePrompt: 'a tamale seller’s spot on a cobbled corner in San Cristóbal de las Casas on a cold morning. A big steaming aluminium pot on a stand, tamales wrapped in green leaves and corn husks, and a thermos of hot atole. A woman in a shawl and apron hands a tamale to a man in a jacket.',
+      imagePrompt: "a small comedor in an old house in San Cristóbal de las Casas on a cold morning. A few wooden tables with woven cloths, regulars in jackets drinking hot atole and coffee, a big steaming pot of tamales on the stove and a bowl of soup on the counter. A woman in a shawl and apron serves a plate of tamales wrapped in green leaves.",
     },
     {
       id: 'arco-del-carmen',
@@ -107,11 +107,11 @@ export const sanCristobalDeLasCasas: CityPantry = {
       gender: 'm',
       age: 38,
       voice: 'nmvA11Y688M5reLqDsVm', // Samuel Rosales
-      role: 'guía de Chamula',
+      role: "mayordomo",
       placeId: 'templo-de-san-juan-chamula',
-      personality: ['serious', 'protective of his community', 'dry humour'],
-      portraitPrompt: 'Gouache portrait of a man of 38 with short black hair and a calm, watchful face, wearing a thick black woollen tunic over a white shirt and a leather belt, who guides visitors at the church of San Juan Chamula, near San Cristóbal de las Casas. Include the white church door with its painted arch of flowers. Bold, saturated colour: wool black, flower green and sky blue. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You are from San Juan Chamula, a Tsotsil Maya town a few kilometres from San Cristóbal, and you take visitors into the church of Saint John the Baptist. Inside there are no pews and no regular Mass: the floor is covered with pine needles, and families kneel among hundreds of candles to pray in Tsotsil, sometimes with a healer, with eggs, posh and soft drinks. Taking photographs inside is strictly forbidden. Chamula governs its own affairs.",
+      personality: ["serious", "proud of his duty", "dry humour"],
+      portraitPrompt: "Gouache portrait of a man of 38 with short black hair and a calm, watchful face, wearing a thick black woollen tunic over a white shirt, a leather belt and a flat hat with coloured ribbons, carrying pine boughs, who is a mayordomo at the church of San Juan Chamula, near San Cristóbal de las Casas. Include the white church door with its painted arch of flowers. Bold, saturated colour: wool black, flower green and sky blue. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
+      here: "You are from San Juan Chamula, a Tsotsil Maya town a few kilometres from San Cristóbal, and this year you hold a cargo as a mayordomo: for a year you look after one of the saints in the church and pay for its fiesta, an honour that costs a family a great deal. Today you are bringing fresh pine boughs. Inside the church there are no pews and no regular Mass: the floor is covered with pine needles, and families kneel among candles to pray in Tsotsil, sometimes with a healer, with eggs, posh and soft drinks. Photographs inside are strictly forbidden, and Chamula governs its own affairs.",
     },
     {
       id: 'petrona-tejedora',
@@ -155,11 +155,11 @@ export const sanCristobalDeLasCasas: CityPantry = {
       gender: 'f',
       age: 31,
       voice: 'ewn5JTa3lNPY8QVuZJi6', // Ana Sofía
-      role: 'guía del museo',
+      role: "tostadora de café",
       placeId: 'museo-del-cafe-sancris',
-      personality: ['passionate', 'practical', 'a coffee snob'],
-      portraitPrompt: 'Gouache portrait of a woman of 31 with her hair tied in a scarf, an apron over a sweater and red coffee cherries in her palm, smiling with enthusiasm, who works at the coffee museum in San Cristóbal de las Casas. Include the sacks of green beans and the old roaster. Bold, saturated colour: coffee red, sack beige and forest green. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You work at the coffee museum in San Cristóbal, run with small growers' cooperatives. Chiapas produces more coffee than any other state in Mexico, most of it grown by Indigenous families on small plots in the mountains, in the shade of taller trees. The cherries are picked red by hand, from about November to March. Your family grows coffee near the border with Guatemala.",
+      personality: ["passionate", "practical", "a coffee snob"],
+      portraitPrompt: "Gouache portrait of a woman of 31 with her hair tied in a scarf, an apron over a sweater and a scoop of roasted beans in her hand, smiling with enthusiasm, who roasts coffee at the coffee museum in San Cristóbal de las Casas. Include the sacks of green beans and the drum roaster. Bold, saturated colour: coffee red, sack beige and forest green. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
+      here: "You roast the coffee at the coffee museum in San Cristóbal, run with small growers' cooperatives, and today you are roasting your family's beans. Chiapas produces more coffee than any other state in Mexico, most of it grown by Indigenous families on small plots in the mountains, in the shade of taller trees. The cherries are picked red by hand, from about November to March. Your family grows coffee near the border with Guatemala.",
     },
     {
       id: 'itzel-guia-na-bolom',
@@ -167,11 +167,11 @@ export const sanCristobalDeLasCasas: CityPantry = {
       gender: 'f',
       age: 29,
       voice: 'm7yTemJqdIqrcNleANfX', // Ana María
-      role: 'guía',
+      role: "viverista",
       placeId: 'na-bolom',
-      personality: ['gentle', 'thoughtful', 'cares about the forest'],
-      portraitPrompt: 'Gouache portrait of a woman of 29 with long straight black hair, a woollen sweater and a notebook, with a thoughtful expression, who guides visitors at Casa Na Bolom, San Cristóbal de las Casas. Include the flowering courtyard garden. Bold, saturated colour: wall yellow, forest green and red. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You guide visitors at Na Bolom, the house of the Danish archaeologist Frans Blom and the Swiss photographer Gertrude Duby Blom, who from the 1950s studied and defended the Lacandon Maya of the Chiapas rainforest. Na Bolom means house of the jaguar. It holds their library, photographs and a garden, and it still works for the Lacandon forest, which is being cut down.",
+      personality: ["gentle", "thoughtful", "cares about the forest"],
+      portraitPrompt: "Gouache portrait of a woman of 29 with long straight black hair, a woollen sweater, rubber boots and soil on her hands, holding a seedling in a black bag, who works in the tree nursery at Casa Na Bolom, San Cristóbal de las Casas. Include the yellow walls and rows of seedlings. Bold, saturated colour: wall yellow, forest green and red. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
+      here: "You work in the tree nursery at Na Bolom, growing seedlings for the Lacandon rainforest, which is being cut down. Na Bolom, house of the jaguar, was the home of the Danish archaeologist Frans Blom and the Swiss photographer Gertrude Duby Blom, who from the 1950s studied and defended the Lacandon Maya of the Chiapas rainforest. The house keeps their library and photographs, and it still works for the forest and its people.",
     },
     {
       id: 'rosa-poeta-tsotsil',
@@ -191,11 +191,11 @@ export const sanCristobalDeLasCasas: CityPantry = {
       gender: 'f',
       age: 62,
       voice: 'iBGVhgcEZS6A5gTOjqSJ', // Gabiyoya
-      role: 'tamalera',
+      role: "cocinera",
       placeId: 'tamales-barrio-de-mexicanos',
       personality: ['motherly', 'chatty', 'worries you are cold'],
-      portraitPrompt: 'Gouache portrait of a woman of 62 with a round face, a woollen shawl over her shoulders and an apron, holding a steaming tamale, smiling kindly, who sells tamales on a corner in San Cristóbal de las Casas. Include the big steaming pot and the cobbled street. Bold, saturated colour: leaf green, shawl red and steam white. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You sell tamales on your corner on cold mornings. In Chiapas there are many kinds: tamales de chipilín, with a green herb mixed into the dough; tamales de bola, round and filled with pork and plum; and tamales de hoja de plátano, wrapped in banana leaf. You sell them with hot atole. People here also drink pox, a cane and corn spirit used in highland ceremonies.",
+      portraitPrompt: "Gouache portrait of a woman of 62 with a round face, a woollen shawl over her shoulders and an apron, holding a steaming tamale, smiling kindly, who runs a small comedor in San Cristóbal de las Casas. Include the wooden tables and the big steaming pot. Bold, saturated colour: leaf green, shawl red and steam white. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
+      here: "You run a small comedor in your house, and your regulars come every morning for breakfast when the town is still cold. You make tamales the Chiapas way: de chipilín, with a green herb in the dough; de bola, round and filled with pork and plum; and de hoja de plátano, wrapped in banana leaf. At midday there is sopa de pan, a layered soup of bread, broth and vegetables that coletos eat at fiestas. You serve hot atole and local coffee.",
     },
     {
       id: 'samuel-pintor-arco',

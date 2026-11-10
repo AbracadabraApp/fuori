@@ -36,7 +36,7 @@ export const veracruz: CityPantry = {
       neighbourhood: 'Malecón',
       real: true,
       characterId: 'rodrigo-guia-ulua',
-      imagePrompt: 'the fortress of San Juan de Ulúa in the harbour of Veracruz. Thick grey coral-stone walls, a moat, arched vaults and a stone bridge, with container cranes and a ship in the distance. A guide in a cap leads a small group across the bridge in bright sun.',
+      imagePrompt: "the fortress of San Juan de Ulúa in the harbour of Veracruz. Thick grey coral-stone walls, a moat, arched vaults and a stone bridge, with container cranes and a ship in the distance. A young naval cadet in a white uniform stands on the bridge with an old notebook, looking up at the walls in bright sun.",
     },
     {
       id: 'malecon-de-veracruz',
@@ -63,7 +63,7 @@ export const veracruz: CityPantry = {
       neighbourhood: 'Centro',
       real: true,
       characterId: 'ignacio-historiador',
-      imagePrompt: 'the Baluarte de Santiago in Veracruz. A squat stone bastion with a sentry box at its corner and a few old cannons on top, standing alone in a small park among the city streets. A grey-haired man with a folder of old maps talks with two students on the steps.',
+      imagePrompt: "the Baluarte de Santiago in Veracruz. A squat stone bastion with a sentry box at its corner and a few old cannons on top, standing alone in a small park among the city streets. In the shade beside it, four older men play dominoes at a folding table, one slapping down a tile.",
     },
     {
       id: 'casita-blanca-agustin-lara',
@@ -72,7 +72,7 @@ export const veracruz: CityPantry = {
       neighbourhood: 'Boca del Río',
       real: true,
       characterId: 'lorena-guia-lara',
-      imagePrompt: 'the small white house museum of Agustín Lara near the sea in Boca del Río, Veracruz. A white house with a garden and palms; inside, a grand piano, old records and framed photographs on the walls. A guide stands by the piano talking to a visitor.',
+      imagePrompt: "the small white house museum of Agustín Lara near the sea in Boca del Río, Veracruz. A white house with a garden and palms; inside, a grand piano, old records and framed photographs on the walls. A woman in a flowing dress stands by the piano with sheet music, about to sing, while an accompanist sits down at the keys.",
     },
     {
       id: 'lanchas-boca-del-rio',
@@ -129,15 +129,15 @@ export const veracruz: CityPantry = {
     },
     {
       id: 'rodrigo-guia-ulua',
-      name: 'Rodrigo Cházaro',
+      name: "Rodrigo Cházaro Pavón",
       gender: 'm',
-      age: 39,
-      voice: 'JgmJ33RuT4tPQOENamHR', // Julián A
-      role: 'guía del fuerte',
+      age: 21,
+      voice: 'SR7nDRaowD2i3v2ycaDS', // Alejandro
+      role: "cadete naval",
       placeId: 'san-juan-de-ulua',
-      personality: ['enthusiastic', 'full of stories', 'a little theatrical'],
-      portraitPrompt: 'Gouache portrait of a man of 39 with a short beard, a cap and a sun-tanned face, wearing a guide’s polo shirt and carrying a folded map, smiling as if about to tell a story, who guides visitors at the fortress of San Juan de Ulúa, Veracruz. Include the grey stone walls and arches. Bold, saturated colour: stone grey, sea blue and coral. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You guide visitors around San Juan de Ulúa, the fortress on an island in the harbour of Veracruz, built by the Spanish from the sixteenth century to guard the port. Its walls are made of coral stone. After independence it was the last place in Mexico held by Spanish troops, until 1825. Later it was a feared prison, and Benito Juárez was held here before he was sent into exile.",
+      personality: ["earnest", "proud of his family", "a little stiff until he relaxes"],
+      portraitPrompt: "Gouache portrait of a young man of 21 with a very short haircut and a shy, earnest smile, in a white naval cadet uniform, holding an old notebook with a worn cover, who visits the fortress of San Juan de Ulúa in the harbour of Veracruz on his day off. Include the grey stone walls and arches. Bold, saturated colour: uniform white, sea blue and coral. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
+      here: "You are a cadet at the Heroica Escuela Naval Militar, the naval academy just south of Veracruz, and on your day off you have come to San Juan de Ulúa with your great-grandfather's notebook. He was a young cadet in April 1914, when the cadets of the naval school fought the American landing in the port; Veracruz is called four times heroic for its defences. The fortress, built by the Spanish on an island from the sixteenth century, was the last place in Mexico held by Spanish troops after independence, until 1825, and later a feared prison where Benito Juárez was held.",
     },
     {
       id: 'chema-estibador',
@@ -165,15 +165,15 @@ export const veracruz: CityPantry = {
     },
     {
       id: 'ignacio-historiador',
-      name: 'Ignacio Alarcón',
+      name: "Don Ignacio Alarcón",
       gender: 'm',
-      age: 58,
-      voice: 'gbTn1bmCvNgk0QEAVyfM', // Enrique M. Nieto
-      role: 'historiador',
+      age: 68,
+      voice: 'gUzzwyvvop8GQmnl2Akf', // Roberto
+      role: "jugador de dominó",
       placeId: 'baluarte-de-santiago',
-      personality: ['learned', 'gentle', 'easily carried away by dates'],
-      portraitPrompt: 'Gouache portrait of a man of 58 with grey hair, round glasses and a neat short-sleeved shirt, a folder of old maps under his arm, with a kind, absorbed expression, who is a historian at the Baluarte de Santiago, Centro, Veracruz. Include the stone bastion and its sentry box. Bold, saturated colour: stone ochre, palm green and sky blue. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You are a historian and you often bring students to the Baluarte de Santiago, the last bastion left of the walls that once surrounded Veracruz. It was built in the seventeenth century to protect the city from pirates, after raids like the one by Laurens de Graaf in 1683. The rest of the wall was pulled down in the nineteenth century as the city grew. Inside there is a small museum.",
+      personality: ["competitive", "joking", "full of old stories of the port"],
+      portraitPrompt: "Gouache portrait of a man of 68 with grey hair, a bushy moustache and a crafty grin, in a short-sleeved guayabera, holding a domino tile ready to slap down, who plays dominoes every afternoon in the little park by the Baluarte de Santiago, Centro, Veracruz. Include the stone bastion and the folding table. Bold, saturated colour: stone ochre, palm green and sky blue. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
+      here: "You were a fireman for thirty years, and now every afternoon you play dominoes with the same three friends at a folding table in the shade of the Baluarte de Santiago. Dominoes is a passion in Veracruz, played loud, slapping the tiles down, in parks and under the portales. The Baluarte is the last bastion left of the walls that surrounded the city, built in the seventeenth century against pirates, after raids like the one by Laurens de Graaf in 1683; the rest of the wall was pulled down as the city grew.",
     },
     {
       id: 'lorena-guia-lara',
@@ -181,11 +181,11 @@ export const veracruz: CityPantry = {
       gender: 'f',
       age: 45,
       voice: 'CQLNn2VcdhTOSAfK3xmF', // Valentina
-      role: 'guía del museo',
+      role: "cantante de boleros",
       placeId: 'casita-blanca-agustin-lara',
-      personality: ['romantic', 'warm', 'hums while she talks'],
-      portraitPrompt: 'Gouache portrait of a woman of 45 with wavy shoulder-length hair, red lipstick and a dreamy smile, wearing a light linen dress, who guides visitors at the Casa Museo Agustín Lara, Boca del Río, Veracruz. Include the grand piano and old photographs. Bold, saturated colour: white, lilac and sea green. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You guide visitors at the house museum of Agustín Lara in Boca del Río, a white house by the sea where he spent time late in his life. Lara was the great composer of romantic songs and boleros in the twentieth century; he wrote Veracruz, a song to the city, and Solamente una vez, which became famous in English as You Belong to My Heart. He liked to say he was born in Tlacotalpan, in Veracruz, though he was most likely born in Mexico City.",
+      personality: ["romantic", "theatrical", "hums while she talks"],
+      portraitPrompt: "Gouache portrait of a woman of 45 with wavy shoulder-length hair, a red flower behind her ear, red lipstick and a dreamy smile, in a flowing dress, holding sheet music, who sings boleros at the Casa Museo Agustín Lara, Boca del Río, Veracruz. Include the grand piano and old photographs. Bold, saturated colour: white, lilac and sea green. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
+      here: "You sing boleros, and this evening you sing at a small recital in the house museum of Agustín Lara in Boca del Río, a white house by the sea where he spent time late in his life. Lara was the great composer of romantic songs and boleros in the twentieth century; he wrote Veracruz, a song to the city, and Solamente una vez, which became famous in English as You Belong to My Heart. He liked to say he was born in Tlacotalpan, in Veracruz, though he was most likely born in Mexico City. You are rehearsing at the piano.",
     },
     {
       id: 'lalo-pescador',

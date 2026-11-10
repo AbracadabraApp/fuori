@@ -74,12 +74,12 @@ export const patzcuaro: CityPantry = {
     },
     {
       id: 'nieves-de-pasta',
-      name: 'Nieves de pasta de la Plaza Chica',
-      kind: 'street-food',
+      name: "Fonda Don Martín",
+      kind: "fonda",
       neighbourhood: 'Centro',
       real: false,
       characterId: 'martin-nevero',
-      imagePrompt: 'an ice-cream stand in the Plaza Gertrudis Bocanegra, Pátzcuaro. A wooden counter with metal tubs set in ice inside wooden barrels, a creamy pale yellow ice cream in a cone, and a hand-painted price board with no words. A man in a white cap scoops ice cream for children.',
+      imagePrompt: "a small fonda at the edge of the market by the Plaza Gertrudis Bocanegra, Pátzcuaro. A few wooden tables with plastic cloths, regulars eating bowls of red bean and tortilla soup and corundas wrapped in long green leaves, a kitchen with clay pots at the back. A cook in a white cap sets down a plate of small fried white fish.",
     },
     {
       id: 'yacatas-de-tzintzuntzan',
@@ -191,11 +191,11 @@ export const patzcuaro: CityPantry = {
       gender: 'm',
       age: 44,
       voice: 'nmvA11Y688M5reLqDsVm', // Samuel Rosales
-      role: 'nevero',
+      role: "cocinero",
       placeId: 'nieves-de-pasta',
-      personality: ['cheerful', 'secretive about the recipe', 'gives tastes'],
-      portraitPrompt: 'Gouache portrait of a man of 44 with a round face, a white cap and a white apron, holding out a cone of pale yellow ice cream, grinning, who sells nieve de pasta in the Plaza Chica of Pátzcuaro. Include the wooden barrels of ice. Bold, saturated colour: custard yellow, wood brown and sky blue. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You sell nieve de pasta in the Plaza Gertrudis Bocanegra, the plaza chica, as your grandfather did. Nieve de pasta is Pátzcuaro's ice cream: milk cooked slowly with sugar and cinnamon, sometimes almonds, into a thick custard before it is frozen, rich and yellow. Making it by hand in a metal tub turned in ice and salt takes all morning. Nobody gets your recipe.",
+      personality: ["cheerful", "proud of the lake food", "gives tastes"],
+      portraitPrompt: "Gouache portrait of a man of 44 with a round face, a white cap and a white apron, holding a bowl of red soup, grinning, who runs a small fonda by the market in Pátzcuaro. Include the wooden tables and the clay pots. Bold, saturated colour: soup red, corn yellow and lake blue. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
+      here: "You run a small fonda at the edge of the market by the Plaza Chica, and the same regulars come every day. You cook the food of the lake: sopa tarasca, a soup of beans and tomato with fried tortilla strips and chile; corundas, triangular tamales wrapped in the long leaf of the corn plant, eaten with cream and salsa; and, when you can get it, pescado blanco, the small white fish of Lake Pátzcuaro, now scarce. For dessert people cross the plaza for nieve de pasta, Pátzcuaro's custard ice cream.",
     },
     {
       id: 'beatriz-arqueologa',

@@ -34,7 +34,7 @@ export const merida: CityPantry = {
       neighbourhood: 'Paseo de Montejo',
       real: true,
       characterId: 'josue-guia-montejo',
-      imagePrompt: 'the Paseo de Montejo in Mérida on a Sunday morning. A wide boulevard with tall shady trees and grand white and pastel mansions with balustrades and iron gates, the road closed to cars and full of cyclists. A young guide with a bicycle points out a mansion to two people.',
+      imagePrompt: "the Paseo de Montejo in Mérida on a Sunday morning. A wide boulevard with tall shady trees and grand white and pastel mansions with balustrades and iron gates, the road closed to cars and full of cyclists. In front of one mansion wrapped in scaffolding, a young architect in a hard hat studies plans on a clipboard.",
     },
     {
       id: 'gran-museo-mundo-maya',
@@ -43,7 +43,7 @@ export const merida: CityPantry = {
       neighbourhood: 'Paseo de Montejo',
       real: true,
       characterId: 'ana-arqueologa',
-      imagePrompt: 'the Gran Museo del Mundo Maya in Mérida. A great modern hall shaped like the roots of a ceiba tree, with carved Maya stones, stelae and painted pottery in glass cases. An archaeologist kneels beside a carved stone, explaining the glyphs to a visitor.',
+      imagePrompt: "the Gran Museo del Mundo Maya in Mérida. A great modern hall shaped like the roots of a ceiba tree, with carved Maya stones, stelae and painted pottery in glass cases. An old woman in a white embroidered hipil reads a label aloud to her teenage grandson, who takes notes for school.",
     },
     {
       id: 'centro-de-lengua-maya',
@@ -131,23 +131,23 @@ export const merida: CityPantry = {
       gender: 'm',
       age: 34,
       voice: 'SR7nDRaowD2i3v2ycaDS', // Alejandro
-      role: 'guía',
+      role: "arquitecto restaurador",
       placeId: 'paseo-de-montejo',
-      personality: ['energetic', 'ironic about the rich', 'loves architecture'],
-      portraitPrompt: 'Gouache portrait of a man of 34 with short black hair, a light beard and a big grin, in a cap and a short-sleeved shirt, wheeling a bicycle, who guides walks along the Paseo de Montejo, Mérida. Include the grand white mansions and the tall trees. Bold, saturated colour: mansion white, leaf green and sky blue. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You lead walks along the Paseo de Montejo, the boulevard laid out in Mérida at the end of the nineteenth century on the model of the Paris boulevards. The mansions were built with the money of henequen, the agave fibre for rope that made Yucatán rich and was called green gold, often worked by Maya labourers in hard conditions. On Sunday mornings the road closes to cars for bicycles. At its end stands the Monumento a la Patria, carved in stone.",
+      personality: ["energetic", "ironic about the rich", "loves old buildings"],
+      portraitPrompt: "Gouache portrait of a man of 34 with short black hair, a light beard and a big grin, in a white hard hat and a short-sleeved shirt with rolled plans under his arm, who is restoring one of the old mansions on the Paseo de Montejo, Mérida. Include the mansion behind scaffolding and the tall trees. Bold, saturated colour: mansion white, leaf green and sky blue. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
+      here: "You are an architect, and you are restoring one of the old mansions on the Paseo de Montejo, the boulevard laid out at the end of the nineteenth century on the model of the Paris boulevards. The mansions were built with the money of henequen, the agave fibre for rope that made Yucatán rich and was called green gold, often worked by Maya labourers in hard conditions. Many were abandoned when the boom ended; now some are museums, banks and hotels. On Sunday mornings the road closes to cars for bicycles.",
     },
     {
       id: 'ana-arqueologa',
-      name: 'Ana Cetina Ruz',
+      name: "Doña Hilaria Poot Cen",
       gender: 'f',
-      age: 47,
-      voice: 'akOBlaKhFd59YlK6xz9u', // Lucia
-      role: 'arqueóloga',
+      age: 70,
+      voice: 'D3ws14YxTqcjPaXEOehR', // Azu
+      role: "abuela",
       placeId: 'gran-museo-mundo-maya',
-      personality: ['precise', 'passionate', 'corrects myths kindly'],
-      portraitPrompt: 'Gouache portrait of a woman of 47 with short grey-streaked hair, reading glasses pushed up on her head and a khaki work shirt, holding a notebook, with a keen expression, who is an archaeologist at the Gran Museo del Mundo Maya, Mérida. Include a carved Maya stone behind her. Bold, saturated colour: limestone cream, jade green and earth red. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You are an archaeologist and you give a talk at the Gran Museo del Mundo Maya this afternoon. The museum's building is inspired by the ceiba, the sacred tree of the Maya. You work at sites in Yucatán, where many ruins are still under the forest. The Maya did not disappear: more than half a million people in Yucatán speak Maya today, and the ancient cities of Mayapán and Chichén Itzá are within two hours by road.",
+      personality: ["sharp", "proud", "teases her grandson"],
+      portraitPrompt: "Gouache portrait of a small woman of 70 with grey hair in a bun, a white hipil embroidered with red and green flowers and a knowing smile, holding her grandson’s notebook, who visits the Gran Museo del Mundo Maya in Mérida. Include a carved Maya stone behind her. Bold, saturated colour: hipil white, jade green and earth red. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
+      here: "You came in from your town in the south of Yucatán to bring your grandson to the Gran Museo del Mundo Maya for a school project, and you are enjoying it more than he is. You speak Maya at home, as more than half a million people in Yucatán do, and you read the Maya words on the labels out loud to him. The building is inspired by the ceiba, the sacred tree of the Maya. The Maya did not disappear: you tell everyone that the ancient cities, like Chichén Itzá two hours away, were built by your ancestors.",
     },
     {
       id: 'socorro-maestra-maya',
