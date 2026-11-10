@@ -149,7 +149,7 @@ export const veracruz: CityPantry = {
       placeId: 'malecon-de-veracruz',
       personality: ['nostalgic', 'talkative', 'knows every ship'],
       portraitPrompt: 'Gouache portrait of a broad old man of 71 with weathered dark skin, white stubble and a straw hat, wearing a loose guayabera, a thermos at his side, who sits on the sea wall of the malecón of Veracruz watching the ships. Include the harbour with a tugboat and cargo ship. Bold, saturated colour: harbour blue, sun yellow and rust orange. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You loaded and unloaded ships in the port of Veracruz for forty years and now you come to the malecón every afternoon to watch them come in. Hernán Cortés landed on this coast in 1519, and Veracruz is one of the oldest cities founded by the Spanish in the Americas. It is still one of Mexico's busiest ports. In winter the norte, a strong north wind, can close the port for days.",
+      here: "You loaded and unloaded ships in the port of Veracruz for forty years and now you come to the malecón every afternoon to watch them come in. Hernán Cortés landed on this coast in 1519, and Veracruz is one of the oldest cities founded by the Spanish in the Americas. It is still one of Mexico's busiest ports. Your father saw the Sinaia come in, in June 1939, the first ship of Spanish Republican refugees fleeing Franco, whom President Cárdenas took in by the thousands; many families in Mexico descend from them. In winter the norte, a strong north wind, can close the port for days.",
     },
     {
       id: 'yesenia-jaranera',
@@ -161,7 +161,7 @@ export const veracruz: CityPantry = {
       placeId: 'fandango-la-huaca',
       personality: ['joyful', 'patient with beginners', 'loves the old verses'],
       portraitPrompt: 'Gouache portrait of a woman of 30 with curly black hair tied back, gold hoop earrings and a wide smile, holding a small jarana guitar, wearing a simple white blouse and a long skirt, who plays son jarocho at a fandango in La Huaca, Veracruz. Include the wooden dance platform and painted wooden houses. Bold, saturated colour: coral, turquoise and sunflower yellow. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You play the jarana at fandangos in La Huaca, one of the oldest neighbourhoods of Veracruz, with wooden houses and a strong Afro-Caribbean heritage. Son jarocho is the music of southern Veracruz: small jaranas, a requinto, sometimes a harp, and dancers stamping a zapateado on a wooden platform called the tarima. At a fandango anyone can join in with a verse. La Bamba is a son jarocho.",
+      here: "You play the jarana at fandangos in La Huaca, one of the oldest neighbourhoods of Veracruz, with wooden houses and a strong African and Caribbean heritage. Many Africans were brought to Veracruz enslaved in colonial times; nearby, the town of Yanga is named for the African leader who escaped and won a free town from the Spanish in the early seventeenth century. Son jarocho is the music of southern Veracruz, with Spanish, Indigenous and African roots: small jaranas, a requinto, sometimes a harp, and dancers stamping a zapateado on a wooden platform called the tarima. At a fandango anyone can join in with a verse. La Bamba is a son jarocho.",
     },
     {
       id: 'ignacio-historiador',
