@@ -2,6 +2,12 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
 
+### 2026-11-10f: offer the goodbye (from Beginner 1)
+- **Added:** beginner.md's "Goodbye: offer it", word for word: "When the talk winds down, offer the goodbye as a phrase they can say. Their goodbye ends the conversation."
+- **Why:** Josh played Doña Chayo (cluster 1): 16 turns, a question every turn, "this conversation feels like it's going on forever". Beginner 2 lost the line when the Intermediate character prompt replaced beginner.md's; Josh: it's somewhere in Italy (Giulia's "Vuole dire arrivederci adesso?"). Copied, not reinvented.
+- **Also:** Level 1 no longer says "then your question in {language}": whether there's a question is the setup's job, and it contradicted "Setup: two questions to ask" ("don't ask them anything"); a ten-turn look had 3 of 4 of those turns with no questions to ask.
+- **Added:** "Setup: goodbye", used by the code from the learner's 8th turn (the plan: "the goodbye is offered after about 8 turns or when they say it"): a twelve-turn look with only the Beginner 1 line never wound down (a coffee, then the salsa, then more salsa).
+
 ### 2026-11-10e (code, no prompt change): questions with their English in Level 1
 - lib/beginner-2.ts → questionEcho: in clusters 1–2 every question in the language has its English right next to it, spoken: an English piece after it, unless an English question comes just before it (Josh, 2026-11-09: "questions should be spanish then english - near same is fine"; "it could go english-spanish or spanish english"; "it's hard to answer a spanish question with no english"). Added as a spoken English piece, not a gloss, because with answers shown a question's gloss isn't spoken (the 2026-11-05 coffee fix, mirrored by the app).
 

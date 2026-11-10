@@ -54,6 +54,10 @@ export const RUNGS: Setup[] = [
 ];
 const R = (id: string) => RUNGS.find((r) => r.id === id)!;
 
+/** The goodbye offered, from the learner's 8th turn (docs/beginner-2.md: "offered after about 8 turns or when they say it") */
+export const GOODBYE: Setup = { id: 'goodbye', block: 'Setup: goodbye', maxAnswers: 2, english: true };
+export const GOODBYE_AFTER = 8;
+
 /**
  * Six clusters: the setups in play, the level text and whether every phrase is glossed move
  * together (Josh: 6–8 clusters; progression is also how much English is spoken)
@@ -97,6 +101,7 @@ function seedOf(s: string): number {
  * so the next day's opener differs (Josh, 2026-11-09)
  */
 export function pickSetup(p: { conversationId?: string | null; turn: number; learnerId?: string | null; characterId: string; now?: Date }, cluster: Setup[] = CLUSTER_1): Setup {
+  if (p.turn >= GOODBYE_AFTER) return GOODBYE;
   const day = (p.now ?? new Date()).toISOString().slice(0, 10);
   const key = p.conversationId ? `${p.conversationId}|${p.turn}` : `${p.learnerId ?? ''}|${p.characterId}|${day}`;
   return cluster[seedOf(key) % cluster.length];
@@ -198,6 +203,9 @@ export function shownParts(raw: Part[], setup: Setup, cluster: Setup[] = CLUSTER
   const at = Math.max(0, CLUSTERS.indexOf(cluster));
   if (setup.inside) return insideSpeech(parts, setup);
   if (setup.invite) return invited(QUESTION_ECHO[at] ? questionEcho(parts) : parts);
+  // Questions to ask, and none came (the character asked its own, deep in a visit): treated as an invited
+  // English answer, so the learner always has a way to answer (2026-11-09, a twelve-turn look: 4 of 5)
+  if (setup.id === 'ask-en' && !parts.some((x) => x.kind === 'answer' && x.text.trim())) return invited(QUESTION_ECHO[at] ? questionEcho(parts) : parts);
   if (QUESTION_ECHO[at]) return questionEcho(parts);
   return setup.english ? parts : parts.map((x) => (x.kind === 'answer' ? { ...x, en: '' } : x));
 }

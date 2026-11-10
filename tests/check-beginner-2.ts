@@ -4,7 +4,7 @@
 // prompt file, the language-only rung hides the answers' English, the turn
 // code takes the switch, and Beginner 2 turns don't move the Beginner 1 path.
 import { readFileSync } from 'fs';
-import { beginnerVersionFrom, pickSetup, setupText, shownParts, beginner2Version, glossAll, questionEcho, CLUSTER_1, CLUSTERS, RUNGS, clusterFrom } from '@/lib/beginner-2';
+import { beginnerVersionFrom, pickSetup, setupText, shownParts, beginner2Version, glossAll, questionEcho, GOODBYE, CLUSTER_1, CLUSTERS, RUNGS, clusterFrom } from '@/lib/beginner-2';
 import { stageInVersion } from '@/lib/conversation-record';
 import { lineFromParts, type Part } from '@/lib/beginner';
 import { buildBeginnerPrompt, SCAFFOLDING_FILE, dialogueWithoutFormat } from '@/lib/beginner';
@@ -20,7 +20,7 @@ check(beginnerVersionFrom(new Headers()) === 1 && beginnerVersionFrom(new Header
 
 const a = pickSetup({ conversationId: 'conv-1', turn: 3, characterId: 'luisa' });
 check(pickSetup({ conversationId: 'conv-1', turn: 3, characterId: 'luisa' }).id === a.id, 'the same conversation and turn get the same setup');
-const seen = new Set(Array.from({ length: 40 }, (_, i) => pickSetup({ conversationId: 'conv-1', turn: i, characterId: 'luisa' }).id));
+const seen = new Set(Array.from({ length: 40 }, (_, i) => pickSetup({ conversationId: `conv-${i}`, turn: i % 8, characterId: 'luisa' }).id));
 check(seen.size === CLUSTER_1.length && [...seen].every((id) => CLUSTER_1.some((s) => s.id === id)), `over 40 turns every setup of cluster 1 comes up (got ${[...seen].join(', ')})`);
 const day = new Date('2026-11-09T10:00:00Z');
 check(pickSetup({ turn: 0, learnerId: 'L', characterId: 'luisa', now: day }).id === pickSetup({ turn: 0, learnerId: 'L', characterId: 'luisa', now: day }).id, 'an opening is seeded by learner, place and day');
@@ -33,7 +33,7 @@ check(CLUSTERS.flat().filter((r) => !r.inside).every((r) => r.maxAnswers === 0 |
 check(['two-en', 'ask-en', 'invite-en'].every((id) => CLUSTER_1.some((r) => r.id === id)), 'cluster 1 mixes two answers, two questions to ask and an invited English answer (Josh: no cluster 1 surrender)');
 check(!CLUSTERS.flat().some((r) => r.inside), 'no cluster plays the answer inside the character\'s line until it has a screen design');
 check(clusterFrom(new Headers({ 'x-fuori-cluster': '4' })) === CLUSTERS[3] && clusterFrom(new Headers()) === CLUSTER_1 && clusterFrom(new Headers({ 'x-fuori-cluster': '9' })) === CLUSTER_1, 'the cluster header picks clusters 1-6, cluster 1 otherwise');
-const seen6 = new Set(Array.from({ length: 40 }, (_, i) => pickSetup({ conversationId: 'c', turn: i, characterId: 'x' }, CLUSTERS[5]).id));
+const seen6 = new Set(Array.from({ length: 40 }, (_, i) => pickSetup({ conversationId: `c-${i}`, turn: i % 8, characterId: 'x' }, CLUSTERS[5]).id));
 check(seen6.size === 2 && seen6.has('free') && seen6.has('invite-en'), `cluster 6 plays its own three rungs (got ${[...seen6].join(', ')})`);
 
 const parts: Part[] = [{ kind: 'question', text: 'Un caffè?', en: 'A coffee?', gloss: '' }, { kind: 'answer', text: 'Sì, grazie.', en: 'Yes, thanks.', gloss: '' }];
@@ -66,6 +66,10 @@ check(shownParts(pre, RUNGS.find((r) => r.id === 'invite-en')!, CLUSTERS[3]).len
 check(questionEcho([{ kind: 'question', text: '¿Le gusta?', en: 'Do you like it?', gloss: 'you can answer in English' }])[1].text === 'Do you like it?', 'the echo is the question\'s full English, not whatever is in its gloss');
 const twice = shownParts([{ kind: 'question', text: '¿Qué mural le gusta más? You can answer in English.', en: 'Which mural do you like most? You can answer in English.', gloss: '' }], RUNGS.find((r) => r.id === 'invite-en')!, CLUSTER_1);
 check((lineFromParts(twice).line.match(/answer (me )?in English/gi) ?? []).length <= 2 && !twice.some((x) => x.kind === 'english' && /^You can answer me in English\.$/.test(x.text)), 'the invitation isn\'t added when the character already gave it');
+check(pickSetup({ conversationId: 'c', turn: 8, characterId: 'x' }).id === 'goodbye' && pickSetup({ conversationId: 'c', turn: 7, characterId: 'x' }).id !== 'goodbye', 'from the 8th turn the goodbye is offered');
+check(setupText(GOODBYE).includes('goodbye'), 'the goodbye setup line comes from scaffolding.md');
+const noAsk = shownParts([{ kind: 'question', text: '¿De dónde es usted?', en: 'Where are you from?', gloss: '' }], RUNGS.find((r) => r.id === 'ask-en')!, CLUSTER_1);
+check(noAsk.some((x) => x.kind === 'english' && /English/.test(x.text)), 'questions to ask with none given becomes an invited English answer');
 const inside = shownParts(parts, RUNGS.find((r) => r.id === 'inside-en')!);
 check(!inside.some((x) => x.kind === 'answer') && inside.some((x) => x.kind === 'word' && x.text === 'Sì, grazie.' && x.gloss === 'Yes, thanks.'), 'rung 4: the answer is in her speech with its English heard, no bubble');
 check(shownParts(parts, RUNGS.find((r) => r.id === 'inside')!).some((x) => x.kind === 'word' && x.text === 'Sì, grazie.' && !x.gloss), 'rung 6: the answer in her speech, no English');
