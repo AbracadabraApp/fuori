@@ -1,6 +1,6 @@
 # Automated replies: conversations that play themselves
 
-**Status (2026-11-09):** named automated replies (Josh); notes and a design from a conversation with Josh. Nothing built. On the to-do list (`docs/06-roadmap.md` → Now).
+**Status (2026-11-10):** build steps 1 and 1b built (`tests/experiments/automated-replies.mts`): whole Beginner 2 visits through the game's Beginner 2 turn, the learner's reply kind picked by code at a persona's rates, said-back lines and edits in code, own words / a question / English written by one small call each. No database yet (no memory between visits). First runs below.
 
 ## Why
 
@@ -62,3 +62,18 @@ Checked against real play by numbers (words per line, share of English, said bac
 3. The edits and the push; the two persona mixes; the check against real play's numbers.
 4. Length and goodbye counts; then the flagged judges (role, particular to the town) from the variety gate.
 5. A tool check: does it run, are the counts right on lines read by hand (called a tool check, not a test).
+
+## First runs (2026-11-10, cluster 1, persona "josh", 6 characters × 2 visits, up to 12 turns)
+
+| | Italy | Mexico |
+|---|---|---|
+| Turns | 119 | 102 |
+| Broken | 1 | 5 (all "hit max_tokens", intermittent: the same turn replayed came back at 137 tokens) |
+| Setup followed | all but the character's own last goodbye | the same |
+| English beside every question | 118/118 | 97/97 |
+| Words a turn: English / the language | 13.7 / 10.0 | 13.1 / 12.6 |
+| The English invitation on other turns | 0 | 0 |
+| Announcing ("You could ask me one of these:") | 27 turns (22 on questions-to-ask) | 15 (14 on questions-to-ask) |
+| Visits ended on a goodbye | 11/12 | 6/12 (the broken turns stopped 5 visits early) |
+
+Read from the counts: the setup line next to the latest message holds (no invitation copied, bubbles where the setup wants them); questions-to-ask announces itself on most of its turns; about 3% of turns run past the token limit.
