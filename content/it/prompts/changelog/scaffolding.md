@@ -2,6 +2,10 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
 
+### 2026-11-10n: the character knows they've lived here a while, and doesn't ask
+- **Changed:** the learner line adds "They've been living here a while, and everyone asks them whether they're new or where they're from; you don't, you talk about what's here."
+- **Why:** after the opener stopped asking (10m), the question moved later in the visit: in all three of Josh's conversations on 10m (Rigoberto turn 7, Andrés turn 2 and again, Rosa turn 2: "¿Usted vive aquí en Guadalajara?"); Josh: "cada personaje pregunta lo mismo", "this makes the app look broken". The character is given what it keeps asking for, and why not to ask. Measured with automated replies (docs/automated-replies.md).
+
 ### 2026-11-10m: the opener asks about the place, not the person; the invitation to ask removed
 - **Removed:** the invitation to ask ("Is there anything you'd like to know about…?") from every cluster, and the invitation sentence from questions to ask, which now just carries on and offers two questions as bubbles. Josh, 2026-11-10, after Renata and Doña Carmen asked it again and again (Carmen four times; Josh: "is it because you have Alzheimer's"): "you can just remove the ask question".
 - **Added:** "Setup: opener", the code's setup for the first turn: open with your place or what you're doing right now, and ask about that, not about them; two answers to say back.
