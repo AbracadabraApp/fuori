@@ -3,7 +3,7 @@
 // not a test of a change: plays Intermediate visits (up to --turns character lines, a learner reply written for each) for
 // characters spread over every city, and reads Beginner 2 visits saved by automated-replies.mts.
 // A judge reads every character line; no phrase list, so it works in any language.
-//   COUNTRY=es-mx npx tsx --env-file=.env.local tests/experiments/newcomer-question.mts [--characters=48] [--turns=15] [--label=name] [b2-file.json ...]
+//   COUNTRY=es-mx npx tsx --env-file=.env.local tests/experiments/newcomer-question.mts [--characters=48] [--turns=8] [--label=name] [b2-file.json ...]
 import { readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { cities, language } from '@/content';
@@ -13,7 +13,7 @@ import { ask, pool, OUT } from './common.mjs';
 
 const arg = (n: string, d: string) => process.argv.find((a) => a.startsWith(`--${n}=`))?.split('=')[1] ?? d;
 const howMany = Number(arg('characters', '48'));
-const turns = Number(arg('turns', '15'));
+const turns = Number(arg('turns', '8'));
 const label = arg('label', 'newcomer');
 const b2Files = process.argv.slice(2).filter((a) => !a.startsWith('--'));
 
