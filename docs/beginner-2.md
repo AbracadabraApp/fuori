@@ -124,6 +124,37 @@ At an offer every 3–5 conversations that count (3 or more replies from the lea
 
 Josh: "we should aim to improve the echo. Its sentence for sentence. We should figure out how to make it more characteristic and folksy." Today the English after each phrase is the code copying the phrase's literal `en` (glossAll on every cluster-1 turn, questionEcho on ~6 in 10): a subtitle read aloud. What Josh means (2026-11-09, correcting Claude's first reading of asides and explanations): the English woven into the sentence where it matters, as the character speaks: "El Andador es el corazón de la ciudad, the heart of the city…" (Josh's example, which worked; "Estoy preparando, I'm preparing, las velas, the candles…" was not a good one: every chunk echoed). The key phrase gets its English, and the sentence carries on; not a whole sentence followed by its translation, and not every chunk. Asides in the character's voice are good too, with the warm words kept in the language inside the English (Josh: "yes - but nona"): "¿Le gustan? You like them? My abuela made them this way." / "My nonna made them this way." And a check that they followed ends on a short tag in the language (Josh): "La Parroquia, the big pink church, ¿la ve?" / "…si vede?" And English as the character's own explanation, not a translation (Josh: "good"): "Hoy hay mole. It's a sauce, very dark, chocolate and chiles; you must try." Likely route: Claude writes that English in character as part of the reply; code fills English only on a turn that has none. A prompt change, so a test: the same visits with the code echo and with the character's own English, read for whether the learner still follows and whether it sounds like a person.
 
+
+### The examples, and what they share (2026-11-09)
+
+1. The key phrase echoed: "El Andador es el corazón de la ciudad, the heart of the city…"
+2. An aside, with the warm words kept in the language: "¿Le gustan? You like them? My nonna made them this way." (Mexico: "My abuela…")
+3. A check that ends on a tag in the language: "La Parroquia, the big pink church, si vede?" (Mexico: "¿la ve?")
+4. English as the character's own explanation: "Hoy hay mole. It's a sauce, very dark, chocolate and chiles; you must try."
+
+The four examples work because the English does a different job each time. None of them translates the sentence.
+
+**Patterns in the four**
+- English follows a fragment, not a sentence. It comes in the same breath, right after the one word or phrase it serves (1, 3).
+- The language keeps the warm and functional words: questions, tags like "¿la ve?", endearments. English carries the nouns and explanations (2, 3, 4).
+- Each English piece adds something. It names a thing (1), says something new (2), checks understanding (3) or explains (4).
+- The learner can ignore the English. The Spanish stands alone, and the English is a hand held out.
+- There's at most one English piece a line. That keeps it sounding like a person.
+
+**More lines in the same spirit (Mexico)**
+- Naming one word: "Esto es tejuino, a cold corn drink, de Jalisco."
+- A reaching-for-the-word moment: "Es muy… how do you say… picoso. Spicy, ¿eh?"
+- Pointing: "Mire, ahí, el volcán, the volcano. Es el Popocatépetl."
+- Explaining, with a Spanish tag: "Las gorditas llevan masa de maíz. Like a thick little tortilla, stuffed. ¿Quiere una?"
+- A quick English reaction: "¡Ay, qué bueno! Good choice. Ahora se lo preparo."
+- The word, then using it: "Esto se llama comal, the griddle. Ahí las pongo."
+- Options in English, question in Spanish: "¿Rojo o verde? The red is milder."
+- A personal aside, with the Spanish kept: "Mi abuelo bolea aquí desde hace cuarenta años. He taught me everything, ¿sabe?"
+
+Italy equivalents: "Questo è il pecorino, sheep's cheese, di Pienza." "È un po'… how do you say… piccante, eh?"
+
+**Where this fits the app.** Patterns 1–4 already fit the existing parts format, which has a word part followed by an English part. The difference is that the English is short and does a job, instead of being a full gloss. Mixing English into the middle of a line, as in "muy… how do you say… picoso", needs a closer look at how the line is spoken and shown.
+
 ## The prompt
 
 **History** (2026-11-09): `beginner.md` grew from 502 to 1,245 words in two weeks over 19 versions, each fixing what the last one showed and none removed; with the shared `dialogue.md` and the stage blocks a Beginner turn gets 1,559–1,730 words before the conversation (the Intermediate character prompt is 534). Of its 31 units (`docs/beginner-prompt-inventory.md`) 9 were ever measured; the stage blocks measured no change. The same characters come alive at Intermediate.
