@@ -177,10 +177,11 @@ export function withEnglish(parts: Part[]): Part[] {
  * English" block is said after it, unless the turn already says English answers are fine
  */
 export function invited(parts: Part[]): Part[] {
-  const lead = readPromptFile(SCAFFOLDING_FILE).block('Line: invite English').trim();
+  const lead = fill(readPromptFile(SCAFFOLDING_FILE).block('Line: invite English'), { language: language.name }).trim();
   // Anywhere in what's said: the character sometimes writes the invitation into the question itself (Hugo, 2026-11-09)
   const english = parts.filter((x) => x.kind !== 'answer').map((x) => `${x.text} ${x.gloss ?? ''} ${x.kind === 'question' ? x.en : ''}`).join(' ').toLowerCase();
-  const already = english.includes(lead.toLowerCase().replace(/[.!]$/, '').split(' ').slice(-2).join(' '));
+  // Already invited, in the character's own words ("ask me in English", "you can ask me anything")
+  const already = /ask me (anything|in english)|in english or/.test(english);
   const echoed = parts.some((x, i) => x.kind === 'question' && parts[i + 1]?.kind === 'english');
   const out = echoed ? parts : parts.map((x) => (x.kind === 'question' && !x.gloss?.trim() && x.en.trim() ? { ...x, gloss: x.en } : x));
   return already ? out : [...out.filter((x) => x.kind !== 'answer'), { kind: 'english', text: lead, en: '', gloss: '' }];

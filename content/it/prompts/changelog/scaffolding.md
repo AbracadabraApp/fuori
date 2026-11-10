@@ -2,6 +2,10 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
 
+### 2026-11-10h: the invitation is to ask, not to answer in English
+- **Changed:** "Setup: invite English" now has the character ask, in English, whether there's anything they'd like to know (the place, the work, the town), and "Line: invite English" is "You can ask me in English or {language}." It was "ask what they think… they can answer in English".
+- **Why:** Josh, 2026-11-09: "I'm not sure this answer helps - especially English to English - maybe if it was do you want to ask anything about the town? not do you like the Zócalo". Across today's five conversations he answered the invited-English turns in Spanish anyway (Arturo: 0 of 9 in English). An open question from the learner makes the character's answer the teaching moment.
+
 ### 2026-11-10g: questions to ask, invited in role
 - **Changed:** "Setup: two questions to ask" now has the character invite curiosity as a local would ("ask, in English, whether they're wondering about your place, your work or the town"), instead of "don't ask them anything: give them two short questions…", which the character read out as stage directions ("Here are two things you could ask me:").
 - **Why:** Josh, 2026-11-09, playing Lupita (Tlaquepaque): "this is unnatural speech… It sounds like a teacher managing the lesson rather than a local. Are you wondering about the church? about my job? about the city?"

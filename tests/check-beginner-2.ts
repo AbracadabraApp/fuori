@@ -54,7 +54,7 @@ check(g1[2].gloss === '', 'glossAll: not when the turn\'s own English already sa
 check(shownParts(para, CLUSTER_1[0], CLUSTER_1)[1].gloss === '', 'cluster 1 leaves glossing to the S1 text (Josh: Beginner 1\'s S1 glossing works)');
 check(/echoes your English/.test(setupText(CLUSTER_1[0], CLUSTER_1)) && !/never says what your/.test(setupText(CLUSTER_1[0], CLUSTER_1)), 'Level 1: English with echoes in the language, without the rule keeping the two apart');
 const inv = shownParts([{ kind: 'english', text: 'Sit anywhere.', en: '', gloss: '' }, { kind: 'question', text: '¿Es su primera vez en Puebla?', en: 'Is it your first time in Puebla?', gloss: '' }], RUNGS.find((r) => r.id === 'invite-en')!, CLUSTER_1);
-{ const qi = inv.findIndex((x) => x.kind === 'question'); check(inv[qi + 1]?.text === 'Is it your first time in Puebla?' && inv[inv.length - 1].kind === 'english' && /English/.test(inv[inv.length - 1].text), 'invited English: the question\'s English and the invitation are said, in code'); }
+{ const qi = inv.findIndex((x) => x.kind === 'question'); check(inv[qi + 1]?.text === 'Is it your first time in Puebla?' && inv[inv.length - 1].kind === 'english' && /ask me in English or/.test(inv[inv.length - 1].text), 'the invitation to ask is said, in code'); }
 check(shownParts(para, CLUSTERS[3][0], CLUSTERS[3])[1].gloss === '', 'later clusters leave glossing to the character');
 const qs: Part[] = [{ kind: 'english', text: 'Welcome!', en: '', gloss: '' }, { kind: 'question', text: '¿Quiere probar el mole?', en: 'Do you want to try the mole?', gloss: '' }, { kind: 'answer', text: 'Sí, por favor.', en: 'Yes, please.', gloss: '' }, { kind: 'answer', text: 'No, gracias.', en: 'No, thanks.', gloss: '' }];
 const q1 = shownParts(qs, RUNGS.find((r) => r.id === 'two-en')!, CLUSTER_1);
@@ -65,12 +65,12 @@ check(shownParts(qs, RUNGS.find((r) => r.id === 'two-en')!, CLUSTERS[3]).every((
 const pre: Part[] = [{ kind: 'english', text: 'What can I get you?', en: '', gloss: '' }, { kind: 'question', text: '¿Qué le sirvo?', en: 'What can I serve you?', gloss: '' }];
 check(shownParts(pre, RUNGS.find((r) => r.id === 'invite-en')!, CLUSTERS[3]).length >= 2 && !lineFromParts(questionEcho(pre)).line.includes('What can I serve you?'), 'an English question just before is enough: no echo after (nothing said three times)');
 check(questionEcho([{ kind: 'question', text: '¿Le gusta?', en: 'Do you like it?', gloss: 'you can answer in English' }])[1].text === 'Do you like it?', 'the echo is the question\'s full English, not whatever is in its gloss');
-const twice = shownParts([{ kind: 'question', text: '¿Qué mural le gusta más? You can answer in English.', en: 'Which mural do you like most? You can answer in English.', gloss: '' }], RUNGS.find((r) => r.id === 'invite-en')!, CLUSTER_1);
-check((lineFromParts(twice).line.match(/answer (me )?in English/gi) ?? []).length <= 2 && !twice.some((x) => x.kind === 'english' && /^You can answer me in English\.$/.test(x.text)), 'the invitation isn\'t added when the character already gave it');
+const twice = shownParts([{ kind: 'question', text: '¿Quiere saber algo del barrio? You can ask me anything.', en: 'Do you want to know anything about the barrio? You can ask me anything.', gloss: '' }], RUNGS.find((r) => r.id === 'invite-en')!, CLUSTER_1);
+check(!twice.some((x) => x.kind === 'english' && /^You can ask me in English or/.test(x.text)), 'the invitation isn\'t added when the character already gave it');
 check(pickSetup({ conversationId: 'c', turn: 8, characterId: 'x' }).id === 'goodbye' && pickSetup({ conversationId: 'c', turn: 7, characterId: 'x' }).id !== 'goodbye', 'from the 8th turn the goodbye is offered');
 check(setupText(GOODBYE).includes('goodbye'), 'the goodbye setup line comes from scaffolding.md');
 const noAsk = shownParts([{ kind: 'question', text: '¿De dónde es usted?', en: 'Where are you from?', gloss: '' }], RUNGS.find((r) => r.id === 'ask-en')!, CLUSTER_1);
-check(noAsk.some((x) => x.kind === 'english' && /English/.test(x.text)), 'questions to ask with none given becomes an invited English answer');
+check(noAsk.some((x) => x.kind === 'english' && /ask me in English or/.test(x.text)), 'questions to ask with none given becomes an invitation to ask');
 // The four of 2026-11-09 evening
 check(pickSetup({ conversationId: null, turn: 0, learnerId: 'L', characterId: 'x' }, CLUSTER_1).id === 'two-en', 'the opener is two answers to read');
 const thin: Part[] = [{ kind: 'word', text: 'Estoy preparando las velas.', en: "I'm preparing the candles.", gloss: 'candles' }, { kind: 'word', text: 'La iglesia.', en: 'The church.', gloss: 'church' }];
