@@ -4,7 +4,7 @@
 // prompt file, the language-only rung hides the answers' English, the turn
 // code takes the switch, and Beginner 2 turns don't move the Beginner 1 path.
 import { readFileSync } from 'fs';
-import { beginnerVersionFrom, pickSetup, setupText, levelText, setupLine, fullerGlosses, shownParts, shapeParts, turnSteps, beginner2Version, glossAll, questionEcho, GOODBYE, OPENER, CLUSTER_1, CLUSTERS, RUNGS, clusterFrom } from '@/lib/beginner-2';
+import { beginnerVersionFrom, pickSetup, setupText, levelText, setupLine, fullerGlosses, shownParts, shapeParts, turnSteps, beginner2Version, glossAll, questionEcho, GOODBYE, OPENER, CLUSTER_1, CLUSTERS, RUNGS, clusterFrom, stretchesOf, withSummaries, summaryPrompt, MAX_STRETCH_WORDS, MAX_STRETCH_SENTENCES } from '@/lib/beginner-2';
 import { stageInVersion } from '@/lib/conversation-record';
 import { lineFromParts, type Part } from '@/lib/beginner';
 import { buildBeginnerPrompt, SCAFFOLDING_FILE, dialogueWithoutFormat } from '@/lib/beginner';
@@ -15,6 +15,32 @@ import { characterForPlace } from '@/lib/characters/for-place';
 
 const problems: string[] = [];
 const check = (ok: boolean, msg: string) => { if (!ok) problems.push(msg); };
+
+// The summary after a stretch of her talk (docs/summary-and-mixed.md, card B2-E5; Josh, 2026-11-10: English after
+// every sentence is "too structured"): stretches close at 2 sentences or past 20 words, each gets one English
+// remark said after it, the phrases inside lose their glosses, the question keeps its echo
+{
+  const w = (text: string, en: string): Part => ({ kind: 'word', text, en, gloss: en });
+  const talk: Part[] = [w('Buenas tardes, joven.', 'Good afternoon, young man.'), w('Pásele, pásele, aquí tiene su silla.', 'Come on over, here is your chair.'), w('Ese calzado quiere una buena boleada.', 'Those shoes want a good shine.'), { kind: 'question', text: '¿Le doy brillo?', en: 'Shall I shine them?', gloss: '' }, { kind: 'answer', text: 'Sí, por favor.', en: 'Yes, please.', gloss: '' }];
+  const st = stretchesOf(talk);
+  check(st.length === 2 && st[0].from === 0 && st[0].to === 1 && st[1].from === 2 && st[1].to === 2, `two sentences close a stretch; the rest before the question is its own (got ${JSON.stringify(st.map((x) => [x.from, x.to]))})`);
+  const long: Part[] = [w('Primero les quito el polvo con el cepillo, y luego la grasa, para que agarren buen brillo y duren más tiempo', 'First the dust, then the polish.'), w('Es rápido.', 'It is quick.'), { kind: 'question', text: '¿Sí?', en: 'Yes?', gloss: '' }];
+  check(stretchesOf(long).length === 2 && stretchesOf(long)[0].to === 0, `past ${MAX_STRETCH_WORDS} words a stretch closes on its own, before the ${MAX_STRETCH_SENTENCES}nd sentence`);
+  const own: Part[] = [w('Hoy hay mole.', 'There is mole today.'), { kind: 'english', text: "It's a sauce, very dark.", en: '', gloss: '' }, w('Pruébelo.', 'Try it.'), { kind: 'question', text: '¿Quiere?', en: 'Want some?', gloss: '' }];
+  check(stretchesOf(own).length === 2 && stretchesOf(own)[1].from === 2, 'English she wrote herself ends a stretch and is left in place');
+  check(stretchesOf([{ kind: 'question', text: '¿Un café?', en: 'A coffee?', gloss: '' }]).length === 0, 'a turn that is only a question has no stretch');
+  const out = withSummaries(talk, st, ['Good afternoon, come sit here.', 'Your shoes need a shine.']);
+  check(out.length === talk.length + 2 && out[2].kind === 'english' && out[2].text === 'Good afternoon, come sit here.' && out[4].kind === 'english', 'each summary is said after its stretch');
+  check(out.filter((x) => x.kind === 'word').every((x) => x.gloss === ''), 'the phrases in a stretch lose their literal glosses');
+  const shaped = shapeParts(talk, RUNGS.find((r) => r.id === 'two-en')!, CLUSTER_1, { stretches: st, summaries: ['Good afternoon, come sit here.', 'Your shoes need a shine.'] });
+  check(shaped.fixes.includes('summaries') && !shaped.fixes.includes('glossAll'), `cluster 1 with summaries: the summary step, not glossAll (got ${shaped.fixes.join(', ')})`);
+  const spoken = lineFromParts(shaped.parts).line;
+  check(/Buenas tardes, joven\. Pásele, pásele, aquí tiene su silla\. Good afternoon, come sit here\./.test(spoken) && !/Come on over/.test(spoken), 'spoken: her two sentences, then the summary, no literal English in between');
+  const fallback = shapeParts(talk, RUNGS.find((r) => r.id === 'two-en')!, CLUSTER_1, null);
+  check(fallback.fixes.includes('glossAll') || fallback.parts.every((x) => x.kind !== 'word' || x.gloss), 'no summaries (late or failed): the literal English after every phrase, as before');
+  check(shapeParts(talk, RUNGS.find((r) => r.id === 'two-en')!, CLUSTERS[2], { stretches: st, summaries: ['x', 'y'] }).parts.every((x) => x.kind !== 'english'), 'later clusters: no summary');
+  check(/fewest words/.test(summaryPrompt()) && /in her own words/.test(summaryPrompt()) && !/\{\w+\}/.test(summaryPrompt()), 'the summary prompt is read from scaffolding.md, filled: Josh\'s line with her voice');
+}
 
 check(beginnerVersionFrom(new Headers({ 'x-fuori-beginner': '2' })) === 2, 'the header switches Beginner 2 on');
 check(beginnerVersionFrom(new Headers()) === 1 && beginnerVersionFrom(new Headers({ 'x-fuori-beginner': '1' })) === 1, 'no header, or 1: Beginner 1');

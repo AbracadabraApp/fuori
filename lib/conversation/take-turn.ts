@@ -16,8 +16,8 @@ import { studyFileReady } from '@/lib/study-file';
 import { loadAddressedAs } from '@/lib/learner-address';
 import { tutor } from '@/content';
 import { onboardingState } from '@/lib/onboarding';
-import { runBeginnerTurn, beginnerPromptVersion, lineFromParts } from '@/lib/beginner';
-import { BEGINNER_2_FILE, CLUSTER_1, pickSetup, levelText, setupLine, shapeParts, turnSteps, beginner2Version, type Setup, type TurnSteps } from '@/lib/beginner-2';
+import { runBeginnerTurn, beginnerPromptVersion, lineFromParts, type Part } from '@/lib/beginner';
+import { BEGINNER_2_FILE, CLUSTER_1, pickSetup, levelText, setupLine, shapeParts, turnSteps, beginner2Version, type Setup, type TurnSteps, GLOSS_ALL, CLUSTERS, stretchesOf, writeSummaries, type Stretch } from '@/lib/beginner-2';
 import { stageFor, stageTag, stageText, type Stage } from '@/lib/path';
 import { pathState } from '@/lib/conversation-record';
 import { welcomeContent, welcomed, welcomeVersion, welcomeStep, welcomeBrief, learnerLines, addressAnswers, welcomeTurnFlags } from '@/lib/welcome';
@@ -176,9 +176,13 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
     ? // Beginner 2: the parts are rewritten after the reply (glosses, English, the answer said inside), so the
       // spoken line is rebuilt from them, and the voice waits for the whole reply (no early first sentence:
       // it would be spoken from the parts before they were rewritten, then again)
-      await runBeginnerTurn({ character, transcript, learnerSaid, memory, addressedAs, laps: p.laps, canRetry: p.canRetry, promptFile: BEGINNER_2_FILE, stageText: levelText(p.beginnerCluster ?? CLUSTER_1), turnNote: setupLine(setup), maxAnswers: setup.maxAnswers, withDone: true }).then((r) => {
+      await runBeginnerTurn({ character, transcript, learnerSaid, memory, addressedAs, laps: p.laps, canRetry: p.canRetry, promptFile: BEGINNER_2_FILE, stageText: levelText(p.beginnerCluster ?? CLUSTER_1), turnNote: setupLine(setup), maxAnswers: setup.maxAnswers, withDone: true }).then(async (r) => {
         const cluster = p.beginnerCluster ?? CLUSTER_1;
-        const { parts, fixes } = shapeParts(r.parts, setup, cluster);
+        // Cluster 1: one English remark in her voice after each stretch of her talk, from a side call (lib/beginner-2.ts,
+        // card B2-E5), instead of the literal English after every phrase. Late (past SUMMARY_DEADLINE_MS) or failed: the
+        // literal English, and the turn says so (fixes: glossAll, not summaries)
+        const summaries = await summariesFor(character, r.parts, cluster, p.onSoftError);
+        const { parts, fixes } = shapeParts(r.parts, setup, cluster, summaries);
         steps = turnSteps(r.parts, setup, cluster, fixes);
         return { ...r, ...lineFromParts(parts), parts };
       })
@@ -267,4 +271,25 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
   p.laps?.lap('record');
 
   return { reply, promptVersion: version, conversationId: savedId, memory, isTutor, ...(commit ? { commit } : {}) };
+}
+
+
+/** How long the summary call may take before the turn goes on with the literal English (B2-E5: median 2.1 s, slowest 9 s) */
+export const SUMMARY_DEADLINE_MS = 6_000;
+
+/** Cluster 1's summaries, or null when there's nothing to summarize, the call fails, or it's late */
+async function summariesFor(character: CharacterSheet, parts: Part[], cluster: Setup[], onSoftError: (where: string, err: unknown) => void): Promise<{ stretches: Stretch[]; summaries: string[] } | null> {
+  if (!GLOSS_ALL[Math.max(0, CLUSTERS.indexOf(cluster))]) return null;
+  const stretches = stretchesOf(parts);
+  if (!stretches.length) return null;
+  try {
+    const summaries = await Promise.race([
+      writeSummaries(character, parts, stretches),
+      new Promise<never>((_, reject) => setTimeout(() => reject(new Error(`summary call past ${SUMMARY_DEADLINE_MS / 1000} s`)), SUMMARY_DEADLINE_MS)),
+    ]);
+    return { stretches, summaries };
+  } catch (err) {
+    onSoftError('summary', err);
+    return null;
+  }
 }

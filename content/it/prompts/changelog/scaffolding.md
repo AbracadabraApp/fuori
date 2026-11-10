@@ -2,6 +2,10 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
 
+### 2026-11-10p: the Summary block: one English remark in her voice after each stretch of her talk (cluster 1)
+- **Added:** "Summary", the prompt of a side call (lib/beginner-2.ts → writeSummaries) that writes one English sentence per stretch of her talk (a stretch closes past 20 words or at 2 sentences). In cluster 1 the code says it after the stretch instead of the literal English after every phrase (glossAll); her question keeps its full English. Late or failed, the literal English plays as before.
+- **Why:** Josh, 2026-11-10, on the echo: "Spanish is followed by English sentence by sentence… too structured". Card B2-E5 (heard, not read): with the bare line, half the summaries narrated her in the third person and Josh preferred the literal; with "in her own words, as she would say it" narration fell from 5 of 16 turns to 1 of 16, the summaries stayed shorter than the literal on 16 of 16 (0.76 of its words) and arrived in 2.1 s. Nothing else in the line, by Josh's rule. The Level 1 text is unchanged: her per-phrase English is still asked for and is the fallback.
+
 ### 2026-11-10o: the learner line without status: no "Beginner", no "living here", no "new or where from"
 - **Also:** "Setup: two answers" now asks "about what's here or what you're doing": the two-answers turns needed an easy yes/no question, and "Is it your first time here?" was the easiest (10 of 13 times the question came on a two-answers turn).
 - **Removed:** the assumption that the learner is a newcomer who has come to live in the country ("They're living in {country} for a while", "a person who has recently come to live in {city}", "the way a newcomer politely would", and the like). The learner is someone learning about the country, its language and culture; nothing is assumed about where they're from, where they live or for how long, and characters know only what the learner has told them.

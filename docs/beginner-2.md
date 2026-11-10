@@ -127,6 +127,8 @@ Josh: "we should aim to improve the echo. Its sentence for sentence. We should f
 
 **2026-11-10:** after B2-E to B2-E4, Josh's next direction is a summary after a stretch of her talk and an English thought inside her line: [summary-and-mixed.md](summary-and-mixed.md), card B2-E5.
 
+**Built (2026-11-10, after B2-E5):** in cluster 1 the English after every phrase (`glossAll`) is replaced by **one English remark in her voice after each stretch of her talk** (a stretch closes past 20 words or at 2 sentences), written by a side call (`lib/beginner-2.ts` → `stretchesOf`, `writeSummaries`, `withSummaries`; prompt block "Summary" in `scaffolding.md`, Josh's line plus "in her own words, as she would say it"). Her question keeps its full English. Late (6 s) or failed, the literal English plays as before and the turn's `fixes` say `glossAll` instead of `summaries`. Heard, not shown, like a gloss: no screen change. The English thought inside her line (mixed) is parked: Josh heard it as hers on 6 of 8 but could follow 1 of 8; "not good enough to release", to come back to.
+
 ### The examples, and what they share (2026-11-09)
 
 1. The key phrase echoed: "El Andador es el corazón de la ciudad, the heart of the city…"

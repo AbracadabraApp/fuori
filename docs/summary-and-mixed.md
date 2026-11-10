@@ -2,6 +2,10 @@
 
 2026-11-10 · Josh and the cloud session, from a phone conversation · Notes, a design sketch and the smallest test (card B2-E5 in [prompt-trials.md](prompt-trials.md), script `tests/experiments/summary-mixed.mts`). Nothing in the game changed. Follows [beginner-2.md](beginner-2.md) → "a folksy echo" and cards B2-E to B2-E4.
 
+## What happened (2026-11-10)
+
+Card B2-E5 ran and Josh listened blind. **Summary:** with the bare line, half the summaries narrated her ("She brushes off dust first"); Josh followed the literal on 8 of 8 and the summary on 6, preferred the summary on 3. The in-voice ones won. With "in her own words, as she would say it" added (code counts third-person summaries), narration fell from 5 of 16 turns to 1 of 16, at 0.76 of the literal's words. **Built into Beginner 2, cluster 1** the same day (see [beginner-2.md](beginner-2.md) → Built). **Mixed:** a thought on 6 of 8, a person's switch on 8 of 8, but Josh followed 1 of 8 (English 23–36% of her words): "not good enough to release"; parked, to come back to.
+
 ## The problem
 
 Today each Spanish sentence is followed by its English, sentence by sentence. The prompt writes the Spanish; code writes the English (`glossAll`, `questionEcho`). Josh: better than a few words, but too structured; "not great but it's coherent". The goal is more bilingual mixing or summarizing.

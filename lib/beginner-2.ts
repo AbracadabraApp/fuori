@@ -15,6 +15,8 @@
 import { fill, readPromptFile } from '@/lib/prompts/template';
 import { language } from '@/content';
 import { glossEchoes, type Part } from '@/lib/beginner';
+import { anthropic, CLAUDE_MODEL, noThinkingFor, replyText, WAITING } from '@/lib/claude';
+import type { CharacterSheet } from '@/lib/types';
 
 export { SCAFFOLDING_FILE as BEGINNER_2_FILE } from '@/lib/beginner';
 import { SCAFFOLDING_FILE } from '@/lib/beginner';
@@ -185,6 +187,79 @@ export function glossAll(parts: Part[]): Part[] {
 }
 
 /**
+ * A stretch of her talk (docs/summary-and-mixed.md, card B2-E5): consecutive word parts before her question,
+ * closed past MAX_STRETCH_WORDS or at MAX_STRETCH_SENTENCES, whichever comes first (Josh, 2026-11-10, "a total
+ * guess": more than 20 words needs a summary, no more than 2 sentences). An English part she wrote herself ends
+ * a stretch and stays as it is. Indexes into the parts, so the summary can be put after the stretch's last part
+ */
+export const MAX_STRETCH_WORDS = 20;
+export const MAX_STRETCH_SENTENCES = 2;
+export interface Stretch { from: number; to: number; text: string }
+const wordCount = (s: string) => s.trim().split(/\s+/).filter(Boolean).length;
+const sentenceCount = (s: string) => s.split(/(?<=[.!?…])\s+/).map((x) => x.trim()).filter(Boolean).length;
+export function stretchesOf(parts: Part[]): Stretch[] {
+  const out: Stretch[] = [];
+  let from = -1;
+  let text: string[] = [];
+  const close = (to: number) => { if (from >= 0) out.push({ from, to, text: text.join(' ') }); from = -1; text = []; };
+  const firstAsked = parts.findIndex((p) => p.kind === 'question' || p.kind === 'answer');
+  const end = firstAsked < 0 ? parts.length : firstAsked;
+  for (let i = 0; i < end; i++) {
+    const p = parts[i];
+    if (p.kind !== 'word' || !p.text.trim()) { close(i - 1); continue; }
+    if (from < 0) from = i;
+    text.push(p.text.trim());
+    const joined = text.join(' ');
+    if (wordCount(joined) > MAX_STRETCH_WORDS || sentenceCount(joined) >= MAX_STRETCH_SENTENCES) close(i);
+  }
+  close(end - 1);
+  return out;
+}
+
+/** The summary prompt (scaffolding.md "Summary"): Josh's one line, with her voice (card B2-E5, 2026-11-10) */
+export function summaryPrompt(): string {
+  return fill(readPromptFile(SCAFFOLDING_FILE).block('Summary'), { language: language.name }).trim();
+}
+const summarySchema = { type: 'object', additionalProperties: false, required: ['summaries'], properties: { summaries: { type: 'array', items: { type: 'string' } } } };
+
+/**
+ * One English remark per stretch, in her voice, from a side call (B2-E5: median 2.1 s). The literal English of
+ * her parts is given to the writer only. Throws on a failed call; the caller falls back to the literal English
+ */
+export async function writeSummaries(character: CharacterSheet, parts: Part[], stretches: Stretch[]): Promise<string[]> {
+  if (!stretches.length) return [];
+  const literal = (st: Stretch) => parts.slice(st.from, st.to + 1).map((p) => p.en.trim()).filter(Boolean).join(' ');
+  const content = `She is ${character.name}, ${character.role} in ${character.city}.\n\nWhat she said, in stretches:\n${stretches.map((st, i) => `${i + 1}. ${st.text}`).join('\n')}\n\nIts literal English, for you only:\n${stretches.map((st, i) => `${i + 1}. ${literal(st)}`).join('\n')}`;
+  const response = await anthropic.messages.create({
+    model: CLAUDE_MODEL,
+    max_tokens: 600,
+    ...noThinkingFor(CLAUDE_MODEL),
+    system: summaryPrompt(),
+    messages: [{ role: 'user', content }],
+    output_config: { format: { type: 'json_schema', schema: summarySchema } },
+  }, WAITING);
+  const { summaries } = JSON.parse(replyText(response)) as { summaries: string[] };
+  if (!Array.isArray(summaries) || summaries.length !== stretches.length || summaries.some((x) => !x?.trim())) throw new Error(`summaries: ${summaries?.length ?? 'none'} for ${stretches.length} stretches`);
+  return summaries.map((x) => x.trim());
+}
+
+/**
+ * The summaries in the turn: each stretch's word parts lose their glosses (the summary stands for them) and the
+ * summary is said after the stretch's last part, as an English part (heard, not shown, like a gloss). Her
+ * question keeps its own echo (questionEcho). Replaces glossAll in cluster 1 (Josh, 2026-11-10: English after
+ * every sentence is "too structured"; B2-E5: a summary in her voice was followed and preferred)
+ */
+export function withSummaries(parts: Part[], stretches: Stretch[], summaries: string[]): Part[] {
+  const out: Part[] = [];
+  parts.forEach((p, i) => {
+    const at = stretches.findIndex((st) => i >= st.from && i <= st.to);
+    out.push(at >= 0 && p.kind === 'word' ? { ...p, gloss: '' } : p);
+    if (at >= 0 && i === stretches[at].to && summaries[at]) out.push({ kind: 'english', text: summaries[at], en: '', gloss: '' });
+  });
+  return out;
+}
+
+/**
  * English on every turn (Josh, 2026-11-09: "almost no character dialogue in english"): a turn
  * with no English part and no gloss gets the English of her question (or of her last phrase)
  * as its gloss, so it's heard after the language. The prompt asks for it; this makes sure
@@ -276,7 +351,7 @@ export interface TurnSteps {
  * Display: every phrase glossed in clusters 1–2; English on every turn; an inside rung's answer said by the character.
  * Each step is named, and the names of those that changed the parts are returned, so a turn shows what the code fixed
  */
-export function shapeParts(raw: Part[], setup: Setup, cluster: Setup[] = CLUSTER_1): { parts: Part[]; fixes: string[] } {
+export function shapeParts(raw: Part[], setup: Setup, cluster: Setup[] = CLUSTER_1, summaries?: { stretches: Stretch[]; summaries: string[] } | null): { parts: Part[]; fixes: string[] } {
   const fixes: string[] = [];
   const step = (name: string, f: (x: Part[]) => Part[]) => (x: Part[]) => {
     const y = f(x);
@@ -285,7 +360,9 @@ export function shapeParts(raw: Part[], setup: Setup, cluster: Setup[] = CLUSTER
   };
   const at = Math.max(0, CLUSTERS.indexOf(cluster));
   const echo = (x: Part[]) => (QUESTION_ECHO[at] ? step('questionEcho', questionEcho)(step('fullerGlosses', fullerGlosses)(x)) : x);
-  const parts = step('withoutAnnouncing', withoutAnnouncing)(step('withEnglish', withEnglish)(GLOSS_ALL[at] ? step('glossAll', glossAll)(raw) : raw));
+  // Cluster 1: the summary after each stretch when the side call delivered; the literal English after every phrase otherwise
+  const glossed = !GLOSS_ALL[at] ? raw : summaries?.summaries.length ? step('summaries', (x) => withSummaries(x, summaries.stretches, summaries.summaries))(raw) : step('glossAll', glossAll)(raw);
+  const parts = step('withoutAnnouncing', withoutAnnouncing)(step('withEnglish', withEnglish)(glossed));
   const done = (x: Part[]) => ({ parts: x, fixes });
   if (setup.inside) return done(step('insideSpeech', (x) => insideSpeech(x, setup))(parts));
   if (setup.invite) return done(step('invited', invited)(echo(parts)));
