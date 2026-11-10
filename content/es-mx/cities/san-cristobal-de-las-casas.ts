@@ -16,7 +16,7 @@ export const sanCristobalDeLasCasas: CityPantry = {
       neighbourhood: 'San Juan Chamula',
       real: true,
       characterId: 'mariano-guia-chamula',
-      imagePrompt: "the church of San Juan Chamula, in the highlands near San Cristóbal de las Casas, seen from its wide plaza. A white church with a doorway framed by a painted arch of green, blue and orange flowers, under a misty sky, with pine boughs at the door. A man in a thick black woollen tunic and a ribboned hat carries an armful of pine boughs toward the door while others talk in the plaza.",
+      imagePrompt: "the church of San Juan Chamula, in the highlands near San Cristóbal de las Casas, seen from its wide plaza. A white church with a doorway framed by a painted arch of green, blue and orange flowers, under a bright blue sky, with pine boughs at the door. A man in a thick black woollen tunic and a ribboned hat carries an armful of pine boughs toward the door while others talk in the plaza.",
     },
     {
       id: 'mercado-santo-domingo',
@@ -34,7 +34,7 @@ export const sanCristobalDeLasCasas: CityPantry = {
       neighbourhood: 'Centro',
       real: true,
       characterId: 'efrain-marimbista',
-      imagePrompt: 'the main plaza of San Cristóbal de las Casas in the evening. A two-storey bandstand among trees, the yellow and red front of the cathedral behind, cool mountain light. A group of musicians in white shirts plays a long wooden marimba under the bandstand while families stroll.',
+      imagePrompt: 'the main plaza of San Cristóbal de las Casas in the evening. A two-storey bandstand among trees, the yellow and red front of the cathedral behind, bright mountain sunlight. A group of musicians in white shirts plays a long wooden marimba under the bandstand while families stroll.',
     },
     {
       id: 'templo-de-guadalupe-sancris',
@@ -79,7 +79,7 @@ export const sanCristobalDeLasCasas: CityPantry = {
       neighbourhood: 'Centro',
       real: false,
       characterId: 'juana-tamalera',
-      imagePrompt: "a small comedor in an old house in San Cristóbal de las Casas on a cold morning. A few wooden tables with woven cloths, regulars in jackets drinking hot atole and coffee, a big steaming pot of tamales on the stove and a bowl of soup on the counter. A woman in a shawl and apron serves a plate of tamales wrapped in green leaves.",
+      imagePrompt: "a small comedor in an old house in San Cristóbal de las Casas on a bright, crisp morning. A few wooden tables with woven cloths, regulars in jackets drinking hot atole and coffee, a big steaming pot of tamales on the stove and a bowl of soup on the counter. A woman in a shawl and apron serves a plate of tamales wrapped in green leaves.",
     },
     {
       id: 'catedral-de-san-cristobal',
@@ -88,7 +88,7 @@ export const sanCristobalDeLasCasas: CityPantry = {
       neighbourhood: "Centro",
       real: true,
       characterId: 'arnulfo-sacristan',
-      imagePrompt: "the cathedral of San Cristóbal de las Casas on the main plaza. A tall front painted deep yellow with red and white decoration and a bell tower, its atrium open to the plaza, mountains and clouds behind. An old sacristan in a woollen jacket sweeps the steps in the cool morning.",
+      imagePrompt: "the cathedral of San Cristóbal de las Casas on the main plaza. A tall front painted deep yellow with red and white decoration and a bell tower, its atrium open to the plaza, mountains and clouds behind. An old sacristan in a woollen jacket sweeps the steps in the morning sun.",
     },
     {
       id: 'terminal-san-cristobal',
