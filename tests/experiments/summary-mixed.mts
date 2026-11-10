@@ -28,6 +28,8 @@ const mixedOn = Number(arg('mixed', '4'));
 const MAX_PAIRS = 8;
 const audio = arg('audio', '1') === '1';
 const label = arg('label', 'b2e5');
+/** --voice=1: the summary prompt also asks for her voice (the fault Josh heard on 2026-11-10: "narrated, not in character") */
+const voice = arg('voice', '0') === '1';
 
 /** Josh's guess (2026-11-10): more than 20 words needs a summary; no more than 2 sentences */
 const MAX_WORDS = 20;
@@ -71,7 +73,7 @@ function stretches(statements: string[], statementsEn: string[]): Stretch[] {
 // Josh's wording (2026-11-10): "Summarize in one sentence with the fewest words". Kept bare on purpose: a correcting
 // phrase in a prompt tends to become the behaviour (Josh: "Correcting words can lead to inclusion"), so nothing is
 // allowed or forbidden here until the clips show a fault
-const SUMMARY = `A local has just said this in ${language.name}. Summarize each numbered stretch in one sentence of English with the fewest words.
+const SUMMARY = `A local has just said this in ${language.name}. Summarize each numbered stretch in one sentence of English with the fewest words${voice ? ', in her own words, as she would say it' : ''}.
 
 Reply with JSON: { "summaries": ["...", ...] }, one for each stretch, in order.`;
 const summarySchema = { type: 'object', additionalProperties: false, required: ['summaries'], properties: { summaries: { type: 'array', items: { type: 'string' } } } };
@@ -190,6 +192,8 @@ const twoSentence = allStretches.filter((x) => x.count >= 2);
 const oneSentence = allStretches.filter((x) => x.count < 2);
 const ratioOf = (xs: typeof allStretches, top: (x: Stretch) => string) => { const a = xs.reduce((n, x) => n + words(x.summary), 0); const b = xs.reduce((n, x) => n + words(top(x)), 0); return b ? (a / b).toFixed(2) : 'n/a'; };
 const closed = (by: string) => allStretches.filter((x) => x.closedBy === by).length;
+/** A summary that narrates her instead of speaking as her: English third-person forms, or her name (the summary is always English, so this isn't a rule about the learned language) */
+const narrated = (summary: string, name: string) => { const w = new Set(norm(summary).split(' ')); return ['she', 'her', 'hers', 'herself', 'he', 'him', 'his', 'himself', ...norm(name).split(' ')].some((x) => w.has(x)); };
 /** Her words kept in a summary: its words that are in the stretch (4 letters or more, so not "a", "de", "no") */
 const keptWords = (x: { text: string; summary: string }) => { const hers = new Set(norm(x.text).split(' ').filter((w) => w.length >= 4)); return norm(x.summary).split(' ').filter((w) => hers.has(w)).length; };
 const timed = S.filter((r) => r.ms && r.stretches?.length);
@@ -204,6 +208,9 @@ console.log(`  separable turns (a stretch of 2 sentences, the pairs Josh hears):
 console.log(`  2-sentence stretches ${twoSentence.length}: summaries with fewer words than the literal English they replace ${twoSentence.filter((x) => words(x.summary) < words(x.literal)).length} of ${twoSentence.length} (the hypothesis); summary over literal ${ratioOf(twoSentence, (x) => x.literal)}`);
 console.log(`  1-sentence stretches ${oneSentence.length}: summary over the literal ${ratioOf(oneSentence, (x) => x.literal)}, over the ${language.name} ${ratioOf(oneSentence, (x) => x.text)} (reported: does a lone short sentence get a summary or not)`);
 console.log(`  summary length: ${mean(allStretches.map((x) => words(x.summary))).toFixed(1)} words a stretch; of one or two words ${allStretches.filter((x) => words(x.summary) <= 2).length} of ${allStretches.length}`);
+const narratedTurns = S.filter((r) => r.stretches?.some((x) => narrated(x.summary, r.character)));
+const narratedStretches = S.flatMap((r) => (r.stretches ?? []).filter((x) => narrated(x.summary, r.character))).length;
+console.log(`  summaries that narrate her (third person or her name): ${narratedStretches} of ${allStretches.length} stretches, ${narratedTurns.length} of ${S.length} turns${voice ? ' (voice line on)' : ''}`);
 console.log(`  her words kept in the summary: ${mean(allStretches.map(keptWords)).toFixed(1)} a stretch; stretches with none ${allStretches.filter((x) => keptWords(x) === 0).length} of ${allStretches.length}`);
 console.log(`  summary call (the game's model, 2 at once): median ${ms[Math.floor(ms.length / 2)] ?? 'n/a'} ms, slowest ${ms[ms.length - 1] ?? 'n/a'} ms; ready before she finishes her first stretch (at ${WORDS_A_SECOND} words a second): ${inTime} of ${timed.length}`);
 console.log(`  turns where her English didn't line up sentence for sentence (no literal clip, pair left out): ${S.filter((r) => !r.aligned).length} of ${S.length}`);
@@ -252,7 +259,7 @@ M.forEach((r, i) => {
 writeFileSync(join(dir, 'listen.md'), listen);
 writeFileSync(join(dir, 'text.md'), text);
 writeFileSync(join(dir, 'key.json'), JSON.stringify(key, null, 1));
-writeFileSync(join(dir, 'rows.json'), JSON.stringify({ label, summaryPrompt: SUMMARY, mixedBlock: MIXED, maxWords: MAX_WORDS, maxSentences: MAX_SENTENCES, rows }, null, 1));
+writeFileSync(join(dir, 'rows.json'), JSON.stringify({ label, voice, summaryPrompt: SUMMARY, mixedBlock: MIXED, maxWords: MAX_WORDS, maxSentences: MAX_SENTENCES, rows }, null, 1));
 console.log(`  ${pairs.length} summary pairs (${pairs.filter((p) => p.control).length} of them literal–literal controls) and ${M.length} mixed clips listed in ${dir}/listen.md (text.md and key.json are in the same folder: send Josh listen.md and the mp3s only)`);
 
 if (audio) {
