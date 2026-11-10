@@ -60,14 +60,10 @@ function stretches(statements: string[]): { text: string; closedBy: 'words' | 's
   return out;
 }
 
-const SUMMARY = `You write the short English a listener hears after a stretch of what a local has just said in ${language.name}. The listener is at the very start of ${language.name}.
-
-For each numbered stretch, write one English remark that tells them what she said in it, as short as carries it: one word can stand for five of hers, and it is never more than one short sentence.
-- Say it as she would say it herself, in the first person.
-- Keep one or two of her own ${language.name} words inside the English, each next to its meaning, when they are worth having.
-- You may say what a thing she named is, in her voice. Give her no new facts, events or offers that she did not make.
-- Leave out anything she already said in English.
-- Never translate sentence by sentence.
+// Josh's wording (2026-11-10): "Summarize in one sentence with the fewest words". Kept bare on purpose: a correcting
+// phrase in a prompt tends to become the behaviour (Josh: "Correcting words can lead to inclusion"), so nothing is
+// allowed or forbidden here until the clips show a fault
+const SUMMARY = `A local has just said this in ${language.name} to someone who is starting to learn it. Summarize each numbered stretch in one sentence of English with the fewest words.
 
 Reply with JSON: { "summaries": ["...", ...] }, one for each stretch, in order.`;
 const summarySchema = { type: 'object', additionalProperties: false, required: ['summaries'], properties: { summaries: { type: 'array', items: { type: 'string' } } } };
@@ -178,6 +174,7 @@ console.log(`Arm S (summary), ${S.length} turns:`);
 console.log(`  stretches: ${allStretches.length} (${(allStretches.length / (S.length || 1)).toFixed(1)} a turn); closed by more than ${MAX_WORDS} words ${closed('words')}, by ${MAX_SENTENCES} sentences ${closed('sentences')}, by the end of her talk ${closed('end')}`);
 console.log(`  English against ${language.name} on her statements (ratio of totals): ${spanish ? (english / spanish).toFixed(2) : 'n/a'} (${english} over ${spanish} words; Josh's guess 0.5–0.7, under 0.3 is too little)`);
 console.log(`  stretches with a summary longer than the stretch: ${allStretches.filter((x) => words(x.summary) > words(x.text)).length} of ${allStretches.length}`);
+console.log(`  summary length: ${mean(allStretches.map((x) => words(x.summary))).toFixed(1)} words a stretch; of one or two words ${allStretches.filter((x) => words(x.summary) <= 2).length} of ${allStretches.length}`);
 console.log(`  her words kept in the summary: ${mean(allStretches.map(keptWords)).toFixed(1)} a stretch; stretches with none ${allStretches.filter((x) => keptWords(x) === 0).length} of ${allStretches.length}`);
 console.log(`  summary call (the game's model, 2 at once): median ${ms[Math.floor(ms.length / 2)] ?? 'n/a'} ms, slowest ${ms[ms.length - 1] ?? 'n/a'} ms; ready before she finishes her first stretch (at ${WORDS_A_SECOND} words a second): ${inTime} of ${timed.length}`);
 console.log(`  turns where her English didn't line up sentence for sentence (no literal clip, pair left out): ${S.filter((r) => !r.aligned).length} of ${S.length}`);

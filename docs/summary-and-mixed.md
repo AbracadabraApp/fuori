@@ -30,6 +30,7 @@ Today each Spanish sentence is followed by its English, sentence by sentence. Th
 - The first version doesn't need levels.
 - Talk then question is not a bad format. But her response should move forward from what the learner said, not go back to her previous story: no narration that ignores the response.
 - On the summary adding nothing: "Is add nothing good". And "One word could sum 5": a summary can be far shorter than a translation and still carry it.
+- "Correcting words can lead to inclusion": a correcting phrase added to a prompt tends to become the behaviour. So the summary prompt is his one line, "Summarize in one sentence with the fewest words", and nothing else until the clips show a fault.
 - Reading is probably 20% the fidelity of hearing; hearing probably 80% of playing. So a test is heard, not read.
 
 ## Mixed: a thought, not a label (Josh)
@@ -75,6 +76,7 @@ Two questions, one small run, heard by Josh. Josh has no Spanish, so his ear in 
 
 **Setup**
 - Mexico. 4 places, 2 turns each (the opener and her reply to one short learner line), so 8 turns an arm.
+- **The summary prompt in the test is bare:** "Summarize each numbered stretch in one sentence of English with the fewest words." Her voice, the vocabulary and any limits on what it may add are in the sketch above but not in the prompt.
 - **Arm S (summary):** the Intermediate prompt exactly as it is. Code ends a stretch past 20 Spanish words or at 2 sentences. The new summary prompt writes one remark per stretch. The question's English comes from her `en`.
 - **Arm M (mixed):** the Intermediate prompt plus one level block describing her English as a thought of her own, with Josh's two good examples. No summary.
 - **Audio:** every clip is spoken by the game's own voice provider in her voice.
