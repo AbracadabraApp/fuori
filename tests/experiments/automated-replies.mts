@@ -33,14 +33,22 @@ const arm = arg('arm', '');
 const seed = arg('seed', label);
 let stage = levelText(cluster);
 if (arm) {
-  const card = arg('card', arm === 'C' ? 'E2' : 'E');
-  startTest(card === 'E2' ? "B2-E2 (2026-11-10): cluster 1 with the folksy echo in the character's own words (Josh's four examples), against the code echo" : 'B2-E (2026-11-10): cluster 1 with English that does a job, against English that mirrors each sentence');
+  const card = arg('card', arm === 'D' ? 'E3' : arm === 'C' ? 'E2' : 'E');
+  startTest(card === 'E3' ? 'B2-E3 (2026-11-10): cluster 1 with the English echo passed through a lossy, concrete device, against the full-fidelity echo' : card === 'E2' ? "B2-E2 (2026-11-10): cluster 1 with the folksy echo in the character's own words (Josh's four examples), against the code echo" : 'B2-E (2026-11-10): cluster 1 with English that does a job, against English that mirrors each sentence');
   if (arm === 'C') {
     // Card B2-E2: only Josh's four examples (docs/beginner-2.md), the English as the character's own part; code fills only a turn with none
     const ex = language.card.country === 'Mexico'
       ? ['"El Andador es el corazón de la ciudad, the heart of the city…"', '"¿Le gustan? You like them? My abuela made them this way."', '"La Parroquia, the big pink church, ¿la ve?"', '"Hoy hay mole. It\'s a sauce, very dark, chocolate and chiles; you must try."']
       : ['"Il Duomo è il cuore della città, the heart of the city…"', '"Le piacciono? You like them? My nonna made them this way."', '"La Torre, the tall brick tower, si vede?"', '"Oggi c\'è il ragù. It\'s a sauce, slow-cooked, meat and tomato; you must try."'];
     stage = `They're at the very start. Talk like a bilingual local who knows some English: short, simple ${language.name} sentences, one idea each. When English helps, say it yourself as its own English part, right after the fragment it serves, then carry on in ${language.name}: not every chunk, and never a whole sentence followed by its translation. Four ways, as models: (1) the key phrase, echoed: ${ex[0]}; (2) an aside in your own voice, the warm words kept in ${language.name}: ${ex[1]}; (3) a check that ends on a short tag in ${language.name}: ${ex[2]}; (4) English as your own explanation: ${ex[3]}. Keep each turn short: two or three sentences and your question.`;
+    GLOSS_ALL[0] = false;
+  }
+  if (arm === 'D') {
+    // Card B2-E3: the gloss is what the same thing looks like in gesture (Josh's sign-language device), not a translation
+    const ex = language.card.country === 'Mexico'
+      ? ['"Hoy hay mole" → "Mole. Sauce, dark, chocolate, chile. You try."', '"Lo sirvo en una taza de Talavera" → "Cup, Talavera, painted. Puebla."', '"Llevo muchos años en esta esquina" → "This corner, many years. Me."']
+      : ['"Oggi c\'è il ragù" → "Ragù. Sauce, meat, tomato, slow. You try."', '"Lo servo in una tazza di Faenza" → "Cup, Faenza, painted."', '"Sto qui da molti anni" → "Here, many years. Me."'];
+    stage = `They're at the very start. Talk like a bilingual local: short, simple ${language.name} sentences, one idea each, each its own word part. What you put in a part's gloss is not a translation. It is what the same thing looks like in gesture, as when someone uses their hands because words fail: only the concrete nouns, verbs and properties, topic first, no small grammar words, no filler, a few words in all. ${ex.join('; ')}. A line with nothing concrete in it (a reaction, thanks) keeps a short plain English. Keep each turn short: two or three sentences and your question.`;
     GLOSS_ALL[0] = false;
   }
   if (arm === 'B') {
@@ -129,7 +137,7 @@ await pool(chosen.map(({ city, place }) => async () => {
       const nw = (t: string) => t.trim().split(/\s+/).filter(Boolean).length;
       const woven = rawParts.some((p, i) => p.kind === 'english' && rawParts[i - 1]?.kind === 'word' && nw(p.text) < 0.8 * nw(rawParts[i - 1].text));
       const ownEnglish = woven || rawParts.some((p, i) => ((p.kind === 'word' || p.kind === 'question') && p.gloss?.trim()) || (p.kind === 'english' && rawParts[i - 1]?.kind !== 'question'));
-      if (arm === 'C' && !ownEnglish) { parts = glossAll(parts); fixes = [...fixes, 'fillGloss']; }
+      if ((arm === 'C' || arm === 'D') && !ownEnglish) { parts = glossAll(parts); fixes = [...fixes, 'fillGloss']; }
       const { line } = lineFromParts(parts);
       const answers = parts.filter((p) => p.kind === 'answer').map((p) => p.text);
       rows.push({ character: character.name, visit: v, turn: turn + 1, setup: setup.id, fixes, kind, how, said, ms: Math.round(performance.now() - started), ok: true, parts, line, answers, done: reply.done, woven, ownEnglish, raw: rawParts });
@@ -248,12 +256,15 @@ if (visits > 1) {
 if (arm) {
   const okRows = rows.filter((x) => x.ok && x.parts);
   const filled = okRows.filter((x) => (x.fixes ?? []).includes('fillGloss')).length;
-  const copies = okRows.filter((x) => /Andador|Parroquia|abuela made them|Hoy hay mole|Duomo è il cuore|nonna made them|Torre, the tall|ragù\. It/.test(x.line ?? '')).length;
+  const copies = okRows.filter((x) => /Andador|Parroquia|abuela made them|Hoy hay mole|Duomo è il cuore|nonna made them|Torre, the tall|ragù\. It|Mole\. Sauce|Cup, Talavera|This corner, many years|Ragù\. Sauce|Cup, Faenza|Here, many years/.test(x.line ?? '')).length;
   console.log(`  woven English (from her own parts) on ${okRows.filter((x) => x.woven).length}/${okRows.length} turns · turns with none of her own English ${okRows.filter((x) => !x.ownEnglish).length}/${okRows.length} (the fill fired on ${filled}) · turns copying an example ${copies}`);
+  const glossed = okRows.flatMap((x) => (x.parts ?? []).filter((p) => p.kind === 'word' && p.gloss?.trim()));
+  const gw = glossed.reduce((n, p) => n + p.gloss!.trim().split(/\s+/).length, 0), pw = glossed.reduce((n, p) => n + p.text.trim().split(/\s+/).length, 0);
+  console.log(`  reduction, ratio of totals: ${gw} gloss words over ${pw} phrase words = ${(gw / (pw || 1)).toFixed(2)} over ${glossed.length} glossed word parts (A: 1.07 and 1.08)`);
   if (arg('comp', '1') === '1') {
     const qSchema = { type: 'object', additionalProperties: false, required: ['items'], properties: { items: { type: 'array', items: { type: 'object', additionalProperties: false, required: ['q', 'a'], properties: { q: { type: 'string' }, a: { type: 'string' } } } } } };
     const gSchema = { type: 'object', additionalProperties: false, required: ['right'], properties: { right: { type: 'array', items: { type: 'boolean' } } } };
-    const shown = (x: TurnRow) => (x.parts ?? []).filter((p) => p.kind !== 'answer');
+    const shown = (x: TurnRow) => (x.parts ?? []).filter((p, i, ps) => p.kind !== 'answer' && p.kind !== 'question' && !(p.kind === 'english' && ps[i - 1]?.kind === 'question'));
     const full = (x: TurnRow) => shown(x).map((p) => `${p.text}${p.en ? ` (${p.en})` : ''}${p.gloss ? ` [${p.gloss}]` : ''}`).join('\n');
     // What a learner with no Spanish can take from the screen: her phrases masked, the English parts and glosses left
     const masked = (x: TurnRow) => shown(x).map((p) => (p.kind === 'english' ? p.text : `[${language.name}]${p.gloss?.trim() ? ` ${p.gloss}` : ''}`)).join('\n');
@@ -266,7 +277,7 @@ if (arm) {
     const controlIdx = new Set(okRows.map((_, i) => i).filter((i) => i % 2 === 0).slice(0, 20)); // controls on 20 turns
     await pool(okRows.map((x, i) => async () => {
       try {
-        const qs = (JSON.parse(await ask(`A ${language.name}-speaking character said this to a learner (each ${language.name} part has its English in round brackets, glosses in square brackets):\n${full(x)}\n\nWrite 3 short questions about what the character MEANT TO CONVEY: what she is offering, what she is asking, what the thing she names is. Not details only the ${language.name} could carry (exact prices, times), each with the right answer in English.`, { schema: qSchema, max: 1200 })) as { items: { q: string; a: string }[] }).items.slice(0, 3);
+        const qs = (JSON.parse(await ask(`A ${language.name}-speaking character said this to a learner (each ${language.name} part has its English in round brackets, glosses in square brackets):\n${full(x)}\n\nWrite 3 short questions about what the character MEANT TO CONVEY in these statements (not her question): what she says about the thing she names, what she is doing, what she offers. Not details only the ${language.name} could carry (exact prices, times), each with the right answer in English.`, { schema: qSchema, max: 1200 })) as { items: { q: string; a: string }[] }).items.slice(0, 3);
         if (!qs.length) return;
         x.comp = await read(masked(x), qs);
         if (controlIdx.has(i)) { x.compFull = await read(full(x), qs); x.compNone = await read(allMasked(x), qs); }
