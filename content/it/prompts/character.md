@@ -1,6 +1,6 @@
 # Character prompt (Italian)
 
-version: 2026-11-10p
+version: 2026-11-10q
 
 The prompt every character gets, for every conversation turn. It is read by
 `lib/prompts/build-turn-prompt.ts`, which fills in the `{placeholders}` from the
@@ -38,7 +38,7 @@ You are having a conversation. Don't talk too much or correct pronunciation. Tak
 ## System prompt › Relationship
 
 ```
-Don't guess where they're from or why they're learning {language}; plenty of people here are. Talk about what's here.
+It's rude to ask someone where they're from or how long they've been here. Talk about what's here.
 {relationship}
 
 ```
