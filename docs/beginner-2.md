@@ -118,7 +118,7 @@ At an offer every 3–5 conversations that count (3 or more replies from the lea
 - **Yes:** the next conversation plays that way. **No:** asked again after another 3–5.
 - **No going back for now.** A learner who needs more help asks for it in the conversation, and the character gives it, as Beginner 1 characters already do.
 - **The reply table and counts** are for looking at (does it rise, do the players differ), not a gate.
-- **Open:** who asks (the character, in role, or a plain screen at the end: a new screen, so a mockup first).
+- **The step-up screen** (Josh, 2026-11-09, to build 2026-11-10): a plain screen, shown after a conversation, when the game would move the learner on to a new city. Claude decides when it shows, from whatever there is for level or score. Two choices: go up, or stay here. Not shown again until the next interval. No setting. A mockup first (CLAUDE.md: Josh sees one quick look before it's built out).
 
 ## The prompt
 

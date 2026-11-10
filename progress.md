@@ -5,7 +5,7 @@
 **What to do next lives in [docs/06-roadmap.md → Now](docs/06-roadmap.md#now)**. Open decisions: [docs/open-design-questions.md](docs/open-design-questions.md). Parked ideas: [docs/ideas.md](docs/ideas.md). This file is the session log; the dated entries below say what happened and why.
 
 ### Decisions
-- **No newcomer assumption; stored memory left as it is** (Josh, 2026-11-09): prompts and city files no longer assume the learner is new, a visitor or staying a while (0b7cbfa; CLAUDE.md f2b3921). Strict count after the fix: 0 of 16 Beginner 2 visits and 1 of 16 Intermediate openers ask where they're from. The 23 old memory notes with arrival wording ("Newcomer to Matera") stay unchanged: "no changes to memory". The "it's rude to ask" wording tested the same (0/16, 0/16) and wasn't merged.
+- **No newcomer assumption; stored memory left as it is** (Josh, 2026-11-09): prompts and city files no longer assume the learner is new, a visitor or staying a while (0b7cbfa; CLAUDE.md f2b3921). The 23 old memory notes with arrival wording ("Newcomer to Matera") stay unchanged: "no changes to memory". At full size the "don't guess" line still left 20% of conversations asking; "It's rude to ask someone where they're from or how long they've been here." (character.md 10q, 5e5eaa0) brought it to 5%.
 - **Immersion, not full understanding** (2026-10-11): for learners who tolerate not understanding; characters above your level and teaching in character are fine; breaking character isn't. See `docs/01-vision.md` → Level.
 - **Open-ended world** (2026-10-09): Claude generates places, people and scenes. Every day: 3–4 suggestions from the director, plus "cambia aria" and "vai dove vuoi". Hand-written content is limited to city pantries, a few anchors per city (Roma: Rita, Giulia), Magda and level rules. Replaces the scripted 18-day season.
 - **Vocabulary emerges from context** (2026-10-09): No vocabulary lists or tracking in M1. Market vocabulary appears when you visit markets, bar vocabulary at bars. Multiple instances of each place type (many bars, not one scripted bar).
@@ -66,6 +66,16 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 ---
 
 
+
+## 2026-11-09 (night): newcomer question at full size; turn steps recorded; scripts archived (laptop session)
+
+- **Newcomer question:** a judge-based count (`tests/experiments/newcomer-question.mts`) over full visits on the mini, 48 Intermediate (8 turns) and 48 Beginner 2 per country. The merged "don't guess" line: 37 of 189 conversations asked (20%), 34 of 40 questions on turn 3 or later (the 16-visit runs had missed it). "It's rude to ask…" (Josh's social framing): 9 of 189, merged as character.md 10q (5e5eaa0). The first-meeting line as "Someone interested in you." on top: no better, dropped. Not released.
+- **Beginner 2 turn steps** (7ce4181): each turn logs and saves which code fixes changed Claude's parts (`shapeParts`, `steps` on the saved reply); automated runs print how often each fired. In cluster 1 all the English under phrases is added by code (glossAll on every turn).
+- **43 finished experiment scripts archived** to `tests/experiments/archive/` (525c282).
+- **Automated replies steps 5 and 2** done by the mini (029ad63): counts checked by hand; visits with memory: ~0.7 true retellings a later visit, memory picked up openly in 3 of 40, goodbyes drag (31/50 Italy, 19/47 Mexico).
+- CLAUDE.md: "the way a real person in their role would" (f2b3921).
+- **Next (Josh, 2026-11-10): build the step-up screen** (docs/beginner-2.md → Progression): after a conversation, when the game would move on to a new city; Claude decides when from level or score; go up or stay here; not again until the next interval; no setting. Mockup first.
+- **Open:** release (`npm run release`, Josh) for 5e5eaa0 and 7ce4181; `test:language` fails on main on `ios/.../ContentTests.swift:104` (9f0bb85), not fixed; five Mexico place pictures uncommitted on the mini, waiting for Josh.
 
 ## 2026-11-09 (later): the hearing step misheard; eleven films back for a recheck (cloud session)
 
