@@ -30,6 +30,7 @@ Doable, but the outcome depends on a test, a decision or a plan not yet made.
   5. Replies written ahead for every setup, if turns carry likely answers.
   6. Docs: `beginner-as-live.md` retired, CLAUDE.md's Beginner paragraph, `progress.md`.
   Done when: there is one prompt for every level, the level, reply setup and rules filled in per turn, no prompt or code special to one level left that hasn't been argued for, and the docs say so.
+- [ ] **Mexico: more open and cultural places, maybe more cities** (Josh, 2026-11-09: "mexico needs more open and cultural places maybe more cities"). Builds on the decision already in docs/conversation-variety.md (Josh, 2026-11-06: add 2 cultural or open places to each of the 5 Mexican cities, 10 places, Mexico having almost nothing hidden to show), which hasn't been built. Each new place needs a person, a `here` line written the Mexican way and fact-checked, and pictures in the Mexico style for Josh to approve (docs/mexico-version.md → Visual style). Next: Claude lists candidate places per city (and candidate cities) for Josh to choose. Done when: Josh's chosen places and cities are in the game with pictures he approved.
 - [ ] **Josh and Sophia play the path.** Next: play as usual. Done when: two weeks of words spoken per week in `format=records` show whether learners move up.
 
 ### Done 2026-11-08 (night)
