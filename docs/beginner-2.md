@@ -120,6 +120,10 @@ At an offer every 3–5 conversations that count (3 or more replies from the lea
 - **The reply table and counts** are for looking at (does it rise, do the players differ), not a gate.
 - **The step-up screen** (Josh, 2026-11-09, to build 2026-11-10): a plain screen, shown after a conversation, when the game would move the learner on to a new city. Claude decides when it shows, from whatever there is for level or score. Two choices: go up, or stay here. Not shown again until the next interval. No setting. A mockup first (CLAUDE.md: Josh sees one quick look before it's built out).
 
+## Next after the step-up screen: a folksy echo (Josh, 2026-11-09)
+
+Josh: "we should aim to improve the echo. Its sentence for sentence. We should figure out how to make it more characteristic and folksy." Today the English after each phrase is the code copying the phrase's literal `en` (glossAll on every cluster-1 turn, questionEcho on ~6 in 10): a subtitle read aloud. A local who knows some English gives the part that matters in their own words: the key words ("las velas… the candles, for tonight"), an aside ("You like them? My grandmother made them this way"), a check ("the big pink church, you see it?"), an explanation ("It's a sauce, very dark, chocolate and chiles"). Likely route: Claude writes that English in character as part of the reply; code fills English only on a turn that has none. A prompt change, so a test: the same visits with the code echo and with the character's own English, read for whether the learner still follows and whether it sounds like a person.
+
 ## The prompt
 
 **History** (2026-11-09): `beginner.md` grew from 502 to 1,245 words in two weeks over 19 versions, each fixing what the last one showed and none removed; with the shared `dialogue.md` and the stage blocks a Beginner turn gets 1,559–1,730 words before the conversation (the Intermediate character prompt is 534). Of its 31 units (`docs/beginner-prompt-inventory.md`) 9 were ever measured; the stage blocks measured no change. The same characters come alive at Intermediate.
