@@ -1,0 +1,900 @@
+{
+ "checked": 946,
+ "failed": [
+  {
+   "id": "542:idea:1",
+   "pass": false,
+   "doubts": [
+    "La Iglesia de pueblo, con humor"
+   ],
+   "text": "Tlayucan (1962), suggested to someone who liked El crimen del padre Amaro (2002): La Iglesia de pueblo, con humor"
+  },
+  {
+   "id": "1391:why",
+   "pass": false,
+   "doubts": [
+    "Julio y Tenoch, dos chavos de dieciocho"
+   ],
+   "text": "About the film 1391: Dos amigos y una mujer en carretera. Gael García Bernal y Diego Luna. Un narrador cuenta lo que no dicen. Julio y Tenoch, dos chavos de dieciocho, invitan a Luisa, española mayor que ellos, a una playa que no existe. El viaje por carretera los cambia. Alfonso Cuarón mezcla comedia y despedida, y deja ver el país detrás de ellos."
+  },
+  {
+   "id": "1417:idea:5",
+   "pass": false,
+   "doubts": [
+    "El origen del terror mexicano"
+   ],
+   "text": "El vampiro (1957), suggested to someone who liked El laberinto del fauno (2006): El origen del terror mexicano"
+  },
+  {
+   "id": "14430:why",
+   "pass": false,
+   "doubts": [
+    "Luis Estrada hizo la sátira política más famosa de México."
+   ],
+   "text": "About the film La ley de Herodes (1999): Damián Alcázar, alcalde de pueblo. Sátira del PRI con nombre y apellido. Casi no la dejan estrenar. En 1949, Juan Vargas, militante gris del partido, es nombrado presidente municipal de un pueblo miserable. Llega honrado y, con una pistola y la Constitución, aprende rápido a robar. Luis Estrada hizo la sátira política más famosa de México."
+  },
+  {
+   "id": "14430:idea:2",
+   "pass": false,
+   "doubts": [
+    "Un político que cambia de bando según quién llegue"
+   ],
+   "text": "El compadre Mendoza (1934), suggested to someone who liked La ley de Herodes (1999): Un político que cambia de bando según quién llegue"
+  },
+  {
+   "id": "14430:idea:4",
+   "pass": false,
+   "doubts": [
+    "Pueblo, Iglesia y pobreza con humor"
+   ],
+   "text": "Tlayucan (1962), suggested to someone who liked La ley de Herodes (1999): Pueblo, Iglesia y pobreza con humor"
+  },
+  {
+   "id": "14430:idea:5",
+   "pass": false,
+   "doubts": [
+    "Un hombre que quiere mandar en el pueblo"
+   ],
+   "text": "Ánimas Trujano (1961), suggested to someone who liked La ley de Herodes (1999): Un hombre que quiere mandar en el pueblo"
+  },
+  {
+   "id": "14430:idea:9",
+   "pass": false,
+   "doubts": [
+    "El otro gran estreno mexicano de esos meses"
+   ],
+   "text": "Amores perros (2000), suggested to someone who liked La ley de Herodes (1999): El otro gran estreno mexicano de esos meses"
+  },
+  {
+   "id": "16382:idea:3",
+   "pass": false,
+   "doubts": [
+    "Los generales y sus negocios"
+   ],
+   "text": "El compadre Mendoza (1934), suggested to someone who liked Arráncame la vida (2008): Los generales y sus negocios"
+  },
+  {
+   "id": "16761:why",
+   "pass": false,
+   "doubts": [
+    "Toto, un huevo de granja, escapa de la cocina con un tocino y otro huevo, y busca el santuario de los pollos.",
+    "Los hermanos Riva Palacio hicieron la primera gran animación mexicana de taquilla"
+   ],
+   "text": "About the film Una película de huevos (2006): Un huevo que no quiere ser cocinado. Animación mexicana para toda la familia. Albures y juegos de palabras. Toto, un huevo de granja, escapa de la cocina con un tocino y otro huevo, y busca el santuario de los pollos. Los hermanos Riva Palacio hicieron la primera gran animación mexicana de taquilla, con mucho humor de palabras. Tiene secuelas."
+  },
+  {
+   "id": "18183:why",
+   "pass": false,
+   "doubts": [
+    "About the film 18183"
+   ],
+   "text": "About the film 18183: Recetas que transmiten emociones. La Revolución vista desde una cocina. De la novela de Laura Esquivel. Tita, la hija menor, no puede casarse: debe cuidar a su madre hasta que muera. Su amor, Pedro, se casa con su hermana para estar cerca. Ella cocina y todo lo que siente pasa a la comida. Alfonso Arau, realismo mágico en la frontera."
+  },
+  {
+   "id": "18205:idea:9",
+   "pass": false,
+   "doubts": [
+    "Amor y miseria en los noventa"
+   ],
+   "text": "Profundo carmesí (1996), suggested to someone who liked El callejón de los milagros (1995): Amor y miseria en los noventa"
+  },
+  {
+   "id": "20015:why",
+   "pass": false,
+   "doubts": [
+    "Ágata atropella a un niño en el kilómetro 31 de una carretera y queda en coma",
+    "Un éxito enorme en México."
+   ],
+   "text": "About the film Kilómetro 31 (2006): La Llorona en una carretera. Dos gemelas unidas por un accidente. Terror mexicano de taquilla. Ágata atropella a un niño en el kilómetro 31 de una carretera y queda en coma; su gemela Catalina siente su dolor y empieza a buscar qué pasó. Rigoberto Castañeda mezcla la leyenda de La Llorona con efectos de Hollywood. Un éxito enorme en México."
+  },
+  {
+   "id": "20015:idea:1",
+   "pass": false,
+   "doubts": [
+    "El primer gran terror mexicano"
+   ],
+   "text": "El vampiro (1957), suggested to someone who liked Kilómetro 31 (2006): El primer gran terror mexicano"
+  },
+  {
+   "id": "22512:why",
+   "pass": false,
+   "doubts": [
+    "Tomás regresa de un viaje y se queda en casa de un amigo casado",
+    "un antiguo novio aparece en la casa de enfrente"
+   ],
+   "text": "About the film Sexo, pudor y lágrimas (1999): Dos parejas y un amigo que vuelve. Comedia romántica de los noventa. Un taquillazo en México. Tomás regresa de un viaje y se queda en casa de un amigo casado; un antiguo novio aparece en la casa de enfrente. Hombres en un departamento, mujeres en el otro. Antonio Serrano llenó los cines con una comedia sobre parejas de clase media."
+  },
+  {
+   "id": "28968:why",
+   "pass": false,
+   "doubts": [
+    "About the film 28968",
+    "Verónica, huérfana, le dice a Flavia, nueva en la escuela, que es bruja, y la convence de ayudarla a preparar un veneno",
+    "Carlos Enrique Taboada en su mejor forma"
+   ],
+   "text": "About the film 28968: Una niña convence a otra de que es bruja. Terror visto a la altura de los niños. Carlos Enrique Taboada en su mejor forma. Verónica, huérfana, le dice a Flavia, nueva en la escuela, que es bruja, y la convence de ayudarla a preparar un veneno. Los adultos casi no aparecen. Carlos Enrique Taboada hace terror sin monstruos, solo con la imaginación de dos niñas."
+  },
+  {
+   "id": "28968:idea:7",
+   "pass": false,
+   "doubts": [
+    "Dos amigas en un mundo peligroso"
+   ],
+   "text": "Noche de fuego (2021), suggested to someone who liked 28968: Dos amigas en un mundo peligroso"
+  },
+  {
+   "id": "29871:why",
+   "pass": false,
+   "doubts": [
+    "Unas vampiras despiertan después de doscientos años"
+   ],
+   "text": "About the film 29871: El Santo, el luchador de plata. Vampiras contra la lucha libre. Puro cine de culto mexicano. Unas vampiras despiertan después de doscientos años y buscan a una joven para su reina. Solo el Santo, el luchador enmascarado, puede detenerlas, entre combates en el ring y peleas en un castillo. Alfonso Corona Blake dirige el clásico del género."
+  },
+  {
+   "id": "32579:why",
+   "pass": false,
+   "doubts": [
+    "Carlitos vive con su abuela en Puebla"
+   ],
+   "text": "About the film La misma luna (2007): Un niño cruza la frontera solo. Kate del Castillo, madre en Los Ángeles. Llamadas de domingo desde un teléfono público. Carlitos vive con su abuela en Puebla y habla con su madre cada domingo desde un teléfono público. Cuando la abuela muere, cruza la frontera para encontrarla en Los Ángeles. Patricia Riggen hizo un drama de migración pensado para emocionar."
+  },
+  {
+   "id": "34207:why",
+   "pass": false,
+   "doubts": [
+    "About the film 34207: Un domingo sin luz en Tlatelolco.",
+    "Fernando Eimbcke hace mucho con casi nada."
+   ],
+   "text": "About the film 34207: Un domingo sin luz en Tlatelolco. Dos adolescentes y un repartidor de pizza. En blanco y negro, sin prisa. Flama y Moko pasan el domingo solos en un departamento de Tlatelolco jugando videojuegos, hasta que se va la luz. Llegan una vecina que quiere hornear y un repartidor que discute once segundos de retraso. Fernando Eimbcke hace mucho con casi nada."
+  },
+  {
+   "id": "34207:idea:2",
+   "pass": false,
+   "doubts": [
+    "Adolescentes que cambian en un fin de semana"
+   ],
+   "text": "Y tu mamá también (2001), suggested to someone who liked 34207: Adolescentes que cambian en un fin de semana"
+  },
+  {
+   "id": "35124:idea:6",
+   "pass": false,
+   "doubts": [
+    "Fe y pobreza en un pueblo, con guion de Alcoriza"
+   ],
+   "text": "Tlayucan (1962), suggested to someone who liked Nazarín (1959): Fe y pobreza en un pueblo, con guion de Alcoriza"
+  },
+  {
+   "id": "37221:why",
+   "pass": false,
+   "doubts": [
+    "Toto y sus amigos, ya instalados en la granja, deben rescatar a Willy de una bruja que quiere sus huevos para un hechizo."
+   ],
+   "text": "About the film Otra película de huevos y un pollo (2009): Toto vuelve, ahora con un pollito. Una bruja quiere los huevos. Para toda la familia. Toto y sus amigos, ya instalados en la granja, deben rescatar a Willy de una bruja que quiere sus huevos para un hechizo. La secuela de los hermanos Riva Palacio sigue con los albures suaves y la aventura para niños."
+  },
+  {
+   "id": "37221:idea:7",
+   "pass": false,
+   "doubts": [
+    "Aventura y brujas"
+   ],
+   "text": "Santo contra las mujeres vampiro (1962), suggested to someone who liked Otra película de huevos y un pollo (2009): Aventura y brujas"
+  },
+  {
+   "id": "37628:idea:7",
+   "pass": false,
+   "doubts": [
+    "Asesinos de comedia negra"
+   ],
+   "text": "Profundo carmesí (1996), suggested to someone who liked Ensayo de un crimen (1955): Asesinos de comedia negra"
+  },
+  {
+   "id": "41311:why",
+   "pass": false,
+   "doubts": [
+    "Una herencia y una carta misteriosa.",
+    "con el clásico enredo en el banco"
+   ],
+   "text": "About the film 41311: Cantinflas aprende a leer de grande. Una herencia y una carta misteriosa. Comedia con mensaje sobre la escuela. Inocencio no sabe leer y lo esconde como puede, hasta que una carta le cambia la vida y decide aprender. Miguel M. Delgado dirige a Cantinflas en una de sus comedias más tiernas, con el clásico enredo en el banco."
+  },
+  {
+   "id": "41311:idea:2",
+   "pass": false,
+   "doubts": [
+    "el mismo año"
+   ],
+   "text": "Macario (1960), suggested to someone who liked 41311: Un pobre que recibe un don, el mismo año"
+  },
+  {
+   "id": "41311:idea:4",
+   "pass": false,
+   "doubts": [
+    "Otra comedia con algo que enseñar"
+   ],
+   "text": "Una familia de tantas (1949), suggested to someone who liked 41311: Otra comedia con algo que enseñar"
+  },
+  {
+   "id": "41311:idea:6",
+   "pass": false,
+   "doubts": [
+    "Pueblo, pobreza y humor"
+   ],
+   "text": "Tlayucan (1962), suggested to someone who liked 41311: Pueblo, pobreza y humor"
+  },
+  {
+   "id": "43338:why",
+   "pass": false,
+   "doubts": [
+    "llevando pasajeros gratis por los barrios"
+   ],
+   "text": "About the film La ilusión viaja en tranvía (1954): Dos tranviarios se roban un tranvía. Una noche por la capital. Buñuel amable y divertido. Cuando su viejo tranvía va a ser retirado, dos trabajadores lo sacan una última noche por la ciudad, llevando pasajeros gratis por los barrios. Luis Buñuel hace una comedia ligera, con su mirada siempre un poco extraña."
+  },
+  {
+   "id": "43338:idea:8",
+   "pass": false,
+   "doubts": [
+    "El Buñuel más famoso"
+   ],
+   "text": "El ángel exterminador (1962), suggested to someone who liked La ilusión viaja en tranvía (1954): El Buñuel más famoso"
+  },
+  {
+   "id": "43344:why",
+   "pass": false,
+   "doubts": [
+    "Luis Buñuel hace un retrato de los celos que Lacan usaba en clase.",
+    "Buñuel antes de que lo descubrieran."
+   ],
+   "text": "About the film Él (1953): Los celos como enfermedad. Arturo de Córdova, marido aterrador. Buñuel antes de que lo descubrieran. Francisco, católico rico y respetable, se casa con Gloria y desde la luna de miel la vigila, la acusa y la encierra. Luis Buñuel hace un retrato de los celos que Lacan usaba en clase. Empieza como melodrama y termina en pesadilla."
+  },
+  {
+   "id": "43344:idea:0",
+   "pass": false,
+   "doubts": [
+    "El Buñuel mexicano más conocido"
+   ],
+   "text": "Los olvidados (1950), suggested to someone who liked Él (1953): El Buñuel mexicano más conocido"
+  },
+  {
+   "id": "43459:why",
+   "pass": false,
+   "doubts": [
+    "Steinbeck escribió el guion en México."
+   ],
+   "text": "About the film 43459: Steinbeck escribió el guion en México. Pedro Armendáriz, pescador de La Paz. Figueroa filma el mar. Quino, pescador pobre, encuentra una perla enorme y cree que salvará a su hijo. Pronto todos la quieren: el médico, los compradores, los ladrones. Emilio Fernández adapta a John Steinbeck, que colaboró en el guion. Fábula sencilla y dura."
+  },
+  {
+   "id": "43459:idea:4",
+   "pass": false,
+   "doubts": [
+    "Una perla robada para curar a un hijo"
+   ],
+   "text": "Tlayucan (1962), suggested to someone who liked 43459: Una perla robada para curar a un hijo"
+  },
+  {
+   "id": "44804:why",
+   "pass": false,
+   "doubts": [
+    "En el autobús viajan una mujer seductora, animales, un parto y un río crecido."
+   ],
+   "text": "About the film Subida al cielo (1952): Un viaje en autobús por Guerrero. Una boda interrumpida por un testamento. Buñuel entre la comedia y el sueño. Oliverio se casa en un pueblo de la costa, pero tiene que ir a la ciudad para que su madre haga testamento. En el autobús viajan una mujer seductora, animales, un parto y un río crecido. Luis Buñuel recorre la costa con humor."
+  },
+  {
+   "id": "47007:idea:5",
+   "pass": false,
+   "doubts": [
+    "Boleros y sacrificio"
+   ],
+   "text": "Salón México (1949), suggested to someone who liked Profundo carmesí (1996): Boleros y sacrificio"
+  },
+  {
+   "id": "47007:idea:7",
+   "pass": false,
+   "doubts": [
+    "El cine mexicano de los noventa, todavía más violento"
+   ],
+   "text": "Amores perros (2000), suggested to someone who liked Profundo carmesí (1996): El cine mexicano de los noventa, todavía más violento"
+  },
+  {
+   "id": "47582:idea:5",
+   "pass": false,
+   "doubts": [
+    "Otro caso real de los setenta, contado en seco"
+   ],
+   "text": "Canoa (1976), suggested to someone who liked El castillo de la pureza (1973): Otro caso real de los setenta, contado en seco"
+  },
+  {
+   "id": "47916:idea:1",
+   "pass": false,
+   "doubts": [
+    "Un departamento de Tlatelolco, en otro tono"
+   ],
+   "text": "Temporada de patos (2004), suggested to someone who liked Rojo amanecer (1989): Un departamento de Tlatelolco, en otro tono"
+  },
+  {
+   "id": "49971:idea:4",
+   "pass": false,
+   "doubts": [
+    "El cine mexicano de los noventa que cambió todo"
+   ],
+   "text": "Amores perros (2000), suggested to someone who liked 49971: El cine mexicano de los noventa que cambió todo"
+  },
+  {
+   "id": "52629:idea:8",
+   "pass": false,
+   "doubts": [
+    "Ir al norte y volver"
+   ],
+   "text": "La misma luna (2007), suggested to someone who liked 52629: Ir al norte y volver"
+  },
+  {
+   "id": "53510:why",
+   "pass": false,
+   "doubts": [
+    "Ismael Rodríguez hizo el melodrama más visto de su época."
+   ],
+   "text": "About the film Nosotros los pobres (1948): Pedro Infante es Pepe el Toro. La vecindad como un pueblo entero. Se llora y se canta. Pepe el Toro, carpintero, cría a su sobrina Chachita en una vecindad del centro, entre vecinos chismosos, deudas y una madre enferma. Ismael Rodríguez hizo el melodrama más visto de su época. Hay que llegar con pañuelo."
+  },
+  {
+   "id": "53510:idea:7",
+   "pass": false,
+   "doubts": [
+    "Tin Tan en una vecindad, la versión cómica del barrio"
+   ],
+   "text": "El rey del barrio (1950), suggested to someone who liked Nosotros los pobres (1948): Tin Tan en una vecindad, la versión cómica del barrio"
+  },
+  {
+   "id": "69060:idea:5",
+   "pass": false,
+   "doubts": [
+    "Tin Tan habla rápido y canta, como respuesta a Cantinflas"
+   ],
+   "text": "Calabacitas tiernas (1949), suggested to someone who liked Ahí está el detalle (1940): Tin Tan habla rápido y canta, como respuesta a Cantinflas"
+  },
+  {
+   "id": "69060:idea:6",
+   "pass": false,
+   "doubts": [
+    "Humor negro en un juicio"
+   ],
+   "text": "El esqueleto de la señora Morales (1960), suggested to someone who liked Ahí está el detalle (1940): Humor negro en un juicio"
+  },
+  {
+   "id": "71652:why",
+   "pass": false,
+   "doubts": [
+    "Tiene secuela.",
+    "Pedro, sin trabajo, entra a la policía de tránsito gracias a Luis, y desde entonces compiten en todo: motos, trucos y mujeres."
+   ],
+   "text": "About the film A toda máquina (1951): Pedro Infante y Luis Aguilar, motociclistas. Amigos rivales en Tránsito. Acrobacias en moto por la ciudad. Pedro, sin trabajo, entra a la policía de tránsito gracias a Luis, y desde entonces compiten en todo: motos, trucos y mujeres. Ismael Rodríguez hace una comedia de cuates que sigue funcionando. Tiene secuela."
+  },
+  {
+   "id": "71652:idea:1",
+   "pass": false,
+   "doubts": [
+    "Infante e Ismael Rodríguez, primos que compiten"
+   ],
+   "text": "Los tres García (1947), suggested to someone who liked A toda máquina (1951): Infante e Ismael Rodríguez, primos que compiten"
+  },
+  {
+   "id": "71652:idea:4",
+   "pass": false,
+   "doubts": [
+    "Amigos que compiten en el ring"
+   ],
+   "text": "Pepe el Toro (1953), suggested to someone who liked A toda máquina (1951): Amigos que compiten en el ring"
+  },
+  {
+   "id": "77360:why",
+   "pass": false,
+   "doubts": [
+    "Primer personaje gay complejo del cine mexicano.",
+    "con un cariño y una tensión que entonces no tenían precedente en México"
+   ],
+   "text": "About the film El lugar sin límites (1978): Roberto Cobo, La Manuela, inolvidable. Un burdel en un pueblo de viñedos. Primer personaje gay complejo del cine mexicano. La Manuela, travesti dueña a medias de un burdel con su hija, teme el regreso de Pancho, un camionero violento. Arturo Ripstein adapta a José Donoso con un cariño y una tensión que entonces no tenían precedente en México."
+  },
+  {
+   "id": "77635:why",
+   "pass": false,
+   "doubts": [
+    "About the film 77635"
+   ],
+   "text": "About the film 77635: Una concursante atrapada por un cártel. Stephanie Sigman, sin salida. Tijuana y la guerra contra el narco. Laura quiere ser Miss Baja California, pero una noche en un antro cae en manos de un cártel que la usa para todo: llevar dinero, cruzar la frontera, ganar el concurso. Gerardo Naranjo filma su miedo en planos largos."
+  },
+  {
+   "id": "101287:why",
+   "pass": false,
+   "doubts": [
+    "Tres primos García se pelean por la prima gringa que llega al pueblo"
+   ],
+   "text": "About the film Los tres García (1947): Pedro Infante y dos primos peleoneros. La abuela Sara García manda. Comedia ranchera de domingo. Tres primos García se pelean por la prima gringa que llega al pueblo, mientras la abuela los controla a bastonazos. Ismael Rodríguez junta canciones, golpes y cariño. Sara García quedó para siempre como la abuela de México."
+  },
+  {
+   "id": "111853:why",
+   "pass": false,
+   "doubts": [
+    "Ismael Rodríguez trajo de Japón al actor de Kurosawa, doblado al español"
+   ],
+   "text": "About the film Ánimas Trujano (1961): Toshirō Mifune es un indígena oaxaqueño. La mayordomía como sueño de grandeza. Nominada al Óscar. Ánimas Trujano, borracho y flojo, quiere ser mayordomo de la fiesta del santo en su pueblo de Oaxaca, aunque no tiene con qué. Ismael Rodríguez trajo de Japón al actor de Kurosawa, doblado al español. Fiestas, mercados y mucha terquedad."
+  },
+  {
+   "id": "111853:idea:2",
+   "pass": false,
+   "doubts": [
+    "Ismael Rodríguez en Oaxaca otra vez"
+   ],
+   "text": "Tizoc (1957), suggested to someone who liked Ánimas Trujano (1961): Ismael Rodríguez en Oaxaca otra vez"
+  },
+  {
+   "id": "111853:idea:4",
+   "pass": false,
+   "doubts": [
+    "Fiesta, gallos y orgullo de pueblo"
+   ],
+   "text": "Allá en el Rancho Grande (1936), suggested to someone who liked Ánimas Trujano (1961): Fiesta, gallos y orgullo de pueblo"
+  },
+  {
+   "id": "114090:idea:9",
+   "pass": false,
+   "doubts": [
+    "Boleros y amor en otro tono"
+   ],
+   "text": "Profundo carmesí (1996), suggested to someone who liked Danzón (1991): Boleros y amor en otro tono"
+  },
+  {
+   "id": "114626:why",
+   "pass": false,
+   "doubts": [
+    "Fernando de Fuentes, el primer gran director"
+   ],
+   "text": "About the film El compadre Mendoza (1934): Un hacendado que sirve a dos bandos. Zapatistas y federales en la misma mesa. Fernando de Fuentes, el primer gran director. Rosalío Mendoza recibe en su hacienda a zapatistas y a federales, cambiando de retrato según quién llega. Su amistad con un general zapatista lo pone a prueba. Fernando de Fuentes hace una película breve y amarga sobre la Revolución."
+  },
+  {
+   "id": "114626:idea:3",
+   "pass": false,
+   "doubts": [
+    "Un político que cambia de lado según convenga"
+   ],
+   "text": "La ley de Herodes (1999), suggested to someone who liked El compadre Mendoza (1934): Un político que cambia de lado según convenga"
+  },
+  {
+   "id": "114626:idea:9",
+   "pass": false,
+   "doubts": [
+    "Políticos que se acomodan, hoy"
+   ],
+   "text": "La dictadura perfecta (2014), suggested to someone who liked El compadre Mendoza (1934): Políticos que se acomodan, hoy"
+  },
+  {
+   "id": "114896:why",
+   "pass": false,
+   "doubts": [
+    "Alberto Gout hizo el melodrama más exagerado y divertido del cine de cabareteras"
+   ],
+   "text": "About the film 114896: Ninón Sevilla baila en el cabaret. Melodrama de cabaretera desatado. Agustín Lara al piano. Elena pierde a su familia y termina, engañada, en un cabaret de Ciudad Juárez. Bailando se vuelve estrella y planea su venganza. Alberto Gout hizo el melodrama más exagerado y divertido del cine de cabareteras, con canciones de Agustín Lara."
+  },
+  {
+   "id": "114896:idea:2",
+   "pass": false,
+   "doubts": [
+    "El primer melodrama de mujeres de la noche"
+   ],
+   "text": "La mujer del puerto (1934), suggested to someone who liked 114896: El primer melodrama de mujeres de la noche"
+  },
+  {
+   "id": "114896:idea:3",
+   "pass": false,
+   "doubts": [
+    "Bolero, amor y crimen"
+   ],
+   "text": "Profundo carmesí (1996), suggested to someone who liked 114896: Bolero, amor y crimen"
+  },
+  {
+   "id": "114896:idea:6",
+   "pass": false,
+   "doubts": [
+    "Cabarets de la capital en una noche"
+   ],
+   "text": "Los Caifanes (1967), suggested to someone who liked 114896: Cabarets de la capital en una noche"
+  },
+  {
+   "id": "115296:why",
+   "pass": false,
+   "doubts": [
+    "Basado en la vida de Rodolfo Casanova."
+   ],
+   "text": "About the film Campeón sin corona (1946): David Silva, boxeador de barrio. Basado en la vida de Rodolfo Casanova. El miedo de no ser suficiente. Roberto Kid Terranova, nevero de la Lagunilla, se vuelve boxeador y llega cerca del título, pero frente al rival gringo se siente menos. Alejandro Galindo hace un retrato del barrio y de un complejo muy mexicano, con humor y tristeza."
+  },
+  {
+   "id": "115296:idea:3",
+   "pass": false,
+   "doubts": [
+    "La Lagunilla y sus pícaros"
+   ],
+   "text": "El rey del barrio (1950), suggested to someone who liked Campeón sin corona (1946): La Lagunilla y sus pícaros"
+  },
+  {
+   "id": "117457:why",
+   "pass": false,
+   "doubts": [
+    "El salón de baile más famoso"
+   ],
+   "text": "About the film Salón México (1949): Una fichera que baila danzón. El salón de baile más famoso. Cine de cabaret de Emilio Fernández. Mercedes baila en el Salón México para pagar el colegio de su hermana menor, que no sabe nada. Un policía la protege; su pareja de baile la explota. Melodrama de cabaret con la música y las noches de la capital."
+  },
+  {
+   "id": "117457:idea:8",
+   "pass": false,
+   "doubts": [
+    "El primer gran melodrama de mujeres de la noche"
+   ],
+   "text": "La mujer del puerto (1934), suggested to someone who liked Salón México (1949): El primer gran melodrama de mujeres de la noche"
+  },
+  {
+   "id": "118003:why",
+   "pass": false,
+   "doubts": [
+    "Su hermano Marcelo como compañero de tantas."
+   ],
+   "text": "About the film El rey del barrio (1950): Tin Tan, pachuco y estafador de buen corazón. Su hermano Marcelo como compañero de tantas. Canciones, baile y caló de la frontera. Tin Tan vive en una vecindad, pasa por ferrocarrilero y en realidad dirige una banda de estafadores que roba a ricas. Con lo que saca ayuda a los vecinos. Gilberto Martínez Solares dirige al cómico en su papel más querido."
+  },
+  {
+   "id": "118003:idea:0",
+   "pass": false,
+   "doubts": [
+    "Tin Tan un año antes, a cargo de un teatro"
+   ],
+   "text": "Calabacitas tiernas (1949), suggested to someone who liked El rey del barrio (1950): Tin Tan un año antes, a cargo de un teatro"
+  },
+  {
+   "id": "118003:idea:4",
+   "pass": false,
+   "doubts": [
+    "Un falso vagabundo en una casa rica"
+   ],
+   "text": "Escuela de vagabundos (1955), suggested to someone who liked El rey del barrio (1950): Un falso vagabundo en una casa rica"
+  },
+  {
+   "id": "118003:idea:7",
+   "pass": false,
+   "doubts": [
+    "Pachucos y cabaret, en melodrama"
+   ],
+   "text": "Víctimas del pecado (1951), suggested to someone who liked El rey del barrio (1950): Pachucos y cabaret, en melodrama"
+  },
+  {
+   "id": "118009:why",
+   "pass": false,
+   "doubts": [
+    "Rumberas, pachucos y la noche."
+   ],
+   "text": "About the film Víctimas del pecado (1951): Ninón Sevilla salva a un bebé. Rumberas, pachucos y la noche. Emilio Fernández en el cabaret. Violeta, bailarina de cabaret, rescata de un bote de basura al hijo de una compañera y lo cría ella sola, enfrentando al padrote que lo abandonó. Emilio Fernández filma con Gabriel Figueroa uno de los melodramas de cabaret más famosos."
+  },
+  {
+   "id": "118009:idea:2",
+   "pass": false,
+   "doubts": [
+    "El primer gran melodrama de la noche"
+   ],
+   "text": "La mujer del puerto (1934), suggested to someone who liked Víctimas del pecado (1951): El primer gran melodrama de la noche"
+  },
+  {
+   "id": "118010:why",
+   "pass": false,
+   "doubts": [
+    "pesca tiburón en un pueblo de Tabasco",
+    "Aurelio deja a su familia en la capital",
+    "donde tiene otra mujer y es libre",
+    "Cuando lo llaman de vuelta, duda",
+    "Luis Alcoriza filma el trabajo y el mar casi como un documental"
+   ],
+   "text": "About the film Tiburoneros (1963): Un pescador de tiburones en el Golfo. Julio Aldama entre dos vidas. Luis Alcoriza, sin melodrama. Aurelio deja a su familia en la capital y pesca tiburón en un pueblo de Tabasco, donde tiene otra mujer y es libre. Cuando lo llaman de vuelta, duda. Luis Alcoriza filma el trabajo y el mar casi como un documental."
+  },
+  {
+   "id": "118010:idea:4",
+   "pass": false,
+   "doubts": [
+    "Un pueblo de costa y el tiempo lento"
+   ],
+   "text": "Lake Tahoe (2008), suggested to someone who liked Tiburoneros (1963): Un pueblo de costa y el tiempo lento"
+  },
+  {
+   "id": "119793:why",
+   "pass": false,
+   "doubts": [
+    "llega a un pueblo del norte",
+    "un cacique que tiene a todos con miedo y sin agua",
+    "Rosaura, maestra enferma, llega a reabrir la escuela"
+   ],
+   "text": "About the film Río Escondido (1948): María Félix, maestra rural valiente. Un cacique que manda en todo. Los cielos de Gabriel Figueroa. Rosaura, maestra enferma, llega a un pueblo del norte a reabrir la escuela, y se enfrenta al cacique que tiene a todos con miedo y sin agua. Emilio Fernández hace un sermón patriótico, pero María Félix y las nubes de Figueroa lo sostienen."
+  },
+  {
+   "id": "119793:idea:0",
+   "pass": false,
+   "doubts": [
+    "en una comedia de amor"
+   ],
+   "text": "Enamorada (1946), suggested to someone who liked Río Escondido (1948): María Félix y Emilio Fernández antes, en una comedia de amor"
+  },
+  {
+   "id": "119793:idea:3",
+   "pass": false,
+   "doubts": [
+    "Otro pueblo sin agua y un poder que roba"
+   ],
+   "text": "La ley de Herodes (1999), suggested to someone who liked Río Escondido (1948): Otro pueblo sin agua y un poder que roba, ahora en sátira"
+  },
+  {
+   "id": "119793:idea:7",
+   "pass": false,
+   "doubts": [
+    "María Félix en el campo de Oaxaca"
+   ],
+   "text": "Tizoc (1957), suggested to someone who liked Río Escondido (1948): María Félix en el campo de Oaxaca"
+  },
+  {
+   "id": "120300:why",
+   "pass": false,
+   "doubts": [
+    "Tin Tan, por un enredo, termina a cargo de un teatro de revista con cuatro estrellas extranjeras y sin dinero para pagarles",
+    "Cuatro vedettes y muchos acreedores",
+    "Gilberto Martínez Solares filma su humor rápido y su música en su mejor momento"
+   ],
+   "text": "About the film Calabacitas tiernas (1949): Tin Tan inventa un espectáculo sin un peso. Cuatro vedettes y muchos acreedores. Canta, baila e improvisa. Tin Tan, por un enredo, termina a cargo de un teatro de revista con cuatro estrellas extranjeras y sin dinero para pagarles. Inventa todo sobre la marcha. Gilberto Martínez Solares filma su humor rápido y su música en su mejor momento."
+  },
+  {
+   "id": "120301:why",
+   "pass": false,
+   "doubts": [
+    "Pedro y Jorge, amigos de toda la vida, se pelean cuando Pedro se casa con la novia de Jorge",
+    "Hay un secreto detrás",
+    "Un duelo de coplas famoso"
+   ],
+   "text": "About the film 120301: Pedro Infante contra Jorge Negrete. Los dos ídolos cantan juntos. Un duelo de coplas famoso. Pedro y Jorge, amigos de toda la vida, se pelean cuando Pedro se casa con la novia de Jorge. Hay un secreto detrás. Ismael Rodríguez reúne a los dos charros cantores más grandes en su única película juntos."
+  },
+  {
+   "id": "120301:idea:3",
+   "pass": false,
+   "doubts": [
+    "Pedro Infante cantando en una casa de locos"
+   ],
+   "text": "Escuela de vagabundos (1955), suggested to someone who liked 120301: Pedro Infante cantando en una casa de locos"
+  },
+  {
+   "id": "120303:why",
+   "pass": false,
+   "doubts": [
+    "Fernando Méndez filmó el primer gran éxito de terror mexicano, antes que la Hammer."
+   ],
+   "text": "About the film 120303: Germán Robles, el conde Lavud. Una hacienda con niebla y telarañas. El terror mexicano empieza aquí. Marta llega a la hacienda de sus tías y descubre que un extraño vecino, el señor Duval, es un vampiro que quiere quedarse con la casa. Fernando Méndez filmó el primer gran éxito de terror mexicano, antes que la Hammer."
+  },
+  {
+   "id": "122019:idea:1",
+   "pass": false,
+   "doubts": [
+    "Un pobre, un hijo enfermo y la fe del pueblo"
+   ],
+   "text": "Tlayucan (1962), suggested to someone who liked Macario (1960): Un pobre, un hijo enfermo y la fe del pueblo"
+  },
+  {
+   "id": "123793:why",
+   "pass": false,
+   "doubts": [
+    "Un científico roba el cuerpo del conde Lavud para estudiarlo y alguien le saca la estaca.",
+    "El vampiro despierta y vuelve a buscar a Marta en la ciudad.",
+    "Fernando Méndez repite la fórmula con un museo de cera y mucha sombra."
+   ],
+   "text": "About the film El ataúd del vampiro (1958): El conde Lavud vuelve a la vida. Germán Robles otra vez. La secuela de El vampiro. Un científico roba el cuerpo del conde Lavud para estudiarlo y alguien le saca la estaca. El vampiro despierta y vuelve a buscar a Marta en la ciudad. Fernando Méndez repite la fórmula con un museo de cera y mucha sombra."
+  },
+  {
+   "id": "126315:idea:9",
+   "pass": false,
+   "doubts": [
+    "Un padre que no ve"
+   ],
+   "text": "El castillo de la pureza (1973), suggested to someone who liked 126315: Un padre que no ve"
+  },
+  {
+   "id": "154629:idea:0",
+   "pass": false,
+   "doubts": [
+    "María Félix, orgullosa y temida"
+   ],
+   "text": "Enamorada (1946), suggested to someone who liked Doña Bárbara (1943): María Félix, orgullosa y temida"
+  },
+  {
+   "id": "169428:why",
+   "pass": false,
+   "doubts": [
+    "Juan Ibáñez abrió el cine mexicano joven de los sesenta."
+   ],
+   "text": "About the film Los Caifanes (1967): Una noche por la Ciudad de México. Una pareja rica con cuatro pícaros. Diálogos de Carlos Fuentes. Una pareja de clase alta busca refugio en un coche de unos caifanes, cuatro pícaros de barrio, y pasan con ellos la noche por la ciudad: cabarets, funerarias, la estatua del Caballito. Juan Ibáñez abrió el cine mexicano joven de los sesenta."
+  },
+  {
+   "id": "169428:idea:0",
+   "pass": false,
+   "doubts": [
+    "Otra noche y otro recorrido por la ciudad"
+   ],
+   "text": "Güeros (2014), suggested to someone who liked Los Caifanes (1967): Otra noche y otro recorrido por la ciudad"
+  },
+  {
+   "id": "180147:why",
+   "pass": false,
+   "doubts": [
+    "La comedia más vista de su año.",
+    "Tuvo versión en otros países."
+   ],
+   "text": "About the film Nosotros los Nobles (2013): Tres hijos ricos aprenden a trabajar. Gonzalo Vega, padre que finge la ruina. La comedia más vista de su año. Un millonario, harto de sus hijos consentidos, finge que el gobierno le quitó todo y los obliga a trabajar: de chofer, de mesera, de cajero de banco. Gary Alazraki hace una comedia ligera sobre clases sociales. Tuvo versión en otros países."
+  },
+  {
+   "id": "180147:idea:1",
+   "pass": false,
+   "doubts": [
+    "Una familia rica muy loca, en el cine de oro"
+   ],
+   "text": "Escuela de vagabundos (1955), suggested to someone who liked Nosotros los Nobles (2013): Una familia rica muy loca, en el cine de oro"
+  },
+  {
+   "id": "194163:why",
+   "pass": false,
+   "doubts": [
+    "Eufemio, campesino pobre, roba una perla del manto de la Virgen para curar a su hijo enfermo. El pueblo entero se pone a buscar al ladrón."
+   ],
+   "text": "About the film Tlayucan (1962): Una perla robada de la Virgen. Pueblo chico, chismes grandes. Comedia de Luis Alcoriza. Eufemio, campesino pobre, roba una perla del manto de la Virgen para curar a su hijo enfermo. El pueblo entero se pone a buscar al ladrón. Luis Alcoriza, guionista de Buñuel, mira con humor la religión y la pobreza. Nominada al Óscar."
+  },
+  {
+   "id": "194163:idea:3",
+   "pass": false,
+   "doubts": [
+    "Alcoriza escribía para Buñuel, y se nota (Nazarín no tiene guion confirmado de Alcoriza)"
+   ],
+   "text": "Nazarín (1959), suggested to someone who liked Tlayucan (1962): Alcoriza escribía para Buñuel, y se nota"
+  },
+  {
+   "id": "194163:idea:5",
+   "pass": false,
+   "doubts": [
+    "con pescadores en Tampico"
+   ],
+   "text": "Tiburoneros (1963), suggested to someone who liked Tlayucan (1962): Otra de Luis Alcoriza, con pescadores en Tampico"
+  },
+  {
+   "id": "240633:why",
+   "pass": false,
+   "doubts": [
+    "José Francisco, caporal de una hacienda, quiere casarse con Cruz, pero el patrón tiene otros planes."
+   ],
+   "text": "About the film Allá en el Rancho Grande (1936): La comedia ranchera empieza aquí. Tito Guízar canta en la hacienda. Primer premio internacional del cine mexicano. José Francisco, caporal de una hacienda, quiere casarse con Cruz, pero el patrón tiene otros planes. Fernando de Fuentes inventó con esta película la comedia ranchera: charros, canciones y gallos. Ganó un premio en Venecia y abrió los mercados de América Latina."
+  },
+  {
+   "id": "240633:idea:4",
+   "pass": false,
+   "doubts": [
+    "Una hacienda y un amor imposible en tiempos revolucionarios"
+   ],
+   "text": "Enamorada (1946), suggested to someone who liked Allá en el Rancho Grande (1936): Una hacienda y un amor imposible en tiempos revolucionarios"
+  },
+  {
+   "id": "240633:idea:5",
+   "pass": false,
+   "doubts": [
+    "Amor entre un indígena y la hija del patrón"
+   ],
+   "text": "Tizoc (1957), suggested to someone who liked Allá en el Rancho Grande (1936): Amor entre un indígena y la hija del patrón"
+  },
+  {
+   "id": "264525:why",
+   "pass": false,
+   "doubts": [
+    "Dos periodistas inventan una historia para distraer al país."
+   ],
+   "text": "About the film La dictadura perfecta (2014): La televisión fabrica a un gobernador. Damián Alcázar otra vez con Estrada. Sátira de medios y política. Un gobernador corrupto, grabado en un escándalo, paga a una televisora para que limpie su imagen. Dos periodistas inventan una historia para distraer al país. Luis Estrada se ríe de la alianza entre televisión y poder."
+  },
+  {
+   "id": "264525:idea:2",
+   "pass": false,
+   "doubts": [
+    "Un político que se adapta a todos"
+   ],
+   "text": "El compadre Mendoza (1934), suggested to someone who liked La dictadura perfecta (2014): Un político que se adapta a todos"
+  },
+  {
+   "id": "426426:idea:4",
+   "pass": false,
+   "doubts": [
+    "Una familia de la capital con un padre ausente de otra forma"
+   ],
+   "text": "Una familia de tantas (1949), suggested to someone who liked Roma (2018): Una familia de la capital con un padre ausente de otra forma"
+  },
+  {
+   "id": "426426:idea:9",
+   "pass": false,
+   "doubts": [
+    "La Ciudad de México de los setenta y ochenta"
+   ],
+   "text": "Museo (2018), suggested to someone who liked Roma (2018): La Ciudad de México de los setenta y ochenta"
+  },
+  {
+   "id": "477654:idea:4",
+   "pass": false,
+   "doubts": [
+    "Dos amigos y malas decisiones"
+   ],
+   "text": "Rudo y Cursi (2008), suggested to someone who liked Museo (2018): Dos amigos y malas decisiones"
+  },
+  {
+   "id": "477654:idea:5",
+   "pass": false,
+   "doubts": [
+    "Una historia real que nadie creería"
+   ],
+   "text": "La dictadura perfecta (2014), suggested to someone who liked Museo (2018): Una historia real que nadie creería"
+  },
+  {
+   "id": "541339:why",
+   "pass": false,
+   "doubts": [
+    "de la novela de Guadalupe Loaeza"
+   ],
+   "text": "About the film Las niñas bien (2018): Una señora de Las Lomas en 1982. Ilse Salas, perfecta y desesperada. La crisis de la deuda en una mesa. Sofía tiene la casa, el club, el chofer y las amigas que la envidian. Llega la crisis de 1982, el peso cae y su marido deja de pagar, pero ella sigue fingiendo. Alejandra Márquez Abella hace una sátira fina de la clase alta, de la novela de Guadalupe Loaeza."
+  },
+  {
+   "id": "653658:idea:9",
+   "pass": false,
+   "doubts": [
+    "Una madre sencilla en el centro"
+   ],
+   "text": "Roma (2018), suggested to someone who liked Sin señas particulares (2020): Una madre sencilla en el centro"
+  },
+  {
+   "id": "772515:idea:0",
+   "pass": false,
+   "doubts": [
+    "Terror mexicano de hoy con leyendas"
+   ],
+   "text": "Vuelven (2017), suggested to someone who liked Huesera (2022): Terror mexicano de hoy con leyendas"
+  },
+  {
+   "id": "772515:idea:6",
+   "pass": false,
+   "doubts": [
+    "Donde empezó el terror mexicano"
+   ],
+   "text": "El vampiro (1957), suggested to someone who liked Huesera (2022): Donde empezó el terror mexicano"
+  },
+  {
+   "id": "1069387:why",
+   "pass": false,
+   "doubts": [
+    "adapta la novela más famosa de México"
+   ],
+   "text": "About the film 1069387: Comala, un pueblo de muertos. La novela de Juan Rulfo en imágenes. Debut de Rodrigo Prieto, fotógrafo de Scorsese. Juan Preciado llega a Comala buscando a su padre, Pedro Páramo, y encuentra un pueblo lleno de voces y murmullos de muertos. Rodrigo Prieto, fotógrafo de Scorsese e Iñárritu, dirige por primera vez y adapta la novela más famosa de México."
+  },
+  {
+   "id": "1069387:idea:8",
+   "pass": false,
+   "doubts": [
+    "Otra película de un gran fotógrafo mexicano"
+   ],
+   "text": "Roma (2018), suggested to someone who liked 1069387: Otra película de un gran fotógrafo mexicano"
+  }
+ ]
+}
