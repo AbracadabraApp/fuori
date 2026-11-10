@@ -170,7 +170,8 @@ export function buildContent(): Content {
     /** The Learn page's cultural lessons, outside the lesson sets (lib/culture.ts; app builds from 2026-11-04) */
     culture: cultureSet().map(({ id, chip, topic }) => ({ id, chip, topic })),
     /** The country has a cinema shuffler (GET /v1/cinema; the film reel by Learn, Josh, 2026-11-06; app builds from 2026-11-06) */
-    cinema: cinemaLibrary() !== null,
+    // Only once a film's poster is on R2: Mexico's library (2026-11-09) arrives before its posters, which the laptop uploads
+    cinema: (cinemaLibrary()?.films ?? []).some((f) => image(`posters/${f.tmdbId}`) !== null),
     card: { ...language.card, image: image(`country/${country}`) },
     language: {
       code: language.code,

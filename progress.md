@@ -66,6 +66,20 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 
 
 
+## 2026-11-09 (evening): Mexico's cinema, built like Italy's (cloud session)
+
+Josh: "build a mexican film area in the nav, shufflers, movie pages, viewer page -- feature to feature like Italy - you could start with 50 mexican films and expand through more ideas"; "copy the italy code as much as possible"; "you can use the mini for any memory intensive work".
+
+- **Done:** `content/es-mx/cinema-library.json` (86 films: 68 chosen, then 22 that their More Ideas named, less those TMDB or YouTube had nothing for; 72 with a full-length upload; eight shelves: Películas completas, En la Ciudad de México, Época de Oro, Para reír, Pueblos y revolución, Para temblar, Grandes directores, Historias de hoy) and `cinema-pages.json` (a WhyWatch with English and ten More Ideas for every film, written in Mexican Spanish in the cloud session; 9.7 ideas per page link to a film in the library). The server, the reel, the shuffler, the film page and the trailer screen needed no change: they read the active country. Scripts: `cinema-check-films.mjs` takes each language's search words from a table (Spanish added), records poster, adults-only flag and videos, and takes `Title (Year) #tmdbId` when TMDB's search finds the wrong film ("Él" found El Circo); `cinema-posters.mjs` works for a country with no city cinema; new `cinema-apply-language.mjs` applies heard languages to a library. `/v1/content`'s `cinema` is now true only once a library film has its poster on R2, so Mexico's reel stays hidden until the mini uploads them (Italy unchanged: checked, true, 8 shelves).
+- **Not done yet: TMDB labels Mexican trailers badly.** Only 16 of the 86 have a video TMDB calls Spanish; the rest wait on hearing the audio, which YouTube refuses to the cloud. Until that runs, the library holds every film with any video, against Italy's rule (in only with a video in the learned language); `cinema-apply-language.mjs` enforces the rule after the check.
+- **For the mini, in order, before any release** (from `~/fuori`, after `git pull`):
+  1. `COUNTRY=es-mx node --env-file=.env.local scripts/cinema-video-language.mjs` (needs yt-dlp for trailers without captions; about 150 videos).
+  2. `COUNTRY=es-mx node scripts/cinema-apply-language.mjs` (relabels, Spanish first, drops films with nothing heard in Spanish to `excluded`).
+  3. `COUNTRY=es-mx node --env-file=.env.local scripts/cinema-posters.mjs && npm run images:upload` (posters for the films left), then `scripts/image-masters.mjs --untrack` as usual.
+  4. `COUNTRY=es-mx npx tsx --env-file=.env.local scripts/cinema-fact-check.mts` (the fact judge over the pages; the cloud session corrects at Josh's "medium to low bar", as for Italy).
+  5. Commit and push the four outputs (`cinema-video-language.json`, the library, `images.json`, `cinema-pages.facts.json`).
+- **Open:** María Candelaria, Tizoc, Reed: México insurgente and Lake Tahoe have no trailer or full upload anywhere, so they're out; ideas naming them don't link. Rojo amanecer, La misma luna and Veneno para las hadas sit under other years on TMDB; their pages say 1989, 2007 and 1984. Nuevo orden's WhyWatch is a NO, as MovieGenius does for some films.
+
 ## 2026-11-09: Beginner 2 plan written; heard-note fix reverted (laptop sessions)
 
 - **The plan now: [docs/beginner-2.md](docs/beginner-2.md)**, from the earlier session's handoff (`~/.claude/plans/graceful-stirring-rossum.md`, missed at first by the next session) and today's decisions: Beginner 2 built beside Beginner 1 (picked in the hidden Version panel), communication with interesting locals who know enough English to help explain (not friends, not bilingual: Josh), their moves as the source of varied turns, the reply types (bubbles, or her glossed words with no bubbles; an invited English answer stands and she turns it later), the reply table and code-counted content as the measure, the six Beginner 1 rules it breaks. `docs/beginner-plan.md` (the turn-shape spec) is kept as the record. Nothing built.

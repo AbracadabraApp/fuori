@@ -108,9 +108,10 @@ async function embeddable(id) {
 }
 
 async function check(line) {
-  const m = line.match(/^(.*?)\s*\((\d{4})\)\s*$/);
-  const [title, year] = m ? [m[1], m[2]] : [line, ''];
-  const found = await tmdb('/search/movie', { query: title, ...(year && { year }), language: `${LANG}-${REGION}` });
+  // "Title (Year)", or "Title (Year) #tmdbId" when TMDB's search finds the wrong film first ("Él" found El Circo)
+  const m = line.match(/^(.*?)\s*\((\d{4})\)\s*(?:#(\d+))?\s*$/);
+  const [title, year, id] = m ? [m[1], m[2], m[3]] : [line, '', undefined];
+  const found = id ? { results: [{ id: Number(id) }] } : await tmdb('/search/movie', { query: title, ...(year && { year }), language: `${LANG}-${REGION}` });
   const film = found.results?.[0];
   if (!film) return { asked: line, found: false };
   const [details, local, all] = await Promise.all([
@@ -133,7 +134,7 @@ async function check(line) {
   let full = null;
   for (const v of candidates.slice(0, 4)) if (await embeddable(v.id)) { full = v; break; }
   return {
-    asked: line,
+    asked: line.replace(/\s*#\d+\s*$/, ''),
     tmdbId: film.id,
     title: details.title,
     year: (details.release_date || '').slice(0, 4),

@@ -1,0 +1,1750 @@
+{
+ "about": "The cinema shuffler for Mexico (Josh, 2026-11-09: \"a mexican film area… feature to feature like Italy… start with 50 mexican films and expand through more ideas\"; \"copy the italy code as much as possible\"). Built like Italy's: Mexican films chosen in the cloud session, checked with scripts/cinema-check-films.mjs (LANG_CODE=es REGION=MX: TMDB's Mexican-Spanish title, poster, videos with Spanish first; fullFilm is a full-length YouTube upload found by searching YouTube, checked by title and running time, playable in other apps). Adults-only films are left out. Shelf titles are shown as written. The rule (Josh, 2026-11-06, agreed for Italy): a film is in only with at least one video in the learned language, its trailer or the full film. TMDB's language labels are unreliable and YouTube won't say from the cloud, so until the laptop runs scripts/cinema-video-language.mjs and scripts/cinema-apply-language.mjs (COUNTRY=es-mx), films whose only Spanish may be unheard are included pending that check.",
+ "fullFilmName": "Película completa",
+ "shelves": [
+  {
+   "id": "full",
+   "title": "Películas completas",
+   "films": [
+    800,
+    53510,
+    30327,
+    30324,
+    240633,
+    115301,
+    119793,
+    117457,
+    69060,
+    122019,
+    111853,
+    194163,
+    35124,
+    29264,
+    101287,
+    120301,
+    71655,
+    114896,
+    115107,
+    43459,
+    106266,
+    114626,
+    118007,
+    120303,
+    68627,
+    169428,
+    47582,
+    116982,
+    77360,
+    114090,
+    49971,
+    18183,
+    11655,
+    18205,
+    47007,
+    14430,
+    542,
+    34207,
+    1417,
+    20015,
+    16761,
+    16382,
+    4786,
+    52629,
+    211954,
+    264525,
+    261101,
+    349067,
+    426426,
+    477654,
+    653658,
+    575446,
+    670981,
+    118003,
+    37628,
+    120300,
+    115296,
+    154629,
+    186976,
+    118009,
+    115294,
+    118010,
+    43338,
+    44804,
+    123793,
+    29871,
+    182207,
+    37221,
+    126315,
+    47916,
+    43344,
+    32579
+   ]
+  },
+  {
+   "id": "cdmx",
+   "title": "En la Ciudad de México",
+   "films": [
+    800,
+    53510,
+    30327,
+    30324,
+    117457,
+    69060,
+    71652,
+    115107,
+    169428,
+    47582,
+    47916,
+    114090,
+    49971,
+    18205,
+    55,
+    34207,
+    256057,
+    426426,
+    541339,
+    477654,
+    575446,
+    22512,
+    43344,
+    29264,
+    261101,
+    118003,
+    120300,
+    115296,
+    43338,
+    701524,
+    126315,
+    182207,
+    37628
+   ]
+  },
+  {
+   "id": "oro",
+   "title": "Época de Oro",
+   "films": [
+    800,
+    53510,
+    30327,
+    30324,
+    240633,
+    115301,
+    119793,
+    117457,
+    69060,
+    101287,
+    71652,
+    120301,
+    71655,
+    114896,
+    115107,
+    43459,
+    43344,
+    120303,
+    106266,
+    114626,
+    118003,
+    120300,
+    115296,
+    154629,
+    118009,
+    115294,
+    37628,
+    43338,
+    44804,
+    123793
+   ]
+  },
+  {
+   "id": "risa",
+   "title": "Para reír",
+   "films": [
+    69060,
+    41311,
+    101287,
+    71652,
+    120301,
+    71655,
+    194163,
+    118007,
+    49971,
+    22512,
+    14430,
+    16761,
+    4786,
+    180147,
+    211954,
+    264525,
+    256057,
+    52629,
+    541339,
+    118003,
+    120300,
+    43338,
+    37221,
+    29871
+   ]
+  },
+  {
+   "id": "pueblo",
+   "title": "Pueblos y revolución",
+   "films": [
+    240633,
+    115301,
+    119793,
+    122019,
+    111853,
+    194163,
+    35124,
+    43459,
+    106266,
+    114626,
+    116982,
+    77360,
+    18183,
+    14430,
+    542,
+    16382,
+    670981,
+    1069387,
+    154629,
+    118010,
+    44804
+   ]
+  },
+  {
+   "id": "miedo",
+   "title": "Para temblar",
+   "films": [
+    120303,
+    68627,
+    11655,
+    20015,
+    1417,
+    349067,
+    122019,
+    47582,
+    47007,
+    43344,
+    772515,
+    28968,
+    123793,
+    29871
+   ]
+  },
+  {
+   "id": "autor",
+   "title": "Grandes directores",
+   "films": [
+    800,
+    35124,
+    43344,
+    29264,
+    47582,
+    77360,
+    47007,
+    116982,
+    11655,
+    55,
+    1391,
+    1417,
+    426426,
+    1069387,
+    477654,
+    37628,
+    44804,
+    43338,
+    182207,
+    701524
+   ]
+  },
+  {
+   "id": "hoy",
+   "title": "Historias de hoy",
+   "films": [
+    55,
+    1391,
+    34207,
+    32579,
+    52629,
+    256057,
+    349067,
+    426426,
+    541339,
+    477654,
+    582927,
+    653658,
+    575446,
+    670981,
+    211954,
+    180147,
+    1069387,
+    772515,
+    186976,
+    701524,
+    77635,
+    126315
+   ]
+  }
+ ],
+ "films": [
+  {
+   "tmdbId": 800,
+   "title": "Los olvidados",
+   "year": 1950,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/s4Gmh7Vld8NgLI8oZNufbpGD1kV.jpg",
+   "videos": [
+    {
+     "youtube": "HBDgOrB76Rk",
+     "type": "Trailer",
+     "name": "Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "XXtGWU9V6VY",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 53510,
+   "title": "Nosotros los pobres",
+   "year": 1948,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/ApnG8a3kNHyOUhuUjs2Zt2i24wC.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "3hUu2Ew-0FQ",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 30327,
+   "title": "Ustedes los ricos",
+   "year": 1948,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/vgqiN2tYYvYN1pCH1CntrJ5pQ92.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "lrZvuigWNhY",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 30324,
+   "title": "Pepe el Toro",
+   "year": 1953,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/vsJRIFfCFBo4aesXTcv8QRGIC5B.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "NA8iBmv5Bk0",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 240633,
+   "title": "Allá en el Rancho Grande",
+   "year": 1936,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/5n4UGrxTKLdXXZAnW2lOxRmUo2M.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "CT5U7BVJWr0",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 115301,
+   "title": "Enamorada",
+   "year": 1946,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/z5sBg8hIvXz1zi6aPsP1Jbyetm4.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "Pc-qpquUBTw",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 119793,
+   "title": "Río Escondido",
+   "year": 1948,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/mYTBLf8YaAYVQLfIS38A4TaMhxx.jpg",
+   "videos": [
+    {
+     "youtube": "YBoPaAmqr9w",
+     "type": "Trailer",
+     "name": "LOS CLÁSICOS | Rio escondido Trailer",
+     "language": "es"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "yKQc6LSVe4k",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 117457,
+   "title": "Salón México",
+   "year": 1949,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/kuxCD96B8kcDfMup0Js8GAfDmoX.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "bflrbcovjss",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 69060,
+   "title": "Ahí está el detalle",
+   "year": 1940,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/AjD4TxqHiDxO6SYdWfPeS0ZVkVd.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "RjRpjNBO6s4",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 41311,
+   "title": "El analfabeto",
+   "year": 1961,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/sooOWMEc2YxZmYiMfRLifHhefy4.jpg",
+   "videos": [
+    {
+     "youtube": "7neRc0katgc",
+     "type": "Teaser",
+     "name": "El analfabeto 1",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 122019,
+   "title": "Macario",
+   "year": 1960,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/xX9JGtsnXQAR7e1fWkr7zBuQUHN.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "ThQaEQNDjdQ",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 111853,
+   "title": "Ánimas Trujano",
+   "year": 1961,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/nGO6Bh4lDERxhg15MJcpQ78FBLv.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "RD6JjzXFX_c",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 194163,
+   "title": "Tlayucan",
+   "year": 1962,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/f908H4d6DiAq6hokXeCd7tD8ta4.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "PBAJGWJhIw0",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 35124,
+   "title": "Nazarín",
+   "year": 1959,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/lY3oAeFyQ25K2fUmz27UleohUh7.jpg",
+   "videos": [
+    {
+     "youtube": "lGv9P_LLxuE",
+     "type": "Trailer",
+     "name": "NAZARIN Luis Buñuel",
+     "language": "es"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "6kkzkQgT14g",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 29264,
+   "title": "El ángel exterminador",
+   "year": 1962,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/x68Bah39Oe6cQ33BAAVP7YlhCiQ.jpg",
+   "videos": [
+    {
+     "youtube": "ZPTPa4V4lH4",
+     "type": "Trailer",
+     "name": "El ángel exterminador / Trailer",
+     "language": "es"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "S-A71sv6pYw",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 101287,
+   "title": "Los tres García",
+   "year": 1947,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/maNjNWwVJdG3dBf3XEJeCLJ1Ryr.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "Ia-VHeKf_Ys",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 71652,
+   "title": "A toda máquina",
+   "year": 1951,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/bOx9pbCXh3p4eNrcljwuF70FKBU.jpg",
+   "videos": [
+    {
+     "youtube": "Jc4ZkA_9xKc",
+     "type": "Trailer",
+     "name": "Pedro Infante - Trailer de A Toda Maquina",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 120301,
+   "title": "Dos tipos de cuidado",
+   "year": 1953,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/syNdsQL5kSFAlaiaNBV0Kb1dJ7r.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "j3YypjA0tu0",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 71655,
+   "title": "Escuela de vagabundos",
+   "year": 1955,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/rH75QrzKJf4hVLfHCvmcC8YaBRV.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "uxVObhqFtwI",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 114896,
+   "title": "Aventurera",
+   "year": 1950,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/kgPbBocMNaVbkoDza49MZUyUenr.jpg",
+   "videos": [
+    {
+     "youtube": "nmJVyecb_JY",
+     "type": "Trailer",
+     "name": "Aventurera Ninón Sevilla Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "pGBDfAWExAw",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 115107,
+   "title": "Una familia de tantas",
+   "year": 1949,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/z58OJgrn6AqEq4Fcio4TVPcpSpr.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "RxJZL8h7GK8",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 43459,
+   "title": "La perla",
+   "year": 1947,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/3Dtb5ZFhilHETAUSfg6BCdrc0Vl.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "v14E2zBWbFA",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 106266,
+   "title": "Vámonos con Pancho Villa",
+   "year": 1936,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/dRGfPAvdAOdOvYCr6Rqw4V91073.jpg",
+   "videos": [
+    {
+     "youtube": "FHBG7g5oWRw",
+     "type": "Trailer",
+     "name": "¿No cree que ya es bastante? - Vámonos con Pancho Villa.",
+     "language": "es"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "GL4Z0no8Uc8",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 114626,
+   "title": "El compadre Mendoza",
+   "year": 1934,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/b56SuoyQWualtXkHmrVN6HROZiD.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "nUjzai5mtJs",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 118007,
+   "title": "El esqueleto de la señora Morales",
+   "year": 1960,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/tiEk8dT46cK2KVFxITIqm0kT3iD.jpg",
+   "videos": [
+    {
+     "youtube": "OmcxItt_6X0",
+     "type": "Trailer",
+     "name": "The Skeleton of Mrs  Morales | Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "w02xDmKezYs",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 120303,
+   "title": "El vampiro",
+   "year": 1957,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/rWjnFo2R6TWvX8MDJ7NwAfp41PX.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "kcLY5_nLgt0",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 68627,
+   "title": "Hasta el viento tiene miedo",
+   "year": 1968,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/mhHaWBFoXhDtdQznZIdx5ZoxZLz.jpg",
+   "videos": [
+    {
+     "youtube": "t7lR3C97sC0",
+     "type": "Trailer",
+     "name": "\"Hasta el viento tiene miedo\" (1967) Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "04Ak42Qkgc0",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 169428,
+   "title": "Los Caifanes",
+   "year": 1967,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/5bqviDmyeRntL5kAMNFjEN7Fkyw.jpg",
+   "videos": [
+    {
+     "youtube": "gV5meNqXE3I",
+     "type": "Trailer",
+     "name": "Los caifanes",
+     "language": "es"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "BUksg8jxJZA",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 47582,
+   "title": "El castillo de la pureza",
+   "year": 1973,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/hVKJ4QaXzs7L3DG3vujnnAmGVpM.jpg",
+   "videos": [
+    {
+     "youtube": "rCmkUk_MQYc",
+     "type": "Trailer",
+     "name": "Trailer Castillo de la Pureza",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "5Tfz0wR-BTg",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 116982,
+   "title": "Canoa",
+   "year": 1976,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/dRXEROGigwqxec0mohlbDnXYbnw.jpg",
+   "videos": [
+    {
+     "youtube": "-2RPx_RDOhw",
+     "type": "Trailer",
+     "name": "Canoa: A Shameful Memory (1976) Original Trailer [FHD]",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "TcizVFQhy0A",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 77360,
+   "title": "El lugar sin límites",
+   "year": 1978,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/yMeByCNZkiCR10kf7QvguI3RCv8.jpg",
+   "videos": [
+    {
+     "youtube": "FmANQBBFRSU",
+     "type": "Trailer",
+     "name": "El lugar sin límites (1978, Arturo Ripstein) - Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "XQJb0qfPghg",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 114090,
+   "title": "Danzón",
+   "year": 1991,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/waGwa4FexexzFT9Ulim6aOZsdIg.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "RND-vAI6OXM",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 49971,
+   "title": "Solo con tu pareja",
+   "year": 1991,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/6T83r9Pll4N0UkRiFBNty761gww.jpg",
+   "videos": [
+    {
+     "youtube": "ca2X2Ztj_MA",
+     "type": "Trailer",
+     "name": "Solo Con Tu Pareja",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "8F_LXMvSN5g",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 18183,
+   "title": "Como agua para chocolate",
+   "year": 1992,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/bBToqYouLBaoojtC6AyRNeFcQoV.jpg",
+   "videos": [
+    {
+     "youtube": "EkvgSTJkKGI",
+     "type": "Trailer",
+     "name": "Like Water for Chocolate (1992) ORIGINAL TRAILER [HD 1080p]",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "7wwzn-VsFTg",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 11655,
+   "title": "Cronos",
+   "year": 1993,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/kakv4ftQ5TlfjtlXwI3DcsbiTYa.jpg",
+   "videos": [
+    {
+     "youtube": "j_9r7Trek5I",
+     "type": "Trailer",
+     "name": "4K Restoration Trailer [Subtitled]",
+     "language": "en"
+    },
+    {
+     "youtube": "YdxA9vIFmYw",
+     "type": "Trailer",
+     "name": "Clip Trailer (YouTube Movies)",
+     "language": "en"
+    },
+    {
+     "youtube": "xFTJ2FqLmH8",
+     "type": "Trailer",
+     "name": "Original Trailer (VHS Capture)",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "1imr_3nvCoU",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 18205,
+   "title": "El callejón de los milagros",
+   "year": 1995,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/kN4F8UfuDLTKbh8lConn9ycQb7B.jpg",
+   "videos": [
+    {
+     "youtube": "H6cosTYH8E0",
+     "type": "Trailer",
+     "name": "Midaq Alley Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "os4jSiu3Gtk",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 47007,
+   "title": "Profundo carmesí",
+   "year": 1996,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/rgjX0j65OS7xbM4Y8xNnrIiNnsM.jpg",
+   "videos": [
+    {
+     "youtube": "h9-SqFDT010",
+     "type": "Trailer",
+     "name": "Profundo Carmesí Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "Tvimr_LU5Hc",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 14430,
+   "title": "La ley de Herodes",
+   "year": 1999,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/653dXbr6dXffXG0oN8OfZGShFRP.jpg",
+   "videos": [
+    {
+     "youtube": "Qx7Ylt-Bwwc",
+     "type": "Trailer",
+     "name": "Herodes Law Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "wR1YDM9yhBg",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 22512,
+   "title": "Sexo, pudor y lágrimas",
+   "year": 1999,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/1j3TiCXSguHi3IGumXKpQymvUKH.jpg",
+   "videos": [
+    {
+     "youtube": "VZYQ1qiMJ_o",
+     "type": "Trailer",
+     "name": "Sexo, pudor y lágrimas (1999) - TRAILER",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 55,
+   "title": "Amores perros",
+   "year": 2000,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/uoObXx53SjSLLtAavMSIe02zizs.jpg",
+   "videos": [
+    {
+     "youtube": "nXftxeXPwKQ",
+     "type": "Teaser",
+     "name": "AMORES PERROS is a timeless mosaic of Mexico City in the year 2000. [Subtitled]",
+     "language": "en"
+    },
+    {
+     "youtube": "_P29GF_NbDc",
+     "type": "Trailer",
+     "name": "Official Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "A5HTBYR7m0o",
+     "type": "Trailer",
+     "name": "AMORES PERROS - HQ  Trailer ( 2000 )",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 1391,
+   "title": "Y tu mamá también",
+   "year": 2001,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/oLl2f0r3c6WMhXv6hYOyjQj4LGU.jpg",
+   "videos": [
+    {
+     "youtube": "inc0vS58ZKg",
+     "type": "Trailer",
+     "name": "Original Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 542,
+   "title": "El crimen del padre Amaro",
+   "year": 2002,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/6sWYtAqZem9DTh5cLsb6g3hgdYx.jpg",
+   "videos": [
+    {
+     "youtube": "P4dRlQoxh38",
+     "type": "Trailer",
+     "name": "El Crimen del Padre Amaro - Trailer",
+     "language": "es"
+    },
+    {
+     "youtube": "4XSnLQyX5qE",
+     "type": "Trailer",
+     "name": "El Crimen del Padre Amaro - Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "6eAzWKCeaRo",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 34207,
+   "title": "Temporada de patos",
+   "year": 2004,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/7ZHuxANQgxjDgjwD1ohp8ejjgu2.jpg",
+   "videos": [
+    {
+     "youtube": "4-X6iN-d_B4",
+     "type": "Trailer",
+     "name": "Duck Season - Original Theatrical Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "Fv-keQeafzw",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 1417,
+   "title": "El laberinto del fauno",
+   "year": 2006,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/cxVlgYbn1GAdVhuBjM2jFiavfRp.jpg",
+   "videos": [
+    {
+     "youtube": "NEg7u3boJhU",
+     "type": "Trailer",
+     "name": "EL LABERINTO DEL FAUNO(GUILLERMO DEL TORO,2006)-TRÁILER ORIGINAL 720",
+     "language": "es"
+    },
+    {
+     "youtube": "OBGKGm3RYos",
+     "type": "Trailer",
+     "name": "Official 20th Anniversary Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "6tYUOAMsydg",
+     "type": "Trailer",
+     "name": "Official 4K Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "jVZRnnVSQ8k",
+     "type": "Trailer",
+     "name": "Official Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "__zGGNQ8-R4",
+     "type": "Teaser",
+     "name": "DVD TV Spot",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "naWA8F2LVXg",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 20015,
+   "title": "Kilómetro 31",
+   "year": 2006,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/iJemaoRW5LFDvi3p6jWMMMIDR4P.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "BVJ_j_W53nw",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 16761,
+   "title": "Una película de huevos",
+   "year": 2006,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/eHqGqr5xBat3P2b9YdRbKMLli4J.jpg",
+   "videos": [
+    {
+     "youtube": "b_I54aXqe9k",
+     "type": "Trailer",
+     "name": "Una Película de Huevos: Trailer final",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "POjFUws3kfk",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 16382,
+   "title": "Arráncame la vida",
+   "year": 2008,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/yw5TT7RnerDnBYKIZ04fyRDM4c8.jpg",
+   "videos": [
+    {
+     "youtube": "Pn3F_7nGbiM",
+     "type": "Trailer",
+     "name": "ARRANCAME LA VIDA TRAILER OFICIAL DE LA PELICULA",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "t2E74K113G4",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 4786,
+   "title": "Rudo y Cursi",
+   "year": 2008,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/xFGuhPSe1mCRcOllLlJYoNUknNt.jpg",
+   "videos": [
+    {
+     "youtube": "jXkQad-OTMU",
+     "type": "Trailer",
+     "name": "Rudo Y Cursi - Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "zAMlwcJchoQ",
+     "type": "Trailer",
+     "name": "Rudo y Cursi | Official Trailer (2008)",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "99LvYfcL1ko",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 52629,
+   "title": "El infierno",
+   "year": 2010,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/ar8BpJ5xAzTIw9bqD9Sra6TjBvw.jpg",
+   "videos": [
+    {
+     "youtube": "n4jQnRkj-gU",
+     "type": "Trailer",
+     "name": "El Infierno Trailer HD Bandidos  Films",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "bg7A7_uGBIs",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 180147,
+   "title": "Nosotros los Nobles",
+   "year": 2013,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/mBI1WTduABARAPzOhi8k0Sh2F6b.jpg",
+   "videos": [
+    {
+     "youtube": "ynA5nXZyZxU",
+     "type": "Trailer",
+     "name": "WE ARE THE NOBLES Trailer (NOSTROS LOS NOBLES)",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 211954,
+   "title": "No se aceptan devoluciones",
+   "year": 2013,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/5h4UApKNe62K8hoUCc151kQ56Uc.jpg",
+   "videos": [
+    {
+     "youtube": "IWBL3JfQls8",
+     "type": "Trailer",
+     "name": "Instructions Not Included - Tráiler",
+     "language": "en"
+    },
+    {
+     "youtube": "-rlFr2lu0IY",
+     "type": "Trailer",
+     "name": "Instructions Not Included Official Trailer #1 (2013) HD",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "HqLdMPlyRZ0",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 264525,
+   "title": "La dictadura perfecta",
+   "year": 2014,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/pjNWekSbafFIPLBNZQ9gUaX3tkV.jpg",
+   "videos": [
+    {
+     "youtube": "ZriH9uEDgsI",
+     "type": "Trailer",
+     "name": "LA DICTADURA PERFECTA - Tráiler oficial - Disponible en BR - DVD y Plataformas Digitales",
+     "language": "es"
+    },
+    {
+     "youtube": "Q3BHyQX7FWg",
+     "type": "Trailer",
+     "name": "LA DICTADURA PERFECTA - NUEVO TRAILER #LACAJACHINA",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "d7zEQ3nTt88",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 256057,
+   "title": "Güeros",
+   "year": 2014,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/7JRxlC4CjaKeLN57mDK52uvkmIv.jpg",
+   "videos": [
+    {
+     "youtube": "YtKKXqv5Y3M",
+     "type": "Trailer",
+     "name": "GÜEROS de Alonso Ruizpalacios Trailer Oficial HD",
+     "language": "es"
+    },
+    {
+     "youtube": "cm49CH4qtSg",
+     "type": "Trailer",
+     "name": "Official US Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 261101,
+   "title": "Cantinflas",
+   "year": 2014,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/jGrJ1CcewVtiEZJ43UtO90R4lwS.jpg",
+   "videos": [
+    {
+     "youtube": "YFqT0DM10QI",
+     "type": "Trailer",
+     "name": "Cantinflas Official Mexico Trailer 2 (2014) - HD",
+     "language": "es"
+    },
+    {
+     "youtube": "DX5rLr_hgrs",
+     "type": "Trailer",
+     "name": "Official US Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "bc_n1hye_WE",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 349067,
+   "title": "Vuelven",
+   "year": 2017,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/tlKmfWU6hvga3f9AinTsEGi2THU.jpg",
+   "videos": [
+    {
+     "youtube": "KyoE0mSJXO8",
+     "type": "Trailer",
+     "name": "Official Trailer [Subtitled]",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "_9OdD0mtAOk",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 426426,
+   "title": "Roma",
+   "year": 2018,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/veWGVw33lnifG10fpkz3QmimVaI.jpg",
+   "videos": [
+    {
+     "youtube": "IzqcQrFit24",
+     "type": "Trailer",
+     "name": "Roma - Trailer español (HD)",
+     "language": "es"
+    },
+    {
+     "youtube": "6BS27ngZtxg",
+     "type": "Trailer",
+     "name": "Official Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "6UlmQDB3vqQ",
+     "type": "Teaser",
+     "name": "Teaser",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "evf5cS9_YEk",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 541339,
+   "title": "Las niñas bien",
+   "year": 2018,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/cfKPGXhJvBM2Q7YOUd1qlMUcK1x.jpg",
+   "videos": [
+    {
+     "youtube": "0paBosD04mM",
+     "type": "Trailer",
+     "name": "THE GOOD GIRLS Trailer | TIFF 2018",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 477654,
+   "title": "Museo",
+   "year": 2018,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/bFbhxPfaNB5oXAIag4fDpVyAXyj.jpg",
+   "videos": [
+    {
+     "youtube": "qsf4wQqLrQk",
+     "type": "Trailer",
+     "name": "MUSEO movie trailer | 2018 LA Film Festival - Sept 20-28",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "ikRdynR996c",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 582927,
+   "title": "Ya no estoy aquí",
+   "year": 2019,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/min2PJ67s9HUD5ZeCSKTfSgniSC.jpg",
+   "videos": [
+    {
+     "youtube": "ieeZ0mviFKc",
+     "type": "Trailer",
+     "name": "I'm No Longer Here | Official Trailer | Netflix",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 653658,
+   "title": "Sin señas particulares",
+   "year": 2020,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/jTwPY2ClirXNqT2kLmard53GTou.jpg",
+   "videos": [
+    {
+     "youtube": "17TlRpteXWE",
+     "type": "Trailer",
+     "name": "Sin señas particulares - Tráiler",
+     "language": "es"
+    },
+    {
+     "youtube": "eMUypshyFKE",
+     "type": "Trailer",
+     "name": "Official Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "-4U208CXMSY",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 575446,
+   "title": "Nuevo orden",
+   "year": 2020,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/5euF3yoW4fGXfqcyeh0JlWqrAZ2.jpg",
+   "videos": [
+    {
+     "youtube": "6bQjFZ8mhU4",
+     "type": "Trailer",
+     "name": "TRÁILER - NUEVO ORDEN",
+     "language": "es"
+    },
+    {
+     "youtube": "S_TWI2-xUEg",
+     "type": "Trailer",
+     "name": "Official UK Trailer #2",
+     "language": "en"
+    },
+    {
+     "youtube": "5sys2WJfIxQ",
+     "type": "Trailer",
+     "name": "Official UK Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "vxrdSLce5ps",
+     "type": "Trailer",
+     "name": "Official US Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "VAT5wjgGjkE",
+     "type": "Trailer",
+     "name": "Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "4EIugcn5edk",
+     "type": "Teaser",
+     "name": "Teaser",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "nYzMaXpeNTc",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 670981,
+   "title": "Noche de fuego",
+   "year": 2021,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/uIzHQXSxD8u0iCnIxwhDHDxvWo.jpg",
+   "videos": [
+    {
+     "youtube": "j-5A65dmn3E",
+     "type": "Trailer",
+     "name": "Official UK Trailer #2",
+     "language": "en"
+    },
+    {
+     "youtube": "hUwh3w6lv-E",
+     "type": "Trailer",
+     "name": "Official UK Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "mlLqfk_OFAA",
+     "type": "Trailer",
+     "name": "Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "j5Oa0WWw1T4",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 1069387,
+   "title": "Pedro Páramo",
+   "year": 2024,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/lpl7d2ALW2TkPt7ziXPGxGJrU0h.jpg",
+   "videos": [
+    {
+     "youtube": "nRq7niwEgSM",
+     "type": "Trailer",
+     "name": "Official Trailer [Subtitled]",
+     "language": "en"
+    },
+    {
+     "youtube": "bbsz-ip1GAI",
+     "type": "Teaser",
+     "name": "Official Teaser [Subtitled]",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 118003,
+   "title": "El rey del barrio",
+   "year": 1950,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/7UFaB1yqgQBAS4o7hXHojfVNqyX.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "AaE5J9-CCdo",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 37628,
+   "title": "Ensayo de un crimen",
+   "year": 1955,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/dT5gYM1usXWmxfbcD68JBjxKZpH.jpg",
+   "videos": [
+    {
+     "youtube": "SoUWMpnKNuI",
+     "type": "Trailer",
+     "name": "Ensayo de un crimen #71MIC",
+     "language": "es"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "OoSlsaI-3WY",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 772515,
+   "title": "Huesera",
+   "year": 2022,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/uqQOjLjJRDH7AzdomnEtX2SvnCA.jpg",
+   "videos": [
+    {
+     "youtube": "4VYvhw-0U_o",
+     "type": "Trailer",
+     "name": "Huesera - Trailer",
+     "language": "es"
+    },
+    {
+     "youtube": "22g-vksXD8c",
+     "type": "Trailer",
+     "name": "Official Trailer",
+     "language": "en"
+    },
+    {
+     "youtube": "xiAiPvKnD6I",
+     "type": "Trailer",
+     "name": "Teaser Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 120300,
+   "title": "Calabacitas tiernas",
+   "year": 1949,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/7GLtooRW6rk15DWvSgzrwQAt3s6.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "qfw7rSctR0M",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 115296,
+   "title": "Campeón sin corona",
+   "year": 1946,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/80KkzbyqiqHMdplieCfJkr7EXud.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "9qE9BYngonk",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 154629,
+   "title": "Doña Bárbara",
+   "year": 1943,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/dys7EksOQd1ej4jWmi503kEmSBP.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "a97SlPLXzSg",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 186976,
+   "title": "La jaula de oro",
+   "year": 2013,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/bCOP37OP39jDKmxj9no7oLjf88i.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "OOBjZtqYqMA",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 118009,
+   "title": "Víctimas del pecado",
+   "year": 1951,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/ziLxM1tqQAaLJ5phIr1aiQtCiTi.jpg",
+   "videos": [
+    {
+     "youtube": "sKCzmFYNgcQ",
+     "type": "Trailer",
+     "name": "4K Restoration Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "rcgL_qF1W7o",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 115294,
+   "title": "La mujer del puerto",
+   "year": 1934,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/7Xm78Il1kJZPNUCClHW7Ds7KRma.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "ZEfxUkAva58",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 118010,
+   "title": "Tiburoneros",
+   "year": 1963,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/y4JpELqw4HXoRuIAVQ5KPGhgA3w.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "rhRAKoFTTJI",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 701524,
+   "title": "Una película de policías",
+   "year": 2021,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/cGqZ8RX1fj0YTbB963g8EACNs7z.jpg",
+   "videos": [
+    {
+     "youtube": "-Ki1-ZpGRk4",
+     "type": "Trailer",
+     "name": "Tráiler oficial",
+     "language": "es"
+    },
+    {
+     "youtube": "b_m3jC4hGn0",
+     "type": "Trailer",
+     "name": "A Cop Movie | Official Trailer | Netflix",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 43338,
+   "title": "La ilusión viaja en tranvía",
+   "year": 1954,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/2j7qoxCzDzDqMzmNez2VaTGcj51.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "7fiOYrr3Klg",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 44804,
+   "title": "Subida al cielo",
+   "year": 1952,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/b8LLhwG4PqXFPHhGPOfp2qLXPMP.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "N8JJRYTX3IM",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 123793,
+   "title": "El ataúd del vampiro",
+   "year": 1958,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/3ESH18HdunVy5Tj54J9FrAyjNt7.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "0qcpTi52ji0",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 29871,
+   "title": "Santo contra las mujeres vampiro",
+   "year": 1962,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/3l4qmh2LhQEhpW4AqKsRIQgQ7dd.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "u8_ZMPjYdes",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 182207,
+   "title": "El apando",
+   "year": 1976,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/l9WfrIUZEV5BjMJnBQkuJX8Ixir.jpg",
+   "videos": [
+    {
+     "youtube": "RN3oJ-GT4cA",
+     "type": "Trailer",
+     "name": "El Apando (TRAILER)",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "I3oOR4q8olk",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 37221,
+   "title": "Otra película de huevos y un pollo",
+   "year": 2009,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/c7LMN9NrJQ97RxYM33qu5ItcbCn.jpg",
+   "videos": [
+    {
+     "youtube": "IsQsrCSCrt0",
+     "type": "Teaser",
+     "name": "Otra Película de Huevos y Un Pollo: Teaser 2",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "FeuHkSOYSMY",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 77635,
+   "title": "Miss Bala",
+   "year": 2011,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/b3sSssMYkOoCghxOFxYPm58kdfJ.jpg",
+   "videos": [
+    {
+     "youtube": "ifgdRVfoYeM",
+     "type": "Trailer",
+     "name": "Official UK Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  },
+  {
+   "tmdbId": 126315,
+   "title": "Después de Lucía",
+   "year": 2012,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/3ZPmkdVuoV0Di0UtLL3w5d2AtpC.jpg",
+   "videos": [
+    {
+     "youtube": "5hAx8KwryrY",
+     "type": "Trailer",
+     "name": "\"Después de Lucía\" Trailer Oficial HD",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "oUDs5dyXMgY",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 47916,
+   "title": "Rojo amanecer",
+   "year": 1989,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/e64pw9gmbQJik2H6C4buiX1ilB7.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "O_gNEFkQ17Y",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 43344,
+   "title": "Él",
+   "year": 1953,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/BENdQAGq47sHgaXufAWlI9jtib.jpg",
+   "videos": [
+    {
+     "youtube": "1jewKsuMI1w",
+     "type": "Trailer",
+     "name": "Official Trailer [Subtitled]",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "BFZbfip8Ubs",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 32579,
+   "title": "La misma luna",
+   "year": 2007,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/ogIobMbmXuL7k3qnba76hUms8lQ.jpg",
+   "videos": [
+    {
+     "youtube": "9jCZgUiPixE",
+     "type": "Trailer",
+     "name": "Under The Same Moon Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "EehaZoDHi6s",
+    "language": null
+   }
+  },
+  {
+   "tmdbId": 28968,
+   "title": "Veneno para las hadas",
+   "year": 1984,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/b4bOVSACDvRxfXYWI7bCtLqm51g.jpg",
+   "videos": [
+    {
+     "youtube": "IAWOBQ9wt9E",
+     "type": "Trailer",
+     "name": "Veneno para las hadas (1984) Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": null
+  }
+ ],
+ "excluded": []
+}
