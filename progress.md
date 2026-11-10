@@ -66,6 +66,19 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 
 
 
+## 2026-11-09 (night): five new Mexican cities, hidden until their pictures (cloud session)
+
+Josh: "lets add 5 cities to mexico - 10 places to start - thick with local qualities - minimal commerce, favor regional foods, streetvendors - lean into plazas, parks, monuments - at least one place no other city would have"; then "pick 5 interesting places with strong Mexican qualities -- that should be the test" and "avoid too much commerce - lean into culture".
+
+- **Done:** Guanajuato, Veracruz, Pátzcuaro, Mérida and San Cristóbal de las Casas (`content/es-mx/cities/`), 10 places and 10 people each, in the feed after Puebla, alternating town and city. Mostly plazas, monuments, music, dance and ritual; at most two food vendors a city; one bus terminal each so you can travel there and on. The place only it has: the lechero at the Gran Café de la Parroquia (Veracruz), the Thursday serenata in Santa Lucía (Mérida), the Callejón del Beso (Guanajuato), the church at San Juan Chamula (San Cristóbal), the boat to Janitzio and its Day of the Dead cemetery (Pátzcuaro). Here lines, portraits and scene prompts written in the cloud session; voices from the Mexican pools by age. `stations.json` has what each is known for and trip times to all nine others (approximate, "about"). `generation.json` has the five cities and a proposed picture style for each, from its own craft: cut-paper collage (Guanajuato), silkscreen travel poster (Veracruz), black-and-gold lacquer (Pátzcuaro), watercolour (Mérida), highland textile (San Cristóbal). New `scripts/here-lines.mts` dumps a city's here lines for the fact judge.
+- **Hidden** (`hidden: true` on each city) until the pictures exist and Josh has looked. Checked with them shown: names unique (120 people), feed order mixes kinds and neighbourhoods, voices match age groups; tsc passes; `/v1/content` still serves the old five.
+- **For the mini, in order** (from `~/fuori`, after `git pull`):
+  1. Fact judge: `COUNTRY=es-mx npx tsx scripts/here-lines.mts guanajuato,veracruz,patzcuaro,merida,san-cristobal-de-las-casas > /tmp/lines.json && COUNTRY=es-mx npx tsx --env-file=.env.local scripts/fact-check.mts /tmp/lines.json > docs/mexico-new-cities.facts.txt`, then commit and push the .txt; the cloud session corrects what fails.
+  2. One picture per city for Josh to judge the five styles: `COUNTRY=es-mx npm run images -- --type place --only callejon-del-beso,gran-cafe-de-la-parroquia,muelle-a-janitzio,serenata-santa-lucia,templo-de-san-juan-chamula`. Show Josh before going on; a style he rejects changes in `generation.json` → `placeStyles`.
+  3. After his yes: the other 45 places and all 50 portraits (`--type place`, then `--type portrait`, `--only` the five cities' ids), and a city card for each (`cities/<id>.jpg`, made as the other five Mexican cards were), then `npm run images:upload`, `scripts/image-masters.mjs --untrack`, commit, push. `npm run test:images` passes again once all 105 exist.
+  4. Then remove `hidden: true` from the five cities, after Josh has played one.
+- **Open:** pre-existing failures, not from this work: `test:pack` (Rome's cinema place has no person) and `test:language` (Italy's cinema test data in ContentTests.swift, and `lib/beginner-2.ts:209`).
+
 ## 2026-11-09 (evening): Mexico's cinema, built like Italy's (cloud session)
 
 Josh: "build a mexican film area in the nav, shufflers, movie pages, viewer page -- feature to feature like Italy - you could start with 50 mexican films and expand through more ideas"; "copy the italy code as much as possible"; "you can use the mini for any memory intensive work".

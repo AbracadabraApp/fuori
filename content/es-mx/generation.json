@@ -185,6 +185,66 @@
           "portraitPrompt": "Gouache portrait of a young man in his early 20s with a fade haircut and a hoodie, who drives a taxi in San Miguel de Allende. Include his green-and-white taxi and a cobbled street. Bold, saturated colour: green, ochre and rose. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3)."
         }
       ]
+    },
+    {
+      "id": "guanajuato",
+      "name": "Guanajuato",
+      "region": "Guanajuato",
+      "neighbourhoods": [
+        "Centro",
+        "Los callejones",
+        "El Pípila",
+        "Valenciana"
+      ],
+      "people": []
+    },
+    {
+      "id": "veracruz",
+      "name": "Veracruz",
+      "region": "Veracruz",
+      "neighbourhoods": [
+        "Centro",
+        "Malecón",
+        "La Huaca",
+        "Boca del Río"
+      ],
+      "people": []
+    },
+    {
+      "id": "patzcuaro",
+      "name": "Pátzcuaro",
+      "region": "Michoacán",
+      "neighbourhoods": [
+        "Centro",
+        "Muelle General",
+        "Janitzio",
+        "Tzintzuntzan"
+      ],
+      "people": []
+    },
+    {
+      "id": "merida",
+      "name": "Mérida",
+      "region": "Yucatán",
+      "neighbourhoods": [
+        "Centro",
+        "Santa Lucía",
+        "Santiago",
+        "Paseo de Montejo"
+      ],
+      "people": []
+    },
+    {
+      "id": "san-cristobal-de-las-casas",
+      "name": "San Cristóbal de las Casas",
+      "region": "Chiapas",
+      "neighbourhoods": [
+        "Centro",
+        "Santo Domingo",
+        "Barrio de Guadalupe",
+        "San Juan Chamula"
+      ],
+      "people": []
     }
   ],
   "placeStyles": {
@@ -192,8 +252,13 @@
     "guadalajara": "Linocut print with bold carved black lines and wood-grain texture, strong contrast, in bright colour. Palette: terracotta, teal, mustard and sky blue",
     "oaxaca": "Mexican shadow-box diorama painted as naive folk art: the scene built inside a small open wooden box, with tiny handmade clay and papier-mâché figures and objects, every surface painted in bright saturated colours with careful small details and alebrije patterns, flat perspective, photographed straight on with soft light. Palette: cochineal red, marigold, indigo and turquoise",
     "puebla": "Illustration in the style of a hand-painted Talavera tile panel from Puebla: slightly glossy glaze, visible brush marks, a thin decorative tile border. Palette: cobalt blue and white with touches of yellow, ochre and green",
-    "san-miguel-de-allende": "Mexican mural painting style: flat fresco look, simplified forms, strong rhythmic composition, matte plaster texture. Palette: terracotta, ochre, rose, slate blue and deep green"
+    "san-miguel-de-allende": "Mexican mural painting style: flat fresco look, simplified forms, strong rhythmic composition, matte plaster texture. Palette: terracotta, ochre, rose, slate blue and deep green",
+    "guanajuato": "Mexican cut-paper collage, like layered papel picado: sheets of coloured paper with crisp cut edges and small cast shadows, playful stacked perspective of houses up a ravine. Palette: saffron, magenta, cobalt and lime",
+    "veracruz": "Vintage silkscreen travel poster: flat overlapping colour fields, fine halftone grain, crisp simple shapes and strong tropical light. Palette: sea turquoise, white, coral and banana yellow",
+    "patzcuaro": "Michoacán lacquerware (maque): the scene painted in bright colours with fine gold-leaf outlines on a glossy black lacquer ground, like a decorated tray. Palette: lacquer black, gold, vermilion and jade",
+    "merida": "Watercolour on rough paper with fine ink outlines, light and airy, strong tropical sun. Palette: Mérida’s pastel colonial walls, ochre, rose, pale lime and white",
+    "san-cristobal-de-las-casas": "Chiapas highland textile: the scene woven and embroidered as cloth, with visible threads, stitched outlines and a brocade border. Palette: deep red, indigo, black and marigold"
   },
   "placeRules": "No other words anywhere: no dates, no 'HOY', no neighbourhood or city names, no slogans, no prices, no brand names or logos. Contemporary Mexico: today's clothes and objects, everyday life; no sombreros, skulls, rebozos or costumes. Keep the main scene in the centre; nothing important near the edges.",
-  "placeStylesNote": "Chosen 2026-10-14 by Josh from the style test (content/es-mx/style-test.json). Each place prompt = city style + the place's scene (its imagePrompt) + its name as the only sign + placeRules (scripts/lib/place-prompt.mjs)."
+  "placeStylesNote": "Chosen 2026-10-14 by Josh from the style test (content/es-mx/style-test.json). Each place prompt = city style + the place's scene (its imagePrompt) + its name as the only sign + placeRules (scripts/lib/place-prompt.mjs). The five cities added 2026-11-09 (Guanajuato, Veracruz, Pátzcuaro, Mérida, San Cristóbal) have styles proposed by the cloud session from each city's own craft or look, not yet tested: Josh judges one picture per city first."
 }
