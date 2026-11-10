@@ -21,7 +21,7 @@ export const sanCristobalDeLasCasas: CityPantry = {
     {
       id: 'mercado-santo-domingo',
       name: 'Mercado de artesanías de Santo Domingo',
-      kind: 'market stall',
+      kind: "market",
       neighbourhood: 'Santo Domingo',
       real: true,
       characterId: 'petrona-tejedora',
@@ -34,7 +34,7 @@ export const sanCristobalDeLasCasas: CityPantry = {
       neighbourhood: 'Centro',
       real: true,
       characterId: 'efrain-marimbista',
-      imagePrompt: 'the main plaza of San Cristóbal de las Casas in the evening. A two-storey bandstand among trees, the yellow and red front of the cathedral behind, bright mountain sunlight. A group of musicians in white shirts plays a long wooden marimba under the bandstand while families stroll.',
+      imagePrompt: "the main plaza of San Cristóbal de las Casas in the evening. A two-storey bandstand among trees, the yellow and red front of the cathedral behind. Musicians in white shirts play a long wooden marimba under the bandstand while families stroll, children chase pigeons and couples sit on the benches.",
     },
     {
       id: 'templo-de-guadalupe-sancris',
@@ -52,7 +52,7 @@ export const sanCristobalDeLasCasas: CityPantry = {
       neighbourhood: 'Centro',
       real: true,
       characterId: 'elena-cafetalera',
-      imagePrompt: "the tasting room of the coffee museum in an old colonial house in San Cristóbal de las Casas. A long wooden table where five people of different ages sip coffee from small cups and talk, a woman in an apron pouring from a pot, and in the background a drum roaster and sacks of green beans under wooden beams.",
+      imagePrompt: "the coffee museum in an old colonial house on a sunny street in San Cristóbal de las Casas, seen from across the street: an open doorway onto a courtyard with wooden pillars, a long table outside where neighbours of different ages sip coffee from small cups and talk, a woman in an apron pouring, and beyond the red roofs the green hills and a blue sky.",
     },
     {
       id: 'na-bolom',

@@ -177,7 +177,7 @@ async function processCity(cityId, cityFile, manifest, options = {}) {
 
     // A city with its own place style: style + scene + the name as the only sign + rules
     const prompt = image.type === 'place' && placeStyles[cityId]
-      ? buildPlacePrompt({ style: placeStyles[cityId], scene: cleanScene(image.prompt), sign: image.name, rules: placeRules, neighbourhood: image.neighbourhood, framing: framingFor(image.kind, image.turn, image.id) })
+      ? buildPlacePrompt({ style: placeStyles[cityId], scene: cleanScene(image.prompt), sign: (generation.noSignKinds ?? []).includes(image.kind) ? null : image.name, rules: placeRules, neighbourhood: image.neighbourhood, framing: framingFor(image.kind, image.turn, image.id) })
       : image.prompt;
     if (options.dry) {
       console.log(`\n[${imageKey}]\n${prompt}`);
