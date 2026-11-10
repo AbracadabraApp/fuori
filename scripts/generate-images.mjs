@@ -9,7 +9,9 @@
  * - Fully resumable (tracks progress in manifest)
  * - Checks if images exist before generating
  * - Can run city-by-city or all at once
- * - --type place|portrait, --only id,id, --force (regenerate existing), --dry (print prompts)
+ * - --type place|portrait|city, --only id,id, --force (regenerate existing), --dry (print prompts)
+ * - City cards (cities/<id>.jpg) from generation.json → cityCards, a hand-written prompt per city,
+ *   square like places (Mexico's five new cities, 2026-11-09): COUNTRY=es-mx npm run images -- --type city --only merida
  *   Mexico places, all 65 in their city's style: COUNTRY=es-mx npm run images -- --type place --force
  * - Handles interruption gracefully
  *
@@ -118,7 +120,8 @@ function parseCityContent(filePath) {
 // Calls xAI directly (no dev server needed). Shape and resolution come from
 // the country's settings; without them the generator picks (Italy).
 async function generateImage(prompt, type) {
-  const size = imageConfig[type] ?? {};
+  // City cards are square, like places
+  const size = imageConfig[type === 'city' ? 'place' : type] ?? {};
   const response = await fetch('https://api.x.ai/v1/images/generations', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json', Authorization: `Bearer ${process.env.XAI_API_KEY}` },
@@ -145,7 +148,7 @@ async function generateImage(prompt, type) {
 // Resize to the configured size and save as JPEG quality 82 (sharp; any OS).
 // Without a configured size (Italy), re-encode at the original size.
 async function fitToSize(filepath, type) {
-  const size = imageConfig[type];
+  const size = imageConfig[type === 'city' ? 'place' : type];
   const img = sharp(fs.readFileSync(filepath));
   const out = await (size?.width ? img.resize(size.width, size.height, { fit: 'cover' }) : img)
     .jpeg({ quality: 82, mozjpeg: true })
@@ -157,6 +160,8 @@ async function processCity(cityId, cityFile, manifest, options = {}) {
   console.log(`\n=== Processing ${cityId} ===`);
 
   const images = parseCityContent(cityFile.path);
+  // The city card, when the country's settings have a prompt for it
+  if (generation.cityCards?.[cityId]) images.push({ type: 'city', id: cityId, prompt: generation.cityCards[cityId] });
   console.log(`Found ${images.length} images to generate`);
 
   let generated = 0;
@@ -187,7 +192,7 @@ async function processCity(cityId, cityFile, manifest, options = {}) {
     }
 
     // Determine output path
-    const dir = image.type === 'place' ? 'places' : 'portraits';
+    const dir = image.type === 'place' ? 'places' : image.type === 'city' ? 'cities' : 'portraits';
     const filename = `${image.id}.jpg`;
     const filepath = path.join(IMAGE_DIR, dir, filename);
 
