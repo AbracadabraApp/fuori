@@ -96,6 +96,11 @@ Josh: "lets add 5 cities to mexico - 10 places to start - thick with local quali
   4. Then remove `hidden: true` from the five cities, after Josh has played one.
 - **Open:** pre-existing failures, not from this work: `test:pack` (Rome's cinema place has no person) and `test:language` (Italy's cinema test data in ContentTests.swift, and `lib/beginner-2.ts:209`).
 
+## 2026-11-10 (mini): automated replies, tool check and visits with memory
+
+- **Tool check (step 5):** read 40 Mexican turns against the script's counts; four counts fixed in `tests/experiments/automated-replies.mts` (setup followed excluded her last goodbye; "English beside every question" now over turns with a question; English words now include the glosses, ~20 not 5; goodbye turns a visit added). Game code and prompts untouched. Table in docs/automated-replies.md → Tool check.
+- **Visits with memory (step 2):** the game's own `summarizeWithClaude` between visits, notes passed as `memory`; repeats counted (exact 8+ and 4+ words, a judge per visit pair). Pilot 2×3, then 10 places × 5 visits in each country. Results in docs/automated-replies.md → Visits with memory: the judge flags ~2 retold-as-new a later visit, about a third true by hand (~0.7 a visit); memory is rarely picked up openly (3 in 40 visits); the scorecard's 8-word rule can't see Beginner repeats; goodbyes drag (19/47 Mexico, 31/50 Italy visits had 3–4 goodbye turns). Not released, no prompt change.
+
 ## 2026-11-09 (evening): Mexico's cinema, built like Italy's (cloud session)
 
 Josh: "build a mexican film area in the nav, shufflers, movie pages, viewer page -- feature to feature like Italy - you could start with 50 mexican films and expand through more ideas"; "copy the italy code as much as possible"; "you can use the mini for any memory intensive work".

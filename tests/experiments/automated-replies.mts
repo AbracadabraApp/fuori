@@ -3,7 +3,9 @@
 // it), with the learner's side picked by code at a persona's rates. Said-back lines and edits are made
 // in code; own words, a question and English are one small call each, of that kind only. Every turn is
 // saved; the counts are about the character's side. A tool, not a test of a change (docs/prompt-testing.md).
-// No database: one visit at a time, no memory between visits (that's build step 2).
+// No database. A place's visits are played in order and, after each, the game's own end-of-conversation
+// memory writer (lib/remember.ts summarizeWithClaude) writes the character's notes, kept here and passed
+// as `memory` into the next visit, as take-turn.ts does (build step 2). Repeats across visits are counted at the end.
 //   COUNTRY=es-mx npx tsx --env-file=.env.local tests/experiments/automated-replies.mts [--cluster=1] [--visits=2] [--turns=12] [--persona=josh] [--characters=4] [--label=name]
 import { writeFileSync, mkdirSync } from 'node:fs';
 import { join } from 'node:path';
@@ -12,6 +14,9 @@ import { characterForVisit } from '@/lib/characters/for-visit';
 import { runBeginnerTurn, lineFromParts, SCAFFOLDING_FILE, type Part } from '@/lib/beginner';
 import { TURN_MODEL } from '@/lib/claude';
 import { CLUSTERS, levelText, setupLine, shapeParts, pickSetup } from '@/lib/beginner-2';
+import { summarizeWithClaude } from '@/lib/remember';
+import { repeatsFromEarlier } from '@/lib/dialogue-stats';
+import type { CharacterMemory } from '@/lib/memory';
 import { ask, pool, OUT } from './common.mjs';
 
 const arg = (n: string, d: string) => process.argv.find((a) => a.startsWith(`--${n}=`))?.split('=')[1] ?? d;
@@ -76,9 +81,15 @@ interface TurnRow { character: string; visit: number; turn: number; setup: strin
 const rows: TurnRow[] = [];
 
 const t0 = Date.now();
-await pool(chosen.flatMap(({ city, place }) => Array.from({ length: visits }, (_, v) => async () => {
+const memoryNotes: Record<string, string[][]> = {}; // character → the notes after each visit
+const lines: Record<string, string[][]> = {}; // character → her lines in each visit
+await pool(chosen.map(({ city, place }) => async () => {
   const character = characterForVisit(city.id, place.id);
   if (!character) return;
+  let memory: CharacterMemory | undefined;
+  memoryNotes[character.id] = [];
+  lines[character.id] = [];
+  for (let v = 0; v < visits; v++) {
   const r = rng(`${label}|${character.id}|${v}`);
   const conversationId = `auto-${label}-${character.id}-${v}`;
   const transcript: { who: 'npc' | 'learner'; transcript: string; offered?: string[] }[] = [];
@@ -89,7 +100,7 @@ await pool(chosen.flatMap(({ city, place }) => Array.from({ length: visits }, (_
     const setup = pickSetup({ conversationId: turn === 0 ? null : conversationId, turn, learnerId: `auto-${v}`, characterId: character.id, learnerSaid: said }, cluster);
     const started = performance.now();
     try {
-      const reply = await runBeginnerTurn({ character, transcript: transcript as never, learnerSaid: said, promptFile: SCAFFOLDING_FILE, stageText: levelText(cluster), turnNote: setupLine(setup), maxAnswers: setup.maxAnswers, withDone: true });
+      const reply = await runBeginnerTurn({ character, transcript: transcript as never, learnerSaid: said, memory, promptFile: SCAFFOLDING_FILE, stageText: levelText(cluster), turnNote: setupLine(setup), maxAnswers: setup.maxAnswers, withDone: true });
       const { parts, fixes } = shapeParts(reply.parts, setup, cluster);
       const { line } = lineFromParts(parts);
       const answers = parts.filter((p) => p.kind === 'answer').map((p) => p.text);
@@ -109,24 +120,39 @@ await pool(chosen.flatMap(({ city, place }) => Array.from({ length: visits }, (_
       break;
     }
   }
-})), 6);
+  lines[character.id].push(transcript.filter((t) => t.who === 'npc').map((t) => t.transcript));
+  // The game's own memory writing, as when a conversation ends (it remembers a visit of 2+ learner lines)
+  const learnerLines = transcript.filter((t) => t.who === 'learner').length;
+  if (learnerLines >= 2) {
+    try {
+      const out = await summarizeWithClaude({ character, notes: memory?.notes ?? [], turns: transcript.map((t) => ({ who: t.who, text: t.transcript })) });
+      memory = { visits: v + 1, lastVisit: new Date(), notes: out.notes };
+    } catch (e) { console.log(`memory failed ${character.name} visit ${v}: ${String(e).slice(0, 120)}`); }
+  }
+  memoryNotes[character.id].push(memory?.notes ?? []);
+  }
+}), 6);
 const secs = Math.round((Date.now() - t0) / 1000);
 
 mkdirSync(OUT, { recursive: true });
 const file = join(OUT, `automated-${label}-${new Date().toISOString().slice(0, 16).replace(/[:T]/g, '-')}.json`);
-writeFileSync(file, JSON.stringify({ label, cluster: clusterNo, persona, model: TURN_MODEL, secs, rows }, null, 1));
+writeFileSync(file, JSON.stringify({ label, cluster: clusterNo, persona, model: TURN_MODEL, secs, rows, memoryNotes, lines }, null, 1));
 
 // The counts (the character's side; facts from the parts and the spoken line)
 const ok = rows.filter((x) => x.ok);
 const words = (s: string) => s.split(/\s+/).filter(Boolean).length;
 const en = (x: TurnRow) => (x.parts ?? []).filter((p) => p.kind === 'english').reduce((n, p) => n + words(p.text), 0);
+// English the learner reads: the English parts plus the glosses under her phrases (cluster 1 glosses every phrase in code)
+const gl = (x: TurnRow) => (x.parts ?? []).filter((p) => p.kind === 'word' || p.kind === 'question').reduce((n, p) => n + words(p.gloss ?? ''), 0);
 const sp = (x: TurnRow) => (x.parts ?? []).filter((p) => p.kind === 'word' || p.kind === 'question').reduce((n, p) => n + words(p.text), 0);
 const followed = (x: TurnRow) => {
+  if (x.done) return true; // her last goodbye offers nothing to say back, by design
   const a = x.answers?.length ?? 0;
   if (x.setup === 'two-en' || x.setup === 'goodbye' || x.setup === 'opener') return a >= 2;
   if (x.setup === 'ask-en') return a >= 2 && (x.answers ?? []).some((s) => /\?/.test(s));
   return a === 0;
 };
+const hasQuestion = (x: TurnRow) => (x.parts ?? []).some((p) => p.kind === 'question');
 const qEnglish = (x: TurnRow) => { const ps = x.parts ?? []; const i = ps.findIndex((p) => p.kind === 'question'); return i < 0 || ps[i + 1]?.kind === 'english' || !!ps[i].gloss || ps[i - 1]?.kind === 'english'; };
 const inviteElsewhere = ok.filter((x) => x.setup !== 'invite-en' && /in English or|answer (me )?in English/i.test(x.line ?? '')).length;
 const announce = ok.filter((x) => /here are two|you could ask me|you can say one of|let me ask/i.test(x.line ?? '')).length;
@@ -134,12 +160,51 @@ const visitsDone = new Set(ok.filter((x) => x.done).map((x) => `${x.character}|$
 const visitCount = new Set(rows.map((x) => `${x.character}|${x.visit}`)).size;
 const ms = ok.map((x) => x.ms).sort((a, b) => a - b);
 console.log(`automated replies · ${label} · cluster ${clusterNo} · ${persona} · ${TURN_MODEL} · ${visitCount} visits, ${rows.length} turns in ${secs}s`);
-console.log(`  broken ${rows.length - ok.length} · setup followed ${ok.filter(followed).length}/${ok.length} · English beside every question ${ok.filter(qEnglish).length}/${ok.length}`);
-console.log(`  per turn: English ${(ok.reduce((n, x) => n + en(x), 0) / ok.length).toFixed(1)} words, ${language.name} ${(ok.reduce((n, x) => n + sp(x), 0) / ok.length).toFixed(1)} words · reply median ${ms[Math.floor(ms.length / 2)]} ms`);
+console.log(`  broken ${rows.length - ok.length} · setup followed ${ok.filter(followed).length}/${ok.length} · English beside every question ${ok.filter((x) => hasQuestion(x) && qEnglish(x)).length}/${ok.filter(hasQuestion).length} turns with one`);
+console.log(`  per turn: English ${(ok.reduce((n, x) => n + en(x) + gl(x), 0) / ok.length).toFixed(1)} words (${(ok.reduce((n, x) => n + en(x), 0) / ok.length).toFixed(1)} English parts + ${(ok.reduce((n, x) => n + gl(x), 0) / ok.length).toFixed(1)} glosses), ${language.name} ${(ok.reduce((n, x) => n + sp(x), 0) / ok.length).toFixed(1)} words · reply median ${ms[Math.floor(ms.length / 2)]} ms`);
 console.log(`  the English invitation on other turns ${inviteElsewhere} · announcing ${announce} · visits ended on a goodbye ${visitsDone}/${visitCount}`);
+const goodbyeTurns = [...new Set(ok.map((x) => `${x.character}|${x.visit}`))].map((k) => ok.filter((x) => `${x.character}|${x.visit}` === k && x.setup === 'goodbye').length);
+console.log(`  goodbye turns a visit: ${goodbyeTurns.join(', ')} (a goodbye that drags on shows as more than 2)`);
 console.log(`  learner kinds: ${Object.entries(rows.reduce((m, x) => ({ ...m, [x.kind ?? 'opening']: (m[x.kind ?? 'opening'] ?? 0) + 1 }), {} as Record<string, number>)).map(([k, n]) => `${k} ${n}`).join(', ')}`);
 console.log(`  saved ${file}`);
 // Which code fixes changed Claude's parts, and how often (lib/beginner-2.ts → shapeParts)
 const fixCounts = new Map<string, number>();
 for (const x of ok) for (const f of x.fixes ?? []) fixCounts.set(f, (fixCounts.get(f) ?? 0) + 1);
 console.log(`  code fixes over ${ok.length} turns: ${[...fixCounts].sort((a, b) => b[1] - a[1]).map(([f, n]) => `${f} ${n}`).join(' · ') || 'none'}`);
+
+// ---- Repeats across visits (build step 2) ----
+// Exact: the game's own count (8+ word sentences, 70% word overlap) and a shorter one (4+ words), since
+// Beginner sentences are short. Content words: words of 5+ letters in this visit's lines that also occur in
+// an earlier visit's, against the same share with another place's visits (what any two visits share anyway).
+// Retold as new: one judge call per pair of following visits.
+if (visits > 1) {
+  const { sentenceOverlap } = await import('@/lib/dialogue-stats');
+  const sentences = (ls: string[], min: number) => ls.flatMap((l) => l.split(/(?<=[.!?…])\s+/).map((x) => x.trim()).filter((x) => x.split(/\s+/).length >= min));
+  const content = (ls: string[]) => new Set((ls.join(' ').toLowerCase().normalize('NFD').replace(/[\u0300-\u036f]/g, '').match(/[a-zñ]{5,}/g) ?? []));
+  const ids = Object.keys(lines).filter((id) => lines[id].length > 1);
+  const out: { character: string; visit: number; exact8: number; exact4: number; shared: number; baseline: number; sharedWords: string[]; judged?: { asNew: { later: string; earlier: string; kind: string }[]; pickedUp: number } }[] = [];
+  const judgeSchema = { type: 'object', additionalProperties: false, required: ['asNew', 'pickedUp'], properties: { asNew: { type: 'array', items: { type: 'object', additionalProperties: false, required: ['later', 'earlier', 'kind'], properties: { later: { type: 'string' }, earlier: { type: 'string' }, kind: { type: 'string', enum: ['story', 'fact', 'question'] } } } }, pickedUp: { type: 'integer' } } };
+  await pool(ids.flatMap((id) => lines[id].slice(1).map((_, k) => async () => {
+    const v = k + 1;
+    const earlierAll = lines[id].slice(0, v).flat();
+    const others = ids.filter((o) => o !== id).flatMap((o) => lines[o].slice(0, v).flat());
+    const cm = content(lines[id][v]);
+    const share = (pool: string[]) => { const c = content(pool); return cm.size ? [...cm].filter((w) => c.has(w)).length / cm.size : 0; };
+    const exact8 = repeatsFromEarlier(earlierAll, lines[id][v]).length;
+    const earlier4 = sentences(earlierAll, 4);
+    const exact4 = sentences(lines[id][v], 4).filter((x) => earlier4.some((e) => sentenceOverlap(x, e) >= 0.7)).length;
+    const ec = content(earlierAll);
+    let judged;
+    try {
+      judged = JSON.parse(await ask(`Two visits by the same learner to the same ${language.name}-speaking character. Below is what the character said in the EARLIER visit, then in the LATER visit. List what the character, in the LATER visit, tells or asks again as if it were new: a story, a fact about themselves or the place, or a question they already asked or told in the earlier visit. Do not list greetings, farewells or ordinary routine of the trade, and do not list something the character openly picks up as already discussed ("as I told you", "last time"); count those in pickedUp. Quote the later line and the earlier one it repeats.\n\nEARLIER:\n${lines[id][v - 1].join('\n')}\n\nLATER:\n${lines[id][v].join('\n')}`, { schema: judgeSchema, max: 3000 }));
+    } catch (e) { judged = undefined; }
+    out.push({ character: id, visit: v + 1, exact8, exact4, shared: [...cm].filter((w) => ec.has(w)).length / (cm.size || 1), baseline: share(others), sharedWords: [...cm].filter((w) => ec.has(w)).slice(0, 15), judged });
+  })), 6);
+  out.sort((a, b) => a.character.localeCompare(b.character) || a.visit - b.visit);
+  writeFileSync(file, JSON.stringify({ label, cluster: clusterNo, persona, model: TURN_MODEL, secs, rows, memoryNotes, lines, repeats: out }, null, 1));
+  const m = (f: (x: (typeof out)[number]) => number) => (out.reduce((n, x) => n + f(x), 0) / (out.length || 1));
+  console.log(`  repeats across visits (${out.length} later visits): exact 8+ words ${m((x) => x.exact8).toFixed(2)} a visit · exact 4+ words ${m((x) => x.exact4).toFixed(2)} · content words shared with earlier visits ${(100 * m((x) => x.shared)).toFixed(0)}% (other places' visits ${(100 * m((x) => x.baseline)).toFixed(0)}%)`);
+  const judgedOk = out.filter((x) => x.judged);
+  console.log(`  judge: ${judgedOk.reduce((n, x) => n + x.judged!.asNew.length, 0)} retold as new in ${judgedOk.filter((x) => x.judged!.asNew.length).length}/${judgedOk.length} visits · picked up as a thread ${judgedOk.reduce((n, x) => n + x.judged!.pickedUp, 0)}`);
+  for (const x of judgedOk) for (const t of x.judged!.asNew) console.log(`    [${x.character} v${x.visit}, ${t.kind}] later: ${t.later} | earlier: ${t.earlier}`);
+}
