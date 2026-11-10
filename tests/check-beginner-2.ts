@@ -17,22 +17,28 @@ check(beginnerVersionFrom(new Headers()) === 1 && beginnerVersionFrom(new Header
 const a = pickSetup({ conversationId: 'conv-1', turn: 3, characterId: 'luisa' });
 check(pickSetup({ conversationId: 'conv-1', turn: 3, characterId: 'luisa' }).id === a.id, 'the same conversation and turn get the same setup');
 const seen = new Set(Array.from({ length: 40 }, (_, i) => pickSetup({ conversationId: 'conv-1', turn: i, characterId: 'luisa' }).id));
-check(seen.size === CLUSTER_1.length, `over 40 turns every setup of cluster 1 comes up (got ${[...seen].join(', ')})`);
+check(seen.size === CLUSTER_1.length && [...seen].every((id) => CLUSTER_1.some((s) => s.id === id)), `over 40 turns every setup of cluster 1 comes up (got ${[...seen].join(', ')})`);
 const day = new Date('2026-11-09T10:00:00Z');
 check(pickSetup({ turn: 0, learnerId: 'L', characterId: 'luisa', now: day }).id === pickSetup({ turn: 0, learnerId: 'L', characterId: 'luisa', now: day }).id, 'an opening is seeded by learner, place and day');
 
 for (const setup of RUNGS) check(setupText(setup).startsWith('This turn,') && !/\{\w+\}/.test(setupText(setup)), `${setup.block}: its line is read from beginner-2.md, filled`);
-check(CLUSTERS.length === 6 && CLUSTERS.every((c) => c.length === 3), 'six clusters of three rungs');
-check(CLUSTERS.every((c, i) => i === 0 || c[0] === CLUSTERS[i - 1][1]), 'each cluster drops the lowest rung and adds the next');
+check(CLUSTERS.length === 6 && CLUSTERS[0].length === 2 && CLUSTERS.slice(1).every((c) => c.length === 3), 'six clusters: the first of two rungs, the rest of three');
+check(CLUSTER_1.every((s) => s.english && !s.inside), 'cluster 1 always shows English under the answers');
+check(CLUSTERS.every((c, i) => i < 2 || c[0] === CLUSTERS[i - 1][1]), 'from cluster 2, each drops the lowest rung and adds the next');
 check(clusterFrom(new Headers({ 'x-fuori-cluster': '4' })) === CLUSTERS[3] && clusterFrom(new Headers()) === CLUSTER_1 && clusterFrom(new Headers({ 'x-fuori-cluster': '9' })) === CLUSTER_1, 'the cluster header picks clusters 1-6, cluster 1 otherwise');
 const seen6 = new Set(Array.from({ length: 40 }, (_, i) => pickSetup({ conversationId: 'c', turn: i, characterId: 'x' }, CLUSTERS[5]).id));
 check(seen6.size === 3 && seen6.has('free'), `cluster 6 plays its own three rungs (got ${[...seen6].join(', ')})`);
 
 const parts: Part[] = [{ kind: 'question', text: 'Un caffè?', en: 'A coffee?', gloss: '' }, { kind: 'answer', text: 'Sì, grazie.', en: 'Yes, thanks.', gloss: '' }];
-check(shownParts(parts, CLUSTER_1.find((s) => !s.english)!)[1].en === '', 'the language-only rung hides the answers\' English');
-check(shownParts(parts, CLUSTER_1.find((s) => s.english)!)[1].en === 'Yes, thanks.', 'the English rungs keep it');
-check(shownParts(parts, CLUSTER_1.find((s) => !s.english)!)[0].en === 'A coffee?', 'her own parts are untouched');
+check(shownParts(parts, RUNGS.find((r) => r.id === 'one')!)[1].en === '', 'the language-only rung hides the answers\' English');
+check(shownParts(parts, RUNGS.find((r) => r.id === 'one-en')!)[1].en === 'Yes, thanks.', 'the English rungs keep it');
+check(shownParts(parts, RUNGS.find((r) => r.id === 'one')!)[0].en === 'A coffee?', 'her own parts are untouched');
 
+const bare: Part[] = [{ kind: 'word', text: 'Qué bueno.', en: 'Great.', gloss: '' }, { kind: 'question', text: '¿Cuál le gusta más?', en: 'Which do you like best?', gloss: '' }, { kind: 'answer', text: 'Me gusta el de allá.', en: 'I like that one.', gloss: '' }];
+const fixed = shownParts(bare, CLUSTER_1[0]);
+check(fixed.find((x) => x.kind === 'question')!.gloss === 'Which do you like best?', 'a turn with no English gets its question\'s English as a gloss (Hugo, 2026-11-09)');
+const glossed: Part[] = [{ kind: 'question', text: '¿Le gustan?', en: 'Do you like them?', gloss: 'like them?' }];
+check(shownParts(glossed, CLUSTER_1[0])[0].gloss === 'like them?', 'a turn that already has English is left alone');
 const inside = shownParts(parts, RUNGS.find((r) => r.id === 'inside-en')!);
 check(!inside.some((x) => x.kind === 'answer') && inside.some((x) => x.kind === 'word' && x.text === 'Sì, grazie.' && x.gloss === 'Yes, thanks.'), 'rung 4: the answer is in her speech with its English heard, no bubble');
 check(shownParts(parts, RUNGS.find((r) => r.id === 'inside')!).some((x) => x.kind === 'word' && x.text === 'Sì, grazie.' && !x.gloss), 'rung 6: the answer in her speech, no English');

@@ -47,8 +47,12 @@ export const RUNGS: Setup[] = [
   { id: 'free', block: 'Setup: no answers', maxAnswers: 0, english: false },
 ];
 
-/** Six clusters of three neighbouring rungs, each step dropping the lowest and adding the next (Josh: 6–8 clusters) */
-export const CLUSTERS: Setup[][] = Array.from({ length: RUNGS.length - 2 }, (_, i) => RUNGS.slice(i, i + 3));
+/**
+ * Six clusters, each step dropping the lowest rung and adding the next (Josh: 6–8 clusters).
+ * Cluster 1 is the two rungs with English under the answers: the language-only answer came up
+ * on Josh's second turn and lost him (Hugo, 2026-11-09), so it starts in cluster 2
+ */
+export const CLUSTERS: Setup[][] = [RUNGS.slice(0, 2), ...Array.from({ length: RUNGS.length - 3 }, (_, i) => RUNGS.slice(i + 1, i + 4))];
 export const CLUSTER_1 = CLUSTERS[0];
 
 /** The app's hidden cluster picker: header `x-fuori-cluster: 1`–`6`; cluster 1 otherwise */
@@ -97,8 +101,21 @@ export function insideSpeech(parts: Part[], setup: Setup): Part[] {
   return [...rest, { kind: 'english', text: lead, en: '', gloss: '' }, { kind: 'word', text: answer.text, en: answer.en, gloss: setup.english ? answer.en : '' }];
 }
 
-/** Display: the answers' English left out on a language-only rung; an inside rung's answer said by her */
-export function shownParts(parts: Part[], setup: Setup): Part[] {
+/**
+ * English on every turn (Josh, 2026-11-09: "almost no character dialogue in english"): a turn
+ * with no English part and no gloss gets the English of her question (or of her last phrase)
+ * as its gloss, so it's heard after the language. The prompt asks for it; this makes sure
+ */
+export function withEnglish(parts: Part[]): Part[] {
+  const said = parts.filter((x) => x.kind !== 'answer');
+  if (said.some((x) => (x.kind === 'english' && x.text.trim()) || ((x.kind === 'word' || x.kind === 'question') && x.gloss?.trim()))) return parts;
+  const target = [...said].reverse().find((x) => x.kind === 'question' && x.en.trim()) ?? [...said].reverse().find((x) => x.kind === 'word' && x.en.trim());
+  return target ? parts.map((x) => (x === target ? { ...x, gloss: x.en } : x)) : parts;
+}
+
+/** Display: English on every turn; the answers' English left out on a language-only rung; an inside rung's answer said by her */
+export function shownParts(raw: Part[], setup: Setup): Part[] {
+  const parts = withEnglish(raw);
   if (setup.inside) return insideSpeech(parts, setup);
   return setup.english ? parts : parts.map((x) => (x.kind === 'answer' ? { ...x, en: '' } : x));
 }
