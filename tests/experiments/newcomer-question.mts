@@ -26,6 +26,7 @@ const judge = async (line: string) => JSON.parse(await ask(`${JUDGE}\n\nLine: ${
 
 type Seen = { who: string; kind: string; line: string; asks: boolean; quote: string };
 const seen: Seen[] = [];
+const failed: string[] = [];
 
 // Intermediate: whole visits, a learner line written for each turn
 const people = cities.flatMap((c) => c.places.filter((p) => p.characterId).map((p) => ({ city: c.id, place: p.id })));
@@ -34,16 +35,18 @@ const chosen = Array.from({ length: howMany }, (_, i) => people[i * step]).filte
 await pool(chosen.map(({ city, place }) => async () => {
   const ch = characterForVisit(city, place);
   if (!ch) return;
-  const transcript: { who: string; transcript: string; translation?: string }[] = [];
-  let said: string | undefined;
-  for (let turn = 0; turn < turns; turn++) {
-    const r = await runTurn({ character: ch, transcript, ...(said ? { learnerSaid: said } : {}), withDone: true } as never);
-    seen.push({ who: `${ch.name} (${city})`, kind: 'intermediate', line: r.line, ...(await judge(r.line)) });
-    if (said) transcript.push({ who: 'learner', transcript: said });
-    transcript.push({ who: 'npc', transcript: r.line, translation: r.en });
-    if (r.done) break;
-    said = await ask(`You're learning ${language.name} and talking with someone. They just said: "${r.line}". Reply as a learner might: one or two short, simple ${language.name} sentences, sometimes a question back. Only what you say.`, { max: 150 });
-  }
+  try {
+    const transcript: { who: string; transcript: string; translation?: string }[] = [];
+    let said: string | undefined;
+    for (let turn = 0; turn < turns; turn++) {
+      const r = await runTurn({ character: ch, transcript, ...(said ? { learnerSaid: said } : {}), withDone: true } as never);
+      seen.push({ who: `${ch.name} (${city})`, kind: 'intermediate', line: r.line, ...(await judge(r.line)) });
+      if (said) transcript.push({ who: 'learner', transcript: said });
+      transcript.push({ who: 'npc', transcript: r.line, translation: r.en });
+      if (r.done) break;
+      said = await ask(`You're learning ${language.name} and talking with someone. They just said: "${r.line}". Reply as a learner might: one or two short, simple ${language.name} sentences, sometimes a question back. Only what you say.`, { max: 600 });
+    }
+  } catch (e) { failed.push(`${ch.name}: ${String(e).slice(0, 120)}`); }
 }), 6);
 
 // Beginner 2: every character line of the saved visits
@@ -63,4 +66,5 @@ for (const kind of ['intermediate', 'beginner-2']) {
   console.log(`${label} ${kind}: ${asking} of ${conv.size} conversations ask (${mine.filter((s) => s.asks).length} of ${mine.length} lines)`);
   for (const s of mine.filter((x) => x.asks)) console.log(`  ${s.who}: ${s.quote}`);
 }
+if (failed.length) console.log(`visits cut short by an error: ${failed.length}\n  ${failed.join('\n  ')}`);
 console.log(file);
