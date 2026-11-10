@@ -33,7 +33,7 @@ Josh, 2026-11-04: "when the conversation is open ended like Lorenzo - no questio
 What happened: Ardit kept saying "torno subito" and "arriva subito", and the mic opened each time with nothing to answer ("Grazie", "Grazie", "No").
 
 - **Claude's proposal:** the reply gets an optional `away` flag that Claude sets when the character steps away for a moment. The mic doesn't open; after a short pause the character comes back with the next line ("Ecco la ribollita, calda calda"). Works in any language, no phrase lists. Needs a prompt line, a server change and an app build. Test: Rome's shop, bar and trattoria scenes come back instead of stalling, and open scenes don't change.
-- **Tried and dropped:** "Always leave them something to answer." added to the character prompt (`tests/experiments/dead-ends.mts`, 2026-11-04). Lines with no question 26% → 4%, dead ends 14 → 1, but it makes the waiter stay and chat, which Josh says is the wrong fix. Two-question lines 16% → 18%, forced questions 1 → 3.
+- **Tried and dropped:** "Always leave them something to answer." added to the character prompt (`tests/experiments/archive/dead-ends.mts`, 2026-11-04). Lines with no question 26% → 4%, dead ends 14 → 1, but it makes the waiter stay and chat, which Josh says is the wrong fix. Two-question lines 16% → 18%, forced questions 1 → 3.
 
 ## Open-ended talk doesn't need a question every turn
 
@@ -101,7 +101,7 @@ Seen by Claude in the replay set (2026-11-05, 1 of 4 runs): after Jennifer's "¿
 
 ## The examples become a replay set
 
-- **Started 2026-11-05:** `tests/experiments/replay-set.mts` replays Luisa's and Doña Chela's openings, Jennifer's Magda lesson and two more stage 1 openings per country, with a judge on what the voice says (repeats, run-on). `tests/experiments/heard-replay.mts` replays the mishearing cases (Magda's coaching, Ardit's ribollita, Lorenzo's *say this*). New examples go into one of the two.
+- **Started 2026-11-05:** `tests/experiments/archive/replay-set.mts` replays Luisa's and Doña Chela's openings, Jennifer's Magda lesson and two more stage 1 openings per country, with a judge on what the voice says (repeats, run-on). `tests/experiments/heard-replay.mts` replays the mishearing cases (Magda's coaching, Ardit's ribollita, Lorenzo's *say this*). New examples go into one of the two.
 
 Claude's proposal (2026-11-04, from a Karpathy-inspired prompt template Josh shared; Josh: "Worth saving any notes/ideas?"): once this list has a dozen or so real examples, turn them into a fixed replay set: the conversation up to the moment, and what should or shouldn't happen next (the waiter comes back; *say this* doesn't answer for the learner; no recast of a mishearing). Any change to the character prompt or to *say this* is then measured against the same cases before it ships, alongside `test:conversations`.
 

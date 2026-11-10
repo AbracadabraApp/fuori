@@ -21,7 +21,7 @@
 
 ## The 10 beginner chips, for Mexico
 
-Same chips as Italy (`tests/experiments/missions-it.json`), checked against these sources:
+Same chips as Italy (`tests/experiments/archive/missions-it.json`), checked against these sources:
 
 | Chip | Where taught | Level | Mexico note |
 |---|---|---|---|

@@ -4,7 +4,7 @@ Status (Josh, 2026-10-15): **"not great yet, getting better."** Working designs,
 
 ## The welcome, redone (Josh, 2026-11-05; built 2026-11-05)
 
-Built in lib/welcome.ts and welcome.md: the steps are counted in code, not left to her. The opening's answers are the two buttons (`tapAnswers`: the mic stays closed); after the tap the done button shows beside the mic (`canEnd`), and she sets done once they say they're ready. The app part (the buttons as taps, the done button beside the mic) comes with the next phone build; until then the app shows the two as answers to say and the button only once they say they're ready. Trial: tests/experiments/welcome-trial.mts, 4 newcomers in each country.
+Built in lib/welcome.ts and welcome.md: the steps are counted in code, not left to her. The opening's answers are the two buttons (`tapAnswers`: the mic stays closed); after the tap the done button shows beside the mic (`canEnd`), and she sets done once they say they're ready. The app part (the buttons as taps, the done button beside the mic) comes with the next phone build; until then the app shows the two as answers to say and the button only once they say they're ready. Trial: tests/experiments/archive/welcome-trial.mts, 4 newcomers in each country.
 
 **This replaces the three-goal welcome (name, masculine or feminine, how much they speak; 2026-11-03).** Josh: "we need to rewrite the onboarding too, just have a simple assignment. Explain a bit about the country, places, and capture masculine/feminine. The whole thing about benvenuto is confusing; we just need to know which gender to use."
 

@@ -19,7 +19,7 @@ learner's first three conversations. The third needs a pair where only one
 reply fits; the wrong one is correct language that doesn't fit the moment,
 never broken language, so the screen never models a mistake
 (docs/beginner-scaffolding.md → stages B and C). The System prompt is
-unchanged. Trial (tests/experiments/reply-choice.mts, 84 pairs per country):
+unchanged. Trial (tests/experiments/archive/reply-choice.mts, 84 pairs per country):
 a first version passed all checks on 70% (Italy) / 75% (Mexico), its wrong
 reply often another fair choice (coffee at a market) or given away by a
 different greeting; this one, the wrong reply answering a different

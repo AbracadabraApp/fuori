@@ -8,27 +8,27 @@ Run from the repo root with the API key: `npx tsx --env-file=.env.local tests/ex
 
 | Script | What it measures | Input | Rounds |
 |---|---|---|---|
-| `question-kinds.mts` | What each character line asks (none, yes/no, choice, one fact, open) and whether a beginner could answer | report `.md` files, `label=path` | 5–6, 15 |
-| `line-level.mts` | Lines a beginner can follow (the scorecard's level judge, `lib/level.ts`), early and late in the conversation | report `.md` files | 1–14 (as `grade-runs.mjs`) |
-| `judge-report.mts` | The replay's quality judge (alive, replies that don't follow) on any report, twice per conversation; `--notes` prints why | report `.md` files | 8–13 |
-| `reply-buttons.mts` | The reply buttons (`lib/replies.ts`) for every character line, judged in 8 checks, and whether they're ready before the line ends | report `.md` files | 7 |
-| `reply-choice.mts` | The choose stage's pair (one reply fits, one doesn't), judged in 7 checks, on the first three lines of each synthetic conversation | synthetic set | choice 1 |
+| `archive/question-kinds.mts` | What each character line asks (none, yes/no, choice, one fact, open) and whether a beginner could answer | report `.md` files, `label=path` | 5–6, 15 |
+| `archive/line-level.mts` | Lines a beginner can follow (the scorecard's level judge, `lib/level.ts`), early and late in the conversation | report `.md` files | 1–14 (as `grade-runs.mjs`) |
+| `archive/judge-report.mts` | The replay's quality judge (alive, replies that don't follow) on any report, twice per conversation; `--notes` prints why | report `.md` files | 8–13 |
+| `archive/reply-buttons.mts` | The reply buttons (`lib/replies.ts`) for every character line, judged in 8 checks, and whether they're ready before the line ends | report `.md` files | 7 |
+| `archive/reply-choice.mts` | The choose stage's pair (one reply fits, one doesn't), judged in 7 checks, on the first three lines of each synthetic conversation | synthetic set | choice 1 |
 | `say-it.mts` | How do I say it: English requests become the line to read, judged in 6 checks | synthetic set | say-it 1–2 |
-| `name-from-heard.mts` | The learner's name out of a spoken answer (`nameFromHeard`), 16 fixed answers | — | name 1 |
-| `real-conversations.mts` | Real conversations from the admin export, re-judged, written as a report (lowest first) for the scripts above | admin export, prompt version | 15 |
-| `placement.mts` | Onboarding's level against a known level, and a level judge after each of 3 conversations | — | 14 |
-| `repeats.mts` | Character lines that repeat themselves or re-ask, on the longest replay scripts; `TURN_RECENT_TURNS` sets the history window | replay set | 15 |
-| `reply-tokens.mts` | Output tokens per character reply with a high cap (how close replies come to `max_tokens`) | replay set (Italy) or simulated learners | 16 |
-| `learner-levels.mts` | The level check (`lib/learner-level.ts`) on each real learner's first conversations, for Josh to compare with his own judgement | admin export | 14 |
-| `diario-cards.mts` | Diario cards from real conversations: today's stored review phrases against a draft card maker, 9 checks plus the level judge | admin export | 17 |
+| `archive/name-from-heard.mts` | The learner's name out of a spoken answer (`nameFromHeard`), 16 fixed answers | — | name 1 |
+| `archive/real-conversations.mts` | Real conversations from the admin export, re-judged, written as a report (lowest first) for the scripts above | admin export, prompt version | 15 |
+| `archive/placement.mts` | Onboarding's level against a known level, and a level judge after each of 3 conversations | — | 14 |
+| `archive/repeats.mts` | Character lines that repeat themselves or re-ask, on the longest replay scripts; `TURN_RECENT_TURNS` sets the history window | replay set | 15 |
+| `archive/reply-tokens.mts` | Output tokens per character reply with a high cap (how close replies come to `max_tokens`) | replay set (Italy) or simulated learners | 16 |
+| `archive/learner-levels.mts` | The level check (`lib/learner-level.ts`) on each real learner's first conversations, for Josh to compare with his own judgement | admin export | 14 |
+| `archive/diario-cards.mts` | Diario cards from real conversations: today's stored review phrases against a draft card maker, 9 checks plus the level judge | admin export | 17 |
 | `core-behaviours.mts` | CLAUDE.md's core behaviours (help when asked, what does it mean, garbled speech, recasting a mistake, no unasked English), one probe each, thinking off and on; `PROBES=` picks probes, `CHARACTER_PROMPT=` a trial prompt, `PROMPTS=a.md,b.md` one arm per prompt | — | 18 |
-| `conversation-ends.mts` | Real conversations from the admin export: where each was first naturally over (errand done and closed, or both said goodbye), what happened after, and whether the learner said goodbye; reads `ended_at`, which includes idle time, so the seconds are rough; also writes JSON for end-detect | — | 19 |
-| `end-detect.mts` | Two ways to notice a conversation is over, scored against conversation-ends' judge: an `over` flag on the character's reply (trial schema, line regenerated) and a separate judge after each real line (timed) | — | 20 |
+| `archive/conversation-ends.mts` | Real conversations from the admin export: where each was first naturally over (errand done and closed, or both said goodbye), what happened after, and whether the learner said goodbye; reads `ended_at`, which includes idle time, so the seconds are rough; also writes JSON for end-detect | — | 19 |
+| `archive/end-detect.mts` | Two ways to notice a conversation is over, scored against conversation-ends' judge: an `over` flag on the character's reply (trial schema, line regenerated) and a separate judge after each real line (timed) | — | 20 |
 | `help-asks.mts` | Real conversations: every learner turn asking for help, and whether the next character line carried English in the spoken line, helped in the language only, or ignored it (before dropping the English translation line) ; `PROMPTS=` replays each ask with each prompt file | — | 21 |
-| `teach-moments.mts` | Real conversations: the character's teaching moments by kind (vocabulary, gender or number, conjugation, dialect or local), how (recast, in the language, in English), whether it sounds like a lesson, and missed chances | — | 22 |
-| `word-list-level.py` + `word-list-level.mts` | "Lines a beginner can follow" by a fixed word list (the syllabus's `level-words-it.csv`, lemmas from spaCy's large Italian model; needs a venv, see the script) against the level.md judge run three times | — | 23 |
-| `learner-address.mts` | Whether characters get the learner's gender right (benvenuto / benvenuta): women and men, gender unknown and known (character.md `{person}`), first and return visits; a judge lists every gendered word for the learner | — | gender 1 |
-| `voice-speed.mts` | Speed of speech in (Groq Whisper, ElevenLabs Scribe) and speech out (ElevenLabs models, whole file and first streamed byte), short to long lines, both languages; laptop network | — | voice 1 |
+| `archive/teach-moments.mts` | Real conversations: the character's teaching moments by kind (vocabulary, gender or number, conjugation, dialect or local), how (recast, in the language, in English), whether it sounds like a lesson, and missed chances | — | 22 |
+| `archive/word-list-level.py` + `archive/word-list-level.mts` | "Lines a beginner can follow" by a fixed word list (the syllabus's `level-words-it.csv`, lemmas from spaCy's large Italian model; needs a venv, see the script) against the level.md judge run three times | — | 23 |
+| `archive/learner-address.mts` | Whether characters get the learner's gender right (benvenuto / benvenuta): women and men, gender unknown and known (character.md `{person}`), first and return visits; a judge lists every gendered word for the learner | — | gender 1 |
+| `archive/voice-speed.mts` | Speed of speech in (Groq Whisper, ElevenLabs Scribe) and speech out (ElevenLabs models, whole file and first streamed byte), short to long lines, both languages; laptop network | — | voice 1 |
 | `leveling/run.mts` (folder with its own README) | The leveling prototype: designs A, B and C (docs/research/leveling/05-designs.md) on simulated learners over 15 conversations, both countries; lines followable at the step, climbs, alive, seconds and calls; `--dry` runs without a key | — | leveling 1 |
 | `on-hold/smaller-world.mts` | Scripted two-visit conversations per character in one neighbourhood, checked and rewritten. On hold until the smaller world has a spec | — | 12–13 |
 

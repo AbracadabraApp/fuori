@@ -230,7 +230,7 @@ export async function lessonBrief(l: LessonTurn, learnerId: string, transcript: 
     return { brief, forcedDone: last, askDone: false, speaking };
   }
   // The review: the learner's lines from the practice dialogues, read from their own conversations
-  // (or given, by tests/experiments/lesson-trial.mts)
+  // (or given, by tests/experiments/archive/lesson-trial.mts)
   const ids = (l.practiceIds ?? []).filter((id) => /^[0-9a-f-]{36}$/i.test(id)).slice(0, SCENES);
   let lines = practiceLines;
   if (!lines) {

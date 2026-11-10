@@ -1,6 +1,6 @@
 ## Fuori's beginner chips against the A1–A2 books
 
-Josh's 10 beginner chips (`tests/experiments/missions-it.json`) checked against *Nuovissimo Progetto italiano* 1a (A1) and 1B (A2), and against the function map from *Italian Grammar You Really Need to Know*.
+Josh's 10 beginner chips (`tests/experiments/archive/missions-it.json`) checked against *Nuovissimo Progetto italiano* 1a (A1) and 1B (A2), and against the function map from *Italian Grammar You Really Need to Know*.
 
 | Fuori chip | Where the book teaches it | Level | Notes |
 |---|---|---|---|

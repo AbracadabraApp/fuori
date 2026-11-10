@@ -16,7 +16,7 @@ Josh, 2026-11-05: "its fine if alcohol comes into the game (like the mezcaleria)
 
 ### 2026-11-04: first version
 
-Josh, 2026-11-03: "handle all the data and code work" for culture. From the other session's tested prompts (tests/experiments/culture-lesson.mts; Rome: six items, all passed the fact judge, tipico; two played as lessons), made language-neutral (the language and the city come from the content), with a Fix and a Choose step for the bounded pass the doc decided (write, judge once, fix the failures, recheck once, drop what still fails), and two changes from the review of that trial: each turn is capped at three or four short sentences (the trial's Intermediate turns ran to about 90 words, a lot to follow by ear) and the teller keeps to the checked facts. Beginners hear the story in the Beginner format's English parts, with the words as word parts.
+Josh, 2026-11-03: "handle all the data and code work" for culture. From the other session's tested prompts (tests/experiments/archive/culture-lesson.mts; Rome: six items, all passed the fact judge, tipico; two played as lessons), made language-neutral (the language and the city come from the content), with a Fix and a Choose step for the bounded pass the doc decided (write, judge once, fix the failures, recheck once, drop what still fails), and two changes from the review of that trial: each turn is capped at three or four short sentences (the trial's Intermediate turns ran to about 90 words, a lot to follow by ear) and the teller keeps to the checked facts. Beginners hear the story in the Beginner format's English parts, with the words as word parts.
 
 ### 2026-11-04b: no "word worth keeping"
 

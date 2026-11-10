@@ -96,7 +96,7 @@ Claude's favourites: The word you were missing, What she meant, Next time try (s
 
 **Wired up (2026-10-21; on for everyone since Josh said no test flags while it's him and family):** in a conversation, once the learner has sent four lines, the **Learn link** appears bottom right, centred on the mic circle ([bottom-bar.md](bottom-bar.md); Josh: the nav-bar book is the Learn area, not the sheet). Tapping it pauses the scene and opens the **Learn sheet**, which calls POST /v1/learn (the **Learn agent**: `lib/learn.ts`, the prompt below) for the conversation so far; corrections say `right` through /v1/speak in the character's voice. Closing leaves the scene paused. Italy only: a country without `prompts/learn.md` gets "Learn isn't ready for this country yet". The memory call's learning notes aren't passed yet (they're written when the conversation ends; mid-conversation the prompt gets "(none)"). The Learn area (the book in the nav bar) isn't built.
 
-**First try:** `content/it/prompts/learn.md`, run by `tests/experiments/learn-page.mts` on the modelled month and on one of Josh's conversations (pages in `tests/experiments/out/`, off git).
+**First try:** `content/it/prompts/learn.md`, run by `tests/experiments/archive/learn-page.mts` on the modelled month and on one of Josh's conversations (pages in `tests/experiments/out/`, off git).
 
 ## A lesson: Magda teaches, characters practise, Magda reviews (Josh, 2026-10-28)
 

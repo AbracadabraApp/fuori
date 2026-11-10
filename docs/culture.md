@@ -198,9 +198,9 @@ Each city's file has 30–40 places but the app shows about 10 (`content/it/show
 
 ## Tests (2026-11-03)
 
-**Cultural items and lessons** (`tests/experiments/culture-lesson.mts`): one call, with no city lists, picked six items for Rome from its shown people, each with its teller; all six passed the fact judge, and they were tipico (the quinto quarto, gnocchi on Thursday, Il Gesù's ceiling, romanisti and laziali, the Festa de' Noantri, the Palazzaccio; the last is the weakest). Two played as lessons: the personal questions work ("Hai mai mangiato la trippa?"), the Beginner version works (story in English, *Palazzaccio* said back), but the turns were too long for Intermediate (80–90 words, dates). Shop business stayed in the background (2 of 17 sentences). Next: four or five shorter turns, dates only when they're the point.
+**Cultural items and lessons** (`tests/experiments/archive/culture-lesson.mts`): one call, with no city lists, picked six items for Rome from its shown people, each with its teller; all six passed the fact judge, and they were tipico (the quinto quarto, gnocchi on Thursday, Il Gesù's ceiling, romanisti and laziali, the Festa de' Noantri, the Palazzaccio; the last is the weakest). Two played as lessons: the personal questions work ("Hai mai mangiato la trippa?"), the Beginner version works (story in English, *Palazzaccio* said back), but the turns were too long for Intermediate (80–90 words, dates). Shop business stayed in the background (2 of 17 sentences). Next: four or five shorter turns, dates only when they're the point.
 
-**Ordinary visits with an errand** (`tests/experiments/errand-leads.mts`): 6 Rome characters × 4 versions of their setting × 2 simulated learners, real turn code, Intermediate path only.
+**Ordinary visits with an errand** (`tests/experiments/archive/errand-leads.mts`): 6 Rome characters × 4 versions of their setting × 2 simulated learners, real turn code, Intermediate path only.
 
 | Character's prompt | Errand | Culture | Weather | Errand done |
 |---|---|---|---|---|

@@ -8,7 +8,7 @@ Josh, 2026-11-06: speed of speech doesn't belong in a character prompt (his deci
 
 ### 2026-11-05b: stage 1 doesn't say the key word twice
 
-Josh, 2026-11-05, hearing Beginner openings: "totally incoherent, repetitive with no pauses". Stage 1 asked to "say the key word again without being asked", which gave "Nieve. Nieve de tuna. ¿Quiere nieve de tuna…?" (tests/experiments/replay-set.mts). Dropped; the rest of the stage is unchanged. With beginner.md 2026-11-05c (say each thing once).
+Josh, 2026-11-05, hearing Beginner openings: "totally incoherent, repetitive with no pauses". Stage 1 asked to "say the key word again without being asked", which gave "Nieve. Nieve de tuna. ¿Quiere nieve de tuna…?" (tests/experiments/archive/replay-set.mts). Dropped; the rest of the stage is unchanged. With beginner.md 2026-11-05c (say each thing once).
 
 ### 2026-11-05: answers, not "whole sentences"
 
