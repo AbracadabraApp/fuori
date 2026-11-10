@@ -56,13 +56,16 @@ const R = (id: string) => RUNGS.find((r) => r.id === id)!;
  * together (Josh: 6–8 clusters; progression is also how much English is spoken)
  */
 export const CLUSTERS: Setup[][] = [
-  [R('two-en'), R('inside-en')],
-  [R('two-en'), R('inside-en'), R('invite-en')],
-  [R('two-en'), R('inside-en'), R('invite-en')],
-  [R('inside-en'), R('invite-en'), R('inside')],
-  [R('invite-en'), R('inside'), R('free')],
+  [R('two-en')],
+  [R('two-en'), R('invite-en')],
+  [R('two-en'), R('invite-en')],
+  [R('two-en'), R('invite-en'), R('free')],
+  [R('invite-en'), R('free')],
   [R('invite-en'), R('free')],
 ];
+// The answer set up inside the character's line (rungs inside-en and inside) is out of every cluster until it
+// has a screen design (Josh, 2026-11-09: "I can't tell what the dialogue is that goes with 'You could answer me
+// with: …'": the lead is heard, not shown, and the answer sits unmarked inside the character's bubble)
 /** Whole-phrase glossing per cluster: off everywhere (2026-11-10c: Beginner 1's S1 text glosses well on its own, Josh); kept to switch on if play shows the need */
 export const GLOSS_ALL = [false, false, false, false, false, false];
 export const CLUSTER_1 = CLUSTERS[0];

@@ -50,6 +50,8 @@ Out: three or more answers (crowds the screen); one word missing with words to c
 
 **What you read, you can understand** (Josh, 2026-11-09, a principle, not a rule): an answer to read is understood either from the English under it or because the character just said it in English ("Do you like blue (*piace blu*) or yellow (*piace giallo*)?" then bubbles "Mi piace blu / Mi piace giallo" need no English). The failure: two sentences in the language with no English, then one bubble in the language ("Sí, azul y amarillo. Y también hay rojo, abajo. ¿Le gusta más el azul o el rojo?" → "Me gusta más el azul."). Reading something you don't understand "feels odd and coercive"; a single answer to read feels weird. So bubbles are two; in clusters 1–2 every phrase is spoken with its English (code); the English under the bubbles stays for now and is the natural thing to drop once the glossing holds in play. An answer the character sets up in speech may be in the language only (it's heard, not read).
 
+**The answer set up inside the character's line is out for now** (Josh, 2026-11-09: "what feels most odd is not knowing what you are saying. I can't tell what the dialogue is that goes with 'You could answer me with: …'"): the lead is English, so heard and not shown, and the answer sits unmarked inside the character's Spanish bubble. It comes back only with a screen design Josh has seen. Cluster 1 is Beginner 1's S1: two answers with English, every turn.
+
 ## Measuring
 
 **The reply table** (Josh's experiment on the Nunzio visit, Palermo, 52ae014d): the learner's reply, judged against what the character asked.
