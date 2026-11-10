@@ -1,5 +1,14 @@
 # Fuori Development Progress
 
+## 2026-11-10: Learn-link ideas, for a session to build (cloud session)
+
+Josh, on the book in the conversation (the Learn link → Learn sheet): ideas 3–5 and the lesson chip interest him. **Build them; don't turn them into test plans first** (Josh: "We have found another place Claude prefers testing to building"). Only a change to how characters talk (character.md) needs a test card.
+- **Leave card:** on leaving a conversation, a small dismissible card (fixes · words · good to know) when there's something, tap for the full sheet. The review is already written at leave (lib/remember.ts; lib/learn-ahead.ts). Screen: one mockup to Josh first.
+- **Lesson chip:** the Learn page writer (content/<country>/prompts/learn.md via lib/learn.ts) is also given the learner's unfinished lessons at their level (lib/lesson.ts → lessonsDone) and picks at most one the conversation shows they need, or none; shown as "Practise this: …" in the Learn sheet and on the leave card, opening the lesson.
+- **Good to know from the place:** the same writer also gets the place and the character's here line, so good-to-know can be the place's culture or history when the talk touched it.
+- **A fix brought back next visit:** one phrase from the review log carried into the next visit's notes for the character to work in naturally. This one changes character.md's relationship line, so it's the one that gets a card (docs/prompt-testing.md).
+- Also noticed: Mexico's lesson examples label the learner `role: "newcomer"`, against CLAUDE.md's new learner rule.
+
 ## Current phase: M2 live (memory, Magda, study file, stamps); M3 polish and language levels next
 
 **What to do next lives in [docs/06-roadmap.md → Now](docs/06-roadmap.md#now)**. Open decisions: [docs/open-design-questions.md](docs/open-design-questions.md). Parked ideas: [docs/ideas.md](docs/ideas.md). This file is the session log; the dated entries below say what happened and why.
