@@ -1,5 +1,5 @@
 {
- "about": "The film page's words for Mexico (as Italy's: MovieGenius's movie page, its tools and style, in Mexican Spanish and curated). whyWatch: MovieGenius's WhyWatch v3 form in Spanish: YES or NO, 2-3 reasons of 5-8 words, 30-50 words of context, no hype words. moreIdeas: MovieGenius's More Ideas form with Mexican criteria: 10 Mexican films, a reason under 20 words; the page shows only the ideas whose film is in cinema-library.json, and the ideas not yet in the library are the next films to check. whyWatch.en: the English for the translate link. Written by Claude in the cloud session, 2026-11-09; the fact judge (scripts/cinema-fact-check.mts, COUNTRY=es-mx) still to run.",
+ "about": "The film page's words for Mexico (as Italy's: MovieGenius's movie page, its tools and style, in Mexican Spanish and curated). whyWatch: MovieGenius's WhyWatch v3 form in Spanish: YES or NO, 2-3 reasons of 5-8 words, 30-50 words of context, no hype words. moreIdeas: MovieGenius's More Ideas form with Mexican criteria: 10 Mexican films, a reason under 20 words; the page shows only the ideas whose film is in cinema-library.json, and the ideas not yet in the library are the next films to check. whyWatch.en: the English for the translate link. Written by Claude in the cloud session, 2026-11-09; Fact-judged 2026-11-09 on the mini (946 claims, 109 flagged); the cloud session corrected what was likely wrong in the films still in the library (Josh's \"medium to low bar\": overclaims, a wrong relation, a book called a novel, uncertain plot details) and left matters of taste and ideas pointing to films no longer in the library.",
  "labels": {
   "yes": "Recomendada",
   "no": "No recomendada",
@@ -96,14 +96,14 @@
      "La vecindad como un pueblo entero",
      "Se llora y se canta"
     ],
-    "context": "Pepe el Toro, carpintero, cría a su sobrina Chachita en una vecindad del centro, entre vecinos chismosos, deudas y una madre enferma. Ismael Rodríguez hizo el melodrama más visto de su época. Hay que llegar con pañuelo.",
+    "context": "Pepe el Toro, carpintero, cría a su sobrina Chachita en una vecindad del centro, entre vecinos chismosos, deudas y una madre enferma. Ismael Rodríguez hizo uno de los melodramas más vistos de su época. Hay que llegar con pañuelo.",
     "en": {
      "reasons": [
       "Pedro Infante is Pepe el Toro",
       "The tenement as a whole village",
       "You cry and you sing"
      ],
-     "context": "Pepe el Toro, a carpenter, raises his niece Chachita in a downtown tenement, among gossiping neighbours, debts and a sick mother. Ismael Rodríguez made the most-watched melodrama of its time. Bring a handkerchief."
+     "context": "Pepe el Toro, a carpenter, raises his niece Chachita in a downtown tenement, among gossiping neighbours, debts and a sick mother. Ismael Rodríguez made one of the most-watched melodramas of its time. Bring a handkerchief."
     }
    },
    "moreIdeas": [
@@ -510,7 +510,7 @@
     {
      "title": "Enamorada",
      "year": 1946,
-     "connection": "María Félix y Emilio Fernández antes, en una comedia de amor",
+     "connection": "María Félix y Emilio Fernández antes, en un romance revolucionario",
      "tmdbId": 115301
     },
     {
@@ -572,14 +572,14 @@
     "recommendation": "YES",
     "reasons": [
      "Una fichera que baila danzón",
-     "El salón de baile más famoso",
+     "Un salón de baile legendario de la capital",
      "Cine de cabaret de Emilio Fernández"
     ],
     "context": "Mercedes baila en el Salón México para pagar el colegio de su hermana menor, que no sabe nada. Un policía la protege; su pareja de baile la explota. Melodrama de cabaret con la música y las noches de la capital.",
     "en": {
      "reasons": [
       "A dance-hall girl who dances danzón",
-      "The most famous dance hall",
+      "A legendary dance hall of the capital",
       "Emilio Fernández's cabaret cinema"
      ],
      "context": "Mercedes dances at the Salón México to pay her younger sister's school fees, and the sister knows nothing. A policeman protects her; her dance partner exploits her. A cabaret melodrama with the music and nights of the capital."
@@ -636,7 +636,7 @@
     {
      "title": "La mujer del puerto",
      "year": 1934,
-     "connection": "El primer gran melodrama de mujeres de la noche",
+     "connection": "Uno de los primeros grandes melodramas de mujeres de la noche",
      "tmdbId": 115294
     },
     {
@@ -1009,7 +1009,7 @@
     {
      "title": "Nazarín",
      "year": 1959,
-     "connection": "Alcoriza escribía para Buñuel, y se nota",
+     "connection": "Buñuel, para quien Alcoriza escribió varios guiones",
      "tmdbId": 35124
     },
     {
@@ -1021,7 +1021,7 @@
     {
      "title": "Tiburoneros",
      "year": 1963,
-     "connection": "Otra de Luis Alcoriza, con pescadores en Tampico",
+     "connection": "Otra de Luis Alcoriza, con pescadores de tiburón en el Golfo",
      "tmdbId": 118010
     },
     {
@@ -1862,14 +1862,14 @@
     "reasons": [
      "Un hacendado que sirve a dos bandos",
      "Zapatistas y federales en la misma mesa",
-     "Fernando de Fuentes, el primer gran director"
+     "Fernando de Fuentes, uno de los primeros grandes directores"
     ],
     "context": "Rosalío Mendoza recibe en su hacienda a zapatistas y a federales, cambiando de retrato según quién llega. Su amistad con un general zapatista lo pone a prueba. Fernando de Fuentes hace una película breve y amarga sobre la Revolución.",
     "en": {
      "reasons": [
       "A landowner who serves both sides",
       "Zapatistas and federal troops at the same table",
-      "Fernando de Fuentes, the first great director"
+      "Fernando de Fuentes, one of the first great directors"
      ],
      "context": "Rosalío Mendoza hosts both Zapatistas and federal troops at his hacienda, swapping the portrait on the wall depending on who arrives. His friendship with a Zapatista general puts him to the test. Fernando de Fuentes makes a short, bitter film about the Revolution."
     }
@@ -1896,7 +1896,7 @@
     {
      "title": "La ley de Herodes",
      "year": 1999,
-     "connection": "Un político que cambia de lado según convenga",
+     "connection": "Acomodarse al poder, ahora en sátira del PRI",
      "tmdbId": 14430
     },
     {
@@ -1931,7 +1931,7 @@
     {
      "title": "La dictadura perfecta",
      "year": 2014,
-     "connection": "Políticos que se acomodan, hoy",
+     "connection": "La política mexicana y sus acomodos, en sátira",
      "tmdbId": 264525
     }
    ]
@@ -2187,14 +2187,14 @@
      "Una pareja rica con cuatro pícaros",
      "Diálogos de Carlos Fuentes"
     ],
-    "context": "Una pareja de clase alta busca refugio en un coche de unos caifanes, cuatro pícaros de barrio, y pasan con ellos la noche por la ciudad: cabarets, funerarias, la estatua del Caballito. Juan Ibáñez abrió el cine mexicano joven de los sesenta.",
+    "context": "Una pareja de clase alta busca refugio en un coche de unos caifanes, cuatro pícaros de barrio, y pasan con ellos la noche por la ciudad: cabarets, funerarias, la estatua del Caballito. Juan Ibáñez fue una de las voces del cine joven de los sesenta.",
     "en": {
      "reasons": [
       "A night across Mexico City",
       "A rich couple with four rascals",
       "Dialogue by Carlos Fuentes"
      ],
-     "context": "An upper-class couple take shelter in a car belonging to the caifanes, four neighbourhood rascals, and spend the night with them across the city: cabarets, funeral parlours, the Caballito statue. Juan Ibáñez opened the young Mexican cinema of the sixties."
+     "context": "An upper-class couple take shelter in a car belonging to the caifanes, four neighbourhood rascals, and spend the night with them across the city: cabarets, funeral parlours, the Caballito statue. Juan Ibáñez was one of the voices of the young cinema of the sixties."
     }
    },
    "moreIdeas": [
@@ -2428,16 +2428,16 @@
     "reasons": [
      "Roberto Cobo, La Manuela, inolvidable",
      "Un burdel en un pueblo de viñedos",
-     "Primer personaje gay complejo del cine mexicano"
+     "Un personaje gay como pocos en el cine mexicano de entonces"
     ],
-    "context": "La Manuela, travesti dueña a medias de un burdel con su hija, teme el regreso de Pancho, un camionero violento. Arturo Ripstein adapta a José Donoso con un cariño y una tensión que entonces no tenían precedente en México.",
+    "context": "La Manuela, travesti dueña a medias de un burdel con su hija, teme el regreso de Pancho, un camionero violento. Arturo Ripstein adapta a José Donoso con un cariño y una tensión poco comunes entonces en México.",
     "en": {
      "reasons": [
       "Roberto Cobo, La Manuela, unforgettable",
       "A brothel in a vineyard town",
-      "Mexican cinema's first complex gay character"
+      "A gay character like few in Mexican cinema then"
      ],
-     "context": "La Manuela, a transvestite who half-owns a brothel with her daughter, fears the return of Pancho, a violent trucker. Arturo Ripstein adapts José Donoso with a tenderness and tension that had no precedent in Mexico then."
+     "context": "La Manuela, a transvestite who half-owns a brothel with her daughter, fears the return of Pancho, a violent trucker. Arturo Ripstein adapts José Donoso with a tenderness and tension rare in Mexico then."
     }
    },
    "moreIdeas": [
@@ -2996,14 +2996,14 @@
      "Sátira del PRI con nombre y apellido",
      "Casi no la dejan estrenar"
     ],
-    "context": "En 1949, Juan Vargas, militante gris del partido, es nombrado presidente municipal de un pueblo miserable. Llega honrado y, con una pistola y la Constitución, aprende rápido a robar. Luis Estrada hizo la sátira política más famosa de México.",
+    "context": "En 1949, Juan Vargas, militante gris del partido, es nombrado presidente municipal de un pueblo miserable. Llega honrado y, con una pistola y la Constitución, aprende rápido a robar. Luis Estrada hizo una de las sátiras políticas más famosas de México.",
     "en": {
      "reasons": [
       "Damián Alcázar, a village mayor",
       "A satire of the PRI, by name",
       "It was almost not released"
      ],
-     "context": "In 1949, Juan Vargas, a dull party member, is made mayor of a wretched village. He arrives honest and, with a pistol and the Constitution, learns fast to steal. Luis Estrada made Mexico's most famous political satire."
+     "context": "In 1949, Juan Vargas, a dull party member, is made mayor of a wretched village. He arrives honest and, with a pistol and the Constitution, learns fast to steal. Luis Estrada made one of Mexico's most famous political satires."
     }
    },
    "moreIdeas": [
@@ -3022,7 +3022,7 @@
     {
      "title": "El compadre Mendoza",
      "year": 1934,
-     "connection": "Un político que cambia de bando según quién llegue",
+     "connection": "Un hombre que se acomoda con el poder de turno, en plena Revolución",
      "tmdbId": 114626
     },
     {
@@ -3077,14 +3077,14 @@
      "Comedia romántica de los noventa",
      "Un taquillazo en México"
     ],
-    "context": "Tomás regresa de un viaje y se queda en casa de un amigo casado; un antiguo novio aparece en la casa de enfrente. Hombres en un departamento, mujeres en el otro. Antonio Serrano llenó los cines con una comedia sobre parejas de clase media.",
+    "context": "Dos parejas de amigos viven en dos departamentos frente a frente, y la llegada de dos viejos amores lo revuelve todo: hombres en un departamento, mujeres en el otro. Antonio Serrano llenó los cines con una comedia sobre parejas de clase media.",
     "en": {
      "reasons": [
       "Two couples and a friend who comes back",
       "A nineties romantic comedy",
       "A Mexican box-office hit"
      ],
-     "context": "Tomás comes back from a trip and stays with a married friend; an old boyfriend turns up in the flat across the street. Men in one flat, women in the other. Antonio Serrano filled cinemas with a comedy about middle-class couples."
+     "context": "Two couples of friends live in two flats facing each other, and the arrival of two old flames turns everything upside down: men in one flat, women in the other. Antonio Serrano filled cinemas with a comedy about middle-class couples."
     }
    },
    "moreIdeas": [
@@ -3562,14 +3562,14 @@
      "Dos gemelas unidas por un accidente",
      "Terror mexicano de taquilla"
     ],
-    "context": "Ágata atropella a un niño en el kilómetro 31 de una carretera y queda en coma; su gemela Catalina siente su dolor y empieza a buscar qué pasó. Rigoberto Castañeda mezcla la leyenda de La Llorona con efectos de Hollywood. Un éxito enorme en México.",
+    "context": "Ágata sufre un accidente en el kilómetro 31 de una carretera y queda en coma; su gemela Catalina siente su dolor y empieza a buscar qué pasó. Rigoberto Castañeda mezcla la leyenda de La Llorona con efectos de Hollywood. Un gran éxito de taquilla en México.",
     "en": {
      "reasons": [
       "La Llorona on a highway",
       "Twin sisters joined by an accident",
       "Box-office Mexican horror"
      ],
-     "context": "Ágata runs over a boy at kilometre 31 of a highway and falls into a coma; her twin Catalina feels her pain and starts looking into what happened. Rigoberto Castañeda mixes the legend of La Llorona with Hollywood effects. A huge hit in Mexico."
+     "context": "Ágata has an accident at kilometre 31 of a highway and falls into a coma; her twin Catalina feels her pain and starts looking into what happened. Rigoberto Castañeda mixes the legend of La Llorona with Hollywood effects. A big box-office hit in Mexico."
     }
    },
    "moreIdeas": [
@@ -3643,14 +3643,14 @@
      "Animación mexicana para toda la familia",
      "Albures y juegos de palabras"
     ],
-    "context": "Toto, un huevo de granja, escapa de la cocina con un tocino y otro huevo, y busca el santuario de los pollos. Los hermanos Riva Palacio hicieron la primera gran animación mexicana de taquilla, con mucho humor de palabras. Tiene secuelas.",
+    "context": "Toto, un huevo de granja, escapa de la cocina con un tocino y otro huevo, y busca el santuario de los pollos. Los hermanos Riva Palacio hicieron una de las primeras grandes animaciones mexicanas de taquilla, con mucho humor de palabras. Tiene secuelas.",
     "en": {
      "reasons": [
       "An egg that doesn't want to be cooked",
       "Mexican animation for the whole family",
       "Double meanings and wordplay"
      ],
-     "context": "Toto, a farm egg, escapes the kitchen with a piece of bacon and another egg, and looks for the chickens' sanctuary. The Riva Palacio brothers made the first big hit of Mexican animation, with lots of wordplay. It has sequels."
+     "context": "Toto, a farm egg, escapes the kitchen with a piece of bacon and another egg, and looks for the chickens' sanctuary. The Riva Palacio brothers made one of the first big hits of Mexican animation, with lots of wordplay. It has sequels."
     }
    },
    "moreIdeas": [
@@ -3756,7 +3756,7 @@
     {
      "title": "El compadre Mendoza",
      "year": 1934,
-     "connection": "Los generales y sus negocios",
+     "connection": "Generales y hacendados en tiempos revueltos",
      "tmdbId": 114626
     },
     {
@@ -3965,16 +3965,16 @@
     "reasons": [
      "Tres hijos ricos aprenden a trabajar",
      "Gonzalo Vega, padre que finge la ruina",
-     "La comedia más vista de su año"
+     "Un gran éxito de taquilla en 2013"
     ],
-    "context": "Un millonario, harto de sus hijos consentidos, finge que el gobierno le quitó todo y los obliga a trabajar: de chofer, de mesera, de cajero de banco. Gary Alazraki hace una comedia ligera sobre clases sociales. Tuvo versión en otros países.",
+    "context": "Un millonario, harto de sus hijos consentidos, finge que el gobierno le quitó todo y los obliga a trabajar: de chofer, de mesera, de cajero de banco. Gary Alazraki hace una comedia ligera sobre clases sociales.",
     "en": {
      "reasons": [
       "Three rich kids learn to work",
       "Gonzalo Vega, a father who fakes ruin",
-      "The most-watched comedy of its year"
+      "A big box-office hit in 2013"
      ],
-     "context": "A millionaire, fed up with his spoiled children, pretends the government took everything and makes them work: as a driver, a waitress, a bank teller. Gary Alazraki makes a light comedy about social class. It was remade in other countries."
+     "context": "A millionaire, fed up with his spoiled children, pretends the government took everything and makes them work: as a driver, a waitress, a bank teller. Gary Alazraki makes a light comedy about social class."
     }
    },
    "moreIdeas": [
@@ -4129,14 +4129,14 @@
      "Damián Alcázar otra vez con Estrada",
      "Sátira de medios y política"
     ],
-    "context": "Un gobernador corrupto, grabado en un escándalo, paga a una televisora para que limpie su imagen. Dos periodistas inventan una historia para distraer al país. Luis Estrada se ríe de la alianza entre televisión y poder.",
+    "context": "Un gobernador corrupto, grabado en un escándalo, paga a una televisora para que limpie su imagen. La televisora inventa historias para distraer al país. Luis Estrada se ríe de la alianza entre televisión y poder.",
     "en": {
      "reasons": [
       "Television makes a governor",
       "Damián Alcázar with Estrada again",
       "A satire of media and politics"
      ],
-     "context": "A corrupt governor, caught on video in a scandal, pays a television network to clean up his image. Two journalists invent a story to distract the country. Luis Estrada laughs at the alliance between television and power."
+     "context": "A corrupt governor, caught on video in a scandal, pays a television network to clean up his image. The network invents stories to distract the country. Luis Estrada laughs at the alliance between television and power."
     }
    },
    "moreIdeas": [
@@ -4155,7 +4155,7 @@
     {
      "title": "El compadre Mendoza",
      "year": 1934,
-     "connection": "Un político que se adapta a todos",
+     "connection": "Un hombre que se acomoda con todos los bandos",
      "tmdbId": 114626
     },
     {
@@ -4490,7 +4490,7 @@
     {
      "title": "Una familia de tantas",
      "year": 1949,
-     "connection": "Una familia de la capital con un padre ausente de otra forma",
+     "connection": "Otra familia de clase media de la capital, setenta años antes",
      "tmdbId": 115107
     },
     {
@@ -4519,7 +4519,7 @@
     {
      "title": "Museo",
      "year": 2018,
-     "connection": "La Ciudad de México de los setenta y ochenta",
+     "connection": "La Ciudad de México de otra época, estrenada el mismo año",
      "tmdbId": 477654
     }
    ]
@@ -4532,14 +4532,14 @@
      "Ilse Salas, perfecta y desesperada",
      "La crisis de la deuda en una mesa"
     ],
-    "context": "Sofía tiene la casa, el club, el chofer y las amigas que la envidian. Llega la crisis de 1982, el peso cae y su marido deja de pagar, pero ella sigue fingiendo. Alejandra Márquez Abella hace una sátira fina de la clase alta, de la novela de Guadalupe Loaeza.",
+    "context": "Sofía tiene la casa, el club, el chofer y las amigas que la envidian. Llega la crisis de 1982, el peso cae y su marido deja de pagar, pero ella sigue fingiendo. Alejandra Márquez Abella hace una sátira fina de la clase alta, del libro de crónicas de Guadalupe Loaeza.",
     "en": {
      "reasons": [
       "A society lady in Las Lomas in 1982",
       "Ilse Salas, perfect and desperate",
       "The debt crisis around a dinner table"
      ],
-     "context": "Sofía has the house, the club, the driver and the friends who envy her. The 1982 crisis arrives, the peso falls and her husband stops paying, but she keeps pretending. Alejandra Márquez Abella makes a sharp satire of the upper class, from Guadalupe Loaeza's novel."
+     "context": "Sofía has the house, the club, the driver and the friends who envy her. The 1982 crisis arrives, the peso falls and her husband stops paying, but she keeps pretending. Alejandra Márquez Abella makes a sharp satire of the upper class, from Guadalupe Loaeza's book of sketches."
     }
    },
    "moreIdeas": [
@@ -5095,14 +5095,14 @@
     "recommendation": "YES",
     "reasons": [
      "Tin Tan, pachuco y estafador de buen corazón",
-     "Su hermano Marcelo como compañero de tantas",
+     "Marcelo, su eterno compañero de escena",
      "Canciones, baile y caló de la frontera"
     ],
     "context": "Tin Tan vive en una vecindad, pasa por ferrocarrilero y en realidad dirige una banda de estafadores que roba a ricas. Con lo que saca ayuda a los vecinos. Gilberto Martínez Solares dirige al cómico en su papel más querido.",
     "en": {
      "reasons": [
       "Tin Tan, a pachuco con man with a good heart",
-      "His brother Marcelo as his sidekick",
+      "Marcelo, his long-time stage partner",
       "Songs, dancing and border slang"
      ],
      "context": "Tin Tan lives in a tenement, passes as a railwayman and actually runs a gang of con men who rob rich women. With what he takes he helps the neighbours. Gilberto Martínez Solares directs the comedian in his best-loved role."
@@ -5338,17 +5338,17 @@
     "recommendation": "YES",
     "reasons": [
      "Tin Tan inventa un espectáculo sin un peso",
-     "Cuatro vedettes y muchos acreedores",
+     "Vedettes, acreedores y enredos",
      "Canta, baila e improvisa"
     ],
-    "context": "Tin Tan, por un enredo, termina a cargo de un teatro de revista con cuatro estrellas extranjeras y sin dinero para pagarles. Inventa todo sobre la marcha. Gilberto Martínez Solares filma su humor rápido y su música en su mejor momento.",
+    "context": "Tin Tan, por un enredo, termina haciéndose pasar por el empresario de un teatro de revista, rodeado de vedettes y sin un peso. Inventa todo sobre la marcha. Gilberto Martínez Solares filma su humor rápido y su música.",
     "en": {
      "reasons": [
       "Tin Tan puts on a show without a peso",
-      "Four showgirls and a lot of creditors",
+      "Showgirls, creditors and mix-ups",
       "He sings, dances and improvises"
      ],
-     "context": "Through a mix-up, Tin Tan ends up in charge of a revue theatre with four foreign stars and no money to pay them. He makes it all up as he goes. Gilberto Martínez Solares films his fast humour and music at their best."
+     "context": "Through a mix-up, Tin Tan ends up posing as the impresario of a revue theatre, surrounded by showgirls and without a peso. He makes it all up as he goes. Gilberto Martínez Solares films his fast humour and his music."
     }
    },
    "moreIdeas": [
@@ -5689,7 +5689,7 @@
     {
      "title": "La mujer del puerto",
      "year": 1934,
-     "connection": "El primer gran melodrama de la noche",
+     "connection": "Uno de los primeros grandes melodramas de la noche",
      "tmdbId": 115294
     },
     {
@@ -5824,14 +5824,14 @@
      "Julio Aldama entre dos vidas",
      "Luis Alcoriza, sin melodrama"
     ],
-    "context": "Aurelio deja a su familia en la capital y pesca tiburón en un pueblo de Tabasco, donde tiene otra mujer y es libre. Cuando lo llaman de vuelta, duda. Luis Alcoriza filma el trabajo y el mar casi como un documental.",
+    "context": "Aurelio deja a su familia en la capital y pesca tiburón en un pueblo de la costa del Golfo, donde tiene otra mujer y es libre. Cuando lo llaman de vuelta, duda. Luis Alcoriza filma el trabajo y el mar casi como un documental.",
     "en": {
      "reasons": [
       "A shark fisherman on the Gulf",
       "Julio Aldama between two lives",
       "Luis Alcoriza, without melodrama"
      ],
-     "context": "Aurelio leaves his family in the capital and fishes for sharks in a Tabasco village, where he has another woman and is free. When he's called back, he hesitates. Luis Alcoriza films the work and the sea almost like a documentary."
+     "context": "Aurelio leaves his family in the capital and fishes for sharks in a village on the Gulf coast, where he has another woman and is free. When he's called back, he hesitates. Luis Alcoriza films the work and the sea almost like a documentary."
     }
    },
    "moreIdeas": [
@@ -6146,14 +6146,14 @@
      "Germán Robles otra vez",
      "La secuela de El vampiro"
     ],
-    "context": "Un científico roba el cuerpo del conde Lavud para estudiarlo y alguien le saca la estaca. El vampiro despierta y vuelve a buscar a Marta en la ciudad. Fernando Méndez repite la fórmula con un museo de cera y mucha sombra.",
+    "context": "El conde Lavud, el vampiro de la primera película, vuelve a la vida cuando alguien le saca la estaca, y regresa a buscar a Marta. Fernando Méndez repite la fórmula con mucha niebla y mucha sombra.",
     "en": {
      "reasons": [
       "Count Lavud comes back to life",
       "Germán Robles again",
       "The sequel to El vampiro"
      ],
-     "context": "A scientist steals Count Lavud's body to study it, and someone pulls out the stake. The vampire wakes and goes looking for Marta again in the city. Fernando Méndez repeats the formula with a wax museum and lots of shadow."
+     "context": "Count Lavud, the vampire from the first film, comes back to life when someone pulls out the stake, and goes looking for Marta again. Fernando Méndez repeats the formula with plenty of fog and shadow."
     }
    },
    "moreIdeas": [
@@ -6388,14 +6388,14 @@
      "Una bruja quiere los huevos",
      "Para toda la familia"
     ],
-    "context": "Toto y sus amigos, ya instalados en la granja, deben rescatar a Willy de una bruja que quiere sus huevos para un hechizo. La secuela de los hermanos Riva Palacio sigue con los albures suaves y la aventura para niños.",
+    "context": "Toto y sus amigos vuelven, y esta vez una bruja se cruza en su camino. La secuela de los hermanos Riva Palacio sigue con los albures suaves y la aventura para niños.",
     "en": {
      "reasons": [
       "Toto returns, now with a chick",
       "A witch wants the eggs",
       "For the whole family"
      ],
-     "context": "Toto and his friends, settled on the farm, have to rescue Willy from a witch who wants their eggs for a spell. The Riva Palacio brothers' sequel keeps the mild wordplay and adventure for children."
+     "context": "Toto and his friends are back, and this time a witch crosses their path. The Riva Palacio brothers' sequel keeps the mild wordplay and adventure for children."
     }
    },
    "moreIdeas": [
@@ -6709,16 +6709,16 @@
     "reasons": [
      "Los celos como enfermedad",
      "Arturo de Córdova, marido aterrador",
-     "Buñuel antes de que lo descubrieran"
+     "Buñuel en su etapa mexicana"
     ],
-    "context": "Francisco, católico rico y respetable, se casa con Gloria y desde la luna de miel la vigila, la acusa y la encierra. Luis Buñuel hace un retrato de los celos que Lacan usaba en clase. Empieza como melodrama y termina en pesadilla.",
+    "context": "Francisco, católico rico y respetable, se casa con Gloria y desde la luna de miel la vigila, la acusa y la encierra. Luis Buñuel hace un retrato de los celos que hasta los psicoanalistas citan. Empieza como melodrama y termina en pesadilla.",
     "en": {
      "reasons": [
       "Jealousy as an illness",
       "Arturo de Córdova, a terrifying husband",
-      "Buñuel before he was discovered"
+      "Buñuel in his Mexican years"
      ],
-     "context": "Francisco, a rich and respectable Catholic, marries Gloria and from the honeymoon on watches her, accuses her and locks her in. Luis Buñuel paints a portrait of jealousy that Lacan used in class. It starts as melodrama and ends as a nightmare."
+     "context": "Francisco, a rich and respectable Catholic, marries Gloria and from the honeymoon on watches her, accuses her and locks her in. Luis Buñuel paints a portrait of jealousy that even psychoanalysts cite. It starts as melodrama and ends as a nightmare."
     }
    },
    "moreIdeas": [
@@ -6792,14 +6792,14 @@
      "Kate del Castillo, madre en Los Ángeles",
      "Llamadas de domingo desde un teléfono público"
     ],
-    "context": "Carlitos vive con su abuela en Puebla y habla con su madre cada domingo desde un teléfono público. Cuando la abuela muere, cruza la frontera para encontrarla en Los Ángeles. Patricia Riggen hizo un drama de migración pensado para emocionar.",
+    "context": "Carlitos vive con su abuela en México y habla con su madre cada domingo desde un teléfono público. Cuando la abuela muere, cruza la frontera para encontrarla en Los Ángeles. Patricia Riggen hizo un drama de migración pensado para emocionar.",
     "en": {
      "reasons": [
       "A boy crosses the border alone",
       "Kate del Castillo, a mother in Los Angeles",
       "Sunday calls from a payphone"
      ],
-     "context": "Carlitos lives with his grandmother in Puebla and talks to his mother every Sunday from a payphone. When his grandmother dies, he crosses the border to find her in Los Angeles. Patricia Riggen made a migration drama meant to move you."
+     "context": "Carlitos lives with his grandmother in Mexico and talks to his mother every Sunday from a payphone. When his grandmother dies, he crosses the border to find her in Los Angeles. Patricia Riggen made a migration drama meant to move you."
     }
    },
    "moreIdeas": [
