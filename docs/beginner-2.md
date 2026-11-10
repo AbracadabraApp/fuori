@@ -11,9 +11,9 @@
 
 ## What Beginner 2 is
 
-- **The goal is communication.** She speaks the language; English is there to help the learner follow and reply.
+- **The goal is communication.** The character speaks the language; English is there to help the learner follow and reply.
 - **The characters are interesting locals, not friends** (Josh, 2026-11-09): helpful the way a local is to a newcomer, but there to be met, not befriended.
-- **The character is themselves** (Nino stays Nino): **a local who knows enough English to help explain** (Josh, 2026-11-09). She speaks the language, as a local does, and reaches for English when it helps the newcomer: to explain, to give a word, to rescue them when they're lost. How much English that takes is not the level.
+- **The character is themselves** (Nino stays Nino): **a local who knows enough English to help explain** (Josh, 2026-11-09). The character speaks the language, as a local does, and reaches for English when it helps the newcomer: to explain, to give a word, to rescue them when they're lost. How much English that takes is not the level.
 - **The learner may reply in either language.** If they're unclear, the character encourages an English reply.
 - **The gain:** the character asks in the language and the learner understands, whatever language they answer in.
 - **Errors are signal, not failure.** A corrected error (uptake, self-correction) is a strong gain. Mistakes are never pointed out.
@@ -27,26 +27,26 @@ Real moves, each a different kind of turn, and the source of variety (Josh: the 
 - switches mid-sentence ("Allora, the best thing here is *la gricia*. Sai cos'è?");
 - asks about English ("How do you say *cornetto* in America?");
 - checks they followed ("Did you get that? *Chiusa*, closed.");
-- tells something short in English with the key words in the language (the festival, her nonna's recipe);
+- tells something short in English with the key words in the language (the festival, a nonna's recipe);
 - slows down or rephrases when they're lost.
 
-Also real: a turn with no question (a remark they react to), the learner leading (they ask or comment, she answers), a short turn (a reaction and one answer).
+Also real: a turn with no question (a remark they react to), the learner leading (they ask or comment, the character answers), a short turn (a reaction and one answer).
 
 ## How the learner replies
 
-Most replies are set up one of two ways: **the bubbles** (she asks, two answers to say back, as in Beginner 1) or **her glossed words, no bubbles** (she glosses the words that matter as she asks, and they build the answer: "Piccante o dolce? Spicy or sweet, quale ti piace? which do you like?" → "Piccante" or "Mi piace dolce").
+Most replies are set up one of two ways: **the bubbles** (the character asks, two answers to say back, as in Beginner 1) or **the character's glossed words, no bubbles** (the character glosses the words that matter while asking, and they build the answer: "Piccante o dolce? Spicy or sweet, quale ti piace? which do you like?" → "Piccante" or "Mi piace dolce").
 
 | Reply | Bubbles | Who makes the sentence |
 |---|---|---|
-| Two answers to choose from | yes | she does |
-| One answer | yes | she does |
-| A question for them to ask her | yes | she does; they lead |
-| Built from her glossed words | no | they do |
-| Answers set up in her speech ("…just say *Vorrei la carbonara*") | spoken, or spoken and shown | she does |
-| Answer in English, invited ("*Il Palio è una follia*, it's madness. What do you think?") | no | they do, in English; it stands, nothing comes back to say; she can turn it later with more of the language |
+| Two answers to choose from | yes | the character does |
+| One answer | yes | the character does |
+| A question for them to ask the character | yes | the character does; they lead |
+| Built from the character's glossed words | no | they do |
+| Answers set up in the character's speech ("…just say *Vorrei la carbonara*") | spoken, or spoken and shown | the character does |
+| Answer in English, invited ("*Il Palio è una follia*, it's madness. What do you think?") | no | they do, in English; it stands, nothing comes back to say; the character can turn it later with more of the language |
 | Free | no | they do |
 
-Out: three or more answers (crowds the screen); one word missing with words to choose (a puzzle); and, as unrealistic classroom exercises no one does in a bar (Josh): repeat after her, finish her sentence, a key word only, a hint in English only, a listening turn, catch her out. Not yet judged: build it from two pieces.
+Out: three or more answers (crowds the screen); one word missing with words to choose (a puzzle); and, as unrealistic classroom exercises no one does in a bar (Josh): repeat after the character, finish the character's sentence, a key word only, a hint in English only, a listening turn, catch the character out. Not yet judged: build it from two pieces.
 
 ## Measuring
 
@@ -58,13 +58,13 @@ Out: three or more answers (crowds the screen); one word missing with words to c
 | Language asked, offered answer read back | ~+1 |
 | Language asked, answered in English | +2 |
 | Garbled attempt | +2 |
-| Own words in the language (a reply built from her glossed words included) | +3 |
+| Own words in the language (a reply built from the character's glossed words included) | +3 |
 | Uptake or self-correction | +4 |
 | Silence | 0 |
 
 Nunzio visit: 40 over 13 replies.
 
-Why reading back scores below an English answer (Josh, 2026-11-09): reading a bubble takes less of the language than answering her in English, because the bubble's English is under it and the learner can pick and read without understanding her; an English answer to her question shows they understood her.
+Why reading back scores below an English answer (Josh, 2026-11-09): reading a bubble takes less of the language than answering the character in English, because the bubble's English is under it and the learner can pick and read without understanding the character; an English answer to her question shows they understood the character.
 
 **Content, counted in code** (no judge, any language): words per turn, unique words per conversation, number of turns. Nunzio: 14 turns, 31.4 words a turn, 229 unique; Josh: 13 turns, 14.8 words a turn, 108 unique (1,038 bytes against 2,475).
 
@@ -77,11 +77,11 @@ How the learner's reply is set up, ordered by how much of the language it takes 
 1. one bubble, with English;
 2. two bubbles, with English (they choose, by the English);
 3. one bubble, the language only;
-4. in her dialogue, glossed (caught by ear, meaning given);
+4. in the character's dialogue, glossed (caught by ear, meaning given);
 5. two bubbles, the language only (choosing means understanding both);
-6. in her dialogue, the language only;
-7. an English answer she invites (they understood her);
-8. built from her glossed words (their own sentence);
+6. in the character's dialogue, the language only;
+7. an English answer the character invites (they understood the character);
+8. built from the character's glossed words (their own sentence);
 9. free.
 
 Unsure: 3 against 4, and 5 against 6 (is hearing harder than reading for a beginner? the order assumes it is).
@@ -103,7 +103,7 @@ At an offer every 3–5 conversations that count (3 or more replies from the lea
 **One ladder, three uses** (Josh):
 - **Measure:** a reply counts by the setup it was given on and how they answered it; progress shows as handling the higher setups in the cluster.
 - **Taking scaffolding away:** each progression offer moves to the next cluster: the lowest setups drop out, the next ones come in, so the change is gradual and some turns still feel familiar.
-- **Choosing each turn's setup:** the code picks from the current cluster, mixed and seeded (more of the higher setups as the visit goes well, the lower ones after a breakdown). Code chooses the reply setup; she chooses her move.
+- **Choosing each turn's setup:** the code picks from the current cluster, mixed and seeded (more of the higher setups as the visit goes well, the lower ones after a breakdown). Code chooses the reply setup; the character chooses their move.
 
 ## Progression
 
@@ -112,9 +112,9 @@ At an offer every 3–5 conversations that count (3 or more replies from the lea
 - **When:** after every 3–5 conversations at the current setting, asked once, at the end of a conversation.
 - **What:** the next cluster of the reply ladder (above), named by what drops out ("no more English under the answers?"); past the last, the full conversation (Intermediate).
 - **Yes:** the next conversation plays that way. **No:** asked again after another 3–5.
-- **No going back for now.** A learner who needs more help asks for it in the conversation, and she gives it, as Beginner 1 characters already do.
+- **No going back for now.** A learner who needs more help asks for it in the conversation, and the character gives it, as Beginner 1 characters already do.
 - **The reply table and counts** are for looking at (does it rise, do the players differ), not a gate.
-- **Open:** who asks (her, in role, or a plain screen at the end: a new screen, so a mockup first).
+- **Open:** who asks (the character, in role, or a plain screen at the end: a new screen, so a mockup first).
 
 ## The prompt
 
@@ -131,13 +131,13 @@ At an offer every 3–5 conversations that count (3 or more replies from the lea
 2. **Structure in code and the output format, not prose:** the parts, the reply setup from the cluster, one question a turn.
 3. **Back in only what earned it:** the measured units (the learner's facts left blank, one idea per answer, say each thing once, answers as a local says them).
 4. **Patches that memory now covers stay out** (Josh): repeats across visits and things told again are `memory.md`'s job since 2026-11-07a/08a.
-5. **No de-scripting by instruction** (Josh: attempts to de-script mostly failed): variety comes from the code's reply setups and her moves, not from "vary your turns".
+5. **No de-scripting by instruction** (Josh: attempts to de-script mostly failed): variety comes from the code's reply setups and the character's moves, not from "vary your turns".
 6. **The English and gloss failures are real and make the app feel broken** (Josh): an echo that repeats the same word (*caffè*, "coffee"; a name glossed as itself), and both forms then English (*benvenuto, benvenuta*… "welcome"). These need a fix that holds: in code where it can be (drop an echo that is nearly the same word as what it glosses, by spelling, any language), and the learner's gender in the setting so she uses one form.
 7. **The safety net:** each dropped unit's original moment goes into `tests/experiments/moments.json`; the new prompt is run on them against Beginner 1's. That is the test card.
 
 ## Beginner 1 rules Beginner 2 breaks
 
-1. **English: brief** (`beginner.md`: at most two short sentences) → English whenever it helps the newcomer (explaining, a word, a rescue); she still speaks the language.
+1. **English: brief** (`beginner.md`: at most two short sentences) → English whenever it helps the newcomer (explaining, a word, a rescue); the character still speaks the language.
 2. **English only when asked** → the character invites an English reply when the learner is unclear.
 3. **English reply = lost** (`conversation-record.ts` `feltOf`: lost on 40% or more of turns = hard) → an English reply is communication (+2).
 4. **Said back doesn't count** (`RULES.countedOwnTurns`: 3 own-words turns) → every reply counts, reading included (+1).
