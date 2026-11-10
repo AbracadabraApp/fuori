@@ -612,20 +612,45 @@
       "src": "ee64d70d5896352e",
       "bytes": 468630
     },
+    "cities/guanajuato": {
+      "key": "es-mx/cities/guanajuato.dbf38face7.webp",
+      "src": "b9823a7105266598",
+      "bytes": 225338
+    },
+    "cities/merida": {
+      "key": "es-mx/cities/merida.bd6d757ba8.webp",
+      "src": "7320086ccbb7e87f",
+      "bytes": 372960
+    },
     "cities/oaxaca": {
       "key": "es-mx/cities/oaxaca.d6f2f30db7.webp",
       "src": "d4cd15ce197fd503",
       "bytes": 252186
+    },
+    "cities/patzcuaro": {
+      "key": "es-mx/cities/patzcuaro.a5813168ba.webp",
+      "src": "1b7eb16ab6cd15d6",
+      "bytes": 438092
     },
     "cities/puebla": {
       "key": "es-mx/cities/puebla.440253133a.webp",
       "src": "ac5c7efb38dc3251",
       "bytes": 278694
     },
+    "cities/san-cristobal-de-las-casas": {
+      "key": "es-mx/cities/san-cristobal-de-las-casas.882cff6a18.webp",
+      "src": "15965587e6180db4",
+      "bytes": 406742
+    },
     "cities/san-miguel-de-allende": {
       "key": "es-mx/cities/san-miguel-de-allende.cbd3412f2c.webp",
       "src": "aac6785e64e17dce",
       "bytes": 176178
+    },
+    "cities/veracruz": {
+      "key": "es-mx/cities/veracruz.dc9f7ddb57.webp",
+      "src": "481cdb12afd36360",
+      "bytes": 242834
     },
     "country/es-mx": {
       "key": "es-mx/country/es-mx.f1d349f9af.webp",
@@ -762,6 +787,11 @@
       "src": "b8032c2005bd30e8",
       "bytes": 345646
     },
+    "places/calle-subterranea-hidalgo": {
+      "key": "es-mx/places/calle-subterranea-hidalgo.8f1fb9abf6.webp",
+      "src": "eed3eb221e9bc576",
+      "bytes": 309520
+    },
     "places/cantina-la-fuente": {
       "key": "es-mx/places/cantina-la-fuente.75596a04f0.webp",
       "src": "854f2f3434f6ce93",
@@ -872,6 +902,11 @@
       "src": "9e2b890f0067c0f6",
       "bytes": 186330
     },
+    "places/gran-cafe-de-la-parroquia": {
+      "key": "es-mx/places/gran-cafe-de-la-parroquia.caef3333ab.webp",
+      "src": "3b1d95bf61fac056",
+      "bytes": 244804
+    },
     "places/hospicio-cabanas": {
       "key": "es-mx/places/hospicio-cabanas.4758261576.webp",
       "src": "9e469b2fa68c4650",
@@ -946,6 +981,11 @@
       "key": "es-mx/places/monte-alban.943f218a97.webp",
       "src": "e37fb86a7675d41d",
       "bytes": 314480
+    },
+    "places/muelle-a-janitzio": {
+      "key": "es-mx/places/muelle-a-janitzio.a26159b09d.webp",
+      "src": "5468704fffb7e893",
+      "bytes": 312190
     },
     "places/murales-palacio-nacional": {
       "key": "es-mx/places/murales-palacio-nacional.8c71d26a6b.webp",
@@ -1022,6 +1062,11 @@
       "src": "e1e3db7362c1e6b2",
       "bytes": 209622
     },
+    "places/serenata-santa-lucia": {
+      "key": "es-mx/places/serenata-santa-lucia.cc9ae336ba.webp",
+      "src": "f7b4a74dae66b207",
+      "bytes": 387790
+    },
     "places/tacos-arabes-el-puente": {
       "key": "es-mx/places/tacos-arabes-el-puente.521b875fd1.webp",
       "src": "68d23724c934fc9c",
@@ -1056,6 +1101,11 @@
       "key": "es-mx/places/tejuino-san-juan-de-dios.2d7de122f0.webp",
       "src": "867a77f66dabf348",
       "bytes": 349212
+    },
+    "places/templo-de-san-juan-chamula": {
+      "key": "es-mx/places/templo-de-san-juan-chamula.0a097453c2.webp",
+      "src": "8823618c57c148ad",
+      "bytes": 445312
     },
     "places/templo-de-santo-domingo": {
       "key": "es-mx/places/templo-de-santo-domingo.3ac849d8de.webp",

@@ -775,13 +775,63 @@
       "timestamp": "2026-11-06T23:50:03.571Z",
       "path": "/Users/josh.petersen/fuori-mexico-places/public/images/es-mx/portraits/ramon-mirador.jpg",
       "type": "portrait"
+    },
+    "guanajuato/calle-subterranea-hidalgo": {
+      "timestamp": "2026-11-10T05:23:30.135Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/calle-subterranea-hidalgo.jpg",
+      "type": "place"
+    },
+    "merida/serenata-santa-lucia": {
+      "timestamp": "2026-11-10T05:23:58.391Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/serenata-santa-lucia.jpg",
+      "type": "place"
+    },
+    "patzcuaro/muelle-a-janitzio": {
+      "timestamp": "2026-11-10T05:24:26.961Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/muelle-a-janitzio.jpg",
+      "type": "place"
+    },
+    "san-cristobal-de-las-casas/templo-de-san-juan-chamula": {
+      "timestamp": "2026-11-10T05:24:48.864Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/templo-de-san-juan-chamula.jpg",
+      "type": "place"
+    },
+    "veracruz/gran-cafe-de-la-parroquia": {
+      "timestamp": "2026-11-10T05:25:16.713Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/gran-cafe-de-la-parroquia.jpg",
+      "type": "place"
+    },
+    "guanajuato/guanajuato": {
+      "timestamp": "2026-11-10T05:50:31.291Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/cities/guanajuato.jpg",
+      "type": "city"
+    },
+    "merida/merida": {
+      "timestamp": "2026-11-10T05:51:03.541Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/cities/merida.jpg",
+      "type": "city"
+    },
+    "patzcuaro/patzcuaro": {
+      "timestamp": "2026-11-10T05:51:27.037Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/cities/patzcuaro.jpg",
+      "type": "city"
+    },
+    "san-cristobal-de-las-casas/san-cristobal-de-las-casas": {
+      "timestamp": "2026-11-10T05:51:59.888Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/cities/san-cristobal-de-las-casas.jpg",
+      "type": "city"
+    },
+    "veracruz/veracruz": {
+      "timestamp": "2026-11-10T05:52:23.215Z",
+      "path": "/Users/joshpetersen/fuori/public/images/es-mx/cities/veracruz.jpg",
+      "type": "city"
     }
   },
   "failed": {},
   "stats": {
-    "total": 155,
-    "completed": 155,
+    "total": 165,
+    "completed": 165,
     "failed": 0,
-    "lastRun": "2026-11-06T23:50:06.571Z"
+    "lastRun": "2026-11-10T05:52:26.218Z"
   }
 }
