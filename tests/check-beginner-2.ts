@@ -28,23 +28,27 @@ check(pickSetup({ turn: 0, learnerId: 'L', characterId: 'luisa', now: day }).id 
 for (const setup of RUNGS) check(setupText(setup).includes('This turn,') && !/\{\w+\}/.test(setupText(setup)), `${setup.block}: its line is read from scaffolding.md, filled`);
 check(setupText(CLUSTER_1[0], CLUSTER_1).startsWith('Where they are now: at the very start') && setupText(CLUSTERS[2][0], CLUSTERS[2]).startsWith('Where they are now: they know a little') && setupText(CLUSTERS[5][0], CLUSTERS[5]).startsWith('Where they are now: finding their feet'), 'each cluster gets its level text (S1, S2, S3) before the setup');
 check(!/Every turn has some English|When you first see them|explain something in English when it helps/.test(readFileSync(`content/${process.env.COUNTRY ?? 'it'}/prompts/scaffolding.md`, 'utf8')), 'the English lines added one per play are gone from the prompt');
-check(CLUSTERS.length === 6 && CLUSTERS[0].length === 2 && CLUSTERS.slice(1).every((c) => c.length === 3), 'six clusters: the first of two rungs, the rest of three');
-check(CLUSTER_1.every((s) => s.english && !s.inside), 'cluster 1 always shows English under the answers');
-check(CLUSTERS.every((c, i) => i < 2 || c[0] === CLUSTERS[i - 1][1]), 'from cluster 2, each drops the lowest rung and adds the next');
+check(CLUSTERS.length === 6, 'six clusters');
+check(CLUSTERS.flat().filter((r) => !r.inside).every((r) => r.maxAnswers === 0 || (r.maxAnswers === 2 && r.english)), 'bubbles are two, always with English (Josh: reading Spanish you don\'t understand is coercive; one answer feels weird)');
+check(CLUSTER_1.every((s) => s.english), 'cluster 1: English with every answer');
 check(clusterFrom(new Headers({ 'x-fuori-cluster': '4' })) === CLUSTERS[3] && clusterFrom(new Headers()) === CLUSTER_1 && clusterFrom(new Headers({ 'x-fuori-cluster': '9' })) === CLUSTER_1, 'the cluster header picks clusters 1-6, cluster 1 otherwise');
 const seen6 = new Set(Array.from({ length: 40 }, (_, i) => pickSetup({ conversationId: 'c', turn: i, characterId: 'x' }, CLUSTERS[5]).id));
-check(seen6.size === 3 && seen6.has('free'), `cluster 6 plays its own three rungs (got ${[...seen6].join(', ')})`);
+check(seen6.size === 2 && seen6.has('free'), `cluster 6 plays its own three rungs (got ${[...seen6].join(', ')})`);
 
 const parts: Part[] = [{ kind: 'question', text: 'Un caffè?', en: 'A coffee?', gloss: '' }, { kind: 'answer', text: 'Sì, grazie.', en: 'Yes, thanks.', gloss: '' }];
-check(shownParts(parts, RUNGS.find((r) => r.id === 'one')!)[1].en === '', 'the language-only rung hides the answers\' English');
-check(shownParts(parts, RUNGS.find((r) => r.id === 'one-en')!)[1].en === 'Yes, thanks.', 'the English rungs keep it');
-check(shownParts(parts, RUNGS.find((r) => r.id === 'one')!)[0].en === 'A coffee?', 'her own parts are untouched');
+check(shownParts(parts, RUNGS.find((r) => r.id === 'two-en')!)[1].en === 'Yes, thanks.', 'bubbles keep their English');
+
 
 const bare: Part[] = [{ kind: 'word', text: 'Qué bueno.', en: 'Great.', gloss: '' }, { kind: 'question', text: '¿Cuál le gusta más?', en: 'Which do you like best?', gloss: '' }, { kind: 'answer', text: 'Me gusta el de allá.', en: 'I like that one.', gloss: '' }];
-const fixed = shownParts(bare, CLUSTER_1[0]);
+const fixed = shownParts(bare, CLUSTER_1[0], CLUSTERS[2]);
 check(fixed.find((x) => x.kind === 'question')!.gloss === 'Which do you like best?', 'a turn with no English gets its question\'s English as a gloss (Hugo, 2026-11-09)');
 const glossed: Part[] = [{ kind: 'question', text: '¿Le gustan?', en: 'Do you like them?', gloss: 'like them?' }];
 check(shownParts(glossed, CLUSTER_1[0])[0].gloss === 'like them?', 'a turn that already has English is left alone');
+const para: Part[] = [{ kind: 'english', text: 'Welcome to the barrio.', en: '', gloss: '' }, { kind: 'word', text: 'Aquí pinto todos los días.', en: 'I paint here every day.', gloss: '' }, { kind: 'word', text: 'Bienvenido al barrio.', en: 'Welcome to the barrio.', gloss: '' }, { kind: 'question', text: '¿Le gustan los murales?', en: 'Do you like the murals?', gloss: '' }];
+const g1 = shownParts(para, CLUSTER_1[0], CLUSTER_1);
+check(g1[1].gloss === 'I paint here every day.' && g1[3].gloss === 'Do you like the murals?', 'cluster 1: every phrase gets its English spoken (Josh: "gloss the whole paragraph")');
+check(g1[2].gloss === '', 'not when the turn\'s own English already said it');
+check(shownParts(para, CLUSTERS[3][0], CLUSTERS[3])[1].gloss === '', 'later clusters leave glossing to the character');
 const inside = shownParts(parts, RUNGS.find((r) => r.id === 'inside-en')!);
 check(!inside.some((x) => x.kind === 'answer') && inside.some((x) => x.kind === 'word' && x.text === 'Sì, grazie.' && x.gloss === 'Yes, thanks.'), 'rung 4: the answer is in her speech with its English heard, no bubble');
 check(shownParts(parts, RUNGS.find((r) => r.id === 'inside')!).some((x) => x.kind === 'word' && x.text === 'Sì, grazie.' && !x.gloss), 'rung 6: the answer in her speech, no English');
@@ -55,6 +59,7 @@ check(v.startsWith('beginner-2-') && !stageInVersion(v), `Beginner 2 turns carry
 
 const route = readFileSync('app/v1/turn/route.ts', 'utf8');
 const take = readFileSync('lib/conversation/take-turn.ts', 'utf8');
+check(/lineFromParts\(parts\)/.test(take) && /promptFile: BEGINNER_2_FILE/.test(take) && !/canRetry: p\.canRetry, promptFile: BEGINNER_2_FILE[^\n]*onText/.test(take), 'the spoken line is rebuilt from the rewritten parts, and the voice waits for them');
 check(/beginnerVersion: beginnerVersionFrom\(request\.headers\)/.test(route) && /beginnerCluster: clusterFrom\(request\.headers\)/.test(route), 'the route passes the switch and the cluster to the turn');
 check(/p\.beginnerVersion === 2/.test(take) && /promptFile: BEGINNER_2_FILE/.test(take), 'the turn plays the scaffolding only when the switch is on');
 check(/: beginner && onPath\n\s+\? await runBeginnerTurn\(\{ character, transcript, learnerSaid, memory, addressedAs, laps: p\.laps, onText: p\.onText, canRetry: p\.canRetry, stageText: stageText\(onPath\.stage/.test(take), 'Beginner 1\'s turn is unchanged');

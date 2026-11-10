@@ -48,6 +48,8 @@ Most replies are set up one of two ways: **the bubbles** (the character asks, tw
 
 Out: three or more answers (crowds the screen); one word missing with words to choose (a puzzle); and, as unrealistic classroom exercises no one does in a bar (Josh): repeat after the character, finish the character's sentence, a key word only, a hint in English only, a listening turn, catch the character out. Not yet judged: build it from two pieces.
 
+**What you read, you can understand** (Josh, 2026-11-09, a principle, not a rule): an answer to read is understood either from the English under it or because the character just said it in English ("Do you like blue (*piace blu*) or yellow (*piace giallo*)?" then bubbles "Mi piace blu / Mi piace giallo" need no English). The failure: two sentences in the language with no English, then one bubble in the language ("Sí, azul y amarillo. Y también hay rojo, abajo. ¿Le gusta más el azul o el rojo?" → "Me gusta más el azul."). Reading something you don't understand "feels odd and coercive"; a single answer to read feels weird. So bubbles are two; in clusters 1–2 every phrase is spoken with its English (code); the English under the bubbles stays for now and is the natural thing to drop once the glossing holds in play. An answer the character sets up in speech may be in the language only (it's heard, not read).
+
 ## Measuring
 
 **The reply table** (Josh's experiment on the Nunzio visit, Palermo, 52ae014d): the learner's reply, judged against what the character asked.

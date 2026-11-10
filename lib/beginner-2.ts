@@ -14,7 +14,7 @@
  */
 import { fill, readPromptFile } from '@/lib/prompts/template';
 import { language } from '@/content';
-import type { Part } from '@/lib/beginner';
+import { glossEchoes, type Part } from '@/lib/beginner';
 
 export { SCAFFOLDING_FILE as BEGINNER_2_FILE } from '@/lib/beginner';
 import { SCAFFOLDING_FILE } from '@/lib/beginner';
@@ -36,24 +36,35 @@ export interface Setup {
   inside?: boolean;
 }
 
-/** The reply ladder's rungs, least of the language first (docs/beginner-2.md → The reply ladder) */
+/**
+ * The reply ladder's rungs, least of the language first (docs/beginner-2.md → The reply ladder).
+ * Josh, 2026-11-09: anything read as an answer has its English under it (reading Spanish you don't
+ * understand "feels odd and coercive"), and a single answer to read feels weird; so bubbles are two,
+ * always with English. An answer the character sets up in speech may be in the language only.
+ */
 export const RUNGS: Setup[] = [
-  { id: 'one-en', block: 'Setup: one answer', maxAnswers: 1, english: true },
   { id: 'two-en', block: 'Setup: two answers', maxAnswers: 2, english: true },
-  { id: 'one', block: 'Setup: one answer', maxAnswers: 1, english: false },
   { id: 'inside-en', block: 'Setup: one answer', maxAnswers: 1, english: true, inside: true },
-  { id: 'two', block: 'Setup: two answers', maxAnswers: 2, english: false },
-  { id: 'inside', block: 'Setup: one answer', maxAnswers: 1, english: false, inside: true },
   { id: 'invite-en', block: 'Setup: invite English', maxAnswers: 0, english: false },
+  { id: 'inside', block: 'Setup: one answer', maxAnswers: 1, english: false, inside: true },
   { id: 'free', block: 'Setup: no answers', maxAnswers: 0, english: false },
 ];
+const R = (id: string) => RUNGS.find((r) => r.id === id)!;
 
 /**
- * Six clusters, each step dropping the lowest rung and adding the next (Josh: 6–8 clusters).
- * Cluster 1 is the two rungs with English under the answers: the language-only answer came up
- * on Josh's second turn and lost him (Hugo, 2026-11-09), so it starts in cluster 2
+ * Six clusters: the setups in play, the level text and whether every phrase is glossed move
+ * together (Josh: 6–8 clusters; progression is also how much English is spoken)
  */
-export const CLUSTERS: Setup[][] = [RUNGS.slice(0, 2), ...Array.from({ length: RUNGS.length - 3 }, (_, i) => RUNGS.slice(i + 1, i + 4))];
+export const CLUSTERS: Setup[][] = [
+  [R('two-en'), R('inside-en')],
+  [R('two-en'), R('inside-en'), R('invite-en')],
+  [R('two-en'), R('inside-en'), R('invite-en')],
+  [R('inside-en'), R('invite-en'), R('inside')],
+  [R('invite-en'), R('inside'), R('free')],
+  [R('invite-en'), R('free')],
+];
+/** Clusters 1–2: every phrase in the language followed by its English, spoken (glossAll) */
+export const GLOSS_ALL = [true, true, false, false, false, false];
 export const CLUSTER_1 = CLUSTERS[0];
 
 /** The app's hidden cluster picker: header `x-fuori-cluster: 1`–`6`; cluster 1 otherwise */
@@ -108,6 +119,21 @@ export function insideSpeech(parts: Part[], setup: Setup): Part[] {
 }
 
 /**
+ * Every phrase glossed (clusters 1–2): each phrase in the language with no gloss gets its English,
+ * spoken after it, unless the turn's own English already says it or the English only repeats the
+ * phrase (a name, a cognate). Josh, 2026-11-09: "I could not tell what the character was saying
+ * until I got answers with subtitles… He would have needed to gloss the whole paragraph"
+ */
+export function glossAll(parts: Part[]): Part[] {
+  const english = parts.filter((x) => x.kind === 'english').map((x) => x.text).join(' ');
+  return parts.map((x) => {
+    if ((x.kind !== 'word' && x.kind !== 'question') || x.gloss?.trim() || !x.en.trim()) return x;
+    if (glossEchoes(x.en, x.text) || (english && glossEchoes(x.en, english))) return x;
+    return { ...x, gloss: x.en };
+  });
+}
+
+/**
  * English on every turn (Josh, 2026-11-09: "almost no character dialogue in english"): a turn
  * with no English part and no gloss gets the English of her question (or of her last phrase)
  * as its gloss, so it's heard after the language. The prompt asks for it; this makes sure
@@ -119,9 +145,9 @@ export function withEnglish(parts: Part[]): Part[] {
   return target ? parts.map((x) => (x === target ? { ...x, gloss: x.en } : x)) : parts;
 }
 
-/** Display: English on every turn; the answers' English left out on a language-only rung; an inside rung's answer said by her */
-export function shownParts(raw: Part[], setup: Setup): Part[] {
-  const parts = withEnglish(raw);
+/** Display: every phrase glossed in clusters 1–2; English on every turn; an inside rung's answer said by the character */
+export function shownParts(raw: Part[], setup: Setup, cluster: Setup[] = CLUSTER_1): Part[] {
+  const parts = withEnglish(GLOSS_ALL[Math.max(0, CLUSTERS.indexOf(cluster))] ? glossAll(raw) : raw);
   if (setup.inside) return insideSpeech(parts, setup);
   return setup.english ? parts : parts.map((x) => (x.kind === 'answer' ? { ...x, en: '' } : x));
 }

@@ -16,7 +16,7 @@ import { studyFileReady } from '@/lib/study-file';
 import { loadAddressedAs } from '@/lib/learner-address';
 import { tutor } from '@/content';
 import { onboardingState } from '@/lib/onboarding';
-import { runBeginnerTurn, beginnerPromptVersion } from '@/lib/beginner';
+import { runBeginnerTurn, beginnerPromptVersion, lineFromParts } from '@/lib/beginner';
 import { BEGINNER_2_FILE, CLUSTER_1, pickSetup, setupText, shownParts, beginner2Version, type Setup } from '@/lib/beginner-2';
 import { stageFor, stageTag, stageText, type Stage } from '@/lib/path';
 import { pathState } from '@/lib/conversation-record';
@@ -171,7 +171,13 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
         return { ...r, parts, done: step === 'answers' && r.done === true, ...welcomeTurnFlags(step) };
       })()
     : beginner && onPath && setup
-    ? await runBeginnerTurn({ character, transcript, learnerSaid, memory, addressedAs, laps: p.laps, onText: p.onText, canRetry: p.canRetry, promptFile: BEGINNER_2_FILE, stageText: setupText(setup, p.beginnerCluster ?? CLUSTER_1), maxAnswers: setup.maxAnswers, withDone: true }).then((r) => ({ ...r, parts: shownParts(r.parts, setup) }))
+    ? // Beginner 2: the parts are rewritten after the reply (glosses, English, the answer said inside), so the
+      // spoken line is rebuilt from them, and the voice waits for the whole reply (no early first sentence:
+      // it would be spoken from the parts before they were rewritten, then again)
+      await runBeginnerTurn({ character, transcript, learnerSaid, memory, addressedAs, laps: p.laps, canRetry: p.canRetry, promptFile: BEGINNER_2_FILE, stageText: setupText(setup, p.beginnerCluster ?? CLUSTER_1), maxAnswers: setup.maxAnswers, withDone: true }).then((r) => {
+        const parts = shownParts(r.parts, setup, p.beginnerCluster ?? CLUSTER_1);
+        return { ...r, ...lineFromParts(parts), parts };
+      })
     : beginner && onPath
     ? await runBeginnerTurn({ character, transcript, learnerSaid, memory, addressedAs, laps: p.laps, onText: p.onText, canRetry: p.canRetry, stageText: stageText(onPath.stage, character.role), maxAnswers: onPath.stage.answers, withDone: true })
     : await runTurn({
