@@ -749,6 +749,26 @@ Limits: judges not calibrated (F1); item 7 left out (no memory in the export)
 - Run, Italy to confirm (2026-11-08, Mac mini, 10 characters × 3 visits, Intermediate, A twice for 3, 255 s; `tests/conversations/runs/2026-11-08-22-33-22-c13-commerce-it/`): **B is not worse: lines about the sale over all 10, A 53, B 53.** A-against-A gaps 0, 2, 4, so the threshold is again 8. Per character (A → B): Luisa 9 → 9, Nino 0 → 2 (A twice: 0, 2), Antonio 4 → 7 (A twice: 4, 8), Matteo 2 → 1, Carmela 9 → 5, Giuseppe 0 → 0, Giulia 6 → 6, Lucia 7 → 8, Marta 9 → 7, Nusrat 7 → 8. Guards: reply words A 17.5, B 20.1; repeats A 0.05, B 0. Italy shows no effect either way (the totals are equal), where Mexico's total was 9 lower; the rule does no harm in either country. Judge uncalibrated; transcripts not read for Italy
 
 
+### B2-E (2026-11-10): cluster 1 with English that does a job, against English that mirrors each sentence
+- Serves: 1 (at their level: she must still be followable), 4 (in character: a local who knows some English talks like one); Josh, 2026-11-10: "right now the dialogue says a line in spanish, then translates in english. its better than nothing but better would be to make it more natural"
+- Type: visit (a whole short visit, through the turn code; `tests/experiments/automated-replies.mts`, learner replies by code, seeded)
+- Unit: cluster 1's level text (`## Level: 1` in `content/<country>/prompts/scaffolding.md`) and the code that makes every phrase carry its full English (`glossAll`, `GLOSS_ALL` in `lib/beginner-2.ts`)
+- Variable: how the English is used. A (today, pattern B): each sentence in the language, then its full English, written into every phrase's gloss by code. B: the level line says the English is the character's own speech and never translates a whole sentence: it names one word right after it ("Esto es tejuino, a cold corn drink"), adds something new ("¿Le gustan? My abuela made them this way"), checks ("La Parroquia, the big pink church, ¿la ve?"), or explains in a short sentence ("Hoy hay mole. Dark sauce, chocolate and chiles; you must try"); at most one English piece a line; the language keeps the questions, tags and warm words. `glossAll` off for cluster 1 in B (the character's own English is not overwritten); `questionEcho` stays (English beside every question), since Josh decided it
+- Held constant: the rest of the prompt, model and settings, the reply setups, the places and seeds, the learner's reply kinds
+- Place: Mexico, then Italy if it passes (Josh is playing Mexico)
+- Moments: 4 places × 2 visits × 10 turns per arm, both arms on the same places and seeds (the learner's lines differ after the first turn, because she offers different answers)
+- Measure: per turn, counted in code from the parts: (1) mirror rate: word and question parts whose English (gloss or following English part) has at least 80% as many words as the phrase, i.e. a translation of the whole sentence; (2) English pieces a line; (3) English words a turn; (4) her words in the language a turn; (5) English beside every question (must hold in B too); (6) setup followed, valid parts, reply time. READ by Claude on every B turn and a sample of A (flagged, rule 7b): what job each English piece does (names a word / adds / checks / explains / mirrors / other); and whether a learner with no Spanish could follow the turn from what is shown (yes / no). Then **Josh reads 10 turn pairs blind** (A and B for the same character and turn number, order hidden): which sounds more like a local helping, and whether he could follow B. His read decides; the counts and the following judgment are the guards
+- Fact or judgment: FACT (code) for 1–6; JUDGMENT (flagged) for the jobs and for followable; Josh's blind read is the decision
+- Hypothesis: mirror rate under 25% in B against 90% or more in A (counted); English words a turn no more than A's; followable in B on at least 90% of turns (A's rate as the floor); the language words a turn no fewer than A's; Josh prefers B on at least 7 of 10 pairs
+- Other outcomes: (a) B passes the counts and the followable check, Josh prefers it: change the level text and `GLOSS_ALL` for cluster 1 (a prompt change: version bump and changelog), then cluster 2's text on its own card. (b) The counts pass but followable drops under 90%: too little English; widen the allowance (two pieces a line) and test again. (c) B prefers but A's mirror rate was already low in the visits: the measure was wrong; read the turns. (d) Josh prefers A: keep pattern B; the mirror stays because the learner needs it, and this idea is closed for cluster 1
+- Size: pilot 2 places × 1 visit × 10 turns per arm (about 2 minutes); real run 4 places × 2 visits per arm (about 4 minutes), then Josh's 10 pairs
+- Time: about 6 minutes on the Mac mini, plus Josh's read (about 5 minutes)
+- Guards: words a turn, reply time, the language's share of words, setup followed, English beside every question, the code fixes that fired (`glossAll` in A only, by design)
+- Result:
+- Read:
+- Checked after:
+- Decision:
+
 ### B2-S (2026-11-09): does Beginner 2's character follow each reply setup line? (runs with B2-P)
 - Serves: 1 (at their level: the reply ladder only works if she sets up the reply as asked; docs/beginner-2.md → The reply ladder)
 - Type: moment (one turn, the conversation before it, rule 5)
