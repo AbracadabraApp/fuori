@@ -105,6 +105,14 @@ check(glossAll([{ kind: 'word', text: 'Buenas tardes.', en: 'Good afternoon.', g
 const ann = shownParts([{ kind: 'english', text: 'Great question. You could ask me one of these:', en: '', gloss: '' }, { kind: 'answer', text: '¿Qué pinta?', en: 'What do you paint?', gloss: '' }, { kind: 'answer', text: '¿Desde cuándo?', en: 'Since when?', gloss: '' }], RUNGS.find((r) => r.id === 'ask-en')!, CLUSTERS[3]);
 check(ann[0].kind === 'english' && ann[0].text === 'Great question.', 'an announcing sentence ending in a colon before the bubbles is dropped');
 check(/p\.promptFile === SCAFFOLDING_FILE && !p\.retried/.test(readFileSync('lib/beginner.ts', 'utf8')), 'Beginner 2 retries once when a reply runs past the limit (Beginner 1 unchanged)');
+{
+  const city0 = cities.find((c) => c.places.some((p) => p.characterId))!;
+  const ch0 = characterForPlace(city0, city0.places.find((p) => p.characterId)!)!;
+  const said = buildBeginnerPrompt({ character: ch0, transcript: [{ who: 'npc', transcript: '¿Café?', offered: ['Un café, por favor.', 'Un té, por favor.'] }], learnerSaid: 'Un café, por favor.', promptFile: SCAFFOLDING_FILE, stageText: levelText(CLUSTER_1), turnNote: setupLine(RUNGS[0]) });
+  const own = buildBeginnerPrompt({ character: ch0, transcript: [{ who: 'npc', transcript: '¿Café?', offered: ['Un café, por favor.', 'Un té, por favor.'] }], learnerSaid: 'Prefiero agua fría hoy.', promptFile: SCAFFOLDING_FILE, stageText: levelText(CLUSTER_1), turnNote: setupLine(RUNGS[0]) });
+  const last = (b: typeof said) => b.messages[b.messages.length - 1].content;
+  check(last(said) !== last(own) && last(said).length > 'Un café, por favor.'.length + 5, 'Beginner 2: the heard note tells said-back from own words');
+}
 const inside = shownParts(parts, RUNGS.find((r) => r.id === 'inside-en')!);
 check(!inside.some((x) => x.kind === 'answer') && inside.some((x) => x.kind === 'word' && x.text === 'Sì, grazie.' && x.gloss === 'Yes, thanks.'), 'rung 4: the answer is in her speech with its English heard, no bubble');
 check(shownParts(parts, RUNGS.find((r) => r.id === 'inside')!).some((x) => x.kind === 'word' && x.text === 'Sì, grazie.' && !x.gloss), 'rung 6: the answer in her speech, no English');
@@ -118,7 +126,8 @@ const take = readFileSync('lib/conversation/take-turn.ts', 'utf8');
 check(/lineFromParts\(parts\)/.test(take) && /promptFile: BEGINNER_2_FILE/.test(take) && !/canRetry: p\.canRetry, promptFile: BEGINNER_2_FILE[^\n]*onText/.test(take), 'the spoken line is rebuilt from the rewritten parts, and the voice waits for them');
 check(/beginnerVersion: beginnerVersionFrom\(request\.headers\)/.test(route) && /beginnerCluster: clusterFrom\(request\.headers\)/.test(route), 'the route passes the switch and the cluster to the turn');
 check(/p\.beginnerVersion === 2/.test(take) && /promptFile: BEGINNER_2_FILE/.test(take), 'the turn plays the scaffolding only when the switch is on');
-check(/: beginner && onPath\n\s+\? await runBeginnerTurn\(\{ character, transcript, learnerSaid, memory, addressedAs, laps: p\.laps, onText: p\.onText, canRetry: p\.canRetry, stageText: stageText\(onPath\.stage/.test(take), 'Beginner 1\'s turn is unchanged');
+check(/: beginner && onPath\n\s+\? \/\/ Beginner 1 as it has always run[^\n]*\n\s+await runBeginnerTurn\(\{ character, transcript: transcript\.map\(\(\{ offered: _offered, \.\.\.t \}\) => t\), learnerSaid, memory, addressedAs, laps: p\.laps, onText: p\.onText, canRetry: p\.canRetry, stageText: stageText\(onPath\.stage/.test(take), 'Beginner 1\'s turn is unchanged: same stage text, and still without the offered answers (no heard note)');
+check(/promptFile: BEGINNER_2_FILE/.test(take) && !/setup[\s\S]{0,40}transcript\.map\(\(\{ offered/.test(take.slice(take.indexOf('beginner && onPath && setup'), take.indexOf(': beginner && onPath\n'))), 'Beginner 2 keeps the offered answers, so its heard note works');
 
 // The split (Josh, 2026-11-09): the dialogue is the Intermediate prompt itself, then the scaffolding
 {

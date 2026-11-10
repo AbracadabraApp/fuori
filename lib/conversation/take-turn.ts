@@ -179,7 +179,8 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
         return { ...r, ...lineFromParts(parts), parts };
       })
     : beginner && onPath
-    ? await runBeginnerTurn({ character, transcript, learnerSaid, memory, addressedAs, laps: p.laps, onText: p.onText, canRetry: p.canRetry, stageText: stageText(onPath.stage, character.role), maxAnswers: onPath.stage.answers, withDone: true })
+    ? // Beginner 1 as it has always run in the app: without the offered answers, so no heard note (production untouched, Josh)
+      await runBeginnerTurn({ character, transcript: transcript.map(({ offered: _offered, ...t }) => t), learnerSaid, memory, addressedAs, laps: p.laps, onText: p.onText, canRetry: p.canRetry, stageText: stageText(onPath.stage, character.role), maxAnswers: onPath.stage.answers, withDone: true })
     : await runTurn({
     character,
     transcript,

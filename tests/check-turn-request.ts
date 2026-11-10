@@ -77,6 +77,19 @@ for (const b of bodies) check(!/\bcharacter\b/.test(b) && /placeId/.test(b), `a 
   check(r.ok, `a 250-turn stored conversation, fitted, is accepted: ${r.ok ? '' : r.error}`);
 }
 
+// The answers she offered reach the next turn, so its heard note works (lib/dialogue/heard.ts):
+// the route rebuilt the stored transcript without them and the schema dropped them,
+// so the note never reached the character in the app (deep dive, 2026-11-09)
+{
+  const city = cities.find((c) => c.places.some((p) => p.characterId && p.characterId !== tutor.id))!;
+  const place = city.places.find((p) => p.characterId && p.characterId !== tutor.id)!;
+  const r = parseTurnRequest({ cityId: city.id, placeId: place.id, learnerSaid: 'Un caffè, per favore.', transcript: [{ who: 'npc', transcript: 'Cosa prende?', offered: ['Un caffè, per favore.', 'Un cornetto, per favore.'] }] });
+  check(r.ok && r.transcript[0].offered?.length === 2, 'a turn keeps the answers she offered');
+  const route = readFileSync('app/v1/turn/route.ts', 'utf8');
+  const mapping = route.match(/fitStoredTranscript\(transcript\.map\(([^\n]*)\)\)/)?.[1] ?? '';
+  check(/offered/.test(mapping), `the route keeps offered when it rebuilds the stored transcript: ${mapping}`);
+}
+
 if (problems.length) {
   console.error(`FAIL: ${problems.length} problem(s)\n- ${problems.join('\n- ')}`);
   process.exit(1);

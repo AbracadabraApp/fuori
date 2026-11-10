@@ -135,7 +135,7 @@ export async function POST(request: Request) {
     laps.lap('load');
 
     // Same checks as the web: the character from ids, sizes capped
-    const parsed = parseTurnRequest({ ...body.data, transcript: fitStoredTranscript(transcript.map(({ who, transcript, translation }) => ({ who, transcript, translation }))) });
+    const parsed = parseTurnRequest({ ...body.data, transcript: fitStoredTranscript(transcript.map(({ who, transcript, translation, offered }) => ({ who, transcript, translation, ...(offered ? { offered } : {}) }))) });
     if (!parsed.ok) return apiError(parsed.status === 404 ? 'not_found' : 'bad_request', parsed.error);
     // Magda only teaches in lessons (Josh, 2026-11-07): outside a lesson she isn't there
     if (parsed.character.id === tutor.id && !body.data.lesson) return apiError('not_found', 'Magda only teaches in lessons');
@@ -285,7 +285,8 @@ export async function POST(request: Request) {
       const after = fitStoredTranscript([
         ...parsed.transcript,
         ...(saidNow ? [{ who: 'learner' as const, transcript: saidNow }] : []),
-        { who: 'npc' as const, transcript: line.line, translation: line.en },
+        // The answers she offered, so a reply written ahead gets the heard note too (Beginner 2)
+        { who: 'npc' as const, transcript: line.line, translation: line.en, offered: ((r.body as { parts?: Part[] }).parts ?? []).filter((x) => x.kind === 'answer').map((x) => x.text) },
       ]);
       offer(`${learnerId}|${conv}`, answers);
       for (const a of answers) drafts.start(`${learnerId}|${conv}|${a}`, (emit) => settle((first, parts) => emit({ first, parts }), { said: a, transcript: after, conversationId: conv }));
