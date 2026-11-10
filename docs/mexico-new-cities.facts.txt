@@ -1,0 +1,75 @@
+FAIL  guanajuato/tona-vecina-del-beso
+      just 68 centimetres apart
+FAIL  guanajuato/ruben-estudiantino
+      its estudiantinas go back to the 1960s
+pass  guanajuato/claudia-teatro-juarez
+FAIL  guanajuato/hugo-fotografo-pipila
+      Most people come up on the funicular.
+FAIL  guanajuato/marisol-guia-alhondiga
+      this month you are on a scaffold in the Alhóndiga de Granaditas, cleaning the stairway murals
+pass  guanajuato/fermin-guardia-momias
+pass  guanajuato/isidro-minero
+pass  guanajuato/padre-tomas-rangel
+pass  guanajuato/lupe-enchiladera
+FAIL  guanajuato/diego-taquillero-guanajuato
+      On Friday afternoons the students fill the buses to go home for the weekend.
+pass  veracruz/arturo-mesero-parroquia
+pass  veracruz/mercedes-danzonera
+FAIL  veracruz/rodrigo-guia-ulua
+      the naval academy just south of Veracruz
+      on your day off you have come to San Juan de Ulúa with your great-grandfather's notebook
+pass  veracruz/chema-estibador
+pass  veracruz/yesenia-jaranera
+pass  veracruz/ignacio-historiador
+FAIL  veracruz/lorena-guia-lara
+      this evening you sing at a small recital in the house museum of Agustín Lara in Boca del Río
+      You are rehearsing at the piano.
+pass  veracruz/lalo-pescador
+pass  veracruz/rosario-picadera
+pass  veracruz/karla-taquillera-veracruz
+pass  patzcuaro/salvador-lanchero
+FAIL  patzcuaro/elvira-veladora-janitzio
+      you are getting your family's graves ready
+FAIL  patzcuaro/gerardo-profe-jubilado
+      He organised the Purépecha towns around the lake so that each one specialised in a craft: copper in Santa Clara del Cobre, pottery in Tzintzuntzan, guitars in Paracho, lacquer in Pátzcuaro.
+pass  patzcuaro/marta-bibliotecaria
+pass  patzcuaro/lucia-maquera
+FAIL  patzcuaro/sor-guadalupe-achoques
+      You are a Dominican nun in the convent beside the Basílica of Our Lady of Health.
+      Now the nuns breed them with scientists to save them from extinction.
+FAIL  patzcuaro/juan-carlos-danzante
+      they are rehearsing this afternoon
+pass  patzcuaro/martin-nevero
+pass  patzcuaro/beatriz-arqueologa
+pass  patzcuaro/omar-taquillero-patzcuaro
+FAIL  merida/wilberth-trovador
+      held every Thursday evening in the Parque de Santa Lucía since the 1960s
+      Guty Cárdenas is its most famous composer
+pass  merida/leydi-jaranera
+pass  merida/josue-guia-montejo
+pass  merida/ana-arqueologa
+pass  merida/socorro-maestra-maya
+pass  merida/rosy-cochinitera
+FAIL  merida/angel-marquesitero
+      a Dutch Edam cheese that has been eaten in Yucatán since the days of the port trade
+FAIL  merida/genaro-sacristan
+      In the evenings there are sometimes concerts of trova here.
+pass  merida/gaspar-hamaquero
+pass  merida/raul-taquillero-merida
+FAIL  san-cristobal-de-las-casas/mariano-guia-chamula
+      Today you are bringing fresh pine boughs.
+pass  san-cristobal-de-las-casas/petrona-tejedora
+FAIL  san-cristobal-de-las-casas/efrain-marimbista
+      The marimba is the instrument of Chiapas, an official symbol of the state
+pass  san-cristobal-de-las-casas/chayo-vecina-guadalupe
+FAIL  san-cristobal-de-las-casas/elena-cafetalera
+      today you are roasting your family's beans
+      the coffee museum in San Cristóbal, run with small growers' cooperatives
+pass  san-cristobal-de-las-casas/itzel-guia-na-bolom
+pass  san-cristobal-de-las-casas/rosa-poeta-tsotsil
+FAIL  san-cristobal-de-las-casas/juana-tamalera
+      de bola, round and filled with pork and plum
+FAIL  san-cristobal-de-las-casas/samuel-pintor-arco
+      the old arched tower at the south end of the centre
+FAIL  san-cristobal-de-las-casas/andrea-taquillera-sancris
+      The nearest airport is at Tuxtla Gutiérrez, about an hour away down the mountain.

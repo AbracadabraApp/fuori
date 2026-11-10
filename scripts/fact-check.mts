@@ -9,7 +9,11 @@ import { readPromptFile } from '@/lib/prompts/template';
 
 const items = JSON.parse(readFileSync(process.argv[2], 'utf8')) as { id: string; text: string }[];
 const schema = { type: 'object', additionalProperties: false, required: ['items'], properties: { items: { type: 'array', items: { type: 'object', additionalProperties: false, required: ['id', 'pass', 'doubts'], properties: { id: { type: 'string' }, pass: { type: 'boolean' }, doubts: { type: 'array', items: { type: 'string' } } } } } } };
-const r = await anthropic.messages.create({ model: CLAUDE_MODEL, max_tokens: 4000, system: readPromptFile('facts.md').block('Facts'), messages: [{ role: 'user', content: JSON.stringify(items) }], output_config: { format: { type: 'json_schema', schema } } } as Parameters<typeof anthropic.messages.create>[0]);
-const verdicts = (JSON.parse(replyText(r as Parameters<typeof replyText>[0])) as { items: { id: string; pass: boolean; doubts: string[] }[] }).items;
+// In batches: one call for a whole city list ran out of tokens while thinking.
+const verdicts: { id: string; pass: boolean; doubts: string[] }[] = [];
+for (let i = 0; i < items.length; i += 30) {
+  const r = await anthropic.messages.create({ model: CLAUDE_MODEL, max_tokens: 16000, system: readPromptFile('facts.md').block('Facts'), messages: [{ role: 'user', content: JSON.stringify(items.slice(i, i + 30)) }], output_config: { format: { type: 'json_schema', schema } } } as Parameters<typeof anthropic.messages.create>[0]);
+  verdicts.push(...(JSON.parse(replyText(r as Parameters<typeof replyText>[0])) as { items: { id: string; pass: boolean; doubts: string[] }[] }).items);
+}
 for (const v of verdicts) console.log(`${v.pass ? 'pass' : 'FAIL'}  ${v.id}${v.doubts.length ? `\n      ${v.doubts.join('\n      ')}` : ''}`);
 if (verdicts.some((v) => !v.pass)) process.exitCode = 1;
