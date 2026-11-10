@@ -2,6 +2,10 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
 
+### 2026-11-10g: questions to ask, invited in role
+- **Changed:** "Setup: two questions to ask" now has the character invite curiosity as a local would ("ask, in English, whether they're wondering about your place, your work or the town"), instead of "don't ask them anything: give them two short questions…", which the character read out as stage directions ("Here are two things you could ask me:").
+- **Why:** Josh, 2026-11-09, playing Lupita (Tlaquepaque): "this is unnatural speech… It sounds like a teacher managing the lesson rather than a local. Are you wondering about the church? about my job? about the city?"
+
 ### 2026-11-10f: offer the goodbye (from Beginner 1)
 - **Added:** beginner.md's "Goodbye: offer it", word for word: "When the talk winds down, offer the goodbye as a phrase they can say. Their goodbye ends the conversation."
 - **Why:** Josh played Doña Chayo (cluster 1): 16 turns, a question every turn, "this conversation feels like it's going on forever". Beginner 2 lost the line when the Intermediate character prompt replaced beginner.md's; Josh: it's somewhere in Italy (Giulia's "Vuole dire arrivederci adesso?"). Copied, not reinvented.

@@ -2,6 +2,10 @@
 
 Ideas about how conversations with characters should go: what they say, when the learner speaks, how the scene moves. Started by Josh on 2026-11-04, after playing Florence (Ardit at Trattoria Mario, Lorenzo in Piazza Santa Croce). Nothing here is scheduled. An idea moves to the roadmap once Josh decides it. Josh's words are quoted; anything else is marked as Claude's proposal.
 
+## Managing the lesson out loud (Josh, 2026-11-09)
+
+Lupita, the sacristan in Tlaquepaque (Beginner 2, cluster 1), after the learner's garbled line ("El rey es latino"): "Sorry, Joshua, I didn't quite catch that. Maybe the words got mixed up. No problem! Let me ask something easy about the church." Josh: "unnatural speech… It sounds like a teacher managing the lesson rather than a local." The other case, "Here are two things you could ask me:", came from Beginner 2's setup line and was rewritten in role (scaffolding.md 2026-11-10g; Josh's model: "Are you wondering about the church? about my job? about the city?"). This one is the character's own recovery from a garbled line: dialogue layer, noted, not fixed.
+
 ## Beginner S2 is too much: little English, Italian back to back (Josh, 2026-11-09; noted, not to fix)
 
 Josh played Hugo, the muralist in Puebla (Mexico, Beginner 1 at stage S2, `beginner-2026-11-07a+S2`, 2026-11-09 23:51 UTC): "not enough english and speed feels fast"; "it was too much - just to note - not fix". Per turn: about 4 words of English and 16 in Spanish, against 14–17 English and 8–11 in the language in his S1 conversations in Italy the night before (Paolo, Giulia, Nino). With English cut, her Spanish sentences come one after another with nothing between them, which is what reads as fast:
