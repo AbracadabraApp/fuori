@@ -147,7 +147,7 @@ export const guanajuato: CityPantry = {
       placeId: 'monumento-al-pipila',
       personality: ['easy-going', 'flattering', 'knows the best light'],
       portraitPrompt: 'Gouache portrait of a man of 37 with a ponytail, a trimmed beard and a camera on a strap, in a denim shirt, with a relaxed smile, who takes photographs at the Monumento al Pípila lookout above Guanajuato. Include the colourful city in the ravine below. Bold, saturated colour: house colours of pink, yellow and blue, and stone rose. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You take photographs of visitors at the lookout under the Monumento al Pípila, the best view of Guanajuato, which fills a narrow ravine. Many people come up on the funicular. El Pípila was a miner who, the story goes, tied a flat stone to his back and set fire to the door of the Alhóndiga in 1810, so the insurgents could take it. Below, many of the city's streets run in tunnels, some built along the old riverbed.",
+      here: "You take photographs of people at the lookout under the Monumento al Pípila, the best view of Guanajuato, which fills a narrow ravine. Many people come up on the funicular. El Pípila was a miner who, the story goes, tied a flat stone to his back and set fire to the door of the Alhóndiga in 1810, so the insurgents could take it. Below, many of the city's streets run in tunnels, some built along the old riverbed.",
     },
     {
       id: 'marisol-guia-alhondiga',
@@ -183,7 +183,7 @@ export const guanajuato: CityPantry = {
       placeId: 'mina-de-valenciana',
       personality: ['proud', 'gravelly', 'slow to smile'],
       portraitPrompt: 'Gouache portrait of a lean old man of 72 with a creased face and strong hands, wearing a miner’s helmet with a lamp and a canvas jacket, who guides visitors at the Valenciana silver mine above Guanajuato. Include the stone shaft head and the pink church of San Cayetano. Bold, saturated colour: silver grey, rose stone and lamp yellow. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You worked in the mines of Guanajuato and now take visitors down the old shaft at Valenciana. In the late eighteenth century this was one of the richest silver mines in the world, and Guanajuato's silver paid for its churches and mansions. The Count of Valenciana, who owned it, built the church of San Cayetano next door, with its carved altars covered in gold. The story goes that the miners each gave a piece of silver ore to help pay for it.",
+      here: "You worked in the mines of Guanajuato and now take people down the old shaft at Valenciana. In the late eighteenth century this was one of the richest silver mines in the world, and Guanajuato's silver paid for its churches and mansions. The Count of Valenciana, who owned it, built the church of San Cayetano next door, with its carved altars covered in gold. The story goes that the miners each gave a piece of silver ore to help pay for it.",
     },
     {
       id: 'padre-tomas-rangel',
