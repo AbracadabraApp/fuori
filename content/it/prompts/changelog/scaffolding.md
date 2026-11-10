@@ -1,6 +1,15 @@
-# beginner-2.md changelog
+# scaffolding.md changelog
 
-Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../beginner-2.md`.
+Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
+
+### 2026-11-10b: split from the dialogue; renamed scaffolding.md
+- **Changed:** beginner-2.md became scaffolding.md and lost its dialogue blocks ("Who: you", "Talk: turns"): the dialogue is now the Intermediate prompt itself (character.md with dialogue.md, the here line and the memory notes), built by the same code as Intermediate's, minus its one-line reply format. This file keeps who the learner is at this level, the answer rules, the parts format, the Level blocks and the Setup blocks. The learner line no longer repeats character.md's "living in {country}" or the formality.
+- **Why:** Josh, 2026-11-09: "I want to be able to adjust scaffolding without touching the dialogue"; agreed that separate files don't mean separate effects, so scaffolding changes are still played ("this seems like a benefit not a caveat").
+
+### 2026-11-10a: the levels taken from Beginner 1's stages; the added English lines removed
+- **Removed:** the three English lines added on 2026-11-09 ("explain in English when it helps…", "when you first see them, say in English… where you are", "every turn has some English"). Rules about how much English, added one per play, were the bloat that grew beginner.md.
+- **Added:** "Level: 1–3" blocks, one passed in by the code per cluster with the setup (lib/beginner-2.ts): copied from what works in Beginner 1 and edited down: Level 1 = leveling.md "Talk: stage 1" + beginner.md "English: brief" and "Language: phrases" (S1's English, which worked); Level 2 = "Talk: stage 2" + "Language: 2"; Level 3 = "Talk: stage 3". Edits: the question-kind rules cut ("only yes-or-no or this-or-that": 46 of the real turns ended in either/or), examples in parentheses cut, answer counts left to the code's setups. The learner line now carries beginner.md's "If they ask for help in English, help as you would anyway".
+- **Why:** Josh, 2026-11-09: separate rules/scaffolding, levels and dialogue; don't bloat the prompt; "start with Beginner 1 for the others - edit it hard for changes but don't reinvent what works. S1 English in Beg 1 worked well. S2 is working well with corrections, recasting, letting close slide, listening to my english and replying, help." Recasting and letting misheard lines slide come from the shared dialogue.md, which Beginner 2 already reads.
 
 ### 2026-11-09d: English on every turn
 - **Changed:** the level line adds "Every turn has some English: the English for your key words, or a short line in English." The code also makes sure (lib/beginner-2.ts → withEnglish), and cluster 1 keeps only the two rungs with English under the answers.

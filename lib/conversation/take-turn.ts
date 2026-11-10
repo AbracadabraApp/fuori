@@ -171,7 +171,7 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
         return { ...r, parts, done: step === 'answers' && r.done === true, ...welcomeTurnFlags(step) };
       })()
     : beginner && onPath && setup
-    ? await runBeginnerTurn({ character, transcript, learnerSaid, memory, addressedAs, laps: p.laps, onText: p.onText, canRetry: p.canRetry, promptFile: BEGINNER_2_FILE, stageText: setupText(setup), maxAnswers: setup.maxAnswers, withDone: true }).then((r) => ({ ...r, parts: shownParts(r.parts, setup) }))
+    ? await runBeginnerTurn({ character, transcript, learnerSaid, memory, addressedAs, laps: p.laps, onText: p.onText, canRetry: p.canRetry, promptFile: BEGINNER_2_FILE, stageText: setupText(setup, p.beginnerCluster ?? CLUSTER_1), maxAnswers: setup.maxAnswers, withDone: true }).then((r) => ({ ...r, parts: shownParts(r.parts, setup) }))
     : beginner && onPath
     ? await runBeginnerTurn({ character, transcript, learnerSaid, memory, addressedAs, laps: p.laps, onText: p.onText, canRetry: p.canRetry, stageText: stageText(onPath.stage, character.role), maxAnswers: onPath.stage.answers, withDone: true })
     : await runTurn({

@@ -14,6 +14,7 @@
  * memory, Learn and the voice work as for any turn.
  */
 import { doneField } from '@/lib/prompts/turn-output-schema';
+import { buildTurnPrompt } from '@/lib/prompts/build-turn-prompt';
 import { z } from 'zod';
 import { anthropic, TURN_MODEL, replyText, finalWithDeadline } from '@/lib/claude';
 import { readPromptFile, fill } from '@/lib/prompts/template';
@@ -202,6 +203,14 @@ function withoutRepeats(said: Set<string>) {
   };
 }
 
+/** Beginner 2's scaffolding file (lib/beginner-2.ts) */
+export const SCAFFOLDING_FILE = 'scaffolding.md';
+
+/** The Intermediate prompt without its one-line reply format ("Respond with JSON: { line, en }"): Beginner 2 replies in parts */
+export function dialogueWithoutFormat(system: string): string {
+  return system.replace(/Respond with JSON:\s*\{[^}]*\}\s*/, '').replace(/\n{3,}/g, '\n\n').trim();
+}
+
 export function buildBeginnerPrompt(p: {
   character: CharacterSheet;
   transcript: Turn[];
@@ -211,7 +220,7 @@ export function buildBeginnerPrompt(p: {
   now?: Date;
   /** The path's stage (lib/path.ts → stageText): leveling.md blocks added after the system prompt */
   stageText?: string;
-  /** The prompt file; beginner.md unless given (Beginner 2's trial: beginner-2.md, docs/beginner-2.md) */
+  /** The prompt file; beginner.md unless given. scaffolding.md is Beginner 2's: the dialogue is then the Intermediate prompt itself, this file's system block after it (docs/beginner-2.md) */
   promptFile?: string;
 }): { system: string; messages: { role: 'user' | 'assistant'; content: string }[] } {
   const { character } = p;
@@ -234,8 +243,12 @@ export function buildBeginnerPrompt(p: {
     country: language.card.country,
     formality: `the polite form ("${language.formality.formal}") unless you already use the familiar one ("${language.formality.informal}")`,
   });
-  // The rules every conversation follows, then the stage's or the kind's brief (docs/dialogue-model.md)
-  const ruled = withDialogueRules(base);
+  // The rules every conversation follows, then the stage's or the kind's brief (docs/dialogue-model.md).
+  // Beginner 2: the dialogue is the Intermediate prompt as built for Intermediate (character.md with
+  // dialogue.md, the here line, the memory notes), minus its one-line reply format; the scaffolding after it
+  const ruled = p.promptFile === SCAFFOLDING_FILE
+    ? `${dialogueWithoutFormat(buildTurnPrompt({ character, transcript: [], memory: p.memory, addressedAs: p.addressedAs, now: p.now }).system)}\n\n${base}`
+    : withDialogueRules(base);
   const system = p.stageText ? `${ruled}\n\n${p.stageText}` : ruled;
   // The conversation so far as plain lines; two in a row from one side become one message
   const messages: { role: 'user' | 'assistant'; content: string }[] = [];

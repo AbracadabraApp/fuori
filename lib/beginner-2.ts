@@ -1,6 +1,6 @@
 /**
- * Beginner 2 (docs/beginner-2.md): one shared prompt (content/<country>/prompts/
- * beginner-2.md) with the reply setup picked here each turn from the learner's
+ * Beginner 2 (docs/beginner-2.md): the Intermediate prompt as the dialogue, with the
+ * scaffolding (content/<country>/prompts/scaffolding.md) and the reply setup picked here each turn from the learner's
  * cluster of the reply ladder. Played only when the app sends
  * `x-fuori-beginner: 2` (Settings → touch and hold Version → Beginner), so
  * Josh can play it against Beginner 1, which stays as it is (Josh, 2026-11-09).
@@ -16,7 +16,8 @@ import { fill, readPromptFile } from '@/lib/prompts/template';
 import { language } from '@/content';
 import type { Part } from '@/lib/beginner';
 
-export const BEGINNER_2_FILE = 'beginner-2.md';
+export { SCAFFOLDING_FILE as BEGINNER_2_FILE } from '@/lib/beginner';
+import { SCAFFOLDING_FILE } from '@/lib/beginner';
 
 /** The app's switch: header `x-fuori-beginner: 2` */
 export function beginnerVersionFrom(headers: Headers): 1 | 2 {
@@ -25,7 +26,7 @@ export function beginnerVersionFrom(headers: Headers): 1 | 2 {
 
 export interface Setup {
   id: string;
-  /** The block in beginner-2.md the character gets this turn */
+  /** The block in scaffolding.md the character gets this turn */
   block: string;
   /** Answers kept, at most (code trims extras) */
   maxAnswers: number;
@@ -82,9 +83,14 @@ export function pickSetup(p: { conversationId?: string | null; turn: number; lea
   return cluster[seedOf(key) % cluster.length];
 }
 
-/** The setup's line for the character, from the prompt file (a misspelt block fails loudly) */
-export function setupText(setup: Setup): string {
-  return fill(readPromptFile(BEGINNER_2_FILE).block(setup.block), { language: language.name }).trim();
+/** The level text per cluster (scaffolding.md "Level: 1–3", from Beginner 1's stages S1–S3): clusters 1–2 S1, 3–4 S2, 5–6 S3 */
+export const LEVEL_OF_CLUSTER = ['Level: 1', 'Level: 1', 'Level: 2', 'Level: 2', 'Level: 3', 'Level: 3'];
+
+/** What the character gets each turn after the shared rules: the cluster's level, then this turn's setup (a misspelt block fails loudly) */
+export function setupText(setup: Setup, cluster: Setup[] = CLUSTER_1): string {
+  const f = readPromptFile(SCAFFOLDING_FILE);
+  const level = LEVEL_OF_CLUSTER[Math.max(0, CLUSTERS.indexOf(cluster))];
+  return [f.block(level), f.block(setup.block)].map((b) => fill(b, { language: language.name }).trim()).join('\n');
 }
 
 /**
@@ -97,7 +103,7 @@ export function insideSpeech(parts: Part[], setup: Setup): Part[] {
   const answer = parts.find((x) => x.kind === 'answer' && x.text.trim());
   const rest = parts.filter((x) => x.kind !== 'answer');
   if (!answer) return rest;
-  const lead = readPromptFile(BEGINNER_2_FILE).block('Line: answer inside').trim();
+  const lead = readPromptFile(SCAFFOLDING_FILE).block('Line: answer inside').trim();
   return [...rest, { kind: 'english', text: lead, en: '', gloss: '' }, { kind: 'word', text: answer.text, en: answer.en, gloss: setup.english ? answer.en : '' }];
 }
 
@@ -122,5 +128,5 @@ export function shownParts(raw: Part[], setup: Setup): Part[] {
 
 /** The version recorded with each turn: "beginner-2-<version>+C<cluster>", no stage tag, so the path doesn't count it; the scorecard and records group by it */
 export function beginner2Version(cluster: Setup[]): string {
-  return `beginner-2-${readPromptFile(BEGINNER_2_FILE).version}+C${Math.max(1, CLUSTERS.indexOf(cluster) + 1)}`;
+  return `beginner-2-${readPromptFile(SCAFFOLDING_FILE).version}/${readPromptFile('character.md').version}+C${Math.max(1, CLUSTERS.indexOf(cluster) + 1)}`;
 }

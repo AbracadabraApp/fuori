@@ -20,7 +20,7 @@ startTest(CARD_P);
 startTest(CARD_S);
 
 const mode = process.argv[2] === 'run' ? 'run' : 'pilot';
-const B_FILE = 'beginner-2.md';
+const B_FILE = 'scaffolding.md'; // was beginner-2.md when B2-S and B2-P ran (2026-11-09)
 // The reply setup lines (docs/beginner-2.md → The prompt, item 1)
 const SETUP = {
   two: { line: 'This turn, give them two short answers they could say back.', max: 2 },
