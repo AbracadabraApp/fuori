@@ -4,6 +4,12 @@ Newest first. One entry per version: what changed, why, what prompted it. The pr
 
 Newest first. Each entry: what changed, why, and what prompted it.
 
+### 2026-11-10q: five counts for the one grade (lib/grade.ts)
+- **Added** `unanswered`, `cutOffByGoodbye`, `extraGoodbyes`, `placeFacts`, `newcomerAssumed`. They feed the Responsive, Content, Ending and In role variables of the one 1–10 grade per conversation. Optional in the saved score, so older scores still read and the grade leaves out what they can't measure.
+- **Why:** the scorecard had no way to see how a conversation ends or whether the learner learned anything real: the Chuy conversation at the Plaza de los Mariachis (2026-11-10 17:40 UTC) closed over the learner's question about charro suits, then said goodbye eight more times, and scored 33.5-word replies, 0 problems.
+- **Prompted by:** Josh, 2026-11-10: "Improve or create a scorecard that scores every conversation on several variables and one total score… 1-10… all variables are important but not equal."
+- **Not run yet:** the card in `docs/prompt-trials.md` (Q1) tests these counts against Josh's own grades before this ships.
+
 ### 2026-11-10p: the newcomer assumption removed
 - **Removed:** the assumption that the learner is a newcomer who has come to live in the country ("They're living in {country} for a while", "a person who has recently come to live in {city}", "the way a newcomer politely would", and the like). The learner is someone learning about the country, its language and culture; nothing is assumed about where they're from, where they live or for how long, and characters know only what the learner has told them.
 - **Why:** Josh, 2026-11-10: characters kept asking whether the learner is new, from here or how long they're staying ("cada personaje pregunta lo mismo"; Doña Carmen: "¿Es porque veo africano?"); "these are all patches that compounded the problem… The game should work for someone regardless of where they are from or how long. Imagine an Italian of African background is playing and our game always asks if they are a newcomer or how long they are visiting." The persona came from the game's beginning (someone staying in Rome with a landlady); patches since kept reinforcing it. The same change in every prompt that carried it, both countries, and the city files' "helps newcomers". Measured with automated replies before release (docs/automated-replies.md).

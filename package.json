@@ -76,6 +76,7 @@
     "test:cards": "tsx tests/check-cards.mts",
     "card:review": "tsx tests/experiments/card-review.mts",
     "test:scorecard": "tsx tests/check-scorecard.ts",
+    "test:grade": "tsx tests/check-grade.ts",
     "test:real-play-scores": "tsx tests/check-real-play-scores.ts",
     "test:repeats": "tsx tests/check-repeats.ts",
     "test:voice-outcomes": "tsx tests/check-voice-outcomes.ts",

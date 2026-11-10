@@ -16,6 +16,7 @@ import { startConversation, addConversationTurn, type CharacterMemory, type Revi
 import type { CharacterSheet, Turn } from './types';
 import { turnStats, wordCount, REPEATS_LOOKBACK } from './dialogue-stats';
 import type { ConversationScore } from './quality';
+import { gradeConversation, gradeLine } from './grade';
 import type { TurnSteps } from './beginner-2';
 
 export function recordingEnabled(): boolean {
@@ -226,6 +227,7 @@ export function conversationAsText(c: RecordedConversation): string {
     ? [
         '',
         `SCORE: median reply ${q.stats.wordsMedian} words · opener ${q.stats.openerWords} · corrections ${q.judge.correctionsUnprompted} unprompted, ${q.judge.correctionsAsked} asked · pronunciation ${q.judge.pronunciationCorrections} · lost ${q.lost.length} (pulled back ${q.lost.filter((l) => l.pulledBack && l.shorter).length})`,
+        gradeLine(gradeConversation(q)),
         ...(q.judge.note && q.judge.note !== 'None' ? [`  ${q.judge.note}`] : []),
       ]
     : [];

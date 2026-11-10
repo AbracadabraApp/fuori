@@ -9,6 +9,7 @@
 
 import { median, summarize } from './dialogue-stats';
 import type { ConversationScore } from './quality';
+import { gradeConversation } from './grade';
 
 type Direction = 'lower' | 'higher';
 
@@ -36,6 +37,11 @@ const avgOf = (s: ConversationScore[], f: (x: ConversationScore) => number | und
   avg(s.map(f).filter((v): v is number => typeof v === 'number'));
 
 export const MEASURES: Measure[] = [
+  {
+    // Josh, 2026-11-10: one grade for every conversation, to watch overall progress (lib/grade.ts)
+    key: 'grade', label: 'Overall grade (1–10)', better: 'higher', target: null, format: 'rating', tolerance: 0.3,
+    value: (s) => avgOf(s, (x) => gradeConversation(x).total),
+  },
   {
     key: 'replySeconds', label: 'Reply time (median seconds)', better: 'lower', target: 2, format: 'seconds', tolerance: 0.3,
     value: (s) => {

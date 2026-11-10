@@ -67,6 +67,12 @@ const JudgeSchema = z.object({
   // Added 2026-10-16 (judge version 2026-10-16); optional so scores saved before still read
   incoherent: z.number().int().min(0).optional(),
   alive: z.number().int().min(1).max(10).optional(),
+  // Added 2026-11-10 (judge version 2026-11-10q), for the one grade (lib/grade.ts); optional so older scores still read
+  unanswered: z.number().int().min(0).optional(),
+  cutOffByGoodbye: z.boolean().optional(),
+  extraGoodbyes: z.number().int().min(0).optional(),
+  placeFacts: z.number().int().min(0).optional(),
+  newcomerAssumed: z.number().int().min(0).optional(),
   // Added 2026-10-27 (judge version 2026-10-27): how much each side spoke the
   // language and English (Josh: "both are important, character and speaker";
   // for the character, total words, not a share, and "the length of phrase and
