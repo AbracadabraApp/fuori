@@ -62,10 +62,10 @@ function stretches(statements: string[]): { text: string; closedBy: 'words' | 's
 
 const SUMMARY = `You write the short English a listener hears after a stretch of what a local has just said in ${language.name}. The listener is at the very start of ${language.name}.
 
-For each numbered stretch, write one English remark that tells them what she said in it: a phrase or one sentence, clearly shorter than the stretch.
+For each numbered stretch, write one English remark that tells them what she said in it, as short as carries it: one word can stand for five of hers, and it is never more than one short sentence.
 - Say it as she would say it herself, in the first person.
 - Keep one or two of her own ${language.name} words inside the English, each next to its meaning, when they are worth having.
-- Add nothing she did not say.
+- You may say what a thing she named is, in her voice. Give her no new facts, events or offers that she did not make.
 - Leave out anything she already said in English.
 - Never translate sentence by sentence.
 

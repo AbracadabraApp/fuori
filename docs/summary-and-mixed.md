@@ -29,6 +29,7 @@ Today each Spanish sentence is followed by its English, sentence by sentence. Th
 - Counting only the hard words is true but too fancy: count every Spanish word.
 - The first version doesn't need levels.
 - Talk then question is not a bad format. But her response should move forward from what the learner said, not go back to her previous story: no narration that ignores the response.
+- On the summary adding nothing: "Is add nothing good". And "One word could sum 5": a summary can be far shorter than a translation and still carry it.
 - Reading is probably 20% the fidelity of hearing; hearing probably 80% of playing. So a test is heard, not read.
 
 ## Mixed: a thought, not a label (Josh)
@@ -46,14 +47,14 @@ Today each Spanish sentence is followed by its English, sentence by sentence. Th
 
 **The summary**
 - Code walks her line sentence by sentence, counting Spanish words. A stretch ends when it passes 20 words or reaches 2 sentences, whichever comes first (Josh's guess; Claude's reading of it). So a sentence over 20 words gets its own summary before the next one.
-- One side call, started as soon as her text exists, like the replies written ahead. It gets who she is and her line in stretches. For each stretch: one English remark, shorter than the Spanish, keeping one or two of her words with their meaning (the vocabulary), adding nothing, skipping anything she already said in English.
-- **How this differs from B2-E4:** the Spanish is never rewritten, and the English comes after a stretch, not woven through it. So her voice starts at once and the summary has the length of her first stretch to arrive (about 8 s for 20 words), where B2-E4's writer had to finish before she could speak. B2-E4's two other failures are addressed in the prompt ("clearly shorter", "add nothing") and counted.
+- One side call, started as soon as her text exists, like the replies written ahead. It gets who she is and her line in stretches. For each stretch: one English remark, shorter than the Spanish, as short as carries it (a word can stand for five of hers), keeping one or two of her words with their meaning (the vocabulary), skipping anything she already said in English. It may say what a thing she named is, in her voice; it gives her no new facts, events or offers, because the summary isn't in her transcript and she wouldn't know she said them.
+- **How this differs from B2-E4:** the Spanish is never rewritten, and the English comes after a stretch, not woven through it. So her voice starts at once and the summary has the length of her first stretch to arrive (about 8 s for 20 words), where B2-E4's writer had to finish before she could speak. B2-E4's other two failures are handled differently: brevity is asked for outright, and "nothing added" (the test designer's rule there, not Josh's) is narrowed to no new facts, since Josh's own examples add ("It's a sauce, very dark, chocolate and chiles; you must try").
 - A closing question gets its full English, as today.
 - Late or failed: code speaks the literal English, and the turn logs it.
 - Open (Claude): whether a single short sentence, well under 20 words, gets a summary or is left alone.
 
 **Counted, not asked for**
-- English against Spanish on her statements, apart from the question. 50–70% watched; under 30% falls back to the literal English.
+- English against Spanish on her statements, apart from the question. Reported, to compare with Josh's 50–70%; not a rule, since one word can sum five. Whether a floor should trigger the literal English is open until the clips are heard.
 
 **Left for later**
 - The word limit as the level dial per cluster.
@@ -86,7 +87,7 @@ Two questions, one small run, heard by Josh. Josh has no Spanish, so his ear in 
 **Counted in code**
 - Summary: English against Spanish on her statements; stretches a turn, and how many closed on the 20 words, the 2 sentences or the end of her talk; summaries longer than their stretch; her words kept in the summary; the summary call's time against how long her first stretch takes to say (an estimate, 2.3 words a second).
 - Mixed: words a line against Arm S; the copy guard (an example line repeated).
-- Read by Claude, flagged as a read: added claims in the summaries (B2-E4's failure); whether her second turn picks up the learner's reply.
+- Read by Claude, flagged as a read: new facts, events or offers in the summaries; whether her second turn picks up the learner's reply.
 
 **What would answer it**
 - Mixed works if Josh hears a thought, not a label, on about half the clips or more, and the switch sounds like a person. Under a quarter: the one-string format isn't enough either.
