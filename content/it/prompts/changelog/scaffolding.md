@@ -2,6 +2,9 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
 
+### 2026-11-10e (code, no prompt change): questions with their English in Level 1
+- lib/beginner-2.ts → questionEcho: in clusters 1–2 every question in the language has its English right next to it, spoken: an English piece after it, unless an English question comes just before it (Josh, 2026-11-09: "questions should be spanish then english - near same is fine"; "it could go english-spanish or spanish english"; "it's hard to answer a spanish question with no english"). Added as a spoken English piece, not a gloss, because with answers shown a question's gloss isn't spoken (the 2026-11-05 coffee fix, mirrored by the app).
+
 ### 2026-11-10e: Level 1 is English with echoes in the language
 - **Changed:** "Level: 1" (clusters 1–2) is now English-led: the character speaks English and puts the language right after the English that says it (the words worth keeping, a short phrase, the question), an echo, so the learner always knows what it means. Replaces S1's text, including its "your English never says what your {language} then says".
 - **Why:** Josh played Doña Chayo (Puebla, cluster 1, 2026-11-09): every turn was an English block, then a block in the language that said something else, no glosses ("English intro - all Spanish… had to look to answers for context… this is not bilingual helper"); "English with Spanish gloss might be a better beginner approach than all Spanish a little English". That's the ramp from the plan (English leads → the language leads → English only sets the scene). The rule against saying the same thing in both languages was written for "cafe, coffee, cafe", which Josh says was the voice reading something meant only for the screen; the code fixed that on 2026-11-05, so the rule only kept the two languages apart.

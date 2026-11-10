@@ -161,17 +161,44 @@ export function withEnglish(parts: Part[]): Part[] {
  */
 export function invited(parts: Part[]): Part[] {
   const lead = readPromptFile(SCAFFOLDING_FILE).block('Line: invite English').trim();
-  const english = parts.filter((x) => x.kind === 'english').map((x) => x.text).join(' ').toLowerCase();
+  // Anywhere in what's said: the character sometimes writes the invitation into the question itself (Hugo, 2026-11-09)
+  const english = parts.filter((x) => x.kind !== 'answer').map((x) => `${x.text} ${x.gloss ?? ''} ${x.kind === 'question' ? x.en : ''}`).join(' ').toLowerCase();
   const already = english.includes(lead.toLowerCase().replace(/[.!]$/, '').split(' ').slice(-2).join(' '));
-  const out = parts.map((x) => (x.kind === 'question' && !x.gloss?.trim() && x.en.trim() ? { ...x, gloss: x.en } : x));
+  const echoed = parts.some((x, i) => x.kind === 'question' && parts[i + 1]?.kind === 'english');
+  const out = echoed ? parts : parts.map((x) => (x.kind === 'question' && !x.gloss?.trim() && x.en.trim() ? { ...x, gloss: x.en } : x));
   return already ? out : [...out.filter((x) => x.kind !== 'answer'), { kind: 'english', text: lead, en: '', gloss: '' }];
+}
+
+/** Clusters where the question is echoed in English right after it (Level 1) */
+export const QUESTION_ECHO = [true, true, false, false, false, false];
+
+/**
+ * Level 1: the question in the language, then its English right after (Josh, 2026-11-09: "questions
+ * should be spanish then english - near same is fine"). Added as an English piece after the question,
+ * not as its gloss: with answers shown a question's gloss isn't spoken (lib/beginner.ts → lineFromParts,
+ * mirrored by the app), while an English piece is spoken by both
+ */
+export function questionEcho(parts: Part[]): Part[] {
+  const i = parts.findIndex((x) => x.kind === 'question');
+  if (i < 0) return parts;
+  const q = parts[i];
+  // Its full English (the gloss can hold something else: "you can answer in English")
+  const en = q.en.trim() || q.gloss?.trim() || '';
+  // English on either side is enough (Josh: "it could go english-spanish or spanish english"): an English question
+  // just before it ("What can I get you? ¿Qué le sirvo?") or English just after means no echo, so nothing is said three times
+  const before = parts[i - 1];
+  const englishBefore = before?.kind === 'english' && /\?["'»”’)]*\s*$/.test(before.text.trim());
+  if (!en || glossEchoes(en, q.text) || englishBefore || parts[i + 1]?.kind === 'english') return parts;
+  return [...parts.slice(0, i), { ...q, gloss: '' }, { kind: 'english', text: en, en: '', gloss: '' }, ...parts.slice(i + 1)];
 }
 
 /** Display: every phrase glossed in clusters 1–2; English on every turn; an inside rung's answer said by the character */
 export function shownParts(raw: Part[], setup: Setup, cluster: Setup[] = CLUSTER_1): Part[] {
   const parts = withEnglish(GLOSS_ALL[Math.max(0, CLUSTERS.indexOf(cluster))] ? glossAll(raw) : raw);
+  const at = Math.max(0, CLUSTERS.indexOf(cluster));
   if (setup.inside) return insideSpeech(parts, setup);
-  if (setup.invite) return invited(parts);
+  if (setup.invite) return invited(QUESTION_ECHO[at] ? questionEcho(parts) : parts);
+  if (QUESTION_ECHO[at]) return questionEcho(parts);
   return setup.english ? parts : parts.map((x) => (x.kind === 'answer' ? { ...x, en: '' } : x));
 }
 

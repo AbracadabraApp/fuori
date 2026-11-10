@@ -4,9 +4,9 @@
 // prompt file, the language-only rung hides the answers' English, the turn
 // code takes the switch, and Beginner 2 turns don't move the Beginner 1 path.
 import { readFileSync } from 'fs';
-import { beginnerVersionFrom, pickSetup, setupText, shownParts, beginner2Version, glossAll, CLUSTER_1, CLUSTERS, RUNGS, clusterFrom } from '@/lib/beginner-2';
+import { beginnerVersionFrom, pickSetup, setupText, shownParts, beginner2Version, glossAll, questionEcho, CLUSTER_1, CLUSTERS, RUNGS, clusterFrom } from '@/lib/beginner-2';
 import { stageInVersion } from '@/lib/conversation-record';
-import type { Part } from '@/lib/beginner';
+import { lineFromParts, type Part } from '@/lib/beginner';
 import { buildBeginnerPrompt, SCAFFOLDING_FILE, dialogueWithoutFormat } from '@/lib/beginner';
 import { buildTurnPrompt } from '@/lib/prompts/build-turn-prompt';
 import { cities } from '@/content';
@@ -37,14 +37,15 @@ const seen6 = new Set(Array.from({ length: 40 }, (_, i) => pickSetup({ conversat
 check(seen6.size === 2 && seen6.has('free') && seen6.has('invite-en'), `cluster 6 plays its own three rungs (got ${[...seen6].join(', ')})`);
 
 const parts: Part[] = [{ kind: 'question', text: 'Un caffè?', en: 'A coffee?', gloss: '' }, { kind: 'answer', text: 'Sì, grazie.', en: 'Yes, thanks.', gloss: '' }];
-check(shownParts(parts, RUNGS.find((r) => r.id === 'two-en')!)[1].en === 'Yes, thanks.', 'bubbles keep their English');
+check(shownParts(parts, RUNGS.find((r) => r.id === 'two-en')!).find((x) => x.kind === 'answer')!.en === 'Yes, thanks.', 'bubbles keep their English');
 
 
 const bare: Part[] = [{ kind: 'word', text: 'Qué bueno.', en: 'Great.', gloss: '' }, { kind: 'question', text: '¿Cuál le gusta más?', en: 'Which do you like best?', gloss: '' }, { kind: 'answer', text: 'Me gusta el de allá.', en: 'I like that one.', gloss: '' }];
 const fixed = shownParts(bare, CLUSTER_1[0], CLUSTERS[2]);
 check(fixed.find((x) => x.kind === 'question')!.gloss === 'Which do you like best?', 'a turn with no English gets its question\'s English as a gloss (Hugo, 2026-11-09)');
 const glossed: Part[] = [{ kind: 'question', text: '¿Le gustan?', en: 'Do you like them?', gloss: 'like them?' }];
-check(shownParts(glossed, CLUSTER_1[0])[0].gloss === 'like them?', 'a turn that already has English is left alone');
+check(shownParts(glossed, CLUSTER_1[0], CLUSTERS[3])[0].gloss === 'like them?', 'later clusters: a turn that already has English is left alone');
+check(shownParts(glossed, CLUSTER_1[0], CLUSTER_1)[1]?.text === 'Do you like them?', 'Level 1: a glossed question gets its full English as the spoken piece after it');
 const para: Part[] = [{ kind: 'english', text: 'Welcome to the barrio.', en: '', gloss: '' }, { kind: 'word', text: 'Aquí pinto todos los días.', en: 'I paint here every day.', gloss: '' }, { kind: 'word', text: 'Bienvenido al barrio.', en: 'Welcome to the barrio.', gloss: '' }, { kind: 'question', text: '¿Le gustan los murales?', en: 'Do you like the murals?', gloss: '' }];
 const g1 = glossAll(para);
 check(g1[1].gloss === 'I paint here every day.' && g1[3].gloss === 'Do you like the murals?', 'glossAll (off for now): every phrase gets its English');
@@ -52,8 +53,19 @@ check(g1[2].gloss === '', 'glossAll: not when the turn\'s own English already sa
 check(shownParts(para, CLUSTER_1[0], CLUSTER_1)[1].gloss === '', 'cluster 1 leaves glossing to the S1 text (Josh: Beginner 1\'s S1 glossing works)');
 check(/echoes your English/.test(setupText(CLUSTER_1[0], CLUSTER_1)) && !/never says what your/.test(setupText(CLUSTER_1[0], CLUSTER_1)), 'Level 1: English with echoes in the language, without the rule keeping the two apart');
 const inv = shownParts([{ kind: 'english', text: 'Sit anywhere.', en: '', gloss: '' }, { kind: 'question', text: '¿Es su primera vez en Puebla?', en: 'Is it your first time in Puebla?', gloss: '' }], RUNGS.find((r) => r.id === 'invite-en')!, CLUSTER_1);
-check(inv.find((x) => x.kind === 'question')!.gloss === 'Is it your first time in Puebla?' && inv[inv.length - 1].kind === 'english' && /English/.test(inv[inv.length - 1].text), 'invited English: the question\'s English and the invitation are said, in code');
+{ const qi = inv.findIndex((x) => x.kind === 'question'); check(inv[qi + 1]?.text === 'Is it your first time in Puebla?' && inv[inv.length - 1].kind === 'english' && /English/.test(inv[inv.length - 1].text), 'invited English: the question\'s English and the invitation are said, in code'); }
 check(shownParts(para, CLUSTERS[3][0], CLUSTERS[3])[1].gloss === '', 'later clusters leave glossing to the character');
+const qs: Part[] = [{ kind: 'english', text: 'Welcome!', en: '', gloss: '' }, { kind: 'question', text: '¿Quiere probar el mole?', en: 'Do you want to try the mole?', gloss: '' }, { kind: 'answer', text: 'Sí, por favor.', en: 'Yes, please.', gloss: '' }, { kind: 'answer', text: 'No, gracias.', en: 'No, thanks.', gloss: '' }];
+const q1 = shownParts(qs, RUNGS.find((r) => r.id === 'two-en')!, CLUSTER_1);
+const qi = q1.findIndex((x) => x.kind === 'question');
+check(q1[qi + 1]?.kind === 'english' && q1[qi + 1].text === 'Do you want to try the mole?', 'Level 1: the question, then its English as a spoken piece (Josh: "spanish then english")');
+check(lineFromParts(q1).line.includes('¿Quiere probar el mole? Do you want to try the mole?'), 'the English is spoken right after the question, with answers shown');
+check(shownParts(qs, RUNGS.find((r) => r.id === 'two-en')!, CLUSTERS[3]).every((x) => x.kind !== 'english' || x.text === 'Welcome!'), 'later clusters: no question echo');
+const pre: Part[] = [{ kind: 'english', text: 'What can I get you?', en: '', gloss: '' }, { kind: 'question', text: '¿Qué le sirvo?', en: 'What can I serve you?', gloss: '' }];
+check(shownParts(pre, RUNGS.find((r) => r.id === 'invite-en')!, CLUSTERS[3]).length >= 2 && !lineFromParts(questionEcho(pre)).line.includes('What can I serve you?'), 'an English question just before is enough: no echo after (nothing said three times)');
+check(questionEcho([{ kind: 'question', text: '¿Le gusta?', en: 'Do you like it?', gloss: 'you can answer in English' }])[1].text === 'Do you like it?', 'the echo is the question\'s full English, not whatever is in its gloss');
+const twice = shownParts([{ kind: 'question', text: '¿Qué mural le gusta más? You can answer in English.', en: 'Which mural do you like most? You can answer in English.', gloss: '' }], RUNGS.find((r) => r.id === 'invite-en')!, CLUSTER_1);
+check((lineFromParts(twice).line.match(/answer (me )?in English/gi) ?? []).length <= 2 && !twice.some((x) => x.kind === 'english' && /^You can answer me in English\.$/.test(x.text)), 'the invitation isn\'t added when the character already gave it');
 const inside = shownParts(parts, RUNGS.find((r) => r.id === 'inside-en')!);
 check(!inside.some((x) => x.kind === 'answer') && inside.some((x) => x.kind === 'word' && x.text === 'Sì, grazie.' && x.gloss === 'Yes, thanks.'), 'rung 4: the answer is in her speech with its English heard, no bubble');
 check(shownParts(parts, RUNGS.find((r) => r.id === 'inside')!).some((x) => x.kind === 'word' && x.text === 'Sì, grazie.' && !x.gloss), 'rung 6: the answer in her speech, no English');
