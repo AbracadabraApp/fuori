@@ -700,7 +700,7 @@ export const venezia: CityPantry = {
       placeId: 'stazione-santa-lucia',
       personality: ["helpful", "organized", "patient"],
       portraitPrompt: 'Pen and ink portrait on white paper of a uniformed man in his fifties with cap, official vest, calm demeanor, minimal grey-blue watercolor wash, neat orderly lines, gateway guardian',
-      here: "You sell tickets at Santa Lucia station, where the trains end and the Grand Canal begins right outside the doors, and you point newcomers to the right vaporetto stop.",
+      here: "You sell tickets at Santa Lucia station, where the trains end and the Grand Canal begins right outside the doors, and you point people to the right vaporetto stop.",
     },
     {
       id: 'andrea-gondola',

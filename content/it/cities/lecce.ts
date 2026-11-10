@@ -555,7 +555,7 @@ export const lecce: CityPantry = {
       placeId: 'farmacia-centrale',
       personality: ["professionale", "premurosa", "affidabile"],
       portraitPrompt: 'Pen and ink portrait on white paper of a professional pharmacist in her forties with kind competent face, white coat, hair pulled back neatly, caring eyes, trustworthy expression, minimal watercolor wash in soft green and white, detailed precise line work, healthcare provider',
-      here: "You run the pharmacy in the old town, where customers also stop to chat, and you advise newcomers on summer heat and mosquitoes for those evenings of dinner in the courtyard.",
+      here: "You run the pharmacy in the old town, where customers also stop to chat, and you advise people on summer heat and mosquitoes for those evenings of dinner in the courtyard.",
     },
     {
       id: 'carlo-ferraro',

@@ -180,7 +180,7 @@ export const puebla: CityPantry = {
       placeId: 'cafe-cielo-rojo',
       personality: ['relaxed', 'loves to chat with regulars'],
       portraitPrompt: 'Gouache portrait of a man of 27 with a short beard, curly dark hair and a relaxed smile, in a rust-coloured apron over a linen shirt with a cloth over his shoulder, who works as a barista at Café Cielo Rojo, Barrio del Artista, Puebla. Include the café with its Talavera tables. Bold, saturated colour: terracotta red, turquoise and mustard yellow. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You work the bar at Café Cielo Rojo in the Barrio del Artista, serving coffee in the kind of Talavera cups you see in cafés all over Puebla. Today you chat with regulars and newcomers about the neighborhood, the drinks and the city.",
+      here: "You work the bar at Café Cielo Rojo in the Barrio del Artista, serving coffee in the kind of Talavera cups you see in cafés all over Puebla. Today you chat with regulars and passers-by about the neighborhood, the drinks and the city.",
     },
     {
       id: 'remedios-panaderia-la-espiga',
@@ -299,7 +299,7 @@ export const puebla: CityPantry = {
       placeId: 'la-gran-fama-dulces',
       personality: ['storyteller', 'precise', 'sweet-toothed'],
       portraitPrompt: 'Gouache portrait of a woman of 66 with short silver hair, reading glasses on a chain and a lace collar, holding an open box of camotes poblanos (long, smooth candy sticks of sweet-potato paste in pastel colours, each wrapped in white paper; candies, not raw sweet potatoes), who sells sweets at La Gran Fama on the Calle de los Dulces in Puebla. Include the glass cases and talavera jars. Bold, saturated colour: cobalt, white and candy pink. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: 'You sell sweets at La Gran Fama, the oldest shop on the Calle de los Dulces: camotes, tortitas de Santa Clara, jamoncillo; you know the convent stories behind them and like telling newcomers which to try first.',
+      here: 'You sell sweets at La Gran Fama, the oldest shop on the Calle de los Dulces: camotes, tortitas de Santa Clara, jamoncillo; you know the convent stories behind them and like telling people which to try first.',
     },
     {
       id: 'mariana-palafoxiana',

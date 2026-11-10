@@ -206,7 +206,8 @@ export function invited(parts: Part[]): Part[] {
   // Anywhere in what's said: the character sometimes writes the invitation into the question itself (Hugo, 2026-11-09)
   const english = parts.filter((x) => x.kind !== 'answer').map((x) => `${x.text} ${x.gloss ?? ''} ${x.kind === 'question' ? x.en : ''}`).join(' ').toLowerCase();
   // Already invited, in the character's own words ("ask me in English", "you can ask me anything")
-  const already = /ask me (anything|in english|in spanish|in italian)|in (english|spanish|italian) or/.test(english);
+  const lang = language.name.toLowerCase();
+  const already = new RegExp(`ask me (anything|in english|in ${lang})|in (english|${lang}) or`).test(english);
   const echoed = parts.some((x, i) => x.kind === 'question' && parts[i + 1]?.kind === 'english');
   const out = echoed ? parts : parts.map((x) => (x.kind === 'question' && !x.gloss?.trim() && x.en.trim() ? { ...x, gloss: x.en } : x));
   return already ? out : [...out.filter((x) => x.kind !== 'answer'), { kind: 'english', text: lead, en: '', gloss: '' }];

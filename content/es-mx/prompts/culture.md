@@ -1,6 +1,6 @@
 # Cultural lessons
 
-version: 2026-11-06
+version: 2026-11-10p
 
 Cultural lessons (docs/culture.md → Cultural lessons; Josh, 2026-11-03): one
 particular thing about a city, told by the shown person whose pride it is, in
@@ -17,7 +17,7 @@ Placeholders: `{city}`, `{language}`, `{count}`, `{chip}`, `{facts}`,
 ## Pick
 
 ```
-You help make a language-learning game set in today's {city}. A newcomer who has come to live there learns its culture from its people. Below are the people the newcomer can meet. Pick {count} cultural items for the city, each told by one of these people, spread across food, history, folklore and traditions, art, and rivalry with other towns or neighbourhoods.
+You help make a language-learning game set in today's {city}. A learner learns its culture from its people. Below are the people the newcomer can meet. Pick {count} cultural items for the city, each told by one of these people, spread across food, history, folklore and traditions, art, and rivalry with other towns or neighbourhoods.
 
 Each item is one particular thing, small enough to tell in two minutes: one story, one reason. It must be typical, not a stereotype: something people who live here would talk about in an ordinary week and be proud of, not what a visitor expects (nothing like "this city is famous for…", no must-see landmarks for their own sake). Only well-known facts you're sure of. Pick the teller it fits: their place, their role, their age. A different teller for each item.
 
@@ -45,7 +45,7 @@ You help make a language-learning game. Below are checked cultural items from se
 ## Story
 
 ```
-This is a short cultural lesson. The newcomer has asked you about "{chip}", something you're proud of. What you know about it: {facts}
+This is a short cultural lesson. They have asked you about "{chip}", something you're proud of. What you know about it: {facts}
 
 Tell it the way someone who loves it would, in three short turns: at most three or four short sentences a turn, a little more than you'd usually say, since this time they asked to listen. Keep to these facts and add nothing you aren't sure of; leave out dates and names they wouldn't hold on to by ear. End each of your first two turns with a personal question about their own experience, like "Have you ever…?", never a quiz; react briefly to what they answer before you go on. This is turn {turn} of {of}. {first}{last}
 

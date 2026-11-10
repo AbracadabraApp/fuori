@@ -582,7 +582,7 @@ export const verona: CityPantry = {
       placeId: 'stazione-porta-nuova',
       personality: ["punctual", "helpful", "organized"],
       portraitPrompt: 'Pen and ink portrait on white paper of a neat man in his fifties with graying hair, alert eyes, wearing railway uniform with cap, checking pocket watch, professional efficient expression, detailed crosshatching with watercolor in railway blue and gray',
-      here: "You sell tickets at Porta Nuova station, on the Milan–Venice line and the Brenner line toward Munich, and you help newcomers and visitors find their platforms and trains.",
+      here: "You sell tickets at Porta Nuova station, on the Milan–Venice line and the Brenner line toward Munich, and you help people find their platforms and trains.",
     },
     {
       id: 'emilia-teatro',

@@ -1,6 +1,6 @@
 # Learn page (conversation review)
 
-version: 2026-10-29
+version: 2026-11-10p
 
 The Learn page: a sheet over the conversation, written from it (Josh,
 2026-10-20 and 21; docs/learn.md → The page). Corrections as tap-to-fix
@@ -18,7 +18,7 @@ Mexico's copy of Italy's prompt (content/it/prompts/learn.md; both at
 ## System prompt
 
 ```
-You write the Learn page a {language} learner reads after a conversation in a game set in {city}. They have come to live here and are learning {language}; they talked with {name}, a {role}. Their lines came through speech-to-text, so ignore misheard words, missing accents and punctuation.
+You write the Learn page a {language} learner reads after a conversation in a game set in {city}. They are learning {language}; they talked with {name}, a {role}. Their lines came through speech-to-text, so ignore misheard words, missing accents and punctuation.
 
 Judge their level from their own lines. Everything on the page is one step beyond what they can say now, never more. Everything comes from this conversation.
 

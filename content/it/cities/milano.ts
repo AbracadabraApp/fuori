@@ -739,7 +739,7 @@ export const milano: CityPantry = {
       placeId: 'farmacia-centrale',
       personality: ["professional", "caring", "calm"],
       portraitPrompt: "Pen and ink portrait on white paper of a woman in her late 30s with dark hair tied back, white coat, glasses, reassuring expression, minimal watercolor wash in pharmacy green and white tones, medical trust",
-      here: "You are the pharmacist here, and you help newcomers who don't yet know how to say what hurts or what they need, in a city where everyone is in a hurry. Your background: from Bucharest, here 15 years.",
+      here: "You are the pharmacist here, and you help people who don't know how to say what hurts or what they need, in a city where everyone is in a hurry. Your background: from Bucharest, here 15 years.",
     },
     {
       id: 'michele-franco',

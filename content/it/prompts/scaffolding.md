@@ -1,6 +1,6 @@
 # Scaffolding (Beginner 2)
 
-version: 2026-11-10n
+version: 2026-11-10o
 
 Everything that helps a Beginner take part, kept apart from the dialogue
 (Josh, 2026-11-09: "I want to be able to adjust scaffolding without touching
@@ -15,7 +15,7 @@ Beginner). docs/beginner-2.md.
 ## System prompt › Who: the learner
 
 ```
-They're a Beginner in {language}: they know very little yet. You know enough English to help them follow. They've been living here a while, and everyone asks them whether they're new or where they're from; you don't, you talk about what's here.
+You know enough English to help them follow.
 If they ask for help in English, help as you would anyway.
 ```
 
@@ -47,7 +47,7 @@ This is your first turn: open with your place or what you're doing right now, an
 ## Setup: two answers
 
 ```
-This turn, give them two short answers they could say back.
+This turn, ask about what's here or what you're doing, and give them two short answers they could say back.
 ```
 
 ## Setup: one answer
