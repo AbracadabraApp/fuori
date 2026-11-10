@@ -10,6 +10,10 @@
  * of whose videos could be heard, as Italy's eight were (2026-11-06), until
  * someone listens to it.
  *
+ * Rule 3 (Josh, 2026-11-09): a film originally made in the learned language
+ * (`original` in the library) counts its full upload as that language when the
+ * upload couldn't be heard, unless the upload's title says it's dubbed.
+ *
  * Written for Mexico's first films (2026-11-09), most of which TMDB labels
  * wrong or not at all; it works the same for Italy.
  *
@@ -43,6 +47,9 @@ for (const film of library.films) {
   }
   film.videos.sort((a, b) => Number(b.language === lang) - Number(a.language === lang));
   if (film.fullFilm) film.fullFilm.language = heardAs(film.fullFilm.youtube, film.fullFilm.language);
+  // Rule 3: an unheard full upload of a film made in the learned language counts as that language, unless its title says dubbed
+  const dubbed = /dub|doblad|doppiat|english|ingl[eé]s|inglese|fran[cç]ais|french|franc[eé]s/i;
+  if (film.original === lang && film.fullFilm && !heard[film.fullFilm.youtube]?.language && !dubbed.test(film.fullFilm.title ?? '')) film.fullFilm.language = lang;
   const ids = [...film.videos.map((v) => v.youtube), ...(film.fullFilm ? [film.fullFilm.youtube] : [])];
   const inLang = film.videos.some((v) => v.language === lang) || film.fullFilm?.language === lang;
   if (inLang) kept.push(film);

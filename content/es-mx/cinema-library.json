@@ -1,5 +1,5 @@
 {
- "about": "The cinema shuffler for Mexico (Josh, 2026-11-09: \"a mexican film area… feature to feature like Italy… start with 50 mexican films and expand through more ideas\"; \"copy the italy code as much as possible\"). Built like Italy's: Mexican films chosen in the cloud session, checked with scripts/cinema-check-films.mjs (LANG_CODE=es REGION=MX: TMDB's Mexican-Spanish title, poster, videos with Spanish first; fullFilm is a full-length YouTube upload found by searching YouTube, checked by title and running time, playable in other apps). Adults-only films are left out. Shelf titles are shown as written. The rule (Josh, 2026-11-06, agreed for Italy): a film is in only with at least one video in the learned language, its trailer or the full film. TMDB's language labels are unreliable and YouTube won't say from the cloud, so until the laptop runs scripts/cinema-video-language.mjs and scripts/cinema-apply-language.mjs (COUNTRY=es-mx), films whose only Spanish may be unheard are included pending that check.",
+ "about": "The cinema shuffler for Mexico (Josh, 2026-11-09: \"a mexican film area… feature to feature like Italy… start with 50 mexican films and expand through more ideas\"; \"copy the italy code as much as possible\"). Built like Italy's: Mexican films chosen in the cloud session, checked with scripts/cinema-check-films.mjs (LANG_CODE=es REGION=MX: TMDB's Mexican-Spanish title, poster, videos with Spanish first; fullFilm is a full-length YouTube upload found by searching YouTube, checked by title and running time, playable in other apps). Adults-only films are left out. Shelf titles are shown as written. The rule (Josh, 2026-11-06, agreed for Italy): a film is in only with at least one video in the learned language, its trailer or the full film. TMDB's language labels are unreliable and YouTube won't say from the cloud, so until the laptop runs scripts/cinema-video-language.mjs and scripts/cinema-apply-language.mjs (COUNTRY=es-mx), films whose only Spanish may be unheard are included pending that check. Josh, 2026-11-09 (rule 3): a film originally made in Spanish (`original: \"es\"`) counts its full upload as Spanish when the audio couldn't be heard, unless the upload's title says it's dubbed; scripts/cinema-apply-language.mjs applies it. Ten films came back this way.",
  "fullFilmName": "Película completa",
  "shelves": [
   {
@@ -66,7 +66,17 @@
     37221,
     47916,
     43344,
-    32579
+    32579,
+    120301,
+    114896,
+    43459,
+    49971,
+    18183,
+    34207,
+    52629,
+    186976,
+    29871,
+    126315
    ]
   },
   {
@@ -101,7 +111,10 @@
     43338,
     701524,
     182207,
-    37628
+    37628,
+    49971,
+    34207,
+    126315
    ]
   },
   {
@@ -133,7 +146,10 @@
     37628,
     43338,
     44804,
-    123793
+    123793,
+    120301,
+    114896,
+    43459
    ]
   },
   {
@@ -158,7 +174,11 @@
     118003,
     120300,
     43338,
-    37221
+    37221,
+    120301,
+    49971,
+    52629,
+    29871
    ]
   },
   {
@@ -182,7 +202,9 @@
     670981,
     154629,
     118010,
-    44804
+    44804,
+    43459,
+    18183
    ]
   },
   {
@@ -199,7 +221,8 @@
     47007,
     43344,
     772515,
-    123793
+    123793,
+    29871
    ]
   },
   {
@@ -241,7 +264,11 @@
     211954,
     180147,
     772515,
-    701524
+    701524,
+    34207,
+    52629,
+    186976,
+    126315
    ]
   }
  ],
@@ -1416,6 +1443,178 @@
     "youtube": "EehaZoDHi6s",
     "language": "es"
    }
+  },
+  {
+   "tmdbId": 120301,
+   "title": "Dos tipos de cuidado",
+   "year": 1953,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/syNdsQL5kSFAlaiaNBV0Kb1dJ7r.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "j3YypjA0tu0",
+    "language": "es",
+    "title": "Dos tipos de cuidado (1953). Pedro Infante - Jorge Negrete."
+   },
+   "original": "es"
+  },
+  {
+   "tmdbId": 114896,
+   "title": "Aventurera",
+   "year": 1950,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/kgPbBocMNaVbkoDza49MZUyUenr.jpg",
+   "videos": [
+    {
+     "youtube": "nmJVyecb_JY",
+     "type": "Trailer",
+     "name": "Aventurera Ninón Sevilla Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "pGBDfAWExAw",
+    "language": "es",
+    "title": "Película Aventurera completa"
+   },
+   "original": "es"
+  },
+  {
+   "tmdbId": 43459,
+   "title": "La perla",
+   "year": 1947,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/3Dtb5ZFhilHETAUSfg6BCdrc0Vl.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "v14E2zBWbFA",
+    "language": "es",
+    "title": "Peliculas Clasicas en Espanol- La Perla (1947)"
+   },
+   "original": "es"
+  },
+  {
+   "tmdbId": 49971,
+   "title": "Solo con tu pareja",
+   "year": 1991,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/6T83r9Pll4N0UkRiFBNty761gww.jpg",
+   "videos": [
+    {
+     "youtube": "ca2X2Ztj_MA",
+     "type": "Trailer",
+     "name": "Solo Con Tu Pareja",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "8F_LXMvSN5g",
+    "language": "es",
+    "title": "Solo con tu pareja 1991"
+   },
+   "original": "es"
+  },
+  {
+   "tmdbId": 18183,
+   "title": "Como agua para chocolate",
+   "year": 1992,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/bBToqYouLBaoojtC6AyRNeFcQoV.jpg",
+   "videos": [
+    {
+     "youtube": "EkvgSTJkKGI",
+     "type": "Trailer",
+     "name": "Like Water for Chocolate (1992) ORIGINAL TRAILER [HD 1080p]",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "7wwzn-VsFTg",
+    "language": "es",
+    "title": "- Como agua para chocolate - Audiodescripción"
+   },
+   "original": "es"
+  },
+  {
+   "tmdbId": 34207,
+   "title": "Temporada de patos",
+   "year": 2004,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/7ZHuxANQgxjDgjwD1ohp8ejjgu2.jpg",
+   "videos": [
+    {
+     "youtube": "4-X6iN-d_B4",
+     "type": "Trailer",
+     "name": "Duck Season - Original Theatrical Trailer",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "Fv-keQeafzw",
+    "language": "es",
+    "title": "temporada de patos *****pelicula completa***** comedia  2004"
+   },
+   "original": "es"
+  },
+  {
+   "tmdbId": 52629,
+   "title": "El infierno",
+   "year": 2010,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/ar8BpJ5xAzTIw9bqD9Sra6TjBvw.jpg",
+   "videos": [
+    {
+     "youtube": "n4jQnRkj-gU",
+     "type": "Trailer",
+     "name": "El Infierno Trailer HD Bandidos  Films",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "bg7A7_uGBIs",
+    "language": "es",
+    "title": "El Infierno (2010)"
+   },
+   "original": "es"
+  },
+  {
+   "tmdbId": 186976,
+   "title": "La jaula de oro",
+   "year": 2013,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/bCOP37OP39jDKmxj9no7oLjf88i.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "OOBjZtqYqMA",
+    "language": "es",
+    "title": "La Jaula de Oro "
+   },
+   "original": "es"
+  },
+  {
+   "tmdbId": 29871,
+   "title": "Santo contra las mujeres vampiro",
+   "year": 1962,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/3l4qmh2LhQEhpW4AqKsRIQgQ7dd.jpg",
+   "videos": [],
+   "fullFilm": {
+    "youtube": "u8_ZMPjYdes",
+    "language": "es",
+    "title": "Santo vs las mujeres Vampiro"
+   },
+   "original": "es"
+  },
+  {
+   "tmdbId": 126315,
+   "title": "Después de Lucía",
+   "year": 2012,
+   "posterUrl": "https://image.tmdb.org/t/p/w500/3ZPmkdVuoV0Di0UtLL3w5d2AtpC.jpg",
+   "videos": [
+    {
+     "youtube": "5hAx8KwryrY",
+     "type": "Trailer",
+     "name": "\"Después de Lucía\" Trailer Oficial HD",
+     "language": "en"
+    }
+   ],
+   "fullFilm": {
+    "youtube": "oUDs5dyXMgY",
+    "language": "es",
+    "title": "Después de lucia"
+   },
+   "original": "es"
   }
  ],
  "excluded": [
@@ -1425,34 +1624,9 @@
    "why": "no video could be heard: in once someone confirms one is in the learned language"
   },
   {
-   "tmdbId": 120301,
-   "title": "Dos tipos de cuidado",
-   "why": "no video could be heard: in once someone confirms one is in the learned language"
-  },
-  {
-   "tmdbId": 114896,
-   "title": "Aventurera",
-   "why": "no video could be heard: in once someone confirms one is in the learned language"
-  },
-  {
-   "tmdbId": 43459,
-   "title": "La perla",
-   "why": "no video could be heard: in once someone confirms one is in the learned language"
-  },
-  {
    "tmdbId": 120303,
    "title": "El vampiro",
-   "why": "no video could be heard: in once someone confirms one is in the learned language"
-  },
-  {
-   "tmdbId": 49971,
-   "title": "Solo con tu pareja",
-   "why": "no video could be heard: in once someone confirms one is in the learned language"
-  },
-  {
-   "tmdbId": 18183,
-   "title": "Como agua para chocolate",
-   "why": "no video heard in the learned language (es)"
+   "why": "its only full upload is a different film (El vampiro sangriento, 1962), and no video was heard in Spanish"
   },
   {
    "tmdbId": 55,
@@ -1462,16 +1636,6 @@
   {
    "tmdbId": 1391,
    "title": "Y tu mamá también",
-   "why": "no video could be heard: in once someone confirms one is in the learned language"
-  },
-  {
-   "tmdbId": 34207,
-   "title": "Temporada de patos",
-   "why": "no video could be heard: in once someone confirms one is in the learned language"
-  },
-  {
-   "tmdbId": 52629,
-   "title": "El infierno",
    "why": "no video could be heard: in once someone confirms one is in the learned language"
   },
   {
@@ -1485,23 +1649,8 @@
    "why": "no video could be heard: in once someone confirms one is in the learned language"
   },
   {
-   "tmdbId": 186976,
-   "title": "La jaula de oro",
-   "why": "no video could be heard: in once someone confirms one is in the learned language"
-  },
-  {
-   "tmdbId": 29871,
-   "title": "Santo contra las mujeres vampiro",
-   "why": "no video could be heard: in once someone confirms one is in the learned language"
-  },
-  {
    "tmdbId": 77635,
    "title": "Miss Bala",
-   "why": "no video could be heard: in once someone confirms one is in the learned language"
-  },
-  {
-   "tmdbId": 126315,
-   "title": "Después de Lucía",
    "why": "no video could be heard: in once someone confirms one is in the learned language"
   },
   {

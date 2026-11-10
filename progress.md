@@ -66,6 +66,13 @@ Working backwards from A1-A2 Italian standards confirms the environmental vocabu
 
 
 
+## 2026-11-09 (late): Mexico's cinema after the mini's run; rule 3 (cloud session)
+
+- The mini heard the videos, cut the library to 68, put the posters on R2 and ran the fact judge (c19925c). The cloud session corrected the pages (bcbbbf3: 35 edits at Josh's "medium to low bar").
+- **Rule 3 (Josh, 2026-11-09):** a film originally made in Spanish (`original: "es"` in the library) counts its full upload as Spanish when it couldn't be heard, unless the upload's title says it's dubbed. In `scripts/cinema-apply-language.mjs`. Ten films came back: Dos tipos de cuidado, Aventurera, La perla, Solo con tu pareja, Como agua para chocolate (its upload is an audio-described version), Temporada de patos, El infierno, La jaula de oro, Santo contra las mujeres vampiro, Después de Lucía. 78 films now.
+- **Found:** none of the 17 "unheard" films was really unheard: every one failed in yt-dlp on the mini (`Command failed: yt-dlp … --download-sections`), probably an old yt-dlp or missing ffmpeg. El vampiro's only full upload is a different film (El vampiro sangriento, 1962), so it stays out.
+- **For the mini** (from `~/fuori`, after `git pull`): (1) posters for the ten: `COUNTRY=es-mx node --env-file=.env.local scripts/cinema-posters.mjs && COUNTRY=es-mx npm run images:upload`, then `node --env-file=.env.local scripts/image-masters.mjs --untrack`; (2) `brew upgrade yt-dlp && brew install ffmpeg`, then rerun `COUNTRY=es-mx node --env-file=.env.local scripts/cinema-video-language.mjs` (it skips videos already heard) and `COUNTRY=es-mx node scripts/cinema-apply-language.mjs`. That may bring back the seven without an upload (Amores perros, Y tu mamá también, Ya no estoy aquí, Pedro Páramo, Miss Bala, El analfabeto, Veneno para las hadas) if their trailers are heard in Spanish; the films that come back need posters too (step 1 again). Commit and push.
+
 ## 2026-11-09 (night): five new Mexican cities, hidden until their pictures (cloud session)
 
 Josh: "lets add 5 cities to mexico - 10 places to start - thick with local qualities - minimal commerce, favor regional foods, streetvendors - lean into plazas, parks, monuments - at least one place no other city would have"; then "pick 5 interesting places with strong Mexican qualities -- that should be the test" and "avoid too much commerce - lean into culture".
