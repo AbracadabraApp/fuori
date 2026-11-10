@@ -11,6 +11,12 @@ export const CLAUDE_MODEL = process.env.CLAUDE_MODEL || 'claude-sonnet-5-5';
  *  Set TURN_MODEL in a test to try a faster model without changing the judge. */
 export const TURN_MODEL = process.env.TURN_MODEL || CLAUDE_MODEL;
 
+/**
+ * A reply with no thinking first, for a given model: Sonnet and Opus 5.5 turn thinking off with
+ * between_tools; Haiku doesn't think unless asked and refuses between_tools (400), so nothing is sent
+ */
+export const noThinkingFor = (model: string): { thinking?: { type: 'between_tools' } } => (/haiku/.test(model) ? {} : { thinking: { type: 'between_tools' } });
+
 // Every call has a limit (whole-app scan, 2026-10-29): the SDK's default is
 // 10 minutes and two retries, so a stalled call could hang a screen for half
 // an hour. Background calls (memory, study file, judge, level) get 2 minutes

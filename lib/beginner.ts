@@ -16,7 +16,7 @@
 import { doneField } from '@/lib/prompts/turn-output-schema';
 import { buildTurnPrompt } from '@/lib/prompts/build-turn-prompt';
 import { z } from 'zod';
-import { anthropic, TURN_MODEL, replyText, finalWithDeadline } from '@/lib/claude';
+import { anthropic, TURN_MODEL, replyText, finalWithDeadline, noThinkingFor } from '@/lib/claude';
 import { readPromptFile, fill } from '@/lib/prompts/template';
 import { loadTemplate, relationshipLine, personLine, type RememberedLearner } from '@/lib/prompts/build-turn-prompt';
 import { cities, language } from '@/content';
@@ -326,7 +326,8 @@ export async function runBeginnerTurn(p: Parameters<typeof buildBeginnerPrompt>[
     max_tokens: 1500,
     temperature: 1.0,
     // No thinking before the reply, as the character call
-    thinking: { type: 'between_tools' },
+    // No thinking before the reply, as the character call (Haiku takes no setting for it: lib/claude.ts)
+    ...noThinkingFor(TURN_MODEL),
     system: prompt.system,
     messages: prompt.messages,
     output_config: { format: { type: 'json_schema', schema: p.withDone ? partsWithDoneJsonSchema : partsJsonSchema } },

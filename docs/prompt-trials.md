@@ -815,3 +815,8 @@ Limits: judges not calibrated (F1); item 7 left out (no memory in the export)
 - Time: about 5 minutes on the Mac mini (pilot about 1)
 - Guards: as in Measure
 - Reviewed: pending (after B2-S and B2-P; needs its rule written first)
+
+### Model check (2026-11-09): Haiku 5.5 against Sonnet 5.5 for Beginner 2's character turns
+- Not a card (Josh asked for a quick side by side): the same Beginner 2 cluster 1 visits (Mexico: Arturo, Doña Chayo, Hugo, Lupita; 6 turns each, the learner saying the first answer back or a fixed English line), through runBeginnerTurn with TURN_MODEL switched.
+- Result: Sonnet 0 broken, setup followed 24/24, median 2.7 s (slowest 10% 3.2 s), 14 Spanish and 12 English words a turn. Haiku 0 broken, 22/24, median 1.8 s (slowest 10% 5.0 s), 8 Spanish and 17 English. Read side by side: Sonnet kept pattern B every turn; Haiku dropped to plain English in later turns, offered answers that didn't fit its own question once (Arturo), and slipped to tú once. Haiku needed lib/claude.ts → noThinkingFor (it refuses thinking: between_tools).
+- Decision: the character stays on Sonnet. Haiku is for the after-visit calls (reply labels, memory notes), a cost saving not heard in play (Josh: operating cost may be what keeps Fuori from being commercial). Turns saved in tests/experiments/out/models-*.json (gitignored).
