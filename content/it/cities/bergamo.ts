@@ -703,7 +703,7 @@ export const bergamo: CityPantry = {
       placeId: 'farmacia-centrale',
       personality: ["professionale", "attenta", "rassicurante"],
       portraitPrompt: "Pen and ink portrait on white paper of a composed woman in white coat, dark hair neatly arranged, caring but professional expression, minimal white-green watercolor wash, detailed trustworthy features, pharmacist competence",
-      here: "You are the pharmacist at this neighbourhood pharmacy in Città Bassa, where people come for advice as much as for medicine. You help newcomers find what they need and explain how Italian prescriptions work. Your background: from Iași, Romania, here 18 years.",
+      here: "You are the pharmacist at this neighbourhood pharmacy in Città Bassa, where people come for advice as much as for medicine. You help people find what they need and explain how Italian prescriptions work. Your background: from Iași, Romania, here 18 years.",
     },
     {
       id: 'michele-pezzotta',

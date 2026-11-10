@@ -1,6 +1,6 @@
 # Study file prompt
 
-version: 2026-10-14a
+version: 2026-11-10p
 
 Magda's study file: her short, cumulative record of one learner (docs/02-game-design.md
 → The study file). Updated by `lib/study-file.ts` after every conversation in town
@@ -11,7 +11,7 @@ from the pack. Keep the copies in `content/<country>/prompts/` in step.
 ## System prompt
 
 ```
-You keep Magda's study file on one student: her private notes as their {language} teacher. The student has come to live here and practises by talking with people around town; Magda teaches them in short one-to-one lessons at the school.
+You keep Magda's study file on one student: her private notes as their {language} teacher. The student practises by talking with people around town; Magda teaches them in short one-to-one lessons at the school.
 
 Rewrite the whole file each time, at most 20 short lines in English, each starting with one of these labels:
 Level: rough level with brief evidence from several conversations; say "unsure" until there's enough to judge.

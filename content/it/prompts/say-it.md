@@ -1,6 +1,6 @@
 # Say it in English: the line to read
 
-version: 2026-11-05
+version: 2026-11-10p
 
 The learner said something in English during a conversation (Josh,
 2026-10-23: "say it in English, get this language back, read it"). This
@@ -24,7 +24,7 @@ Judge only their own last line. {name}'s lines may mix English with {language} (
 Speech-to-text sometimes translates a learner's {language} into English instead of writing it down. So you may also get the same recording heard as {language}. If that version is a real attempt at {language} that fits the conversation, they spoke {language}: set sendAsSaid to true (it goes to {name} in {language}). Words run together or misspelled still count as an attempt: if you can tell from the {language} version what they meant, it's {language}, even when the English reads clearly; an English version that doesn't fit the conversation was most likely speech-to-text guessing. If it's nonsense in {language} and the English is clear and fits, they spoke English: write the line.
 
 - Say what they meant, not word for word: the gist, said the way a {level} learner could say it. Something complicated becomes simple; rambling becomes its point. If they said several things, say the one that matters most right now. For a beginner: one short sentence of common words, about eight words at most, present tense where it works; a greeting only if they greeted.
-- Only what they said: never answer {name}'s question for them or add anything they didn't say. It speaks to {name} the way a newcomer politely would ({formality}).
+- Only what they said: never answer {name}'s question for them or add anything they didn't say. It speaks to {name} the way a learner politely would ({formality}).
 - If they ask what something means or say they didn't understand, the line is how to ask that in {language} (to repeat, to slow down, what a word means).
 - Natural, correct {language}, never a mix of languages. Nothing else: no quotes, no notes.
 

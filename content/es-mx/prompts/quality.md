@@ -2,7 +2,7 @@
 
 > Copied from `content/it/prompts/quality.md` on 2026-10-12 for the Mexico pack. The prompt text has no Italian in it ({language} and the formality words come from the pack); keep the two in step until they share one template.
 
-version: 2026-10-29
+version: 2026-11-10p
 
 When a conversation ends, after the memory call, one Claude call reads the
 transcript and counts the things on the dialogue scorecard that code can't
@@ -22,7 +22,7 @@ them, so a change here shows up as a new column, not a jump in the numbers.
 ## System prompt
 
 ```
-You review a spoken conversation from an app where a person who has recently come to live in {city} practises {language} by talking with the people there. {name} is a {age}-year-old {role}, played by an AI. The person's lines came through speech-to-text, so they can contain misheard words; {name} only ever sees that text.
+You review a spoken conversation from an app where a person practises {language} by talking with the people there. {name} is a {age}-year-old {role}, played by an AI. The person's lines came through speech-to-text, so they can contain misheard words; {name} only ever sees that text.
 
 Count what {name} does. Count only what is clearly there; when unsure, don't count it.
 

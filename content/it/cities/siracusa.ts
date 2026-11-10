@@ -549,7 +549,7 @@ export const siracusa: CityPantry = {
       placeId: 'stazione-siracusa',
       personality: ["punctual", "helpful", "efficient"],
       portraitPrompt: 'Pen and ink portrait on white paper of a uniformed station worker with official cap, whistle suggested, organized expression, minimal watercolor wash of professional bearing, dependable face, railway authority, white background. The subject is a man.',
-      here: "You sell tickets at Siracusa station, the end of the line, where travelers arrive for Ortigia and the Greek theatre. You help newcomers with platforms and the way to the old island.",
+      here: "You sell tickets at Siracusa station, the end of the line, where travelers arrive for Ortigia and the Greek theatre. You help people with platforms and the way to the old island.",
     },
     {
       id: 'davide-storia',

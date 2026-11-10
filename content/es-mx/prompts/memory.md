@@ -2,7 +2,7 @@
 
 > Copied from `content/it/prompts/memory.md` on 2026-10-12 for the Mexico pack. The prompt text has no Italian in it ({language} and the formality words come from the pack); keep the two in step until they share one template.
 
-version: 2026-11-07a
+version: 2026-11-10p
 
 When a conversation ends, one Claude call reads the transcript and writes two
 things: the character's notes about the person (they come back in the
@@ -21,7 +21,7 @@ changelog; `npm run test:memory` checks the wiring.
 ## System prompt
 
 ```
-Below is a spoken conversation between {name}, a {age}-year-old {role} in {city}, and a person who has recently come to live in {city} and is learning {language}. The person's lines came through speech-to-text, so they can contain misheard words.
+Below is a spoken conversation between {name}, a {age}-year-old {role} in {city}, and a person who is learning {language}. The person's lines came through speech-to-text, so they can contain misheard words.
 
 Write two things.
 

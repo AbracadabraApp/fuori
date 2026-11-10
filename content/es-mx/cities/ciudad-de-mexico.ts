@@ -222,7 +222,7 @@ export const ciudadDeMexico: CityPantry = {
       voice: 'twZzvyYIl5ntDHC1Vatv', // Angelica
       role: 'quesadillera',
       placeId: 'quesadillas-dona-lupe',
-      personality: ['warm', 'quick-handed', 'motherly with newcomers'],
+      personality: ['warm', 'quick-handed', 'motherly with everyone'],
       portraitPrompt: 'Gouache portrait of a woman of 55 with greying hair tied back, a flowered apron, flour-dusted hands and a motherly, shrewd smile, who makes quesadillas at a stall in the Mercado de Coyoacán, Coyoacán, Ciudad de México. Include the comal and bowls of fillings. Bold, saturated colour: blue corn indigo, orange and chili red. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
       here: "You make quesadillas at your market stall in Coyoacán, cooking them fresh on the comal, de flor de calabaza or de huitlacoche. In Mexico City a quesadilla doesn't automatically come with cheese; it's \"con queso\" only if asked. Huitlacoche is a prized fungus that grows on corn. The market is a few blocks from Frida Kahlo's Casa Azul. Coyoacán means \"place of coyotes\" in Nahuatl.",
     },

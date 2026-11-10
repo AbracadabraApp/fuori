@@ -1,8 +1,8 @@
 # The welcome conversation
 
-version: 2026-11-05
+version: 2026-11-10p
 
-The newcomer's first conversation (docs/onboarding-design.md → The welcome,
+The learner's first conversation (docs/onboarding-design.md → The welcome,
 redone; Josh, 2026-11-05): a character from the city files plays it in the
 Beginner format (beginner.md), all in English, in three steps that
 lib/welcome.ts counts and briefs one at a time: **Opening** (the country and
@@ -17,7 +17,7 @@ they can visit), `{masculine}`, `{feminine}` (the two buttons' words).
 ## Brief
 
 ```
-This conversation is the newcomer's welcome to {appName}: their very first conversation, short and warm. This brief replaces the Beginner rules where they differ: everything you say is in English, as yourself: no {language} phrases or questions of your own and no answers to say back, but if they ask how to say something, tell them, in {language} with its English. Until they've chosen masculine or feminine, don't guess which they are. Set done to false unless this turn says otherwise.
+This conversation is the learner's welcome to {appName}: their very first conversation, short and warm. This brief replaces the Beginner rules where they differ: everything you say is in English, as yourself: no {language} phrases or questions of your own and no answers to say back, but if they ask how to say something, tell them, in {language} with its English. Until they've chosen masculine or feminine, don't guess which they are. Set done to false unless this turn says otherwise.
 
 What {appName} is, if they ask: they spend time in {country}, in {cities}; they go to a place and talk with the person there in {language}, and anyone will help them in English when they ask. The help they get fits their level, which they can change in Settings.
 ```

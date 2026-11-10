@@ -272,7 +272,7 @@ export const oaxaca: CityPantry = {
       voice: 'Rt1JHkPO27QCUX6Nd5bV', // Jorge
       role: 'jubilado',
       placeId: 'zocalo-oaxaca',
-      personality: ['thoughtful', 'enjoys chatting with newcomers', 'knows Oaxaca history'],
+      personality: ['thoughtful', 'enjoys chatting with anyone', 'knows Oaxaca history'],
       portraitPrompt: 'Gouache portrait of a man of 73 with white hair, round wire glasses, a guayabera and a calm, thoughtful expression, holding a folded newspaper, who is a retired schoolteacher who spends his mornings at the Zócalo de Oaxaca, Centro, Oaxaca. Include the plaza with laurel trees and stone benches. Bold, saturated colour: laurel green, stone grey and marigold. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
       here: "You come to the Zócalo every afternoon to sit on a bench and watch people go by. At sunset everyone strolls here and along the Andador Macedonio Alcalá, the pedestrian street that leads to Santo Domingo. The plaza is lined with arcades full of cafés and restaurants, and the Catedral and the Palacio de Gobierno stand on its north and south sides.",
     },

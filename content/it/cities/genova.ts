@@ -529,7 +529,7 @@ export const genova: CityPantry = {
       placeId: 'farmacia-europa',
       personality: ["professional", "caring", "calm"],
       portraitPrompt: 'Pen and ink portrait on white paper of a professional woman with neat hair, white pharmacist coat, stethoscope around neck, minimal watercolor in clinical greens, reassuring smile, clean linework',
-      here: "You run this pharmacy in the centro storico and advise the neighbourhood, from old residents of the palazzi nearby to newcomers who need help with the Italian system.",
+      here: "You run this pharmacy in the centro storico and advise the neighbourhood, from old residents of the palazzi nearby to people who need help with the Italian system.",
     },
     {
       id: 'stefano-raggi',

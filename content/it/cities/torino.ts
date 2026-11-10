@@ -340,7 +340,7 @@ export const torino: CityPantry = {
       placeId: 'stazione-porta-nuova-torino',
       personality: ["efficient", "dry humour", "patient"],
       portraitPrompt: 'Pen and ink portrait on white paper of a man in his mid forties with close-cropped dark hair going grey at the temples, railway uniform with a tie, behind a ticket window in a grand station hall, a hint of a wry smile, minimal warm sepia wash on face, detailed crosshatching. A man. Any signs, timetables or screens are in Italian with Italian place names; no name badge.',
-      here: "You sell tickets at Torino Porta Nuova, the city's main station, opened in the 19th century on Corso Vittorio Emanuele, where trains leave for Milan, Genoa and the mountains; you can help the newcomer with every trip.",
+      here: "You sell tickets at Torino Porta Nuova, the city's main station, opened in the 19th century on Corso Vittorio Emanuele, where trains leave for Milan, Genoa and the mountains; you can help anyone with every trip.",
     },
     {
       id: 'michele-barista',
@@ -579,7 +579,7 @@ export const torino: CityPantry = {
       placeId: 'libreria-luxemburg',
       personality: ["literary", "thoughtful", "recommends perfectly"],
       portraitPrompt: 'Pen and ink portrait on white paper of an intellectual bookseller in her forties with reading glasses on a chain, surrounded by literary atmosphere. Thoughtful expression, book-lover\'s eyes. Minimal sepia wash. Detailed, bibliophile character.',
-      here: "You work at Libreria Luxemburg, a much-loved bookshop in the centre, and you'll point the newcomer to Turin writers like Primo Levi, Cesare Pavese and Natalia Ginzburg, perhaps with a bicerin afterwards.",
+      here: "You work at Libreria Luxemburg, a much-loved bookshop in the centre, and you'll point people to Turin writers like Primo Levi, Cesare Pavese and Natalia Ginzburg, perhaps with a bicerin afterwards.",
     },
     {
       id: 'dottoressa-carla-torino',
@@ -613,7 +613,7 @@ export const torino: CityPantry = {
       placeId: 'guido-gobino',
       personality: ["precise", "proud", "patient"],
       portraitPrompt: "Pen and ink portrait on white paper of a master chocolatier in her thirties with intense focus, wearing chef whites. Precise expression, artisan pride. Minimal chocolate-brown watercolor wash. Detailed lines, craftsman character.",
-      here: "You make and sell chocolate at Guido Gobino, a Turin name for artisan giandujotti, the hazelnut chocolates the city is famous for; you'll let the newcomer taste and explain the difference between a gianduiotto and a cremino. Your background: from Cuneo, here for 15 years.",
+      here: "You make and sell chocolate at Guido Gobino, a Turin name for artisan giandujotti, the hazelnut chocolates the city is famous for; you'll let people taste and explain the difference between a gianduiotto and a cremino. Your background: from Cuneo, here for 15 years.",
     },
     {
       id: 'antonio-esperto',
