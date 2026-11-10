@@ -25,7 +25,7 @@ export const sanCristobalDeLasCasas: CityPantry = {
       neighbourhood: 'Santo Domingo',
       real: true,
       characterId: 'petrona-tejedora',
-      imagePrompt: 'the textile market in front of the church of Santo Domingo, San Cristóbal de las Casas. The carved pink stone front of the church behind rows of stalls hung with woven and embroidered cloth in deep red, indigo and bright floral colours. A woman kneels at a backstrap loom tied to a post, weaving, while another arranges shawls.',
+      imagePrompt: "a wide view from the steps of the church of Santo Domingo, San Cristóbal de las Casas, over the textile market in its atrium: long rows of stalls under canvas awnings hung with woven and embroidered cloth in deep red, indigo and bright floral colours, and a busy crowd of shoppers and sellers walking between them, mountains beyond.",
     },
     {
       id: 'kiosko-plaza-31-de-marzo',
@@ -52,7 +52,7 @@ export const sanCristobalDeLasCasas: CityPantry = {
       neighbourhood: 'Centro',
       real: true,
       characterId: 'elena-cafetalera',
-      imagePrompt: "the coffee museum in an old colonial house in San Cristóbal de las Casas. A courtyard with wooden pillars, sacks of green coffee beans and a small drum roaster turning, with the smell almost visible as smoke. A young woman in an apron checks the colour of the beans with a scoop.",
+      imagePrompt: "the tasting room of the coffee museum in an old colonial house in San Cristóbal de las Casas. A long wooden table where five people of different ages sip coffee from small cups and talk, a woman in an apron pouring from a pot, and in the background a drum roaster and sacks of green beans under wooden beams.",
     },
     {
       id: 'na-bolom',
