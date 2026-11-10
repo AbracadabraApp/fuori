@@ -46,7 +46,6 @@
     264525,
     261101,
     349067,
-    426426,
     477654,
     653658,
     575446,
@@ -68,14 +67,11 @@
     43344,
     32579,
     120301,
-    114896,
-    43459,
     49971,
     18183,
     34207,
     52629,
     186976,
-    29871,
     126315
    ]
   },
@@ -97,7 +93,6 @@
     114090,
     18205,
     256057,
-    426426,
     541339,
     477654,
     575446,
@@ -147,9 +142,7 @@
     43338,
     44804,
     123793,
-    120301,
-    114896,
-    43459
+    120301
    ]
   },
   {
@@ -177,8 +170,7 @@
     37221,
     120301,
     49971,
-    52629,
-    29871
+    52629
    ]
   },
   {
@@ -203,7 +195,6 @@
     154629,
     118010,
     44804,
-    43459,
     18183
    ]
   },
@@ -221,8 +212,7 @@
     47007,
     43344,
     772515,
-    123793,
-    29871
+    123793
    ]
   },
   {
@@ -239,7 +229,6 @@
     116982,
     11655,
     1417,
-    426426,
     477654,
     37628,
     44804,
@@ -255,7 +244,6 @@
     32579,
     256057,
     349067,
-    426426,
     541339,
     477654,
     653658,
@@ -560,7 +548,7 @@
      "youtube": "t7lR3C97sC0",
      "type": "Trailer",
      "name": "\"Hasta el viento tiene miedo\" (1967) Trailer",
-     "language": "en"
+     "language": "es"
     }
    ],
    "fullFilm": {
@@ -583,7 +571,7 @@
    ],
    "fullFilm": {
     "youtube": "BUksg8jxJZA",
-    "language": null
+    "language": "en"
    }
   },
   {
@@ -619,7 +607,7 @@
    ],
    "fullFilm": {
     "youtube": "TcizVFQhy0A",
-    "language": null
+    "language": "es"
    }
   },
   {
@@ -667,7 +655,7 @@
      "youtube": "YdxA9vIFmYw",
      "type": "Trailer",
      "name": "Clip Trailer (YouTube Movies)",
-     "language": "en"
+     "language": "es"
     },
     {
      "youtube": "xFTJ2FqLmH8",
@@ -678,7 +666,7 @@
    ],
    "fullFilm": {
     "youtube": "1imr_3nvCoU",
-    "language": null
+    "language": "en"
    }
   },
   {
@@ -709,7 +697,7 @@
      "youtube": "h9-SqFDT010",
      "type": "Trailer",
      "name": "Profundo Carmesí Trailer",
-     "language": "en"
+     "language": "es"
     }
    ],
    "fullFilm": {
@@ -842,7 +830,7 @@
    ],
    "fullFilm": {
     "youtube": "POjFUws3kfk",
-    "language": null
+    "language": "es"
    }
   },
   {
@@ -870,15 +858,15 @@
    "posterUrl": "https://image.tmdb.org/t/p/w500/xFGuhPSe1mCRcOllLlJYoNUknNt.jpg",
    "videos": [
     {
-     "youtube": "jXkQad-OTMU",
-     "type": "Trailer",
-     "name": "Rudo Y Cursi - Trailer",
-     "language": "en"
-    },
-    {
      "youtube": "zAMlwcJchoQ",
      "type": "Trailer",
      "name": "Rudo y Cursi | Official Trailer (2008)",
+     "language": "es"
+    },
+    {
+     "youtube": "jXkQad-OTMU",
+     "type": "Trailer",
+     "name": "Rudo Y Cursi - Trailer",
      "language": "en"
     }
    ],
@@ -918,7 +906,7 @@
      "youtube": "IWBL3JfQls8",
      "type": "Trailer",
      "name": "Instructions Not Included - Tráiler",
-     "language": "en"
+     "language": "es"
     }
    ],
    "fullFilm": {
@@ -933,16 +921,16 @@
    "posterUrl": "https://image.tmdb.org/t/p/w500/pjNWekSbafFIPLBNZQ9gUaX3tkV.jpg",
    "videos": [
     {
-     "youtube": "ZriH9uEDgsI",
-     "type": "Trailer",
-     "name": "LA DICTADURA PERFECTA - Tráiler oficial - Disponible en BR - DVD y Plataformas Digitales",
-     "language": "es"
-    },
-    {
      "youtube": "Q3BHyQX7FWg",
      "type": "Trailer",
      "name": "LA DICTADURA PERFECTA - NUEVO TRAILER #LACAJACHINA",
      "language": "es"
+    },
+    {
+     "youtube": "ZriH9uEDgsI",
+     "type": "Trailer",
+     "name": "LA DICTADURA PERFECTA - Tráiler oficial - Disponible en BR - DVD y Plataformas Digitales",
+     "language": "en"
     }
    ],
    "fullFilm": {
@@ -992,7 +980,7 @@
    ],
    "fullFilm": {
     "youtube": "bc_n1hye_WE",
-    "language": null
+    "language": "en"
    }
   },
   {
@@ -1010,37 +998,7 @@
    ],
    "fullFilm": {
     "youtube": "_9OdD0mtAOk",
-    "language": null
-   }
-  },
-  {
-   "tmdbId": 426426,
-   "title": "Roma",
-   "year": 2018,
-   "posterUrl": "https://image.tmdb.org/t/p/w500/veWGVw33lnifG10fpkz3QmimVaI.jpg",
-   "videos": [
-    {
-     "youtube": "IzqcQrFit24",
-     "type": "Trailer",
-     "name": "Roma - Trailer español (HD)",
-     "language": "es"
-    },
-    {
-     "youtube": "6BS27ngZtxg",
-     "type": "Trailer",
-     "name": "Official Trailer",
-     "language": "en"
-    },
-    {
-     "youtube": "6UlmQDB3vqQ",
-     "type": "Teaser",
-     "name": "Teaser",
-     "language": "en"
-    }
-   ],
-   "fullFilm": {
-    "youtube": "evf5cS9_YEk",
-    "language": null
+    "language": "en"
    }
   },
   {
@@ -1083,21 +1041,21 @@
    "posterUrl": "https://image.tmdb.org/t/p/w500/jTwPY2ClirXNqT2kLmard53GTou.jpg",
    "videos": [
     {
-     "youtube": "17TlRpteXWE",
-     "type": "Trailer",
-     "name": "Sin señas particulares - Tráiler",
-     "language": "es"
-    },
-    {
      "youtube": "eMUypshyFKE",
      "type": "Trailer",
      "name": "Official Trailer",
      "language": "es"
+    },
+    {
+     "youtube": "17TlRpteXWE",
+     "type": "Trailer",
+     "name": "Sin señas particulares - Tráiler",
+     "language": "en"
     }
    ],
    "fullFilm": {
     "youtube": "-4U208CXMSY",
-    "language": null
+    "language": "en"
    }
   },
   {
@@ -1134,18 +1092,18 @@
      "youtube": "vxrdSLce5ps",
      "type": "Trailer",
      "name": "Official US Trailer",
-     "language": "en"
+     "language": "es"
     },
     {
      "youtube": "4EIugcn5edk",
      "type": "Teaser",
      "name": "Teaser",
-     "language": "en"
+     "language": "es"
     }
    ],
    "fullFilm": {
     "youtube": "nYzMaXpeNTc",
-    "language": null
+    "language": "en"
    }
   },
   {
@@ -1164,7 +1122,7 @@
      "youtube": "j-5A65dmn3E",
      "type": "Trailer",
      "name": "Official UK Trailer #2",
-     "language": "en"
+     "language": "es"
     },
     {
      "youtube": "mlLqfk_OFAA",
@@ -1323,7 +1281,7 @@
      "youtube": "b_m3jC4hGn0",
      "type": "Trailer",
      "name": "A Cop Movie | Official Trailer | Netflix",
-     "language": "en"
+     "language": "es"
     }
    ],
    "fullFilm": null
@@ -1458,39 +1416,6 @@
    "original": "es"
   },
   {
-   "tmdbId": 114896,
-   "title": "Aventurera",
-   "year": 1950,
-   "posterUrl": "https://image.tmdb.org/t/p/w500/kgPbBocMNaVbkoDza49MZUyUenr.jpg",
-   "videos": [
-    {
-     "youtube": "nmJVyecb_JY",
-     "type": "Trailer",
-     "name": "Aventurera Ninón Sevilla Trailer",
-     "language": "en"
-    }
-   ],
-   "fullFilm": {
-    "youtube": "pGBDfAWExAw",
-    "language": "es",
-    "title": "Película Aventurera completa"
-   },
-   "original": "es"
-  },
-  {
-   "tmdbId": 43459,
-   "title": "La perla",
-   "year": 1947,
-   "posterUrl": "https://image.tmdb.org/t/p/w500/3Dtb5ZFhilHETAUSfg6BCdrc0Vl.jpg",
-   "videos": [],
-   "fullFilm": {
-    "youtube": "v14E2zBWbFA",
-    "language": "es",
-    "title": "Peliculas Clasicas en Espanol- La Perla (1947)"
-   },
-   "original": "es"
-  },
-  {
    "tmdbId": 49971,
    "title": "Solo con tu pareja",
    "year": 1991,
@@ -1560,7 +1485,7 @@
      "youtube": "n4jQnRkj-gU",
      "type": "Trailer",
      "name": "El Infierno Trailer HD Bandidos  Films",
-     "language": "en"
+     "language": "es"
     }
    ],
    "fullFilm": {
@@ -1584,19 +1509,6 @@
    "original": "es"
   },
   {
-   "tmdbId": 29871,
-   "title": "Santo contra las mujeres vampiro",
-   "year": 1962,
-   "posterUrl": "https://image.tmdb.org/t/p/w500/3l4qmh2LhQEhpW4AqKsRIQgQ7dd.jpg",
-   "videos": [],
-   "fullFilm": {
-    "youtube": "u8_ZMPjYdes",
-    "language": "es",
-    "title": "Santo vs las mujeres Vampiro"
-   },
-   "original": "es"
-  },
-  {
    "tmdbId": 126315,
    "title": "Después de Lucía",
    "year": 2012,
@@ -1606,7 +1518,7 @@
      "youtube": "5hAx8KwryrY",
      "type": "Trailer",
      "name": "\"Después de Lucía\" Trailer Oficial HD",
-     "language": "en"
+     "language": "es"
     }
    ],
    "fullFilm": {
@@ -1657,6 +1569,26 @@
    "tmdbId": 28968,
    "title": "Veneno para las hadas",
    "why": "no video could be heard: in once someone confirms one is in the learned language"
+  },
+  {
+   "tmdbId": 426426,
+   "title": "Roma",
+   "why": "no video heard in the learned language (es)"
+  },
+  {
+   "tmdbId": 114896,
+   "title": "Aventurera",
+   "why": "no video heard in the learned language (es)"
+  },
+  {
+   "tmdbId": 43459,
+   "title": "La perla",
+   "why": "no video heard in the learned language (es)"
+  },
+  {
+   "tmdbId": 29871,
+   "title": "Santo contra las mujeres vampiro",
+   "why": "no video heard in the learned language (es)"
   }
  ]
 }
