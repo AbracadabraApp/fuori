@@ -13,11 +13,11 @@ import { cities, language } from '@/content';
 import { characterForVisit } from '@/lib/characters/for-visit';
 import { runBeginnerTurn, lineFromParts, SCAFFOLDING_FILE, type Part } from '@/lib/beginner';
 import { TURN_MODEL } from '@/lib/claude';
-import { CLUSTERS, levelText, setupLine, shapeParts, pickSetup } from '@/lib/beginner-2';
+import { CLUSTERS, GLOSS_ALL, levelText, setupLine, shapeParts, pickSetup } from '@/lib/beginner-2';
 import { summarizeWithClaude } from '@/lib/remember';
 import { repeatsFromEarlier } from '@/lib/dialogue-stats';
 import type { CharacterMemory } from '@/lib/memory';
-import { ask, pool, OUT } from './common.mjs';
+import { ask, pool, OUT, startTest } from './common.mjs';
 
 const arg = (n: string, d: string) => process.argv.find((a) => a.startsWith(`--${n}=`))?.split('=')[1] ?? d;
 const clusterNo = Number(arg('cluster', '1'));
@@ -27,6 +27,19 @@ const maxTurns = Number(arg('turns', '12'));
 const persona = arg('persona', 'josh');
 const howMany = Number(arg('characters', '4'));
 const label = arg('label', `c${clusterNo}-${persona}`);
+// Card B2-E (docs/prompt-trials.md): --arm=A is today's cluster 1; --arm=B gives the English a job (the level
+// text below, and glossAll off for cluster 1, in this process only). --seed keeps places and learner seeds the same across arms.
+const arm = arg('arm', '');
+const seed = arg('seed', label);
+let stage = levelText(cluster);
+if (arm) {
+  startTest('B2-E (2026-11-10): cluster 1 with English that does a job, against English that mirrors each sentence');
+  if (arm === 'B') {
+    const example = language.card.country === 'Mexico' ? '"Esto es tejuino, a cold corn drink"' : '"Questo è il pecorino, sheep\'s cheese"';
+    stage = `They're at the very start. Talk like a bilingual local who knows some English: short, simple ${language.name} sentences, one idea each, each its own word part. The English is your own speech, not a translation: never translate a whole sentence. Use at most one piece of English a line, and give it a job: name the one word right after it (${example}), add something new, check they follow, or explain in a short sentence. Keep the questions, tags and warm words in ${language.name}. Keep each turn short: two or three sentences and your question.`;
+    GLOSS_ALL[0] = false;
+  }
+}
 
 /** The learner's reply kinds and their rates (docs/automated-replies.md → persona mixes, from real play) */
 type Kind = 'back' | 'edit' | 'own' | 'question' | 'english';
@@ -90,7 +103,7 @@ await pool(chosen.map(({ city, place }) => async () => {
   memoryNotes[character.id] = [];
   lines[character.id] = [];
   for (let v = 0; v < visits; v++) {
-  const r = rng(`${label}|${character.id}|${v}`);
+  const r = rng(`${seed}|${character.id}|${v}`);
   const conversationId = `auto-${label}-${character.id}-${v}`;
   const transcript: { who: 'npc' | 'learner'; transcript: string; offered?: string[] }[] = [];
   let said: string | undefined;
@@ -100,7 +113,7 @@ await pool(chosen.map(({ city, place }) => async () => {
     const setup = pickSetup({ conversationId: turn === 0 ? null : conversationId, turn, learnerId: `auto-${v}`, characterId: character.id, learnerSaid: said }, cluster);
     const started = performance.now();
     try {
-      const reply = await runBeginnerTurn({ character, transcript: transcript as never, learnerSaid: said, memory, promptFile: SCAFFOLDING_FILE, stageText: levelText(cluster), turnNote: setupLine(setup), maxAnswers: setup.maxAnswers, withDone: true });
+      const reply = await runBeginnerTurn({ character, transcript: transcript as never, learnerSaid: said, memory, promptFile: SCAFFOLDING_FILE, stageText: stage, turnNote: setupLine(setup), maxAnswers: setup.maxAnswers, withDone: true });
       const { parts, fixes } = shapeParts(reply.parts, setup, cluster);
       const { line } = lineFromParts(parts);
       const answers = parts.filter((p) => p.kind === 'answer').map((p) => p.text);
@@ -162,6 +175,13 @@ const ms = ok.map((x) => x.ms).sort((a, b) => a - b);
 console.log(`automated replies · ${label} · cluster ${clusterNo} · ${persona} · ${TURN_MODEL} · ${visitCount} visits, ${rows.length} turns in ${secs}s`);
 console.log(`  broken ${rows.length - ok.length} · setup followed ${ok.filter(followed).length}/${ok.length} · English beside every question ${ok.filter((x) => hasQuestion(x) && qEnglish(x)).length}/${ok.filter(hasQuestion).length} turns with one`);
 console.log(`  per turn: English ${(ok.reduce((n, x) => n + en(x) + gl(x), 0) / ok.length).toFixed(1)} words (${(ok.reduce((n, x) => n + en(x), 0) / ok.length).toFixed(1)} English parts + ${(ok.reduce((n, x) => n + gl(x), 0) / ok.length).toFixed(1)} glosses), ${language.name} ${(ok.reduce((n, x) => n + sp(x), 0) / ok.length).toFixed(1)} words · reply median ${ms[Math.floor(ms.length / 2)]} ms`);
+// Card B2-E measures: mirror rate on word parts (a part's English has 80%+ as many words as the phrase), English pieces a line, turns with no English at all
+const wordParts = ok.flatMap((x) => (x.parts ?? []).filter((p) => p.kind === 'word'));
+const enOf = (p: Part, next?: Part) => (p.gloss?.trim() ? p.gloss : next?.kind === 'english' ? next.text : '');
+const mirrored = ok.flatMap((x) => (x.parts ?? []).map((p, i, ps) => ({ p, e: p.kind === 'word' ? enOf(p, ps[i + 1]) : '' }))).filter((m) => m.p.kind === 'word' && m.e && words(m.e) >= 0.8 * words(m.p.text)).length;
+const pieces = (x: TurnRow) => (x.parts ?? []).filter((p) => ((p.kind === 'word' || p.kind === 'question') && p.gloss?.trim()) || p.kind === 'english').length;
+const noEnglish = ok.filter((x) => pieces(x) === 0).length;
+console.log(`  B2-E${arm ? ` arm ${arm}` : ''}: word parts mirrored ${mirrored}/${wordParts.length} (${wordParts.length ? Math.round((100 * mirrored) / wordParts.length) : 0}%) · English pieces a turn ${(ok.reduce((n, x) => n + pieces(x), 0) / (ok.length || 1)).toFixed(1)} · turns with no English ${noEnglish}/${ok.length}`);
 console.log(`  the English invitation on other turns ${inviteElsewhere} · announcing ${announce} · visits ended on a goodbye ${visitsDone}/${visitCount}`);
 const goodbyeTurns = [...new Set(ok.map((x) => `${x.character}|${x.visit}`))].map((k) => ok.filter((x) => `${x.character}|${x.visit}` === k && x.setup === 'goodbye').length);
 console.log(`  goodbye turns a visit: ${goodbyeTurns.join(', ')} (a goodbye that drags on shows as more than 2)`);
