@@ -435,3 +435,10 @@ For now everyone starts at Beginner and Settings changes the level (docs/dialogu
 4. **One open question in the welcome** for someone who says they can chat, answered in the language.
 
 Also from the same talk: Intermediate is very different from Beginner (Josh), so a wrong placement there is costly (Sophia, placed Intermediate, left four conversations without a word); S4 is the bridge, and moving up from it could be quicker (2 easy in a row rather than 4 of 5).
+
+## Learning videos and children's shows (Josh, 2026-11-09)
+
+Josh: "We should think about Italian/mexican language learning videos or children's videos." Video the learner can mostly follow is the input conversations alone don't give. Not decided; nothing built.
+- **Graded learner videos** (natives speaking slowly, sorted by level; maps onto Beginner and Intermediate). Italy: Easy Italian, Podcast Italiano, Italiano Automatico, Learn Italian with Lucrezia. Mexico: Dreaming Spanish (graded, with Mexican guides), Easy Spanish (partly filmed in Mexico City).
+- **Children's shows** (real native TV, simple and repetitive, short episodes; can feel childish to an adult). Italy: Peppa Pig in Italian, La Pimpa, Masha e Orso, Rai Yoyo. Mexico: Plaza Sésamo (made in Mexico), El Chavo animado, Bluey in Latin American Spanish. Check that a dub is Mexican or Latin American Spanish, not Spain's.
+- **Where:** a "Per imparare / Para aprender" shelf in the film reel, and in Learn, matched to the learner's level. The cinema scripts already find YouTube videos, check they embed and hear their language, so a list of about 30 per country is mostly data work.
