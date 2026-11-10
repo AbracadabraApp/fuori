@@ -1,5 +1,13 @@
 # Fuori Development Progress
 
+## 2026-11-10 (laptop): card B2-E5 reviewed, run, and the clips to Josh
+
+- **Review** (test designer): the script couldn't produce Arm M (the mixed block passed as `level`, a levels.md block name that throws; now `brief`), plus seven card changes, all applied (separable pairs only, brevity against the literal English, the question guard on M, one mixed threshold 4 of 8, the exact summary prompt on the card, M heard alone, two literal–literal controls). Stamped 41dc2e65 (0f162ec).
+- **Sheet run** (text, 24/24 turns, 69 s): her Intermediate lines run 24–28 words, so every S turn had a two-sentence stretch (the stand-in's "mostly translations" worry didn't hold). Summary English 0.61–0.62 of the literal English it replaces, 0.67 of the Spanish; shorter on 32 of 34 two-sentence stretches over the two runs; the call median 2.1 s, in time on 31 of 32. One script defect fixed: her English thought inside the closing question got echoed twice.
+- **Clips run** (28 of 28 mp3s, ElevenLabs): 8 summary pairs + 2 controls + 8 mixed, in `tests/experiments/out/summary-mixed-clips-2026-11-10-21-27/` (gitignored). `listen.md` and the mp3s copied to `~/Desktop/B2-E5-listen/`; `text.md` and `key.json` held back until Josh has listened. Guard to note: in the clips run M ended on a question 2 of 8 against S 5 of 16 (the sheet run had 4 of 8 against 4 of 16): outcome (h) is in play only if M passes on thoughts.
+- **For after Josh listens** (flagged reads, from the sheet): summaries sometimes slip into the third person ("She corrects you: she's a woman"); they keep almost none of her words (0.5 a stretch; cempasúchil → "marigolds").
+- **Next:** Josh listens (about 10 min) and answers per pair/clip; then the key is opened, the result goes on the card and here.
+
 ## 2026-11-10: summary and mixed, notes and the smallest test (cloud session)
 
 Josh, on the phone, on the Beginner echo ("Spanish is followed by English sentence by sentence… too structured"): the goal is "more bilingual mixing or summarizing". His hunches and the sketch that came out of them are in [docs/summary-and-mixed.md](docs/summary-and-mixed.md).
