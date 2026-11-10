@@ -266,7 +266,8 @@ async function generateAllImages(options = {}) {
 
   for (const cityFile of cityFiles) {
     // Skip cities if specified
-    if (options.city && cityFile.id !== options.city) {
+    // --city takes one city or several, comma-separated (Mexico's five new cities, 2026-11-09)
+    if (options.city && !options.city.split(',').includes(cityFile.id)) {
       continue;
     }
 
