@@ -848,9 +848,9 @@
       "bytes": 230678
     },
     "places/catedral-de-san-cristobal": {
-      "key": "es-mx/places/catedral-de-san-cristobal.29e0e9f2ad.webp",
-      "src": "8bfa1f4bc1401f9a",
-      "bytes": 303906
+      "key": "es-mx/places/catedral-de-san-cristobal.c17984ea0b.webp",
+      "src": "c7009980c410fd6a",
+      "bytes": 386282
     },
     "places/catedral-metropolitana": {
       "key": "es-mx/places/catedral-metropolitana.aa018f13b3.webp",
@@ -863,9 +863,9 @@
       "bytes": 332740
     },
     "places/centro-de-escritores-tsotsil": {
-      "key": "es-mx/places/centro-de-escritores-tsotsil.adbf93507c.webp",
-      "src": "722c8c60b35c058b",
-      "bytes": 409216
+      "key": "es-mx/places/centro-de-escritores-tsotsil.a9436c1b71.webp",
+      "src": "de0703d7dcd4af42",
+      "bytes": 395086
     },
     "places/centro-de-lengua-maya": {
       "key": "es-mx/places/centro-de-lengua-maya.5b96d504bf.webp",
@@ -1038,9 +1038,9 @@
       "bytes": 274700
     },
     "places/kiosko-plaza-31-de-marzo": {
-      "key": "es-mx/places/kiosko-plaza-31-de-marzo.5429557e23.webp",
-      "src": "6a665243fe1f6b2f",
-      "bytes": 421764
+      "key": "es-mx/places/kiosko-plaza-31-de-marzo.dfbf59f9ae.webp",
+      "src": "da536da8904107ee",
+      "bytes": 462108
     },
     "places/la-cucaracha": {
       "key": "es-mx/places/la-cucaracha.67b3e6cb97.webp",
@@ -1078,9 +1078,9 @@
       "bytes": 285260
     },
     "places/mercado-santo-domingo": {
-      "key": "es-mx/places/mercado-santo-domingo.a00bac9769.webp",
-      "src": "7374c6d498da396a",
-      "bytes": 384768
+      "key": "es-mx/places/mercado-santo-domingo.69476cf691.webp",
+      "src": "ccf66d83ec9adcb6",
+      "bytes": 467976
     },
     "places/mezcaleria-los-amantes": {
       "key": "es-mx/places/mezcaleria-los-amantes.cfbf0fab74.webp",
@@ -1113,14 +1113,14 @@
       "bytes": 345582
     },
     "places/museo-del-cafe-sancris": {
-      "key": "es-mx/places/museo-del-cafe-sancris.2a3534104c.webp",
-      "src": "2c253eec6eebd279",
-      "bytes": 399494
+      "key": "es-mx/places/museo-del-cafe-sancris.00cd4fe997.webp",
+      "src": "e1c9fed38dd25840",
+      "bytes": 438598
     },
     "places/na-bolom": {
-      "key": "es-mx/places/na-bolom.10e3314a9c.webp",
-      "src": "804bf8e4ad43c0ca",
-      "bytes": 463088
+      "key": "es-mx/places/na-bolom.38e5b9a1a0.webp",
+      "src": "a80d170b9c552d66",
+      "bytes": 509598
     },
     "places/nieves-de-pasta": {
       "key": "es-mx/places/nieves-de-pasta.2d74a3cb46.webp",
@@ -1263,9 +1263,9 @@
       "bytes": 325608
     },
     "places/tamales-barrio-de-mexicanos": {
-      "key": "es-mx/places/tamales-barrio-de-mexicanos.c436aa21bd.webp",
-      "src": "d46ae94b9896b607",
-      "bytes": 356858
+      "key": "es-mx/places/tamales-barrio-de-mexicanos.a5e630b44e.webp",
+      "src": "67f30c37b24d40a0",
+      "bytes": 441056
     },
     "places/tamales-oaxaquenos-bici": {
       "key": "es-mx/places/tamales-oaxaquenos-bici.bb80eef418.webp",
@@ -1283,9 +1283,9 @@
       "bytes": 349212
     },
     "places/templo-de-guadalupe-sancris": {
-      "key": "es-mx/places/templo-de-guadalupe-sancris.a40b5a7ac9.webp",
-      "src": "e6e46100d32180b3",
-      "bytes": 445484
+      "key": "es-mx/places/templo-de-guadalupe-sancris.a1611684a4.webp",
+      "src": "370cb29271773fcf",
+      "bytes": 469748
     },
     "places/templo-de-san-cayetano": {
       "key": "es-mx/places/templo-de-san-cayetano.248acd772c.webp",
@@ -1293,9 +1293,9 @@
       "bytes": 359178
     },
     "places/templo-de-san-juan-chamula": {
-      "key": "es-mx/places/templo-de-san-juan-chamula.12b98d1ec3.webp",
-      "src": "d2fc7846177035f8",
-      "bytes": 384356
+      "key": "es-mx/places/templo-de-san-juan-chamula.b16dbe514f.webp",
+      "src": "790e8675da0a64a0",
+      "bytes": 489470
     },
     "places/templo-de-santo-domingo": {
       "key": "es-mx/places/templo-de-santo-domingo.3ac849d8de.webp",
@@ -1338,9 +1338,9 @@
       "bytes": 329298
     },
     "places/terminal-san-cristobal": {
-      "key": "es-mx/places/terminal-san-cristobal.9524ffddfb.webp",
-      "src": "6863c4f596ec2cf3",
-      "bytes": 326210
+      "key": "es-mx/places/terminal-san-cristobal.68d000cc11.webp",
+      "src": "d8987bc60d964ba2",
+      "bytes": 380746
     },
     "places/terminal-sma": {
       "key": "es-mx/places/terminal-sma.5b6fdd5a39.webp",

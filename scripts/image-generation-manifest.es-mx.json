@@ -792,8 +792,8 @@
       "type": "place"
     },
     "san-cristobal-de-las-casas/templo-de-san-juan-chamula": {
-      "timestamp": "2026-11-10T06:15:28.890Z",
-      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/templo-de-san-juan-chamula.jpg",
+      "timestamp": "2026-11-10T06:58:34.902Z",
+      "path": "/Users/joshpetersen/fuori-e2/public/images/es-mx/places/templo-de-san-juan-chamula.jpg",
       "type": "place"
     },
     "veracruz/gran-cafe-de-la-parroquia": {
@@ -962,48 +962,48 @@
       "type": "place"
     },
     "san-cristobal-de-las-casas/mercado-santo-domingo": {
-      "timestamp": "2026-11-10T06:15:50.529Z",
-      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/mercado-santo-domingo.jpg",
+      "timestamp": "2026-11-10T06:59:03.385Z",
+      "path": "/Users/joshpetersen/fuori-e2/public/images/es-mx/places/mercado-santo-domingo.jpg",
       "type": "place"
     },
     "san-cristobal-de-las-casas/kiosko-plaza-31-de-marzo": {
-      "timestamp": "2026-11-10T06:16:21.683Z",
-      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/kiosko-plaza-31-de-marzo.jpg",
+      "timestamp": "2026-11-10T06:59:34.040Z",
+      "path": "/Users/joshpetersen/fuori-e2/public/images/es-mx/places/kiosko-plaza-31-de-marzo.jpg",
       "type": "place"
     },
     "san-cristobal-de-las-casas/templo-de-guadalupe-sancris": {
-      "timestamp": "2026-11-10T06:16:43.461Z",
-      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/templo-de-guadalupe-sancris.jpg",
+      "timestamp": "2026-11-10T07:00:00.879Z",
+      "path": "/Users/joshpetersen/fuori-e2/public/images/es-mx/places/templo-de-guadalupe-sancris.jpg",
       "type": "place"
     },
     "san-cristobal-de-las-casas/museo-del-cafe-sancris": {
-      "timestamp": "2026-11-10T06:17:06.188Z",
-      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/museo-del-cafe-sancris.jpg",
+      "timestamp": "2026-11-10T07:00:30.420Z",
+      "path": "/Users/joshpetersen/fuori-e2/public/images/es-mx/places/museo-del-cafe-sancris.jpg",
       "type": "place"
     },
     "san-cristobal-de-las-casas/na-bolom": {
-      "timestamp": "2026-11-10T06:17:27.962Z",
-      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/na-bolom.jpg",
+      "timestamp": "2026-11-10T07:01:26.722Z",
+      "path": "/Users/joshpetersen/fuori-e2/public/images/es-mx/places/na-bolom.jpg",
       "type": "place"
     },
     "san-cristobal-de-las-casas/centro-de-escritores-tsotsil": {
-      "timestamp": "2026-11-10T06:17:51.710Z",
-      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/centro-de-escritores-tsotsil.jpg",
+      "timestamp": "2026-11-10T07:01:53.691Z",
+      "path": "/Users/joshpetersen/fuori-e2/public/images/es-mx/places/centro-de-escritores-tsotsil.jpg",
       "type": "place"
     },
     "san-cristobal-de-las-casas/tamales-barrio-de-mexicanos": {
-      "timestamp": "2026-11-10T06:18:20.197Z",
-      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/tamales-barrio-de-mexicanos.jpg",
+      "timestamp": "2026-11-10T07:02:24.040Z",
+      "path": "/Users/joshpetersen/fuori-e2/public/images/es-mx/places/tamales-barrio-de-mexicanos.jpg",
       "type": "place"
     },
     "san-cristobal-de-las-casas/catedral-de-san-cristobal": {
-      "timestamp": "2026-11-10T06:18:45.317Z",
-      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/catedral-de-san-cristobal.jpg",
+      "timestamp": "2026-11-10T07:02:44.598Z",
+      "path": "/Users/joshpetersen/fuori-e2/public/images/es-mx/places/catedral-de-san-cristobal.jpg",
       "type": "place"
     },
     "san-cristobal-de-las-casas/terminal-san-cristobal": {
-      "timestamp": "2026-11-10T06:19:08.769Z",
-      "path": "/Users/joshpetersen/fuori/public/images/es-mx/places/terminal-san-cristobal.jpg",
+      "timestamp": "2026-11-10T07:03:10.657Z",
+      "path": "/Users/joshpetersen/fuori-e2/public/images/es-mx/places/terminal-san-cristobal.jpg",
       "type": "place"
     },
     "veracruz/zocalo-de-veracruz": {
@@ -1307,6 +1307,6 @@
     "total": 260,
     "completed": 260,
     "failed": 0,
-    "lastRun": "2026-11-10T06:46:41.185Z"
+    "lastRun": "2026-11-10T07:03:13.660Z"
   }
 }
