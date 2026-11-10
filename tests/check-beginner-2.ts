@@ -51,8 +51,8 @@ const para: Part[] = [{ kind: 'english', text: 'Welcome to the barrio.', en: '',
 const g1 = glossAll(para);
 check(g1[1].gloss === 'I paint here every day.' && g1[3].gloss === 'Do you like the murals?', 'glossAll (off for now): every phrase gets its English');
 check(g1[2].gloss === '', 'glossAll: not when the turn\'s own English already said it');
-check(shownParts(para, CLUSTER_1[0], CLUSTER_1)[1].gloss === '', 'cluster 1: no gloss on every sentence (Josh: English as little as needed)');
-check(/as little as needed/.test(setupText(CLUSTER_1[0], CLUSTER_1)), 'Level 1: short sentences in the language, English as little as needed');
+check(shownParts(para, CLUSTER_1[0], CLUSTER_1)[1].gloss === 'I paint here every day.' && shownParts(para, CLUSTERS[1][0], CLUSTERS[1])[1].gloss === '', 'cluster 1: each sentence then its English (B); cluster 2: as little as needed (C)');
+check(/each is followed by what it means/.test(setupText(CLUSTER_1[0], CLUSTER_1)) && /as little as needed/.test(setupText(CLUSTERS[1][0], CLUSTERS[1])), 'Level 1 is B, Level 1b (cluster 2) is C');
 const inv = shownParts([{ kind: 'english', text: 'Sit anywhere.', en: '', gloss: '' }, { kind: 'question', text: '¿Es su primera vez en Puebla?', en: 'Is it your first time in Puebla?', gloss: '' }], RUNGS.find((r) => r.id === 'invite-en')!, CLUSTER_1);
 { const qi = inv.findIndex((x) => x.kind === 'question'); check(inv[qi + 1]?.text === 'Is it your first time in Puebla?' && inv[inv.length - 1].kind === 'english' && /ask me in English or/.test(inv[inv.length - 1].text), 'the invitation to ask is said, in code'); }
 check(shownParts(para, CLUSTERS[3][0], CLUSTERS[3])[1].gloss === '', 'later clusters leave glossing to the character');

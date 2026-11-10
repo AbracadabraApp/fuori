@@ -75,8 +75,8 @@ export const CLUSTERS: Setup[][] = [
 // The answer set up inside the character's line (rungs inside-en and inside) is out of every cluster until it
 // has a screen design (Josh, 2026-11-09: "I can't tell what the dialogue is that goes with 'You could answer me
 // with: …'": the lead is heard, not shown, and the answer sits unmarked inside the character's bubble)
-/** Whole-phrase glossing per cluster: off (Josh, 2026-11-09: English "as little as needed", not every sentence; glossing every one read like a phrasebook) */
-export const GLOSS_ALL = [false, false, false, false, false, false];
+/** Whole-phrase glossing per cluster: cluster 1 only, pattern B (Josh, 2026-11-09: "b for s1": each sentence in the language, then its English) */
+export const GLOSS_ALL = [true, false, false, false, false, false];
 export const CLUSTER_1 = CLUSTERS[0];
 
 /** The app's hidden cluster picker: header `x-fuori-cluster: 1`–`6`; cluster 1 otherwise */
@@ -110,7 +110,7 @@ export function pickSetup(p: { conversationId?: string | null; turn: number; lea
 }
 
 /** The level text per cluster (scaffolding.md "Level: 1–3", from Beginner 1's stages S1–S3): clusters 1–2 S1, 3–4 S2, 5–6 S3 */
-export const LEVEL_OF_CLUSTER = ['Level: 1', 'Level: 1', 'Level: 2', 'Level: 2', 'Level: 3', 'Level: 3'];
+export const LEVEL_OF_CLUSTER = ['Level: 1', 'Level: 1b', 'Level: 2', 'Level: 2', 'Level: 3', 'Level: 3'];
 
 /** The cluster's level text, in the system prompt after the shared rules */
 export function levelText(cluster: Setup[] = CLUSTER_1): string {

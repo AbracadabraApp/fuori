@@ -2,6 +2,10 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
 
+### 2026-11-10j: cluster 1 is each sentence then its English (B); cluster 2 the language-led, English as little as needed (C)
+- **Changed:** "Level: 1" (cluster 1) is pattern B: short sentences in the language, each a word part followed by its English, which the code speaks (glossAll on in cluster 1). The 2026-11-10i text (English as little as needed, or a brief check) is now "Level: 1b", for cluster 2. The ladder's English: B → C → S2 → S3.
+- **Why:** Josh, 2026-11-09, after three patterns (A English-led with echoes, B each sentence then its English, C language-led, English as little as needed): "I'm not sure Spanish/English or … are bad patterns — needs to be tested"; then "b for s1".
+
 ### 2026-11-10i: Level 1 relies on the language and clarifies in English as little as needed
 - **Changed:** "Level: 1" now describes the speaker: short, simple sentences in the language, one idea each, "and English as little as needed for them to follow, or a brief check that they've understood". Whole-phrase glossing stays off; the code keeps English beside every question, the English safety net, and a one-word gloss on a phrase of three or more words becomes its English.
 - **Why:** Josh, 2026-11-09: the aim is someone "who relies on Spanish but clarifies in English, or describes in English but uses Spanish echoes, key phrases, idioms" (his model: "El Andador es el corazón de la ciudad, the heart of the city…"); then "not dictating the method but 'as little as needed', or a brief check on understanding". A look with every sentence glossed in code read like a phrasebook ("Soy Hugo. I'm Hugo."). The English-led wordings before gave English paragraphs with the language at the edges (up to 46 English words a turn).
