@@ -88,7 +88,7 @@ export const sanCristobalDeLasCasas: CityPantry = {
       neighbourhood: 'Centro',
       real: true,
       characterId: 'samuel-pintor-arco',
-      imagePrompt: 'the Arco del Carmen in San Cristóbal de las Casas. A tall red and white tower with an arch through its base for the street to pass under, decorated with white Moorish-style patterns, beside an old church. A painter with an easel works on the pavement, paintbrush in hand.',
+      imagePrompt: "the Arco del Carmen in San Cristóbal de las Casas. A tall red and white tower with an arch through its base for the street to pass under, decorated with white Moorish-style patterns, beside an old church and a cultural centre. A man with a ring of keys unlocks the wooden door of the cultural centre in the morning.",
     },
     {
       id: 'terminal-san-cristobal',
@@ -121,7 +121,7 @@ export const sanCristobalDeLasCasas: CityPantry = {
       voice: '9Godp7dNohUvXk6qp0gS', // Regina
       role: 'tejedora',
       placeId: 'mercado-santo-domingo',
-      personality: ['shy at first', 'proud of her work', 'bargains hard'],
+      personality: ["proud of her work", "funny with the other weavers", "firm about a fair price"],
       portraitPrompt: 'Gouache portrait of a woman of 34 with long black braids, a deep blue shawl and a blouse embroidered with bright flowers, sitting at a backstrap loom, who weaves and sells textiles at the market in front of Santo Domingo, San Cristóbal de las Casas. Include the carved pink church front. Bold, saturated colour: indigo, flower pink and leaf green. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
       here: "You come from Zinacantán, a Tsotsil town near San Cristóbal, to sell your weaving at the market in front of the church of Santo Domingo. You weave on a backstrap loom, tied to a post at one end and to your waist at the other. Each town of the highlands has its own clothes: in Zinacantán they are covered in embroidered flowers, because the town grows flowers in greenhouses. A blouse can take a month to make.",
     },
@@ -193,8 +193,8 @@ export const sanCristobalDeLasCasas: CityPantry = {
       voice: 'iBGVhgcEZS6A5gTOjqSJ', // Gabiyoya
       role: "cocinera",
       placeId: 'tamales-barrio-de-mexicanos',
-      personality: ['motherly', 'chatty', 'worries you are cold'],
-      portraitPrompt: "Gouache portrait of a woman of 62 with a round face, a woollen shawl over her shoulders and an apron, holding a steaming tamale, smiling kindly, who runs a small comedor in San Cristóbal de las Casas. Include the wooden tables and the big steaming pot. Bold, saturated colour: leaf green, shawl red and steam white. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
+      personality: ["dry-humoured", "watchful", "feeds the regulars first"],
+      portraitPrompt: "Gouache portrait of a tall, angular woman of 62 with grey hair in a braid, a woollen shawl over her shoulders and an apron, holding a steaming tamale, with a dry, kind smile, who runs a small comedor in San Cristóbal de las Casas. Include the wooden tables and the big steaming pot. Bold, saturated colour: leaf green, shawl red and steam white. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
       here: "You run a small comedor in your house, and your regulars come every morning for breakfast when the town is still cold. You make tamales the Chiapas way: de chipilín, with a green herb in the dough; de bola, round and filled with pork, prunes and raisins; and de hoja de plátano, wrapped in banana leaf. At midday there is sopa de pan, a layered soup of bread, broth and vegetables that coletos eat at fiestas. You serve hot atole and local coffee.",
     },
     {
@@ -203,11 +203,11 @@ export const sanCristobalDeLasCasas: CityPantry = {
       gender: 'm',
       age: 45,
       voice: 'ojGau167OE7nUATM1xDa', // Marto
-      role: 'pintor',
+      role: "conserje del centro cultural",
       placeId: 'arco-del-carmen',
-      personality: ['dreamy', 'philosophical', 'easily distracted'],
-      portraitPrompt: 'Gouache portrait of a man of 45 with long greying hair, a paint-spattered jacket and a brush behind his ear, with a dreamy look, who paints at his easel by the Arco del Carmen, San Cristóbal de las Casas. Include the red and white arched tower. Bold, saturated colour: arch red, white and mountain blue. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You paint at your easel by the Arco del Carmen, the old arched tower on the Andador del Carmen, next to the church of El Carmen. Its white decoration is in Mudéjar style, a Spanish style with roots in Islamic art. The arch once marked an entrance to the city. San Cristóbal has long drawn painters and writers from all over the world, and many stayed.",
+      personality: ["quiet", "observant", "knows everyone who takes a class"],
+      portraitPrompt: "Gouache portrait of a man of 45 with greying hair tied back, a woollen jacket and a big ring of keys, with a calm, observant face, who looks after the cultural centre beside the Arco del Carmen, San Cristóbal de las Casas. Include the red and white arched tower. Bold, saturated colour: arch red, white and mountain blue. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
+      here: "You are the caretaker of the cultural centre beside the Arco del Carmen, and you open it every morning for the music, dance and painting classes. The arch is an old tower next to the church of El Carmen, its white decoration in Mudéjar style, a Spanish style with roots in Islamic art; it once marked an entrance to the city. You know every child who takes marimba lessons there and every grandmother in the embroidery class.",
     },
     {
       id: 'andrea-taquillera-sancris',

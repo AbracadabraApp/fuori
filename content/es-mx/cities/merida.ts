@@ -25,7 +25,7 @@ export const merida: CityPantry = {
       neighbourhood: 'Centro',
       real: true,
       characterId: 'leydi-jaranera',
-      imagePrompt: 'the Plaza Grande of Mérida on a Sunday. Laurel trees, white benches and the grey stone cathedral of San Ildefonso with its two towers. In front of the town hall, young dancers in white embroidered dresses and white guayaberas dance jarana, one woman balancing a tray of glasses on her head, as families watch.',
+      imagePrompt: "the Plaza Grande of Mérida on a Sunday. Laurel trees, white benches and the grey stone cathedral of San Ildefonso with its two towers. In front of the town hall, couples of all ages in white dance jarana to a live band, and neighbours on the benches clap along.",
     },
     {
       id: 'paseo-de-montejo',

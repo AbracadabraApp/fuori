@@ -16,7 +16,7 @@ export const patzcuaro: CityPantry = {
       neighbourhood: 'Muelle General',
       real: true,
       characterId: 'salvador-lanchero',
-      imagePrompt: 'the boat landing on Lake Pátzcuaro, with the island of Janitzio in the distance, crowned by a giant stone statue of a man with a raised fist. Long wooden passenger boats with painted names wait at the dock, and a boatman in a cap helps a family aboard. In the water, a fisherman in a small canoe lifts a wide net shaped like butterfly wings.',
+      imagePrompt: "the boat landing on Lake Pátzcuaro, with the island of Janitzio in the distance, crowned by a giant stone statue of a man with a raised fist. Long wooden passenger boats with painted names wait at the dock, and a boatman in a cap helps a woman from the island load sacks of shopping and a crate of tomatoes aboard.",
     },
     {
       id: 'panteon-de-janitzio',
@@ -111,7 +111,7 @@ export const patzcuaro: CityPantry = {
       placeId: 'muelle-a-janitzio',
       personality: ['steady', 'proud of the lake', 'worried about it'],
       portraitPrompt: 'Gouache portrait of a man of 52 with a weathered face, a cap and a windbreaker, a coil of rope over his shoulder, who runs passenger boats from the Muelle General on Lake Pátzcuaro. Include the lake and the island of Janitzio with its giant statue. Bold, saturated colour: lake blue, boat red and pine green. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You run a passenger boat from the Muelle General to the island of Janitzio, about twenty minutes across Lake Pátzcuaro. On the way, fishermen sometimes show passengers the old butterfly nets, wide nets the Purépecha used for the pescado blanco, the lake's famous small white fish. At the top of Janitzio stands a giant statue of José María Morelos, a hero of independence, with a mural inside that you can climb. The lake has been shrinking and getting dirtier for years.",
+      here: "You run a passenger boat from the Muelle General to the island of Janitzio, about twenty minutes across Lake Pátzcuaro. Most of your passengers are islanders going home with their shopping, since Janitzio has no road. The Purépecha of the lake once fished pescado blanco, its famous small white fish, with wide butterfly-shaped nets; now the fish is scarce. At the top of Janitzio stands a giant statue of José María Morelos, a hero of independence, with a mural inside that you can climb. The lake has been shrinking and getting dirtier for years.",
     },
     {
       id: 'elvira-veladora-janitzio',

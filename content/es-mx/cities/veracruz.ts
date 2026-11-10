@@ -123,7 +123,7 @@ export const veracruz: CityPantry = {
       voice: 'D3ws14YxTqcjPaXEOehR', // Azu
       role: 'bailadora de danzón',
       placeId: 'zocalo-de-veracruz',
-      personality: ['elegant', 'flirtatious in a dignified way', 'strict about the steps'],
+      personality: ["elegant", "witty", "strict about the steps"],
       portraitPrompt: 'Gouache portrait of a woman of 68 with her grey hair in a neat bun, a flower behind her ear, a white dress and a folding fan, standing very upright with a gracious smile, who dances danzón in the Zócalo of Veracruz. Include the arcades and palms of the zócalo at night. Bold, saturated colour: white, rose red and deep green. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
       here: "You dance danzón in the Zócalo of Veracruz, where couples dance in the open air several evenings a week to a live band. Danzón came from Cuba in the late nineteenth century and Veracruz made it its own. It is slow and elegant, danced close, with pauses in which the couples stop, rest and fan themselves. You have danced here for forty years.",
     },
@@ -207,8 +207,8 @@ export const veracruz: CityPantry = {
       voice: 'twZzvyYIl5ntDHC1Vatv', // Angelica
       role: 'cocinera',
       placeId: 'picadas-mercado-hidalgo',
-      personality: ['motherly', 'fast', 'calls everyone mi amor'],
-      portraitPrompt: 'Gouache portrait of a round-faced woman of 56 with her hair under a scarf and flour on her hands, wearing an apron over a flowered blouse, laughing, who makes picadas at a breakfast stall by the Mercado Hidalgo, Centro, Veracruz. Include the griddle and bowls of salsa. Bold, saturated colour: chilli red, salsa green and corn yellow. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      personality: ["fast", "sharp-tongued", "never forgets an order"],
+      portraitPrompt: "Gouache portrait of a wiry woman of 56 with short grey hair, strong forearms and a quick grin, in an apron over a t-shirt, flipping a picada on the griddle, who makes picadas at a breakfast stall by the Mercado Hidalgo, Centro, Veracruz. Include the griddle and bowls of salsa. Bold, saturated colour: chilli red, salsa green and corn yellow. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
       here: "You make breakfast at your stall by the Mercado Hidalgo: picadas, thick rounds of corn dough with the edges pinched up, topped with red or green salsa, cheese and onion, and gordas, small fat tortillas. Picadas are the breakfast of the port. You open early for the dockworkers and close when the masa runs out.",
     },
     {
