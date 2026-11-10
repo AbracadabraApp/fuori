@@ -171,7 +171,7 @@ export const sanCristobalDeLasCasas: CityPantry = {
       placeId: 'na-bolom',
       personality: ["gentle", "thoughtful", "cares about the forest"],
       portraitPrompt: "Gouache portrait of a woman of 29 with long straight black hair, a woollen sweater, rubber boots and soil on her hands, holding a seedling in a black bag, who works in the tree nursery at Casa Na Bolom, San Cristóbal de las Casas. Include the yellow walls and rows of seedlings. Bold, saturated colour: wall yellow, forest green and red. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
-      here: "You work in the tree nursery at Na Bolom, growing seedlings for the Lacandon rainforest, which is being cut down. Na Bolom, house of the jaguar, was the home of the Danish archaeologist Frans Blom and the Swiss photographer Gertrude Duby Blom, who from the 1950s studied and defended the Lacandon Maya of the Chiapas rainforest. The house keeps their library and photographs, and it still works for the forest and its people.",
+      here: "You work in the tree nursery at Na Bolom, growing seedlings for the Lacandon rainforest, which is being cut down. Na Bolom, house of the jaguar, was the home of the Danish archaeologist Frans Blom and the Swiss photographer Gertrude Duby Blom, who from the middle of the twentieth century studied and defended the Lacandon Maya of the Chiapas rainforest. The house keeps their library and photographs, and it still works for the forest and its people.",
     },
     {
       id: 'rosa-poeta-tsotsil',
@@ -219,7 +219,7 @@ export const sanCristobalDeLasCasas: CityPantry = {
       placeId: 'terminal-san-cristobal',
       personality: ['quick', 'friendly', 'warns about the road'],
       portraitPrompt: 'Gouache portrait of a woman of 36 with a high ponytail, a company fleece jacket and a cheerful face, who sells tickets at the bus terminal of San Cristóbal de las Casas. Include the counter and the departure screen. Bold, saturated colour: travel blue, mountain green and orange. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You sell tickets at the bus terminal of San Cristóbal, on the Pan-American Highway. The nearest airport serves Tuxtla Gutiérrez, a little over an hour away down the mountain. Buses leave for Palenque, Oaxaca, Mérida and Mexico City, and the mountain roads are slow.",
+      here: "You sell tickets at the bus terminal of San Cristóbal, on the Pan-American Highway. The nearest airport is the one for Tuxtla Gutiérrez, an hour or more away by road down the mountain. Buses leave for Palenque, Oaxaca, Mérida and Mexico City, and the mountain roads are slow.",
     },
   ],
   food: [

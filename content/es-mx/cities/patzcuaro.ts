@@ -159,7 +159,7 @@ export const patzcuaro: CityPantry = {
       placeId: 'casa-de-los-once-patios',
       personality: ['meticulous', 'warm', 'protective of the old methods'],
       portraitPrompt: 'Gouache portrait of a woman of 35 with her hair pulled back, an apron flecked with paint and a fine brush in her hand, with a focused, gentle face, who makes lacquerware in the Casa de los Once Patios, Pátzcuaro. Include the glossy black trays painted with flowers and gold. Bold, saturated colour: lacquer black, gold and vermilion. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You make maque, lacquerware, in a workshop in the Casa de los Once Patios, an eighteenth-century convent turned into artisans' workshops. Pátzcuaro's lacquer is black, painted with flowers and birds and outlined in fine gold leaf. The craft goes back to before the Spanish, and the old lacquer was made with an oil from insects and seeds. A tray takes many layers and many days.",
+      here: "You make maque, lacquerware, in a workshop in the Casa de los Once Patios, an eighteenth-century convent turned into artisans' workshops. Pátzcuaro's lacquer is often black, painted with flowers and birds and outlined in fine gold leaf. The craft goes back to before the Spanish, and the old lacquer was made with an oil from insects and seeds. A tray takes many layers and many days.",
     },
     {
       id: 'sor-guadalupe-achoques',
@@ -219,7 +219,7 @@ export const patzcuaro: CityPantry = {
       placeId: 'terminal-patzcuaro',
       personality: ['relaxed', 'helpful', 'chatty with regulars'],
       portraitPrompt: 'Gouache portrait of a man of 36 with short hair, a goatee and a company polo shirt, leaning on the counter with a relaxed smile, who sells tickets at the bus station of Pátzcuaro. Include the ticket window and the pine-covered hills outside. Bold, saturated colour: pine green, travel blue and orange. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You sell tickets at the small bus station of Pátzcuaro. Buses and minibuses go every few minutes to Morelia, the state capital, about an hour away, and to Uruapan, Santa Clara del Cobre and Tzintzuntzan. For Mexico City or Guadalajara most people change in Morelia.",
+      here: "You sell tickets at the small bus station of Pátzcuaro. Buses and minibuses go often to Morelia, the state capital, about an hour away, and to Uruapan, Santa Clara del Cobre and Tzintzuntzan. There are some direct buses to Mexico City and Guadalajara, but many people change in Morelia.",
     },
   ],
   food: [

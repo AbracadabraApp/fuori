@@ -195,7 +195,7 @@ export const guanajuato: CityPantry = {
       placeId: 'casa-diego-rivera',
       personality: ["enthusiastic", "frank", "a little irreverent about Diego"],
       portraitPrompt: "Gouache portrait of a woman of 50 with short silver hair, paint on her fingers, large earrings and a striped smock, holding a folder of sketches, with an amused, frank expression, who teaches painting at the university and brings her students to the Museo Casa Diego Rivera, Guanajuato. Include the house’s green shutters and a painting on the wall. Bold, saturated colour: shutter green, ochre and red. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
-      here: "You teach painting at the university and bring your students to the Museo Casa Diego Rivera, the house where Rivera was born in 1886. He left Guanajuato as a small child, studied in Mexico City and Europe, and became the most famous of the Mexican muralists, painting the history of the country on public walls so that everyone could see it. Guanajuato was slow to forgive his politics and his atheism; the house only became a museum in the 1970s.",
+      here: "You teach painting at the university and bring your students to the Museo Casa Diego Rivera, the house where Rivera was born in 1886. He left Guanajuato as a small child, studied in Mexico City and Europe, and became the most famous of the Mexican muralists, painting the history of the country on public walls so that everyone could see it. He was a communist and an atheist, and in Catholic, conservative Guanajuato the house only became a museum in the 1970s.",
     },
     {
       id: 'lupe-enchiladera',
