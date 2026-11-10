@@ -4,7 +4,7 @@
 // prompt file, the language-only rung hides the answers' English, the turn
 // code takes the switch, and Beginner 2 turns don't move the Beginner 1 path.
 import { readFileSync } from 'fs';
-import { beginnerVersionFrom, pickSetup, setupText, levelText, setupLine, fullerGlosses, shownParts, beginner2Version, glossAll, questionEcho, GOODBYE, OPENER, CLUSTER_1, CLUSTERS, RUNGS, clusterFrom } from '@/lib/beginner-2';
+import { beginnerVersionFrom, pickSetup, setupText, levelText, setupLine, fullerGlosses, shownParts, shapeParts, turnSteps, beginner2Version, glossAll, questionEcho, GOODBYE, OPENER, CLUSTER_1, CLUSTERS, RUNGS, clusterFrom } from '@/lib/beginner-2';
 import { stageInVersion } from '@/lib/conversation-record';
 import { lineFromParts, type Part } from '@/lib/beginner';
 import { buildBeginnerPrompt, SCAFFOLDING_FILE, dialogueWithoutFormat } from '@/lib/beginner';
@@ -138,6 +138,29 @@ check(/promptFile: BEGINNER_2_FILE/.test(take) && !/setup[\s\S]{0,40}transcript\
   check(b2.startsWith(inter), 'Beginner 2 starts with the Intermediate prompt exactly (character.md, dialogue.md, the here line)');
   check(!/Respond with JSON:\s*\{\s*"line"/.test(b2) && /Reply with JSON: parts/.test(b2), 'the one-line reply format is replaced by the parts format');
   check(!/\{\w+\}/.test(b2), 'no placeholder left unfilled');
+}
+
+// Each turn records which shaping steps changed Claude's parts (logged and saved with the turn)
+{
+  const two = RUNGS.find((r) => r.id === 'two-en')!;
+  const raw: Part[] = [
+    { kind: 'word', text: 'Estoy preparando las velas.', en: "I'm preparing the candles.", gloss: 'candles' },
+    { kind: 'question', text: '¿Le gustan?', en: 'Do you like them?', gloss: '' },
+    { kind: 'english', text: 'You could say:', en: '', gloss: '' },
+    { kind: 'answer', text: 'Sí, mucho.', en: 'Yes, a lot.', gloss: '' },
+    { kind: 'answer', text: 'No mucho.', en: 'Not much.', gloss: '' },
+  ];
+  const { parts, fixes } = shapeParts(raw, two, CLUSTER_1);
+  check(JSON.stringify(parts) === JSON.stringify(shownParts(raw, two, CLUSTER_1)), 'shapeParts shows the same parts as shownParts');
+  check(['glossAll', 'withoutAnnouncing', 'questionEcho'].every((f) => fixes.includes(f)), `the fixes that changed something are named (got ${fixes.join(', ')})`);
+  const clean: Part[] = [{ kind: 'english', text: 'Good afternoon.', en: '', gloss: '' }, { kind: 'word', text: 'Buenas tardes.', en: 'Good afternoon.', gloss: '' }];
+  check(shapeParts(clean, RUNGS.find((r) => r.id === 'free')!, CLUSTERS[5]).fixes.length === 0, 'a turn the code leaves alone records no fixes');
+  const steps = turnSteps(raw, two, CLUSTER_1, fixes);
+  check(steps.setup === 'two-en' && steps.cluster === 1 && steps.claudeParts === raw, "the steps keep the setup, the cluster and Claude's parts when fixed");
+  check(!('claudeParts' in turnSteps(clean, two, CLUSTERS[5], [])) && turnSteps(clean, two, CLUSTERS[5], []).cluster === 6, "no fixes: Claude's parts aren't kept twice");
+  const saved = exchangeTurns({ learnerSaid: 'hola', reply: { line: 'x', en: 'x', parts }, replyMs: 900, steps }, 'now');
+  check(JSON.stringify((saved[1] as { steps?: unknown }).steps) === JSON.stringify(steps), 'the steps are saved with the reply');
+  check(!('steps' in exchangeTurns({ reply: { line: 'x', en: 'x' } }, 'now')[0]), 'a turn without steps (Beginner 1, Intermediate) saves as before');
 }
 
 if (problems.length) {

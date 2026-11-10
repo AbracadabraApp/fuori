@@ -16,6 +16,7 @@ import { startConversation, addConversationTurn, type CharacterMemory, type Revi
 import type { CharacterSheet, Turn } from './types';
 import { turnStats, wordCount, REPEATS_LOOKBACK } from './dialogue-stats';
 import type { ConversationScore } from './quality';
+import type { TurnSteps } from './beginner-2';
 
 export function recordingEnabled(): boolean {
   return !!process.env.DATABASE_URL;
@@ -62,10 +63,12 @@ interface RecordTurnParams {
   replyMs?: number;
   /** What the character remembered at the start, kept with a new conversation */
   memory?: CharacterMemory;
+  /** Beginner 2: the setup, cluster and code fixes of the reply (lib/beginner-2.ts → TurnSteps), kept with it */
+  steps?: TurnSteps;
 }
 
 /** The turns saved for one exchange: the learner's line if any, then the character's reply with its time */
-export function exchangeTurns(p: Pick<RecordTurnParams, 'learnerSaid' | 'reply' | 'replyMs'>, at: string) {
+export function exchangeTurns(p: Pick<RecordTurnParams, 'learnerSaid' | 'reply' | 'replyMs' | 'steps'>, at: string) {
   return [
     ...(p.learnerSaid ? [{ who: 'learner' as const, text: p.learnerSaid, at }] : []),
     {
@@ -76,6 +79,7 @@ export function exchangeTurns(p: Pick<RecordTurnParams, 'learnerSaid' | 'reply' 
       // Each part with its English and its gloss, so a transcript shows what was heard (2026-11-09: glosses were spoken but not kept)
       ...(p.reply.parts ? { parts: p.reply.parts.map((x) => ({ kind: x.kind, text: x.text, ...(x.en ? { en: x.en } : {}), ...(x.gloss ? { gloss: x.gloss } : {}) })) } : {}),
       ...(p.learnerSaid && typeof p.replyMs === 'number' ? { ms: p.replyMs } : {}),
+      ...(p.steps ? { steps: p.steps } : {}),
     },
   ];
 }

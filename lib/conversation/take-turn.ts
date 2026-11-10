@@ -17,7 +17,7 @@ import { loadAddressedAs } from '@/lib/learner-address';
 import { tutor } from '@/content';
 import { onboardingState } from '@/lib/onboarding';
 import { runBeginnerTurn, beginnerPromptVersion, lineFromParts } from '@/lib/beginner';
-import { BEGINNER_2_FILE, CLUSTER_1, pickSetup, levelText, setupLine, shownParts, beginner2Version, type Setup } from '@/lib/beginner-2';
+import { BEGINNER_2_FILE, CLUSTER_1, pickSetup, levelText, setupLine, shapeParts, turnSteps, beginner2Version, type Setup, type TurnSteps } from '@/lib/beginner-2';
 import { stageFor, stageTag, stageText, type Stage } from '@/lib/path';
 import { pathState } from '@/lib/conversation-record';
 import { welcomeContent, welcomed, welcomeVersion, welcomeStep, welcomeBrief, learnerLines, addressAnswers, welcomeTurnFlags } from '@/lib/welcome';
@@ -147,6 +147,8 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
   const setup = beginner && !p.lesson && p.beginnerVersion === 2
     ? pickSetup({ conversationId, turn: transcript.filter((t) => t.who === 'npc').length, learnerId, characterId: character.id, learnerSaid }, p.beginnerCluster)
     : null;
+  // Beginner 2: what the code did to the turn's parts, logged and saved with it
+  let steps: TurnSteps | undefined;
   const pathLevel = !welcome && onPath?.stage.path === 'character' ? onPath.stage.level : undefined;
 
   // A lesson (lib/lesson.ts): every part in the Beginner format with its brief, Magda included;
@@ -175,7 +177,9 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
       // spoken line is rebuilt from them, and the voice waits for the whole reply (no early first sentence:
       // it would be spoken from the parts before they were rewritten, then again)
       await runBeginnerTurn({ character, transcript, learnerSaid, memory, addressedAs, laps: p.laps, canRetry: p.canRetry, promptFile: BEGINNER_2_FILE, stageText: levelText(p.beginnerCluster ?? CLUSTER_1), turnNote: setupLine(setup), maxAnswers: setup.maxAnswers, withDone: true }).then((r) => {
-        const parts = shownParts(r.parts, setup, p.beginnerCluster ?? CLUSTER_1);
+        const cluster = p.beginnerCluster ?? CLUSTER_1;
+        const { parts, fixes } = shapeParts(r.parts, setup, cluster);
+        steps = turnSteps(r.parts, setup, cluster, fixes);
         return { ...r, ...lineFromParts(parts), parts };
       })
     : beginner && onPath
@@ -217,8 +221,9 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
       character: character.id,
       turn: transcript.length === 0 ? 'opening' : 'reply',
       promptVersion: version,
-      // Beginner 2: this turn's rung of the reply ladder (lib/beginner-2.ts)
+      // Beginner 2: this turn's rung of the reply ladder, its cluster, and the code's fixes to Claude's parts (lib/beginner-2.ts)
       ...(setup ? { setup: setup.id } : {}),
+      ...(steps ? { cluster: steps.cluster, fixes: steps.fixes } : {}),
     })
   );
 
@@ -238,6 +243,7 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
         reply,
         replyMs: ms,
         memory,
+        steps,
       }).catch((err) => {
         p.onSoftError('recording', err);
         return null;

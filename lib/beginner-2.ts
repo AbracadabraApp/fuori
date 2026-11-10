@@ -264,17 +264,46 @@ export function withoutAnnouncing(parts: Part[]): Part[] {
     .filter((x) => x.kind !== 'english' || x.text);
 }
 
-/** Display: every phrase glossed in clusters 1–2; English on every turn; an inside rung's answer said by the character */
-export function shownParts(raw: Part[], setup: Setup, cluster: Setup[] = CLUSTER_1): Part[] {
-  const parts = withoutAnnouncing(withEnglish(GLOSS_ALL[Math.max(0, CLUSTERS.indexOf(cluster))] ? glossAll(raw) : raw));
+/** What the code did to one turn's parts: the setup and cluster it played, the shaping steps that changed something, and Claude's parts when one did */
+export interface TurnSteps {
+  setup: string;
+  cluster: number;
+  fixes: string[];
+  claudeParts?: Part[];
+}
+
+/**
+ * Display: every phrase glossed in clusters 1–2; English on every turn; an inside rung's answer said by the character.
+ * Each step is named, and the names of those that changed the parts are returned, so a turn shows what the code fixed
+ */
+export function shapeParts(raw: Part[], setup: Setup, cluster: Setup[] = CLUSTER_1): { parts: Part[]; fixes: string[] } {
+  const fixes: string[] = [];
+  const step = (name: string, f: (x: Part[]) => Part[]) => (x: Part[]) => {
+    const y = f(x);
+    if (JSON.stringify(y) !== JSON.stringify(x)) fixes.push(name);
+    return y;
+  };
   const at = Math.max(0, CLUSTERS.indexOf(cluster));
-  if (setup.inside) return insideSpeech(parts, setup);
-  if (setup.invite) return invited(QUESTION_ECHO[at] ? questionEcho(fullerGlosses(parts)) : parts);
+  const echo = (x: Part[]) => (QUESTION_ECHO[at] ? step('questionEcho', questionEcho)(step('fullerGlosses', fullerGlosses)(x)) : x);
+  const parts = step('withoutAnnouncing', withoutAnnouncing)(step('withEnglish', withEnglish)(GLOSS_ALL[at] ? step('glossAll', glossAll)(raw) : raw));
+  const done = (x: Part[]) => ({ parts: x, fixes });
+  if (setup.inside) return done(step('insideSpeech', (x) => insideSpeech(x, setup))(parts));
+  if (setup.invite) return done(step('invited', invited)(echo(parts)));
   // Questions to ask, and none came (the character asked its own, deep in a visit): treated as an invited
   // English answer, so the learner always has a way to answer (2026-11-09, a twelve-turn look: 4 of 5)
-  if (setup.id === 'ask-en' && !parts.some((x) => x.kind === 'answer' && x.text.trim())) return invited(QUESTION_ECHO[at] ? questionEcho(fullerGlosses(parts)) : parts);
-  if (QUESTION_ECHO[at]) return questionEcho(fullerGlosses(parts));
-  return setup.english ? parts : parts.map((x) => (x.kind === 'answer' ? { ...x, en: '' } : x));
+  if (setup.id === 'ask-en' && !parts.some((x) => x.kind === 'answer' && x.text.trim())) return done(step('invited', invited)(echo(parts)));
+  if (QUESTION_ECHO[at]) return done(echo(parts));
+  return done(setup.english ? parts : step('answersWithoutEnglish', (x) => x.map((y) => (y.kind === 'answer' ? { ...y, en: '' } : y)))(parts));
+}
+
+/** The parts as shown and spoken (shapeParts without the record of what changed) */
+export function shownParts(raw: Part[], setup: Setup, cluster: Setup[] = CLUSTER_1): Part[] {
+  return shapeParts(raw, setup, cluster).parts;
+}
+
+/** What to record of a turn's shaping (TurnSteps): Claude's parts only when the code changed them */
+export function turnSteps(raw: Part[], setup: Setup, cluster: Setup[], fixes: string[]): TurnSteps {
+  return { setup: setup.id, cluster: Math.max(1, CLUSTERS.indexOf(cluster) + 1), fixes, ...(fixes.length ? { claudeParts: raw } : {}) };
 }
 
 /** The version recorded with each turn: "beginner-2-<version>+C<cluster>", no stage tag, so the path doesn't count it; the scorecard and records group by it */

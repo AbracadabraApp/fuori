@@ -11,7 +11,7 @@ import { cities, language } from '@/content';
 import { characterForVisit } from '@/lib/characters/for-visit';
 import { runBeginnerTurn, lineFromParts, SCAFFOLDING_FILE, type Part } from '@/lib/beginner';
 import { TURN_MODEL } from '@/lib/claude';
-import { CLUSTERS, levelText, setupLine, shownParts, pickSetup } from '@/lib/beginner-2';
+import { CLUSTERS, levelText, setupLine, shapeParts, pickSetup } from '@/lib/beginner-2';
 import { ask, pool, OUT } from './common.mjs';
 
 const arg = (n: string, d: string) => process.argv.find((a) => a.startsWith(`--${n}=`))?.split('=')[1] ?? d;
@@ -72,7 +72,7 @@ const people = cities.flatMap((c) => c.places.filter((p) => p.characterId).map((
 const step = Math.max(1, Math.floor(people.length / howMany));
 const chosen = Array.from({ length: howMany }, (_, i) => people[i * step]).filter(Boolean);
 
-interface TurnRow { character: string; visit: number; turn: number; setup: string; kind?: Kind | 'goodbye'; how?: string; said?: string; ms: number; ok: boolean; error?: string; parts?: Part[]; line?: string; answers?: string[]; done?: boolean }
+interface TurnRow { character: string; visit: number; turn: number; setup: string; fixes?: string[]; kind?: Kind | 'goodbye'; how?: string; said?: string; ms: number; ok: boolean; error?: string; parts?: Part[]; line?: string; answers?: string[]; done?: boolean }
 const rows: TurnRow[] = [];
 
 const t0 = Date.now();
@@ -90,10 +90,10 @@ await pool(chosen.flatMap(({ city, place }) => Array.from({ length: visits }, (_
     const started = performance.now();
     try {
       const reply = await runBeginnerTurn({ character, transcript: transcript as never, learnerSaid: said, promptFile: SCAFFOLDING_FILE, stageText: levelText(cluster), turnNote: setupLine(setup), maxAnswers: setup.maxAnswers, withDone: true });
-      const parts = shownParts(reply.parts, setup, cluster);
+      const { parts, fixes } = shapeParts(reply.parts, setup, cluster);
       const { line } = lineFromParts(parts);
       const answers = parts.filter((p) => p.kind === 'answer').map((p) => p.text);
-      rows.push({ character: character.name, visit: v, turn: turn + 1, setup: setup.id, kind, how, said, ms: Math.round(performance.now() - started), ok: true, parts, line, answers, done: reply.done });
+      rows.push({ character: character.name, visit: v, turn: turn + 1, setup: setup.id, fixes, kind, how, said, ms: Math.round(performance.now() - started), ok: true, parts, line, answers, done: reply.done });
       if (said) transcript.push({ who: 'learner', transcript: said });
       transcript.push({ who: 'npc', transcript: line, offered: answers });
       if (reply.done) break;
@@ -139,3 +139,7 @@ console.log(`  per turn: English ${(ok.reduce((n, x) => n + en(x), 0) / ok.lengt
 console.log(`  the English invitation on other turns ${inviteElsewhere} · announcing ${announce} · visits ended on a goodbye ${visitsDone}/${visitCount}`);
 console.log(`  learner kinds: ${Object.entries(rows.reduce((m, x) => ({ ...m, [x.kind ?? 'opening']: (m[x.kind ?? 'opening'] ?? 0) + 1 }), {} as Record<string, number>)).map(([k, n]) => `${k} ${n}`).join(', ')}`);
 console.log(`  saved ${file}`);
+// Which code fixes changed Claude's parts, and how often (lib/beginner-2.ts → shapeParts)
+const fixCounts = new Map<string, number>();
+for (const x of ok) for (const f of x.fixes ?? []) fixCounts.set(f, (fixCounts.get(f) ?? 0) + 1);
+console.log(`  code fixes over ${ok.length} turns: ${[...fixCounts].sort((a, b) => b[1] - a[1]).map(([f, n]) => `${f} ${n}`).join(' · ') || 'none'}`);
