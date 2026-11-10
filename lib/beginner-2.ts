@@ -121,8 +121,9 @@ export function insideSpeech(parts: Part[], setup: Setup): Part[] {
 /**
  * Every phrase glossed (clusters 1–2): each phrase in the language with no gloss gets its English,
  * spoken after it, unless the turn's own English already says it or the English only repeats the
- * phrase (a name, a cognate). Josh, 2026-11-09: "I could not tell what the character was saying
- * until I got answers with subtitles… He would have needed to gloss the whole paragraph"
+ * phrase (a name, a cognate). Claude's response to Josh's observation (2026-11-09: in that session
+ * "I could not tell what the character was saying until I got answers with subtitles"; the character
+ * would have had to gloss the whole paragraph to make sense), not something Josh asked for.
  */
 export function glossAll(parts: Part[]): Part[] {
   const english = parts.filter((x) => x.kind === 'english').map((x) => x.text).join(' ');

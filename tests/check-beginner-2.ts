@@ -46,7 +46,7 @@ const glossed: Part[] = [{ kind: 'question', text: '¿Le gustan?', en: 'Do you l
 check(shownParts(glossed, CLUSTER_1[0])[0].gloss === 'like them?', 'a turn that already has English is left alone');
 const para: Part[] = [{ kind: 'english', text: 'Welcome to the barrio.', en: '', gloss: '' }, { kind: 'word', text: 'Aquí pinto todos los días.', en: 'I paint here every day.', gloss: '' }, { kind: 'word', text: 'Bienvenido al barrio.', en: 'Welcome to the barrio.', gloss: '' }, { kind: 'question', text: '¿Le gustan los murales?', en: 'Do you like the murals?', gloss: '' }];
 const g1 = shownParts(para, CLUSTER_1[0], CLUSTER_1);
-check(g1[1].gloss === 'I paint here every day.' && g1[3].gloss === 'Do you like the murals?', 'cluster 1: every phrase gets its English spoken (Josh: "gloss the whole paragraph")');
+check(g1[1].gloss === 'I paint here every day.' && g1[3].gloss === 'Do you like the murals?', 'cluster 1: every phrase gets its English spoken');
 check(g1[2].gloss === '', 'not when the turn\'s own English already said it');
 check(shownParts(para, CLUSTERS[3][0], CLUSTERS[3])[1].gloss === '', 'later clusters leave glossing to the character');
 const inside = shownParts(parts, RUNGS.find((r) => r.id === 'inside-en')!);
