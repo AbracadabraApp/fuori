@@ -252,3 +252,27 @@ No Slot, Gloss, Say-back or Echo. The prompt prescribes no order inside a turn a
 - **Rest is half the conversation:** 6 of 13 non-closing turns end on an Ask (1 tag, 3 yes/no, 1 open, 1 either/or); 7 end on a statement and Josh led the next turn himself.
 - **Both prompt breaches are Ask-shaped:** words after the question mark (turn 2) and the tourist question (turn 3).
 - **Nothing recycles and nothing fades,** since there are no chunks: at Intermediate the unit is the idea, not the phrase. A turn is usually three sentences.
+
+## 11. Code picking shapes: the idea and the first table (Claude, with another laptop session's refinement; Josh, 2026-11-11: "yes")
+
+**The idea.** Code decides what kind of turn comes next; the model writes the words for it. A shape is a short list of moves in order (Take, Fact, Ask; Reassure, Slot, Ask yes/no; Close). Today the model chooses the shape from a paragraph of prose and its own habits, and gets it right often (§10: Take, one added thing, sometimes an Ask) and wrong in ways no one chose (the goodbye at a fixed count, the tourist question). With code picking shapes, the prompt keeps describing who the character is and where they are, and a turn gets one extra line saying what this turn does, in the character's situation, not in our terms ("React to what they said, then one thing about your place, then one question"). The model stays the writer; the code is the director. The lever exists: the bracketed `note` at the end of the newest message (O5), which Beginner 2 already fills with the answer setup.
+
+**Not scripting.** The code never writes a line, never picks a topic, never fixes an order for a visit. It chooses from a few turn kinds the way a host does: a moment for a question, a moment to let them lead, a moment to help. Every word is the character's; two visits with the same shapes read differently.
+
+**Why.** A theory becomes something to switch on (the Ask ladder is a table, nothing else changes). A test becomes a fact (the shape asked for is recorded per turn, so "did the character do what the turn asked" is a count, not a judge's guess). The prompt can shrink, because the sentences that tried to hold structure come out.
+
+**The quiet default is the design, not a first version** (the other session's refinement, agreed). The director speaks only at moments code can see and stays silent otherwise: an instruction on every turn breeds repetition (Beginner 1's history), and Nunzio's conversation got its shape, Rest turns included, from habit. At Intermediate the note is empty unless a moment fires. At Beginner cluster 1 the note already speaks every turn with the answer setup, so "quiet" there means the answers only, no shape; the repetition risk is a Beginner risk.
+
+**The first table.** Each moment is detected with a signal that works in any language (CLAUDE.md: recording length, silence, punctuation, a judge or the reply's own flag; no phrase lists).
+
+| Moment | Signal | Shape |
+|---|---|---|
+| They said goodbye, or the talk is winding down | the reply's `done` flag set by the learner's goodbye, not a turn count | Close (T11). Replaces `GOODBYE_AFTER = 8`, the one fault proven in play (Chuy); goes first |
+| They said almost nothing, or asked for help | recording length or word count; a help request in either language | Repair (T19): a shorter piece of the language, an easy Ask |
+| They asked something | `?` or `¿` in what they said (already used in `pickSetup`) | Answer it first, before anything of the character's own. Not "nothing else": Nunzio's turn 8 answered the spleen question and then asked about Josh's country, and that opened the best stretch. The retold-as-new fault was the character skipping the answer, not adding to it |
+| The opening | turn 0 | Intro (T22), the decided design (§0) |
+| Everything else | | no note: the model's Take, one new thing, sometimes an Ask (or a Rest, T41) |
+
+The Ask ladder (S7) and Recycle (S8) join the table later only if Josh's ear says the chat needs them; not the start.
+
+**Needs.** The shape asked for is recorded per turn for Beginner 2 (`steps`), not yet on the Intermediate path; that record is a few lines and comes with the table. Beginner's first-use Slot check and the Intermediate's shape note share the one `note` lever, so the table lives once, in `lib/beginner-2.ts` or its successor, for both levels and both countries.
