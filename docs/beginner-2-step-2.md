@@ -12,6 +12,12 @@
 
 The Cluster stepper (Settings → touch and hold Version → Cluster 1–6) is the level-up for now: Josh picks the cluster by hand.
 
+## First thing tomorrow: the Level 1 reply format (before step 2)
+
+Josh played 10q live (Don Efrén, Guadalajara, 2026-11-11 04:36 UTC): "speaking straight english except question". Three wordings of the Level 1 brief that night, each failing differently in the parts format: one Spanish phrase a turn (10q); rows of bare labels between the English ("La silla. El cepillo."); the Spanish hidden inside the English boxes (10r, on `main`, not released). The cause is the format, not the words: the lines Josh judged ("that's la silla, the chair, where you climb up") were written as one flowing string in the Intermediate format; the parts format makes the character pull the Spanish out of the sentence into its own box.
+
+**The fix:** at Level 1 the character writes one flowing line (as Intermediate) and lists the spans in the language it used, each with its English; code cuts the line at those spans into the parts the app already shows (english heard, the spans as word parts with their English, the question echoed, the answers). `buildBeginnerPrompt` gets a second output format block for Level 1 (`scaffolding.md` → "Reply: line and spans"), `runBeginnerTurn` converts to parts after the reply, `flowingLine` becomes unnecessary for that path (the line is the character's own). Check: `b2-frame-live.mts` in both countries, reading for phrases inside sentences with their English beside them, then Josh plays. An evening.
+
 ## Step 2: what to write
 
 One prompt block, `scaffolding.md` → "Level: 1b" rewritten (both countries, version bump, changelog), same shape as Level 1 minus the English after each phrase. Draft:
