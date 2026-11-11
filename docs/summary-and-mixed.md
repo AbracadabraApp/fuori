@@ -20,6 +20,8 @@ Josh asked for a better mixed approach ("my best guess is that the grammar matte
 
 The brief that made them: "The person in front of you has no {language} yet. You are a bilingual local, so with them you talk mostly in English, the way you would to a visitor, and you put the {language} in where it fits: the names of things, set phrases, and the short {language} sentence that matters, with its English beside it. Like: 'Mire, that's el comal, the griddle, that's where I put them. ¿Quiere una? Want one?' You are still yourself, here, doing what you do. One question at the end, in {language}, with its English." Noticed (Claude): the lines run 35–45 words, long for a first cluster. Not in the game (Josh: "not incorporate into game play yet").
 
+**Josh, 2026-11-10, on the F1 list: "These are strong. For early learners - these are better than the echo or summary."** So the first cluster's shape is the English frame with the Spanish slotted in; the summary (built the same day) is a later-cluster shape, or goes. Not built yet.
+
 ## The problem
 
 Today each Spanish sentence is followed by its English, sentence by sentence. The prompt writes the Spanish; code writes the English (`glossAll`, `questionEcho`). Josh: better than a few words, but too structured; "not great but it's coherent". The goal is more bilingual mixing or summarizing.
