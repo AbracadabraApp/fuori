@@ -143,6 +143,18 @@ public actor APIClient {
         /// The welcome after the tap: the end button shows beside the mic, so
         /// they can go any time. Nil otherwise
         public var canEnd: Bool? = nil
+        /// The intro (lib/intro.ts): the opening in sentences with their
+        /// English, shown as subtitles on the portrait until the last one, the
+        /// question, which is the chat's first bubble. `line` is them joined.
+        /// Nil for every other turn and from older servers
+        public var intro: [IntroSentence]? = nil
+    }
+
+    /// One sentence of the intro, with its English subtitle
+    public struct IntroSentence: Codable, Sendable, Equatable, Hashable {
+        public let text: String
+        public let en: String
+        public init(text: String, en: String) { self.text = text; self.en = en }
     }
 
     /// A part of a Beginner turn: English heard (not shown), or a word, the
@@ -176,7 +188,8 @@ public actor APIClient {
     /// `onFirst` also gets the first parts of a Beginner turn (nil otherwise),
     /// so they show as bubbles while they're said
     /// `welcome`: this conversation is the welcome (lib/welcome.ts); `micOff`: the mic was refused, she says once where to turn it on; `lesson`: a lesson's turn (lib/lesson.ts)
-    public func turnStreamed(cityId: String, placeId: String, tripTo: String? = nil, conversationId: String? = nil, learnerSaid: String? = nil, speed: Double? = nil, welcome: Bool? = nil, micOff: Bool? = nil, lesson: LessonTurn? = nil, onFirst: @escaping @Sendable (String, [TurnPart]?) -> Void) async throws -> TurnReply {
+    /// `onFirst`'s third value: the first sentence of an intro with its English (nil otherwise), so the intro shows from its first word
+    public func turnStreamed(cityId: String, placeId: String, tripTo: String? = nil, conversationId: String? = nil, learnerSaid: String? = nil, speed: Double? = nil, welcome: Bool? = nil, micOff: Bool? = nil, lesson: LessonTurn? = nil, onFirst: @escaping @Sendable (String, [TurnPart]?, IntroSentence?) -> Void) async throws -> TurnReply {
         struct Body: Encodable { let cityId: String; let placeId: String; let tripTo: String?; let conversationId: String?; let learnerSaid: String?; let speed: Double?; let welcome: Bool?; let micOff: Bool?; let lesson: LessonTurn? }
         var req = try post("v1/turn", json: Body(cityId: cityId, placeId: placeId, tripTo: tripTo, conversationId: conversationId, learnerSaid: learnerSaid, speed: speed, welcome: welcome, micOff: micOff, lesson: lesson))
         req.setValue("application/x-ndjson", forHTTPHeaderField: "Accept")
@@ -195,7 +208,7 @@ public actor APIClient {
         }
         for try await line in bytes.lines {
             switch try TurnStreamEvent.parse(line) {
-            case .first(let first, let parts): onFirst(first, parts)
+            case .first(let first, let parts, let intro): onFirst(first, parts, intro)
             case .reply(let reply): return reply
             case .error(var error):
                 error.requestId = requestId
@@ -210,7 +223,7 @@ public actor APIClient {
 
     /// One line of a streamed /v1/turn
     public enum TurnStreamEvent: Equatable, Sendable {
-        case first(String, [TurnPart]?)
+        case first(String, [TurnPart]?, IntroSentence?)
         case reply(TurnReply)
         case error(APIError)
 
@@ -219,9 +232,9 @@ public actor APIClient {
         public static func parse(_ line: String) throws -> TurnStreamEvent? {
             let data = Data(line.utf8)
             guard !line.trimmingCharacters(in: .whitespaces).isEmpty else { return nil }
-            struct Event: Decodable { let first: String?; let parts: [TurnPart]?; let reply: TurnReply?; let error: APIError?; let status: Int? }
+            struct Event: Decodable { let first: String?; let parts: [TurnPart]?; let intro: IntroSentence?; let reply: TurnReply?; let error: APIError?; let status: Int? }
             let event = try JSONDecoder().decode(Event.self, from: data)
-            if let first = event.first { return .first(first, event.parts) }
+            if let first = event.first { return .first(first, event.parts, event.intro) }
             if let reply = event.reply { return .reply(reply) }
             if var error = event.error {
                 error.status = event.status ?? 0

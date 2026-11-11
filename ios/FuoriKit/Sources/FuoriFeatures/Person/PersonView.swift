@@ -29,10 +29,18 @@ struct PersonView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            band
+            // The intro (Josh's design, 2026-11-11): the portrait alone with the
+            // subtitle band while the character sets the scene; the name band
+            // and the chat come in on the first question
+            if !model.inIntro { band }
             ZStack(alignment: .bottom) {
                 Portrait(url: model.character.portrait, name: model.character.name)
                     .ignoresSafeArea(edges: .bottom)
+                if model.inIntro, let subtitle = model.introSubtitle {
+                    IntroSubtitle(text: subtitle.text, english: subtitle.en, shown: subtitle.shown, speechLanguage: model.speechLanguage)
+                        .ignoresSafeArea(edges: .bottom)
+                        .transition(.opacity)
+                }
                 if debug {
                     DebugPanel(info: model.debug, conversationId: model.conversationId)
                         .frame(maxHeight: .infinity, alignment: .top)
@@ -41,14 +49,18 @@ struct PersonView: View {
                 }
                 // Over the portrait; when it doesn't fit (the largest text
                 // sizes), it scrolls from the bottom, and the portrait stays put
-                ViewThatFits(in: .vertical) {
-                    overlay
-                    ScrollView { overlay }
-                        .defaultScrollAnchor(.bottom)
-                        .scrollIndicators(.hidden)
+                if !model.inIntro {
+                    ViewThatFits(in: .vertical) {
+                        overlay
+                        ScrollView { overlay }
+                            .defaultScrollAnchor(.bottom)
+                            .scrollIndicators(.hidden)
+                    }
+                    .transition(.opacity)
                 }
             }
         }
+        .animation(.easeInOut(duration: 0.4), value: model.inIntro)
         .background(Tokens.Colors.paper)
         #if os(iOS)
         .navigationBarTitleDisplayMode(.inline)
@@ -92,7 +104,7 @@ struct PersonView: View {
                 BeginnerBubbles(parts: model.shownParts, speechLanguage: model.speechLanguage)
                 if let note { Subtitles(line: nil, shown: nil, english: nil, note: note) }
             } else {
-                Subtitles(line: showLine ? model.line : nil, shown: model.shown, english: showEnglish ? model.english : nil, note: note, hint: model.openerHint)
+                Subtitles(line: showLine ? model.chatLine : nil, shown: model.chatShown, english: showEnglish ? model.chatEnglish : nil, note: note, hint: model.openerHint)
             }
             // At the station: your ticket, just above the talking controls (as on the web)
             if let trip = model.trip, let content = appModel.content {
@@ -141,6 +153,53 @@ struct PersonView: View {
         .background(Tokens.Colors.paper)
         .overlay(alignment: .bottom) { Divider() }
         .zIndex(1)
+    }
+}
+
+/// The intro's subtitle over the bottom of the portrait (Josh's mockup,
+/// 2026-11-11): the sentence in the language, typed out in step with the
+/// voice, its English under it from the moment the sentence starts, on a dark
+/// fade so both read on any portrait. The chat's own bubble takes over on the
+/// question.
+struct IntroSubtitle: View {
+    let text: String
+    let english: String
+    /// Characters of `text` spoken so far; nil when it's all out
+    let shown: Int?
+    let speechLanguage: String
+    @ScaledMetric(relativeTo: .title3) private var lineSize: CGFloat = 20
+    @ScaledMetric(relativeTo: .subheadline) private var englishSize: CGFloat = 15
+
+    var body: some View {
+        VStack(alignment: .leading, spacing: 6) {
+            Text(typed)
+                .font(.system(size: lineSize, weight: .semibold))
+                .lineSpacing(lineSize * 0.2)
+                .foregroundStyle(Tokens.Colors.card)
+                .accessibilityLabel(String(text.prefix(shown ?? text.count)))
+            Text(english)
+                .font(.system(size: englishSize))
+                .foregroundStyle(Tokens.Colors.flapInk)
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+        .padding(.horizontal, Tokens.Space.gutter)
+        .padding(.top, 48)
+        .padding(.bottom, 28)
+        .background(
+            LinearGradient(colors: [Tokens.Colors.flapTile.opacity(0), Tokens.Colors.flapTile.opacity(0.85)], startPoint: .top, endPoint: .bottom)
+        )
+        .animation(.easeOut(duration: 0.2), value: text)
+    }
+
+    /// The sentence, tagged with the language; the unspoken rest laid out but
+    /// invisible, so the band doesn't grow as it types
+    private var typed: AttributedString {
+        var s = AttributedString(text)
+        s.languageIdentifier = speechLanguage
+        guard let shown, shown < text.count else { return s }
+        let start = s.index(s.startIndex, offsetByCharacters: shown)
+        s[start...].foregroundColor = .clear
+        return s
     }
 }
 

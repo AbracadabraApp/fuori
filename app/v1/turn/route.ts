@@ -40,6 +40,7 @@ import { cities, tutor } from '@/content';
 import { writeLearnAhead } from '@/lib/learn-ahead';
 import { startEarlyVoice, DEFAULT_APP_SPEED, LineWatcher } from '@/lib/voice/early-voice';
 import { PartsWatcher, type Part } from '@/lib/beginner';
+import { IntroWatcher } from '@/lib/intro';
 import { DraftStore } from '@/lib/draft-turns';
 import { beginnerVersionFrom, clusterFrom } from '@/lib/beginner-2';
 import { isSaidBack } from '@/lib/conversation-record';
@@ -155,7 +156,7 @@ export async function POST(request: Request) {
     /** The turn; onFirst, when streaming, gets the first sentence as soon as more follows it */
     /** A reply written ahead: this answer said back, after this transcript, in this conversation; no voice until it's claimed */
     type Ahead = { said: string; transcript: typeof parsed.transcript; conversationId: string };
-    const run = async (onFirst?: (first: string, parts?: Part[]) => void, ahead?: Ahead): Promise<{ body: object; headers: Record<string, string>; after?: (said?: string, replyMs?: number) => void } | { error: Response }> => {
+    const run = async (onFirst?: (first: string, parts?: Part[], intro?: { text: string; en: string }) => void, ahead?: Ahead): Promise<{ body: object; headers: Record<string, string>; after?: (said?: string, replyMs?: number) => void } | { error: Response }> => {
       const draft = !!ahead;
       // A reply written ahead is timed on its own: it runs after this request's turn, sometimes two at once
       const l = draft ? new Laps() : laps;
@@ -184,6 +185,18 @@ export async function POST(request: Request) {
         voice(first);
         onFirst(first, leadParts);
       });
+      // The intro (lib/intro.ts) opens a visit in sentences: the first one starts the voice. Armed only on an
+      // opening, so the answers of a later turn (the same { text, en } shape) are never taken for a sentence
+      let introFirst: string | undefined;
+      const introWatcher = transcriptNow.length === 0 && !body.data.welcome && !body.data.lesson
+        ? new IntroWatcher((first, sentence) => {
+            if (!onFirst) return;
+            introFirst = first;
+            firstSent = true;
+            voice(first);
+            onFirst(first, undefined, sentence);
+          })
+        : null;
       try {
         const result = await takeTurn({
           learnerId,
@@ -201,6 +214,7 @@ export async function POST(request: Request) {
           onText: (snapshot) => {
             watcher.feed(snapshot);
             partsWatcher.feed(snapshot);
+            introWatcher?.feed(snapshot);
           },
           canRetry: () => !firstSent,
           micOff: body.data.micOff,
@@ -210,9 +224,13 @@ export async function POST(request: Request) {
           welcome: body.data.welcome,
           lesson: body.data.lesson,
         });
-        // Beginner: the voice for the rest (after the first parts), or the whole line. Not when the line watcher
-        // already started it: Beginner 2's cluster 1 is a one-line reply whose parts are only the answers
-        if (result.reply.parts && !watcher.handled) {
+        // The intro: the voice for the rest after its first sentence, or the whole line
+        if (result.reply.intro) {
+          if (introFirst && result.reply.line.startsWith(introFirst)) voice(result.reply.line.slice(introFirst.length), introFirst);
+          else voice(result.reply.line);
+        } else if (result.reply.parts && !watcher.handled) {
+          // Beginner: the voice for the rest (after the first parts), or the whole line. Not when the line watcher
+          // already started it: Beginner 2's cluster 1 is a one-line reply whose parts are only the answers
           if (partsFirst && result.reply.line.startsWith(partsFirst)) voice(result.reply.line.slice(partsFirst.length), partsFirst);
           else voice(result.reply.line);
         }
@@ -271,7 +289,7 @@ export async function POST(request: Request) {
 
     // The same turn already being answered: wait for it and send the same reply
     const key = conversationId && learnerSaid ? `${learnerId}|${conversationId}|${learnerSaid}` : null;
-    const settle = async (onFirst?: (first: string, parts?: Part[]) => void, ahead?: Ahead): Promise<Settled> => {
+    const settle = async (onFirst?: (first: string, parts?: Part[], intro?: { text: string; en: string }) => void, ahead?: Ahead): Promise<Settled> => {
       const r = await run(onFirst, ahead);
       return 'error' in r ? { status: r.error.status, error: await r.error.json() } : r;
     };
@@ -324,7 +342,7 @@ export async function POST(request: Request) {
         return r;
       });
     };
-    const answer = async (onFirst?: (first: string, parts?: Part[]) => void): Promise<Settled> => {
+    const answer = async (onFirst?: (first: string, parts?: Part[], intro?: { text: string; en: string }) => void): Promise<Settled> => {
       const r = await sharedWhileRunning(inFlight, key, () => claimAhead(onFirst) ?? settle(onFirst));
       writeAhead(r, learnerSaid);
       return r;
@@ -348,7 +366,7 @@ export async function POST(request: Request) {
             // The app went away (left or paused the scene); the turn is still saved
           }
         };
-        const r = await answer((first, parts) => send(parts ? { first, parts } : { first }));
+        const r = await answer((first, parts, intro) => send(parts ? { first, parts } : intro ? { first, intro } : { first }));
         if ('error' in r) send({ ...r.error, status: r.status });
         else send({ reply: r.body });
         try {

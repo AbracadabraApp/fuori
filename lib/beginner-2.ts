@@ -56,7 +56,11 @@ export const RUNGS: Setup[] = [
 ];
 const R = (id: string) => RUNGS.find((r) => r.id === id)!;
 
-/** The goodbye offered, from the learner's 8th turn (docs/beginner-2.md: "offered after about 8 turns or when they say it") */
+/**
+ * The goodbye offered once, on the learner's 8th turn (docs/beginner-2.md: "offered after about 8 turns or when they say
+ * it"). Once, not on every turn from the 8th: Chuy (2026-11-10) played the goodbye setup ten turns in a row over whatever
+ * the learner said. Their goodbye, whenever it comes, ends the conversation through the reply's done flag
+ */
 export const GOODBYE: Setup = { id: 'goodbye', block: 'Setup: goodbye', maxAnswers: 2, english: true };
 export const GOODBYE_AFTER = 8;
 
@@ -124,7 +128,7 @@ function weighted(cluster: Setup[], key: string): Setup {
 }
 
 export function pickSetup(p: { conversationId?: string | null; turn: number; learnerId?: string | null; characterId: string; now?: Date; /** what the learner just said: after their own question, no invitation (the character follows it up) */ learnerSaid?: string }, cluster: Setup[] = CLUSTER_1): Setup {
-  if (p.turn >= GOODBYE_AFTER) return GOODBYE;
+  if (p.turn === GOODBYE_AFTER) return GOODBYE;
   // The opener is two answers to read when the cluster has them (Arturo, 2026-11-09: an invited-English opener set a pattern the character copied all visit)
   if (p.turn === 0 && cluster.some((s) => s.id === 'two-en')) return OPENER;
   const day = (p.now ?? new Date()).toISOString().slice(0, 10);
@@ -426,10 +430,14 @@ export function lineWithAnswers(r: { line: string; en: string; done?: boolean; a
 
 /** What the code did to one turn's parts: the setup and cluster it played, the shaping steps that changed something, and Claude's parts when one did */
 export interface TurnSteps {
-  setup: string;
-  cluster: number;
+  /** Beginner 2: the reply setup played (two answers, questions to ask, opener, goodbye) */
+  setup?: string;
+  /** Beginner 2: the cluster */
+  cluster?: number;
   fixes: string[];
   claudeParts?: Part[];
+  /** The shape code asked for this turn (lib/shapes.ts), or the intro (lib/intro.ts); absent on a turn written by habit */
+  shape?: string;
 }
 
 /**

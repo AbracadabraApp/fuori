@@ -55,6 +55,10 @@ public final class ConversationModel {
     public private(set) var english: String?
     /// Beginner level dialogue: her turn in parts (APIClient.TurnPart), or nil
     public private(set) var parts: [APIClient.TurnPart]?
+    /// The intro (lib/intro.ts): the opening's sentences, once the reply is here; nil for other turns
+    public private(set) var intro: [APIClient.IntroSentence]?
+    /// The intro's first sentence, from the streamed head, before the reply has come
+    public private(set) var introHead: APIClient.IntroSentence?
     /// Typewriter subtitles: how many characters of `line` have been spoken so
     /// far; nil once the whole line is out (then the English appears too)
     public private(set) var shown: Int?
@@ -228,6 +232,60 @@ public final class ConversationModel {
         return p.count + (p.range(of: #"[.!?…:;]["'»”’)]*$"#, options: .regularExpression) == nil ? 1 : 0)
     }
 
+    // MARK: - The intro (lib/intro.ts; Josh's design, 2026-11-11)
+
+    /// Where each intro sentence starts in `line` (the server joins them with one space)
+    private var introStarts: [Int] {
+        guard let intro else { return [] }
+        var starts: [Int] = []
+        var at = 0
+        for s in intro { starts.append(at); at += s.text.count + 1 }
+        return starts
+    }
+
+    /// The sentence the voice is on, while it's still before the last one (the
+    /// question): nil once the question starts, or when the line is all out
+    private var introIndex: Int? {
+        guard let intro, intro.count > 1, let shown, phase == .speaking else { return nil }
+        let starts = introStarts
+        let i = (starts.lastIndex { $0 <= shown }) ?? 0
+        return i < intro.count - 1 ? i : nil
+    }
+
+    /// The portrait with the subtitle band, until the question starts and the chat takes over
+    public var inIntro: Bool {
+        if intro != nil { return introIndex != nil }
+        return introHead != nil && phase == .speaking
+    }
+
+    /// The subtitle on the portrait: the sentence being said, and how much of it is out
+    public var introSubtitle: (text: String, en: String, shown: Int?)? {
+        if let intro, let i = introIndex {
+            let start = introStarts[i]
+            return (intro[i].text, intro[i].en, shown.map { max(0, $0 - start) })
+        }
+        if let introHead, intro == nil, phase == .speaking { return (introHead.text, introHead.en, shown) }
+        return nil
+    }
+
+    /// Her bubble in the chat: the question only, after an intro; the whole line otherwise
+    public var chatLine: String? {
+        guard let intro, let last = intro.last else { return line }
+        return last.text
+    }
+
+    /// Typewriter progress within `chatLine`
+    public var chatShown: Int? {
+        guard let intro, let shown else { return shown }
+        return max(0, shown - (introStarts.last ?? 0))
+    }
+
+    /// The English under her bubble: the question's, after an intro
+    public var chatEnglish: String? {
+        guard let intro, let last = intro.last else { return english }
+        return last.en
+    }
+
     /// Beginner dialogue: the answers to say back, on the learner's turn
     public var answersToSay: [APIClient.TurnPart] {
         // With the mic off they're the way to answer (tapped: AnswersToSay.onSay)
@@ -320,6 +378,7 @@ public final class ConversationModel {
             line = reply.line
             english = reply.en
             parts = reply.parts
+            intro = reply.intro
             shown = nil
             replies = nil
             chosen = nil
@@ -338,6 +397,8 @@ public final class ConversationModel {
         line = reply.line
         english = reply.en
         parts = reply.parts
+        intro = reply.intro
+        introHead = nil
         shown = 0
         replies = nil
         chosen = nil
@@ -391,13 +452,14 @@ public final class ConversationModel {
         let generation = self.generation
         let micOff = micOffToSay ? true : nil
         micOffToSay = false
-        return try await api.turnStreamed(cityId: city.id, placeId: place.id, tripTo: trip?.to.id, conversationId: conversationId, learnerSaid: learnerSaid, speed: speed, welcome: welcome ? true : nil, micOff: micOff, lesson: lesson) { [weak self] first, parts in
-            Task { @MainActor in self?.startHead(first, parts: parts, generation: generation) }
+        return try await api.turnStreamed(cityId: city.id, placeId: place.id, tripTo: trip?.to.id, conversationId: conversationId, learnerSaid: learnerSaid, speed: speed, welcome: welcome ? true : nil, micOff: micOff, lesson: lesson) { [weak self] first, parts, intro in
+            Task { @MainActor in self?.startHead(first, parts: parts, intro: intro, generation: generation) }
         }
     }
 
     /// `parts`: a Beginner turn's first parts, shown as bubbles while they're said
-    private func startHead(_ first: String, parts headParts: [APIClient.TurnPart]? = nil, generation: Int) {
+    /// `intro`: an intro's first sentence with its English, shown as the subtitle on the portrait from the first word
+    private func startHead(_ first: String, parts headParts: [APIClient.TurnPart]? = nil, intro headIntro: APIClient.IntroSentence? = nil, generation: Int) {
         // Only while still waiting for the reply: once it's here, present() says the whole line
         guard awaitingReply, head == nil, generation == self.generation, phase == .thinking || phase == .starting else { return }
         stoppedByTap = false
@@ -417,6 +479,8 @@ public final class ConversationModel {
                 self.sayIt = nil
                 self.line = first
                 self.parts = headParts
+                self.intro = nil
+                self.introHead = headIntro
                 self.english = nil
                 self.shown = 0
                 self.replies = nil
@@ -457,7 +521,8 @@ public final class ConversationModel {
         line = reply.line
         english = reply.en
         parts = reply.parts
-        parts = reply.parts
+        intro = reply.intro
+        introHead = nil
         replies = nil
         chosen = nil
         if stoppedByTap || phase != .speaking {

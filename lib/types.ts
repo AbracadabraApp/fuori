@@ -294,6 +294,8 @@ export interface TurnOutput {
   en: string;
   /** Beginner level dialogue (lib/beginner.ts): the turn in parts; `line` is them all, in order */
   parts?: import('@/lib/beginner').Part[];
+  /** The intro (lib/intro.ts): the opening's sentences with their English, shown as subtitles on the portrait; `line` is them joined */
+  intro?: { text: string; en: string }[];
   /** The last turn: the welcome's (the app shows the button in place of the mic), a lesson's, or an
    *  ordinary conversation's after their goodbye (the app closes the screen after it's said) */
   done?: boolean;

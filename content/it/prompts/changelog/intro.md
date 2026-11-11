@@ -1,0 +1,7 @@
+# intro.md changelog
+
+Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../intro.md`.
+
+### 2026-11-11a: the first version
+- **Added:** the Brief (six to eight short sentences in {language} about the thing the place is known for: what's done, how, why, as done at this place; the person only in one clause where it explains the custom; one question at the end answerable in a word or two; a return visit picks up where it left off, then something new) and two reply formats (sentences with their English; the same with two answers for Beginner 2). `lib/intro.ts` builds the prompt from character.md's "Who: you", "Who: the learner" and "Relationship" blocks plus these, without the turn rules or dialogue.md; `/v1/turn` plays it on the opening of every ordinary visit at Intermediate and Beginner 2.
+- **Why:** Josh's design (2026-11-11, docs/dialogue-structure-reference.md § 0): "culturally rich and personally engaging in the native language, English subtitles run below, the narration leads to the first question said in language and echoed in English, subtitle UX drops out and we are in chat". On content: "I'd prioritize explaining the cultural points; if that needs 30 seconds fine, but we don't need to make it 45 by adding too much biography." On the prompt: "if the intro requires something more prescriptive to content, if not so burdened by character.md idiosyncrasies". Not a prompt trial: a new kind of turn Josh asked for; checked by reading intros in both countries (tests/experiments/intro-live.mts), then played.
