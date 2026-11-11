@@ -36,3 +36,6 @@ export { imageListFor } from './images';
 
 /** What the ticket seller knows about a trip (content/stations.ts) */
 export { stationsFor, type Stations } from './stations';
+
+/** Where each city sits on the trip map (content/travel-map.ts) */
+export { travelMapFor, type TravelMap } from './travel-map';

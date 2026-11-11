@@ -56,6 +56,24 @@ The person screen's rules (2026-10-13): talking happens at the bottom (Start con
 
 **Built 2026-10-14** (cloud session): the departures board on the city screen (it had been drawn only on the city list, so tapping a station opened nothing), every city on it, the ticket strip with Sali/Subir, the destination in the clerk's setting, one shared leave step for both exits, `npm run test:leave`. Stations for the last six Italian cities (Taormina, Assisi, Bergamo, Torino, Lucca, Orvieto) are on branch `stations-missing`, waiting for their 12 images (laptop: `npm run images`), then merge.
 
+### Light board and trip map (Josh, 2026-11-11)
+
+Josh: "lets improve the stations visual experience - the whole path after clicking on station to arriving in city". Worked out on the canvas "Station path: station to arrival" (claude.ai artifact UHmPwsV4n5Y21q1nFegUWC). The path is now: station card (unchanged, "station place cards are good as is") → departures → ticket → map → the destination's place list.
+
+- **Departures, light, not dark** (Josh: "light departures - not dark"). The plain list was "pretty austere" and its rows "need to appear clickable". Now: the station's picture in an arched station window, its name on a blue enamel sign, column headings ("With no headers the list is less clear"), each city a raised card with its name on dark split-flap tiles ("the greyer letters were fine"), its platform, and a chevron. First-screen cities, then "show more". Decoration comes from a station, never a café: a striped awning and lemons were tried and dropped (Josh: "Am i in an icecream parlor"). `DeparturesView.swift`; new word `ui.ticket.destination`; new colour `stationSign`.
+- **Not built from the mock:** trip length on the board (stations.json has it only as prose; about one pair in ten has no clean figure), the hanging clock and the rails along the bottom.
+- **Ticket and Sali: unchanged.** Sali stays the end button beside the mic. (The canvas drew Sali on a torn stub; not decided, not built.)
+- **No train page, no arrival page** (Josh: they "create many clicks"; "skip arrival"). After Sali the trip's map shows over the destination's places for about 3.5 s, then goes; a tap goes at once; with VoiceOver on it waits for the tap. Nothing animates (Josh: "I'd skip animation on the map").
+- **The map is built from parts** (Josh: "I would do map. 20 buildings. 20 Names. A travel map could have the arrival / destination buildings and names - + N other city names for orientation/education"). Ten generated maps with the cities drawn in each got the boot or the twenty cities right, never both (missing Bologna, Genova on the Adriatic, Lecce on Sicily, misspellings; Josh: "the locations don't need to be correct - just not plainly wrong"; of the best all-names map: "the boot is pretty fat and bulgy"). So:
+  - one painted map per country with no cities on it, in the look of an antique engraved map on parchment (Josh's references); no Sardinia, "as it has no role in game"; image id `travel/map`;
+  - one small engraved building per city, ink on white (the app lays it on with multiply, so the white disappears); image ids `travel/buildings/<city id>`;
+  - the app draws the names, so none is misspelled or misplaced. Each city's spot on the picture, the picture's shape and the always-named cities are in `content/<country>/travel-map.json`.
+  - On a trip: the two ends with building and name, the route in red with railway ticks, the other named cities as a dot and a name, and under the map the trip in words and one line on what the destination is known for (stations.json, the seller's own facts).
+- **Until a country has its picture and at least two placed cities, `/v1/content` sends `travelMap: null` and Sali goes straight to the destination, as before.** Both countries are in that state today: no picture is made yet. Italy first; Mexico when its pictures exist (Claude's assumption; Josh didn't answer).
+- **Parked (Josh: "interesting idea - maybe fits better elsewhere"):** buildings staying on the map for cities you've visited.
+- **Prompts for the pictures** are in the Fuori project chat of 2026-11-11 (blank map; building template; a landmark per city).
+- `TripMapView.swift`, `AppModel.journey`, `Content.travelMap`, `lib/content-api.ts → travelMap`, `tests/check-content-api.ts`.
+
 ---
 
 ## Original analysis (2026-10-14, laptop session)

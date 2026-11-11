@@ -27,6 +27,12 @@ public struct RootView: View {
                     .transition(.opacity)
                     .zIndex(1)
             }
+            // Boarded at the station: the trip's map, over the destination's places
+            if let trip = model.journey, let content = model.content, let map = content.travelMap {
+                TripMapView(trip: trip, map: map, content: content) { model.journeyShown() }
+                    .transition(.opacity)
+                    .zIndex(1)
+            }
             if showsLaunch {
                 LaunchView(art: art)
                     .transition(.opacity)
@@ -36,6 +42,7 @@ public struct RootView: View {
         }
         .animation(reduceMotion ? .linear(duration: 0.25) : .easeInOut(duration: 0.45), value: showsLaunch)
         .animation(reduceMotion ? .linear(duration: 0.25) : .easeInOut(duration: 0.45), value: showsChoiceAtLaunch)
+        .animation(reduceMotion ? .linear(duration: 0.25) : .easeInOut(duration: 0.45), value: model.journey)
         .task {
             // The opening moment holds about a second (canvas "Launch screen")
             try? await Task.sleep(for: .seconds(1))

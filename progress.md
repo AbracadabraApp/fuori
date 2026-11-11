@@ -2229,3 +2229,10 @@ Design only; nothing built. Decisions are Josh's unless marked.
 - **Not run against Claude:** no API key in the cloud session. The dry run counts about 7,900 calls for the full run (~$25 at $3/$15 per million tokens before the judges' thinking; probably $40–80).
 - **Next:** Josh's laptop runs it (start small: `--country=it --learners=improving-first,flat --conversations=8`), reads the traces, then the full run; add rows to docs/prompt-trials.md with the results. Not built: replaying Josh's real conversations through the steps.
 
+
+## 2026-11-11: Station path, light departures board and the trip map (cloud chat session, with Josh)
+
+- **Design** on the canvas "Station path: station to arrival" (docs/station-feature-decision.md → Light board and trip map): departures → ticket → map → the destination's places. Station card, ticket and Sali unchanged.
+- **Built, on branch `claude/station-visuals`:** the departures board restyled (arched station window, enamel sign, headings, raised cards with split-flap names, show more); the trip map screen and its content (`travelMap` in /v1/content, `content/<country>/travel-map.json`); three colour tokens; `ui.ticket.destination` in both languages.
+- **Checked:** tsc; test:content-api in both countries (with new trip-map checks); test:leave; tokens --check. **Not verified:** nothing was built or run on a Mac or phone from this session; the iOS CI on the pull request is the first compile. The trip map can't be seen at all yet: no country has its picture, so `travelMap` is null and Sali behaves as before.
+- **Open:** make the pictures (one blank map and 20 buildings for Italy; prompts in the project chat), upload them as `travel/map` and `travel/buildings/<city id>`, then fill in each city's spot in `content/it/travel-map.json`. Josh looks at the board and the first real trip map on his phone before either is called done. Mexico's map later.

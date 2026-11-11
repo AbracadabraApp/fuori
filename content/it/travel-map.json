@@ -1,0 +1,6 @@
+{
+  "about": "The trip map shown after boarding at a station (docs/station-feature-decision.md -> Trip map). The picture is one painted map of Italy with no cities on it (image id travel/map); each city's building is its own picture (travel/buildings/<city id>). Here: the picture's width divided by its height, each city's spot on the picture as fractions from the top left (x across, y down), and the cities whose names always show for orientation. No cities listed means the country has no map yet, and boarding goes straight to the destination.",
+  "aspect": 0.6667,
+  "cities": {},
+  "anchors": []
+}

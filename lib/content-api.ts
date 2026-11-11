@@ -20,7 +20,7 @@ import { cultureSet } from '@/lib/culture';
 import { cinemaFilms, cinemaLibrary } from '@/lib/cinema';
 import { characterForPlace } from '@/lib/characters/for-place';
 import { feedOrder } from '@/lib/places/feed-order';
-import { imageListFor } from '@/content';
+import { imageListFor, stationsFor, travelMapFor } from '@/content';
 import type { Gender } from '@/lib/types';
 
 export interface ContentPlace {
@@ -72,6 +72,14 @@ export interface ContentOnboarding {
   welcome: { characterId: string; cityId: string; placeId: string; go: { line: string; en: string } } | null;
 }
 
+/** The trip map: the painted picture, and for each placed city its spot, its building and what it's known for */
+export interface ContentTravelMap {
+  image: string;
+  aspect: number;
+  cities: { id: string; x: number; y: number; building: string | null; known: string | null }[];
+  anchors: string[];
+}
+
 export interface Content {
   version: string;
   country: string;
@@ -85,6 +93,8 @@ export interface Content {
     ui: typeof language.ui;
   };
   ticketTheme: typeof pack.ticketTheme;
+  /** The trip map shown after boarding (content/<country>/travel-map.json); null until the country has its picture and positions */
+  travelMap: ContentTravelMap | null;
   onboarding: ContentOnboarding;
   cities: ContentCity[];
   characters: Record<string, ContentCharacter>;
@@ -99,6 +109,30 @@ export function imageUrl(id: string): string | null {
 
 /** Same test as the web's city screen (app/page.tsx) */
 export const isStation = (placeId: string) => placeId.startsWith('stazione-') || placeId.startsWith('terminal-');
+
+/**
+ * The trip map for the app, or null while the country has no picture
+ * (travel/map in images.json) or no city positions yet: then boarding goes
+ * straight to the destination, as before. Only shown cities are sent.
+ */
+function travelMap(image: (id: string) => string | null, shown: { id: string; name: string }[]): ContentTravelMap | null {
+  const map = travelMapFor(country);
+  const picture = image('travel/map');
+  const known = stationsFor(country).cities;
+  const placed = shown.filter((c) => map.cities[c.id]);
+  if (!picture || placed.length < 2) return null;
+  return {
+    image: picture,
+    aspect: map.aspect,
+    cities: placed.map((c) => ({
+      id: c.id,
+      ...map.cities[c.id],
+      building: image(`travel/buildings/${c.id}`),
+      known: known[c.id] ? `${c.name} is known for ${known[c.id]}.` : null,
+    })),
+    anchors: map.anchors.filter((id) => placed.some((c) => c.id === id)),
+  };
+}
 
 export function buildContent(): Content {
   const list = imageListFor(country);
@@ -181,6 +215,7 @@ export function buildContent(): Content {
       ui: language.ui,
     },
     ticketTheme: pack.ticketTheme,
+    travelMap: travelMap(image, shown),
     onboarding: {
       guide: {
         id: onboarding.guide.id,

@@ -63,7 +63,7 @@ struct PlaceListView: View {
             trip = picked
             picked = nil
         }) { station in
-            DeparturesView(city: city, content: content) { destination in
+            DeparturesView(city: city, station: station, content: content) { destination in
                 picked = TripRoute(city: city, place: station, trip: Trip(from: city, to: destination))
             }
         }

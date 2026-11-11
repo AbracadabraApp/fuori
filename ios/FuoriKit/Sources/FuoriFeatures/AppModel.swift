@@ -407,6 +407,11 @@ public final class AppModel {
     public private(set) var arrival: City?
     func arrived() { arrival = nil }
 
+    /// The trip just boarded, while its map shows over the destination's
+    /// places (TripMapView); nil where the country has no map for it
+    public private(set) var journey: Trip?
+    func journeyShown() { journey = nil }
+
     /// The ticket seller's screen with a ticket from the departures board. "Sali"
     /// (the ticket's board word, from content) is the end button, beside the mic
     /// from the start; it leaves through the one leave function, which saves,
@@ -417,6 +422,11 @@ public final class AppModel {
         let board = Onboarding.Line(line: content.language.ui.ticket.board, en: "Board, to \(destination.name)")
         return ConversationModel(city: city, place: place, character: character, language: content.language, api: api, beginner: level == "beginner" || level == nil, trip: Trip(from: city, to: destination), endButton: board, onEnd: { [weak self] model in
             model.leave()
+            // The map first, where the country has one for this trip; the
+            // destination's places are already under it when it goes
+            if self?.content?.travelMap?.covers(from: city.id, to: destination.id) == true {
+                self?.journey = Trip(from: city, to: destination)
+            }
             self?.arrival = destination
         }) { [weak self] id in
             self?.save(conversationId: id, on: (api, server))

@@ -43,6 +43,9 @@ public enum Tokens {
         public static let youEdge = Color(red: 0.7098, green: 0.7608, blue: 0.5765) // #b5c293
         public static let youInk = Color(red: 0.2471, green: 0.2902, blue: 0.1333) // #3f4a22
         public static let cinemaGlow = Color(red: 1.0000, green: 0.8392, blue: 0.0000) // #ffd600
+        public static let stationSign = Color(red: 0.0902, green: 0.2510, blue: 0.4784) // #17407a
+        public static let mapInk = Color(red: 0.2902, green: 0.2000, blue: 0.1255) // #4a3320
+        public static let mapRoute = Color(red: 0.6039, green: 0.1804, blue: 0.1098) // #9a2e1c
     }
 
     public enum FontFamily {
