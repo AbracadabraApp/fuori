@@ -2,6 +2,14 @@
 
 2026-11-11 · Claude, from a session with Josh · Everything is numbered so a card, a log entry or a message can cite it ("T3", "S6", "F2"). Sources and the long form: [research/frame-gloss-echo.md](research/frame-gloss-echo.md). Nothing here changed code or prompts; the card for the first sequences is S1 in [prompt-trials.md](prompt-trials.md) (drafted, reviewed, not re-reviewed, not stamped, not run).
 
+## 0. Decided design (Josh, 2026-11-11)
+
+The smallest version, and the one to try first: **a subtitle area added to the portrait and chat screen that already exists, used for a long Spanish intro, with the English subtitle tracking the Spanish line by line (T27); then the chat bubbles exactly as they are now.** Nothing more: no new scene or component (the film, book and sun buttons in the mockup are existing buttons: replay, Learn, settings), no change to levels, no new rules beyond the intro's subtitle showing in step (today the English waits until the character has finished; Josh: his rule to change). Mockup: the portrait with a caption and English under it, then the same portrait with the bubble and mic.
+
+Sample, Don Arturo, Gran Café de la Parroquia, Malecón, Veracruz (hand-written for design; the glass-and-spoon custom needs a fact check): eight Spanish sentences, about 90 words, about 35 seconds, each with its English subtitle, ending on "¿Quiere un lechero?" and the first Say-backs "Sí, por favor." / "¿Desde arriba?".
+
+The sections below are the discussion and the options. Sections 6 and 7 (turn pseudo code, memory at turn size) and T23 to T26 and S15 are options Claude over-built, not the plan; memory read and written more often (J9) is still Josh's wish, on hold for the live system.
+
 ## 1. The question and Josh's judgments
 
 - **J1.** The frame (a language piece slotted into one line of English) is better structurally than the echo (a language sentence, then its full English): "it's one line of dialogue; with the echo you just listen to the echo."
@@ -42,11 +50,19 @@ The interactional moves (not built as rules):
 - **T21 Expand:** the character adds one detail to the learner's short answer.
 
 Added from J7 to J9 (the story and memory design):
-- **T22 Intro:** a medium-length first turn that sets the scene: who the character is, where you are, what's going on, with a hook. The one place a longer stretch of English is allowed; it can carry culture (T15) and ends with an Ask.
+- **T22 Intro (corrected 2026-11-11):** a long Spanish intro on the portrait, with a tracking English subtitle (T27), ending on the first question; then the chat as it is now. It carries the scene, the character and the culture (T15). (First written as a medium-length English stretch; Josh's design is Spanish with subtitles.)
 - **T23 Build:** a line that takes the thread from the last turn and adds one new thing to it. It replaces "Recap": the old thread shows only as the hook the new thing hangs on. A Fact (T15) is usually the Build, so culture arrives as the next thing in the story.
 - **T24 Thread:** the beats the character has told so far (who, what, where), newest last. The next Build must attach to the newest and must not repeat any.
 - **T25 Learner facts:** what the learner has clearly said about themselves, written only when stated, never inferred.
 - **T26 Chunk ledger:** the Slots heard and which have landed, setting support (T9) and what to Recycle (T8).
+
+From reading the syllabus notes (Josh asked for ideas, 2026-11-11):
+- **T27 Subtitle:** the English line that tracks the Spanish in step, like a film subtitle, in a subtitle area added to the portrait. Used for the Intro only.
+- **T28 Function:** what a phrase does: greet, give your name, say where we are, ask for something. Intros and Say-backs are built from one function, so the learner's own detail can be swapped in (T14 Blank).
+- **T29 Heard-first:** a phrase is heard in the Intro before it is offered as a Say-back (the textbook order: dialogue before production).
+- **T30 Cognate:** a word that looks and sounds the same in both languages (café, mar); carries meaning without English, with what the portrait shows (T20 Anchor).
+- **T31 Manner:** how a local talks, as against what a local knows: a greeting plus a small personal question, diminutives, "¿mande?", a soft refusal. Culture that lives in speech; Fact (T15) is culture that lives in information.
+- **T32 Register:** *usted* or *tú*, set per character (`{formality}`); already in the product.
 
 In the product today: T10 to T15 exist as setups or prompt content; T1 to T3 are the live cluster-1 frame; T6 is missing on the live cluster-1 path (no answers since fe38bc2); T16 to T21 have no rule.
 
@@ -64,6 +80,9 @@ In the product today: T10 to T15 exist as setups or prompt content; T1 to T3 are
 - **F10.** Personalized questions easy to hard (TPRS circling): practitioner craft, almost no controlled research.
 - **F11.** Complex or even ungrammatical native-speaker input didn't hurt comprehension when the situation was plausible; the effect of simplifying on learning is open. Weak.
 - **F12.** Sandwiching (language, English, repeated): practitioner guidance only, no experiment.
+
+- **F13 (syllabus notes).** The textbook order: a phrase is heard in a dialogue before it's seen or produced; meaning comes from photos and cognates, not English; phrases are grouped by function with the learner's own details swapped in; recycling comes in a review or episode, not a retelling (research/textbook-a1-sequence.md). Our own reading, not a study.
+- **F14 (Mexico communication notes).** A Mexican character greets and asks a small personal question before the transaction, uses diminutives and "¿mande?", softens a refusal, and remembers the learner (research/syllabus-es/communicating-in-mexico.md). Source: one intercultural guide.
 
 **G (gaps).** G1 no study compares a slotted piece against the echo for beginners by voice. G2 no right share of language to English. G3 no listening-specific gloss meta-analysis. G4 no ideal whole-dialogue order. G5 several sources are slides or secondary summaries.
 
@@ -91,6 +110,7 @@ Culture (from J5):
 - **S11, revised by J8:** Take, Build (usually the Fact, attached to the last beat), Ask about the Build.
 
 Story shape (from J7 and J8):
+- **S16 Intro built from one Function (T28), with Heard-first Say-backs (T29) and Manner (T31) in the speech:** the syllabus ideas, applied to the decided design. Josh's pick of Claude's ideas, pending.
 - **S15 Intro, Slot, Ask, Say-back on turn 1; then Take, Build, Slot (0 to 2, growing out of the Build), Ask, Say-back on every later turn.** The story carries the turn; the language grows out of it.
 
 ## 5. Measures
