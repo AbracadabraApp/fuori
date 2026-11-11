@@ -2,6 +2,16 @@
 
 Ideas about how conversations with characters should go: what they say, when the learner speaks, how the scene moves. Started by Josh on 2026-11-04, after playing Florence (Ardit at Trattoria Mario, Lorenzo in Piazza Santa Croce). Nothing here is scheduled. An idea moves to the roadmap once Josh decides it. Josh's words are quoted; anything else is marked as Claude's proposal.
 
+## The character asks and carries on, as if answered (Josh, 2026-11-11; heard before this morning's build)
+
+Josh: "it does seem to still go past character - learner. sometimes character - learner - character - learner. sometimes character - learner. character." Counted in the archive's saved conversations since 2026-11-05 (22 conversations, 219 character turns, lessons and onboarding left out; all before the intro and the shape table, 104ffe9):
+
+- **The character never takes two turns in a row:** 0 consecutive character turns. What Josh hears is inside one turn.
+- **At Intermediate, 13 of 67 turns ask and carry on.** Six ask twice: Nino, "Or maybe you have to run now? Vuole un altro caffè o va via?"; Giulia, "What can I get you this morning? Vuole un caffè o un cappuccino?". Seven ask, then continue as if answered: Nonna Gina, "Ah, e chi sei tu, bello? Siediti qui vicino a me, sotto la tettoia, che piove a dirotto! Io sono Gina…"; Lorenzo, "Eppure parla ancora bene, sa? Le parole tornano…"; Maurizio, "Hai già visto il cucù? È il gallo di terracotta che fischia, porta fortuna." The character plays the learner's side in its head and goes on. character.md already says "No more words after a question mark"; breached about one turn in five.
+- **At Beginner there is no clean count yet:** the English echo after every question is words after the question mark (52 of 320 turns by the raw count, mostly echo and the "you can answer me in English" line). A clean count skips the question's own English and the invite line.
+
+In terms (docs/dialogue-structure-reference.md): an Ask (T5) that isn't last, or two Asks in one turn. Where it could be held: it's a shape fault, so a row in the shape table or a code check at Intermediate (the reply is one string; a question mark is a signal in any language), not another prompt sentence. The intro (104ffe9) already guarantees it by format: the question is the last sentence. **Not to fix until Josh has played today's build:** the intro and answer-first change what the first turn and the question turns look like. Examples to add as they come.
+
 ## The same invitation every other turn (Renata, Palacio Nacional, 2026-11-10; Beginner 2 cluster 1)
 
 5 of 9 turns after the opener were "Is there anything you'd like to know about my work, this palace, or the town?" in near-identical words; Josh: "Creo que preguntaste esa pregunta antes", "Usted me hizo esa pregunta tres veces". Causes, all scaffolding: cluster 1 picks evenly among two answers, questions to ask and the invitation to ask, so two turns in three invite curiosity; both setup lines name "your place, your work or the town", which the character repeats; and after the learner's own question the setup forces another invitation instead of a follow-up. Fix prepared on a branch (setup mix weighted to two answers, no invitation twice in a row or right after the learner asked, lines without the list), held until Josh's round on 2026-11-10k is done.
