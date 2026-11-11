@@ -4,7 +4,7 @@
 
 ## 0. Decided design (Josh, 2026-11-11)
 
-The smallest version, and the one to try first: **a subtitle area added to the portrait and chat screen that already exists, used for a long Spanish intro, with the English subtitle tracking the Spanish line by line (T27); then the chat bubbles exactly as they are now.** Nothing more: no new scene or component (the film, book and sun buttons in the mockup are existing buttons: replay, Learn, settings), no change to levels, no new rules beyond the intro's subtitle showing in step (today the English waits until the character has finished; Josh: his rule to change). Mockup: the portrait with a caption and English under it, then the same portrait with the bubble and mic.
+The smallest version, and the one to try first: **a subtitle area added to the portrait and chat screen that already exists, used for a long Spanish intro, with the English subtitle tracking the Spanish line by line (T27); then the chat bubbles exactly as they are now.** Nothing more: no new scene or component (the buttons in the mockup's top bar are existing ones: Josh named learn books, exit buttons and lesson styles), no change to levels, no new rules beyond the intro's subtitle showing in step (today the English waits until the character has finished; Josh: his rule to change). Mockup: the portrait with a caption and English under it, then the same portrait with the bubble and mic.
 
 Sample, Don Arturo, Gran Café de la Parroquia, Malecón, Veracruz (hand-written for design; the glass-and-spoon custom needs a fact check): eight Spanish sentences, about 90 words, about 35 seconds, each with its English subtitle, ending on "¿Quiere un lechero?" and the first Say-backs "Sí, por favor." / "¿Desde arriba?".
 
