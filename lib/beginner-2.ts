@@ -399,6 +399,31 @@ export function withQuestionEnglish(line: string, en: string): string {
   return `${line.trim()} ${qEn}`;
 }
 
+/**
+ * Cluster 1's brief on the Intermediate reply (2026-11-10s): the Level 1 frame, then the answer rules and the one-line
+ * reply format with answers (scaffolding.md "Reply: line and answers", 2026-11-11a), so the two answers to say back
+ * come with the line. The setup line goes on the newest message (runTurn's note), where it did in the parts format
+ */
+export function cluster1Brief(): string {
+  const f = readPromptFile(SCAFFOLDING_FILE);
+  return [levelText(CLUSTER_1), f.block('System prompt › Answers'), f.block('Reply: line and answers')]
+    .map((b) => fill(b, { language: language.name }).trim())
+    .join('\n\n');
+}
+
+/**
+ * The one-line reply with its answers as the app's parts: the line with the question's English after it
+ * (withQuestionEnglish), and each answer as an answer part, at most the setup's count, blank ones dropped. The parts
+ * carry only answers, so the app shows her line as the subtitle and the answers as bubbles on the learner's turn
+ */
+export function lineWithAnswers(r: { line: string; en: string; done?: boolean; answers?: { text: string; en: string }[] }, setup: Setup): { line: string; en: string; done?: boolean; parts: Part[] } {
+  const answers = (r.answers ?? [])
+    .map((a) => ({ kind: 'answer' as const, text: a.text.trim(), en: a.en.trim(), gloss: '' }))
+    .filter((a) => a.text)
+    .slice(0, setup.maxAnswers);
+  return { line: withQuestionEnglish(r.line, r.en), en: r.en, ...(r.done !== undefined ? { done: r.done } : {}), parts: answers };
+}
+
 /** What the code did to one turn's parts: the setup and cluster it played, the shaping steps that changed something, and Claude's parts when one did */
 export interface TurnSteps {
   setup: string;

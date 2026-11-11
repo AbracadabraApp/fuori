@@ -127,6 +127,11 @@ export class LineWatcher {
 
   constructor(private o: { split: boolean; onFirst?: (first: string) => void; onLine: (line: string, first?: string) => void }) {}
 
+  /** Whether the line was seen written and its voice started (so a reply that also carries parts isn't voiced twice) */
+  get handled(): boolean {
+    return this.done;
+  }
+
   feed(snapshot: string): void {
     if (this.done) return;
     const p = partialLine(snapshot);

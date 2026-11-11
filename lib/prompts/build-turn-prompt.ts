@@ -64,6 +64,9 @@ interface BuildTurnPromptParams {
   levelAt?: 'system' | 'last';
   /** A lesson's brief (lib/lesson.ts, the speaking mode), at the end of the system prompt */
   brief?: string;
+  /** A note about this turn, in brackets at the end of the newest message, where the model weighs it most
+   *  (Beginner 2's setup line on the one-line reply, 2026-11-11; as lib/beginner.ts → turnNote) */
+  note?: string;
 }
 
 interface TurnPrompt {
@@ -175,6 +178,10 @@ export function buildTurnPrompt(params: BuildTurnPromptParams): TurnPrompt {
   if (levelBlock && params.levelAt === 'last') {
     const last = messages[messages.length - 1];
     messages[messages.length - 1] = { ...last, content: `(${levelBlock})\n\n${last.content}` };
+  }
+  if (params.note) {
+    const last = messages[messages.length - 1];
+    messages[messages.length - 1] = { ...last, content: `${last.content}\n\n(${params.note})` };
   }
 
   return { system: levelled, messages, version: params.level ? `${t.version}+${params.level}` : t.version };

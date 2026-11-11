@@ -210,8 +210,9 @@ export async function POST(request: Request) {
           welcome: body.data.welcome,
           lesson: body.data.lesson,
         });
-        // Beginner: the voice for the rest (after the first parts), or the whole line
-        if (result.reply.parts) {
+        // Beginner: the voice for the rest (after the first parts), or the whole line. Not when the line watcher
+        // already started it: Beginner 2's cluster 1 is a one-line reply whose parts are only the answers
+        if (result.reply.parts && !watcher.handled) {
           if (partsFirst && result.reply.line.startsWith(partsFirst)) voice(result.reply.line.slice(partsFirst.length), partsFirst);
           else voice(result.reply.line);
         }

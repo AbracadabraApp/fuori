@@ -85,8 +85,10 @@ struct PersonView: View {
             // (docs/beginner-scaffolding.md)
             let showLine = model.scaffolding || subtitles
             let showEnglish = model.scaffolding || english
-            if model.parts != nil {
-                // Beginner dialogue: her English is heard, her words in the language are bubbles
+            // Beginner dialogue: her English is heard, her words in the language are bubbles. Parts that are only
+            // the answers to say back (Beginner 2 on the one-line reply, 2026-11-11): her line is the subtitle as
+            // at every other level, and the answers show on the learner's turn (ConversationControls)
+            if model.parts?.contains(where: { !$0.isAnswer }) == true {
                 BeginnerBubbles(parts: model.shownParts, speechLanguage: model.speechLanguage)
                 if let note { Subtitles(line: nil, shown: nil, english: nil, note: note) }
             } else {

@@ -1,6 +1,6 @@
 # Scaffolding (Beginner 2)
 
-version: 2026-11-10s
+version: 2026-11-11a
 
 Everything that helps a Beginner take part, kept apart from the dialogue
 (Josh, 2026-11-09: "I want to be able to adjust scaffolding without touching
@@ -36,6 +36,14 @@ Reply with JSON: parts, in the order you say them. Each part is { "kind": "engli
 - word: a word, or a short phrase of 4 to 8 words, in {language}, with its English. In the English, leave out names said in the phrase (the name is said once, in {language})
 - question: your question in {language}, with its English
 - answer: what they can say back, in {language}, with its English. When it names a local thing with no English word (a dish, a drink, a food), the English says what it is in a few words ("El quesillo, por favor." → "The quesillo (Oaxacan string cheese), please."). It's shown to them, not said by you: don't repeat it in your other parts
+```
+
+## Reply: line and answers
+
+```
+Respond with JSON:
+{ "line": "what you say, in your own words", "en": "its English", "answers": [ { "text": "what they can say back, in {language}", "en": "its English" } ] }
+The answers are shown to them, not said by you: don't repeat them in your line. When an answer names a local thing with no English word (a dish, a drink, a food), the English says what it is in a few words ("El quesillo, por favor." → "The quesillo (Oaxacan string cheese), please.").
 ```
 
 ## Setup: opener

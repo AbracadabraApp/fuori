@@ -64,7 +64,7 @@ From reading the syllabus notes (Josh asked for ideas, 2026-11-11):
 - **T31 Manner:** how a local talks, as against what a local knows: a greeting plus a small personal question, diminutives, "¿mande?", a soft refusal. Culture that lives in speech; Fact (T15) is culture that lives in information.
 - **T32 Register:** *usted* or *tú*, set per character (`{formality}`); already in the product.
 
-In the product today: T10 to T15 exist as setups or prompt content; T1 to T3 are the live cluster-1 frame; T6 is missing on the live cluster-1 path (no answers since fe38bc2); T16 to T21 have no rule.
+In the product today: T10 to T15 exist as setups or prompt content; T1 to T3 are the live cluster-1 frame; T6 is back on the live cluster-1 path since 2026-11-11a (answers on the one-line reply; missing between fe38bc2 and that); T16 to T21 have no rule.
 
 ## 3. Findings (what research says; strength)
 
@@ -171,7 +171,7 @@ No extra model call per turn: code writes the first three from structured output
 
 ## 8. Prerequisites and status
 
-- **P1** The live cluster-1 path has no answers and no per-turn setup (fe38bc2); S2, S4, S6 with Say-back, S12 and S13 need answers there first.
+- **P1** The live cluster-1 path has the answers and the per-turn setup line again since 2026-11-11a (`lineWithAnswers`, `runTurn` with `answers` and `note`); S2, S4, S6 with Say-back, S12 and S13 can use it. Not released until the next build (the app change in `PersonView.swift`).
 - **P2** The auto-responder plays the parts format, not the live path; it needs pointing at the live call before it can test any of this.
 - **P3** Card S1 (S1 to S8's first cases: the Take, Slot and Recycle arms) is drafted and reviewed ("run with changes", applied); needs a re-review and a stamp; its thresholds are set after A's pilot and then frozen; Josh said "Not yet" to the re-review and the run.
 - **P4** A culture card for S11 to S14 isn't drafted; Josh hasn't said go.

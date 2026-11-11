@@ -6,7 +6,7 @@
 import { fixMojibake } from '@/lib/mojibake';
 import { z } from 'zod';
 import { anthropic, TURN_MODEL, replyText, finalWithDeadline } from '@/lib/claude';
-import { turnOutputJsonSchema, turnOutputWithDoneJsonSchema } from '@/lib/prompts/turn-output-schema';
+import { turnOutputJsonSchema, turnOutputWithAnswersJsonSchema, turnOutputWithDoneJsonSchema } from '@/lib/prompts/turn-output-schema';
 import { buildTurnPrompt, type RememberedLearner } from '@/lib/prompts/build-turn-prompt';
 import type { CharacterSheet, Gender, Turn } from '@/lib/types';
 import type { Laps } from '@/lib/timing';
@@ -16,6 +16,8 @@ export const TurnOutputSchema = z.object({
   line: z.string().describe('What the character says, in the language the person is learning'),
   en: z.string().describe('English translation of the reply'),
   done: z.boolean().optional(),
+  /** The answers to say back (Beginner 2, cluster 1): only when asked for with `answers` */
+  answers: z.array(z.object({ text: z.string(), en: z.string() })).optional(),
 });
 
 export type TurnReply = z.infer<typeof TurnOutputSchema>;
@@ -44,6 +46,10 @@ export async function runTurn(params: {
   canRetry?: () => boolean;
   /** An ordinary conversation: the reply also says whether it ends here (they said goodbye) */
   withDone?: boolean;
+  /** Beginner 2, cluster 1: the reply also lists the answers to say back (with done; the brief says what to give) */
+  answers?: boolean;
+  /** A note about this turn, in brackets at the end of the newest message (Beginner 2's setup line; see buildTurnPrompt) */
+  note?: string;
   /** The day it is (tests replay visits on different days); defaults to now */
   now?: Date;
 }): Promise<TurnReply> {
@@ -66,7 +72,7 @@ export async function runTurn(params: {
     system: prompt.system,
     messages: prompt.messages,
     output_config: {
-      format: { type: 'json_schema', schema: params.withDone ? turnOutputWithDoneJsonSchema : turnOutputJsonSchema },
+      format: { type: 'json_schema', schema: params.answers ? turnOutputWithAnswersJsonSchema : params.withDone ? turnOutputWithDoneJsonSchema : turnOutputJsonSchema },
     },
   });
   if (laps) stream.once('text', () => laps.mark('claudeFirstToken', performance.now() - started));

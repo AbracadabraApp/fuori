@@ -4,7 +4,7 @@
 // prompt file, the language-only rung hides the answers' English, the turn
 // code takes the switch, and Beginner 2 turns don't move the Beginner 1 path.
 import { readFileSync } from 'fs';
-import { beginnerVersionFrom, pickSetup, setupText, levelText, setupLine, fullerGlosses, shownParts, shapeParts, turnSteps, beginner2Version, glossAll, questionEcho, GOODBYE, OPENER, CLUSTER_1, CLUSTERS, RUNGS, clusterFrom, stretchesOf, withSummaries, summaryPrompt, MAX_STRETCH_WORDS, MAX_STRETCH_SENTENCES, GLOSS_ALL, flowingLine, withQuestionEnglish } from '@/lib/beginner-2';
+import { beginnerVersionFrom, pickSetup, setupText, levelText, setupLine, fullerGlosses, shownParts, shapeParts, turnSteps, beginner2Version, glossAll, questionEcho, GOODBYE, OPENER, CLUSTER_1, CLUSTERS, RUNGS, clusterFrom, stretchesOf, withSummaries, summaryPrompt, MAX_STRETCH_WORDS, MAX_STRETCH_SENTENCES, GLOSS_ALL, flowingLine, withQuestionEnglish, cluster1Brief, lineWithAnswers } from '@/lib/beginner-2';
 import { stageInVersion } from '@/lib/conversation-record';
 import { lineFromParts, type Part } from '@/lib/beginner';
 import { buildBeginnerPrompt, SCAFFOLDING_FILE, dialogueWithoutFormat } from '@/lib/beginner';
@@ -99,7 +99,17 @@ check(g1[1].gloss === 'I paint here every day.' && g1[3].gloss === 'Do you like 
 check(g1[2].gloss === '', 'glossAll: not when the turn\'s own English already said it');
 check(shownParts(para, CLUSTER_1[0], CLUSTER_1)[1].gloss === '' && shownParts(para, CLUSTERS[1][0], CLUSTERS[1])[1].gloss === '', 'no cluster adds the literal English after each phrase by code (2026-11-10q: the frame carries it)');
 check(/talk mostly in English/.test(setupText(CLUSTER_1[0], CLUSTER_1)) && /with its English beside it/.test(setupText(CLUSTER_1[0], CLUSTER_1)) && !/word part/.test(levelText(CLUSTER_1)) && !/say it again/.test(setupText(CLUSTER_1[0], CLUSTER_1)), 'Level 1 is the frame brief as the list used it: one line, no parts, each phrase with its English, no sandwich repeat (Josh: weird)');
-check(/beginnerCluster \?\? CLUSTER_1\) === CLUSTER_1\n\s*\?[\s\S]*?runTurn\(\{[^\n]*brief: levelText\(CLUSTER_1\)/.test(readFileSync('lib/conversation/take-turn.ts', 'utf8')), 'cluster 1 runs on the Intermediate reply with the Level 1 block as its brief (2026-11-10s)');
+check(/beginnerCluster \?\? CLUSTER_1\) === CLUSTER_1\n\s*\?[\s\S]*?runTurn\(\{[^\n]*brief: cluster1Brief\(\), note: setupLine\(setup\), answers: setup\.maxAnswers > 0/.test(readFileSync('lib/conversation/take-turn.ts', 'utf8')), 'cluster 1 runs on the Intermediate reply with the Level 1 brief, the setup line on the newest message and the answers asked for (2026-11-11a)');
+// Cluster 1's brief: the frame, the answer rules and the one-line format with answers; the setup line is not in it (it goes on the newest message)
+check(cluster1Brief().startsWith(levelText(CLUSTER_1)) && /When you offer answers/.test(cluster1Brief()) && /"answers"/.test(cluster1Brief()) && !/This turn/.test(cluster1Brief()) && !/\{language\}/.test(cluster1Brief()), 'cluster 1 brief: the Level 1 frame, then the answer rules and the line-and-answers format, every placeholder filled');
+// The one-line reply's answers become answer parts: capped at the setup's count, blank ones dropped, the question's English after the line
+{
+  const r = { line: 'Suba a la silla, climb up. ¿Quiere una boleada?', en: 'Climb up on the chair. Do you want a shine?', done: false, answers: [{ text: 'Sí, por favor.', en: 'Yes, please.' }, { text: '  ', en: '' }, { text: 'No, gracias.', en: 'No, thanks.' }, { text: 'Otra.', en: 'Another.' }] };
+  const out = lineWithAnswers(r, RUNGS.find((x) => x.id === 'two-en')!);
+  check(out.parts.length === 2 && out.parts.every((x) => x.kind === 'answer' && x.gloss === '') && out.parts[1].text === 'No, gracias.', `lineWithAnswers: two answer parts, blank dropped, extras cut (got ${JSON.stringify(out.parts)})`);
+  check(out.line.endsWith('¿Quiere una boleada? Do you want a shine?') && out.en === r.en && out.done === false, 'lineWithAnswers: the question\'s English after the line, en and done kept');
+  check(lineWithAnswers({ line: 'Ecco.', en: 'Here.' }, RUNGS.find((x) => x.id === 'free')!).parts.length === 0, 'lineWithAnswers: a setup with no answers gives none');
+}
 check(/as little as needed/.test(setupText(CLUSTERS[1][0], CLUSTERS[1])), 'Level 1b (cluster 2) is C');
 const inv = shownParts([{ kind: 'english', text: 'Sit anywhere.', en: '', gloss: '' }, { kind: 'question', text: '¿Es su primera vez en Puebla?', en: 'Is it your first time in Puebla?', gloss: '' }], RUNGS.find((r) => r.id === 'invite-en')!, CLUSTER_1);
 { const qi = inv.findIndex((x) => x.kind === 'question'); check(inv[qi + 1]?.text === 'Is it your first time in Puebla?' && inv[inv.length - 1].kind === 'english' && /ask me in English or/.test(inv[inv.length - 1].text), 'the invitation to ask is said, in code'); }

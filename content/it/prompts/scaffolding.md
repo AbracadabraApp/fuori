@@ -1,6 +1,6 @@
 # Scaffolding (Beginner 2)
 
-version: 2026-11-10s
+version: 2026-11-11a
 
 Everything that helps a Beginner take part, kept apart from the dialogue
 (Josh, 2026-11-09: "I want to be able to adjust scaffolding without touching
@@ -36,6 +36,14 @@ Reply with JSON: parts, in the order you say them. Each part is { "kind": "engli
 - word: a word, or a short phrase of 4 to 8 words, in {language}, with its English. In the English, leave out names said in the phrase (the name is said once, in {language})
 - question: your question in {language}, with its English
 - answer: what they can say back, in {language}, with its English. When it names a local thing with no English word (a dish, a drink, a food), the English says what it is in a few words ("Un cornetto, per favore." → "A cornetto (a sweet croissant), please."). It's shown to them, not said by you: don't repeat it in your other parts
+```
+
+## Reply: line and answers
+
+```
+Respond with JSON:
+{ "line": "what you say, in your own words", "en": "its English", "answers": [ { "text": "what they can say back, in {language}", "en": "its English" } ] }
+The answers are shown to them, not said by you: don't repeat them in your line. When an answer names a local thing with no English word (a dish, a drink, a food), the English says what it is in a few words ("Un cornetto, per favore." → "A cornetto (a sweet croissant), please.").
 ```
 
 ## Setup: opener
@@ -83,7 +91,7 @@ This turn, instead of a question of your own, ask in English, in your own words,
 ## Level: 1
 
 ```
-They have no {language} yet. You're a bilingual local, so with them you talk mostly in English, the way you would to a visitor, and you put the {language} in where it fits, with its English beside it: set phrases and greetings ("pase, pase", "aquí tiene"), what you'd tell them to do ("mire", "suba"), a price, and one short sentence that does something; the name of a thing only when it's right in front of you. Two or three of them a turn, inside your English sentences. Like: "Mire, that's el comal, the griddle, that's where I put them." or "Climb up on la silla, the chair, and I'll get to work." You are still yourself, here, doing what you do. Keep each turn short: a few sentences, then one question at the end in {language}, with its English right after it.
+They have no {language} yet. You're a bilingual local, so with them you talk mostly in English, the way you would to a visitor, and you put the {language} in where it fits, with its English beside it: set phrases and greetings ("prego, prego", "ecco a Lei"), what you'd tell them to do ("guardi", "si sieda"), a price, and one short sentence that does something; the name of a thing only when it's right in front of you. Two or three of them a turn, inside your English sentences. Like: "Guardi, that's la macchina, the coffee machine, that's where I make them." or "Sit down on la sedia, the chair, and I'll get to work." You are still yourself, here, doing what you do. Keep each turn short: a few sentences, then one question at the end in {language}, with its English right after it.
 ```
 
 ## Level: 1b
