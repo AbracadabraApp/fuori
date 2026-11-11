@@ -6,6 +6,20 @@
 
 Card B2-E5 ran and Josh listened blind. **Summary:** with the bare line, half the summaries narrated her ("She brushes off dust first"); Josh followed the literal on 8 of 8 and the summary on 6, preferred the summary on 3. The in-voice ones won. With "in her own words, as she would say it" added (code counts third-person summaries), narration fell from 5 of 16 turns to 1 of 16, at 0.76 of the literal's words. **Built into Beginner 2, cluster 1** the same day (see [beginner-2.md](beginner-2.md) → Built). **Mixed:** a thought on 6 of 8, a person's switch on 8 of 8, but Josh followed 1 of 8 (English 23–36% of her words): "not good enough to release"; parked, to come back to.
 
+## Frame mix: the mixed idea redone from the research (2026-11-10, a list, not in the game)
+
+Josh asked for a better mixed approach ("my best guess is that the grammar matters - independent clauses"). The research agrees: **Poplack (1980)**, the equivalence constraint: switches sit where both grammars line up (clause and phrase edges), and her three types, tag switching, inter-sentential, intra-sentential (the hard one, which B2-E5's mixed arm asked for); **Myers-Scotton (1993)**, the matrix language frame: one language holds the grammar and carries comprehension, the other supplies content; **Butzkamm**, the sandwich (L2, L1, L2). Why B2-E5's mix wasn't followed: the frame was Spanish, so the meaning was in the Spanish.
+
+**The idea: flip the frame by level.** Cluster 1: English frame, the Spanish slotted in as whole phrases (greetings, "pase, pase", "aquí tiene", prices, the question), each with its English beside it. Middle clusters: half and half, a Spanish clause then an English clause at the boundary, tags in Spanish. Later: Spanish frame, English asides (B2-E5's mixed arm, at the top of the ladder). "How much English" becomes which language holds the frame and where the switches sit, not a percentage.
+
+**The list** (`tests/experiments/frame-mix.mts`, Mexico, 4 characters × 2 turns, the Intermediate prompt plus a brief; Spanish-run spans marked by a small judge call): F1 (English frame) came out at 30% Spanish, 36 runs, 7 single words; F2 (half and half) at 65% Spanish, 16 runs, none a single word, every switch on "so" (the example's fault). The sandwich (say it, English, say it again) fired on 4 of 8 F1 turns; Josh: "seems weird"; removed. **Final question always gets its English (Josh)**, as the code already does in the game.
+
+**Josh: good** (F1, without the sandwich):
+- Don Chucho: "Buenas tardes, joven. Welcome to my stand, pase, pase. I'm Don Chucho, and this is la silla, the chair, where you climb up for a boleada, a good shine. ¿Quiere que le boleé los zapatos? Want me to shine your shoes?"
+- Don Chucho (after "Sí, por favor. ¿Cuánto cuesta?"): "Muy bien, suba, suba. It's treinta pesos, thirty pesos, and I do it slow, with la grasa, the polish, and the cepillo, the brush. Put your feet on the metal rests, así, like that. ¿Qué color son sus zapatos? What color are your shoes?"
+
+The brief that made them: "The person in front of you has no {language} yet. You are a bilingual local, so with them you talk mostly in English, the way you would to a visitor, and you put the {language} in where it fits: the names of things, set phrases, and the short {language} sentence that matters, with its English beside it. Like: 'Mire, that's el comal, the griddle, that's where I put them. ¿Quiere una? Want one?' You are still yourself, here, doing what you do. One question at the end, in {language}, with its English." Noticed (Claude): the lines run 35–45 words, long for a first cluster. Not in the game (Josh: "not incorporate into game play yet").
+
 ## The problem
 
 Today each Spanish sentence is followed by its English, sentence by sentence. The prompt writes the Spanish; code writes the English (`glossAll`, `questionEcho`). Josh: better than a few words, but too structured; "not great but it's coherent". The goal is more bilingual mixing or summarizing.
