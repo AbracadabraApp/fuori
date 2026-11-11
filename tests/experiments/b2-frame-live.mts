@@ -2,7 +2,7 @@
 // real pieces (the prompt, the setup, shapeParts, lineFromParts), printed as what is spoken, what is shown as bubbles
 // (the word parts, the language only) and the answers. Not a card: Josh judged the lines on a list (frame-mix.mts).
 //   COUNTRY=es-mx npx tsx --env-file=.env.local tests/experiments/b2-frame-live.mts [--characters=4]
-import { cities } from '@/content';
+import { cities, language } from '@/content';
 import { characterForVisit } from '@/lib/characters/for-visit';
 import { runBeginnerTurn } from '@/lib/beginner';
 import { BEGINNER_2_FILE, CLUSTER_1, OPENER, RUNGS, levelText, setupLine, shapeParts, flowingLine } from '@/lib/beginner-2';
@@ -12,7 +12,7 @@ const people = cities.flatMap((c) => c.places.filter((p) => p.characterId).map((
 const step = Math.max(1, Math.floor(people.length / howMany));
 const chosen = Array.from({ length: howMany }, (_, i) => people[i * step]).filter(Boolean);
 const words = (s: string) => s.trim().split(/\s+/).filter(Boolean).length;
-let spoken = 0, inLanguage = 0;
+let spoken = 0, inLanguage = 0, phrases = 0, turns = 0, rows = 0, unglossed = 0;
 for (const { city, place } of chosen) {
   const character = characterForVisit(city.id, place.id)!;
   const transcript: Turn[] = [];
@@ -23,7 +23,7 @@ for (const { city, place } of chosen) {
     const { parts, fixes } = shapeParts(r.parts, setup, CLUSTER_1);
     const line = flowingLine(parts).line;
     const shown = parts.filter((x) => x.kind === 'word' || x.kind === 'question').map((x) => x.text);
-    spoken += words(line); inLanguage += shown.reduce((n, t) => n + words(t), 0);
+    spoken += words(line); inLanguage += shown.reduce((n, t) => n + words(t), 0); phrases += parts.filter((x) => x.kind === 'word').length; turns++; rows += parts.filter((x, i) => x.kind === 'word' && parts[i + 1]?.kind === 'word').length; unglossed += parts.filter((x) => x.kind === 'word' && !x.gloss?.trim()).length;
     console.log(`\n## ${character.name} t${turn} (${setup.id}) ${Math.round(performance.now() - t0)} ms, fixes: ${fixes.join(', ') || 'none'}`);
     console.log('SPOKEN: ' + line);
     console.log('SHOWN:  ' + shown.join(' · '));
@@ -33,4 +33,4 @@ for (const { city, place } of chosen) {
     learnerSaid = parts.find((x) => x.kind === 'answer')?.text ?? 'Sí, gracias.';
   }
 }
-console.log(`\nwords in the language, of what's spoken: ${(100 * inLanguage / spoken).toFixed(0)}%`);
+console.log(`\nwords in the language, of what's spoken: ${(100 * inLanguage / spoken).toFixed(0)}%; ${language.name} phrases a turn besides the question: ${(phrases / turns).toFixed(1)}; word parts followed by another (rows): ${rows}; word parts with no gloss: ${unglossed} of ${phrases}`);

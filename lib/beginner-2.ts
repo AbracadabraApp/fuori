@@ -351,14 +351,35 @@ export function withoutAnnouncing(parts: Part[]): Part[] {
  * every piece, which was right when every part was a sentence (connection test, 2026-11-10: "picadas on. el comal. and")
  */
 export function flowingLine(parts: Part[]): { line: string; en: string } {
-  const spoken = parts.filter((p) => p.kind !== 'answer');
+  const spoken = withoutSaidInEnglish(parts).filter((p) => p.kind !== 'answer');
   const answered = parts.some((p) => p.kind === 'answer' && p.text.trim());
-  const pieces = spoken.flatMap((p) => [p.text.trim(), p.kind === 'question' && answered ? '' : p.gloss?.trim() ?? '']).filter(Boolean);
+  // Each piece with whether it is a gloss: a gloss is set off by commas ("el comal, the griddle,"); a phrase inside an
+  // English sentence is joined with plain spaces ("a batch of tejuino here"), not commas (run 2026-11-10: "a fresh batch of, tejuino, here")
+  const pieces = spoken.flatMap((p) => [{ text: p.text.trim(), gloss: false }, { text: p.kind === 'question' && answered ? '' : p.gloss?.trim() ?? '', gloss: true }]).filter((x) => x.text);
   const closed = (s: string) => /[.!?…:;,]["'»”’)]*$/.test(s);
   const continues = (s: string) => /^[\p{Ll}]/u.test(s);
-  const line = pieces.map((piece, i) => (closed(piece) ? piece : i + 1 < pieces.length && continues(pieces[i + 1]) ? `${piece},` : `${piece}.`)).join(' ');
+  const line = pieces
+    .map((piece, i) => {
+      const next = pieces[i + 1];
+      if (closed(piece.text)) return piece.text;
+      if (!next || !continues(next.text)) return `${piece.text}.`;
+      return piece.gloss || next.gloss ? `${piece.text},` : piece.text;
+    })
+    .join(' ');
   const en = spoken.map((p) => (p.kind === 'english' ? p.text : p.en).trim()).filter(Boolean);
   return { line, en: en.join(' ') };
+}
+
+/**
+ * A word part whose text the character already said inside an English part (the frame invites "my polish, la grasa"
+ * as English text, then "la grasa" again as a word part: run 2026-11-10, "el comal… el comal.") is dropped from what's
+ * spoken; it stays on screen as the turn's bubble. By text, so any language
+ */
+export function withoutSaidInEnglish(parts: Part[]): Part[] {
+  // Not the question's echo (the English part right after the question, added by questionEcho): it names the same
+  // things as her phrases ("Do you want to try a tejuino?"), which dropped "tejuino" from speech (run 2026-11-10)
+  const english = parts.filter((p, i) => p.kind === 'english' && parts[i - 1]?.kind !== 'question').map((p) => p.text.toLowerCase()).join(' ');
+  return parts.filter((p) => !(p.kind === 'word' && p.text.trim() && english.includes(p.text.trim().replace(/[.!?…]+$/, '').toLowerCase())));
 }
 
 /** What the code did to one turn's parts: the setup and cluster it played, the shaping steps that changed something, and Claude's parts when one did */
