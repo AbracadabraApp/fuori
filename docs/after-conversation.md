@@ -30,6 +30,17 @@ From the brainstorm on the book in the conversation: the review you'd otherwise 
 - **A lesson for this:** the one unfinished lesson the conversation shows you need ("Polite or friendly you"), opening it; "Try the lesson" / "Done".
 - **What exists:** the review written at leave (lib/remember.ts), the Learn page writer and learn-ahead (lib/learn.ts, lib/learn-ahead.ts), lessons done (lib/lesson.ts → lessonsDone). **New:** the writer given the place and your unfinished lessons; the screen.
 
+## The morning's Learn ideas (2026-11-10, on the book in the conversation)
+
+Josh asked for ideas to integrate the book (the Learn link → Learn sheet) better; he liked 3 to 5 and the lesson mapping. Nothing decided or built.
+1. **A dot on the book** when there's something new: a count (2) when a character recasts a mistake or uses a word worth keeping, so tapping it has a reason.
+2. **Try it now:** each correction in the sheet gets a button that closes the sheet and opens the mic; you say the better phrase to the character, who reacts in character ("¡Eso!").
+3. **A summary when you leave:** fixes · words · good to know, a tap for the full sheet. This became the Learn page above.
+4. **The book feeds the next visit:** one fix or word from today worked naturally into tomorrow's conversation, never as "last time you got it wrong" (changes character.md's relationship line).
+5. **A tip about the place:** good-to-know drawn from the place's history and culture when the talk touched it (Ulúa in 1914, the Caste War, de las Casas), by giving the Learn writer the place and the character's here line.
+6. **Mapping the conversation to lessons:** the Learn writer also gets your unfinished lessons at your level and picks at most one the conversation shows you need (tú where usted belonged → "Polite or friendly you"); shown in the Learn sheet, on the leave page, and as a dot on that lesson in the Learn area. A judgement of the conversation, not a word match.
+- Noticed: Mexico's lesson examples label the learner `role: "newcomer"`, against CLAUDE.md's learner rule.
+
 ## More kinds, brainstormed (none decided)
 
 - **What they'll remember about you:** one line the character keeps from today ("Remembers: you're learning to make café de olla"), so the memory the game already has becomes visible.
