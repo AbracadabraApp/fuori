@@ -78,3 +78,51 @@ Suggested next step if wanted: a card in [../prompt-trials.md](../prompt-trials.
 **What nothing answers:** the right share of language to English; whether a gloss goes inside the line or after it, for voice; how long a turn should be; whether any order across a whole conversation is ideal.
 
 **Where data could come from:** Josh's ten graded conversations and the real Beginner transcripts are the only evidence on this exact structure: which frame builds got the best listener grades.
+
+## 6. Labels for the parts of a dialogue, and sequences to investigate (Josh, 2026-11-11)
+
+**Labels** (so a card can say which part changes). The character's own moves first, then the interactional moves the first list missed.
+
+| Label | The part |
+|---|---|
+| **Scene** | A short line about what's here or what the character is doing, in English |
+| **Slot** | A language chunk of 4 to 8 words inside the English line |
+| **Gloss** | The brief English for a Slot, only where needed |
+| **Echo** | A full language sentence, then its full English (the old pattern; the control) |
+| **Ask** | The one question: yes/no, either/or or open |
+| **Say-back** | One or two short answers the learner can say |
+| **Help** | Repeat, slower, rephrase or English, on request |
+| **Recycle** | A chunk reused in a later turn, in a new situation |
+| **Fade** | Less support each time a chunk has landed |
+| **Open** | The first turn: a greeting and a line about the character's own place, before any Ask (in the product: the opener setup) |
+| **Close** | The wind-down and the goodbye the learner can say (goodbye setup, `GOODBYE_AFTER`) |
+| **Invite** | A turn that asks in English whether they'd like to know anything (invite-English setup) |
+| **Learner asks** | The learner gets two short questions to ask the character (two-questions setup) |
+| **Blank** | A Say-back with a slot for something about the learner, left as "..." |
+| **Fact** | The character tells something real about the place or country (the scorecard's Content) |
+| **Take** | The character reacts to what the learner just said before moving on (not built as a rule; Responsive is the largest weight in the grade) |
+| **Confirm** | The character repeats the learner's answer back as a question, or checks "¿entiende?" (negotiation research) |
+| **Recast** | A correction inside a natural reply, one thing changed (CLAUDE.md: skip when a mishearing is likely) |
+| **Repair offered** | Repeating or rephrasing before being asked, when the learner seems lost (CEFR A1; the scorecard's Support) |
+| **Anchor** | A line that points at something visible, so the scene carries the meaning |
+| **Expand** | The character adds one detail to the learner's short answer (no outcome data found) |
+
+**Sequences** (order of labels). Candidates, not results.
+
+Within one turn:
+1. **Scene + Slot (Gloss), then Ask echoed.** Today's live frame; the baseline.
+2. **Scene + Slot (Gloss), then Ask in the language only, Say-back shown.** Does dropping the echo on the Ask and adding answers change what the learner does? (Concha's repeated "sí" had no answers.)
+3. **Slot first (Gloss), then Scene, then Ask.** Does leading with the language make the learner listen to it?
+4. **Scene, Slot, Say-back offered before the Ask.** A chunk to say before the question, or after?
+5. **Echo, then Ask.** The control. Reads high on language words, low on structure.
+6. **Take, Slot, Ask, Say-back**, against the same turn with no Take.
+
+Across turns:
+7. **Ask kinds in order:** either/or, then yes/no, then open.
+8. **Slot with Gloss on turn 1, Recycle on turn 3 with no Gloss.**
+9. **Recycle plus Fade over a whole visit.**
+10. **Help offered every turn**, against Help on request only.
+
+**Measures:** slotted clauses per turn by length (single words apart); whether the learner follows a turn first time (the scorecard's instrument); whether the learner says the Say-back; Josh's blind grades on a handful of conversations per sequence.
+
+**Prerequisite:** all of this has to run on the live cluster-1 path, which has no answers and no per-turn setup (commit fe38bc2), and the auto-responder doesn't test that path. Sequences 2, 4 and 6 (with Say-back) need answers on that path first; first card: S1 in [../prompt-trials.md](../prompt-trials.md) (sequences 1, 6 and 8, and the slot length, with no answers needed).
