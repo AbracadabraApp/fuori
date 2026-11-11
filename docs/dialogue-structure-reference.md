@@ -1,4 +1,4 @@
-# Beginner dialogue structure: terms, sequences and findings (reference)
+# Beginner dialogue redesign: terms, sequences, turn design and memory (reference)
 
 2026-11-11 · Claude, from a session with Josh · Everything is numbered so a card, a log entry or a message can cite it ("T3", "S6", "F2"). Sources and the long form: [research/frame-gloss-echo.md](research/frame-gloss-echo.md). Nothing here changed code or prompts; the card for the first sequences is S1 in [prompt-trials.md](prompt-trials.md) (drafted, reviewed, not re-reviewed, not stamped, not run).
 
@@ -10,6 +10,9 @@
 - **J4.** Level 1's text is already long; don't add words.
 - **J5.** Cultural content is a goal and works well on its own, but it produces an English monologue with a weak connection to the learner (2026-11-11).
 - **J6.** The "sí" in Concha's conversation came from having no proposed answers.
+- **J7.** A medium-length Intro that sets the scene, then a shorter turn each time, holds a beginner's interest. Drilling Spanish is work, so the language shouldn't carry the turn (2026-11-11).
+- **J8.** Less memory loss, more building on the story: a turn picks up the last thread and adds to it, rather than reporting back what was said ("my abuela grew up on a coffee plantation", not "you've got your coffee, and I was telling you about my abuela").
+- **J9.** Memory could be read and written more often (2026-11-11).
 
 ## 2. Terms (labels for the parts of a dialogue)
 
@@ -37,6 +40,13 @@ The interactional moves (not built as rules):
 - **T19 Repair offered:** repeating or rephrasing before being asked, when the learner seems lost.
 - **T20 Anchor:** a line that points at something visible, so the scene carries the meaning.
 - **T21 Expand:** the character adds one detail to the learner's short answer.
+
+Added from J7 to J9 (the story and memory design):
+- **T22 Intro:** a medium-length first turn that sets the scene: who the character is, where you are, what's going on, with a hook. The one place a longer stretch of English is allowed; it can carry culture (T15) and ends with an Ask.
+- **T23 Build:** a line that takes the thread from the last turn and adds one new thing to it. It replaces "Recap": the old thread shows only as the hook the new thing hangs on. A Fact (T15) is usually the Build, so culture arrives as the next thing in the story.
+- **T24 Thread:** the beats the character has told so far (who, what, where), newest last. The next Build must attach to the newest and must not repeat any.
+- **T25 Learner facts:** what the learner has clearly said about themselves, written only when stated, never inferred.
+- **T26 Chunk ledger:** the Slots heard and which have landed, setting support (T9) and what to Recycle (T8).
 
 In the product today: T10 to T15 exist as setups or prompt content; T1 to T3 are the live cluster-1 frame; T6 is missing on the live cluster-1 path (no answers since fe38bc2); T16 to T21 have no rule.
 
@@ -78,6 +88,10 @@ Culture (from J5):
 - **S12 Fact, Slot, Say-back:** the thing the Fact is about is named once as a chunk the learner can say back.
 - **S13 Learner asks, Fact:** the learner pulls the culture by choosing one of two questions. Strongest on engagement; needs the answers path.
 - **S14 Fact capped at one sentence, then hand over:** the cheapest variant and the control for S11 to S13.
+- **S11, revised by J8:** Take, Build (usually the Fact, attached to the last beat), Ask about the Build.
+
+Story shape (from J7 and J8):
+- **S15 Intro, Slot, Ask, Say-back on turn 1; then Take, Build, Slot (0 to 2, growing out of the Build), Ask, Say-back on every later turn.** The story carries the turn; the language grows out of it.
 
 ## 5. Measures
 
@@ -90,12 +104,56 @@ Culture (from J5):
 - **M7** Longest run of English in a turn (a code count; the monologue measure for J5).
 - **M8** Whether the learner's next line builds on the Fact (Josh's listening, or a judge).
 - **M9** Content (facts per reply) must not drop (the guard for S11 to S14).
+- **M11** Build repeats: Builds that restate a beat already in the thread (a code count; the retold-as-new problem was about a fifth of facts in the auto-responder runs).
+- **M12** Attached Builds: Builds that mention something from the last turn (code proxy, every hit read).
+- **M13** Intro length and the share of turns with a Build.
 - **M10** Josh's blind read, by ear, with hidden A-against-A pairs: the decision.
 
-## 6. Prerequisites and status
+## 6. Turn design (pseudo code, design only; nothing built)
+
+Principle: code chooses the turn's shape (rules enforced in code have held; prompt rules keep coming back, beginner-deep-dive); the model writes the pieces.
+
+```
+turn(1):   Intro(scene + who + hook, 3 to 5 sentences, culture in it)
+           + Slot(1, with Gloss) + Ask(easy) + Say-back
+turn(n>1): signal = lostOrAskedForHelp(learnerSaid)      # silence, "what?", English
+           if signal:  [Repair(T19), Slot(shorter), Ask(yes/no), Say-back]
+           elif winding down: [Take, Close, Say-back(goodbyes)]
+           else: Take (a clause, from learnerSaid)
+                 Build (one new beat attached to thread.last; not in thread)   # T23
+                 Slot  (0 to 2, grows out of the Build; one with its Gloss on first use)
+                 Ask   (about the Build; easy kind first: either/or, yes/no, open)
+                 Say-back (1 to 2)
+                 every 4th turn: Invite or Learner asks instead of the Ask
+caps (guesses): Intro up to ~70 words; later turns up to ~40; longest English run up to ~25
+checks (code): one Ask, in the language; Say-back present; no Build restating a beat in the thread;
+               every Build attached to something in the last turn; first use of a Slot has English;
+               Recycle has none; on a failed check regenerate once, else drop the piece
+assemble:  spoken = one line of dialogue (Take, Build, Slot with Gloss, Ask); shown = Say-backs
+```
+
+A Concha-style turn: Take "Ah, café con leche, buena elección." Build "My abuela grew up on a coffee plantation." Slot "Una finca de café (a coffee farm)." Ask "¿Le gusta el café fuerte? (Do you like strong coffee?)" Say-back "Sí, me gusta fuerte." / "No, con leche."
+
+Open: whether one model call can write all the pieces or the Fact needs its own; the caps and the fourth-turn rotation are guesses; whether a medium Intro keeps a beginner listening is for Josh's ears. The research on Intro and Build is thin: sources favor context carrying meaning (T20) and elaboration (F3); nothing found tests an Intro with Builds against short turns.
+
+## 7. Memory at turn size (design; on hold for the live system, J9)
+
+Now, as read: a model writes notes once, when the visit ends; each turn reads the earlier visits' notes; within a visit the character has only the transcript.
+
+| | Written | Read |
+|---|---|---|
+| Thread (T24) | every turn, by code, from the Build part the turn returned | every turn, to attach the next Build and block repeats |
+| Learner facts (T25) | every turn, only when stated, in a field the turn returns | every turn, so blanks and Takes use them |
+| Chunk ledger (T26) | every turn, by code | every turn, to set support and pick Recycle |
+| Visit summary | once, at the end: folds the three lists into a short note | the next visit's Intro, which resumes the thread instead of re-opening |
+
+No extra model call per turn: code writes the first three from structured output; the one model call stays at the end of the visit and consolidates. It targets retelling (retold-as-new), the opener replay on return visits (found earlier; "this is your first turn" setup), and the weak link to the learner (a Take can use what they said two turns ago). Risks: speech-recognition mishearing (write only what's clearly stated; CLAUDE.md: characters know only what the learner told them); drifting summaries (recursive summaries degrade, LLM-Rsum in llm-language-learning.md: keep lists append-only per visit, consolidate once); prompt size (cap the thread to the last few beats plus the one-line visit summary). Josh's "hold on memory" stands: no code, prompt or card until he says go.
+
+## 8. Prerequisites and status
 
 - **P1** The live cluster-1 path has no answers and no per-turn setup (fe38bc2); S2, S4, S6 with Say-back, S12 and S13 need answers there first.
 - **P2** The auto-responder plays the parts format, not the live path; it needs pointing at the live call before it can test any of this.
 - **P3** Card S1 (S1 to S8's first cases: the Take, Slot and Recycle arms) is drafted and reviewed ("run with changes", applied); needs a re-review and a stamp; its thresholds are set after A's pilot and then frozen; Josh said "Not yet" to the re-review and the run.
 - **P4** A culture card for S11 to S14 isn't drafted; Josh hasn't said go.
+- **P6** The story design (T22 to T26, S15, sections 6 and 7) is design only. If taken forward, its first slice would replace S1's Take arm; it needs a card, a review and Josh's go. The thread and turn-size memory need code on the live path (P1) and the memory hold lifted.
 - **P5** Memory, the opener replay, the goodbye fix and the earlier items remain on hold as listed in progress.md.
