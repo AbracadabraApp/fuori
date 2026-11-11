@@ -51,3 +51,30 @@ Repo evidence that bears on the same question (our own tests, not the research l
 - The repo notes were written earlier from their own searches; their findings are quoted as written, not rechecked.
 
 Suggested next step if wanted: a card in [../prompt-trials.md](../prompt-trials.md) to count slotted 4-to-8-word clauses per turn, on the live cluster-1 path.
+
+## 5. Is there an ideal dialogue structure for new learners? (Josh's question, 2026-11-11, from a fresh start)
+
+**No validated one.** No study or data found tests a whole dialogue shape for beginners. The research gives parts that agree; the assembled shape below is Claude's, not a finding.
+
+| Part of the dialogue | Support | Strength |
+|---|---|---|
+| Short turns, one idea each, one question at the end | CEFR describes A1 by the partner's behavior: very slow, carefully articulated, repeating and rephrasing, "totally dependent on repetition... rephrasing and repair" ([leveling/01](leveling/01-learning-science.md)) | Standard, descriptive; never tested as a design |
+| Help on request beats simplifying ahead of time | Loschky 1994: simplified input with no interaction no better than unmodified; unmodified plus negotiation best. Negotiation = clarification requests, confirmation checks, comprehension checks ([Interaction hypothesis](https://en.wikipedia.org/wiki/Interaction_hypothesis)) | Moderate; reviews and small studies, mostly information-gap tasks and classrooms |
+| Elaborate (rephrase, gloss, add) rather than strip | [Yano, Long & Ross](https://core.ac.uk/download/32302657.pdf); listening: [Hillman](https://drum.lib.umd.edu/items/eee887c8-6db3-41d0-9dd3-f70c69280bf5/full) | Moderate; little listening |
+| Chunks as the unit | Beginners lean on memorized phrases, later unpacked into grammar ([beginner-mode-scaffolding](beginner-mode-scaffolding.md)) | Good |
+| Say it aloud, then retrieve it | Production effect; retrieval beats repetition; Pimsleur is built on cue, silent attempt, confirmation | Good for the effects; no controlled trial of Pimsleur |
+| A frame the learner fills, support that fades | Frames help (small studies, mostly no controls); fixed support creates over-reliance | Weak |
+| Personalized questions, easy to hard | TPRS "circling": statement, yes/no, either/or, then wh-questions ([TPRS](https://comprehensibleclassroom.com/about-the-comprehensible-classroom/how-to/essential-strategies-for-tprsci-teachers/how-to-circle)) | Practitioner craft; almost no controlled research |
+| Simplifying the native speaker's talk | Complex or even ungrammatical input did not hurt comprehension when the situation was plausible ([Issidorides & Hulstijn](https://www.cambridge.org/core/journals/applied-psycholinguistics/article/comprehension-of-grammatically-modified-and-nonmodified-sentences-by-second-language-learners/28D7C4FE99B1618EA3342243969F697C)); effect of modifications on learning is open ([scoping review](https://addi.ehu.es/bitstream/10810/58093/1/The%20acoustic%20features%20and%20didactic%20function2022.pdf)) | Weak; argues against heavy simplification |
+
+**The shape those parts suggest (Claude's assembly):**
+1. A short line grounded in the scene, so the situation carries the meaning.
+2. Language pieces of chunk length (4 to 8 words) slotted into it, each glossed briefly only where needed.
+3. One question about what's here, easy to answer: yes/no or either/or first, open later.
+4. One or two short answers to say back, so the learner produces a chunk.
+5. Help on request (repeat, slower, rephrase, English); the next turn recycles the chunk in a new situation.
+6. Support fades as chunks land.
+
+**What nothing answers:** the right share of language to English; whether a gloss goes inside the line or after it, for voice; how long a turn should be; whether any order across a whole conversation is ideal.
+
+**Where data could come from:** Josh's ten graded conversations and the real Beginner transcripts are the only evidence on this exact structure: which frame builds got the best listener grades.
