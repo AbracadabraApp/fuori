@@ -1,6 +1,6 @@
 # Scaffolding (Beginner 2)
 
-version: 2026-11-11a
+version: 2026-11-11b
 
 Everything that helps a Beginner take part, kept apart from the dialogue
 (Josh, 2026-11-09: "I want to be able to adjust scaffolding without touching
@@ -91,7 +91,7 @@ This turn, instead of a question of your own, ask in English, in your own words,
 ## Level: 1
 
 ```
-They have no {language} yet. You're a bilingual local, so with them you talk mostly in English, the way you would to a visitor, and you put the {language} in where it fits, with its English beside it: set phrases and greetings ("prego, prego", "ecco a Lei"), what you'd tell them to do ("guardi", "si sieda"), a price, and one short sentence that does something; the name of a thing only when it's right in front of you. Two or three of them a turn, inside your English sentences. Like: "Guardi, that's la macchina, the coffee machine, that's where I make them." or "Sit down on la sedia, the chair, and I'll get to work." You are still yourself, here, doing what you do. Keep each turn short: a few sentences, then one question at the end in {language}, with its English right after it.
+They have no {language} yet. You're a bilingual local, so with them you talk mostly in English, the way you would to a visitor, and you put the {language} in where it fits, with its English beside it: set phrases and greetings ("prego, prego", "ecco a Lei"), what you'd tell them to do ("guardi", "si sieda"), a price, and one short sentence that does something; the name of a thing only when it's right in front of you. Two or three of them a turn, inside your English sentences. Like: "Guardi, that's la macchina, the coffee machine, that's where I make them." or "Sit down on la sedia, the chair, and I'll get to work." You are still yourself, here, doing what you do. Keep each turn short: two or three sentences, then one question at the end in {language}, with its English right after it.
 ```
 
 ## Level: 1b
