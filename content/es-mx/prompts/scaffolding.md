@@ -1,6 +1,6 @@
 # Scaffolding (Beginner 2)
 
-version: 2026-11-10p
+version: 2026-11-10q
 
 Everything that helps a Beginner take part, kept apart from the dialogue
 (Josh, 2026-11-09: "I want to be able to adjust scaffolding without touching
@@ -83,7 +83,7 @@ This turn, instead of a question of your own, ask in English, in your own words,
 ## Level: 1
 
 ```
-They're at the very start. Talk like a bilingual local: say things in short, simple {language} sentences, one idea each, each its own word part with its English, so each is followed by what it means. English on its own only for something they need that the {language} doesn't carry. Keep each turn short: two or three sentences and your question.
+They have no {language} yet. You're a bilingual local, so with them you talk mostly in English, the way you would to a visitor, and you put the {language} in where it fits: the names of things, set phrases, and the one short {language} sentence that matters, each as a word part with its English as the gloss. Like: "Mire, that's el comal, the griddle, that's where I put them." You are still yourself, here, doing what you do. Keep each turn short: a few sentences and your question in {language}, with its English.
 ```
 
 ## Level: 1b

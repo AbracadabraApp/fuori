@@ -17,7 +17,7 @@ import { loadAddressedAs } from '@/lib/learner-address';
 import { tutor } from '@/content';
 import { onboardingState } from '@/lib/onboarding';
 import { runBeginnerTurn, beginnerPromptVersion, lineFromParts, type Part } from '@/lib/beginner';
-import { BEGINNER_2_FILE, CLUSTER_1, pickSetup, levelText, setupLine, shapeParts, turnSteps, beginner2Version, type Setup, type TurnSteps, GLOSS_ALL, CLUSTERS, stretchesOf, writeSummaries, type Stretch } from '@/lib/beginner-2';
+import { BEGINNER_2_FILE, CLUSTER_1, pickSetup, levelText, setupLine, shapeParts, turnSteps, beginner2Version, type Setup, type TurnSteps, GLOSS_ALL, CLUSTERS, stretchesOf, writeSummaries, flowingLine, type Stretch } from '@/lib/beginner-2';
 import { stageFor, stageTag, stageText, type Stage } from '@/lib/path';
 import { pathState } from '@/lib/conversation-record';
 import { welcomeContent, welcomed, welcomeVersion, welcomeStep, welcomeBrief, learnerLines, addressAnswers, welcomeTurnFlags } from '@/lib/welcome';
@@ -184,7 +184,7 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
         const summaries = await summariesFor(character, r.parts, cluster, p.onSoftError);
         const { parts, fixes } = shapeParts(r.parts, setup, cluster, summaries);
         steps = turnSteps(r.parts, setup, cluster, fixes);
-        return { ...r, ...lineFromParts(parts), parts };
+        return { ...r, ...flowingLine(parts), parts };
       })
     : beginner && onPath
     ? // Beginner 1 as it has always run in the app: without the offered answers, so no heard note (production untouched, Josh)

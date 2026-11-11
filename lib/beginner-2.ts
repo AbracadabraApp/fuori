@@ -80,8 +80,13 @@ export const CLUSTERS: Setup[][] = [
 // The answer set up inside the character's line (rungs inside-en and inside) is out of every cluster until it
 // has a screen design (Josh, 2026-11-09: "I can't tell what the dialogue is that goes with 'You could answer me
 // with: …'": the lead is heard, not shown, and the answer sits unmarked inside the character's bubble)
-/** Whole-phrase glossing per cluster: cluster 1 only, pattern B (Josh, 2026-11-09: "b for s1": each sentence in the language, then its English) */
-export const GLOSS_ALL = [true, false, false, false, false, false];
+/**
+ * English after every phrase by code, per cluster: none now. Cluster 1 was pattern B (Josh, 2026-11-09: "b for s1": each
+ * sentence in the language, then its English), then the summary after a stretch (2026-11-10p); since 2026-11-10q the
+ * Level 1 text is the English frame with the language slotted in (docs/summary-and-mixed.md → Frame mix), so the
+ * character's own English carries the turn and the code adds none. The summary code stays for a later cluster, or goes (Josh)
+ */
+export const GLOSS_ALL = [false, false, false, false, false, false];
 export const CLUSTER_1 = CLUSTERS[0];
 
 /** The app's hidden cluster picker: header `x-fuori-cluster: 1`–`6`; cluster 1 otherwise */
@@ -337,6 +342,23 @@ export function withoutAnnouncing(parts: Part[]): Part[] {
       return kept.length === sentences.length ? x : { ...x, text: kept.join(' ').trim() };
     })
     .filter((x) => x.kind !== 'english' || x.text);
+}
+
+/**
+ * The spoken line for the English frame (Level 1, 2026-11-10q): the pieces in order, as lineFromParts, but a piece
+ * with no closing punctuation gets a comma when the next piece carries the sentence on (starts lowercase: "picadas on"
+ * + "el comal" + "and they're hot") and a full stop only before a new sentence. lineFromParts puts a full stop after
+ * every piece, which was right when every part was a sentence (connection test, 2026-11-10: "picadas on. el comal. and")
+ */
+export function flowingLine(parts: Part[]): { line: string; en: string } {
+  const spoken = parts.filter((p) => p.kind !== 'answer');
+  const answered = parts.some((p) => p.kind === 'answer' && p.text.trim());
+  const pieces = spoken.flatMap((p) => [p.text.trim(), p.kind === 'question' && answered ? '' : p.gloss?.trim() ?? '']).filter(Boolean);
+  const closed = (s: string) => /[.!?…:;,]["'»”’)]*$/.test(s);
+  const continues = (s: string) => /^[\p{Ll}]/u.test(s);
+  const line = pieces.map((piece, i) => (closed(piece) ? piece : i + 1 < pieces.length && continues(pieces[i + 1]) ? `${piece},` : `${piece}.`)).join(' ');
+  const en = spoken.map((p) => (p.kind === 'english' ? p.text : p.en).trim()).filter(Boolean);
+  return { line, en: en.join(' ') };
 }
 
 /** What the code did to one turn's parts: the setup and cluster it played, the shaping steps that changed something, and Claude's parts when one did */
