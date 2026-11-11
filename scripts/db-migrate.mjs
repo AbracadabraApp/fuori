@@ -95,6 +95,11 @@ ALTER TABLE learners ADD COLUMN IF NOT EXISTS level_checks jsonb;
 -- weaker signals may fill it, never over a choice).
 ALTER TABLE learners ADD COLUMN IF NOT EXISTS addressed_as text CHECK (addressed_as IN ('f', 'm'));
 ALTER TABLE learners ADD COLUMN IF NOT EXISTS addressed_from text;
+-- Level up (lib/level-up.ts): the learner's step of Beginner 2's reply ladder, when it was set, and when the
+-- offer was last declined (the columns also add themselves on first use)
+ALTER TABLE learners ADD COLUMN IF NOT EXISTS step int NOT NULL DEFAULT 1;
+ALTER TABLE learners ADD COLUMN IF NOT EXISTS step_since timestamptz;
+ALTER TABLE learners ADD COLUMN IF NOT EXISTS level_up_asked_at timestamptz;
 -- Scaffolding counts only conversations started after this (lib/scaffold.ts);
 -- null counts them all. Set to restart the reply buttons without deleting
 -- conversations (Josh, 2026-10-22, for his own learners).

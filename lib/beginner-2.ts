@@ -95,8 +95,13 @@ export const CLUSTER_1 = CLUSTERS[0];
 
 /** The app's hidden cluster picker: header `x-fuori-cluster: 1`–`6`; cluster 1 otherwise */
 export function clusterFrom(headers: Headers): Setup[] {
+  return clusterHeaderFrom(headers) ?? CLUSTER_1;
+}
+
+/** The cluster header alone, or undefined: then the learner's stored step decides (lib/level-up.ts → storedCluster) */
+export function clusterHeaderFrom(headers: Headers): Setup[] | undefined {
   const n = Number(headers.get('x-fuori-cluster'));
-  return Number.isInteger(n) && n >= 1 && n <= CLUSTERS.length ? CLUSTERS[n - 1] : CLUSTER_1;
+  return Number.isInteger(n) && n >= 1 && n <= CLUSTERS.length ? CLUSTERS[n - 1] : undefined;
 }
 
 /** A stable number from a string (FNV-1a), so a conversation replays with the same setups */

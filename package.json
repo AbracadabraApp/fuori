@@ -21,6 +21,7 @@
     "test:reply-ranks": "tsx tests/check-reply-ranks.ts",
     "test:beginner-2": "tsx tests/check-beginner-2.ts && COUNTRY=es-mx tsx tests/check-beginner-2.ts",
     "test:shapes": "tsx tests/check-shapes.ts && COUNTRY=es-mx tsx tests/check-shapes.ts",
+    "test:level-up": "tsx tests/check-level-up.ts && COUNTRY=es-mx tsx tests/check-level-up.ts",
     "test:learn-route": "tsx tests/check-learn-route.ts",
     "test:level-trial": "tsx tests/check-level-trial.ts",
     "test:flashcards": "tsx tests/check-flashcards.ts",

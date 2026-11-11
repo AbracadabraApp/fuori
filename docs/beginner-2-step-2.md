@@ -38,7 +38,9 @@ Open while writing it: whether "a word or two" of English for a new word slides 
 
 ## The step up: what has to exist
 
-Nothing of it exists (checked 2026-11-10: no screen, no stored step, no count, no copy).
+**Built 2026-11-11 evening as "level up" (docs/glossary.md; not released):** items 1–5 below, as `lib/level-up.ts`, `/v1/level-up`, `content/<country>/prompts/level-up.md`, the words in `language.ts` → `ui.levelUp`, and `ios/.../LevelUp/LevelUpView.swift` from the approved mockups (sketches/level-up/). Differences from the plan: the offer is after 3 conversations with 3 or more replies at the step (or since the last "not yet"), chosen by the learner, no score (Josh, 2026-11-11); the hidden `x-fuori-cluster` header stays as Josh's override; `POST /v1/level-up { step }` sets the step for testing. Item 6 (steps 2 and 3 written) is still open: a learner who says yes plays cluster 2's text as it is.
+
+As written 2026-11-10 (nothing of it existed then: no screen, no stored step, no count, no copy):
 
 1. **The learner's step, stored** on their record, replacing the hidden `x-fuori-cluster` header: set by the offer, read by `/v1/turn` (`clusterFrom` reads the record instead of the header; the header stays as an override for Josh's testing).
 2. **The count** of conversations that count at the current step (3 or more learner replies; opener-only visits don't), from `conversations`, reset when the step changes.

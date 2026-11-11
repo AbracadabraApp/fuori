@@ -74,7 +74,25 @@ public struct UIWords: Codable, Sendable, Equatable {
     public let stamp: StampWords?
     /// A lesson's buttons; nil from servers before 2026-11-02
     public let lesson: LessonWords?
+    /// The level-up screen's words; nil from servers before 2026-11-11
+    public let levelUp: LevelUpWords?
     public let ticket: TicketWords
+}
+
+/// The level-up screen (sketches/level-up/): its words, the yes in the
+/// language, and which decoration the country wears ("pennants" or "awning")
+public struct LevelUpWords: Codable, Sendable, Equatable {
+    public let theme: String
+    public let kicker: String
+    public let headline: String
+    public let how: String
+    public let now: String
+    public let next: String
+    public let play: String
+    public let answers: String
+    public let yes: String
+    public let yesLabel: String
+    public let notYet: String
 }
 
 /// A lesson's buttons (lib/lesson.ts), in the language, with their English

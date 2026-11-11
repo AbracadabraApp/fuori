@@ -43,6 +43,24 @@ public enum Tokens {
         public static let youEdge = Color(red: 0.7098, green: 0.7608, blue: 0.5765) // #b5c293
         public static let youInk = Color(red: 0.2471, green: 0.2902, blue: 0.1333) // #3f4a22
         public static let cinemaGlow = Color(red: 1.0000, green: 0.8392, blue: 0.0000) // #ffd600
+        public static let levelUpCard = Color(red: 1.0000, green: 0.9098, blue: 0.6392) // #ffe8a3
+        public static let levelUpAccent = Color(red: 0.9490, green: 0.6627, blue: 0.0000) // #f2a900
+        public static let levelUpAccentInk = Color(red: 0.2275, green: 0.1647, blue: 0.0000) // #3a2a00
+        public static let levelUpCardInk = Color(red: 0.1686, green: 0.1333, blue: 0.0000) // #2b2200
+        public static let levelUpCardLabel = Color(red: 0.2902, green: 0.2275, blue: 0.0196) // #4a3a05
+        public static let levelUpBody = Color(red: 0.3333, green: 0.3333, blue: 0.3333) // #555555
+        public static let magenta = Color(red: 0.8784, green: 0.1882, blue: 0.4353) // #e0306f
+        public static let magentaInk = Color(red: 0.7216, green: 0.1373, blue: 0.3529) // #b8235a
+        public static let awningGreen = Color(red: 0.1843, green: 0.4196, blue: 0.2706) // #2f6b45
+        public static let teal = Color(red: 0.1137, green: 0.6235, blue: 0.7020) // #1d9fb3
+        public static let tealLight = Color(red: 0.3686, green: 0.7686, blue: 0.8196) // #5ec4d1
+        public static let purple = Color(red: 0.4824, green: 0.2471, blue: 0.6275) // #7b3fa0
+        public static let pink = Color(red: 1.0000, green: 0.3569, blue: 0.5765) // #ff5b93
+        public static let leafGreen = Color(red: 0.1020, green: 0.5412, blue: 0.3529) // #1a8a5a
+        public static let leafDark = Color(red: 0.0784, green: 0.3608, blue: 0.2392) // #145c3d
+        public static let lemon = Color(red: 0.9686, green: 0.7765, blue: 0.0000) // #f7c600
+        public static let lemonDeep = Color(red: 0.9490, green: 0.7176, blue: 0.0196) // #f2b705
+        public static let lemonLight = Color(red: 1.0000, green: 0.8902, blue: 0.4510) // #ffe373
     }
 
     public enum FontFamily {

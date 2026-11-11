@@ -302,6 +302,38 @@ public actor APIClient {
         public let promptVersion: String
     }
 
+    /// The level up (lib/level-up.ts): after N conversations at the learner's
+    /// step the game offers the next one; the character's last line as said,
+    /// and the same line at the next step
+    public struct LevelUp: Codable, Sendable, Equatable, Identifiable {
+        public struct Person: Codable, Sendable, Equatable { public let id: String; public let name: String; public let role: String }
+        public struct Line: Codable, Sendable, Equatable { public let line: String; public let en: String }
+        public let step: Int
+        public let nextStep: Int
+        public let character: Person
+        public let place: String
+        public let city: String
+        public let now: Line
+        public let next: Line
+        public var id: String { "\(character.id)-\(step)" }
+    }
+
+    /// GET /v1/level-up?conversationId=…: the offer when it's due after this
+    /// conversation, with the screen's words; nil otherwise
+    public func levelUp(conversationId: String) async throws -> (offer: LevelUp, words: LevelUpWords)? {
+        struct Reply: Decodable { let due: Bool; let offer: LevelUp?; let words: LevelUpWords? }
+        let r: Reply = try await send(request("v1/level-up?conversationId=\(conversationId)"), signedIn: true)
+        guard r.due, let offer = r.offer, let words = r.words else { return nil }
+        return (offer, words)
+    }
+
+    /// POST /v1/level-up: the learner's answer, yes or not yet
+    public func answerLevelUp(yes: Bool) async throws {
+        struct Body: Encodable { let answer: String }
+        struct Reply: Decodable { let step: Int }
+        let _: Reply = try await send(post("v1/level-up", json: Body(answer: yes ? "yes" : "not-yet")), signedIn: true)
+    }
+
     /// POST /v1/learn: the Learn page for this conversation so far. The server
     /// reads the conversation; the learner must have said something.
     public func learn(cityId: String, placeId: String, tripTo: String? = nil, conversationId: String) async throws -> LearnPage {
