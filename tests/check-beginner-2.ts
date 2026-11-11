@@ -4,7 +4,7 @@
 // prompt file, the language-only rung hides the answers' English, the turn
 // code takes the switch, and Beginner 2 turns don't move the Beginner 1 path.
 import { readFileSync } from 'fs';
-import { beginnerVersionFrom, pickSetup, setupText, levelText, setupLine, fullerGlosses, shownParts, shapeParts, turnSteps, beginner2Version, glossAll, questionEcho, GOODBYE, OPENER, CLUSTER_1, CLUSTERS, RUNGS, clusterFrom, stretchesOf, withSummaries, summaryPrompt, MAX_STRETCH_WORDS, MAX_STRETCH_SENTENCES, GLOSS_ALL, flowingLine } from '@/lib/beginner-2';
+import { beginnerVersionFrom, pickSetup, setupText, levelText, setupLine, fullerGlosses, shownParts, shapeParts, turnSteps, beginner2Version, glossAll, questionEcho, GOODBYE, OPENER, CLUSTER_1, CLUSTERS, RUNGS, clusterFrom, stretchesOf, withSummaries, summaryPrompt, MAX_STRETCH_WORDS, MAX_STRETCH_SENTENCES, GLOSS_ALL, flowingLine, withQuestionEnglish } from '@/lib/beginner-2';
 import { stageInVersion } from '@/lib/conversation-record';
 import { lineFromParts, type Part } from '@/lib/beginner';
 import { buildBeginnerPrompt, SCAFFOLDING_FILE, dialogueWithoutFormat } from '@/lib/beginner';
@@ -15,6 +15,12 @@ import { characterForPlace } from '@/lib/characters/for-place';
 
 const problems: string[] = [];
 const check = (ok: boolean, msg: string) => { if (!ok) problems.push(msg); };
+
+// Cluster 1 on the one-line reply: the question's English said after it (Josh: "Final Question always gets English echo")
+check(withQuestionEnglish('Suba a la silla, climb up. ¿Quiere una boleada?', 'Climb up on the chair. Do you want a shine?') === 'Suba a la silla, climb up. ¿Quiere una boleada? Do you want a shine?', 'the English question follows hers');
+check(withQuestionEnglish('Cosa ti preparo? (What can I make for you?)', 'What can I make for you?') === 'Cosa ti preparo? (What can I make for you?)', 'not when she put it in brackets herself');
+check(withQuestionEnglish('What can I get you? Cosa prendi?', 'What can I get you? What will you have?') === 'What can I get you? Cosa prendi?', 'not when the English question is already right before hers');
+check(withQuestionEnglish('Ecco il cornetto, still warm.', 'Here is the cornetto, still warm.') === 'Ecco il cornetto, still warm.', 'no question, nothing added');
 
 // The spoken line for the English frame: a phrase inside an English sentence is joined with commas, a sentence with full stops
 {
@@ -92,7 +98,8 @@ const g1 = glossAll(para);
 check(g1[1].gloss === 'I paint here every day.' && g1[3].gloss === 'Do you like the murals?', 'glossAll (off for now): every phrase gets its English');
 check(g1[2].gloss === '', 'glossAll: not when the turn\'s own English already said it');
 check(shownParts(para, CLUSTER_1[0], CLUSTER_1)[1].gloss === '' && shownParts(para, CLUSTERS[1][0], CLUSTERS[1])[1].gloss === '', 'no cluster adds the literal English after each phrase by code (2026-11-10q: the frame carries it)');
-check(/talk in English/.test(setupText(CLUSTER_1[0], CLUSTER_1)) && /with its English as the gloss/.test(setupText(CLUSTER_1[0], CLUSTER_1)) && !/say it again/.test(setupText(CLUSTER_1[0], CLUSTER_1)), 'Level 1 is the English frame with the language slotted in, each phrase with its English, no sandwich repeat (Josh: weird)');
+check(/talk mostly in English/.test(setupText(CLUSTER_1[0], CLUSTER_1)) && /with its English beside it/.test(setupText(CLUSTER_1[0], CLUSTER_1)) && !/word part/.test(levelText(CLUSTER_1)) && !/say it again/.test(setupText(CLUSTER_1[0], CLUSTER_1)), 'Level 1 is the frame brief as the list used it: one line, no parts, each phrase with its English, no sandwich repeat (Josh: weird)');
+check(/beginnerCluster \?\? CLUSTER_1\) === CLUSTER_1\n\s*\?[\s\S]*?runTurn\(\{[^\n]*brief: levelText\(CLUSTER_1\)/.test(readFileSync('lib/conversation/take-turn.ts', 'utf8')), 'cluster 1 runs on the Intermediate reply with the Level 1 block as its brief (2026-11-10s)');
 check(/as little as needed/.test(setupText(CLUSTERS[1][0], CLUSTERS[1])), 'Level 1b (cluster 2) is C');
 const inv = shownParts([{ kind: 'english', text: 'Sit anywhere.', en: '', gloss: '' }, { kind: 'question', text: '¿Es su primera vez en Puebla?', en: 'Is it your first time in Puebla?', gloss: '' }], RUNGS.find((r) => r.id === 'invite-en')!, CLUSTER_1);
 { const qi = inv.findIndex((x) => x.kind === 'question'); check(inv[qi + 1]?.text === 'Is it your first time in Puebla?' && inv[inv.length - 1].kind === 'english' && /ask me in English or/.test(inv[inv.length - 1].text), 'the invitation to ask is said, in code'); }

@@ -382,6 +382,23 @@ export function withoutSaidInEnglish(parts: Part[]): Part[] {
   return parts.filter((p) => !(p.kind === 'word' && p.text.trim() && english.includes(p.text.trim().replace(/[.!?…]+$/, '').toLowerCase())));
 }
 
+/**
+ * The question's English after it, on the one-line reply (cluster 1, 2026-11-10s): when the line ends on a question
+ * and her English does too, the English question is said right after hers (Josh: "Final Question always gets English
+ * echo"), unless she already put it there (in brackets, or as a second question). Punctuation only, so any language
+ */
+export function withQuestionEnglish(line: string, en: string): string {
+  const last = (s: string) => s.trim().split(/(?<=[.!?…]["'»”’)]*)\s+/).filter(Boolean).at(-1) ?? '';
+  const q = last(line);
+  const qEn = last(en).replace(/^\(|\)$/g, '');
+  if (!/\?["'»”’)]*$/.test(q) || !/\?$/.test(qEn)) return line;
+  // Already there: her last two sentences are both questions (she wrote the English herself), or the question is in brackets
+  const tail = line.trim().split(/(?<=[.!?…]["'»”’)]*)\s+/).filter(Boolean).slice(-2);
+  if (tail.length === 2 && /\?["'»”’)]*$/.test(tail[0])) return line;
+  if (/\(.*\?\)$/.test(q)) return line;
+  return `${line.trim()} ${qEn}`;
+}
+
 /** What the code did to one turn's parts: the setup and cluster it played, the shaping steps that changed something, and Claude's parts when one did */
 export interface TurnSteps {
   setup: string;

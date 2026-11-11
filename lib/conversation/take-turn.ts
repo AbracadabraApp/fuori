@@ -17,7 +17,7 @@ import { loadAddressedAs } from '@/lib/learner-address';
 import { tutor } from '@/content';
 import { onboardingState } from '@/lib/onboarding';
 import { runBeginnerTurn, beginnerPromptVersion, lineFromParts, type Part } from '@/lib/beginner';
-import { BEGINNER_2_FILE, CLUSTER_1, pickSetup, levelText, setupLine, shapeParts, turnSteps, beginner2Version, type Setup, type TurnSteps, GLOSS_ALL, CLUSTERS, stretchesOf, writeSummaries, flowingLine, type Stretch } from '@/lib/beginner-2';
+import { BEGINNER_2_FILE, CLUSTER_1, pickSetup, levelText, setupLine, shapeParts, turnSteps, beginner2Version, type Setup, type TurnSteps, GLOSS_ALL, CLUSTERS, stretchesOf, writeSummaries, flowingLine, withQuestionEnglish, type Stretch } from '@/lib/beginner-2';
 import { stageFor, stageTag, stageText, type Stage } from '@/lib/path';
 import { pathState } from '@/lib/conversation-record';
 import { welcomeContent, welcomed, welcomeVersion, welcomeStep, welcomeBrief, learnerLines, addressAnswers, welcomeTurnFlags } from '@/lib/welcome';
@@ -172,6 +172,12 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
         const parts = step === 'opening' ? [...r.parts, ...addressAnswers()] : r.parts;
         return { ...r, parts, done: step === 'answers' && r.done === true, ...welcomeTurnFlags(step) };
       })()
+    : beginner && onPath && setup && (p.beginnerCluster ?? CLUSTER_1) === CLUSTER_1
+    ? // Beginner 2, cluster 1 (2026-11-10s): the English frame on the Intermediate reply, one flowing line with the
+      // level block as the brief, the path that made the list Josh judged (docs/summary-and-mixed.md → Frame mix). Not the
+      // parts format: there the character pulls the language out of the sentence into its own box (10q–10r). No answers
+      // to say back yet (the reply panel Intermediate has in the first conversations stands in); the voice starts early
+      await runTurn({ character, transcript, learnerSaid, memory, addressedAs, brief: levelText(CLUSTER_1), laps: p.laps, onText: p.onText, canRetry: p.canRetry, withDone: true }).then((r) => ({ ...r, line: withQuestionEnglish(r.line, r.en) }))
     : beginner && onPath && setup
     ? // Beginner 2: the parts are rewritten after the reply (glosses, English, the answer said inside), so the
       // spoken line is rebuilt from them, and the voice waits for the whole reply (no early first sentence:

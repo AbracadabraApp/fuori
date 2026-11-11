@@ -12,7 +12,13 @@
 
 The Cluster stepper (Settings → touch and hold Version → Cluster 1–6) is the level-up for now: Josh picks the cluster by hand.
 
-## First thing tomorrow: the Level 1 reply format (before step 2)
+## Done the same night: cluster 1 runs on the Intermediate prompt with the frame brief (2026-11-10s)
+
+Josh: "why isn't it just using the frame". It now does: `take-turn.ts` runs Beginner 2 cluster 1 through `runTurn` (the Intermediate prompt, one flowing line) with `scaffolding.md` → "Level: 1" as the brief, the exact call that made the lines Josh judged; `withQuestionEnglish` says the question's English after it (Josh: "Final Question always gets English echo"). Runs through that call: Mexico 2 + 2 characters, Italy 2, two turns each: 28% in the language, three to four pieces a turn, mostly phrases ("Suba a la silla, climb up on the chair, and I'll get to work. ¿Quiere una boleada? Do you want a shoe shine?"), 4.0–4.8 s a turn (the voice starts on the first sentence, as at Intermediate). On screen: the whole line as the subtitle, as at Intermediate; no bubbles for the Spanish and no two answers to say back yet; the reply panel Intermediate shows in a learner's first conversations stands in. Clusters 2–6 still run on the Beginner prompt (parts). Not released.
+
+**Still open:** the two answers to say back and the Spanish as bubbles: the one-line-plus-spans format below, now a screen question rather than the fix for the dialogue. And the brief's noun guard (Josh: the Spanish in the live transcript "are likely things like nouns"): watch the single-word count.
+
+## The reply format with spans (later; was "first thing tomorrow" before 10s)
 
 Josh played 10q live (Don Efrén, Guadalajara, 2026-11-11 04:36 UTC): "speaking straight english except question". Three wordings of the Level 1 brief that night, each failing differently in the parts format: one Spanish phrase a turn (10q); rows of bare labels between the English ("La silla. El cepillo."); the Spanish hidden inside the English boxes (10r, on `main`, not released). The cause is the format, not the words: the lines Josh judged ("that's la silla, the chair, where you climb up") were written as one flowing string in the Intermediate format; the parts format makes the character pull the Spanish out of the sentence into its own box.
 
