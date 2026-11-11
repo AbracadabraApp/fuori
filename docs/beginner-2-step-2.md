@@ -36,3 +36,19 @@ Nothing of it exists (checked 2026-11-10: no screen, no stored step, no count, n
 6. **Steps 2 and 3 written** before the screen ships, or the first "Yes" steps into the old Level 2 text.
 
 Build order: step 2 (above) → the stored step and the count → the route with the rewrite → the screen → step 3. The screen is a day; the steps are the work.
+
+## Goal: Beginner 2 replaces Beginner 1 (Josh, 2026-11-10). What remains
+
+Beginner 1 = `beginner.md` + `lib/path.ts` (a fixed playlist of stages with a moving-up rule that fired once in 185 records) + the record's rules (`lib/conversation-record.ts` → `feltOf`: an English reply counts as lost). Beginner 2 = the Intermediate character prompt + `scaffolding.md` + `lib/beginner-2.ts`, switched on by a header the app sends, with no stored progress. To swap, in order:
+
+1. **Josh plays step 1 and says it's better** (after a release): the only gate. A few conversations, both countries.
+2. **Steps 2 and 3 written** (above), so a learner has somewhere to go. Steps 4–6 can come after the swap; step 6 is the Intermediate prompt itself.
+3. **The stored step and the offer** (above: the step on the learner's record, the count, `/v1/step-up`, the copy, the screen). Without it every learner is stuck at step 1; this is the one piece that can't wait. Beginner 1's `lib/path.ts` stages and its moving-up rule go with it.
+4. **Beginner 2 on by default:** `beginnerVersionFrom` returns 2 unless the header says 1 (the hidden switch flips meaning, then goes); the Cluster stepper becomes an override of the stored step for Josh's testing.
+5. **The record's rules** (docs/beginner-2.md → "Beginner 1 rules Beginner 2 breaks"): an English reply is communication, every reply counts, uptake scores; `feltOf` and `countedOwnTurns` rewritten; the scorecard and grade already split by `+C<cluster>`.
+6. **What else reads `beginner.md`:** the welcome (`lib/welcome.ts`) and lessons run the Beginner format with `beginner.md`'s System prompt blocks (`buildBeginnerPrompt` defaults to it). They keep it, or move to `scaffolding.md`'s blocks; either way `beginner.md` isn't deleted by the swap.
+7. **Onboarding places a new learner at step 1** (it stores `beginner`; the step defaults to 1): nothing to do beyond 3.
+8. **Tests and smoke:** `check-beginner`, `check-path` and the version/stage tests follow the new rules; `smoke:live` plays a Beginner conversation in both countries and must pass before the release that swaps.
+9. **Release, then Josh and Sophia play.** Beginner 1's code is removed later, once nothing refers to it (`new beside old`: the old one goes when the new one has won in play, not before).
+
+Sizes: 1 is Josh's time; 2 is an evening; 3 is the week (server a day or two, screen a day, both countries); 4, 5, 7, 8 a day together; 6 nothing now.
