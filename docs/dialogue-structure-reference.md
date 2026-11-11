@@ -191,3 +191,64 @@ From reading `lib/beginner-2.ts`, `lib/conversation/take-turn.ts`, `lib/prompts/
 **Implication.** The first implementation work for the deep dive isn't a theory; it's two enabling pieces: spans in the reply (O4) and a shape note per turn (O5). Without them a theory is a prompt paragraph judged by ear.
 
 **On the numbering** (Josh, 2026-11-11: "discussion of dialogue gets very vague easily"). The terms are kept because a change can name its part and a real turn can be labelled by its parts; the numbers are for cards and logs, the words for conversation. A term earns its place only when something built or on a card uses it.
+
+## 10. The Intermediate dialogue in terms (Claude, 2026-11-11; Josh: "represent the current intermediate dialogue in terms, or create new ones")
+
+From two directions: the prompt (`content/*/prompts/character.md` 2026-11-10q and `dialogue.md` 2026-11-10p) and one real conversation (Josh with Nunzio, Palermo, 2026-11-09, character prompt 2026-11-08b, 14 character turns; archive `conversations-2026-11-10.json` on the mini). The archive's newest 200 have no Mexico Intermediate conversation longer than one turn, so the transcript side is Italy only.
+
+### 10.1 New terms (no fit in T1 to T32)
+
+- **T33 Full:** the whole turn in the language, English only as display (the Intermediate reply, `{ line, en }`). The counterpart of the Beginner frame (Scene + Slot).
+- **T34 Translation:** the full English of the line, shown after the character finishes (Intermediate display today). Distinct from Gloss (T3, spoken, brief, inside the line) and Subtitle (T27, shown, tracking).
+- **T35 Serve:** the transaction, when the role has one ("a turn or two of the visit, not the whole of it").
+- **T36 Refer:** sending them elsewhere for what the role doesn't give ("la Vucciria è a due passi"; dialogue.md: "tell them where to get it").
+- **T37 Story:** a piece of the character's own life or past ("lo mangiavo da ragazzo"). Culture that lives in a person; Fact (T15) is culture that lives in information, Manner (T31) culture that lives in speech.
+- **T38 Do:** an invitation to act in the scene ("Veda se riesce a toccarne una"; Level 1's "what you'd tell them to do: mire, suba"). Both levels.
+- **T39 Praise:** "Bene, brava!", "buon orecchio". Named so it can be counted: it is the move that reads as a tutor's script at Beginner.
+- **T40 Reassure:** the character answers an apology or a stumble ("Non si scusi, parla benissimo"). Not Help (T7), which is on request.
+- **T41 Rest:** a turn that ends on a statement and leaves the learner to lead. At Beginner a dead end (dialogue-model.md: S1 to S3 end on a question); at Intermediate where Nunzio's conversation got good.
+
+Inputs (what the prompt gives the model; not moves): **I1 Setting** (the here line), **I2 Notes** (the character's memory of the learner, with "don't tell them again"), **I3 Learner said** (the newest message), **I4 Heard note** (the app's check against the answers offered; none at Intermediate, which has no answers), **I5 Register** (T32).
+
+### 10.2 The prompt, in terms
+
+| Prompt text | Term |
+|---|---|
+| "Someone approaches." | Open (T10) |
+| "No more words after a question mark" | Ask (T5) ends the turn when there is one; nothing says there must be |
+| "Talk about what's here"; the setting line | Anchor (T20), Fact (T15) from I1 |
+| "If your job has a sale, it's a turn or two" | Serve (T35) |
+| "tell them where to get it, and ask nothing about it" | Refer (T36) |
+| "use the right words yourself… not every time" | Recast (T18) |
+| "Don't tell them again what you've already told them"; the notes | Thread across visits (T24), Learner facts (T25), from I2 |
+| "It's rude to ask someone where they're from or how long they've been here" | a forbidden Ask kind (the tourist question) |
+| "say goodbye back… nothing new" | Close (T11) |
+| `{ line, en }` | Full (T33) spoken, Translation (T34) shown |
+
+No Slot, Gloss, Say-back or Echo. The prompt prescribes no order inside a turn and no shape across turns; everything below is the model's habit.
+
+### 10.3 Nunzio's turns, labelled
+
+| Turn | Labels |
+|---|---|
+| 1 | Open, Anchor ("questi alberi"), Fact (cent'anni), Ask as a tag ("sa?") |
+| 2 | Fact (Australia, 1800s), Anchor as a question ("Vede le radici?"), Fact. Rest; words after the question mark |
+| 3 | Take (the name), Anchor (novembre), Ask about them ("di passaggio a Palermo?": the tourist question the prompt forbids) |
+| 4 | Take, Fact + Anchor (Palazzo Steri, qui di fronte), Ask yes/no |
+| 5 | Confirm ("Ha ragione"), Fact (arabi, normanni), Refer (la Vucciria). Rest |
+| 6 | Take ("Certo che lo conosco"), Fact (pani ca meusa), Story ("lo mangiavo da ragazzo"). Rest |
+| 7 | Take, Fact (milza, strutto), Fact (tradition). Rest |
+| 8 | Help on request (milza = spleen), Praise ("buon orecchio"), Ask about them (gardens in your country) |
+| 9 | Take ("Ma guarda!"), Expand, Ask open |
+| 10 | Take, Anchor (vecchietti sulle panchine), Expand. Rest |
+| 11 | Praise, Story (opinion), Ask either/or |
+| 12 | Take, Anchor + Fact (fichi, radici), Do ("Veda se riesce a toccarne una"). Rest |
+| 13 | Reassure ("Non si scusi, parla benissimo"), Take, Expand. Rest |
+| 14 | Close, nothing new |
+
+### 10.4 What the labelling shows
+
+- **The model's default shape, with no instruction, is Take, then one added thing (Fact, Anchor, Story or Expand), then sometimes an Ask.** Take is in 12 of 13 turns after the first. That is S11-revised (Take, Build, Ask), arrived at by habit, not design.
+- **Rest is half the conversation:** 6 of 13 non-closing turns end on an Ask (1 tag, 3 yes/no, 1 open, 1 either/or); 7 end on a statement and Josh led the next turn himself.
+- **Both prompt breaches are Ask-shaped:** words after the question mark (turn 2) and the tourist question (turn 3).
+- **Nothing recycles and nothing fades,** since there are no chunks: at Intermediate the unit is the idea, not the phrase. A turn is usually three sentences.
