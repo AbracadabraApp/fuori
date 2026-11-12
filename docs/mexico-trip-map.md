@@ -63,3 +63,13 @@ Building, square:
 - **The ticket sheet with a wide map** is shorter than Italy's, so the sheet may have empty space below the ticket.
 - **Names and route on a bright map** (above).
 - **Ten cities on the board**, all on the first screen, no "show more".
+
+## After the first sketches (2026-11-11, later the same evening)
+
+Rough sketches only; nothing here is made. Josh's words are quoted; the rest is the cloud chat session's suggestion.
+
+**Sheet layout Josh steered to.** He liked the picture panels round the border of a 1930s pictorial map ("I thought the key on the border here was interesting"). From there: "layout 10 down the left and the full size ticket under the map", the ticket "full-size - under map - right of the key-strip". So: a key strip of ten city panels (a number and the city's building) down the left for the sheet's full height; on the right a tall map with numbered dots, and under it the full-size ticket. His last word on the sketch was "correct placement - still smushed ticket"; the ticket then got taller with larger type and the route on two lines, which he hasn't judged. This replaces "landscape, 3:2" above: the map becomes tall, either the whole country or zoomed to where the cities are.
+
+**No cities in the north** (Josh: "do we really have zero cities in the North?"). True: nothing north of Guanajuato and Mérida, nothing in Baja or on the Pacific coast. He raised the Pueblos Mágicos ("there is a designation of cultural towns in Mexico"); Pátzcuaro and San Cristóbal are already on that list. Suggested, not decided: **Monterrey, Mazatlán, Chihuahua with Creel (El Chepe starts there, a real train trip), and one of Tijuana or Ensenada.** Passed over: Zacatecas (a second silver city after Guanajuato), Durango, Puerto Vallarta (a resort), Acapulco (later, perhaps), Álamos, Todos Santos, Cuatro Ciénegas, Real de Catorce (the best picture, but tiny). With a real north the whole-country map is the right one. Add or swap is open (Josh asked "add or swap"): the suggestion is to add, and if one goes, San Miguel de Allende, which sits 6 pt from Guanajuato on the map and is the most expat of the ten. More than ten cities means the key strip needs rethinking.
+
+**The hard side of places** (Josh: "you are still missing the narco towns", "Michocan", and "agree" to this). Pátzcuaro is already in cartel country and its file is all lake, plaza, crafts and Day of the Dead. Characters there should know what a local knows, so it can come up as it does in life, without being a topic or a scene. A prompt and pantry change, so it waits on a test: K1 in docs/prompt-testing.md → The queue.
