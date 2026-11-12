@@ -2,6 +2,10 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../intro.md`.
 
+### 2026-11-12b: a short question at Beginner (a prose cap)
+- **Changed:** the Beginner reply block ("Reply: sentences and answers") adds: "Your question is short, six words at most, the way you'd ask it across the counter: a choice between two words, not two clauses." Intermediate's block is unchanged.
+- **Why and prompted by:** Josh, 2026-11-12, of the question bubble after the intro: "the transition is good - the amount of words is broken". Raymundo's and Don Isidro's were 15 words, about 35 with the English under them, in a Beginner's first bubble. Before: six intros a country, median 13 words in the language (longest 15), English median 15–16 (`tests/experiments/intro-question-length.mts`). A length rule in prose, the kind docs/dialogue-plan.md 5.5 questions; kept because one question holds a cap far better than a whole turn does (the dialogue session's note), and checked on fresh intros. Product change on Josh's word, no card.
+
 ### 2026-11-12a: the beats aren't "taken up one at a time"
 - **Changed:** both Reply blocks said of the beats "the visit's later turns take them up one at a time"; the Beats block (11e) says "not a list to work through". Now: "you'll have them for the rest of the visit".
 - **Why and prompted by:** a leftover of the per-turn beat note removed in shapes.md 11d, contradicting the Beats block in the same prompt (docs/dialogue-plan.md 1.3). Wording only; on Josh's go for the plan, 2026-11-12.
