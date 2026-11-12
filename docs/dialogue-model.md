@@ -97,6 +97,7 @@ Sorted by subject 2026-11-12 (the entries unedited; a line in italics says where
 
 ### The Beginner
 
+- **"Questions to ask" stays, about what the character just said** (Josh, 2026-11-12: "I appreciate variety, but also coherent play"; "yes" to keeping it with that change): on some Beginner turns the character asks nothing and the learner gets two questions to ask, which come out of what the character just told them (scaffolding.md 12g). The exception to "every turn ends on a question" below.
 - **The Beginner is the new Beginner** (Josh, 2026-11-12: "the sooner we cut over the clearer this will be"): every Beginner plays it, on six steps; the old one behind the hidden switch for a week.
 - **Step 1 is the English frame** (Josh, 2026-11-10, on the frame-mix lines: "These are strong. For early learners - these are better than the echo or summary"): mostly English with the language slotted in, each phrase with its English beside it. Short (Josh, 2026-11-11: "Everything is basically too long"): one or two phrases a turn, two short sentences, then the question (scaffolding.md 12b).
 - **Answers to say back** (Claude's proposal; Josh, 2026-11-05: "fine"): the
@@ -113,7 +114,7 @@ Sorted by subject 2026-11-12 (the entries unedited; a line in italics says where
   turn with nothing to answer is a dead end. From S4 up a question isn't
   required (open talk can be a statement; a character who steps away comes
   back, docs/dialogue-ideas.md).
-  *Superseded in part (2026-11-12): the stages are gone; the Beginner's steps end each turn on a question except "questions to ask" (the learner asks) and the goodbye; see "A conversation is bids". Whether that exception stands is open (Not decided yet).*
+  *Superseded in part (2026-11-12): the stages are gone; the Beginner's steps end each turn on a question except "questions to ask" (the learner asks) and the goodbye; see "A conversation is bids". That exception stands: see "Questions to ask" above.*
 - **Moving up is offered and chosen** (Josh, 2026-11-11: "a simple offer after N conversations; doesn't have to be success based and is user chosen"; "lets use the level up pages as designed").
 - **Everyone starts at Beginner** (Josh, 2026-11-05: "for now everyone starts
   at beginner"), at S1; Settings → level changes it (Beginner, Intermediate,
@@ -204,7 +205,6 @@ What Beginner level dialogue is for. The trial prompt is written against these, 
   is working this out; the one global subtitle setting is hidden in Settings
   for now (2026-11-05).
   *The intro's subtitles are decided ("The intro opens a visit"); bubbles for the rest.*
-- **Does every Beginner turn end on the character's question?** The 11-05 decision says yes (S1–S3); the "questions to ask" setup ends on the learner asking instead, which the bids model counts as a bid. Josh to say.
 
 ## The code
 

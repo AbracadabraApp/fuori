@@ -2,6 +2,11 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
 
+### 2026-11-12g: the questions to ask follow from what the character just said
+- **Changed, Setup: two questions to ask:** "give them two short questions they could ask you" → "… they could ask you about what you just told them".
+- **Why:** in Josh's Raymundo visit (409863b2, turn 2) the character talked about the arches and the orange lights in the tunnel, and the questions offered were "¿Cuánto cuesta el pasaje?" and "¿Adónde llega este camión?": stock questions for any bus, so the turn read as a menu, not a conversation. Josh, 2026-11-12, asked whether this kind of turn should stay ("I appreciate variety, but also coherent play"): kept, with the questions tied to the character's line ("yes").
+- **Prompted by:** the review of dialogue-model.md (the 11-05 rule that every Beginner turn ends on the character's question, against this setup).
+
 ### 2026-11-12f: Notice points at something not shown yet, and never comes twice running
 - **Changed, Setup: notice:** "something they can see right now" → "something they can see right now that you haven't shown them yet". In code (lib/beginner-2.ts): Notice's weight 2 → 1 (as questions to ask), and never twice running.
 - **Why:** a replay of Josh's Raymundo visit (409863b2) through 12e drew Notice on 3 of 5 middle turns, two in a row, each the same stone arches and "¿Los ve? Do you see them?": the Dora repetition again in a new shape.
