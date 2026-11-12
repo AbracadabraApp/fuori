@@ -1,145 +1,109 @@
 # Dialogue plan
 
-2026-11-12 · laptop session (dialogue; another session has the user-facing changes) · Josh: "focus on our dialogue model", then "reorganize all of todays assessment into a action plan", then "make this part of the plan for any 'kept' items and cite the docs it resolves".
+The one list of dialogue work (laptop dialogue session; another session has the screen). How dialogue works today is [dialogue-now.md](dialogue-now.md); what's decided is [dialogue-model.md](dialogue-model.md). Started 2026-11-12 from Josh: "focus on our dialogue model" and "reorganize all of todays assessment into a action plan"; rewritten the same day to be readable (Josh: "yes" to tidying it). The older item numbers (1.1, 5.4…) are kept in brackets, because commits and messages use them.
 
-**Josh's answers, 2026-11-12:** 1 "yes"; 2 "c - good, a good enough, change 8 to 7"; 3 "we are cutting over to beg 2" (done by the other laptop session, b45d171); 4 "needs more fidelity"; 5 "yes"; 6 "yes". **Done today:** 1.1 and 2.3 (3322eb2), 1.2 and 1.3 (ecd7fab), 5.6 for Beginner 2 (f5a8ca5), decision 6 (614da8d). Each row below says so.
+**Rule for the work (Josh, 2026-11-12):** experiments are for creating information in an unknown situation. Where the information is already there (his words, a cause found), build it and let his play judge it.
 
-**Status of the rest: proposed by Claude, not agreed.** The order and the items are Claude's, from two reads of the code and prompts on `main` at e53902f (both countries; Italy's prompt texts match Mexico's apart from example phrases). The decisions that are Josh's are listed at the end; nothing that changes what a learner hears ships without his word.
+## Now: being worked on
 
-**How to read it.** Each item says what it resolves: the inconsistency, and the docs and sections that hold the problem or the earlier thinking about it. When the item is done, those sections are brought up to date or archived (phase 6). An item with nothing cited is new today.
+1. **Closing a visit when the talk is done** (your "c", 2026-11-12). Today a Beginner visit offers the goodbye on the 7th turn whatever is happening, and an Intermediate visit ends only when the learner says goodbye. Wanted: the character winds down when the talk has run its course, using a signal that works in any language. [5.3]
+2. **"Newcomer" in the lesson and culture writers.** The prompt that writes lessons labels the learner's lines "newcomer"; the one that picks cultural stories speaks of "the newcomer". Then the lesson practice prompt can drop its patch ("don't ask their name or where they're from"), which exists only because the Beginner prompt used to ask. Regenerating lessons or stories is your call. [2.1, 2.2]
+3. **A first new kind of question for Beginners.** Today the character's questions are nearly all "this or that?" (the Dora shape); after the six-word cap, five of six Italian intro questions start "Preferisce…". First new kind: *Notice* ("See those arches above us?") or *Offer* ("Want to try one?"), played before the next. "Finish the sentence" comes later: learners left on it more than on any other kind (27%). [4.2]
 
-## Phase 1: fix what's live and wrong
+## Waiting on you
 
-| # | What | Resolves | Check | Needs |
+1. **Release.** On main, not live: the shorter step 1, the goodbye fix and "take up what they said first" (b27cb88); the shorter intro question (intro.md 12b); the question's English at steps 1–3 and the "first time or when new" rules removed (27a7fdb).
+2. **Step 2 is now longer than step 1.** This morning step 1 went to one or two phrases and two short sentences; step 2's text still asks for "three or four" phrases and "two or three sentences". Give step 2 the same shortening? (yes / no)
+3. **Steps 4–6.** Never played; today they switch to a different screen and a slower start, and don't follow your ladder for the question's English. Your ladder is the target (below). How to get there: (a) hear steps 4–6 as they play today, or (b) build my direction (below) and hear it. [5.4]
+4. **Speech-to-text given the answers just offered** ("Quiero ver los altares" heard as "Kiran Velos Altera"; Don Isidro then called you Kiran). When, if at all. [B]
+5. **Play, when you can:** Beginner turn length; a goodbye said with your name; whether characters take up what you say without sounding formulaic; a second visit to Raymundo or Isidro in Guanajuato (does the character remember what it told you?); a few Intermediate visits.
+
+## Done (2026-11-12)
+
+| What | Commit | Live? |
+|---|---|---|
+| "Where are you from" and "newcomer" lines out of the Beginner prompt [1.1, 2.3] | 3322eb2 | Yes |
+| Beginner goodbye offered once on the 7th turn; the close by the intro's beat count removed; the intro prompt's beats wording made consistent [1.2, 1.3] | ecd7fab | Yes |
+| Dead code out: the summary call, the answer said inside her line [5.6] | f5a8ca5 | Yes |
+| CLAUDE.md points at dialogue-now, dialogue-model and this plan; the M1 and October designs archived | 614da8d | (docs) |
+| Every Beginner on the new Beginner; the old one behind the hidden switch for a week (the screen session) [5.1, 5.2] | b45d171 | Yes |
+| Shorter step 1 (median 60 → 37–47 words on your Guanajuato visits replayed) [A] | b27cb88 | No |
+| A goodbye with your name or a thanks still ends the visit [part of 5.3] | b27cb88 | No |
+| "Take up what they just said before you add anything of your own" (the accept half of your bids model) [4.1] | b27cb88 | No |
+| Beginner intro question six words at most (the screen session) | intro.md 12b | No |
+| The question's English shown and said at steps 1–3; the "English only the first time or when new" rules removed ("i never proposed that"; the screen session) | 27a7fdb | No |
+| Measures: what learners do after each kind of question (`scripts/bid-count.mjs`); turn length on replayed real visits (`tests/experiments/b2-turn-length.mts`) [3.1, A] | 8423712, 970ba64 | (tools) |
+
+## Later
+
+- **Remove the old Beginner** (a week from 2026-11-12) with its prompt blocks in `levels.md` and `leveling.md`, and decide whether the welcome and lessons move to the new Beginner's prompt. [5.2, 5.6]
+- **Rerun the counts** after a week on the new Beginner: what learners do after each kind of question; whether characters ask and then carry on as if answered. [3.1, 3.2]
+- **Cultural lessons:** their fixed "Have you ever…?" at the end of each turn becomes a choice of question. Your word: a lesson prompt. [4.3]
+- **Length rules written as prose** ("two short sentences", "six words at most"): leave unless your play says they don't hold. [5.5]
+- **A step-3 character ended on an English question** (Don Chucho: "Hmm, maybe you want a boleada?"): watch for more before fixing.
+- **The rules inventory:** every rule in the prompts sorted into what it does. [5.7]
+- **No Intermediate lessons in Mexico** (Italy has them). Content; may be the screen session's. [5.9]
+- **Parked:** the turn-code refactor, until a change has to reach every kind of conversation. [5.8]
+
+## Steps 4–6, in detail
+
+**Your ladder for the character's question** (Josh, 2026-11-12, "this is what i want"; for "¿Le gustan los túneles?"):
+
+| Beginner step | Under the question in her bubble | What the character says aloud |
+|---|---|---|
+| Steps 1, 2 and 3 | The Spanish, with "Do you like the tunnels?" printed under it | The Spanish question, then "Do you like the tunnels?" |
+| Steps 4 and 5 | The Spanish only | The Spanish question, then "Do you like the tunnels?" |
+| Step 6 (the last Beginner step) | The Spanish only | The Spanish question only |
+
+Steps 1–3 play this way since 27a7fdb. Your worry about today's code: at step 4 all of the question's English went at once ("deep water").
+
+**What each step plays today** (code on main, 2026-11-12):
+
+| Step | What the character is told | What the learner gets to answer with | Reply and screen | Voice starts |
 |---|---|---|---|---|
-| 1.1 | **Done 3322eb2.** Take the "where they're from / newcomer" wording out of Beginner 1: `beginner.md` → "Who: the learner" ("with a newcomer"), "Flow: react, then move on" ("talk the way such a person would with a newcomer (where they're from, how they find the city, the place, their plans)"), "Answers: their facts left blank" (its list of where-from, how long, where they live); `leveling.md` → "Language: 4" ("to a newcomer who manages"); `levels.md` → "Beginner: shape" ("talks to a newcomer"). Both countries, changelogs | Every Beginner is told to ask what CLAUDE.md's learner rule and `character.md` → Relationship ("It's rude to ask…") forbid. Docs: `dialogue-ideas.md` → "Are you new here?" in almost every opener (2026-11-09); `progress.md` → Decisions, "No newcomer assumption" (the 20% → 5% cut that never reached Beginner 1) | Beginner 1 openers in a batch, before and after, counted by the quality judge's `touristAsked` / `newcomerAssumed` | Josh: Beginner 1 is "production untouched" (`beginner-2.md` → Rules for the work) |
-| 1.2 | **Done ecd7fab** (Josh's "a": the goodbye offered once on the 7th turn; the close by the beat count removed; "c", closing when the talk is done, stays as 5.3). Beginner 2's close follows the talk, not the beat count: `lib/shapes.ts` → `beatFor` fires "close" on the turn after `beats.length`, and `shapes.md` → "Shape: close" tells the character "You've covered what you set out" whether it has or not | A leftover of the beat-per-turn note removed in shapes.md 11d. Docs: `dialogue-structure-reference.md` § 12 → Status; `progress.md` 2026-11-11 night 2 (Built, Then) | `test:shapes`, `test:beginner-2`; one visit on a local server | Josh: how a Beginner 2 visit ends (decision 2) |
-| 1.3 | **Done ecd7fab.** `intro.md` → both "Reply" blocks say beats are what "the visit's later turns take them up one at a time"; the "Beats" block says "not a list to work through". One wording, both countries | Same leftover. Docs: `intro.md` changelog 11d / 11e | `test:prompt` | None (wording; changelog) |
-| 1.4 | **Comments fixed ecd7fab;** the recorded "opener" left (the intro does offer two answers). Stop recording "opener" as the setup on an intro turn (the intro never sends `Setup: opener`); fix the stale comments (`take-turn.ts` "the thread names the next beat"; `shapes.ts` "thread+answer-first") | The turn records name a setup that wasn't played. Docs: `progress.md` 2026-11-11 mini → Memory (the opener as a suspected cause of return visits opening as first meetings, now overtaken by the intro) | tsc | None |
-| 1.5 | **Overtaken by the cut-over:** the old Beginner goes in a week. Beginner 1's answers against the decision: `path.ts` S2 plays "Answers: one" and S3 "Answers: frame" (a single answer), though "never a single answer to read out" was agreed and "Replaces S1 two answers, S2 one, S3 a frame" | `dialogue-model.md` → Decided → Answers to say back (Josh, 2026-11-05: "fine"), never built into the path | `test:beginner` both countries | Josh: production Beginner 1 again (decision 1), or leave it to Beginner 2 replacing it (decision 3) |
+| 1 | Mix English and Spanish; one or two phrases with their English; two short sentences, then the question with its English | Two answers with English, or two questions to ask | One line; her bubble shows the question | On the first sentence |
+| 2 | The same, "a little Spanish now"; still three or four phrases, two or three sentences (see Waiting on you, 2) | The same | The same | The same |
+| 3 | Half Spanish, half English, never a sentence followed by its translation; the question with its English | The same, or none (an open question) | The same | The same |
+| 4 | The same text as step 3 | Two questions to ask, or none | **Separate bubbles per phrase**, joined into the spoken line by code; the question's English not added by code | **After the whole reply is written** |
+| 5 | Mostly Spanish; English only when asked or for a word they can't get from the scene | Two answers with English, or none | Separate bubbles | After the whole reply |
+| 6 | The same as step 5 | None | Separate bubbles | After the whole reply |
 
-## Phase 2: the newcomer framing in the content writers and lessons
-
-| # | What | Resolves | Needs |
-|---|---|---|---|
-| 2.1 | `lesson-steps.md`: the learner's example lines labelled role "newcomer" → "learner"; `culture.md` → Pick ("the people the newcomer can meet") and Choose ("the order a newcomer might enjoy them") | CLAUDE.md's learner rule. Docs: `progress.md` 2026-11-10 Learn-link ideas ("Mexico's lesson examples label the learner role: newcomer") | None for the prompts; regenerating lessons or culture is Josh's (no Magda or lesson tests without his approval) |
-| 2.2 | Lesson practice scenes run on `beginner.md`, and the Practice brief patches it ("don't ask their name or where they're from"): after 1.1, drop the patch so two prompts stop pulling against each other | `lesson-flow.md` → Practice, Practice speaking | After 1.1; Josh, as a lesson change |
-| 2.3 | **Wording done 3322eb2;** the blocks go with the old Beginner. `levels.md` → "Intermediate: B1" and "B1, support back" ("They have been living here a while… anyone new in town"): reachable only through `LEVEL_TRIAL`. Fix the wording or delete with 5.6 | CLAUDE.md's learner rule | With 5.6 |
-
-## Phase 3: measure before building (reads saved visits; no prompt changes)
-
-**First run, 2026-11-12** (`scripts/bid-count.mjs`; the table is in [dialogue-now.md](dialogue-now.md) § 4). 3.1: a baseline for Beginner 1 and 2, mostly from one or two learners; offered answers are said back 82% (Beginner 2) and 54% (Beginner 1); the frame to finish is the bid most often left on (27%); the open question without answers got own words on all 16 bids. Intermediate since 11-10q has 18 bids, too few to read. 3.2: 3 of 18 Intermediate turns since 11-10q ask and carry on; too few, rerun after Josh's next Intermediate visits. 3.3: no return visit since the ledger exists; waits for a second visit to Raymundo or Isidro (Guanajuato).
-
-| # | What | Resolves |
-|---|---|---|
-| 3.1 | **The bid-response count:** for each kind of bid live today (say it back, choose, questions to ask; Intermediate's open questions and statements), did the learner reply, how much, did the visit go on. The learner's reply is the verdict; no judge | `dialogue-structure-reference.md` § 1a → "The learner's reply is the verdict on a bid" and § 2a → "What it would take" (the count "can be made first from saved visits, for the three live rows") |
-| 3.2 | **Asks and carries on as if answered:** recount on visits since the intro build (13 of 67 Intermediate turns before it), against `character.md` → "No more words after a question mark" | `dialogue-ideas.md` → The character asks and carries on, as if answered |
-| 3.3 | **Return visits:** does the intro pick up from the last visit and leave out what "Told them about" lists? The told-ledger's first check, before Remember (4.2b) builds on it | `dialogue-structure-reference.md` § 12.3; `progress.md` handoff → Open (1) "a second visit to the same character (the ledger)" |
-
-## Phase 4: build the bids model
-
-| # | What | Resolves | Ships on |
-|---|---|---|---|
-| 4.1 | **Shipped b27cb88** as "Take up what they just said before you add anything of your own" (character.md 12a); judged by Josh's play. **Accept, then bid**, at Intermediate: the one line Beginner 1 has and Intermediate lacks ("first react to what they just said… then move on", `beginner.md` → Flow) | `dialogue-structure-reference.md` § 1a → "Two moves a turn"; § 10.4 (the model's Take by habit); `dialogue-ideas.md` → Top 10 at Intermediate #1 (forgetting the visitor) and the asks-and-carries-on entry | Josh's play and a changelog; a card only if 3.1 makes it a number |
-| 4.2 | **The menu of asks, one kind at a time**, each played before the next: (a) Finish it (already live as Beginner 1 S3's "Answers: frame": port it), (b) Remember (after 3.3), (c) Guess, (d) Notice or do, (e) Offer | `dialogue-structure-reference.md` § 2a (the menu) and § 12.1 (the palette); `dialogue-model.md` → Decided → Questions (S1–S3 end every turn on a question: the menu keeps that, varying the kind); the Dora remark (`progress.md` 2026-11-11 night) | Josh's play, a row at a time |
-| 4.2b | **The intro's question is one kind of bid:** after intro.md 12b (the screen session: a Beginner's intro question six words at most, median 13 → 6–7 words), five of six Italian intro questions started "Preferisce" (the either-or, the Dora shape). The menu of asks (4.2) should reach the intro's question too | The screen session's measure, `tests/experiments/intro-question-length.mts`, 2026-11-12; `dialogue-structure-reference.md` § 2a ("The opening is built to end on an either-or… on every visit") | With 4.2 |
-| 4.3 | **Cultural lessons:** the Story brief's fixed "Have you ever…?" at the end of the first two turns becomes a choice of bid | `culture.md` → Story; `dialogue-ideas.md` → Open-ended talk doesn't need a question every turn | Josh: a lesson prompt |
-
-## Phase 5: structure, waiting on Josh's decisions
-
-| # | What | Resolves |
-|---|---|---|
-| 5.1 | **Settled by the cut-over** (b45d171): every Beginner plays the new one on its stored step; `path.ts` still decides who is a Beginner, and its stages play only for the old Beginner, a week. **Two ladders.** `lib/path.ts` (Beginner 1: S1–S4, moved by counts) and `lib/level-up.ts` (Beginner 2: steps 1–6, offered, chosen) know nothing of each other; a learner at S4 gets no intro, no shapes, no beats. The welcome brief still says it "starts everyone at Beginner S1" | `beginner-2.md` → Progression; `beginner-2-step-2.md` → The step up; `dialogue-model.md` → Decided → Everyone starts at Beginner; `06-roadmap.md` → Learner level (placement and moving up) |
-| 5.2 | **Cut over** (b45d171); the old Beginner's code goes in a week. Left: the welcome and lessons still run on `beginner.md`. **Beginner 2 replacing Beginner 1**, and with it every dialogue fix made once instead of twice (the intro, shapes and beats reach Intermediate and Beginner 2 only; Beginner 1, the welcome, lessons and Magda have none) | `06-roadmap.md` → Now, "If Beginner 2 replaces Beginner 1: the changes after"; `beginner-2-step-2.md` → Goal; `beginner-2.md` → Beginner 1 rules Beginner 2 breaks; the "fixes are global" rule |
-| 5.3 | **The case Josh hit shipped b27cb88** (dialogue.md 12a: a goodbye with a name or thanks still ends it). **Next:** Josh's "c": the goodbye when the talk is done, with a signal that works in any language. **One goodbye.** Today four: Beginner 1 offers it when the model judges ("Goodbye: offer it"); Beginner 2 has that line plus the code's goodbye setup at the beat count or turn 8; lessons end by turn count; Intermediate ends only on the learner's goodbye (`dialogue.md`) | `dialogue-structure-reference.md` § 11 (the first table: "Close… replaces GOODBYE_AFTER = 8"); `progress.md` 2026-11-10 mini (Chuy) |
-| 5.4 | **Josh: "needs more fidelity":** a fuller write-up of what steps 4–6 would sound like, before deciding. **Beginner 2 steps 4–6**, never played: the parts reply with "Level: 2" and "Level: 3" texts written for the flowing line ("never a sentence followed by its own translation", while the parts format gives every phrase its English). Fix, or cap the level-up at 3, before anyone reaches it (about nine conversations away) | `beginner-2.md` → The reply ladder; `beginner-2-step-2.md` → Step 2 |
-| 5.5 | **Length rules in prose:** "Don't talk too much" in a prompt whose principle is "No length rules" (`character.md`); "two or three sentences", "three or four of them a turn" (`scaffolding.md` → Level 1, 1b, 2); "four or five" (`intro.md`). Into code, or out | `progress.md` 2026-11-11 deep dive → the late review ("three are length rules in prose… if the limits matter they belong in code") |
-| 5.6 | **Done for Beginner 2** (f5a8ca5: the summary call, the answer inside her line). `levels.md` and `leveling.md`'s blocks go with the old Beginner in a week. **Dead code and blocks:** the summary side call and the answer said inside her line (`lib/beginner-2.ts`); `levels.md`'s trial blocks; `leveling.md`'s "Say it again", "Line check", "Speaking judge", "Echo: off", "Language: 1", "Language: 3" (test scripts only). Their tests go with them | `one-turn-engine.md` § 2; `summary-and-mixed.md` (the summary, settled for the frame); `scaffolding.md` → Summary, Line: answer inside |
-| 5.7 | **The rules inventory** (stage 5): every rule sorted into shape, moment, content or prohibition. Beginner 1's 23 rule blocks against Intermediate's ~100 words of situation are the two principles side by side | `dialogue-structure-reference.md` → decisions in the deep-dive entry (`progress.md` 2026-11-11); `06-roadmap.md` → Now, "Dialogue by shape" |
-| 5.8 | **The turn-code refactor:** parked until a change has to reach every conversation | `one-turn-engine.md` § 3, § 4 (who plans a turn: kept as an open question here) |
-| 5.9 | **No Intermediate lessons in Mexico** (`content/it/lessons-b1.json` and `lesson-steps.md` → "System prompt: Intermediate" exist for Italy only). Content; may be the other session's | `lesson-flow.md` (the speaking mode) |
-
-## Taken from Josh's play, 2026-11-12 (handed over by the screen session on Josh's "yes")
-
-| # | What | Status |
-|---|---|---|
-| A | **Beginner turns long and mostly English** (visits 6159f8cb Isidro, 409863b2 Raymundo: step 1 turns of 70–85 words, three or four Spanish phrases; Josh earlier: "Everything is basically too long"). With 5.5 | Cause found: Level 1 asks for "three or four" glossed phrases a turn and "two or three sentences"; the phrases win. Replayed on Josh's two visits with today's call (`tests/experiments/b2-turn-length.mts`, 20 turns): median 60 words heard, 4 sentences, 28% Spanish. A shorter Level 1 (one or two phrases, English only to carry the Spanish, two short sentences and the question): median 37 words, 3 sentences, 34% Spanish. **Shipped b27cb88** (Josh: "yes"); one pass as shipped: median 47 words. Not live until the next release |
-| B | **Speech-to-text given the answers just offered** ("Quiero ver los altares" heard as "Kiran Velos Altera", and Don Isidro called Josh "Kiran", visit 6159f8cb) | Logged; when is Josh's call |
-
-## Steps 4–6, in more detail (5.4; Josh: "needs more fidelity")
-
-What a learner gets at each step today, read from the code on `main` at 614da8d (`lib/beginner-2.ts` → `CLUSTERS`, `LEVEL_OF_CLUSTER`, `QUESTION_ECHO*`, `FRAME_CLUSTERS`; `lib/level-up.ts`; `scaffolding.md`). Steps 1–3 are for comparison; 4–6 have never been played.
-
-| Step | What the character is told (Level text) | What the learner is given to answer with (setups, drawn per turn) | Question's English said | Reply and screen | Voice |
-|---|---|---|---|---|---|
-| 1 | Level 1: mostly English, the language slotted in with its English beside it; 2–3 sentences, the question in the language with its English | two answers with English · two questions to ask | yes | one line; her bubble shows only the question | starts on the first sentence |
-| 2 | Level 1b: the same, the English left out after phrases heard before | the same as step 1 | yes | the same | the same |
-| 3 | Level 2: half and half, never a sentence and its translation | the same + no answers (open question) | only for a new kind of question | the same | the same |
-| 4 | Level 2 again | questions to ask · no answers | no | **parts** (phrase, question and answer bubbles, joined into the spoken line by code) | **waits for the whole reply** |
-| 5 | Level 3: mostly the language; English only when asked or for a word they can't get from the scene | two answers with English · no answers | no | parts | waits |
-| 6 | Level 3 again | no answers, every turn | no | parts | waits |
-
-After step 6 nothing: the level up is never offered at the top, and nothing moves the learner to Intermediate.
+After step 6 nothing: the level up isn't offered at the top, and nothing moves the learner to Intermediate.
 
 **What doesn't hold together:**
-- **The screen and the wait change at step 4, and nothing else does.** The text is the same Level 2 as step 3, but the reply switches from one line to parts: a different screen (bubbles per phrase) and a slower start (the voice waits for the whole reply). That goes against "one screen, all levels".
-- **The text and the format disagree at step 4.** Level 2 says "never a sentence followed by its own translation", while the parts format asks for every phrase "with its English".
-- **Step 5 gives back what step 4 took away.** Step 4 has no answers with English; step 5 brings back two answers with English.
-- **The steps no longer follow the ladder they were built from** (`beginner-2.md` → The reply ladder: nine rungs, seven clusters). Five rungs aren't in the code: one bubble with English; one bubble in the language only; two bubbles in the language only; the two answer-inside rungs (removed today, never played); built from glossed words. So steps 4–6 only vary questions to ask, two answers with English, and none.
-- **The level-up preview doesn't match what plays.** It rewrites her last line as one line with the next step's text, while steps 4–6 play in parts.
-- **Level 3 was copied from the old Beginner's stage 3** ("Talk: stage 3", without its question rule), not written for this ladder.
+- The screen and the wait change at step 4 while what the character is told doesn't (step 4 has step 3's text). Against "one screen, all levels".
+- Step 5 gives back the answers with English that step 4 took away.
+- The steps no longer follow the ladder they were designed from (`beginner-2.md` → The reply ladder): five of its rungs aren't in the code.
+- The level-up preview rewrites her line as one line; steps 4–6 play in separate bubbles.
+- Steps 5–6's text was copied from the old Beginner's stage 3, not written for this ladder.
+- Step 2 now plays almost the same as step 1.
 
-**From the goal, a direction to look at** (Claude's, not decided). What should change from step to step is how much of the language the learner hears and how much they have to produce. The screen and the engine shouldn't change. Read that way, steps 4–6 would stay on the one-line reply of steps 1–3, and each would take away one support:
-- **Step 4:** the frame flips. Mostly the language, with an English aside of her own now and then: the Spanish-frame aside of card B2-E5 (a thought on 6 of 8 turns, but followed on only 1 of 8 without help). Answers as at step 3.
-- **Step 5:** answers in the language only, no English under them (ladder rung 5: choosing means understanding both). English only when asked.
-- **Step 6:** no answers; their own words. The level up's next offer is Intermediate.
+**A direction** (Claude's, not decided): what changes from step to step is how much Spanish the learner hears and how much they must say; the screen and the start of the voice don't change. So steps 4–6 stay on the one-line reply of steps 1–3, each taking away one support, with your ladder for the question:
+- **Step 4:** mostly Spanish, with an English aside of her own now and then; answers as at step 3; the question's English said but not printed.
+- **Step 5:** answers in Spanish only, no English under them; the question's English said but not printed.
+- **Step 6:** no answers, their own words; the question in Spanish only. The next level up is Intermediate.
 
-**The question's English as a ladder (Josh, 2026-11-12, "yes", through the screen session):** printed and spoken at steps 1–3, spoken only at 4–5 (her bubble shows the question in the language alone), neither from step 6. Josh's worry about today's code: all of the question's English goes at once at step 4 ("deep water"). Josh's example, confirmed ("this is what i want"): for "¿Le gustan los túneles?", steps 1–3 the bubble shows the Spanish with "Do you like the tunnels?" under it and the character says both; steps 4–5 the bubble shows the Spanish only and the character still says both; from step 6 the bubble shows the Spanish only and the character says only the Spanish. Today step 3 keeps the printed English but drops the spoken English except for a new kind of question (`QUESTION_ECHO_FRAME` = [true, true, false]; Level 2), so the ladder changes step 3's speech only, as well as 4–6. (Corrected by the screen session: this line first said step 3 dropped both.) Part of 5.4 from here; the screen session has handed step 3 over. **Steps 1–3 built** by the screen session (27a7fdb, scaffolding.md 12c, `QUESTION_ECHO_FRAME` = [true, true, true]; not released), with Josh's removal of the "English only the first time or when new" rules ("i never proposed that": they came from a Claude session's step 2 and 3 texts). Since then step 2 differs from step 1 only by "They have a little {language} now". Seen in its live step-3 check, for the fault log: Don Chucho ended a turn on an English question ("Hmm, maybe you want a boleada?") instead of the question in the language.
+## Taken from your play (handed over by the screen session)
 
-**To give it more fidelity before deciding**, which you choose: (a) hear today's steps 4–6 as they'd play now, one visit each with the auto-responder, as audio; (b) hear the direction above, written as Level texts on the one-line reply, against (a). Either is about 15 minutes of listening; (b) is a prompt comparison, so it needs a card.
+- **A. Beginner turns long and mostly English** (visits 6159f8cb Isidro and 409863b2 Raymundo, 2026-11-12: step 1 turns of 70–85 words). Cause: step 1 asked for three or four phrases with their English inside two or three sentences, and the phrases won. Replayed through today's call on those visits: 60 words a turn → 37 (two takes) and 47 (one take, as shipped); Spanish 28% → 34%. Shipped b27cb88.
+- **B. Speech-to-text given the answers just offered.** Waiting on you (above).
 
-## Phase 6: the documentation, once items above are done or decided
+## Notes on the open items
 
-**Five current docs, one job each:**
+What each one resolves, and where the earlier thinking is.
 
-| Doc | Job |
-|---|---|
-| `dialogue-now.md` (new) | How dialogue works today, checked against the code with a date: the eight kinds of conversation, what each level is given, the ladders, the goodbyes, the open inconsistencies (this plan's phases 1, 2 and 5). Rewritten when the code changes |
-| `dialogue-model.md` | Decisions only, as now, brought up to date (the intro, shapes and the quiet default, beats once, level up, the frame at step 1, bids as the lens), plus a "Tried and dropped" list, one line each with its card |
-| `dialogue-plan.md` (this) | The only list of dialogue work; the roadmap links here |
-| `dialogue-structure-reference.md`, renamed "Dialogue terms and bids" | Bids, terms, the menu, research findings; the built-status lines move to `dialogue-now.md` |
-| `dialogue-ideas.md` | The fault log: open faults on top with their examples, fixed ones below |
+- **Closing when the talk is done** [5.3]: four endings today (old Beginner: the model offers the goodbye; new Beginner: the goodbye on the 7th turn; lessons: a turn count; Intermediate: the learner's goodbye). Earlier thinking: `dialogue-structure-reference.md` § 11 (the first table); `progress.md` 2026-11-10 mini (Chuy: the goodbye on ten turns running).
+- **Newcomer in the writers** [2.1, 2.2]: CLAUDE.md's learner rule; `progress.md` 2026-11-10 Learn-link ideas; `lesson-flow.md` → Practice; `lesson-steps.md`; `culture.md` → Pick, Choose.
+- **New kinds of question** [4.2]: `dialogue-structure-reference.md` § 1a (bids; what kind of bid gets taken up), § 2a (the menu), § 12.1 (the palette); the count in `dialogue-now.md` § 4; `dialogue-model.md` → Questions (Beginner turns end on a question; the menu varies the kind, not that).
+- **Steps 4–6** [5.4]: `beginner-2.md` → The reply ladder, Progression; `beginner-2-step-2.md`; the Spanish-frame aside on card B2-E5 (`prompt-trials.md`).
+- **Old Beginner removal** [5.2, 5.6]: `06-roadmap.md` → Now, "If Beginner 2 replaces Beginner 1: the changes after"; `one-turn-engine.md` § 2.
 
-`beginner-2.md` stays as Beginner 2's spec and takes what's still true from `beginner-2-step-2.md` and the conclusion of `summary-and-mixed.md`. Research, `prompt-trials.md`, `prompt-testing.md` and `automated-replies.md` stay as they are.
+## Documentation
 
-**What's kept, and where** (no content is deleted: what leaves the current docs goes to `docs/archive/` with "superseded by …, date" on top):
+**Target: five current documents, one job each.** `dialogue-now.md` (how it works, checked against the code; done), `dialogue-model.md` (decisions only), this plan (the work), `dialogue-structure-reference.md` (terms and bids), `dialogue-ideas.md` (faults with examples). `beginner-2.md` stays as the Beginner's spec.
 
-| Kind | Kept? | Where |
-|---|---|---|
-| Josh's words, a decision of his, dated | Always, word for word | `dialogue-model.md`, or the reference for the bids model |
-| Evidence: a result, a count, a quoted turn with character, place, time | Always | The fault log, the cards, or beside the decision it backs |
-| A reason behind a decision | One copy | Beside the decision |
-| What the code does | Only if the code still does it, rechecked, not copied | `dialogue-now.md` |
-| A design wanted and not built | Kept | This plan, or the reference for theory |
-| A design dropped, a test that said no | One line: tried, dropped, why, card | `dialogue-model.md` → Tried and dropped, or `prompt-trials.md` |
-| Claude's proposals never answered | Kept, labelled as Claude's | This plan, "Proposed, not agreed" |
-| A past day's status and next steps | Out of the current docs | Archive; `progress.md` keeps the dated log |
-| The same thing told twice | One copy, the closest to the source | Linked from the rest |
-| Reviews and back-and-forth | The conclusion stays; the exchange is archived | Archive |
+**Done:** `dialogue-now.md`; CLAUDE.md and the README point at these; `M1-CONVERSATION-MODEL.md` and `04-conversation-engine.md` archived; the Beginner goals moved word for word into `dialogue-model.md`.
 
-Where a doc paraphrases Josh and his words can't be found, it moves as Claude's reading, marked so. Where it's unclear whether something is decided, it stays open and goes on a list for Josh; filing doesn't decide it.
+**Next:** `dialogue-model.md` brought up to date with the decisions of 11-10 to 11-12; the fault log sorted into open and fixed; archive the documents already superseded (`level-judge-test.md`, `language-levels-plan.md`, `one-turn-engine.md`, `beginner-plan.md`, `beginner-deep-dive.md`); after steps 4–6 are decided, `beginner-2-step-2.md` and `summary-and-mixed.md`; `beginner-as-live.md` with the old Beginner.
 
-**To archive when their content has moved:** `beginner-plan.md` (already marked superseded), `beginner-deep-dive.md`, `beginner-2-step-2.md`, `summary-and-mixed.md`, `one-turn-engine.md`, `level-judge-test.md`, `language-levels-plan.md`, and `beginner-as-live.md` only once Beginner 1 is retired. `M1-CONVERSATION-MODEL.md` and `04-conversation-engine.md` only with decision 6.
-
-**How Josh checks it:** one move list per commit (moved, archived and why, dropped as already in X); a short list of anything of his that would sit only in the archive; line counts before and after (about 3,400 lines in ten docs now). `06-roadmap.md` and `progress.md` are shared with the other laptop session: tell it before changing them.
-
-## Josh's decisions, in the order they unblock work
-
-1. ~~**Beginner 1 (production):**~~ yes, done. may 1.1 (and 1.5) change `beginner.md` and the path's blocks, or does everything wait for Beginner 2?
-2. ~~**How a Beginner 2 visit ends**~~ the 7th turn for now; when the talk is done next (5.3). (1.2, 5.3): when the talk is done (and how that's seen), the goodbye offered once at turn 8, or only on the learner's goodbye.
-3. ~~**Which ladder survives**~~ cut over to the new Beginner. **Which ladder survives, and when Beginner 2 replaces Beginner 1** (5.1, 5.2).
-4. **Steps 4–6:** needs more fidelity: see "Steps 4–6, in more detail" above; pick (a) or (b) to hear. fix, or cap the level-up at step 3 for now (5.4).
-5. ~~**Dead code**~~ yes, done for Beginner 2. and the tests that cover it (5.6).
-6. ~~**CLAUDE.md's source of truth:**~~ yes, done. point it at `dialogue-now.md` and `dialogue-model.md` instead of `M1-CONVERSATION-MODEL.md` and `beginner-scaffolding.md` → Goals, and archive the M1 doc and `04-conversation-engine.md` (about 30 links to fix).
-
-Phase 3 needs none of these and can start now.
+**What's kept when a document moves:** Josh's words and decisions, word for word; evidence (results, counts, quoted turns with character, place and time); one copy of each reason; what the code does only if it still does it. A dropped design keeps one line (tried, dropped, why). Nothing is deleted: what leaves goes to `docs/archive/` with "superseded by …, date" on top. Where it's unclear whether something was decided, it stays open and is put to Josh.
