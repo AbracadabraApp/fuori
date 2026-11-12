@@ -84,10 +84,15 @@ function sceneJson(cityId: string, placeId: string) {
 }
 
 const norm = (s: string) => s.toLowerCase().normalize('NFD').replace(/\p{M}/gu, '').trim();
+/** The role of the learner's own example lines: "learner" from lesson-steps.md 2026-11-12a, "newcomer" in lessons written before it */
+const LEARNER_ROLES = new Set(['learner', 'newcomer']);
+export const isLearnerRole = (role: string) => LEARNER_ROLES.has(norm(role));
+/** An example as Magda's brief lists it: the learner's own lines as "you", never "newcomer" (CLAUDE.md's learner rule) */
+export const exampleLine = (e: { role: string; said: string; en: string }) => `- ${isLearnerRole(e.role) ? 'you' : e.role}: ${e.said} (${e.en})`;
 
 /**
  * The examples to practise from, one per place, in order: those said by
- * someone other than the learner; where every example is the newcomer's own
+ * someone other than the learner; where every example is the learner's own
  * line (asking someone to repeat, the key questions), those, and the partner
  * is someone at that kind of place. Before, those lessons found nobody and
  * went from teaching straight to the review (5 of Mexico's 25, 2026-11-03).
@@ -97,7 +102,7 @@ function practiceExamples(step: LessonStep) {
     const seen = new Set<string>();
     return list.filter((e) => !seen.has(norm(e.place)) && seen.add(norm(e.place)));
   };
-  const others = byPlace(step.examples.filter((e) => norm(e.role) !== 'newcomer'));
+  const others = byPlace(step.examples.filter((e) => !isLearnerRole(e.role)));
   return others.length ? others : byPlace(step.examples);
 }
 
@@ -187,7 +192,7 @@ export async function lessonBrief(l: LessonTurn, learnerId: string, transcript: 
       ? fill(f.block('Teach, speaking'), {
           ...base,
           intro: step.intro,
-          examples: step.examples.map((e) => `- ${e.role}: ${e.said} (${e.en})`).join('\n'),
+          examples: step.examples.map(exampleLine).join('\n'),
           notice: step.notice,
           turn,
           of: String(of + 1),
@@ -211,7 +216,7 @@ export async function lessonBrief(l: LessonTurn, learnerId: string, transcript: 
     const brief = fill(f.block('Teach'), {
       ...base,
       intro: step.intro,
-      examples: step.examples.map((e) => `- ${e.role}: ${e.said} (${e.en})`).join('\n'),
+      examples: step.examples.map(exampleLine).join('\n'),
       notice: step.notice,
       places: [...new Set(places)].join(', ') || 'town',
     });

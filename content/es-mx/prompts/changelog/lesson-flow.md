@@ -2,6 +2,11 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../lesson-flow.md`.
 
+### 2026-11-12a: the practice patch against "where they're from" removed
+- **Changed:** Practice and Practice, speaking: "(don't ask their name or where they're from unless that's today's step)" → "(don't ask their name unless that's today's step)".
+- **Why:** the where-from half only patched the Beginner prompt, which told characters to ask it until beginner.md 12a removed that; with the cause gone, the patch went. The name half stays: beginner.md's opener still sometimes asks the name, and a practice scene keeps to today's step.
+- **Prompted by:** docs/dialogue-plan.md, "Newcomer in the writers"; Josh, 2026-11-12: approved. Not run: no lesson tests without Josh's approval.
+
 ### 2026-11-05: one correction rule; the example said before it's asked for
 
 Josh's family's play, 2026-11-04 and 05: Magda coached Jennifer's "¿Owen me ayuda?" (a misheard "Joven, ¿me ayuda?") into "HO-ven", and met "Estoy en el barco de canzart" with "Almost! The word you want is cansado". Josh: fixes "are global improvements not local to lessons or conversations or one country"; "its ok not to get corrected all the time". Corrections and mishearings now have one rule for every conversation (dialogue.md, added to every system prompt), and the app tells the character whether an offered answer was said back (lib/dialogue/heard.ts); this file no longer has its own. Removed: Teach's "if it was off, say it right once" (both modes); the reviews' fix now only from a line sure to have been heard right. Teach says the example aloud before offering it to say back (Josh, 2026-11-05: Magda says the phrase before asking for it; Jennifer was shown "Joven, ¿me ayuda?" without hearing it).

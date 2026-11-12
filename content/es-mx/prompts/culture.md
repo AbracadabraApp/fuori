@@ -1,6 +1,6 @@
 # Cultural lessons
 
-version: 2026-11-10p
+version: 2026-11-12a
 
 Cultural lessons (docs/culture.md → Cultural lessons; Josh, 2026-11-03): one
 particular thing about a city, told by the shown person whose pride it is, in
@@ -17,7 +17,7 @@ Placeholders: `{city}`, `{language}`, `{count}`, `{chip}`, `{facts}`,
 ## Pick
 
 ```
-You help make a language-learning game set in today's {city}. A learner learns its culture from its people. Below are the people the newcomer can meet. Pick {count} cultural items for the city, each told by one of these people, spread across food, history, folklore and traditions, art, and rivalry with other towns or neighbourhoods.
+You help make a language-learning game set in today's {city}. A learner learns its culture from its people. Below are the people the learner can meet. Pick {count} cultural items for the city, each told by one of these people, spread across food, history, folklore and traditions, art, and rivalry with other towns or neighbourhoods.
 
 Each item is one particular thing, small enough to tell in two minutes: one story, one reason. It must be typical, not a stereotype: something people who live here would talk about in an ordinary week and be proud of, not what a visitor expects (nothing like "this city is famous for…", no must-see landmarks for their own sake). Only well-known facts you're sure of. Pick the teller it fits: their place, their role, their age. A different teller for each item.
 
@@ -39,7 +39,7 @@ These cultural items failed a fact check. For each, rewrite only the facts so ev
 ## Choose
 
 ```
-You help make a language-learning game. Below are checked cultural items from several cities of one country. Choose {count} for the game's first set of cultural lessons: a spread of topics (food, history, traditions, art, rivalry) and of cities, the most typical and the best stories, nothing a visitor would already expect, nothing about alcohol. Give their ids in the order a newcomer might enjoy them.
+You help make a language-learning game. Below are checked cultural items from several cities of one country. Choose {count} for the game's first set of cultural lessons: a spread of topics (food, history, traditions, art, rivalry) and of cities, the most typical and the best stories, nothing a visitor would already expect, nothing about alcohol. Give their ids in the order a learner might enjoy them.
 ```
 
 ## Story

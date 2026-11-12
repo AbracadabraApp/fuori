@@ -8,7 +8,7 @@
 import { readFileSync } from 'fs';
 import { pack } from '@/content';
 import { lessonUnits, lessonAreas, currentLessonSet } from '@/lib/lessons';
-import { lessonVersion, lessonPlan } from '@/lib/lesson';
+import { lessonVersion, lessonPlan, exampleLine, isLearnerRole } from '@/lib/lesson';
 
 const problems: string[] = [];
 const check = (ok: boolean, msg: string) => { if (!ok) problems.push(msg); };
@@ -49,6 +49,12 @@ check(currentLessonSet(new Set(sets.flatMap(setSteps)), 'beginner') === sets[set
 
 check(lessonVersion('review', 'a1-01-1').endsWith('-review:a1-01-1'), `review version names its step: ${lessonVersion('review', 'a1-01-1')}`);
 check(!lessonVersion('practice', 'a1-01-1').includes(':'), 'practice versions name no step');
+
+// The learner's own example lines (role "newcomer" in lessons written before 2026-11-12, "learner" after) are shown to
+// Magda as "you", never "newcomer" (CLAUDE.md's learner rule; Magda's brief listed "- newcomer: …" in every lesson)
+check(isLearnerRole('newcomer') && isLearnerRole('Learner') && !isLearnerRole('café waiter'), 'both learner roles are the learner\'s own lines');
+check(exampleLine({ role: 'newcomer', said: 'Un café, por favor.', en: 'A coffee, please.' }) === '- you: Un café, por favor. (A coffee, please.)' && exampleLine({ role: 'barista', said: 'Ecco.', en: 'Here.' }) === '- barista: Ecco. (Here.)', 'Magda sees the learner\'s lines as "you"');
+for (const u of lessonUnits()) for (const st of u.steps ?? []) for (const e of st.examples ?? []) check(!/newcomer/i.test(exampleLine(e)), `no example reaches Magda as a newcomer (${e.said})`);
 
 if (problems.length) {
   console.error(`[${pack.id}] FAILED\n- ${problems.join('\n- ')}`);

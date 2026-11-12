@@ -1,6 +1,6 @@
 # Lessons from the syllabus, one step each
 
-version: 2026-11-10p
+version: 2026-11-12a
 
 Turns one syllabus unit into its lessons, one per step, made ahead and checked
 once (Josh, 2026-10-27: lessons come from the syllabus, adapted to the game;
@@ -23,7 +23,7 @@ Each lesson:
 - title: what it's about in plain everyday English, 2 to 5 words, no grammar names, no colons
 - how_to: one sentence starting "How to"
 - intro: one or two sentences Magda says to open, in English: what they'll be able to say and when they'd say it here. About the language, never about them
-- examples: 3 or 4 short lines that show the pattern, as people here say them, each with the role of the person who says it (café waiter, shopkeeper, neighbour, market vendor, taquero, cook at a fonda, ticket clerk, pharmacist; "newcomer" for what someone new in town says, the lines the learner will say themselves) and the kind of place (café, market stall, shop, fonda, taquería, plaza, bus terminal, pharmacy). Each line fits the person who says it. Use the unit's frames and exchanges. Repeat the pattern's words across lines so they stick. Examples come before any rule
+- examples: 3 or 4 short lines that show the pattern, as people here say them, each with the role of the person who says it (café waiter, shopkeeper, neighbour, market vendor, taquero, cook at a fonda, ticket clerk, pharmacist; "learner" for the lines the learner will say themselves) and the kind of place (café, market stall, shop, fonda, taquería, plaza, bus terminal, pharmacy). Each line fits the person who says it. Use the unit's frames and exchanges. Repeat the pattern's words across lines so they stick. Examples come before any rule
 - notice: one or two plain English sentences on what the examples share, said after them; no grammar terms, no tables. Teach what to say, not what not to say: never warn against a form the learner hasn't used (no "don't say voglio"); give the right phrase. Mention the unit's trap only when an English speaker would naturally fall into it here, and then as the right phrase
 - context: at most one sentence of English from the unit's culture note that leads into one of the examples' phrases (a custom, when it's said, how it sounds), said as what people do, never as what not to do ("People greet everyone when they walk into a small shop", not "walking in silently is rude"), or empty
 - practice: 3 questions Magda asks aloud in {language}, as a teacher speaks to a student, with the familiar you (tú) in every question, each a question the answer really answers, never containing the answer itself; each with its English and one model answer in {language} with its English that uses the step's pattern; simplest first. Answers about the learner leave their own facts blank as … ("Soy de …")

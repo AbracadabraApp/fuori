@@ -1,6 +1,6 @@
 # Lessons from the syllabus, one step each
 
-version: 2026-11-10p
+version: 2026-11-12a
 
 Turns one syllabus unit into its lessons, one per step, made ahead and checked
 once (Josh, 2026-10-27: lessons come from the syllabus, adapted to the game;
@@ -23,7 +23,7 @@ Each lesson:
 - title: what it's about in plain everyday English, 2 to 5 words, no grammar names, no colons
 - how_to: one sentence starting "How to"
 - intro: one or two sentences Magda says to open, in English: what they'll be able to say and when they'd say it here. About the language, never about them
-- examples: 3 or 4 short lines that show the pattern, as people here say them, each with the role of the person who says it (barista, shopkeeper, neighbour, waiter, ticket clerk, market vendor, pharmacist; "newcomer" for what someone new in town says, the lines the learner will say themselves) and the kind of place (bar, market, shop, station, pharmacy, piazza, restaurant). Each line fits the person who says it. Use the unit's frames and exchanges. Repeat the pattern's words across lines so they stick. Examples come before any rule
+- examples: 3 or 4 short lines that show the pattern, as people here say them, each with the role of the person who says it (barista, shopkeeper, neighbour, waiter, ticket clerk, market vendor, pharmacist; "learner" for the lines the learner will say themselves) and the kind of place (bar, market, shop, station, pharmacy, piazza, restaurant). Each line fits the person who says it. Use the unit's frames and exchanges. Repeat the pattern's words across lines so they stick. Examples come before any rule
 - notice: one or two plain English sentences on what the examples share, said after them; no grammar terms, no tables. Teach what to say, not what not to say: never warn against a form the learner hasn't used (no "don't say voglio"); give the right phrase. Mention the unit's trap only when an English speaker would naturally fall into it here, and then as the right phrase
 - context: at most one sentence of English from the unit's culture note that leads into one of the examples' phrases (a custom, when it's said, how it sounds), said as what people do, never as what not to do ("Italians greet when they walk into a shop", not "walking in silently is rude"), or empty
 - practice: 3 questions Magda asks aloud in {language}, as a teacher speaks to a student, with the familiar you (tu) in every question, each a question the answer really answers, never containing the answer itself; each with its English and one model answer in {language} with its English that uses the step's pattern; simplest first. Answers about the learner leave their own facts blank as … ("Sono di …")
@@ -34,7 +34,7 @@ Every {language} line correct, natural and under 12 words, at the beginner level
 One point per lesson: every example, the notice, the context and every practice answer show this step's point and nothing else; the unit's other phrases belong to its other steps.
 Practice questions are at the unit's level too: short, one clause, no question inside a question, no grammar from later units; never a question that hands over its answer or expects facts it doesn't give.
 Practice is new: each practice question is a new situation, and each model answer uses the step's pattern in a new sentence, with a different thing, person or place from every example; never an example repeated, shortened or reordered.
-At least two examples are said by someone other than the newcomer.
+At least two examples are said by someone other than the learner.
 English: American English, natural and not word for word, the same register as the line; never a note in brackets inside the English.
 ```
 
@@ -57,7 +57,7 @@ Each lesson has the same fields as the beginner lessons (title, how_to, intro, e
 - every {language} line correct, natural, at B1, under 16 words
 
 One point per lesson; practice questions short and at B1, never handing over their answer; English American, natural and never word for word, no notes in brackets.
-Practice is new: each question a new situation, each model answer the step's pattern in a new sentence, with a different thing, person or place from every example; never an example repeated, shortened or reordered. At least two examples are said by someone other than the newcomer. Nothing the syllabus's grammar list places above B1, even where a unit frame uses it (impersonal si, il quale). Lines the learner says back avoid gendered forms (sono venuto/a) when an equally natural line exists.
+Practice is new: each question a new situation, each model answer the step's pattern in a new sentence, with a different thing, person or place from every example; never an example repeated, shortened or reordered. At least two examples are said by someone other than the learner. Nothing the syllabus's grammar list places above B1, even where a unit frame uses it (impersonal si, il quale). Lines the learner says back avoid gendered forms (sono venuto/a) when an equally natural line exists.
 ```
 
 The changelog is in `changelog/lesson-steps.md`.

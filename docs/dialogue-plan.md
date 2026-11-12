@@ -7,7 +7,7 @@ The one list of dialogue work (laptop dialogue session; another session has the 
 ## Now: being worked on
 
 1. **Closing a visit when the talk is done** (your "c", 2026-11-12). Today a Beginner visit offers the goodbye on the 7th turn whatever is happening, and an Intermediate visit ends only when the learner says goodbye. Wanted: the character winds down when the talk has run its course, using a signal that works in any language. [5.3]
-2. **"Newcomer" in the lesson and culture writers.** The prompt that writes lessons labels the learner's lines "newcomer"; the one that picks cultural stories speaks of "the newcomer". Then the lesson practice prompt can drop its patch ("don't ask their name or where they're from"), which exists only because the Beginner prompt used to ask. Regenerating lessons or stories is your call. [2.1, 2.2]
+2. **Done (see Done).** **"Newcomer" in the lesson and culture writers.** The prompt that writes lessons labels the learner's lines "newcomer"; the one that picks cultural stories speaks of "the newcomer". Then the lesson practice prompt can drop its patch ("don't ask their name or where they're from"), which exists only because the Beginner prompt used to ask. Regenerating lessons or stories is your call. [2.1, 2.2]
 3. **A first new kind of question for Beginners.** Today the character's questions are nearly all "this or that?" (the Dora shape); after the six-word cap, five of six Italian intro questions start "Preferisce…". First new kind: *Notice* ("See those arches above us?") or *Offer* ("Want to try one?"), played before the next. "Finish the sentence" comes later: learners left on it more than on any other kind (27%). [4.2]
 
 ## Waiting on you
@@ -15,8 +15,7 @@ The one list of dialogue work (laptop dialogue session; another session has the 
 1. **Release.** On main, not live: the shorter step 1, the goodbye fix and "take up what they said first" (b27cb88); the shorter intro question (intro.md 12b); the question's English at steps 1–3 and the "first time or when new" rules removed (27a7fdb).
 2. **Step 2 is now longer than step 1.** This morning step 1 went to one or two phrases and two short sentences; step 2's text still asks for "three or four" phrases and "two or three sentences". Give step 2 the same shortening? (yes / no)
 3. **Steps 4–6.** Never played; today they switch to a different screen and a slower start, and don't follow your ladder for the question's English. Your ladder is the target (below). How to get there: (a) hear steps 4–6 as they play today, or (b) build my direction (below) and hear it. [5.4]
-4. **Speech-to-text given the answers just offered** ("Quiero ver los altares" heard as "Kiran Velos Altera"; Don Isidro then called you Kiran). When, if at all. [B]
-5. **Play, when you can:** Beginner turn length; a goodbye said with your name; whether characters take up what you say without sounding formulaic; a second visit to Raymundo or Isidro in Guanajuato (does the character remember what it told you?); a few Intermediate visits.
+4. **Play, when you can:** Beginner turn length; a goodbye said with your name; whether characters take up what you say without sounding formulaic; a second visit to Raymundo or Isidro in Guanajuato (does the character remember what it told you?); a few Intermediate visits.
 
 ## Done (2026-11-12)
 
@@ -32,6 +31,7 @@ The one list of dialogue work (laptop dialogue session; another session has the 
 | "Take up what they just said before you add anything of your own" (the accept half of your bids model) [4.1] | b27cb88 | No |
 | Beginner intro question six words at most (the screen session) | intro.md 12b | No |
 | The question's English shown and said at steps 1–3; the "English only the first time or when new" rules removed ("i never proposed that"; the screen session) | 27a7fdb | No |
+| The lesson and culture writers say "learner", not "newcomer"; Magda sees the learner's example lines as "you" (146 lines in saved lessons were labelled newcomer); the lesson practice patch against "where they're from" removed [2.1, 2.2] | (this commit) | No |
 | Measures: what learners do after each kind of question (`scripts/bid-count.mjs`); turn length on replayed real visits (`tests/experiments/b2-turn-length.mts`) [3.1, A] | 8423712, 970ba64 | (tools) |
 
 ## Later
@@ -86,7 +86,7 @@ After step 6 nothing: the level up isn't offered at the top, and nothing moves t
 ## Taken from your play (handed over by the screen session)
 
 - **A. Beginner turns long and mostly English** (visits 6159f8cb Isidro and 409863b2 Raymundo, 2026-11-12: step 1 turns of 70–85 words). Cause: step 1 asked for three or four phrases with their English inside two or three sentences, and the phrases won. Replayed through today's call on those visits: 60 words a turn → 37 (two takes) and 47 (one take, as shipped); Spanish 28% → 34%. Shipped b27cb88.
-- **B. Speech-to-text given the answers just offered.** Waiting on you (above).
+- **B. Speech-to-text given the answers just offered** ("Quiero ver los altares" heard as "Kiran Velos Altera"). **Off the list:** Josh, 2026-11-12: "We don't support speech to text".
 
 ## Notes on the open items
 

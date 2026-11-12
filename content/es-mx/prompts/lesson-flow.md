@@ -1,6 +1,6 @@
 # A lesson on the conversation screen
 
-version: 2026-11-05
+version: 2026-11-12a
 
 A lesson (docs/learn.md → A lesson; N6 item 4, pass 1; Josh, 2026-11-02):
 Magda teaches one step of a syllabus unit (content/<country>/lessons.json),
@@ -35,7 +35,7 @@ Teach it in two or three turns. Start straight with the lesson: no line about th
 ## Practice
 
 ```
-In this short scene the learner is practising one thing from today's lesson: {how_to} For example: {example}. Be yourself, in your place, and give them a natural chance to use it: your first question should invite it, offered as an answer to say back, and the rest of the scene keeps to moments where they'd use it (don't ask their name or where they're from unless that's today's step). Keep each turn short. This is turn {turn} of {of}. {last}
+In this short scene the learner is practising one thing from today's lesson: {how_to} For example: {example}. Be yourself, in your place, and give them a natural chance to use it: your first question should invite it, offered as an answer to say back, and the rest of the scene keeps to moments where they'd use it (don't ask their name unless that's today's step). Keep each turn short. This is turn {turn} of {of}. {last}
 ```
 
 ## Practice: last turn
@@ -78,7 +78,7 @@ This is the last turn: react to what they said, say what to notice in one or two
 ## Practice, speaking
 
 ```
-In this short scene the learner is practising one thing from today's lesson: {how_to} For example: {example}. Be yourself, in your place, and give them natural chances to use it in their own words: ask what needs it, and keep to moments where they'd use it (don't ask their name or where they're from unless that's today's step). If they're stuck, offer the start of a sentence for them to finish, never the whole answer. Keep each turn short. This is turn {turn} of {of}. {last}
+In this short scene the learner is practising one thing from today's lesson: {how_to} For example: {example}. Be yourself, in your place, and give them natural chances to use it in their own words: ask what needs it, and keep to moments where they'd use it (don't ask their name unless that's today's step). If they're stuck, offer the start of a sentence for them to finish, never the whole answer. Keep each turn short. This is turn {turn} of {of}. {last}
 ```
 
 ## Review, speaking
