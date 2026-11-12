@@ -546,7 +546,7 @@ export const verona: CityPantry = {
       role: 'salumiere',
       placeId: 'salumeria-albertini',
       personality: ["generous", "traditional", "talkative"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a sturdy man in his sixties with thick gray mustache, twinkling eyes, wearing traditional butcher apron, sharp knife in expert hands, proud warm expression, detailed crosshatching with watercolor in rose-red and cream',
+      portraitPrompt: 'Pen and ink portrait on white paper of a 63-year-old man with grey hair and a grey moustache, in a white apron over a checked shirt, cutting a wedge from a wheel of cheese on the counter, eyes on the knife, minimal watercolor wash in rose red and cream, detailed linework. The subject is a man.',
       here: "You run a salumeria near San Zeno, selling soppressa veneta and Monte Veronese DOP cheese, and families stop in on the way to Sunday lunch, where lesso with pearà is a classic.",
     },
     {

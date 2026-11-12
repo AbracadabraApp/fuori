@@ -599,7 +599,7 @@ export const bergamo: CityPantry = {
       role: 'guida turistica',
       placeId: 'piazza-vecchia',
       personality: ["entusiasta", "loquace", "curioso"],
-      portraitPrompt: 'Pen and ink portrait on white paper of an animated young man with expressive gestures captured, stylish casual clothes, intelligent eyes, minimal amber watercolor wash, detailed enthusiastic features, passionate guide energy',
+      portraitPrompt: 'Pen and ink portrait on white paper of a 35-year-old man with short curly dark hair and a light beard, in a casual jacket with a small backpack on one shoulder, standing in a square and pointing up at a building as he talks to people out of frame, minimal amber watercolor wash, detailed linework. The subject is a man.',
       here: "You guide visitors around Piazza Vecchia, with the Palazzo della Ragione and the old fountain, and up on the Venetian walls. You also tell them how people ride the funicolare between Città Alta and Città Bassa.",
     },
     {

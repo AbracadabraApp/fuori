@@ -484,7 +484,7 @@ export const palermo: CityPantry = {
       role: 'fruttivendolo',
       placeId: 'mercato-ballaro',
       personality: ["loud", "charismatic", "shrewd"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a robust Sicilian market vendor with animated expression, calling out prices, sun-weathered skin, work clothes, minimal watercolor wash in vibrant tones, energetic strokes. The subject is a man.',
+      portraitPrompt: 'Pen and ink portrait on white paper of a 48-year-old Sicilian man with sun-browned skin, short dark hair going grey and a few days of stubble, in a faded polo shirt, stacking aubergines on a market stall and calling a price over his shoulder to the street, minimal watercolor wash in aubergine purple and leaf green, detailed linework. The subject is a man.',
       here: "You sell fruit and vegetables at Ballarò, one of Palermo's oldest street markets, shouting your prices in the traditional vendor's call. You push aubergines for caponata and tenerumi for the summer soup.",
     },
     {
@@ -518,7 +518,7 @@ export const palermo: CityPantry = {
       role: 'cuoca e proprietaria',
       placeId: 'trattoria-ai-cascinari',
       personality: ['motherly'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a warm Sicilian woman with apron, wooden spoon in hand, caring expression, traditional style, minimal watercolor wash in warm kitchen tones, loving details',
+      portraitPrompt: 'Pen and ink portrait on white paper of a 59-year-old Sicilian woman with short dark hair streaked with grey and reading glasses on a chain, in a plain dark apron over a blouse, cleaning wild fennel at a kitchen table, looking down at her hands, minimal watercolor wash in fennel green and warm ochre, detailed linework. The subject is a woman.',
       here: "You run Trattoria ai Cascinari, a trattoria of Palermo home cooking. Your menu has pasta con le sarde, made with wild fennel, raisins and pine nuts; anelletti al forno, ring pasta baked with ragù; caponata, sweet-and-sour aubergine with celery, olives and capers; and swordfish involtini, since swordfish is a spring and summer fish in Sicily.",
     },
     {
@@ -530,7 +530,7 @@ export const palermo: CityPantry = {
       role: 'chef e proprietario',
       placeId: 'osteria-ballarò',
       personality: ['gregarious', 'wine-loving'],
-      portraitPrompt: 'Pen and ink portrait on white paper of an enthusiastic Sicilian chef with five o\'clock shadow, chef coat, wine glass in hand, jovial expression, minimal watercolor wash in burgundy tones, expressive lines. The subject is a man.',
+      portraitPrompt: 'Pen and ink portrait on white paper of a 44-year-old Sicilian man with short dark hair and a few days of stubble, in a plain white chef jacket with the sleeves pushed up and no hat, shaping a rice ball in his cupped hands at a kitchen counter, concentrating, a slight smile, minimal watercolor wash in saffron and burgundy, detailed linework. The subject is a man.',
       here: "You cook Palermo's classics: arancine (with an e, here in Palermo), sarde a beccafico, busiate with pesto trapanese, and cassata to finish, and you correct anyone who says arancini.",
     },
     {
@@ -736,7 +736,7 @@ export const palermo: CityPantry = {
       role: 'meusaro',
       placeId: 'pani-ca-meusa-ballaro',
       personality: ['loud', 'theatrical', 'proud of Palermo'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a 63-year-old Sicilian man with a weathered face, a white cap and a white apron, holding a sesame roll stuffed with spleen and ricotta out towards the viewer with a big laugh, minimal watercolor wash in warm golden and lemon tones, detailed linework.',
+      portraitPrompt: 'Pen and ink portrait on white paper of a 63-year-old Sicilian man with a weathered face, a white cap and a white apron, bent over a wide pan, lifting meat with a long fork onto a sesame roll held in his other hand, eyes on the roll, minimal watercolor wash in warm golden and lemon tones, detailed linework. The subject is a man.',
       here: 'You sell pani ca\' meusa at Ballarò market from a pan of spleen simmering in lard, the way your father did: you shout to the crowd and ask everyone "schietta o maritata?", plain with lemon, or "married" with ricotta and caciocavallo. You also do panelle.',
     },
   ],

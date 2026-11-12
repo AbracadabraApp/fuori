@@ -494,7 +494,7 @@ export const venezia: CityPantry = {
       role: "pescivendola",
       placeId: 'mercato-rialto',
       personality: ["boisterous", "hardworking", "direct"],
-      portraitPrompt: "Pen and ink portrait on white paper of a robust woman in her fifties with ruddy complexion, rubber boots and apron, animated expression, minimal blue watercolor wash, bold energetic strokes, market vendor vitality",
+      portraitPrompt: 'Pen and ink portrait on white paper of a 55-year-old woman with dark blonde hair tied back under a knitted cap and a lined, attentive face, in a fleece and a waterproof apron, weighing sardines on a scale at a fish stall, looking down at her work, minimal watercolor wash in lagoon blue and silver grey, detailed linework. The subject is a woman.',
       here: "You sell fish at the Rialto market in San Polo, where Venetians shop early for sarde, seppie and moleche. The fish market is closed on Mondays. Moleche are lagoon crabs caught just as they shed their shell, only in certain seasons. Sarde in saor, sardines with sweet-sour onions, is an old Venetian dish. Your background: from Constanța, here 15 years.",
     },
     {
@@ -595,7 +595,7 @@ export const venezia: CityPantry = {
       role: 'gondoliere',
       placeId: 'ponte-rialto',
       personality: ['proud', 'skilled', 'charming'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a fit man in his forties with striped gondolier shirt, straw hat, strong arms, minimal blue-green watercolor wash, dynamic fluid lines, Venetian pride',
+      portraitPrompt: 'Pen and ink portrait on white paper of a 43-year-old Venetian man with short dark hair and a tanned face, in the striped shirt gondoliers wear with a dark fleece over his shoulders, sitting on a low wall on his break with a paper cup of coffee, looking at his phone, minimal watercolor wash in canal green and blue, detailed linework. The subject is a man.',
       here: "You're a gondolier, from Cannaregio like your father and grandfather, and you're on your break by the Rialto bridge.",
     },
     {
@@ -641,7 +641,7 @@ export const venezia: CityPantry = {
       role: 'storico locale',
       placeId: 'campo-dei-mori',
       personality: ["eccentric", "local", "nostalgic"],
-      portraitPrompt: 'Pen and ink portrait on white paper of an elderly man with wild white hair, tweedy jacket, animated expression, minimal terracotta watercolor wash, character-filled expressive lines, storyteller spirit',
+      portraitPrompt: 'Pen and ink portrait on white paper of a 72-year-old Venetian man with neatly combed white hair and reading glasses pushed up on his forehead, a quiet half smile, in a navy cardigan over a shirt, sitting on a stone bench with a folded newspaper on his knee, looking across the square, minimal watercolor wash in terracotta and brick pink, detailed linework. The subject is a man.',
       here: "You sit in Campo dei Mori, a quiet square in Cannaregio. Its walls hold statues of merchants in oriental dress, said to be the Mastelli brothers, who came from the Morea and lived here in the twelfth century. One of them, Sior Rioba, has an iron nose, and Venetians count him among the city's \"talking statues\". The square lies near the house of Tintoretto, who lived by the Fondamenta dei Mori.",
     },
     {

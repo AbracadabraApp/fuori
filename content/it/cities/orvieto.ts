@@ -368,7 +368,7 @@ export const orvieto: CityPantry = {
       role: 'bigliettaio',
       placeId: 'stazione-orvieto',
       personality: ["jovial", "punctual"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a stocky man in his late fifties with a round face and white moustache, railway cap pushed back, uniform jacket, behind a ticket window with a funicular timetable behind him, minimal sepia watercolor wash, detailed facial lines. A man. Any signs, timetables or screens are in Italian with Italian place names; no name badge.',
+      portraitPrompt: 'Pen and ink portrait on white paper of a 58-year-old man with a round face and a white moustache, in a railway uniform jacket and no cap, behind a ticket window, sliding a ticket under the glass and looking at the traveller, minimal sepia watercolor wash, detailed linework. The subject is a man.',
       here: "You sell train tickets at the station in Orvieto Scalo, the modern district at the foot of the cliff. The old town stands on top of a tall block of volcanic tuff. The funicolare climbs from beside the station to Piazza Cahen, at the edge of the old town. Up there are the Duomo and cellars where Orvieto Classico white wine is made.",
     },
     {
@@ -547,7 +547,7 @@ export const orvieto: CityPantry = {
       role: 'fruttivendolo',
       placeId: 'mercato-coperto',
       personality: ["boisterous", "humorous", "generous"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a jovial elderly man with ruddy cheeks, cap, loud laugh, suspenders, minimal green watercolor wash, lifetime at the market, detailed character-filled face',
+      portraitPrompt: 'Pen and ink portrait on white paper of a 71-year-old man with a lined face, white stubble and a flat cap, in a cardigan over a shirt, scooping lentils into a paper bag at a market stall, smiling at something a customer has said, minimal green watercolor wash, detailed linework. The subject is a man.',
       here: "You have sold fruit and vegetables here all your life, and you joke with every customer. You can tell them what is good this week, from local vegetables to Castelluccio lentils.",
     },
     {

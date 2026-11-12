@@ -37,6 +37,8 @@ const imageConfig = generation.images ?? {};
 // Per-city place styles (Mexico, 2026-10-14): place prompt = city style + scene + sign + rules
 const placeStyles = generation.placeStyles ?? {};
 const placeRules = generation.placeRules ?? '';
+// Rules added to every portrait prompt (Italy, 2026-11-11: unposed, one particular person, no words in the picture)
+const portraitRules = generation.portraitRules ?? '';
 // Where the camera stands, by place kind (Napoli, 2026-10-27): close for shops and food, wide for squares
 // wide for squares and landmarks; other places take the views in turn (Josh: "why not vary them")
 const placeFraming = generation.placeFraming;
@@ -178,7 +180,7 @@ async function processCity(cityId, cityFile, manifest, options = {}) {
     // A city with its own place style: style + scene + the name as the only sign + rules
     const prompt = image.type === 'place' && placeStyles[cityId]
       ? buildPlacePrompt({ style: placeStyles[cityId], scene: cleanScene(image.prompt), sign: (generation.noSignKinds ?? []).includes(image.kind) ? null : image.name, rules: placeRules, neighbourhood: image.neighbourhood, framing: framingFor(image.kind, image.turn, image.id) })
-      : image.prompt;
+      : image.type === 'portrait' && portraitRules ? `${image.prompt} ${portraitRules}` : image.prompt;
     if (options.dry) {
       console.log(`\n[${imageKey}]\n${prompt}`);
       continue;

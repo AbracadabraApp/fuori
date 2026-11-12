@@ -2276,3 +2276,12 @@ Design only; nothing built. Decisions are Josh's unless marked.
 - **Checked with them shown:** tsc; test:content-api in es-mx and it; test:images (es-mx); test:leave. **Not verified:** no conversation was played in a new city; `smoke:live` has not run against them.
 - **To go live:** `npm run release` from the mini when Josh says "release" (no new app build needed: cities come from /v1/content), then Josh plays one conversation in a new city. The same release also carries the station work merged today (def792f).
 - **Open:** Mexico has no trip map or buildings yet, so its ticket sheet shows the ticket alone.
+
+## 2026-11-11, night: Italy's portraits, caricature pass (cloud chat session, with Josh)
+
+- Josh's screenshot of Filippo Basile (Palermo): no colour, "Cinque" lettered into the picture, and a caricature. His rule, the lists and what's left are in docs/portraits-caricature.md. All 217 Italian portraits were looked at on contact sheets (loaded from R2).
+- **Done:** 17 portrait prompts rewritten (9 caricature or posing, 8 borderline; Josh: "caricature and borderline redo"); `portraitRules` in content/it/generation.json, appended to every Italian portrait prompt by generate-images.mjs (unposed, one particular person, no words). Mexico's prompts are unchanged (no portraitRules there).
+- **Checked:** tsc; test:content-api (it); `--dry` shows the rules on Italian portraits and not on Mexican ones. **Not verified:** no picture has been redrawn.
+- **For the mini:** the command in docs/portraits-caricature.md (17 ids, `--force`), upload, untrack, push; the cloud chat session then looks at them.
+- **Open:** colour skipped by Josh (63 of 217 have none); about 36 more with lettering, not decided; Mexico's portraits not looked at.
+- Also tonight: design/intro-subtitle (the intro's subtitle as a charcoal band; spec for the laptop, not built).

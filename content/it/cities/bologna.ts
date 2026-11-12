@@ -575,7 +575,7 @@ export const bologna: CityPantry = {
       role: 'salumiere',
       placeId: 'salumeria-simoni',
       personality: ['proud'],
-      portraitPrompt: 'Pen and ink portrait on white paper of solid man in striped apron, holding mortadella slicer, confident craftsman expression, mustache, minimal pink and gold watercolor for meats, strong bold strokes, capturing master salumiere',
+      portraitPrompt: 'Pen and ink portrait on white paper of a 61-year-old man with short grey hair and a trimmed grey moustache, glasses on a cord, in a white coat over a shirt and tie, leaning over the counter to slice mortadella by hand with a long knife, eyes on the cut, minimal watercolor wash in pink and gold, detailed linework. The subject is a man.',
       here: "You run Salumeria Simoni, a salumeria in the Quadrilatero, the old market streets off Piazza Maggiore, where stalls have sold food since the Middle Ages. You slice mortadella, Bologna's famous cold cut, by hand, and it is sold sliced to order by weight. Parmigiano Reggiano is sold by age, 24 or 36 months. You also sell fresh tortellini, the pasta of Bologna, traditionally eaten in broth.",
     },
     {

@@ -370,7 +370,7 @@ export const genova: CityPantry = {
       role: 'cuoco',
       placeId: 'trattoria-rosmarino',
       personality: ['nostalgic'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a heavyset chef with expressive face, chef\'s whites, wooden spoon in hand, minimal watercolor in warm reds, intense eyes, bold pen work. The subject is a man.',
+      portraitPrompt: 'Pen and ink portrait on white paper of a 58-year-old Genoese man with thinning grey hair and a tired, kind face, in a dark apron over a shirt with the sleeves rolled, working basil in a marble mortar with a wooden pestle, looking down at it, minimal watercolor wash in basil green and warm red, detailed linework. The subject is a man.',
       here: "You cook Genoese food in the caruggi: trofie al pesto (made in a mortar), pansoti with walnut sauce, and farinata, and you'll say why pesto never goes near a blender.",
     },
     {
@@ -575,7 +575,7 @@ export const genova: CityPantry = {
       role: 'salumiere',
       placeId: 'salumeria-fontana',
       personality: ["generous", "proud", "funny"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a stocky man with handlebar mustache, white apron, knife at belt, minimal watercolor in meat reds, proud expression, bold pen strokes',
+      portraitPrompt: 'Pen and ink portrait on white paper of a 64-year-old man with a bald crown, grey hair at the sides and a short grey moustache, in a white apron over a blue shirt, wrapping a piece of cheese in paper at the counter, glancing up over his glasses, minimal watercolor wash in muted reds and cream, detailed linework. The subject is a man.',
       here: "You run this delicatessen in the caruggi, selling cured meats, cheeses, jars of pesto genovese and acciughe sotto sale, the salted anchovies Liguria is known for.",
     },
     {

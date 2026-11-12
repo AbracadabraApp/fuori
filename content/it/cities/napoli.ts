@@ -531,7 +531,7 @@ export const napoli: CityPantry = {
       role: 'fruttivendolo',
       placeId: 'mercato-pignasecca',
       personality: ['loud', 'generous', 'quick-witted'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a 34-year-old Chinese Italian man, a Neapolitan fruit and vegetable seller, short black hair, a big warm grin, mid-shout as he calls out to customers, a canvas apron over a checked shirt with the sleeves rolled up, holding up a bunch of lemons with crates of fruit behind him. Minimal watercolor wash in lemon yellow, tomato red and leaf green. Bold, energetic linework. The subject is a man.',
+      portraitPrompt: 'Pen and ink portrait on white paper of a 34-year-old Chinese Italian man with short black hair and an easy smile, in a canvas apron over a checked shirt with the sleeves rolled up, weighing tomatoes on a scale and glancing up at a customer, crates of fruit behind him, minimal watercolor wash in lemon yellow, tomato red and leaf green, detailed linework. The subject is a man.',
       here: "You run the fruit and vegetable stall at the Pignasecca market that your parents opened when they came from Wenzhou. You were born in Naples, grew up in these streets and call out your prices in Neapolitan like every other vendor in the market; your regulars tease you and you tease them back.",
     },
     {
@@ -805,7 +805,7 @@ export const napoli: CityPantry = {
       role: 'pizzaiolo',
       placeId: 'pizza-a-portafoglio-tribunali',
       personality: ['fast', 'cheeky', 'proud of Naples'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a 29-year-old Neapolitan man with short curly hair and flour on his forearms, a white T-shirt, folding a small pizza in four with paper around it, cheeky grin, minimal watercolor wash in tomato red and cream, detailed linework.',
+      portraitPrompt: 'Pen and ink portrait on white paper of a 29-year-old Neapolitan man with short curly hair and flour on his forearms, in a white T-shirt, looking down at his hands as he folds a small pizza in four inside a sheet of paper, the folded pizza no bigger than his hand, a slight smile, minimal watercolor wash in tomato red and cream, detailed linework. The subject is a man.',
       here: 'You make pizza a portafoglio at the street window of a pizzeria on Via dei Tribunali: a small margherita or marinara folded in four like a wallet and wrapped in paper, eaten walking, for a couple of euros. You also sell the cuoppo, a paper cone of fried things.',
     },
   ],

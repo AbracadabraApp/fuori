@@ -372,7 +372,7 @@ export const lecce: CityPantry = {
       role: 'venditore',
       placeId: 'mercato-comunale',
       personality: ["chiassoso", "simpatico", "generoso"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a robust market vendor in his fifties with weathered face, booming laugh, rolled-up sleeves, hands gesturing expressively, salt-and-pepper hair, joyful eyes, minimal watercolor wash in earthy terracotta, detailed energetic line work, larger than life',
+      portraitPrompt: 'Pen and ink portrait on white paper of a 54-year-old man with salt-and-pepper hair and a tanned, lined face, in a work shirt with the sleeves rolled up, tying bunches of wild chicory at a vegetable stall, head tilted as he listens to a customer, minimal watercolor wash in earthy terracotta and chicory green, detailed linework. The subject is a man.',
       here: "You sell vegetables in Lecce, including the wild chicory and dried fava beans that go into fave e cicoria. This is a Salento staple: a fava purée served with bitter boiled greens and local olive oil. Wild chicory is a winter green. Piazza Sant'Oronzo holds a half-uncovered Roman amphitheatre. Its tall column, topped by the patron saint Oronzo, once stood at the end of the Appian Way in Brindisi.",
     },
     {
