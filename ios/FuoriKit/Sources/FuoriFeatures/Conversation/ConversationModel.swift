@@ -238,82 +238,26 @@ public final class ConversationModel {
 
     // MARK: - The intro (lib/intro.ts; Josh's design, 2026-11-11)
 
-    /// Where each intro sentence starts in `line` (the server joins them with one space)
-    private var introStarts: [Int] {
-        guard let intro else { return [] }
-        var starts: [Int] = []
-        var at = 0
-        for s in intro { starts.append(at); at += s.text.count + 1 }
-        return starts
+    /// The turn as CharacterBubble reads it (what the character's side shows: CharacterBubble.swift)
+    private var bubbleTurn: CharacterBubble.Turn {
+        CharacterBubble.Turn(line: line, english: english, parts: parts, intro: intro, introHead: introHead, question: question,
+                             shown: shown, speaking: phase == .speaking, awaitingQuestion: awaitingQuestion,
+                             newBeginner: beginner && !APIClient.oldBeginner)
     }
 
-    /// The sentence the voice is on, while it's still before the last one (the
-    /// question): nil once the question starts, or when the line is all out
-    private var introIndex: Int? {
-        guard let intro, intro.count > 1, let shown, phase == .speaking else { return nil }
-        let starts = introStarts
-        let i = (starts.lastIndex { $0 <= shown }) ?? 0
-        return i < intro.count - 1 ? i : nil
-    }
+    /// Where each intro sentence starts in `line`
+    private var introStarts: [Int] { CharacterBubble.introStarts(intro) }
 
-    /// The portrait with the subtitle band, until the question starts and the chat takes over
-    public var inIntro: Bool {
-        if intro != nil { return introIndex != nil }
-        return introHead != nil && phase == .speaking
-    }
+    /// The intro is playing (its sheet is up), until the question starts and the chat takes over
+    public var inIntro: Bool { CharacterBubble.inIntro(bubbleTurn) }
 
-    /// The subtitle on the portrait: the sentence being said, and how much of it is out
-    public var introSubtitle: (text: String, en: String, shown: Int?)? {
-        if let intro, let i = introIndex {
-            let start = introStarts[i]
-            return (intro[i].text, intro[i].en, shown.map { max(0, $0 - start) })
-        }
-        if let introHead, intro == nil, phase == .speaking { return (introHead.text, introHead.en, shown) }
-        return nil
-    }
+    /// The intro's subtitle: the sentence being said, and how much of it is out
+    public var introSubtitle: (text: String, en: String, shown: Int?)? { CharacterBubble.introSubtitle(bubbleTurn) }
 
-    /// Where the question starts in `line`, for a one-line Beginner 2 reply
-    private var questionStart: Int? {
-        guard let question, let line, let r = line.range(of: question.text) else { return nil }
-        return line.distance(from: line.startIndex, to: r.lowerBound)
-    }
-
-    /// A Beginner one-line reply (the English frame with the language slotted in): its parts are only the answers to
-    /// say back. Only its question is printed, and nothing when it has none
-    private var frameTurn: Bool {
-        guard beginner, intro == nil, !APIClient.oldBeginner, let parts else { return false }
-        return parts.allSatisfy(\.isAnswer)
-    }
-
-    /// The character's bubble in the chat: the question only, after an intro or on a Beginner one-line reply (and
-    /// nothing until the voice reaches it); nothing on a Beginner turn with no question (Josh, 2026-11-12: "we shouldn't
-    /// put english/frame in bubble"); the whole line otherwise
-    public var chatLine: String? {
-        if awaitingQuestion { return nil }
-        if let intro, let last = intro.last { return last.text }
-        if let question {
-            if let shown, let start = questionStart, shown < start { return nil }
-            return question.text
-        }
-        if frameTurn { return nil }
-        return line
-    }
-
-    /// Typewriter progress within `chatLine`
-    public var chatShown: Int? {
-        guard let shown else { return nil }
-        if intro != nil { return max(0, shown - (introStarts.last ?? 0)) }
-        if question != nil, let start = questionStart { return max(0, shown - start) }
-        return shown
-    }
-
-    /// The English under her bubble: the question's, after an intro or on a one-line Beginner 2 reply
-    public var chatEnglish: String? {
-        if let intro, let last = intro.last { return last.en }
-        if let question { return question.en }
-        if frameTurn { return nil }
-        return english
-    }
+    /// The character's bubble in the chat, its typewriter progress and its English (CharacterBubble.of)
+    public var chatLine: String? { CharacterBubble.of(bubbleTurn).line }
+    public var chatShown: Int? { CharacterBubble.of(bubbleTurn).shown }
+    public var chatEnglish: String? { CharacterBubble.of(bubbleTurn).english }
 
     /// Beginner dialogue: the answers to say back, on the learner's turn
     public var answersToSay: [APIClient.TurnPart] {

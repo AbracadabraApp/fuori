@@ -141,7 +141,26 @@ Sorted by subject 2026-11-12 (the entries unedited; a line in italics says where
   answer bubble); her bubbles show no English and nothing happens on a tap,
   except where the answer is a tap (mic off, VoiceOver, the welcome's buttons).
   *Since 2026-11-12: answers and their English go at step 6 of the new Beginner, not S4.*
-- **Who is talking, at a glance** (Josh, 2026-11-05: "I'm interested in if a user can tell who is talking"; "Beginner always being different is not a goal"): one bubble for her and one for the learner, the same on every screen and at every level. Hers on the left in warm parchment (#eee6d6, the Learn page's lessons field) with a thin #d6cab3 edge; the learner's on the right in solid olive (#dbe3c4, the old onboarding answers' green, made solid), its English in dark olive (#3f4a22). Solid, no transparency, so they read over any picture. No tails (Josh: "the left and right are clear and the tails look messy"). Josh: "colors are good". Not built yet.
+  *"Her bubbles show no English" holds for the parts reply; on the one-line reply her question shows its English (the ladder; "What the screen shows").*
+- **Who is talking, at a glance** (Josh, 2026-11-05: "I'm interested in if a user can tell who is talking"; "Beginner always being different is not a goal"): one bubble for her and one for the learner, the same on every screen and at every level. Hers on the left in warm parchment (#eee6d6, the Learn page's lessons field) with a thin #d6cab3 edge; the learner's on the right in solid olive (#dbe3c4, the old onboarding answers' green, made solid), its English in dark olive (#3f4a22). Solid, no transparency, so they read over any picture. No tails (Josh: "the left and right are clear and the tails look messy"). Josh: "colors are good". *Built: SpeechBubble.swift, the same bubble at every level.*
+
+- **What the screen shows** (written 2026-11-12 from Josh's decisions that day; the code is `CharacterBubble.swift`, its cases in `CharacterBubbleTests`). Three kinds of rule, kept apart:
+  - *Where English goes:* spoken by the character, written under the language in a bubble, or, in the intro only, as a subtitle in the charcoal band. Spoken English is never written in a bubble.
+  - *When it shows:* a bubble's English shows once the character has finished speaking; the intro's subtitle shows the English of each sentence as it's said. The character's bubble types out in step with the voice (Josh kept it: reading along helps listening), and is drawn only once there are words in it.
+  - *How much of the character's line is printed:*
+
+  | Level and turn | The character's side | The learner's side |
+  |---|---|---|
+  | Any visit that opens on the intro (Beginner, Intermediate) | A sheet under the name band: portrait, the English subtitle in pieces of at most two lines, a glass close button; swipe down or the X ends it and the question is said | Nothing until the question |
+  | The intro's question | The question; its English under it at Beginner (Intermediate shows no English) | Two answers with their English (Beginner); nothing (Intermediate) |
+  | Beginner, a turn ending on a question | Only the question in the language, from when the voice reaches it; its English under it at steps 1–3 (the ladder) | Two answers with their English |
+  | Beginner, questions to ask, or the goodbye | Nothing | The two questions, or two goodbyes, with their English |
+  | Beginner steps 4–6 (the parts reply), the old Beginner, the welcome, Magda's Beginner lessons | One bubble of the phrases in the language as they're said, the question in bold; no English | The answers, with their English |
+  | Intermediate | The whole line | Nothing, unless the reply panel's two answers (a new learner's first turns) |
+  | Advanced | No line (the level's own setting, 2026-10-23) | Nothing |
+  | A note (an error, "Didn't catch that.") | A small grey card above the controls | — |
+
+  The question is the line's last sentence once any English is set aside: a sentence in the translation, or sharing at least half the words of both it and its closest translation sentence; only the last two sentences are looked at (`lib/beginner-2.ts → questionOf`). Why it's written down: four bugs of 2026-11-12 came from these rules living only in code (an empty oval while the character spoke, the English frame printed, the English echo taken as the question, a question emptied by English in brackets).
 
 ### Rules for every conversation
 
@@ -204,7 +223,7 @@ What Beginner level dialogue is for. The trial prompt is written against these, 
 - **The screen:** subtitles or bubbles, and what the subtitle line shows. Josh
   is working this out; the one global subtitle setting is hidden in Settings
   for now (2026-11-05).
-  *The intro's subtitles are decided ("The intro opens a visit"); bubbles for the rest.*
+  *Settled: bubbles, with the intro's subtitles as the one exception ("What the screen shows").*
 
 ## The code
 
