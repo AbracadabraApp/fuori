@@ -64,14 +64,21 @@ public final class Voice: NSObject {
         }
     }
 
-    /// The phone's own voice: `language` is the pack's speech code (e.g. it-IT, es-MX)
-    public func speak(_ text: String, language: String, rate: Float) async {
+    /// The phone's own voice: `language` is the pack's speech code (e.g. it-IT, es-MX); `gender` the character's
+    /// ("m" or "f"), so a man isn't heard in a woman's voice when the hosted voice fails (Josh, 2026-11-12: Pietro at
+    /// Termini spoke as Alice when the credits ran out). A stock iPhone has only a woman's Italian voice, so a man's
+    /// is used only where one is installed
+    public func speak(_ text: String, language: String, rate: Float, gender: String? = nil) async {
         stop()
         if Self.muted { return }
         spokenUpTo = 0
         spokenLength = (text as NSString).length
         let utterance = AVSpeechUtterance(string: text)
-        utterance.voice = AVSpeechSynthesisVoice(language: language)
+        let installed = AVSpeechSynthesisVoice.speechVoices().map {
+            PhoneVoice(id: $0.identifier, language: $0.language, gender: $0.gender == .male ? "m" : $0.gender == .female ? "f" : nil, quality: $0.quality.rawValue)
+        }
+        utterance.voice = Self.phoneVoice(from: installed, language: language, gender: gender).flatMap { AVSpeechSynthesisVoice(identifier: $0) }
+            ?? AVSpeechSynthesisVoice(language: language)
         utterance.rate = AVSpeechUtteranceDefaultSpeechRate * rate
         await withCheckedContinuation { continuation in
             finished = continuation
@@ -113,6 +120,25 @@ public final class Voice: NSObject {
     /// own length plus a margin, whatever the players report.
     nonisolated static func playDeadline(duration: TimeInterval) -> TimeInterval {
         max(duration, 0) + 3
+    }
+
+    /// An installed phone voice, as `phoneVoice` reads it
+    struct PhoneVoice: Equatable {
+        let id: String
+        let language: String
+        let gender: String?
+        let quality: Int
+    }
+
+    /// The installed voice for `language` (the exact code first, then the same language anywhere) and `gender`, best
+    /// quality first; nil when none matches both, and the phone's default for the language speaks
+    nonisolated static func phoneVoice(from voices: [PhoneVoice], language: String, gender: String?) -> String? {
+        guard let gender else { return nil }
+        let base = language.split(separator: "-").first.map(String.init) ?? language
+        let matching = voices.filter { $0.gender == gender }
+        let exact = matching.filter { $0.language == language }
+        let near = matching.filter { $0.language.split(separator: "-").first.map(String.init) == base }
+        return (exact.isEmpty ? near : exact).max { $0.quality < $1.quality }?.id
     }
 
     /// The phone's voice speaks about 12 characters a second at rate 1; slower

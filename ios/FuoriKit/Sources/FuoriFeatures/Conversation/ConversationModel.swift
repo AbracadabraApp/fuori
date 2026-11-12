@@ -451,7 +451,7 @@ public final class ConversationModel {
             let code = report(error, step: "speak")
             debug.voice = "phone (hosted failed, \(code))"
             startReveal(reply.line)
-            await voice.speak(reply.line, language: language.speechLang, rate: Float(speed))
+            await voice.speak(reply.line, language: language.speechLang, rate: Float(speed), gender: character.gender)
         }
         finishReveal()
         guard generation == self.generation, phase == .speaking else { return }
@@ -576,14 +576,14 @@ public final class ConversationModel {
             startReveal(rest, offset: offset)
             do { try await voice.play(audio) } catch {
                 report(error, step: "speak")
-                await voice.speak(rest, language: language.speechLang, rate: Float(speed))
+                await voice.speak(rest, language: language.speechLang, rate: Float(speed), gender: character.gender)
             }
         case .failure(let error):
             guard generation == self.generation, phase == .speaking else { return true }
             let code = report(error, step: "speak")
             debug.voice = "phone for the rest (hosted failed, \(code))"
             startReveal(rest, offset: offset)
-            await voice.speak(rest, language: language.speechLang, rate: Float(speed))
+            await voice.speak(rest, language: language.speechLang, rate: Float(speed), gender: character.gender)
         case nil:
             break
         }
@@ -1132,7 +1132,7 @@ public final class ConversationModel {
         } catch {
             guard learnSaying == text else { return }
             _ = report(error, step: "learn speak")
-            await voice.speak(text, language: language.speechLang, rate: Float(speed))
+            await voice.speak(text, language: language.speechLang, rate: Float(speed), gender: character.gender)
         }
         if learnSaying == text { learnSaying = nil }
     }
