@@ -2,6 +2,11 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
 
+### 2026-11-12b: step 1 shorter: one or two phrases, English only to carry them, a whole turn as the example
+- **Changed, Level 1:** "Three or four of them a turn, inside your English sentences" → "One or two of them a turn, inside your English"; "talk mostly in English" → "mix English and {language}"; added "Your English is only there to carry the {language}: no stories or explanations of your own in English"; "Keep each turn short: two or three sentences" → "Each turn is two short sentences"; the fragment examples replaced by one whole turn at that length.
+- **Why:** Josh's Guanajuato play (visits 6159f8cb, 409863b2): step 1 turns of 70–85 words, mostly English; earlier, "Everything is basically too long". The cause was in this block: three or four glossed phrases can't fit in two or three sentences, and the phrases won. Replayed on his two visits through today's call (tests/experiments/b2-turn-length.mts): median 60 words heard, 4 sentences, 28% Spanish; with the shorter text (before the whole-turn example), 37 words, 3 sentences, 34%.
+- **Prompted by:** item A of docs/dialogue-plan.md, handed over by the screen session; Josh, 2026-11-12: "yes". Product development on his word, judged by his play (no card: the information was already there).
+
 ### 2026-11-12a: the Summary and "Line: answer inside" blocks removed
 - **Removed:** "Summary" (the side call's prompt: one English remark per stretch of her talk, card B2-E5) and "Line: answer inside" ("You could answer me with:", the lead for an answer said inside her line). Neither was played: since 10q no cluster summarizes or glosses by code (the Level 1 frame carries its own English), and the inside rungs were in no cluster since 2026-11-09 (no screen design). Their code went with them (lib/beginner-2.ts: stretchesOf, writeSummaries, withSummaries, glossAll, GLOSS_ALL, insideSpeech, the inside-en and inside rungs; take-turn.ts: summariesFor).
 - **Why and prompted by:** the dialogue inventory (docs/dialogue-plan.md 5.6); Josh, 2026-11-12: "yes" to deleting the dead code and its tests. The summary's result stays on card B2-E5 and in docs/summary-and-mixed.md.

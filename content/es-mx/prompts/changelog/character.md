@@ -4,6 +4,11 @@ Newest first. One entry per version: what changed, why, what prompted it. The pr
 
 Newest first. Each entry: what changed, why, and what prompted it.
 
+### 2026-11-12a: take up what they said first
+- **Added, Talk: turns:** "Take up what they just said before you add anything of your own."
+- **Why:** Josh's model of a conversation as bids (docs/dialogue-structure-reference.md § 1a: "Character makes a bid. Learner accepts and makes their bid. Character accepts, repeat"). The accept half had no line at Intermediate; the old Beginner prompt had one ("first react to what they just said… then move on"). The fault it answers: the character carrying on with its own subject (docs/dialogue-ideas.md → The character asks and carries on, as if answered; the Intermediate top 10, #1). Also reaches Beginner steps 1–3, which run on this prompt.
+- **Prompted by:** docs/dialogue-plan.md 4.1; Josh, 2026-11-12: "yes", to be judged by his play; one line to take out if it makes turns formulaic.
+
 ### 2026-11-10q: it's rude to ask where they're from
 - **Changed:** "Don't guess where they're from or why they're learning {language}; plenty of people here are. Talk about what's here." became "It's rude to ask someone where they're from or how long they've been here. Talk about what's here."
 - **Why:** at full size (48 Intermediate visits of 8 turns and 48 Beginner 2 visits in each country, a judge reading every line) the 10p line still left 37 of 189 conversations asking (20%), mostly on turns 3 to 8, not the opener: "Lei è di passaggio a Firenze, o si ferma qualche giorno?", "¿Cuántos días va a estar en Puebla?", "¿Es su primera vez en el mercado?". The 16-visit runs behind 10p had read it as near zero. Social framing, as with "rude to dominate the conversation" (2026-10-12i): 9 of 189 (5%). What's left is mostly "first time at this place?" or "do you come here often?". Also tried on top of it: the first-meeting line "You haven't met them before." as "Someone interested in you." (no better: 3/47 and 7/48 Intermediate against 2/47 and 4/48), not kept.
