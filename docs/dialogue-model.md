@@ -3,8 +3,8 @@
 How a character and the learner talk to each other, in every conversation.
 Decisions only, each with who decided and when; anything not listed here is
 undecided, whatever the code does today (Josh, 2026-11-05: "user experiences
-are intentional"). Background and today's behaviour, from the code: the shared
-doc "The dialogue model" (https://claude.ai/artifact/XvRja1uP7z4L8WxieCU44R).
+are intentional"). Today's behaviour, from the code: [dialogue-now.md](dialogue-now.md);
+the work: [dialogue-plan.md](dialogue-plan.md).
 
 ## Principles
 
@@ -76,25 +76,74 @@ some principles of dialogue we've learned"). Results are in
 
 - **Four kinds of conversation:** town, the welcome, Magda's lessons, cultural
   stories. *How do I say it* is a tool inside any of them, not a kind.
-- *(Since 2026-11-12 the Beginner plays six steps of the new Beginner, not these stages; see "Decided, 2026-11-10 to 2026-11-12".)*
-- **Six levels:** Beginner stages S1, S2, S3, S4 (lib/path.ts), then
-  Intermediate, then Advanced. The welcome is the one exception: it comes
-  before there's a level.
+- **Levels:** the Beginner's six steps (the new Beginner, since 2026-11-12), then Intermediate, then Advanced. The welcome comes before there's a level.
 
 ## Decided
 
+Sorted by subject 2026-11-12 (the entries unedited; a line in italics says where a later decision replaces part of one). The decisions of 11-10 to 11-12 were added the same day from progress.md, the plan and the changelogs, each quote checked against the written record.
+
+### How we work
+
+- **Feel first** (Josh, 2026-11-11): "the goal has to be does it feel right more than does it teach best". Teaching measures are guardrails; his ear decides, by listening ("listening is faster than reading and necessary").
+- **Experiments only where the answer is unknown** (Josh, 2026-11-12): experiments are for creating information in an unknown situation; it's too early to optimize measurement where the information is already present. Product changes ship on his word with a changelog, judged by his play; a card only when a decision hinges on a number ("cards should be used for experiments - not product development"; CLAUDE.md).
 - **Content and display are separate** (Josh, 2026-11-07: "We should separate content and display"). Content is what the character says, written by the prompt at every level: her words in each language, how much English, how hard the language, what she talks about, her question, the answers she'd accept, the English meaning of each phrase. Display is what the learner sees and hears of it, decided in code by level: how many answers are shown (or one turned into a frame), whether the English echo is spoken, whether and when a translation shows, bubbles, buttons, timing. The prompt doesn't mention the screen. Today's Beginner stages mix the two (answers two/one/frame and the echo are display; how much and how hard the language is content); separating them points to one prompt with one dial for the language, and display rules per step. **Decided as the goal, not the build** (Josh, 2026-11-07: "while decided as goal it still needs to test into implementation"): the separated version replaces today's stages only after it wins a test against them (docs/prompt-testing.md → queue, CD1).
+
+### A visit
+
+- **The intro opens a visit** (Josh, 2026-11-11; his mockup): the character sets the scene in the language with English subtitles, about what the place is known for, "cultural points first, 30 s fine, not 45 with biography", and ends on a question that comes out of what was told ("'are you visiting' after a cultural intro is a stinker"). At Intermediate and every Beginner step. At Beginner the question is short (intro.md 12b, the screen session, on his yes).
+- **A conversation is bids** (Josh, 2026-11-12): "A conversation is all about bids… every turn is an opportunity to bid/accept"; "Character makes a bid. Learner accepts and makes their bid. Character accepts, repeat"; "if the bid stinks it doesn't get accepted"; at Beginner "the learner bid is continuing to play". Variety in the kind of bid, not "this or that?" every turn ("It's like Dora the Explorer", 2026-11-11). In the prompts: "Take up what they just said before you add anything of your own" (character.md 12a); new kinds of question one at a time, Notice first (scaffolding.md 12d). Detail: dialogue-structure-reference.md § 1a, § 2a.
+- **The beats go to the character once** (Josh, 2026-11-11, "go", on the cloud session's critique): a note on every turn made every turn the same; the director speaks only on "answer first" when they asked something.
+- **How a Beginner visit ends** (Josh, 2026-11-12: "c - good, a good enough, change 8 to 7"): when the talk has run its course, the character winds down and the answers become goodbyes (scaffolding.md 12e); the goodbye on the 7th turn as the fallback. A goodbye with a name or a thanks still ends it (dialogue.md 12a).
+
+### The Beginner
+
+- **The Beginner is the new Beginner** (Josh, 2026-11-12: "the sooner we cut over the clearer this will be"): every Beginner plays it, on six steps; the old one behind the hidden switch for a week.
+- **Step 1 is the English frame** (Josh, 2026-11-10, on the frame-mix lines: "These are strong. For early learners - these are better than the echo or summary"): mostly English with the language slotted in, each phrase with its English beside it. Short (Josh, 2026-11-11: "Everything is basically too long"): one or two phrases a turn, two short sentences, then the question (scaffolding.md 12b).
+- **Answers to say back** (Claude's proposal; Josh, 2026-11-05: "fine"): the
+  question decides the form, two real choices or a frame about the learner;
+  never a single answer to read out (it can put words in their mouth); the
+  stages fade the help (S1 the most, S4 none); the character models the
+  sentence in her own line. In Magda's teaching she says the phrase and the
+  learner repeats it, not an answer bubble. Replaces S1 two answers, S2 one,
+  S3 a frame (never chosen as such).
+  *Since 2026-11-12: the fading is by the new Beginner's steps (two answers, questions to ask, Notice; none from step 6), not S1–S4.*
+- **At step 1, every question comes with answers to say back** (Josh, 2026-11-11, on an open question with none at step 1: "difficult for this level"). Step 3 has an open question in its mix; untested by his play.
+- **Questions** (Josh, 2026-11-05, "ok"): at S1–S3 every turn ends with one
+  question, except the goodbye; a Beginner can't start talk unprompted, and a
+  turn with nothing to answer is a dead end. From S4 up a question isn't
+  required (open talk can be a statement; a character who steps away comes
+  back, docs/dialogue-ideas.md).
+  *Superseded in part (2026-11-12): the stages are gone; the Beginner's steps end each turn on a question except "questions to ask" (the learner asks) and the goodbye; see "A conversation is bids". Whether that exception stands is open (Not decided yet).*
+- **Moving up is offered and chosen** (Josh, 2026-11-11: "a simple offer after N conversations; doesn't have to be success based and is user chosen"; "lets use the level up pages as designed").
+- **Everyone starts at Beginner** (Josh, 2026-11-05: "for now everyone starts
+  at beginner"), at S1; Settings → level changes it (Beginner, Intermediate,
+  Advanced). Built 2026-11-05: the welcome's button starts everyone at S1
+  (lib/welcome.ts → finishWelcome). Faster assessment
+  later: docs/ideas.md → Assessing level faster.
+  *Since 2026-11-12: at step 1 of the new Beginner.*
+
+### English and the screen
 
 - **Where English goes** (Josh, 2026-11-05): "if english is needed it should be
   spoken by the character or listed underneath the italian within the answer
   bubble." Whether it's needed, and at which levels, is not decided. Nothing is
   shown on tap: the tap for English on Beginner bubbles (built 2026-10-25,
   never chosen) is gone from the next phone build.
-- **Questions** (Josh, 2026-11-05, "ok"): at S1–S3 every turn ends with one
-  question, except the goodbye; a Beginner can't start talk unprompted, and a
-  turn with nothing to answer is a dead end. From S4 up a question isn't
-  required (open talk can be a statement; a character who steps away comes
-  back, docs/dialogue-ideas.md).
+  *Decided for the character's question since: "The question's English as a ladder".*
+- **The question's English as a ladder** (Josh, 2026-11-12, "this is what i want"): steps 1–3, printed under the question and said; steps 4–5, said but not printed; step 6, neither. Steps 1–3 built; 4–6 wait for their direction. No "English only the first time or for something new" rules ("i never proposed that").
+- **English in answer bubbles** (Claude's proposal; Josh, 2026-11-05: "fine"):
+  every answer bubble shows its English under the Italian, always; it goes
+  when answers go (S4). Style: light italic (Josh: "light italics or
+  parentheses or both"; Claude: italic in the muted ink, no parentheses, at
+  least 4.5:1 contrast). Built 2026-11-05 for the next phone build
+  (BeginnerBubbles.swift): light italic in muted #666666 (5.7:1 on the white
+  answer bubble); her bubbles show no English and nothing happens on a tap,
+  except where the answer is a tap (mic off, VoiceOver, the welcome's buttons).
+  *Since 2026-11-12: answers and their English go at step 6 of the new Beginner, not S4.*
+- **Who is talking, at a glance** (Josh, 2026-11-05: "I'm interested in if a user can tell who is talking"; "Beginner always being different is not a goal"): one bubble for her and one for the learner, the same on every screen and at every level. Hers on the left in warm parchment (#eee6d6, the Learn page's lessons field) with a thin #d6cab3 edge; the learner's on the right in solid olive (#dbe3c4, the old onboarding answers' green, made solid), its English in dark olive (#3f4a22). Solid, no transparency, so they read over any picture. No tails (Josh: "the left and right are clear and the tails look messy"). Josh: "colors are good". Not built yet.
+
+### Rules for every conversation
+
 - **Four fixes, for every conversation and both countries** (agreed 2026-11-05):
   1. The character is told whether the learner said the offered answer back,
      worked out by the app in any language (close counts), so a mishearing is
@@ -105,46 +154,6 @@ some principles of dialogue we've learned"). Results are in
   4. *How do I say it* only puts the learner's own words into the language:
      never answers the character's question for them (cause: say-it.md, "it
      answers or follows {name}'s last line"; Lorenzo, 2026-11-05).
-
-- **Answers to say back** (Claude's proposal; Josh, 2026-11-05: "fine"): the
-  question decides the form, two real choices or a frame about the learner;
-  never a single answer to read out (it can put words in their mouth); the
-  stages fade the help (S1 the most, S4 none); the character models the
-  sentence in her own line. In Magda's teaching she says the phrase and the
-  learner repeats it, not an answer bubble. Replaces S1 two answers, S2 one,
-  S3 a frame (never chosen as such).
-- **English in answer bubbles** (Claude's proposal; Josh, 2026-11-05: "fine"):
-  every answer bubble shows its English under the Italian, always; it goes
-  when answers go (S4). Style: light italic (Josh: "light italics or
-  parentheses or both"; Claude: italic in the muted ink, no parentheses, at
-  least 4.5:1 contrast). Built 2026-11-05 for the next phone build
-  (BeginnerBubbles.swift): light italic in muted #666666 (5.7:1 on the white
-  answer bubble); her bubbles show no English and nothing happens on a tap,
-  except where the answer is a tap (mic off, VoiceOver, the welcome's buttons).
-
-- **Who is talking, at a glance** (Josh, 2026-11-05: "I'm interested in if a user can tell who is talking"; "Beginner always being different is not a goal"): one bubble for her and one for the learner, the same on every screen and at every level. Hers on the left in warm parchment (#eee6d6, the Learn page's lessons field) with a thin #d6cab3 edge; the learner's on the right in solid olive (#dbe3c4, the old onboarding answers' green, made solid), its English in dark olive (#3f4a22). Solid, no transparency, so they read over any picture. No tails (Josh: "the left and right are clear and the tails look messy"). Josh: "colors are good". Not built yet.
-
-- **Everyone starts at Beginner** (Josh, 2026-11-05: "for now everyone starts
-  at beginner"), at S1; Settings → level changes it (Beginner, Intermediate,
-  Advanced). Built 2026-11-05: the welcome's button starts everyone at S1
-  (lib/welcome.ts → finishWelcome). Faster assessment
-  later: docs/ideas.md → Assessing level faster.
-
-## Decided, 2026-11-10 to 2026-11-12
-
-Added 2026-11-12 from progress.md, the plan and the changelogs; each quote checked against the written record.
-
-- **Feel first** (Josh, 2026-11-11): "the goal has to be does it feel right more than does it teach best". Teaching measures are guardrails; his ear decides, by listening ("listening is faster than reading and necessary").
-- **Experiments only where the answer is unknown** (Josh, 2026-11-12): experiments are for creating information in an unknown situation; it's too early to optimize measurement where the information is already present. Product changes ship on his word with a changelog, judged by his play; a card only when a decision hinges on a number ("cards should be used for experiments - not product development"; CLAUDE.md).
-- **A conversation is bids** (Josh, 2026-11-12): "A conversation is all about bids… every turn is an opportunity to bid/accept"; "Character makes a bid. Learner accepts and makes their bid. Character accepts, repeat"; "if the bid stinks it doesn't get accepted"; at Beginner "the learner bid is continuing to play". Variety in the kind of bid, not "this or that?" every turn ("It's like Dora the Explorer", 2026-11-11). In the prompts: "Take up what they just said before you add anything of your own" (character.md 12a); new kinds of question one at a time, Notice first (scaffolding.md 12d). Detail: dialogue-structure-reference.md § 1a, § 2a.
-- **The intro opens a visit** (Josh, 2026-11-11; his mockup): the character sets the scene in the language with English subtitles, about what the place is known for, "cultural points first, 30 s fine, not 45 with biography", and ends on a question that comes out of what was told ("'are you visiting' after a cultural intro is a stinker"). At Intermediate and every Beginner step. At Beginner the question is short (intro.md 12b, the screen session, on his yes).
-- **The beats go to the character once** (Josh, 2026-11-11, "go", on the cloud session's critique): a note on every turn made every turn the same; the director speaks only on "answer first" when they asked something.
-- **The Beginner is the new Beginner** (Josh, 2026-11-12: "the sooner we cut over the clearer this will be"): every Beginner plays it, on six steps; the old one behind the hidden switch for a week.
-- **Step 1 is the English frame** (Josh, 2026-11-10, on the frame-mix lines: "These are strong. For early learners - these are better than the echo or summary"): mostly English with the language slotted in, each phrase with its English beside it. Short (Josh, 2026-11-11: "Everything is basically too long"): one or two phrases a turn, two short sentences, then the question (scaffolding.md 12b).
-- **The question's English as a ladder** (Josh, 2026-11-12, "this is what i want"): steps 1–3, printed under the question and said; steps 4–5, said but not printed; step 6, neither. Steps 1–3 built; 4–6 wait for their direction. No "English only the first time or for something new" rules ("i never proposed that").
-- **Moving up is offered and chosen** (Josh, 2026-11-11: "a simple offer after N conversations; doesn't have to be success based and is user chosen"; "lets use the level up pages as designed").
-- **How a Beginner visit ends** (Josh, 2026-11-12: "c - good, a good enough, change 8 to 7"): when the talk has run its course, the character winds down and the answers become goodbyes (scaffolding.md 12e); the goodbye on the 7th turn as the fallback. A goodbye with a name or a thanks still ends it (dialogue.md 12a).
-- **At step 1, every question comes with answers to say back** (Josh, 2026-11-11, on an open question with none at step 1: "difficult for this level"). Step 3 has an open question in its mix; untested by his play.
 - **Speech-to-text is left as it is** (Josh, 2026-11-12: "We don't support speech to text"; "i haven't experienced comprehension issues with whisper = background noice and mishearing but not misunderstanding").
 
 ## Tried and dropped
@@ -169,10 +178,10 @@ What Beginner level dialogue is for. The trial prompt is written against these, 
 1. **Know where they are, and who they're talking to** (varied, Josh, 2026-10-25: the opening note is sometimes what's special, sometimes history or culture, sometimes just the country, region, city or the weather; the character introduces themselves and asks the name only sometimes). The first turn says in English, in one line, what this place is and what's special about it, and the character introduces themselves by name (maybe asking the player's), before any question in the language.
 2. **Take away a few words and phrases:** one or two that matter in each conversation, explained in English and used again later in it.
 3. **Say whole sentences:** a question invites an answer that reuses its words, and the character offers that answer.
-4. **Always be able to answer.** Every question comes in English first, then in the language. Questions avoid plain yes/no and prefer ones that make you use a useful verb (*Le piace…?* → *Mi piace…*; *Vuole…?* → *Vorrei…*), or one of two, or one fact. The polite form with a stranger unless the character already uses the familiar one.
+4. **Always be able to answer.** Every question comes in English first, then in the language *(order changed: the Spanish first, then its English; the ladder)*. Questions avoid plain yes/no and prefer ones that make you use a useful verb (*Le piace…?* → *Mi piace…*; *Vuole…?* → *Vorrei…*), or one of two, or one fact. The polite form with a stranger unless the character already uses the familiar one.
 
 **How the character talks**
-5. **English as support, heard not shown, and brief:** a sentence or two to set the scene, then the language. No lectures (not what goes into carbonara, the kinds of pizza, how the bread differs); one interesting detail at most. Each phrase in the language gets its own bubble (a single word can sit inline), its English a tap away.
+5. **English as support, heard not shown, and brief:** a sentence or two to set the scene, then the language. No lectures (not what goes into carbonara, the kinds of pizza, how the bread differs); one interesting detail at most. Each phrase in the language gets its own bubble (a single word can sit inline), its English a tap away *(no tap: English under the answers, and spoken)*.
 5b. **English used to teach, not instead of teaching (Josh, 2026-10-27):** English that carries history, culture or an explanation is worth having: a conversation in Italian only would lose it, and the context can bring Italian phrases with it ("This square was the city's market for 700 years. *Qui c'era il mercato.*"). What lowers the value isn't which words are in English but English that does the Italian's job instead of setting it up. Josh: "I don't think word choice is what matters but a more pedagogical use of English." Pedagogical uses, for example:
    - **Context that leads into a phrase:** a bit of history or culture, then the Italian that goes with it.
    - **Explaining a phrase just said:** what it means, when people say it, why it's said that way.
@@ -194,14 +203,9 @@ What Beginner level dialogue is for. The trial prompt is written against these, 
 - **The screen:** subtitles or bubbles, and what the subtitle line shows. Josh
   is working this out; the one global subtitle setting is hidden in Settings
   for now (2026-11-05).
+  *The intro's subtitles are decided ("The intro opens a visit"); bubbles for the rest.*
+- **Does every Beginner turn end on the character's question?** The 11-05 decision says yes (S1–S3); the "questions to ask" setup ends on the learner asking instead, which the bids model counts as a bid. Josh to say.
 
-## How the code is organised (Claude, 2026-11-05; Josh: "think about ways the code should be written to make changes to dialogue issues consistent as well as changes to dialogue scaffolding")
+## The code
 
-Today `lib/conversation/take-turn.ts` picks one of five prompt paths by kind of conversation, and each path's prompt file carries its own rules about English, answers and corrections, so a fix in one never reaches the others. The target:
-
-- **`lib/dialogue/`: the one place dialogue behaviour lives.**
-  - `rules.ts` with `content/<country>/prompts/dialogue.md`: the rules that hold in every conversation (corrections, mishearings, and later questions and answers by level), added to every system prompt by one function. A fix to how characters handle the learner goes here, once.
-  - `heard.ts`: reads what the learner said against what was offered (any language, no phrase list) and adds a short note to their message for the character. The said-back fact.
-  - `level.ts` (later): the learner's place on the path resolved once, setting the reply form (parts or a line), the stage blocks and the answer limit. Scaffolding changes go here and reach every kind.
-- **Kinds supply briefs only:** a lesson, a cultural story or the welcome gives its topic and when it ends; its prompt file says nothing about English, answers or corrections.
-- **A test** builds the prompt for every kind and checks the shared rules are in each, so a new kind or a new prompt can't miss them.
+How the code holds the dialogue (the shared layer, what each kind supplies) is in [dialogue-now.md](dialogue-now.md) → The shared dialogue layer: a Claude proposal of 2026-11-05, partly built, not a decision.

@@ -65,3 +65,16 @@ Readings, not conclusions (one or two learners carry most rows): offered answers
 ## 5. Inconsistencies open today
 
 The list, with what each resolves, is [dialogue-plan.md](dialogue-plan.md) phases 1, 2 and 5. Fixed 2026-11-12: the where-from lines (1.1), the beat-count close (1.2), intro.md's beats wording (1.3), the S4 gap and the two ladders (cut-over), Beginner 2's dead code (5.6). Still open: newcomer wording in the lesson and culture writers (2.1, 2.2); the welcome and lessons on `beginner.md`, so dialogue fixes reach them separately (5.2); four goodbyes, and a close when the talk is done (5.3); steps 4–6 unplayed with mismatched texts (5.4); length rules in prose (5.5).
+
+## 6. The shared dialogue layer (Claude's proposal, 2026-11-05; Josh: "think about ways the code should be written to make changes to dialogue issues consistent as well as changes to dialogue scaffolding")
+
+Moved here from dialogue-model.md on 2026-11-12: a proposal, not a decision. Built: `lib/dialogue/rules.ts` with `dialogue.md` (in every kind's prompt; `npm run test:dialogue` checks it) and `lib/dialogue/heard.ts`. Not built: `level.ts`. The text as written:
+
+Today `lib/conversation/take-turn.ts` picks one of five prompt paths by kind of conversation, and each path's prompt file carries its own rules about English, answers and corrections, so a fix in one never reaches the others. The target:
+
+- **`lib/dialogue/`: the one place dialogue behaviour lives.**
+  - `rules.ts` with `content/<country>/prompts/dialogue.md`: the rules that hold in every conversation (corrections, mishearings, and later questions and answers by level), added to every system prompt by one function. A fix to how characters handle the learner goes here, once.
+  - `heard.ts`: reads what the learner said against what was offered (any language, no phrase list) and adds a short note to their message for the character. The said-back fact.
+  - `level.ts` (later): the learner's place on the path resolved once, setting the reply form (parts or a line), the stage blocks and the answer limit. Scaffolding changes go here and reach every kind.
+- **Kinds supply briefs only:** a lesson, a cultural story or the welcome gives its topic and when it ends; its prompt file says nothing about English, answers or corrections.
+- **A test** builds the prompt for every kind and checks the shared rules are in each, so a new kind or a new prompt can't miss them.
