@@ -26,6 +26,8 @@
 
 ## Phase 3: measure before building (reads saved visits; no prompt changes)
 
+**First run, 2026-11-12** (`scripts/bid-count.mjs`; the table is in [dialogue-now.md](dialogue-now.md) § 4). 3.1: a baseline for Beginner 1 and 2, mostly from one or two learners; offered answers are said back 82% (Beginner 2) and 54% (Beginner 1); the frame to finish is the bid most often left on (27%); the open question without answers got own words on all 16 bids. Intermediate since 11-10q has 18 bids, too few to read. 3.2: 3 of 18 Intermediate turns since 11-10q ask and carry on; too few, rerun after Josh's next Intermediate visits. 3.3: no return visit since the ledger exists; waits for a second visit to Raymundo or Isidro (Guanajuato).
+
 | # | What | Resolves |
 |---|---|---|
 | 3.1 | **The bid-response count:** for each kind of bid live today (say it back, choose, questions to ask; Intermediate's open questions and statements), did the learner reply, how much, did the visit go on. The learner's reply is the verdict; no judge | `dialogue-structure-reference.md` § 1a → "The learner's reply is the verdict on a bid" and § 2a → "What it would take" (the count "can be made first from saved visits, for the three live rows") |
