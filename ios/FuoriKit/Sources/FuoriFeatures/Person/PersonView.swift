@@ -87,6 +87,8 @@ struct PersonView: View {
             LearnSheet(model: model)
         }
         .settingsToolbar()
+        // The header's sheets wait for the intro's to close (Settings.swift → SettingsToolbar.open)
+        .environment(\.introSheetUp, model.inIntro)
         .task { await model.start() }
         // Hands-free means no taps, so without this the phone auto-locks
         // mid-conversation and backgrounding ends the learner's turn
