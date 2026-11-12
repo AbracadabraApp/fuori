@@ -21,8 +21,7 @@ Read them in order:
 1. [Vision](docs/01-vision.md): who it's for, the learner persona, principles
 2. [Game design](docs/02-game-design.md): the open world, daily suggestions, people, changing scenery, Magda, levelling up, interface
 3. [Cities and people](docs/03-journey.md): city pantries, anchors, seed characters, suggested route
-4. [Conversation engine](docs/04-conversation-engine.md): the fuller design (M2+): suggestions, scenes and characters; how characters talk, forgive, correct and remember
-   - **For conversations today, read [M1 conversation model](docs/M1-CONVERSATION-MODEL.md) instead:** the short prompt and two-field reply in use today
+4. Dialogue: [how it works today](docs/dialogue-now.md) (checked against the code), [what's decided](docs/dialogue-model.md), [the plan](docs/dialogue-plan.md), [terms and bids](docs/dialogue-structure-reference.md), [faults with examples](docs/dialogue-ideas.md). The October designs ([conversation engine](docs/archive/04-conversation-engine.md), [M1 conversation model](docs/archive/M1-CONVERSATION-MODEL.md)) are archived
 5. [Architecture](docs/05-architecture.md): web app stack, voice, data model, API use
 6. [Roadmap](docs/06-roadmap.md): milestones, starting with M1
 7. [Visuals](docs/07-visuals.md): portrait style, moods, SVG avatars, photos

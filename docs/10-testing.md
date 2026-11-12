@@ -431,7 +431,7 @@ export interface LevelRules {
 }
 ```
 
-The rules feed two places: the house-rules layer of every character prompt ([Conversation engine](04-conversation-engine.md)), and the judge rubric below.
+The rules feed two places: the house-rules layer of every character prompt ([Conversation engine](archive/04-conversation-engine.md)), and the judge rubric below.
 
 ### 4b. Simulated learner
 

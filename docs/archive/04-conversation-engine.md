@@ -1,5 +1,7 @@
 # Conversation engine
 
+> **Archived 2026-11-12** (Josh: "yes" to plan decision 6). How conversations work today is [dialogue-now.md](../dialogue-now.md); decisions are in [dialogue-model.md](../dialogue-model.md). Kept as the record of the October design (world making, help, forgiveness, memory).
+
 > **M1 note:** M1 uses the much simpler model in [M1-CONVERSATION-MODEL.md](M1-CONVERSATION-MODEL.md): a short prompt and a two-field reply (`line`, `en`). This document is the fuller design for M2 and later; where they disagree, the M1 doc wins for now.
 
 Every place, person and line in Fuori comes from Claude. This document describes the calls that make the world (suggestions, scenes, characters), the call that runs each conversation turn, and the rules that make characters forgiving, helpful and consistent.
@@ -10,7 +12,7 @@ Three generation calls run before any conversation. All return structured JSON a
 
 ### The director: daily suggestions (`/api/suggest`)
 
-Runs once at the start of each in-game day. Input: the city pantry ([Cities and people](03-journey.md)), the learner profile and level, recurring mistakes, stale quaderno words, yesterday's "try tomorrow" goals, Magda's latest lesson, and the people the learner knows (with familiarity and memories).
+Runs once at the start of each in-game day. Input: the city pantry ([Cities and people](../03-journey.md)), the learner profile and level, recurring mistakes, stale quaderno words, yesterday's "try tomorrow" goals, Magda's latest lesson, and the people the learner knows (with familiarity and memories).
 
 Output: 3–4 suggestions plus one "cambia aria" option. Each suggestion names:
 - **a place** (from the pantry, or a plausible new one),
@@ -28,7 +30,7 @@ Runs when the learner picks a suggestion or says "vai dove vuoi" ("voglio andare
 ### Characters
 
 - **Anchors** (Rita, Giulia in Roma) are hand-written in `content/it/`.
-- **Everyone else is generated** on first meeting from the city, place and role: name, age, personality, what they care about, a secret or opinion, how they speak (Lei/tu, pace, a regional touch), and an appearance description for their avatar. Same shape as a hand-written sheet ([Data model](09-data-model.md)).
+- **Everyone else is generated** on first meeting from the city, place and role: name, age, personality, what they care about, a secret or opinion, how they speak (Lei/tu, pace, a regional touch), and an appearance description for their avatar. Same shape as a hand-written sheet ([Data model](../09-data-model.md)).
 - **Saved immediately**, so they persist and remember the learner. Avoid repeating names or personalities already in the learner's world.
 - **Magda** is special: a fixed character sheet with tutor rules (see [Magda](#magda-tutor-mode)).
 
@@ -374,7 +376,7 @@ Keep a small set of recorded learner turns (with transcription noise) and expect
 - Daily suggestions work in the learner's recurring mistakes and include one change of scenery.
 - Generated characters don't repeat names or personalities already in the learner's world.
 
-These become the simulated-learner test ([Testing → 4b](10-testing.md#4b-simulated-learner)).
+These become the simulated-learner test ([Testing → 4b](../10-testing.md#4b-simulated-learner)).
 
 ## Pedagogical foundations
 

@@ -383,7 +383,7 @@ Kept for the record; what's next is [Now](#now) above. Item 13 moved there. How 
 
 ## M1: Navigate cities and hold a conversation that's remembered
 
-**Goal:** on your phone, browse Italian cities, pick a place, and hold a spoken conversation in Italian; come back another day and the character remembers you. Learn whether immersion alone works ([M1 conversation model](M1-CONVERSATION-MODEL.md)).
+**Goal:** on your phone, browse Italian cities, pick a place, and hold a spoken conversation in Italian; come back another day and the character remembers you. Learn whether immersion alone works ([M1 conversation model](archive/M1-CONVERSATION-MODEL.md)).
 
 **Done**
 - [x] Next.js app on Railway, deploying from `main`; API keys server-side only

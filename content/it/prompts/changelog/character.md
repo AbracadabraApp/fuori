@@ -124,5 +124,5 @@ Newest first. Each entry: what changed, why, and what prompted it.
 - **Prompted by:** phone testing. Marco Alberti (archeologo, Siracusa) opened with five sentences introducing himself and the Greek Theatre; Rosa (fruttivendola, Firenze) opened with four. Josh spotted that "learning Italian" / "foreigner" in a draft would make it worse.
 
 ### 2026-10-10 (laptop session): radically simple
-- Replaced a ~400-line, six-layer prompt and 10-field output with a short character prompt and `{ it, en }`. See `docs/M1-CONVERSATION-MODEL.md`.
+- Replaced a ~400-line, six-layer prompt and 10-field output with a short character prompt and `{ it, en }`. See `docs/archive/M1-CONVERSATION-MODEL.md`.
 - Later that evening: added where the character is (`Right now you are here`), "hearing speech, not writing", and briefly "Say things once…" and "Never comment on spelling"; the laptop session then trimmed the prompt back to identity, setting, traits, formality, speech-to-text and English ability.

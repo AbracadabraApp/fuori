@@ -348,7 +348,7 @@ async function getLearnerResponse(persona, scene, transcript, npcLastLine) {
  */
 function buildNPCPrompt(character, scene, levelRules, transcript, learnerLine) {
   // TODO: This should match the actual prompt structure from the conversation engine
-  // See docs/04-conversation-engine.md for the layered prompt structure
+  // See docs/archive/04-conversation-engine.md for the layered prompt structure
 
   const prompt = `You are ${character.name}, a ${character.role} in Rome.
 

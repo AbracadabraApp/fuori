@@ -15,29 +15,7 @@ Rewritten 2026-10-22 (Josh: "rewrite docs") into one current picture. Three plan
 
 ### Goals (Josh, 2026-10-25)
 
-What Beginner level dialogue is for. The trial prompt is written against these, and replays are measured on them.
-
-**What the learner gets from each conversation**
-1. **Know where they are, and who they're talking to** (varied, Josh, 2026-10-25: the opening note is sometimes what's special, sometimes history or culture, sometimes just the country, region, city or the weather; the character introduces themselves and asks the name only sometimes). The first turn says in English, in one line, what this place is and what's special about it, and the character introduces themselves by name (maybe asking the player's), before any question in the language.
-2. **Take away a few words and phrases:** one or two that matter in each conversation, explained in English and used again later in it.
-3. **Say whole sentences:** a question invites an answer that reuses its words, and the character offers that answer.
-4. **Always be able to answer.** Every question comes in English first, then in the language. Questions avoid plain yes/no and prefer ones that make you use a useful verb (*Le piace…?* → *Mi piace…*; *Vuole…?* → *Vorrei…*), or one of two, or one fact. The polite form with a stranger unless the character already uses the familiar one.
-
-**How the character talks**
-5. **English as support, heard not shown, and brief:** a sentence or two to set the scene, then the language. No lectures (not what goes into carbonara, the kinds of pizza, how the bread differs); one interesting detail at most. Each phrase in the language gets its own bubble (a single word can sit inline), its English a tap away.
-5b. **English used to teach, not instead of teaching (Josh, 2026-10-27):** English that carries history, culture or an explanation is worth having: a conversation in Italian only would lose it, and the context can bring Italian phrases with it ("This square was the city's market for 700 years. *Qui c'era il mercato.*"). What lowers the value isn't which words are in English but English that does the Italian's job instead of setting it up. Josh: "I don't think word choice is what matters but a more pedagogical use of English." Pedagogical uses, for example:
-   - **Context that leads into a phrase:** a bit of history or culture, then the Italian that goes with it.
-   - **Explaining a phrase just said:** what it means, when people say it, why it's said that way.
-   - **Setting up the learner's turn:** what they're about to be asked, so they can answer in Italian.
-   - **Help when they're lost or ask.**
-
-   Patterns and the best examples from the syllabus: [teaching-with-english.md](teaching-with-english.md).
-
-   English that lowers it: saying in English what the beginner could have taken in Italian with a gloss (the order, the price, "here you are"); narration and chat that leads to no Italian; repeating in English what was just said in Italian.
-6. **Language a beginner can follow:** short, common words, present tense; the aim is 90% of words at the learner's level.
-7. **One thing at a time:** at most one question per turn. **The first turn may be the longest** (the place, the introduction, the first question); after it, turns stay short (Josh, 2026-10-25).
-8. **Still a person in a place:** helpful in role, not a teacher with a lesson plan.
-9. **True facts about real places, or none.** Places carry only a name today, so this may need a short checked line per place. **Parts of these conversations could be premade if needed (Josh, 2026-10-25):** e.g. a few checked opening notes per place (its history, what's special, the neighbourhood), which the character picks from.
+Moved to [dialogue-model.md → Beginner goals](dialogue-model.md#beginner-goals-josh-2026-10-25) on 2026-11-12, word for word.
 
 **How it changes over time**
 10. **The English fades:** a lot in the first conversations, then less, then only when asked; decided by counting, not a judge.

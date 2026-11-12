@@ -130,4 +130,4 @@ The rubric enforces principles from:
 - **ZPD (Vygotsky)**: Scaffolding only when needed, not over-helping
 - **Progetto Italiano methodology**: Inductive learning through authentic conversation
 
-See `docs/04-conversation-engine.md` for full pedagogical foundations.
+See `docs/archive/04-conversation-engine.md` for full pedagogical foundations.

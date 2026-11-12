@@ -1,5 +1,7 @@
 # M1 Conversation Model - True Implementation
 
+> **Archived 2026-11-12** (Josh: "yes" to plan decision 6). How conversations work today is [dialogue-now.md](../dialogue-now.md), checked against the code; decisions are in [dialogue-model.md](../dialogue-model.md). Kept as the record of M1's design.
+
 **The hypothesis:** Can natural conversation alone drive language learning?
 
 This is the source of truth for how M1 conversations work. Where it disagrees with `04-conversation-engine.md` (the fuller, older design), this document wins for M1.
@@ -34,9 +36,9 @@ This is the source of truth for how M1 conversations work. Where it disagrees wi
 
 The principle: describe the situation, not how to talk (decided 2026-10-11). The prompt says who the character is, where they are, that this is a spoken face-to-face moment, and what they know about the person. It sets no length rules. It avoids "a foreigner" (turns characters into tour guides) and, so far, "learning Italian".
 
-**Teaching in character is fine** (Josh, 2026-10-11). A barista who slows down, repeats a word or says "si dice *il* caffè, eh" is what a kind Italian does with a newcomer. What's not fine is breaking character: lectures, tour-guide mode, a CV instead of a greeting. So telling a character about the learner's level is allowed if it keeps them in character; whether to do it is an [open question](open-design-questions.md#11-level-and-speaking-2026-10-11).
+**Teaching in character is fine** (Josh, 2026-10-11). A barista who slows down, repeats a word or says "si dice *il* caffè, eh" is what a kind Italian does with a newcomer. What's not fine is breaking character: lectures, tour-guide mode, a CV instead of a greeting. So telling a character about the learner's level is allowed if it keeps them in character; whether to do it is an [open question](../open-design-questions.md#11-level-and-speaking-2026-10-11).
 
-**What phone play shows (2026-10-11):** characters speak B1–B2 to an A1–A2 learner, which is fine (see [Vision → Level](01-vision.md#level)); the problems are long turns with no opening to reply, traits performed as topics ("local historian" → a history lecture), and corrections of things the character can't hear. Fixes are being tested, not assumed: see [Roadmap → Now](06-roadmap.md#earlier-list-2026-10-12-to-10-14).
+**What phone play shows (2026-10-11):** characters speak B1–B2 to an A1–A2 learner, which is fine (see [Vision → Level](../01-vision.md#level)); the problems are long turns with no opening to reply, traits performed as topics ("local historian" → a history lecture), and corrections of things the character can't hear. Fixes are being tested, not assumed: see [Roadmap → Now](../06-roadmap.md#earlier-list-2026-10-12-to-10-14).
 
 **That's the entire system prompt. Everything else emerges naturally.**
 
@@ -114,7 +116,7 @@ Track only what matters for natural conversation:
 **Store as simple notes, not structured data.**
 
 **How it works (decided 2026-10-10, part of M1):**
-- Stored in **Railway Postgres** (`character_memories`), keyed by an anonymous learner id kept in a server-set cookie. Not on the phone: Safari erases site storage after about a week without a visit. See [Architecture](05-architecture.md#where-learner-data-lives-decided-2026-10-10).
+- Stored in **Railway Postgres** (`character_memories`), keyed by an anonymous learner id kept in a server-set cookie. Not on the phone: Safari erases site storage after about a week without a visit. See [Architecture](../05-architecture.md#where-learner-data-lives-decided-2026-10-10).
 - **When a conversation ends,** one Claude call turns the transcript into a few short notes (at most ~10 lines), merged with what the character already remembered.
 - **Next conversation,** the notes and visit count fill the `{relationship}` line of the character prompt (`content/it/prompts/character.md`), e.g. "You've met them 3 times. You remember: their name is Josh; from Seattle; always orders a cappuccino." The character uses them naturally, the way a real barista would, not by reciting them.
 - Familiarity levels (stranger → friend, *Lei* → *tu*) are M2.
@@ -187,7 +189,7 @@ But test the simple version first.
 
 ## Testing
 
-`npm run test:conversations` runs simulated conversations with Giulia, Rita and a random sample of city characters, using the real prompt. A simulated learner makes realistic mistakes and says when they don't understand. A grader scores each character on four things: speaks Italian, understands imperfect speech, adapts when the learner is lost, feels like a real person. The report suggests up to 3 changes and never edits files. Complex, natural Italian is not penalized; what counts is how the character responds to confusion. That means the test can't see the main problem from phone play (long, hard turns); adding level-fit and turn-length scores is [Now #1](06-roadmap.md#earlier-list-2026-10-12-to-10-14). See `tests/README.md`.
+`npm run test:conversations` runs simulated conversations with Giulia, Rita and a random sample of city characters, using the real prompt. A simulated learner makes realistic mistakes and says when they don't understand. A grader scores each character on four things: speaks Italian, understands imperfect speech, adapts when the learner is lost, feels like a real person. The report suggests up to 3 changes and never edits files. Complex, natural Italian is not penalized; what counts is how the character responds to confusion. That means the test can't see the main problem from phone play (long, hard turns); adding level-fit and turn-length scores is [Now #1](../06-roadmap.md#earlier-list-2026-10-12-to-10-14). See `tests/README.md`.
 
 ## The Radical Bet
 

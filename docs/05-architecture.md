@@ -36,7 +36,7 @@ transcript + scene + state     ─────▶ /api/turn
 render reply, speechSynthesis  ◀───── turn output
 ```
 
-End-of-day: `/api/diario` takes the day's transcripts and returns the diario, updated character memories, level evidence and any Magda message. `/api/magda` runs her lessons. See [Conversation engine](04-conversation-engine.md).
+End-of-day: `/api/diario` takes the day's transcripts and returns the diario, updated character memories, level evidence and any Magda message. `/api/magda` runs her lessons. See [Conversation engine](archive/04-conversation-engine.md).
 
 **M3 with hosted TTS:** `/api/turn` also generates TTS audio for the character's response and returns audio URL or streams bytes.
 

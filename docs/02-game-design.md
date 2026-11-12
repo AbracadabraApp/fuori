@@ -53,7 +53,7 @@ No city is locked. [Cities and people](03-journey.md) suggests a route as inspir
 
 ## Evening conversations
 
-The last suggestion of the day is usually an open conversation with someone new: a nonna on a bench, a wine bar owner, a student sketching in the piazza. No checklist; the character has a hidden topic and leads with questions so a beginner can keep up. See [Conversation engine → Open conversations](04-conversation-engine.md#open-conversations).
+The last suggestion of the day is usually an open conversation with someone new: a nonna on a bench, a wine bar owner, a student sketching in the piazza. No checklist; the character has a hidden topic and leads with questions so a beginner can keep up. See [Conversation engine → Open conversations](archive/04-conversation-engine.md#open-conversations).
 
 ## Who teaches
 

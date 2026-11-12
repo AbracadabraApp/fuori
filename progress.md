@@ -1042,10 +1042,10 @@ Roma pantry already has good balance - emphasizes daily life vocabulary (bars, m
 
 **The hypothesis:** Can natural conversation alone drive language learning?
 
-**Documented in:** `docs/M1-CONVERSATION-MODEL.md`
+**Documented in:** `docs/archive/M1-CONVERSATION-MODEL.md`
 
 **Why the mismatch happened:**
-- `docs/04-conversation-engine.md` contradicts itself: natural philosophy but complex schema
+- `docs/archive/04-conversation-engine.md` contradicts itself: natural philosophy but complex schema
 - Discussion about simple approach wasn't written down
 - Lost between sessions due to inadequate documentation
 - Defaulted to implementing what was specified vs questioning complexity
@@ -1161,7 +1161,7 @@ The conversation system was completely rebuilt to match the true M1 vision docum
 
 - Character memory moves from M2 into M1, in its minimal form: visit count plus a few short notes per character, written by Claude when a conversation ends and added to the prompt next time.
 - Stored in Railway Postgres from M1 (`learners`, `character_memories`), not localStorage: Safari wipes site storage after ~7 days without a visit, the server needs memory for future messages, and it can be inspected. Anonymous learner id in a server-set HTTP-only cookie; no login until M4.
-- Updated: `docs/05-architecture.md`, `docs/09-data-model.md`, `docs/06-roadmap.md`, `docs/M1-CONVERSATION-MODEL.md`.
+- Updated: `docs/05-architecture.md`, `docs/09-data-model.md`, `docs/06-roadmap.md`, `docs/archive/M1-CONVERSATION-MODEL.md`.
 - **Next:** add a Postgres service in Railway (sets `DATABASE_URL`), then build the memory flow.
 
 ## 2026-10-11: Fix: Giulia never heard the learner (cloud session)
@@ -1223,7 +1223,7 @@ Notes from the first real phone use are in `docs/ideas.md` → "Coda". Acted on 
 ## 2026-10-11: Level, speaking and where things live (docs only)
 
 Discussion with Josh after Salvatore and Suor Agata. No code or prompt changes.
-- **Decided:** Fuori is immersion for learners who tolerate not understanding, not a beginner course; characters speaking above your level is fine; teaching in character is fine, breaking character isn't. In `docs/01-vision.md` (Level, principle 7) and `docs/M1-CONVERSATION-MODEL.md`.
+- **Decided:** Fuori is immersion for learners who tolerate not understanding, not a beginner course; characters speaking above your level is fine; teaching in character is fine, breaking character isn't. In `docs/01-vision.md` (Level, principle 7) and `docs/archive/M1-CONVERSATION-MODEL.md`.
 - **Roadmap rewritten** to match what's built (it still listed conversation wiring and Railway as to-do). Now has a ranked **Now** list (test level and length first, then prompt experiments, Postgres, memory + saved conversations + review log, ElevenLabs quota) and clear M1/M2/M3 scope. M1 now includes saving conversations and a review-log entry (debug only); learner profile, success scoring and Magda are M2; interactive transcript M3.
 - `docs/09-data-model.md`: `conversations` table (turns as JSON, review entry, prompt version; no audio).
 - `docs/open-design-questions.md` #11: six open decisions (noticed field, trait reframing, learner level reaching characters, starting level, where the review shows, pace/pauses).

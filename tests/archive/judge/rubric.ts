@@ -6,7 +6,7 @@
  *
  * Based on:
  * - Priority test scenarios (docs/10-testing.md, section 3)
- * - Conversation engine rules (docs/04-conversation-engine.md)
+ * - Conversation engine rules (docs/archive/04-conversation-engine.md)
  * - A1 level rules (content/it/levels/a1.ts)
  */
 

@@ -485,7 +485,7 @@ ${this.formatPassRatesTable(summary.passRatePerCriterion)}`;
 4. **Validate persona handling** - Did the system appropriately handle different learner types?
 
 **Next steps:**
-- If pass rates are low, review the relevant sections in [docs/04-conversation-engine.md](../../docs/04-conversation-engine.md)
+- If pass rates are low, review the relevant sections in [docs/archive/04-conversation-engine.md](../../docs/archive/04-conversation-engine.md)
 - Update character sheets or house rules based on identified patterns
 - Re-run tests after changes to measure improvement
 
