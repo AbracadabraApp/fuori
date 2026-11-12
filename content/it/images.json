@@ -8606,6 +8606,106 @@
       "key": "it/posters/977487.95377abc09.webp",
       "src": "6a90acc27d28d82d",
       "bytes": 43136
+    },
+    "travel/building-assisi": {
+      "key": "it/travel/building-assisi.5fb9283f63.webp",
+      "src": "88f02aaa0f2f3234",
+      "bytes": 68196
+    },
+    "travel/building-bergamo": {
+      "key": "it/travel/building-bergamo.816d5f0c77.webp",
+      "src": "f485a7fead8e1a29",
+      "bytes": 48988
+    },
+    "travel/building-bologna": {
+      "key": "it/travel/building-bologna.ea126700e5.webp",
+      "src": "1861b598854bacc5",
+      "bytes": 55672
+    },
+    "travel/building-firenze": {
+      "key": "it/travel/building-firenze.55c375047d.webp",
+      "src": "6b22e96d2a4889b7",
+      "bytes": 81162
+    },
+    "travel/building-genova": {
+      "key": "it/travel/building-genova.4821b83260.webp",
+      "src": "dd941ca4758f11e4",
+      "bytes": 50956
+    },
+    "travel/building-lecce": {
+      "key": "it/travel/building-lecce.344f5df7ea.webp",
+      "src": "ba3f9c60ea76f712",
+      "bytes": 68234
+    },
+    "travel/building-lucca": {
+      "key": "it/travel/building-lucca.c0687929f6.webp",
+      "src": "8d326c2930623a29",
+      "bytes": 50428
+    },
+    "travel/building-mantova": {
+      "key": "it/travel/building-mantova.f0a6120b70.webp",
+      "src": "c02004b4ab036e17",
+      "bytes": 67054
+    },
+    "travel/building-matera": {
+      "key": "it/travel/building-matera.25b0c78c88.webp",
+      "src": "6eec3bd4b59571f1",
+      "bytes": 75918
+    },
+    "travel/building-milano": {
+      "key": "it/travel/building-milano.34b365da51.webp",
+      "src": "50fccd681cdfe388",
+      "bytes": 64774
+    },
+    "travel/building-orvieto": {
+      "key": "it/travel/building-orvieto.ded2e60e2e.webp",
+      "src": "31aadba4e62741d2",
+      "bytes": 78024
+    },
+    "travel/building-palermo": {
+      "key": "it/travel/building-palermo.097890402b.webp",
+      "src": "1d6aae143275064f",
+      "bytes": 48678
+    },
+    "travel/building-roma-nuova": {
+      "key": "it/travel/building-roma-nuova.e301c8581d.webp",
+      "src": "aa47d522ad10cdf9",
+      "bytes": 70752
+    },
+    "travel/building-siena": {
+      "key": "it/travel/building-siena.3dfb90b3d1.webp",
+      "src": "12c35fd4bb5537c5",
+      "bytes": 25320
+    },
+    "travel/building-siracusa": {
+      "key": "it/travel/building-siracusa.eee1306521.webp",
+      "src": "1328a9b82e8a1604",
+      "bytes": 62072
+    },
+    "travel/building-taormina": {
+      "key": "it/travel/building-taormina.a854e047e7.webp",
+      "src": "b4cbcb536c4c1069",
+      "bytes": 69712
+    },
+    "travel/building-torino": {
+      "key": "it/travel/building-torino.826196bd6c.webp",
+      "src": "df756d5937b87e2d",
+      "bytes": 28898
+    },
+    "travel/building-venezia": {
+      "key": "it/travel/building-venezia.931196b247.webp",
+      "src": "211b24f0f1dc1fba",
+      "bytes": 68576
+    },
+    "travel/building-verona": {
+      "key": "it/travel/building-verona.fa1bf7ad5b.webp",
+      "src": "add08429c8825e3e",
+      "bytes": 68246
+    },
+    "travel/map": {
+      "key": "it/travel/map.50bcf6d937.webp",
+      "src": "2a9a181f238d0939",
+      "bytes": 275212
     }
   }
 }
