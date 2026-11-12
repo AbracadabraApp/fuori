@@ -1,7 +1,7 @@
 /**
  * Cultural lessons (docs/culture.md → Cultural lessons; Josh, 2026-11-03):
  * one particular thing about a city, told by the shown person whose pride it
- * is, mostly listening, with a personal question at the end of the teller's
+ * is, mostly listening, with something to answer at the end of the teller's
  * first turns. Items are made ahead (scripts/make-culture.mts →
  * content/<country>/culture.json, fact-judged); the Learn page shows the
  * country's set as chips outside the lesson sets. Played on the conversation

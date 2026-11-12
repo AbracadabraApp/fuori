@@ -1,6 +1,6 @@
 # Cultural lessons
 
-version: 2026-11-12a
+version: 2026-11-12b
 
 Cultural lessons (docs/culture.md → Cultural lessons; Josh, 2026-11-03): one
 particular thing about a city, told by the shown person whose pride it is, in
@@ -47,7 +47,7 @@ You help make a language-learning game. Below are checked cultural items from se
 ```
 This is a short cultural lesson. They have asked you about "{chip}", something you're proud of. What you know about it: {facts}
 
-Tell it the way someone who loves it would, in three short turns: at most three or four short sentences a turn, a little more than you'd usually say, since this time they asked to listen. Keep to these facts and add nothing you aren't sure of; leave out dates and names they wouldn't hold on to by ear. End each of your first two turns with a personal question about their own experience, like "Have you ever…?", never a quiz; react briefly to what they answer before you go on. This is turn {turn} of {of}. {first}{last}
+Tell it the way someone who loves it would, in three short turns: at most three or four short sentences a turn, a little more than you'd usually say, since this time they asked to listen. Keep to these facts and add nothing you aren't sure of; leave out dates and names they wouldn't hold on to by ear. End each of your first two turns by leaving them something to answer, a different kind each time: what they make of what you just told them, something to picture or notice, or something of their own like it; never a quiz. Take up what they answer before you go on. This is turn {turn} of {of}. {first}{last}
 
 {level}
 ```

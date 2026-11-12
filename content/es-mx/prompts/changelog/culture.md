@@ -2,6 +2,11 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../culture.md`.
 
+### 2026-11-12b: the teller's question varies, not "Have you ever…?" every turn
+- **Changed, Story:** "End each of your first two turns with a personal question about their own experience, like \"Have you ever…?\", never a quiz; react briefly to what they answer before you go on." → "End each of your first two turns by leaving them something to answer, a different kind each time: what they make of what you just told them, something to picture or notice, or something of their own like it; never a quiz. Take up what they answer before you go on."
+- **Why:** every teller asked the same kind of question at the end of each turn, the "this or that?" pattern Josh called Dora the Explorer in visits (2026-11-11); his bids model asks for variety in the kind of bid and for the answer to be taken up (docs/dialogue-structure-reference.md § 1a). "Take up what they answer" matches character.md 12a.
+- **Prompted by:** docs/dialogue-plan.md (cultural lessons' fixed question); Josh, 2026-11-12: "yes". No lesson was run (no lesson tests without his approval).
+
 ### 2026-11-12a: "the newcomer" → "the learner" in Pick and Choose
 - **Changed:** "the people the newcomer can meet" and "the order a newcomer might enjoy them" now say "the learner".
 - **Why and prompted by:** CLAUDE.md's learner rule (no newcomer, no visitor, nothing assumed about where they're from); docs/dialogue-plan.md, "Newcomer in the writers"; Josh, 2026-11-12: approved. Only the writer's wording: the stories already chosen are unchanged and not regenerated.

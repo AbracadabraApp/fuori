@@ -34,17 +34,17 @@ The one list of dialogue work (laptop dialogue session; another session has the 
 | The lesson and culture writers say "learner", not "newcomer"; Magda sees the learner's example lines as "you" (146 lines in saved lessons were labelled newcomer); the lesson practice patch against "where they're from" removed [2.1, 2.2] | 8be8049 | No |
 | A new kind of question at steps 1–3, Notice: the character points at something you can see and asks whether you see it ("¿Los ve? Do you see them?"), with two answers; in the rotation beside two answers and questions to ask [4.2] | e2412d4, adjusted in 95af83e | No |
 | A Beginner visit winds down when the talk has run its course, before the turn's setup; the goodbye on the 7th turn stays as the fallback [5.3, your "c"] | 95af83e | No |
+| Cultural lessons: the teller's question varies (what you make of it, something to picture or notice, something of your own like it) instead of "Have you ever…?" every turn; the answer taken up [4.3] | (next commit) | No |
 | Measures: what learners do after each kind of question (`scripts/bid-count.mjs`); turn length on replayed real visits (`tests/experiments/b2-turn-length.mts`) [3.1, A] | 8423712, 970ba64 | (tools) |
 
 ## Later
 
 - **Remove the old Beginner** (a week from 2026-11-12) with its prompt blocks in `levels.md` and `leveling.md`, and decide whether the welcome and lessons move to the new Beginner's prompt. [5.2, 5.6]
-- **Rerun the counts** after a week on the new Beginner: what learners do after each kind of question; whether characters ask and then carry on as if answered. [3.1, 3.2]
-- **Cultural lessons:** their fixed "Have you ever…?" at the end of each turn becomes a choice of question. Your word: a lesson prompt. [4.3]
+- **Rerun the counts** after 20 visits on the new Beginner with at least three replies from the learner (Josh: "how many conversations not days"; at about six questions a visit, enough to read each kind of question on): what learners do after each kind of question; whether characters ask and then carry on as if answered. `node scripts/bid-count.mjs` on a fresh snapshot. [3.1, 3.2]
 - **Length rules written as prose** ("two short sentences", "six words at most"): leave unless your play says they don't hold. [5.5]
 - **A step-3 character ended on an English question** (Don Chucho: "Hmm, maybe you want a boleada?"): watch for more before fixing.
-- **The rules inventory:** every rule in the prompts sorted into what it does. [5.7]
-- **No Intermediate lessons in Mexico** (Italy has them). Content; may be the screen session's. [5.9]
+- **Dropped: the rules inventory** (Josh, 2026-11-12, by not choosing it; Claude: an analysis that wouldn't change what's heard). Rules get fixed when play shows them misfire. [5.7]
+- **No Intermediate lessons in Mexico** (Italy has them): deferred (Josh, 2026-11-12). Content, not the dialogue model; Sophia plays Mexico at Intermediate. [5.9]
 - **Parked:** the turn-code refactor, until a change has to reach every kind of conversation. [5.8]
 
 ## Steps 4–6, in detail
