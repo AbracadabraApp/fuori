@@ -337,3 +337,40 @@ Nunzio gave the terms that fill out a monologue (Story, Reassure, Praise, Rest, 
 **13.4 What the table can't yet say.** The pairs across speakers: offer then accept or decline, hook then question, ask-back then repeat, apology then Reassure. The structure lives in those pairs. The next change to the table is a learner column and the pairs, before more terms.
 
 **Caveats.** Both scripts are comedies written to be performed, one a seduction, one about not understanding dialect; the film lines come from a thesis's excerpts chosen for translation problems, so ask-backs are over-represented. No Mexican script was found with its text freely available; the real-conversation corpora checked (KIParla) have no shop or bar recordings.
+
+## 14. A review of the table: shortcomings, how to improve it, and what it's for (Claude, Mac mini session, 2026-11-11 night, with Josh)
+
+Josh asked whether the terms table factors into the turn-code doc ([one-turn-engine.md](one-turn-engine.md)), what its shortcomings are, how to improve it, and whether it is likely to improve dialogue. Positions here are Claude's, held after Josh's corrections; each has the best case against it.
+
+**14.1 Where the table is used.** Of about 46 terms, 8 kinds of question (§ 12.1) and 5 inputs, the live code uses two shapes (answer first, close) and the answer setups. The turn-code doc was written without reading § 9 to § 13 and didn't use the table; its one link is that the bracketed note is where a shape is sent.
+
+**14.2 Shortcomings, strongest first.**
+1. **It names forms and has no notion of quality.** A dull turn and a good one can both be Take, Fact, Ask.
+2. **The labels rest on one reader and little data:** one real conversation of 14 turns and two comedy scripts, labelled once by Claude. No second labelling to see whether two readers agree; "Take in 12 of 13" is one reading.
+3. **It mixes kinds in one flat list:** moves (Take, Fact), formats (Echo, Full, Subtitle), stored state (Thread, Chunk ledger), properties (Register, Cognate), positions (Open, Close), rules (Heard-first, Fade). Terms overlap, and there are no levels for visit, turn and sentence.
+4. **One speaker** (§ 13.4 says so): no learner column, no pairs across speakers.
+5. **No term has a test a program or a judge can apply,** which is why code detects only what punctuation shows and an Ask without a question mark is missed.
+6. **Narrow sources:** our own characters, research terms, two Italian comedies. No teacher with a real beginner; nothing Mexican.
+7. **The numbering grows by appending** (T, A, I, S, and a card also named S1); nobody holds 46 numbers. § 9's decision stands: words in conversation, numbers for cards.
+
+**14.3 What it's for: grading and constructing.** Claude first framed the table as a language for grading only. Josh: "So you see this as grading conversation not constructing dialogue." That was too narrow. Three constructive uses, none tried:
+- **The character's craft knowledge:** the moves and pairs given once, as what a good host does, and the character chooses each turn.
+- **The language Claude plans in:** before a turn, or once at the intro for the visit, Claude writes what it intends in these terms, then the line (one-turn-engine.md § 4).
+- **The notes on an example visit:** one whole good visit with each turn marked for what it does and why it works. No character has been shown one.
+
+**14.4 A correction: what the evidence says about selection.** Claude argued that code picking from the table would flatten dialogue, citing "a note on every turn makes every turn the same turn". Josh: that describes one note cited on every turn, not picking turns from a list. Accepted. The evidence is of repetition of one instruction (the beat note; the same two-answers setup). Rotation was the fix applied to the setups.
+
+*Held after the correction:* (a) the rotation fix was made and no result of it by ear is on record, so it is not yet evidence for selection either; (b) a seeded, weighted draw with gates gives variety, not fit, while § 12 says shape is about fit; code cannot see whether the learner is lost or has said something worth following; (c) Nunzio's good shape came by habit, which shows an Intermediate character needs no note, and says nothing about Beginner.
+*The best case against holding these:* at Beginner a note already goes out every turn, so the choice there is between one setup repeated and several rotated, and rotation can only help; code's choice is recorded, so "did the character do what was asked" becomes a count; and Claude's own choice of move is its habit, which is where the present sameness comes from.
+*Where that leaves it:* selection by code from the list is untested, not failed. The palette of § 12.1 is the test; one of its eight kinds is live.
+
+**14.5 Is it likely to improve dialogue.** By being a better description, no: describing changes nothing the character says. As a menu for code: unknown (14.4). As material Claude constructs with: untested, and the use with the largest possible gain, because the pairs and the quality notes give the character something to aim at where a label gives it a name. As a reviewer's language: likely useful, indirectly.
+
+**14.6 A cheap check before more work on the table.** Label the ten conversations Josh graded by ear and see whether anything in the labels tracks his grades (more turns that react, more statements with a hook, fewer questions in a row). Reading only; no prompt change. *The case against trusting it:* ten conversations, one listener who says he is not a teacher, and mostly Beginner conversations in the old echo format, whose labels are dominated by the format. So it is a screen: a clear pattern is worth following, no pattern is weak evidence either way.
+
+**14.7 How to improve it, in order of likely value.**
+1. **The learner's side and the pairs** (offer then accept, hook then question, apology then Reassure): § 13.4's own next step, and the part nearest to how a conversation works.
+2. **What makes a move good, not only that it happened,** starting from § 13.3: a Fact attached to a thing in front of them, Praise that follows an act, a Rest that leaves a Hook.
+3. **Cut the moves to those that separate good from bad** (14.6), probably a dozen; sort formats, state and properties out of the list of moves.
+4. **A yes-or-no test per term,** answered by quoting the sentence; two independent labellings of five visits; drop terms the two disagree on.
+5. **Wider sources:** a teacher with a real beginner, something Mexican.

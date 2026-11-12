@@ -1,133 +1,88 @@
-# One turn engine: plan and design
+# The turn code: a map, a small refactor, and who plans a turn
 
-Claude's proposal, 2026-11-11, written at Josh's request ("Write up the plan and design") after the question "what is wrong with Fuori" and "how to fix 1". Nothing here is agreed or built. Decisions that are Josh's are listed at the end.
+Claude (Mac mini session), 2026-11-11. First written at Josh's request ("Write up the plan and design") as an eight-step plan for one turn engine. Rewritten the same night after a review of it and the discussion that followed (Josh: "update the docs you've committed… stick to your guns, don't accept points you don't agree with but do consider best cases against"). Nothing here is agreed or built.
 
-**Status, 2026-11-11:** parked. The last section gives the reasons it may fail to improve dialogue, and its conclusion is not to start here if the aim is better dialogue soon. No step has been started and Josh has made none of the three decisions.
+**Status:** not a dialogue plan, and parked as a refactor. What stands is the map (§1), two deletions (§2), a small refactor worth doing only when a change has to reach every conversation (§3), and the question the discussion ended on: who plans a turn, code or Claude (§4).
 
-Read for this: `lib/conversation/take-turn.ts`, `lib/turn.ts`, `lib/claude.ts`, `lib/beginner-2.ts`, `lib/prompts/build-turn-prompt.ts`, `lib/speech/hear-recording.ts`, the prompt files. Not read: `lib/beginner.ts`, `lib/lesson.ts`, `lib/welcome.ts`, `lib/intro.ts`, `lib/shapes.ts` in full, and the iPhone app. Nothing was run.
+Read for this: `lib/conversation/take-turn.ts`, `lib/turn.ts`, `lib/claude.ts`, `lib/beginner-2.ts`, `lib/shapes.ts`, `lib/prompts/build-turn-prompt.ts`, `lib/speech/hear-recording.ts`, the prompt files. Not read: `lib/beginner.ts`, `lib/lesson.ts`, `lib/welcome.ts`, `lib/intro.ts`, the iPhone app. Nothing was run.
 
-## The problem
+## 1. The map: eight conversations, two engines
 
-`takeTurn` (`lib/conversation/take-turn.ts`) decides in one nested conditional which of eight conversations a turn belongs to. Each branch picks its own engine, prompt file, per-turn note, clean-up code and version string. So:
+`takeTurn` (`lib/conversation/take-turn.ts`) decides in one nested conditional which conversation a turn belongs to. Two engines sit under it.
 
-- A fix lands on one branch and the same fault stays on the others.
-- A test built on one branch says nothing about the others. On 2026-11-11 a test exercised a branch the app doesn't play.
-- Nobody can say from the code what a given learner will hear without tracing the level, the path stage, the welcome state, two app headers and the stored step.
-
-## What's there now
-
-Two engines sit under the eight branches.
-
-- **The line engine** (`runTurn`, `lib/turn.ts`): one flowing line in the character's voice with its English, optionally answers to say back and a done flag. The first sentence can go to the voice while the rest is written.
-- **The parts engine** (`runBeginnerTurn`, `lib/beginner.ts`): the reply as separate parts (English, phrase, question, answer), which code then rewrites and joins into the spoken line.
+- **The line engine** (`runTurn`): one flowing line in the character's voice with its English, optionally answers to say back and a done flag. The first sentence can go to the voice while the rest is written.
+- **The parts engine** (`runBeginnerTurn`): the reply as separate parts (English, phrase, question, answer), which code rewrites and joins into the spoken line.
 
 | # | Conversation | Engine | Brief or prompt | Code after the reply | Who gets it today |
 |---|---|---|---|---|---|
 | 1 | Lesson, speaking mode | line | lesson brief | forced done | Intermediate lessons |
 | 2 | Lesson, Beginner format | parts | lesson brief | done flag | every other lesson part, Magda included |
 | 3 | Welcome | parts | welcome brief by counted step | adds the address buttons | a learner who hasn't finished it |
-| 4 | Intro (a visit's first turn) | its own call (`runIntro`, `intro.md`) | intro prompt | beats saved for later turns | Intermediate and Beginner 2 visits |
-| 5 | Beginner 2, steps 1 to 3 | line | level text, answer rules, setup note, shape note | `lineWithAnswers`, question's English | the hidden switch only |
-| 6 | Beginner 2, steps 4 to 6 | parts | scaffolding file, setup note | `shapeParts`, `flowingLine`; the voice waits for the whole reply | the hidden switch only |
+| 4 | Intro (a visit's first turn) | its own call (`runIntro`, `intro.md`) | intro prompt | beats kept for later turns | Intermediate and Beginner 2 visits |
+| 5 | Beginner 2, steps 1 to 3 | line | level text, answer rules, setup note, shape note | `lineWithAnswers`, the question's English | the hidden switch, or the learner's stored step |
+| 6 | Beginner 2, steps 4 to 6 | parts | scaffolding file, setup note | `shapeParts`, `flowingLine`; the voice waits for the whole reply | the same |
 | 7 | Beginner 1 | parts | stage text | none here | every Beginner in production |
 | 8 | Intermediate, Advanced, Magda outside a lesson | line | level block or tutor prompt, shape note | none | everyone else |
 
-Three things found while reading that change the earlier account:
+What each turn is handed, across all eight: a system prompt (character, plus a brief), the conversation so far, and on some turns a bracketed note on the newest message. The note carries the answer setup (`pickSetup`, Beginner 2, every turn) and a shape (`pickShapes`: answer first, close; only when a signal fires). Thinking is off on every reply (`noThinkingFor`). The intro is the one place Claude looks ahead: it writes the opening and a list of beats, which later turns get once as material.
 
-- The second Claude call for English remarks (`writeSummaries`) is switched off: `GLOSS_ALL` is false for every step, so `summariesFor` returns before calling. It is dead code, not a live delay.
-- The "answer inside her line" rungs are in no step of the ladder. `insideSpeech` and the two rungs are dead too.
-- Branch 5 already turns the line engine's reply into the parts the app draws (answer parts only, her line as the subtitle). So the app already plays a Beginner turn from the line engine.
+## 2. Dead code that can be deleted
 
-## The design
+- **The summary side call** (`writeSummaries`, `summariesFor`, `withSummaries`, `stretchesOf`): `GLOSS_ALL` is false for every step, so it never runs.
+- **The answer inside her line** (`insideSpeech`, the `inside-en` and `inside` rungs): in no step of the ladder.
+- `glossAll` goes with the first.
 
-One engine, and every conversation differs only in data handed to it.
+Existing checks exercise these functions, so their tests go with them; that needs Josh's word (CLAUDE.md: don't weaken tests without approval). No prompt text changes.
 
-```
-takeTurn(request)
-  ctx   = loadTurnContext(request)   // database reads only: memory, address, level, path stage, welcome state, stored step
-  plan  = planTurn(ctx)              // pure: no database, no Claude
-  reply = plan.opening ? runIntro(plan) : runTurn(plan)
-  out   = finish(reply, plan)        // pure
-  save(out, plan)
-```
+## 3. The refactor, cut to what I still hold
 
-**`planTurn` returns a `TurnPlan`:**
+**What I hold.** The conditional is a real fault, not only untidiness: on 2026-11-11 a test was built on a branch the app doesn't play, and nothing in the code would have stopped it. Two steps fix that and change nothing a learner hears:
 
-| Field | What it holds | Who sets it |
+- **A replay set.** Twenty saved real visits, and a script that runs them through `takeTurn` without saving and prints each turn's assembled prompt. Its job is to prove a prompt is unchanged. It cannot judge dialogue, and isn't meant to: a saved learner line answers the reply given that day, and stops fitting once the character changes.
+- **Split deciding from running.** `takeTurn` becomes: load what's known (database reads), work out the turn's settings (a pure function: which engine, which brief, which note, how many answers, how it ends), run, finish, save. Both engines stay. The settings are saved with the turn. Checked by the replay set: every assembled prompt identical, character for character.
+
+I called the pure function `planTurn` in the first version. That was a bad name: it is settings picked by code, and "plan" should be kept for Claude's own planning (§4). Call it `turnSettings`.
+
+**What I've dropped.** Steps 3 to 7 of the first version (Beginner 2's later steps, Beginner 1, the welcome and lessons onto the line engine; the parts engine deleted). They are not a refactor. Each rests on a product decision of Josh's (is the flowing line the Beginner format everywhere; is Beginner 2 ready to replace Beginner 1; do steps 4 to 6 of the ladder stay), each changes what a learner hears and so needs a test card, and I designed them without reading the lesson, welcome or Beginner 1 code. They also delete repairs that each record a real fault (answers announced in 36 of 42 turns; the inside answer held 3 of 15 times from the prompt) without saying what replaces them.
+
+**When to do it.** Not now. When a dialogue change has proved itself on the branch Josh plays and has to be carried to every conversation; that is the moment eight branches cost something.
+
+**The best case against even this much.** The laptop session changes `take-turn.ts` most nights (shapes, the intro, level up), so a refactor of it collides with live work. A pure refactor still risks the family's production play for no audible gain. And the branches may thin out by themselves once Beginner 1 is retired, which is a product decision that will be made anyway.
+
+## 4. Who plans a turn
+
+The first version and the discussion used "plan" for opposite things. In the first version, code works out the turn and Claude writes it, as now. In Josh's and the laptop's sense, Claude plans the turn itself before it speaks.
+
+**Today.** Code steers: the answer setup every Beginner 2 turn, a shape when a signal fires. Claude writes each reply once, with thinking off, having seen neither a plan for the visit (beyond the intro's beats) nor an example of a good visit.
+
+**Three ways to give Claude a planning step:**
+
+| Way | What it does | Cost |
 |---|---|---|
-| `kind` | visit, welcome, lesson or tutor | the request |
-| `opening` | this is a visit's first turn | the transcript |
-| `system`, `firstTurn` | a replacement prompt | Magda only |
-| `brief` | text added to the system prompt: the level's text, the lesson's or welcome's brief, the intro's beats | level, lesson, welcome |
-| `note` | this turn's note on the newest message: the reply setup and the shape | the ladder and `pickShapes` |
-| `answers` | how many answers to say back, 0 to 2 | the reply setup |
-| `questionEnglish` | say the question's English after it | the step |
-| `withDone`, `forcedDone` | how the conversation can end | lesson, welcome, visit |
-| `extraParts` | parts code adds to the reply (the welcome's address buttons) | welcome |
-| `version` | the string logged and saved with the turn | built from the above |
+| Thinking on | Claude reasons before each reply | Delay before the first spoken word, every turn |
+| A planning field before the line in the reply | Claude writes what this turn should do, then the line; the note is saved and readable | The same delay, a little smaller |
+| Draft, check against a standard, rewrite once (the laptop's review, progress.md 2026-11-11) | A second pass | About double the wait, or the intro only |
 
-**`finish`** is `lineWithAnswers` made general: trim the answers to `plan.answers`, add the question's English when asked, add `extraParts`, set `done`. Nothing else touches the reply.
+The intro is the cheapest place to try any of them: the learner is already waiting for a long opening there. Any of the three is a prompt change and needs a card.
 
-**What this buys:**
+**My position.** Code and Claude should each plan what they can see. Code sees counts, punctuation and what was offered, so it can keep variety (rotation) and must set whatever the app has to draw (how many answer bubbles). It cannot see what the moment asks: whether the learner is lost, amused, or has just said something worth following. Claude can. So the fit of a turn to the moment should be Claude's choice, in a short plan it writes, and the reply mode stays code's. The terms table (dialogue-structure-reference.md § 14) is what would make that plan short.
 
-- `planTurn` is a pure function, so a test can list every case (level by step by kind by first turn or later) and check the plan in milliseconds, with no Claude call.
-- The plan is saved with the turn. Any reply can be traced to the exact brief and note that produced it, not only a version string.
-- A fix to how a reply is written or cleaned up is made once.
-- The replay set (below) runs through the same function the app calls.
+**The best case against.** Claude's unplanned habits are where today's faults come from (two questions in a turn, the tourist question, the same Take-Fact-Ask every turn), and a plan written by the same model in the same call may just restate the habit. A planning step costs time on every turn in a voice app where the wait is already 2 to 5 seconds. Code's choice is recorded and countable ("did the character do what the turn asked"), which is the one thing the test method has been missing; a plan Claude writes and then follows proves nothing by matching itself. And selection by code from a list has never been tried beyond two shapes, so it is untested, not failed (see the correction below).
 
-**What goes away with the parts engine:** `runBeginnerTurn`, `beginner.md`, the parts schema as something Claude writes, `shapeParts` and its eight steps (`glossAll`, `withEnglish`, `withoutAnnouncing`, `questionEcho`, `fullerGlosses`, `invited`, `insideSpeech`, `withSummaries`), `flowingLine`, `withoutSaidInEnglish`, the summary call, and the rule that the voice waits for the whole reply.
+## 5. The review of the first version, and my answer to each point
 
-**What stays separate:** the intro is still its own call with its own prompt. It is the opening of the same engine, picked by `plan.opening`.
+A review of the first version (relayed by Josh) made five points.
 
-## The plan
+1. **"It solves a code problem and files it under dialogue."** Agreed on the filing. The first version ended by arguing against itself and should have been half a page. Held: the code problem is real and caused a wrong test (§3).
+2. **"Built on code the author didn't read."** Agreed. The first version said so and then planned deletions in that code anyway.
+3. **"It slips three product decisions into a refactor."** Half agreed. They weren't slipped: they were listed as Josh's, in their own section. But they don't belong in a refactor at all, and they are out (§3).
+4. **"Its checks don't fit the repo's rules."** Agreed on the error: steps that change what's heard need a card, and "Josh plays it" is not a check. Not agreed that the replay set is a weakness for proving only that nothing changed: for a refactor that is exactly the proof needed.
+5. **"It deletes repairs without saying what replaces them."** Agreed.
 
-Steps 0 to 2 change nothing a learner hears. Steps 3 to 6 each change what someone hears, so each is a prompt change under CLAUDE.md's rule and needs Josh's yes.
+Its keep list (the map, the dead code, and the point that the character writes one turn at a time, steered by a note, never seeing a visit whole) is what §1, §2 and §4 now are.
 
-| Step | What | Changes what's heard | How it's checked |
-|---|---|---|---|
-| 0 | **Replay set.** Twenty saved real visits with the learner's lines as spoken, and a script that runs them through `takeTurn` without saving and prints each turn's assembled prompt and reply. | No | It runs on main and prints today's prompts |
-| 1 | **Split out `loadTurnContext`, `planTurn`, `finish`.** `takeTurn` becomes plan, run, save. Both engines still exist; the plan names which. | No | The assembled prompt for every turn of the replay set is identical, character for character, before and after. A table test covers every case of `planTurn` |
-| 2 | **Delete dead code:** the summary call, the inside rungs, `glossAll`. | No | Type check, the existing Beginner 2 checks, replay set identical |
-| 3 | **Beginner 2 steps 4 to 6 onto the line engine.** | Yes, behind the hidden switch only | Josh plays steps 4 to 6 |
-| 4 | **Beginner 2 becomes the Beginner.** The switch goes; Beginner 1 goes. | Yes, for every Beginner | Josh's decision that it's ready |
-| 5 | **Welcome onto the line engine,** its brief unchanged in meaning. | Yes | Josh plays the welcome once |
-| 6 | **Beginner-format lessons onto the line engine.** | Yes | Josh plays one lesson |
-| 7 | **Delete the parts engine** and everything listed above. | No | Type check, replay set, both countries' smoke test |
+## 6. A correction to the first version's reasoning
 
-After step 1 the main gain is already there: one place to see what a turn will be, and a replay set through the live function. Steps 3 to 7 remove the second engine.
+The first version said the design "most likely to cause flat dialogue" is turn-by-turn steering, citing "a note on every turn makes every turn the same turn". Josh's correction, which I accept: that observation was of one note repeated on every turn (the beat note; before it, the same two-answers setup, "Dora the Explorer"). It says nothing against picking a different move from a list each turn. Rotation was the fix applied to the setups.
 
-## Decisions that are Josh's
-
-1. **Is the one flowing line the Beginner format everywhere,** the welcome and lessons included? He chose it for visits. Steps 5 and 6 depend on a yes; without it the design still holds with two engines behind one plan, and steps 5 to 7 are dropped.
-2. **Is Beginner 2 ready to replace Beginner 1** (step 4)?
-3. **Do steps 4 to 6 of the ladder stay?** They are the only users of the parts engine inside Beginner 2. If the ladder ends at step 3 for now, step 3 of this plan is a deletion.
-
-## Risks and what isn't covered
-
-- The app draws parts. Branch 5 shows it can draw a line-engine turn, but the welcome's address buttons and lesson screens weren't read. Step 5 and 6 start by reading the app's side.
-- A written-ahead reply (an offered answer's reply, drafted before the learner speaks) goes through `takeTurn` with a deferred save. The plan must be the same when the draft is written and when it is committed; the reply setup is seeded by conversation and turn number, so it should be, but this needs a test in step 1.
-- This fixes where a turn is decided. It does not make the dialogue better by itself, give the character a whole visit to plan, change memory, or fix the judge. Those are the other points of the same review.
-
-## Why this plan may fail to improve dialogue
-
-Added at Josh's request, 2026-11-11: the best reasons, strongest first.
-
-1. **It may answer the wrong diagnosis.** Josh's own account of why three days of tests produced no big step was: no reliable judge, and standards of improvement set too high. Eight branches is my complaint from reading code. Nothing shows the branches are why the dialogue is flat. The plan could be finished and correct and the dialogue sound the same.
-
-2. **The best dialogue we have already runs on the engine the plan keeps.** Intermediate visits and Beginner 2 steps 1 to 3 are on the line engine today, and those are the conversations judged not good enough. Moving the welcome, lessons and Beginner 1 onto it spreads today's quality to more places. It raises nothing.
-
-3. **It keeps, and hardens, the design most likely to cause flat dialogue.** The character still writes one turn at a time, with thinking off, steered by a note that code picks for that turn, never seeing the visit as a whole and never having seen a good one. The plan makes that note a named field of every turn. If turn-by-turn steering is the cause ("every turn the same turn"), this makes the cause tidier and harder to remove.
-
-4. **The replay set cannot judge dialogue.** A saved learner line answers the reply the character gave that day. Once a changed character says something different, the next saved line no longer fits. So the set can prove a prompt is unchanged (steps 1 and 2) and nothing more. Steps 3 to 6 are still judged by Josh's ear, one play at a time: the same bottleneck as now.
-
-5. **The code being deleted exists because the model didn't do those things when asked.** The answer inside her line held 3 of 15 times from the prompt. Characters announced their answers in 36 of 42 turns. Questions went without English. Each fix in `shapeParts` records a real fault. On one flowing line there are no parts to repair, so either the faults come back or the repairs return as text matching on the line, and the complexity has moved, not gone.
-
-6. **One engine makes every difference a block of prompt text.** Level, lesson, welcome, beats and the turn's note all stack in one prompt and interact. The project's own finding is that instructions cause repetition. A single engine also makes it easy to add one sentence that reaches every conversation, which is how the prompts grew.
-
-7. **The welcome and lessons may need the structure the parts give.** The welcome counts its steps and ends on two buttons; a lesson moves through steps. A brief on a free line may not hold a sequence that the parts format holds by construction. I haven't read that code, so this is unknown, not shown.
-
-8. **Replacing Beginner 1 may be worse for a real beginner.** The frame was chosen by one listener over one evening and by his own account doesn't yet use enough of the language. Step 4 makes it the only Beginner.
-
-9. **It costs the time that could go to dialogue.** Steps 0 to 2 are several sessions with nothing a learner can hear. The changes more likely to move dialogue (showing the character one whole good visit, giving it the situation instead of instructions, a longer intro, memory read and written during a visit) need none of this plan. Each can be tried on the one branch Josh plays.
-
-**What follows from these.** Reasons 1, 2, 3 and 9 together say: if the aim is better dialogue soon, don't start here. Try the dialogue changes on the branch Josh plays, and do steps 0 to 2 only when a change proves worth carrying to every conversation, since that is the moment the eight branches start to cost something.
+What I still hold, more narrowly: rotation was applied, and I have no record of how it sounded afterwards, so it is a fix made, not a result heard. And a seeded draw gives variety, not fit; it cannot choose the move the moment calls for. Whether varied selection by code improves dialogue is unknown. The palette of eight kinds of question in dialogue-structure-reference.md § 12.1 is the design that would test it; one of the eight is live.
