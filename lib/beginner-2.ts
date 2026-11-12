@@ -349,7 +349,7 @@ export function lineWithAnswers(r: { line: string; en: string; done?: boolean; a
  * translation"). The line's last sentence once any English echo is set aside, when it's a question; its English is the
  * last question in the English. Nothing when the turn doesn't end on a question (the app then prints nothing).
  *
- * Only the last two sentences are looked at, and an English one is set aside. An echo is a sentence of the line that's also in the English (or mostly) (any language: the English is the translation, so
+ * Only the last two sentences are looked at, and an English one is set aside. An echo is a sentence of the line that's also in the English (or shares most of its words with one of it) (any language: the English is the translation, so
  * the question in the language never is): "¿Le gustan los túneles? Do you like the tunnels?" ends on the English, and
  * "¿Quiere entrar? (Do you want to go in?)" on the English in brackets. Before 2026-11-12 the last sentence was taken
  * as it came, so the bubble printed the English as the question, or an empty question (Josh's Mexico play: Raymundo,
@@ -360,13 +360,19 @@ export function questionOf(line: string, en: string): { text: string; en: string
   const bare = (s: string) => s.toLowerCase().replace(/[()"'«»“”‘’¿¡]/g, '').replace(/\s+/g, ' ').trim();
   const english = bare(en);
   const isQuestion = (s: string) => /\?["'»”’)]*$/.test(s);
-  // English: the sentence is in the translation, or most of its words are (an English sentence with a word of the
-  // language in it, "Hmm, maybe you want a boleada?", whose translation says "shoe shine": Don Chucho, 2026-11-12)
-  const englishWords = new Set(english.split(/[^\p{L}\p{N}]+/u).filter(Boolean));
-  const isEnglish = (s: string) => {
-    const words = bare(s).split(/[^\p{L}\p{N}]+/u).filter(Boolean);
-    return english.includes(bare(s)) || (words.length > 0 && words.filter((w) => englishWords.has(w)).length / words.length >= 0.6);
+  // English: the sentence is in the translation, or it shares most of its words with one of the translation's
+  // sentences, counted against the words of both (an English sentence with a word of the language swapped in, "Hmm,
+  // maybe you want a boleada?" against "…a shoe shine?": 5 of 8, Don Chucho, 2026-11-12). Counted against both, so a
+  // question in the language built from names the translation keeps stays the question ("¿Le sirvo carne en su jugo
+  // o pozole?" against "Shall I serve you carne en su jugo or pozole?": 5 of 13), which a count of the sentence's own
+  // words alone set aside (the dialogue session's catch, 2026-11-12)
+  const wordsOf = (x: string) => new Set(bare(x).split(/[^\p{L}\p{N}]+/u).filter(Boolean));
+  const shared = (a: Set<string>, b: Set<string>) => {
+    const both = [...a].filter((w) => b.has(w)).length;
+    return both / (a.size + b.size - both || 1);
   };
+  const englishSentences = sentences(en).map(wordsOf);
+  const isEnglish = (x: string) => english.includes(bare(x)) || englishSentences.some((e) => shared(wordsOf(x), e) >= 0.5);
   // Only the turn's last two sentences: the question and, after it, its English (an echo, or in brackets)
   const q = sentences(line).slice(-2).reverse().find((s) => !isEnglish(s));
   const qEn = sentences(en).reverse().find(isQuestion)?.replace(/^\(|\)$/g, '').trim();
