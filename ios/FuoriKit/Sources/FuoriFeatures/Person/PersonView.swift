@@ -29,15 +29,16 @@ struct PersonView: View {
 
     var body: some View {
         VStack(spacing: 0) {
-            // The intro (Josh's design, 2026-11-11): the portrait alone with the
-            // subtitle band while the character sets the scene; the name band
-            // and the chat come in on the first question
-            if !model.inIntro { band }
+            // The name band always, the intro included (Josh, 2026-11-12: the intro
+            // screen stays standard, minus the circle): it came and went around
+            // the intro, and the portrait jumped with it. The chat comes in on
+            // the first question
+            band
             ZStack(alignment: .bottom) {
                 Portrait(url: model.character.portrait, name: model.character.name)
                     .ignoresSafeArea(edges: .bottom)
                 if model.inIntro, let subtitle = model.introSubtitle {
-                    IntroSubtitle(english: subtitle.en)
+                    IntroSubtitle(english: subtitle.en, progress: subtitle.shown.map { Double($0) / Double(max(1, subtitle.text.count)) } ?? 0)
                         .transition(.opacity)
                 }
                 if debug {
@@ -104,7 +105,7 @@ struct PersonView: View {
                 BeginnerBubbles(parts: model.shownParts, speechLanguage: model.speechLanguage)
                 if let note { Subtitles(line: nil, shown: nil, english: nil, note: note) }
             } else {
-                Subtitles(line: showLine ? model.chatLine : nil, shown: model.chatShown, english: showEnglish ? model.chatEnglish : nil, note: note, hint: model.openerHint)
+                Subtitles(line: showLine ? model.chatLine : nil, shown: model.chatShown, english: showEnglish ? model.chatEnglish : nil, note: note, hint: model.openerHint, speechLanguage: model.speechLanguage)
             }
             // At the station: your ticket, just above the talking controls (as on the web)
             if let trip = model.trip, let content = appModel.content {
@@ -164,23 +165,34 @@ struct PersonView: View {
 /// indicator, a hard top edge with a light 6 pt shadow on the portrait above
 /// it; a fixed height with room for three lines, so it never changes size as
 /// sentences change; the words in the label face, centred vertically in the
-/// band above the safe area. The chat's own bubble takes over on the question.
+/// band above the safe area. A long sentence shows two lines at a time
+/// (SubtitleChunks; Josh, 2026-11-12), each piece while the voice is on its
+/// share of the sentence. The chat's own bubble takes over on the question.
 struct IntroSubtitle: View {
     let english: String
-    private static let wordSize: CGFloat = 21
+    /// How much of the spoken sentence is out, 0...1
+    let progress: Double
     /// The band above the bottom safe area: 145 pt on Josh's phone less its 34 pt home-indicator area
     @ScaledMetric(relativeTo: .title3) private var bandHeight: CGFloat = 111
-    @ScaledMetric(relativeTo: .title3) private var lineSpacing: CGFloat = 21 * 0.28
+    @ScaledMetric(relativeTo: .title3) private var lineSpacing: CGFloat = Tokens.Size.subtitle * 0.28
+    @Environment(\.legibilityWeight) private var legibilityWeight
+    @State private var textWidth: CGFloat = 0
+
+    private var shownText: String {
+        let chunks = SubtitleChunks.split(english, maxWidth: textWidth * 0.96, width: Self.measure(bold: legibilityWeight == .bold))
+        return chunks[SubtitleChunks.index(chunks, progress: progress)]
+    }
 
     var body: some View {
-        Text(english)
-            .typeface(.label, Self.wordSize, relativeTo: .title3, weight: .medium)
+        Text(shownText)
+            .typeface(.label, Tokens.Size.subtitle, relativeTo: .title3, weight: .medium)
             .lineSpacing(lineSpacing)
             .foregroundStyle(Tokens.Colors.flapInk)
             .multilineTextAlignment(.leading)
-            .id(english)
+            .id(shownText)
             .transition(.opacity)
             .frame(maxWidth: .infinity, alignment: .leading)
+            .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { textWidth = $0 }
             .padding(.horizontal, Tokens.Space.gutter)
             .frame(height: bandHeight)
             .frame(maxWidth: .infinity)
@@ -192,7 +204,19 @@ struct IntroSubtitle: View {
                     .offset(y: -6)
                     .allowsHitTesting(false)
             }
-            .animation(.easeInOut(duration: 0.25), value: english)
+            .animation(.easeInOut(duration: 0.25), value: shownText)
+    }
+
+    /// The width of a line of the subtitle, as the band sets it (the label face, medium, or bold with Bold Text,
+    /// scaled like .title3); without UIKit, no measure, so the sentence shows whole
+    static func measure(bold: Bool) -> (String) -> CGFloat {
+        #if canImport(UIKit)
+        let size = UIFontMetrics(forTextStyle: .title3).scaledValue(for: Tokens.Size.subtitle)
+        let font = UIFont(name: bold ? "AlegreyaSans-Bold" : "AlegreyaSans-Medium", size: size) ?? .systemFont(ofSize: size, weight: bold ? .bold : .medium)
+        return { ($0 as NSString).size(withAttributes: [.font: font]).width }
+        #else
+        return { _ in 0 }
+        #endif
     }
 }
 

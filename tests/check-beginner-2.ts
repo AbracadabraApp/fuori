@@ -65,6 +65,14 @@ check(['two-en', 'ask-en'].every((id) => CLUSTER_1.some((r) => r.id === id)) && 
   const q = questionOf('Suba a la silla, climb up. ¿Quiere una boleada?', 'Climb up on the chair. Do you want a shine?');
   check(q?.text === '¿Quiere una boleada?' && q?.en === 'Do you want a shine?', `questionOf: the last question with its English (got ${JSON.stringify(q)})`);
   check(questionOf('Ecco il cornetto.', 'Here is the cornetto.') === undefined, 'questionOf: nothing when the line ends on a statement');
+  // Josh's Mexico play, 2026-11-12 (visits 409863b2, 6159f8cb): the English echo after the question, and the English in
+  // brackets, were taken as the question; the bubble showed the English twice, or no Spanish at all
+  const echoed = questionOf('Look at the arches over us. ¿Le gustan los túneles? Do you like the tunnels?', 'Look at the arches over us. Do you like the tunnels?');
+  check(echoed?.text === '¿Le gustan los túneles?' && echoed?.en === 'Do you like the tunnels?', `questionOf: the spoken English echo is not the question (got ${JSON.stringify(echoed)})`);
+  const bracketed = questionOf('Mire, I used to look at the altars. ¿Quiere entrar a ver los altares? (Do you want to go in and see the altars?)', 'Look, I used to look at the altars. Do you want to go in and see the altars?');
+  check(bracketed?.text === '¿Quiere entrar a ver los altares?' && bracketed?.en === 'Do you want to go in and see the altars?', `questionOf: English in brackets is not the question (got ${JSON.stringify(bracketed)})`);
+  check(questionOf('Es un ratito, "es un ratito", and the lights glow orange.', 'It\'s a short ride, and the lights glow orange.') === undefined, 'questionOf: a turn with questions to ask, no question of its own: nothing');
+  check(questionOf('Well, ya llegamos. Que le vaya muy bien.', 'Well, we have arrived. May all go well for you.') === undefined, 'questionOf: a goodbye with no question: nothing');
   check(lineWithAnswers({ line: 'Mire. ¿Quiere ver?', en: 'Look. Do you want to see?', answers: [] }, RUNGS.find((x) => x.id === 'free')!).question?.text === '¿Quiere ver?', 'lineWithAnswers carries the question');
 }
 check(clusterFrom(new Headers({ 'x-fuori-cluster': '4' })) === CLUSTERS[3] && clusterFrom(new Headers()) === CLUSTER_1 && clusterFrom(new Headers({ 'x-fuori-cluster': '9' })) === CLUSTER_1, 'the cluster header picks clusters 1-6, cluster 1 otherwise');

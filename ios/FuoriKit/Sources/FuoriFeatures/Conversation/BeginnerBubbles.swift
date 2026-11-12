@@ -11,7 +11,7 @@ import FuoriNetworking
 struct BeginnerBubbles: View {
     let parts: [APIClient.TurnPart]
     let speechLanguage: String
-    @ScaledMetric(relativeTo: .body) private var size: CGFloat = 18
+    @ScaledMetric(relativeTo: .body) private var size: CGFloat = Tokens.Size.bubbleText
 
     var body: some View {
         if !parts.isEmpty {
@@ -63,7 +63,7 @@ struct AnswerBubble: View {
     let english: String
     let speechLanguage: String
     var onTap: (() -> Void)? = nil
-    @ScaledMetric(relativeTo: .body) private var size: CGFloat = 18
+    @ScaledMetric(relativeTo: .body) private var size: CGFloat = Tokens.Size.bubbleText
 
     var body: some View {
         if let onTap {

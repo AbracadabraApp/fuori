@@ -12,15 +12,19 @@ struct Subtitles: View {
     let shown: Int?
     let english: String?
     let note: String?
-    /// The Beginner hint under her first line ("Answer in Italian or English")
+    /// The Beginner hint under the character's first line ("Answer in Italian or English")
     var hint: String? = nil
-    // Web sizes, scaled with the learner's text size
-    @ScaledMetric(relativeTo: .body) private var lineSize: CGFloat = 18
-    @ScaledMetric(relativeTo: .footnote) private var hintSize: CGFloat = 14
+    /// The language's code, so VoiceOver reads the line in it, not in English
+    var speechLanguage: String? = nil
+    // Sizes from the tokens (design/tokens.json), scaled with the learner's text size
+    @ScaledMetric(relativeTo: .body) private var lineSize: CGFloat = Tokens.Size.bubbleText
+    @ScaledMetric(relativeTo: .footnote) private var hintSize: CGFloat = Tokens.Size.hint
 
     var body: some View {
         VStack(spacing: 8) {
-            if line != nil || english != nil {
+            // Only once there are words to show: the English alone, waiting for the line to finish, drew an empty
+            // oval while the character spoke (Josh's Mexico play, 2026-11-12)
+            if let line, !line.isEmpty {
                 // The same bubble as the answers (SpeechBubble, Josh 2026-11-11: "her bubble style should match the
                 // other, font size, translation line"); only a long reply scrolls
                 SpeechBubble(speaker: .her) {
@@ -36,7 +40,7 @@ struct Subtitles: View {
             }
             if let note {
                 Text(note)
-                    .typeface(.label, 15, relativeTo: .footnote)
+                    .typeface(.label, Tokens.Size.note, relativeTo: .footnote)
                     .foregroundStyle(Tokens.Colors.muted)
                     .padding(.horizontal, 12)
                     .padding(.vertical, 8)
@@ -55,7 +59,7 @@ struct Subtitles: View {
                 Text(typed(line))
                     .font(.system(size: lineSize))
                     .foregroundStyle(Tokens.Colors.ink)
-                    .accessibilityLabel(String(line.prefix(shown ?? line.count)))
+                    .accessibilityLabel(Text(tagged(String(line.prefix(shown ?? line.count)))))
             }
             if let english, shown == nil {
                 BubbleEnglish(text: english, speaker: .her)
@@ -70,8 +74,15 @@ struct Subtitles: View {
         }
     }
 
+    /// Tagged with the language, so VoiceOver reads it in that language
+    private func tagged(_ text: String) -> AttributedString {
+        var s = AttributedString(text)
+        if let speechLanguage { s.languageIdentifier = speechLanguage }
+        return s
+    }
+
     private func typed(_ line: String) -> AttributedString {
-        var text = AttributedString(line)
+        var text = tagged(line)
         guard let shown, shown < line.count else { return text }
         let start = text.index(text.startIndex, offsetByCharacters: shown)
         text[start...].foregroundColor = .clear

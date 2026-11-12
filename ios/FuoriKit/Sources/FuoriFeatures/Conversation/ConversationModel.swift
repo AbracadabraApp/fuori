@@ -278,8 +278,16 @@ public final class ConversationModel {
         return line.distance(from: line.startIndex, to: r.lowerBound)
     }
 
-    /// Her bubble in the chat: the question only, after an intro or on a one-line Beginner 2 reply (and nothing
-    /// until the voice reaches it); the whole line otherwise
+    /// A Beginner one-line reply (the English frame with the language slotted in): its parts are only the answers to
+    /// say back. Only its question is printed, and nothing when it has none
+    private var frameTurn: Bool {
+        guard beginner, intro == nil, !APIClient.oldBeginner, let parts else { return false }
+        return parts.allSatisfy(\.isAnswer)
+    }
+
+    /// The character's bubble in the chat: the question only, after an intro or on a Beginner one-line reply (and
+    /// nothing until the voice reaches it); nothing on a Beginner turn with no question (Josh, 2026-11-12: "we shouldn't
+    /// put english/frame in bubble"); the whole line otherwise
     public var chatLine: String? {
         if awaitingQuestion { return nil }
         if let intro, let last = intro.last { return last.text }
@@ -287,6 +295,7 @@ public final class ConversationModel {
             if let shown, let start = questionStart, shown < start { return nil }
             return question.text
         }
+        if frameTurn { return nil }
         return line
     }
 
@@ -302,6 +311,7 @@ public final class ConversationModel {
     public var chatEnglish: String? {
         if let intro, let last = intro.last { return last.en }
         if let question { return question.en }
+        if frameTurn { return nil }
         return english
     }
 

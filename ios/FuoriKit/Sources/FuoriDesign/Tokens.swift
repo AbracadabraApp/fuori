@@ -86,6 +86,11 @@ public enum Tokens {
         public static let stampWord: CGFloat = 11
         public static let stampLabel: CGFloat = 12
         public static let stampStripe: CGFloat = 7
+        public static let bubbleText: CGFloat = 18
+        public static let bubbleEnglish: CGFloat = 15
+        public static let note: CGFloat = 15
+        public static let hint: CGFloat = 14
+        public static let subtitle: CGFloat = 21
     }
 
     public enum Space {
@@ -98,6 +103,7 @@ public enum Tokens {
     public enum Radius {
         public static let card: CGFloat = 8
         public static let poster: CGFloat = 16
+        public static let bubble: CGFloat = 18
     }
 
     public enum Shadow {

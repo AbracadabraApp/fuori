@@ -12,7 +12,7 @@ import FuoriDesign
 struct SayItBubbles: View {
     let model: ConversationModel
     let sayIt: ConversationModel.SayIt
-    @ScaledMetric(relativeTo: .body) private var lineSize: CGFloat = 18
+    @ScaledMetric(relativeTo: .body) private var lineSize: CGFloat = Tokens.Size.bubbleText
 
     var body: some View {
         VStack(spacing: 8) {
