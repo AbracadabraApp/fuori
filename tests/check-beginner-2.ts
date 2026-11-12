@@ -61,7 +61,7 @@ check(['two-en', 'ask-en'].every((id) => CLUSTER_1.some((r) => r.id === id)) && 
   let runs = 0;
   const seq: string[] = [];
   for (let t = 1; t <= 60; t++) { const id = pickSetup({ conversationId: 'rot', turn: t, characterId: 'x' }).id; seq.push(id); if (seq.length >= 3 && seq.slice(-3).every((x) => x === id)) runs++; }
-  check(runs === 0 && new Set(seq.filter((x) => x !== 'goodbye')).size === 2, `no setup three times running over 60 turns, both kinds played (got ${runs} runs of three, kinds ${[...new Set(seq)].join(', ')})`);
+  check(runs === 0 && new Set(seq.filter((x) => x !== 'goodbye')).size === CLUSTER_1.length, `no setup three times running over 60 turns, every kind played (2026-11-12d: three kinds, Notice added) (got ${runs} runs of three, kinds ${[...new Set(seq)].join(', ')})`);
   const q = questionOf('Suba a la silla, climb up. ¿Quiere una boleada?', 'Climb up on the chair. Do you want a shine?');
   check(q?.text === '¿Quiere una boleada?' && q?.en === 'Do you want a shine?', `questionOf: the last question with its English (got ${JSON.stringify(q)})`);
   check(questionOf('Ecco il cornetto.', 'Here is the cornetto.') === undefined, 'questionOf: nothing when the line ends on a statement');
@@ -148,7 +148,7 @@ check((stored[0] as { parts?: { gloss?: string; en?: string }[] }).parts?.[0].gl
 {
   const picks = Array.from({ length: 400 }, (_, i) => pickSetup({ conversationId: `mix-${i}`, turn: 1 + (i % (GOODBYE_AFTER - 1)), characterId: 'x' }, CLUSTER_1).id);
   const share = (id: string) => picks.filter((x) => x === id).length / picks.length;
-  check(share('two-en') > 0.5 && share('ask-en') < 0.35, `two answers most of the time, questions to ask now and then (2026-11-11c: never three of a kind running) (two ${share('two-en').toFixed(2)}, ask ${share('ask-en').toFixed(2)}, invite ${share('invite-en').toFixed(2)})`);
+  check(share('two-en') > share('notice') && share('notice') > share('ask-en') && share('notice') > 0.15 && share('ask-en') < 0.35, `two answers the most, Notice next, questions to ask now and then (2026-11-12d; 2026-11-11c: never three of a kind running) (notice ${share('notice').toFixed(2)}) (two ${share('two-en').toFixed(2)}, ask ${share('ask-en').toFixed(2)}, invite ${share('invite-en').toFixed(2)})`);
   let twice = 0;
   for (let c = 0; c < 200; c++) for (let t = 2; t < 8; t++) {
     const a = pickSetup({ conversationId: `run-${c}`, turn: t - 1, characterId: 'x' }, CLUSTER_1).id, b = pickSetup({ conversationId: `run-${c}`, turn: t, characterId: 'x' }, CLUSTER_1).id;

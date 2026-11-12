@@ -8,7 +8,7 @@ The one list of dialogue work (laptop dialogue session; another session has the 
 
 1. **Closing a visit when the talk is done** (your "c", 2026-11-12). Today a Beginner visit offers the goodbye on the 7th turn whatever is happening, and an Intermediate visit ends only when the learner says goodbye. Wanted: the character winds down when the talk has run its course, using a signal that works in any language. [5.3]
 2. **Done (see Done).** **"Newcomer" in the lesson and culture writers.** The prompt that writes lessons labels the learner's lines "newcomer"; the one that picks cultural stories speaks of "the newcomer". Then the lesson practice prompt can drop its patch ("don't ask their name or where they're from"), which exists only because the Beginner prompt used to ask. Regenerating lessons or stories is your call. [2.1, 2.2]
-3. **A first new kind of question for Beginners.** Today the character's questions are nearly all "this or that?" (the Dora shape); after the six-word cap, five of six Italian intro questions start "Preferisce…". First new kind: *Notice* ("See those arches above us?") or *Offer* ("Want to try one?"), played before the next. "Finish the sentence" comes later: learners left on it more than on any other kind (27%). [4.2]
+3. **Done (see Done).** **A first new kind of question for Beginners.** Today the character's questions are nearly all "this or that?" (the Dora shape); after the six-word cap, five of six Italian intro questions start "Preferisce…". First new kind: *Notice* ("See those arches above us?") or *Offer* ("Want to try one?"), played before the next. "Finish the sentence" comes later: learners left on it more than on any other kind (27%). [4.2]
 
 ## Waiting on you
 
@@ -31,7 +31,8 @@ The one list of dialogue work (laptop dialogue session; another session has the 
 | "Take up what they just said before you add anything of your own" (the accept half of your bids model) [4.1] | b27cb88 | No |
 | Beginner intro question six words at most (the screen session) | intro.md 12b | No |
 | The question's English shown and said at steps 1–3; the "English only the first time or when new" rules removed ("i never proposed that"; the screen session) | 27a7fdb | No |
-| The lesson and culture writers say "learner", not "newcomer"; Magda sees the learner's example lines as "you" (146 lines in saved lessons were labelled newcomer); the lesson practice patch against "where they're from" removed [2.1, 2.2] | (this commit) | No |
+| The lesson and culture writers say "learner", not "newcomer"; Magda sees the learner's example lines as "you" (146 lines in saved lessons were labelled newcomer); the lesson practice patch against "where they're from" removed [2.1, 2.2] | 8be8049 | No |
+| A new kind of question at steps 1–3, Notice: the character points at something you can see and asks whether you see it ("¿Los ve? Do you see them?"), with two answers; in the rotation beside two answers and questions to ask [4.2] | (this commit) | No |
 | Measures: what learners do after each kind of question (`scripts/bid-count.mjs`); turn length on replayed real visits (`tests/experiments/b2-turn-length.mts`) [3.1, A] | 8423712, 970ba64 | (tools) |
 
 ## Later

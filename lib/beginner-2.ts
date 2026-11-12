@@ -44,6 +44,8 @@ export interface Setup {
  */
 export const RUNGS: Setup[] = [
   { id: 'two-en', block: 'Setup: two answers', maxAnswers: 2, english: true },
+  // Something they can see right now, two answers (2026-11-12d; Josh's bids: a different kind of question, not only "this or that?")
+  { id: 'notice', block: 'Setup: notice', maxAnswers: 2, english: true },
   { id: 'ask-en', block: 'Setup: two questions to ask', maxAnswers: 2, english: true },
   { id: 'invite-en', block: 'Setup: invite English', maxAnswers: 0, english: false, invite: true },
   { id: 'free', block: 'Setup: no answers', maxAnswers: 0, english: false },
@@ -72,9 +74,9 @@ export const CLUSTERS: Setup[][] = [
   // Cluster 1 (2026-11-11c): two answers and questions to ask, never the same three times running (Josh: "the answers
   // are fine but no variation. It's like Dora the Explorer"). An open question with no answers was tried the same night
   // and pulled (Josh: "difficult for this level")
-  [R('two-en'), R('ask-en')],
-  [R('two-en'), R('ask-en')],
-  [R('two-en'), R('ask-en'), R('free')],
+  [R('two-en'), R('notice'), R('ask-en')],
+  [R('two-en'), R('notice'), R('ask-en')],
+  [R('two-en'), R('notice'), R('ask-en'), R('free')],
   [R('ask-en'), R('free')],
   [R('two-en'), R('free')],
   [R('free')],
@@ -110,7 +112,7 @@ function seedOf(s: string): number {
 /** Invitations to be curious (questions to ask, an invitation to ask): rarer than answers, never twice running (Renata, 2026-11-10) */
 const INVITES = new Set(['ask-en', 'invite-en']);
 /** How often each setup comes up in its cluster: two answers three times as often as either invitation */
-const WEIGHT: Record<string, number> = { 'two-en': 3, 'ask-en': 1, 'invite-en': 1, free: 2 };
+const WEIGHT: Record<string, number> = { 'two-en': 3, notice: 2, 'ask-en': 1, 'invite-en': 1, free: 2 };
 
 /** The seeded pick by weight, before the rules about the turn before; `not`: a setup left out of the draw */
 function weighted(cluster: Setup[], key: string, not?: string): Setup {
