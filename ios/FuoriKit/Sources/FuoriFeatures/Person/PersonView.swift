@@ -38,7 +38,6 @@ struct PersonView: View {
                     .ignoresSafeArea(edges: .bottom)
                 if model.inIntro, let subtitle = model.introSubtitle {
                     IntroSubtitle(english: subtitle.en)
-                        .ignoresSafeArea(edges: .bottom)
                         .transition(.opacity)
                 }
                 if debug {
@@ -157,30 +156,42 @@ struct PersonView: View {
     }
 }
 
-/// The intro's subtitle over the bottom of the portrait, like a film's
-/// (Josh, 2026-11-11, after playing it): the language runs as one continuous
-/// dialogue with nothing of it written, and the English of the sentence being
-/// said shows on its own, replaced by the next as the speech moves on. On a
-/// dark fade so it reads on any portrait. The chat's own bubble takes over on
-/// the question.
+/// The intro's subtitle, like a film's (Josh, 2026-11-11, after playing it):
+/// the language runs as one continuous dialogue with nothing of it written,
+/// and the English of the sentence being said shows on its own, replaced by
+/// the next as the speech moves on. The charcoal band (design/intro-subtitle/
+/// README.md, the agreed look): solid, full width, running on under the home
+/// indicator, a hard top edge with a light 6 pt shadow on the portrait above
+/// it; a fixed height with room for three lines, so it never changes size as
+/// sentences change; the words in the label face, centred vertically in the
+/// band above the safe area. The chat's own bubble takes over on the question.
 struct IntroSubtitle: View {
     let english: String
-    @ScaledMetric(relativeTo: .title3) private var size: CGFloat = 19
+    private static let wordSize: CGFloat = 21
+    /// The band above the bottom safe area: 145 pt on Josh's phone less its 34 pt home-indicator area
+    @ScaledMetric(relativeTo: .title3) private var bandHeight: CGFloat = 111
+    @ScaledMetric(relativeTo: .title3) private var lineSpacing: CGFloat = 21 * 0.28
 
     var body: some View {
         Text(english)
-            .font(.system(size: size, weight: .semibold))
-            .lineSpacing(size * 0.2)
-            .foregroundStyle(Tokens.Colors.card)
+            .typeface(.label, Self.wordSize, relativeTo: .title3, weight: .medium)
+            .lineSpacing(lineSpacing)
+            .foregroundStyle(Tokens.Colors.flapInk)
+            .multilineTextAlignment(.leading)
             .id(english)
             .transition(.opacity)
             .frame(maxWidth: .infinity, alignment: .leading)
             .padding(.horizontal, Tokens.Space.gutter)
-            .padding(.top, 48)
-            .padding(.bottom, 28)
-            .background(
-                LinearGradient(colors: [Tokens.Colors.flapTile.opacity(0), Tokens.Colors.flapTile.opacity(0.85)], startPoint: .top, endPoint: .bottom)
-            )
+            .frame(height: bandHeight)
+            .frame(maxWidth: .infinity)
+            .background(Tokens.Colors.flapTile.ignoresSafeArea(edges: .bottom))
+            // A minimal shadow on the portrait just above the band's hard edge
+            .overlay(alignment: .top) {
+                LinearGradient(colors: [Tokens.Colors.flapTile.opacity(0.22), Tokens.Colors.flapTile.opacity(0)], startPoint: .bottom, endPoint: .top)
+                    .frame(height: 6)
+                    .offset(y: -6)
+                    .allowsHitTesting(false)
+            }
             .animation(.easeInOut(duration: 0.25), value: english)
     }
 }
