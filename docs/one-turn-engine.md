@@ -105,3 +105,27 @@ After step 1 the main gain is already there: one place to see what a turn will b
 - The app draws parts. Branch 5 shows it can draw a line-engine turn, but the welcome's address buttons and lesson screens weren't read. Step 5 and 6 start by reading the app's side.
 - A written-ahead reply (an offered answer's reply, drafted before the learner speaks) goes through `takeTurn` with a deferred save. The plan must be the same when the draft is written and when it is committed; the reply setup is seeded by conversation and turn number, so it should be, but this needs a test in step 1.
 - This fixes where a turn is decided. It does not make the dialogue better by itself, give the character a whole visit to plan, change memory, or fix the judge. Those are the other points of the same review.
+
+## Why this plan may fail to improve dialogue
+
+Added at Josh's request, 2026-11-11: the best reasons, strongest first.
+
+1. **It may answer the wrong diagnosis.** Josh's own account of why three days of tests produced no big step was: no reliable judge, and standards of improvement set too high. Eight branches is my complaint from reading code. Nothing shows the branches are why the dialogue is flat. The plan could be finished and correct and the dialogue sound the same.
+
+2. **The best dialogue we have already runs on the engine the plan keeps.** Intermediate visits and Beginner 2 steps 1 to 3 are on the line engine today, and those are the conversations judged not good enough. Moving the welcome, lessons and Beginner 1 onto it spreads today's quality to more places. It raises nothing.
+
+3. **It keeps, and hardens, the design most likely to cause flat dialogue.** The character still writes one turn at a time, with thinking off, steered by a note that code picks for that turn, never seeing the visit as a whole and never having seen a good one. The plan makes that note a named field of every turn. If turn-by-turn steering is the cause ("every turn the same turn"), this makes the cause tidier and harder to remove.
+
+4. **The replay set cannot judge dialogue.** A saved learner line answers the reply the character gave that day. Once a changed character says something different, the next saved line no longer fits. So the set can prove a prompt is unchanged (steps 1 and 2) and nothing more. Steps 3 to 6 are still judged by Josh's ear, one play at a time: the same bottleneck as now.
+
+5. **The code being deleted exists because the model didn't do those things when asked.** The answer inside her line held 3 of 15 times from the prompt. Characters announced their answers in 36 of 42 turns. Questions went without English. Each fix in `shapeParts` records a real fault. On one flowing line there are no parts to repair, so either the faults come back or the repairs return as text matching on the line, and the complexity has moved, not gone.
+
+6. **One engine makes every difference a block of prompt text.** Level, lesson, welcome, beats and the turn's note all stack in one prompt and interact. The project's own finding is that instructions cause repetition. A single engine also makes it easy to add one sentence that reaches every conversation, which is how the prompts grew.
+
+7. **The welcome and lessons may need the structure the parts give.** The welcome counts its steps and ends on two buttons; a lesson moves through steps. A brief on a free line may not hold a sequence that the parts format holds by construction. I haven't read that code, so this is unknown, not shown.
+
+8. **Replacing Beginner 1 may be worse for a real beginner.** The frame was chosen by one listener over one evening and by his own account doesn't yet use enough of the language. Step 4 makes it the only Beginner.
+
+9. **It costs the time that could go to dialogue.** Steps 0 to 2 are several sessions with nothing a learner can hear. The changes more likely to move dialogue (showing the character one whole good visit, giving it the situation instead of instructions, a longer intro, memory read and written during a visit) need none of this plan. Each can be tried on the one branch Josh plays.
+
+**What follows from these.** Reasons 1, 2, 3 and 9 together say: if the aim is better dialogue soon, don't start here. Try the dialogue changes on the branch Josh plays, and do steps 0 to 2 only when a change proves worth carrying to every conversation, since that is the moment the eight branches start to cost something.
