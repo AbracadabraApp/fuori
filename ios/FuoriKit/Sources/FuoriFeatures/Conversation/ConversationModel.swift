@@ -505,8 +505,8 @@ public final class ConversationModel {
                 self.intro = nil
                 self.introHead = headIntro
                 self.question = nil
-                // Beginner 2's one-line reply: nothing printed until the question comes with the reply
-                self.awaitingQuestion = self.beginner && headParts == nil && headIntro == nil && UserDefaults.standard.integer(forKey: APIClient.beginnerVersionKey) == 2
+                // The Beginner's one-line reply: nothing printed until the question comes with the reply
+                self.awaitingQuestion = self.beginner && headParts == nil && headIntro == nil && !APIClient.oldBeginner
                 self.english = nil
                 self.shown = 0
                 self.replies = nil

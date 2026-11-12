@@ -102,8 +102,8 @@ struct SettingsSheet: View {
     @AppStorage(SettingsKey.english) private var english = false
     @AppStorage(SettingsKey.dialect) private var dialect = false
     @AppStorage(SettingsKey.debug) private var debug = false
-    @AppStorage(APIClient.beginnerVersionKey) private var beginnerVersion = 1
-    @AppStorage(APIClient.beginnerClusterKey) private var beginnerCluster = 1
+    @AppStorage(APIClient.oldBeginnerKey) private var oldBeginner = false
+    @AppStorage(APIClient.beginnerStepKey) private var beginnerStep = 1
     @Environment(\.dismiss) private var dismiss
     @State private var confirmingRestart = false
     private static let showsSubtitles = false
@@ -230,19 +230,19 @@ struct SettingsSheet: View {
                         LabeledContent("Server", value: model.server?.host() ?? "—")
                         LabeledContent("Learner", value: model.learnerId ?? "—")
                             .textSelection(.enabled)
-                        // Beginner 1 (today's) or Beginner 2 (docs/beginner-2.md), played side by side; the next turn uses it
+                        // The Beginner since the cut-over (2026-11-12), or the old one, kept a week for comparison; the next turn uses it
                         LabeledContent("Beginner") {
-                            Picker("Beginner", selection: $beginnerVersion) {
-                                Text("1").tag(1)
-                                Text("2").tag(2)
+                            Picker("Beginner", selection: $oldBeginner) {
+                                Text("Old").tag(true)
+                                Text("New").tag(false)
                             }
                             .pickerStyle(.segmented)
                             .labelsHidden()
                             .fixedSize()
                         }
-                        // Beginner 2's cluster of the reply ladder (docs/beginner-2.md), until the offers to move up are built
-                        if beginnerVersion == 2 {
-                            Stepper("Cluster \(beginnerCluster)", value: $beginnerCluster, in: 1...6)
+                        // The step of scaffolding (docs/glossary.md → Level up); 1 leaves it to the learner's stored step
+                        if !oldBeginner {
+                            Stepper("Step \(beginnerStep)", value: $beginnerStep, in: 1...6)
                         }
                         // Back to the country choice, as on first launch (applied once the sheet has closed)
                         Button("Restart onboarding") {

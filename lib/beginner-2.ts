@@ -1,14 +1,14 @@
 /**
- * Beginner 2 (docs/beginner-2.md): the Intermediate prompt as the dialogue, with the
- * scaffolding (content/<country>/prompts/scaffolding.md) and the reply setup picked here each turn from the learner's
- * cluster of the reply ladder. Played only when the app sends
- * `x-fuori-beginner: 2` (Settings → touch and hold Version → Beginner), so
- * Josh can play it against Beginner 1, which stays as it is (Josh, 2026-11-09).
+ * The Beginner level (docs/beginner-2.md; called "Beginner 2" while it was played beside the old one): the
+ * Intermediate prompt as the dialogue, with the scaffolding (content/<country>/prompts/scaffolding.md) and the reply
+ * setup picked here each turn from the learner's step. Every Beginner plays it since the cut-over (Josh, 2026-11-12:
+ * "the sooner we cut over the clearer this will be"); the old Beginner (lib/beginner.ts with its stages) plays only
+ * when the app sends `x-fuori-beginner: 1` (Settings → touch and hold Version → Beginner: Old), for a week of
+ * comparison before it goes.
  *
- * The reply ladder (docs/beginner-2.md): eight rungs by how much of the
- * language a reply takes, played in six overlapping clusters of three. The
- * learner's cluster comes from the app's hidden picker for now
- * (`x-fuori-cluster`); the offers to move up aren't built yet. With or without
+ * The reply ladder (docs/beginner-2.md): eight rungs by how much of the language a reply takes, played in six
+ * overlapping steps (`CLUSTERS` in code). The learner's step is the stored one (lib/level-up.ts), or the app's hidden
+ * stepper (`x-fuori-cluster`) when Josh sets one. With or without
  * English under the answers is display: the prompt asks for the answers'
  * English either way, and it's left out here.
  */
@@ -21,9 +21,9 @@ import type { CharacterSheet } from '@/lib/types';
 export { SCAFFOLDING_FILE as BEGINNER_2_FILE } from '@/lib/beginner';
 import { SCAFFOLDING_FILE } from '@/lib/beginner';
 
-/** The app's switch: header `x-fuori-beginner: 2` */
+/** Which Beginner plays: the new one (2) unless the app asks for the old one with `x-fuori-beginner: 1` (the cut-over, 2026-11-12) */
 export function beginnerVersionFrom(headers: Headers): 1 | 2 {
-  return headers.get('x-fuori-beginner')?.trim() === '2' ? 2 : 1;
+  return headers.get('x-fuori-beginner')?.trim() === '1' ? 1 : 2;
 }
 
 export interface Setup {

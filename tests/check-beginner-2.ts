@@ -62,8 +62,9 @@ check(withQuestionEnglish('Ecco il cornetto, still warm.', 'Here is the cornetto
   check(/fewest words/.test(summaryPrompt()) && /in her own words/.test(summaryPrompt()) && !/\{\w+\}/.test(summaryPrompt()), 'the summary prompt is read from scaffolding.md, filled: Josh\'s line with her voice');
 }
 
-check(beginnerVersionFrom(new Headers({ 'x-fuori-beginner': '2' })) === 2, 'the header switches Beginner 2 on');
-check(beginnerVersionFrom(new Headers()) === 1 && beginnerVersionFrom(new Headers({ 'x-fuori-beginner': '1' })) === 1, 'no header, or 1: Beginner 1');
+// The cut-over (Josh, 2026-11-12): the new Beginner by default; the old one only when the app asks for it
+check(beginnerVersionFrom(new Headers()) === 2 && beginnerVersionFrom(new Headers({ 'x-fuori-beginner': '2' })) === 2, 'no header, or 2: the new Beginner');
+check(beginnerVersionFrom(new Headers({ 'x-fuori-beginner': '1' })) === 1, 'header 1: the old Beginner');
 
 const a = pickSetup({ conversationId: 'conv-1', turn: 3, characterId: 'luisa' });
 check(pickSetup({ conversationId: 'conv-1', turn: 3, characterId: 'luisa' }).id === a.id, 'the same conversation and turn get the same setup');
@@ -197,7 +198,8 @@ const route = readFileSync('app/v1/turn/route.ts', 'utf8');
 const take = readFileSync('lib/conversation/take-turn.ts', 'utf8');
 check(/flowingLine\(parts\)/.test(take) && /promptFile: BEGINNER_2_FILE/.test(take) && !/canRetry: p\.canRetry, promptFile: BEGINNER_2_FILE[^\n]*onText/.test(take), 'the spoken line is rebuilt from the rewritten parts, and the voice waits for them');
 check(/beginnerVersion: beginnerVersionFrom\(request\.headers\)/.test(route) && /beginnerCluster: clusterHeaderFrom\(request\.headers\)/.test(route), 'the route passes the switch and the cluster to the turn');
-check(/p\.beginnerVersion === 2/.test(take) && /promptFile: BEGINNER_2_FILE/.test(take), 'the turn plays the scaffolding only when the switch is on');
+check(/const newBeginner = p\.beginnerVersion !== 1;/.test(take) && /promptFile: BEGINNER_2_FILE/.test(take), 'the turn plays the new Beginner unless the old one is asked for');
+check(/onPath !== null && \(newBeginner \|\| onPath\.stage\.path === 'beginner'\)/.test(take) && /!newBeginner && onPath\?\.stage\.path === 'character'/.test(take), 'a learner past the old stage 3 plays the new Beginner too, not the character prompt with a Beginner block');
 check(/: beginner && onPath\n\s+\? \/\/ Beginner 1 as it has always run[^\n]*\n\s+await runBeginnerTurn\(\{ character, transcript: transcript\.map\(\(\{ offered: _offered, \.\.\.t \}\) => t\), learnerSaid, memory, addressedAs, laps: p\.laps, onText: p\.onText, canRetry: p\.canRetry, stageText: stageText\(onPath\.stage/.test(take), 'Beginner 1\'s turn is unchanged: same stage text, and still without the offered answers (no heard note)');
 check(/promptFile: BEGINNER_2_FILE/.test(take) && !/setup[\s\S]{0,40}transcript\.map\(\(\{ offered/.test(take.slice(take.indexOf('beginner && onPath && setup'), take.indexOf(': beginner && onPath\n'))), 'Beginner 2 keeps the offered answers, so its heard note works');
 

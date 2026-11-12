@@ -124,19 +124,25 @@ async function appApi(cityId: string, placeId: string, characterId: string, said
   const auth = { Authorization: `Bearer ${reg.token}` };
   // A minute at most, and the failure names the call: two runs on 2026-10-30
   // hung five minutes on a request and said only "fetch failed"
-  const v1 = (path: string, body: unknown) =>
-    fetch(base + path, { method: 'POST', headers: { ...auth, 'Content-Type': 'application/json' }, body: JSON.stringify(body), signal: AbortSignal.timeout(60_000) })
+  const v1 = (path: string, body: unknown, headers: Record<string, string> = {}) =>
+    fetch(base + path, { method: 'POST', headers: { ...auth, 'Content-Type': 'application/json', ...headers }, body: JSON.stringify(body), signal: AbortSignal.timeout(60_000) })
       .catch((e: Error) => { throw new Error(`${path}: ${e.message}`); });
   reg.token ? pass('v1 device signed in') : fail('v1 device signed in', JSON.stringify(reg));
 
   const open = await v1('/v1/turn', { cityId, placeId });
-  const o = (await open.json()) as { line: string; conversationId: string; replies?: unknown; stage?: unknown; parts?: { kind: string; text: string }[] };
-  // No level yet counts as a Beginner: Beginner level dialogue (lib/beginner.ts),
-  // the turn in parts with a question and answers to say back, and no answer panel
+  const o = (await open.json()) as { line: string; conversationId: string; replies?: unknown; stage?: unknown; parts?: { kind: string; text: string }[]; intro?: unknown[]; promptVersion?: string };
+  // No level yet counts as a Beginner, and every Beginner plays the new one (the cut-over, 2026-11-12): the visit
+  // opens on the intro (lib/intro.ts), sentences with their English, and two answers to say back; no answer panel
   const kinds = (o.parts ?? []).map((p) => p.kind);
-  kinds.includes('question') && kinds.includes('answer') && o.stage === null && o.line?.length > 0
-    ? pass(`v1 turn: Beginner dialogue in parts (${kinds.join(', ')})`)
-    : fail('v1 turn Beginner parts', JSON.stringify({ parts: o.parts, stage: o.stage }).slice(0, 300));
+  (o.intro?.length ?? 0) >= 2 && kinds.length === 2 && kinds.every((k) => k === 'answer') && o.stage === null && o.line?.length > 0 && o.promptVersion?.startsWith('beginner-2-')
+    ? pass(`v1 turn: the Beginner opens on the intro (${o.intro?.length} sentences, 2 answers, ${o.promptVersion})`)
+    : fail('v1 turn Beginner intro', JSON.stringify({ intro: o.intro?.length, parts: o.parts, stage: o.stage, promptVersion: o.promptVersion }).slice(0, 300));
+  // The old Beginner, while the hidden switch can still ask for it (a week from the cut-over): in parts, with a question
+  const old = (await (await v1('/v1/turn', { cityId, placeId }, { 'x-fuori-beginner': '1' })).json()) as { parts?: { kind: string }[]; stage?: unknown; promptVersion?: string };
+  const oldKinds = (old.parts ?? []).map((p) => p.kind);
+  oldKinds.includes('question') && oldKinds.includes('answer') && old.stage === null && old.promptVersion?.startsWith('beginner-') && !old.promptVersion.startsWith('beginner-2-')
+    ? pass(`v1 turn: the old Beginner when asked for (${oldKinds.join(', ')})`)
+    : fail('v1 turn old Beginner', JSON.stringify({ parts: old.parts, stage: old.stage, promptVersion: old.promptVersion }).slice(0, 300));
   // Two learner lines: memory is only written after at least two (lib/remember.ts)
   let reply = open;
   let r: { line?: string; conversationId?: string; stage?: unknown } = {};
