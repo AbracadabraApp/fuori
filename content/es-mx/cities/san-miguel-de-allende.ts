@@ -305,7 +305,7 @@ export const sanMiguelDeAllende: CityPantry = {
       name: "Gabriela Ramírez",
       gender: 'f',
       age: 39,
-      voice: 'twZzvyYIl5ntDHC1Vatv', // Angelica
+      voice: 'akOBlaKhFd59YlK6xz9u', // Lucia
       role: "maestra de historia",
       placeId: 'casa-de-allende',
       personality: ["energetic", "passionate about the independence", "good with kids"],

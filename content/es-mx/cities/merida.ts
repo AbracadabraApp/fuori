@@ -153,7 +153,7 @@ export const merida: CityPantry = {
       name: 'Socorro Ek Balam',
       gender: 'f',
       age: 58,
-      voice: 'twZzvyYIl5ntDHC1Vatv', // Angelica
+      voice: 'CQLNn2VcdhTOSAfK3xmF', // Valentina
       role: 'maestra de maya',
       placeId: 'centro-de-lengua-maya',
       personality: ['patient', 'proud of her language', 'teases gently'],

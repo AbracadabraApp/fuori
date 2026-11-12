@@ -24,7 +24,6 @@ const byAge: Record<Gender, Record<AgeGroup, string[]>> = {
       '9Godp7dNohUvXk6qp0gS', // Regina - casual, conversational (-20.5)
     ],
     middle: [
-      'twZzvyYIl5ntDHC1Vatv', // Angelica - friendly, energetic (-18.1)
       'akOBlaKhFd59YlK6xz9u', // Lucia - warm, conversational (-19.9)
       'CQLNn2VcdhTOSAfK3xmF', // Valentina - relaxed, conversational (-17.0)
       '1VQaMRazTeAqnqdb5C33', // Monica Mendez - conversational (-20.4)

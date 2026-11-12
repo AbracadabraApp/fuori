@@ -150,7 +150,7 @@ export const oaxaca: CityPantry = {
       name: 'Doña Ofelia Santiago',
       gender: 'f',
       age: 56,
-      voice: 'twZzvyYIl5ntDHC1Vatv', // Angelica
+      voice: 'CQLNn2VcdhTOSAfK3xmF', // Valentina
       role: 'tlayudera',
       placeId: 'tlayudas-mercado-20-de-noviembre',
       personality: ['warm', 'bossy', 'quick-witted'],

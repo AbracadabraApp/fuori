@@ -187,7 +187,7 @@ export const puebla: CityPantry = {
       name: 'Doña Remedios',
       gender: 'f',
       age: 58,
-      voice: 'twZzvyYIl5ntDHC1Vatv', // Angelica
+      voice: 'akOBlaKhFd59YlK6xz9u', // Lucia
       role: 'panadera y dueña',
       placeId: 'panaderia-la-espiga-de-la-paz',
       personality: ['motherly', 'no-nonsense', 'generous with extras'],

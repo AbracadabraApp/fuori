@@ -219,7 +219,7 @@ export const ciudadDeMexico: CityPantry = {
       name: 'Doña Lupe Hernández',
       gender: 'f',
       age: 55,
-      voice: 'twZzvyYIl5ntDHC1Vatv', // Angelica
+      voice: '1VQaMRazTeAqnqdb5C33', // Monica Mendez
       role: 'quesadillera',
       placeId: 'quesadillas-dona-lupe',
       personality: ['warm', 'quick-handed', 'motherly with everyone'],

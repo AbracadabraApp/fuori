@@ -247,7 +247,7 @@ export const guadalajara: CityPantry = {
       name: 'Doña Chuy Hermosillo',
       gender: 'f',
       age: 58,
-      voice: 'twZzvyYIl5ntDHC1Vatv', // Angelica
+      voice: 'CQLNn2VcdhTOSAfK3xmF', // Valentina
       role: 'cocinera',
       placeId: 'fonda-dona-chuy',
       personality: ['warm', 'bossy', 'generous with portions'],

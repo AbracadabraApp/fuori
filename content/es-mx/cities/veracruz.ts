@@ -203,7 +203,7 @@ export const veracruz: CityPantry = {
       name: 'Doña Rosario Villa',
       gender: 'f',
       age: 56,
-      voice: 'twZzvyYIl5ntDHC1Vatv', // Angelica
+      voice: '1VQaMRazTeAqnqdb5C33', // Monica Mendez
       role: 'cocinera',
       placeId: 'picadas-mercado-hidalgo',
       personality: ["fast", "sharp-tongued", "never forgets an order"],
