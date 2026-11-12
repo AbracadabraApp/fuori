@@ -1,6 +1,8 @@
 # Fuori Development Progress
 
-## 2026-11-12 (Mac mini, from the cloud session's brief at Josh's request): test X1 run, one whole good visit shown to the character; Josh's listening pending (a test only; no prompt or code in the game changed)
+## 2026-11-12 (Mac mini, from the cloud session's brief at Josh's request): test X1 run and heard: one whole good visit shown to the character made no difference Josh could hear (a test only; no prompt or code in the game changed)
+
+- **Result (Josh's ear, order hidden):** the noise pair (two takes of today's prompt) "no"; of the three real pairs, Siena "a little" with no preference ("Both were good turns and on topic"), Napoli "no" and he'd rather have had today's ("Very similar"), Matera "no". The shown-visit side was preferred on none. Counts flat: statement endings and words a turn with the visit shown sit where two takes of today's prompt sit; nothing of Nunzio's was copied. **Decision, by the card: outcome (c), not heard at this size. Nothing ships and no larger card is written.** Whether the idea is closed is Josh's call: the card's automatic close missed by 0.2 words a turn, and the test designer, who checked the result against the card, recommends closing. A remark, not a result: in Siena both shown-visit takes gave the English word "soft" when asked what *morbido* means and neither of today's takes did; Nunzio gives "spleen" in English when asked.
 
 - **The question (queue row X1):** does showing a character one whole good visit change how it talks? The model is Nunzio's visit (Palermo, 2026-11-09), exported to `tests/experiments/exemplars/nunzio-palermo.json` with two trims recorded in the file (the words after the question mark in his turn 2; the passing-through-Palermo question in turn 3) and nothing else changed.
 - **The card:** X1 in `docs/prompt-trials.md`. A is today's Intermediate prompt; B adds one block at the end of the system prompt, the visit in Italian under one sentence, no instruction. Reviewed by the test designer ("run with nine changes", none to Josh's parts; all applied) and stamped (dab753ef) before the run.
@@ -8,7 +10,7 @@
 - **For Josh to hear:** four pairs (three real, one hidden pair of two takes of today's prompt), about 16 minutes, order hidden, on a private page: https://claude.ai/artifact/BjnYHvDN1PFzJe1bAeogXc. The key and the text stay on the mini until he answers.
 - **Counts so far (guards only, they decide nothing):** none of Nunzio's content was copied (two list hits, both read, neither a copy); statement endings and words a turn in B are inside the gap between two takes of A; the block adds about 1,700 input tokens and about 0.2 s to the median reply.
 - **Known limits, on the card:** one take per clip at temperature 1.0; Josh's replayed lines stop fitting once the reply differs; the replayed visit predates the intro, so it runs without the beats brief in both arms; the responder has not passed F2.
-- **Next:** Josh listens and answers on the page; his words go into the card; the test designer's check after; the decision by the card's outcomes. `npm run test:cards` reports X1 as run without its after-check until then (as it does for B2-E2 to B2-E4).
+- **Open:** Josh's call on whether showing a visit is closed; the queue row X1 in `docs/prompt-testing.md` is the cloud session's and still reads as waiting.
 
 ## 2026-11-11 (Mac mini, driven from Josh's phone): research note, Italy pictures, a technical review and a turn-engine plan that argues against starting with itself (docs and pictures only; no code or prompt changed)
 
