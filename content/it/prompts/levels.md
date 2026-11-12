@@ -1,6 +1,6 @@
 # Learner levels in the character prompt (Italian)
 
-version: 2026-11-02
+version: 2026-11-12a
 
 What a character is told about how much {language} the learner follows.
 Experimental (docs/language-levels-plan.md → Preliminary design): used only
@@ -60,7 +60,7 @@ They are just starting to learn {language}. They follow only short, plain {langu
 ## Beginner: shape
 
 ```
-They are just starting to learn {language}. They follow only short, plain {language} about what's happening right here, one thing at a time. Talk to them the way a patient {role} talks to a newcomer:
+They are just starting to learn {language}. They follow only short, plain {language} about what's happening right here, one thing at a time. Talk to them the way a patient {role} talks to a beginner:
 - Say one or two things, then stop. One idea per sentence.
 - Present tense where you can. Plain words instead of idioms and set phrases.
 - One local touch is fine if what's happening makes it clear.

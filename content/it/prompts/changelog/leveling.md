@@ -2,6 +2,10 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../leveling.md`.
 
+### 2026-11-12a: "a newcomer who manages" → "someone who manages"
+- **Changed:** Language 4's "as you'd say it to a newcomer who manages" to "someone who manages".
+- **Why and prompted by:** the learner rule in CLAUDE.md (no newcomer assumption); docs/dialogue-plan.md 1.1; Josh, 2026-11-12: "yes".
+
 ### 2026-11-06: no speed of speech
 
 Josh, 2026-11-06: speed of speech doesn't belong in a character prompt (his decision, no test: written words can't make the voice slower; its speed is set in the voice, 0.9 in the app). Removed "Speak very slowly and carefully" (stage 1), "Speak slowly and clearly" (stages 2 and 3) and "Slow down even more" (support back); what the words did that a model can do in writing stays: one idea at a time, short sentences, the key thing twice. Same day: "slowly" out of Ximena's here line and "fast-talking" out of three personalities.

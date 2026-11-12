@@ -1,6 +1,6 @@
 # Leveling prototype prompts (trial, Mexico)
 
-version: 2026-11-06
+version: 2026-11-12a
 
 Prompts for the leveling prototype (tests/experiments/leveling/, designs A, B
 and C in docs/research/leveling/05-designs.md), and since 2026-11-02d the
@@ -70,7 +70,7 @@ How much {language} (this replaces the guidance above on how much {language} to 
 ## Language: 4
 
 ```
-How much {language} (this replaces the guidance above on how much {language} to use and how hard): everything you say is in {language}, as you'd say it to a newcomer who manages: natural sentences of up to 15 words, any common tense, a few less common words when the place needs them. English only if they ask.
+How much {language} (this replaces the guidance above on how much {language} to use and how hard): everything you say is in {language}, as you'd say it to someone who manages: natural sentences of up to 15 words, any common tense, a few less common words when the place needs them. English only if they ask.
 ```
 
 ## Talk: support back

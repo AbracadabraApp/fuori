@@ -4,6 +4,10 @@ Newest first. One entry per version: what changed, why, what prompted it. The pr
 
 Newest first. Each entry: what changed, why, and what prompted it.
 
+### 2026-11-12a: "talks to a newcomer" → "talks to a beginner"
+- **Changed:** "Beginner: shape" ("the way a patient {role} talks to a newcomer") to "a beginner".
+- **Why and prompted by:** the learner rule in CLAUDE.md; docs/dialogue-plan.md 2.3; Josh, 2026-11-12: "yes". The block is reachable only through LEVEL_TRIAL and goes with the dead-code deletion (plan 5.6).
+
 ### 2026-11-02: Intermediate B1 blocks (leveling prototype)
 
 Intermediate never had a level block (docs/research/leveling/00-what-we-know.md
