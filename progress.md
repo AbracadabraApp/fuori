@@ -2285,3 +2285,4 @@ Design only; nothing built. Decisions are Josh's unless marked.
 - **For the mini:** the command in docs/portraits-caricature.md (17 ids, `--force`), upload, untrack, push; the cloud chat session then looks at them.
 - **Open:** colour skipped by Josh (63 of 217 have none); about 36 more with lettering, not decided; Mexico's portraits not looked at.
 - Also tonight: design/intro-subtitle (the intro's subtitle as a charcoal band; spec for the laptop, not built).
+- **Mexico's trip map: plan written, nothing made** (docs/mexico-trip-map.md, Josh: "spec out your plan for Mexico Map and Station changes"): a landscape map of central and southern Mexico with no cities, ten buildings, positions in content/es-mx/travel-map.json; two looks for Josh to pick between. The lettered Italian portraits are left as they are (Josh: "leave it").
