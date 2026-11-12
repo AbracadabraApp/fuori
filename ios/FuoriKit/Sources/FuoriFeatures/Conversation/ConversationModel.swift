@@ -619,8 +619,49 @@ public final class ConversationModel {
     /// moves on the generation, so a stale wait never blocks a new turn)
     private var openingMic: Int?
 
+    // MARK: - Ending the intro early (the intro sheet; Josh, 2026-11-12: "users want control")
+
+    /// The learner closed the intro (the X, or swiping the sheet down): the rest of it isn't said, only its question
+    private var introSkipped = false
+
+    /// Ends the intro early: the voice stops as a tap stops it, the chat comes in on the question, and the character
+    /// says just the question (when the reply is still on its way, once it comes)
+    public func skipIntro() async {
+        guard inIntro else { return }
+        introSkipped = true
+        await tapTurn()
+    }
+
+    /// After a skipped intro: the question said by itself, typed out in its bubble, before the learner's turn
+    private func sayQuestionAfterSkip() async {
+        guard introSkipped else { return }
+        introSkipped = false
+        guard let question = intro?.last, intro?.count ?? 0 > 1, let start = introStarts.last else { return }
+        let generation = self.generation
+        phase = .speaking
+        do {
+            let audio = try await api.speak(text: question.text, characterId: character.id, speed: speed)
+            guard generation == self.generation, phase == .speaking else { return }
+            startReveal(question.text, offset: start)
+            try await voice.play(audio)
+        } catch {
+            guard generation == self.generation, phase == .speaking else { return }
+            report(error, step: "speak")
+            startReveal(question.text, offset: start)
+            await voice.speak(question.text, language: language.speechLang, rate: Float(speed), gender: character.gender)
+        }
+        finishReveal()
+    }
+
     /// `micClosed`: after an interruption the mic waits for a tap, hands-free too
     private func openTurn(micClosed: Bool = false) async {
+        // A skipped intro: its question is said first
+        if introSkipped, !micClosed {
+            let generation = self.generation
+            await sayQuestionAfterSkip()
+            guard generation == self.generation else { return }
+        }
+        introSkipped = false
         ring = 0
         // The last line has been said: the end button, or the screen closes; never the mic
         if finished {

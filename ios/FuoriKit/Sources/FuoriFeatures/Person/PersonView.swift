@@ -23,6 +23,12 @@ struct PersonView: View {
     @Environment(AppModel.self) private var appModel
     @Environment(\.dismiss) private var dismiss
 
+    /// The space under the name band: its height (as width) and the home indicator's (as height), for the intro sheet
+    @State private var below = CGSize.zero
+    /// Paper between the name band and the intro sheet, so its rounded corners show
+    private static let introGap: CGFloat = 13
+    private static let introCorner: CGFloat = 38
+
     init(model: ConversationModel) {
         _model = State(initialValue: model)
     }
@@ -37,10 +43,6 @@ struct PersonView: View {
             ZStack(alignment: .bottom) {
                 Portrait(url: model.character.portrait, name: model.character.name)
                     .ignoresSafeArea(edges: .bottom)
-                if model.inIntro, let subtitle = model.introSubtitle {
-                    IntroSubtitle(english: subtitle.en, progress: subtitle.shown.map { Double($0) / Double(max(1, subtitle.text.count)) } ?? 0)
-                        .transition(.opacity)
-                }
                 if debug {
                     DebugPanel(info: model.debug, conversationId: model.conversationId)
                         .frame(maxHeight: .infinity, alignment: .top)
@@ -59,8 +61,23 @@ struct PersonView: View {
                     .transition(.opacity)
                 }
             }
+            // The space under the name band, and the home indicator's: the intro sheet's height
+            .onGeometryChange(for: CGSize.self) { CGSize(width: $0.size.height, height: $0.safeAreaInsets.bottom) } action: { below = $0 }
         }
         .animation(.easeInOut(duration: 0.4), value: model.inIntro)
+        // The intro in a sheet (Josh, 2026-11-12, from the mockups: "I think it looks great"): its top is the top of
+        // the picture, just under the name band, which stays as it is. Swiping it down or its close button ends the
+        // intro early (Josh: "users want control"), and the character says just the question. Ending by itself, it
+        // slides down as the question starts and the question types out in its bubble (Josh: "A")
+        .sheet(isPresented: Binding(get: { model.inIntro }, set: { shown in if !shown { Task { await model.skipIntro() } } })) {
+            IntroSheet(model: model)
+                .presentationDetents([.height(max(200, below.width + below.height - Self.introGap))])
+                .presentationCornerRadius(Self.introCorner)
+                .presentationDragIndicator(.hidden)
+                // The header stays as it is, undimmed, and its buttons work
+                .presentationBackgroundInteraction(.enabled)
+                .presentationBackground(Tokens.Colors.flapTile)
+        }
         .background(Tokens.Colors.paper)
         #if os(iOS)
         .navigationBarTitleDisplayMode(.inline)
@@ -152,8 +169,49 @@ struct PersonView: View {
         .padding(.top, Tokens.Space.band / 2)
         .padding(.bottom, Tokens.Space.band)
         .background(Tokens.Colors.paper)
-        .overlay(alignment: .bottom) { Divider() }
+        // No divider while the intro sheet is up: its curved top is the edge (Josh: "the rule and the top of sheet compete")
+        .overlay(alignment: .bottom) { if !model.inIntro { Divider() } }
         .zIndex(1)
+    }
+}
+
+/// The intro's sheet: the portrait, a light grabber on it, the glass close button top right of the picture, and the
+/// charcoal subtitle band (the mockup Josh approved, 2026-11-12)
+struct IntroSheet: View {
+    let model: ConversationModel
+    @ScaledMetric(relativeTo: .body) private var closeSize: CGFloat = 44
+
+    var body: some View {
+        ZStack(alignment: .bottom) {
+            Portrait(url: model.character.portrait, name: model.character.name)
+                .ignoresSafeArea(edges: .bottom)
+            if let subtitle = model.introSubtitle {
+                IntroSubtitle(english: subtitle.en, progress: subtitle.shown.map { Double($0) / Double(max(1, subtitle.text.count)) } ?? 0)
+            }
+        }
+        .overlay(alignment: .top) {
+            // Light, with a soft shadow, so it shows on any picture (Josh: "dont lose grabber")
+            Capsule()
+                .fill(.white.opacity(0.95))
+                .frame(width: 36, height: 5)
+                .shadow(color: .black.opacity(0.5), radius: 3)
+                .padding(.top, 6)
+                .accessibilityHidden(true)
+        }
+        .overlay(alignment: .topTrailing) {
+            Button { Task { await model.skipIntro() } } label: {
+                Image(systemName: "xmark")
+                    .font(.title3.weight(.semibold))
+                    .foregroundStyle(Tokens.Colors.ink)
+                    .frame(width: closeSize, height: closeSize)
+            }
+            .buttonStyle(.glass)
+            .buttonBorderShape(.circle)
+            .padding(.top, 14)
+            .padding(.trailing, Tokens.Space.gutter)
+            .accessibilityLabel("Close")
+            .accessibilityHint("Ends the introduction and goes to the question")
+        }
     }
 }
 
