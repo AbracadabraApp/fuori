@@ -201,8 +201,8 @@ export function invited(parts: Part[]): Part[] {
 
 /** Clusters where the question is echoed in English right after it (Level 1) */
 export const QUESTION_ECHO = [true, true, false, false, false, false];
-/** On the one-line reply, the question's English is said after it in clusters 1–2; from cluster 3 only when the character gave it (Level 2) */
-export const QUESTION_ECHO_FRAME = [true, true, false];
+/** On the one-line reply (steps 1–3), the question's English is said after it, added by code when the character left it out (Josh, 2026-11-12: printed and spoken at steps 1–3, the question's English ladder; scaffolding.md 12c) */
+export const QUESTION_ECHO_FRAME = [true, true, true];
 
 /**
  * Level 1: the question in the language, then its English right after (Josh, 2026-11-09: "questions
@@ -349,7 +349,7 @@ export function lineWithAnswers(r: { line: string; en: string; done?: boolean; a
  * translation"). The line's last sentence once any English echo is set aside, when it's a question; its English is the
  * last question in the English. Nothing when the turn doesn't end on a question (the app then prints nothing).
  *
- * An echo is a sentence of the line that's also in the English (any language: the English is the translation, so
+ * Only the last two sentences are looked at, and an English one is set aside. An echo is a sentence of the line that's also in the English (or mostly) (any language: the English is the translation, so
  * the question in the language never is): "¿Le gustan los túneles? Do you like the tunnels?" ends on the English, and
  * "¿Quiere entrar? (Do you want to go in?)" on the English in brackets. Before 2026-11-12 the last sentence was taken
  * as it came, so the bubble printed the English as the question, or an empty question (Josh's Mexico play: Raymundo,
@@ -360,7 +360,15 @@ export function questionOf(line: string, en: string): { text: string; en: string
   const bare = (s: string) => s.toLowerCase().replace(/[()"'«»“”‘’¿¡]/g, '').replace(/\s+/g, ' ').trim();
   const english = bare(en);
   const isQuestion = (s: string) => /\?["'»”’)]*$/.test(s);
-  const q = sentences(line).reverse().find((s) => !english.includes(bare(s)));
+  // English: the sentence is in the translation, or most of its words are (an English sentence with a word of the
+  // language in it, "Hmm, maybe you want a boleada?", whose translation says "shoe shine": Don Chucho, 2026-11-12)
+  const englishWords = new Set(english.split(/[^\p{L}\p{N}]+/u).filter(Boolean));
+  const isEnglish = (s: string) => {
+    const words = bare(s).split(/[^\p{L}\p{N}]+/u).filter(Boolean);
+    return english.includes(bare(s)) || (words.length > 0 && words.filter((w) => englishWords.has(w)).length / words.length >= 0.6);
+  };
+  // Only the turn's last two sentences: the question and, after it, its English (an echo, or in brackets)
+  const q = sentences(line).slice(-2).reverse().find((s) => !isEnglish(s));
   const qEn = sentences(en).reverse().find(isQuestion)?.replace(/^\(|\)$/g, '').trim();
   if (!q || !isQuestion(q) || !qEn) return undefined;
   return { text: q.trim(), en: qEn };
