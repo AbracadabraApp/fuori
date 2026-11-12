@@ -13,9 +13,8 @@ The one list of dialogue work (laptop dialogue session; another session has the 
 ## Waiting on you
 
 1. **Release.** On main, not live: the shorter step 1, the goodbye fix and "take up what they said first" (b27cb88); the shorter intro question (intro.md 12b); the question's English at steps 1–3 and the "first time or when new" rules removed (27a7fdb).
-2. **Step 2 is now longer than step 1.** This morning step 1 went to one or two phrases and two short sentences; step 2's text still asks for "three or four" phrases and "two or three sentences". Give step 2 the same shortening? (yes / no)
-3. **Steps 4–6.** Never played; today they switch to a different screen and a slower start, and don't follow your ladder for the question's English. Your ladder is the target (below). How to get there: (a) hear steps 4–6 as they play today, or (b) build my direction (below) and hear it. [5.4]
-4. **Play, when you can:** Beginner turn length; a goodbye said with your name; whether characters take up what you say without sounding formulaic; a second visit to Raymundo or Isidro in Guanajuato (does the character remember what it told you?); a few Intermediate visits.
+2. **Steps 4–6.** Never played; today they switch to a different screen and a slower start, and don't follow your ladder for the question's English. Your ladder is the target (below). How to get there: (a) hear steps 4–6 as they play today, or (b) build my direction (below) and hear it. [5.4]
+3. **Play, when you can:** Beginner turn length; a goodbye said with your name; whether characters take up what you say without sounding formulaic; a second visit to Raymundo or Isidro in Guanajuato (does the character remember what it told you?); a few Intermediate visits.
 
 ## Done (2026-11-12)
 
@@ -36,6 +35,7 @@ The one list of dialogue work (laptop dialogue session; another session has the 
 | A Beginner visit winds down when the talk has run its course, before the turn's setup; the goodbye on the 7th turn stays as the fallback [5.3, your "c"] | 95af83e | No |
 | Cultural lessons: the teller's question varies (what you make of it, something to picture or notice, something of your own like it) instead of "Have you ever…?" every turn; the answer taken up [4.3] | f612b53 | No |
 | Beginner "questions to ask" turns stay, and the questions offered come out of what the character just said ("¿Qué es el huitlacoche?" after she names it), not stock ones like the bus fare (Josh: "I appreciate variety, but also coherent play") | 9a23f81 | No |
+| Step 2 as short as step 1 (two short sentences and the question) with two or three Spanish phrases against step 1's one or two | (next) | No |
 | Measures: what learners do after each kind of question (`scripts/bid-count.mjs`); turn length on replayed real visits (`tests/experiments/b2-turn-length.mts`) [3.1, A] | 8423712, 970ba64 | (tools) |
 
 ## Later
@@ -65,7 +65,7 @@ Steps 1–3 play this way since 27a7fdb. Your worry about today's code: at step 
 | Step | What the character is told | What the learner gets to answer with | Reply and screen | Voice starts |
 |---|---|---|---|---|
 | 1 | Mix English and Spanish; one or two phrases with their English; two short sentences, then the question with its English | Two answers with English, or two questions to ask | One line; her bubble shows the question | On the first sentence |
-| 2 | The same, "a little Spanish now"; still three or four phrases, two or three sentences (see Waiting on you, 2) | The same | The same | The same |
+| 2 | The same length as step 1, with two or three phrases (scaffolding.md 12h) | The same | The same | The same |
 | 3 | Half Spanish, half English, never a sentence followed by its translation; the question with its English | The same, or none (an open question) | The same | The same |
 | 4 | The same text as step 3 | Two questions to ask, or none | **Separate bubbles per phrase**, joined into the spoken line by code; the question's English not added by code | **After the whole reply is written** |
 | 5 | Mostly Spanish; English only when asked or for a word they can't get from the scene | Two answers with English, or none | Separate bubbles | After the whole reply |

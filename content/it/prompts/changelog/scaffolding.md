@@ -2,6 +2,11 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
 
+### 2026-11-12h: step 2 as short as step 1, with more of the language
+- **Changed, Level 1b (step 2):** the same shape as step 1 (12b): "mix English and {language}", English only to carry the language, "Each turn is two short sentences" and the question with its English, a whole-turn example; but "Two or three of them a turn" against step 1's "one or two", so step 2 is a step up in the language at the same length.
+- **Why:** since 12b, step 1 had one or two phrases in two short sentences while step 2 still asked for three or four in two or three sentences: moving up made turns longer, against Josh's "Everything is basically too long". Copying step 1's numbers instead would have made the two steps the same (the screen session's point).
+- **Prompted by:** the check before Josh's build and play, 2026-11-12; the screen session's version, which Josh passed on.
+
 ### 2026-11-12g: the questions to ask follow from what the character just said
 - **Changed, Setup: two questions to ask:** "give them two short questions they could ask you" → "… they could ask you about what you just told them".
 - **Why:** in Josh's Raymundo visit (409863b2, turn 2) the character talked about the arches and the orange lights in the tunnel, and the questions offered were "¿Cuánto cuesta el pasaje?" and "¿Adónde llega este camión?": stock questions for any bus, so the turn read as a menu, not a conversation. Josh, 2026-11-12, asked whether this kind of turn should stay ("I appreciate variety, but also coherent play"): kept, with the questions tied to the character's line ("yes").
