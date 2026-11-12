@@ -74,12 +74,18 @@
   --size-stamp-word: 11px;
   --size-stamp-label: 12px;
   --size-stamp-stripe: 7px;
+  --size-bubble-text: 18px;
+  --size-bubble-english: 15px;
+  --size-note: 15px;
+  --size-hint: 14px;
+  --size-subtitle: 21px;
   --space-gutter: 16px;
   --space-card-gap: 20px;
   --space-caption-padding: 16px;
   --space-band: 12px;
   --radius-card: 8px;
   --radius-poster: 16px;
+  --radius-bubble: 18px;
   --shadow-card: 0px 2px 8px rgba(0, 0, 0, 0.1);
   --shadow-stamp: 0px 3px 8px rgba(0, 0, 0, 0.25);
 }

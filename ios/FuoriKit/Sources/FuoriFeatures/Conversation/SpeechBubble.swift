@@ -28,7 +28,7 @@ struct SpeechBubble<Content: View>: View {
             .padding(speaker == .you ? .leading : .trailing, 40)
     }
 
-    static var shape: RoundedRectangle { RoundedRectangle(cornerRadius: 18) }
+    static var shape: RoundedRectangle { RoundedRectangle(cornerRadius: Tokens.Radius.bubble) }
     private var fill: Color { speaker == .you ? Tokens.Colors.youBubble : Tokens.Colors.herBubble }
     private var edge: Color { speaker == .you ? Tokens.Colors.youEdge : Tokens.Colors.herEdge }
 }
@@ -37,7 +37,7 @@ struct SpeechBubble<Content: View>: View {
 struct BubbleEnglish: View {
     let text: String
     let speaker: Speaker
-    @ScaledMetric(relativeTo: .callout) private var size: CGFloat = 15
+    @ScaledMetric(relativeTo: .callout) private var size: CGFloat = Tokens.Size.bubbleEnglish
 
     var body: some View {
         Text(text)

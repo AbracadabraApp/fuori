@@ -344,16 +344,26 @@ export function lineWithAnswers(r: { line: string; en: string; done?: boolean; a
 }
 
 /**
- * The question that ends a one-line reply, with its English: the only thing the app prints of a cluster-1 turn
+ * The question that ends a one-line reply, with its English: the only thing the app prints of a Beginner turn
  * (Josh, 2026-11-11: "The English parts of the turn don't need to be printed at all. Only the Spanish question and
- * translation"). The line's last sentence when it ends on a question mark and the English's does too; nothing otherwise
+ * translation"). The line's last sentence once any English echo is set aside, when it's a question; its English is the
+ * last question in the English. Nothing when the turn doesn't end on a question (the app then prints nothing).
+ *
+ * An echo is a sentence of the line that's also in the English (any language: the English is the translation, so
+ * the question in the language never is): "¿Le gustan los túneles? Do you like the tunnels?" ends on the English, and
+ * "¿Quiere entrar? (Do you want to go in?)" on the English in brackets. Before 2026-11-12 the last sentence was taken
+ * as it came, so the bubble printed the English as the question, or an empty question (Josh's Mexico play: Raymundo,
+ * Don Isidro).
  */
 export function questionOf(line: string, en: string): { text: string; en: string } | undefined {
-  const last = (s: string) => s.trim().split(/(?<=[.!?…]["'»”’)]*)\s+/).filter(Boolean).at(-1) ?? '';
-  const q = last(line);
-  const qEn = last(en).replace(/^\(|\)$/g, '');
-  if (!/\?["'»”’)]*$/.test(q) || !/\?$/.test(qEn)) return undefined;
-  return { text: q.replace(/\s*\(.*\?\)$/, '').trim(), en: qEn };
+  const sentences = (s: string) => s.trim().split(/(?<=[.!?…]["'»”’)]*)\s+/).filter(Boolean);
+  const bare = (s: string) => s.toLowerCase().replace(/[()"'«»“”‘’¿¡]/g, '').replace(/\s+/g, ' ').trim();
+  const english = bare(en);
+  const isQuestion = (s: string) => /\?["'»”’)]*$/.test(s);
+  const q = sentences(line).reverse().find((s) => !english.includes(bare(s)));
+  const qEn = sentences(en).reverse().find(isQuestion)?.replace(/^\(|\)$/g, '').trim();
+  if (!q || !isQuestion(q) || !qEn) return undefined;
+  return { text: q.trim(), en: qEn };
 }
 
 /** What the code did to one turn's parts: the setup and cluster it played, the shaping steps that changed something, and Claude's parts when one did */
