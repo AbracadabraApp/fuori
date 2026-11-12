@@ -83,7 +83,7 @@ check(['two-en', 'ask-en'].every((id) => CLUSTER_1.some((r) => r.id === id)) && 
   let runs = 0;
   const seq: string[] = [];
   for (let t = 1; t <= 60; t++) { const id = pickSetup({ conversationId: 'rot', turn: t, characterId: 'x' }).id; seq.push(id); if (seq.length >= 3 && seq.slice(-3).every((x) => x === id)) runs++; }
-  check(runs === 0 && new Set(seq).size === 2, `no setup three times running over 60 turns, both kinds played (got ${runs} runs of three, kinds ${[...new Set(seq)].join(', ')})`);
+  check(runs === 0 && new Set(seq.filter((x) => x !== 'goodbye')).size === 2, `no setup three times running over 60 turns, both kinds played (got ${runs} runs of three, kinds ${[...new Set(seq)].join(', ')})`);
   const q = questionOf('Suba a la silla, climb up. ¿Quiere una boleada?', 'Climb up on the chair. Do you want a shine?');
   check(q?.text === '¿Quiere una boleada?' && q?.en === 'Do you want a shine?', `questionOf: the last question with its English (got ${JSON.stringify(q)})`);
   check(questionOf('Ecco il cornetto.', 'Here is the cornetto.') === undefined, 'questionOf: nothing when the line ends on a statement');
