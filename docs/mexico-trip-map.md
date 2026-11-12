@@ -47,7 +47,11 @@ Building, square:
 
 ## Steps
 
-1. **Mini:** six maps in three looks, two of each: the soft flat prompt below; the same prompt opening "A mid-century illustrated tourist map of the whole of Mexico, painted in bright flat gouache"; and the same opening "An antique engraved map of the whole of Mexico on aged, stained parchment, in sepia ink with faint watercolor washes tinting each state". One building, Palacio de Bellas Artes, in each look. Saved to `design/trip-map/mexico/` and pushed. Josh picks the look.
+1. **Mini:** six maps, landscape 3:2, in three looks, two of each (the looks follow Josh's second set of references, 2026-11-11; still "ideas - no rules"). Each uses the map prompt below with its first sentence swapped:
+   - **Vintage travel poster:** "A 1940s travel-poster map of the whole of Mexico, painted in gouache: warm yellow and cream land, a deep blue sea with paler shallows near the coast."
+   - **Modern flat graphic:** "A modern flat graphic map of the whole of Mexico in a limited palette: off-white land, a teal sea, accents in mustard, coral and dark green, crisp simple shapes."
+   - **Atlas map:** "A classic atlas map of the whole of Mexico: each state tinted a different soft colour with thin borders, a pale blue sea with darker depths, clean and calm." For this one drop the landscape drawings.
+   One building, Palacio de Bellas Artes, in each look. Saved to `design/trip-map/mexico/` and pushed. Josh picks the look.
 2. **Mini:** the ten buildings in the chosen look, pushed to the same folder.
 3. **Cloud chat session:** looks at them (redo any that drift), measures the ten positions on the map and checks them on a plotted copy, turns the pictures into masters (`public/images/es-mx/travel/map.jpg`, `building-<city id>.jpg`, paper turned pure white, cropped close), fills in `content/es-mx/travel-map.json`, pushes.
 4. **Mini:** `COUNTRY=es-mx npm run images:upload`, untrack, push, then release. No app build is needed: the map, the buildings and the positions all come from `/v1/content`.
