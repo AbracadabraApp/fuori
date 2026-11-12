@@ -158,13 +158,12 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
       p.onSoftError('learner step', err);
     }
   }
-  // The intro's beats (lib/intro.ts), and which turn after it this is: the thread names the next beat, the goodbye follows the last
+  // The intro's beats (lib/intro.ts): given to the character once on every later turn (shapes.ts → beatsBrief)
   const beats = transcript.find((t) => t.who === 'npc' && t.beats?.length)?.beats;
   const npcTurns = transcript.filter((t) => t.who === 'npc').length;
-  const goodbyeAt = beats?.length ? beats.length + 1 : undefined; // Beginner 2 only: pickSetup runs only there
   // Beginner 2's reply setup this turn (docs/beginner-2.md), when the app switched it on
   const setup = beginner && !p.lesson && newBeginner
-    ? pickSetup({ conversationId, turn: npcTurns, learnerId, characterId: character.id, learnerSaid, goodbyeAt }, cluster)
+    ? pickSetup({ conversationId, turn: npcTurns, learnerId, characterId: character.id, learnerSaid }, cluster)
     : null;
   // Beginner 2: what the code did to the turn's parts, logged and saved with it; any path: the shape asked for
   let steps: TurnSteps | undefined;
@@ -173,8 +172,8 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
   // (lib/shapes.ts; docs/dialogue-structure-reference.md § 11). Beginner 1, the welcome, lessons and Magda: untouched
   const shaped = !isTutor && !p.lesson && !welcome && (setup !== null || onPath === null);
   const intro = shaped && transcript.length === 0 && !learnerSaid;
-  // The turns after the intro carry its thread; a learner's question is answered first (lib/shapes.ts)
-  const shapes = shaped && !intro ? pickShapes({ learnerSaid, beats, turnAfterIntro: npcTurns, beginner2: setup !== null }) : [];
+  // After the intro, no note unless they asked something: then it's answered first (lib/shapes.ts)
+  const shapes = shaped && !intro ? pickShapes({ learnerSaid }) : [];
   const shape = shapes.length ? shapes : null;
   const shapeId = shapeIds(shapes);
   // The intro's beats, once, in the system prompt of every later turn: material the character has, not a list to work through

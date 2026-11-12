@@ -3,7 +3,7 @@
 import { readFileSync } from 'node:fs';
 import { cities, language } from '@/content';
 import { characterForPlace } from '@/lib/characters/for-place';
-import { pickShape, pickShapes, shapeNote, noteOf, shapeIds, beatFor, beatsBrief, ANSWER_FIRST, CLOSE, askedSomething } from '@/lib/shapes';
+import { pickShape, pickShapes, shapeNote, noteOf, shapeIds, beatsBrief, ANSWER_FIRST, askedSomething } from '@/lib/shapes';
 import { buildIntroPrompt, introLine, IntroWatcher } from '@/lib/intro';
 import { GOODBYE_AFTER, pickSetup } from '@/lib/beginner-2';
 
@@ -16,21 +16,19 @@ check(pickShape({ learnerSaid: 'Cosa sono quelle?' })?.id === 'answer-first', 't
 check(pickShape({ learnerSaid: 'Un caffè, per favore.' }) === null && pickShape({}) === null, 'no signal: no shape, the character writes the turn by habit');
 // After the intro: no note unless a signal fires (the quiet default, restored 2026-11-11d)
 check(shapeIds(pickShapes({ learnerSaid: 'Sí.' })) === undefined && shapeIds(pickShapes({ learnerSaid: '¿Por qué?' })) === 'answer-first' && shapeIds([]) === undefined, 'after the intro a turn carries no note unless they asked');
-check(noteOf([CLOSE, ANSWER_FIRST], 'This turn, X.') === `${shapeNote(CLOSE)} ${shapeNote(ANSWER_FIRST)} This turn, X.`, 'shape lines join before the setup line');
-// The intro's beats: one a turn in order, the close after the last (Beginner 2 only), nothing past it; the beat is named in the note
+// The intro's beats go to the character once; no close by the beat count (Josh, 2026-11-12: the goodbye on the 7th turn)
 const beats = ['la piña', 'el borde crujiente', 'el día seco'];
-check(beatFor(beats, 1) === 'la piña' && beatFor(beats, 3) === 'el día seco' && beatFor(beats, 4) === 'close' && beatFor(beats, 5) === undefined && beatFor(undefined, 1) === undefined && beatFor(beats, 0) === undefined, 'beatFor: the beats in order, then the close, then nothing');
-check(shapeIds(pickShapes({ beats, turnAfterIntro: 2, beginner2: true })) === undefined && shapeIds(pickShapes({ beats, turnAfterIntro: 4, learnerSaid: '¿Y usted?', beginner2: true })) === 'close+answer-first' && shapeIds(pickShapes({ beats, turnAfterIntro: 6, beginner2: true })) === undefined, 'Beginner 2: no note while the beats run, the close after the last, nothing after');
-check(shapeIds(pickShapes({ beats, turnAfterIntro: 4 })) === undefined && shapeIds(pickShapes({ beats, turnAfterIntro: 9, learnerSaid: 'Perché?' })) === 'answer-first', 'Intermediate: no close (Nunzio ran 14 turns); answer-first only');
-check(/la piña; el borde crujiente; el día seco/.test(beatsBrief(beats)) && /not a list to work through/.test(beatsBrief(beats)) && !/\{\w+\}/.test(beatsBrief(beats)) && beatsBrief(undefined) === '' && !/\{beat\}/.test(shapeNote(CLOSE)), 'the beats go to the character once, as what was set out, not a list; the close has no placeholder');
+check(/la piña; el borde crujiente; el día seco/.test(beatsBrief(beats)) && /not a list to work through/.test(beatsBrief(beats)) && !/\{\w+\}/.test(beatsBrief(beats)) && beatsBrief(undefined) === '', 'the beats go to the character once, as what was set out, not a list');
+check(!/Shape: close/.test(['it', 'es-mx'].map((c) => readFileSync(`content/${c}/prompts/shapes.md`, 'utf8')).join('')) && !/beatFor|goodbyeAt/.test(readFileSync('lib/conversation/take-turn.ts', 'utf8')), 'no close shape and no goodbye by the beat count');
 
 // Notes: the shape's line, joined before the setup line; nothing when neither
 check(/^Answer what they asked first/.test(shapeNote(ANSWER_FIRST)) && !/\{/.test(shapeNote(ANSWER_FIRST)), 'the answer-first line comes from shapes.md, filled');
 check(noteOf(ANSWER_FIRST, 'This turn, ask about X.') === `${shapeNote(ANSWER_FIRST)} This turn, ask about X.`, 'shape and setup lines join into one note');
 check(noteOf(null, 'This turn, ask about X.') === 'This turn, ask about X.' && noteOf(null) === undefined && noteOf(null, '') === undefined, 'the setup alone, or no note at all');
 
-// The goodbye: once, on the 8th turn
+// The goodbye: once, on the 7th turn (Josh, 2026-11-12)
 check(pickSetup({ conversationId: 'c', turn: GOODBYE_AFTER, characterId: 'x' }).id === 'goodbye' && pickSetup({ conversationId: 'c', turn: GOODBYE_AFTER + 1, characterId: 'x' }).id !== 'goodbye', 'the goodbye is offered once');
+check(GOODBYE_AFTER === 7, 'the goodbye is offered on the 7th turn');
 
 // The intro prompt: the character and the place, the brief, no turn rules; answers only when asked for
 const city = cities[0];

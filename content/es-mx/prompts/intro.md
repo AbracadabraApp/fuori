@@ -1,6 +1,6 @@
 # Intro: how a visit opens
 
-version: 2026-11-11e
+version: 2026-11-12a
 
 The first turn of a visit (Josh's design, 2026-11-11, docs/dialogue-structure-
 reference.md § 0): the character opens in {language} with the thing the place
@@ -26,7 +26,7 @@ Someone has just come in, and you open the visit yourself, in {language}: first 
 ```
 Respond with JSON:
 { "sentences": [ { "text": "one sentence, in {language}", "en": "its English, as a subtitle" } ], "beats": [ "..." ] }
-One sentence per item, in the order you say them; the question is the last item. beats: the three or four things you set out, each named in a few words of {language} (the thing, not the sentence), in the order you said them; the visit's later turns take them up one at a time.
+One sentence per item, in the order you say them; the question is the last item. beats: the three or four things you set out, each named in a few words of {language} (the thing, not the sentence), in the order you said them; you'll have them for the rest of the visit.
 ```
 
 ## Reply: sentences and answers
@@ -34,7 +34,7 @@ One sentence per item, in the order you say them; the question is the last item.
 ```
 Respond with JSON:
 { "sentences": [ { "text": "one sentence, in {language}", "en": "its English, as a subtitle" } ], "beats": [ "..." ], "answers": [ { "text": "what they can say back, in {language}", "en": "its English" } ] }
-One sentence per item, in the order you say them; the question is the last item. beats: the three or four things you set out, each named in a few words of {language} (the thing, not the sentence), in the order you said them; the visit's later turns take them up one at a time. The answers are two short ways to answer your question, shown to them, not said by you.
+One sentence per item, in the order you say them; the question is the last item. beats: the three or four things you set out, each named in a few words of {language} (the thing, not the sentence), in the order you said them; you'll have them for the rest of the visit. The answers are two short ways to answer your question, shown to them, not said by you.
 ```
 
 ## Beats

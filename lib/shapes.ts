@@ -21,16 +21,13 @@ export interface Shape {
 
 /** They asked something: answer it first, before anything of the character's own */
 export const ANSWER_FIRST: Shape = { id: 'answer-first', block: 'Shape: answer first' };
-/** Beginner 2, the turn after the intro's last beat: wind down, leave room for the goodbye (the goodbye setup plays with it) */
-export const CLOSE: Shape = { id: 'close', block: 'Shape: close' };
 
 /** Whether what they said is a question, by punctuation (any language) */
 export const askedSomething = (said: string | undefined): boolean => /[?¿]/.test(said ?? '');
 
 /** This turn's shapes from what code can see, in the order they're said; empty: no note, the character's habit */
-export function pickShapes(p: { learnerSaid?: string; /** the intro's beats, and which turn after it this is (1 = the first reply) */ beats?: string[]; turnAfterIntro?: number; /** Beginner 2: the close after the last beat; Intermediate keeps going by habit (Nunzio's 14 turns) */ beginner2?: boolean }): Shape[] {
+export function pickShapes(p: { learnerSaid?: string }): Shape[] {
   const shapes: Shape[] = [];
-  if (p.beginner2 && beatFor(p.beats, p.turnAfterIntro) === 'close') shapes.push(CLOSE);
   if (askedSomething(p.learnerSaid)) shapes.push(ANSWER_FIRST);
   return shapes;
 }
@@ -39,14 +36,6 @@ export function pickShapes(p: { learnerSaid?: string; /** the intro's beats, and
 export function beatsBrief(beats: string[] | undefined): string {
   if (!beats?.length) return '';
   return fill(readPromptFile('intro.md').block('Beats'), { language: language.name, beats: beats.join('; ') }).trim();
-}
-
-/** This turn's beat from the intro's list, in order; 'close' on the turn after the last; undefined without beats or past the close */
-export function beatFor(beats: string[] | undefined, turnAfterIntro: number | undefined): string | 'close' | undefined {
-  if (!beats?.length || !turnAfterIntro || turnAfterIntro < 1) return undefined;
-  if (turnAfterIntro <= beats.length) return beats[turnAfterIntro - 1];
-  if (turnAfterIntro === beats.length + 1) return 'close';
-  return undefined;
 }
 
 /** The first shape, for callers that record one; null when none */
@@ -66,7 +55,7 @@ export function noteOf(shape: Shape | Shape[] | null, setupLine?: string): strin
   return lines.length ? lines.join(' ') : undefined;
 }
 
-/** The ids recorded with the turn: "thread+answer-first" */
+/** The ids recorded with the turn: "answer-first" */
 export const shapeIds = (shapes: Shape[]): string | undefined => (shapes.length ? shapes.map((s) => s.id).join('+') : undefined);
 
 /** The version recorded with a turn that had a shape */

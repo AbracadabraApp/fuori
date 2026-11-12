@@ -1,6 +1,6 @@
 # Shapes: what this turn does
 
-version: 2026-11-11d
+version: 2026-11-12a
 
 Code picks the shape of a turn from signals it can see (punctuation, the turn
 count, what was offered); the model writes the words (docs/dialogue-structure-
@@ -18,8 +18,3 @@ is untouched.
 Answer what they asked first, before anything of your own.
 ```
 
-## Shape: close
-
-```
-You've covered what you set out at the start: wind down warmly, with nothing new, and leave them room to say goodbye.
-```

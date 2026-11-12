@@ -4,7 +4,7 @@
 // prompt file, the language-only rung hides the answers' English, the turn
 // code takes the switch, and Beginner 2 turns don't move the Beginner 1 path.
 import { readFileSync } from 'fs';
-import { beginnerVersionFrom, pickSetup, setupText, levelText, setupLine, fullerGlosses, shownParts, shapeParts, turnSteps, beginner2Version, glossAll, questionEcho, GOODBYE, OPENER, CLUSTER_1, CLUSTERS, RUNGS, clusterFrom, stretchesOf, withSummaries, summaryPrompt, MAX_STRETCH_WORDS, MAX_STRETCH_SENTENCES, GLOSS_ALL, flowingLine, withQuestionEnglish, cluster1Brief, frameBrief, onFrame, lineWithAnswers, questionOf } from '@/lib/beginner-2';
+import { beginnerVersionFrom, pickSetup, GOODBYE_AFTER, setupText, levelText, setupLine, fullerGlosses, shownParts, shapeParts, turnSteps, beginner2Version, glossAll, questionEcho, GOODBYE, OPENER, CLUSTER_1, CLUSTERS, RUNGS, clusterFrom, stretchesOf, withSummaries, summaryPrompt, MAX_STRETCH_WORDS, MAX_STRETCH_SENTENCES, GLOSS_ALL, flowingLine, withQuestionEnglish, cluster1Brief, frameBrief, onFrame, lineWithAnswers, questionOf } from '@/lib/beginner-2';
 import { stageInVersion } from '@/lib/conversation-record';
 import { lineFromParts, type Part } from '@/lib/beginner';
 import { buildBeginnerPrompt, SCAFFOLDING_FILE, dialogueWithoutFormat } from '@/lib/beginner';
@@ -68,7 +68,7 @@ check(beginnerVersionFrom(new Headers({ 'x-fuori-beginner': '1' })) === 1, 'head
 
 const a = pickSetup({ conversationId: 'conv-1', turn: 3, characterId: 'luisa' });
 check(pickSetup({ conversationId: 'conv-1', turn: 3, characterId: 'luisa' }).id === a.id, 'the same conversation and turn get the same setup');
-const seen = new Set(Array.from({ length: 40 }, (_, i) => pickSetup({ conversationId: `conv-${i}`, turn: 1 + (i % 7), characterId: 'luisa' }).id));
+const seen = new Set(Array.from({ length: 40 }, (_, i) => pickSetup({ conversationId: `conv-${i}`, turn: 1 + (i % (GOODBYE_AFTER - 1)), characterId: 'luisa' }).id));
 check(seen.size === CLUSTER_1.length && [...seen].every((id) => CLUSTER_1.some((s) => s.id === id)), `over 40 turns every setup of cluster 1 comes up (got ${[...seen].join(', ')})`);
 const day = new Date('2026-11-09T10:00:00Z');
 check(pickSetup({ turn: 0, learnerId: 'L', characterId: 'luisa', now: day }).id === pickSetup({ turn: 0, learnerId: 'L', characterId: 'luisa', now: day }).id, 'an opening is seeded by learner, place and day');
@@ -92,7 +92,7 @@ check(['two-en', 'ask-en'].every((id) => CLUSTER_1.some((r) => r.id === id)) && 
 }
 check(!CLUSTERS.flat().some((r) => r.inside), 'no cluster plays the answer inside the character\'s line until it has a screen design');
 check(clusterFrom(new Headers({ 'x-fuori-cluster': '4' })) === CLUSTERS[3] && clusterFrom(new Headers()) === CLUSTER_1 && clusterFrom(new Headers({ 'x-fuori-cluster': '9' })) === CLUSTER_1, 'the cluster header picks clusters 1-6, cluster 1 otherwise');
-const seen6 = new Set(Array.from({ length: 40 }, (_, i) => pickSetup({ conversationId: `c-${i}`, turn: 1 + (i % 7), characterId: 'x' }, CLUSTERS[5]).id));
+const seen6 = new Set(Array.from({ length: 40 }, (_, i) => pickSetup({ conversationId: `c-${i}`, turn: 1 + (i % (GOODBYE_AFTER - 1)), characterId: 'x' }, CLUSTERS[5]).id));
 check(seen6.size === 1 && seen6.has('free'), `cluster 6 plays its own three rungs (got ${[...seen6].join(', ')})`);
 
 const parts: Part[] = [{ kind: 'question', text: 'Un caffè?', en: 'A coffee?', gloss: '' }, { kind: 'answer', text: 'Sì, grazie.', en: 'Yes, thanks.', gloss: '' }];
@@ -114,7 +114,6 @@ check(/talk mostly in English/.test(setupText(CLUSTER_1[0], CLUSTER_1)) && /with
 check(/setup && onFrame\(cluster\)\n\s*\?[\s\S]*?runTurn\(\{[^\n]*brief: withBeats\(frameBrief\(cluster\)\), note: noteOf\(shape, setupLine\(setup\)\), answers: setup\.maxAnswers > 0/.test(readFileSync('lib/conversation/take-turn.ts', 'utf8')), 'clusters 1-3 run on the Intermediate reply with the cluster\'s brief, the setup line (with any shape and beat) on the newest message and the answers asked for (2026-11-11d)');
 check(onFrame(CLUSTER_1) && onFrame(CLUSTERS[2]) && !onFrame(CLUSTERS[3]) && frameBrief(CLUSTERS[1]).startsWith(levelText(CLUSTERS[1])) && /only the first time they hear it/.test(levelText(CLUSTERS[1])) && /half in English/.test(levelText(CLUSTERS[2])), 'steps 2 and 3: the frame minus the English heard before, then half and half, on the one-line reply; the parts format from cluster 4');
 check(lineWithAnswers({ line: 'Mire. ¿Quiere ver?', en: 'Look. Do you want to see?', answers: [] }, RUNGS.find((x) => x.id === 'two-en')!, CLUSTERS[2]).line === 'Mire. ¿Quiere ver?' && /Do you want to see\?$/.test(lineWithAnswers({ line: 'Mire. ¿Quiere ver?', en: 'Look. Do you want to see?', answers: [] }, RUNGS.find((x) => x.id === 'two-en')!, CLUSTERS[1]).line), 'the question\'s English is said after it in clusters 1-2, not from cluster 3');
-check(pickSetup({ conversationId: 'c', turn: 4, characterId: 'x', goodbyeAt: 4 }).id === 'goodbye' && pickSetup({ conversationId: 'c', turn: 8, characterId: 'x', goodbyeAt: 4 }).id !== 'goodbye', 'with beats the goodbye is offered on the turn after the last beat, not the 8th');
 // Cluster 1's brief: the frame, the answer rules and the one-line format with answers; the setup line is not in it (it goes on the newest message)
 check(cluster1Brief().startsWith(levelText(CLUSTER_1)) && /When you offer answers/.test(cluster1Brief()) && /"answers"/.test(cluster1Brief()) && !/This turn/.test(cluster1Brief()) && !/\{language\}/.test(cluster1Brief()), 'cluster 1 brief: the Level 1 frame, then the answer rules and the line-and-answers format, every placeholder filled');
 // The one-line reply's answers become answer parts: capped at the setup's count, blank ones dropped, the question's English after the line
@@ -140,7 +139,7 @@ check(shownParts(pre, RUNGS.find((r) => r.id === 'invite-en')!, CLUSTERS[3]).len
 check(questionEcho([{ kind: 'question', text: '¿Le gusta?', en: 'Do you like it?', gloss: 'you can answer in English' }])[1].text === 'Do you like it?', 'the echo is the question\'s full English, not whatever is in its gloss');
 const twice = shownParts([{ kind: 'question', text: '¿Quiere saber algo del barrio? You can ask me anything.', en: 'Do you want to know anything about the barrio? You can ask me anything.', gloss: '' }], RUNGS.find((r) => r.id === 'invite-en')!, CLUSTER_1);
 check(!twice.some((x) => x.kind === 'english' && /^You can ask me in English or/.test(x.text)), 'the invitation isn\'t added when the character already gave it');
-check(pickSetup({ conversationId: 'c', turn: 8, characterId: 'x' }).id === 'goodbye' && pickSetup({ conversationId: 'c', turn: 7, characterId: 'x' }).id !== 'goodbye' && pickSetup({ conversationId: 'c', turn: 9, characterId: 'x' }).id !== 'goodbye' && pickSetup({ conversationId: 'c', turn: 12, characterId: 'x' }).id !== 'goodbye', 'the goodbye is offered once, on the 8th turn, not on every turn after it (Chuy)');
+check(pickSetup({ conversationId: 'c', turn: 7, characterId: 'x' }).id === 'goodbye' && pickSetup({ conversationId: 'c', turn: 6, characterId: 'x' }).id !== 'goodbye' && pickSetup({ conversationId: 'c', turn: 8, characterId: 'x' }).id !== 'goodbye' && pickSetup({ conversationId: 'c', turn: 12, characterId: 'x' }).id !== 'goodbye', 'the goodbye is offered once, on the 7th turn (Josh, 2026-11-12), not on every turn after it (Chuy)');
 check(setupText(GOODBYE).includes('goodbye'), 'the goodbye setup line comes from scaffolding.md');
 const noAsk = shownParts([{ kind: 'question', text: '¿De dónde es usted?', en: 'Where are you from?', gloss: '' }], RUNGS.find((r) => r.id === 'ask-en')!, CLUSTER_1);
 check(noAsk.some((x) => x.kind === 'english' && /ask me in English or/.test(x.text)), 'questions to ask with none given becomes an invitation to ask');
@@ -163,7 +162,7 @@ check(glossAll([{ kind: 'word', text: 'Vengo al Zócalo cada tarde.', en: 'I com
 check(glossAll([{ kind: 'word', text: 'Buenas tardes.', en: 'Good afternoon.', gloss: 'Good afternoon.' }])[0].gloss === 'Good afternoon.', 'pattern B: a full gloss is kept');
 // The setup mix (Renata, 2026-11-10)
 {
-  const picks = Array.from({ length: 400 }, (_, i) => pickSetup({ conversationId: `mix-${i}`, turn: 1 + (i % 7), characterId: 'x' }, CLUSTER_1).id);
+  const picks = Array.from({ length: 400 }, (_, i) => pickSetup({ conversationId: `mix-${i}`, turn: 1 + (i % (GOODBYE_AFTER - 1)), characterId: 'x' }, CLUSTER_1).id);
   const share = (id: string) => picks.filter((x) => x === id).length / picks.length;
   check(share('two-en') > 0.5 && share('ask-en') < 0.35, `two answers most of the time, questions to ask now and then (2026-11-11c: never three of a kind running) (two ${share('two-en').toFixed(2)}, ask ${share('ask-en').toFixed(2)}, invite ${share('invite-en').toFixed(2)})`);
   let twice = 0;

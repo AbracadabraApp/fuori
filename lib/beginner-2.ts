@@ -57,12 +57,13 @@ export const RUNGS: Setup[] = [
 const R = (id: string) => RUNGS.find((r) => r.id === id)!;
 
 /**
- * The goodbye offered once, on the learner's 8th turn (docs/beginner-2.md: "offered after about 8 turns or when they say
- * it"). Once, not on every turn from the 8th: Chuy (2026-11-10) played the goodbye setup ten turns in a row over whatever
- * the learner said. Their goodbye, whenever it comes, ends the conversation through the reply's done flag
+ * The goodbye offered once, on the learner's 7th turn (Josh, 2026-11-12: closing when the talk is done would be best, a
+ * fixed turn "good enough, change 8 to 7"; it was the 8th, or the turn after the intro's last beat, 2026-11-11d). Once,
+ * not on every turn from then: Chuy (2026-11-10) played the goodbye setup ten turns in a row over whatever the learner
+ * said. Their goodbye, whenever it comes, ends the conversation through the reply's done flag
  */
 export const GOODBYE: Setup = { id: 'goodbye', block: 'Setup: goodbye', maxAnswers: 2, english: true };
-export const GOODBYE_AFTER = 8;
+export const GOODBYE_AFTER = 7;
 
 /** The first turn: the place, not the person (Doña Carmen, 2026-11-10: "¿Usted es de aquí?… ¿Es porque veo africano?") */
 export const OPENER: Setup = { id: 'opener', block: 'Setup: opener', maxAnswers: 2, english: true };
@@ -137,8 +138,8 @@ function weighted(cluster: Setup[], key: string, not?: string): Setup {
   return from[0];
 }
 
-export function pickSetup(p: { conversationId?: string | null; turn: number; learnerId?: string | null; characterId: string; now?: Date; /** what the learner just said: after their own question, no invitation (the character follows it up) */ learnerSaid?: string; /** the turn the goodbye is offered on: after the intro's last beat (lib/shapes.ts → beatFor), else the 8th */ goodbyeAt?: number }, cluster: Setup[] = CLUSTER_1): Setup {
-  if (p.turn === (p.goodbyeAt ?? GOODBYE_AFTER)) return GOODBYE;
+export function pickSetup(p: { conversationId?: string | null; turn: number; learnerId?: string | null; characterId: string; now?: Date; /** what the learner just said: after their own question, no invitation (the character follows it up) */ learnerSaid?: string }, cluster: Setup[] = CLUSTER_1): Setup {
+  if (p.turn === GOODBYE_AFTER) return GOODBYE;
   // The opener is two answers to read when the cluster has them (Arturo, 2026-11-09: an invited-English opener set a pattern the character copied all visit)
   if (p.turn === 0 && cluster.some((s) => s.id === 'two-en')) return OPENER;
   const day = (p.now ?? new Date()).toISOString().slice(0, 10);

@@ -2,6 +2,10 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../intro.md`.
 
+### 2026-11-12a: the beats aren't "taken up one at a time"
+- **Changed:** both Reply blocks said of the beats "the visit's later turns take them up one at a time"; the Beats block (11e) says "not a list to work through". Now: "you'll have them for the rest of the visit".
+- **Why and prompted by:** a leftover of the per-turn beat note removed in shapes.md 11d, contradicting the Beats block in the same prompt (docs/dialogue-plan.md 1.3). Wording only; on Josh's go for the plan, 2026-11-12.
+
 ### 2026-11-11e: the beats given to the character once, not one a turn
 - **Added:** "Beats": one line in the system prompt of every turn after the intro, at every level: what was set out, to come back to when the talk gives a reason, in any order, "not a list to work through". Replaces the per-turn "say one more thing about {beat}" note (shapes.md 11c, removed in 11d).
 - **Why:** the cloud session's point, agreed by Josh ("go"): a note on every turn makes every turn the same turn, and a prescribed topic makes it worse; a character writing by habit varies (Nunzio), one following a per-turn instruction performs it. The beats stay, as material the character has, not as orders.

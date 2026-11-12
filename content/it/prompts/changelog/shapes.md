@@ -2,6 +2,10 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../shapes.md`.
 
+### 2026-11-12a: "Shape: close" removed; the goodbye on the 7th turn
+- **Removed:** "Shape: close" ("You've covered what you set out at the start: wind down warmly…"), played at Beginner 2 on the turn after the intro's last beat. Since 11d the beats are no longer taken up one a turn, so the turn after the beat count said "you've covered what you set out" whether it had or not, at turn 4 or 5. Beginner 2's goodbye setup is now offered once on the learner's 7th turn (lib/beginner-2.ts → GOODBYE_AFTER, was 8), with or without beats. Answer first is the one shape left.
+- **Why and prompted by:** the dialogue inventory (docs/dialogue-plan.md 1.2); Josh, 2026-11-12, on how a Beginner visit should end: closing when the talk is done is best ("c - good"), a fixed turn "good enough, change 8 to 7". Closing when the talk is done stays in the plan (5.3).
+
 ### 2026-11-11d: the thread and the beat removed; the director speaks only when something happens
 - **Removed:** "Shape: thread" and "Shape: beat". After the intro, no note on a turn unless a signal fires: a question from the learner (answer first), and at Beginner 2 the close after the last beat (with the goodbye setup) and the answers setup the turn already carries. The intro's beats go to the character once, in the system prompt (intro.md 11e → Beats).
 - **Why:** the quiet default of § 11 (docs/dialogue-structure-reference.md), restored: a note on every turn makes every turn the same turn (Elena's visit; Beginner 1's history); the beats as a per-turn order made it worse. Josh, 2026-11-11: "go".

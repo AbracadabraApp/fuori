@@ -115,7 +115,7 @@ await pool(VISITS.map((v) => async () => {
     for (let i = 0; i < REPLIES; i++) {
       const learnerSaid = fixed ? fixed[i] : i === 0 ? first : await write(kinds[i], lastLine);
       const npcTurns = transcript.filter((t) => t.who === 'npc').length;
-      const shapes = pickShapes({ learnerSaid, beats: opening.beats, turnAfterIntro: npcTurns, beginner2: false });
+      const shapes = pickShapes({ learnerSaid });
       const row: Row = { visit: v.id, character: character.name, characterId: character.id, arm, take: k + 1, turn: i + 1, learnerSaid, kind: fixed ? 'josh' : kinds[i], line: '', en: '', shape: shapeIds(shapes), ms: 0 };
       rows.push(row);
       const laps = new Laps();
