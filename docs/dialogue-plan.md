@@ -93,6 +93,8 @@ After step 6 nothing: the level up is never offered at the top, and nothing move
 - **Step 5:** answers in the language only, no English under them (ladder rung 5: choosing means understanding both). English only when asked.
 - **Step 6:** no answers; their own words. The level up's next offer is Intermediate.
 
+**The question's English as a ladder (Josh, 2026-11-12, "yes", through the screen session):** printed and spoken at steps 1–3, spoken only at 4–5 (her bubble shows the question in the language alone), neither from step 6. Josh's worry about today's code: all of the question's English goes at once at step 4 ("deep water"). Today step 3 already drops it (`QUESTION_ECHO_FRAME` = [true, true, false]; Level 2: "give its English only when it's a new kind of question"), so the ladder changes step 3 (back to printed and spoken) as well as 4–6. Part of 5.4 from here; the screen session has handed step 3 over.
+
 **To give it more fidelity before deciding**, which you choose: (a) hear today's steps 4–6 as they'd play now, one visit each with the auto-responder, as audio; (b) hear the direction above, written as Level texts on the one-line reply, against (a). Either is about 15 minutes of listening; (b) is a prompt comparison, so it needs a card.
 
 ## Phase 6: the documentation, once items above are done or decided
