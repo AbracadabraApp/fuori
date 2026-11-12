@@ -112,7 +112,7 @@ function seedOf(s: string): number {
 /** Invitations to be curious (questions to ask, an invitation to ask): rarer than answers, never twice running (Renata, 2026-11-10) */
 const INVITES = new Set(['ask-en', 'invite-en']);
 /** How often each setup comes up in its cluster: two answers three times as often as either invitation */
-const WEIGHT: Record<string, number> = { 'two-en': 3, notice: 2, 'ask-en': 1, 'invite-en': 1, free: 2 };
+const WEIGHT: Record<string, number> = { 'two-en': 3, notice: 1, 'ask-en': 1, 'invite-en': 1, free: 2 };
 
 /** The seeded pick by weight, before the rules about the turn before; `not`: a setup left out of the draw */
 function weighted(cluster: Setup[], key: string, not?: string): Setup {
@@ -143,6 +143,8 @@ export function pickSetup(p: { conversationId?: string | null; turn: number; lea
     let w = weighted(cluster, key(turn), cluster.length > 1 && p1 && p2 && p1.id === p2.id ? p1.id : undefined);
     // Renata (2026-11-10): the same invitation every other turn; an invitation never follows an invitation
     if (INVITES.has(w.id) && p1 && INVITES.has(p1.id)) w = cluster.find((s) => !INVITES.has(s.id)) ?? w;
+    // Notice never twice running (2026-11-12, a replay of Raymundo's visit: the same arches and "¿Los ve?" on two turns in a row)
+    if (w.id === 'notice' && p1?.id === 'notice') w = cluster.find((s) => s.id === 'two-en') ?? w;
     chain.set(turn, w);
     return w;
   };

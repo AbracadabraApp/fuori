@@ -2,6 +2,16 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
 
+### 2026-11-12f: Notice points at something not shown yet, and never comes twice running
+- **Changed, Setup: notice:** "something they can see right now" → "something they can see right now that you haven't shown them yet". In code (lib/beginner-2.ts): Notice's weight 2 → 1 (as questions to ask), and never twice running.
+- **Why:** a replay of Josh's Raymundo visit (409863b2) through 12e drew Notice on 3 of 5 middle turns, two in a row, each the same stone arches and "¿Los ve? Do you see them?": the Dora repetition again in a new shape.
+- **Prompted by:** the check of 12d/12e on Josh's visits, 2026-11-12, the same day as 12d.
+
+### 2026-11-12e: the visit winds down when the talk is done, not only on the 7th turn
+- **Changed, Answers:** "When the talk winds down, offer the goodbye as a phrase they can say." → "When the talk has run its course (what they came for is done, or there's nothing more to it), that comes before this turn's note: wind down warmly, with nothing new, and make your two answers ways to say goodbye." The goodbye setup on the learner's 7th turn (lib/beginner-2.ts → GOODBYE_AFTER) stays as the fallback.
+- **Why:** each turn's setup note ("give them two short answers about what's here") overrode the standing line, so a Beginner visit wound down only when code said so. Josh, 2026-11-12, on how a visit should end: closing when the talk is done is best ("c - good"); the fixed turn was "good enough". The talk's course is the character's judgment, which works in any language; code can't see it.
+- **Prompted by:** docs/dialogue-plan.md, "Closing a visit when the talk is done"; Josh, 2026-11-12: approved. Steps 1–6 of the Beginner; Intermediate unchanged (it ends on the learner's goodbye).
+
 ### 2026-11-12d: a new kind of question at steps 1–3, Notice
 - **Added:** "Setup: notice" ("point them at something they can see right now and ask whether they see it or what they make of it, and give them two short answers they could say back"), drawn in the rotation at steps 1–3 beside two answers and questions to ask (lib/beginner-2.ts: rung `notice`, weight 2 against two answers' 3 and questions to ask's 1; never the same three times running, as before).
 - **Why:** nearly every Beginner question was "this or that?" (Josh, 2026-11-11: "no variation. It's like Dora the Explorer"); his bids model asks for variety in the kind of bid (docs/dialogue-structure-reference.md § 1a, § 2a: "Notice or do"). A question about what the learner can see presses harder for a reply than one about the character (Stivers and Rossano, in § 1a), and ties the language to the scene. The first of the menu's new kinds, played before the next.

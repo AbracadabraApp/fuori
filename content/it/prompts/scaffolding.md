@@ -1,6 +1,6 @@
 # Scaffolding (Beginner 2)
 
-version: 2026-11-12d
+version: 2026-11-12f
 
 Everything that helps a Beginner take part, kept apart from the dialogue
 (Josh, 2026-11-09: "I want to be able to adjust scaffolding without touching
@@ -24,7 +24,7 @@ If they ask for help in English, help as you would anyway.
 ```
 When you offer answers: one idea each, as short as a local would say it. When an answer is about them and you don't know it yet, leave that part blank as …; never make it up. Say each thing once.
 
-When the talk winds down, offer the goodbye as a phrase they can say. Their goodbye ends the conversation.
+When the talk has run its course (what they came for is done, or there's nothing more to it), that comes before this turn's note: wind down warmly, with nothing new, and make your two answers ways to say goodbye. Their goodbye ends the conversation.
 ```
 
 ## System prompt › Reply: parts format
@@ -61,7 +61,7 @@ This turn, ask about what's here or what you're doing, and give them two short a
 ## Setup: notice
 
 ```
-This turn, point them at something they can see right now and ask whether they see it or what they make of it, and give them two short answers they could say back.
+This turn, point them at something they can see right now that you haven't shown them yet, and ask whether they see it or what they make of it, and give them two short answers they could say back.
 ```
 
 ## Setup: one answer
