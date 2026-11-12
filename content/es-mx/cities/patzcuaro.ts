@@ -6,7 +6,6 @@ export const patzcuaro: CityPantry = {
   id: 'patzcuaro',
   name: 'Pátzcuaro',
   region: 'Michoacán',
-  hidden: true,
   neighbourhoods: ['Centro', 'Muelle General', 'Janitzio', 'Tzintzuntzan'],
   places: [
     {

@@ -6,7 +6,6 @@ export const guanajuato: CityPantry = {
   id: 'guanajuato',
   name: 'Guanajuato',
   region: 'Guanajuato',
-  hidden: true,
   neighbourhoods: ['Centro', 'El Pípila', 'Valenciana'],
   places: [
     {

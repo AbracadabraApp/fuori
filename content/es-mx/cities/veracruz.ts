@@ -8,7 +8,6 @@ export const veracruz: CityPantry = {
   id: 'veracruz',
   name: 'Veracruz',
   region: 'Veracruz',
-  hidden: true,
   neighbourhoods: ['Centro', 'Malecón', 'La Huaca', 'Boca del Río'],
   places: [
     {

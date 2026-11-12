@@ -6,7 +6,6 @@ export const sanCristobalDeLasCasas: CityPantry = {
   id: 'san-cristobal-de-las-casas',
   name: 'San Cristóbal de las Casas',
   region: 'Chiapas',
-  hidden: true,
   neighbourhoods: ['Centro', 'Santo Domingo', 'Barrio de Guadalupe', 'San Juan Chamula'],
   places: [
     {

@@ -6,7 +6,6 @@ export const merida: CityPantry = {
   id: 'merida',
   name: 'Mérida',
   region: 'Yucatán',
-  hidden: true,
   neighbourhoods: ['Centro', 'Santa Lucía', 'Santiago', 'Paseo de Montejo'],
   places: [
     {
