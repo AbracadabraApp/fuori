@@ -4,7 +4,7 @@
 // prompt file, the language-only rung hides the answers' English, the turn
 // code takes the switch, and Beginner 2 turns don't move the Beginner 1 path.
 import { readFileSync } from 'fs';
-import { beginnerVersionFrom, pickSetup, setupText, levelText, setupLine, fullerGlosses, shownParts, shapeParts, turnSteps, beginner2Version, glossAll, questionEcho, GOODBYE, OPENER, CLUSTER_1, CLUSTERS, RUNGS, clusterFrom, stretchesOf, withSummaries, summaryPrompt, MAX_STRETCH_WORDS, MAX_STRETCH_SENTENCES, GLOSS_ALL, flowingLine, withQuestionEnglish, cluster1Brief, lineWithAnswers, questionOf } from '@/lib/beginner-2';
+import { beginnerVersionFrom, pickSetup, setupText, levelText, setupLine, fullerGlosses, shownParts, shapeParts, turnSteps, beginner2Version, glossAll, questionEcho, GOODBYE, OPENER, CLUSTER_1, CLUSTERS, RUNGS, clusterFrom, stretchesOf, withSummaries, summaryPrompt, MAX_STRETCH_WORDS, MAX_STRETCH_SENTENCES, GLOSS_ALL, flowingLine, withQuestionEnglish, cluster1Brief, frameBrief, onFrame, lineWithAnswers, questionOf } from '@/lib/beginner-2';
 import { stageInVersion } from '@/lib/conversation-record';
 import { lineFromParts, type Part } from '@/lib/beginner';
 import { buildBeginnerPrompt, SCAFFOLDING_FILE, dialogueWithoutFormat } from '@/lib/beginner';
@@ -73,7 +73,7 @@ const day = new Date('2026-11-09T10:00:00Z');
 check(pickSetup({ turn: 0, learnerId: 'L', characterId: 'luisa', now: day }).id === pickSetup({ turn: 0, learnerId: 'L', characterId: 'luisa', now: day }).id, 'an opening is seeded by learner, place and day');
 
 for (const setup of RUNGS) check(setupText(setup).includes('This turn,') && !/\{\w+\}/.test(setupText(setup)), `${setup.block}: its line is read from scaffolding.md, filled`);
-check(setupText(CLUSTER_1[0], CLUSTER_1).startsWith("They have no") && setupText(CLUSTERS[2][0], CLUSTERS[2]).startsWith('Where they are now: they know a little') && setupText(CLUSTERS[5][0], CLUSTERS[5]).startsWith('Where they are now: finding their feet'), 'each cluster gets its level text (S1, S2, S3) before the setup');
+check(setupText(CLUSTER_1[0], CLUSTER_1).startsWith("They have no") && setupText(CLUSTERS[2][0], CLUSTERS[2]).startsWith('They can follow simple') && setupText(CLUSTERS[5][0], CLUSTERS[5]).startsWith('Where they are now: finding their feet'), 'each cluster gets its level text (S1, S2, S3) before the setup');
 check(!/Every turn has some English|When you first see them|explain something in English when it helps/.test(readFileSync(`content/${process.env.COUNTRY ?? 'it'}/prompts/scaffolding.md`, 'utf8')), 'the English lines added one per play are gone from the prompt');
 check(CLUSTERS.length === 6, 'six clusters');
 check(CLUSTERS.flat().filter((r) => !r.inside).every((r) => r.maxAnswers === 0 || (r.maxAnswers === 2 && r.english)), 'bubbles are two, always with English (Josh: reading Spanish you don\'t understand is coercive; one answer feels weird)');
@@ -110,7 +110,10 @@ check(g1[1].gloss === 'I paint here every day.' && g1[3].gloss === 'Do you like 
 check(g1[2].gloss === '', 'glossAll: not when the turn\'s own English already said it');
 check(shownParts(para, CLUSTER_1[0], CLUSTER_1)[1].gloss === '' && shownParts(para, CLUSTERS[1][0], CLUSTERS[1])[1].gloss === '', 'no cluster adds the literal English after each phrase by code (2026-11-10q: the frame carries it)');
 check(/talk mostly in English/.test(setupText(CLUSTER_1[0], CLUSTER_1)) && /with its English beside it/.test(setupText(CLUSTER_1[0], CLUSTER_1)) && !/word part/.test(levelText(CLUSTER_1)) && !/say it again/.test(setupText(CLUSTER_1[0], CLUSTER_1)), 'Level 1 is the frame brief as the list used it: one line, no parts, each phrase with its English, no sandwich repeat (Josh: weird)');
-check(/setup && cluster === CLUSTER_1\n\s*\?[\s\S]*?runTurn\(\{[^\n]*brief: cluster1Brief\(\), note: noteOf\(shape, setupLine\(setup\)\), answers: setup\.maxAnswers > 0/.test(readFileSync('lib/conversation/take-turn.ts', 'utf8')), 'cluster 1 runs on the Intermediate reply with the Level 1 brief, the setup line (with any shape) on the newest message and the answers asked for (2026-11-11a)');
+check(/setup && onFrame\(cluster\)\n\s*\?[\s\S]*?runTurn\(\{[^\n]*brief: frameBrief\(cluster\), note: noteOf\(shape, setupLine\(setup\), beatText\), answers: setup\.maxAnswers > 0/.test(readFileSync('lib/conversation/take-turn.ts', 'utf8')), 'clusters 1-3 run on the Intermediate reply with the cluster\'s brief, the setup line (with any shape and beat) on the newest message and the answers asked for (2026-11-11d)');
+check(onFrame(CLUSTER_1) && onFrame(CLUSTERS[2]) && !onFrame(CLUSTERS[3]) && frameBrief(CLUSTERS[1]).startsWith(levelText(CLUSTERS[1])) && /only the first time they hear it/.test(levelText(CLUSTERS[1])) && /half in English/.test(levelText(CLUSTERS[2])), 'steps 2 and 3: the frame minus the English heard before, then half and half, on the one-line reply; the parts format from cluster 4');
+check(lineWithAnswers({ line: 'Mire. ¿Quiere ver?', en: 'Look. Do you want to see?', answers: [] }, RUNGS.find((x) => x.id === 'two-en')!, CLUSTERS[2]).line === 'Mire. ¿Quiere ver?' && /Do you want to see\?$/.test(lineWithAnswers({ line: 'Mire. ¿Quiere ver?', en: 'Look. Do you want to see?', answers: [] }, RUNGS.find((x) => x.id === 'two-en')!, CLUSTERS[1]).line), 'the question\'s English is said after it in clusters 1-2, not from cluster 3');
+check(pickSetup({ conversationId: 'c', turn: 4, characterId: 'x', goodbyeAt: 4 }).id === 'goodbye' && pickSetup({ conversationId: 'c', turn: 8, characterId: 'x', goodbyeAt: 4 }).id !== 'goodbye', 'with beats the goodbye is offered on the turn after the last beat, not the 8th');
 // Cluster 1's brief: the frame, the answer rules and the one-line format with answers; the setup line is not in it (it goes on the newest message)
 check(cluster1Brief().startsWith(levelText(CLUSTER_1)) && /When you offer answers/.test(cluster1Brief()) && /"answers"/.test(cluster1Brief()) && !/This turn/.test(cluster1Brief()) && !/\{language\}/.test(cluster1Brief()), 'cluster 1 brief: the Level 1 frame, then the answer rules and the line-and-answers format, every placeholder filled');
 // The one-line reply's answers become answer parts: capped at the setup's count, blank ones dropped, the question's English after the line
@@ -121,7 +124,7 @@ check(cluster1Brief().startsWith(levelText(CLUSTER_1)) && /When you offer answer
   check(out.line.endsWith('¿Quiere una boleada? Do you want a shine?') && out.en === r.en && out.done === false, 'lineWithAnswers: the question\'s English after the line, en and done kept');
   check(lineWithAnswers({ line: 'Ecco.', en: 'Here.' }, RUNGS.find((x) => x.id === 'free')!).parts.length === 0, 'lineWithAnswers: a setup with no answers gives none');
 }
-check(/as little as needed/.test(setupText(CLUSTERS[1][0], CLUSTERS[1])), 'Level 1b (cluster 2) is C');
+check(/only the first time they hear it/.test(setupText(CLUSTERS[1][0], CLUSTERS[1])), 'Level 1b (cluster 2) is step 2: the frame minus the English heard before (2026-11-11d)');
 const inv = shownParts([{ kind: 'english', text: 'Sit anywhere.', en: '', gloss: '' }, { kind: 'question', text: '¿Es su primera vez en Puebla?', en: 'Is it your first time in Puebla?', gloss: '' }], RUNGS.find((r) => r.id === 'invite-en')!, CLUSTER_1);
 { const qi = inv.findIndex((x) => x.kind === 'question'); check(inv[qi + 1]?.text === 'Is it your first time in Puebla?' && inv[inv.length - 1].kind === 'english' && /ask me in English or/.test(inv[inv.length - 1].text), 'the invitation to ask is said, in code'); }
 check(shownParts(para, CLUSTERS[3][0], CLUSTERS[3])[1].gloss === '', 'later clusters leave glossing to the character');
@@ -152,7 +155,7 @@ check(fuller[0].gloss === "I'm preparing the candles." && fuller[1].gloss === 'c
   check(built.messages[built.messages.length - 1].content.endsWith(`(${setupLine(RUNGS[0])})`) && !built.system.includes(setupLine(RUNGS[0])), 'the setup line is said next to the latest message, not in the system prompt');
   check(built.system.includes(levelText(CLUSTER_1)), 'the level text stays in the system prompt');
 }
-check(/turnNote: noteOf\(shape, setupLine\(setup\)\)/.test(readFileSync('lib/conversation/take-turn.ts', 'utf8')), 'the game puts the setup (with any shape) next to the latest message');
+check(/turnNote: noteOf\(shape, setupLine\(setup\), beatText\)/.test(readFileSync('lib/conversation/take-turn.ts', 'utf8')), 'the game puts the setup (with any shape and beat) next to the latest message');
 const stored = exchangeTurns({ reply: { line: 'x', en: 'y', parts: [{ kind: 'word', text: 'Preparo las velas.', en: 'I prepare the candles.', gloss: 'preparing the candles' }] } } as never, new Date().toISOString());
 check((stored[0] as { parts?: { gloss?: string; en?: string }[] }).parts?.[0].gloss === 'preparing the candles' && (stored[0] as { parts?: { en?: string }[] }).parts?.[0].en === 'I prepare the candles.', 'stored parts keep their gloss and English');
 check(glossAll([{ kind: 'word', text: 'Vengo al Zócalo cada tarde.', en: 'I come to the Zócalo every afternoon.', gloss: 'every afternoon' }])[0].gloss === 'I come to the Zócalo every afternoon.', 'pattern B: a clipped gloss becomes the full English');

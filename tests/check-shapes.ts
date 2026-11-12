@@ -3,7 +3,7 @@
 import { readFileSync } from 'node:fs';
 import { cities, language } from '@/content';
 import { characterForPlace } from '@/lib/characters/for-place';
-import { pickShape, pickShapes, shapeNote, noteOf, shapeIds, ANSWER_FIRST, THREAD, askedSomething } from '@/lib/shapes';
+import { pickShape, pickShapes, shapeNote, noteOf, shapeIds, beatFor, ANSWER_FIRST, THREAD, BEAT, CLOSE, askedSomething } from '@/lib/shapes';
 import { buildIntroPrompt, introLine, IntroWatcher } from '@/lib/intro';
 import { GOODBYE_AFTER, pickSetup } from '@/lib/beginner-2';
 
@@ -17,6 +17,12 @@ check(pickShape({ learnerSaid: 'Un caffè, per favore.' }) === null && pickShape
 // After the intro: the thread, then answer-first when they asked; recorded as "thread+answer-first"
 check(pickShapes({ learnerSaid: 'Sí.', afterIntro: true }).map((s) => s.id).join('+') === 'thread' && shapeIds(pickShapes({ learnerSaid: '¿Por qué?', afterIntro: true })) === 'thread+answer-first' && shapeIds([]) === undefined, 'after the intro every turn carries the thread; a question adds answer-first');
 check(/stay with what you opened the visit with/.test(shapeNote(THREAD)) && noteOf([THREAD, ANSWER_FIRST], 'This turn, X.') === `${shapeNote(THREAD)} ${shapeNote(ANSWER_FIRST)} This turn, X.`, 'the thread line comes from shapes.md and joins before answer-first and the setup');
+// The intro's beats: one a turn in order, the close after the last (Beginner 2 only), nothing past it; the beat is named in the note
+const beats = ['la piña', 'el borde crujiente', 'el día seco'];
+check(beatFor(beats, 1) === 'la piña' && beatFor(beats, 3) === 'el día seco' && beatFor(beats, 4) === 'close' && beatFor(beats, 5) === undefined && beatFor(undefined, 1) === undefined && beatFor(beats, 0) === undefined, 'beatFor: the beats in order, then the close, then nothing');
+check(shapeIds(pickShapes({ afterIntro: true, beats, turnAfterIntro: 2, beginner2: true })) === 'beat' && shapeIds(pickShapes({ afterIntro: true, beats, turnAfterIntro: 4, learnerSaid: '¿Y usted?', beginner2: true })) === 'close+answer-first' && shapeIds(pickShapes({ afterIntro: true, beats, turnAfterIntro: 6, beginner2: true })) === 'thread', 'Beginner 2: the beat, then the close, then the plain thread');
+check(shapeIds(pickShapes({ afterIntro: true, beats, turnAfterIntro: 2 })) === 'beat' && shapeIds(pickShapes({ afterIntro: true, beats, turnAfterIntro: 4 })) === undefined && shapeIds(pickShapes({ afterIntro: true, beats, turnAfterIntro: 9, learnerSaid: 'Perché?' })) === 'answer-first' && shapeIds(pickShapes({ afterIntro: true, turnAfterIntro: 3 })) === 'thread', 'Intermediate: the beats, then nothing (no wind-down: Nunzio ran 14 turns); the plain thread only when the opening left no beats');
+check(noteOf([BEAT], 'This turn, X.', 'la piña') === `Pick up what they just said, then say one more thing about la piña, then ask. This turn, X.` && !/\{beat\}/.test(shapeNote(CLOSE)), 'the beat note names the beat; the close has no placeholder');
 
 // Notes: the shape's line, joined before the setup line; nothing when neither
 check(/^Answer what they asked first/.test(shapeNote(ANSWER_FIRST)) && !/\{/.test(shapeNote(ANSWER_FIRST)), 'the answer-first line comes from shapes.md, filled');
@@ -33,7 +39,7 @@ const c = characterForPlace(city, place)!;
 const plain = buildIntroPrompt({ character: c, answers: false });
 const withAnswers = buildIntroPrompt({ character: c, answers: true, addressedAs: 'f', memory: { visits: 1, lastVisit: new Date(), notes: ['Had a coffee', 'Asked about the market'] } });
 check(plain.system.includes(c.name) && plain.system.includes(place.name), `the intro prompt names ${c.name} and ${place.name}`);
-check(/four or five short sentences/.test(plain.system) && /picks up where you left off/.test(plain.system), 'the brief is in the system prompt');
+check(/four or five short sentences/.test(plain.system) && /picks up where you left off/.test(plain.system) && /"beats"/.test(plain.system), 'the brief and the beats format are in the system prompt');
 check(!/No more words after a question mark/.test(plain.system) && !/speech-to-text/.test(plain.system) && !/Respond with JSON:\s*\{ "line"/.test(plain.system), 'no turn rules, no dialogue rules, no line format: the intro has its own prompt');
 check(!/\{\w+\}/.test(plain.system) && !/\{\w+\}/.test(withAnswers.system), `every placeholder filled (got ${[...(plain.system + withAnswers.system).matchAll(/\{(\w+)\}/g)].map((m) => m[1]).join(', ') || 'none'})`);
 check(!/"answers"/.test(plain.system) && /"answers"/.test(withAnswers.system), 'the answers format only when answers are asked for (Beginner 2)');
@@ -60,7 +66,7 @@ check(introLine(sentences).line === 'Buenas tardes. ¿Quiere un lechero?' && int
 // The turn wiring: the intro on an opening, shapes on both paths, Beginner 1 untouched
 const tt = readFileSync('lib/conversation/take-turn.ts', 'utf8');
 check(/const shaped = !isTutor && !p\.lesson && !welcome && \(setup !== null \|\| onPath === null\)/.test(tt), 'shapes and the intro: ordinary visits at Intermediate or Beginner 2 only');
-check(/note: noteOf\(shape, setupLine\(setup\)\)/.test(tt) && /turnNote: noteOf\(shape, setupLine\(setup\)\)/.test(tt) && /note: noteOf\(shape\),/.test(tt), 'the shape note reaches cluster 1, the parts clusters and the Intermediate reply');
+check(/note: noteOf\(shape, setupLine\(setup\), beatText\)/.test(tt) && /turnNote: noteOf\(shape, setupLine\(setup\), beatText\)/.test(tt) && /note: noteOf\(shape, undefined, beatText\),/.test(tt), 'the shape note reaches cluster 1, the parts clusters and the Intermediate reply');
 
 if (problems.length) {
   console.error(`check-shapes: ${problems.length} problem(s)\n- ${problems.join('\n- ')}`);

@@ -1,6 +1,6 @@
 # Intro: how a visit opens
 
-version: 2026-11-11c
+version: 2026-11-11d
 
 The first turn of a visit (Josh's design, 2026-11-11, docs/dialogue-structure-
 reference.md § 0): the character opens in {language} with the thing the place
@@ -25,14 +25,14 @@ Someone has just come in, and you open the visit yourself, in {language}: first 
 
 ```
 Respond with JSON:
-{ "sentences": [ { "text": "one sentence, in {language}", "en": "its English, as a subtitle" } ] }
-One sentence per item, in the order you say them; the question is the last item.
+{ "sentences": [ { "text": "one sentence, in {language}", "en": "its English, as a subtitle" } ], "beats": [ "..." ] }
+One sentence per item, in the order you say them; the question is the last item. beats: the three or four things you set out, each named in a few words of {language} (the thing, not the sentence), in the order you said them; the visit's later turns take them up one at a time.
 ```
 
 ## Reply: sentences and answers
 
 ```
 Respond with JSON:
-{ "sentences": [ { "text": "one sentence, in {language}", "en": "its English, as a subtitle" } ], "answers": [ { "text": "what they can say back, in {language}", "en": "its English" } ] }
-One sentence per item, in the order you say them; the question is the last item. The answers are two short ways to answer your question, shown to them, not said by you.
+{ "sentences": [ { "text": "one sentence, in {language}", "en": "its English, as a subtitle" } ], "beats": [ "..." ], "answers": [ { "text": "what they can say back, in {language}", "en": "its English" } ] }
+One sentence per item, in the order you say them; the question is the last item. beats: the three or four things you set out, each named in a few words of {language} (the thing, not the sentence), in the order you said them; the visit's later turns take them up one at a time. The answers are two short ways to answer your question, shown to them, not said by you.
 ```

@@ -27,12 +27,14 @@ const introJsonSchema = (answers: boolean) => ({
   type: 'object',
   properties: {
     sentences: { type: 'array', description: 'What the character says, one sentence per item, the question last', items: sentenceSchema },
+    beats: { type: 'array', description: 'The three or four things set out, each named in a few words of the language, in order', items: { type: 'string' } },
     ...(answers ? { answers: { type: 'array', description: 'Two short answers to the question, in the language with their English', items: sentenceSchema } } : {}),
   },
-  required: answers ? ['sentences', 'answers'] : ['sentences'],
+  required: answers ? ['sentences', 'beats', 'answers'] : ['sentences', 'beats'],
 });
 const IntroSchema = z.object({
   sentences: z.array(z.object({ text: z.string(), en: z.string() })).min(1),
+  beats: z.array(z.string()).optional(),
   answers: z.array(z.object({ text: z.string(), en: z.string() })).optional(),
 });
 
@@ -109,7 +111,8 @@ export async function runIntro(p: IntroParams & { laps?: Laps; onText?: (snapsho
     .map((a) => ({ kind: 'answer' as const, text: a.text.trim(), en: a.en.trim(), gloss: '' }))
     .filter((a) => a.text)
     .slice(0, 2);
-  return { ...introLine(sentences), intro: sentences, done: false, ...(p.answers ? { parts: answers } : {}) };
+  const beats = (parsed.beats ?? []).map((b) => b.trim()).filter(Boolean).slice(0, 5);
+  return { ...introLine(sentences), intro: sentences, done: false, ...(beats.length ? { beats } : {}), ...(p.answers ? { parts: answers } : {}) };
 }
 
 /** The intro prompt's version, for the turn's record */

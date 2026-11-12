@@ -2,6 +2,10 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../shapes.md`.
 
+### 2026-11-11c: the beat, and the close after the last one
+- **Added:** "Shape: beat" ("Pick up what they just said, then say one more thing about {beat}, then ask"), sent instead of the thread line when the opening left beats (intro.md 11d): the turns after the intro take them up in order. "Shape: close" ("You've covered what you set out at the start: wind down warmly, with nothing new, and leave them room to say goodbye"), sent on the turn after the last beat at Beginner 2 only, where that turn also plays the goodbye setup (two goodbyes as answers) instead of the fixed 8th turn. At Intermediate the beats are taken up and then nothing: no wind-down, the character goes on by habit (Nunzio's 14-turn visit was the best stretch; a nudge at turn five would have cut it; caught by the cloud session before release).
+- **Why:** Josh, 2026-11-11: the intro sets the scene, the turns discuss it ("Lets do that"), and the visit is done when the thing is done, not at a count.
+
 ### 2026-11-11b: the thread, every turn after the intro
 - **Added:** "Shape: thread": "Pick up what they just said, stay with what you opened the visit with, add one thing to it, then ask." Sent on every turn after the intro of an ordinary visit (Intermediate and Beginner 2), joined before answer-first when both fire.
 - **Why:** Josh, 2026-11-11: "My thought was basically that the intro sets the scene, the following discusses it", confirmed as the thing to build ("I was referring to this"). The chat turns knew the intro only as the first lines of the transcript and reached for a new thing about the place each turn; Elena's visit stayed on the costumes by habit, Bar Alba did not. The reference's "Build on the thread" (T23), as one row. The quiet default stands for turns with no intro (the welcome, lessons, Beginner 1).

@@ -18,6 +18,7 @@ const show = (label: string, r: Awaited<ReturnType<typeof runIntro>>, t0: number
   console.log(`\n## ${label} · ${r.intro!.length} sentences, ${words(r.line)} words, ${took} ms`);
   for (const s of r.intro!) console.log(`${s.text}\n    ${s.en}`);
   if (r.parts?.length) console.log(`answers: ${r.parts.map((a) => `${a.text} (${a.en})`).join(' | ')}`);
+  console.log(`beats: ${(r.beats ?? []).join(' · ') || 'none'}`);
 };
 for (const { city, place } of chosen) {
   const character = characterForVisit(city.id, place.id)!;

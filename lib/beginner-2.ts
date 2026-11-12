@@ -137,8 +137,8 @@ function weighted(cluster: Setup[], key: string, not?: string): Setup {
   return from[0];
 }
 
-export function pickSetup(p: { conversationId?: string | null; turn: number; learnerId?: string | null; characterId: string; now?: Date; /** what the learner just said: after their own question, no invitation (the character follows it up) */ learnerSaid?: string }, cluster: Setup[] = CLUSTER_1): Setup {
-  if (p.turn === GOODBYE_AFTER) return GOODBYE;
+export function pickSetup(p: { conversationId?: string | null; turn: number; learnerId?: string | null; characterId: string; now?: Date; /** what the learner just said: after their own question, no invitation (the character follows it up) */ learnerSaid?: string; /** the turn the goodbye is offered on: after the intro's last beat (lib/shapes.ts → beatFor), else the 8th */ goodbyeAt?: number }, cluster: Setup[] = CLUSTER_1): Setup {
+  if (p.turn === (p.goodbyeAt ?? GOODBYE_AFTER)) return GOODBYE;
   // The opener is two answers to read when the cluster has them (Arturo, 2026-11-09: an invited-English opener set a pattern the character copied all visit)
   if (p.turn === 0 && cluster.some((s) => s.id === 'two-en')) return OPENER;
   const day = (p.now ?? new Date()).toISOString().slice(0, 10);
@@ -321,6 +321,8 @@ export function invited(parts: Part[]): Part[] {
 
 /** Clusters where the question is echoed in English right after it (Level 1) */
 export const QUESTION_ECHO = [true, true, false, false, false, false];
+/** On the one-line reply, the question's English is said after it in clusters 1–2; from cluster 3 only when the character gave it (Level 2) */
+export const QUESTION_ECHO_FRAME = [true, true, false];
 
 /**
  * Level 1: the question in the language, then its English right after (Josh, 2026-11-09: "questions
@@ -431,24 +433,34 @@ export function withQuestionEnglish(line: string, en: string): string {
  * come with the line. The setup line goes on the newest message (runTurn's note), where it did in the parts format
  */
 export function cluster1Brief(): string {
+  return frameBrief(CLUSTER_1);
+}
+
+/** The brief for a cluster on the one-line reply (clusters 1–3, 2026-11-11d: steps 1 to 3 of the ladder are the frame with less English each step) */
+export function frameBrief(cluster: Setup[]): string {
   const f = readPromptFile(SCAFFOLDING_FILE);
-  return [levelText(CLUSTER_1), f.block('System prompt › Answers'), f.block('Reply: line and answers')]
+  return [levelText(cluster), f.block('System prompt › Answers'), f.block('Reply: line and answers')]
     .map((b) => fill(b, { language: language.name }).trim())
     .join('\n\n');
 }
+
+/** Clusters that play on the one-line reply (the frame) rather than the parts format */
+export const FRAME_CLUSTERS = 3;
+export const onFrame = (cluster: Setup[]): boolean => Math.max(0, CLUSTERS.indexOf(cluster)) < FRAME_CLUSTERS;
 
 /**
  * The one-line reply with its answers as the app's parts: the line with the question's English after it
  * (withQuestionEnglish), and each answer as an answer part, at most the setup's count, blank ones dropped. The parts
  * carry only answers, so the app shows her line as the subtitle and the answers as bubbles on the learner's turn
  */
-export function lineWithAnswers(r: { line: string; en: string; done?: boolean; answers?: { text: string; en: string }[] }, setup: Setup): { line: string; en: string; done?: boolean; parts: Part[]; question?: { text: string; en: string } } {
+export function lineWithAnswers(r: { line: string; en: string; done?: boolean; answers?: { text: string; en: string }[] }, setup: Setup, cluster: Setup[] = CLUSTER_1): { line: string; en: string; done?: boolean; parts: Part[]; question?: { text: string; en: string } } {
   const answers = (r.answers ?? [])
     .map((a) => ({ kind: 'answer' as const, text: a.text.trim(), en: a.en.trim(), gloss: '' }))
     .filter((a) => a.text)
     .slice(0, setup.maxAnswers);
   const question = questionOf(r.line, r.en);
-  return { line: withQuestionEnglish(r.line, r.en), en: r.en, ...(r.done !== undefined ? { done: r.done } : {}), parts: answers, ...(question ? { question } : {}) };
+  const echo = QUESTION_ECHO_FRAME[Math.max(0, CLUSTERS.indexOf(cluster))] ?? false;
+  return { line: echo ? withQuestionEnglish(r.line, r.en) : r.line, en: r.en, ...(r.done !== undefined ? { done: r.done } : {}), parts: answers, ...(question ? { question } : {}) };
 }
 
 /**

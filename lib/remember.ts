@@ -124,11 +124,14 @@ export async function rememberConversation(
     }
 
     const out = await summarize({ character, notes: known.notes, turns: claim.turns });
+    // The told-ledger (intro.md 11d): what the opening set out, kept with the notes so the next intro picks something new
+    const told = (claim.turns as { beats?: string[] }[]).find((t) => t.beats?.length)?.beats ?? [];
+    const notes = told.length ? [...out.notes.filter((n) => !n.startsWith('Told them about:')).slice(0, 9), `Told them about: ${told.join('; ')}`] : out.notes;
     await saveConversationMemory({
       conversationId,
       learnerId,
       characterId: claim.characterId,
-      notes: out.notes,
+      notes,
       review: { ...out.review, promptVersion: memoryPromptVersion() },
       firstTime: claim.firstTime,
     });

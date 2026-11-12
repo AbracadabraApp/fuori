@@ -136,7 +136,7 @@ export async function POST(request: Request) {
     laps.lap('load');
 
     // Same checks as the web: the character from ids, sizes capped
-    const parsed = parseTurnRequest({ ...body.data, transcript: fitStoredTranscript(transcript.map(({ who, transcript, translation, offered }) => ({ who, transcript, translation, ...(offered ? { offered } : {}) }))) });
+    const parsed = parseTurnRequest({ ...body.data, transcript: fitStoredTranscript(transcript.map(({ who, transcript, translation, offered, beats }) => ({ who, transcript, translation, ...(offered ? { offered } : {}), ...(beats ? { beats } : {}) }))) });
     if (!parsed.ok) return apiError(parsed.status === 404 ? 'not_found' : 'bad_request', parsed.error);
     // Magda only teaches in lessons (Josh, 2026-11-07): outside a lesson she isn't there
     if (parsed.character.id === tutor.id && !body.data.lesson) return apiError('not_found', 'Magda only teaches in lessons');

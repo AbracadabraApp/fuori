@@ -2,6 +2,10 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../intro.md`.
 
+### 2026-11-11d: the intro names its beats
+- **Added:** both reply formats return `beats`: the three or four things the intro set out, each named in a few words of {language}, in order. Stored with the opening turn; each later turn's thread note names the next one ("say one more thing about {beat}"), the goodbye is offered after the last, and at the end of the visit they're written into the character's notes as what was told, so the next intro picks something new (the told-ledger).
+- **Why:** Josh, 2026-11-11: the intro sets the scene and the turns discuss it ("Lets do that"): the thread note alone was a nudge, not material; the turns circled the first thing or reached for new ones.
+
 ### 2026-11-11c: who they are first, and shorter
 - **Changed:** "six to eight short sentences, all about the thing your place is known for" → "first who you are, in one short sentence (your name, what you do here), then four or five short sentences about the thing your place is known for". Nothing else.
 - **Why:** Josh, 2026-11-11, after playing the live intros in Palermo: "Everything is basically too long"; "The character doesn't often introduce themselves". The intros ran 100–115 words; a learner met Elena for a whole visit without her name until the goodbye.

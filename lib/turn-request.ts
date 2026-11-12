@@ -33,6 +33,8 @@ const TurnRequestSchema = z.object({
         // The answers she offered (lib/recording.ts → loadConversationTurns), so the next turn's
         // heard note works (lib/dialogue/heard.ts); without it zod dropped them
         offered: z.array(z.string().max(MAX_LINE_CHARS)).max(4).optional(),
+        // The intro's beats (lib/intro.ts), on the opening turn: the later turns take them up one at a time
+        beats: z.array(z.string().max(120)).max(6).optional(),
       })
     )
     .max(MAX_TURNS)

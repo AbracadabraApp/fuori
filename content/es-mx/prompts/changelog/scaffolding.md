@@ -2,6 +2,10 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
 
+### 2026-11-11d: steps 2 and 3 of the ladder written: the frame without the English heard before, then half and half
+- **Changed:** "Level: 1b" (cluster 2, step 2) is the Level 1 frame minus the English after phrases heard before (the English only the first time, or for a new word that matters). "Level: 2" (clusters 3–4, step 3) is half {language} and half English in every turn, never a sentence followed by its own translation, the English after a phrase only when new, the question's English only for a new kind of question. Both run on the one-line reply with answers (`lib/conversation/take-turn.ts`: clusters 1–3 on `runTurn`, the parts format from cluster 4). The old texts were Beginner 1's S1 and S2 stages.
+- **Why:** Josh, 2026-11-11: "Steps 2 and 3 of the ladder… aren't written" after the level up shipped; a yes on the level-up screen played the old short-Spanish-sentences text. docs/beginner-2-step-2.md → Step 2's draft, and the ladder in docs/beginner-2.md.
+
 ### 2026-11-11c: three or four pieces of the language a turn
 - **Changed:** Level 1: "Two or three of them a turn" → "Three or four of them a turn". No other words. In code (`lib/beginner-2.ts`): cluster 1 never plays the same setup three times running (two answers, two questions to ask). An open question with no answers was added the same night and pulled before release (Josh: "difficult for this level: open question with no balloons").
 - **Why:** Josh, 2026-11-11, after playing the live build: "Would be good to get more of the spanish frame in the english"; and on the turns: "the answers are fine but no variation. It's like Dora the Explorer": every turn ended on a choice with two balloons. The rotation is the first cut of the palette of asks (docs/dialogue-structure-reference.md § 12.1).

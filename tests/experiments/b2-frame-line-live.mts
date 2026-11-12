@@ -4,7 +4,8 @@
 import { cities, language } from '@/content';
 import { characterForVisit } from '@/lib/characters/for-visit';
 import { runTurn } from '@/lib/turn';
-import { CLUSTER_1, cluster1Brief, lineWithAnswers, pickSetup, setupLine } from '@/lib/beginner-2';
+import { CLUSTERS, frameBrief, lineWithAnswers, pickSetup, setupLine } from '@/lib/beginner-2';
+const CLUSTER = CLUSTERS[Number(process.argv.find((a) => a.startsWith('--cluster='))?.split('=')[1] ?? '1') - 1];
 import type { Turn } from '@/lib/types';
 import { ask } from './common.mjs';
 const howMany = Number(process.argv.find((a) => a.startsWith('--characters='))?.split('=')[1] ?? '4');
@@ -20,9 +21,9 @@ for (const { city, place } of chosen) {
   let learnerSaid: string | undefined;
   for (let turn = 0; turn < 2; turn++) {
     const t0 = performance.now();
-    const setup = pickSetup({ conversationId: `${character.id}-live`, turn, learnerId: null, characterId: character.id, learnerSaid }, CLUSTER_1);
-    const r0 = await runTurn({ character, transcript, learnerSaid, brief: cluster1Brief(), note: setupLine(setup), answers: setup.maxAnswers > 0, withDone: true });
-    const r = lineWithAnswers(r0, setup);
+    const setup = pickSetup({ conversationId: `${character.id}-live`, turn, learnerId: null, characterId: character.id, learnerSaid }, CLUSTER);
+    const r0 = await runTurn({ character, transcript, learnerSaid, brief: frameBrief(CLUSTER), note: setupLine(setup), answers: setup.maxAnswers > 0, withDone: true });
+    const r = lineWithAnswers(r0, setup, CLUSTER);
     withAnswers += r.parts.length === 2 ? 1 : 0;
     const spans = (JSON.parse(await ask(`Copy out every run of ${language.name} words in this line, one string per run, exactly as written (English runs left out):\n${r.line}`, { schema: spansSchema, max: 1200 })) as { spans: string[] }).spans;
     total += words(r.line); wordsTotal += words(r.line); inLang += spans.reduce((n, s) => n + words(s), 0); runs += spans.length; single += spans.filter((s) => words(s) === 1).length; turns++;
