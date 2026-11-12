@@ -40,6 +40,20 @@ struct SettingsToolbar: ViewModifier {
     @State private var watching = false
     /// Inside the cinema already: no film reel to open it again
     @Environment(\.insideCinema) private var insideCinema
+    /// The intro's sheet is up (PersonView): it has to close before another sheet can open
+    @Environment(\.introSheetUp) private var introSheetUp
+
+    /// Opens one of the header's sheets. The conversation is paused first (its intro sheet, if up, closes then), and
+    /// while the intro's sheet slides away the new one waits for it, since iOS shows one sheet at a time and drops a
+    /// second asked for meanwhile: one tap, not two (Josh, 2026-11-12)
+    private func open(_ show: @escaping @MainActor () -> Void) {
+        NotificationCenter.default.post(name: .fuoriSheetOpening, object: nil)
+        guard introSheetUp else { show(); return }
+        Task { @MainActor in
+            try? await Task.sleep(for: .milliseconds(550))
+            show()
+        }
+    }
 
     func body(content: Content) -> some View {
         content
@@ -48,7 +62,7 @@ struct SettingsToolbar: ViewModifier {
                 // Learn, a trial with the family); only for a country with a film library
                 if model.phase == .ready, model.content?.cinema == true, !insideCinema {
                     ToolbarItem(placement: .primaryAction) {
-                        Button { NotificationCenter.default.post(name: .fuoriSheetOpening, object: nil); watching = true } label: {
+                        Button { open { watching = true } } label: {
                             Image(systemName: "film")
                         }
                         .accessibilityLabel("Cinema")
@@ -59,7 +73,7 @@ struct SettingsToolbar: ViewModifier {
                 // 2026-10-26); not during onboarding, which has nothing to learn yet
                 if model.phase == .ready {
                     ToolbarItem(placement: .primaryAction) {
-                        Button { NotificationCenter.default.post(name: .fuoriSheetOpening, object: nil); learning = true } label: {
+                        Button { open { learning = true } } label: {
                             Image(systemName: "character.book.closed")
                         }
                         .accessibilityLabel("Learn")
@@ -67,7 +81,7 @@ struct SettingsToolbar: ViewModifier {
                     }
                 }
                 ToolbarItem(placement: .primaryAction) {
-                    Button { NotificationCenter.default.post(name: .fuoriSheetOpening, object: nil); showing = true } label: {
+                    Button { open { showing = true } } label: {
                         SettingsIcon()
                     }
                     .accessibilityLabel("Settings")
@@ -86,6 +100,11 @@ struct SettingsToolbar: ViewModifier {
             .onAppear { if UserDefaults.standard.bool(forKey: "FuoriOpenLearn"), model.phase == .ready { learning = true } }
             #endif
     }
+}
+
+extension EnvironmentValues {
+    /// The intro plays in its sheet (PersonView), so the header's sheets wait for it to close
+    @Entry var introSheetUp = false
 }
 
 extension View {
