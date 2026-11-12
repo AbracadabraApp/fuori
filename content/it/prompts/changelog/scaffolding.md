@@ -3,7 +3,7 @@
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
 
 ### 2026-11-11c: three or four pieces of the language a turn
-- **Changed:** Level 1: "Two or three of them a turn" → "Three or four of them a turn". No other words. In code (`lib/beginner-2.ts`): cluster 1 now plays three setups, two answers, two questions to ask and no answers (an open question answered in the learner's own words), never the same one twice running.
+- **Changed:** Level 1: "Two or three of them a turn" → "Three or four of them a turn". No other words. In code (`lib/beginner-2.ts`): cluster 1 never plays the same setup three times running (two answers, two questions to ask). An open question with no answers was added the same night and pulled before release (Josh: "difficult for this level: open question with no balloons").
 - **Why:** Josh, 2026-11-11, after playing the live build: "Would be good to get more of the spanish frame in the english"; and on the turns: "the answers are fine but no variation. It's like Dora the Explorer": every turn ended on a choice with two balloons. The rotation is the first cut of the palette of asks (docs/dialogue-structure-reference.md § 12.1).
 
 ### 2026-11-11b: Level 1 turns are two or three sentences, not "a few"

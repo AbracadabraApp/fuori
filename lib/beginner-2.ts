@@ -74,9 +74,10 @@ export const OPENER: Setup = { id: 'opener', block: 'Setup: opener', maxAnswers:
 export const CLUSTERS: Setup[][] = [
   // No invitation to ask ("Is there anything you'd like to know…?"): Josh, 2026-11-10, after Renata and Doña Carmen
   // asked it again and again: "you can just remove the ask question". Questions to ask stay, as bubbles only
-  // Cluster 1 (2026-11-11c): two answers, questions to ask, and an open question in their own words (no answers), never
-  // the same twice running (Josh: "the answers are fine but no variation. It's like Dora the Explorer")
-  [R('two-en'), R('ask-en'), R('free')],
+  // Cluster 1 (2026-11-11c): two answers and questions to ask, never the same three times running (Josh: "the answers
+  // are fine but no variation. It's like Dora the Explorer"). An open question with no answers was tried the same night
+  // and pulled (Josh: "difficult for this level")
+  [R('two-en'), R('ask-en')],
   [R('two-en'), R('ask-en')],
   [R('two-en'), R('ask-en'), R('free')],
   [R('ask-en'), R('free')],
@@ -124,7 +125,7 @@ function seedOf(s: string): number {
 /** Invitations to be curious (questions to ask, an invitation to ask): rarer than answers, never twice running (Renata, 2026-11-10) */
 const INVITES = new Set(['ask-en', 'invite-en']);
 /** How often each setup comes up in its cluster: two answers three times as often as either invitation */
-const WEIGHT: Record<string, number> = { 'two-en': 2, 'ask-en': 1, 'invite-en': 1, inside: 1, 'inside-en': 1, free: 1 };
+const WEIGHT: Record<string, number> = { 'two-en': 3, 'ask-en': 1, 'invite-en': 1, inside: 1, 'inside-en': 1, free: 2 };
 
 /** The seeded pick by weight, before the rules about the turn before; `not`: a setup left out of the draw */
 function weighted(cluster: Setup[], key: string, not?: string): Setup {
@@ -142,12 +143,18 @@ export function pickSetup(p: { conversationId?: string | null; turn: number; lea
   if (p.turn === 0 && cluster.some((s) => s.id === 'two-en')) return OPENER;
   const day = (p.now ?? new Date()).toISOString().slice(0, 10);
   const key = (turn: number) => (p.conversationId ? `${p.conversationId}|${turn}` : `${p.learnerId ?? ''}|${p.characterId}|${day}|${turn}`);
-  // Never the same setup twice running (2026-11-11c, Josh: "no variation"): the draw leaves out the turn before's
-  // setup, which is worked out by the same rule, so the chain holds over a visit
+  // Never the same setup three times running (2026-11-11c, Josh: "no variation"): after two of a kind the draw leaves
+  // it out; the turns before are worked out by the same rule, so the chain holds over a visit
+  const base = new Map<number, Setup | null>();
   const baseAt = (turn: number): Setup | null => {
     if (turn < 1) return null;
-    const b = baseAt(turn - 1);
-    return weighted(cluster, key(turn), cluster.length > 1 ? b?.id : undefined);
+    const hit = base.get(turn);
+    if (hit !== undefined) return hit;
+    const b1 = baseAt(turn - 1);
+    const b2 = baseAt(turn - 2);
+    const s = weighted(cluster, key(turn), cluster.length > 1 && b1 && b2 && b1.id === b2.id ? b1.id : undefined);
+    base.set(turn, s);
+    return s;
   };
   const pick = baseAt(p.turn)!;
   const before = baseAt(p.turn - 1);

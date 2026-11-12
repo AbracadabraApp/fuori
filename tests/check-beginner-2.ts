@@ -77,13 +77,13 @@ check(setupText(CLUSTER_1[0], CLUSTER_1).startsWith("They have no") && setupText
 check(!/Every turn has some English|When you first see them|explain something in English when it helps/.test(readFileSync(`content/${process.env.COUNTRY ?? 'it'}/prompts/scaffolding.md`, 'utf8')), 'the English lines added one per play are gone from the prompt');
 check(CLUSTERS.length === 6, 'six clusters');
 check(CLUSTERS.flat().filter((r) => !r.inside).every((r) => r.maxAnswers === 0 || (r.maxAnswers === 2 && r.english)), 'bubbles are two, always with English (Josh: reading Spanish you don\'t understand is coercive; one answer feels weird)');
-check(['two-en', 'ask-en', 'free'].every((id) => CLUSTER_1.some((r) => r.id === id)) && !CLUSTERS.flat().some((r) => r.id === 'invite-en'), 'cluster 1 mixes two answers, questions to ask and an open question; no cluster invites a question (Josh: remove the ask question)');
+check(['two-en', 'ask-en'].every((id) => CLUSTER_1.some((r) => r.id === id)) && !CLUSTER_1.some((r) => r.id === 'free') && !CLUSTERS.flat().some((r) => r.id === 'invite-en'), 'cluster 1 mixes two answers and questions to ask, no open question (Josh: difficult for this level); no cluster invites a question');
 {
   // Never the same setup twice running (2026-11-11c)
-  let repeats = 0;
-  let prev = '';
-  for (let t = 1; t <= 60; t++) { const id = pickSetup({ conversationId: 'rot', turn: t, characterId: 'x' }).id; if (id === prev) repeats++; prev = id; }
-  check(repeats === 0, `no setup twice running over 60 turns (got ${repeats} repeats)`);
+  let runs = 0;
+  const seq: string[] = [];
+  for (let t = 1; t <= 60; t++) { const id = pickSetup({ conversationId: 'rot', turn: t, characterId: 'x' }).id; seq.push(id); if (seq.length >= 3 && seq.slice(-3).every((x) => x === id)) runs++; }
+  check(runs === 0 && new Set(seq).size === 2, `no setup three times running over 60 turns, both kinds played (got ${runs} runs of three, kinds ${[...new Set(seq)].join(', ')})`);
   const q = questionOf('Suba a la silla, climb up. ¿Quiere una boleada?', 'Climb up on the chair. Do you want a shine?');
   check(q?.text === '¿Quiere una boleada?' && q?.en === 'Do you want a shine?', `questionOf: the last question with its English (got ${JSON.stringify(q)})`);
   check(questionOf('Ecco il cornetto.', 'Here is the cornetto.') === undefined, 'questionOf: nothing when the line ends on a statement');
@@ -161,7 +161,7 @@ check(glossAll([{ kind: 'word', text: 'Buenas tardes.', en: 'Good afternoon.', g
 {
   const picks = Array.from({ length: 400 }, (_, i) => pickSetup({ conversationId: `mix-${i}`, turn: 1 + (i % 7), characterId: 'x' }, CLUSTER_1).id);
   const share = (id: string) => picks.filter((x) => x === id).length / picks.length;
-  check(share('two-en') >= share('ask-en') && share('two-en') >= share('free') && share('two-en') <= 0.6 && share('ask-en') < 0.35 && share('free') < 0.35, `two answers the most common kind but never most turns (2026-11-11c: no kind twice running), invitations now and then (two ${share('two-en').toFixed(2)}, ask ${share('ask-en').toFixed(2)}, invite ${share('invite-en').toFixed(2)})`);
+  check(share('two-en') > 0.5 && share('ask-en') < 0.35, `two answers most of the time, questions to ask now and then (2026-11-11c: never three of a kind running) (two ${share('two-en').toFixed(2)}, ask ${share('ask-en').toFixed(2)}, invite ${share('invite-en').toFixed(2)})`);
   let twice = 0;
   for (let c = 0; c < 200; c++) for (let t = 2; t < 8; t++) {
     const a = pickSetup({ conversationId: `run-${c}`, turn: t - 1, characterId: 'x' }, CLUSTER_1).id, b = pickSetup({ conversationId: `run-${c}`, turn: t, characterId: 'x' }, CLUSTER_1).id;
