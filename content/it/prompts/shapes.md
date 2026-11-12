@@ -1,6 +1,6 @@
 # Shapes: what this turn does
 
-version: 2026-11-11c
+version: 2026-11-11d
 
 Code picks the shape of a turn from signals it can see (punctuation, the turn
 count, what was offered); the model writes the words (docs/dialogue-structure-
@@ -16,18 +16,6 @@ is untouched.
 
 ```
 Answer what they asked first, before anything of your own.
-```
-
-## Shape: thread
-
-```
-Pick up what they just said, stay with what you opened the visit with, add one thing to it, then ask.
-```
-
-## Shape: beat
-
-```
-Pick up what they just said, then say one more thing about {beat}, then ask.
 ```
 
 ## Shape: close

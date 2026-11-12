@@ -2,6 +2,10 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../shapes.md`.
 
+### 2026-11-11d: the thread and the beat removed; the director speaks only when something happens
+- **Removed:** "Shape: thread" and "Shape: beat". After the intro, no note on a turn unless a signal fires: a question from the learner (answer first), and at Beginner 2 the close after the last beat (with the goodbye setup) and the answers setup the turn already carries. The intro's beats go to the character once, in the system prompt (intro.md 11e → Beats).
+- **Why:** the quiet default of § 11 (docs/dialogue-structure-reference.md), restored: a note on every turn makes every turn the same turn (Elena's visit; Beginner 1's history); the beats as a per-turn order made it worse. Josh, 2026-11-11: "go".
+
 ### 2026-11-11c: the beat, and the close after the last one
 - **Added:** "Shape: beat" ("Pick up what they just said, then say one more thing about {beat}, then ask"), sent instead of the thread line when the opening left beats (intro.md 11d): the turns after the intro take them up in order. "Shape: close" ("You've covered what you set out at the start: wind down warmly, with nothing new, and leave them room to say goodbye"), sent on the turn after the last beat at Beginner 2 only, where that turn also plays the goodbye setup (two goodbyes as answers) instead of the fixed 8th turn. At Intermediate the beats are taken up and then nothing: no wind-down, the character goes on by habit (Nunzio's 14-turn visit was the best stretch; a nudge at turn five would have cut it; caught by the cloud session before release).
 - **Why:** Josh, 2026-11-11: the intro sets the scene, the turns discuss it ("Lets do that"), and the visit is done when the thing is done, not at a count.

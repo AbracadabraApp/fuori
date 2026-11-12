@@ -18,7 +18,7 @@ import { tutor } from '@/content';
 import { onboardingState } from '@/lib/onboarding';
 import { runBeginnerTurn, beginnerPromptVersion, lineFromParts, type Part } from '@/lib/beginner';
 import { BEGINNER_2_FILE, CLUSTER_1, pickSetup, levelText, setupLine, shapeParts, turnSteps, beginner2Version, type Setup, type TurnSteps, GLOSS_ALL, CLUSTERS, stretchesOf, writeSummaries, flowingLine, frameBrief, onFrame, lineWithAnswers, type Stretch } from '@/lib/beginner-2';
-import { pickShapes, noteOf, shapeIds, beatFor } from '@/lib/shapes';
+import { pickShapes, noteOf, shapeIds, beatsBrief } from '@/lib/shapes';
 import { runIntro } from '@/lib/intro';
 import { storedCluster } from '@/lib/level-up';
 import { stageFor, stageTag, stageText, type Stage } from '@/lib/path';
@@ -171,11 +171,12 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
   const shaped = !isTutor && !p.lesson && !welcome && (setup !== null || onPath === null);
   const intro = shaped && transcript.length === 0 && !learnerSaid;
   // The turns after the intro carry its thread; a learner's question is answered first (lib/shapes.ts)
-  const shapes = shaped && !intro ? pickShapes({ learnerSaid, afterIntro: transcript.length > 0, beats, turnAfterIntro: npcTurns, beginner2: setup !== null }) : [];
+  const shapes = shaped && !intro ? pickShapes({ learnerSaid, beats, turnAfterIntro: npcTurns, beginner2: setup !== null }) : [];
   const shape = shapes.length ? shapes : null;
   const shapeId = shapeIds(shapes);
-  const beat = beatFor(beats, npcTurns);
-  const beatText = beat && beat !== 'close' ? beat : undefined;
+  // The intro's beats, once, in the system prompt of every later turn: material the character has, not a list to work through
+  const beatsText = shaped && !intro ? beatsBrief(beats) : '';
+  const withBeats = (brief: string) => [brief, beatsText].filter(Boolean).join('\n\n');
 
   // A lesson (lib/lesson.ts): every part in the Beginner format with its brief, Magda included;
   // the Intermediate lessons in the speaking mode, the character prompt with its brief
@@ -211,7 +212,7 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
       // parts format: there the character pulls the language out of the sentence into its own box (10q–10r). The two
       // answers to say back come with the line (2026-11-11a: the setup line on the newest message, the answers in the
       // reply) and go to the app as answer parts; her line stays the subtitle. The voice starts early, as at Intermediate
-      await runTurn({ character, transcript, learnerSaid, memory, addressedAs, brief: frameBrief(cluster), note: noteOf(shape, setupLine(setup), beatText), answers: setup.maxAnswers > 0, laps: p.laps, onText: p.onText, canRetry: p.canRetry, withDone: true }).then((r) => {
+      await runTurn({ character, transcript, learnerSaid, memory, addressedAs, brief: withBeats(frameBrief(cluster)), note: noteOf(shape, setupLine(setup)), answers: setup.maxAnswers > 0, laps: p.laps, onText: p.onText, canRetry: p.canRetry, withDone: true }).then((r) => {
         const out = lineWithAnswers(r, setup, cluster);
         steps = { ...turnSteps(out.parts, setup, cluster, []), ...(shapeId ? { shape: shapeId } : {}) };
         return out;
@@ -220,7 +221,7 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
     ? // Beginner 2: the parts are rewritten after the reply (glosses, English, the answer said inside), so the
       // spoken line is rebuilt from them, and the voice waits for the whole reply (no early first sentence:
       // it would be spoken from the parts before they were rewritten, then again)
-      await runBeginnerTurn({ character, transcript, learnerSaid, memory, addressedAs, laps: p.laps, canRetry: p.canRetry, promptFile: BEGINNER_2_FILE, stageText: levelText(cluster), turnNote: noteOf(shape, setupLine(setup), beatText), maxAnswers: setup.maxAnswers, withDone: true }).then(async (r) => {
+      await runBeginnerTurn({ character, transcript, learnerSaid, memory, addressedAs, laps: p.laps, canRetry: p.canRetry, promptFile: BEGINNER_2_FILE, stageText: withBeats(levelText(cluster)), turnNote: noteOf(shape, setupLine(setup)), maxAnswers: setup.maxAnswers, withDone: true }).then(async (r) => {
         // Cluster 1: one English remark in her voice after each stretch of her talk, from a side call (lib/beginner-2.ts,
         // card B2-E5), instead of the literal English after every phrase. Late (past SUMMARY_DEADLINE_MS) or failed: the
         // literal English, and the turn says so (fixes: glossAll, not summaries)
@@ -241,8 +242,9 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
     system: tutorPrompt?.system,
     firstTurn: tutorPrompt?.firstTurn,
     level: pathLevel ?? level,
-    // Intermediate: this turn's shape, when a signal fired (lib/shapes.ts); nothing otherwise
-    note: noteOf(shape, undefined, beatText),
+    // Intermediate: this turn's shape, when a signal fired (lib/shapes.ts); nothing otherwise. The intro's beats once, as the brief
+    note: noteOf(shape),
+    ...(beatsText && !pathLevel && !tutorPrompt ? { brief: beatsText } : {}),
     laps: p.laps,
     onText: p.onText,
     canRetry: p.canRetry,

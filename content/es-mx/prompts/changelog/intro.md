@@ -2,6 +2,10 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../intro.md`.
 
+### 2026-11-11e: the beats given to the character once, not one a turn
+- **Added:** "Beats": one line in the system prompt of every turn after the intro, at every level: what was set out, to come back to when the talk gives a reason, in any order, "not a list to work through". Replaces the per-turn "say one more thing about {beat}" note (shapes.md 11c, removed in 11d).
+- **Why:** the cloud session's point, agreed by Josh ("go"): a note on every turn makes every turn the same turn, and a prescribed topic makes it worse; a character writing by habit varies (Nunzio), one following a per-turn instruction performs it. The beats stay, as material the character has, not as orders.
+
 ### 2026-11-11d: the intro names its beats
 - **Added:** both reply formats return `beats`: the three or four things the intro set out, each named in a few words of {language}, in order. Stored with the opening turn; each later turn's thread note names the next one ("say one more thing about {beat}"), the goodbye is offered after the last, and at the end of the visit they're written into the character's notes as what was told, so the next intro picks something new (the told-ledger).
 - **Why:** Josh, 2026-11-11: the intro sets the scene and the turns discuss it ("Lets do that"): the thread note alone was a nudge, not material; the turns circled the first thing or reached for new ones.
