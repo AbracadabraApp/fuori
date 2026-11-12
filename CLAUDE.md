@@ -44,6 +44,13 @@ One app for every country (Fuori in Italy, Afuera in Mexico; the country is chos
   - Prompt and content changes are checked by the variety gate and `smoke:live`, not the simulator.
 - Builds: `cd ios && make build` or XcodeBuildMCP; CI (`.github/workflows/ios.yml`) must pass. When the simulator is needed (above), to get past onboarding: `npm run dev:sim -- it beginner` (a warmed local server on port 3100, the newest local learner moved past onboarding; steps in `scripts/dev-sim.sh`), then launch with `-FuoriServer http://localhost:3100`, `-FuoriMute YES` (no voice, so screenshots don't wait) and `-FuoriOpen <city>/<place>`. Waiting for a deploy: `npm run deploy:wait`.
 
+## What needs Josh's yes
+Added 2026-11-11 (Josh: "Apply to Fuori", on three tips for working with Claude: ask what's wrong with an idea before building, say what needs approval and let the session decide the rest, give the whole project and not the next step). The list gathers rules already in this file; it adds none.
+- Needs his yes, each time: a release (`npm run release`); an install on his iPhone; a prompt change going into the game (the card and its test, above); a test that runs over 5 minutes; building out a new or changed screen (he sees one quick look first); keeping a family member's recordings.
+- Everything else is the session's call: decide, do it, and say what was decided in the report. Don't hand him a choice between options he didn't ask for.
+- When he asks what's wrong with an idea, say all of it before anything is built. While he's still forming an idea and hasn't asked, build on it.
+- A piece of work starts from the whole of it (the goal and where it ends), not only the next step. When he gives only a step, find the whole in the docs or ask for it once.
+
 ## Working across sessions
 - Several Claude sessions work on this repo: Claude Code on Josh's laptop (sometimes two at once, in the same folder) and a cloud session in the Claude app's "Fuori" project. None can see another's uncommitted work.
 - Start every session with `git pull --rebase origin main`. End every session by committing and pushing to `main`, and update `progress.md`.
