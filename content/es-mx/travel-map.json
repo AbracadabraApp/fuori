@@ -1,5 +1,5 @@
 {
-  "about": "The trip map shown after boarding at a station (docs/station-feature-decision.md -> Trip map). The picture is one painted map of Mexico with no cities on it (image id travel/map); each city's building is its own picture (travel/buildings/<city id>). Here: the picture's width divided by its height, each city's spot on the picture as fractions from the top left (x across, y down), and the cities whose names always show for orientation. No cities listed means the country has no map yet, and boarding goes straight to the destination.",
+  "about": "The trip map on the ticket sheet (docs/station-feature-decision.md -> Board, map, city). The picture is one painted map of Mexico with no cities on it (image id travel/map); each city's building is its own picture (travel/building-<city id>), shown on the departures board. Here: the picture's width divided by its height, each city's spot on the picture as fractions from the top left (x across, y down), and the cities whose names always show for orientation. No cities listed means the country has no map yet: the ticket sheet shows the ticket alone.",
   "aspect": 0.6667,
   "cities": {},
   "anchors": []

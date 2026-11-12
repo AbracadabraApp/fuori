@@ -20,7 +20,7 @@ import { cultureSet } from '@/lib/culture';
 import { cinemaFilms, cinemaLibrary } from '@/lib/cinema';
 import { characterForPlace } from '@/lib/characters/for-place';
 import { feedOrder } from '@/lib/places/feed-order';
-import { imageListFor, stationsFor, travelMapFor } from '@/content';
+import { imageListFor, travelMapFor } from '@/content';
 import type { Gender } from '@/lib/types';
 
 export interface ContentPlace {
@@ -72,11 +72,11 @@ export interface ContentOnboarding {
   welcome: { characterId: string; cityId: string; placeId: string; go: { line: string; en: string } } | null;
 }
 
-/** The trip map: the painted picture, and for each placed city its spot, its building and what it's known for */
+/** The trip map: the painted picture, and for each placed city its spot and its building */
 export interface ContentTravelMap {
   image: string;
   aspect: number;
-  cities: { id: string; x: number; y: number; building: string | null; known: string | null }[];
+  cities: { id: string; x: number; y: number; building: string | null }[];
   anchors: string[];
 }
 
@@ -112,13 +112,13 @@ export const isStation = (placeId: string) => placeId.startsWith('stazione-') ||
 
 /**
  * The trip map for the app, or null while the country has no picture
- * (travel/map in images.json) or no city positions yet: then boarding goes
- * straight to the destination, as before. Only shown cities are sent.
+ * (travel/map in images.json) or no city positions yet: then the ticket
+ * sheet shows the ticket alone and the board has no buildings. Only shown
+ * cities are sent.
  */
 function travelMap(image: (id: string) => string | null, shown: { id: string; name: string }[]): ContentTravelMap | null {
   const map = travelMapFor(country);
   const picture = image('travel/map');
-  const known = stationsFor(country).cities;
   const placed = shown.filter((c) => map.cities[c.id]);
   if (!picture || placed.length < 2) return null;
   return {
@@ -127,8 +127,7 @@ function travelMap(image: (id: string) => string | null, shown: { id: string; na
     cities: placed.map((c) => ({
       id: c.id,
       ...map.cities[c.id],
-      building: image(`travel/buildings/${c.id}`),
-      known: known[c.id] ? `${c.name} is known for ${known[c.id]}.` : null,
+      building: image(`travel/building-${c.id}`),
     })),
     anchors: map.anchors.filter((id) => placed.some((c) => c.id === id)),
   };

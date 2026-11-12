@@ -8,8 +8,8 @@ import FuoriDesign
 /// "Station path", light board): the plain list was austere and its rows
 /// didn't look tappable. Now the station's own picture in an arched station
 /// window with its name on an enamel sign, column headings, and each city a
-/// raised card: its name on split-flap tiles, its platform from here, and a
-/// chevron. The current city is disabled and says so in words ("Sei qui"),
+/// raised card: its building (an engraving, where the country has them), its
+/// name on split-flap tiles, its platform from here, and a chevron. The current city is disabled and says so in words ("Sei qui"),
 /// not only in colour. First-screen cities, then the rest after "show more",
 /// as on the city list. Picking a city closes the sheet; the place list then
 /// opens the ticket seller with that ticket.
@@ -20,6 +20,7 @@ struct DeparturesView: View {
     let onPick: (City) -> Void
     @Environment(\.dismiss) private var dismiss
     @State private var showsMore = false
+    @ScaledMetric(relativeTo: .body) private var thumb: CGFloat = 48
 
     var body: some View {
         NavigationStack {
@@ -101,11 +102,29 @@ struct DeparturesView: View {
         }
     }
 
+    /// The city's building, ink on white laid onto the white card so its
+    /// paper disappears. Countries with no buildings yet show none; a city
+    /// whose building isn't drawn keeps the space, so the names line up
+    @ViewBuilder private func building(_ destination: City) -> some View {
+        if let map = content.travelMap {
+            AsyncImage(url: map.spot(destination.id)?.building) { phase in
+                if let picture = phase.image {
+                    picture.resizable().scaledToFit().blendMode(.multiply)
+                } else {
+                    Color.clear
+                }
+            }
+            .frame(width: thumb, height: thumb)
+            .accessibilityHidden(true)
+        }
+    }
+
     private func row(_ destination: City) -> some View {
         let here = destination.id == city.id
         let words = content.language.ui.ticket
         let platform = Departure(from: city.id, to: destination.id).platform
         return HStack(spacing: 10) {
+            building(destination)
             VStack(alignment: .leading, spacing: 4) {
                 FlapWord(text: destination.name, language: content.language.speechLang)
                 if let region = destination.region {

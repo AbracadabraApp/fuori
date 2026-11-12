@@ -28,9 +28,9 @@ public struct Content: Codable, Sendable, Equatable {
     public let culture: [CultureChip]?
     /// The country has a cinema shuffler (GET /v1/cinema), opened by the film reel by Learn; nil from servers before 2026-11-06
     public let cinema: Bool?
-    /// The trip map shown after boarding at a station; nil from servers before
-    /// 2026-11-11 and while a country has no map picture yet (then boarding
-    /// goes straight to the destination)
+    /// The trip map on the ticket sheet; nil from servers before 2026-11-11
+    /// and while a country has no map picture yet (then the sheet shows the
+    /// ticket alone)
     public let travelMap: TravelMap?
     public let characters: [String: Character]
 
@@ -125,8 +125,8 @@ public struct TicketWords: Codable, Sendable, Equatable {
 }
 
 /// The trip map (content/<country>/travel-map.json): one painted map with no
-/// cities on it, and each city's spot on it. The app draws the names, the two
-/// buildings and the route, so a name can't be misspelled or misplaced
+/// cities on it, and each city's spot on it. The app draws the names and the
+/// route, so a name can't be misspelled or misplaced
 public struct TravelMap: Codable, Sendable, Equatable {
     public let image: URL
     /// The picture's width divided by its height
@@ -141,10 +141,8 @@ public struct TravelMap: Codable, Sendable, Equatable {
         /// Across and down the picture, as fractions from the top left
         public let x: Double
         public let y: Double
-        /// The city's own building, ink on white; nil until it's drawn
+        /// The city's own building, ink on white, for the departures board; nil until it's drawn
         public let building: URL?
-        /// One English sentence on what the city is known for (the ticket seller's facts)
-        public let known: String?
     }
 
     public func spot(_ cityId: String) -> Spot? { cities.first { $0.id == cityId } }
