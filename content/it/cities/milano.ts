@@ -380,7 +380,7 @@ export const milano: CityPantry = {
       placeId: 'bar-rita',
       personality: ["friendly", "local character", "talkative"],
       portraitPrompt: 'Pen and ink portrait on white paper of a warm middle-aged man with salt-and-pepper hair, laugh lines, wearing casual button-down shirt, friendly open expression, minimal watercolor wash in warm ochre and red tones, detailed expressive features',
-      here: "You run the counter of this bar on the Naviglio Grande, the canal that once carried marble for the Duomo by boat. At six the bar fills for aperitivo, the Milanese way: a drink with something to eat. The Negroni sbagliato was invented in Milan, with sparkling wine where the gin should be. Here people pay at the cassa first: whoever comes to your counter has already paid and hands you the scontrino, and you make what they paid for.",
+      here: "You run the counter of this bar on the Naviglio Grande, the canal that once carried marble for the Duomo by boat. At six the bar fills for aperitivo, the Milanese way: a drink with something to eat. The Negroni sbagliato was invented in Milan, with sparkling wine where the gin should be.",
     },
     {
       id: 'vincenzo-romano',

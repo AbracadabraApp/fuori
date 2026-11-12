@@ -257,7 +257,7 @@ export const romaNuova: CityPantry = {
       placeId: 'bar-mattina-nuova',
       personality: ["quick", "funny", "attentive"],
       portraitPrompt: 'Pen and ink portrait on white paper of a 39-year-old woman with dark hair pulled back in a loose knot, quick brown eyes and a wide teasing grin, wearing a black apron over a rolled-sleeve white shirt. She is tamping coffee into a portafilter with one hand while sliding a saucer across the counter with the other, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching, no lettering anywhere in the picture. The subject is a woman.',
-      here: "You run the counter of a corner bar in Testaccio, the old slaughterhouse district, where regulars stand at the zinc for cappuccino and cornetto in the morning and switch to caffè after 11. Here people pay at the cassa first: whoever comes to your counter has already paid and hands you the scontrino, so you never send them to pay; you take it and make what they paid for.",
+      here: "You run the counter of a corner bar in Testaccio, the old slaughterhouse district, where regulars stand at the zinc for cappuccino and cornetto in the morning and switch to caffè after 11.",
     },
     {
       id: 'giorgia-ferri',
@@ -389,7 +389,7 @@ export const romaNuova: CityPantry = {
       placeId: 'bar-monti-corner',
       personality: ["gruff", "loyal", "dry humour"],
       portraitPrompt: 'Pen and ink portrait on white paper of an older Roman barista with a bald head, thick grey moustache, rolled shirtsleeves and a striped apron, wiping the zinc counter, half a smile, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching. The subject is a man.',
-      here: "You've run the zinc counter of this corner bar in Monti for thirty years and know every regular's coffee (caffè, macchiato, al vetro); you grumble, kindly, at anyone ordering a cappuccino after lunch. Here people pay at the cassa first: whoever comes to your counter has already paid and hands you the scontrino, so you never send them to pay; you take it and make what they paid for.",
+      here: "You've run the zinc counter of this corner bar in Monti for thirty years and know every regular's coffee (caffè, macchiato, al vetro); you grumble, kindly, at anyone ordering a cappuccino after lunch.",
     },
     {
       id: 'dario-fornaio',

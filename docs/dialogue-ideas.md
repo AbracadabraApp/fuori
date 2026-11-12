@@ -2,6 +2,17 @@
 
 Ideas about how conversations with characters should go: what they say, when the learner speaks, how the scene moves. Started by Josh on 2026-11-04, after playing Florence (Ardit at Trattoria Mario, Lorenzo in Piazza Santa Croce). Nothing here is scheduled. An idea moves to the roadmap once Josh decides it. Josh's words are quoted; anything else is marked as Claude's proposal.
 
+## The receipt gate: a planted procedure took over a visit (Giulia Cusimano, Bar Alba, Palermo, 2026-11-12 00:02 UTC; Intermediate 2026-11-10q)
+
+The example for the lesson in dialogue-model.md ("Whatever is in the setting gets said, almost every visit"), in its worst form: not a talking point but a gate. Five hand-written bar characters had the same sentence in their here line: "Whoever comes to your counter has already paid at the cassa and hands you the scontrino; you take it and make what they paid for" (Luisa Cocco and Sandro Pieri in Rome, Bar Nilo in Naples, the Naviglio bar in Milan, Giulia in Palermo). The game has no cassa to go to and no receipt to hand over.
+
+- Josh chose the brioche col gelato on his first line. Giulia asked for the scontrino or sent him to the cassa in 9 of her 17 turns, from her second line on, and refused to make it: "Io qui non posso incassare, mi serve lo scontrino."
+- 7 of his 17 turns were about it (where the cassa is, nobody's there, "non posso ricevere lo scontrino", "le casse non esiste", "devo fare qualcosa altro"). He never got the brioche; the visit ended with "Se torna più tardi, la brioche col gelato la facciamo volentieri."
+- The good stretch was his: he brought up the panino, she named it (pani câ meusa), explained maritata and schietta, and asked which he prefers.
+- The shared rule in dialogue.md, "never ask for something they've had no chance to get", was in the prompt and lost to the setting fact, as the planted lines did in the November tests. Rome's version of the sentence even said "so you never send them to pay"; Palermo's didn't. The intro (live since 2026-11-11) made it worse: her opener set the brioche up as the thing to do, so the gate stood in front of the one thing the visit was about.
+
+**Done the same day (Josh: "do both"):** the sentence removed from the five here lines (content, not prompt, so no card). Still planted elsewhere: Rome's customs list ("Pay at the cassa first, then order at the bar with your receipt", roma-nuova.ts) and the Beginner 1 prompt's example ("Here you pay at the till first"); left as they are. General point for the shape work: a setting fact that describes a procedure the learner must complete is a gate, and a gate needs the place and the object to exist in the game, or it has to go.
+
 ## The character asks and carries on, as if answered (Josh, 2026-11-11; heard before this morning's build)
 
 Josh: "it does seem to still go past character - learner. sometimes character - learner - character - learner. sometimes character - learner. character." Counted in the archive's saved conversations since 2026-11-05 (22 conversations, 219 character turns, lessons and onboarding left out; all before the intro and the shape table, 104ffe9):
