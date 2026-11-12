@@ -4,7 +4,7 @@
 // prompt file, the language-only rung hides the answers' English, the turn
 // code takes the switch, and Beginner 2 turns don't move the Beginner 1 path.
 import { readFileSync } from 'fs';
-import { beginnerVersionFrom, pickSetup, GOODBYE_AFTER, setupText, levelText, setupLine, fullerGlosses, shownParts, shapeParts, turnSteps, beginner2Version, glossAll, questionEcho, GOODBYE, OPENER, CLUSTER_1, CLUSTERS, RUNGS, clusterFrom, stretchesOf, withSummaries, summaryPrompt, MAX_STRETCH_WORDS, MAX_STRETCH_SENTENCES, GLOSS_ALL, flowingLine, withQuestionEnglish, cluster1Brief, frameBrief, onFrame, lineWithAnswers, questionOf } from '@/lib/beginner-2';
+import { beginnerVersionFrom, pickSetup, GOODBYE_AFTER, setupText, levelText, setupLine, fullerGlosses, shownParts, shapeParts, turnSteps, beginner2Version, questionEcho, GOODBYE, OPENER, CLUSTER_1, CLUSTERS, RUNGS, clusterFrom, flowingLine, withQuestionEnglish, cluster1Brief, frameBrief, onFrame, lineWithAnswers, questionOf } from '@/lib/beginner-2';
 import { stageInVersion } from '@/lib/conversation-record';
 import { lineFromParts, type Part } from '@/lib/beginner';
 import { buildBeginnerPrompt, SCAFFOLDING_FILE, dialogueWithoutFormat } from '@/lib/beginner';
@@ -37,30 +37,7 @@ check(withQuestionEnglish('Ecco il cornetto, still warm.', 'Here is the cornetto
   check(flowingLine([{ kind: 'question', text: '¿Un café?', en: 'A coffee?', gloss: 'a coffee?' }, { kind: 'answer', text: 'Sí.', en: 'Yes.', gloss: '' }]).line === '¿Un café?', 'flowingLine: with answers shown the question\'s gloss is not said, as lineFromParts');
 }
 
-// The summary after a stretch of her talk (docs/summary-and-mixed.md, card B2-E5; Josh, 2026-11-10: English after
-// every sentence is "too structured"): stretches close at 2 sentences or past 20 words, each gets one English
-// remark said after it, the phrases inside lose their glosses, the question keeps its echo
-{
-  const w = (text: string, en: string): Part => ({ kind: 'word', text, en, gloss: en });
-  const talk: Part[] = [w('Buenas tardes, joven.', 'Good afternoon, young man.'), w('Pásele, pásele, aquí tiene su silla.', 'Come on over, here is your chair.'), w('Ese calzado quiere una buena boleada.', 'Those shoes want a good shine.'), { kind: 'question', text: '¿Le doy brillo?', en: 'Shall I shine them?', gloss: '' }, { kind: 'answer', text: 'Sí, por favor.', en: 'Yes, please.', gloss: '' }];
-  const st = stretchesOf(talk);
-  check(st.length === 2 && st[0].from === 0 && st[0].to === 1 && st[1].from === 2 && st[1].to === 2, `two sentences close a stretch; the rest before the question is its own (got ${JSON.stringify(st.map((x) => [x.from, x.to]))})`);
-  const long: Part[] = [w('Primero les quito el polvo con el cepillo, y luego la grasa, para que agarren buen brillo y duren más tiempo', 'First the dust, then the polish.'), w('Es rápido.', 'It is quick.'), { kind: 'question', text: '¿Sí?', en: 'Yes?', gloss: '' }];
-  check(stretchesOf(long).length === 2 && stretchesOf(long)[0].to === 0, `past ${MAX_STRETCH_WORDS} words a stretch closes on its own, before the ${MAX_STRETCH_SENTENCES}nd sentence`);
-  const own: Part[] = [w('Hoy hay mole.', 'There is mole today.'), { kind: 'english', text: "It's a sauce, very dark.", en: '', gloss: '' }, w('Pruébelo.', 'Try it.'), { kind: 'question', text: '¿Quiere?', en: 'Want some?', gloss: '' }];
-  check(stretchesOf(own).length === 2 && stretchesOf(own)[1].from === 2, 'English she wrote herself ends a stretch and is left in place');
-  check(stretchesOf([{ kind: 'question', text: '¿Un café?', en: 'A coffee?', gloss: '' }]).length === 0, 'a turn that is only a question has no stretch');
-  const out = withSummaries(talk, st, ['Good afternoon, come sit here.', 'Your shoes need a shine.']);
-  check(out.length === talk.length + 2 && out[2].kind === 'english' && out[2].text === 'Good afternoon, come sit here.' && out[4].kind === 'english', 'each summary is said after its stretch');
-  check(out.filter((x) => x.kind === 'word').every((x) => x.gloss === ''), 'the phrases in a stretch lose their literal glosses');
-  const spoken = lineFromParts(out).line;
-  check(/Buenas tardes, joven\. Pásele, pásele, aquí tiene su silla\. Good afternoon, come sit here\./.test(spoken) && !/Come on over/.test(spoken), 'spoken: her two sentences, then the summary, no literal English in between');
-  // Since 2026-11-10q no cluster adds English by code (the Level 1 frame carries its own): summaries given to shapeParts are left unused
-  check(GLOSS_ALL.every((x) => !x), 'no cluster glosses every phrase or summarizes by code: the English frame (Level 1) carries the English');
-  const shaped = shapeParts(talk, RUNGS.find((r) => r.id === 'two-en')!, CLUSTER_1, { stretches: st, summaries: ['Good afternoon, come sit here.', 'Your shoes need a shine.'] });
-  check(!shaped.fixes.includes('summaries') && !shaped.fixes.includes('glossAll') && shaped.parts.every((x) => x.kind !== 'english' || !/come sit here/.test(x.text)), `cluster 1: neither the summary nor glossAll fires (got ${shaped.fixes.join(', ') || 'none'})`);
-  check(/fewest words/.test(summaryPrompt()) && /in her own words/.test(summaryPrompt()) && !/\{\w+\}/.test(summaryPrompt()), 'the summary prompt is read from scaffolding.md, filled: Josh\'s line with her voice');
-}
+// No cluster adds English by code since 2026-11-10q (the Level 1 frame carries its own); the summary side call was removed 2026-11-12 (Josh: dead code)
 
 // The cut-over (Josh, 2026-11-12): the new Beginner by default; the old one only when the app asks for it
 check(beginnerVersionFrom(new Headers()) === 2 && beginnerVersionFrom(new Headers({ 'x-fuori-beginner': '2' })) === 2, 'no header, or 2: the new Beginner');
@@ -77,7 +54,7 @@ for (const setup of RUNGS) check(setupText(setup).includes('This turn,') && !/\{
 check(setupText(CLUSTER_1[0], CLUSTER_1).startsWith("They have no") && setupText(CLUSTERS[2][0], CLUSTERS[2]).startsWith('They can follow simple') && setupText(CLUSTERS[5][0], CLUSTERS[5]).startsWith('Where they are now: finding their feet'), 'each cluster gets its level text (S1, S2, S3) before the setup');
 check(!/Every turn has some English|When you first see them|explain something in English when it helps/.test(readFileSync(`content/${process.env.COUNTRY ?? 'it'}/prompts/scaffolding.md`, 'utf8')), 'the English lines added one per play are gone from the prompt');
 check(CLUSTERS.length === 6, 'six clusters');
-check(CLUSTERS.flat().filter((r) => !r.inside).every((r) => r.maxAnswers === 0 || (r.maxAnswers === 2 && r.english)), 'bubbles are two, always with English (Josh: reading Spanish you don\'t understand is coercive; one answer feels weird)');
+check(CLUSTERS.flat().every((r) => r.maxAnswers === 0 || (r.maxAnswers === 2 && r.english)), 'bubbles are two, always with English (Josh: reading Spanish you don\'t understand is coercive; one answer feels weird)');
 check(['two-en', 'ask-en'].every((id) => CLUSTER_1.some((r) => r.id === id)) && !CLUSTER_1.some((r) => r.id === 'free') && !CLUSTERS.flat().some((r) => r.id === 'invite-en'), 'cluster 1 mixes two answers and questions to ask, no open question (Josh: difficult for this level); no cluster invites a question');
 {
   // Never the same setup twice running (2026-11-11c)
@@ -90,7 +67,6 @@ check(['two-en', 'ask-en'].every((id) => CLUSTER_1.some((r) => r.id === id)) && 
   check(questionOf('Ecco il cornetto.', 'Here is the cornetto.') === undefined, 'questionOf: nothing when the line ends on a statement');
   check(lineWithAnswers({ line: 'Mire. ¿Quiere ver?', en: 'Look. Do you want to see?', answers: [] }, RUNGS.find((x) => x.id === 'free')!).question?.text === '¿Quiere ver?', 'lineWithAnswers carries the question');
 }
-check(!CLUSTERS.flat().some((r) => r.inside), 'no cluster plays the answer inside the character\'s line until it has a screen design');
 check(clusterFrom(new Headers({ 'x-fuori-cluster': '4' })) === CLUSTERS[3] && clusterFrom(new Headers()) === CLUSTER_1 && clusterFrom(new Headers({ 'x-fuori-cluster': '9' })) === CLUSTER_1, 'the cluster header picks clusters 1-6, cluster 1 otherwise');
 const seen6 = new Set(Array.from({ length: 40 }, (_, i) => pickSetup({ conversationId: `c-${i}`, turn: 1 + (i % (GOODBYE_AFTER - 1)), characterId: 'x' }, CLUSTERS[5]).id));
 check(seen6.size === 1 && seen6.has('free'), `cluster 6 plays its own three rungs (got ${[...seen6].join(', ')})`);
@@ -106,9 +82,6 @@ const glossed: Part[] = [{ kind: 'question', text: '¿Le gustan?', en: 'Do you l
 check(shownParts(glossed, CLUSTER_1[0], CLUSTERS[3])[0].gloss === 'like them?', 'later clusters: a turn that already has English is left alone');
 check(shownParts(glossed, CLUSTER_1[0], CLUSTER_1)[1]?.text === 'Do you like them?', 'Level 1: a glossed question gets its full English as the spoken piece after it');
 const para: Part[] = [{ kind: 'english', text: 'Welcome to the barrio.', en: '', gloss: '' }, { kind: 'word', text: 'Aquí pinto todos los días.', en: 'I paint here every day.', gloss: '' }, { kind: 'word', text: 'Bienvenido al barrio.', en: 'Welcome to the barrio.', gloss: '' }, { kind: 'question', text: '¿Le gustan los murales?', en: 'Do you like the murals?', gloss: '' }];
-const g1 = glossAll(para);
-check(g1[1].gloss === 'I paint here every day.' && g1[3].gloss === 'Do you like the murals?', 'glossAll (off for now): every phrase gets its English');
-check(g1[2].gloss === '', 'glossAll: not when the turn\'s own English already said it');
 check(shownParts(para, CLUSTER_1[0], CLUSTER_1)[1].gloss === '' && shownParts(para, CLUSTERS[1][0], CLUSTERS[1])[1].gloss === '', 'no cluster adds the literal English after each phrase by code (2026-11-10q: the frame carries it)');
 check(/talk mostly in English/.test(setupText(CLUSTER_1[0], CLUSTER_1)) && /with its English beside it/.test(setupText(CLUSTER_1[0], CLUSTER_1)) && !/word part/.test(levelText(CLUSTER_1)) && !/say it again/.test(setupText(CLUSTER_1[0], CLUSTER_1)), 'Level 1 is the frame brief as the list used it: one line, no parts, each phrase with its English, no sandwich repeat (Josh: weird)');
 check(/setup && onFrame\(cluster\)\n\s*\?[\s\S]*?runTurn\(\{[^\n]*brief: withBeats\(frameBrief\(cluster\)\), note: noteOf\(shape, setupLine\(setup\)\), answers: setup\.maxAnswers > 0/.test(readFileSync('lib/conversation/take-turn.ts', 'utf8')), 'clusters 1-3 run on the Intermediate reply with the cluster\'s brief, the setup line (with any shape and beat) on the newest message and the answers asked for (2026-11-11d)');
@@ -158,8 +131,6 @@ check(fuller[0].gloss === "I'm preparing the candles." && fuller[1].gloss === 'c
 check(/turnNote: noteOf\(shape, setupLine\(setup\)\)/.test(readFileSync('lib/conversation/take-turn.ts', 'utf8')), 'the game puts the setup (with any shape) next to the latest message');
 const stored = exchangeTurns({ reply: { line: 'x', en: 'y', parts: [{ kind: 'word', text: 'Preparo las velas.', en: 'I prepare the candles.', gloss: 'preparing the candles' }] } } as never, new Date().toISOString());
 check((stored[0] as { parts?: { gloss?: string; en?: string }[] }).parts?.[0].gloss === 'preparing the candles' && (stored[0] as { parts?: { en?: string }[] }).parts?.[0].en === 'I prepare the candles.', 'stored parts keep their gloss and English');
-check(glossAll([{ kind: 'word', text: 'Vengo al Zócalo cada tarde.', en: 'I come to the Zócalo every afternoon.', gloss: 'every afternoon' }])[0].gloss === 'I come to the Zócalo every afternoon.', 'pattern B: a clipped gloss becomes the full English');
-check(glossAll([{ kind: 'word', text: 'Buenas tardes.', en: 'Good afternoon.', gloss: 'Good afternoon.' }])[0].gloss === 'Good afternoon.', 'pattern B: a full gloss is kept');
 // The setup mix (Renata, 2026-11-10)
 {
   const picks = Array.from({ length: 400 }, (_, i) => pickSetup({ conversationId: `mix-${i}`, turn: 1 + (i % (GOODBYE_AFTER - 1)), characterId: 'x' }, CLUSTER_1).id);
@@ -185,10 +156,6 @@ check(/p\.promptFile === SCAFFOLDING_FILE && !p\.retried/.test(readFileSync('lib
   const last = (b: typeof said) => b.messages[b.messages.length - 1].content;
   check(last(said) !== last(own) && last(said).length > 'Un café, por favor.'.length + 5, 'Beginner 2: the heard note tells said-back from own words');
 }
-const inside = shownParts(parts, RUNGS.find((r) => r.id === 'inside-en')!);
-check(!inside.some((x) => x.kind === 'answer') && inside.some((x) => x.kind === 'word' && x.text === 'Sì, grazie.' && x.gloss === 'Yes, thanks.'), 'rung 4: the answer is in her speech with its English heard, no bubble');
-check(shownParts(parts, RUNGS.find((r) => r.id === 'inside')!).some((x) => x.kind === 'word' && x.text === 'Sì, grazie.' && !x.gloss), 'rung 6: the answer in her speech, no English');
-check(inside.some((x) => x.kind === 'english' && x.text.length > 0), 'the lead line before the answer comes from scaffolding.md');
 const v = beginner2Version(CLUSTERS[2]);
 check(v.endsWith('+C3'), `the version names the cluster (${v})`);
 check(v.startsWith('beginner-2-') && !stageInVersion(v), `Beginner 2 turns carry no stage tag, so the Beginner 1 path doesn't count them (${v})`);

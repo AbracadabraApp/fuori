@@ -1,6 +1,6 @@
 # Scaffolding (Beginner 2)
 
-version: 2026-11-11d
+version: 2026-11-12a
 
 Everything that helps a Beginner take part, kept apart from the dialogue
 (Josh, 2026-11-09: "I want to be able to adjust scaffolding without touching
@@ -112,26 +112,10 @@ They can follow simple {language} now. Talk half in {language} and half in Engli
 Where they are now: finding their feet. Short sentences of your own, with more of the conversation in {language} than in English. If they don't follow, rephrase in {language} first. English only when they ask, or for a word they can't get from the scene.
 ```
 
-## Summary
-
-```
-A local has just said this in {language}. Summarize each numbered stretch in one sentence of English with the fewest words, in her own words, as she would say it.
-
-Reply with JSON: { "summaries": ["...", ...] }, one for each stretch, in order.
-```
-
-The side call for cluster 1 (lib/beginner-2.ts → writeSummaries): one English remark per stretch of her talk (past 20 words or 2 sentences), said after the stretch instead of the literal English after every phrase. Josh's one line, with her voice; nothing else until the game shows a fault (Josh, 2026-11-10: "Correcting words can lead to inclusion"). Card B2-E5.
-
 ## Line: invite English
 
 ```
 You can ask me in English or {language}.
-```
-
-## Line: answer inside
-
-```
-You could answer me with:
 ```
 
 The changelog is in `changelog/scaffolding.md`.

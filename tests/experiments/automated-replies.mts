@@ -13,7 +13,7 @@ import { cities, language } from '@/content';
 import { characterForVisit } from '@/lib/characters/for-visit';
 import { runBeginnerTurn, lineFromParts, SCAFFOLDING_FILE, type Part } from '@/lib/beginner';
 import { TURN_MODEL } from '@/lib/claude';
-import { CLUSTERS, GLOSS_ALL, glossAll, levelText, setupLine, shapeParts, pickSetup } from '@/lib/beginner-2';
+import { CLUSTERS, levelText, setupLine, shapeParts, pickSetup } from '@/lib/beginner-2';
 import { summarizeWithClaude } from '@/lib/remember';
 import { repeatsFromEarlier } from '@/lib/dialogue-stats';
 import type { CharacterMemory } from '@/lib/memory';
@@ -28,7 +28,7 @@ const persona = arg('persona', 'josh');
 const howMany = Number(arg('characters', '4'));
 const label = arg('label', `c${clusterNo}-${persona}`);
 // Card B2-E (docs/prompt-trials.md): --arm=A is today's cluster 1; --arm=B gives the English a job (the level
-// text below, and glossAll off for cluster 1, in this process only). --seed keeps places and learner seeds the same across arms.
+// text below). --seed keeps places and learner seeds the same across arms.
 const arm = arg('arm', '');
 const seed = arg('seed', label);
 let stage = levelText(cluster);
@@ -41,7 +41,6 @@ if (arm) {
       ? ['"El Andador es el corazón de la ciudad, the heart of the city…"', '"¿Le gustan? You like them? My abuela made them this way."', '"La Parroquia, the big pink church, ¿la ve?"', '"Hoy hay mole. It\'s a sauce, very dark, chocolate and chiles; you must try."']
       : ['"Il Duomo è il cuore della città, the heart of the city…"', '"Le piacciono? You like them? My nonna made them this way."', '"La Torre, the tall brick tower, si vede?"', '"Oggi c\'è il ragù. It\'s a sauce, slow-cooked, meat and tomato; you must try."'];
     stage = `They're at the very start. Talk like a bilingual local who knows some English: short, simple ${language.name} sentences, one idea each. When English helps, say it yourself as its own English part, right after the fragment it serves, then carry on in ${language.name}: not every chunk, and never a whole sentence followed by its translation. Four ways, as models: (1) the key phrase, echoed: ${ex[0]}; (2) an aside in your own voice, the warm words kept in ${language.name}: ${ex[1]}; (3) a check that ends on a short tag in ${language.name}: ${ex[2]}; (4) English as your own explanation: ${ex[3]}. Keep each turn short: two or three sentences and your question.`;
-    GLOSS_ALL[0] = false;
   }
   if (arm === 'D') {
     // Card B2-E3: the gloss is what the same thing looks like in gesture (Josh's sign-language device), not a translation
@@ -49,12 +48,10 @@ if (arm) {
       ? ['"Hoy hay mole" → "Mole. Sauce, dark, chocolate, chile. You try."', '"Lo sirvo en una taza de Talavera" → "Cup, Talavera, painted. Puebla."', '"Llevo muchos años en esta esquina" → "This corner, many years. Me."']
       : ['"Oggi c\'è il ragù" → "Ragù. Sauce, meat, tomato, slow. You try."', '"Lo servo in una tazza di Faenza" → "Cup, Faenza, painted."', '"Sto qui da molti anni" → "Here, many years. Me."'];
     stage = `They're at the very start. Talk like a bilingual local: short, simple ${language.name} sentences, one idea each, each its own word part. What you put in a part's gloss is not a translation. It is what the same thing looks like in gesture, as when someone uses their hands because words fail: only the concrete nouns, verbs and properties, topic first, no small grammar words, no filler, a few words in all. ${ex.join('; ')}. A line with nothing concrete in it (a reaction, thanks) keeps a short plain English. Keep each turn short: two or three sentences and your question.`;
-    GLOSS_ALL[0] = false;
   }
   if (arm === 'B') {
     const example = language.card.country === 'Mexico' ? '"Esto es tejuino, a cold corn drink"' : '"Questo è il pecorino, sheep\'s cheese"';
     stage = `They're at the very start. Talk like a bilingual local who knows some English: short, simple ${language.name} sentences, one idea each, each its own word part. The English is your own speech, not a translation: never translate a whole sentence. Use at most one piece of English a line, and give it a job: name the one word right after it (${example}), add something new, check they follow, or explain in a short sentence. Keep the questions, tags and warm words in ${language.name}. Keep each turn short: two or three sentences and your question.`;
-    GLOSS_ALL[0] = false;
   }
 }
 
@@ -137,7 +134,6 @@ await pool(chosen.map(({ city, place }) => async () => {
       const nw = (t: string) => t.trim().split(/\s+/).filter(Boolean).length;
       const woven = rawParts.some((p, i) => p.kind === 'english' && rawParts[i - 1]?.kind === 'word' && nw(p.text) < 0.8 * nw(rawParts[i - 1].text));
       const ownEnglish = woven || rawParts.some((p, i) => ((p.kind === 'word' || p.kind === 'question') && p.gloss?.trim()) || (p.kind === 'english' && rawParts[i - 1]?.kind !== 'question'));
-      if ((arm === 'C' || arm === 'D') && !ownEnglish) { parts = glossAll(parts); fixes = [...fixes, 'fillGloss']; }
       const { line } = lineFromParts(parts);
       const answers = parts.filter((p) => p.kind === 'answer').map((p) => p.text);
       rows.push({ character: character.name, visit: v, turn: turn + 1, setup: setup.id, fixes, kind, how, said, ms: Math.round(performance.now() - started), ok: true, parts, line, answers, done: reply.done, woven, ownEnglish, raw: rawParts });

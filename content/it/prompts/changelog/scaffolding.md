@@ -2,6 +2,10 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
 
+### 2026-11-12a: the Summary and "Line: answer inside" blocks removed
+- **Removed:** "Summary" (the side call's prompt: one English remark per stretch of her talk, card B2-E5) and "Line: answer inside" ("You could answer me with:", the lead for an answer said inside her line). Neither was played: since 10q no cluster summarizes or glosses by code (the Level 1 frame carries its own English), and the inside rungs were in no cluster since 2026-11-09 (no screen design). Their code went with them (lib/beginner-2.ts: stretchesOf, writeSummaries, withSummaries, glossAll, GLOSS_ALL, insideSpeech, the inside-en and inside rungs; take-turn.ts: summariesFor).
+- **Why and prompted by:** the dialogue inventory (docs/dialogue-plan.md 5.6); Josh, 2026-11-12: "yes" to deleting the dead code and its tests. The summary's result stays on card B2-E5 and in docs/summary-and-mixed.md.
+
 ### 2026-11-11d: steps 2 and 3 of the ladder written: the frame without the English heard before, then half and half
 - **Changed:** "Level: 1b" (cluster 2, step 2) is the Level 1 frame minus the English after phrases heard before (the English only the first time, or for a new word that matters). "Level: 2" (clusters 3–4, step 3) is half {language} and half English in every turn, never a sentence followed by its own translation, the English after a phrase only when new, the question's English only for a new kind of question. Both run on the one-line reply with answers (`lib/conversation/take-turn.ts`: clusters 1–3 on `runTurn`, the parts format from cluster 4). The old texts were Beginner 1's S1 and S2 stages.
 - **Why:** Josh, 2026-11-11: "Steps 2 and 3 of the ladder… aren't written" after the level up shipped; a yes on the level-up screen played the old short-Spanish-sentences text. docs/beginner-2-step-2.md → Step 2's draft, and the ladder in docs/beginner-2.md.
