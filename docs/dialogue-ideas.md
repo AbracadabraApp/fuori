@@ -2,6 +2,35 @@
 
 Ideas about how conversations with characters should go: what they say, when the learner speaks, how the scene moves. Started by Josh on 2026-11-04, after playing Florence (Ardit at Trattoria Mario, Lorenzo in Piazza Santa Croce). Nothing here is scheduled. An idea moves to the roadmap once Josh decides it. Josh's words are quoted; anything else is marked as Claude's proposal.
 
+## Index: open and fixed (sorted 2026-11-12)
+
+Status from the entries and the day's commits; "not checked" means nobody has looked at it against today's game. The entries below are unchanged.
+
+**Open**
+- The character asks and carries on, as if answered: "Take up what they just said" shipped 2026-11-12 (character.md 12a, not yet live); recount after 20 visits (dialogue-plan.md).
+- The receipt gate (Bar Alba): the cassa sentence was removed from five bar characters' here lines (4d765c3, live); not heard since.
+- Open-ended talk doesn't need a question every turn: now part of the bids model (a statement can be a bid; dialogue-structure-reference.md § 1a).
+- A character who steps away comes back: not checked.
+- "Stay within your job" turns away a question about the town: not checked.
+- Managing the lesson out loud: not checked.
+- A correction for something the learner said right: collecting examples.
+- "Say this" adds things the learner didn't say: not checked.
+- A voice that seems to change mid-line: not checked.
+- Long replies in open-ended talk (Intermediate): not checked; Beginner turns shortened 2026-11-12 (scaffolding.md 12b).
+
+**Fixed or overtaken**
+- "Are you new here?" in almost every opener: character.md 10q; beginner.md 12a (2026-11-12); the intro asks about what it told.
+- The same invitation every other turn: the invitation removed from every step (Josh, 2026-11-10: "you can just remove the ask question").
+- A Beginner turn says the same thing three times: beginner.md 2026-11-05c (the old Beginner).
+- Beginner S2 is too much: the old Beginner's stage; overtaken by the cut-over (2026-11-12).
+- A cultural lesson never says what its topic is: culture.md 2026-11-06.
+- Tommaso's coffee in Florence: fixed 2026-11-06.
+- Beto, San Miguel: the taxi driver's order fixed 2026-11-06 (dialogue.md "Stay within your job"); the entry's other items not checked.
+- Corrections: not every time: dialogue.md's shared rule (2026-11-05).
+- Magda says "Almost!" to a line that wasn't the offered answer: the shared mishearing rule (2026-11-05); not checked since.
+
+**Analyses and tools, kept for reference:** the two top 10s (2026-11-08), why Beginner conversations read flat, kind and lively places, carbonara without cream, the examples as a replay set.
+
 ## The receipt gate: a planted procedure took over a visit (Giulia Cusimano, Bar Alba, Palermo, 2026-11-12 00:02 UTC; Intermediate 2026-11-10q)
 
 The example for the lesson in dialogue-model.md ("Whatever is in the setting gets said, almost every visit"), in its worst form: not a talking point but a gate. Five hand-written bar characters had the same sentence in their here line: "Whoever comes to your counter has already paid at the cassa and hands you the scontrino; you take it and make what they paid for" (Luisa Cocco and Sandro Pieri in Rome, Bar Nilo in Naples, the Naviglio bar in Milan, Giulia in Palermo). The game has no cassa to go to and no receipt to hand over.

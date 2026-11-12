@@ -3,7 +3,7 @@
 version: 2026-11-12a
 
 What a character is told about how much {language} the learner follows.
-Experimental (docs/language-levels-plan.md → Preliminary design): used only
+Experimental (docs/archive/language-levels-plan.md → Preliminary design): used only
 when a level is passed to `buildTurnPrompt` (`--level=<block>` in
 `npm run test:replay` and `npm run test:conversations`). Production passes
 none, so the character prompt is unchanged. The block is added at the end of
@@ -13,7 +13,7 @@ Two Beginner variants to compare:
 - **situation**: describes the person, in keeping with character.md's
   principle ("describe the situation, not how to talk")
 - **shape**: the situation plus how a patient person in that role talks to
-  them, from the rewrite samples (docs/level-judge-test.md)
+  them, from the rewrite samples (docs/archive/level-judge-test.md)
 
 ## Beginner: situation
 

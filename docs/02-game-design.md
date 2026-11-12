@@ -100,7 +100,7 @@ Inspired by the creator's real teacher. Use her first name only, and check she's
 
 Levels follow the **CEFR** (A1, A2, B1…), with Italian specifics from the *Profilo della lingua italiana*. Two dials move separately:
 
-- **What you hear:** speed, sentence length, vocabulary, tenses, how much regional dialect, and what characters ask: yes or no and this or that for a beginner, one fact for an intermediate, anything for an advanced learner (Josh, 2026-10-17; see `docs/language-levels-plan.md` → Three tiers).
+- **What you hear:** speed, sentence length, vocabulary, tenses, how much regional dialect, and what characters ask: yes or no and this or that for a beginner, one fact for an intermediate, anything for an advanced learner (Josh, 2026-10-17; see `docs/archive/language-levels-plan.md` → Three tiers).
 - **What situations ask of you:** ordering → describing → telling what happened → giving opinions → handling problems.
 
 **How the game knows you're ready** (from conversations, no tests): how often you need hints, "Come si dice?", slow replay or English; how many corrections; whether old mistakes stop recurring; the words and tenses you actually use. The end-of-conversation step updates your profile; changes need consistent evidence across several conversations, so one good or bad day doesn't move you.

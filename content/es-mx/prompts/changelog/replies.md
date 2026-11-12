@@ -35,7 +35,7 @@ good 91–92%, sensible 100%, 1.4–1.5 s).
 
 ### 2026-10-17: first version
 
-Round 7 of docs/level-judge-test.md. A first version kept both replies on one
+Round 7 of docs/archive/level-judge-test.md. A first version kept both replies on one
 frame even after a yes-or-no question, so both said "Sì" and one answered
 something else ("Ti piace l'arancia?" → "Sì, mi piace il mare"). This one makes
 a yes and a no the two choices and asks for different choices, not two

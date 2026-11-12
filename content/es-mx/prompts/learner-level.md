@@ -7,7 +7,7 @@ confirm or move it (Josh, 2026-10-18). After each of a learner's first 3
 conversations, one call reads the onboarding answers and those conversations
 and sets the stored level (`learners.level`). Read by `lib/learner-level.ts`,
 only when the `LEVEL_CHECK` setting is on. Tested in round 14
-(docs/level-judge-test.md): on simulated learners at a known level, one
+(docs/archive/level-judge-test.md): on simulated learners at a known level, one
 conversation corrected every placement onboarding got wrong.
 
 ## System prompt

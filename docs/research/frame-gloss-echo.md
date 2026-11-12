@@ -33,7 +33,7 @@ From [beginner-mode-scaffolding.md](beginner-mode-scaffolding.md), [leveling/01-
 - **Spacing helps only after enough repetitions**: echo first, then quiz.
 - Shipping products give beginners tap-to-translate, suggested replies to read and hear before repeating, and replay at a slower rate; they shrink the learner's reply space, not the world.
 
-Repo evidence that bears on the same question (our own tests, not the research literature): [beginner-deep-dive.md](../beginner-deep-dive.md) notes the English-then-language echo reverses the 5 Nov "say each thing once" fix, and that the English echo was the only dial that moved the English balance when measured.
+Repo evidence that bears on the same question (our own tests, not the research literature): [beginner-deep-dive.md](../archive/beginner-deep-dive.md) notes the English-then-language echo reverses the 5 Nov "say each thing once" fix, and that the English echo was the only dial that moved the English balance when measured.
 
 ## 3. What this means for the frame
 

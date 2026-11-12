@@ -202,7 +202,7 @@ Written by the end-of-conversation step (`lib/remember.ts`), stored with the phr
 
 ## On hold: a scripted, smaller world for beginners (Josh, 2026-10-17; on hold until there's a spec, 2026-10-18)
 
-Fixed scripts per character, the same for every learner, in one neighbourhood (Trastevere: 11 characters; Mexico City: 13 across four neighbourhoods) while the learner only taps; leaving the neighbourhood is the reward for speaking. Tests (rounds 11–13, [level-judge-test.md](level-judge-test.md)): cheap to write and the easiest dialogue yet (70–84% of lines a beginner can follow), but where both replies must lead to the same next line one path ignores the learner's answer, and forcing a this-or-that choice at every join made it a quiz. Costs: the open world, memory of the learner's own taps, their name without live audio. CLAUDE.md's "no scripted scenes" predates this and doesn't rule it out.
+Fixed scripts per character, the same for every learner, in one neighbourhood (Trastevere: 11 characters; Mexico City: 13 across four neighbourhoods) while the learner only taps; leaving the neighbourhood is the reward for speaking. Tests (rounds 11–13, [level-judge-test.md](archive/level-judge-test.md)): cheap to write and the easiest dialogue yet (70–84% of lines a beginner can follow), but where both replies must lead to the same next line one path ignores the learner's answer, and forcing a this-or-that choice at every join made it a quiz. Costs: the open world, memory of the learner's own taps, their name without live audio. CLAUDE.md's "no scripted scenes" predates this and doesn't rule it out.
 
 ## Open questions
 

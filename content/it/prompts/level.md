@@ -7,7 +7,7 @@ dialogue scorecard (docs/06-roadmap.md → 2; 90% of the character's words at
 the learner's level). Read by `lib/level.ts`, one call per character line; the
 replay test uses it, real play doesn't yet. Listener 1–2 is a beginner (about
 A1–A2), so a line a beginner can follow is one where at least 90% of its words
-are known by listener 1 or 2. Developed in the level tests (docs/level-judge-test.md,
+are known by listener 1 or 2. Developed in the level tests (docs/archive/level-judge-test.md,
 rounds 1–14 as the scratch `grade-runs.mjs`).
 
 ## User message

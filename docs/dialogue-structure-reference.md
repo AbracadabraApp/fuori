@@ -420,7 +420,7 @@ Nunzio gave the terms that fill out a monologue (Story, Reassure, Praise, Rest, 
 
 *Since this was written (2026-11-12):* test X1 showed a whole good visit to the character and Josh heard no difference, which answers 14.3's third use (the notes on an example visit) with a no for that way of showing one; and Josh's bids model (§ 1a) with the Beginner menu (§ 2a) is the sorting and the pairs that 14.2 and 14.7 asked for.
 
-Josh asked whether the terms table factors into the turn-code doc ([one-turn-engine.md](one-turn-engine.md)), what its shortcomings are, how to improve it, and whether it is likely to improve dialogue. Positions here are Claude's, held after Josh's corrections; each has the best case against it.
+Josh asked whether the terms table factors into the turn-code doc ([one-turn-engine.md](archive/one-turn-engine.md)), what its shortcomings are, how to improve it, and whether it is likely to improve dialogue. Positions here are Claude's, held after Josh's corrections; each has the best case against it.
 
 **14.1 Where the table is used.** Of about 46 terms, 8 kinds of question (§ 12.1) and 5 inputs, the live code uses two shapes (answer first, close) and the answer setups. The turn-code doc was written without reading § 9 to § 13 and didn't use the table; its one link is that the bracketed note is where a shape is sent.
 

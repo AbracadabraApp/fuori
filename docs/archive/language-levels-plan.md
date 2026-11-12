@@ -1,8 +1,10 @@
 # Language levels (M3): quick capture
 
-Draft, 2026-10-14, from a conversation with Josh; a preliminary design was added 2026-10-16 (below), not yet discussed. Originally: we lay it out properly after the Mexican place images are approved. Roadmap: [Now → Language levels](06-roadmap.md#now).
+> **Archived 2026-11-12:** the October draft for language levels, overtaken by the old Beginner path and then the new Beginner (docs/beginner-2.md; decisions in docs/dialogue-model.md).
 
-Research behind this plan: [How language apps handle levels](research/language-app-levels.md) (2026-10-15), product and technical, with ranked implications for Fuori.
+Draft, 2026-10-14, from a conversation with Josh; a preliminary design was added 2026-10-16 (below), not yet discussed. Originally: we lay it out properly after the Mexican place images are approved. Roadmap: [Now → Language levels](../06-roadmap.md#now).
+
+Research behind this plan: [How language apps handle levels](../research/language-app-levels.md) (2026-10-15), product and technical, with ranked implications for Fuori.
 
 ## The problem
 
@@ -34,7 +36,7 @@ Research behind this plan: [How language apps handle levels](research/language-a
 
 ## Three tiers: Beginner, Intermediate, Advanced
 
-**Decided (Josh, 2026-10-15): three levels, named Beginner, Intermediate and Advanced.** No hidden steps inside Beginner; "Advanced" rather than "Expert". The five scaffolding levels in [beginner-scaffolding.md](beginner-scaffolding.md) are not steps of this kind: they change how a Beginner takes part, while how characters talk follows the tier (Josh, 2026-10-17).
+**Decided (Josh, 2026-10-15): three levels, named Beginner, Intermediate and Advanced.** No hidden steps inside Beginner; "Advanced" rather than "Expert". The five scaffolding levels in [beginner-scaffolding.md](../beginner-scaffolding.md) are not steps of this kind: they change how a Beginner takes part, while how characters talk follows the tier (Josh, 2026-10-17).
 
 | | Beginner | Intermediate | Advanced |
 |---|---|---|---|
@@ -48,11 +50,11 @@ Research behind this plan: [How language apps handle levels](research/language-a
 
 Characters are told the tier; it doesn't break character. A beginner gets a more patient barista, not a teacher ("everyone teaches, always in role").
 
-**What characters ask is the clearest difference between the levels (Josh, 2026-10-17).** It describes the outcome, not prompt wording: how a prompt gets there is for testing. A beginner always has something to answer, and something small; the questions open up as the learner does. It works the same in any language, and a "this or that" question gives the reply buttons their answers. Measured per turn by the kind of question a character's line leaves (none, yes or no, choice, one fact, open), as in `docs/level-judge-test.md` (round 5). The risk is the opposite one: a character who only asks turns a conversation into an intake form, so at higher levels the character leads less.
+**What characters ask is the clearest difference between the levels (Josh, 2026-10-17).** It describes the outcome, not prompt wording: how a prompt gets there is for testing. A beginner always has something to answer, and something small; the questions open up as the learner does. It works the same in any language, and a "this or that" question gives the reply buttons their answers. Measured per turn by the kind of question a character's line leaves (none, yes or no, choice, one fact, open), as in `docs/archive/level-judge-test.md` (round 5). The risk is the opposite one: a character who only asks turns a conversation into an intake form, so at higher levels the character leads less.
 
 ## Beginner ladder (Josh's idea)
 
-**Superseded (2026-10-17):** the scaffolding design in [beginner-scaffolding.md](beginner-scaffolding.md) replaces this sketch (its own five-step plan was later replaced too; that doc is current as of 2026-10-22). Kept below for history.
+**Superseded (2026-10-17):** the scaffolding design in [beginner-scaffolding.md](../beginner-scaffolding.md) replaces this sketch (its own five-step plan was later replaced too; that doc is current as of 2026-10-22). Kept below for history.
 
 Support comes off step by step:
 1. **Pick:** the character speaks; the learner chooses one of two replies. No speaking yet.

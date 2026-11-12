@@ -1,6 +1,6 @@
 # Experiments
 
-Scripts behind the level and dialogue tests (results in [docs/level-judge-test.md](../../docs/level-judge-test.md), queue in [docs/test-ideas.md](../../docs/test-ideas.md)). Moved here from the laptop session's scratchpad on 2026-10-18 so any session can rerun them. They aren't checks that pass or fail: each prints numbers to compare between arms.
+Scripts behind the level and dialogue tests (results in [docs/archive/level-judge-test.md](../../docs/archive/level-judge-test.md), queue in [docs/test-ideas.md](../../docs/test-ideas.md)). Moved here from the laptop session's scratchpad on 2026-10-18 so any session can rerun them. They aren't checks that pass or fail: each prints numbers to compare between arms.
 
 Run from the repo root with the API key: `npx tsx --env-file=.env.local tests/experiments/<script>.mts …`, with `COUNTRY=es-mx` for Mexico. Outputs go to `tests/experiments/out/`, which is gitignored because several quote Josh's real lines. Every Claude call goes through `lib/claude.ts`, so the models are the app's.
 

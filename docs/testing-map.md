@@ -43,7 +43,7 @@ One page: every kind of testing in Fuori, what it is for, which one decides what
 - The first simulated-learner suite: `tests/archive/`.
 - `npm run test:conversations`'s 1–10 grades and recommendations: replaced by counts on 2026-11-08 (layer 3b).
 - The simulated learner Sam on Grok inside one-off scripts (C4–C10): replaced by the conversation test's learner.
-- `docs/test-ideas.md` and `docs/level-judge-test.md`: the 2026-10 queue and results, before the card method.
+- `docs/test-ideas.md` and `docs/archive/level-judge-test.md`: the 2026-10 queue and results, before the card method.
 
 ## What isn't tested
 

@@ -1,6 +1,6 @@
 # Afuera: today vs Beginner, for a Spanish speaker's eye
 
-2026-10-16. Simulated conversations from the level tests (`docs/level-judge-test.md`): the same characters and kind of learner, with today's prompt and with two Beginner versions. The learner is simulated (an English speaker with very little Spanish), so their lines differ between versions.
+2026-10-16. Simulated conversations from the level tests (`docs/archive/level-judge-test.md`): the same characters and kind of learner, with today's prompt and with two Beginner versions. The learner is simulated (an English speaker with very little Spanish), so their lines differ between versions.
 
 **Questions for a fluent speaker:**
 1. Do the Beginner versions still sound like a real person in that place in Mexico, or like a textbook?

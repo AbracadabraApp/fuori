@@ -1,6 +1,6 @@
 # The Beginner level as it runs in production
 
-What a Beginner conversation is in the live code today: build **bb0b6e6** (released 2026-11-08), read from `origin/live`. The baseline for the Beginner plan (`docs/beginner-plan.md`): any change is measured against this. Facts only, no proposals. Italy's files are quoted; Mexico's mirror them.
+What a Beginner conversation is in the live code today: build **bb0b6e6** (released 2026-11-08), read from `origin/live`. The baseline for the Beginner plan (`docs/archive/beginner-plan.md`): any change is measured against this. Facts only, no proposals. Italy's files are quoted; Mexico's mirror them.
 
 ## 1. Who gets it
 

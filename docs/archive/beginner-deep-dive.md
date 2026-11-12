@@ -1,6 +1,8 @@
 # Beginner deep dive (2026-11-09)
 
-Five read-only reports put together: production code (origin/live bb0b6e6), proposed changes (beginner-plan.md), real play (last 14 days, production DB), dependencies, and history (git and changelogs). Facts unless marked *opinion*. Baseline: [beginner-as-live.md](beginner-as-live.md); spec then: [beginner-plan.md](beginner-plan.md); the plan now: [beginner-2.md](beginner-2.md).
+> **Archived 2026-11-12:** a snapshot of five reports on 2026-11-09, before the new Beginner and the cut-over.
+
+Five read-only reports put together: production code (origin/live bb0b6e6), proposed changes (beginner-plan.md), real play (last 14 days, production DB), dependencies, and history (git and changelogs). Facts unless marked *opinion*. Baseline: [beginner-as-live.md](../beginner-as-live.md); spec then: [beginner-plan.md](beginner-plan.md); the plan now: [beginner-2.md](../beginner-2.md).
 
 ## 1. Production: what the code check found
 

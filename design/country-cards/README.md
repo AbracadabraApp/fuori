@@ -1,6 +1,6 @@
 # Country cards
 
-The pictures for choosing Italy or Mexico when the app starts (one app, two countries: docs/12-native-app.md decision 1; onboarding in docs/language-levels-plan.md#onboarding). Picked by Josh, 2026-10-15.
+The pictures for choosing Italy or Mexico when the app starts (one app, two countries: docs/12-native-app.md decision 1; onboarding in docs/archive/language-levels-plan.md#onboarding). Picked by Josh, 2026-10-15.
 
 - **Style:** the Mexico City place style (bright daylight photography), so the two cards match.
 - **Content:** evocative of the country, not one real place (Josh: "the image doesn't have to be real as much as evocative of the country"). Both are a sunny street with one person, so the cards pair in shape while colour and details tell them apart.

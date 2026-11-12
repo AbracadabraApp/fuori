@@ -1,5 +1,7 @@
 # Level judge test (temporary)
 
+> **Archived 2026-11-12:** a temporary record of the October level-judge test (its scripts and samples were never in the repo). Kept as the record of its results.
+
 Started 2026-10-16 with Josh. Question: can Claude tell the CEFR level of Italian it reads, well enough to measure whether characters speak at the learner's level ([language-levels-plan.md](language-levels-plan.md), target: 90% of a character's words at the learner's level)?
 
 Temporary: the scripts and samples live in the laptop session's scratchpad, not the repo (the samples are copied from published exam papers). This file keeps the design and the results so the next session can repeat or extend them.
@@ -206,7 +208,7 @@ The share of turns ending on a tacked-on "sì o no?" / "¿sí o no?" was checked
 - **The new pick is "sometimes ask"**: answerable turns go from about 54–79% to 77–100%, and choice questions come back for the reply buttons. It costs a little life on the judge (Mexico 7.8 → 6.8–7.0 against this round's control, which is high: round 3 had 7.2–7.4), so Josh's ear decides.
 - The alive judge may itself mark down a turn for ending on a question; checked in round 8: it doesn't.
 
-**Round 7: reply buttons, written by a separate call (2026-10-17).** For levels 1–3 of [beginner-scaffolding.md](beginner-scaffolding.md): after each character line in round 6's "sometimes ask" conversations, a "clicks" prompt writes two whole-line replies on one frame, given the conversation so far (`replies.mjs`, prompt v1). Sonnet judges each pair (sensible answer to the last line, same frame, whole sentence, beginner-readable, distinct, English right, correct). "Ready" means written before the character's line finishes at beginner speed (about 2.3 words a second).
+**Round 7: reply buttons, written by a separate call (2026-10-17).** For levels 1–3 of [beginner-scaffolding.md](../beginner-scaffolding.md): after each character line in round 6's "sometimes ask" conversations, a "clicks" prompt writes two whole-line replies on one frame, given the conversation so far (`replies.mjs`, prompt v1). Sonnet judges each pair (sensible answer to the last line, same frame, whole sentence, beginner-readable, distinct, English right, correct). "Ready" means written before the character's line finishes at beginner speed (about 2.3 words a second).
 
 | Writer | Pairs | All good | Sensible | Distinct | Correct | Median time | Ready before the voice ends |
 |---|---|---|---|---|---|---|---|
@@ -290,7 +292,7 @@ v2 (one reply yes and one no; different choices, not two wordings; answer the la
 - **Recasting fell with the short prompt:** a mistake ("Io vuole due di questi. Io è nuovo qui.") is echoed back right in 13–19% of replies, against 31–44% on the previous prompt with thinking. Mostly the character just moves on ("Certo, due di questi, subito! Benvenuto a Firenze."). 16 per cell, so the size is rough; the direction is the same in both countries.
 - Everything else holds at 94–100%.
 
-**Round 17: Diario cards from real conversations (2026-10-18, [diario.md](diario.md)).** Are the phrases worth reviewing? Real conversations from the admin export with 2+ learner lines (Italy 28, Mexico 9). Arm "today": every review phrase the memory step already stores (items, mistakes' better version, missed), judged on whether the learner would say it and whether it's on a reusable frame. Arm "cards": a draft card maker writes up to 6 cards per conversation (a frame the learner needed: a mistake, English, a recast, or something they couldn't answer; the character's line inviting it; two replies on the frame with the character's answers). Each card judged in 9 checks, and the level judge (`lib/level.ts`, 90% of words) on its line and replies (`tests/experiments/archive/diario-cards.mts`).
+**Round 17: Diario cards from real conversations (2026-10-18, [diario.md](../diario.md)).** Are the phrases worth reviewing? Real conversations from the admin export with 2+ learner lines (Italy 28, Mexico 9). Arm "today": every review phrase the memory step already stores (items, mistakes' better version, missed), judged on whether the learner would say it and whether it's on a reusable frame. Arm "cards": a draft card maker writes up to 6 cards per conversation (a frame the learner needed: a mistake, English, a recast, or something they couldn't answer; the character's line inviting it; two replies on the frame with the character's answers). Each card judged in 9 checks, and the level judge (`lib/level.ts`, 90% of words) on its line and replies (`tests/experiments/archive/diario-cards.mts`).
 
 | | Today's phrases: card-worthy | Cards | Pass the 9 checks | Conversations with 3+ good cards | Beginner follows the line | and both replies |
 |---|---|---|---|---|---|---|

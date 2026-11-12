@@ -130,4 +130,4 @@ This is the API-friendly stand-in for guided decoding. It comes in three forms.
 - [Readability of Spanish Texts: Alternative Metrics to Flesch (Screaming Frog)](https://www.screamingfrog.co.uk/blog/readability-of-spanish-texts-alternative-metrics-to-flesch/)
 - [Flesch Reading Ease in italiano e la sua affidabilità (SupportHost; Gulpease thresholds)](https://supporthost.com/it/flesch-reading-ease-in-italiano-e-la-sua-affidabilita)
 - [textstat (Python readability library)](https://pypi.org/project/textstat)
-- Repo: [00-what-we-know.md](00-what-we-know.md), [../../prompt-trials.md](../../prompt-trials.md), [../../level-judge-test.md](../../level-judge-test.md), [../llm-language-learning.md](../llm-language-learning.md)
+- Repo: [00-what-we-know.md](00-what-we-know.md), [../../prompt-trials.md](../../prompt-trials.md), [../../level-judge-test.md](../../archive/level-judge-test.md), [../llm-language-learning.md](../llm-language-learning.md)

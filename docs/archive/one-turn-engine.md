@@ -1,5 +1,7 @@
 # The turn code: a map, a small refactor, and who plans a turn
 
+> **Archived 2026-11-12:** its map of the turn code lives on, checked, in docs/dialogue-now.md; the refactor is parked and "who plans a turn" is an open question in docs/dialogue-plan.md.
+
 Claude (Mac mini session), 2026-11-11. First written at Josh's request ("Write up the plan and design") as an eight-step plan for one turn engine. Rewritten the same night after a review of it and the discussion that followed (Josh: "update the docs you've committed… stick to your guns, don't accept points you don't agree with but do consider best cases against"). Nothing here is agreed or built.
 
 **Status:** not a dialogue plan, and parked as a refactor. What stands is the map (§1), two deletions (§2), a small refactor worth doing only when a change has to reach every conversation (§3), and the question the discussion ended on: who plans a turn, code or Claude (§4).

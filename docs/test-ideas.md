@@ -1,6 +1,6 @@
 # Test ideas
 
-A running list of tests to run, kept by whichever Claude session is testing (Josh, 2026-10-17: "I don't want to be the bottleneck"; Claude designs and runs the tests, Josh adds ideas). Results go in [level-judge-test.md](level-judge-test.md); this file is only the queue. Tests never change production: experiments run through `--level` and scratch scripts until Josh decides.
+A running list of tests to run, kept by whichever Claude session is testing (Josh, 2026-10-17: "I don't want to be the bottleneck"; Claude designs and runs the tests, Josh adds ideas). Results go in [level-judge-test.md](archive/level-judge-test.md); this file is only the queue. Tests never change production: experiments run through `--level` and scratch scripts until Josh decides.
 
 How to work it: take the top item, run it, write the result in the test log, move the item to Done with one line and the commit, add any new ideas it raised. Reorder when a result changes what matters most.
 

@@ -20,7 +20,7 @@ Doable, but the outcome depends on a test, a decision or a plan not yet made.
 - [ ] **Josh, then Claude: choose the next dialogue test.** Next: Claude proposes 2–3 tests from the queue (`docs/prompt-testing.md` → The queue) matched to the top problems; Josh picks one. Done when: a reviewed card is at the top of the queue.
 - [ ] **City picker.** Next: Josh names what's wrong with it. Done when: Claude has fixed that and Josh approves.
 - [ ] **Intermediate lessons draft: 50 lines to fix** (`content/it/lessons-b1.json`, not read by the app). Waits on: Josh's review of the proposal (old list below, item 4). Done when: Josh says yes, then the lines are fixed and the app reads the file.
-- [ ] **One plan for the Beginner level** ([beginner-plan.md](beginner-plan.md): the shape of turns, what counts toward moving up, placement, the path's fading, and the other Beginner items). Next: Claude drafts it from the goal, for Josh. Done when: Josh approves it.
+- [ ] **One plan for the Beginner level** ([beginner-plan.md](archive/beginner-plan.md): the shape of turns, what counts toward moving up, placement, the path's fading, and the other Beginner items). Next: Claude drafts it from the goal, for Josh. Done when: Josh approves it.
 - [ ] **Automated replies: conversations that play themselves** (Josh, 2026-11-09: "write up notes and design for auto mode and add to todo list", then "maybe automated replies?" as the name; [automated-replies.md](automated-replies.md)). Code picks the kind of learner reply at rates from real play (an offered answer said back, an edit of one, own words, a question, English, help, silence, a push); said-back lines and edits by code, the rest one small generated line of that kind, over long conversations and visits with memory. For drift, length, cultural content and stories retold across visits. Who: Claude, when Josh picks it up ("not for now"). Next: build step 1 (one place, one visit, say-back only, every turn saved). Done when: a run over several places and visits produces the code counts, checked against lines read by hand.
 - [ ] **If Beginner 2 replaces Beginner 1: the changes after** (Josh, 2026-11-09: "add post test changes if beginner 2 replace 1 in todo"; [beginner-2.md](beginner-2.md)). Waits on: Beginner 2 winning on Josh's phone. Then, each its own step:
   1. Beginner 2 the default; Beginner 1 kept a week behind the Version panel, then its code removed (`beginner.md`, the stage blocks in `leveling.md`, the playlist in `lib/path.ts`) and the panel switch with it.
@@ -206,7 +206,7 @@ Goal: alive 7 (today about 6 in real conversations, 5–7 with simulated learner
 - [x] **Claude** A replay set for Mexico (the replay set is one file and holds only Italy's conversations today) · closed (Josh, 2026-11-02)
 - [ ] **Later (Josh, 2026-11-04): characters make up their own details and don't keep them.** In three visits with memory, Ettore's career changed every visit (bank clerk, accountant, ministry clerk) and Serena lived in Monti on one visit and San Lorenzo on another (tests/experiments/archive/here-topic-vs-specific.mts). A separate consistency issue from culture: a fact or two of backstory in `here` (what they did for a living, where they live), or memory keeping what they said about themselves, are the options to look at.
 
-### Language level of the dialogue (what characters say) ([language-levels-plan.md](language-levels-plan.md)) — N6, the level framework
+### Language level of the dialogue (what characters say) ([language-levels-plan.md](archive/language-levels-plan.md)) — N6, the level framework
 Goal: 90% of the character's words at the learner's level (Josh; the [research](research/language-app-levels.md#word-coverage-predicts-confusion-and-llm-judges-can-grade-speech) suggests 95% for easy listening). Today a beginner can follow about 25% of lines on today's prompt.
 - [x] **Claude** Level on the scorecard: "Lines a beginner can follow" (`lib/level.ts`, `level.md`), scored by the replay; real play not yet
 - [x] **Claude** The `test:conversations` grader no longer says complex language is fine; it reports "Lines a beginner can follow" instead (Josh's OK, 2026-10-18). Baseline: 10% Italy, 11% Mexico
@@ -227,7 +227,7 @@ Real learner speech kept as a test set, so changes can be replayed on the same i
 - [x] **Josh** Device checks (Josh, 2026-10-27: calls, Siri, AirPods and backgrounding "works"), on the iPhone during a conversation (while the character speaks and while the mic is open): a phone call comes in; Siri; AirPods out; AirPods in; swipe to the home screen; lock the phone. Each time it should pause, save like any exit, and never reopen the mic without a tap; AirPods out shouldn't carry on through the phone speaker (CLAUDE.md → iPhone app). A simulator can't test this
 
 ### Learner level (placement and moving up) — N6, the level framework
-Doesn't exist as a system yet; onboarding's placement, Magda's study-file Level line and an unused type are separate pieces ([language-levels-plan.md](language-levels-plan.md) → 1).
+Doesn't exist as a system yet; onboarding's placement, Magda's study-file Level line and an unused type are separate pieces ([language-levels-plan.md](archive/language-levels-plan.md) → 1).
 - [x] **Josh** Decided (2026-10-18): onboarding's level is a first guess; the first conversations confirm or move it. Round 14: one conversation corrected every misplacement
 - [x] **Claude** Level check at the end of each of the first 3 conversations, updating `learners.level` (`lib/learner-level.ts`, `learner-level.md`, `test:learner-level`). Off unless `LEVEL_CHECK` is set (`all` or learner ids); the `level_checks` column is created the first time it runs
 - [ ] **Josh** ⛔ Turn it on (for himself first, then `all`): setting it adds a column to the production database
@@ -271,7 +271,7 @@ Onboarding, then reply buttons for the first turns of each conversation (stage A
 
 ### Diario: the review place ([diario.md](diario.md); card screens in [beginner-scaffolding.md](beginner-scaffolding.md)) — N5
 Josh, 2026-10-18: no end of day; a book in the top bar, left of settings, opens phrase cards from your own conversations, at each phrase's own beginner level.
-- [x] **Claude** Card test (round 17, [level-judge-test.md](level-judge-test.md)): today's review phrases are mostly the character's lines (18–22% card-worthy); a card maker passes 69–78% of cards on 9 checks; level is the weak spot (about half the lines at 90% of words)
+- [x] **Claude** Card test (round 17, [level-judge-test.md](archive/level-judge-test.md)): today's review phrases are mostly the character's lines (18–22% card-worthy); a card maker passes 69–78% of cards on 9 checks; level is the weak spot (about half the lines at 90% of words)
 - [ ] **N6 (moved from N5, Josh 2026-10-30)** **Claude** Missions prototype P1–P3 first ([diario.md](diario.md) → Prototype first; Josh, 2026-10-19: prototype before building the whole feature)
 - [ ] **N6 (moved from N5, Josh 2026-10-30)** **Claude** Card maker v2 (on hold until P4: chips with missions may replace cards)
 
@@ -287,7 +287,7 @@ Josh, 2026-10-18: no end of day; a book in the top bar, left of settings, opens 
 - [ ] **Josh + Claude** Adventures: places where something happens, people with something to show (scholar, priest, docent, professor, journalist, archaeologist), and a mystery to solve across days and places; Rome first
 
 ### Smaller world for beginners — skipped (Josh, 2026-10-30; had been on hold for a spec since 2026-10-18)
-Josh's idea (2026-10-17): for levels 1–3, fixed scripts per character, the same for every learner, in one neighbourhood until level 4. Explored in rounds 11–13 ([level-judge-test.md](level-judge-test.md)); described in [beginner-scaffolding.md](beginner-scaffolding.md) → "On hold". No work on it until the spec exists.
+Josh's idea (2026-10-17): for levels 1–3, fixed scripts per character, the same for every learner, in one neighbourhood until level 4. Explored in rounds 11–13 ([level-judge-test.md](archive/level-judge-test.md)); described in [beginner-scaffolding.md](beginner-scaffolding.md) → "On hold". No work on it until the spec exists.
 - ~~**Josh** ⛔ Spec: what's fixed and what's generated; which neighbourhood(s) per country; how many visits and in what order; what earns leaving it; how it fits levels 1–3; whether audio is recorded once~~: skipped (Josh, 2026-10-30)
 - What the tests found: a scripted neighbourhood is cheap to write (24 characters, about 50 scripts, minutes) and the easiest dialogue yet (70–84% of lines a beginner can follow), but where both replies must lead to the same next line, one path ignores the learner's answer; forcing a this-or-that choice at every join made it a quiz (round 13)
 - Parked tests: scripts as a tree with no joins; visits ordered so frames build up ("Vorrei…" before "Sono di…")

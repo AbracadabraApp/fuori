@@ -76,6 +76,7 @@ some principles of dialogue we've learned"). Results are in
 
 - **Four kinds of conversation:** town, the welcome, Magda's lessons, cultural
   stories. *How do I say it* is a tool inside any of them, not a kind.
+- *(Since 2026-11-12 the Beginner plays six steps of the new Beginner, not these stages; see "Decided, 2026-11-10 to 2026-11-12".)*
 - **Six levels:** Beginner stages S1, S2, S3, S4 (lib/path.ts), then
   Intermediate, then Advanced. The welcome is the one exception: it comes
   before there's a level.
@@ -128,6 +129,35 @@ some principles of dialogue we've learned"). Results are in
   Advanced). Built 2026-11-05: the welcome's button starts everyone at S1
   (lib/welcome.ts → finishWelcome). Faster assessment
   later: docs/ideas.md → Assessing level faster.
+
+## Decided, 2026-11-10 to 2026-11-12
+
+Added 2026-11-12 from progress.md, the plan and the changelogs; each quote checked against the written record.
+
+- **Feel first** (Josh, 2026-11-11): "the goal has to be does it feel right more than does it teach best". Teaching measures are guardrails; his ear decides, by listening ("listening is faster than reading and necessary").
+- **Experiments only where the answer is unknown** (Josh, 2026-11-12): experiments are for creating information in an unknown situation; it's too early to optimize measurement where the information is already present. Product changes ship on his word with a changelog, judged by his play; a card only when a decision hinges on a number ("cards should be used for experiments - not product development"; CLAUDE.md).
+- **A conversation is bids** (Josh, 2026-11-12): "A conversation is all about bids… every turn is an opportunity to bid/accept"; "Character makes a bid. Learner accepts and makes their bid. Character accepts, repeat"; "if the bid stinks it doesn't get accepted"; at Beginner "the learner bid is continuing to play". Variety in the kind of bid, not "this or that?" every turn ("It's like Dora the Explorer", 2026-11-11). In the prompts: "Take up what they just said before you add anything of your own" (character.md 12a); new kinds of question one at a time, Notice first (scaffolding.md 12d). Detail: dialogue-structure-reference.md § 1a, § 2a.
+- **The intro opens a visit** (Josh, 2026-11-11; his mockup): the character sets the scene in the language with English subtitles, about what the place is known for, "cultural points first, 30 s fine, not 45 with biography", and ends on a question that comes out of what was told ("'are you visiting' after a cultural intro is a stinker"). At Intermediate and every Beginner step. At Beginner the question is short (intro.md 12b, the screen session, on his yes).
+- **The beats go to the character once** (Josh, 2026-11-11, "go", on the cloud session's critique): a note on every turn made every turn the same; the director speaks only on "answer first" when they asked something.
+- **The Beginner is the new Beginner** (Josh, 2026-11-12: "the sooner we cut over the clearer this will be"): every Beginner plays it, on six steps; the old one behind the hidden switch for a week.
+- **Step 1 is the English frame** (Josh, 2026-11-10, on the frame-mix lines: "These are strong. For early learners - these are better than the echo or summary"): mostly English with the language slotted in, each phrase with its English beside it. Short (Josh, 2026-11-11: "Everything is basically too long"): one or two phrases a turn, two short sentences, then the question (scaffolding.md 12b).
+- **The question's English as a ladder** (Josh, 2026-11-12, "this is what i want"): steps 1–3, printed under the question and said; steps 4–5, said but not printed; step 6, neither. Steps 1–3 built; 4–6 wait for their direction. No "English only the first time or for something new" rules ("i never proposed that").
+- **Moving up is offered and chosen** (Josh, 2026-11-11: "a simple offer after N conversations; doesn't have to be success based and is user chosen"; "lets use the level up pages as designed").
+- **How a Beginner visit ends** (Josh, 2026-11-12: "c - good, a good enough, change 8 to 7"): when the talk has run its course, the character winds down and the answers become goodbyes (scaffolding.md 12e); the goodbye on the 7th turn as the fallback. A goodbye with a name or a thanks still ends it (dialogue.md 12a).
+- **At step 1, every question comes with answers to say back** (Josh, 2026-11-11, on an open question with none at step 1: "difficult for this level"). Step 3 has an open question in its mix; untested by his play.
+- **Speech-to-text is left as it is** (Josh, 2026-11-12: "We don't support speech to text"; "i haven't experienced comprehension issues with whisper = background noice and mishearing but not misunderstanding").
+
+## Tried and dropped
+
+One line each; the full result is on the card or in the changelog.
+
+- **A summary in her voice after each stretch of Spanish** (card B2-E5, 2026-11-10): followed less than the literal English; the frame replaced it; the code deleted 2026-11-12.
+- **Showing the character one whole good visit** (card X1, 2026-11-12): no difference Josh could hear ("This hypothesis of a model dialog transforming anything seems unlikely").
+- **A note on every turn naming the next beat** (shapes.md 11b–11c, 2026-11-11): every turn became the same turn; removed in 11d.
+- **An open question with no answers at step 1** (2026-11-11): "difficult for this level".
+- **The answer said inside the character's line** (2026-11-09): never in a cluster for want of a screen design; deleted 2026-11-12.
+- **"English only the first time they hear it" at steps 2–3** (written by a Claude session, 2026-11-11): removed 2026-11-12 ("i never proposed that").
+- **The close by the intro's beat count** (2026-11-11): fired on turn 4–5 whatever had been said; removed 2026-11-12.
 
 ## Beginner goals (Josh, 2026-10-25)
 

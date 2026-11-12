@@ -2,7 +2,7 @@
 
 **Cut over (2026-11-12, Josh: "the sooner we cut over (in nomenclature or code) the clearer this will be"):** this is now the Beginner every Beginner plays, from any stage of the old path; the old Beginner plays only when the app asks for it (Settings → touch and hold Version → Beginner: Old, header `x-fuori-beginner: 1`), kept a week for comparison. Its clusters are called steps (docs/glossary.md). The name "Beginner 2" is kept in this file and the code for now; the history below is as it was written.
 
-**Status (2026-11-10):** playable behind a hidden switch (Settings → touch and hold Version → Beginner 1 · 2, with a Cluster 1–6 stepper); Josh plays it against Beginner 1, which stays production. Built: the six clusters of the reply ladder, the setups picked per turn, the scaffolding prompt (`scaffolding.md`) over the unchanged Intermediate prompt, the code's fixes to the parts (each turn records which fired, 7ce4181), replies written ahead, records by reply rank. Not built: the offer to move up (Progression below), placing learners into a cluster. The plan came from Josh's decisions of 2026-11-09 (the handoff `~/.claude/plans/graceful-stirring-rossum.md`, and the session after it). Supersedes the direction of [beginner-plan.md](beginner-plan.md) (the turn-shape spec, kept as the record); the facts behind it are in [beginner-deep-dive.md](beginner-deep-dive.md).
+**Status (2026-11-10):** playable behind a hidden switch (Settings → touch and hold Version → Beginner 1 · 2, with a Cluster 1–6 stepper); Josh plays it against Beginner 1, which stays production. Built: the six clusters of the reply ladder, the setups picked per turn, the scaffolding prompt (`scaffolding.md`) over the unchanged Intermediate prompt, the code's fixes to the parts (each turn records which fired, 7ce4181), replies written ahead, records by reply rank. Not built: the offer to move up (Progression below), placing learners into a cluster. The plan came from Josh's decisions of 2026-11-09 (the handoff `~/.claude/plans/graceful-stirring-rossum.md`, and the session after it). Supersedes the direction of [beginner-plan.md](archive/beginner-plan.md) (the turn-shape spec, kept as the record); the facts behind it are in [beginner-deep-dive.md](archive/beginner-deep-dive.md).
 
 ## Rules for the work
 
@@ -191,7 +191,7 @@ Italy equivalents: "Questo è il pecorino, sheep's cheese, di Pienza." "È un po
 5. **Stages turn English down** (`leveling.md`; S3 English only when asked; S4 none) → the amount of English isn't the level.
 6. **Errors are only "own words"** in the record → uptake and self-correction score +4.
 
-The earlier spec's section-by-section list is in [beginner-plan.md](beginner-plan.md) → "Production rules this overrides".
+The earlier spec's section-by-section list is in [beginner-plan.md](archive/beginner-plan.md) → "Production rules this overrides".
 
 ## Carried over, to rethink before use
 
