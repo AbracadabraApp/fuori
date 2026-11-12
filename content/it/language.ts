@@ -33,6 +33,7 @@ export const language = {
       fareLabel: 'Tariffa',
       fare: 'Solo andata',
       board: 'Sali',
+      destination: 'Destinazione', // departures board: the column of city names
     },
     whereTo: 'Dove vuoi andare?', // departures board title
     letsDoIt: 'Sì, dai', // Learn home: the Lessons card's button (canvas "Learn area", D3)

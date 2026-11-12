@@ -159,8 +159,8 @@ public struct RootView: View {
         // A new country (Settings → Explore) starts at its city list
         .onChange(of: model.server) { path = NavigationPath() }
         .onChange(of: model.content == nil) { _, missing in if !missing { sampleLevelUp() } }
-        // Boarded at the station ("Sali"): the conversation was saved on the
-        // way out; arrive at the destination's places, back leads to the cities
+        // Boarded at the station ("Sali" on the ticket sheet): arrive at the
+        // destination's places, back leads to the cities
         .onChange(of: model.arrival) { _, city in
             guard let city else { return }
             var arrived = NavigationPath()

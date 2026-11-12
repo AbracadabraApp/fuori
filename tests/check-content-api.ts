@@ -5,7 +5,7 @@ import { join } from 'path';
 // the people list, hidden cities and places are left out, and nothing the
 // server keeps to itself (prompts, personalities, image prompts, voices)
 // leaks into it. Run for both countries (COUNTRY=es-mx).
-import { cities, country, pack } from '@/content';
+import { cities, country, imageListFor, pack, travelMapFor } from '@/content';
 import { buildContent } from '@/lib/content-api';
 
 const problems: string[] = [];
@@ -89,4 +89,21 @@ if (problems.length) {
   console.error(`FAIL (${country}): ${problems.length} problem(s)\n- ${problems.slice(0, 30).join('\n- ')}`);
   process.exit(1);
 }
+// The trip map (content/<country>/travel-map.json): every placed city and
+// every always-named city is a real city, spots are inside the picture, and
+// the content sends the map only once the picture and two cities exist
+const mapData = travelMapFor(country);
+for (const [id, spot] of Object.entries(mapData.cities)) {
+  check(cities.some((x) => x.id === id), `travel-map.json places "${id}", which is not a city`);
+  check(spot.x >= 0 && spot.x <= 1 && spot.y >= 0 && spot.y <= 1, `travel-map.json: ${id} is outside the picture`);
+}
+for (const id of mapData.anchors) check(!!mapData.cities[id], `travel-map.json always names "${id}", which has no spot`);
+check(mapData.aspect > 0, 'travel-map.json: aspect must be the picture\'s width divided by its height');
+if (c.travelMap) {
+  check(base.test(c.travelMap.image), 'the trip map has no image address');
+  check(c.travelMap.cities.length >= 2 && c.travelMap.cities.every((x) => c.cities.some((y) => y.id === x.id)), 'the trip map lists a city the content does not show');
+} else {
+  check(Object.keys(mapData.cities).length < 2 || !imageListFor(country)?.images['travel/map'], 'travel-map.json has cities and a picture, but the content sends no trip map');
+}
+
 console.log(`OK (${country}): /v1/content has ${c.cities.length} cities, ${c.cities.reduce((n, x) => n + x.places.length, 0)} places, ${Object.keys(c.characters).length} people, all with R2 images and no prompts`);

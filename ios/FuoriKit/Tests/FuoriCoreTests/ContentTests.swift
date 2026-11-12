@@ -25,6 +25,18 @@ import Testing
         }
     }
 
+    /// The trip map (content/<country>/travel-map.json): absent from older
+    /// servers and from countries without a picture; when sent, it covers a
+    /// trip only when both cities have a spot on it
+    @Test func decodesTravelMap() throws {
+        #expect(try fixture().travelMap == nil)
+        let json = #"{"image":"https://img.example/travel/map.webp","aspect":0.6667,"cities":[{"id":"roma-nuova","x":0.45,"y":0.5,"building":"https://img.example/travel/building-roma-nuova.webp"},{"id":"firenze","x":0.4,"y":0.36,"building":null}],"anchors":["firenze"]}"#
+        let map = try JSONDecoder().decode(TravelMap.self, from: Data(json.utf8))
+        #expect(map.covers(from: "roma-nuova", to: "firenze"))
+        #expect(!map.covers(from: "roma-nuova", to: "lecce"))
+        #expect(map.spot("firenze")?.building == nil)
+    }
+
     @Test func splitsFirstScreenAndMore() throws {
         let content = try fixture()
         #expect(content.firstScreenCities.count == 1)

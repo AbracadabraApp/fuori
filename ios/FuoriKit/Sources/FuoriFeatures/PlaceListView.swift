@@ -8,26 +8,21 @@ struct PersonRoute: Hashable {
     let place: Place
 }
 
-/// The ticket seller's screen with a ticket bought on the departures board
-struct TripRoute: Hashable {
-    let city: City
-    let place: Place
-    let trip: Trip
-}
-
 /// A city's places in today's order (DailyOrder: unvisited first, new each day,
 /// an open space near the top), each with who you meet there.
 /// A card opens the person screen; a cinema's card opens its films; the station's card opens the departures
-/// board, and picking a city there opens the ticket seller with that ticket.
+/// board, and picking a city there opens the ticket sheet (the map, the ticket, "Sali").
 struct PlaceListView: View {
     let city: City
     let content: Content
     @Environment(AppModel.self) private var model
     /// The station whose departures board is open
     @State private var board: Place?
-    /// The destination picked on the board, opened once the sheet has closed
-    @State private var picked: TripRoute?
-    @State private var trip: TripRoute?
+    /// The trip picked on the board; its ticket sheet opens once the board has closed
+    @State private var picked: Trip?
+    @State private var trip: Trip?
+    /// Where "Sali" was tapped for; travel starts once the ticket sheet has closed
+    @State private var boarding: City?
 
     var body: some View {
         ScrollView {
@@ -58,22 +53,25 @@ struct PlaceListView: View {
         .background(Tokens.Colors.paper)
         .navigationTitle(city.name)
         .settingsToolbar()
-        // One sheet at a time, then the push (R10): the seller opens once the board has gone
+        // One sheet at a time (R10): the ticket sheet opens once the board has
+        // gone, and travel starts once the ticket sheet has gone
         .sheet(item: $board, onDismiss: {
             trip = picked
             picked = nil
         }) { station in
-            DeparturesView(city: city, content: content) { destination in
-                picked = TripRoute(city: city, place: station, trip: Trip(from: city, to: destination))
+            DeparturesView(city: city, station: station, content: content) { destination in
+                picked = Trip(from: city, to: destination)
             }
+        }
+        .sheet(item: $trip, onDismiss: {
+            if let destination = boarding {
+                boarding = nil
+                model.travel(to: destination)
+            }
+        }) { trip in
+            TripSheet(trip: trip, content: content) { boarding = trip.to }
         }
         .navigationDestination(for: CinemaRoute.self) { route in CinemaView(place: route.place) }
-        .navigationDestination(item: $trip) { route in
-            if let seller = content.character(route.place.characterId),
-               let conversation = model.stationConversation(city: route.city, place: route.place, character: seller, to: route.trip.to) {
-                PersonView(model: conversation)
-            }
-        }
     }
 
     private func card(_ place: Place) -> some View {

@@ -1,0 +1,95 @@
+{
+  "about": "The trip map on the ticket sheet (docs/station-feature-decision.md -> Board, map, city). The picture is one painted map of Italy with no cities on it (image id travel/map, public/images/travel/map.jpg); each city's building is its own picture (travel/building-<city id>), shown on the departures board. Here: the picture's width divided by its height, each city's spot on the picture as fractions from the top left (x across, y down; measured on the picture, 2026-11-11), and the cities whose names always show for orientation. No cities listed means the country has no map yet: the ticket sheet shows the ticket alone.",
+  "aspect": 0.6667,
+  "cities": {
+    "torino": {
+      "x": 0.14,
+      "y": 0.265
+    },
+    "milano": {
+      "x": 0.27,
+      "y": 0.235
+    },
+    "bergamo": {
+      "x": 0.32,
+      "y": 0.215
+    },
+    "verona": {
+      "x": 0.475,
+      "y": 0.22
+    },
+    "mantova": {
+      "x": 0.4,
+      "y": 0.25
+    },
+    "venezia": {
+      "x": 0.56,
+      "y": 0.23
+    },
+    "genova": {
+      "x": 0.24,
+      "y": 0.31
+    },
+    "bologna": {
+      "x": 0.46,
+      "y": 0.295
+    },
+    "lucca": {
+      "x": 0.365,
+      "y": 0.35
+    },
+    "firenze": {
+      "x": 0.42,
+      "y": 0.355
+    },
+    "siena": {
+      "x": 0.43,
+      "y": 0.4
+    },
+    "assisi": {
+      "x": 0.51,
+      "y": 0.405
+    },
+    "orvieto": {
+      "x": 0.475,
+      "y": 0.435
+    },
+    "roma-nuova": {
+      "x": 0.49,
+      "y": 0.505
+    },
+    "napoli": {
+      "x": 0.62,
+      "y": 0.575
+    },
+    "matera": {
+      "x": 0.78,
+      "y": 0.585
+    },
+    "lecce": {
+      "x": 0.89,
+      "y": 0.605
+    },
+    "palermo": {
+      "x": 0.5,
+      "y": 0.765
+    },
+    "taormina": {
+      "x": 0.675,
+      "y": 0.775
+    },
+    "siracusa": {
+      "x": 0.65,
+      "y": 0.83
+    }
+  },
+  "anchors": [
+    "milano",
+    "venezia",
+    "firenze",
+    "roma-nuova",
+    "napoli",
+    "lecce",
+    "palermo"
+  ]
+}

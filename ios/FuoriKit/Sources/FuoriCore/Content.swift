@@ -28,6 +28,10 @@ public struct Content: Codable, Sendable, Equatable {
     public let culture: [CultureChip]?
     /// The country has a cinema shuffler (GET /v1/cinema), opened by the film reel by Learn; nil from servers before 2026-11-06
     public let cinema: Bool?
+    /// The trip map on the ticket sheet; nil from servers before 2026-11-11
+    /// and while a country has no map picture yet (then the sheet shows the
+    /// ticket alone)
+    public let travelMap: TravelMap?
     public let characters: [String: Character]
 
     /// A lesson by its step id
@@ -133,6 +137,36 @@ public struct TicketWords: Codable, Sendable, Equatable {
     public let fareLabel: String
     public let fare: String
     public let board: String
+    /// The departures board's heading over the city names ("Destinazione");
+    /// nil from servers before 2026-11-11
+    public let destination: String?
+}
+
+/// The trip map (content/<country>/travel-map.json): one painted map with no
+/// cities on it, and each city's spot on it. The app draws the names and the
+/// route, so a name can't be misspelled or misplaced
+public struct TravelMap: Codable, Sendable, Equatable {
+    public let image: URL
+    /// The picture's width divided by its height
+    public let aspect: Double
+    public let cities: [Spot]
+    /// Cities whose names show on every trip, for orientation
+    public let anchors: [String]
+
+    public struct Spot: Codable, Sendable, Equatable, Identifiable {
+        /// The city's id
+        public let id: String
+        /// Across and down the picture, as fractions from the top left
+        public let x: Double
+        public let y: Double
+        /// The city's own building, ink on white, for the departures board; nil until it's drawn
+        public let building: URL?
+    }
+
+    public func spot(_ cityId: String) -> Spot? { cities.first { $0.id == cityId } }
+
+    /// The map can show this trip: both ends have a spot
+    public func covers(from: String, to: String) -> Bool { spot(from) != nil && spot(to) != nil }
 }
 
 public struct TicketTheme: Codable, Sendable, Equatable {

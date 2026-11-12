@@ -2245,3 +2245,18 @@ Design only; nothing built. Decisions are Josh's unless marked.
 - **Not run against Claude:** no API key in the cloud session. The dry run counts about 7,900 calls for the full run (~$25 at $3/$15 per million tokens before the judges' thinking; probably $40–80).
 - **Next:** Josh's laptop runs it (start small: `--country=it --learners=improving-first,flat --conversations=8`), reads the traces, then the full run; add rows to docs/prompt-trials.md with the results. Not built: replaying Josh's real conversations through the steps.
 
+
+## 2026-11-11: Station path, light departures board and the trip map (cloud chat session, with Josh)
+
+- **Design** on the canvas "Station path: station to arrival" (docs/station-feature-decision.md → Light board and trip map): departures → ticket → map → the destination's places. Station card, ticket and Sali unchanged.
+- **Built, on branch `claude/station-visuals`:** the departures board restyled (arched station window, enamel sign, headings, raised cards with split-flap names, show more); the trip map screen and its content (`travelMap` in /v1/content, `content/<country>/travel-map.json`); three colour tokens; `ui.ticket.destination` in both languages.
+- **Checked:** tsc; test:content-api in both countries (with new trip-map checks); test:leave; tokens --check. **Not verified:** nothing was built or run on a Mac or phone from this session; the iOS CI on the pull request is the first compile. The trip map can't be seen at all yet: no country has its picture, so `travelMap` is null and Sali behaves as before.
+- **Open:** make the pictures (one blank map and 20 buildings for Italy; prompts in the project chat), upload them as `travel/map` and `travel/buildings/<city id>`, then fill in each city's spot in `content/it/travel-map.json`. Josh looks at the board and the first real trip map on his phone before either is called done. Mexico's map later.
+
+## 2026-11-11, evening: station path is board → ticket sheet → city (cloud chat session, with Josh)
+
+- **Decided with Josh on the canvas** (docs/station-feature-decision.md → Board, map, city): no ticket seller in the path. Picking a city on the board opens a sheet with the painted map, the trip marked on it, and the ticket across its lower edge with an arrow stub that boards. Buildings sit in the board's rows.
+- **Built on `claude/station-visuals` (PR #5):** `TripSheet.swift` (replaces `TripMapView.swift`), `PlaceListView` (board → ticket sheet → travel), `AppModel.travel(to:)` (replaces `stationConversation` and the journey state), board rows with buildings, `content/it/travel-map.json` filled in for all 20 cities, `travel` added to the upload script's folders, the map and 19 building masters committed under `public/images/travel/` (git add -f).
+- **Checked:** tsc; test:content-api both countries; test:images. **Not verified:** the Swift was not compiled here; CI on the PR is the build. Nothing seen on a phone. The map and buildings can't show until the pictures are uploaded.
+- **For the laptop or Mac mini:** `npm run images:upload` (puts `travel/map` and `travel/building-*` in images.json), then `scripts/image-masters.mjs --untrack`, commit. Regenerate Napoli's building (Castel dell'Ovo on the water; the first try drew a hill town) and save it as `public/images/travel/building-napoli.jpg`. Then Josh plays station → board → ticket → city on his phone in both countries before the PR merges.
+- **Open:** the ticket seller's content and `PersonView`'s ticket are now unused; remove after Josh has played it. Voice over the map: next conversation.

@@ -37,7 +37,9 @@ const ROOT = path.join(__dirname, '..');
 // cards: the master deck, a tall 2:3 picture (1000 × 1500) and the word's recording
 // (<id>.mp3, listed as cards/<id>.mp3) per word (scripts/build-flashcard-deck.mjs)
 // posters: a cinema's film posters, named by TMDB id (scripts/cinema-posters.mjs)
-const KINDS = ['cities', 'places', 'portraits', 'pictures', 'country', 'guide', 'flashcards', 'cards', 'posters'];
+// travel: the trip map with no cities on it (travel/map) and each city's building, ink on white
+// (travel/building-<city id>), for the departures board and the ticket sheet (content/<country>/travel-map.json)
+const KINDS = ['cities', 'places', 'portraits', 'pictures', 'country', 'guide', 'flashcards', 'cards', 'posters', 'travel'];
 const WEBP_QUALITY = 80;
 const CONCURRENCY = 8;
 

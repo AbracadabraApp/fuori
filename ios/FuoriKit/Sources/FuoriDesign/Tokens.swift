@@ -61,6 +61,9 @@ public enum Tokens {
         public static let lemon = Color(red: 0.9686, green: 0.7765, blue: 0.0000) // #f7c600
         public static let lemonDeep = Color(red: 0.9490, green: 0.7176, blue: 0.0196) // #f2b705
         public static let lemonLight = Color(red: 1.0000, green: 0.8902, blue: 0.4510) // #ffe373
+        public static let stationSign = Color(red: 0.0902, green: 0.2510, blue: 0.4784) // #17407a
+        public static let mapInk = Color(red: 0.2902, green: 0.2000, blue: 0.1255) // #4a3320
+        public static let mapRoute = Color(red: 0.6039, green: 0.1804, blue: 0.1098) // #9a2e1c
     }
 
     public enum FontFamily {

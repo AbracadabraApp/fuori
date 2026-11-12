@@ -33,6 +33,7 @@ export const language = {
       fareLabel: 'Boleto',
       fare: 'Sencillo',
       board: 'Súbete', // tú, like Italy's "Sali" and "¿A dónde quieres ir?" (2026-11-05)
+      destination: 'Destino', // departures board: the column of city names
     },
     whereTo: '¿A dónde quieres ir?', // departures board title
     letsDoIt: '¡Sí, va!', // Learn home: the Lessons card's button (canvas "Learn area", D3)
