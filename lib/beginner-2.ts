@@ -144,25 +144,24 @@ export function pickSetup(p: { conversationId?: string | null; turn: number; lea
   const day = (p.now ?? new Date()).toISOString().slice(0, 10);
   const key = (turn: number) => (p.conversationId ? `${p.conversationId}|${turn}` : `${p.learnerId ?? ''}|${p.characterId}|${day}|${turn}`);
   // Never the same setup three times running (2026-11-11c, Josh: "no variation"): after two of a kind the draw leaves
-  // it out; the turns before are worked out by the same rule, so the chain holds over a visit
-  const base = new Map<number, Setup | null>();
-  const baseAt = (turn: number): Setup | null => {
+  // it out. The turns before are worked out by the same rules (this one and the invitation rule below), so the chain
+  // holds over a visit; what the learner said on an earlier turn isn't known here, so that rule applies to this turn only
+  const chain = new Map<number, Setup | null>();
+  const at = (turn: number): Setup | null => {
     if (turn < 1) return null;
-    const hit = base.get(turn);
+    const hit = chain.get(turn);
     if (hit !== undefined) return hit;
-    const b1 = baseAt(turn - 1);
-    const b2 = baseAt(turn - 2);
-    const s = weighted(cluster, key(turn), cluster.length > 1 && b1 && b2 && b1.id === b2.id ? b1.id : undefined);
-    base.set(turn, s);
-    return s;
+    const p1 = at(turn - 1);
+    const p2 = at(turn - 2);
+    let w = weighted(cluster, key(turn), cluster.length > 1 && p1 && p2 && p1.id === p2.id ? p1.id : undefined);
+    // Renata (2026-11-10): the same invitation every other turn; an invitation never follows an invitation
+    if (INVITES.has(w.id) && p1 && INVITES.has(p1.id)) w = cluster.find((s) => !INVITES.has(s.id)) ?? w;
+    chain.set(turn, w);
+    return w;
   };
-  const pick = baseAt(p.turn)!;
-  const before = baseAt(p.turn - 1);
-  if (!INVITES.has(pick.id)) return pick;
-  // Renata (2026-11-10): the same invitation every other turn, and none of the learner's questions followed up.
-  // An invitation never follows an invitation, nor the learner's own question (punctuation, any language)
-  const askedSomething = /[?¿]/.test(p.learnerSaid ?? '');
-  if ((before && INVITES.has(before.id)) || askedSomething) return cluster.find((s) => !INVITES.has(s.id) && s.id !== before?.id) ?? cluster.find((s) => !INVITES.has(s.id)) ?? pick;
+  const pick = at(p.turn)!;
+  // Nor the learner's own question (punctuation, any language): the character follows it up instead
+  if (INVITES.has(pick.id) && /[?¿]/.test(p.learnerSaid ?? '')) return cluster.find((s) => !INVITES.has(s.id)) ?? pick;
   return pick;
 }
 
