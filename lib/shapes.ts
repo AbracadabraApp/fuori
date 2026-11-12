@@ -21,14 +21,23 @@ export interface Shape {
 
 /** They asked something: answer it first, before anything of the character's own */
 export const ANSWER_FIRST: Shape = { id: 'answer-first', block: 'Shape: answer first' };
+/** Every turn after the intro: stay with what the visit opened with (Josh: the intro sets the scene, the turns discuss it) */
+export const THREAD: Shape = { id: 'thread', block: 'Shape: thread' };
 
 /** Whether what they said is a question, by punctuation (any language) */
 export const askedSomething = (said: string | undefined): boolean => /[?¿]/.test(said ?? '');
 
-/** This turn's shape from what code can see, or null: no note, the character's habit */
-export function pickShape(p: { learnerSaid?: string }): Shape | null {
-  if (askedSomething(p.learnerSaid)) return ANSWER_FIRST;
-  return null;
+/** This turn's shapes from what code can see, in the order they're said; empty: no note, the character's habit */
+export function pickShapes(p: { learnerSaid?: string; /** the visit opened with an intro and this is a later turn */ afterIntro?: boolean }): Shape[] {
+  const shapes: Shape[] = [];
+  if (p.afterIntro) shapes.push(THREAD);
+  if (askedSomething(p.learnerSaid)) shapes.push(ANSWER_FIRST);
+  return shapes;
+}
+
+/** The first shape, for callers that record one; null when none */
+export function pickShape(p: { learnerSaid?: string; afterIntro?: boolean }): Shape | null {
+  return pickShapes(p)[0] ?? null;
 }
 
 /** The shape's line, filled */
@@ -36,11 +45,15 @@ export function shapeNote(shape: Shape): string {
   return fill(readPromptFile(SHAPES_FILE).block(shape.block), { language: language.name }).trim();
 }
 
-/** The bracketed note for a turn: the shape's line (if any) and the setup line (if any), one after the other */
-export function noteOf(shape: Shape | null, setupLine?: string): string | undefined {
-  const lines = [shape ? shapeNote(shape) : '', setupLine ?? ''].map((s) => s.trim()).filter(Boolean);
+/** The bracketed note for a turn: the shapes' lines (if any) and the setup line (if any), one after the other */
+export function noteOf(shape: Shape | Shape[] | null, setupLine?: string): string | undefined {
+  const shapes = Array.isArray(shape) ? shape : shape ? [shape] : [];
+  const lines = [...shapes.map(shapeNote), setupLine ?? ''].map((s) => s.trim()).filter(Boolean);
   return lines.length ? lines.join(' ') : undefined;
 }
+
+/** The ids recorded with the turn: "thread+answer-first" */
+export const shapeIds = (shapes: Shape[]): string | undefined => (shapes.length ? shapes.map((s) => s.id).join('+') : undefined);
 
 /** The version recorded with a turn that had a shape */
 export function shapesVersion(): string {

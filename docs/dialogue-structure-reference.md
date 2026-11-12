@@ -303,5 +303,37 @@ Added one or two at a time, each played before the next. Rotation: never the sam
 
 **12.3 The told-ledger.** The intro always says "the thing the place is known for", so a third visit is the lechero again; and Remember needs to know what was told. The fix is a line in the memory notes already written at the end of a visit (what the character told them: customs, stories, facts), read by the Intro (pick one not yet told) and by Remember (pick one told). Across visits only; within a visit the transcript serves. No new state beyond a line in the notes.
 
-**Status.** 12.1 to 12.3 are design, agreed with Josh 2026-11-11 ("ok"); the stage map is in [06-roadmap.md](06-roadmap.md) → Now. Nothing of them is built. Live today: the table of § 11 (three rows) and a palette of one (Say it back, with Compare as the model's habit).
+**Status.** 12.1 and 12.3 are design, agreed with Josh 2026-11-11 ("ok"); the stage map is in [06-roadmap.md](06-roadmap.md) → Now. **12.2 is built (2026-11-11 evening, not released):** the stored step (`learners.step`, `lib/level-up.ts`), the count of conversations with 3 or more replies since the step was set or the offer last declined, the offer after 3 (`GET /v1/level-up`, with the character's last line and the same line at the next step from `level-up.md`), the learner's yes or not yet (`POST`), and the screen as the approved mockups (`ios/.../LevelUp/LevelUpView.swift`, offered over the place list when a conversation is saved). The turn reads the stored step when the app sends no cluster header. Josh: "lets use the level up pages as designed". Live today: the table of § 11 (three rows) and a palette of one (Say it back, with Compare as the model's habit).
 
+
+## 13. The table tested on written dialogue (Claude, 2026-11-11; Josh: "ok")
+
+Josh's framing: can the table label dialogue, does reading dialogue find new terms, and what does it show about the interplay of terms. Three labellings: Nunzio (§ 10), Goldoni's *La locandiera* II.iv (Mirandolina serving the Cavaliere, 1753) and seven scenes of *Benvenuti al Sud* (2010, the locals and the northern newcomer, from a Bologna thesis's transcriptions). Word counts and question rates from the scripts are left out on purpose (Josh: length in literature unrelated to language instruction isn't helpful); only what the reading did for the table is kept.
+
+**13.1 Where the table couldn't label.**
+- A question that isn't an Ask: "Quanto zucchero?", "Volete un caffè?", "È permesso?" are offers and permissions. Ask (T5) is by grammatical kind (yes/no, either/or, open), not by what the question does.
+- An Ask with no question mark: "Avrei piacer di sentire se quel piatto le dà nel genio." The table misses it, and so does the director's punctuation signal (§ 11).
+- A Gloss by a third person: Maria at the post-office counter, Mattia after Scapece ("È un succo di limone fatto dalle sue mani"). Gloss (T3) is the speaker's own aside; in life it is often a separate turn by someone else, and it is the bilingual local of Beginner 2 on screen.
+- The learner's side has no terms: answer, ask-back, apologise, lead, decline. The table describes one speaker; dialogue is two.
+
+**13.2 Terms the reading added** (candidates; none used by code or a card yet).
+- **T42 Hook:** a statement left short or surprising so the other person asks ("Se lo sapessero il Conte ed il Marchese, povera me!" → "Perchè?"; "È uscito u postamat!"). A Rest (T41) with something to pull on.
+- **T43 Say more:** the two-word ask-back that makes the other person repeat or expand ("In che, signore?", "Ovvero?", "Come?", "Eee?"). Confirm (T17) used as a move, not a check.
+- **T44 Offer:** a question that is a Do (T38): "Volete favorire?", "Quanto zucchero?". Most of a local's questions in both scripts.
+- **T45 Insist:** the offer repeated ("Venit' venit' venit'"; "Ve la dovete mangiare, sennò s'offende"). Manner (T31) in Italy's south.
+- **T46 Deflect:** modesty, refusing praise ("Oh! troppa bontà, signore"; "Oh signore, mi burla"). Manner.
+- Learner-side terms, if the table gets a learner column: Answer, Ask-back, Apologise, Lead, Decline.
+
+Nunzio gave the terms that fill out a monologue (Story, Reassure, Praise, Rest, Do, Refer; § 10); the scripts gave the ones that drive a scene without asking (Hook, Say more, Offer, Deflect) and the third-person Gloss. A term list built only from our own dialogue would have missed the second layer, because our characters don't do those things.
+
+**13.3 Interplay.**
+- Take and new material trade off: a turn that reacts needs nothing new. Our turns are long because the prompt gives the character everything to add and nothing to react to.
+- Rest needs a Hook: a statement turn works when it leaves something to pull on; without one it is the dead end the Beginner rule guards against (dialogue-model.md → Questions). The two are a pair.
+- Asking migrates: the more the local hooks and offers, the more the stranger asks. Ask and Hook are two ends of one dial.
+- Fact attaches to a thing or an action, not to a question: the limoncello in hand, the dish on the table. Fact with Anchor or Do appeared everywhere; Fact then Ask about the Fact (S11) appeared nowhere.
+- Praise follows an act, not language: "Bravo" for coming to say hello, "Bravissimo" for the wine choice.
+- Moves per turn: the number of labels a turn carries is a measure the table gives for free. Nunzio's turns carry three or four; the scripts' one or two.
+
+**13.4 What the table can't yet say.** The pairs across speakers: offer then accept or decline, hook then question, ask-back then repeat, apology then Reassure. The structure lives in those pairs. The next change to the table is a learner column and the pairs, before more terms.
+
+**Caveats.** Both scripts are comedies written to be performed, one a seduction, one about not understanding dialect; the film lines come from a thesis's excerpts chosen for translation problems, so ask-backs are over-represented. No Mexican script was found with its text freely available; the real-conversation corpora checked (KIParla) have no shop or bar recordings.

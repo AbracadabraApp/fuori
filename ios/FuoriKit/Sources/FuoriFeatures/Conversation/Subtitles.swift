@@ -21,18 +21,16 @@ struct Subtitles: View {
     var body: some View {
         VStack(spacing: 8) {
             if line != nil || english != nil {
-                // The card hugs the text; only a long reply scrolls
-                ViewThatFits(in: .vertical) {
-                    text.fixedSize(horizontal: false, vertical: true)
-                    ScrollView { text }.scrollBounceBehavior(.basedOnSize)
+                // The same bubble as the answers (SpeechBubble, Josh 2026-11-11: "her bubble style should match the
+                // other, font size, translation line"); only a long reply scrolls
+                SpeechBubble(speaker: .her) {
+                    ViewThatFits(in: .vertical) {
+                        text.fixedSize(horizontal: false, vertical: true)
+                        ScrollView { text }.scrollBounceBehavior(.basedOnSize)
+                    }
+                    .frame(maxHeight: 260)
+                    .fixedSize(horizontal: false, vertical: true)
                 }
-                .frame(maxHeight: 260)
-                .fixedSize(horizontal: false, vertical: true)
-                .background(Tokens.Colors.herBubble, in: SpeechBubble<EmptyView>.shape)
-                .overlay(SpeechBubble<EmptyView>.shape.strokeBorder(Tokens.Colors.herEdge, lineWidth: 1))
-                // Hugs her words on the left, leaving the right for the learner's side
-                .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(.trailing, 40)
                 // Room between her line and the replies or the mic
                 .padding(.bottom, 10)
             }
@@ -52,11 +50,10 @@ struct Subtitles: View {
     /// rest of the line is laid out but invisible, so the card takes its full
     /// size at once and doesn't grow as the text types out.
     private var text: some View {
-        VStack(alignment: .leading, spacing: 8) {
+        VStack(alignment: .leading, spacing: 2) {
             if let line {
                 Text(typed(line))
                     .font(.system(size: lineSize))
-                    .lineSpacing(lineSize * 0.3)
                     .foregroundStyle(Tokens.Colors.ink)
                     .accessibilityLabel(String(line.prefix(shown ?? line.count)))
             }
@@ -71,8 +68,6 @@ struct Subtitles: View {
                     .foregroundStyle(Tokens.Colors.green)
             }
         }
-        .padding(.vertical, 10)
-        .padding(.horizontal, 14)
     }
 
     private func typed(_ line: String) -> AttributedString {

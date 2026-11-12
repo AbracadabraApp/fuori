@@ -13,7 +13,7 @@ const step = Math.max(1, Math.floor(people.length / howMany));
 const chosen = Array.from({ length: howMany }, (_, i) => people[i * step]).filter(Boolean);
 const words = (s: string) => s.trim().split(/\s+/).filter(Boolean).length;
 const spansSchema = { type: 'object', additionalProperties: false, required: ['spans'], properties: { spans: { type: 'array', items: { type: 'string' } } } };
-let total = 0, inLang = 0, runs = 0, single = 0, turns = 0, echoed = 0, withAnswers = 0;
+let total = 0, inLang = 0, runs = 0, single = 0, turns = 0, echoed = 0, withAnswers = 0, wordsTotal = 0;
 for (const { city, place } of chosen) {
   const character = characterForVisit(city.id, place.id)!;
   const transcript: Turn[] = [];
@@ -25,7 +25,7 @@ for (const { city, place } of chosen) {
     const r = lineWithAnswers(r0, setup);
     withAnswers += r.parts.length === 2 ? 1 : 0;
     const spans = (JSON.parse(await ask(`Copy out every run of ${language.name} words in this line, one string per run, exactly as written (English runs left out):\n${r.line}`, { schema: spansSchema, max: 1200 })) as { spans: string[] }).spans;
-    total += words(r.line); inLang += spans.reduce((n, s) => n + words(s), 0); runs += spans.length; single += spans.filter((s) => words(s) === 1).length; turns++;
+    total += words(r.line); wordsTotal += words(r.line); inLang += spans.reduce((n, s) => n + words(s), 0); runs += spans.length; single += spans.filter((s) => words(s) === 1).length; turns++;
     const sentences = r.line.split(/(?<=[.!?…])\s+/);
     if (sentences.length >= 2 && /\?$/.test(sentences.at(-1)!) && /\?["'»”’)]*$/.test(sentences.at(-2)!)) echoed++;
     console.log(`\n## ${character.name} t${turn} (${setup.id}) ${Math.round(performance.now() - t0)} ms\n${r.line}\n${language.name}: ${spans.join(' · ')}\nanswers: ${r.parts.map((a) => `${a.text} (${a.en})`).join(' | ') || 'none'}`);
@@ -34,4 +34,4 @@ for (const { city, place } of chosen) {
     learnerSaid = turn === 0 ? (await ask(`You are a beginner learner of ${language.name}, in ${language.card.country}. They just said:\n"${r.line}"\n\nWrite only a short reply in very simple ${language.name} (at most 6 words), the way a beginner would. Reply with the line only, no quotes.`, { max: 100 })).replace(/^"|"$/g, '') : learnerSaid;
   }
 }
-console.log(`\n${language.name} ${(100 * inLang / total).toFixed(0)}% of words; ${(runs / turns).toFixed(1)} runs a turn, ${single} of ${runs} a single word; question followed by an English question: ${echoed} of ${turns}; two answers to say back: ${withAnswers} of ${turns}`);
+console.log(`\n${language.name} ${(wordsTotal / turns).toFixed(0)} words a turn; ${(100 * inLang / total).toFixed(0)}% of words; ${(runs / turns).toFixed(1)} runs a turn, ${single} of ${runs} a single word; question followed by an English question: ${echoed} of ${turns}; two answers to say back: ${withAnswers} of ${turns}`);

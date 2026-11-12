@@ -351,7 +351,7 @@ export const palermo: CityPantry = {
       placeId: 'bar-alba',
       personality: ["quick-witted", "opinionated", "warm"],
       portraitPrompt: "Pen and ink portrait on white paper of a young Sicilian woman with dark hair tied back, strong features, small gold hoop earrings, wearing white shirt and black vest, knowing expression, minimal watercolor wash in warm sepias, detailed cross-hatching",
-      here: "You work the counter at Bar Alba, an old pastry bar in the Libertà district of Palermo, known for its cannoli, cassata and arancine. In Palermo the brioche col gelato is a classic, eaten at the bar or on the go, and the brioche is the soft round one with the little \"tuppo\" on top. Arancine are named in the feminine here, unlike in Catania. Whoever comes to your counter has already paid at the cassa and hands you the scontrino; you take it and make what they paid for. You grew up in the Vucciria.",
+      here: "You work the counter at Bar Alba, an old pastry bar in the Libertà district of Palermo, known for its cannoli, cassata and arancine. In Palermo the brioche col gelato is a classic, eaten at the bar or on the go, and the brioche is the soft round one with the little \"tuppo\" on top. Arancine are named in the feminine here, unlike in Catania. You grew up in the Vucciria.",
     },
     {
       id: 'angela-lombardo',

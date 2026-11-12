@@ -3,7 +3,7 @@
 import { readFileSync } from 'node:fs';
 import { cities, language } from '@/content';
 import { characterForPlace } from '@/lib/characters/for-place';
-import { pickShape, shapeNote, noteOf, ANSWER_FIRST, askedSomething } from '@/lib/shapes';
+import { pickShape, pickShapes, shapeNote, noteOf, shapeIds, ANSWER_FIRST, THREAD, askedSomething } from '@/lib/shapes';
 import { buildIntroPrompt, introLine, IntroWatcher } from '@/lib/intro';
 import { GOODBYE_AFTER, pickSetup } from '@/lib/beginner-2';
 
@@ -14,6 +14,9 @@ const check = (ok: boolean, what: string) => { if (!ok) problems.push(what); };
 check(askedSomething('¿Y por qué desde arriba?') && askedSomething('Perché?') && !askedSomething('Sí, por favor.') && !askedSomething(undefined), 'a question is punctuation (? or ¿), nothing else');
 check(pickShape({ learnerSaid: 'Cosa sono quelle?' })?.id === 'answer-first', 'they asked something: answer first');
 check(pickShape({ learnerSaid: 'Un caffè, per favore.' }) === null && pickShape({}) === null, 'no signal: no shape, the character writes the turn by habit');
+// After the intro: the thread, then answer-first when they asked; recorded as "thread+answer-first"
+check(pickShapes({ learnerSaid: 'Sí.', afterIntro: true }).map((s) => s.id).join('+') === 'thread' && shapeIds(pickShapes({ learnerSaid: '¿Por qué?', afterIntro: true })) === 'thread+answer-first' && shapeIds([]) === undefined, 'after the intro every turn carries the thread; a question adds answer-first');
+check(/stay with what you opened the visit with/.test(shapeNote(THREAD)) && noteOf([THREAD, ANSWER_FIRST], 'This turn, X.') === `${shapeNote(THREAD)} ${shapeNote(ANSWER_FIRST)} This turn, X.`, 'the thread line comes from shapes.md and joins before answer-first and the setup');
 
 // Notes: the shape's line, joined before the setup line; nothing when neither
 check(/^Answer what they asked first/.test(shapeNote(ANSWER_FIRST)) && !/\{/.test(shapeNote(ANSWER_FIRST)), 'the answer-first line comes from shapes.md, filled');
@@ -30,7 +33,7 @@ const c = characterForPlace(city, place)!;
 const plain = buildIntroPrompt({ character: c, answers: false });
 const withAnswers = buildIntroPrompt({ character: c, answers: true, addressedAs: 'f', memory: { visits: 1, lastVisit: new Date(), notes: ['Had a coffee', 'Asked about the market'] } });
 check(plain.system.includes(c.name) && plain.system.includes(place.name), `the intro prompt names ${c.name} and ${place.name}`);
-check(/six to eight short sentences/.test(plain.system) && /picks up where you left off/.test(plain.system), 'the brief is in the system prompt');
+check(/four or five short sentences/.test(plain.system) && /picks up where you left off/.test(plain.system), 'the brief is in the system prompt');
 check(!/No more words after a question mark/.test(plain.system) && !/speech-to-text/.test(plain.system) && !/Respond with JSON:\s*\{ "line"/.test(plain.system), 'no turn rules, no dialogue rules, no line format: the intro has its own prompt');
 check(!/\{\w+\}/.test(plain.system) && !/\{\w+\}/.test(withAnswers.system), `every placeholder filled (got ${[...(plain.system + withAnswers.system).matchAll(/\{(\w+)\}/g)].map((m) => m[1]).join(', ') || 'none'})`);
 check(!/"answers"/.test(plain.system) && /"answers"/.test(withAnswers.system), 'the answers format only when answers are asked for (Beginner 2)');
@@ -57,7 +60,7 @@ check(introLine(sentences).line === 'Buenas tardes. ¿Quiere un lechero?' && int
 // The turn wiring: the intro on an opening, shapes on both paths, Beginner 1 untouched
 const tt = readFileSync('lib/conversation/take-turn.ts', 'utf8');
 check(/const shaped = !isTutor && !p\.lesson && !welcome && \(setup !== null \|\| onPath === null\)/.test(tt), 'shapes and the intro: ordinary visits at Intermediate or Beginner 2 only');
-check(/note: noteOf\(shape, setupLine\(setup\)\)/.test(tt) && /turnNote: noteOf\(shape, setupLine\(setup\)\)/.test(tt) && /note: shape \? shapeNote\(shape\) : undefined/.test(tt), 'the shape note reaches cluster 1, the parts clusters and the Intermediate reply');
+check(/note: noteOf\(shape, setupLine\(setup\)\)/.test(tt) && /turnNote: noteOf\(shape, setupLine\(setup\)\)/.test(tt) && /note: noteOf\(shape\),/.test(tt), 'the shape note reaches cluster 1, the parts clusters and the Intermediate reply');
 
 if (problems.length) {
   console.error(`check-shapes: ${problems.length} problem(s)\n- ${problems.join('\n- ')}`);

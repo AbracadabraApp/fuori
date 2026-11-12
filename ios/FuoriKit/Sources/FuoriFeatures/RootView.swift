@@ -1,5 +1,6 @@
 import SwiftUI
 import FuoriCore
+import FuoriNetworking
 import FuoriDesign
 
 /// Loading, then the city list; a failure shows the server's message and a
@@ -141,12 +142,23 @@ public struct RootView: View {
             }
         }
         .tint(Tokens.Colors.green)
+        // The level up, offered over the place list after the conversation it followed (sketches/level-up/)
+        .sheet(item: Binding(get: { model.levelUpItem }, set: { model.levelUpItem = $0 })) { offer in
+            if let words = model.levelUp?.words, let api = model.api, let content = model.content {
+                LevelUpView(offer: offer, words: words, language: content.language, api: api) { yes in
+                    try? await api.answerLevelUp(yes: yes)
+                    model.levelUpItem = nil
+                }
+            }
+        }
         .task {
             if model.content == nil { await model.start() }
             openFromLaunchArgument()
+            sampleLevelUp()
         }
         // A new country (Settings → Explore) starts at its city list
         .onChange(of: model.server) { path = NavigationPath() }
+        .onChange(of: model.content == nil) { _, missing in if !missing { sampleLevelUp() } }
         // Boarded at the station ("Sali" on the ticket sheet): arrive at the
         // destination's places, back leads to the cities
         .onChange(of: model.arrival) { _, city in
@@ -171,6 +183,20 @@ public struct RootView: View {
         UserDefaults.standard.string(forKey: "FuoriBubbles") != nil
         #else
         false
+        #endif
+    }
+
+    /// `-FuoriLevelUp YES` (Debug): the level-up sheet with sample lines, for one look at the screen (sketches/level-up/)
+    private func sampleLevelUp() {
+        #if DEBUG
+        // `-FuoriLevelUp YES`: the level-up sheet with sample lines, for one look at the screen (sketches/level-up/)
+        if UserDefaults.standard.bool(forKey: "FuoriLevelUp"), let content = model.content, let words = content.language.ui.levelUp,
+           let city = content.cities.first, let place = city.places.first(where: { $0.characterId != nil }), let person = content.character(place.characterId) {
+            let now = #"{"line":"So the café de olla, we make it with canela and piloncillo. ¿Quieres probarlo?","en":"We make it with cinnamon and piloncillo. Do you want to try it?"}"#
+            let next = #"{"line":"El café de olla lo hacemos con canela, and a little piloncillo. ¿Quieres probarlo?","en":"We make the café de olla with cinnamon, and a little piloncillo. Do you want to try it?"}"#
+            let data = #"{"step":1,"nextStep":2,"character":{"id":"\#(person.id)","name":"\#(person.name)","role":"\#(person.role)"},"place":"\#(place.name)","city":"\#(city.name)","now":"# + now + #","next":"# + next + "}"
+            if let offer = try? JSONDecoder().decode(APIClient.LevelUp.self, from: Data(data.utf8)) { model.levelUp = (offer, words) }
+        }
         #endif
     }
 

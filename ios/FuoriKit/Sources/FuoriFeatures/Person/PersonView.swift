@@ -37,7 +37,7 @@ struct PersonView: View {
                 Portrait(url: model.character.portrait, name: model.character.name)
                     .ignoresSafeArea(edges: .bottom)
                 if model.inIntro, let subtitle = model.introSubtitle {
-                    IntroSubtitle(text: subtitle.text, english: subtitle.en, shown: subtitle.shown, speechLanguage: model.speechLanguage)
+                    IntroSubtitle(english: subtitle.en)
                         .ignoresSafeArea(edges: .bottom)
                         .transition(.opacity)
                 }
@@ -96,7 +96,8 @@ struct PersonView: View {
             // While scaffolding: the words and the English always
             // (docs/beginner-scaffolding.md)
             let showLine = model.scaffolding || subtitles
-            let showEnglish = model.scaffolding || english
+            // A Beginner 2 question always shows its English (Josh, 2026-11-11: "only the Spanish question and translation")
+            let showEnglish = model.scaffolding || english || model.question != nil
             // Beginner dialogue: her English is heard, her words in the language are bubbles. Parts that are only
             // the answers to say back (Beginner 2 on the one-line reply, 2026-11-11): her line is the subtitle as
             // at every other level, and the answers show on the learner's turn (ConversationControls)
@@ -156,50 +157,31 @@ struct PersonView: View {
     }
 }
 
-/// The intro's subtitle over the bottom of the portrait (Josh's mockup,
-/// 2026-11-11): the sentence in the language, typed out in step with the
-/// voice, its English under it from the moment the sentence starts, on a dark
-/// fade so both read on any portrait. The chat's own bubble takes over on the
-/// question.
+/// The intro's subtitle over the bottom of the portrait, like a film's
+/// (Josh, 2026-11-11, after playing it): the language runs as one continuous
+/// dialogue with nothing of it written, and the English of the sentence being
+/// said shows on its own, replaced by the next as the speech moves on. On a
+/// dark fade so it reads on any portrait. The chat's own bubble takes over on
+/// the question.
 struct IntroSubtitle: View {
-    let text: String
     let english: String
-    /// Characters of `text` spoken so far; nil when it's all out
-    let shown: Int?
-    let speechLanguage: String
-    @ScaledMetric(relativeTo: .title3) private var lineSize: CGFloat = 20
-    @ScaledMetric(relativeTo: .subheadline) private var englishSize: CGFloat = 15
+    @ScaledMetric(relativeTo: .title3) private var size: CGFloat = 19
 
     var body: some View {
-        VStack(alignment: .leading, spacing: 6) {
-            Text(typed)
-                .font(.system(size: lineSize, weight: .semibold))
-                .lineSpacing(lineSize * 0.2)
-                .foregroundStyle(Tokens.Colors.card)
-                .accessibilityLabel(String(text.prefix(shown ?? text.count)))
-            Text(english)
-                .font(.system(size: englishSize))
-                .foregroundStyle(Tokens.Colors.flapInk)
-        }
-        .frame(maxWidth: .infinity, alignment: .leading)
-        .padding(.horizontal, Tokens.Space.gutter)
-        .padding(.top, 48)
-        .padding(.bottom, 28)
-        .background(
-            LinearGradient(colors: [Tokens.Colors.flapTile.opacity(0), Tokens.Colors.flapTile.opacity(0.85)], startPoint: .top, endPoint: .bottom)
-        )
-        .animation(.easeOut(duration: 0.2), value: text)
-    }
-
-    /// The sentence, tagged with the language; the unspoken rest laid out but
-    /// invisible, so the band doesn't grow as it types
-    private var typed: AttributedString {
-        var s = AttributedString(text)
-        s.languageIdentifier = speechLanguage
-        guard let shown, shown < text.count else { return s }
-        let start = s.index(s.startIndex, offsetByCharacters: shown)
-        s[start...].foregroundColor = .clear
-        return s
+        Text(english)
+            .font(.system(size: size, weight: .semibold))
+            .lineSpacing(size * 0.2)
+            .foregroundStyle(Tokens.Colors.card)
+            .id(english)
+            .transition(.opacity)
+            .frame(maxWidth: .infinity, alignment: .leading)
+            .padding(.horizontal, Tokens.Space.gutter)
+            .padding(.top, 48)
+            .padding(.bottom, 28)
+            .background(
+                LinearGradient(colors: [Tokens.Colors.flapTile.opacity(0), Tokens.Colors.flapTile.opacity(0.85)], startPoint: .top, endPoint: .bottom)
+            )
+            .animation(.easeInOut(duration: 0.25), value: english)
     }
 }
 

@@ -128,6 +128,13 @@ public final class AppModel {
     /// Settings → Developer → Restart onboarding, applied the same way once the
     /// sheet has closed
     public var pendingRestart = false
+    /// The level-up offer due after the conversation just left (lib/level-up.ts); the sheet shows it and clears it
+    public var levelUp: (offer: APIClient.LevelUp, words: LevelUpWords)?
+    /// The offer as an item for the sheet
+    public var levelUpItem: APIClient.LevelUp? {
+        get { levelUp?.offer }
+        set { if newValue == nil { levelUp = nil } }
+    }
 
     /// Called when the settings sheet has gone: switch to the country picked in
     /// it, or go back to the start of onboarding
@@ -325,8 +332,11 @@ public final class AppModel {
             do {
                 try await api.endConversation(id)
                 UserDefaults.standard.set(Array(pending(key).subtracting([id])), forKey: key)
-                // Still in the same country: refresh the visit stamps
-                if conversationServer == server { visits = (try? await api.me().visits) ?? visits }
+                // Still in the same country: refresh the visit stamps, and ask whether a level up is due
+                if conversationServer == server {
+                    visits = (try? await api.me().visits) ?? visits
+                    if let due = try? await api.levelUp(conversationId: id) { levelUp = due }
+                }
             } catch {
                 // Kept in the pending list and retried at the next launch
                 report(error, step: "save", context: ["conversationId": id], using: api)

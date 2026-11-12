@@ -45,5 +45,7 @@ export const language = {
     /** A lesson's buttons (lib/lesson.ts): after Magda teaches, between practice scenes, back to her review, at the end; the English for VoiceOver's hint */
     lesson: { go: '¡Vámonos!', next: 'Siguiente', back: 'Con Magda', done: '¡Listo!', goLabel: "Let's go", nextLabel: 'Next', backLabel: 'Back to Magda', doneLabel: 'Done' },
     youAreHere: 'Estás aquí', // departures board: the current city
+    /** Level up (sketches/level-up/; lib/level-up.ts): the offer after N conversations; {name} is the character's */
+    levelUp: { theme: 'pennants' as const, kicker: "You're doing great with {name}", headline: 'Ready for more?', how: 'How {name} talks to you', now: 'Now', next: 'Next step', play: 'Play', answers: 'Your answers: still two to choose from, and now you can say your own.', yes: '¡Sí, más español!', yesLabel: 'Yes, more Spanish', notYet: 'Not yet' },
   },
 };

@@ -2,6 +2,14 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
 
+### 2026-11-11c: three or four pieces of the language a turn
+- **Changed:** Level 1: "Two or three of them a turn" → "Three or four of them a turn". No other words. In code (`lib/beginner-2.ts`): cluster 1 never plays the same setup three times running (two answers, two questions to ask). An open question with no answers was added the same night and pulled before release (Josh: "difficult for this level: open question with no balloons").
+- **Why:** Josh, 2026-11-11, after playing the live build: "Would be good to get more of the spanish frame in the english"; and on the turns: "the answers are fine but no variation. It's like Dora the Explorer": every turn ended on a choice with two balloons. The rotation is the first cut of the palette of asks (docs/dialogue-structure-reference.md § 12.1).
+
+### 2026-11-11b: Level 1 turns are two or three sentences, not "a few"
+- **Changed:** "Keep each turn short: a few sentences" → "two or three sentences", in the Level 1 frame. No other words.
+- **Why:** Josh, 2026-11-11, after playing Beginner 2 in Mexico with the intro live: "each turn felt about as long as the intro" (the intro is six to eight sentences). The turns had grown: the cluster-1 runs on 10s read three to four pieces a turn, and with the answers and the shape note the lines ran longer still. "A few" is the loosest word in the brief; "two or three" is what Beginner 1's S1 said. Measured with tests/experiments/b2-frame-line-live.mts (words a turn) before the commit.
+
 ### 2026-11-11a: the answers to say back come back to cluster 1, on the one-line reply
 - **Added:** "Reply: line and answers", the reply format for Beginner 2 on the Intermediate reply (cluster 1 since 10s): the line and its English as always, then `answers`, each in {language} with its English, shown as bubbles and not said. The turn's setup line (opener, two answers, two questions to ask, goodbye) goes in brackets at the end of the newest message, as it did in the parts format; the Answers rules go in the brief. `lib/conversation/take-turn.ts` → cluster 1 asks for the answers (`runTurn` with `answers`), and sends them to the app as answer parts; the app keeps her line as the subtitle when the parts are only answers.
 - **Why:** since 10s cluster 1 had no answers to say back (the Intermediate reply panel stood in). Josh, 2026-11-11: "getting answer bubbles working again first". Not a trial: the frame Josh judged is unchanged; the answers and their rules are the ones every other cluster already asks for.

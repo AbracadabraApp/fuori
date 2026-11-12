@@ -74,6 +74,9 @@ export const OPENER: Setup = { id: 'opener', block: 'Setup: opener', maxAnswers:
 export const CLUSTERS: Setup[][] = [
   // No invitation to ask ("Is there anything you'd like to know…?"): Josh, 2026-11-10, after Renata and Doña Carmen
   // asked it again and again: "you can just remove the ask question". Questions to ask stay, as bubbles only
+  // Cluster 1 (2026-11-11c): two answers and questions to ask, never the same three times running (Josh: "the answers
+  // are fine but no variation. It's like Dora the Explorer"). An open question with no answers was tried the same night
+  // and pulled (Josh: "difficult for this level")
   [R('two-en'), R('ask-en')],
   [R('two-en'), R('ask-en')],
   [R('two-en'), R('ask-en'), R('free')],
@@ -95,8 +98,13 @@ export const CLUSTER_1 = CLUSTERS[0];
 
 /** The app's hidden cluster picker: header `x-fuori-cluster: 1`–`6`; cluster 1 otherwise */
 export function clusterFrom(headers: Headers): Setup[] {
+  return clusterHeaderFrom(headers) ?? CLUSTER_1;
+}
+
+/** The cluster header alone, or undefined: then the learner's stored step decides (lib/level-up.ts → storedCluster) */
+export function clusterHeaderFrom(headers: Headers): Setup[] | undefined {
   const n = Number(headers.get('x-fuori-cluster'));
-  return Number.isInteger(n) && n >= 1 && n <= CLUSTERS.length ? CLUSTERS[n - 1] : CLUSTER_1;
+  return Number.isInteger(n) && n >= 1 && n <= CLUSTERS.length ? CLUSTERS[n - 1] : undefined;
 }
 
 /** A stable number from a string (FNV-1a), so a conversation replays with the same setups */
@@ -119,12 +127,14 @@ const INVITES = new Set(['ask-en', 'invite-en']);
 /** How often each setup comes up in its cluster: two answers three times as often as either invitation */
 const WEIGHT: Record<string, number> = { 'two-en': 3, 'ask-en': 1, 'invite-en': 1, inside: 1, 'inside-en': 1, free: 2 };
 
-/** The seeded pick by weight, before the rules about the turn before */
-function weighted(cluster: Setup[], key: string): Setup {
-  const total = cluster.reduce((n, s) => n + (WEIGHT[s.id] ?? 1), 0);
+/** The seeded pick by weight, before the rules about the turn before; `not`: a setup left out of the draw */
+function weighted(cluster: Setup[], key: string, not?: string): Setup {
+  const pool = cluster.filter((s) => s.id !== not);
+  const from = pool.length ? pool : cluster;
+  const total = from.reduce((n, s) => n + (WEIGHT[s.id] ?? 1), 0);
   let x = seedOf(key) % total;
-  for (const s of cluster) if ((x -= WEIGHT[s.id] ?? 1) < 0) return s;
-  return cluster[0];
+  for (const s of from) if ((x -= WEIGHT[s.id] ?? 1) < 0) return s;
+  return from[0];
 }
 
 export function pickSetup(p: { conversationId?: string | null; turn: number; learnerId?: string | null; characterId: string; now?: Date; /** what the learner just said: after their own question, no invitation (the character follows it up) */ learnerSaid?: string }, cluster: Setup[] = CLUSTER_1): Setup {
@@ -133,13 +143,25 @@ export function pickSetup(p: { conversationId?: string | null; turn: number; lea
   if (p.turn === 0 && cluster.some((s) => s.id === 'two-en')) return OPENER;
   const day = (p.now ?? new Date()).toISOString().slice(0, 10);
   const key = (turn: number) => (p.conversationId ? `${p.conversationId}|${turn}` : `${p.learnerId ?? ''}|${p.characterId}|${day}|${turn}`);
-  const pick = weighted(cluster, key(p.turn));
-  if (!INVITES.has(pick.id)) return pick;
-  // Renata (2026-11-10): the same invitation every other turn, and none of the learner's questions followed up.
-  // An invitation never follows an invitation, nor the learner's own question (punctuation, any language)
-  const before = p.turn > 1 ? weighted(cluster, key(p.turn - 1)) : null;
-  const askedSomething = /[?¿]/.test(p.learnerSaid ?? '');
-  if ((before && INVITES.has(before.id)) || askedSomething) return cluster.find((s) => !INVITES.has(s.id)) ?? pick;
+  // Never the same setup three times running (2026-11-11c, Josh: "no variation"): after two of a kind the draw leaves
+  // it out. The turns before are worked out by the same rules (this one and the invitation rule below), so the chain
+  // holds over a visit; what the learner said on an earlier turn isn't known here, so that rule applies to this turn only
+  const chain = new Map<number, Setup | null>();
+  const at = (turn: number): Setup | null => {
+    if (turn < 1) return null;
+    const hit = chain.get(turn);
+    if (hit !== undefined) return hit;
+    const p1 = at(turn - 1);
+    const p2 = at(turn - 2);
+    let w = weighted(cluster, key(turn), cluster.length > 1 && p1 && p2 && p1.id === p2.id ? p1.id : undefined);
+    // Renata (2026-11-10): the same invitation every other turn; an invitation never follows an invitation
+    if (INVITES.has(w.id) && p1 && INVITES.has(p1.id)) w = cluster.find((s) => !INVITES.has(s.id)) ?? w;
+    chain.set(turn, w);
+    return w;
+  };
+  const pick = at(p.turn)!;
+  // Nor the learner's own question (punctuation, any language): the character follows it up instead
+  if (INVITES.has(pick.id) && /[?¿]/.test(p.learnerSaid ?? '')) return cluster.find((s) => !INVITES.has(s.id)) ?? pick;
   return pick;
 }
 
@@ -420,12 +442,26 @@ export function cluster1Brief(): string {
  * (withQuestionEnglish), and each answer as an answer part, at most the setup's count, blank ones dropped. The parts
  * carry only answers, so the app shows her line as the subtitle and the answers as bubbles on the learner's turn
  */
-export function lineWithAnswers(r: { line: string; en: string; done?: boolean; answers?: { text: string; en: string }[] }, setup: Setup): { line: string; en: string; done?: boolean; parts: Part[] } {
+export function lineWithAnswers(r: { line: string; en: string; done?: boolean; answers?: { text: string; en: string }[] }, setup: Setup): { line: string; en: string; done?: boolean; parts: Part[]; question?: { text: string; en: string } } {
   const answers = (r.answers ?? [])
     .map((a) => ({ kind: 'answer' as const, text: a.text.trim(), en: a.en.trim(), gloss: '' }))
     .filter((a) => a.text)
     .slice(0, setup.maxAnswers);
-  return { line: withQuestionEnglish(r.line, r.en), en: r.en, ...(r.done !== undefined ? { done: r.done } : {}), parts: answers };
+  const question = questionOf(r.line, r.en);
+  return { line: withQuestionEnglish(r.line, r.en), en: r.en, ...(r.done !== undefined ? { done: r.done } : {}), parts: answers, ...(question ? { question } : {}) };
+}
+
+/**
+ * The question that ends a one-line reply, with its English: the only thing the app prints of a cluster-1 turn
+ * (Josh, 2026-11-11: "The English parts of the turn don't need to be printed at all. Only the Spanish question and
+ * translation"). The line's last sentence when it ends on a question mark and the English's does too; nothing otherwise
+ */
+export function questionOf(line: string, en: string): { text: string; en: string } | undefined {
+  const last = (s: string) => s.trim().split(/(?<=[.!?…]["'»”’)]*)\s+/).filter(Boolean).at(-1) ?? '';
+  const q = last(line);
+  const qEn = last(en).replace(/^\(|\)$/g, '');
+  if (!/\?["'»”’)]*$/.test(q) || !/\?$/.test(qEn)) return undefined;
+  return { text: q.replace(/\s*\(.*\?\)$/, '').trim(), en: qEn };
 }
 
 /** What the code did to one turn's parts: the setup and cluster it played, the shaping steps that changed something, and Claude's parts when one did */

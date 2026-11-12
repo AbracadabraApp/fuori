@@ -4,7 +4,7 @@
 // prompt file, the language-only rung hides the answers' English, the turn
 // code takes the switch, and Beginner 2 turns don't move the Beginner 1 path.
 import { readFileSync } from 'fs';
-import { beginnerVersionFrom, pickSetup, setupText, levelText, setupLine, fullerGlosses, shownParts, shapeParts, turnSteps, beginner2Version, glossAll, questionEcho, GOODBYE, OPENER, CLUSTER_1, CLUSTERS, RUNGS, clusterFrom, stretchesOf, withSummaries, summaryPrompt, MAX_STRETCH_WORDS, MAX_STRETCH_SENTENCES, GLOSS_ALL, flowingLine, withQuestionEnglish, cluster1Brief, lineWithAnswers } from '@/lib/beginner-2';
+import { beginnerVersionFrom, pickSetup, setupText, levelText, setupLine, fullerGlosses, shownParts, shapeParts, turnSteps, beginner2Version, glossAll, questionEcho, GOODBYE, OPENER, CLUSTER_1, CLUSTERS, RUNGS, clusterFrom, stretchesOf, withSummaries, summaryPrompt, MAX_STRETCH_WORDS, MAX_STRETCH_SENTENCES, GLOSS_ALL, flowingLine, withQuestionEnglish, cluster1Brief, lineWithAnswers, questionOf } from '@/lib/beginner-2';
 import { stageInVersion } from '@/lib/conversation-record';
 import { lineFromParts, type Part } from '@/lib/beginner';
 import { buildBeginnerPrompt, SCAFFOLDING_FILE, dialogueWithoutFormat } from '@/lib/beginner';
@@ -77,7 +77,18 @@ check(setupText(CLUSTER_1[0], CLUSTER_1).startsWith("They have no") && setupText
 check(!/Every turn has some English|When you first see them|explain something in English when it helps/.test(readFileSync(`content/${process.env.COUNTRY ?? 'it'}/prompts/scaffolding.md`, 'utf8')), 'the English lines added one per play are gone from the prompt');
 check(CLUSTERS.length === 6, 'six clusters');
 check(CLUSTERS.flat().filter((r) => !r.inside).every((r) => r.maxAnswers === 0 || (r.maxAnswers === 2 && r.english)), 'bubbles are two, always with English (Josh: reading Spanish you don\'t understand is coercive; one answer feels weird)');
-check(['two-en', 'ask-en'].every((id) => CLUSTER_1.some((r) => r.id === id)) && !CLUSTERS.flat().some((r) => r.id === 'invite-en'), 'cluster 1 mixes two answers and questions to ask; no cluster invites a question (Josh: remove the ask question)');
+check(['two-en', 'ask-en'].every((id) => CLUSTER_1.some((r) => r.id === id)) && !CLUSTER_1.some((r) => r.id === 'free') && !CLUSTERS.flat().some((r) => r.id === 'invite-en'), 'cluster 1 mixes two answers and questions to ask, no open question (Josh: difficult for this level); no cluster invites a question');
+{
+  // Never the same setup twice running (2026-11-11c)
+  let runs = 0;
+  const seq: string[] = [];
+  for (let t = 1; t <= 60; t++) { const id = pickSetup({ conversationId: 'rot', turn: t, characterId: 'x' }).id; seq.push(id); if (seq.length >= 3 && seq.slice(-3).every((x) => x === id)) runs++; }
+  check(runs === 0 && new Set(seq.filter((x) => x !== 'goodbye')).size === 2, `no setup three times running over 60 turns, both kinds played (got ${runs} runs of three, kinds ${[...new Set(seq)].join(', ')})`);
+  const q = questionOf('Suba a la silla, climb up. ¿Quiere una boleada?', 'Climb up on the chair. Do you want a shine?');
+  check(q?.text === '¿Quiere una boleada?' && q?.en === 'Do you want a shine?', `questionOf: the last question with its English (got ${JSON.stringify(q)})`);
+  check(questionOf('Ecco il cornetto.', 'Here is the cornetto.') === undefined, 'questionOf: nothing when the line ends on a statement');
+  check(lineWithAnswers({ line: 'Mire. ¿Quiere ver?', en: 'Look. Do you want to see?', answers: [] }, RUNGS.find((x) => x.id === 'free')!).question?.text === '¿Quiere ver?', 'lineWithAnswers carries the question');
+}
 check(!CLUSTERS.flat().some((r) => r.inside), 'no cluster plays the answer inside the character\'s line until it has a screen design');
 check(clusterFrom(new Headers({ 'x-fuori-cluster': '4' })) === CLUSTERS[3] && clusterFrom(new Headers()) === CLUSTER_1 && clusterFrom(new Headers({ 'x-fuori-cluster': '9' })) === CLUSTER_1, 'the cluster header picks clusters 1-6, cluster 1 otherwise');
 const seen6 = new Set(Array.from({ length: 40 }, (_, i) => pickSetup({ conversationId: `c-${i}`, turn: 1 + (i % 7), characterId: 'x' }, CLUSTERS[5]).id));
@@ -99,7 +110,7 @@ check(g1[1].gloss === 'I paint here every day.' && g1[3].gloss === 'Do you like 
 check(g1[2].gloss === '', 'glossAll: not when the turn\'s own English already said it');
 check(shownParts(para, CLUSTER_1[0], CLUSTER_1)[1].gloss === '' && shownParts(para, CLUSTERS[1][0], CLUSTERS[1])[1].gloss === '', 'no cluster adds the literal English after each phrase by code (2026-11-10q: the frame carries it)');
 check(/talk mostly in English/.test(setupText(CLUSTER_1[0], CLUSTER_1)) && /with its English beside it/.test(setupText(CLUSTER_1[0], CLUSTER_1)) && !/word part/.test(levelText(CLUSTER_1)) && !/say it again/.test(setupText(CLUSTER_1[0], CLUSTER_1)), 'Level 1 is the frame brief as the list used it: one line, no parts, each phrase with its English, no sandwich repeat (Josh: weird)');
-check(/beginnerCluster \?\? CLUSTER_1\) === CLUSTER_1\n\s*\?[\s\S]*?runTurn\(\{[^\n]*brief: cluster1Brief\(\), note: noteOf\(shape, setupLine\(setup\)\), answers: setup\.maxAnswers > 0/.test(readFileSync('lib/conversation/take-turn.ts', 'utf8')), 'cluster 1 runs on the Intermediate reply with the Level 1 brief, the setup line (with any shape) on the newest message and the answers asked for (2026-11-11a)');
+check(/setup && cluster === CLUSTER_1\n\s*\?[\s\S]*?runTurn\(\{[^\n]*brief: cluster1Brief\(\), note: noteOf\(shape, setupLine\(setup\)\), answers: setup\.maxAnswers > 0/.test(readFileSync('lib/conversation/take-turn.ts', 'utf8')), 'cluster 1 runs on the Intermediate reply with the Level 1 brief, the setup line (with any shape) on the newest message and the answers asked for (2026-11-11a)');
 // Cluster 1's brief: the frame, the answer rules and the one-line format with answers; the setup line is not in it (it goes on the newest message)
 check(cluster1Brief().startsWith(levelText(CLUSTER_1)) && /When you offer answers/.test(cluster1Brief()) && /"answers"/.test(cluster1Brief()) && !/This turn/.test(cluster1Brief()) && !/\{language\}/.test(cluster1Brief()), 'cluster 1 brief: the Level 1 frame, then the answer rules and the line-and-answers format, every placeholder filled');
 // The one-line reply's answers become answer parts: capped at the setup's count, blank ones dropped, the question's English after the line
@@ -150,7 +161,7 @@ check(glossAll([{ kind: 'word', text: 'Buenas tardes.', en: 'Good afternoon.', g
 {
   const picks = Array.from({ length: 400 }, (_, i) => pickSetup({ conversationId: `mix-${i}`, turn: 1 + (i % 7), characterId: 'x' }, CLUSTER_1).id);
   const share = (id: string) => picks.filter((x) => x === id).length / picks.length;
-  check(share('two-en') > 0.5 && share('ask-en') < 0.35, `two answers most of the time, invitations now and then (two ${share('two-en').toFixed(2)}, ask ${share('ask-en').toFixed(2)}, invite ${share('invite-en').toFixed(2)})`);
+  check(share('two-en') > 0.5 && share('ask-en') < 0.35, `two answers most of the time, questions to ask now and then (2026-11-11c: never three of a kind running) (two ${share('two-en').toFixed(2)}, ask ${share('ask-en').toFixed(2)}, invite ${share('invite-en').toFixed(2)})`);
   let twice = 0;
   for (let c = 0; c < 200; c++) for (let t = 2; t < 8; t++) {
     const a = pickSetup({ conversationId: `run-${c}`, turn: t - 1, characterId: 'x' }, CLUSTER_1).id, b = pickSetup({ conversationId: `run-${c}`, turn: t, characterId: 'x' }, CLUSTER_1).id;
@@ -182,7 +193,7 @@ check(v.startsWith('beginner-2-') && !stageInVersion(v), `Beginner 2 turns carry
 const route = readFileSync('app/v1/turn/route.ts', 'utf8');
 const take = readFileSync('lib/conversation/take-turn.ts', 'utf8');
 check(/flowingLine\(parts\)/.test(take) && /promptFile: BEGINNER_2_FILE/.test(take) && !/canRetry: p\.canRetry, promptFile: BEGINNER_2_FILE[^\n]*onText/.test(take), 'the spoken line is rebuilt from the rewritten parts, and the voice waits for them');
-check(/beginnerVersion: beginnerVersionFrom\(request\.headers\)/.test(route) && /beginnerCluster: clusterFrom\(request\.headers\)/.test(route), 'the route passes the switch and the cluster to the turn');
+check(/beginnerVersion: beginnerVersionFrom\(request\.headers\)/.test(route) && /beginnerCluster: clusterHeaderFrom\(request\.headers\)/.test(route), 'the route passes the switch and the cluster to the turn');
 check(/p\.beginnerVersion === 2/.test(take) && /promptFile: BEGINNER_2_FILE/.test(take), 'the turn plays the scaffolding only when the switch is on');
 check(/: beginner && onPath\n\s+\? \/\/ Beginner 1 as it has always run[^\n]*\n\s+await runBeginnerTurn\(\{ character, transcript: transcript\.map\(\(\{ offered: _offered, \.\.\.t \}\) => t\), learnerSaid, memory, addressedAs, laps: p\.laps, onText: p\.onText, canRetry: p\.canRetry, stageText: stageText\(onPath\.stage/.test(take), 'Beginner 1\'s turn is unchanged: same stage text, and still without the offered answers (no heard note)');
 check(/promptFile: BEGINNER_2_FILE/.test(take) && !/setup[\s\S]{0,40}transcript\.map\(\(\{ offered/.test(take.slice(take.indexOf('beginner && onPath && setup'), take.indexOf(': beginner && onPath\n'))), 'Beginner 2 keeps the offered answers, so its heard note works');

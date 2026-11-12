@@ -2,6 +2,10 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../intro.md`.
 
+### 2026-11-11c: who they are first, and shorter
+- **Changed:** "six to eight short sentences, all about the thing your place is known for" → "first who you are, in one short sentence (your name, what you do here), then four or five short sentences about the thing your place is known for". Nothing else.
+- **Why:** Josh, 2026-11-11, after playing the live intros in Palermo: "Everything is basically too long"; "The character doesn't often introduce themselves". The intros ran 100–115 words; a learner met Elena for a whole visit without her name until the goodbye.
+
 ### 2026-11-11b: the question comes out of the content, never about them
 - **Changed:** the Brief's last-question line: "End on one question that comes straight out of what you just told them: which of the two they'd like, whether they want to see or try the thing in front of them, what they make of it; a word or two answers it. Never a question about them: not whether they're visiting, where they're from, whether it's their first time." Was "one question about what's here that they can answer in a word or two".
 - **Why:** Josh, 2026-11-11, hypothesizing before playing the first build ("no - just hypothesizing"): "after a long intro, the question should be very tied to content, or engaging. 'Are you visiting' after a cultural intro is a stinker." Six fresh Mexico intros on this version all ended on a content question (which polish, with or without the sauce, the drawings or the house). The tourist question is the one the Relationship block already forbids for the chat; the intro's own brief now says it too, and says what the question should be instead.
