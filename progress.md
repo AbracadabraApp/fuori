@@ -1,5 +1,12 @@
 # Fuori Development Progress
 
+## 2026-11-12 (laptop, Josh playing Mexico): the bug list from his screenshots, and the cut-over to the new Beginner
+
+- **Cut over (b45d171, on main, not released; needs a phone build and Josh's release):** every Beginner plays the new Beginner (built as "Beginner 2"); the old one only on Settings → touch and hold Version → Beginner: Old, kept a week. Names: steps (not stages or clusters), the Beginner and the old Beginner (docs/glossary.md). Checked: tsc, test:beginner-2, make build, smoke in full locally for Mexico, the two openings locally for Italy. Not on the phone.
+- **Bug list, clear fixes, waiting for Josh's go:** (1) intro subtitles cut off at three lines: split into chunks of at most two lines timed to the voice (Josh chose 2); (2) keep the name band during the intro (Josh: the intro screen stays standard, minus the circle, for now); (4) the English under a Beginner intro question always; (5) the character's line tagged with its language; (6) hard-coded sizes into tokens; (7) CLAUDE.md's English rule: the intro's subtitles are the exception; (11, 12) the question finder (`questionOf`) takes the English echo ("Do you like the tunnels?") or empties a question whose English is in brackets: take the last question not in the translation; (14) an empty bubble while the character speaks English (drawn when only the English is known).
+- **Decisions open:** (10) what the bubble shows on a turn with no question: Claude recommends nothing (Josh's rule: only the question and its English are printed); (8) the intro's question at Beginner (Raymundo's was 21 words); (9) written English in the intro, spoken after; (13) Beginner turns long and mostly English (70–85 words); Raymundo's visit didn't end on Josh's goodbye (to look into); Whisper heard "Quiero ver los altares" as "Kiran Velos Altera" (give it the offered answers?). Set aside until a learner reports it: (3) cutting in during the intro.
+- **Josh:** the smoke tests have become too long.
+
 ## Handoff, 2026-11-12 (laptop session, end of 2026-11-11)
 
 **Live (both countries):** def792f: the film-style intro, the shape table (answer first, the goodbye once), the level up, the station path (board → ticket sheet over the map → city; Italy's map and buildings), Beginner 2 cluster 1 with the question-only bubble server side, the five bar characters without the cassa line.
