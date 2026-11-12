@@ -58,6 +58,13 @@
 | 5.8 | **The turn-code refactor:** parked until a change has to reach every conversation | `one-turn-engine.md` § 3, § 4 (who plans a turn: kept as an open question here) |
 | 5.9 | **No Intermediate lessons in Mexico** (`content/it/lessons-b1.json` and `lesson-steps.md` → "System prompt: Intermediate" exist for Italy only). Content; may be the other session's | `lesson-flow.md` (the speaking mode) |
 
+## Taken from Josh's play, 2026-11-12 (handed over by the screen session on Josh's "yes")
+
+| # | What | Status |
+|---|---|---|
+| A | **Beginner turns long and mostly English** (visits 6159f8cb Isidro, 409863b2 Raymundo: step 1 turns of 70–85 words, three or four Spanish phrases; Josh earlier: "Everything is basically too long"). With 5.5 | Cause found: Level 1 asks for "three or four" glossed phrases a turn and "two or three sentences"; the phrases win. Replayed on Josh's two visits with today's call (`tests/experiments/b2-turn-length.mts`, 20 turns): median 60 words heard, 4 sentences, 28% Spanish. A shorter Level 1 (one or two phrases, English only to carry the Spanish, two short sentences and the question): median 37 words, 3 sentences, 34% Spanish. Waiting for Josh's word to ship it |
+| B | **Speech-to-text given the answers just offered** ("Quiero ver los altares" heard as "Kiran Velos Altera", and Don Isidro called Josh "Kiran", visit 6159f8cb) | Logged; when is Josh's call |
+
 ## Steps 4–6, in more detail (5.4; Josh: "needs more fidelity")
 
 What a learner gets at each step today, read from the code on `main` at 614da8d (`lib/beginner-2.ts` → `CLUSTERS`, `LEVEL_OF_CLUSTER`, `QUESTION_ECHO*`, `FRAME_CLUSTERS`; `lib/level-up.ts`; `scaffolding.md`). Steps 1–3 are for comparison; 4–6 have never been played.
