@@ -68,7 +68,7 @@ export interface TakeTurnParams {
   welcome?: boolean;
   /** A lesson's turn (lib/lesson.ts): Magda teaching or reviewing, or a practice dialogue */
   lesson?: LessonTurn;
-  /** Beginner 2 (lib/beginner-2.ts), from the app's hidden switch; Beginner 1 otherwise */
+  /** Which Beginner plays (lib/beginner-2.ts → beginnerVersionFrom): the new one unless 1, the old one, is asked for */
   beginnerVersion?: 1 | 2;
   /** Beginner 2's cluster of the reply ladder from the app's header (lib/beginner-2.ts → clusterHeaderFrom); the learner's stored step otherwise (lib/level-up.ts) */
   beginnerCluster?: Setup[];
@@ -145,10 +145,13 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
       p.onSoftError('welcome', err);
     }
   }
-  const beginner = !welcome && onPath?.stage.path === 'beginner';
+  // The new Beginner (the cut-over, Josh 2026-11-12) for every Beginner, whatever stage the old path had reached:
+  // its steps replace the stages. The old Beginner only when the app asks for it (x-fuori-beginner: 1)
+  const newBeginner = p.beginnerVersion !== 1;
+  const beginner = !welcome && onPath !== null && (newBeginner || onPath.stage.path === 'beginner');
   // Beginner 2's cluster: the app's header (Josh's Cluster stepper), else the learner's stored step (level up)
   let cluster = p.beginnerCluster ?? CLUSTER_1;
-  if (!p.beginnerCluster && beginner && p.beginnerVersion === 2 && learnerId) {
+  if (!p.beginnerCluster && beginner && newBeginner && learnerId) {
     try {
       cluster = await storedCluster(learnerId);
     } catch (err) {
@@ -160,12 +163,12 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
   const npcTurns = transcript.filter((t) => t.who === 'npc').length;
   const goodbyeAt = beats?.length ? beats.length + 1 : undefined; // Beginner 2 only: pickSetup runs only there
   // Beginner 2's reply setup this turn (docs/beginner-2.md), when the app switched it on
-  const setup = beginner && !p.lesson && p.beginnerVersion === 2
+  const setup = beginner && !p.lesson && newBeginner
     ? pickSetup({ conversationId, turn: npcTurns, learnerId, characterId: character.id, learnerSaid, goodbyeAt }, cluster)
     : null;
   // Beginner 2: what the code did to the turn's parts, logged and saved with it; any path: the shape asked for
   let steps: TurnSteps | undefined;
-  const pathLevel = !welcome && onPath?.stage.path === 'character' ? onPath.stage.level : undefined;
+  const pathLevel = !welcome && !newBeginner && onPath?.stage.path === 'character' ? onPath.stage.level : undefined;
   // An ordinary visit at Intermediate (no path) or Beginner 2: the intro opens it, and a shape is picked per turn
   // (lib/shapes.ts; docs/dialogue-structure-reference.md § 11). Beginner 1, the welcome, lessons and Magda: untouched
   const shaped = !isTutor && !p.lesson && !welcome && (setup !== null || onPath === null);

@@ -16,7 +16,9 @@
 
 ## Proposed (not settled)
 
-- **Level** means only the learner's level (Beginner, Intermediate, Advanced). Not the scaffolding steps (call those stages), not CEFR (A1, A2: research docs only).
+- **Level** means only the learner's level (Beginner, Intermediate, Advanced). Not the scaffolding steps (call those steps), not CEFR (A1, A2: research docs only).
+- **Step** (Josh, 2026-11-12, "these are very badly named"): one step of scaffolding inside the Beginner level, 1 to 6; level up moves the learner to the next. One word for it: "cluster" stays a name inside the code (`CLUSTERS` in `lib/beginner-2.ts`), and "stage" goes with the old Beginner.
+- **The Beginner** is the one every Beginner plays since the cut-over (2026-11-12), built and played as "Beginner 2" beside the old one. **The old Beginner** (`lib/beginner.ts` with its stages S1–S4, "Beginner 1") stays a week behind Settings → touch and hold Version → Beginner: Old, for comparison, then goes. "Beginner 1" and "Beginner 2" are retired as names: they read as two levels, and they were two versions of one.
 - **Conversation**: one visit to one character. **Turn**: one exchange. **Line**: what one person says. **Scene**: the setting a conversation opens in (place, moment, why you came). "Dialogue" is the name of the area, not the thing.
 - **Replies**: the two buttons in a conversation.
 - **Character** for everyone you meet; "person" only in "person screen".

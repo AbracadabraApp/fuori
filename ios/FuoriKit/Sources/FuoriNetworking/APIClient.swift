@@ -646,20 +646,26 @@ public actor APIClient {
         req.setValue("application/json", forHTTPHeaderField: "Accept")
         // Lets the server turn away builds that are too old (426, lib/app-version.ts)
         if let version = Self.appVersion { req.setValue(version, forHTTPHeaderField: "X-App-Version") }
-        // Beginner 2 when switched on in the hidden Settings rows (lib/beginner-2.ts); Beginner 1 otherwise
-        if UserDefaults.standard.integer(forKey: Self.beginnerVersionKey) == 2 {
+        // The new Beginner unless the old one is chosen in the hidden Settings rows (the cut-over, 2026-11-12;
+        // lib/beginner-2.ts → beginnerVersionFrom). Sent either way, so the server's default never decides for this build
+        if Self.oldBeginner {
+            req.setValue("1", forHTTPHeaderField: "x-fuori-beginner")
+        } else {
             req.setValue("2", forHTTPHeaderField: "x-fuori-beginner")
-            // Its cluster of the reply ladder, 1–6 (lib/beginner-2.ts), until the offers to move up are built
-            let cluster = UserDefaults.standard.integer(forKey: Self.beginnerClusterKey)
-            if cluster > 1 { req.setValue(String(cluster), forHTTPHeaderField: "x-fuori-cluster") }
+            // A step set on the hidden stepper (Josh's override, 2–6); otherwise the server uses the learner's stored step
+            let step = UserDefaults.standard.integer(forKey: Self.beginnerStepKey)
+            if step > 1 { req.setValue(String(step), forHTTPHeaderField: "x-fuori-cluster") }
         }
         return req
     }
 
-    /// Settings → touch and hold Version → Beginner: 1 (today's) or 2 (docs/beginner-2.md), played side by side (Josh, 2026-11-09)
-    public static let beginnerVersionKey = "settings.beginnerVersion"
-    /// Settings → touch and hold Version → Cluster: Beginner 2's cluster of the reply ladder, 1–6
-    public static let beginnerClusterKey = "settings.beginnerCluster"
+    /// Settings → touch and hold Version → Beginner: Old, the Beginner from before the cut-over (2026-11-12), kept a
+    /// week for comparison. A new key, so nobody's earlier choice of "1" or "2" carries over: everyone starts on the new one
+    public static let oldBeginnerKey = "settings.oldBeginner"
+    /// Whether the old Beginner is chosen
+    public static var oldBeginner: Bool { UserDefaults.standard.bool(forKey: oldBeginnerKey) }
+    /// Settings → touch and hold Version → Step: the step of scaffolding, 1–6 (docs/glossary.md → Level up)
+    public static let beginnerStepKey = "settings.beginnerCluster"
 
     /// The app's version (CFBundleShortVersionString); nil when not running in the app (tests)
     static let appVersion = Bundle.main.infoDictionary?["CFBundleShortVersionString"] as? String
