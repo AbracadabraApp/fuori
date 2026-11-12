@@ -1,0 +1,169 @@
+{
+  "about": "Nunzio Palmeri, gardener at the Giardino Garibaldi, Palermo, with Josh, 2026-11-09: the visit Josh judged good by ear (docs/dialogue-structure-reference.md § 10.3). The model visit for test X1 (docs/prompt-testing.md, the queue). Exported from the Mac mini archive conversations-2026-11-10.json. The learner lines are as speech-to-text heard them; learner turns have no English in the record.",
+  "source": {
+    "conversationId": "52ae014d-35a7-4410-8edf-f12fa1d1a310",
+    "characterId": "nunzio-palmeri",
+    "cityId": "palermo",
+    "placeId": "giardino-garibaldi",
+    "startedAt": "2026-11-09T02:03:12.943Z",
+    "promptVersion": "2026-11-08b"
+  },
+  "trims": [
+    {
+      "characterTurn": 2,
+      "why": "the words after the question mark",
+      "cutText": "Col tempo diventano tronchi, e l'albero cammina.",
+      "cutEn": "In time they become trunks, and the tree walks."
+    },
+    {
+      "characterTurn": 3,
+      "why": "the question asking if he is passing through Palermo (the tourist question)",
+      "cutText": "Lei è di passaggio a Palermo?",
+      "cutEn": "Are you just passing through Palermo?"
+    }
+  ],
+  "notes": [
+    "Nothing else is changed: the praise, the turns that end on a statement and the long turns are as recorded.",
+    "After the trim to character turn 3, the learner's next line (\"si palermo è molto interessante\") answers a question that is no longer there. Left as it is."
+  ],
+  "turns": [
+    {
+      "who": "character",
+      "characterTurn": 1,
+      "text": "Buongiorno! Prego, si accomodi pure, c'è tutto il tempo. Questi alberi hanno più di cent'anni, sa?",
+      "en": "Good morning! Please, make yourself comfortable, there's all the time in the world. These trees are over a hundred years old, you know."
+    },
+    {
+      "who": "learner",
+      "text": "Si."
+    },
+    {
+      "who": "character",
+      "characterTurn": 2,
+      "text": "Vengono dall'Australia, li portarono nell'Ottocento. Vede le radici che scendono dai rami?",
+      "en": "They come from Australia, they brought them over in the 1800s. See the roots coming down from the branches?",
+      "trimmed": "the words after the question mark"
+    },
+    {
+      "who": "learner",
+      "text": "e vorrei camminare in giardini e mi chiamo joshua piacere"
+    },
+    {
+      "who": "character",
+      "characterTurn": 3,
+      "text": "Piacere, Joshua, io sono Nunzio. Cammini pure, il giardino è aperto a tutti, e sotto questi alberi si sta bene anche a novembre.",
+      "en": "Pleased to meet you, Joshua, I'm Nunzio. Walk around, the garden is open to everyone, and under these trees it's pleasant even in November.",
+      "trimmed": "the question asking if he is passing through Palermo (the tourist question)"
+    },
+    {
+      "who": "learner",
+      "text": "si palermo è molto interessante"
+    },
+    {
+      "who": "character",
+      "characterTurn": 4,
+      "text": "Eh, Palermo è così, ogni angolo ha una storia. Qui di fronte c'è il Palazzo Chiaramonte Steri, una volta c'era l'Inquisizione. Lo ha già visto?",
+      "en": "Eh, Palermo is like that, every corner has a story. Right across from here is Palazzo Chiaramonte Steri, the Inquisition used to be there. Have you already seen it?"
+    },
+    {
+      "who": "learner",
+      "text": "Non ho visto, ma secondo me Palermo è un amisto molto colturi."
+    },
+    {
+      "who": "character",
+      "characterTurn": 5,
+      "text": "Ha ragione, è una città ricchissima di cultura: arabi, normanni, spagnoli, ognuno ha lasciato qualcosa. Ci vada con calma, il palazzo è proprio qui davanti. Poi, se ha fame, la Vucciria è a due passi.",
+      "en": "You're right, it's a city very rich in culture: Arabs, Normans, Spaniards, each left something behind. Take it slowly, the palace is right in front of you. Then, if you're hungry, the Vucciria is a couple of steps away."
+    },
+    {
+      "who": "learner",
+      "text": "Sì, ho visitato Palermo molti anni fa e ho mangiato un panino perfetto come ricotta e una carne, io non so, ma anche con limone. e ho detto che è famoso a Palermo. Conosce questo panino?"
+    },
+    {
+      "who": "character",
+      "characterTurn": 6,
+      "text": "Certo che lo conosco! È il pane con la milza, il «pani ca meusa»: milza, ricotta e un po' di limone. È il panino di Palermo, lo mangiavo da ragazzo anche io, alla Vucciria.",
+      "en": "Of course I know it! It's the spleen sandwich, the \"pani ca meusa\": spleen, ricotta and a little lemon. It's Palermo's sandwich, I ate it too as a boy, at the Vucciria."
+    },
+    {
+      "who": "learner",
+      "text": "Milza. Io ho mangiato milza ma non conosco queste parole."
+    },
+    {
+      "who": "character",
+      "characterTurn": 7,
+      "text": "Ah, allora le sa già mangiare, Joshua, e quello conta più delle parole! La milza è un organo del maiale o del vitello, la friggono nello strutto e la mettono dentro il panino con la sesamo. Qui a Palermo è una tradizione antica, dei poveri e dei mercati.",
+      "en": "Ah, then you already know how to eat it, Joshua, and that counts more than the words! Spleen is an organ of the pig or the calf, they fry it in lard and put it inside a sesame bun. Here in Palermo it's an old tradition, of the poor and the markets."
+    },
+    {
+      "who": "learner",
+      "text": "forse aiutami e questo parole è spleen in inglese"
+    },
+    {
+      "who": "character",
+      "characterTurn": 8,
+      "text": "Esatto, «milza» in inglese è «spleen». Lei ha un buon orecchio, Joshua. Ma ora mi dica, nel suo paese ci sono giardini come questo?",
+      "en": "Exactly, \"milza\" in English is \"spleen\". You have a good ear, Joshua. But now tell me, in your country are there gardens like this one?"
+    },
+    {
+      "who": "learner",
+      "text": "Non lo stesso, ma mia... come si dice? Mia... Mia nonno lavora in una giardina in San Francisco, in Stati Uniti."
+    },
+    {
+      "who": "character",
+      "characterTurn": 9,
+      "text": "Ma guarda! Allora suo nonno fa il mio stesso mestiere: è giardiniere anche lui. San Francisco ha un bel clima per le piante. Che tipo di giardino cura, lo sa?",
+      "en": "Well, look at that! Then your grandfather does the same work as me: he's a gardener too. San Francisco has a lovely climate for plants. What kind of garden does he look after, do you know?"
+    },
+    {
+      "who": "learner",
+      "text": "Non so molto bene, ma è un giardino pubblico, è grande, ha molti arbori, è un posto per la gente fare una passegetta."
+    },
+    {
+      "who": "character",
+      "characterTurn": 10,
+      "text": "Bello, allora è come il mio: un giardino per la gente, dove si cammina e ci si siede all'ombra. Vede quei vecchietti sulle panchine? Giocano a carte tutto il giorno. Anche suo nonno avrà i suoi habitué, ne sono sicuro.",
+      "en": "Lovely, then it's like mine: a garden for the people, where you walk and sit in the shade. See those old men on the benches? They play cards all day. Your grandfather will have his regulars too, I'm sure."
+    },
+    {
+      "who": "learner",
+      "text": "certo lui era una persona molto gentili con"
+    },
+    {
+      "who": "character",
+      "characterTurn": 11,
+      "text": "Si vede che gli somiglia, Joshua: anche lei è gentile. Un giardiniere gentile fa il giardino più bello, lo dico sempre. Mi dica una cosa: a suo nonno piacciono più gli alberi grandi o i fiori?",
+      "en": "You can tell you take after him, Joshua: you're kind too. A kind gardener makes the most beautiful garden, I always say so. Tell me something: does your grandfather like big trees or flowers more?"
+    },
+    {
+      "who": "learner",
+      "text": "Io penso probabilmente a Elbury."
+    },
+    {
+      "who": "character",
+      "characterTurn": 12,
+      "text": "Eh, gli alberi hanno la loro pazienza, ci vuole tempo per farli crescere, e a lui piacerà proprio per questo. Qui i fichi giganti hanno cent'anni e continuano a mettere radici nuove ogni anno. Veda se riesce a toccarne una, le radici sono fresche anche a novembre.",
+      "en": "Eh, trees have their patience, it takes time to grow them, and he'll probably like that about them. Here the giant figs are a hundred years old and keep putting down new roots every year. See if you can touch one, the roots are cool even in November."
+    },
+    {
+      "who": "learner",
+      "text": "Sì, mia nonno, scusa, io non parlo italiano molto bene, mio nonno era in la guerra e poi Poi, io penso che lavorare e giardinare era più tranquillo e buono per la mentalità."
+    },
+    {
+      "who": "character",
+      "characterTurn": 13,
+      "text": "Non si scusi, Joshua, parla benissimo e la capisco. Ha ragione: dopo la guerra la terra fa bene. Le mani nel giardino, il silenzio, le piante che crescono piano... cura anche la testa. Suo nonno ha scelto bene.",
+      "en": "Don't apologize, Joshua, you speak very well and I understand you. You're right: after the war the earth does you good. Hands in the garden, the quiet, plants growing slowly... it heals the mind too. Your grandfather chose well."
+    },
+    {
+      "who": "learner",
+      "text": "Non so. Io devo andare via ma ritornare dopo. Mi piace parlare con noi molto. Grazie per la tua pazienza."
+    },
+    {
+      "who": "character",
+      "characterTurn": 14,
+      "text": "Grazie a lei, Joshua, è stato un piacere. Torni quando vuole, io sono qui. Arrivederci e buona giornata!",
+      "en": "Thank you, Joshua, it was a pleasure. Come back whenever you like, I'm here. Goodbye and have a good day!"
+    }
+  ]
+}
