@@ -296,6 +296,8 @@ export interface TurnOutput {
   parts?: import('@/lib/beginner').Part[];
   /** The intro (lib/intro.ts): the opening's sentences with their English, shown as subtitles on the portrait; `line` is them joined */
   intro?: { text: string; en: string }[];
+  /** A one-line Beginner 2 reply (cluster 1): the question that ends it, with its English; the app prints only this of the turn */
+  question?: { text: string; en: string };
   /** The last turn: the welcome's (the app shows the button in place of the mic), a lesson's, or an
    *  ordinary conversation's after their goodbye (the app closes the screen after it's said) */
   done?: boolean;

@@ -59,6 +59,10 @@ public final class ConversationModel {
     public private(set) var intro: [APIClient.IntroSentence]?
     /// The intro's first sentence, from the streamed head, before the reply has come
     public private(set) var introHead: APIClient.IntroSentence?
+    /// A one-line Beginner 2 reply: the question that ends it, with its English, the only thing printed of the turn
+    public private(set) var question: APIClient.IntroSentence?
+    /// A Beginner 2 one-line reply whose head has come but not its question: nothing is printed yet
+    private var awaitingQuestion = false
     /// Typewriter subtitles: how many characters of `line` have been spoken so
     /// far; nil once the whole line is out (then the English appears too)
     public private(set) var shown: Int?
@@ -268,22 +272,37 @@ public final class ConversationModel {
         return nil
     }
 
-    /// Her bubble in the chat: the question only, after an intro; the whole line otherwise
+    /// Where the question starts in `line`, for a one-line Beginner 2 reply
+    private var questionStart: Int? {
+        guard let question, let line, let r = line.range(of: question.text) else { return nil }
+        return line.distance(from: line.startIndex, to: r.lowerBound)
+    }
+
+    /// Her bubble in the chat: the question only, after an intro or on a one-line Beginner 2 reply (and nothing
+    /// until the voice reaches it); the whole line otherwise
     public var chatLine: String? {
-        guard let intro, let last = intro.last else { return line }
-        return last.text
+        if awaitingQuestion { return nil }
+        if let intro, let last = intro.last { return last.text }
+        if let question {
+            if let shown, let start = questionStart, shown < start { return nil }
+            return question.text
+        }
+        return line
     }
 
     /// Typewriter progress within `chatLine`
     public var chatShown: Int? {
-        guard let intro, let shown else { return shown }
-        return max(0, shown - (introStarts.last ?? 0))
+        guard let shown else { return nil }
+        if intro != nil { return max(0, shown - (introStarts.last ?? 0)) }
+        if question != nil, let start = questionStart { return max(0, shown - start) }
+        return shown
     }
 
-    /// The English under her bubble: the question's, after an intro
+    /// The English under her bubble: the question's, after an intro or on a one-line Beginner 2 reply
     public var chatEnglish: String? {
-        guard let intro, let last = intro.last else { return english }
-        return last.en
+        if let intro, let last = intro.last { return last.en }
+        if let question { return question.en }
+        return english
     }
 
     /// Beginner dialogue: the answers to say back, on the learner's turn
@@ -379,6 +398,8 @@ public final class ConversationModel {
             english = reply.en
             parts = reply.parts
             intro = reply.intro
+            question = reply.question
+            awaitingQuestion = false
             shown = nil
             replies = nil
             chosen = nil
@@ -399,6 +420,8 @@ public final class ConversationModel {
         parts = reply.parts
         intro = reply.intro
         introHead = nil
+        question = reply.question
+        awaitingQuestion = false
         shown = 0
         replies = nil
         chosen = nil
@@ -481,6 +504,9 @@ public final class ConversationModel {
                 self.parts = headParts
                 self.intro = nil
                 self.introHead = headIntro
+                self.question = nil
+                // Beginner 2's one-line reply: nothing printed until the question comes with the reply
+                self.awaitingQuestion = self.beginner && headParts == nil && headIntro == nil && UserDefaults.standard.integer(forKey: APIClient.beginnerVersionKey) == 2
                 self.english = nil
                 self.shown = 0
                 self.replies = nil
@@ -523,6 +549,8 @@ public final class ConversationModel {
         parts = reply.parts
         intro = reply.intro
         introHead = nil
+        question = reply.question
+        awaitingQuestion = false
         replies = nil
         chosen = nil
         if stoppedByTap || phase != .speaking {

@@ -2,6 +2,10 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
 
+### 2026-11-11c: three or four pieces of the language a turn
+- **Changed:** Level 1: "Two or three of them a turn" → "Three or four of them a turn". No other words. In code (`lib/beginner-2.ts`): cluster 1 now plays three setups, two answers, two questions to ask and no answers (an open question answered in the learner's own words), never the same one twice running.
+- **Why:** Josh, 2026-11-11, after playing the live build: "Would be good to get more of the spanish frame in the english"; and on the turns: "the answers are fine but no variation. It's like Dora the Explorer": every turn ended on a choice with two balloons. The rotation is the first cut of the palette of asks (docs/dialogue-structure-reference.md § 12.1).
+
 ### 2026-11-11b: Level 1 turns are two or three sentences, not "a few"
 - **Changed:** "Keep each turn short: a few sentences" → "two or three sentences", in the Level 1 frame. No other words.
 - **Why:** Josh, 2026-11-11, after playing Beginner 2 in Mexico with the intro live: "each turn felt about as long as the intro" (the intro is six to eight sentences). The turns had grown: the cluster-1 runs on 10s read three to four pieces a turn, and with the answers and the shape note the lines ran longer still. "A few" is the loosest word in the brief; "two or three" is what Beginner 1's S1 said. Measured with tests/experiments/b2-frame-line-live.mts (words a turn) before the commit.

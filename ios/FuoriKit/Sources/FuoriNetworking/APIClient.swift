@@ -148,6 +148,10 @@ public actor APIClient {
         /// question, which is the chat's first bubble. `line` is them joined.
         /// Nil for every other turn and from older servers
         public var intro: [IntroSentence]? = nil
+        /// A one-line Beginner 2 reply: the question that ends it, with its
+        /// English; the app prints only this of the turn (Josh, 2026-11-11).
+        /// Nil for other turns and from older servers
+        public var question: IntroSentence? = nil
     }
 
     /// One sentence of the intro, with its English subtitle

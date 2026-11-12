@@ -96,7 +96,8 @@ struct PersonView: View {
             // While scaffolding: the words and the English always
             // (docs/beginner-scaffolding.md)
             let showLine = model.scaffolding || subtitles
-            let showEnglish = model.scaffolding || english
+            // A Beginner 2 question always shows its English (Josh, 2026-11-11: "only the Spanish question and translation")
+            let showEnglish = model.scaffolding || english || model.question != nil
             // Beginner dialogue: her English is heard, her words in the language are bubbles. Parts that are only
             // the answers to say back (Beginner 2 on the one-line reply, 2026-11-11): her line is the subtitle as
             // at every other level, and the answers show on the learner's turn (ConversationControls)
