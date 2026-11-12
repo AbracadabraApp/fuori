@@ -2,6 +2,8 @@
 
 Claude's proposal, 2026-11-11, written at Josh's request ("Write up the plan and design") after the question "what is wrong with Fuori" and "how to fix 1". Nothing here is agreed or built. Decisions that are Josh's are listed at the end.
 
+**Status, 2026-11-11:** parked. The last section gives the reasons it may fail to improve dialogue, and its conclusion is not to start here if the aim is better dialogue soon. No step has been started and Josh has made none of the three decisions.
+
 Read for this: `lib/conversation/take-turn.ts`, `lib/turn.ts`, `lib/claude.ts`, `lib/beginner-2.ts`, `lib/prompts/build-turn-prompt.ts`, `lib/speech/hear-recording.ts`, the prompt files. Not read: `lib/beginner.ts`, `lib/lesson.ts`, `lib/welcome.ts`, `lib/intro.ts`, `lib/shapes.ts` in full, and the iPhone app. Nothing was run.
 
 ## The problem
