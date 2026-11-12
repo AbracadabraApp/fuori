@@ -365,7 +365,7 @@ export function questionOf(line: string, en: string): { text: string; en: string
   // maybe you want a boleada?" against "…a shoe shine?": 5 of 8, Don Chucho, 2026-11-12). Counted against both, so a
   // question in the language built from names the translation keeps stays the question ("¿Le sirvo carne en su jugo
   // o pozole?" against "Shall I serve you carne en su jugo or pozole?": 5 of 13), which a count of the sentence's own
-  // words alone set aside (the dialogue session's catch, 2026-11-12)
+  // words alone set aside (a review note Josh passed on, 2026-11-12)
   const wordsOf = (x: string) => new Set(bare(x).split(/[^\p{L}\p{N}]+/u).filter(Boolean));
   const shared = (a: Set<string>, b: Set<string>) => {
     const both = [...a].filter((w) => b.has(w)).length;
