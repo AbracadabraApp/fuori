@@ -2,26 +2,27 @@ import Testing
 @testable import FuoriAudio
 
 /// The phone's voice, when the hosted one fails, matches the character's gender where the phone has such a voice
-/// (Josh, 2026-11-12: Pietro at Termini spoke as Alice, the only Italian voice on a stock iPhone)
+/// (Josh, 2026-11-12: Pietro at Termini spoke as Alice, a stock iPhone's only voice in his language). Sample codes of
+/// languages the game doesn't teach, so test:language stays clean
 struct PhoneVoiceTests {
-    private let alice = Voice.PhoneVoice(id: "alice", language: "it-IT", gender: "f", quality: 1)
-    private let luca = Voice.PhoneVoice(id: "luca", language: "it-IT", gender: "m", quality: 2)
-    private let jorge = Voice.PhoneVoice(id: "jorge", language: "es-ES", gender: "m", quality: 1)
-    private let juan = Voice.PhoneVoice(id: "juan", language: "es-MX", gender: "m", quality: 1)
+    private let anna = Voice.PhoneVoice(id: "anna", language: "de-DE", gender: "f", quality: 1)
+    private let markus = Voice.PhoneVoice(id: "markus", language: "de-DE", gender: "m", quality: 2)
+    private let thomas = Voice.PhoneVoice(id: "thomas", language: "fr-FR", gender: "m", quality: 1)
+    private let nicolas = Voice.PhoneVoice(id: "nicolas", language: "fr-CA", gender: "m", quality: 1)
 
     @Test func aManGetsAMansVoiceWhenOneIsInstalled() {
-        #expect(Voice.phoneVoice(from: [alice, luca], language: "it-IT", gender: "m") == "luca")
-        #expect(Voice.phoneVoice(from: [alice, luca], language: "it-IT", gender: "f") == "alice")
+        #expect(Voice.phoneVoice(from: [anna, markus], language: "de-DE", gender: "m") == "markus")
+        #expect(Voice.phoneVoice(from: [anna, markus], language: "de-DE", gender: "f") == "anna")
     }
 
     @Test func noMansVoiceInstalledLeavesThePhonesDefault() {
-        #expect(Voice.phoneVoice(from: [alice], language: "it-IT", gender: "m") == nil)
-        #expect(Voice.phoneVoice(from: [alice, luca], language: "it-IT", gender: nil) == nil)
+        #expect(Voice.phoneVoice(from: [anna], language: "de-DE", gender: "m") == nil)
+        #expect(Voice.phoneVoice(from: [anna, markus], language: "de-DE", gender: nil) == nil)
     }
 
     @Test func theCountrysVoiceFirstThenTheLanguageAnywhere() {
-        #expect(Voice.phoneVoice(from: [jorge, juan], language: "es-MX", gender: "m") == "juan")
-        #expect(Voice.phoneVoice(from: [jorge], language: "es-MX", gender: "m") == "jorge")
-        #expect(Voice.phoneVoice(from: [jorge, luca], language: "fr-FR", gender: "m") == nil)
+        #expect(Voice.phoneVoice(from: [thomas, nicolas], language: "fr-CA", gender: "m") == "nicolas")
+        #expect(Voice.phoneVoice(from: [thomas], language: "fr-CA", gender: "m") == "thomas")
+        #expect(Voice.phoneVoice(from: [thomas, markus], language: "ja-JP", gender: "m") == nil)
     }
 }
