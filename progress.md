@@ -1,5 +1,15 @@
 # Fuori Development Progress
 
+## 2026-11-12 (Mac mini, from the cloud session's brief at Josh's request): test X1 run, one whole good visit shown to the character; Josh's listening pending (a test only; no prompt or code in the game changed)
+
+- **The question (queue row X1):** does showing a character one whole good visit change how it talks? The model is Nunzio's visit (Palermo, 2026-11-09), exported to `tests/experiments/exemplars/nunzio-palermo.json` with two trims recorded in the file (the words after the question mark in his turn 2; the passing-through-Palermo question in turn 3) and nothing else changed.
+- **The card:** X1 in `docs/prompt-trials.md`. A is today's Intermediate prompt; B adds one block at the end of the system prompt, the visit in Italian under one sentence, no instruction. Reviewed by the test designer ("run with nine changes", none to Josh's parts; all applied) and stamped (dab753ef) before the run.
+- **The run (`tests/experiments/exemplar-visit.mts`, 65 turns, 48 seconds):** three visits of six character turns, each arm twice: Josh's own visit to Lucia Bini's pasticceria in Siena replayed with his lines as spoken; a fresh visit to Carmine at Bar Nilo, Napoli; a fresh visit to Giovanni at the Sassi belvedere, Matera. In the two fresh visits the auto responder spoke the learner's side at Intermediate, same first line and same seed both ways, called against the live Intermediate calls (`runIntro`, `runTurn`), not the Beginner turn it was written for.
+- **For Josh to hear:** four pairs (three real, one hidden pair of two takes of today's prompt), about 16 minutes, order hidden, on a private page: https://claude.ai/artifact/BjnYHvDN1PFzJe1bAeogXc. The key and the text stay on the mini until he answers.
+- **Counts so far (guards only, they decide nothing):** none of Nunzio's content was copied (two list hits, both read, neither a copy); statement endings and words a turn in B are inside the gap between two takes of A; the block adds about 1,700 input tokens and about 0.2 s to the median reply.
+- **Known limits, on the card:** one take per clip at temperature 1.0; Josh's replayed lines stop fitting once the reply differs; the replayed visit predates the intro, so it runs without the beats brief in both arms; the responder has not passed F2.
+- **Next:** Josh listens and answers on the page; his words go into the card; the test designer's check after; the decision by the card's outcomes. `npm run test:cards` reports X1 as run without its after-check until then (as it does for B2-E2 to B2-E4).
+
 ## 2026-11-11 (Mac mini, driven from Josh's phone): research note, Italy pictures, a technical review and a turn-engine plan that argues against starting with itself (docs and pictures only; no code or prompt changed)
 
 - **Research, `docs/research/frame-gloss-echo.md`:** the repo's research and a new web search combined on phrasing, glossing and echoing in a second language. No study gives a validated ideal dialogue structure for new learners; the frame direction is supported, and nothing tests a slotted piece against echo for beginners by voice.
