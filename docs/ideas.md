@@ -442,3 +442,11 @@ Josh: "We should think about Italian/mexican language learning videos or childre
 - **Graded learner videos** (natives speaking slowly, sorted by level; maps onto Beginner and Intermediate). Italy: Easy Italian, Podcast Italiano, Italiano Automatico, Learn Italian with Lucrezia. Mexico: Dreaming Spanish (graded, with Mexican guides), Easy Spanish (partly filmed in Mexico City).
 - **Children's shows** (real native TV, simple and repetitive, short episodes; can feel childish to an adult). Italy: Peppa Pig in Italian, La Pimpa, Masha e Orso, Rai Yoyo. Mexico: Plaza Sésamo (made in Mexico), El Chavo animado, Bluey in Latin American Spanish. Check that a dub is Mexican or Latin American Spanish, not Spain's.
 - **Where:** a "Per imparare / Para aprender" shelf in the film reel, and in Learn, matched to the learner's level. The cinema scripts already find YouTube videos, check they embed and hear their language, so a list of about 30 per country is mostly data work.
+
+## Ideas from play, 2026-11-13 (Josh)
+
+Not decided; nothing built.
+- **Characters who know the family.** Josh, to Vale at Libros Tecolote (ba340097): "It would be an interesting idea if people knew each other through the game. Like when Chema plays, you could say you spoke to his father-in-law." The family plays as separate learners (Josh, Sophia, Jenn; Chema is Sophia's husband). Claude's note: it would need learners to be linked and to agree to what a character may pass on.
+- **Characters tell their own story.** Josh, to Don Chucho (499b9774): "Hableme de su vida. Por favor, next time." Today a character talks about its work and the place, and asks about the learner; a regular could tell their own life a piece at a time across visits. Close to the bids draft's "what makes the seventh visit worth having" (docs/bids.md).
+- **Train noises on the map card.** Josh: "Train noises on map card." The station path (board → ticket sheet over the map → city), shipped 2026-11-11.
+- **The website back.** Josh: "return of web." Switched off 2026-10-26 because the web `/api` routes had no sign-in: `proxy.ts` answers 404 to everything but `/v1`, `/api/admin` and `/healthz`, and the web code is still in the repo. Bringing it back means sign-in first, then deleting `proxy.ts`.

@@ -512,3 +512,7 @@ The big change was Nov 6 (a431cd9, Josh's approved list in `docs/conversation-va
 
 Of 6 conversations with "carbonara, never cream", 5 are Nino (trattoria-garbatella, 11-06 to 11-09), every visit; the other is Franco (10-20). Nino's here line asks him to tell a newcomer about his menu "dish by dish… what the tourists get wrong", and carbonara is his dish. Not a habit of every character; one line pointing him at it. Logged only (Josh: mechanics before dialogue).
 
+
+## Mixed dialogue: the English and the language together (Josh, 2026-11-13)
+
+Josh: "Need to get mixed dialogue working better." The Beginner turn, mostly English with the language slotted in as whole phrases (CLAUDE.md; docs/dialogue-model.md → Beginner goals), and the step-by-step move to less English. Already on the screen list as "the English/Spanish mix to improve" (progress.md, 2026-11-12, item h). What play shows today is in docs/bugs.md: B1 (turns with no English), B7 ("mucho mucho inglés por favor", "puede hablar más despacio?"). Josh's examples of what "better" means: to collect.
