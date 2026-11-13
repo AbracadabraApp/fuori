@@ -73,6 +73,16 @@ History to know: Beginner step 1 used a parts reply until 2026-11-10q and was mo
 - *Different here:* it's written for a bilingual voice talking to an English speaker; Fuori's learner is learning, so what goes in the language should also be what they can catch and say back, and grow with the level (the diglot weave's point).
 - *Open (Josh's call):* a bank of local phrases per city with glosses (its "idiom memory") would be pantry content, which CLAUDE.md allows; few-shot examples against "keep the prompt short".
 
+## Idioms (Josh, 2026-11-13)
+
+Josh: "I know italian better than Spanish - in Italy idioms are a major part of daily speech and an imporrtant way of showwingnig fluency -- i saw a note about city based idioms (which can exists especially in places like Palermo, Rome, Venezia, Napoli) where dialect is strong -- but 98% of idioms are national. The using phrases you've \"heard\" seems importanrt, but so much of what you hear doesnt really register. Idioms stick".
+
+Claude's proposals from it, not decided:
+- Idioms at every level, glossed in two parts, the picture then the meaning, so the picture is the hook: {in bocca al lupo | into the wolf's mouth: good luck}.
+- Layer C (the outside design's "idiom memory") as a store per language, with a few local ones for dialect cities, not a phrasebook per city.
+- Recycling: the idioms a learner has met come back from other characters (the conversation record already keeps what they met).
+- One idiom a visit, where it fits, not one a turn: what's in the prompt gets copied (the "Mire" lesson: 72% of turns at 12h, 33% at 12i once the example went).
+
 ## Measures
 
 The amount of the language, unsupported runs, turn length; and Josh's ear, which decides.
