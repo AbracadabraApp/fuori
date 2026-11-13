@@ -84,6 +84,16 @@ Claude's proposals from it, not decided:
 - One idiom a visit, where it fits, not one a turn: what's in the prompt gets copied (the "Mire" lesson: 72% of turns at 12h, 33% at 12i once the example went).
 - **Weighting (Josh, 2026-11-13):** "the game will sound crazy if people just echo the idiom over and over. I know it goes against some of the rules - but weighting can help with variety - the most important idioms (+) and how recently it was used (-)". Code picks one idiom and gives it to the character (no list in the prompt to copy), as Beginner setups are already picked by weight (lib/beginner-2.ts pickSetup). Claude's refinement: two recencies, the game's (not twice from one character or in one evening) and the learner's (the spacing effect: an idiom met before comes back when due, after a growing gap): score ≈ importance × due for this learner − heard just now. The rule it touches: CLAUDE.md limits hand-written content to city pantries, Magda and level rules, so an idiom store per language needs Josh's yes; it isn't a phrase list in "no phrase lists" (that rule is about predicting what people say).
 
+## From the walk-through of the outside design (2026-11-13)
+
+Josh and Claude went through its five layers (A the model, B the brief, C a phrase store, D the chooser, E the editor). What it added to this draft, not decided:
+- **Three bins, not two**, sorted by "how much English does this learner need": known (the language, no gloss), new and worth catching (the language with its gloss), too hard now (English). The ladder is the first bin growing. Josh's example: Nunzio's "le radici scendono dai rami" (67edfe03) belonged in the second bin, for the words and for the thing itself (roots that come down); it was played as the first, and the help came only after he asked twice.
+- **Code sets the budget, the model spends it** (layer D): code decides how many pieces, whether there's an idiom and which, gloss all or only new; the character picks the words. No thinking pass or separate chooser: both cost the wait before the voice.
+- **One record of the learner** (what they met, said and missed; the visit summaries already keep most of it) feeds the bins, the idiom spacing and a check after each visit of what was left unglossed for them.
+- **The learner's signals count:** asking for help moves things into the second bin for the rest of the visit (B13).
+- **Editing** (layer E): live, the braces and the code check (assemblePieces); afterwards, the model judge (unsupported-runs.mts). No live rewrite: Josh: "speed" (the voice starts on the first sentence).
+- **No fine-tuning** (layer A): the model writes the mix well; the fixes are in the brief and the code around it.
+
 ## Measures
 
 The amount of the language, unsupported runs, turn length; and Josh's ear, which decides.
