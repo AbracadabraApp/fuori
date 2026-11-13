@@ -60,6 +60,18 @@ Prompt wording asks for the rule; structure would guarantee it. The character wr
 
 History to know: Beginner step 1 used a parts reply until 2026-11-10q and was moved to one line, after Josh called a phrase repeated around its English a "sandwich" ("weird"; tests/check-beginner-2.ts). The proposal isn't the sandwich: each piece is said once, with its gloss once.
 
+## Research (2026-11-13; Josh: "I like the proposal but lets research a bit more")
+
+**Teaching methods that already do this:**
+- **The diglot weave** (Robert Blair, Power-Glide courses): words and phrases of the target language woven into a text mostly in the learner's own language, more of them as the learner goes; also called the substitution method or "sandwich stories". The closest match to the steps. Claims of large vocabulary gains come mostly from companies that sell it; a caution from the Open University: it can teach a habit of mixing, and it gets harder with more and harder words.
+- **Dodson's bilingual method** (1967) and its **sandwich technique**: the teacher says a phrase in the target language, its meaning in the learner's language, then the phrase again, so the learner can say it back. Revived by Butzkamm & Caldwell (2009); some classroom studies supported it. It's the echo with the phrase said again at the end. (The step-1 check bans a "sandwich repeat" Josh called "weird", tests/check-beginner-2.ts.)
+- **Research on learners and code-switching** is mostly about advanced learners reading or hearing it (e.g. Treadway, Higdon & Valdés Kroff, Isogloss 2025, eye-tracking with L2 Spanish learners); nothing found on glossing by an AI for beginners.
+
+**Outside design input (an AI answer Josh passed on), against Fuori:**
+- *Fits:* the language for what carries meaning or culture (idioms, set phrases, the local thing), English for the rest; a short conversational gloss, not a dictionary one; switches at phrase boundaries; density as a dial; staged generation (plan, insert, gloss), which is the structure proposed above; a check after generation that every piece has its gloss (`unsupported-runs.mts` is that check, run offline).
+- *Different here:* it's written for a bilingual voice talking to an English speaker; Fuori's learner is learning, so what goes in the language should also be what they can catch and say back, and grow with the level (the diglot weave's point).
+- *Open (Josh's call):* a bank of local phrases per city with glosses (its "idiom memory") would be pantry content, which CLAUDE.md allows; few-shot examples against "keep the prompt short".
+
 ## Measures
 
 The amount of the language, unsupported runs, turn length; and Josh's ear, which decides.
