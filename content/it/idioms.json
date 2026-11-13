@@ -1,0 +1,1096 @@
+{
+ "about": "Idioms for characters to use, one a visit, glossed with the picture then the meaning (docs/mix.md → Idioms; Josh, 2026-11-13: \"Idioms stick\", \"we might favor shotter and common\", \"start the list and I'll get youo edits later\"). Chosen from idioms read out of Must-Know Italian Slang, Talk Like an Italian, 1001 Easy Italian Phrases, Les 800 expressions pour tout dire en italien, four modi di dire collections, Un tesoro di lingua and Los dichos de Jesús: common, 2 to 6 words, not already in syllabus.json, plus common biblical sayings. Only the idioms come from the books; pictures, meanings, situations and origins are our own words (origins are often folk etymology: stories, not facts). Not checked by a person yet: Josh's edits to come. common: very common | common; group: idiom | biblical.",
+ "version": "2026-11-13a",
+ "idioms": [
+  {
+   "text": "dare i numeri",
+   "picture": "to give out numbers",
+   "meaning": "to talk nonsense, to lose it; a machine acting up",
+   "common": "very common",
+   "level": "B1",
+   "fits": "the ticket machine misbehaves; someone says something absurd",
+   "group": "idiom"
+  },
+  {
+   "text": "andare a rotoli",
+   "picture": "to go rolling",
+   "meaning": "to go to ruin, fall apart",
+   "common": "very common",
+   "level": "B1",
+   "fits": "a business, a plan, a relationship",
+   "group": "idiom"
+  },
+  {
+   "text": "andare in fumo",
+   "picture": "to go up in smoke",
+   "meaning": "to come to nothing (money, plans, work)",
+   "common": "very common",
+   "level": "B1",
+   "fits": "a cancelled trip, a failed deal, a ruined harvest",
+   "group": "idiom"
+  },
+  {
+   "text": "attaccare bottone (con qualcuno)",
+   "picture": "to sew on a button",
+   "meaning": "to strike up a conversation, often with a stranger; sometimes to corner someone with chatter",
+   "common": "very common",
+   "level": "B1",
+   "fits": "a talkative regular at the bar, a stranger on the train",
+   "origin": "old surgeons cauterised wounds with a hot button-tipped iron; first it meant to needle someone with talk, then to force a long talk on them",
+   "group": "idiom"
+  },
+  {
+   "text": "avere la coda di paglia",
+   "picture": "to have a tail of straw (it catches fire easily)",
+   "meaning": "to have a guilty conscience, and so be touchy and take any remark as aimed at you",
+   "common": "very common",
+   "level": "B2",
+   "fits": "someone bristles at an innocent question; teasing a friend who gets defensive",
+   "group": "idiom"
+  },
+  {
+   "text": "avere un chiodo fisso",
+   "picture": "to have a nail fixed in",
+   "meaning": "to have an obsession, something you can't stop thinking about",
+   "common": "very common",
+   "level": "B1",
+   "fits": "a passion for football, a hobby, a crush",
+   "origin": "likened to a pin around which a latch turns",
+   "group": "idiom"
+  },
+  {
+   "text": "capitare (cascare, cadere) a fagiolo",
+   "picture": "to drop like a bean",
+   "meaning": "to come at exactly the right moment",
+   "common": "very common",
+   "level": "B1",
+   "fits": "an unexpected day off, a friend turning up just when needed",
+   "origin": "origin unknown; the book guesses bean-curved furniture that fits neatly into corners",
+   "group": "idiom"
+  },
+  {
+   "text": "che pizza!",
+   "picture": "what a pizza!",
+   "meaning": "how boring, what a drag",
+   "common": "very common",
+   "level": "B1",
+   "fits": "a long queue, a dull chore, rainy Sunday",
+   "group": "idiom"
+  },
+  {
+   "text": "costare un occhio della testa",
+   "picture": "to cost an eye out of your head",
+   "meaning": "to cost a fortune",
+   "common": "very common",
+   "level": "B1",
+   "fits": "rent in the centre, a designer bag, petrol, a tourist-trap bill",
+   "group": "idiom"
+  },
+  {
+   "text": "di punto in bianco",
+   "picture": "from point-blank (aiming straight)",
+   "meaning": "suddenly, out of the blue, without warning",
+   "common": "very common",
+   "level": "B1",
+   "fits": "a shop that closed, someone who quit, weather that turned",
+   "group": "idiom"
+  },
+  {
+   "text": "in un batter d'occhio",
+   "picture": "in a blink of the eye",
+   "meaning": "in an instant",
+   "common": "very common",
+   "level": "B1",
+   "fits": "fast service, something that sold out",
+   "group": "idiom"
+  },
+  {
+   "text": "l'abito non fa il monaco",
+   "picture": "the habit doesn't make the monk",
+   "meaning": "don't judge by appearances",
+   "common": "very common",
+   "level": "B1",
+   "fits": "the scruffy man who turns out to own the place",
+   "origin": "an old guess: clothes once showed your trade or rank, and crooks dressed up as gentlemen",
+   "group": "idiom"
+  },
+  {
+   "text": "non avere né capo né coda",
+   "picture": "to have neither head nor tail",
+   "meaning": "to make no sense",
+   "common": "very common",
+   "level": "B1",
+   "fits": "a confusing story, a muddled film",
+   "group": "idiom"
+  },
+  {
+   "text": "restare (tornare) a mani vuote",
+   "picture": "with empty hands",
+   "meaning": "to come away with nothing",
+   "common": "very common",
+   "level": "B1",
+   "fits": "a sold-out market, a wasted trip",
+   "group": "idiom"
+  },
+  {
+   "text": "rompere le scatole (che scatole! / una rottura di scatole)",
+   "picture": "to break the boxes (polite stand-in for a coarser word)",
+   "meaning": "to pester, be a nuisance; \"what a pain!\"",
+   "common": "very common",
+   "level": "B1",
+   "fits": "a neighbour's noise, paperwork, a pestering child",
+   "group": "idiom"
+  },
+  {
+   "text": "testa di rapa (testa di cavolo)",
+   "picture": "turnip head (cabbage head)",
+   "meaning": "blockhead (a mild, joking insult)",
+   "common": "very common",
+   "level": "B1",
+   "fits": "teasing someone who did something silly",
+   "group": "idiom"
+  },
+  {
+   "text": "(passare) dalla padella alla brace",
+   "picture": "from the frying pan into the embers",
+   "meaning": "from bad to worse, out of the frying pan into the fire",
+   "common": "very common",
+   "level": "B1",
+   "fits": "a fix that made things worse",
+   "group": "idiom"
+  },
+  {
+   "text": "(su questo) non ci piove",
+   "picture": "it doesn't rain on that",
+   "meaning": "no doubt about it",
+   "common": "very common",
+   "level": "B1",
+   "fits": "stating something certain",
+   "group": "idiom"
+  },
+  {
+   "text": "a buon intenditor poche parole",
+   "picture": "for a good understander, few words",
+   "meaning": "a word to the wise is enough",
+   "common": "very common",
+   "level": "B2",
+   "fits": "a hint to a customer",
+   "group": "idiom"
+  },
+  {
+   "text": "a ogni morte di papa",
+   "picture": "at every death of a pope",
+   "meaning": "very rarely, once in a blue moon",
+   "common": "very common",
+   "level": "B1",
+   "fits": "seeing an old friend very rarely",
+   "group": "idiom"
+  },
+  {
+   "text": "a puntate",
+   "picture": "in instalments",
+   "meaning": "in episodes, bit by bit (a series, a story)",
+   "common": "very common",
+   "level": "B1",
+   "fits": "chatting about a TV series at the bar",
+   "origin": "from bookbinding: a \"puntata\" was as many sheets as one stitch could hold",
+   "group": "idiom"
+  },
+  {
+   "text": "acqua in bocca!",
+   "picture": "water in your mouth!",
+   "meaning": "keep it quiet, mum's the word",
+   "common": "very common",
+   "level": "B1",
+   "fits": "sharing a secret",
+   "group": "idiom"
+  },
+  {
+   "text": "all'ordine del giorno",
+   "picture": "on the day's agenda",
+   "meaning": "happening all the time, routine",
+   "common": "very common",
+   "level": "B1",
+   "fits": "traffic jams or strikes being normal",
+   "group": "idiom"
+  },
+  {
+   "text": "alla luce del sole",
+   "picture": "in the light of the sun",
+   "meaning": "openly, with nothing hidden",
+   "common": "very common",
+   "level": "B1",
+   "fits": "a seller insisting everything is above board",
+   "group": "idiom"
+  },
+  {
+   "text": "alzare il gomito",
+   "picture": "to raise your elbow",
+   "meaning": "to drink too much",
+   "common": "very common",
+   "level": "B1",
+   "fits": "a festa, a wedding, the morning after",
+   "group": "idiom"
+  },
+  {
+   "text": "alzare la voce",
+   "picture": "to raise your voice",
+   "meaning": "to shout, speak angrily",
+   "common": "very common",
+   "level": "A2",
+   "fits": "a quarrel, a noisy street",
+   "group": "idiom"
+  },
+  {
+   "text": "anche l'occhio vuole la sua parte",
+   "picture": "the eye wants its share too",
+   "meaning": "appearance and presentation matter too",
+   "common": "very common",
+   "level": "B1",
+   "fits": "a pastry shop arranging cakes nicely, a well-plated dish",
+   "origin": "traced to an old tale of a tailor who threw leftover cloth through a little eye-shaped hole in his door and justified it with this line",
+   "group": "idiom"
+  },
+  {
+   "text": "andare a farsi friggere",
+   "picture": "go and get fried",
+   "meaning": "go to ruin, be wasted or lost",
+   "common": "very common",
+   "level": "B2",
+   "fits": "saying a plan or holiday was ruined by rain",
+   "group": "idiom"
+  },
+  {
+   "text": "andare a fondo",
+   "picture": "go to the bottom",
+   "meaning": "get to the bottom of something, examine it thoroughly; also sink",
+   "common": "very common",
+   "level": "B1",
+   "fits": "someone vowing to find out why a delivery never came",
+   "group": "idiom"
+  },
+  {
+   "text": "andare a gonfie vele",
+   "picture": "to go with swollen sails",
+   "meaning": "to go really well",
+   "common": "very common",
+   "level": "B1",
+   "fits": "business is booming, a project on track",
+   "group": "idiom"
+  },
+  {
+   "text": "andare a manetta",
+   "picture": "going at the throttle",
+   "meaning": "to go flat out, at full speed or with great energy",
+   "common": "very common",
+   "level": "B1",
+   "fits": "a friend driving too fast, or a busy day at work",
+   "origin": "the manetta was the hand throttle lever controlling fuel flow on old vehicles",
+   "group": "idiom"
+  },
+  {
+   "text": "andare a ruba",
+   "picture": "go to theft",
+   "meaning": "sell out fast, be snapped up",
+   "common": "very common",
+   "level": "B1",
+   "fits": "a baker saying the cornetti are gone by nine",
+   "group": "idiom"
+  },
+  {
+   "text": "andare a testa alta",
+   "picture": "go with head held high",
+   "meaning": "to be proud, have nothing to be ashamed of",
+   "common": "very common",
+   "level": "B1",
+   "fits": "encouraging a friend after a setback",
+   "group": "idiom"
+  },
+  {
+   "text": "andare all'aria / a monte (mandare all'aria, mandare a monte)",
+   "picture": "to go up in the air / to go to the pool (the \"monte\" of debts)",
+   "meaning": "to fall through, come to nothing / to wreck a plan",
+   "common": "very common",
+   "level": "B2",
+   "fits": "a cancelled trip, a wedding called off",
+   "group": "idiom"
+  },
+  {
+   "text": "andare d'amore e d'accordo",
+   "picture": "to go in love and agreement",
+   "meaning": "to get along perfectly",
+   "common": "very common",
+   "level": "B1",
+   "fits": "talking about neighbours or a married couple",
+   "group": "idiom"
+  },
+  {
+   "text": "andare pazzo per",
+   "picture": "to go crazy for",
+   "meaning": "to be mad about",
+   "common": "very common",
+   "level": "A2",
+   "fits": "football, gelato, a singer",
+   "group": "idiom"
+  },
+  {
+   "text": "anima e corpo",
+   "picture": "soul and body",
+   "meaning": "wholeheartedly, totally",
+   "common": "very common",
+   "level": "B1",
+   "fits": "a cook devoted to her trattoria",
+   "group": "idiom"
+  },
+  {
+   "text": "arrampicarsi sugli specchi",
+   "picture": "climbing up mirrors",
+   "meaning": "to clutch at straws: defend a lost position with flimsy excuses",
+   "common": "very common",
+   "level": "B2",
+   "fits": "an excuse that doesn't hold up",
+   "group": "idiom"
+  },
+  {
+   "text": "avere il cuore in gola",
+   "picture": "to have your heart in your throat",
+   "meaning": "your heart is pounding (from running, fear or nerves)",
+   "common": "very common",
+   "level": "B1",
+   "fits": "after running for the train, waiting for news",
+   "group": "idiom"
+  },
+  {
+   "text": "avere il pallino di qualcosa",
+   "picture": "having the jack (bowls) of something",
+   "meaning": "to have a fixed idea or obsession about something",
+   "common": "very common",
+   "level": "B1",
+   "fits": "a customer obsessed with one brand of coffee",
+   "origin": "probably from bowls, where everything aims at the small jack ball",
+   "group": "idiom"
+  },
+  {
+   "text": "avere la luna storta (di traverso)",
+   "picture": "to have the moon crooked",
+   "meaning": "to be in a bad mood",
+   "common": "very common",
+   "level": "B1",
+   "fits": "a grumpy barista, a moody teenager",
+   "group": "idiom"
+  },
+  {
+   "text": "avere la pazienza di Giobbe",
+   "picture": "have Job's patience",
+   "meaning": "have endless patience",
+   "common": "very common",
+   "level": "B1",
+   "fits": "a shopkeeper dealing with a fussy customer",
+   "group": "idiom"
+  },
+  {
+   "text": "avere la pelle d'oca",
+   "picture": "to have goose skin",
+   "meaning": "to have goosebumps (from cold or emotion)",
+   "common": "very common",
+   "level": "A2",
+   "fits": "a cold wind; a moving song or view",
+   "group": "idiom"
+  },
+  {
+   "text": "avere la testa fra le nuvole",
+   "picture": "to have your head in the clouds",
+   "meaning": "to be absent-minded",
+   "common": "very common",
+   "level": "A2",
+   "fits": "someone forgot an appointment",
+   "group": "idiom"
+  },
+  {
+   "text": "avere le mani bucate",
+   "picture": "to have holed hands",
+   "meaning": "to spend money too easily",
+   "common": "very common",
+   "level": "B1",
+   "fits": "someone buying everything at the market",
+   "group": "idiom"
+  },
+  {
+   "text": "avere le mani legate",
+   "picture": "to have your hands tied",
+   "meaning": "to be unable to act",
+   "common": "very common",
+   "level": "B1",
+   "fits": "an official who can't make an exception",
+   "group": "idiom"
+  },
+  {
+   "text": "avere torto marcio",
+   "picture": "to be rotten wrong",
+   "meaning": "to be completely wrong",
+   "common": "very common",
+   "level": "B1",
+   "fits": "an argument about football or directions",
+   "group": "idiom"
+  },
+  {
+   "text": "avere un diavolo per capello",
+   "picture": "to have a devil for every hair",
+   "meaning": "to be fuming, in a foul temper",
+   "common": "very common",
+   "level": "B1",
+   "fits": "after a traffic jam, a bad day",
+   "group": "idiom"
+  },
+  {
+   "text": "avere una gatta da pelare",
+   "picture": "to have a cat to skin",
+   "meaning": "to have a tough problem on your hands",
+   "common": "very common",
+   "level": "B2",
+   "fits": "a difficult customer, a leaking roof",
+   "group": "idiom"
+  },
+  {
+   "text": "averne fin sopra i capelli",
+   "picture": "to have it up above your hair",
+   "meaning": "to be sick and tired of something",
+   "common": "very common",
+   "level": "B1",
+   "fits": "fed up with rain, tourists, paperwork",
+   "group": "idiom"
+  },
+  {
+   "text": "ben ti sta!",
+   "picture": "it suits you well",
+   "meaning": "serves you right",
+   "common": "very common",
+   "level": "B1",
+   "fits": "teasing a friend who ignored advice",
+   "group": "idiom"
+  },
+  {
+   "text": "buttare i soldi dalla finestra",
+   "picture": "to throw money out of the window",
+   "meaning": "to waste money",
+   "common": "very common",
+   "level": "B1",
+   "fits": "an overpriced tourist menu, an impulse buy",
+   "group": "idiom"
+  },
+  {
+   "text": "cadere dalle nuvole",
+   "picture": "to fall from the clouds",
+   "meaning": "to be completely surprised by news everyone else already knew",
+   "common": "very common",
+   "level": "B1",
+   "fits": "hearing a piece of local news for the first time",
+   "group": "idiom"
+  },
+  {
+   "text": "calzare a pennello",
+   "picture": "fit like a brush",
+   "meaning": "fit perfectly",
+   "common": "very common",
+   "level": "B1",
+   "fits": "trying on a jacket in a shop",
+   "group": "idiom"
+  },
+  {
+   "text": "capire al volo",
+   "picture": "understand in flight",
+   "meaning": "get it instantly",
+   "common": "very common",
+   "level": "A2",
+   "fits": "a barman grasping a quick order",
+   "group": "idiom"
+  },
+  {
+   "text": "cercare il pelo nell'uovo",
+   "picture": "to look for a hair in the egg",
+   "meaning": "to nitpick, find fault with tiny details",
+   "common": "very common",
+   "level": "B1",
+   "fits": "a fussy customer, a picky critic",
+   "group": "idiom"
+  },
+  {
+   "text": "chi la dura la vince",
+   "picture": "whoever holds out wins",
+   "meaning": "persistence pays off",
+   "common": "very common",
+   "level": "B1",
+   "fits": "encouraging someone who's struggling, a learner",
+   "group": "idiom"
+  },
+  {
+   "text": "chi si accontenta gode",
+   "picture": "whoever's content enjoys",
+   "meaning": "be happy with what you have",
+   "common": "very common",
+   "level": "B1",
+   "fits": "a simple meal, a small flat with a view",
+   "group": "idiom"
+  },
+  {
+   "text": "chiudere un occhio",
+   "picture": "to close one eye",
+   "meaning": "to turn a blind eye, let it go",
+   "common": "very common",
+   "level": "B1",
+   "fits": "a lenient warden, forgiving a small mistake",
+   "group": "idiom"
+  },
+  {
+   "text": "ci mancava (solo) questa! / ci mancava altro!",
+   "picture": "this was all that was missing",
+   "meaning": "just what we needed (ironic, at one more problem). Don't mix up with *ci mancherebbe (altro)!*, \"of course!\"",
+   "common": "very common",
+   "level": "B1",
+   "fits": "a bus strike on a rainy day, a second flat tyre",
+   "group": "idiom"
+  },
+  {
+   "text": "cogliere (prendere) con le mani nel sacco",
+   "picture": "to catch with your hands in the sack",
+   "meaning": "to catch red-handed",
+   "common": "very common",
+   "level": "B1",
+   "fits": "a child caught stealing sweets",
+   "group": "idiom"
+  },
+  {
+   "text": "col senno di poi",
+   "picture": "with the good sense of afterwards",
+   "meaning": "with hindsight",
+   "common": "very common",
+   "level": "B2",
+   "fits": "looking back on a decision",
+   "group": "idiom"
+  },
+  {
+   "text": "colpo d'aria",
+   "picture": "stroke of air",
+   "meaning": "a chill caught from a draught",
+   "common": "very common",
+   "level": "B1",
+   "fits": "a grandmother warning to close the window",
+   "group": "idiom"
+  },
+  {
+   "text": "colpo di fulmine",
+   "picture": "a lightning strike",
+   "meaning": "love at first sight",
+   "common": "very common",
+   "level": "B1",
+   "fits": "how a couple met; falling for a town",
+   "group": "idiom"
+  },
+  {
+   "text": "colpo di scena",
+   "picture": "stroke of scene",
+   "meaning": "a sudden plot twist, surprising turn of events",
+   "common": "very common",
+   "level": "B1",
+   "fits": "gossip at the market taking an unexpected turn",
+   "group": "idiom"
+  },
+  {
+   "text": "colpo di telefono",
+   "picture": "stroke of telephone",
+   "meaning": "a quick phone call",
+   "common": "very common",
+   "level": "A2",
+   "fits": "'give me a ring' when arranging to meet",
+   "group": "idiom"
+  },
+  {
+   "text": "colpo di testa",
+   "picture": "head blow",
+   "meaning": "a rash, impulsive decision",
+   "common": "very common",
+   "level": "B1",
+   "fits": "someone who quit a job to open a bar",
+   "group": "idiom"
+  },
+  {
+   "text": "con la coda dell'occhio",
+   "picture": "with the tail of the eye",
+   "meaning": "out of the corner of one's eye",
+   "common": "very common",
+   "level": "B1",
+   "fits": "noticing someone in a shop",
+   "group": "idiom"
+  },
+  {
+   "text": "costare una cifra",
+   "picture": "cost a figure",
+   "meaning": "cost a fortune",
+   "common": "very common",
+   "level": "B1",
+   "fits": "complaining about the price of a restaurant",
+   "group": "idiom"
+  },
+  {
+   "text": "da favola",
+   "picture": "as in a fairy tale",
+   "meaning": "wonderful, dreamlike",
+   "common": "very common",
+   "level": "A2",
+   "fits": "describing a view or a wedding",
+   "group": "idiom"
+  },
+  {
+   "text": "dare carta bianca",
+   "picture": "give white paper",
+   "meaning": "give someone full freedom to decide",
+   "common": "very common",
+   "level": "B1",
+   "fits": "telling the waiter to choose the wine",
+   "group": "idiom"
+  },
+  {
+   "text": "dare nell'occhio",
+   "picture": "to strike the eye",
+   "meaning": "to attract attention, stand out",
+   "common": "very common",
+   "level": "B1",
+   "fits": "loud clothes, a flashy car",
+   "group": "idiom"
+  },
+  {
+   "text": "dare per scontato",
+   "picture": "to give as discounted",
+   "meaning": "to take for granted",
+   "common": "very common",
+   "level": "B1",
+   "fits": "assuming someone already knows",
+   "group": "idiom"
+  },
+  {
+   "text": "darla vinta (a qualcuno)",
+   "picture": "to give it to someone as won",
+   "meaning": "to let someone have their way, give in",
+   "common": "very common",
+   "level": "B2",
+   "fits": "an argument, a child pleading for sweets",
+   "group": "idiom"
+  },
+  {
+   "text": "darsi la zappa sui piedi",
+   "picture": "to hit your own feet with the hoe",
+   "meaning": "to shoot yourself in the foot",
+   "common": "very common",
+   "level": "B2",
+   "fits": "a clever plan that backfired",
+   "group": "idiom"
+  },
+  {
+   "text": "darsi una mossa",
+   "picture": "give oneself a move",
+   "meaning": "hurry up, get going",
+   "common": "very common",
+   "level": "A2",
+   "fits": "telling a friend to hurry to catch the train",
+   "group": "idiom"
+  },
+  {
+   "text": "di male in peggio",
+   "picture": "from bad to worse",
+   "meaning": "things keep getting worse",
+   "common": "very common",
+   "level": "B1",
+   "fits": "the weather, a business, a run of bad luck",
+   "group": "idiom"
+  },
+  {
+   "text": "di normale amministrazione",
+   "picture": "of normal administration",
+   "meaning": "routine, nothing special",
+   "common": "very common",
+   "level": "B1",
+   "fits": "a shopkeeper shrugging off a small problem",
+   "group": "idiom"
+  },
+  {
+   "text": "dormirci sopra (su)",
+   "picture": "to sleep on it",
+   "meaning": "to sleep on it",
+   "common": "very common",
+   "level": "B1",
+   "fits": "a big decision, an expensive purchase",
+   "group": "idiom"
+  },
+  {
+   "text": "essere al settimo cielo",
+   "picture": "to be in seventh heaven",
+   "meaning": "to be over the moon",
+   "common": "very common",
+   "level": "A2",
+   "fits": "good news: a baby, a new job",
+   "group": "idiom"
+  },
+  {
+   "text": "essere come il prezzemolo",
+   "picture": "to be like parsley",
+   "meaning": "to turn up everywhere",
+   "common": "very common",
+   "level": "B1",
+   "fits": "bumping into the same person all day",
+   "group": "idiom"
+  },
+  {
+   "text": "essere in alto mare",
+   "picture": "to be on the high sea",
+   "meaning": "to be nowhere near finished",
+   "common": "very common",
+   "level": "B1",
+   "fits": "renovations, exam revision, a project",
+   "group": "idiom"
+  },
+  {
+   "text": "essere in gamba",
+   "picture": "to be on your leg",
+   "meaning": "to be capable, smart, on the ball; \"in gamba!\" also means take care, get well",
+   "common": "very common",
+   "level": "A2",
+   "fits": "praising someone; saying goodbye to an older person",
+   "group": "idiom"
+  },
+  {
+   "text": "essere in un mare di guai",
+   "picture": "to be in a sea of trouble",
+   "meaning": "to be in deep trouble",
+   "common": "very common",
+   "level": "B1",
+   "fits": "a run of problems",
+   "group": "idiom"
+  },
+  {
+   "text": "essere in vena (di)",
+   "picture": "to be in vein",
+   "meaning": "to be in the mood, on good form",
+   "common": "very common",
+   "level": "B1",
+   "fits": "\"I'm not in the mood for cooking tonight\"",
+   "origin": "doctors said a patient with a steady pulse was \"in buona vena\"",
+   "group": "idiom"
+  },
+  {
+   "text": "essere la pecora nera",
+   "picture": "to be the black sheep",
+   "meaning": "the odd one out, the one in disgrace",
+   "common": "very common",
+   "level": "B1",
+   "fits": "about a family member or colleague",
+   "group": "idiom"
+  },
+  {
+   "text": "essere tra l'incudine e il martello",
+   "picture": "to be between the anvil and the hammer",
+   "meaning": "to be caught between a rock and a hard place",
+   "common": "very common",
+   "level": "B2",
+   "fits": "stuck between two people who disagree",
+   "group": "idiom"
+  },
+  {
+   "text": "essere un altro paio di maniche",
+   "picture": "to be another pair of sleeves",
+   "meaning": "to be a different matter entirely",
+   "common": "very common",
+   "level": "B1",
+   "fits": "comparing two things that only look alike",
+   "group": "idiom"
+  },
+  {
+   "text": "essere un pallone gonfiato",
+   "picture": "to be an inflated balloon",
+   "meaning": "to be a big-headed show-off",
+   "common": "very common",
+   "level": "B1",
+   "fits": "about an arrogant person",
+   "group": "idiom"
+  },
+  {
+   "text": "essere un pezzo di pane (buono come il pane)",
+   "picture": "to be a piece of bread",
+   "meaning": "to be a really kind person",
+   "common": "very common",
+   "level": "A2",
+   "fits": "describing a kind neighbour or grandfather",
+   "group": "idiom"
+  },
+  {
+   "text": "essere una frana",
+   "picture": "to be a landslide",
+   "meaning": "to be hopeless at something",
+   "common": "very common",
+   "level": "B1",
+   "fits": "admitting you're terrible at cooking, dancing, sport",
+   "group": "idiom"
+  },
+  {
+   "text": "essere una mela marcia",
+   "picture": "to be a rotten apple",
+   "meaning": "to be the bad one who spoils the group",
+   "common": "very common",
+   "level": "B1",
+   "fits": "talking about a troublemaker at work",
+   "group": "idiom"
+  },
+  {
+   "text": "far colpo",
+   "picture": "make a blow",
+   "meaning": "make a strong impression, impress",
+   "common": "very common",
+   "level": "B1",
+   "fits": "dressing up to impress on a date",
+   "group": "idiom"
+  },
+  {
+   "text": "far storcere il naso",
+   "picture": "make someone twist their nose",
+   "meaning": "make someone turn up their nose, displease",
+   "common": "very common",
+   "level": "B1",
+   "fits": "pineapple on pizza mentioned to a pizzaiolo",
+   "group": "idiom"
+  },
+  {
+   "text": "far venire i brividi",
+   "picture": "making shivers come",
+   "meaning": "to give someone the chills, scare or thrill",
+   "common": "very common",
+   "level": "B1",
+   "fits": "describing a horror film or a great concert",
+   "group": "idiom"
+  },
+  {
+   "text": "far venire l'acquolina in bocca",
+   "picture": "to bring the little water to your mouth",
+   "meaning": "to make your mouth water",
+   "common": "very common",
+   "level": "A2",
+   "fits": "the smell from a bakery, a dish being described",
+   "group": "idiom"
+  },
+  {
+   "text": "far venire la pelle d'oca",
+   "picture": "bring on goose skin",
+   "meaning": "give goosebumps from fear, cold or emotion",
+   "common": "very common",
+   "level": "A2",
+   "fits": "listening to a street musician",
+   "origin": "Skin rising like a freshly plucked goose's",
+   "group": "idiom"
+  },
+  {
+   "text": "fare bella / brutta figura (un figurone, una figuraccia)",
+   "picture": "to cut a fine / ugly figure",
+   "meaning": "to make a good or bad impression; to shine or to embarrass yourself",
+   "common": "very common",
+   "level": "A2",
+   "fits": "hosting guests, choosing a gift, tripping in public",
+   "group": "idiom"
+  },
+  {
+   "text": "fare brutta figura",
+   "picture": "make a bad figure",
+   "meaning": "make a bad impression, embarrass yourself",
+   "common": "very common",
+   "level": "A2",
+   "fits": "bringing a cheap gift to dinner",
+   "group": "idiom"
+  },
+  {
+   "text": "fare d'ogni erba un fascio",
+   "picture": "making one bundle of every herb",
+   "meaning": "to lump everything together without distinction",
+   "common": "very common",
+   "level": "B2",
+   "fits": "arguing about generalisations at the bar",
+   "group": "idiom"
+  },
+  {
+   "text": "chi è senza peccato scagli la prima pietra",
+   "picture": "whoever has no sin, throw the first stone",
+   "meaning": "nobody is clean enough to condemn others",
+   "common": "very common",
+   "fits": "someone gossips harshly about another's mistake",
+   "origin": "John 8: a crowd ready to stone a woman; Jesus tells the sinless one to start, and they leave",
+   "group": "biblical"
+  },
+  {
+   "text": "vedere la pagliuzza nell'occhio altrui (e non la trave nel proprio)",
+   "picture": "seeing a speck of straw in someone else's eye and missing the beam in your own",
+   "meaning": "criticising small faults in others while ignoring your own big ones",
+   "common": "common",
+   "fits": "someone complains about a neighbour who has the same habit",
+   "origin": "Matthew 7, Sermon on the Mount",
+   "group": "biblical"
+  },
+  {
+   "text": "il figliol prodigo (è tornato il figliol prodigo)",
+   "picture": "the spendthrift son",
+   "meaning": "someone who comes back after a long absence, often after going astray; said warmly or teasingly",
+   "common": "very common",
+   "fits": "a regular reappears after months away",
+   "origin": "Luke 15: a son squanders his inheritance, comes home broke, and his father throws a feast",
+   "group": "biblical"
+  },
+  {
+   "text": "il buon samaritano",
+   "picture": "the good man from Samaria",
+   "meaning": "a stranger who stops to help",
+   "common": "very common",
+   "fits": "someone helped a stranger with a flat tyre or a fall",
+   "origin": "Luke 10: a man beaten on the road is passed by a priest and a Levite and helped by a despised Samaritan",
+   "group": "biblical"
+  },
+  {
+   "text": "gli ultimi saranno i primi",
+   "picture": "the last will be first",
+   "meaning": "the humble or late can end up ahead; also a joke for whoever arrives last",
+   "common": "very common",
+   "fits": "the last to arrive gets served first",
+   "origin": "Matthew 19–20 and Mark 10, Jesus on the kingdom",
+   "group": "biblical"
+  },
+  {
+   "text": "nessuno è profeta in patria",
+   "picture": "nobody is a prophet in his own land",
+   "meaning": "people are least valued at home",
+   "common": "very common",
+   "fits": "a local artist famous abroad and ignored at home",
+   "origin": "Luke 4 and Mark 6: Nazareth scorns Jesus, a local boy",
+   "group": "biblical"
+  },
+  {
+   "text": "molti sono i chiamati, pochi gli eletti",
+   "picture": "many are called, few are chosen",
+   "meaning": "many try, few make it",
+   "common": "common",
+   "fits": "a hard audition, a competition, a job opening",
+   "origin": "Matthew 20 and 22, the end of two parables",
+   "group": "biblical"
+  },
+  {
+   "text": "chi ha orecchie per intendere, intenda",
+   "picture": "whoever has ears, let him hear",
+   "meaning": "I've said it; whoever understands, take note (a pointed hint)",
+   "common": "very common",
+   "fits": "dropping a hint everyone in the room gets",
+   "origin": "Jesus's closing line after parables (Matthew 13, Luke 8) and in Revelation",
+   "group": "biblical"
+  },
+  {
+   "text": "non sappia la tua sinistra ciò che fa la destra / la destra non sa cosa fa la sinistra",
+   "picture": "the left hand not knowing what the right is doing",
+   "meaning": "give quietly, without showing off; now mostly said of a disorganised office where nobody coordinates",
+   "common": "common",
+   "fits": "two counters at the town hall give opposite answers",
+   "origin": "Matthew 6, on giving alms in secret",
+   "group": "biblical"
+  },
+  {
+   "text": "un sepolcro imbiancato",
+   "picture": "a whitewashed tomb",
+   "meaning": "a hypocrite: clean outside, rotten inside",
+   "common": "common",
+   "fits": "a politician preaching morals",
+   "origin": "Matthew 23, Jesus on the Pharisees",
+   "group": "biblical"
+  },
+  {
+   "text": "rinascere / è come rinascere",
+   "picture": "to be born again",
+   "meaning": "to survive a close call, or start life afresh",
+   "common": "very common",
+   "fits": "after a near-accident or a recovery",
+   "origin": "John 3: Jesus tells Nicodemus a person must be born again",
+   "group": "biblical"
+  },
+  {
+   "text": "essere una manna dal cielo",
+   "picture": "like manna falling from the sky",
+   "meaning": "an unexpected help that arrives just when needed",
+   "common": "very common",
+   "fits": "rain after a drought, a refund at month's end",
+   "origin": "Exodus 16: bread falls from the sky for the Israelites in the desert",
+   "group": "biblical"
+  },
+  {
+   "text": "nei secoli dei secoli",
+   "picture": "for the centuries of the centuries",
+   "meaning": "forever; jokingly, an endless wait",
+   "common": "common",
+   "fits": "a queue or a building project that never ends",
+   "origin": "the closing formula of biblical praise (Galatians, Revelation) and of prayers",
+   "group": "biblical"
+  },
+  {
+   "text": "la pecorella smarrita",
+   "picture": "the lost sheep",
+   "meaning": "someone who has strayed from family or group",
+   "common": "common",
+   "fits": "a cousin who stopped coming to Sunday lunch",
+   "origin": "Luke 15: a shepherd leaves ninety-nine sheep to find one",
+   "group": "biblical"
+  },
+  {
+   "text": "tornare all'ovile",
+   "picture": "returning to the sheepfold",
+   "meaning": "coming back to family, a group or old habits",
+   "common": "very common",
+   "fits": "a footballer back at his old club, an ex who returns",
+   "origin": "the shepherd and sheep images of Luke 15 and John 10",
+   "group": "biblical"
+  },
+  {
+   "text": "ama il prossimo tuo come te stesso",
+   "picture": "love your neighbour as yourself",
+   "meaning": "treat others as you'd want to be treated",
+   "common": "common",
+   "fits": "a dispute with neighbours",
+   "origin": "Leviticus 19, quoted by Jesus in Luke 10",
+   "group": "biblical"
+  },
+  {
+   "text": "guadagnarsi il pane col sudore della fronte",
+   "picture": "earning bread with the sweat of your brow",
+   "meaning": "to earn a living by hard work",
+   "common": "very common",
+   "fits": "a baker up at 4 a.m., a farmer",
+   "origin": "Genesis 3: Adam's punishment on leaving Eden",
+   "group": "biblical"
+  },
+  {
+   "text": "avere un cuore di pietra",
+   "picture": "having a heart of stone",
+   "meaning": "to be cold, unmoved by others' pain",
+   "common": "common",
+   "fits": "someone shrugs at a sad story",
+   "origin": "Ezekiel 36: a promise to replace hearts of stone with hearts of flesh",
+   "group": "biblical"
+  },
+  {
+   "text": "restare (rimanere) di sale",
+   "picture": "turning into a pillar of salt",
+   "meaning": "to be frozen with shock",
+   "common": "very common",
+   "fits": "hearing shocking news",
+   "origin": "Genesis 19: Lot's wife looks back at burning Sodom and turns to salt",
+   "group": "biblical"
+  },
+  {
+   "text": "Sodoma e Gomorra",
+   "picture": "Sodom and Gomorrah",
+   "meaning": "a place of wild excess and vice",
+   "common": "common",
+   "fits": "a wild party, a rowdy nightlife street",
+   "origin": "Genesis 19: two cities destroyed for their wickedness",
+   "group": "biblical"
+  }
+ ]
+}

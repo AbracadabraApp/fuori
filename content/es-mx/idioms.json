@@ -1,0 +1,1096 @@
+{
+ "about": "Idioms, dichos and slang for characters to use, one a visit, glossed with the picture then the meaning (docs/mix.md → Idioms; Josh, 2026-11-13: \"Idioms stick\", \"we might favor shotter and common\", \"slang is very common in Mexico\", \"start the list and I'll get youo edits later\"). Chosen from Seven Keys, Mexican Spanish Word Power, the Compendio temático de dichos y refranes, Iribarren's El porqué de los dichos, refranes lists, food dichos (México Destinos, México Desconocido) and Los dichos de Jesús: common in Mexico, 2 to 6 words (slang any length), not already in syllabus.json; 50 Mexican-only dichos, 25 shared, 25 slang, plus common biblical sayings. Only the dichos come from the sources; pictures, meanings and situations are our own words. Not checked by a Mexican yet: edits to come. common: very common | common; group: dicho (Mexican) | shared | slang | biblical.",
+ "version": "2026-11-13a",
+ "idioms": [
+  {
+   "text": "al buen entendedor, pocas palabras (bastan)",
+   "picture": "to a good understander, few words",
+   "meaning": "a sharp person gets the hint; no need to spell it out",
+   "common": "very common",
+   "level": "B1",
+   "fits": "hinting at something instead of saying it",
+   "origin": "high-context talk: much is left unsaid and you're trusted to read it",
+   "group": "dicho"
+  },
+  {
+   "text": "A falta de pan, tortillas",
+   "picture": "no bread, then tortillas",
+   "meaning": "make do with what's available",
+   "common": "very common",
+   "level": "A2",
+   "fits": "settling for an alternative",
+   "group": "dicho"
+  },
+  {
+   "text": "dando y dando, pajarito volando",
+   "picture": "giving and giving, little bird flying",
+   "meaning": "pay first, then you get it; a fair swap on the spot",
+   "common": "very common",
+   "level": "B1",
+   "fits": "a market stall: money in one hand, goods in the other",
+   "group": "dicho"
+  },
+  {
+   "text": "Dar atole con el dedo",
+   "picture": "feed atole with a finger",
+   "meaning": "fool someone with empty promises",
+   "common": "very common",
+   "level": "B2",
+   "fits": "politicians' promises",
+   "group": "dicho"
+  },
+  {
+   "text": "de lengua me como un taco",
+   "picture": "I'll eat a tongue taco out of words",
+   "meaning": "talk is cheap; prove it",
+   "common": "very common",
+   "level": "B1",
+   "fits": "someone boasting they could easily do something",
+   "group": "dicho"
+  },
+  {
+   "text": "Entre menos burros, más olotes",
+   "picture": "fewer donkeys, more corncobs",
+   "meaning": "fewer people means bigger shares",
+   "common": "very common",
+   "level": "B1",
+   "fits": "someone drops out of a shared meal",
+   "group": "dicho"
+  },
+  {
+   "text": "a fuerza, ni los zapatos entran",
+   "picture": "by force, not even shoes go on",
+   "meaning": "you can't force things, or people",
+   "common": "very common",
+   "level": "B1",
+   "fits": "someone pushing an unwilling person",
+   "group": "dicho"
+  },
+  {
+   "text": "Calladitos, nos vemos más bonitos",
+   "picture": "we look prettier quiet",
+   "meaning": "better to keep your mouth shut",
+   "common": "very common",
+   "level": "A2",
+   "fits": "someone is about to say something unwise",
+   "group": "dicho"
+  },
+  {
+   "text": "Cargarle el muertito",
+   "picture": "to load the little corpse on someone",
+   "meaning": "to pin the blame on someone",
+   "common": "very common",
+   "level": "B2",
+   "fits": "someone blamed for another's mistake",
+   "group": "dicho"
+  },
+  {
+   "text": "Cuentas claras, chocolate espeso",
+   "picture": "clear accounts, thick chocolate",
+   "meaning": "Keep money matters clear",
+   "common": "very common",
+   "level": "B1",
+   "fits": "splitting a bill",
+   "group": "dicho"
+  },
+  {
+   "text": "dar lata",
+   "picture": "to give a tin",
+   "meaning": "to be a nuisance",
+   "common": "very common",
+   "level": "A2",
+   "fits": "a child nagging, a neighbour's noise",
+   "group": "dicho"
+  },
+  {
+   "text": "Echando a perder se aprende",
+   "picture": "by spoiling things you learn",
+   "meaning": "you learn by making mistakes",
+   "common": "very common",
+   "level": "B1",
+   "fits": "someone makes a beginner's mistake",
+   "group": "dicho"
+  },
+  {
+   "text": "echarle a uno los perros",
+   "picture": "to set the dogs on someone",
+   "meaning": "to hound or harass someone; in Mexico \"echarle los perros\" usually means to flirt with someone",
+   "common": "very common",
+   "level": "B1",
+   "fits": "in Mexico, a friend clearly hitting on someone at a party",
+   "origin": "dogs were once set on bulls that refused to charge; the book also suggests the conquistadors' war dogs",
+   "group": "dicho"
+  },
+  {
+   "text": "El burro hablando de orejas",
+   "picture": "the donkey talking about ears",
+   "meaning": "someone criticising a fault they have",
+   "common": "very common",
+   "level": "B1",
+   "fits": "someone calls another lazy or late",
+   "group": "dicho"
+  },
+  {
+   "text": "el que la sigue la mata (el que sigue la liebre la mata)",
+   "picture": "whoever chases the hare kills it",
+   "meaning": "persistence wins in the end; Mexico says \"el que la sigue la consigue\"",
+   "common": "very common",
+   "level": "B1",
+   "fits": "encouraging someone who keeps applying for jobs",
+   "origin": "it comes from hunting: the hunter who keeps after the hare is the one who catches it",
+   "group": "dicho"
+  },
+  {
+   "text": "El que no tranza, no avanza",
+   "picture": "who doesn't cheat doesn't get ahead",
+   "meaning": "Cynically: cheating is how you advance.",
+   "common": "very common",
+   "level": "B2",
+   "fits": "grumbling about corruption",
+   "group": "dicho"
+  },
+  {
+   "text": "estar en chino",
+   "picture": "to be in Chinese",
+   "meaning": "to be very hard to understand or do",
+   "common": "very common",
+   "level": "A2",
+   "fits": "a tough instruction manual",
+   "group": "dicho"
+  },
+  {
+   "text": "la chancla (de mamá)",
+   "picture": "mum's sandal",
+   "meaning": "a mother's threat of discipline (humorous)",
+   "common": "very common",
+   "level": "B1",
+   "fits": "joking about childhood",
+   "origin": "the book's author approves of old-fashioned discipline",
+   "group": "dicho"
+  },
+  {
+   "text": "Madre sólo hay una",
+   "picture": "there's only one mother",
+   "meaning": "your mother is irreplaceable",
+   "common": "very common",
+   "level": "A2",
+   "fits": "Mother's Day (10 May), a mother's cooking",
+   "group": "dicho"
+  },
+  {
+   "text": "Mi mero mole",
+   "picture": "my very own mole",
+   "meaning": "my favourite thing, my speciality",
+   "common": "very common",
+   "level": "A2",
+   "fits": "a favourite dish, hobby or skill",
+   "group": "dicho"
+  },
+  {
+   "text": "No soy monedita de oro (pa' caerles bien a todos)",
+   "picture": "I'm not a gold coin, to please everyone",
+   "meaning": "I can't please everyone",
+   "common": "very common",
+   "level": "B1",
+   "fits": "someone disliked by a few; a well-known song line",
+   "group": "dicho"
+  },
+  {
+   "text": "Pa' luego es tarde",
+   "picture": "for later is too late",
+   "meaning": "do it now, don't wait",
+   "common": "very common",
+   "level": "A2",
+   "fits": "urging someone to hurry",
+   "group": "dicho"
+  },
+  {
+   "text": "Sacarle la vuelta",
+   "picture": "to take the turn around it",
+   "meaning": "to avoid something or someone",
+   "common": "very common",
+   "level": "B1",
+   "fits": "someone dodges a chore or a person",
+   "group": "dicho"
+  },
+  {
+   "text": "Una sopa de su propio chocolate",
+   "picture": "a soup of your own chocolate",
+   "meaning": "a taste of your own medicine",
+   "common": "very common",
+   "level": "B1",
+   "fits": "a prankster gets pranked",
+   "group": "dicho"
+  },
+  {
+   "text": "Meterse hasta la cocina",
+   "picture": "going right into the kitchen",
+   "meaning": "to pry into someone's private affairs",
+   "common": "common",
+   "level": "B1",
+   "fits": "someone overly nosy",
+   "group": "dicho"
+  },
+  {
+   "text": "Asustar con el petate del muerto",
+   "picture": "scaring someone with the dead man's mat",
+   "meaning": "trying to frighten with an empty threat",
+   "common": "common",
+   "level": "B2",
+   "fits": "someone makes a bluffing threat",
+   "group": "dicho"
+  },
+  {
+   "text": "Dios aprieta pero no ahorca",
+   "picture": "God squeezes but doesn't hang",
+   "meaning": "hardship never goes beyond what you can bear",
+   "common": "common",
+   "level": "B1",
+   "fits": "going through a hard time",
+   "group": "dicho"
+  },
+  {
+   "text": "el hombre propone, Dios dispone (y llega el diablo y todo lo descompone)",
+   "picture": "man proposes, God decides, and the devil comes and wrecks it all",
+   "meaning": "plans don't always work out",
+   "common": "common",
+   "level": "B2",
+   "fits": "when plans fall through, laughing it off",
+   "origin": "little faith in control over events, so promises stay loose",
+   "group": "dicho"
+  },
+  {
+   "text": "es mi mero mole",
+   "picture": "it's my very own mole",
+   "meaning": "it's my speciality, my thing",
+   "common": "common",
+   "level": "B1",
+   "fits": "asked about a hobby or talent",
+   "group": "dicho"
+  },
+  {
+   "text": "Estar como agua para chocolate",
+   "picture": "like water for chocolate",
+   "meaning": "furious, boiling with anger or passion",
+   "common": "common",
+   "level": "B2",
+   "fits": "someone furious; also the novel and film",
+   "group": "dicho"
+  },
+  {
+   "text": "Hacerle de chivo los tamales",
+   "picture": "make someone's tamales with goat",
+   "meaning": "cheat someone, often a partner",
+   "common": "common",
+   "level": "B2",
+   "fits": "suspicion of being cheated",
+   "group": "dicho"
+  },
+  {
+   "text": "Limosnero y con garrote",
+   "picture": "a beggar with a club",
+   "meaning": "someone asking a favour yet making demands",
+   "common": "common",
+   "level": "B2",
+   "fits": "someone asks for help and complains about it",
+   "group": "dicho"
+  },
+  {
+   "text": "lo puso como camote",
+   "picture": "he left him like a sweet potato",
+   "meaning": "he gave him a severe telling-off or beating",
+   "common": "common",
+   "level": "B2",
+   "fits": "a mother scolding a child",
+   "group": "dicho"
+  },
+  {
+   "text": "Más mexicano que el mole",
+   "picture": "more Mexican than mole",
+   "meaning": "as Mexican as it gets",
+   "common": "common",
+   "level": "A2",
+   "fits": "a foreign-born person who loves everything Mexican",
+   "group": "dicho"
+  },
+  {
+   "text": "no te hagas rosca",
+   "picture": "don't make yourself into a ring-shaped bread",
+   "meaning": "stop dodging; don't play dumb",
+   "common": "common",
+   "level": "B1",
+   "fits": "someone avoiding paying or answering",
+   "group": "dicho"
+  },
+  {
+   "text": "O todos coludos o todos rabones",
+   "picture": "either all long-tailed or all bob-tailed",
+   "meaning": "treat everyone the same",
+   "common": "common",
+   "level": "C1",
+   "fits": "demanding equal treatment",
+   "group": "dicho"
+  },
+  {
+   "text": "pareces pepita en comal",
+   "picture": "you look like a pumpkin seed on the griddle",
+   "meaning": "you can't sit still",
+   "common": "common",
+   "level": "B1",
+   "fits": "a restless child, someone nervous",
+   "group": "dicho"
+  },
+  {
+   "text": "Según el sapo, es la pedrada",
+   "picture": "the stone fits the toad",
+   "meaning": "respond in proportion to the problem",
+   "common": "common",
+   "level": "B2",
+   "fits": "sizing up a task or a person",
+   "group": "dicho"
+  },
+  {
+   "text": "Voltearse la tortilla",
+   "picture": "the tortilla flipped",
+   "meaning": "The situation reversed.",
+   "common": "common",
+   "level": "B2",
+   "fits": "the underdog takes the lead",
+   "group": "dicho"
+  },
+  {
+   "text": "A la gringa",
+   "picture": "the gringo way",
+   "meaning": "everyone pays their own share",
+   "common": "common",
+   "level": "B1",
+   "fits": "splitting the bill",
+   "group": "dicho"
+  },
+  {
+   "text": "A lo que te truje Chencha",
+   "picture": "what I brought you here for, Chencha",
+   "meaning": "Let's get to the point",
+   "common": "common",
+   "level": "B2",
+   "fits": "cutting the small talk",
+   "group": "dicho"
+  },
+  {
+   "text": "A Seguro lo llevaron preso",
+   "picture": "they took Sure-thing to jail",
+   "meaning": "nothing is ever certain (playing on \"seguro\")",
+   "common": "common",
+   "level": "B1",
+   "fits": "someone says \"seguro\" too confidently",
+   "group": "dicho"
+  },
+  {
+   "text": "Aguársele la fiesta",
+   "picture": "to have your party watered down",
+   "meaning": "to have your plans spoiled",
+   "common": "common",
+   "level": "B1",
+   "fits": "rain ruins an outdoor fiesta",
+   "group": "dicho"
+  },
+  {
+   "text": "Ahí muere",
+   "picture": "there it dies",
+   "meaning": "let's drop it, leave it there",
+   "common": "common",
+   "level": "B1",
+   "fits": "ending an argument or a deal: \"ahí muere\"",
+   "group": "dicho"
+  },
+  {
+   "text": "Al peor puerco, la mejor guayaba",
+   "picture": "to the worst pig, the best guava",
+   "meaning": "the least deserving get the best things",
+   "common": "common",
+   "level": "B2",
+   "fits": "a lazy person gets lucky; an unpleasant man with a lovely wife",
+   "group": "dicho"
+  },
+  {
+   "text": "Ante la duda, la más peluda",
+   "picture": "when in doubt, the hairiest",
+   "meaning": "when unsure, play the biggest tile",
+   "common": "common",
+   "level": "B2",
+   "fits": "dominoes, or any hesitant choice",
+   "group": "dicho"
+  },
+  {
+   "text": "Aquí el que menos corre, vuela",
+   "picture": "here the slowest one flies",
+   "meaning": "everyone here is quick and sharp",
+   "common": "common",
+   "level": "B1",
+   "fits": "someone gets outsmarted",
+   "group": "dicho"
+  },
+  {
+   "text": "Aquí sólo mis chicharrones truenan",
+   "picture": "only my pork rinds crackle here",
+   "meaning": "I'm the boss here.",
+   "common": "common",
+   "level": "B2",
+   "fits": "someone asserting authority",
+   "group": "dicho"
+  },
+  {
+   "text": "Aquí truenan mis chicharrones",
+   "picture": "here my pork cracklings crackle",
+   "meaning": "here I'm in charge; what I say goes",
+   "common": "common",
+   "level": "B2",
+   "fits": "a fonda owner or a grandmother running her kitchen",
+   "group": "dicho"
+  },
+  {
+   "text": "Armar un pancho",
+   "picture": "to put together a pancho",
+   "meaning": "to make a scene, throw a fit",
+   "common": "common",
+   "level": "B1",
+   "fits": "a customer makes a scene in a shop; a child's tantrum",
+   "group": "dicho"
+  },
+  {
+   "text": "Barriga llena, corazón contento",
+   "picture": "full belly, happy heart",
+   "meaning": "a good meal makes you happy",
+   "common": "very common",
+   "level": "A2",
+   "fits": "after a satisfying meal",
+   "group": "shared"
+  },
+  {
+   "text": "Más claro ni el agua",
+   "picture": "clearer than water",
+   "meaning": "it's perfectly obvious",
+   "common": "very common",
+   "level": "A2",
+   "fits": "something obvious",
+   "group": "shared"
+  },
+  {
+   "text": "Un clavo saca otro clavo",
+   "picture": "one nail drives out another",
+   "meaning": "a new love cures an old one",
+   "common": "very common",
+   "level": "B1",
+   "fits": "someone dates soon after a breakup",
+   "origin": "from Cicero; carpenters push out a stuck nail with another",
+   "group": "shared"
+  },
+  {
+   "text": "A palabras necias, oídos sordos",
+   "picture": "to foolish words, deaf ears",
+   "meaning": "Ignore insults and foolish talk",
+   "common": "very common",
+   "level": "B1",
+   "fits": "someone is being rude",
+   "group": "shared"
+  },
+  {
+   "text": "Al que madruga, Dios lo ayuda",
+   "picture": "God helps the early riser",
+   "meaning": "early, diligent effort is rewarded",
+   "common": "very common",
+   "level": "A2",
+   "fits": "encouraging someone to get up early for the market",
+   "origin": "the joke reply (the one who lost the purse got up even earlier) already appears in 16th-century tales",
+   "group": "shared"
+  },
+  {
+   "text": "Caras vemos, corazones no sabemos",
+   "picture": "we see faces, we don't know hearts",
+   "meaning": "you can't know what people really feel",
+   "common": "very common",
+   "level": "A2",
+   "fits": "someone turned out different than expected",
+   "group": "shared"
+  },
+  {
+   "text": "El que mucho abarca, poco aprieta",
+   "picture": "who grabs a lot holds little tightly",
+   "meaning": "take on too much and you'll do it badly",
+   "common": "very common",
+   "level": "B1",
+   "fits": "someone takes on too many projects",
+   "group": "shared"
+  },
+  {
+   "text": "hierba mala nunca muere",
+   "picture": "weeds never die",
+   "meaning": "bad people (jokingly, friends) always survive",
+   "common": "very common",
+   "level": "B1",
+   "fits": "a friend recovers fast; teasing someone who turns up unharmed",
+   "group": "shared"
+  },
+  {
+   "text": "Nadie es profeta en su tierra",
+   "picture": "no one is a prophet in his own land",
+   "meaning": "people aren't valued at home",
+   "common": "very common",
+   "level": "B1",
+   "fits": "someone famous abroad but ignored at home",
+   "origin": "Jesus' words when his own town of Nazareth scorned him",
+   "group": "shared"
+  },
+  {
+   "text": "otra vez la burra al trigo",
+   "picture": "the donkey back at the wheat again",
+   "meaning": "there they go again, the same mistake",
+   "common": "very common",
+   "level": "B1",
+   "fits": "someone repeating a bad habit",
+   "group": "shared"
+  },
+  {
+   "text": "Perro que ladra no muerde",
+   "picture": "a barking dog doesn't bite",
+   "meaning": "loud threats are usually empty",
+   "common": "very common",
+   "level": "A2",
+   "fits": "someone making empty threats",
+   "group": "shared"
+  },
+  {
+   "text": "Ser harina de otro costal",
+   "picture": "to be flour from another sack",
+   "meaning": "to be a different matter",
+   "common": "very common",
+   "level": "B1",
+   "fits": "changing the subject",
+   "group": "shared"
+  },
+  {
+   "text": "Ser pan comido",
+   "picture": "to be eaten bread",
+   "meaning": "to be very easy",
+   "common": "very common",
+   "level": "A2",
+   "fits": "a task turns out easy",
+   "group": "shared"
+  },
+  {
+   "text": "A buen entendedor, pocas palabras",
+   "picture": "a good listener needs few words",
+   "meaning": "a hint is enough for the wise",
+   "common": "very common",
+   "level": "B1",
+   "fits": "dropping a hint",
+   "group": "shared"
+  },
+  {
+   "text": "Cada loco con su tema",
+   "picture": "each madman with his theme",
+   "meaning": "everyone has their own obsession",
+   "common": "very common",
+   "level": "B1",
+   "fits": "someone's quirky hobby",
+   "group": "shared"
+  },
+  {
+   "text": "dar en el clavo (antes, dar en el hito)",
+   "picture": "to hit the nail",
+   "meaning": "to get something exactly right",
+   "common": "very common",
+   "level": "B1",
+   "fits": "someone guesses exactly what's wrong with your car",
+   "origin": "either from blacksmiths shoeing horses, who hit the shoe far more than the nail, or from an old game of throwing rings or coins at a peg stuck in the ground",
+   "group": "shared"
+  },
+  {
+   "text": "De tal palo tal astilla",
+   "picture": "from such a stick, such a splinter",
+   "meaning": "like father, like son",
+   "common": "very common",
+   "level": "B1",
+   "fits": "a child acts like a parent",
+   "group": "shared"
+  },
+  {
+   "text": "El que calla, otorga",
+   "picture": "silence grants",
+   "meaning": "not objecting means agreeing",
+   "common": "very common",
+   "level": "B1",
+   "fits": "someone says nothing to a proposal",
+   "group": "shared"
+  },
+  {
+   "text": "El que la hace, la paga",
+   "picture": "whoever does it pays for it",
+   "meaning": "wrongdoing always gets its punishment",
+   "common": "very common",
+   "level": "A2",
+   "fits": "a cheat gets caught",
+   "group": "shared"
+  },
+  {
+   "text": "El que nada debe, nada teme",
+   "picture": "who owes nothing fears nothing",
+   "meaning": "an honest person has nothing to fear",
+   "common": "very common",
+   "level": "A2",
+   "fits": "someone is accused but stays calm",
+   "group": "shared"
+  },
+  {
+   "text": "El que no llora no mama",
+   "picture": "the baby who doesn't cry doesn't nurse",
+   "meaning": "the squeaky wheel gets the grease",
+   "common": "very common",
+   "level": "B1",
+   "fits": "encouraging someone to ask or complain",
+   "group": "shared"
+  },
+  {
+   "text": "El tiempo es oro",
+   "picture": "time is gold",
+   "meaning": "time is valuable; don't waste it",
+   "common": "very common",
+   "level": "A2",
+   "fits": "someone is in a hurry",
+   "group": "shared"
+  },
+  {
+   "text": "En boca cerrada no entran moscas",
+   "picture": "flies don't enter a closed mouth",
+   "meaning": "keep quiet and stay out of trouble",
+   "common": "very common",
+   "level": "A2",
+   "fits": "someone talks too much",
+   "group": "shared"
+  },
+  {
+   "text": "entrar con el pie derecho",
+   "picture": "to enter with the right foot",
+   "meaning": "to start something well",
+   "common": "very common",
+   "level": "B1",
+   "fits": "starting the new year or a new job",
+   "origin": "from the old superstition of always stepping off with the right foot when starting a journey",
+   "group": "shared"
+  },
+  {
+   "text": "Estirar la pata",
+   "picture": "stretching out the leg",
+   "meaning": "to die, kick the bucket",
+   "common": "very common",
+   "level": "B1",
+   "fits": "joking about death",
+   "group": "shared"
+  },
+  {
+   "text": "chafa",
+   "picture": "(no picture)",
+   "meaning": "poor quality, shoddy",
+   "common": "very common",
+   "level": "B1",
+   "fits": "a cheap gadget that breaks",
+   "group": "slang"
+  },
+  {
+   "text": "de volada",
+   "picture": "on the fly",
+   "meaning": "right away",
+   "common": "very common",
+   "level": "A2",
+   "fits": "\"I'll be right back\"",
+   "group": "slang"
+  },
+  {
+   "text": "estar cañón",
+   "picture": "to be cannon",
+   "meaning": "to be hard; to be intense",
+   "common": "very common",
+   "level": "B1",
+   "fits": "a hard exam, heavy traffic",
+   "group": "slang"
+  },
+  {
+   "text": "gringo",
+   "picture": "(no picture)",
+   "meaning": "American",
+   "common": "very common",
+   "level": "A2",
+   "fits": "casual talk about Americans",
+   "group": "slang"
+  },
+  {
+   "text": "la caguama",
+   "picture": "the loggerhead turtle",
+   "meaning": "a litre bottle of beer",
+   "common": "very common",
+   "level": "B1",
+   "fits": "ordering beer at a gathering",
+   "group": "slang"
+  },
+  {
+   "text": "no hay bronca",
+   "picture": "there's no fight",
+   "meaning": "no problem",
+   "common": "very common",
+   "level": "A2",
+   "fits": "reassuring someone",
+   "group": "slang"
+  },
+  {
+   "text": "ya estuvo",
+   "picture": "it already was",
+   "meaning": "that's it; done",
+   "common": "very common",
+   "level": "A2",
+   "fits": "finishing a task",
+   "group": "slang"
+  },
+  {
+   "text": "¡chale!",
+   "picture": "(no picture)",
+   "meaning": "oh no!; what a drag!",
+   "common": "very common",
+   "level": "A2",
+   "fits": "the shop is closed",
+   "group": "slang"
+  },
+  {
+   "text": "¡qué hueva!",
+   "picture": "what eggs (laziness)",
+   "meaning": "what a drag; I can't be bothered",
+   "common": "very common",
+   "level": "B1",
+   "fits": "a boring chore (informal)",
+   "group": "slang"
+  },
+  {
+   "text": "agüitarse",
+   "picture": "to get watery",
+   "meaning": "to get sad or down",
+   "common": "common",
+   "level": "B1",
+   "fits": "\"no te agüites\" to cheer someone up",
+   "group": "slang"
+  },
+  {
+   "text": "al bote",
+   "picture": "to the jar",
+   "meaning": "to jail",
+   "common": "common",
+   "level": "B1",
+   "fits": "joking about getting arrested",
+   "group": "slang"
+  },
+  {
+   "text": "ardido",
+   "picture": "burned",
+   "meaning": "sore, resentful (after losing)",
+   "common": "common",
+   "level": "B1",
+   "fits": "a sore loser after a match",
+   "group": "slang"
+  },
+  {
+   "text": "carnal",
+   "picture": "brother (by flesh)",
+   "meaning": "close friend; bro",
+   "common": "common",
+   "level": "B1",
+   "fits": "greeting a good friend",
+   "group": "slang"
+  },
+  {
+   "text": "choteado",
+   "picture": "(no picture)",
+   "meaning": "overused, worn out (a joke, a song)",
+   "common": "common",
+   "level": "B1",
+   "fits": "a song played everywhere",
+   "group": "slang"
+  },
+  {
+   "text": "disparar (algo)",
+   "picture": "to shoot (something)",
+   "meaning": "to treat someone, pay for them",
+   "common": "common",
+   "level": "B1",
+   "fits": "\"I'll buy the beers\"",
+   "group": "slang"
+  },
+  {
+   "text": "el chesco",
+   "picture": "(no picture)",
+   "meaning": "soft drink",
+   "common": "common",
+   "level": "A2",
+   "fits": "ordering a soda with tacos",
+   "group": "slang"
+  },
+  {
+   "text": "el coyote",
+   "picture": "the coyote",
+   "meaning": "a fixer who sells shortcuts at offices (also people smuggler)",
+   "common": "common",
+   "level": "B2",
+   "fits": "queues at a government office",
+   "group": "slang"
+  },
+  {
+   "text": "el mitote",
+   "picture": "(no picture)",
+   "meaning": "a fuss, commotion",
+   "common": "common",
+   "level": "B2",
+   "fits": "a scene at a party",
+   "group": "slang"
+  },
+  {
+   "text": "el tiradero",
+   "picture": "the dumping ground",
+   "meaning": "a mess",
+   "common": "common",
+   "level": "A2",
+   "fits": "\"sorry about the mess\"",
+   "group": "slang"
+  },
+  {
+   "text": "el varo",
+   "picture": "(no picture)",
+   "meaning": "money; a peso",
+   "common": "common",
+   "level": "A2",
+   "fits": "prices",
+   "group": "slang"
+  },
+  {
+   "text": "gordo / gorda",
+   "picture": "fat one",
+   "meaning": "darling (to a partner)",
+   "common": "common",
+   "level": "B1",
+   "fits": "calling a partner (affectionate)",
+   "group": "slang"
+  },
+  {
+   "text": "la banda",
+   "picture": "the band",
+   "meaning": "the group of friends; people",
+   "common": "common",
+   "level": "B1",
+   "fits": "\"the gang's coming over\"",
+   "group": "slang"
+  },
+  {
+   "text": "la feria",
+   "picture": "the fair",
+   "meaning": "small change; money",
+   "common": "common",
+   "level": "A2",
+   "fits": "\"do you have change?\"",
+   "group": "slang"
+  },
+  {
+   "text": "la nave",
+   "picture": "the ship",
+   "meaning": "car",
+   "common": "common",
+   "level": "B1",
+   "fits": "\"nice car\"",
+   "group": "slang"
+  },
+  {
+   "text": "la rola",
+   "picture": "(no picture)",
+   "meaning": "song",
+   "common": "common",
+   "level": "B1",
+   "fits": "music talk",
+   "group": "slang"
+  },
+  {
+   "text": "el que esté libre de pecado, que tire la primera piedra",
+   "picture": "whoever has no sin, throw the first stone",
+   "meaning": "nobody is clean enough to condemn others",
+   "common": "very common",
+   "fits": "someone gossips harshly about another's mistake",
+   "origin": "John 8: a crowd ready to stone a woman; Jesus tells the sinless one to start, and they leave",
+   "group": "biblical"
+  },
+  {
+   "text": "ver la paja en el ojo ajeno (y no la viga en el propio)",
+   "picture": "seeing a speck of straw in someone else's eye and missing the beam in your own",
+   "meaning": "criticising small faults in others while ignoring your own big ones",
+   "common": "very common",
+   "fits": "someone complains about a neighbour who has the same habit",
+   "origin": "Matthew 7, Sermon on the Mount",
+   "group": "biblical"
+  },
+  {
+   "text": "el hijo pródigo (volvió el hijo pródigo)",
+   "picture": "the spendthrift son",
+   "meaning": "someone who comes back after a long absence, often after going astray; said warmly or teasingly",
+   "common": "very common",
+   "fits": "a regular reappears after months away",
+   "origin": "Luke 15: a son squanders his inheritance, comes home broke, and his father throws a feast",
+   "group": "biblical"
+  },
+  {
+   "text": "el buen samaritano",
+   "picture": "the good man from Samaria",
+   "meaning": "a stranger who stops to help",
+   "common": "very common",
+   "fits": "someone helped a stranger with a flat tyre or a fall",
+   "origin": "Luke 10: a man beaten on the road is passed by a priest and a Levite and helped by a despised Samaritan",
+   "group": "biblical"
+  },
+  {
+   "text": "los últimos serán los primeros",
+   "picture": "the last will be first",
+   "meaning": "the humble or late can end up ahead; also a joke for whoever arrives last",
+   "common": "very common",
+   "fits": "the last to arrive gets served first",
+   "origin": "Matthew 19–20 and Mark 10, Jesus on the kingdom",
+   "group": "biblical"
+  },
+  {
+   "text": "muchos son los llamados y pocos los escogidos",
+   "picture": "many are called, few are chosen",
+   "meaning": "many try, few make it",
+   "common": "common",
+   "fits": "a hard audition, a competition, a job opening",
+   "origin": "Matthew 20 and 22, the end of two parables",
+   "group": "biblical"
+  },
+  {
+   "text": "el que tenga oídos, que oiga",
+   "picture": "whoever has ears, let him hear",
+   "meaning": "I've said it; whoever understands, take note (a pointed hint)",
+   "common": "common",
+   "fits": "dropping a hint everyone in the room gets",
+   "origin": "Jesus's closing line after parables (Matthew 13, Luke 8) and in Revelation",
+   "group": "biblical"
+  },
+  {
+   "text": "que tu mano izquierda no sepa lo que hace la derecha / la mano izquierda no sabe lo que hace la derecha",
+   "picture": "the left hand not knowing what the right is doing",
+   "meaning": "give quietly, without showing off; now mostly said of a disorganised office where nobody coordinates",
+   "common": "common",
+   "fits": "two counters at the town hall give opposite answers",
+   "origin": "Matthew 6, on giving alms in secret",
+   "group": "biblical"
+  },
+  {
+   "text": "volver a nacer / nacer de nuevo",
+   "picture": "to be born again",
+   "meaning": "to survive a close call, or start life afresh",
+   "common": "very common",
+   "fits": "after a near-accident or a recovery",
+   "origin": "John 3: Jesus tells Nicodemus a person must be born again",
+   "group": "biblical"
+  },
+  {
+   "text": "caer como maná del cielo",
+   "picture": "like manna falling from the sky",
+   "meaning": "an unexpected help that arrives just when needed",
+   "common": "common",
+   "fits": "rain after a drought, a refund at month's end",
+   "origin": "Exodus 16: bread falls from the sky for the Israelites in the desert",
+   "group": "biblical"
+  },
+  {
+   "text": "por los siglos de los siglos",
+   "picture": "for the centuries of the centuries",
+   "meaning": "forever; jokingly, an endless wait",
+   "common": "common",
+   "fits": "a queue or a building project that never ends",
+   "origin": "the closing formula of biblical praise (Galatians, Revelation) and of prayers",
+   "group": "biblical"
+  },
+  {
+   "text": "la oveja perdida / la oveja descarriada",
+   "picture": "the lost sheep",
+   "meaning": "someone who has strayed from family or group",
+   "common": "common",
+   "fits": "a cousin who stopped coming to Sunday lunch",
+   "origin": "Luke 15: a shepherd leaves ninety-nine sheep to find one",
+   "group": "biblical"
+  },
+  {
+   "text": "volver al redil",
+   "picture": "returning to the sheepfold",
+   "meaning": "coming back to family, a group or old habits",
+   "common": "common",
+   "fits": "a footballer back at his old club, an ex who returns",
+   "origin": "the shepherd and sheep images of Luke 15 and John 10",
+   "group": "biblical"
+  },
+  {
+   "text": "ama a tu prójimo como a ti mismo",
+   "picture": "love your neighbour as yourself",
+   "meaning": "treat others as you'd want to be treated",
+   "common": "common",
+   "fits": "a dispute with neighbours",
+   "origin": "Leviticus 19, quoted by Jesus in Luke 10",
+   "group": "biblical"
+  },
+  {
+   "text": "ganarse el pan con el sudor de la frente",
+   "picture": "earning bread with the sweat of your brow",
+   "meaning": "to earn a living by hard work",
+   "common": "very common",
+   "fits": "a baker up at 4 a.m., a farmer",
+   "origin": "Genesis 3: Adam's punishment on leaving Eden",
+   "group": "biblical"
+  },
+  {
+   "text": "tener un corazón de piedra",
+   "picture": "having a heart of stone",
+   "meaning": "to be cold, unmoved by others' pain",
+   "common": "common",
+   "fits": "someone shrugs at a sad story",
+   "origin": "Ezekiel 36: a promise to replace hearts of stone with hearts of flesh",
+   "group": "biblical"
+  },
+  {
+   "text": "Sodoma y Gomorra",
+   "picture": "Sodom and Gomorrah",
+   "meaning": "a place of wild excess and vice",
+   "common": "common",
+   "fits": "a wild party, a rowdy nightlife street",
+   "origin": "Genesis 19: two cities destroyed for their wickedness",
+   "group": "biblical"
+  },
+  {
+   "text": "de la abundancia del corazón habla la boca",
+   "picture": "the mouth speaks from the heart's overflow",
+   "meaning": "what you really feel comes out when you talk",
+   "common": "common",
+   "fits": "someone lets slip what they truly think",
+   "origin": "Matthew 12, Jesus on words revealing the heart",
+   "group": "biblical"
+  },
+  {
+   "text": "no se puede servir a dos amos (señores)",
+   "picture": "you can't serve two masters",
+   "meaning": "you can't be loyal to two sides at once",
+   "common": "common",
+   "fits": "someone working for two rival shops",
+   "origin": "Matthew 6: you can't serve God and money",
+   "group": "biblical"
+  },
+  {
+   "text": "por sus frutos los conoceréis / al árbol se le conoce por sus frutos",
+   "picture": "you'll know them by their fruit",
+   "meaning": "judge people by what they do, not what they say",
+   "common": "common",
+   "fits": "judging a new boss or a restaurant by results",
+   "origin": "Matthew 7 and 12, false prophets and good trees",
+   "group": "biblical"
+  }
+ ]
+}
