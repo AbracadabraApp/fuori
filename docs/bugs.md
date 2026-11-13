@@ -51,8 +51,11 @@ Josh, 2026-11-13: "Excuse me, Elena. I don't speak Italian perfectly… What do 
 ### B12. The character's bubble stays on screen too long
 Josh, 2026-11-13, in play: "el personaje bubble está en la pantalla demasiado largo" (Ofelia 71dc1d3b). Which bubble and when, to ask. **Status: open (screen).**
 
-### B13. Intermediate too hard on an open topic
-Josh, 2026-11-13: "questa conversazione è un po difficile… posso parlare con una topica più facile che i giardini." (Nunzio 67edfe03). Carried with dialogue-ideas.md's "Long replies in open-ended talk (Intermediate)". **Status: open.**
+### B13. Intermediate doesn't back off when the learner says it's hard
+Josh, 2026-11-13, after play: "Intermediate didn't back off." In play: to Elena, "Excuse me, Elena. I don't speak Italian perfectly. It's a bit difficult for me." She reassured him in Italian and went on at the same length (252960a4; see B11). To Nunzio, "Mi piace parlare con lei… ma io non posso capire tutto. Forse un più facile parole"; Nunzio said "Va bene, Joshua, parlo più semplice" and kept it simple for two turns, then went back to new words ("corteccia", "scendono") until Josh ended with "questa conversazione è un po difficile… posso parlare con una topica più facile che i giardini" (67edfe03). The Beginner side of the same thing works: see "kept" below. Carried with dialogue-ideas.md's "Long replies in open-ended talk (Intermediate)". **Status: open.**
+
+### B23. The intro is long and passive
+Josh, 2026-11-13, after play: "The intro is not quite the right thing. Long. Passive." Today's 16 openers (both countries, both levels) run 80–109 words, six or seven sentences, the character describing what it's doing or the place's history before one choice question; the learner only listens (e.g. Ofelia 109 words, 71dc1d3b; Marisol on the heads in cages, f464791e). Two visits today were left during the intro with no reply (Fernanda 49bc093b, Marisol 4e0fb0f5). The deep dive's "the intro at Intermediate" (progress.md) is the place to settle what it should be. **Status: open.**
 
 ### Carried from progress.md's screen list (2026-11-12)
 - **B14.** "The city didn't show" (Valenciana, Don Isidro's place). Which screen, asked. **Open.**
@@ -65,6 +68,12 @@ Josh, 2026-11-13: "questa conversazione è un po difficile… posso parlare con 
 - **B19.** A correction for something the learner said right. Collecting examples.
 - **B20.** "Say this" adds things the learner didn't say. Not checked.
 - **B21.** A voice that seems to change mid-line. Not checked.
+
+## Kept: what play says works
+
+Not bugs; recorded so a fix doesn't undo them.
+- **The dialogue is improving** (Josh, 2026-11-13, after play).
+- **A Beginner character asked for more English adapts.** Josh, 2026-11-13: "Some character adapted to use more English." Ofelia, asked "¿hablo più inglés?", answered "Sure, mi reina, I'll use more English" and did (71dc1d3b); Carmen, told "that was a lot of Spanish with no English", said "I'll go slower" (09978a29).
 
 ## Closed
 

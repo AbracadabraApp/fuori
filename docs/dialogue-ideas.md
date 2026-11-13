@@ -516,3 +516,4 @@ Of 6 conversations with "carbonara, never cream", 5 are Nino (trattoria-garbatel
 ## Mixed dialogue: the English and the language together (Josh, 2026-11-13)
 
 Josh: "Need to get mixed dialogue working better." The Beginner turn, mostly English with the language slotted in as whole phrases (CLAUDE.md; docs/dialogue-model.md → Beginner goals), and the step-by-step move to less English. Already on the screen list as "the English/Spanish mix to improve" (progress.md, 2026-11-12, item h). What play shows today is in docs/bugs.md: B1 (turns with no English), B7 ("mucho mucho inglés por favor", "puede hablar más despacio?"). Josh's examples of what "better" means: to collect.
+Josh, again after play the same day: "Need to get mixed dialogue working better." With it: "Some character adapted to use more English" (kept, bugs.md) and "Intermediate didn't back off" (B13).
