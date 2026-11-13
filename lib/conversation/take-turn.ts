@@ -17,6 +17,7 @@ import { loadAddressedAs } from '@/lib/learner-address';
 import { tutor } from '@/content';
 import { onboardingState } from '@/lib/onboarding';
 import { runBeginnerTurn, beginnerPromptVersion, lineFromParts, type Part } from '@/lib/beginner';
+import { assemblePieces } from '@/lib/dialogue/pieces';
 import { BEGINNER_2_FILE, CLUSTER_1, pickSetup, levelText, setupLine, shapeParts, turnSteps, beginner2Version, type Setup, type TurnSteps, flowingLine, frameBrief, onFrame, lineWithAnswers } from '@/lib/beginner-2';
 import { pickShapes, noteOf, shapeIds, beatsBrief } from '@/lib/shapes';
 import { runIntro } from '@/lib/intro';
@@ -171,7 +172,9 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
   // An ordinary visit at Intermediate (no path) or Beginner 2: the intro opens it, and a shape is picked per turn
   // (lib/shapes.ts; docs/dialogue-structure-reference.md § 11). Beginner 1, the welcome, lessons and Magda: untouched
   const shaped = !isTutor && !p.lesson && !welcome && (setup !== null || onPath === null);
-  const intro = shaped && transcript.length === 0 && !learnerSaid;
+  // The intro is cut (Josh, 2026-11-13: "I'd cut the intro as it is now and just start as before in the charracters
+  // conversation"; docs/bugs.md B23): a visit opens on the character's first ordinary turn. lib/intro.ts stays for now
+  const intro = false;
   // After the intro, no note unless they asked something: then it's answered first (lib/shapes.ts)
   const shapes = shaped && !intro ? pickShapes({ learnerSaid }) : [];
   const shape = shapes.length ? shapes : null;
@@ -215,7 +218,8 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
       // answers to say back come with the line (2026-11-11a: the setup line on the newest message, the answers in the
       // reply) and go to the app as answer parts; her line stays the subtitle. The voice starts early, as at Intermediate
       await runTurn({ character, transcript, learnerSaid, memory, addressedAs, brief: withBeats(frameBrief(cluster)), note: noteOf(shape, setupLine(setup)), answers: setup.maxAnswers > 0, laps: p.laps, onText: p.onText, canRetry: p.canRetry, withDone: true }).then((r) => {
-        const out = lineWithAnswers(r, setup, cluster);
+        // Step 1 writes the language as {piece | English} (docs/mix.md): the line as it's said, as the voice had it
+        const out = lineWithAnswers({ ...r, line: assemblePieces(r.line) }, setup, cluster);
         steps = { ...turnSteps(out.parts, setup, cluster, []), ...(shapeId ? { shape: shapeId } : {}) };
         return out;
       })

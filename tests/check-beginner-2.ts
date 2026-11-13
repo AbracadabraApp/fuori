@@ -9,6 +9,8 @@ import { stageInVersion } from '@/lib/conversation-record';
 import { lineFromParts, type Part } from '@/lib/beginner';
 import { buildBeginnerPrompt, SCAFFOLDING_FILE, dialogueWithoutFormat } from '@/lib/beginner';
 import { exchangeTurns } from '@/lib/recording';
+import { assemblePieces } from '@/lib/dialogue/pieces';
+import { partialLine, LineWatcher } from '@/lib/voice/early-voice';
 import { buildTurnPrompt } from '@/lib/prompts/build-turn-prompt';
 import { cities } from '@/content';
 import { characterForPlace } from '@/lib/characters/for-place';
@@ -215,6 +217,23 @@ check(/promptFile: BEGINNER_2_FILE/.test(take) && !/setup[\s\S]{0,40}transcript\
   check(JSON.stringify((saved[1] as { steps?: unknown }).steps) === JSON.stringify(steps), 'the steps are saved with the reply');
   check(!('steps' in exchangeTurns({ reply: { line: 'x', en: 'x' } }, 'now')[0]), 'a turn without steps (Beginner 1, Intermediate) saves as before');
 }
+
+// The mix in a fixed shape (docs/mix.md, 2026-11-13): {piece | English} becomes the piece, then its English
+check(assemblePieces('{Pase, pase | come in}, sit here. {¿Le pongo salsa? | Do you want salsa?}') === 'Pase, pase, come in, sit here. ¿Le pongo salsa? Do you want salsa?', 'pieces: the piece then its English; a question then its English after a space');
+check(assemblePieces('That is {Cecina | cecina}, grilled.') === 'That is Cecina, grilled.', 'pieces: English that only repeats the piece (a name) is dropped');
+check(assemblePieces('Look, {el comal}.') === 'Look, el comal.', 'pieces: a piece with no English is said alone');
+check(assemblePieces('Sit here. {Ese es el co') === 'Sit here. Ese es el co' && assemblePieces('Sit here. {Ese es el co', true) === 'Sit here. ', 'pieces: a brace still open is held back while streaming');
+check(assemblePieces('Sit here, {el comal | the griddle and more') === 'Sit here, el comal | the griddle and more', 'pieces: a stray brace on a whole line is dropped, nothing lost');
+check(assemblePieces('No braces at all.') === 'No braces at all.', 'pieces: a line without braces is unchanged');
+// The voice starts on the streamed line: it must never get a brace (the connection, not just the function)
+const streamed = '{"line":"{Pase, pase | come in}, sit here. Look at {el co';
+check(partialLine(streamed)?.text === 'Pase, pase, come in, sit here. Look at ', 'pieces: the streamed line is put together, an open piece held back');
+let firstHeard = '';
+let lineHeard = '';
+const w = new LineWatcher({ split: true, onFirst: (f) => { firstHeard = f; }, onLine: (l) => { lineHeard = l; } });
+w.feed(streamed);
+w.feed('{"line":"{Pase, pase | come in}, sit here. Look at {el comal | the griddle}. {¿Le gusta? | Do you like it?}","en":"');
+check(firstHeard === 'Pase, pase, come in, sit here. ' && lineHeard === 'Pase, pase, come in, sit here. Look at el comal, the griddle. ¿Le gusta? Do you like it?' && lineHeard.startsWith(firstHeard), 'pieces: the voice gets the first sentence and the whole line put together, the first a prefix of the line');
 
 if (problems.length) {
   console.error(`check-beginner-2: ${problems.length} problem(s)\n- ${problems.join('\n- ')}`);

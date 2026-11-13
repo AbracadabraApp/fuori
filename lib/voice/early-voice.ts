@@ -14,6 +14,7 @@ import { elevenLabsVoiceFor, language, onboarding } from '@/content';
 import { characterAge, characterGender, characterVoice } from '@/lib/characters/by-id';
 import { getVoiceProvider } from '@/lib/voice/providers';
 import type { SynthesisResult } from '@/lib/voice/providers/types';
+import { assemblePieces } from '@/lib/dialogue/pieces';
 
 const KEEP_MS = 2 * 60 * 1000;
 
@@ -91,7 +92,8 @@ export function partialLine(partialJson: string): { text: string; closed: boolea
   // Drop an escape cut off at the end of the chunk (\ or \u00e) before decoding
   const body = m[2] ? m[1] : m[1].replace(/\\(u[0-9a-fA-F]{0,3})?$/, '');
   try {
-    return { text: JSON.parse(`"${body}"`), closed: !!m[2] };
+    // Beginner step 1 writes the language as {piece | English}: the voice and the app get the line as it's said (lib/dialogue/pieces.ts)
+    return { text: assemblePieces(JSON.parse(`"${body}"`), !m[2]), closed: !!m[2] };
   } catch {
     return undefined;
   }

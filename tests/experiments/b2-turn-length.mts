@@ -13,17 +13,18 @@ import { CLUSTER_1, frameBrief, levelText, lineWithAnswers, pickSetup, setupLine
 import { beatsBrief, noteOf, pickShapes } from '@/lib/shapes';
 import type { Turn } from '@/lib/types';
 import { ask } from './common.mjs';
+import { assemblePieces } from '@/lib/dialogue/pieces';
 
 const args = process.argv.slice(2);
 const flag = (name: string) => args.find((a) => a.startsWith(`--${name}=`))?.split('=').slice(1).join('=');
 const [file, ...ids] = args.filter((a) => !a.startsWith('--'));
 const takes = Number(flag('takes') ?? '2');
 const levelFile = flag('level');
-// --pieces: the Level text asks for each piece of the language as {piece | its English}; the code checks every piece
+// --pieces: the replies are put together as the game does (lib/dialogue/pieces.ts); the Level text asks for each piece of the language as {piece | its English}; the code checks every piece
 // has its English and puts the spoken line together ("piece, English"), as docs/mix.md proposes (2026-11-13)
 const pieces = args.includes('--pieces');
 const unglossed: string[] = [];
-const assemble = (line: string) => line.replace(/\{([^{}|]*)\|?([^{}]*)\}/g, (_m, piece: string, en: string) => { piece = piece.trim(); en = en.trim(); if (!en) { unglossed.push(piece); return piece; } return /[.!?…]$/.test(piece) ? `${piece} ${en}` : `${piece}, ${en}`; });
+const assemble = (line: string) => { for (const m of line.matchAll(/\{([^{}|]*)\}/g)) unglossed.push(m[1].trim()); return assemblePieces(line); };
 const level = levelFile ? readFileSync(levelFile, 'utf8').trim().replaceAll('{language}', language.name) : undefined;
 
 type Saved = { id: string; city_id: string; place_id: string; character_id: string; turns: { who: 'npc' | 'learner'; text: string; en?: string; parts?: { kind: string; text: string }[]; beats?: string[] }[] };
