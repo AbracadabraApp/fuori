@@ -67,6 +67,9 @@ some principles of dialogue we've learned"). Results are in
   "even that is repetitive").
 - **Small tests first.** Try an idea on the two or three places that show the problem, one level, one or two visits; widen to the full gate only when it shows promise (Josh, 2026-11-06: "smaller tests that show promise before going broader").
 - **Make sure the test can show the problem.** A simulated learner who asks for a ticket makes the character talk about tickets; a judge asked about "errands" counted Beto's "¿Quiere tacos o pizza?" as one, though he stayed a taxi driver (Josh: "he didn't change roles"). Test one fixed moment where the character alone decides, read every line before trusting a count, and pick approaches that differ in kind (a rule, a fact, a deletion) to learn the most (Josh, 2026-11-06: "every experiment should maximize learning, not results").
+- **Fix by taking away, or by adding facts, not by adding rules about how to talk** (Claude's synthesis of 2026-11-12; Josh: "Im fine with you doing 1-10"). Every rule added that day turned into a habit: "mire" in an example became "Mire" every turn, Notice became "¿Lo ve?" again and again, the goodbye setup became two goodbyes. The removals held: the newcomer lines, the cassa line, the per-turn beat note. Don Chucho's replay needed facts (what the learner said), not an instruction.
+- **Go structural only where the same patch keeps coming back** (same source). How a visit ends was changed about six times in three days, and repeating was patched four times; those two get a design (the character saying when it's winding down; memory that keeps the learner's words). Everything else stays a small removal.
+- **Judge by a round of play, not one visit** (same source). Claude varies from visit to visit; a fault seen across several visits is a pattern, one weak visit is noise. Play a round, send the notes together, then sort what recurs from what happened once.
 - **Measure against noise.** Run today's code twice before a change, one
   change per row, the same cases and judges, with prompt versions, commit and
   reply time recorded; a change counts only if it moves a number beyond the
@@ -90,6 +93,8 @@ Sorted by subject 2026-11-12 (the entries unedited; a line in italics says where
 
 ### A visit
 
+- **Culture first** (Josh, 2026-11-12): "learning culture is more important than language in this game. Its easier and drives interest. No one is going to head to mexico weillding beginner level spanish.. But knowing geigraphy, culture, food, tradition is useful." CLAUDE.md's opening line puts language and culture side by side; whether it changes is Josh's call.
+- **The intro is a rest** (Josh, 2026-11-12): "learning a language is exhausting, the intro refined is a passive exposure before returning to Dora the Explorer." So the intro is judged as good listening (a story, something concrete and new), not by how many turns the learner takes.
 - **The intro opens a visit** (Josh, 2026-11-11; his mockup): the character sets the scene in the language with English subtitles, about what the place is known for, "cultural points first, 30 s fine, not 45 with biography", and ends on a question that comes out of what was told ("'are you visiting' after a cultural intro is a stinker"). At Intermediate and every Beginner step. At Beginner the question is short (intro.md 12b, the screen session, on his yes).
 - **A conversation is bids** (Josh, 2026-11-12): "A conversation is all about bids… every turn is an opportunity to bid/accept"; "Character makes a bid. Learner accepts and makes their bid. Character accepts, repeat"; "if the bid stinks it doesn't get accepted"; at Beginner "the learner bid is continuing to play". Variety in the kind of bid, not "this or that?" every turn ("It's like Dora the Explorer", 2026-11-11). In the prompts: "Take up what they just said before you add anything of your own" (character.md 12a); new kinds of question one at a time, Notice first (scaffolding.md 12d). Detail: dialogue-structure-reference.md § 1a, § 2a.
 - **The beats go to the character once** (Josh, 2026-11-11, "go", on the cloud session's critique): a note on every turn made every turn the same; the director speaks only on "answer first" when they asked something.
@@ -218,6 +223,7 @@ What Beginner level dialogue is for. The trial prompt is written against these, 
 
 ## Not decided yet
 
+- **The intro at Intermediate** (Josh, 2026-11-12: "it probably isn't as relevant for intermediate, unless even thicker on culture and lighter on personality"): no intro at all, or one that's almost all culture. His Intermediate play decides.
 - **Whether English is needed** anywhere else on screen: at S4 (today an
   English line under hers) or under her lines at any level.
 - **The screen:** subtitles or bubbles, and what the subtitle line shows. Josh

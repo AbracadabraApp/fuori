@@ -39,6 +39,15 @@ The one list of dialogue work (laptop dialogue session; another session has the 
 | From Josh's evening play (Don Chucho, Raymundo): a return visit greets you as someone known, asks after what you told the character, and talks about something other than the work; "talk like a regular" for every character you've met; no "mire" given as a model; the goodbye left to you (no double goodbye); no repeats within a visit | ed467dd | No |
 | Measures: what learners do after each kind of question (`scripts/bid-count.mjs`); turn length on replayed real visits (`tests/experiments/b2-turn-length.mts`) [3.1, A] | 8423712, 970ba64 | (tools) |
 
+## For the deep dive (Josh, "later tonight or tomorrow")
+
+The frame is [bids.md](bids.md) (a draft, not agreed): a turn as take-up, bid and supply. The threads to bring:
+- **What a visit is for, and what makes the seventh visit worth having.** Culture first; the intro as a rest (both now in dialogue-model.md).
+- **The small design** for the faults that kept coming back: the character says when it's winding down (one yes/no in its reply; turn 7 becomes a late safety net); memory keeps the learner's own words with dates and loose ends, checked against the transcript; a visit has a point (from the character alone, or offered from the town and the date).
+- **Steps 4–6 as "from engagement to bids":** the steps hand the bidding over (answers to say back, questions to ask, a sentence to finish, their own words), and the bubbles fade from answers to hints.
+- **The intro at Intermediate:** none, or thicker on culture (open, in dialogue-model.md).
+- **Evidence:** Josh's round of play (the list in progress.md), read in bid terms.
+
 ## Later
 
 - **Remove the old Beginner** (a week from 2026-11-12) with its prompt blocks in `levels.md` and `leveling.md`, and decide whether the welcome and lessons move to the new Beginner's prompt. [5.2, 5.6]

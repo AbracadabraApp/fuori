@@ -62,6 +62,12 @@ Readings, not conclusions (one or two learners carry most rows): offered answers
 
 **Return visits since the told-ledger:** none yet. Two visits have stored beats (Raymundo and Isidro, Guanajuato, 2026-11-12 morning), each a first meeting; the ledger is written (Isidro's notes carry it twice, once as prose and once as the "Told them about" line). Plan item 3.3 waits for a second visit to either.
 
+## 4a. Tools for checking dialogue
+
+- **Replay real visits through today's code:** `COUNTRY=es-mx npx tsx --env-file=.env.local tests/experiments/b2-turn-length.mts <snapshot.json> <conversation id prefix>… [--takes=2] [--level=<file>]`. Each of the learner's real lines, at the same point in the visit, goes through the call the game makes at Beginner step 1; it prints each reply with its words, sentences, Spanish words and whether it ends on a question. The most useful check of 2026-11-12: it showed the cause of the long turns, Notice repeating, and the replayed return visit. A check, not an experiment.
+- **What learners do after each kind of bid:** `node scripts/bid-count.mjs <snapshot.json>` (§ 4). Rerun after 20 new-Beginner visits with three or more replies (dialogue-plan.md).
+- **The snapshot:** `node scripts/archive-conversations.mjs`, run from `~/fuori` (the folder linked to Railway), writes `~/fuori-archive/conversations-<date>T<hhmm>.json` (private, never in git). `--since=<day>` writes a separate `partial-conversations-…` file, so a full copy is never overwritten.
+
 ## 5. Inconsistencies open today
 
 The list, with what each resolves, is [dialogue-plan.md](dialogue-plan.md) phases 1, 2 and 5. Fixed 2026-11-12: the where-from lines (1.1), the beat-count close (1.2), intro.md's beats wording (1.3), the S4 gap and the two ladders (cut-over), Beginner 2's dead code (5.6). Still open: newcomer wording in the lesson and culture writers (2.1, 2.2); the welcome and lessons on `beginner.md`, so dialogue fixes reach them separately (5.2); four goodbyes, and a close when the talk is done (5.3); steps 4–6 unplayed with mismatched texts (5.4); length rules in prose (5.5).

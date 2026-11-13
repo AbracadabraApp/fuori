@@ -4,8 +4,8 @@
 // without production access). Real transcripts hold learners' own lines, so
 // the file is private (mode 600) and never goes in git or a public bucket.
 //
-//   node scripts/archive-conversations.mjs            # all history, to ~/fuori-archive/conversations-<date>.json
-//   node scripts/archive-conversations.mjs --since=2026-11-08
+//   node scripts/archive-conversations.mjs            # all history, to ~/fuori-archive/conversations-<date>T<hhmm>.json
+//   node scripts/archive-conversations.mjs --since=2026-11-08   # to ~/fuori-archive/partial-conversations-<date>T<hhmm>-since-<day>.json
 //
 // Reads the admin route of each service (the key is read from Railway and
 // never printed) in pages of 200, newest first, walking back with until=.
@@ -40,7 +40,10 @@ for (const [service, host] of services) {
 const rows = [...seen.values()].sort((a, b) => a.started_at.localeCompare(b.started_at));
 const dir = join(homedir(), 'fuori-archive');
 mkdirSync(dir, { recursive: true });
-const file = join(dir, `conversations-${new Date().toISOString().slice(0, 10)}.json`);
+// Never overwrite an earlier copy (2026-11-12: a --since run replaced the day's full copy): the time is in the name,
+// and a partial copy has its own prefix, so scripts that take the newest conversations-*.json (gold-set.mts) still get a full one
+const stamp = new Date().toISOString().slice(0, 16).replace(':', '');
+const file = join(dir, since ? `partial-conversations-${stamp}-since-${since}.json` : `conversations-${stamp}.json`);
 writeFileSync(file, JSON.stringify(rows));
 chmodSync(file, 0o600);
 if (rows.length === 200 && !since) console.log('Exactly 200: the live route has no until= yet, so older conversations are not in this file. Run again after the release.');
