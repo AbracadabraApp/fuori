@@ -2,6 +2,12 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../intro.md`.
 
+### 2026-11-12c: a return visit greets them as someone known and talks about something other than the work; no repeats within a visit
+- **Changed, Brief:** "If you've met before, the first sentence picks up where you left off (what they had, what you were talking about), and the rest is something you haven't told them yet." → "If you've met before, this replaces the opening above: greet them as someone you know, ask after something they told you about themselves last time, then tell them about something other than your work this time (the neighbourhood, the town, a custom, what's going on today), and end on one question that comes out of it."
+- **Changed, Beats:** added "Don't say again what you've already said in this visit."
+- **Why:** Josh's play, 2026-11-12 evening (visits 015d2607 and 96962a32, Don Chucho; 45764841, Raymundo): "Don Chucho - almost same conversation - no familiarity or small talk - all repeating details of shoe shining". The told-ledger reached Don Chucho's prompt and he still retold the shine: the Brief opened every visit with "the thing your place is known for and that you're doing right now", so he picked other parts of the same shine. Raymundo said "la puerta de atrás se abre primero" on turns 0, 10, 12 and 14, after the Beats line invited him to come back to what he set out.
+- **Prompted by:** Josh, 2026-11-12: "go". Both countries.
+
 ### 2026-11-12b: a short question at Beginner (a prose cap)
 - **Changed:** the Beginner reply block ("Reply: sentences and answers") adds: "Your question is short, six words at most, the way you'd ask it across the counter: a choice between two words, not two clauses." Intermediate's block is unchanged.
 - **Why and prompted by:** Josh, 2026-11-12, of the question bubble after the intro: "the transition is good - the amount of words is broken". Raymundo's and Don Isidro's were 15 words, about 35 with the English under them, in a Beginner's first bubble. Before: six intros a country, median 13 words in the language (longest 15), English median 15–16 (`tests/experiments/intro-question-length.mts`). A length rule in prose, the kind docs/dialogue-plan.md 5.5 questions; kept because one question holds a cap far better than a whole turn does (the dialogue session's note), and checked on fresh intros. Product change on Josh's word, no card.

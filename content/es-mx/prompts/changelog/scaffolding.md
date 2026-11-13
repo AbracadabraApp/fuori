@@ -2,6 +2,12 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
 
+### 2026-11-12i: no "mire" given as a model; the goodbye left to the learner
+- **Changed, Level 1 and 1b:** "mire" ("guardi" in Italy) out of the list of what you'd tell them to do, and the whole-turn examples no longer open their second sentence with it.
+- **Changed, Setup: goodbye and Answers:** the character winds down but leaves the goodbye itself to the learner ("don't say goodbye yourself"), instead of "say something warm to close".
+- **Why:** Josh's play, 2026-11-12 evening (visits 015d2607 and 96962a32, Don Chucho; 45764841, Raymundo): "Don Chucho - almost same conversation - no familiarity or small talk - all repeating details of shoe shining". "Mire" opened nearly every turn (Raymundo 9 of 9): this morning's step texts (12b, 12h) listed it and their examples opened with it. Two goodbyes in each visit: the goodbye setup made the character say a full farewell ("Fue un gusto, Joshua, ¡que le vaya muy bien!"), then the learner said goodbye and the character said it again.
+- **Prompted by:** Josh, 2026-11-12: "go".
+
 ### 2026-11-12h: step 2 as short as step 1, with more of the language
 - **Changed, Level 1b (step 2):** the same shape as step 1 (12b): "mix English and {language}", English only to carry the language, "Each turn is two short sentences" and the question with its English, a whole-turn example; but "Two or three of them a turn" against step 1's "one or two", so step 2 is a step up in the language at the same length.
 - **Why:** since 12b, step 1 had one or two phrases in two short sentences while step 2 still asked for three or four in two or three sentences: moving up made turns longer, against Josh's "Everything is basically too long". Copying step 1's numbers instead would have made the two steps the same (the screen session's point).

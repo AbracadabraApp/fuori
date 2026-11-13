@@ -4,6 +4,11 @@ Newest first. One entry per version: what changed, why, what prompted it. The pr
 
 Newest first. Each entry: what changed, why, and what prompted it.
 
+### 2026-11-12b: with someone they've met, talk like a regular
+- **Added, Relationship: met before:** "Talk with them like a regular: about what they've told you of themselves and about the day, not only your work."
+- **Why:** Josh's play, 2026-11-12 evening (visits 015d2607 and 96962a32, Don Chucho; 45764841, Raymundo): "Don Chucho - almost same conversation - no familiarity or small talk - all repeating details of shoe shining"; the second visit greeted him by name and then retold the shine, with nothing of what he'd said about himself (he dislikes the cold, loves "Sabor a mí", lives in Mexico City, all in the notes).
+- **Prompted by:** Josh, 2026-11-12: "go". Every level and both countries (fixes are global).
+
 ### 2026-11-12a: take up what they said first
 - **Added, Talk: turns:** "Take up what they just said before you add anything of your own."
 - **Why:** Josh's model of a conversation as bids (docs/dialogue-structure-reference.md § 1a: "Character makes a bid. Learner accepts and makes their bid. Character accepts, repeat"). The accept half had no line at Intermediate; the old Beginner prompt had one ("first react to what they just said… then move on"). The fault it answers: the character carrying on with its own subject (docs/dialogue-ideas.md → The character asks and carries on, as if answered; the Intermediate top 10, #1). Also reaches Beginner steps 1–3, which run on this prompt.

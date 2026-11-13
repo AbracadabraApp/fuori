@@ -37,7 +37,7 @@ const c = characterForPlace(city, place)!;
 const plain = buildIntroPrompt({ character: c, answers: false });
 const withAnswers = buildIntroPrompt({ character: c, answers: true, addressedAs: 'f', memory: { visits: 1, lastVisit: new Date(), notes: ['Had a coffee', 'Asked about the market'] } });
 check(plain.system.includes(c.name) && plain.system.includes(place.name), `the intro prompt names ${c.name} and ${place.name}`);
-check(/four or five short sentences/.test(plain.system) && /picks up where you left off/.test(plain.system) && /"beats"/.test(plain.system), 'the brief and the beats format are in the system prompt');
+check(/four or five short sentences/.test(plain.system) && /greet them as someone you know/.test(plain.system) && /something other than your work/.test(plain.system) && /"beats"/.test(plain.system), 'the brief and the beats format are in the system prompt');
 check(!/No more words after a question mark/.test(plain.system) && !/speech-to-text/.test(plain.system) && !/Respond with JSON:\s*\{ "line"/.test(plain.system), 'no turn rules, no dialogue rules, no line format: the intro has its own prompt');
 check(!/\{\w+\}/.test(plain.system) && !/\{\w+\}/.test(withAnswers.system), `every placeholder filled (got ${[...(plain.system + withAnswers.system).matchAll(/\{(\w+)\}/g)].map((m) => m[1]).join(', ') || 'none'})`);
 check(!/"answers"/.test(plain.system) && /"answers"/.test(withAnswers.system), 'the answers format only when answers are asked for (Beginner 2)');
