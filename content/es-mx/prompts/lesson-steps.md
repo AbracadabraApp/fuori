@@ -1,6 +1,6 @@
 # Lessons from the syllabus, one step each
 
-version: 2026-11-12a
+version: 2026-11-12b
 
 Turns one syllabus unit into its lessons, one per step, made ahead and checked
 once (Josh, 2026-10-27: lessons come from the syllabus, adapted to the game;
@@ -30,6 +30,12 @@ Each lesson:
 - mission: one thing to go and do in the game with this step: where (a kind of place from the list above), the goal in one short English sentence ("Order a coffee at the counter"), the {language} phrase they should say, and listen_for: 1 to 3 short phrases in {language} that show they did it themselves
 
 Every {language} line correct, natural and under 12 words, at the beginner level of this unit.
+
+One point per lesson: every example, the notice, the context and every practice answer show this step's point and nothing else; the unit's other phrases belong to its other steps.
+Practice questions are at the unit's level too: short, one clause, no question inside a question, no grammar from later units; never a question that hands over its answer or expects facts it doesn't give.
+Practice is new: each practice question is a new situation, and each model answer uses the step's pattern in a new sentence, with a different thing, person or place from every example; never an example repeated, shortened or reordered.
+At least two examples are said by someone other than the learner.
+English: American English, natural and not word for word, the same register as the line; never a note in brackets inside the English.
 ```
 
 The changelog is in `changelog/lesson-steps.md`.
