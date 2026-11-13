@@ -126,6 +126,7 @@ From the Mac mini session, with Josh on his phone. Mock-ups only (a private page
 - **Cost is unclear:** ElevenLabs' own pages give 40, 20 and 11 credits a second with a set length, and 100 or 200 a generation without. Check the account's usage after one trial sound before relying on any figure. Either way a handful of sounds is small.
 - **How it would fit:** these are a few fixed sounds per country (a terminal announcement tone, a bus door and engine; a station chime and a train), so they are made once, listened to by Josh, and stored with the other media in R2, not generated during play. The app would play a file; no new call from the phone, no key on the phone. The existing key in `.env.local` should work for the call; not tried.
 - **Limits to expect:** spoken announcements come out as gibberish from a sound model, so a real announcement would be a voice line (the existing voice path) over a sound. Results vary run to run, so each sound wants a few takes to pick from.
-- **Next step when Josh says:** a trial of three or four sounds for each country, a few takes each, for his ear.
+- **Kept simple (Josh, same day):** "we could keep it simple..train noise, bus noise. I imagine the screen is up 3-5 seconds". So one sound a country, a train for Italy and a bus for Mexico, 3 to 5 seconds, and the sheet stays up for that long. No announcement, no voice line, no ambience loop.
+- **Next step when Josh says:** a few takes of each of the two sounds, for his ear.
 
 Sources: https://elevenlabs.io/docs/api-reference/text-to-sound-effects/convert · https://elevenlabs.io/docs/overview/capabilities/sound-effects
