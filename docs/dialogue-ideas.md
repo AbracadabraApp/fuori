@@ -517,3 +517,12 @@ Of 6 conversations with "carbonara, never cream", 5 are Nino (trattoria-garbatel
 
 Josh: "Need to get mixed dialogue working better." The Beginner turn, mostly English with the language slotted in as whole phrases (CLAUDE.md; docs/dialogue-model.md → Beginner goals), and the step-by-step move to less English. Already on the screen list as "the English/Spanish mix to improve" (progress.md, 2026-11-12, item h). What play shows today is in docs/bugs.md: B1 (turns with no English), B7 ("mucho mucho inglés por favor", "puede hablar más despacio?"). Josh's examples of what "better" means: to collect.
 Josh, again after play the same day: "Need to get mixed dialogue working better." With it: "Some character adapted to use more English" (kept, bugs.md) and "Intermediate didn't back off" (B13).
+
+## Josh's dialogue ideas, 2026-11-13 (after play)
+
+Not decided; nothing built. Josh's words as written.
+- **The intro, rethought.** "the intro concept doesn't win, but parts of idea were good. First turn shoulld offer something that iss a break from getting quizzed, but in character mode - no subtitles or sheet. For it to work the english/spanish mix needs to be good." (bugs.md B23: the intro long and passive.)
+- **Return visits about something else.** "return visit intros and dialogue should be less about something and more about something else. The obvioud first is less about job or weather, more about the culture or family or something else." (Close to "characters tell their own story", ideas.md.)
+- **The character asks the learner a favor: say it in English.** "another dialogue to to consider is returning to say it in English - In englese come si dice? Explain inn English -- not the previous \"you can answer in Englis\" - the character is asking you for a favor - the system helps put it into sspanish". (The old "invite English" setup is in scaffolding.md, "Setup: invite English"; this is the other way round: the character wants the learner's English.)
+- **A pastiche: mixed, then echo, then mixed.** "we might want to come up with pastiche of mixed then echo - then mix".
+- **Levels as plain amounts.** "Could level prompts be as easy as saying not much, a bit more, more" (after seeing that a character asked for less Spanish gave less). First measure, 2026-11-13 (scaffolding.md changelog 13a): a step 1 that only said "mostly in English, with only a little {language}" got 30% Spanish against 45% today, but its Spanish was nearly all the closing question, with no phrases slotted in.
