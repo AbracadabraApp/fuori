@@ -1,5 +1,13 @@
 # Fuori Development Progress
 
+## 2026-11-13 (Mac mini, with Josh): Mexico recipe steps 1 and 2 run, and the ticket sheet rethought on mock-ups
+
+- **Run from docs/mexico-north-recipe.md:** step 1, the fact judge on the four hidden northern cities (`docs/mexico-north-cities.facts.txt`; 25 of 40 people flagged, many for a person's own situation; the claims about the world are not sorted or fixed, no content changed). Step 2, eight candidate maps in four looks and a sample building in each (`design/trip-map/mexico/`; one map redrawn for a wrong outline).
+- **Josh has not picked a look.** Instead the sheet's layout changed on mock-ups: ticket on top (the app's own ticket), the map full width with numbered dots, and a key of numbers and names only. Buildings and soccer team colours were both tried in the key and dropped; a blast furnace for Monterrey is out. Record with his words: docs/mexico-trip-map.md → "2026-11-13, later".
+- **Later idea (Josh):** sound effects and a timer so the sheet advances by itself; no animated route line. ElevenLabs' sound effects call was looked into (same doc); nothing generated.
+- **Not done:** nothing built in the app; recipe steps 3 to 8 not run (the fourteen buildings are in question now); no pictures uploaded; cities still hidden; no release.
+- **Open, Josh's:** the map's look (the land must be clear for numbered dots); whether the board wants buildings; whether Italy's sheet takes the same layout; a trial of sounds for his ear.
+
 ## 2026-11-13 (cloud chat session, with Josh): Mexico's four northern cities written, and the recipe for the map and their pictures
 
 - **Josh:** "develop the menu card needed for the mexico map and city creation" (a recipe card for the mini), then "include the new northern cities - limit 10 places per city - follow current norms for types of people and places", then "you can build all that you don't need the mini to do".

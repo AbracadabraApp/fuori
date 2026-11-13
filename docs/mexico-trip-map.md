@@ -93,3 +93,39 @@ What that changes above:
 - **Always named:** Tijuana, Monterrey, Guadalajara, Ciudad de México, Oaxaca, Mérida.
 - "Steps" above is replaced by the recipe's steps.
 
+
+## 2026-11-13, later: the sheet Josh steered to on the mock-ups, and a later idea
+
+From the Mac mini session, with Josh on his phone. Mock-ups only (a private page, https://claude.ai/artifact/RjpxotaXdNJ8rg84UEbsDF); nothing is built in the app. Josh's words are quoted; the rest is Claude's.
+
+**What was drawn first.** Recipe steps 1 and 2 were run: the fact judge's output (`docs/mexico-north-cities.facts.txt`, claims not yet sorted) and the eight candidate maps with a sample building in each look (`design/trip-map/mexico/`). Josh has not picked a look.
+
+**The sheet, top to bottom (this replaces the key strip of building panels above):**
+1. **The ticket on top** ("Show me ticket on top"; before that, "I'd flip the city list and ticket - let the ticket be clear from/to"). It is the app's own ticket (`TicketStrip`), not a new drawing: "I'd copy the style of the Italy ticket (or improve - now it is a tall manila rectangle)" was said of the mock-up's stand-in.
+2. **The map**, full width, with a numbered dot for every city and the trip's two cities in red. Dots stay plain ("I wouldn't change dot colors").
+3. **The key: numbers and names only**, two columns under the map, names at a readable size ("on the key I'd lose the team colors - just numbers and names").
+
+**How it got there, so it isn't retried:**
+- Key down the left against across the top and bottom: across gives the map the full width.
+- **Buildings in the key: no.** "the token bldgs are all nearly identical"; "I doubt the bldgs will work - they are all similar and small". Six of the fourteen are a church with a dome or two towers, and the four looks drew one building almost the same way.
+- **A blast furnace for Monterrey: no** ("a blast furnace is not going to work"). If Monterrey needs a picture anywhere, Claude's suggestion is the Cerro de la Silla.
+- **Soccer team colours** (Josh's idea): "the colors kind of work but not that well - the biggest issue is probably size of city name". Dropped from the key. Four of the fourteen cities have no well-known team of their own.
+- City names inside 48-point panels can't be larger than about 7 points; that, not the picture, is what sank the panels.
+
+**Open**
+- The map's look. With numbered dots the land has to be clear: the atlas look works as drawn; the other three have a cactus, volcanoes and a pyramid where cities go and would need a redraw without them.
+- The fourteen buildings (recipe step 3): the key no longer uses them. Whether the departures board wants them is Josh's; not drawn.
+- Italy: the sheet is one piece of code for both countries, and Italy's has names on the map, the ticket under it and no key. Same layout for both, or different, is Josh's.
+- The boarding arrow is now at the top of the sheet; to be judged on a phone.
+- Not seen on a phone at real size; about 530 points tall by sums.
+
+**Later, "when we are ready to get fancy" (Josh):** "we add sound effects and a timer to the page so it auto advances". The sheet becomes a short scene that moves on by itself; Cancel stays. This changes his earlier word for the sheet ("no timer, nothing rises or animates"), which is his to change. **No animated route line:** "the only piece I might skip is the animated line - lots of cities would barely show it". It could join the earlier idea of a voice over the map about the city you're going to, the timer being the length of that voice (Claude's suggestion).
+
+**ElevenLabs sound effects, looked into at Josh's request (2026-11-13; nothing generated):**
+- It is a text-to-sound call on the service the game already uses for voices: `POST https://api.elevenlabs.io/v1/sound-generation`, with `text` (a description of the sound), optional `duration_seconds` (0.5 to 30; left out, the length is guessed), `prompt_influence` (0 to 1, default 0.3), `loop` (a seamless loop, for ambience) and `model_id` (`eleven_text_to_sound_v2` by default; a v3 is listed). It returns an audio file, MP3 by default.
+- **Cost is unclear:** ElevenLabs' own pages give 40, 20 and 11 credits a second with a set length, and 100 or 200 a generation without. Check the account's usage after one trial sound before relying on any figure. Either way a handful of sounds is small.
+- **How it would fit:** these are a few fixed sounds per country (a terminal announcement tone, a bus door and engine; a station chime and a train), so they are made once, listened to by Josh, and stored with the other media in R2, not generated during play. The app would play a file; no new call from the phone, no key on the phone. The existing key in `.env.local` should work for the call; not tried.
+- **Limits to expect:** spoken announcements come out as gibberish from a sound model, so a real announcement would be a voice line (the existing voice path) over a sound. Results vary run to run, so each sound wants a few takes to pick from.
+- **Next step when Josh says:** a trial of three or four sounds for each country, a few takes each, for his ear.
+
+Sources: https://elevenlabs.io/docs/api-reference/text-to-sound-effects/convert · https://elevenlabs.io/docs/overview/capabilities/sound-effects
