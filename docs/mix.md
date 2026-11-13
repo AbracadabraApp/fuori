@@ -37,7 +37,7 @@ Patterns can be combined in a turn: Josh, 2026-11-13: "pastiche of mixed then ec
 ## Where it's used
 
 - **All Beginner steps:** the table above.
-- **The first turn of a visit, in place of the intro:** Josh: "First turn shoulld offer something that iss a break from getting quizzed, but in character mode - no subtitles or sheet. For it to work the english/spanish mix needs to be good."
+- **The first turn of a visit:** Josh, 2026-11-13: "I'd cut the intro as it is now and just start as before in the charracters conversation". The visit opens on an ordinary turn of the character's conversation, in the mix like every other turn; no sheet, no subtitles. (Not built; the intro is still live.)
 - **Intermediate, when the learner asks for help:** the character switches to the mix for the help, then goes back.
 - **The other way round (an idea):** the character asks the learner a favour, "come si dice in inglese?" (dialogue-ideas.md, 2026-11-13).
 
