@@ -19,6 +19,11 @@ const flag = (name: string) => args.find((a) => a.startsWith(`--${name}=`))?.spl
 const [file, ...ids] = args.filter((a) => !a.startsWith('--'));
 const takes = Number(flag('takes') ?? '2');
 const levelFile = flag('level');
+// --pieces: the Level text asks for each piece of the language as {piece | its English}; the code checks every piece
+// has its English and puts the spoken line together ("piece, English"), as docs/mix.md proposes (2026-11-13)
+const pieces = args.includes('--pieces');
+const unglossed: string[] = [];
+const assemble = (line: string) => line.replace(/\{([^{}|]*)\|?([^{}]*)\}/g, (_m, piece: string, en: string) => { piece = piece.trim(); en = en.trim(); if (!en) { unglossed.push(piece); return piece; } return /[.!?…]$/.test(piece) ? `${piece} ${en}` : `${piece}, ${en}`; });
 const level = levelFile ? readFileSync(levelFile, 'utf8').trim().replaceAll('{language}', language.name) : undefined;
 
 type Saved = { id: string; city_id: string; place_id: string; character_id: string; turns: { who: 'npc' | 'learner'; text: string; en?: string; parts?: { kind: string; text: string }[]; beats?: string[] }[] };
@@ -46,7 +51,9 @@ for (const id of ids) {
     const setup = pickSetup({ conversationId: c.id, turn: npcTurns, learnerId: null, characterId: character.id, learnerSaid }, CLUSTER_1);
     const brief = [level ? frameBrief(CLUSTER_1).replace(levelText(CLUSTER_1), level) : frameBrief(CLUSTER_1), beatsBrief(beats)].filter(Boolean).join('\n\n');
     for (let k = 0; k < takes; k++) {
-      const r0 = await runTurn({ character, transcript, learnerSaid, brief, note: noteOf(pickShapes({ learnerSaid }), setupLine(setup)), answers: setup.maxAnswers > 0, withDone: true });
+      const raw = await runTurn({ character, transcript, learnerSaid, brief, note: noteOf(pickShapes({ learnerSaid }), setupLine(setup)), answers: setup.maxAnswers > 0, withDone: true });
+      const r0 = pieces ? { ...raw, line: assemble(raw.line) } : raw;
+      if (pieces) console.log(`  as written: ${raw.line}`);
       const r = lineWithAnswers(r0, setup, CLUSTER_1);
       const spans = (JSON.parse(await ask(`Copy out every run of ${language.name} words in this line, one string per run, exactly as written (English runs left out):\n${r.line}`, { schema: spansSchema, max: 800 })) as { spans: string[] }).spans;
       const row = { heard: words(r.line), lang: spans.reduce((n, s) => n + words(s), 0), sentences: sentences(r0.line), question: /[?¿]\s*\S*$/.test(r0.line.trim()) || /[?¿]$/.test(r0.line.trim()) };
@@ -57,3 +64,4 @@ for (const id of ids) {
 }
 const med = (xs: number[]) => xs.slice().sort((a, b) => a - b)[Math.floor(xs.length / 2)];
 console.log(`\n${rows.length} turns · median ${med(rows.map((r) => r.heard))} words heard (range ${Math.min(...rows.map((r) => r.heard))}-${Math.max(...rows.map((r) => r.heard))}) · ${Math.round((100 * rows.reduce((n, r) => n + r.lang, 0)) / rows.reduce((n, r) => n + r.heard, 0))}% in ${language.name} · median ${med(rows.map((r) => r.sentences))} sentences · ${rows.filter((r) => r.question).length} of ${rows.length} end on a question`);
+if (pieces) console.log(`pieces with no English: ${unglossed.length}${unglossed.length ? ' (' + unglossed.slice(0, 8).join(' · ') + ')' : ''}`);
