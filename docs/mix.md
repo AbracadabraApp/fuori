@@ -8,6 +8,7 @@ What bilinguals do when they talk to someone who doesn't share their language: t
 
 That is the Beginner turn already: a bilingual local talking to a visitor. Proposed words for the glossary:
 - **the mix**: a turn in English with pieces of the language in it.
+- **the character's question** (Josh, 2026-11-13): "How much English does this learner need to follow me?" Every level is an answer to it.
 - **piece**: a word, phrase or short sentence in the language.
 - **gloss**: a piece's English, right beside it.
 - **echo**: a whole sentence in the language, then the same sentence in English (Josh, 2026-11-13: "echo 50/50 can be easier than mix 70/30").
@@ -38,7 +39,7 @@ Patterns can be combined in a turn: Josh, 2026-11-13: "pastiche of mixed then ec
 
 - **All Beginner steps:** the table above.
 - **The first turn of a visit:** Josh, 2026-11-13: "I'd cut the intro as it is now and just start as before in the charracters conversation". The visit opens on an ordinary turn of the character's conversation, in the mix like every other turn; no sheet, no subtitles. (Not built; the intro is still live.) The feature idea that remains (Josh, 2026-11-13): "with the intro gone, enrich the content in the first turrn". With it, his earlier words: a first turn that "should offer something that iss a break from getting quizzed, but in character mode", and on return visits "less about job or weather, more about the culture or family or something else".
-- **Intermediate, when the learner asks for help:** the character switches to the mix for the help, then goes back.
+- **Intermediate: the same model, less English** (Josh, 2026-11-13): "i think this one \"mixed model\" coulld expand to intermediate. Our intermediate is HARD. so a mixed model still has a role there. I think the mental model of the character should be \"How muuch english does this learrner need to follow me\" an intermediaatte speaker needs a lot less, but if the charactter wants to start using more complicated verb tenses or talking about more partticular vocab, mixed would help". So one question for every character at every level; Intermediate's line is mostly the language, with the hard bits (a new tense, a particular word) marked and glossed in the same shape (Claude: "Le radici {scendono | come down} dai rami"). Fits B13 (Nunzio's "corteccia", "scendono"). Also when the learner asks for help.
 - **The other way round (an idea):** the character asks the learner a favour, "come si dice in inglese?" (dialogue-ideas.md, 2026-11-13).
 
 ## What the numbers say (2026-11-13)
