@@ -36,7 +36,7 @@ The one list of dialogue work (laptop dialogue session; another session has the 
 | Cultural lessons: the teller's question varies (what you make of it, something to picture or notice, something of your own like it) instead of "Have you ever…?" every turn; the answer taken up [4.3] | f612b53 | No |
 | Beginner "questions to ask" turns stay, and the questions offered come out of what the character just said ("¿Qué es el huitlacoche?" after she names it), not stock ones like the bus fare (Josh: "I appreciate variety, but also coherent play") | 9a23f81 | No |
 | Step 2 as short as step 1 (two short sentences and the question) with two or three Spanish phrases against step 1's one or two | 20926c8 | No |
-| From Josh's evening play (Don Chucho, Raymundo): a return visit greets you as someone known, asks after what you told the character, and talks about something other than the work; "talk like a regular" for every character you've met; no "mire" given as a model; the goodbye left to you (no double goodbye); no repeats within a visit | (next) | No |
+| From Josh's evening play (Don Chucho, Raymundo): a return visit greets you as someone known, asks after what you told the character, and talks about something other than the work; "talk like a regular" for every character you've met; no "mire" given as a model; the goodbye left to you (no double goodbye); no repeats within a visit | ed467dd | No |
 | Measures: what learners do after each kind of question (`scripts/bid-count.mjs`); turn length on replayed real visits (`tests/experiments/b2-turn-length.mts`) [3.1, A] | 8423712, 970ba64 | (tools) |
 
 ## Later
