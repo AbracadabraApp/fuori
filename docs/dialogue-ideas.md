@@ -7,16 +7,9 @@ Ideas about how conversations with characters should go: what they say, when the
 Status from the entries and the day's commits; "not checked" means nobody has looked at it against today's game. The entries below are unchanged.
 
 **Open**
-- The character asks and carries on, as if answered: "Take up what they just said" shipped 2026-11-12 (character.md 12a, not yet live); recount after 20 visits (dialogue-plan.md).
-- The receipt gate (Bar Alba): the cassa sentence was removed from five bar characters' here lines (4d765c3, live); not heard since.
+Bugs moved to [bugs.md](bugs.md) on 2026-11-13 (the entries below stay as the record): the character asks and carries on (B6), the receipt gate (B22, confirmed fixed), a character who steps away comes back (B17), "Stay within your job" (B18), a correction for something said right (B19), "Say this" adds things (B20), a voice that changes mid-line (B21), long Intermediate replies (B13). Still here as ideas:
 - Open-ended talk doesn't need a question every turn: now part of the bids model (a statement can be a bid; dialogue-structure-reference.md § 1a).
-- A character who steps away comes back: not checked.
-- "Stay within your job" turns away a question about the town: not checked.
 - Managing the lesson out loud: not checked.
-- A correction for something the learner said right: collecting examples.
-- "Say this" adds things the learner didn't say: not checked.
-- A voice that seems to change mid-line: not checked.
-- Long replies in open-ended talk (Intermediate): not checked; Beginner turns shortened 2026-11-12 (scaffolding.md 12b).
 
 **Fixed or overtaken**
 - "Are you new here?" in almost every opener: character.md 10q; beginner.md 12a (2026-11-12); the intro asks about what it told.
