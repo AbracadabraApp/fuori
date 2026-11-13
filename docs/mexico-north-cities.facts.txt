@@ -1,0 +1,70 @@
+pass  tijuana/sergio-mesero-caesars
+FAIL  tijuana/paola-muralista-playas
+      this week you are repainting a faded stretch of the murals on the border fence at Playas de Tijuana
+pass  tijuana/ana-lucia-chelista-cecut
+FAIL  tijuana/estela-chiles-mercado-hidalgo
+      Tijuana's traditional market since the 1950s
+      At weekends families cross from San Diego to do their shopping here.
+pass  tijuana/ivan-taquero-el-mezquite
+FAIL  tijuana/emilio-serigrafista-pasaje-rodriguez
+      Today you are printing posters for a concert.
+pass  tijuana/rosendo-acordeonista-santa-cecilia
+pass  tijuana/veronica-maestra-agua-caliente
+FAIL  tijuana/fermin-ajedrecista-teniente-guerrero
+      the oldest park in Tijuana, laid out in the 1920s
+      On Sundays older couples come to dance by the kiosk.
+FAIL  tijuana/jazmin-taquillera-tijuana
+      everyone knows how long the wait is today
+pass  zacatecas/refugio-cantero-catedral-zacatecas
+FAIL  zacatecas/eulalia-capilla-la-bufa
+      in the bloodiest battle of the Revolution
+FAIL  zacatecas/uriel-operador-teleferico
+      about eighty metres above the roofs
+      When the wind is too strong you close, and in Zacatecas that happens often.
+FAIL  zacatecas/leticia-restauradora-coronel
+      Today you are cleaning a devil mask from Guerrero.
+FAIL  zacatecas/abel-trompetista-tamborazo
+      Tonight you play a callejoneada for a wedding.
+pass  zacatecas/cata-cocinera-gorditas
+FAIL  zacatecas/teodoro-cantinero-quince-letras
+      one of the oldest cantinas in Zacatecas, open since the first years of the twentieth century
+      Painters and poets have always drunk here, and the walls are covered with pictures they left.
+      Almost every family here has someone working in the United States
+pass  zacatecas/yareli-estudiante-acueducto
+FAIL  zacatecas/ismael-cofrade-bracho
+      It has been done here for about two hundred years
+      Today the drum corps is rehearsing, and you are mending your uniform.
+FAIL  zacatecas/nayeli-taquillera-zacatecas
+      the bus terminal of Zacatecas, on a hill at the edge of the city
+FAIL  monterrey/regina-estudiante-macroplaza
+      today you are sitting in the Macroplaza sketching the Faro del Comercio for a class
+pass  monterrey/eleazar-obrero-fundidora
+pass  monterrey/fabian-lanchero-santa-lucia
+pass  monterrey/adrian-discos-barrio-antiguo
+FAIL  monterrey/cecilia-historiadora-obispado
+      the oldest large building in Monterrey
+pass  monterrey/baldemar-asador-los-sauces
+FAIL  monterrey/hortensia-voluntaria-roble
+      today you are arranging the flowers for the altar
+      Her feast is on 18 December.
+      The dome of the old church collapsed at the start of the twentieth century
+pass  monterrey/rolando-cantinero-regiomontana
+pass  monterrey/licha-taquera-mananeros
+FAIL  monterrey/mayra-taquillera-monterrey
+      one of the busiest bus stations in the country
+      On Sundays the buses to Santiago and the mountains fill with families going out to eat.
+FAIL  mazatlan/anselmo-capitan-machado
+      The square was laid out in the 1830s by Juan Nepomuceno Machado, a merchant from the Philippines
+pass  mazatlan/camila-bailarina-angela-peralta
+pass  mazatlan/marco-antonio-pulmonia-olas-altas
+pass  mazatlan/lizbeth-enfermera-faro
+pass  mazatlan/irma-changuera-aquiles-serdan
+FAIL  mazatlan/joel-carretero-patasalada
+      In Mazatlán seafood is breakfast and lunch, never dinner.
+FAIL  mazatlan/heriberto-tambora-los-pinos
+      The most famous of all, Banda El Recodo, was founded in 1938 by Cruz Lizárraga in the village of El Recodo, half an hour from here.
+FAIL  mazatlan/maribel-artesana-carnaval
+      the Combate Naval, a battle of fireworks over Olas Altas that remembers a French warship driven off in 1864
+FAIL  mazatlan/nicolas-sacristan-catedral-mazatlan
+      each of the twenty-eight stained-glass windows has a six-pointed star
+pass  mazatlan/brenda-taquillera-mazatlan
