@@ -1,5 +1,15 @@
 # Fuori Development Progress
 
+## 2026-11-13 (cloud chat session, with Josh): Mexico's four northern cities written, and the recipe for the map and their pictures
+
+- **Josh:** "develop the menu card needed for the mexico map and city creation" (a recipe card for the mini), then "include the new northern cities - limit 10 places per city - follow current norms for types of people and places", then "you can build all that you don't need the mini to do".
+- **Built (text only), hidden until their pictures exist:** Tijuana, Zacatecas, Monterrey and Mazatlán (`content/es-mx/cities/`), 10 places and 10 people each, written to the norms of the five cities of 2026-11-09. Only Tijuana is Josh's yes; the other three are the cloud session's yeses from 2026-11-11, built on "the new northern cities": his to keep, drop or add to. Mexico is 14 cities.
+- **With them:** what each is known for and trip facts for all 91 pairs (`stations.json`); weather for the four, and for the five cities shown since 2026-11-11, which had none (`test:weather` was failing on main; it passes); a picture style and a city card prompt for each, proposed and untested, and three public place kinds drawn without a sign (`generation.json`).
+- **The map:** the map and building prompts now live in `generation.json` → `travel` (four looks; fourteen buildings, each with a second landmark where the first may drift), and `scripts/generate-travel-pictures.mjs` draws them into `design/trip-map/mexico/`. `travel-map.json` is untouched: positions are measured on the picture Josh picks.
+- **The recipe:** [docs/mexico-north-recipe.md](docs/mexico-north-recipe.md): fact judge, maps in four looks (Josh picks), fourteen buildings, one picture per new city (Josh judges the style), the other 78 pictures, the map into the app, upload from a Mac, then show and release. 110 pictures.
+- **Checked:** tsc; with the four shown: test:names (160), test:feed, test:weather (14 cities), test:voices, test:roles; ids unique in Mexico and not shared with Italy; `--dry` prints every prompt. Five claims checked against sources, two lines corrected (the Morismas' programme; the Roble's dome). **Not verified:** no picture drawn (no image key in this session and no folder connected on the laptop), no conversation played, fact judge and smoke:live not run. test:images fails for the four until their pictures exist. Pre-existing, not from this work: test:pack (Rome's cinema), test:language (ContentTests.swift), tsc's `LayoutProps` in a fresh clone.
+- **Open, Josh's:** which northern cities; the map's look; fourteen cities against the ten-panel key strip (some under "more", or the strip rethought). Not done on purpose: the hard side of places (waits on K1), San Miguel under "more", culture items for the new cities.
+
 ## 2026-11-13 (laptop): transcript review, and a bug list
 
 - **Josh:** "review transcripts last 48 hours", then "pull english messages out of transcripts - disscussed bugs insside transcript", then "how do we track bugs - most off these are not \"ideas\"" (Claude's choice, on "your preference": a file in the repo).

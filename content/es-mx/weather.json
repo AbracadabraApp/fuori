@@ -552,5 +552,995 @@
       "",
       ""
     ]
+  },
+  "guanajuato": {
+    "1": [
+      "cold morning",
+      "clear and dry",
+      "sunny, cool in the shade",
+      "chilly night",
+      "",
+      "",
+      ""
+    ],
+    "2": [
+      "cold morning",
+      "dry and sunny",
+      "windy",
+      "clear sky",
+      "",
+      "",
+      ""
+    ],
+    "3": [
+      "warm and dry",
+      "windy and dusty",
+      "jacarandas in bloom",
+      "cool morning",
+      "",
+      "",
+      ""
+    ],
+    "4": [
+      "hot and dry",
+      "hazy",
+      "warm afternoon",
+      "dusty wind",
+      "",
+      "",
+      ""
+    ],
+    "5": [
+      "hot and dry",
+      "first rain of the season",
+      "hazy",
+      "warm evening",
+      "",
+      "",
+      ""
+    ],
+    "6": [
+      "afternoon thunderstorm",
+      "afternoon rain",
+      "clear morning",
+      "cool evening",
+      "",
+      "",
+      ""
+    ],
+    "7": [
+      "afternoon rain",
+      "afternoon thunderstorm",
+      "green hills, clear morning",
+      "drizzle",
+      "",
+      "",
+      ""
+    ],
+    "8": [
+      "afternoon rain",
+      "afternoon thunderstorm",
+      "clear morning",
+      "cool, damp evening",
+      "",
+      "",
+      ""
+    ],
+    "9": [
+      "afternoon rain",
+      "clear morning",
+      "cool evening",
+      "rain overnight",
+      "",
+      "",
+      ""
+    ],
+    "10": [
+      "clear and mild",
+      "cool morning",
+      "sunny and dry",
+      "chilly night",
+      "",
+      "",
+      ""
+    ],
+    "11": [
+      "clear and dry",
+      "cold morning",
+      "sunny",
+      "chilly night",
+      "",
+      "",
+      ""
+    ],
+    "12": [
+      "cold morning",
+      "clear and dry",
+      "sunny, cold in the shade",
+      "cold night",
+      "",
+      "",
+      ""
+    ]
+  },
+  "veracruz": {
+    "1": [
+      "a norte blowing, grey and windy",
+      "mild and breezy",
+      "cool for the port",
+      "sunny and fresh",
+      "",
+      "",
+      ""
+    ],
+    "2": [
+      "a norte blowing, the port closed",
+      "mild and sunny",
+      "breezy",
+      "cool evening",
+      "",
+      "",
+      ""
+    ],
+    "3": [
+      "warm and breezy",
+      "a late norte, windy",
+      "sunny",
+      "humid",
+      "",
+      "",
+      ""
+    ],
+    "4": [
+      "hot and humid",
+      "sunny",
+      "hazy over the sea",
+      "warm night",
+      "",
+      "",
+      ""
+    ],
+    "5": [
+      "very hot and humid",
+      "sunny",
+      "sticky, no breeze",
+      "hot night",
+      "",
+      "",
+      ""
+    ],
+    "6": [
+      "hot, afternoon downpour",
+      "humid",
+      "rain in the afternoon",
+      "hot and sticky",
+      "",
+      "",
+      ""
+    ],
+    "7": [
+      "hot, afternoon downpour",
+      "humid",
+      "sunny morning, rain later",
+      "hot night",
+      "",
+      "",
+      ""
+    ],
+    "8": [
+      "hot and humid",
+      "afternoon downpour",
+      "stormy sea",
+      "sunny morning",
+      "",
+      "",
+      ""
+    ],
+    "9": [
+      "heavy rain",
+      "hot and humid",
+      "a storm in the Gulf, rough sea",
+      "rain most of the day",
+      "",
+      "",
+      ""
+    ],
+    "10": [
+      "warm, a shower",
+      "the first norte of the season",
+      "humid",
+      "sunny and breezy",
+      "",
+      "",
+      ""
+    ],
+    "11": [
+      "a norte blowing, windy",
+      "mild and clear",
+      "breezy",
+      "cool evening",
+      "",
+      "",
+      ""
+    ],
+    "12": [
+      "a norte blowing, grey and windy",
+      "mild and sunny",
+      "cool for the port",
+      "fresh evening",
+      "",
+      "",
+      ""
+    ]
+  },
+  "patzcuaro": {
+    "1": [
+      "frost this morning",
+      "cold, mist on the lake",
+      "clear and cold",
+      "sunny, cold in the shade",
+      "",
+      "",
+      ""
+    ],
+    "2": [
+      "cold morning",
+      "mist on the lake",
+      "clear and dry",
+      "windy",
+      "",
+      "",
+      ""
+    ],
+    "3": [
+      "cool morning, warm noon",
+      "dry and sunny",
+      "windy",
+      "hazy",
+      "",
+      "",
+      ""
+    ],
+    "4": [
+      "warm and dry",
+      "hazy, smoke from the fields",
+      "sunny",
+      "cool evening",
+      "",
+      "",
+      ""
+    ],
+    "5": [
+      "warm and dry",
+      "first rain of the season",
+      "hazy",
+      "cool evening",
+      "",
+      "",
+      ""
+    ],
+    "6": [
+      "afternoon rain",
+      "afternoon thunderstorm",
+      "mist on the lake this morning",
+      "cool and damp",
+      "",
+      "",
+      ""
+    ],
+    "7": [
+      "afternoon rain",
+      "rain most of the day",
+      "cool and green",
+      "drizzle",
+      "",
+      "",
+      ""
+    ],
+    "8": [
+      "afternoon rain",
+      "afternoon thunderstorm",
+      "cool and damp",
+      "clear morning",
+      "",
+      "",
+      ""
+    ],
+    "9": [
+      "afternoon rain",
+      "cool and damp",
+      "mist on the lake",
+      "rain overnight",
+      "",
+      "",
+      ""
+    ],
+    "10": [
+      "clear and cool",
+      "cold morning",
+      "mist on the lake",
+      "sunny",
+      "",
+      "",
+      ""
+    ],
+    "11": [
+      "cold morning",
+      "clear and dry",
+      "mist on the lake",
+      "cold night",
+      "",
+      "",
+      ""
+    ],
+    "12": [
+      "frost this morning",
+      "cold and clear",
+      "mist on the lake",
+      "cold night",
+      "",
+      "",
+      ""
+    ]
+  },
+  "merida": {
+    "1": [
+      "warm and sunny",
+      "a norte, cool and breezy",
+      "pleasant evening",
+      "clear",
+      "",
+      "",
+      ""
+    ],
+    "2": [
+      "warm and sunny",
+      "a norte, cool for Mérida",
+      "dry",
+      "pleasant evening",
+      "",
+      "",
+      ""
+    ],
+    "3": [
+      "hot and dry",
+      "sunny",
+      "hazy",
+      "warm evening",
+      "",
+      "",
+      ""
+    ],
+    "4": [
+      "very hot",
+      "hot and dry",
+      "hazy, smoke in the air",
+      "hot night",
+      "",
+      "",
+      ""
+    ],
+    "5": [
+      "very hot, the hottest time of year",
+      "hot and humid",
+      "no breeze",
+      "hot night",
+      "",
+      "",
+      ""
+    ],
+    "6": [
+      "hot, afternoon downpour",
+      "humid",
+      "rain in the afternoon",
+      "hot and sticky",
+      "",
+      "",
+      ""
+    ],
+    "7": [
+      "hot, afternoon downpour",
+      "humid",
+      "sunny morning, rain later",
+      "hot night",
+      "",
+      "",
+      ""
+    ],
+    "8": [
+      "hot and humid",
+      "afternoon downpour",
+      "thunder in the afternoon",
+      "sunny morning",
+      "",
+      "",
+      ""
+    ],
+    "9": [
+      "heavy rain",
+      "hot and humid",
+      "a storm passing offshore",
+      "rain in the afternoon",
+      "",
+      "",
+      ""
+    ],
+    "10": [
+      "warm, a shower",
+      "humid",
+      "a first norte, a little cooler",
+      "sunny",
+      "",
+      "",
+      ""
+    ],
+    "11": [
+      "warm and sunny",
+      "a norte, cool and breezy",
+      "pleasant evening",
+      "clear",
+      "",
+      "",
+      ""
+    ],
+    "12": [
+      "warm and sunny",
+      "a norte, cool for Mérida",
+      "pleasant evening",
+      "clear and dry",
+      "",
+      "",
+      ""
+    ]
+  },
+  "san-cristobal-de-las-casas": {
+    "1": [
+      "frost this morning",
+      "cold and clear",
+      "fog in the valley",
+      "sunny, cold in the shade",
+      "",
+      "",
+      ""
+    ],
+    "2": [
+      "cold morning",
+      "fog in the valley",
+      "clear and dry",
+      "cold night",
+      "",
+      "",
+      ""
+    ],
+    "3": [
+      "cool morning, warm noon",
+      "dry and sunny",
+      "hazy",
+      "cold night",
+      "",
+      "",
+      ""
+    ],
+    "4": [
+      "mild and dry",
+      "hazy",
+      "sunny",
+      "cool evening",
+      "",
+      "",
+      ""
+    ],
+    "5": [
+      "first rain of the season",
+      "afternoon rain",
+      "mild",
+      "cool evening",
+      "",
+      "",
+      ""
+    ],
+    "6": [
+      "afternoon rain",
+      "rain most of the day",
+      "fog this morning",
+      "cool and damp",
+      "",
+      "",
+      ""
+    ],
+    "7": [
+      "afternoon rain",
+      "drizzle",
+      "cool and damp",
+      "a clear morning",
+      "",
+      "",
+      ""
+    ],
+    "8": [
+      "afternoon rain",
+      "rain most of the day",
+      "fog this morning",
+      "cool and damp",
+      "",
+      "",
+      ""
+    ],
+    "9": [
+      "rain most of the day",
+      "afternoon rain",
+      "cold and damp",
+      "fog in the valley",
+      "",
+      "",
+      ""
+    ],
+    "10": [
+      "drizzle",
+      "cool and grey",
+      "fog this morning",
+      "a clear cold morning",
+      "",
+      "",
+      ""
+    ],
+    "11": [
+      "cold morning",
+      "clear and dry",
+      "fog in the valley",
+      "cold night",
+      "",
+      "",
+      ""
+    ],
+    "12": [
+      "frost this morning",
+      "cold and clear",
+      "fog in the valley",
+      "cold night",
+      "",
+      "",
+      ""
+    ]
+  },
+  "tijuana": {
+    "1": [
+      "rain",
+      "cool and clear after the rain",
+      "mild and sunny",
+      "chilly evening",
+      "",
+      "",
+      ""
+    ],
+    "2": [
+      "rain",
+      "mild and sunny",
+      "cool and breezy",
+      "green hills after the rain",
+      "",
+      "",
+      ""
+    ],
+    "3": [
+      "mild and sunny",
+      "a shower",
+      "breezy",
+      "cool evening",
+      "",
+      "",
+      ""
+    ],
+    "4": [
+      "mild and sunny",
+      "low cloud in the morning",
+      "breezy by the sea",
+      "clear",
+      "",
+      "",
+      ""
+    ],
+    "5": [
+      "grey morning, low cloud from the sea",
+      "cool and overcast",
+      "sun by the afternoon",
+      "mild",
+      "",
+      "",
+      ""
+    ],
+    "6": [
+      "grey morning, low cloud from the sea",
+      "overcast all day at the beach",
+      "sun by the afternoon",
+      "mild",
+      "",
+      "",
+      ""
+    ],
+    "7": [
+      "warm and sunny",
+      "morning cloud by the sea",
+      "dry",
+      "pleasant evening",
+      "",
+      "",
+      ""
+    ],
+    "8": [
+      "warm and sunny",
+      "hot inland, cool by the sea",
+      "dry",
+      "clear",
+      "",
+      "",
+      ""
+    ],
+    "9": [
+      "hot and dry",
+      "warm and sunny",
+      "a Santa Ana wind, hot and dry",
+      "clear",
+      "",
+      "",
+      ""
+    ],
+    "10": [
+      "a Santa Ana wind, hot and dry",
+      "warm and clear",
+      "sunny",
+      "cool evening",
+      "",
+      "",
+      ""
+    ],
+    "11": [
+      "mild and sunny",
+      "a Santa Ana wind, dry and clear",
+      "the first rain",
+      "chilly evening",
+      "",
+      "",
+      ""
+    ],
+    "12": [
+      "rain",
+      "cool and clear",
+      "mild and sunny",
+      "cold night",
+      "",
+      "",
+      ""
+    ]
+  },
+  "monterrey": {
+    "1": [
+      "a cold front, grey and cold",
+      "cold morning, mild noon",
+      "drizzle and fog",
+      "sunny and cool",
+      "",
+      "",
+      ""
+    ],
+    "2": [
+      "a cold front, windy",
+      "mild and sunny",
+      "fog on the mountains",
+      "warm afternoon",
+      "",
+      "",
+      ""
+    ],
+    "3": [
+      "warm and dry",
+      "windy",
+      "hot afternoon",
+      "mild evening",
+      "",
+      "",
+      ""
+    ],
+    "4": [
+      "hot",
+      "warm and windy",
+      "a thunderstorm",
+      "hazy",
+      "",
+      "",
+      ""
+    ],
+    "5": [
+      "very hot",
+      "hot and humid",
+      "a thunderstorm in the evening",
+      "hot night",
+      "",
+      "",
+      ""
+    ],
+    "6": [
+      "very hot, forty degrees",
+      "hot and dry",
+      "hot night",
+      "hazy mountains",
+      "",
+      "",
+      ""
+    ],
+    "7": [
+      "very hot, forty degrees",
+      "hot and dry",
+      "no cloud at all",
+      "hot night",
+      "",
+      "",
+      ""
+    ],
+    "8": [
+      "very hot",
+      "hot and humid",
+      "a storm in the evening",
+      "hot night",
+      "",
+      "",
+      ""
+    ],
+    "9": [
+      "heavy rain",
+      "hot and humid",
+      "rain most of the day",
+      "the river running",
+      "",
+      "",
+      ""
+    ],
+    "10": [
+      "warm and clear",
+      "a shower",
+      "the first cold front, cooler",
+      "pleasant evening",
+      "",
+      "",
+      ""
+    ],
+    "11": [
+      "mild and sunny",
+      "a cold front, grey and windy",
+      "cool morning",
+      "fog on the mountains",
+      "",
+      "",
+      ""
+    ],
+    "12": [
+      "a cold front, grey and cold",
+      "cold morning, mild noon",
+      "drizzle",
+      "sunny and cool",
+      "",
+      "",
+      ""
+    ]
+  },
+  "mazatlan": {
+    "1": [
+      "warm and sunny",
+      "cool morning",
+      "dry",
+      "pleasant evening",
+      "",
+      "",
+      ""
+    ],
+    "2": [
+      "warm and sunny",
+      "breezy",
+      "dry",
+      "cool evening",
+      "",
+      "",
+      ""
+    ],
+    "3": [
+      "warm and sunny",
+      "dry",
+      "breezy by the sea",
+      "clear",
+      "",
+      "",
+      ""
+    ],
+    "4": [
+      "warm and dry",
+      "sunny",
+      "hazy",
+      "warm evening",
+      "",
+      "",
+      ""
+    ],
+    "5": [
+      "hot and dry",
+      "sunny",
+      "humid by the sea",
+      "warm night",
+      "",
+      "",
+      ""
+    ],
+    "6": [
+      "hot and humid",
+      "the first rain of the season",
+      "sticky",
+      "hot night",
+      "",
+      "",
+      ""
+    ],
+    "7": [
+      "hot and humid",
+      "an evening thunderstorm",
+      "lightning over the sea",
+      "hot night",
+      "",
+      "",
+      ""
+    ],
+    "8": [
+      "very hot and humid",
+      "an evening thunderstorm",
+      "heavy rain overnight",
+      "sticky",
+      "",
+      "",
+      ""
+    ],
+    "9": [
+      "very hot and humid",
+      "heavy rain",
+      "a storm offshore, rough sea",
+      "an evening thunderstorm",
+      "",
+      "",
+      ""
+    ],
+    "10": [
+      "hot and humid",
+      "a storm offshore, rough sea",
+      "sunny",
+      "warm night",
+      "",
+      "",
+      ""
+    ],
+    "11": [
+      "warm and sunny",
+      "dry",
+      "pleasant evening",
+      "clear",
+      "",
+      "",
+      ""
+    ],
+    "12": [
+      "warm and sunny",
+      "cool morning",
+      "dry",
+      "pleasant evening",
+      "",
+      "",
+      ""
+    ]
+  },
+  "zacatecas": {
+    "1": [
+      "frost this morning",
+      "cold and windy",
+      "clear and cold",
+      "sunny, cold in the shade",
+      "",
+      "",
+      ""
+    ],
+    "2": [
+      "cold and windy",
+      "clear and dry",
+      "cold morning",
+      "dust in the wind",
+      "",
+      "",
+      ""
+    ],
+    "3": [
+      "windy and dusty",
+      "cool and dry",
+      "sunny",
+      "cold night",
+      "",
+      "",
+      ""
+    ],
+    "4": [
+      "warm and dry",
+      "windy",
+      "sunny",
+      "cool evening",
+      "",
+      "",
+      ""
+    ],
+    "5": [
+      "warm and dry",
+      "hazy",
+      "windy",
+      "first rain of the season",
+      "",
+      "",
+      ""
+    ],
+    "6": [
+      "afternoon thunderstorm",
+      "clear morning",
+      "hail in the afternoon",
+      "cool evening",
+      "",
+      "",
+      ""
+    ],
+    "7": [
+      "afternoon rain",
+      "afternoon thunderstorm",
+      "clear morning",
+      "cool evening",
+      "",
+      "",
+      ""
+    ],
+    "8": [
+      "afternoon rain",
+      "afternoon thunderstorm",
+      "green hills, clear morning",
+      "cool, damp evening",
+      "",
+      "",
+      ""
+    ],
+    "9": [
+      "afternoon rain",
+      "clear morning",
+      "cool evening",
+      "windy",
+      "",
+      "",
+      ""
+    ],
+    "10": [
+      "clear and cool",
+      "cold morning",
+      "sunny and dry",
+      "cold night",
+      "",
+      "",
+      ""
+    ],
+    "11": [
+      "cold morning",
+      "clear and dry",
+      "windy",
+      "cold night",
+      "",
+      "",
+      ""
+    ],
+    "12": [
+      "frost this morning",
+      "cold and windy",
+      "clear and cold",
+      "cold night",
+      "",
+      "",
+      ""
+    ]
   }
 }

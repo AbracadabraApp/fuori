@@ -244,6 +244,55 @@
         "San Juan Chamula"
       ],
       "people": []
+    },
+    {
+      "id": "tijuana",
+      "name": "Tijuana",
+      "region": "Baja California",
+      "neighbourhoods": [
+        "Zona Centro",
+        "Zona Río",
+        "Playas de Tijuana",
+        "Agua Caliente",
+        "La Mesa"
+      ],
+      "people": []
+    },
+    {
+      "id": "zacatecas",
+      "name": "Zacatecas",
+      "region": "Zacatecas",
+      "neighbourhoods": [
+        "Centro Histórico",
+        "La Bufa",
+        "Sierra de Álica",
+        "Bracho"
+      ],
+      "people": []
+    },
+    {
+      "id": "monterrey",
+      "name": "Monterrey",
+      "region": "Nuevo León",
+      "neighbourhoods": [
+        "Centro",
+        "Barrio Antiguo",
+        "Fundidora",
+        "Obispado"
+      ],
+      "people": []
+    },
+    {
+      "id": "mazatlan",
+      "name": "Mazatlán",
+      "region": "Sinaloa",
+      "neighbourhoods": [
+        "Centro Histórico",
+        "Olas Altas",
+        "Playa Norte",
+        "Cerro del Crestón"
+      ],
+      "people": []
     }
   ],
   "placeStyles": {
@@ -256,18 +305,26 @@
     "veracruz": "35 mm colour film photography taken at eye level: natural film grain, hard tropical light, a little sea haze in the distance, true colour with warm highlights; candid, unposed",
     "patzcuaro": "Etching with hand-tinted watercolour: fine black etched lines and cross-hatching, with soft washes of colour laid over them, on cream paper. Palette: lake blue, adobe white, roof red and pine green",
     "merida": "Watercolour on rough paper with fine ink outlines, light and airy, strong tropical sun. Palette: Mérida’s pastel colonial walls, ochre, rose, pale lime and white",
-    "san-cristobal-de-las-casas": "Risograph print in several bright inks on off-white paper: sunny yellow, warm red, leaf green, sky blue and indigo, with visible grain, slight misregistration between the inks, flat overlapping shapes and halftone shading. Full, cheerful colour, as on the city card: yellow and ochre walls, red roofs, green hills, blue sky"
+    "san-cristobal-de-las-casas": "Risograph print in several bright inks on off-white paper: sunny yellow, warm red, leaf green, sky blue and indigo, with visible grain, slight misregistration between the inks, flat overlapping shapes and halftone shading. Full, cheerful colour, as on the city card: yellow and ochre walls, red roofs, green hills, blue sky",
+    "tijuana": "Urban sketch in felt-tip marker and coloured ink: a confident black line, flat bright fills, quick hatching for shadow and plenty of white paper left showing. Palette: Pacific blue, hot pink, taxi yellow, warm grey and black",
+    "monterrey": "Hard-edged flat-colour painting, like a mid-century architecture poster with no lettering: clean geometric planes, sharp shadows, a big dry sky and the mountains as flat shapes. Palette: rust orange, steel grey, mountain violet, dry yellow and sky blue",
+    "mazatlan": "Oil pastel drawing on toned paper: thick, waxy, saturated strokes with the paper showing through, strong tropical light and blue shadows. Palette: sea turquoise, hot pink, mango yellow, palm green and white",
+    "zacatecas": "Coloured pencil drawing on warm pink-grey paper: fine hatching, crisp edges, clear highland light and a deep sky. Palette: pink stone, sky blue, ochre, violet shadow and touches of red"
   },
   "placeRules": "No other words anywhere: no dates, no 'HOY', no neighbourhood or city names, no slogans, no prices, no brand names or logos. Contemporary Mexico: today's clothes and objects, everyday life; no sombreros, skulls, rebozos or costumes. Keep the main scene in the centre; nothing important near the edges.",
-  "placeStylesNote": "Chosen 2026-10-14 by Josh from the style test (content/es-mx/style-test.json). Each place prompt = city style + the place's scene (its imagePrompt) + its name as the only sign + placeRules (scripts/lib/place-prompt.mjs). The five cities added 2026-11-09 (Guanajuato, Veracruz, Pátzcuaro, Mérida, San Cristóbal) have styles proposed by the cloud session from each city's own craft or look, not yet tested: Josh judges one picture per city first. Veracruz's first idea, a silkscreen travel poster, was dropped as touristy (2026-11-09) for the port's hand-painted sign and boat style. Portraits stay in the one Mexican gouache style (Josh: \"mexican portraits are great\"). Revised the same night (Josh: the more successful Mexican images were Mexico City, San Miguel and Guadalajara, picture-making techniques rather than the scene rendered as a craft object like Oaxaca's diorama and Puebla's tiles): Guanajuato modernist easel painting, Veracruz 35 mm film photography, Pátzcuaro hand-tinted etching, San Cristóbal two-colour risograph; Mérida watercolour unchanged. San Cristóbal's first places looked forbidding (Josh: \"it screams 'don't come here'\") while its risograph card looked \"x10 better than the places\": the card had no lettering and a wide scene full of people, the places a signboard and one person at work. Style kept as on the card; places widened and given life, and public places drawn without a sign (noSignKinds). Then colour (Josh: \"here is a hint: color\"): the approved card came out in full colour although its prompt said two inks; the places obeyed and came out indigo and red only. San Cristóbal's place style now asks for the card's bright inks.",
+  "placeStylesNote": "Chosen 2026-10-14 by Josh from the style test (content/es-mx/style-test.json). Each place prompt = city style + the place's scene (its imagePrompt) + its name as the only sign + placeRules (scripts/lib/place-prompt.mjs). The five cities added 2026-11-09 (Guanajuato, Veracruz, Pátzcuaro, Mérida, San Cristóbal) have styles proposed by the cloud session from each city's own craft or look, not yet tested: Josh judges one picture per city first. Veracruz's first idea, a silkscreen travel poster, was dropped as touristy (2026-11-09) for the port's hand-painted sign and boat style. Portraits stay in the one Mexican gouache style (Josh: \"mexican portraits are great\"). Revised the same night (Josh: the more successful Mexican images were Mexico City, San Miguel and Guadalajara, picture-making techniques rather than the scene rendered as a craft object like Oaxaca's diorama and Puebla's tiles): Guanajuato modernist easel painting, Veracruz 35 mm film photography, Pátzcuaro hand-tinted etching, San Cristóbal two-colour risograph; Mérida watercolour unchanged. San Cristóbal's first places looked forbidding (Josh: \"it screams 'don't come here'\") while its risograph card looked \"x10 better than the places\": the card had no lettering and a wide scene full of people, the places a signboard and one person at work. Style kept as on the card; places widened and given life, and public places drawn without a sign (noSignKinds). Then colour (Josh: \"here is a hint: color\"): the approved card came out in full colour although its prompt said two inks; the places obeyed and came out indigo and red only. San Cristóbal's place style now asks for the card's bright inks. The four northern cities added 2026-11-13 (Tijuana, Monterrey, Mazatlán, Zacatecas) have styles proposed by the cloud chat session, each a way of making a picture and none a craft object, by the lesson above: marker-and-ink urban sketch, hard-edged flat-colour painting, oil pastel, coloured pencil on pink-grey paper. Not yet tested: Josh judges one picture per city first (docs/mexico-north-recipe.md).",
   "cityCards": {
     "guanajuato": "Mexican modernist easel painting, in the tradition of the painters born in this region: bold simplified forms, solid volumes, rich earth and jewel colours, visible brushwork on canvas. Palette: ochre, terracotta, emerald, cobalt and warm yellow. Guanajuato today: houses in every colour stacked up the sides of a narrow ravine, the yellow dome of the basilica and church towers rising among them, the huge stone statue of El Pípila with his torch on the hill above. At the bottom, a city bus comes out of the stone arch of a tunnel under the town; students sit on a long flight of white stone steps; a woman carries shopping bags up a narrow stepped alley. Contemporary Mexico: today's clothes and objects, everyday life; no sombreros, cacti, skulls, rebozos, costumes or straw-hatted vendors, no sunset glow. Keep the main scene in the centre of the picture; nothing important near the top or bottom edges. Absolutely no words or letters anywhere: no title, no banners, no signs; a picture only, not a poster. Square format.",
     "veracruz": "35 mm colour film photography taken at eye level: natural film grain, hard tropical light, a little sea haze in the distance, true colour with warm highlights; candid, unposed. Veracruz today: the seafront promenade with palm trees, the harbour with a big container ship guided by a tugboat, and across the water the low grey stone fortress of San Juan de Ulúa. On the promenade, an old dockworker on the sea wall, a family walking with ice creams, two older men playing dominoes at a folding table; behind them the white cathedral with its tiled dome and arcades. Contemporary Mexico: today's clothes and objects, everyday life; no sombreros, cacti, skulls, rebozos, costumes or straw-hatted vendors, no sunset glow. Keep the main scene in the centre of the picture; nothing important near the top or bottom edges. Absolutely no words or letters anywhere: no title, no banners, no signs; a picture only, not a poster. Square format.",
     "patzcuaro": "Etching with hand-tinted watercolour: fine black etched lines and cross-hatching, with soft washes of colour laid over them, on cream paper. Palette: lake blue, adobe white, roof red and pine green. Pátzcuaro today: white adobe houses with deep red bases and red-tiled roofs around a huge plaza of old ash trees, and beyond, the blue lake with the island of Janitzio and its great stone statue. A long wooden passenger boat crosses the lake; in the plaza, children in school uniform run past a woman selling corundas from a basket, and an old man reads on a bench. Contemporary Mexico: today's clothes and objects, everyday life; no sombreros, cacti, skulls, rebozos, costumes or straw-hatted vendors, no sunset glow. Keep the main scene in the centre of the picture; nothing important near the top or bottom edges. Absolutely no words or letters anywhere: no title, no banners, no signs; a picture only, not a poster. Square format.",
     "merida": "Watercolour on rough paper with fine ink outlines, light and airy, strong tropical sun. Palette: Mérida's pastel colonial walls, ochre, rose, pale lime and white. Mérida today: a street of one-storey colonial houses in pastel colours with tall wooden doors and iron window grilles, leading to the grey stone cathedral with its two towers. Under a big shady tree in a small park, two older men in white guayaberas talk on white S-shaped love seats, a teenager rides past on a bicycle, and a woman in an embroidered blouse waits at a marquesita cart. Contemporary Mexico: today's clothes and objects, everyday life; no sombreros, cacti, skulls, rebozos, costumes or straw-hatted vendors, no sunset glow. Keep the main scene in the centre of the picture; nothing important near the top or bottom edges. Absolutely no words or letters anywhere: no title, no banners, no signs; a picture only, not a poster. Square format.",
-    "san-cristobal-de-las-casas": "Two-colour risograph print in indigo and warm red on off-white paper: visible grain, slight misregistration between the two inks, flat overlapping shapes and halftone shading. San Cristóbal de las Casas today: red-tiled roofs and the yellow and red cathedral in a green mountain valley, clouds on the hills, and on a hill at the end of a long street a small white church at the top of steep steps. On a cobbled street, people in warm jackets walk to work, a white minibus waits, and a woman weaves at a backstrap loom tied to her doorway. Contemporary Mexico: today's clothes and objects, everyday life; no sombreros, cacti, skulls, rebozos, costumes or straw-hatted vendors, no sunset glow. Keep the main scene in the centre of the picture; nothing important near the top or bottom edges. Absolutely no words or letters anywhere: no title, no banners, no signs; a picture only, not a poster. Square format."
+    "san-cristobal-de-las-casas": "Two-colour risograph print in indigo and warm red on off-white paper: visible grain, slight misregistration between the two inks, flat overlapping shapes and halftone shading. San Cristóbal de las Casas today: red-tiled roofs and the yellow and red cathedral in a green mountain valley, clouds on the hills, and on a hill at the end of a long street a small white church at the top of steep steps. On a cobbled street, people in warm jackets walk to work, a white minibus waits, and a woman weaves at a backstrap loom tied to her doorway. Contemporary Mexico: today's clothes and objects, everyday life; no sombreros, cacti, skulls, rebozos, costumes or straw-hatted vendors, no sunset glow. Keep the main scene in the centre of the picture; nothing important near the top or bottom edges. Absolutely no words or letters anywhere: no title, no banners, no signs; a picture only, not a poster. Square format.",
+    "tijuana": "Urban sketch in felt-tip marker and coloured ink: a confident black line, flat bright fills, quick hatching for shadow and plenty of white paper left showing. Palette: Pacific blue, hot pink, taxi yellow, warm grey and black. Tijuana today: the tall white steel arch that stands over the end of Avenida Revolución, and the wide street running away from it, lined with low buildings, awnings and palm trees, the hills behind covered with houses under a clear Pacific sky. In the street, a taco stand with a red spit of meat and a queue of people in hoodies, a norteño trio walking with an accordion and a double bass, two teenagers on skateboards, and a woman pushing a cart of cut fruit. Contemporary Mexico: today's clothes and objects, everyday life; no sombreros, cacti, skulls, rebozos, costumes or straw-hatted vendors, no sunset glow. Keep the main scene in the centre of the picture; nothing important near the top or bottom edges. Absolutely no words or letters anywhere: no title, no banners, no signs; a picture only, not a poster. Square format.",
+    "monterrey": "Hard-edged flat-colour painting, like a mid-century architecture poster with no lettering: clean geometric planes, sharp shadows, a big dry sky and the mountains as flat shapes. Palette: rust orange, steel grey, mountain violet, dry yellow and sky blue. Monterrey today: a vast open plaza with gardens and fountains, a tall thin orange concrete tower beside the bell tower of an old cathedral, a turquoise canal with a small boat and a footbridge, modern office buildings and, filling the background, the great saddle-shaped peak of the Cerro de la Silla. On the plaza, office workers with coffee cups, a cyclist, a student drawing in a sketchbook and a family with a stroller. Contemporary Mexico: today's clothes and objects, everyday life; no sombreros, cacti, skulls, rebozos, costumes or straw-hatted vendors, no sunset glow. Keep the main scene in the centre of the picture; nothing important near the top or bottom edges. Absolutely no words or letters anywhere: no title, no banners, no signs; a picture only, not a poster. Square format.",
+    "mazatlan": "Oil pastel drawing on toned paper: thick, waxy, saturated strokes with the paper showing through, strong tropical light and blue shadows. Palette: sea turquoise, hot pink, mango yellow, palm green and white. Mazatlán today: a curving seafront avenue with a low sea wall and waves breaking on a small beach, old hotels and houses in pastel colours with balconies, tall palms, and far along the bay a green hill with a white lighthouse on top. On the seafront, a small white open-air taxi like a golf cart with a canopy roof, a seafood cart with customers on plastic stools, a man carrying a tuba, a jogger, and pelicans on the sea wall. Contemporary Mexico: today's clothes and objects, everyday life; no sombreros, cacti, skulls, rebozos, costumes or straw-hatted vendors, no sunset glow. Keep the main scene in the centre of the picture; nothing important near the top or bottom edges. Absolutely no words or letters anywhere: no title, no banners, no signs; a picture only, not a poster. Square format.",
+    "zacatecas": "Coloured pencil drawing on warm pink-grey paper: fine hatching, crisp edges, clear highland light and a deep sky. Palette: pink stone, sky blue, ochre, violet shadow and touches of red. Zacatecas today: a city of pink stone packed into a ravine, with the towers and lace-carved front of the cathedral in the middle, domes and flat roofs around it, a small red cable car cabin crossing high overhead on its cables toward a rocky hilltop with a small chapel, under a huge deep-blue sky. On the sloping street in front, students with backpacks, a woman with shopping bags, and a band of men carrying trumpets and a big bass drum. Contemporary Mexico: today's clothes and objects, everyday life; no sombreros, cacti, skulls, rebozos, costumes or straw-hatted vendors, no sunset glow. Keep the main scene in the centre of the picture; nothing important near the top or bottom edges. Absolutely no words or letters anywhere: no title, no banners, no signs; a picture only, not a poster. Square format."
   },
-  "cityCardsNote": "City cards for Mexico's five new cities (2026-11-09, Josh: \"lets just start with city portraits\"), hand-written in each city's proposed place style, following docs/mexico-version.md → Rules every prompt follows and the recurring defaults to avoid; Josh judges each. The first five cities' cards were made by hand and approved 2026-10-12 (docs/mexico-version.md). Made by scripts/generate-images.mjs --type city.",
+  "cityCardsNote": "City cards for Mexico's five new cities (2026-11-09, Josh: \"lets just start with city portraits\"), hand-written in each city's proposed place style, following docs/mexico-version.md → Rules every prompt follows and the recurring defaults to avoid; Josh judges each. The first five cities' cards were made by hand and approved 2026-10-12 (docs/mexico-version.md). Made by scripts/generate-images.mjs --type city. The four northern cities' cards (2026-11-13) are written the same way, in each city's proposed style; Tijuana's shows Avenida Revolución and its arch, not the border fence (a card is an invitation; the fence is a place in the city).",
   "noSignKinds": [
     "church",
     "plaza",
@@ -278,7 +335,101 @@
     "cemetery",
     "library",
     "cultural centre",
-    "market"
+    "market",
+    "beach",
+    "park",
+    "street market"
   ],
-  "noSignKindsNote": "Place kinds drawn with no lettering at all, instead of the place's name on a sign (2026-11-09): a signboard over a church door or on a plaza looked odd in the new cities' first pictures. Shops, cafés, fondas, stalls and terminals keep their sign. Applies to pictures drawn from now on."
+  "noSignKindsNote": "Place kinds drawn with no lettering at all, instead of the place's name on a sign (2026-11-09): a signboard over a church door or on a plaza looked odd in the new cities' first pictures. Shops, cafés, fondas, stalls and terminals keep their sign. Applies to pictures drawn from now on. 'beach', 'park' and 'street market' added 2026-11-13 (Mazatlán's Playa Los Pinos and its shrimp sellers on the pavement, Tijuana's Parque Teniente Guerrero).",
+  "travel": {
+    "about": "Prompts for the trip map's pictures (scripts/generate-travel-pictures.mjs; docs/mexico-north-recipe.md): candidate maps of the whole country with no cities on them, in several looks for Josh to pick from by eye (his references, 2026-11-11: \"just some ideas - no rules\"), and one building per city for the departures board. The app draws the city names, the two ends of the trip and the route, so a map must have no cities. One building alone, never a townscape (Napoli's castle on its rock came out as a hill town); alt is the landmark to try if the first drifts. Sketches go to design/trip-map/<folder>/, not to the app.",
+    "folder": "mexico",
+    "mapAspect": "3:2",
+    "mapBody": "Accurate outline of the country: the long Baja California peninsula, the Pacific coast, the Gulf of Mexico, the narrow Isthmus of Tehuantepec and the Yucatán peninsula. A few small drawings of landscape only: two snow-capped volcanoes in the centre, cactus and agave in the north, jungle and a stepped pyramid in the Yucatán, two sailing boats and a whale at sea. The neighbouring countries in plain pale grey. A simple title banner reading \"MÉXICO\" at the top, sea names in neat lettering: \"Océano Pacífico\" and \"Golfo de México\", a small compass rose, a thin border. No cities, no city names, no dots or stars for towns, no buildings, no people, no food, no other text.",
+    "mapBodyPlain": "Accurate outline of the country: the long Baja California peninsula, the Pacific coast, the Gulf of Mexico, the narrow Isthmus of Tehuantepec and the Yucatán peninsula. The neighbouring countries in plain pale grey. A simple title banner reading \"MÉXICO\" at the top, sea names in neat lettering: \"Océano Pacífico\" and \"Golfo de México\", a small compass rose, a thin border. No cities, no city names, no dots or stars for towns, no drawings on the land, no people, no other text.",
+    "looks": {
+      "soft-flat": {
+        "map": "A modern illustrated tourist map of the whole of Mexico in a soft, flat, hand-drawn style with bright, friendly colours: cream and pastel land with each state lightly tinted a different colour and thin state borders, a clear blue sea with a few small waves.",
+        "building": "in a soft, flat, hand-drawn style with bright, friendly colours, like a landmark on a modern illustrated tourist map"
+      },
+      "travel-poster": {
+        "map": "A 1940s travel-poster map of the whole of Mexico, painted in gouache: warm yellow and cream land, a deep blue sea with paler shallows near the coast.",
+        "building": "painted in gouache in the manner of a 1940s travel poster, with warm colours and simple shadows"
+      },
+      "flat-graphic": {
+        "map": "A modern flat graphic map of the whole of Mexico in a limited palette: off-white land, a teal sea, accents in mustard, coral and dark green, crisp simple shapes.",
+        "building": "as a modern flat graphic in a limited palette of mustard, coral, teal and dark green, with crisp simple shapes"
+      },
+      "atlas": {
+        "map": "A classic atlas map of the whole of Mexico: each state tinted a different soft colour with thin borders, a pale blue sea with darker depths, clean and calm.",
+        "building": "as a fine ink drawing with soft watercolour tints, like an engraving in an old atlas",
+        "landscape": false
+      }
+    },
+    "buildingPrompt": "A small illustration of [LANDMARK] in [CITY], Mexico, [LOOK]. The building alone, seen from slightly above, centred, on a plain pure white background. No text, no people, no border, no ground beyond a small patch under the building.",
+    "sampleBuilding": "ciudad-de-mexico",
+    "buildings": {
+      "ciudad-de-mexico": {
+        "name": "Mexico City",
+        "landmark": "the Palacio de Bellas Artes, a white marble palace with a golden dome"
+      },
+      "oaxaca": {
+        "name": "Oaxaca",
+        "landmark": "the church of Santo Domingo de Guzmán, with its two domed bell towers"
+      },
+      "guadalajara": {
+        "name": "Guadalajara",
+        "landmark": "the Cathedral, with its two pointed spires covered in yellow tiles"
+      },
+      "san-miguel-de-allende": {
+        "name": "San Miguel de Allende",
+        "landmark": "the Parroquia de San Miguel Arcángel, a pink church with tall pointed Gothic towers"
+      },
+      "puebla": {
+        "name": "Puebla",
+        "landmark": "the Cathedral, a grey stone cathedral with two very tall square towers"
+      },
+      "guanajuato": {
+        "name": "Guanajuato",
+        "landmark": "the Teatro Juárez, a theatre with a portico of columns and a row of bronze statues on its roof"
+      },
+      "veracruz": {
+        "name": "Veracruz",
+        "landmark": "the fortress of San Juan de Ulúa, low grey stone walls with a corner tower",
+        "alt": "the Palacio Municipal, an arcaded town hall with a tower"
+      },
+      "patzcuaro": {
+        "name": "Pátzcuaro",
+        "landmark": "the Basílica de Nuestra Señora de la Salud, a white church with a red-tiled roof and one tower"
+      },
+      "merida": {
+        "name": "Mérida",
+        "landmark": "the Monumento a la Patria, a great curved stone monument carved with figures"
+      },
+      "san-cristobal-de-las-casas": {
+        "name": "San Cristóbal de las Casas",
+        "landmark": "the Arco del Carmen, a red-and-white tower with an archway through it"
+      },
+      "tijuana": {
+        "name": "Tijuana",
+        "landmark": "the Centro Cultural Tijuana, a giant sand-coloured sphere beside low modern buildings",
+        "alt": "the tall white steel arch at the end of Avenida Revolución"
+      },
+      "zacatecas": {
+        "name": "Zacatecas",
+        "landmark": "the Cathedral, a pink stone cathedral with a front carved like lace and two towers",
+        "alt": "the Acueducto El Cubo, a short row of tall pink stone arches"
+      },
+      "monterrey": {
+        "name": "Monterrey",
+        "landmark": "the Horno 3 blast furnace of the old steelworks, a rusted tower of steel pipes and chimneys",
+        "alt": "the Palacio del Obispado, a small pale stone bishop's palace with a dome"
+      },
+      "mazatlan": {
+        "name": "Mazatlán",
+        "landmark": "the lighthouse of Mazatlán, a small white lighthouse building on top of a rocky green hill",
+        "alt": "the Teatro Ángela Peralta, a pale nineteenth-century theatre with arched doors"
+      }
+    }
+  }
 }

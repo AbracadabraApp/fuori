@@ -82,3 +82,14 @@ Rough sketches only; nothing here is made. Josh's words are quoted; the rest is 
 - A correction to carry forward (Josh: "you are sort of in snob mode"): the "would a local go there" test was turned into a taste test. Resort and expat towns are where learners will really speak Spanish, and people live in them: Cancún or Playa del Carmen and Puerto Vallarta belong in the conversation, and San Miguel isn't a flaw. The game has big cities and cultural towns and none of the beach places everyone visits.
 - How it went wrong, for the next session: deciding too fast, then grading each suggestion down, then agreeing to nothing. Next time, build on the places he names.
 
+## 2026-11-13: the northern cities are written, and the recipe is in docs/mexico-north-recipe.md
+
+Josh asked for the recipe card for the map and the cities, with the northern cities included at 10 places each, and said to build what could be built. Built and on `main` (hidden until their pictures exist): **Tijuana, Zacatecas, Monterrey, Mazatlán**; trip facts for all 14 cities; the map and building prompts in `content/es-mx/generation.json` → `travel`; and `scripts/generate-travel-pictures.mjs`, which draws the candidate maps and the buildings from them. Only Tijuana is Josh's yes; the other three are the cloud session's yeses from 2026-11-11.
+
+What that changes above:
+- **Fourteen buildings**, not ten. Added: Tijuana, the CECUT's sphere (or the arch on Avenida Revolución); Zacatecas, the Cathedral (or the Acueducto El Cubo); Monterrey, the Horno 3 blast furnace (or the Palacio del Obispado); Mazatlán, the lighthouse on its hill (or the Teatro Ángela Peralta).
+- **Four looks**, not three: the soft flat tourist map Josh sent twice is in the spread with the travel poster, the flat graphic and the atlas.
+- **The whole country, landscape 3:2**, for the candidates: with Tijuana, Monterrey, Mazatlán and Zacatecas the north is no longer empty. The tall map with a key strip is still his last steer on the sheet; ten panels were sketched and there are now fourteen cities, so the strip is open again (the recipe → Open, Josh's).
+- **Always named:** Tijuana, Monterrey, Guadalajara, Ciudad de México, Oaxaca, Mérida.
+- "Steps" above is replaced by the recipe's steps.
+
