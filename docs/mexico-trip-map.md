@@ -130,3 +130,19 @@ From the Mac mini session, with Josh on his phone. Mock-ups only (a private page
 - **Next step when Josh says:** a few takes of each of the two sounds, for his ear.
 
 Sources: https://elevenlabs.io/docs/api-reference/text-to-sound-effects/convert · https://elevenlabs.io/docs/overview/capabilities/sound-effects
+
+## 2026-11-13, evening: the map is chosen, and three of the open items are closed
+
+**The map (Josh: "Lets go with L"):** `design/trip-map/mexico/map-soft-flat-cropped-banner-2-clean.png`, 2192×1904. How it was made, in order, so it can be made again:
+1. The soft flat look drawn at 4:3 (`scripts/generate-travel-pictures.mjs --maps 2 --look soft-flat --aspect 4:3`; the image service refuses 5:4). Map 1 of the two; map 2 misspelled "Pacífico" and drew the pyramid over the Yucatán.
+2. Cropped to Josh's framing ("I want as much map. Not more sea"; he sent a screenshot): left edge through northern Baja, right edge through the pyramid, bottom under Chiapas (`map-soft-flat-cropped-source.png`).
+3. Three image edits (xAI `/v1/images/edits`, the picture sent with a prompt asking for one change), each in two takes because the edit sometimes damages the map (one take wiped the states): the land cleared and the decorations moved to the empty corners ("Redeploy decorations to fill empty spots"); a ribbon "MÉXICO" banner like the 4:3 map 2's, the smaller of two takes; the scraps of "Océano Pacífico" the crop left at the left edge removed.
+
+**Known about this map, accepted or still to judge:** Tijuana is at the very top-left corner ("Tijuana could be close enough or tweak"); the volcanoes are gone; the pyramid stands where the Yucatán begins, so Mérida's dot sits beside it; the banner's left tail just touches the top of Chihuahua.
+
+**Closed by Josh the same evening:**
+- **Buildings: none.** "yes - skip the buildings - just the written key". Recipe step 3 (the fourteen buildings) is not run.
+- **Italy: "italy is done".** Italy's sheet stays as it is. The new layout is Mexico's only, so the sheet's one piece of code has to lay out by country.
+- **Order: "stub at top, map, key".** The ticket, then the map, then the key.
+
+**Next:** Josh checks the fourteen dots on a mock-up (spots placed by eye; Guanajuato and San Miguel nudged apart so both numbers read). Then `content/es-mx/travel-map.json`, the sheet's Mexico layout in Swift, and the upload, which waits for his word.

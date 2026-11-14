@@ -1,5 +1,12 @@
 # Fuori Development Progress
 
+## 2026-11-13 (Mac mini, with Josh), evening: Mexico's trip map chosen
+
+- **Done:** the map is picked (Josh: "Lets go with L"): `design/trip-map/mexico/map-soft-flat-cropped-banner-2-clean.png`, the soft flat 4:3 map cropped to his framing, then edited three times by the image model (land cleared and decorations moved, a México banner added, sea name scraps removed). How it was made is in `docs/mexico-trip-map.md` → "2026-11-13, evening". `generate-travel-pictures.mjs` gained `--aspect`.
+- **Decided by Josh:** no buildings, "just the written key"; "italy is done" (Italy's sheet is not touched, the new layout is Mexico's only); the order is "stub at top, map, key".
+- **Open:** Josh to check the fourteen dots on the mock-up. Which northern cities stay (only Tijuana is his yes). The fact judge's flags on the four new cities are unsorted. Nothing is in the app, uploaded, unhidden or released.
+- **Next:** `content/es-mx/travel-map.json` from the checked spots; the sheet's Mexico layout in `TripSheet.swift` (build on the mini, phone build from the laptop); upload on Josh's word.
+
 ## 2026-11-13 (Mac mini, with Josh): Mexico recipe steps 1 and 2 run, and the ticket sheet rethought on mock-ups
 
 - **Run from docs/mexico-north-recipe.md:** step 1, the fact judge on the four hidden northern cities (`docs/mexico-north-cities.facts.txt`; 25 of 40 people flagged, many for a person's own situation; the claims about the world are not sorted or fixed, no content changed). Step 2, eight candidate maps in four looks and a sample building in each (`design/trip-map/mexico/`; one map redrawn for a wrong outline).
