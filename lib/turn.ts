@@ -16,6 +16,8 @@ export const TurnOutputSchema = z.object({
   line: z.string().describe('What the character says, in the language the person is learning'),
   en: z.string().describe('English translation of the reply'),
   done: z.boolean().optional(),
+  /** They asked for help or said it's hard (D12): saved with the turn; later turns carry the Help asked note */
+  hard: z.boolean().optional(),
   /** The answers to say back (Beginner 2, cluster 1): only when asked for with `answers` */
   answers: z.array(z.object({ text: z.string(), en: z.string() })).optional(),
 });
@@ -52,10 +54,12 @@ export async function runTurn(params: {
   learnerLevel?: string;
   /** A note about this turn, in brackets at the end of the newest message (Beginner 2's setup line; see buildTurnPrompt) */
   note?: string;
+  /** dialogue.md's Help asked note, after the learner asked for help earlier in the visit (D12); said before the note */
+  help?: string;
   /** The day it is (tests replay visits on different days); defaults to now */
   now?: Date;
 }): Promise<TurnReply> {
-  const prompt = buildTurnPrompt(params);
+  const prompt = buildTurnPrompt({ ...params, note: [params.help, params.note].filter(Boolean).join(' ') || undefined });
 
   // Streamed only to time the first token; the reply is still read whole
   const started = performance.now();

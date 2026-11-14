@@ -352,14 +352,14 @@ export const onFrame = (cluster: Setup[]): boolean => Math.max(0, CLUSTERS.index
  * (withQuestionEnglish), and each answer as an answer part, at most the setup's count, blank ones dropped. The parts
  * carry only answers, so the app shows her line as the subtitle and the answers as bubbles on the learner's turn
  */
-export function lineWithAnswers(r: { line: string; en: string; done?: boolean; answers?: { text: string; en: string }[] }, setup: Setup, cluster: Setup[] = CLUSTER_1): { line: string; en: string; done?: boolean; parts: Part[]; question?: { text: string; en: string } } {
+export function lineWithAnswers(r: { line: string; en: string; done?: boolean; hard?: boolean; answers?: { text: string; en: string }[] }, setup: Setup, cluster: Setup[] = CLUSTER_1): { line: string; en: string; done?: boolean; hard?: boolean; parts: Part[]; question?: { text: string; en: string } } {
   const answers = (r.answers ?? [])
     .map((a) => ({ kind: 'answer' as const, text: a.text.trim(), en: a.en.trim(), gloss: '' }))
     .filter((a) => a.text)
     .slice(0, setup.maxAnswers);
   const question = questionOf(r.line, r.en);
   const echo = QUESTION_ECHO_FRAME[Math.max(0, CLUSTERS.indexOf(cluster))] ?? false;
-  return { line: echo ? withQuestionEnglish(r.line, r.en) : r.line, en: r.en, ...(r.done !== undefined ? { done: r.done } : {}), parts: answers, ...(question ? { question } : {}) };
+  return { line: echo ? withQuestionEnglish(r.line, r.en) : r.line, en: r.en, ...(r.done !== undefined ? { done: r.done } : {}), ...(r.hard ? { hard: true } : {}), parts: answers, ...(question ? { question } : {}) };
 }
 
 /**

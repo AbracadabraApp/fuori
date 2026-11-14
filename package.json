@@ -94,6 +94,7 @@
     "test:onboarding": "node --env-file-if-exists=.env.local node_modules/.bin/tsx tests/check-onboarding.ts",
     "test:sweep": "tsx tests/check-sweep.ts",
     "test:turn-request": "tsx tests/check-turn-request.ts",
+    "test:help-asked": "tsx tests/check-help-asked.ts && COUNTRY=es-mx tsx tests/check-help-asked.ts",
     "test:app-log": "tsx tests/check-app-log.ts",
     "test:app-version": "tsx tests/check-app-version.ts",
     "style-test": "node --env-file-if-exists=.env.local scripts/style-test.mjs",

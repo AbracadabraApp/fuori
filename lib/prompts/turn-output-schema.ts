@@ -28,11 +28,18 @@ export const doneField = {
   description: 'True only when this reply ends the conversation: they are leaving (they said goodbye, or that they have to go or want to stop, in any words) and you say goodbye back',
 };
 
+/** They asked for help or said it's hard (docs/dialogue-plan.md D12; bugs.md B13): saved with the reply, and every later
+ *  turn of the visit carries dialogue.md's "Help asked" note. The character judges it: any language, no phrase list */
+export const hardField = {
+  type: 'boolean',
+  description: "True when their last line asked for help, said they didn't understand, or said it's hard, in any words or language",
+};
+
 /** An ordinary conversation's reply: the line, its English, and whether it ends here */
 export const turnOutputWithDoneJsonSchema = {
   ...turnOutputJsonSchema,
-  properties: { ...turnOutputJsonSchema.properties, done: doneField },
-  required: ['line', 'en', 'done'],
+  properties: { ...turnOutputJsonSchema.properties, done: doneField, hard: hardField },
+  required: ['line', 'en', 'done', 'hard'],
 };
 
 /** The answers the learner can say back, shown as bubbles on their turn (Beginner 2 on the one-line reply, 2026-11-11) */
@@ -57,6 +64,6 @@ export const answersField = {
 /** Beginner 2, cluster 1: the one-line reply with the answers to say back after it (line first, so the voice starts early as usual) */
 export const turnOutputWithAnswersJsonSchema = {
   ...turnOutputJsonSchema,
-  properties: { ...turnOutputJsonSchema.properties, answers: answersField, done: doneField },
-  required: ['line', 'en', 'answers', 'done'],
+  properties: { ...turnOutputJsonSchema.properties, answers: answersField, done: doneField, hard: hardField },
+  required: ['line', 'en', 'answers', 'done', 'hard'],
 };

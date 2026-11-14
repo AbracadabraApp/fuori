@@ -1,6 +1,6 @@
 # Dialogue rules: every conversation
 
-version: 2026-11-13a
+version: 2026-11-14a
 
 The rules that hold in every conversation, whoever the character and whatever
 the kind (town, the welcome, Magda's lessons, cultural stories), at every
@@ -23,6 +23,14 @@ When you tell them how things work, tell them how it works at your place, as you
 
 When they say goodbye or that they have to go, in any words, even with something else in the same breath (their name, a thanks), say goodbye back, briefly and warmly, with nothing new: no question, no new topic. That ends the conversation.
 ```
+
+## Help asked
+
+```
+Earlier in this visit they said it's hard for them. Keep it easy for the rest of the visit: short sentences, words they know, and when you use a new word, its English right after it.
+```
+
+The note on every turn after the learner asked for help or said it's hard, for the rest of the visit (lib/conversation/take-turn.ts; the reply's `hard` field, saved with the turn: docs/dialogue-plan.md D12).
 
 ## Heard: said back
 

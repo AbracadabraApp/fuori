@@ -196,6 +196,8 @@ export interface Turn {
   offered?: string[];
   /** The opening's beats (lib/intro.ts), on the intro turn only */
   beats?: string[];
+  /** A character's turn that answered a learner asking for help (D12): the rest of the visit carries the Help asked note */
+  hard?: boolean;
 }
 
 export interface SceneRun {
@@ -305,6 +307,8 @@ export interface TurnOutput {
   /** The last turn: the welcome's (the app shows the button in place of the mic), a lesson's, or an
    *  ordinary conversation's after their goodbye (the app closes the screen after it's said) */
   done?: boolean;
+  /** Their last line asked for help or said it's hard (docs/dialogue-plan.md D12): saved on the character's turn */
+  hard?: boolean;
   /** The welcome's opening: the answers are buttons to tap, and the mic stays closed */
   tapAnswers?: boolean;
   /** The welcome after the tap: the end button shows beside the mic, so they can go any time */

@@ -2,6 +2,12 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../dialogue.md`.
 
+### 2026-11-14a: asking for help keeps it easier for the rest of the visit
+- **Added, Help asked:** a note on every turn after the learner asked for help or said it's hard, for the rest of the visit: "Earlier in this visit they said it's hard for them. Keep it easy for the rest of the visit: short sentences, words they know, and when you use a new word, its English right after it." The reply says when they asked (a `hard` field, the character's judgement, any language); it's saved with the turn and read back on later turns (lib/conversation/take-turn.ts).
+- **Measured** (tests/experiments/help-lasts.mts, Nunzio 67edfe03 replayed after Josh's ginkgo line, 6 replies each): the same words as a rule in "Every conversation" changed nothing (new words with English after them: 0 of 6 replies, as before it); as this note after the learner's line, 5 of 6 glossed the new word ("quercia (oak)", "ghiande (acorns)"); through runTurn's help parameter, 6 of 6 (median 29 words against 39). The hard flag: set on Josh's "io non posso capire tutto" 6 of 6, on an ordinary line 0 of 6.
+- **Why:** bugs.md B13, "Intermediate didn't back off" (Josh, 2026-11-13). Nunzio (67edfe03): Josh said "io non posso capire tutto. Forse un più facile parole"; Nunzio answered "parlo più semplice", kept it simple for two turns, then brought in *quercia*, *corteccia* and *scendono* with no English, until Josh left: "questa conversazione è un po difficile". docs/mix.md's three bins: asking for help moves things into "new, with its English" for the rest of the visit. docs/dialogue-plan.md D12.
+- **Prompted by:** Josh, 2026-11-14, the to-do list (D12, "build").
+
 ### 2026-11-13a: leaving in any words ends a visit, at every level; a close for long visits
 - **Changed, Every conversation:** "When they say goodbye, even with…" → "When they say goodbye or that they have to go, in any words, even with…".
 - **Added, Close:** the note for the turn where the character closes a long visit itself (the 8th turn at Beginner, the 15th at Intermediate and Advanced; was scaffolding.md's Setup: close on the 13th, Beginner only).

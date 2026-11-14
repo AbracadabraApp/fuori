@@ -18,7 +18,7 @@ import { tutor } from '@/content';
 import { onboardingState } from '@/lib/onboarding';
 import { runBeginnerTurn, beginnerPromptVersion, lineFromParts, type Part } from '@/lib/beginner';
 import { assemblePieces } from '@/lib/dialogue/pieces';
-import { closeNote } from '@/lib/dialogue/rules';
+import { closeNote, helpNote } from '@/lib/dialogue/rules';
 import { BEGINNER_2_FILE, CLOSE_AT_INTERMEDIATE, CLUSTER_1, pickSetup, levelText, setupLine, shapeParts, turnSteps, beginner2Version, type Setup, type TurnSteps, flowingLine, frameBrief, onFrame, lineWithAnswers } from '@/lib/beginner-2';
 import { pickShapes, noteOf, shapeIds, beatsBrief } from '@/lib/shapes';
 import { runIntro } from '@/lib/intro';
@@ -179,6 +179,8 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
   const intro = false;
   // After the intro, no note unless they asked something: then it's answered first (lib/shapes.ts)
   const shapes = shaped && !intro ? pickShapes({ learnerSaid }) : [];
+  // They asked for help or said it's hard earlier in this visit (a character turn saved with hard; D12): keep it easy from here on
+  const helped = transcript.some((t) => t.who === 'npc' && t.hard) ? helpNote() : undefined;
   const shape = shapes.length ? shapes : null;
   const shapeId = shapeIds(shapes);
   // The intro's beats, once, in the system prompt of every later turn: material the character has, not a list to work through
@@ -221,7 +223,7 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
       // parts format: there the character pulls the language out of the sentence into its own box (10q–10r). The two
       // answers to say back come with the line (2026-11-11a: the setup line on the newest message, the answers in the
       // reply) and go to the app as answer parts; her line stays the subtitle. The voice starts early, as at Intermediate
-      await runTurn({ character, transcript, learnerSaid, memory, addressedAs, brief: withBeats(frameBrief(cluster)), note: noteOf(shape, setupLine(setup)), answers: setup.maxAnswers > 0, laps: p.laps, onText: p.onText, canRetry: p.canRetry, withDone: true }).then((r) => {
+      await runTurn({ character, transcript, learnerSaid, memory, addressedAs, brief: withBeats(frameBrief(cluster)), note: noteOf(shape, setupLine(setup)), answers: setup.maxAnswers > 0, help: helped, laps: p.laps, onText: p.onText, canRetry: p.canRetry, withDone: true }).then((r) => {
         // Step 1 writes the language as {piece | English} (docs/mix.md): the line as it's said, as the voice had it
         const out = lineWithAnswers({ ...r, line: assemblePieces(r.line) }, setup, cluster);
         // The close (lib/beginner-2.ts CLOSE_AT): the character says goodbye, and the visit ends here whatever the reply says
@@ -233,7 +235,7 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
     ? // Beginner 2, steps 4-6: the parts are rewritten after the reply (glosses, English), so the
       // spoken line is rebuilt from them, and the voice waits for the whole reply (no early first sentence:
       // it would be spoken from the parts before they were rewritten, then again)
-      await runBeginnerTurn({ character, transcript, learnerSaid, memory, addressedAs, laps: p.laps, canRetry: p.canRetry, promptFile: BEGINNER_2_FILE, stageText: withBeats(levelText(cluster)), turnNote: noteOf(shape, setupLine(setup)), maxAnswers: setup.maxAnswers, withDone: true }).then((r) => {
+      await runBeginnerTurn({ character, transcript, learnerSaid, memory, addressedAs, laps: p.laps, canRetry: p.canRetry, promptFile: BEGINNER_2_FILE, stageText: withBeats(levelText(cluster)), turnNote: noteOf(shape, setupLine(setup)), help: helped, maxAnswers: setup.maxAnswers, withDone: true }).then((r) => {
         const { parts, fixes } = shapeParts(r.parts, setup, cluster);
         steps = { ...turnSteps(r.parts, setup, cluster, fixes), ...(shapeId ? { shape: shapeId } : {}) };
         return { ...r, ...flowingLine(parts), parts };
@@ -253,6 +255,7 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
     // Intermediate: this turn's shape, when a signal fired (lib/shapes.ts); nothing otherwise. The intro's beats once, as the brief.
     // A long visit's close (the 15th turn; Josh, 2026-11-13): the character closes it itself
     note: noteOf(shape, closing ? closeNote() : undefined),
+    help: helped,
     // An ordinary Intermediate or Advanced visit: what the character knows of their language (character.md → Learner: …)
     ...(shaped && setup === null && (learnerLevel === 'intermediate' || learnerLevel === 'advanced') ? { learnerLevel } : {}),
     ...(beatsText && !pathLevel && !tutorPrompt ? { brief: beatsText } : {}),

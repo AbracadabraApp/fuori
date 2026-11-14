@@ -60,7 +60,7 @@ interface RecordTurnParams {
   promptVersion: string;
   /** What Whisper heard; absent on the opening line */
   learnerSaid?: string;
-  reply: { line: string; en: string; parts?: { kind: string; text: string; en?: string; gloss?: string }[]; beats?: string[]; done?: boolean };
+  reply: { line: string; en: string; parts?: { kind: string; text: string; en?: string; gloss?: string }[]; beats?: string[]; done?: boolean; hard?: boolean };
   /** The server's time to the whole reply, in ms; saved with a reply (not an opening) for the scorecard */
   replyMs?: number;
   /** What the character remembered at the start, kept with a new conversation */
@@ -86,6 +86,8 @@ export function exchangeTurns(p: Pick<RecordTurnParams, 'learnerSaid' | 'reply' 
       ...(p.reply.done ? { done: true } : {}),
       // The intro's beats, so the visit's later turns take them up one at a time (lib/shapes.ts → THREAD)
       ...(p.reply.beats?.length ? { beats: p.reply.beats } : {}),
+      // They asked for help or said it's hard (D12): later turns of this visit keep it easier
+      ...(p.reply.hard ? { hard: true } : {}),
     },
   ];
 }
@@ -127,7 +129,7 @@ export async function recordTurn(p: RecordTurnParams): Promise<string | null> {
  */
 export async function loadConversationTurns(conversationId: string, learnerId: string): Promise<Turn[] | null> {
   await savesDone(conversationId);
-  const result = await query<{ turns: { who: 'npc' | 'learner'; text: string; en?: string; parts?: { kind: string; text: string }[]; beats?: string[] }[] }>(
+  const result = await query<{ turns: { who: 'npc' | 'learner'; text: string; en?: string; parts?: { kind: string; text: string }[]; beats?: string[]; hard?: boolean }[] }>(
     'SELECT turns FROM conversations WHERE id = $1 AND learner_id = $2',
     [conversationId, learnerId]
   );
@@ -136,7 +138,7 @@ export async function loadConversationTurns(conversationId: string, learnerId: s
   return row.turns.map((t) => {
     // The answers she offered, so the next turn can tell whether they were said back (lib/dialogue/heard.ts)
     const offered = (t.parts ?? []).filter((x) => x.kind === 'answer').map((x) => x.text);
-    return { who: t.who, transcript: t.text, ...(t.en ? { translation: t.en } : {}), ...(offered.length ? { offered } : {}), ...(t.beats?.length ? { beats: t.beats } : {}) };
+    return { who: t.who, transcript: t.text, ...(t.en ? { translation: t.en } : {}), ...(offered.length ? { offered } : {}), ...(t.beats?.length ? { beats: t.beats } : {}), ...(t.hard ? { hard: true } : {}) };
   });
 }
 

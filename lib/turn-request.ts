@@ -35,6 +35,8 @@ const TurnRequestSchema = z.object({
         offered: z.array(z.string().max(MAX_LINE_CHARS)).max(4).optional(),
         // The intro's beats (lib/intro.ts), on the opening turn: the later turns take them up one at a time
         beats: z.array(z.string().max(120)).max(6).optional(),
+        // A turn that answered a learner asking for help (D12; lib/recording.ts)
+        hard: z.boolean().optional(),
       })
     )
     .max(MAX_TURNS)

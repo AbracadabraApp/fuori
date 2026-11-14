@@ -13,7 +13,7 @@
  * say back aren't in it) and `en` are derived from the parts, so saving,
  * memory, Learn and the voice work as for any turn.
  */
-import { doneField } from '@/lib/prompts/turn-output-schema';
+import { doneField, hardField } from '@/lib/prompts/turn-output-schema';
 import { buildTurnPrompt } from '@/lib/prompts/build-turn-prompt';
 import { z } from 'zod';
 import { anthropic, TURN_MODEL, replyText, finalWithDeadline, noThinkingFor } from '@/lib/claude';
@@ -67,8 +67,8 @@ export const partsJsonSchema = {
 /** The welcome's turns (lib/welcome.ts): the parts, then whether this is its last turn (after the parts, so streaming the parts is unchanged) */
 export const partsWithDoneJsonSchema = {
   ...partsJsonSchema,
-  required: ['parts', 'done'],
-  properties: { ...partsJsonSchema.properties, done: doneField },
+  required: ['parts', 'done', 'hard'],
+  properties: { ...partsJsonSchema.properties, done: doneField, hard: hardField },
 };
 
 export function beginnerPromptVersion(): string {
@@ -222,6 +222,8 @@ export function buildBeginnerPrompt(p: {
   stageText?: string;
   /** Said next to the learner's latest message, where the model weighs it most (Beginner 2's setup line, 2026-11-09: in the system prompt it lost to the pattern of the character's own recent turns) */
   turnNote?: string;
+  /** dialogue.md's Help asked note, after the learner asked for help earlier in the visit (D12); said before the turn note */
+  help?: string;
   /** The prompt file; beginner.md unless given. scaffolding.md is Beginner 2's: the dialogue is then the Intermediate prompt itself, this file's system block after it (docs/beginner-2.md) */
   promptFile?: string;
 }): { system: string; messages: { role: 'user' | 'assistant'; content: string }[] } {
@@ -267,10 +269,11 @@ export function buildBeginnerPrompt(p: {
     const heard = readHeard(p.learnerSaid, lastNpc?.offered ?? []);
     push('user', heard ? `${p.learnerSaid}\n${heardNote(heard)}` : p.learnerSaid);
   }
-  if (p.turnNote) {
+  const turnNote = [p.help, p.turnNote].filter(Boolean).join(' ');
+  if (turnNote) {
     const last = messages[messages.length - 1];
-    if (last?.role === 'user') last.content = `${last.content}\n\n(${p.turnNote})`;
-    else messages.push({ role: 'user', content: `(${p.turnNote})` });
+    if (last?.role === 'user') last.content = `${last.content}\n\n(${turnNote})`;
+    else messages.push({ role: 'user', content: `(${turnNote})` });
   }
   return { system, messages };
 }
@@ -346,5 +349,5 @@ export async function runBeginnerTurn(p: Parameters<typeof buildBeginnerPrompt>[
   let answers = 0;
   const parts = tidyParts(PartsSchema.parse(json).parts).filter((x) => x.kind !== 'answer' || p.maxAnswers === undefined || ++answers <= p.maxAnswers);
   if (!parts.length) throw new Error('Beginner turn came back with no parts');
-  return { ...lineFromParts(parts), parts, ...(p.withDone ? { done: json.done === true } : {}) };
+  return { ...lineFromParts(parts), parts, ...(p.withDone ? { done: json.done === true, ...(json.hard === true ? { hard: true } : {}) } : {}) };
 }
