@@ -1,5 +1,12 @@
 # Fuori Development Progress
 
+## 2026-11-14 (laptop, with Josh): Mexico's northern pictures drawn; a portrait-prompt bug found
+- **Done:** all pictures for Tijuana, Monterrey, Mazatlán and Zacatecas drawn, looked at and uploaded (948a29b); `test:content-api` passes for Mexico with 14 cities. The three approved city cards and samples were on the mini (`~/fuori-portraits`) and never uploaded; now they are.
+- **Tijuana's style with Josh:** bold street-mural colour kept; his first "grit" note came out as ruins, so the style now describes a working city, drawn from the photos he sent (grey asphalt, traffic, plain buildings, colour from murals, kiosks and goods). Plaza Santa Cecilia shows one accordionist, not three bands (Josh: "it looks like a stereotype").
+- **Bug fixed (ab699cd):** the image script cut every double-quoted portrait prompt at its first apostrophe. 29 portraits already drawn were made from cut prompts (25 Italy, 4 Mexico, listed in the commit). Only Sergio was redrawn. New `npm run test:image-prompts`.
+- **Terminals:** the four new cities' terminals were renamed `terminal-<city>` so `isStation` finds them.
+- **Open:** whether to redraw the 28 portraits made from cut prompts (Josh's call); 5 unused escuela-lengua JPEGs on the laptop; `test:image-list` (Italy) shows 19 portraits changed locally since upload, not from this session; `test:language` fails on `ios/FuoriKit/Tests/FuoriCoreTests/ContentTests.swift`. The cities show once released.
+
 ## 2026-11-14 (cloud chat session): the fact judge's flags on the four northern cities sorted
 
 - The judge flagged 25 of 40 people (`docs/mexico-north-cities.facts.txt`, the mini, 2026-11-13). Eight are a person's own day and stand; nine claims were checked against sources and kept (one number corrected: the cable car rides about 85 m up); ten lines were softened in `zacatecas.ts`, `monterrey.ts` and `mazatlan.ts`. The list is in docs/mexico-north-recipe.md, step 1.
