@@ -1,5 +1,13 @@
 # Fuori Development Progress
 
+## 2026-11-14 (cloud chat session, with Josh): the northern style samples judged; Tijuana's pictures rewritten
+
+- **Josh:** "they all look fine - but I would redo Tijuana with diffeerent art style and descriptions. Tijuana is known around the world - the pictures looked like anywhere . Musicians in every plaza is a borderline stereotype." He sent the sample card and three photographs (the arch, Playas from above, a mural).
+- **Monterrey, Mazatlán, Zacatecas: yes.** Recipe step 5 can run for those three (30 places, 30 portraits; their cards exist on the mini).
+- **Tijuana:** new style (bold acrylic street-mural painting), new card (the arch as it is, a mural, a zebra-striped donkey, no musicians) and four place descriptions made specific, in `generation.json` and `tijuana.ts`. Needs a new sample before its other pictures (docs/mexico-north-recipe.md, step 4). Details and what was kept: docs/mexico-trip-map.md → 2026-11-14.
+- **Rule recorded:** musicians only where music is what the place is; a famous city's pictures show what it is known for, as it really is.
+- **Checked:** tsc, test:feed, test:names; `--dry` prints Tijuana's 21 prompts. **Not verified:** no picture drawn (no image key here).
+
 ## 2026-11-14 (cloud chat session, with Josh): Mexico's four northern cities shown, ahead of their pictures
 
 - **Josh:** "Unhide any mexico cards". `hidden: true` is out of Tijuana, Zacatecas, Monterrey and Mazatlán. Mexico shows 14 cities, 160 places.

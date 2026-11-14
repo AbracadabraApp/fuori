@@ -157,3 +157,12 @@ Josh, from his phone, to the cloud chat session. Ideas, not decisions; nothing i
 - **Josh:** "sayulita could fit there with a hippie american surfer running a smoothie shop". The first non-Mexican in Afuera (Rome has its immigrant communities). Claude's points: she is the learner's future self, someone who learned Spanish as an adult; by Josh's caricature rule, keep the smoothie shop and one trait and make her particular, not all four stacked; she is a non-native model of Spanish, which is a choice; and the voice pool is all Mexican, so she needs a Spanish voice with an American accent, found and heard first.
 - **Wrinkles:** no bus terminal (a plane to Puerto Vallarta and a combi up the highway, so the "terminal" is a highway stop and the trip line says plane); and the honest version includes the squeeze on rents, which belongs with the hard side of places (waits on test K1).
 
+## 2026-11-14: Josh's verdict on the four style samples
+
+- **Josh:** "they all look fine - but I would redo Tijuana with diffeerent art style and descriptions. Tijuana is known around the world - the pictures looked like anywhere . Musicians in every plaza is a borderline stereotype."
+- **Monterrey, Mazatlán, Zacatecas:** yes as drawn. Their other pictures can be made.
+- **Tijuana, what was wrong:** the sample card drew the arch as a white lattice hoop over a generic street of awnings, with a norteño trio in the middle. Josh sent the card back with three photographs: the real arch (a tall, slender silver curve with cables and a screen, under a deep blue sky), Playas from above (painted buildings, the bullring, a crowded boardwalk and beach), and a building-sized mural of a face on a yellow wall.
+- **Tijuana, changed (text only, no picture drawn):** style is now bold acrylic street-mural painting in the colours of those photographs; the card shows the arch as it is, a mural and a zebra-striped donkey, with no musicians; Playas, the taco stand, Plaza Santa Cecilia and Parque Teniente Guerrero name what is really there (the painted seafront and bullring, the arch over the rooftops, the hills of houses). The band is out of the park's picture.
+- **Kept, Josh's to overrule:** Plaza Santa Cecilia still has its accordionist. Musicians waiting for hire is what that plaza is, so it is the one place in Tijuana where they belong.
+- **The rule from it:** musicians only where music is what the place is. Of the pictures already approved, Zacatecas's card has a band and Mazatlán's a man with a tuba; left as approved.
+

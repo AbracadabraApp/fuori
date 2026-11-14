@@ -15,7 +15,7 @@
 | Mazatlán | a pulmonía at Olas Altas | Plazuela Machado, Teatro Ángela Peralta, the lighthouse climb, the changueras selling shrimp, a seafood cart, a banda on the beach, the Carnival float workshop, the cathedral |
 | Zacatecas | the cable car over the roofs | the cathedral, La Bufa, Museo Rafael Coronel, a tamborazo in the Plaza de Armas, gorditas, Las Quince Letras, the aqueduct, the Morismas at Bracho |
 
-**The norms followed** (Josh, 2026-11-09 to 11-11, as the five cities before were written): thick with local qualities; little commerce and at most two food vendors a city; plazas, monuments, music and ritual; one place no other city has; one bus terminal; everyone at their place for their own reason, not as an explainer; one person with something to show; unique full names; a voice from the pool for their age; gouache portraits, unposed, one or two true traits and no stacking; place pictures of Mexico today. Mazatlán is Mexico's first beach city (Josh: resort towns are where learners will really speak Spanish).
+**The norms followed** (Josh, 2026-11-09 to 11-11, as the five cities before were written): thick with local qualities; little commerce and at most two food vendors a city; plazas, monuments, music and ritual; one place no other city has; one bus terminal; everyone at their place for their own reason, not as an explainer; one person with something to show; unique full names; a voice from the pool for their age; gouache portraits, unposed, one or two true traits and no stacking; place pictures of Mexico today. Added 2026-11-14 (Josh: "Musicians in every plaza is a borderline stereotype"): musicians only where music is what the place is, never as a plaza's furniture; and a famous city's pictures show the things it is known for, drawn as they really are. Mazatlán is Mexico's first beach city (Josh: resort towns are where learners will really speak Spanish).
 
 **Also built**
 - `content/es-mx/stations.json`: what each new city is known for, and trip facts for all 91 pairs of the 14 cities (46 new, approximate, "about").
@@ -68,6 +68,8 @@ Look at every one. One building alone on white: redo any that came out as a town
 COUNTRY=es-mx npm run images -- --type city --city tijuana,monterrey,mazatlan,zacatecas
 COUNTRY=es-mx npm run images -- --type place --only plaza-santa-cecilia,macroplaza,paseo-de-olas-altas,catedral-de-zacatecas
 ```
+
+**Judged 2026-11-14:** Monterrey, Mazatlán and Zacatecas are a yes ("they all look fine"), so step 5 can run for those three. Tijuana is redone, style and descriptions ("Tijuana is known around the world - the pictures looked like anywhere"): its new style and card are in `generation.json`, and it needs a new sample first, the same two commands with `--city tijuana` and `--only plaza-santa-cecilia`, both with `--force`. His references are in docs/mexico-trip-map.md → 2026-11-14.
 
 **Josh judges the four styles.** A style he rejects changes in `generation.json` → `placeStyles` (and the same words at the start of that city's `cityCards` prompt), then `--force` on those ids.
 

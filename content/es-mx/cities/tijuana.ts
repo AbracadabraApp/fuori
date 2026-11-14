@@ -28,7 +28,7 @@ export const tijuana: CityPantry = {
       neighbourhood: 'Playas de Tijuana',
       real: true,
       characterId: 'paola-muralista-playas',
-      imagePrompt: 'the seafront at Playas de Tijuana. A boardwalk above a wide Pacific beach, and at its north end the tall steel border fence running down the sand and out into the surf, its bars painted with bright murals on this side; a white lighthouse and a round bullring stand behind. A woman in paint-spattered jeans on a short ladder paints part of the fence, while joggers and a family with a stroller pass on the boardwalk.',
+      imagePrompt: 'the seafront at Playas de Tijuana. A busy boardwalk above a wide Pacific beach, lined with low buildings painted turquoise, yellow, blue and red; behind them a big round concrete bullring and a white lighthouse. At the north end the tall rust-coloured steel border fence runs down the sand and out into the surf, its bars painted with bright murals on this side. A woman in paint-spattered jeans on a short ladder paints part of the fence, while joggers and a family with a stroller pass on the boardwalk.',
     },
     {
       id: 'centro-cultural-tijuana',
@@ -55,7 +55,7 @@ export const tijuana: CityPantry = {
       neighbourhood: 'Zona Centro',
       real: false,
       characterId: 'ivan-taquero-el-mezquite',
-      imagePrompt: 'a taco stand on a street corner in the Zona Centro of Tijuana at night. A steel counter under bright bulbs, a charcoal grill covered with beef, a red spit of marinated pork turning beside it and a big stone bowl of guacamole. A young taquero in a cap and apron chops meat on a wooden block; customers in hoodies eat standing up from tacos wrapped in paper.',
+      imagePrompt: 'a taco stand on a street corner in the Zona Centro of Tijuana at night, with the lit silver steel arch of Avenida Revolución rising over the rooftops at the end of the street. A steel counter under bright bulbs, a charcoal grill covered with beef, a red spit of marinated pork turning beside it and a big stone bowl of guacamole. A young taquero in a cap and apron chops meat on a wooden block; customers in hoodies eat standing up from tacos wrapped in paper.',
     },
     {
       id: 'taller-de-serigrafia-pasaje-rodriguez',
@@ -73,7 +73,7 @@ export const tijuana: CityPantry = {
       neighbourhood: 'Zona Centro',
       real: true,
       characterId: 'rosendo-acordeonista-santa-cecilia',
-      imagePrompt: 'Plaza Santa Cecilia in the Zona Centro of Tijuana, a small pedestrian plaza beside the tall white steel arch at the end of Avenida Revolución. Benches, a few trees, and groups of musicians waiting for work: mariachis in dark suits, and a norteño trio with an accordion, a twelve-string bajo sexto and a double bass. An older man in a pressed western shirt sits on a bench with his accordion on his knee.',
+      imagePrompt: 'Plaza Santa Cecilia in the Zona Centro of Tijuana, a small pedestrian plaza right under the very tall, slender silver steel arch, strung with thin cables, that stands at the end of Avenida Revolución. Benches, a few trees, and groups of musicians waiting for work: mariachis in dark suits, and a norteño trio with an accordion, a twelve-string bajo sexto and a double bass. An older man in a pressed western shirt sits on a bench with his accordion on his knee.',
     },
     {
       id: 'minarete-de-agua-caliente',
@@ -91,7 +91,7 @@ export const tijuana: CityPantry = {
       neighbourhood: 'Zona Centro',
       real: true,
       characterId: 'fermin-ajedrecista-teniente-guerrero',
-      imagePrompt: 'Parque Teniente Guerrero in the Zona Centro of Tijuana on a Sunday afternoon. An old city park with tall trees, a kiosk and benches. Older couples dance to a small band near the kiosk, and at stone tables under the trees men play chess; an old man in a cardigan considers his next move.',
+      imagePrompt: 'Parque Teniente Guerrero in the Zona Centro of Tijuana on a Sunday afternoon. An old city park with tall trees, a kiosk and benches, the hills of the city crowded with houses beyond the rooftops. Older couples dance near the kiosk, and at stone tables under the trees men play chess; an old man in a cardigan considers his next move.',
     },
     {
       id: 'central-de-autobuses-de-tijuana',
@@ -185,7 +185,7 @@ export const tijuana: CityPantry = {
       role: 'acordeonista',
       placeId: 'plaza-santa-cecilia',
       personality: ['patient', 'courteous', 'knows a corrido for everything'],
-      portraitPrompt: 'Gouache portrait of a man of 66 with a lined brown face and a grey moustache, in a pressed western shirt, sitting on a bench with a button accordion on his knee, who plays in a norteño trio and waits for work in Plaza Santa Cecilia, Zona Centro, Tijuana. Include the trees of the plaza and the tall white steel arch behind him. Bold, saturated colour: accordion red, sky blue and white. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      portraitPrompt: 'Gouache portrait of a man of 66 with a lined brown face and a grey moustache, in a pressed western shirt, sitting on a bench with a button accordion on his knee, who plays in a norteño trio and waits for work in Plaza Santa Cecilia, Zona Centro, Tijuana. Include the trees of the plaza and the tall, slender silver steel arch behind him. Bold, saturated colour: accordion red, sky blue and white. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
       here: 'You play the accordion in a norteño trio, and you wait for work in Plaza Santa Cecilia, named for the patron saint of musicians. People come here to hire a group by the song or by the hour, for a birthday, a serenade or a funeral: mariachis, norteños, sometimes a banda. Norteño is the music of the north, accordion and bajo sexto, and it sings corridos, ballads that tell a story. The accordion came to northern Mexico with German and Central European immigrants in the nineteenth century. You came from Sinaloa in 1979 looking for work, and stayed.',
     },
     {
