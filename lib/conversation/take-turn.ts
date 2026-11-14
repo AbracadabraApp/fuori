@@ -130,9 +130,10 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
   // 2026-11-02): the stage sets the parts reply's settings, or from step 4
   // the character prompt with a Beginner block; never Magda
   let onPath: { stage: Stage; supportBack: boolean } | null = null;
+  let learnerLevel: string | null | undefined;
   if (learnerId && !isTutor) {
     try {
-      const { level: learnerLevel } = await onboardingState(learnerId);
+      learnerLevel = (await onboardingState(learnerId)).level;
       if (learnerLevel === 'beginner' || learnerLevel === null) onPath = stageFor(await pathState(learnerId));
     } catch (err) {
       p.onSoftError('learner level', err);
@@ -252,6 +253,8 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
     // Intermediate: this turn's shape, when a signal fired (lib/shapes.ts); nothing otherwise. The intro's beats once, as the brief.
     // A long visit's close (the 15th turn; Josh, 2026-11-13): the character closes it itself
     note: noteOf(shape, closing ? closeNote() : undefined),
+    // An ordinary Intermediate visit: the character knows they're learning (character.md → Learner: Intermediate)
+    ...(shaped && setup === null && learnerLevel === 'intermediate' ? { learnerLevel } : {}),
     ...(beatsText && !pathLevel && !tutorPrompt ? { brief: beatsText } : {}),
     laps: p.laps,
     onText: p.onText,

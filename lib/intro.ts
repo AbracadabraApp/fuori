@@ -69,6 +69,7 @@ export function buildIntroPrompt(p: IntroParams): { system: string; messages: { 
     country: language.card.country,
     setting: withToday(character.appearance?.setting ?? '', now, cityIdFor(character), character.id),
     person: personLine(p.addressedAs),
+    learning: '',
     relationship: relationshipLine(loadTemplate(), p.memory, now),
     formality: language.formality[character.speech.formality],
   }).replace(/\n{3,}/g, '\n\n').trim();

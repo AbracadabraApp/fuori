@@ -48,6 +48,8 @@ export async function runTurn(params: {
   withDone?: boolean;
   /** Beginner 2, cluster 1: the reply also lists the answers to say back (with done; the brief says what to give) */
   answers?: boolean;
+  /** The learner's level, for character.md's {learning} line (build-turn-prompt) */
+  learnerLevel?: string;
   /** A note about this turn, in brackets at the end of the newest message (Beginner 2's setup line; see buildTurnPrompt) */
   note?: string;
   /** The day it is (tests replay visits on different days); defaults to now */

@@ -4,6 +4,12 @@ Newest first. One entry per version: what changed, why, what prompted it. The pr
 
 Newest first. Each entry: what changed, why, and what prompted it.
 
+### 2026-11-13a: an Intermediate character knows the learner is learning
+- **Added, Who: the learner:** a {learning} line, filled at Intermediate from "Learner: Intermediate": "They're learning {language} and follow most of it." Empty (left out) at every other level: Beginner has its own level text, Advanced is unchanged.
+- **Why:** the Intermediate prompt never said the person was learning, so a character had to guess each turn how much to help. Help in English when asked works (Josh: "intermediate does help in english when asked"), but it doesn't last: Nunzio (67edfe03) said "parlo più semplice" after "non posso capire tutto", then went back to "corteccia" and "scendono" with no English until Josh asked twice (docs/bugs.md B13). Of two ways offered (this fact, or a note on later turns once the learner has said it's hard), Josh chose the fact: the model handles it, given what it needs to know.
+- **Replayed** (Nunzio's four turns after "non posso capire tutto", two takes each, tests/experiments/intermediate-ending.mts --intermediate): replies a little simpler and shorter, but no more English: "corteccia" explained in Italian both times (without the fact, one take gave "In inglese, «bark»"), and one take brought in "sughera". The fact makes the character gentler; it doesn't make it gloss. Kept for Josh's ear.
+- **Prompted by:** Josh, 2026-11-13: "shouldnt the model just handle this?", then "ok 1".
+
 ### 2026-11-12b: with someone they've met, talk like a regular
 - **Added, Relationship: met before:** "Talk with them like a regular: about what they've told you of themselves and about the day, not only your work."
 - **Why:** Josh's play, 2026-11-12 evening (visits 015d2607 and 96962a32, Don Chucho; 45764841, Raymundo): "Don Chucho - almost same conversation - no familiarity or small talk - all repeating details of shoe shining"; the second visit greeted him by name and then retold the shine, with nothing of what he'd said about himself (he dislikes the cold, loves "Sabor a mí", lives in Mexico City, all in the notes).
