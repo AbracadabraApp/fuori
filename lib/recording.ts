@@ -60,7 +60,7 @@ interface RecordTurnParams {
   promptVersion: string;
   /** What Whisper heard; absent on the opening line */
   learnerSaid?: string;
-  reply: { line: string; en: string; parts?: { kind: string; text: string; en?: string; gloss?: string }[]; beats?: string[] };
+  reply: { line: string; en: string; parts?: { kind: string; text: string; en?: string; gloss?: string }[]; beats?: string[]; done?: boolean };
   /** The server's time to the whole reply, in ms; saved with a reply (not an opening) for the scorecard */
   replyMs?: number;
   /** What the character remembered at the start, kept with a new conversation */
@@ -82,6 +82,8 @@ export function exchangeTurns(p: Pick<RecordTurnParams, 'learnerSaid' | 'reply' 
       ...(p.reply.parts ? { parts: p.reply.parts.map((x) => ({ kind: x.kind, text: x.text, ...(x.en ? { en: x.en } : {}), ...(x.gloss ? { gloss: x.gloss } : {}) })) } : {}),
       ...(p.learnerSaid && typeof p.replyMs === 'number' ? { ms: p.replyMs } : {}),
       ...(p.steps ? { steps: p.steps } : {}),
+      // Whether this reply ended the visit (2026-11-13: it wasn't saved, so a review could only infer it)
+      ...(p.reply.done ? { done: true } : {}),
       // The intro's beats, so the visit's later turns take them up one at a time (lib/shapes.ts → THREAD)
       ...(p.reply.beats?.length ? { beats: p.reply.beats } : {}),
     },

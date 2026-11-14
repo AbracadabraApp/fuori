@@ -23,7 +23,9 @@ export const turnOutputJsonSchema = {
 /** What ends a conversation: their goodbye, said back (docs/beginner-scaffolding.md 11b; Josh, 2026-11-06, Beto) */
 export const doneField = {
   type: 'boolean',
-  description: 'True only when this reply ends the conversation: they have said goodbye and you say goodbye back',
+  // Leaving in any words counts (Josh's Isidro visit, 2026-11-13: "I must see the dentist", "we must stop", "I must insist
+  // we stop" got done: false three times of three on replay; docs/bugs.md B3). The character judges it: any language, no phrase list
+  description: 'True only when this reply ends the conversation: they are leaving (they said goodbye, or that they have to go or want to stop, in any words) and you say goodbye back',
 };
 
 /** An ordinary conversation's reply: the line, its English, and whether it ends here */
@@ -34,9 +36,13 @@ export const turnOutputWithDoneJsonSchema = {
 };
 
 /** The answers the learner can say back, shown as bubbles on their turn (Beginner 2 on the one-line reply, 2026-11-11) */
+// At least one: this schema is used only when the turn asks for answers. "Empty when none were asked for" let the
+// character send none about 1 reply in 8 (tests/experiments/empty-answers.mts, 2026-11-13), on the goodbye turn too,
+// so the learner had nothing to say back and the visit ran on (docs/bugs.md B1, B3)
 export const answersField = {
   type: 'array',
-  description: 'What they can say back, each in the language they are learning with its English; empty when none were asked for',
+  minItems: 1,
+  description: 'What they can say back, each in the language they are learning with its English',
   items: {
     additionalProperties: false,
     type: 'object',

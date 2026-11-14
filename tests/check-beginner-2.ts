@@ -4,12 +4,13 @@
 // prompt file, the language-only rung hides the answers' English, the turn
 // code takes the switch, and Beginner 2 turns don't move the Beginner 1 path.
 import { readFileSync } from 'fs';
-import { beginnerVersionFrom, pickSetup, GOODBYE_AFTER, setupText, levelText, setupLine, fullerGlosses, shownParts, shapeParts, turnSteps, beginner2Version, questionEcho, GOODBYE, OPENER, CLUSTER_1, CLUSTERS, RUNGS, clusterFrom, flowingLine, withQuestionEnglish, cluster1Brief, frameBrief, onFrame, lineWithAnswers, questionOf, QUESTION_ECHO_FRAME } from '@/lib/beginner-2';
+import { beginnerVersionFrom, pickSetup, GOODBYE_AFTER, GOODBYE_AGAIN, CLOSE_AT, CLOSE, setupText, levelText, setupLine, fullerGlosses, shownParts, shapeParts, turnSteps, beginner2Version, questionEcho, GOODBYE, OPENER, CLUSTER_1, CLUSTERS, RUNGS, clusterFrom, flowingLine, withQuestionEnglish, cluster1Brief, frameBrief, onFrame, lineWithAnswers, questionOf, QUESTION_ECHO_FRAME } from '@/lib/beginner-2';
 import { stageInVersion } from '@/lib/conversation-record';
 import { lineFromParts, type Part } from '@/lib/beginner';
 import { buildBeginnerPrompt, SCAFFOLDING_FILE, dialogueWithoutFormat } from '@/lib/beginner';
 import { exchangeTurns } from '@/lib/recording';
 import { assemblePieces } from '@/lib/dialogue/pieces';
+import { turnOutputWithAnswersJsonSchema, doneField } from '@/lib/prompts/turn-output-schema';
 import { partialLine, LineWatcher } from '@/lib/voice/early-voice';
 import { buildTurnPrompt } from '@/lib/prompts/build-turn-prompt';
 import { cities } from '@/content';
@@ -62,8 +63,8 @@ check(['two-en', 'ask-en'].every((id) => CLUSTER_1.some((r) => r.id === id)) && 
   // Never the same setup twice running (2026-11-11c)
   let runs = 0;
   const seq: string[] = [];
-  for (let t = 1; t <= 60; t++) { const id = pickSetup({ conversationId: 'rot', turn: t, characterId: 'x' }).id; seq.push(id); if (seq.length >= 3 && seq.slice(-3).every((x) => x === id)) runs++; }
-  check(runs === 0 && !seq.some((x, i) => x === 'notice' && seq[i - 1] === 'notice') && new Set(seq.filter((x) => x !== 'goodbye')).size === CLUSTER_1.length, `no setup three times running and Notice never twice over 60 turns, every kind played (2026-11-12d: three kinds, Notice added) (got ${runs} runs of three, kinds ${[...new Set(seq)].join(', ')})`);
+  for (let t = 1; t <= 60; t++) { const id = pickSetup({ conversationId: 'rot', turn: t, characterId: 'x' }).id; seq.push(id); if (id !== 'close' && seq.length >= 3 && seq.slice(-3).every((x) => x === id)) runs++; } // from the 13th turn every turn is the close (2026-11-13): the visit ends there
+  check(runs === 0 && !seq.some((x, i) => x === 'notice' && seq[i - 1] === 'notice') && new Set(seq.filter((x) => x !== 'goodbye' && x !== 'close')).size === CLUSTER_1.length, `no setup three times running and Notice never twice over 60 turns, every kind played (2026-11-12d: three kinds, Notice added) (got ${runs} runs of three, kinds ${[...new Set(seq)].join(', ')})`);
   const q = questionOf('Suba a la silla, climb up. ¿Quiere una boleada?', 'Climb up on the chair. Do you want a shine?');
   check(q?.text === '¿Quiere una boleada?' && q?.en === 'Do you want a shine?', `questionOf: the last question with its English (got ${JSON.stringify(q)})`);
   check(questionOf('Ecco il cornetto.', 'Here is the cornetto.') === undefined, 'questionOf: nothing when the line ends on a statement');
@@ -234,6 +235,24 @@ const w = new LineWatcher({ split: true, onFirst: (f) => { firstHeard = f; }, on
 w.feed(streamed);
 w.feed('{"line":"{Pase, pase | come in}, sit here. Look at {el comal | the griddle}. {¿Le gusta? | Do you like it?}","en":"');
 check(firstHeard === 'Pase, pase, come in, sit here. ' && lineHeard === 'Pase, pase, come in, sit here. Look at el comal, the griddle. ¿Le gusta? Do you like it?' && lineHeard.startsWith(firstHeard), 'pieces: the voice gets the first sentence and the whole line put together, the first a prefix of the line');
+
+// Visits that end (2026-11-13, bugs.md B3): the goodbye on the 7th and 10th turns, the close from the 13th
+check(pickSetup({ conversationId: 'c', turn: GOODBYE_AGAIN, characterId: 'x' }).id === 'goodbye' && pickSetup({ conversationId: 'c', turn: CLOSE_AT, characterId: 'x' }).id === 'close' && pickSetup({ conversationId: 'c', turn: CLOSE_AT + 2, characterId: 'x' }).id === 'close' && pickSetup({ conversationId: 'c', turn: 11, characterId: 'x' }).id !== 'goodbye', 'goodbye offered on the 7th and 10th turns, the close from the 13th');
+check(setupText(CLOSE).includes('goodbye') && CLOSE.maxAnswers === 0, 'the close says goodbye itself and offers no answers');
+// Notice once a visit (2026-11-13, Josh: "everyone likes to say, lo veo, lo ve")
+{
+  let twice = 0;
+  for (let c = 0; c < 300; c++) { const seq = Array.from({ length: 12 }, (_, t) => pickSetup({ conversationId: `n-${c}`, turn: t + 1, characterId: 'x' }).id); if (seq.filter((x) => x === 'notice').length > 1) twice++; }
+  check(twice === 0, `Notice at most once a visit (got ${twice} visits with two)`);
+}
+// The reply format (2026-11-13, bugs.md B1, B3): answers required when asked; leaving counts as goodbye
+{
+  const ans = (turnOutputWithAnswersJsonSchema.properties as { answers: { minItems?: number; description: string } }).answers;
+  check(ans.minItems === 1 && !/empty/i.test(ans.description), 'answers: at least one when the turn asks for them, no "empty" option');
+  check(/have to go|want to stop/.test(doneField.description), 'done: leaving in any words counts, not only a goodbye');
+}
+// Whether a reply ended the visit is saved with the turn
+check((exchangeTurns({ learnerSaid: 'Adiós', reply: { line: 'Adiós', en: 'Bye', done: true } }, 'now').at(-1) as { done?: boolean }).done === true, 'a reply that ends the visit is saved with done');
 
 if (problems.length) {
   console.error(`check-beginner-2: ${problems.length} problem(s)\n- ${problems.join('\n- ')}`);

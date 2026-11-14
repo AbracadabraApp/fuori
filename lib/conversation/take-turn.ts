@@ -220,6 +220,8 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
       await runTurn({ character, transcript, learnerSaid, memory, addressedAs, brief: withBeats(frameBrief(cluster)), note: noteOf(shape, setupLine(setup)), answers: setup.maxAnswers > 0, laps: p.laps, onText: p.onText, canRetry: p.canRetry, withDone: true }).then((r) => {
         // Step 1 writes the language as {piece | English} (docs/mix.md): the line as it's said, as the voice had it
         const out = lineWithAnswers({ ...r, line: assemblePieces(r.line) }, setup, cluster);
+        // The close (lib/beginner-2.ts CLOSE_AT): the character says goodbye, and the visit ends here whatever the reply says
+        if (setup.id === 'close') out.done = true;
         steps = { ...turnSteps(out.parts, setup, cluster, []), ...(shapeId ? { shape: shapeId } : {}) };
         return out;
       })

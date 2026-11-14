@@ -60,6 +60,13 @@ const R = (id: string) => RUNGS.find((r) => r.id === id)!;
  */
 export const GOODBYE: Setup = { id: 'goodbye', block: 'Setup: goodbye', maxAnswers: 2, english: true };
 export const GOODBYE_AFTER = 7;
+/** If the visit carries on past the goodbye: offered once more, then the character closes it (2026-11-13: Josué and
+ * Isidro ran to 20 and 24 replies when the 7th turn's goodbye came with no answers; Josh: "Don Insidro, I must insist we
+ * stop"). Spaced out, not every turn (Chuy, 2026-11-10) */
+export const GOODBYE_AGAIN = 10;
+export const CLOSE_AT = 13;
+/** The character closes the visit itself; the reply ends it (take-turn sets done) */
+export const CLOSE: Setup = { id: 'close', block: 'Setup: close', maxAnswers: 0, english: false };
 
 /** The first turn: the place, not the person (Doña Carmen, 2026-11-10: "¿Usted es de aquí?… ¿Es porque veo africano?") */
 export const OPENER: Setup = { id: 'opener', block: 'Setup: opener', maxAnswers: 2, english: true };
@@ -125,7 +132,8 @@ function weighted(cluster: Setup[], key: string, not?: string): Setup {
 }
 
 export function pickSetup(p: { conversationId?: string | null; turn: number; learnerId?: string | null; characterId: string; now?: Date; /** what the learner just said: after their own question, no invitation (the character follows it up) */ learnerSaid?: string }, cluster: Setup[] = CLUSTER_1): Setup {
-  if (p.turn === GOODBYE_AFTER) return GOODBYE;
+  if (p.turn === GOODBYE_AFTER || p.turn === GOODBYE_AGAIN) return GOODBYE;
+  if (p.turn >= CLOSE_AT) return CLOSE;
   // The opener is two answers to read when the cluster has them (Arturo, 2026-11-09: an invited-English opener set a pattern the character copied all visit)
   if (p.turn === 0 && cluster.some((s) => s.id === 'two-en')) return OPENER;
   const day = (p.now ?? new Date()).toISOString().slice(0, 10);
@@ -144,7 +152,9 @@ export function pickSetup(p: { conversationId?: string | null; turn: number; lea
     // Renata (2026-11-10): the same invitation every other turn; an invitation never follows an invitation
     if (INVITES.has(w.id) && p1 && INVITES.has(p1.id)) w = cluster.find((s) => !INVITES.has(s.id)) ?? w;
     // Notice never twice running (2026-11-12, a replay of Raymundo's visit: the same arches and "¿Los ve?" on two turns in a row)
-    if (w.id === 'notice' && p1?.id === 'notice') w = cluster.find((s) => s.id === 'two-en') ?? w;
+    // Notice once a visit (2026-11-13, Josh: "In this game, everyone likes to say, lo veo, lo ve"; 17 turns in 100, five in
+    // one visit): a second Notice becomes two answers. It also covers the old rule, never twice running (2026-11-12)
+    if (w.id === 'notice' && Array.from({ length: turn - 1 }, (_, k) => at(k + 1)).some((s) => s?.id === 'notice')) w = cluster.find((s) => s.id === 'two-en') ?? w;
     chain.set(turn, w);
     return w;
   };
@@ -164,7 +174,11 @@ export function levelText(cluster: Setup[] = CLUSTER_1): string {
 
 /** This turn's setup line, said next to the learner's latest message (lib/beginner.ts → turnNote) */
 export function setupLine(setup: Setup): string {
-  return fill(readPromptFile(SCAFFOLDING_FILE).block(setup.block), { language: language.name }).trim();
+  const f = readPromptFile(SCAFFOLDING_FILE);
+  // Every turn's note gives way when they're leaving (2026-11-13): in the system prompt alone, the note next to their
+  // message won ("Before you go, look at the church's front door…" after "I must see the dentist")
+  const leaving = [OPENER.id, GOODBYE.id, CLOSE.id].includes(setup.id) ? '' : ' ' + f.block('Setup: if they are leaving');
+  return fill(f.block(setup.block) + leaving, { language: language.name }).trim();
 }
 
 /** Both together (scripts and looks); the game puts them in different places */

@@ -12,22 +12,22 @@ Everything that plays wrong: what Josh (or anyone) reports from play, and what a
 
 ### B1. Turns with no English and no offered answers (Beginner)
 Josh, 2026-11-13: "I did not get a help bubble." / "No tengo burbujas de ayuda. Puede ayudarme?" (Josué 8814eb6f); "there is no translation in your bubble", "there is no bubble to read, so I will say…" (Isidro d335b204); "just a note that your bubble has no English" (Don Chucho 499b9774); "that was a lot of Spanish with no English" (Carmen 09978a29).
-Two things: (a) 8 of 100 character turns on the 11-12i version had no offered answers mid-visit (three in a row with Josué); (b) the opener is all Spanish, its English only as intro subtitles, so a learner who missed them has none. Probably the same as the screen list's "Don Chucho's bubbles absent" (progress.md, 2026-11-12, 015d2607). **Status: open.**
+Two things: (a) 8 of 100 character turns on the 11-12i version had no offered answers mid-visit (three in a row with Josué); (b) the opener is all Spanish, its English only as intro subtitles, so a learner who missed them has none. Probably the same as the screen list's "Don Chucho's bubbles absent" (progress.md, 2026-11-12, 015d2607). **Status: fix on main (scaffolding.md 13c): answers required when a turn asks for them (0 of 46 replayed turns empty, from 3 of 24); (b), the all-Spanish opener, is the intro cut (13b).**
 
 ### B2. "¿Lo ve?" (the Notice question) in nearly every visit
 Josh, 2026-11-13: "In this game, everyone likes to say, lo veo, lo ve." (Vale ba340097); "La ve, the question everyone likes to ask." (Carmen 09978a29); "Y la ve es la más popular pregunta." (Isidro d335b204); "It is right in front of my face." (Don Chucho 499b9774).
-17 of 100 character turns on 11-12i; 5 in Isidro's visit, 4 in Josué's. Its rule (scaffolding.md 12f) says weight 1 and never twice running; across visits it still reads as every character's habit. **Status: open.**
+17 of 100 character turns on 11-12i; 5 in Isidro's visit, 4 in Josué's. Its rule (scaffolding.md 12f) says weight 1 and never twice running; across visits it still reads as every character's habit. **Status: fix on main (13c): Notice at most once a visit, and it asks about the thing (what they make of it, which they like), not whether they see it.**
 
 ### B3. The visit doesn't end when the learner wants to go
 Josh, 2026-11-13, Isidro d335b204 (24 replies): "A bit of a strange question and a long conversation." / "I must see the dentist." / "Don Insidro, we must stop." / "Don Insidro, I must insist we stop." Josué 8814eb6f (20 replies): "Es mucho, mucho, mucho parlano."
-After a goodbye turn, any reply that isn't a goodbye reopens the visit, and the character follows a leave-taking with a new question or a Notice. **Status: open.**
+After a goodbye turn, any reply that isn't a goodbye reopens the visit, and the character follows a leave-taking with a new question or a Notice. **Status: fix on main (13c): leaving in any words ends the visit (replayed: 10 of 10, from 0 of 6; ordinary turns 0 of 22); the goodbye offered again on the 10th turn; the character closes on the 13th; answers required, so the goodbye turn always has some.**
 
 ### B4. Repeats within a visit (on the version that should stop them)
 Josh, 2026-11-13: "Don Insidro, ¿usted me preguntó esto antes?" (Isidro asked about the altars three times, d335b204). Earlier: Raymundo's back door three times, "Mire" every turn (45764841, 2026-11-12).
-ed467dd (character.md 12b, "no repeats within a visit") was already live for d335b204. **Status: open (fix live, not working).**
+ed467dd (character.md 12b, "no repeats within a visit") was already live for d335b204. **Status: open; mostly a symptom of B3 (Isidro ran out of material past the visit's end); recheck after 13c is played. The richer first turn (saved beats) should also help.**
 
 ### B5. Double goodbye
-The character says goodbye, the learner says goodbye, the character says it again: every 11-12i Beginner visit that ended on a goodbye (e.g. 2008220a, 35f9fa93, 09978a29). ed467dd ("the goodbye left to the learner") was live for all of them. **Status: open (fix live, not working).**
+The character says goodbye, the learner says goodbye, the character says it again: every 11-12i Beginner visit that ended on a goodbye (e.g. 2008220a, 35f9fa93, 09978a29). ed467dd ("the goodbye left to the learner") was live for all of them. **Status: probably fine; the visits that ended went: the character winds down, the learner says goodbye, the character says it back (one each). Some wind-downs still sound like a farewell; Josh to judge by ear.**
 
 ### B6. Strange or ignored questions: the character doesn't take up what the learner said
 Josh, 2026-11-13: "Hey, that is a strange question." (Raymundo asked if he likes walking the callejones, which he did last visit; 2008220a); "Are you not interested in the Fontana de los Cimbales?" (Don Chucho skipped Josh's walk to point at his brush; 499b9774).
