@@ -221,6 +221,26 @@ What Beginner level dialogue is for. The trial prompt is written against these, 
 8. **Still a person in a place:** helpful in role, not a teacher with a lesson plan.
 9. **True facts about real places, or none.** Places carry only a name today, so this may need a short checked line per place. **Parts of these conversations could be premade if needed (Josh, 2026-10-25):** e.g. a few checked opening notes per place (its history, what's special, the neighbourhood), which the character picks from.
 
+## Being worked out: character, scaffolding, mechanics (2026-11-13)
+
+Josh, feeling it out ("still feelings things out"); not decided. The record of the discussion, so the next session starts from it.
+
+**Three layers** (Josh: "Some of what you listed I'd call scaffoldding: How much English, Helping in English, Answers to say back. Some is mechanics: each turn. Some is character: character.md + dialogue.md + the place + memory, \"The person in front of you is a man\", yes: \"They have no Spanish yet: they follow English…\""):
+
+| Layer | What it is | Pieces today | By level? |
+|---|---|---|---|
+| Character | who's talking, where, what it knows | character.md, dialogue.md's character rules (mishearings, stay within your job, cause before effect, your place's customs), the place, memory, who the learner is | only the fact of how much the learner knows |
+| Scaffolding | the help to take part | how much English, the fixed shape, answers to say back, the question's English, how long help lasts | yes: a level is a set of scaffolding (Settings: Beginner, Intermediate, Advanced) |
+| Mechanics | how a visit runs | each turn's setup, answer first, the goodbye and the close | no: the same at every level |
+
+Findings from sorting it: the files mix the layers (scaffolding.md holds step 1's English and the setups; character.md's reply format, "in {language}", is scaffolding); ending a visit was Beginner-only until dialogue.md 13a made it shared (leaving ends it at every level; the character closes on the 8th turn at Beginner, the 15th at Intermediate; Josh: "lets keep 8 for begginer; 15 for intermediate"); dialogue.md is the one file every level shares.
+
+**What a character can do vs how much** (Josh: "should mix be scaffolding or dialogue? … we are going to want thinggs like idioms at all levels, maybe eventually accents or dialect. We are going to want help in English at all levels"): what a character can do is dialogue, at every level (a piece with its English in the fixed shape; help in English when asked, which works without being in any prompt: Josh, "intermediate does help in english when asked"; idioms with the picture-then-meaning gloss; a Palermo character sounding like Palermo); how much is scaffolding, by level (how many pieces and which get their English; how long help lasts; the idiom rate, Josh: "1 / visit could be a lot"; how much dialect, as "dialect that grows with level", adopted 2026-10-09). Not all of the mix in dialogue: CLAUDE.md's "English nobody asked for is the thing to avoid" at Intermediate needs the amount to go nearly to zero.
+
+**Setting and dial** (Josh: "so is this a dial (like dialogue) or a setting (like scaffolding)"): the level sets where a visit starts and the bounds (a setting); within a visit the character turns the amount of English to the learner (a dial: Josh's "How much English does this learner need to follow me"), up when asked (works today: Ofelia 24% → 85% English), up after a struggle (Nunzio didn't hold it, B13), down for a learner who's following (the most uncertain; left out at first). Josh: "if this is possible it sounds great. It does seem optimistic." Claude's read: the setting, the dial up when asked and the dial staying up are within reach; noticing a struggle unasked and turning down on its own are not promised.
+
+**B13, first try:** of a fact or a note, Josh chose the fact ("shouldnt the model just handle this?", "ok 1"): character.md 13a tells an Intermediate character the learner is learning. Replayed on Nunzio: gentler, not glossed. If help still fades in play, the note (once they've said it's hard) or the fixed shape at Intermediate are next.
+
 ## Not decided yet
 
 - **The intro at Intermediate** (Josh, 2026-11-12: "it probably isn't as relevant for intermediate, unless even thicker on culture and lighter on personality"): no intro at all, or one that's almost all culture. His Intermediate play decides.
