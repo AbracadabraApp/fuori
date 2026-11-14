@@ -1312,8 +1312,8 @@
       "type": "city"
     },
     "tijuana/tijuana": {
-      "timestamp": "2026-11-14T03:55:59.396Z",
-      "path": "/Users/joshpetersen/fuori-portraits/public/images/es-mx/cities/tijuana.jpg",
+      "timestamp": "2026-11-14T19:32:48.651Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/cities/tijuana.jpg",
       "type": "city"
     },
     "zacatecas/zacatecas": {
@@ -1332,21 +1332,401 @@
       "type": "place"
     },
     "tijuana/plaza-santa-cecilia": {
-      "timestamp": "2026-11-14T03:57:34.430Z",
-      "path": "/Users/joshpetersen/fuori-portraits/public/images/es-mx/places/plaza-santa-cecilia.jpg",
+      "timestamp": "2026-11-14T19:33:17.535Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/plaza-santa-cecilia.jpg",
       "type": "place"
     },
     "zacatecas/catedral-de-zacatecas": {
       "timestamp": "2026-11-14T03:57:59.760Z",
       "path": "/Users/joshpetersen/fuori-portraits/public/images/es-mx/places/catedral-de-zacatecas.jpg",
       "type": "place"
+    },
+    "mazatlan/plazuela-machado": {
+      "timestamp": "2026-11-14T19:33:43.606Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/plazuela-machado.jpg",
+      "type": "place"
+    },
+    "mazatlan/teatro-angela-peralta": {
+      "timestamp": "2026-11-14T19:34:08.563Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/teatro-angela-peralta.jpg",
+      "type": "place"
+    },
+    "mazatlan/faro-de-mazatlan": {
+      "timestamp": "2026-11-14T19:34:36.181Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/faro-de-mazatlan.jpg",
+      "type": "place"
+    },
+    "mazatlan/changueras-aquiles-serdan": {
+      "timestamp": "2026-11-14T19:35:02.378Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/changueras-aquiles-serdan.jpg",
+      "type": "place"
+    },
+    "mazatlan/mariscos-el-patasalada": {
+      "timestamp": "2026-11-14T19:35:23.992Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/mariscos-el-patasalada.jpg",
+      "type": "place"
+    },
+    "mazatlan/playa-los-pinos": {
+      "timestamp": "2026-11-14T19:35:48.669Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/playa-los-pinos.jpg",
+      "type": "place"
+    },
+    "mazatlan/taller-de-carrozas-del-carnaval": {
+      "timestamp": "2026-11-14T19:36:12.897Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/taller-de-carrozas-del-carnaval.jpg",
+      "type": "place"
+    },
+    "mazatlan/catedral-de-mazatlan": {
+      "timestamp": "2026-11-14T19:36:35.002Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/catedral-de-mazatlan.jpg",
+      "type": "place"
+    },
+    "monterrey/horno-3-parque-fundidora": {
+      "timestamp": "2026-11-14T19:37:25.905Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/horno-3-parque-fundidora.jpg",
+      "type": "place"
+    },
+    "monterrey/paseo-santa-lucia": {
+      "timestamp": "2026-11-14T19:37:55.822Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/paseo-santa-lucia.jpg",
+      "type": "place"
+    },
+    "monterrey/discos-el-rebelde-corredor-del-arte": {
+      "timestamp": "2026-11-14T19:38:26.692Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/discos-el-rebelde-corredor-del-arte.jpg",
+      "type": "place"
+    },
+    "monterrey/museo-del-obispado": {
+      "timestamp": "2026-11-14T19:38:51.203Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/museo-del-obispado.jpg",
+      "type": "place"
+    },
+    "monterrey/cabritos-los-sauces": {
+      "timestamp": "2026-11-14T19:39:17.854Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/cabritos-los-sauces.jpg",
+      "type": "place"
+    },
+    "monterrey/basilica-del-roble": {
+      "timestamp": "2026-11-14T19:39:40.693Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/basilica-del-roble.jpg",
+      "type": "place"
+    },
+    "monterrey/cantina-la-regiomontana": {
+      "timestamp": "2026-11-14T19:40:06.042Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/cantina-la-regiomontana.jpg",
+      "type": "place"
+    },
+    "monterrey/tacos-mananeros-dona-licha": {
+      "timestamp": "2026-11-14T19:40:32.869Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/tacos-mananeros-dona-licha.jpg",
+      "type": "place"
+    },
+    "zacatecas/cerro-de-la-bufa": {
+      "timestamp": "2026-11-14T20:07:12.072Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/cerro-de-la-bufa.jpg",
+      "type": "place"
+    },
+    "zacatecas/teleferico-de-zacatecas": {
+      "timestamp": "2026-11-14T19:41:44.095Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/teleferico-de-zacatecas.jpg",
+      "type": "place"
+    },
+    "zacatecas/museo-rafael-coronel": {
+      "timestamp": "2026-11-14T19:42:14.098Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/museo-rafael-coronel.jpg",
+      "type": "place"
+    },
+    "zacatecas/plaza-de-armas-zacatecas": {
+      "timestamp": "2026-11-14T19:42:35.408Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/plaza-de-armas-zacatecas.jpg",
+      "type": "place"
+    },
+    "zacatecas/gorditas-dona-cata": {
+      "timestamp": "2026-11-14T19:43:06.826Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/gorditas-dona-cata.jpg",
+      "type": "place"
+    },
+    "zacatecas/cantina-las-quince-letras": {
+      "timestamp": "2026-11-14T19:43:31.714Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/cantina-las-quince-letras.jpg",
+      "type": "place"
+    },
+    "zacatecas/acueducto-el-cubo": {
+      "timestamp": "2026-11-14T19:44:01.509Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/acueducto-el-cubo.jpg",
+      "type": "place"
+    },
+    "zacatecas/lomas-de-bracho": {
+      "timestamp": "2026-11-14T19:44:26.297Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/lomas-de-bracho.jpg",
+      "type": "place"
+    },
+    "mazatlan/anselmo-capitan-machado": {
+      "timestamp": "2026-11-14T19:45:23.665Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/anselmo-capitan-machado.jpg",
+      "type": "portrait"
+    },
+    "mazatlan/camila-bailarina-angela-peralta": {
+      "timestamp": "2026-11-14T19:45:51.474Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/camila-bailarina-angela-peralta.jpg",
+      "type": "portrait"
+    },
+    "mazatlan/marco-antonio-pulmonia-olas-altas": {
+      "timestamp": "2026-11-14T19:46:19.377Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/marco-antonio-pulmonia-olas-altas.jpg",
+      "type": "portrait"
+    },
+    "mazatlan/lizbeth-enfermera-faro": {
+      "timestamp": "2026-11-14T19:46:40.897Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/lizbeth-enfermera-faro.jpg",
+      "type": "portrait"
+    },
+    "mazatlan/irma-changuera-aquiles-serdan": {
+      "timestamp": "2026-11-14T19:47:06.933Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/irma-changuera-aquiles-serdan.jpg",
+      "type": "portrait"
+    },
+    "mazatlan/joel-carretero-patasalada": {
+      "timestamp": "2026-11-14T19:47:32.728Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/joel-carretero-patasalada.jpg",
+      "type": "portrait"
+    },
+    "mazatlan/heriberto-tambora-los-pinos": {
+      "timestamp": "2026-11-14T19:47:59.862Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/heriberto-tambora-los-pinos.jpg",
+      "type": "portrait"
+    },
+    "mazatlan/maribel-artesana-carnaval": {
+      "timestamp": "2026-11-14T19:48:26.800Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/maribel-artesana-carnaval.jpg",
+      "type": "portrait"
+    },
+    "mazatlan/nicolas-sacristan-catedral-mazatlan": {
+      "timestamp": "2026-11-14T19:48:46.923Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/nicolas-sacristan-catedral-mazatlan.jpg",
+      "type": "portrait"
+    },
+    "mazatlan/brenda-taquillera-mazatlan": {
+      "timestamp": "2026-11-14T19:49:14.522Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/brenda-taquillera-mazatlan.jpg",
+      "type": "portrait"
+    },
+    "monterrey/regina-estudiante-macroplaza": {
+      "timestamp": "2026-11-14T19:49:38.009Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/regina-estudiante-macroplaza.jpg",
+      "type": "portrait"
+    },
+    "monterrey/eleazar-obrero-fundidora": {
+      "timestamp": "2026-11-14T19:50:06.927Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/eleazar-obrero-fundidora.jpg",
+      "type": "portrait"
+    },
+    "monterrey/fabian-lanchero-santa-lucia": {
+      "timestamp": "2026-11-14T20:07:37.248Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/fabian-lanchero-santa-lucia.jpg",
+      "type": "portrait"
+    },
+    "monterrey/adrian-discos-barrio-antiguo": {
+      "timestamp": "2026-11-14T19:51:00.498Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/adrian-discos-barrio-antiguo.jpg",
+      "type": "portrait"
+    },
+    "monterrey/cecilia-historiadora-obispado": {
+      "timestamp": "2026-11-14T19:51:25.818Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/cecilia-historiadora-obispado.jpg",
+      "type": "portrait"
+    },
+    "monterrey/baldemar-asador-los-sauces": {
+      "timestamp": "2026-11-14T19:51:53.261Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/baldemar-asador-los-sauces.jpg",
+      "type": "portrait"
+    },
+    "monterrey/hortensia-voluntaria-roble": {
+      "timestamp": "2026-11-14T19:52:23.014Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/hortensia-voluntaria-roble.jpg",
+      "type": "portrait"
+    },
+    "monterrey/rolando-cantinero-regiomontana": {
+      "timestamp": "2026-11-14T19:52:49.917Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/rolando-cantinero-regiomontana.jpg",
+      "type": "portrait"
+    },
+    "monterrey/licha-taquera-mananeros": {
+      "timestamp": "2026-11-14T19:53:15.387Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/licha-taquera-mananeros.jpg",
+      "type": "portrait"
+    },
+    "monterrey/mayra-taquillera-monterrey": {
+      "timestamp": "2026-11-14T19:53:44.648Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/mayra-taquillera-monterrey.jpg",
+      "type": "portrait"
+    },
+    "zacatecas/refugio-cantero-catedral-zacatecas": {
+      "timestamp": "2026-11-14T19:54:08.994Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/refugio-cantero-catedral-zacatecas.jpg",
+      "type": "portrait"
+    },
+    "zacatecas/eulalia-capilla-la-bufa": {
+      "timestamp": "2026-11-14T19:54:32.241Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/eulalia-capilla-la-bufa.jpg",
+      "type": "portrait"
+    },
+    "zacatecas/uriel-operador-teleferico": {
+      "timestamp": "2026-11-14T19:54:58.860Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/uriel-operador-teleferico.jpg",
+      "type": "portrait"
+    },
+    "zacatecas/leticia-restauradora-coronel": {
+      "timestamp": "2026-11-14T19:55:24.644Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/leticia-restauradora-coronel.jpg",
+      "type": "portrait"
+    },
+    "zacatecas/abel-trompetista-tamborazo": {
+      "timestamp": "2026-11-14T19:55:52.475Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/abel-trompetista-tamborazo.jpg",
+      "type": "portrait"
+    },
+    "zacatecas/cata-cocinera-gorditas": {
+      "timestamp": "2026-11-14T19:56:15.604Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/cata-cocinera-gorditas.jpg",
+      "type": "portrait"
+    },
+    "zacatecas/teodoro-cantinero-quince-letras": {
+      "timestamp": "2026-11-14T19:56:46.355Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/teodoro-cantinero-quince-letras.jpg",
+      "type": "portrait"
+    },
+    "zacatecas/yareli-estudiante-acueducto": {
+      "timestamp": "2026-11-14T19:57:15.172Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/yareli-estudiante-acueducto.jpg",
+      "type": "portrait"
+    },
+    "zacatecas/ismael-cofrade-bracho": {
+      "timestamp": "2026-11-14T19:57:40.826Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/ismael-cofrade-bracho.jpg",
+      "type": "portrait"
+    },
+    "zacatecas/nayeli-taquillera-zacatecas": {
+      "timestamp": "2026-11-14T19:58:05.893Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/nayeli-taquillera-zacatecas.jpg",
+      "type": "portrait"
+    },
+    "tijuana/restaurante-caesars": {
+      "timestamp": "2026-11-14T20:08:16.768Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/restaurante-caesars.jpg",
+      "type": "place"
+    },
+    "tijuana/malecon-de-playas-de-tijuana": {
+      "timestamp": "2026-11-14T19:59:02.996Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/malecon-de-playas-de-tijuana.jpg",
+      "type": "place"
+    },
+    "tijuana/centro-cultural-tijuana": {
+      "timestamp": "2026-11-14T19:59:28.017Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/centro-cultural-tijuana.jpg",
+      "type": "place"
+    },
+    "tijuana/chiles-y-moles-mercado-hidalgo": {
+      "timestamp": "2026-11-14T19:59:53.435Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/chiles-y-moles-mercado-hidalgo.jpg",
+      "type": "place"
+    },
+    "tijuana/taqueria-el-mezquite": {
+      "timestamp": "2026-11-14T20:00:16.401Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/taqueria-el-mezquite.jpg",
+      "type": "place"
+    },
+    "tijuana/taller-de-serigrafia-pasaje-rodriguez": {
+      "timestamp": "2026-11-14T20:00:40.822Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/taller-de-serigrafia-pasaje-rodriguez.jpg",
+      "type": "place"
+    },
+    "tijuana/minarete-de-agua-caliente": {
+      "timestamp": "2026-11-14T20:01:12.419Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/minarete-de-agua-caliente.jpg",
+      "type": "place"
+    },
+    "tijuana/parque-teniente-guerrero": {
+      "timestamp": "2026-11-14T20:01:40.235Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/parque-teniente-guerrero.jpg",
+      "type": "place"
+    },
+    "tijuana/sergio-mesero-caesars": {
+      "timestamp": "2026-11-14T20:11:44.408Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/sergio-mesero-caesars.jpg",
+      "type": "portrait"
+    },
+    "tijuana/paola-muralista-playas": {
+      "timestamp": "2026-11-14T20:03:02.455Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/paola-muralista-playas.jpg",
+      "type": "portrait"
+    },
+    "tijuana/ana-lucia-chelista-cecut": {
+      "timestamp": "2026-11-14T20:03:28.717Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/ana-lucia-chelista-cecut.jpg",
+      "type": "portrait"
+    },
+    "tijuana/estela-chiles-mercado-hidalgo": {
+      "timestamp": "2026-11-14T20:09:11.959Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/estela-chiles-mercado-hidalgo.jpg",
+      "type": "portrait"
+    },
+    "tijuana/ivan-taquero-el-mezquite": {
+      "timestamp": "2026-11-14T20:04:23.271Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/ivan-taquero-el-mezquite.jpg",
+      "type": "portrait"
+    },
+    "tijuana/emilio-serigrafista-pasaje-rodriguez": {
+      "timestamp": "2026-11-14T20:04:44.469Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/emilio-serigrafista-pasaje-rodriguez.jpg",
+      "type": "portrait"
+    },
+    "tijuana/rosendo-acordeonista-santa-cecilia": {
+      "timestamp": "2026-11-14T20:05:13.310Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/rosendo-acordeonista-santa-cecilia.jpg",
+      "type": "portrait"
+    },
+    "tijuana/veronica-maestra-agua-caliente": {
+      "timestamp": "2026-11-14T20:05:34.215Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/veronica-maestra-agua-caliente.jpg",
+      "type": "portrait"
+    },
+    "tijuana/fermin-ajedrecista-teniente-guerrero": {
+      "timestamp": "2026-11-14T20:06:01.715Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/fermin-ajedrecista-teniente-guerrero.jpg",
+      "type": "portrait"
+    },
+    "tijuana/jazmin-taquillera-tijuana": {
+      "timestamp": "2026-11-14T20:06:29.066Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/jazmin-taquillera-tijuana.jpg",
+      "type": "portrait"
+    },
+    "tijuana/terminal-tijuana": {
+      "timestamp": "2026-11-14T20:02:06.043Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/terminal-tijuana.jpg",
+      "type": "place"
+    },
+    "monterrey/terminal-monterrey": {
+      "timestamp": "2026-11-14T19:40:56.104Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/terminal-monterrey.jpg",
+      "type": "place"
+    },
+    "mazatlan/terminal-mazatlan": {
+      "timestamp": "2026-11-14T19:37:01.738Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/terminal-mazatlan.jpg",
+      "type": "place"
+    },
+    "zacatecas/terminal-zacatecas": {
+      "timestamp": "2026-11-14T19:44:54.178Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/places/terminal-zacatecas.jpg",
+      "type": "place"
     }
   },
   "failed": {},
   "stats": {
-    "total": 268,
-    "completed": 268,
+    "total": 344,
+    "completed": 344,
     "failed": 0,
-    "lastRun": "2026-11-14T03:58:02.762Z"
+    "lastRun": "2026-11-14T20:11:47.425Z"
   }
 }

@@ -94,7 +94,7 @@ export const tijuana: CityPantry = {
       imagePrompt: 'Parque Teniente Guerrero in the Zona Centro of Tijuana on a Sunday afternoon. An old city park with tall trees, a kiosk and benches, the hills of the city crowded with houses beyond the rooftops. Older couples dance near the kiosk, and at stone tables under the trees men play chess; an old man in a cardigan considers his next move.',
     },
     {
-      id: 'central-de-autobuses-de-tijuana',
+      id: 'terminal-tijuana',
       name: 'Central de Autobuses de Tijuana',
       kind: 'bus-terminal',
       neighbourhood: 'La Mesa',
@@ -113,7 +113,7 @@ export const tijuana: CityPantry = {
       role: 'mesero',
       placeId: 'restaurante-caesars',
       personality: ['precise', 'dry sense of humour', 'proud of the ritual'],
-      portraitPrompt: "Gouache portrait of a man of 58 with short grey hair and a calm, concentrated face, in a white waiter's jacket and black tie, tossing romaine leaves in a wooden bowl, who makes the salad at the table at Caesar's, Zona Centro, Tijuana. Include the dark wooden bar and framed photographs behind him. Bold, saturated colour: bottle green, cream and dark wood brown. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
+      portraitPrompt: "Gouache portrait of a man of 58 with brown skin, short grey hair and a calm, concentrated face, in a waiter's jacket and black tie, standing at a wooden cart beside a customer's table and tossing romaine leaves in a big wooden bowl, who makes the salad at the table at Caesar's, Zona Centro, Tijuana. Include the busy dining room behind him: the long dark wooden bar, the black-and-white tiled floor, framed photographs and diners. Bold, saturated colour: bottle green, warm ochre, lettuce green and dark wood brown. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
       here: "You are a waiter at Caesar's on Avenida Revolución in Tijuana, and you make the Caesar salad at the table from a wooden cart: whole romaine leaves, garlic, lime, a coddled egg, Worcestershire sauce, olive oil, parmesan and croutons. The salad was born here in the 1920s, when Americans crossed the border to drink during Prohibition. The story goes that Caesar Cardini, an Italian restaurateur, made it on a busy Fourth of July weekend in 1924 from what was left in the kitchen. The first version had no anchovies, and people ate the leaves with their fingers. Tijuanenses bring their relatives from out of town here to prove that the salad is Mexican.",
     },
     {
@@ -219,7 +219,7 @@ export const tijuana: CityPantry = {
       age: 26,
       voice: 'm7yTemJqdIqrcNleANfX', // Ana María
       role: 'taquillera',
-      placeId: 'central-de-autobuses-de-tijuana',
+      placeId: 'terminal-tijuana',
       personality: ['brisk', 'kind to the lost', 'knows every route south'],
       portraitPrompt: 'Gouache portrait of a young woman of 26 with her hair in a high ponytail and small gold earrings, in a company polo shirt, typing at a ticket counter, who sells tickets at the Central de Autobuses de Tijuana. Include the ticket counter and the departure screen behind her. Bold, saturated colour: desert orange, teal and white. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
       here: "You sell tickets at Tijuana's main bus terminal. Everything from here goes south or east: Ensenada is an hour and a half down the coast, La Paz is about a day away down the whole peninsula, and the buses to Sinaloa, Guadalajara and Mexico City cross the Sonoran desert and take a day and a half or more. Many of your passengers have just crossed from the United States, or are about to. People say la línea for the border crossing, and everyone knows how long the wait is today.",

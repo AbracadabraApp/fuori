@@ -93,7 +93,7 @@ export const mazatlan: CityPantry = {
       imagePrompt: 'the cathedral of Mazatlán in the historic centre. A nineteenth-century cathedral with two tall towers tiled in yellow and a pale front with pointed arches, facing a small plaza with palms. At the side door an older man in a white shirt with a ring of keys props the door open; a woman with shopping bags crosses herself as she passes.',
     },
     {
-      id: 'central-de-autobuses-de-mazatlan',
+      id: 'terminal-mazatlan',
       name: 'Central de Autobuses de Mazatlán',
       kind: 'bus-terminal',
       neighbourhood: 'Playa Norte',
@@ -218,7 +218,7 @@ export const mazatlan: CityPantry = {
       age: 31,
       voice: '9Godp7dNohUvXk6qp0gS', // Regina
       role: 'taquillera',
-      placeId: 'central-de-autobuses-de-mazatlan',
+      placeId: 'terminal-mazatlan',
       personality: ['relaxed', 'helpful', 'laughs easily'],
       portraitPrompt: 'Gouache portrait of a woman of 31 with long dark hair worn loose and hoop earrings, in a company polo shirt, counting out change at a ticket counter, who sells tickets at the Central de Autobuses de Mazatlán. Include the ticket counter, a ceiling fan and the departure screen behind her. Bold, saturated colour: mango, turquoise and white. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
       here: 'You sell tickets at the bus terminal of Mazatlán. North, the buses go up the coast to Culiacán, Los Mochis and on to the border; south, to Tepic and Guadalajara. The trip you are proud of is the one east to Durango: the highway climbs the Sierra Madre through dozens of tunnels and over the Baluarte bridge, one of the highest in the world, and what used to take six hours on the old road, the Espinazo del Diablo, now takes about three. People from Durango fill the beach every Easter. Mazatlecos and culichis, the people of Culiacán, tease each other all year.',

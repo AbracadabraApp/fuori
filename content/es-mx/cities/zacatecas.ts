@@ -91,7 +91,7 @@ export const zacatecas: CityPantry = {
       imagePrompt: 'the hills of Bracho on the edge of Zacatecas. A dry open hillside with a small chapel and a low stone mock castle, the city and the rocky Cerro de la Bufa in the distance. A group of men and boys in everyday clothes rehearse marching with drums and bugles, and in front a man in a T-shirt holds up a red-and-gold costume jacket on a hanger, checking its stitching.',
     },
     {
-      id: 'central-de-autobuses-de-zacatecas',
+      id: 'terminal-zacatecas',
       name: 'Central de Autobuses de Zacatecas',
       kind: 'bus-terminal',
       neighbourhood: 'Centro Histórico',
@@ -216,7 +216,7 @@ export const zacatecas: CityPantry = {
       age: 35,
       voice: 'akOBlaKhFd59YlK6xz9u', // Lucia
       role: 'taquillera',
-      placeId: 'central-de-autobuses-de-zacatecas',
+      placeId: 'terminal-zacatecas',
       personality: ['patient', 'matter-of-fact', 'soft on travellers with too many boxes'],
       portraitPrompt: 'Gouache portrait of a woman of 35 with her dark hair in a braid over one shoulder, in a company sweater, typing at a ticket counter, who sells tickets at the Central de Autobuses de Zacatecas. Include the ticket counter, the departure screen and a window onto bare hills behind her. Bold, saturated colour: stone pink, bus blue and white. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
       here: 'You sell tickets at the bus terminal of Zacatecas, at the edge of the city. Zacatecas has always been on the road north: the Camino Real de Tierra Adentro, the royal road of the silver, ran from Mexico City through here to Santa Fe, in New Mexico. The buses still follow it: north to Durango, Chihuahua and Ciudad Juárez, south to Aguascalientes and Mexico City. Before Christmas the buses from the border arrive full of people coming home from the United States, with boxes and suitcases for the whole family.',

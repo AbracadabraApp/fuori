@@ -617,10 +617,20 @@
       "src": "b9823a7105266598",
       "bytes": 225338
     },
+    "cities/mazatlan": {
+      "key": "es-mx/cities/mazatlan.b897eac128.webp",
+      "src": "637c7d69aa4ab03d",
+      "bytes": 314796
+    },
     "cities/merida": {
       "key": "es-mx/cities/merida.bd6d757ba8.webp",
       "src": "7320086ccbb7e87f",
       "bytes": 372960
+    },
+    "cities/monterrey": {
+      "key": "es-mx/cities/monterrey.8be33fb78b.webp",
+      "src": "1594f0dec9ef3352",
+      "bytes": 113764
     },
     "cities/oaxaca": {
       "key": "es-mx/cities/oaxaca.d6f2f30db7.webp",
@@ -647,10 +657,20 @@
       "src": "aac6785e64e17dce",
       "bytes": 176178
     },
+    "cities/tijuana": {
+      "key": "es-mx/cities/tijuana.eb2f30f5d0.webp",
+      "src": "1ed8e3a9f6ae5cec",
+      "bytes": 282896
+    },
     "cities/veracruz": {
       "key": "es-mx/cities/veracruz.dc9f7ddb57.webp",
       "src": "481cdb12afd36360",
       "bytes": 242834
+    },
+    "cities/zacatecas": {
+      "key": "es-mx/cities/zacatecas.7947430f47.webp",
+      "src": "f0c101f3d30d835a",
+      "bytes": 400692
     },
     "country/es-mx": {
       "key": "es-mx/country/es-mx.f1d349f9af.webp",
@@ -742,6 +762,11 @@
       "src": "c3fd95ebbfc6a078",
       "bytes": 263990
     },
+    "places/acueducto-el-cubo": {
+      "key": "es-mx/places/acueducto-el-cubo.af4669758e.webp",
+      "src": "02c48fbbdfe8e611",
+      "bytes": 363004
+    },
     "places/alameda-central": {
       "key": "es-mx/places/alameda-central.de0a40523e.webp",
       "src": "d4b19a92f07e1ccb",
@@ -772,6 +797,11 @@
       "src": "18e8686c6f1cc89a",
       "bytes": 460526
     },
+    "places/basilica-del-roble": {
+      "key": "es-mx/places/basilica-del-roble.6521acd501.webp",
+      "src": "97b20604c7e7b095",
+      "bytes": 63374
+    },
     "places/biblioteca-gertrudis-bocanegra": {
       "key": "es-mx/places/biblioteca-gertrudis-bocanegra.95edcacd8c.webp",
       "src": "b75cce1b9ccbe8f8",
@@ -781,6 +811,11 @@
       "key": "es-mx/places/biblioteca-palafoxiana.d167a6a566.webp",
       "src": "dafffde07826480c",
       "bytes": 372108
+    },
+    "places/cabritos-los-sauces": {
+      "key": "es-mx/places/cabritos-los-sauces.3bd7129e0c.webp",
+      "src": "487890524990f770",
+      "bytes": 79508
     },
     "places/cafe-amapola": {
       "key": "es-mx/places/cafe-amapola.0f3491e53f.webp",
@@ -822,6 +857,16 @@
       "src": "f4f9f9d1a923e722",
       "bytes": 239328
     },
+    "places/cantina-la-regiomontana": {
+      "key": "es-mx/places/cantina-la-regiomontana.5b258a0396.webp",
+      "src": "0bcc7a42f4f8fee7",
+      "bytes": 99750
+    },
+    "places/cantina-las-quince-letras": {
+      "key": "es-mx/places/cantina-las-quince-letras.5806dc54d2.webp",
+      "src": "16a01c664405ac91",
+      "bytes": 331378
+    },
     "places/casa-de-allende": {
       "key": "es-mx/places/casa-de-allende.20f3c05c40.webp",
       "src": "7904c48895c6b247",
@@ -847,10 +892,20 @@
       "src": "c368b16c60881e8a",
       "bytes": 230678
     },
+    "places/catedral-de-mazatlan": {
+      "key": "es-mx/places/catedral-de-mazatlan.5843aec580.webp",
+      "src": "de951f8bc47d5b47",
+      "bytes": 398006
+    },
     "places/catedral-de-san-cristobal": {
       "key": "es-mx/places/catedral-de-san-cristobal.c17984ea0b.webp",
       "src": "c7009980c410fd6a",
       "bytes": 386282
+    },
+    "places/catedral-de-zacatecas": {
+      "key": "es-mx/places/catedral-de-zacatecas.0442eaf8af.webp",
+      "src": "7f95002949a9df1d",
+      "bytes": 411980
     },
     "places/catedral-metropolitana": {
       "key": "es-mx/places/catedral-metropolitana.aa018f13b3.webp",
@@ -862,6 +917,11 @@
       "src": "b50c5500abaf01f3",
       "bytes": 332740
     },
+    "places/centro-cultural-tijuana": {
+      "key": "es-mx/places/centro-cultural-tijuana.9a9ef64b2a.webp",
+      "src": "41ff89d2cc2f6a79",
+      "bytes": 188512
+    },
     "places/centro-de-escritores-tsotsil": {
       "key": "es-mx/places/centro-de-escritores-tsotsil.a9436c1b71.webp",
       "src": "de0703d7dcd4af42",
@@ -871,6 +931,21 @@
       "key": "es-mx/places/centro-de-lengua-maya.5b96d504bf.webp",
       "src": "8c12ef0366277612",
       "bytes": 350470
+    },
+    "places/cerro-de-la-bufa": {
+      "key": "es-mx/places/cerro-de-la-bufa.ccecc8243d.webp",
+      "src": "45bc5157c7595043",
+      "bytes": 348614
+    },
+    "places/changueras-aquiles-serdan": {
+      "key": "es-mx/places/changueras-aquiles-serdan.9da611b71a.webp",
+      "src": "1c875144537942db",
+      "bytes": 364408
+    },
+    "places/chiles-y-moles-mercado-hidalgo": {
+      "key": "es-mx/places/chiles-y-moles-mercado-hidalgo.6ddc87e404.webp",
+      "src": "2fb09dda161eec1a",
+      "bytes": 269494
     },
     "places/chocolate-mayordomo-mina": {
       "key": "es-mx/places/chocolate-mayordomo-mina.33d64dd045.webp",
@@ -891,6 +966,11 @@
       "key": "es-mx/places/danza-de-los-viejitos.f5afe62086.webp",
       "src": "a41e5d2c7f4b917a",
       "bytes": 420452
+    },
+    "places/discos-el-rebelde-corredor-del-arte": {
+      "key": "es-mx/places/discos-el-rebelde-corredor-del-arte.a610edbdfd.webp",
+      "src": "2ac99846db5b7969",
+      "bytes": 125776
     },
     "places/dulces-tipicos-la-gloria": {
       "key": "es-mx/places/dulces-tipicos-la-gloria.fa82204f21.webp",
@@ -957,6 +1037,11 @@
       "src": "f1cea86c454148a8",
       "bytes": 342632
     },
+    "places/faro-de-mazatlan": {
+      "key": "es-mx/places/faro-de-mazatlan.d42dd3e936.webp",
+      "src": "bd7455529d8d036d",
+      "bytes": 389940
+    },
     "places/fonda-dona-chuy": {
       "key": "es-mx/places/fonda-dona-chuy.31f2c7dcb0.webp",
       "src": "760d9915240db999",
@@ -982,6 +1067,11 @@
       "src": "9e2b890f0067c0f6",
       "bytes": 186330
     },
+    "places/gorditas-dona-cata": {
+      "key": "es-mx/places/gorditas-dona-cata.da1fce5c3a.webp",
+      "src": "491f35edfbf42252",
+      "bytes": 341404
+    },
     "places/gran-cafe-de-la-parroquia": {
       "key": "es-mx/places/gran-cafe-de-la-parroquia.0403b635ac.webp",
       "src": "281a896bc3dfea53",
@@ -991,6 +1081,11 @@
       "key": "es-mx/places/gran-museo-mundo-maya.286e36aa04.webp",
       "src": "93fdc7e175b36b5b",
       "bytes": 317014
+    },
+    "places/horno-3-parque-fundidora": {
+      "key": "es-mx/places/horno-3-parque-fundidora.2de7a37e13.webp",
+      "src": "5e6b85319db0f382",
+      "bytes": 112406
     },
     "places/hospicio-cabanas": {
       "key": "es-mx/places/hospicio-cabanas.4758261576.webp",
@@ -1067,10 +1162,30 @@
       "src": "81199bf74a4caf6a",
       "bytes": 292286
     },
+    "places/lomas-de-bracho": {
+      "key": "es-mx/places/lomas-de-bracho.09a749bfb1.webp",
+      "src": "d0dd073a6c1037e3",
+      "bytes": 348598
+    },
+    "places/macroplaza": {
+      "key": "es-mx/places/macroplaza.fac64bdd7e.webp",
+      "src": "2070f6414bc9829b",
+      "bytes": 110680
+    },
+    "places/malecon-de-playas-de-tijuana": {
+      "key": "es-mx/places/malecon-de-playas-de-tijuana.afc13e7907.webp",
+      "src": "62e370da70432478",
+      "bytes": 259286
+    },
     "places/malecon-de-veracruz": {
       "key": "es-mx/places/malecon-de-veracruz.e1519c721b.webp",
       "src": "f5756949de8f72b3",
       "bytes": 226548
+    },
+    "places/mariscos-el-patasalada": {
+      "key": "es-mx/places/mariscos-el-patasalada.0476c19fc0.webp",
+      "src": "3f4fd03e0139fc14",
+      "bytes": 390086
     },
     "places/mercado-ignacio-ramirez": {
       "key": "es-mx/places/mercado-ignacio-ramirez.39a23ef37e.webp",
@@ -1086,6 +1201,11 @@
       "key": "es-mx/places/mezcaleria-los-amantes.cfbf0fab74.webp",
       "src": "4474a1f45c215895",
       "bytes": 225012
+    },
+    "places/minarete-de-agua-caliente": {
+      "key": "es-mx/places/minarete-de-agua-caliente.7feabba16d.webp",
+      "src": "d5f31ab4a3acbb91",
+      "bytes": 199120
     },
     "places/miscelanea-los-arcos": {
       "key": "es-mx/places/miscelanea-los-arcos.f4a566e6c0.webp",
@@ -1116,6 +1236,16 @@
       "key": "es-mx/places/museo-del-cafe-sancris.00cd4fe997.webp",
       "src": "e1c9fed38dd25840",
       "bytes": 438598
+    },
+    "places/museo-del-obispado": {
+      "key": "es-mx/places/museo-del-obispado.ad388cedfd.webp",
+      "src": "f477505759b55099",
+      "bytes": 140520
+    },
+    "places/museo-rafael-coronel": {
+      "key": "es-mx/places/museo-rafael-coronel.c70a8bdfa1.webp",
+      "src": "3f5f7a639fa63324",
+      "bytes": 429742
     },
     "places/na-bolom": {
       "key": "es-mx/places/na-bolom.38e5b9a1a0.webp",
@@ -1177,6 +1307,11 @@
       "src": "5e6d8bcac03cea46",
       "bytes": 498012
     },
+    "places/parque-teniente-guerrero": {
+      "key": "es-mx/places/parque-teniente-guerrero.673a55e0b8.webp",
+      "src": "6fd0b02aa718705b",
+      "bytes": 327442
+    },
     "places/parroquia-san-miguel-arcangel": {
       "key": "es-mx/places/parroquia-san-miguel-arcangel.7f4f2d1e1f.webp",
       "src": "f8702cd9ce6d8508",
@@ -1192,20 +1327,50 @@
       "src": "85691530743aeaf0",
       "bytes": 354626
     },
+    "places/paseo-de-olas-altas": {
+      "key": "es-mx/places/paseo-de-olas-altas.0d9b4befeb.webp",
+      "src": "908b9cce5eb499a1",
+      "bytes": 318546
+    },
+    "places/paseo-santa-lucia": {
+      "key": "es-mx/places/paseo-santa-lucia.9c3e818c89.webp",
+      "src": "725526f3e28425d0",
+      "bytes": 94228
+    },
     "places/picadas-mercado-hidalgo": {
       "key": "es-mx/places/picadas-mercado-hidalgo.319e555e7b.webp",
       "src": "ba2120dd59560202",
       "bytes": 202388
+    },
+    "places/playa-los-pinos": {
+      "key": "es-mx/places/playa-los-pinos.cae556eaa0.webp",
+      "src": "ba2224233837185c",
+      "bytes": 360234
+    },
+    "places/plaza-de-armas-zacatecas": {
+      "key": "es-mx/places/plaza-de-armas-zacatecas.6a902be3b1.webp",
+      "src": "9be0461196cb2de3",
+      "bytes": 314028
     },
     "places/plaza-de-los-mariachis": {
       "key": "es-mx/places/plaza-de-los-mariachis.819349e567.webp",
       "src": "2344b10762b4bc16",
       "bytes": 406866
     },
+    "places/plaza-santa-cecilia": {
+      "key": "es-mx/places/plaza-santa-cecilia.91c292bbe2.webp",
+      "src": "f9f735d1e24cc2df",
+      "bytes": 244390
+    },
     "places/plaza-vasco-de-quiroga": {
       "key": "es-mx/places/plaza-vasco-de-quiroga.090d347c06.webp",
       "src": "b8dc994784075052",
       "bytes": 466628
+    },
+    "places/plazuela-machado": {
+      "key": "es-mx/places/plazuela-machado.a17038ca8b.webp",
+      "src": "bbc73e5a2c4f033e",
+      "bytes": 364218
     },
     "places/puesto-chapulines-mercado-benito-juarez": {
       "key": "es-mx/places/puesto-chapulines-mercado-benito-juarez.e2c02efd7e.webp",
@@ -1221,6 +1386,11 @@
       "key": "es-mx/places/quesadillas-dona-lupe.a9316c7caa.webp",
       "src": "e1e3db7362c1e6b2",
       "bytes": 209622
+    },
+    "places/restaurante-caesars": {
+      "key": "es-mx/places/restaurante-caesars.d397538bee.webp",
+      "src": "95e71191a3b5b91f",
+      "bytes": 210588
     },
     "places/san-juan-de-ulua": {
       "key": "es-mx/places/san-juan-de-ulua.997c09f6c5.webp",
@@ -1252,15 +1422,30 @@
       "src": "fc49a3148dd883c6",
       "bytes": 273272
     },
+    "places/tacos-mananeros-dona-licha": {
+      "key": "es-mx/places/tacos-mananeros-dona-licha.04cc99563a.webp",
+      "src": "c998630a7291b1e4",
+      "bytes": 76698
+    },
     "places/taller-ceramica-tlaquepaque": {
       "key": "es-mx/places/taller-ceramica-tlaquepaque.e0aa9e1a41.webp",
       "src": "6a63ad9c235acc1c",
       "bytes": 431536
     },
+    "places/taller-de-carrozas-del-carnaval": {
+      "key": "es-mx/places/taller-de-carrozas-del-carnaval.0c5e30e00e.webp",
+      "src": "de3df60e34bf36b5",
+      "bytes": 386640
+    },
     "places/taller-de-hamacas": {
       "key": "es-mx/places/taller-de-hamacas.321880198e.webp",
       "src": "1e8556d3c0ea6a18",
       "bytes": 325608
+    },
+    "places/taller-de-serigrafia-pasaje-rodriguez": {
+      "key": "es-mx/places/taller-de-serigrafia-pasaje-rodriguez.bebfb5155b.webp",
+      "src": "004cfa9575826ea5",
+      "bytes": 249812
     },
     "places/tamales-barrio-de-mexicanos": {
       "key": "es-mx/places/tamales-barrio-de-mexicanos.a5e630b44e.webp",
@@ -1272,6 +1457,16 @@
       "src": "9416407f3ff1f733",
       "bytes": 242906
     },
+    "places/taqueria-el-mezquite": {
+      "key": "es-mx/places/taqueria-el-mezquite.2bbb06078a.webp",
+      "src": "fcb2589eec6bb22c",
+      "bytes": 201044
+    },
+    "places/teatro-angela-peralta": {
+      "key": "es-mx/places/teatro-angela-peralta.0a2fadf7ca.webp",
+      "src": "345dd16aaa00503e",
+      "bytes": 400032
+    },
     "places/teatro-juarez": {
       "key": "es-mx/places/teatro-juarez.cfefba01d0.webp",
       "src": "eb573abdc55fab12",
@@ -1281,6 +1476,11 @@
       "key": "es-mx/places/tejuino-san-juan-de-dios.2d7de122f0.webp",
       "src": "867a77f66dabf348",
       "bytes": 349212
+    },
+    "places/teleferico-de-zacatecas": {
+      "key": "es-mx/places/teleferico-de-zacatecas.f6dc17f74b.webp",
+      "src": "a94707c92c660149",
+      "bytes": 381726
     },
     "places/templo-de-guadalupe-sancris": {
       "key": "es-mx/places/templo-de-guadalupe-sancris.a1611684a4.webp",
@@ -1322,10 +1522,20 @@
       "src": "9ef90ce730a6be45",
       "bytes": 247078
     },
+    "places/terminal-mazatlan": {
+      "key": "es-mx/places/terminal-mazatlan.0af3a430d0.webp",
+      "src": "b977831c13eca42c",
+      "bytes": 335888
+    },
     "places/terminal-merida-came": {
       "key": "es-mx/places/terminal-merida-came.ab7ca0281b.webp",
       "src": "97bc54737e551d24",
       "bytes": 219992
+    },
+    "places/terminal-monterrey": {
+      "key": "es-mx/places/terminal-monterrey.4b217dc1be.webp",
+      "src": "9f086e6b4ae3a614",
+      "bytes": 74554
     },
     "places/terminal-nueva": {
       "key": "es-mx/places/terminal-nueva.3d8f161c58.webp",
@@ -1352,10 +1562,20 @@
       "src": "e67b11ac8c86609f",
       "bytes": 283882
     },
+    "places/terminal-tijuana": {
+      "key": "es-mx/places/terminal-tijuana.066fa84162.webp",
+      "src": "c3d97405aabd9f1b",
+      "bytes": 202958
+    },
     "places/terminal-veracruz": {
       "key": "es-mx/places/terminal-veracruz.4ac8b15264.webp",
       "src": "1ede36715f8cf438",
       "bytes": 133918
+    },
+    "places/terminal-zacatecas": {
+      "key": "es-mx/places/terminal-zacatecas.a5ab824d9b.webp",
+      "src": "d4dea89f03240fc2",
+      "bytes": 312448
     },
     "places/tlayudas-mercado-20-de-noviembre": {
       "key": "es-mx/places/tlayudas-mercado-20-de-noviembre.e316f8c432.webp",
@@ -1382,6 +1602,16 @@
       "src": "8b17a335045c2f84",
       "bytes": 316308
     },
+    "portraits/abel-trompetista-tamborazo": {
+      "key": "es-mx/portraits/abel-trompetista-tamborazo.ac04b554ea.webp",
+      "src": "57a4f4d1b9656510",
+      "bytes": 311562
+    },
+    "portraits/adrian-discos-barrio-antiguo": {
+      "key": "es-mx/portraits/adrian-discos-barrio-antiguo.f1ea282eff.webp",
+      "src": "378e99079aa4c5a9",
+      "bytes": 348724
+    },
     "portraits/alicia-catequista": {
       "key": "es-mx/portraits/alicia-catequista.ad1a56bea3.webp",
       "src": "05c2bff2a1f81120",
@@ -1397,6 +1627,11 @@
       "src": "effddf7d29f306a3",
       "bytes": 348766
     },
+    "portraits/ana-lucia-chelista-cecut": {
+      "key": "es-mx/portraits/ana-lucia-chelista-cecut.3e0869cf5d.webp",
+      "src": "c44c1ac61fa6a86d",
+      "bytes": 198128
+    },
     "portraits/andrea-taquillera-sancris": {
       "key": "es-mx/portraits/andrea-taquillera-sancris.04af4bab5a.webp",
       "src": "c39e8a9a63b19540",
@@ -1406,6 +1641,11 @@
       "key": "es-mx/portraits/andres-cabanas.a0f77e289b.webp",
       "src": "51040645f496892f",
       "bytes": 248152
+    },
+    "portraits/anselmo-capitan-machado": {
+      "key": "es-mx/portraits/anselmo-capitan-machado.561d39425c.webp",
+      "src": "b0a56659035b4354",
+      "bytes": 497364
     },
     "portraits/arnulfo-sacristan": {
       "key": "es-mx/portraits/arnulfo-sacristan.fb028b2c3b.webp",
@@ -1432,6 +1672,11 @@
       "src": "3e4f902b6b4fdf3c",
       "bytes": 304902
     },
+    "portraits/baldemar-asador-los-sauces": {
+      "key": "es-mx/portraits/baldemar-asador-los-sauces.f64c3543b4.webp",
+      "src": "f26b4c1a16dfb8da",
+      "bytes": 291466
+    },
     "portraits/beatriz-abuela": {
       "key": "es-mx/portraits/beatriz-abuela.6e4011e9be.webp",
       "src": "88707e936961daf5",
@@ -1457,6 +1702,16 @@
       "src": "5b85d5c901ffc438",
       "bytes": 229832
     },
+    "portraits/brenda-taquillera-mazatlan": {
+      "key": "es-mx/portraits/brenda-taquillera-mazatlan.3f990d5a4e.webp",
+      "src": "5732571ddc51f676",
+      "bytes": 233030
+    },
+    "portraits/camila-bailarina-angela-peralta": {
+      "key": "es-mx/portraits/camila-bailarina-angela-peralta.803c22494c.webp",
+      "src": "f3a9667328b41052",
+      "bytes": 251974
+    },
     "portraits/carlos-taquillero-gdl": {
       "key": "es-mx/portraits/carlos-taquillero-gdl.43bbf0e5d1.webp",
       "src": "2245c0dc4aa89e19",
@@ -1466,6 +1721,16 @@
       "key": "es-mx/portraits/carmen-jubilada.696019adfd.webp",
       "src": "a2d73814b790d48d",
       "bytes": 211664
+    },
+    "portraits/cata-cocinera-gorditas": {
+      "key": "es-mx/portraits/cata-cocinera-gorditas.4cd1eab291.webp",
+      "src": "b9ca2479d6ed349f",
+      "bytes": 247600
+    },
+    "portraits/cecilia-historiadora-obispado": {
+      "key": "es-mx/portraits/cecilia-historiadora-obispado.8ba110b904.webp",
+      "src": "825ad0656594f507",
+      "bytes": 307398
     },
     "portraits/chayo-vecina-guadalupe": {
       "key": "es-mx/portraits/chayo-vecina-guadalupe.f617b24741.webp",
@@ -1567,6 +1832,11 @@
       "src": "fd475acf52d6c798",
       "bytes": 301510
     },
+    "portraits/eleazar-obrero-fundidora": {
+      "key": "es-mx/portraits/eleazar-obrero-fundidora.ddf1b0a3f2.webp",
+      "src": "28a7eff91b3daee6",
+      "bytes": 247434
+    },
     "portraits/elena-cafetalera": {
       "key": "es-mx/portraits/elena-cafetalera.072bf644ba.webp",
       "src": "0945adee44d8d8c3",
@@ -1586,6 +1856,31 @@
       "key": "es-mx/portraits/emiliano-los-amantes.bd4b7d7152.webp",
       "src": "61711566a1c215aa",
       "bytes": 256198
+    },
+    "portraits/emilio-serigrafista-pasaje-rodriguez": {
+      "key": "es-mx/portraits/emilio-serigrafista-pasaje-rodriguez.61f8507536.webp",
+      "src": "2026341b23fa5252",
+      "bytes": 373770
+    },
+    "portraits/estela-chiles-mercado-hidalgo": {
+      "key": "es-mx/portraits/estela-chiles-mercado-hidalgo.6c005cd65a.webp",
+      "src": "c5741ad534425990",
+      "bytes": 413958
+    },
+    "portraits/eulalia-capilla-la-bufa": {
+      "key": "es-mx/portraits/eulalia-capilla-la-bufa.411350c294.webp",
+      "src": "2db0481c0665aad0",
+      "bytes": 339928
+    },
+    "portraits/fabian-lanchero-santa-lucia": {
+      "key": "es-mx/portraits/fabian-lanchero-santa-lucia.79ba1f9183.webp",
+      "src": "433781d4efbbb670",
+      "bytes": 322026
+    },
+    "portraits/fermin-ajedrecista-teniente-guerrero": {
+      "key": "es-mx/portraits/fermin-ajedrecista-teniente-guerrero.8cbfa77287.webp",
+      "src": "cfeeb1fe2300dd02",
+      "bytes": 336552
     },
     "portraits/fernanda-estudiante-derecho": {
       "key": "es-mx/portraits/fernanda-estudiante-derecho.895d8d4411.webp",
@@ -1622,6 +1917,16 @@
       "src": "24c10bb9e5870218",
       "bytes": 418062
     },
+    "portraits/heriberto-tambora-los-pinos": {
+      "key": "es-mx/portraits/heriberto-tambora-los-pinos.4b2204c786.webp",
+      "src": "c1d7950654af63cd",
+      "bytes": 343106
+    },
+    "portraits/hortensia-voluntaria-roble": {
+      "key": "es-mx/portraits/hortensia-voluntaria-roble.0c5bb1173a.webp",
+      "src": "09910a7817696d8b",
+      "bytes": 257384
+    },
     "portraits/hugo-fotografo-pipila": {
       "key": "es-mx/portraits/hugo-fotografo-pipila.11d7825456.webp",
       "src": "6bd4198c7ed70929",
@@ -1637,15 +1942,40 @@
       "src": "a515ea367ab7249b",
       "bytes": 367228
     },
+    "portraits/irma-changuera-aquiles-serdan": {
+      "key": "es-mx/portraits/irma-changuera-aquiles-serdan.af0f63e145.webp",
+      "src": "30d27f0012faa68c",
+      "bytes": 298546
+    },
     "portraits/isidro-minero": {
       "key": "es-mx/portraits/isidro-minero.8e355b72f6.webp",
       "src": "95177cb9d590ec58",
       "bytes": 357806
     },
+    "portraits/ismael-cofrade-bracho": {
+      "key": "es-mx/portraits/ismael-cofrade-bracho.164e39a01e.webp",
+      "src": "8b8cc580d2ac41b4",
+      "bytes": 360378
+    },
     "portraits/itzel-guia-na-bolom": {
       "key": "es-mx/portraits/itzel-guia-na-bolom.2177c08d3f.webp",
       "src": "2c04f494f19b3d76",
       "bytes": 297966
+    },
+    "portraits/ivan-taquero-el-mezquite": {
+      "key": "es-mx/portraits/ivan-taquero-el-mezquite.96f94814f0.webp",
+      "src": "0b74cf7a39881f3a",
+      "bytes": 253436
+    },
+    "portraits/jazmin-taquillera-tijuana": {
+      "key": "es-mx/portraits/jazmin-taquillera-tijuana.68fc0238e0.webp",
+      "src": "2ddef499a5412553",
+      "bytes": 158792
+    },
+    "portraits/joel-carretero-patasalada": {
+      "key": "es-mx/portraits/joel-carretero-patasalada.ce6461c2a3.webp",
+      "src": "e4a36ce408438c3c",
+      "bytes": 383834
     },
     "portraits/jorge-kibis": {
       "key": "es-mx/portraits/jorge-kibis.4f3b544aba.webp",
@@ -1687,10 +2017,25 @@
       "src": "3de1239a6cfa6bcd",
       "bytes": 315744
     },
+    "portraits/leticia-restauradora-coronel": {
+      "key": "es-mx/portraits/leticia-restauradora-coronel.31bdea8573.webp",
+      "src": "cbc5198dc0d15954",
+      "bytes": 330484
+    },
     "portraits/leydi-oficinista": {
       "key": "es-mx/portraits/leydi-oficinista.77a075cf5b.webp",
       "src": "ebd182bc3fd39c8f",
       "bytes": 255560
+    },
+    "portraits/licha-taquera-mananeros": {
+      "key": "es-mx/portraits/licha-taquera-mananeros.534fb85c6e.webp",
+      "src": "490c136788bfc5dc",
+      "bytes": 333422
+    },
+    "portraits/lizbeth-enfermera-faro": {
+      "key": "es-mx/portraits/lizbeth-enfermera-faro.4b1f4cbc0e.webp",
+      "src": "6e68fdeb258296f3",
+      "bytes": 309862
     },
     "portraits/lorena-guia-lara": {
       "key": "es-mx/portraits/lorena-guia-lara.dfff30f936.webp",
@@ -1742,6 +2087,11 @@
       "src": "1f589fcd68077204",
       "bytes": 224228
     },
+    "portraits/marco-antonio-pulmonia-olas-altas": {
+      "key": "es-mx/portraits/marco-antonio-pulmonia-olas-altas.679e0b67a9.webp",
+      "src": "452738c950c6a33e",
+      "bytes": 204318
+    },
     "portraits/mari-tendera": {
       "key": "es-mx/portraits/mari-tendera.f0f27f1c5d.webp",
       "src": "cce34cbbea703a42",
@@ -1756,6 +2106,11 @@
       "key": "es-mx/portraits/mariano-guia-chamula.2786250b6f.webp",
       "src": "2e01ac6d091763f0",
       "bytes": 285596
+    },
+    "portraits/maribel-artesana-carnaval": {
+      "key": "es-mx/portraits/maribel-artesana-carnaval.9eb22da860.webp",
+      "src": "4befe21a2fb3fbb3",
+      "bytes": 388582
     },
     "portraits/marisol-cafe-pocito": {
       "key": "es-mx/portraits/marisol-cafe-pocito.1f4179cb7d.webp",
@@ -1792,6 +2147,11 @@
       "src": "33707ea140b5534d",
       "bytes": 333122
     },
+    "portraits/mayra-taquillera-monterrey": {
+      "key": "es-mx/portraits/mayra-taquillera-monterrey.0b099448b0.webp",
+      "src": "bf95057e350e6a33",
+      "bytes": 218446
+    },
     "portraits/memo-tejuino": {
       "key": "es-mx/portraits/memo-tejuino.9faef3249e.webp",
       "src": "48fd2cf02c2bc74b",
@@ -1822,6 +2182,16 @@
       "src": "92c9d22cb51622a3",
       "bytes": 317320
     },
+    "portraits/nayeli-taquillera-zacatecas": {
+      "key": "es-mx/portraits/nayeli-taquillera-zacatecas.380084bdea.webp",
+      "src": "4e3c069adad59409",
+      "bytes": 201840
+    },
+    "portraits/nicolas-sacristan-catedral-mazatlan": {
+      "key": "es-mx/portraits/nicolas-sacristan-catedral-mazatlan.9f72349ad3.webp",
+      "src": "14ceab1fbe808ab5",
+      "bytes": 251302
+    },
     "portraits/ofelia-tlayudas": {
       "key": "es-mx/portraits/ofelia-tlayudas.7a654105bb.webp",
       "src": "6fdbd0adbc96ba37",
@@ -1836,6 +2206,11 @@
       "key": "es-mx/portraits/padre-tomas-santo-domingo.05ca5ead5f.webp",
       "src": "b1e30169bf5d3ed2",
       "bytes": 252588
+    },
+    "portraits/paola-muralista-playas": {
+      "key": "es-mx/portraits/paola-muralista-playas.09c1b57385.webp",
+      "src": "530af4a3889ab740",
+      "bytes": 303314
     },
     "portraits/petrona-tejedora": {
       "key": "es-mx/portraits/petrona-tejedora.7be41586dd.webp",
@@ -1862,6 +2237,16 @@
       "src": "f6ee057c3811336d",
       "bytes": 309532
     },
+    "portraits/refugio-cantero-catedral-zacatecas": {
+      "key": "es-mx/portraits/refugio-cantero-catedral-zacatecas.b92950ceed.webp",
+      "src": "1d4b1f5b127af92f",
+      "bytes": 376090
+    },
+    "portraits/regina-estudiante-macroplaza": {
+      "key": "es-mx/portraits/regina-estudiante-macroplaza.e7b2b1f235.webp",
+      "src": "39ae601b3f7b13b2",
+      "bytes": 278234
+    },
     "portraits/remedios-panaderia-la-espiga": {
       "key": "es-mx/portraits/remedios-panaderia-la-espiga.55f90bff03.webp",
       "src": "999e0a3a46851b57",
@@ -1887,6 +2272,11 @@
       "src": "4ad04c2afcc11551",
       "bytes": 244500
     },
+    "portraits/rolando-cantinero-regiomontana": {
+      "key": "es-mx/portraits/rolando-cantinero-regiomontana.2288445bbc.webp",
+      "src": "0a9c9166409ee8d4",
+      "bytes": 302550
+    },
     "portraits/rosa-estudiante": {
       "key": "es-mx/portraits/rosa-estudiante.5ddd2e9055.webp",
       "src": "83c0310d35830c88",
@@ -1906,6 +2296,11 @@
       "key": "es-mx/portraits/rosario-picadera.9272879dd9.webp",
       "src": "c67f455e6ac352c5",
       "bytes": 349532
+    },
+    "portraits/rosendo-acordeonista-santa-cecilia": {
+      "key": "es-mx/portraits/rosendo-acordeonista-santa-cecilia.056e215ae3.webp",
+      "src": "01c8598f2ac3b685",
+      "bytes": 334634
     },
     "portraits/rosy-cochinitera": {
       "key": "es-mx/portraits/rosy-cochinitera.74581c0f02.webp",
@@ -1937,6 +2332,11 @@
       "src": "9c638816c3650893",
       "bytes": 265488
     },
+    "portraits/sergio-mesero-caesars": {
+      "key": "es-mx/portraits/sergio-mesero-caesars.58a57e3de6.webp",
+      "src": "50aa4549327697e0",
+      "bytes": 248230
+    },
     "portraits/socorro-maestra-maya": {
       "key": "es-mx/portraits/socorro-maestra-maya.9bc03947ae.webp",
       "src": "7dc3790ec4b65ef7",
@@ -1951,6 +2351,11 @@
       "key": "es-mx/portraits/sor-guadalupe-achoques.99f6126511.webp",
       "src": "f8ea1f3231b5863f",
       "bytes": 253368
+    },
+    "portraits/teodoro-cantinero-quince-letras": {
+      "key": "es-mx/portraits/teodoro-cantinero-quince-letras.6617f859ac.webp",
+      "src": "3bce369e91139592",
+      "bytes": 309738
     },
     "portraits/tere-fonda": {
       "key": "es-mx/portraits/tere-fonda.b8faef23b3.webp",
@@ -1972,6 +2377,11 @@
       "src": "71bae62480ded45d",
       "bytes": 319802
     },
+    "portraits/uriel-operador-teleferico": {
+      "key": "es-mx/portraits/uriel-operador-teleferico.c9b011bdc2.webp",
+      "src": "bae236e055a458d1",
+      "bytes": 273530
+    },
     "portraits/vale-libros-tecolote": {
       "key": "es-mx/portraits/vale-libros-tecolote.2d4fe26831.webp",
       "src": "b933733f8be2b41b",
@@ -1981,6 +2391,11 @@
       "key": "es-mx/portraits/valeria-barista.1f293a5bcb.webp",
       "src": "651b04617356f487",
       "bytes": 211284
+    },
+    "portraits/veronica-maestra-agua-caliente": {
+      "key": "es-mx/portraits/veronica-maestra-agua-caliente.5c0e598b42.webp",
+      "src": "c919988d7c4205c8",
+      "bytes": 311112
     },
     "portraits/victor-jubilado": {
       "key": "es-mx/portraits/victor-jubilado.71cb18bbda.webp",
@@ -2006,6 +2421,11 @@
       "key": "es-mx/portraits/ximena-ceramica.5237e176bd.webp",
       "src": "1f5c0ebab63c6c82",
       "bytes": 277006
+    },
+    "portraits/yareli-estudiante-acueducto": {
+      "key": "es-mx/portraits/yareli-estudiante-acueducto.2e312f651b.webp",
+      "src": "2a1d9f249960a41b",
+      "bytes": 291304
     },
     "portraits/yesenia-jaranera": {
       "key": "es-mx/portraits/yesenia-jaranera.b0d775c275.webp",
