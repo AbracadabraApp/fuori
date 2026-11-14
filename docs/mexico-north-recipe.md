@@ -44,6 +44,8 @@ COUNTRY=es-mx npx tsx scripts/here-lines.mts tijuana,monterrey,mazatlan,zacateca
 COUNTRY=es-mx npx tsx --env-file=.env.local scripts/fact-check.mts /tmp/lines.json > docs/mexico-north-cities.facts.txt
 ```
 
+**Sorted 2026-11-14** (cloud chat session; the judge flagged 25 of 40). Eight flags are a person's own day and stand. Checked against sources and kept: Parque Teniente Guerrero (1924, the city's oldest, Sunday danzón), Mercado Hidalgo (1955, shoppers from across the border), the teleférico (1979; the height corrected to about 85 m), the Obispado as Monterrey's oldest building, Las Quince Letras (1906), the Virgen del Roble's feast, the Combate Naval, Mazatlán's cathedral windows, the Morismas. Softened, ten lines: the Toma de Zacatecas is one of the bloodiest battles, not the bloodiest; "always", "almost every family" and "often" toned down; the two terminals' claims; Machado's origin ("people say"); seafood "never" for dinner; El Recodo's distance. Not rerun through the judge.
+
 Commit the .txt. Fix what fails as a claim about the world; a person's own situation ("today you are mending your uniform") is not a fact to check. Bar: low to medium, as before (Josh, 2026-11-11).
 
 **2. Maps, in four looks** (needs the image key)

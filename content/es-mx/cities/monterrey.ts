@@ -219,7 +219,7 @@ export const monterrey: CityPantry = {
       placeId: 'central-de-autobuses-de-monterrey',
       personality: ['efficient', 'frank', 'good at calming people in a hurry'],
       portraitPrompt: 'Gouache portrait of a woman of 38 with straight dark hair in a bob and a headset, in a company blouse, handing a ticket across a counter, who sells tickets at the Central de Autobuses de Monterrey. Include the row of ticket counters and a departure screen behind her. Bold, saturated colour: navy, orange and white. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: 'You sell tickets at the Central de Autobuses of Monterrey, one of the busiest bus stations in the country. Half the buses go north: Nuevo Laredo and Reynosa are about three hours away, and direct buses cross the border to San Antonio, Houston and Dallas. Regios go to Texas to shop the way other people go to the next town. On Sundays the buses to Santiago and the mountains fill with families going out to eat.',
+      here: 'You sell tickets at the Central de Autobuses of Monterrey, a big, busy station. Half the buses go north: Nuevo Laredo and Reynosa are about three hours away, and direct buses cross the border to San Antonio, Houston and Dallas. Regios go to Texas to shop the way other people go to the next town. On Sundays the buses to Santiago and the mountains fill with families going out to eat.',
     },
   ],
   food: [
