@@ -4,17 +4,59 @@ The one list of dialogue work (laptop dialogue session; another session has the 
 
 **Rule for the work (Josh, 2026-11-12):** experiments are for creating information in an unknown situation. Where the information is already there (his words, a cause found), build it and let his play judge it.
 
-## Now: being worked on
+## To do (2026-11-14)
 
-1. **Done for the Beginner (see Done); Intermediate unchanged.** **Closing a visit when the talk is done** (your "c", 2026-11-12). Today a Beginner visit offers the goodbye on the 7th turn whatever is happening, and an Intermediate visit ends only when the learner says goodbye. Wanted: the character winds down when the talk has run its course, using a signal that works in any language. [5.3]
-2. **Done (see Done).** **"Newcomer" in the lesson and culture writers.** The prompt that writes lessons labels the learner's lines "newcomer"; the one that picks cultural stories speaks of "the newcomer". Then the lesson practice prompt can drop its patch ("don't ask their name or where they're from"), which exists only because the Beginner prompt used to ask. Regenerating lessons or stories is your call. [2.1, 2.2]
-3. **Done (see Done).** **A first new kind of question for Beginners.** Today the character's questions are nearly all "this or that?" (the Dora shape); after the six-word cap, five of six Italian intro questions start "Preferisce…". First new kind: *Notice* ("See those arches above us?") or *Offer* ("Want to try one?"), played before the next. "Finish the sentence" comes later: learners left on it more than on any other kind (27%). [4.2]
+Josh, 2026-11-14: "I think no work list has been made. Just documentation. Create a todo list out of all the work - bubbles, bids, terms, etc". Gathered from bids.md, questions-and-bubbles.md, dialogue-structure-reference.md, mix.md, learner-loop.md, play-readings.md, bugs.md and this plan's older sections. Everything from 2026-11-12 and 13 is live (origin/live at c60d638), so the old "Now" and "Waiting on you" are done and folded in here. **Who:** *build* = ready, on Josh's word, with a changelog entry; *Josh* = his choice or his play; *count* = read saved visits, changes nothing; *later* = not before the items it depends on.
 
-## Waiting on you
+### Bids and endings
+| # | To do | From | Who |
+|---|---|---|---|
+| D1 | A goodbye can carry one invitation from the character's world ("Mañana le enseño la mina"), no question; allowed, not required. Today dialogue.md's goodbye lines say "nothing new" | learner-loop.md (bids for returns) | build |
+| D2 | Keep the bid: the next visit opens on it, whenever it comes. First play a return to Isidro (the mine) or Elena (Ballarò) to see if memory already carries it | learner-loop.md | Josh, then build if it doesn't |
+| D3 | An offered story gets told (Beatrice's devil story: "want to hear it?", yes, never told); same family as B6, the character not taking up what was said | play-readings.md; bugs.md B6 | build, with B6 |
 
-1. **Release.** On main, not live: the shorter step 1, the goodbye fix and "take up what they said first" (b27cb88); the shorter intro question (intro.md 12b); the question's English at steps 1–3 and the "first time or when new" rules removed (27a7fdb).
-2. **Steps 4–6.** Never played; today they switch to a different screen and a slower start, and don't follow your ladder for the question's English. Your ladder is the target (below). How to get there: (a) hear steps 4–6 as they play today, or (b) build my direction (below) and hear it. [5.4]
-3. **Play, when you can:** Beginner turn length; a goodbye said with your name; whether characters take up what you say without sounding formulaic; a second visit to Raymundo or Isidro in Guanajuato (does the character remember what it told you?); a few Intermediate visits.
+### Questions and bubbles (Beginner)
+| # | To do | From | Who |
+|---|---|---|---|
+| D4 | Read the five rewritten visits and say what holds | questions-and-bubbles.md → Next step | Josh |
+| D5 | Recount B24 (the closing questions) on visits played on the live version | bugs.md B24 | count |
+| D6 | Comment or question: some turns close on a comment, set in the draw of turn kinds (code, no new instruction) | questions-and-bubbles.md | build after D4 |
+| D7 | The last sentence always has its English; one bubble uses its words, one is new | questions-and-bubbles.md | build after D4 (card if a number decides it) |
+| D8 | New kinds of question, one at a time, each played before the next: About you first, with answers that open a thread ("Sì, mio nonno era giardiniere"); then Guess, Remember, Offer, Help, Words, senses beyond sight | bid menu (dialogue-structure-reference.md § 2a, bids.md); questions-and-bubbles.md | build, one by one |
+| D9 | Thread: the turn after a bubble goes one step deeper into whichever was said | questions-and-bubbles.md → Thread; play-readings.md | build with D8 |
+
+### The mix and English
+| # | To do | From | Who |
+|---|---|---|---|
+| D10 | Steps 4–6: hear them as they play today, or build the direction below (one screen, one support taken away per step) | this plan → Steps 4–6 | Josh |
+| D11 | Too fast and too much Spanish at step 1 | bugs.md B7 | build, after play on the live version |
+| D12 | Asking for help moves the hard words into "new, with a gloss" for the rest of the visit, at every level (Nunzio went back to new words after two turns) | mix.md → three bins; bugs.md B13 | build |
+| D13 | Idioms in play: code picks one by weight (importance, due for this learner, not heard just now) and the character may use it, glossed picture then meaning, at a rate per level. The stores exist, unused | mix.md → Idioms | build |
+| D14 | The mix as pieces put together by code, so an unsupported run can't happen | mix.md → How to get it to zero | Josh (proposal) |
+
+### Memory and learning from play
+| # | To do | From | Who |
+|---|---|---|---|
+| D15 | How often learners come back to the same character (decides how much a richer character memory is worth) | learner-loop.md | count |
+| D16 | Which kinds of bid get taken up: rerun `scripts/bid-count.mjs` once there are 20 new-Beginner visits with three or more replies | bids.md; this plan → Later | count |
+| D17 | A shared file of how the learner speaks and learns (level, recurring mistakes, words met; nothing about their life), read by every character and by Magda in place of the study file | learner-loop.md | later |
+| D18 | Observers read family play and flag problems as candidates for bugs.md | learner-loop.md | later |
+
+### Bugs still open (bugs.md)
+| # | To do | Who |
+|---|---|---|
+| D19 | B4 repeats within a visit, B5 double goodbye: recheck on the live version | Josh (by ear) |
+| D20 | B10 the learner addressed in the feminine (Ofelia) | build |
+| D21 | B12 the character's bubble stays on screen too long: which bubble, when | Josh, then the screen session |
+
+### Docs and code housekeeping
+| # | To do | Who |
+|---|---|---|
+| D22 | Remove the old Beginner and its prompt blocks (due about 2026-11-19, a week after the cut-over) | build |
+| D23 | One doc for bids and the turn: bids.md, the terms and bid menu of dialogue-structure-reference.md, and questions-and-bubbles.md, once the Mac mini session is done with the last | later |
+| D24 | beginner-prompt-inventory.md describes the old Beginner prompt; the test-designer agent reads it. Redo it for the new prompt or retire it with D22 | later |
+
+Suggested order: D1, D20 and D12 (small, ready); D2 and D4 (your play and reading); then D6–D9 together; D5, D15 and D16 whenever a session is free, since they change nothing.
 
 ## Done (2026-11-12)
 
