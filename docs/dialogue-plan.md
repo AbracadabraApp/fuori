@@ -53,7 +53,7 @@ Today (`lib/level-up.ts`): after 3 conversations at a step, each with 3 or more 
 ### The mix and English
 | # | To do | From | Who |
 |---|---|---|---|
-| D10 | Steps 4–6: hear them as they play today, or build the direction below (one screen, one support taken away per step) | this plan → Steps 4–6 | Josh |
+| D10 | Steps 4–6: **build the direction below** (one screen, one support taken away per step). Decided (Josh, 2026-11-14): "don't gate on play today", so no hearing them as they play first | this plan → Steps 4–6 | build |
 | D11 | Too fast and too much Spanish at step 1 | bugs.md B7 | build, after play on the live version |
 | D12 | Asking for help moves the hard words into "new, with a gloss" for the rest of the visit, at every level (Nunzio went back to new words after two turns) | mix.md → three bins; bugs.md B13 | build |
 | D13 | Idioms in play: code picks one by weight (importance, due for this learner, not heard just now) and the character may use it, glossed picture then meaning, at a rate per level. The stores exist, unused | mix.md → Idioms | build |
