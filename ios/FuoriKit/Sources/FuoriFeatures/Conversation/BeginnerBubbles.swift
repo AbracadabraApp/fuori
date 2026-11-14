@@ -45,12 +45,16 @@ struct AnswersToSay: View {
     let speechLanguage: String
     /// Where the answer is a tap (mic refused, VoiceOver, the welcome's buttons): a tap says it
     var onSay: ((APIClient.TurnPart) -> Void)? = nil
+    /// Hear it (D40): the speaker on each bubble plays its line; `hearing` is the line playing
+    var onHear: ((String) -> Void)? = nil
+    var hearing: String? = nil
 
     var body: some View {
         VStack(spacing: 8) {
             ForEach(Array(answers.enumerated()), id: \.offset) { i, answer in
                 if i > 0 { OrMark() }
-                AnswerBubble(text: answer.text, english: answer.en, speechLanguage: speechLanguage, onTap: onSay.map { say in { say(answer) } })
+                AnswerBubble(text: answer.text, english: answer.en, speechLanguage: speechLanguage, onTap: onSay.map { say in { say(answer) } },
+                             onHear: onHear.map { hear in { hear(answer.text) } }, hearing: hearing != nil, playing: hearing == answer.text)
             }
         }
     }
@@ -63,6 +67,12 @@ struct AnswerBubble: View {
     let english: String
     let speechLanguage: String
     var onTap: (() -> Void)? = nil
+    /// Hear it (D40, variant A): a speaker after the line, as Say it's; not where the bubble itself is a tap
+    var onHear: (() -> Void)? = nil
+    /// A line is playing (any bubble's): the speakers wait
+    var hearing = false
+    /// This bubble's line is the one playing
+    var playing = false
     @ScaledMetric(relativeTo: .body) private var size: CGFloat = Tokens.Size.bubbleText
 
     var body: some View {
@@ -77,16 +87,41 @@ struct AnswerBubble: View {
 
     private var bubble: some View {
         SpeechBubble(speaker: .you) {
-            VStack(alignment: .leading, spacing: 2) {
-                Text(target)
-                    .font(.system(size: size))
-                    .foregroundStyle(Tokens.Colors.ink)
-                if !english.isEmpty { BubbleEnglish(text: english, speaker: .you) }
+            if let onHear, onTap == nil {
+                HStack(alignment: .center, spacing: 6) {
+                    lines
+                        .accessibilityElement(children: .ignore)
+                        .accessibilityLabel(Text(target))
+                        .accessibilityValue(english)
+                    Button(action: onHear) {
+                        Image(systemName: playing ? "speaker.wave.2.fill" : "speaker.wave.2")
+                            .font(.body)
+                            .foregroundStyle(Tokens.Colors.youInk)
+                            .frame(width: 44, height: 44)
+                            .contentShape(.rect)
+                    }
+                    .buttonStyle(PressableStyle())
+                    .disabled(hearing)
+                    .accessibilityLabel("Hear it")
+                }
+                .padding(.vertical, -10)
+                .padding(.trailing, -10)
+            } else {
+                lines
+                    .accessibilityElement(children: .ignore)
+                    .accessibilityLabel(Text(target))
+                    .accessibilityValue(english)
             }
         }
-        .accessibilityElement(children: .ignore)
-        .accessibilityLabel(Text(target))
-        .accessibilityValue(english)
+    }
+
+    private var lines: some View {
+        VStack(alignment: .leading, spacing: 2) {
+            Text(target)
+                .font(.system(size: size))
+                .foregroundStyle(Tokens.Colors.ink)
+            if !english.isEmpty { BubbleEnglish(text: english, speaker: .you) }
+        }
     }
 
     /// The line, tagged so VoiceOver reads it in the language

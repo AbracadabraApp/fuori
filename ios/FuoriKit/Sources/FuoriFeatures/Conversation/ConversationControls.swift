@@ -39,7 +39,8 @@ struct ConversationControls: View {
                         // Beginner dialogue: what to say back, on the learner's turn;
                         // where the mic can't be used, a tap says it (Josh, 2026-11-02)
                         AnswersToSay(answers: model.answersToSay, speechLanguage: model.speechLanguage,
-                                     onSay: model.answersAreButtons ? { answer in Task { await model.sayAnswer(answer) } } : nil)
+                                     onSay: model.answersAreButtons ? { answer in Task { await model.sayAnswer(answer) } } : nil,
+                                     onHear: { line in Task { await model.hearAnswer(line) } }, hearing: model.hearingAnswer)
                             .transition(.opacity)
                     }
                     // The end button: in place of the mic at the end; beside it

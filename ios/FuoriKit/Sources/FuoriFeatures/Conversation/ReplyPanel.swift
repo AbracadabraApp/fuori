@@ -40,7 +40,8 @@ struct ReplyPanel<Mic: View>: View {
     @ViewBuilder private func answer(_ reply: APIClient.ReplyOption) -> some View {
         let chosen = model.chosen == reply
         AnswerBubble(text: reply.line, english: reply.en, speechLanguage: model.speechLanguage,
-                     onTap: model.answersAreButtons && (model.phase == .choosing || model.phase == .micDenied) ? { Task { await model.choose(reply) } } : nil)
+                     onTap: model.answersAreButtons && (model.phase == .choosing || model.phase == .micDenied) ? { Task { await model.choose(reply) } } : nil,
+                     onHear: { Task { await model.hearAnswer(reply.line) } }, hearing: model.hearingAnswer != nil, playing: model.hearingAnswer == reply.line)
             .opacity(model.chosen != nil && !chosen ? 0.5 : 1)
             .accessibilityAddTraits(chosen ? .isSelected : [])
     }

@@ -169,6 +169,8 @@ public final class ConversationModel {
     public private(set) var sayIt: SayIt?
     /// The line is being played (hear it), so the mic is closed for it
     public private(set) var hearingLine = false
+    /// The answer bubble whose line is playing (D40), nil otherwise
+    public private(set) var hearingAnswer: String?
 
     /// Answers as buttons that send the line, where reading aloud can't work:
     /// VoiceOver (it would be recorded) or the mic off
@@ -930,6 +932,25 @@ public final class ConversationModel {
         await voice.speak(sayIt.line, language: language.speechLang, rate: Float(speed))
         hearingLine = false
         guard generation == self.generation, self.sayIt == sayIt, phase == .tapToTalk else { return }
+        if endsOnSilence { await startRecording(firstWordWait: readingWait) }
+    }
+
+    /// Hear an answer (docs/dialogue-plan.md D40; Josh, 2026-11-14: "use icon", variant A): the answer bubble's line
+    /// said by the phone's own voice, as Say it's hear it (it's the learner's line; the character never reads the
+    /// answers: "i don't want the character reading any reply bubbles"), the mic closed while it plays, then reopened
+    public func hearAnswer(_ text: String) async {
+        guard hearingAnswer == nil, !hearingLine else { return }
+        if phase == .listening || phase == .hearing {
+            listenTask?.cancel()
+            listenTask = nil
+            if let url = recorder.stop("hear answer") { try? FileManager.default.removeItem(at: url) }
+        }
+        let generation = self.generation
+        hearingAnswer = text
+        phase = .tapToTalk
+        await voice.speak(text, language: language.speechLang, rate: Float(speed))
+        hearingAnswer = nil
+        guard generation == self.generation, phase == .tapToTalk else { return }
         if endsOnSilence { await startRecording(firstWordWait: readingWait) }
     }
 
