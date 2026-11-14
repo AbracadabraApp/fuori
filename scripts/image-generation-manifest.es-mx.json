@@ -152,9 +152,9 @@
       "type": "portrait"
     },
     "puebla/sofia-dulces-la-gloria": {
-      "timestamp": "2026-10-13T03:09:20.144Z",
+      "timestamp": "2026-11-14T20:23:08.776Z",
       "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/sofia-dulces-la-gloria.jpg",
-      "skipped": true
+      "type": "portrait"
     },
     "puebla/padre-tomas-santo-domingo": {
       "timestamp": "2026-10-13T03:09:20.145Z",
@@ -707,8 +707,8 @@
       "type": "place"
     },
     "guadalajara/andres-cabanas": {
-      "timestamp": "2026-11-06T23:44:40.362Z",
-      "path": "/Users/josh.petersen/fuori-mexico-places/public/images/es-mx/portraits/andres-cabanas.jpg",
+      "timestamp": "2026-11-14T20:22:14.097Z",
+      "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/andres-cabanas.jpg",
       "type": "portrait"
     },
     "guadalajara/chuy-mariachi": {
@@ -1532,7 +1532,7 @@
       "type": "portrait"
     },
     "monterrey/cecilia-historiadora-obispado": {
-      "timestamp": "2026-11-14T19:51:25.818Z",
+      "timestamp": "2026-11-14T20:22:43.184Z",
       "path": "/Users/josh.petersen/fuori/public/images/es-mx/portraits/cecilia-historiadora-obispado.jpg",
       "type": "portrait"
     },
@@ -1727,6 +1727,6 @@
     "total": 344,
     "completed": 344,
     "failed": 0,
-    "lastRun": "2026-11-14T20:11:47.425Z"
+    "lastRun": "2026-11-14T20:23:11.798Z"
   }
 }
