@@ -46,6 +46,11 @@ export const language = {
     lesson: { go: '¡Vámonos!', next: 'Siguiente', back: 'Con Magda', done: '¡Listo!', goLabel: "Let's go", nextLabel: 'Next', backLabel: 'Back to Magda', doneLabel: 'Done' },
     youAreHere: 'Estás aquí', // departures board: the current city
     /** Level up (sketches/level-up/; lib/level-up.ts): the offer after N conversations; {name} is the character's */
-    levelUp: { theme: 'pennants' as const, kicker: "You're doing great with {name}", headline: 'Ready for more?', how: 'How {name} talks to you', now: 'Now', next: 'Next step', play: 'Play', answers: 'Your answers: still two to choose from, and now you can say your own.', yes: '¡Sí, más español!', yesLabel: 'Yes, more Spanish', notYet: 'Not yet' },
+    levelUp: { theme: 'pennants' as const, kicker: "You're doing great with {name}", headline: 'Ready for more?', how: 'How {name} talks to you', now: 'Now', next: 'Next step', play: 'Play', answers: 'Your answers: still two to choose from, and now you can say your own.', yes: '¡Sí, más español!', yesLabel: 'Yes, more Spanish', notYet: 'Not yet',
+      /** The offer that moves the level (D34, D35; lib/level-up.ts → moveFrom): the next card's label and the line under the cards */
+      to: {
+        intermediate: { next: 'Intermediate', answers: 'Intermediate: no answers to choose from. You say it your own way, in Spanish, and English is there whenever you ask.' },
+        advanced: { next: 'Advanced', answers: 'Advanced: everyone talks to you as someone who speaks Spanish well.' },
+      } },
   },
 };

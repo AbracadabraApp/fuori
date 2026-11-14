@@ -301,6 +301,23 @@ public final class AppModel {
         }
     }
 
+    /// The level-up sheet's answer (lib/level-up.ts). A yes that moves the
+    /// level (D34: the top of Beginner to Intermediate; D35: Intermediate to
+    /// Advanced) changes it here as Settings does, so the next conversation
+    /// and the level's defaults follow it; the sheet closes either way.
+    public func answerLevelUp(yes: Bool) async {
+        defer { levelUpItem = nil }
+        guard let api else { return }
+        do {
+            if let after = try await api.answerLevelUp(yes: yes), after != level {
+                level = after
+                SettingsKey.applyDefaults(forLevel: after)
+            }
+        } catch {
+            _ = report(error, step: "level up")
+        }
+    }
+
     // MARK: - Saving conversations
 
     /// Conversations whose save failed, retried at the next launch. Kept per

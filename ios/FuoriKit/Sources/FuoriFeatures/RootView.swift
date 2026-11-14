@@ -146,8 +146,7 @@ public struct RootView: View {
         .sheet(item: Binding(get: { model.levelUpItem }, set: { model.levelUpItem = $0 })) { offer in
             if let words = model.levelUp?.words, let api = model.api, let content = model.content {
                 LevelUpView(offer: offer, words: words, language: content.language, api: api) { yes in
-                    try? await api.answerLevelUp(yes: yes)
-                    model.levelUpItem = nil
+                    await model.answerLevelUp(yes: yes)
                 }
             }
         }

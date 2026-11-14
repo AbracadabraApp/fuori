@@ -5,6 +5,11 @@
  * user chosen"). The step is stored on the learner's record and is Beginner 2's cluster of the reply ladder
  * (lib/beginner-2.ts → CLUSTERS) when the app sends no cluster header. The offer shows the character's last
  * line as said and the same line at the next step (one small call, content/<country>/prompts/level-up.md).
+ *
+ * Past the steps, the same offer moves the level (docs/dialogue-plan.md D34, D35): at the top of Beginner (the last
+ * step) to Intermediate, and from Intermediate to Advanced (Josh, 2026-11-14: "we can put a step in but not focus on
+ * the advanced exxperience yet"). The level is learners.level, set as Settings sets it (lib/onboarding.ts → setLevel);
+ * the step stays where it was. Advanced is the top: no offer there.
  */
 import { z } from 'zod';
 import { query } from '@/lib/db';
@@ -16,6 +21,7 @@ import { CLUSTERS, LEVEL_OF_CLUSTER, type Setup } from '@/lib/beginner-2';
 import { SCAFFOLDING_FILE } from '@/lib/beginner';
 import { characterForVisit } from '@/lib/characters/for-visit';
 import { savesDone } from '@/lib/recording';
+import { setLevel, type Level } from '@/lib/onboarding';
 
 export const LEVEL_UP_FILE = 'level-up.md';
 /** Conversations at the step (3 or more learner replies) before the offer, and again after a "not yet" */
@@ -74,12 +80,52 @@ export function isDue(p: { step: number; counted: number }): boolean {
   return p.step < MAX_STEP && p.counted >= LEVEL_UP_AFTER;
 }
 
+/** What a yes does: the next step, or at the top of Beginner the next level; null at Advanced (the top) */
+export type Move = { to: 'step'; step: number } | { to: 'intermediate' } | { to: 'advanced' };
+
+/** The pure rule for the yes (D34, D35): Beginner (or no level yet) climbs the steps, then moves to Intermediate; Intermediate to Advanced */
+export function moveFrom(p: { level: Level | null; step: number }): Move | null {
+  if (p.level === 'advanced') return null;
+  if (p.level === 'intermediate') return { to: 'advanced' };
+  return p.step < MAX_STEP ? { to: 'step', step: p.step + 1 } : { to: 'intermediate' };
+}
+
+/** The pure rule for the offer: the same count at every step and level (LEVEL_UP_AFTER counted conversations) */
+export function offerDue(p: { level: Level | null; step: number; counted: number }): Move | null {
+  return p.counted >= LEVEL_UP_AFTER ? moveFrom(p) : null;
+}
+
+/**
+ * Whether the conversation the offer follows is an ordinary visit at the learner's level: Beginner 2's at Beginner;
+ * at Intermediate and Advanced the character prompt's (not a Beginner one, a lesson, Magda, the welcome or onboarding)
+ */
+export function ordinaryVisit(level: Level | null, promptVersion: string | null): boolean {
+  const v = promptVersion ?? '';
+  if (level === 'intermediate' || level === 'advanced') return v !== '' && !/^(beginner-|lesson-|magda-|onboarding)/.test(v);
+  return /^beginner-2-/.test(v);
+}
+
+/** The level text the rewrite is written for: the step's (scaffolding.md) or the level's (character.md → Learner: …) */
+export function moveLevelText(move: Move): string {
+  if (move.to === 'step') return stepLevelText(move.step);
+  return fill(readPromptFile('character.md').block(move.to === 'intermediate' ? 'Learner: Intermediate' : 'Learner: Advanced'), { language: language.name }).trim();
+}
+
+/** The screen's words for this offer (the app's LevelUpWords): a level move puts its own label on the next card and its own line under the cards */
+export function offerWords(to: Move['to']) {
+  const { to: levels, ...words } = language.ui.levelUp;
+  return to === 'step' ? words : { ...words, ...levels[to] };
+}
+
 /** The later of the two dates, or null when neither */
 export const countFrom = (s: LearnerStep): Date | null => (s.since && s.askedAt ? (s.since > s.askedAt ? s.since : s.askedAt) : s.since ?? s.askedAt);
 
 export interface LevelUpOffer {
   step: number;
+  /** The step after a yes: the same step when the offer moves the level */
   nextStep: number;
+  /** What the yes changes: the step, or the level (D34, D35) */
+  to: Move['to'];
   character: { id: string; name: string; role: string };
   place: string;
   city: string;
@@ -94,22 +140,22 @@ export function stepLevelText(step: number): string {
   return fill(readPromptFile(SCAFFOLDING_FILE).block(LEVEL_OF_CLUSTER[Math.min(MAX_STEP, Math.max(1, step)) - 1]), { language: language.name }).trim();
 }
 
-/** The rewrite prompt (content/<country>/prompts/level-up.md → Rewrite), filled */
-export function rewritePrompt(p: { character: { name: string; role: string; city: string }; line: string; nextStep: number }): string {
+/** The rewrite prompt (content/<country>/prompts/level-up.md → Rewrite), filled; `level` replaces the step's level text (a level move) */
+export function rewritePrompt(p: { character: { name: string; role: string; city: string }; line: string; nextStep: number; level?: string }): string {
   return fill(readPromptFile(LEVEL_UP_FILE).block('Rewrite'), {
     name: p.character.name,
     role: p.character.role,
     city: p.character.city,
     language: language.name,
     line: p.line,
-    level: stepLevelText(p.nextStep),
+    level: p.level ?? stepLevelText(p.nextStep),
   }).trim();
 }
 
 const Rewritten = z.object({ line: z.string(), en: z.string() });
 
 /** Her line again at the next step: one small call */
-export async function rewriteAtStep(p: { character: { name: string; role: string; city: string }; line: string; nextStep: number }): Promise<{ line: string; en: string }> {
+export async function rewriteAtStep(p: { character: { name: string; role: string; city: string }; line: string; nextStep: number; level?: string }): Promise<{ line: string; en: string }> {
   const response = await anthropic.messages.create({
     model: CLAUDE_MODEL,
     max_tokens: 600,
@@ -119,13 +165,22 @@ export async function rewriteAtStep(p: { character: { name: string; role: string
   return Rewritten.parse(JSON.parse(replyText(response)));
 }
 
+/** The learner's level (null before onboarding) and step, for the offer and the yes */
+async function levelAndStep(learnerId: string): Promise<{ level: Level | null; s: LearnerStep }> {
+  const s = await learnerStep(learnerId);
+  const r = await query<{ level: Level | null }>('SELECT level FROM learners WHERE id = $1', [learnerId]);
+  return { level: r.rows[0]?.level ?? null, s };
+}
+
 /**
  * The offer for a learner who has just left this conversation, or null: not due, not their conversation, not an
- * ordinary visit (the welcome, lessons and Magda don't count), or already at the top
+ * ordinary visit at their level (the welcome, lessons and Magda don't count), or already at the top (Advanced).
+ * `beginnerVersion` is the app's switch: at Beginner the offer comes only on Beginner 2
  */
-export async function levelUpOffer(learnerId: string, conversationId: string): Promise<LevelUpOffer | null> {
-  const s = await learnerStep(learnerId);
-  if (s.step >= MAX_STEP) return null;
+export async function levelUpOffer(learnerId: string, conversationId: string, beginnerVersion: 1 | 2 = 2): Promise<LevelUpOffer | null> {
+  const { level, s } = await levelAndStep(learnerId);
+  const beginner = level !== 'intermediate' && level !== 'advanced';
+  if (!moveFrom({ level, step: s.step }) || (beginner && beginnerVersion !== 2)) return null;
   await savesDone(conversationId);
   const r = await query<{ character_id: string; place_id: string | null; city_id: string | null; prompt_version: string | null; turns: { who: 'npc' | 'learner'; text: string; en?: string }[] }>(
     'SELECT character_id, place_id, city_id, prompt_version, turns FROM conversations WHERE id = $1 AND learner_id = $2',
@@ -133,20 +188,23 @@ export async function levelUpOffer(learnerId: string, conversationId: string): P
   );
   const conv = r.rows[0];
   if (!conv || !conv.city_id || !conv.place_id) return null;
-  if (!/^beginner-2-/.test(conv.prompt_version ?? '')) return null;
+  if (!ordinaryVisit(level, conv.prompt_version)) return null;
   const counted = await countedConversations(learnerId, countFrom(s));
-  if (!isDue({ step: s.step, counted })) return null;
+  const move = offerDue({ level, step: s.step, counted });
+  if (!move) return null;
   const last = [...conv.turns].reverse().find((t) => t.who === 'npc' && t.text.trim());
   const character = characterForVisit(conv.city_id, conv.place_id);
   if (!last || !character || character.placeId !== conv.place_id) return null;
-  const nextStep = s.step + 1;
-  const next = await rewriteAtStep({ character: { name: character.name, role: character.role, city: character.city }, line: last.text, nextStep });
+  const nextStep = move.to === 'step' ? move.step : s.step;
+  // The preview: her last line rewritten for the next step, or for the next level (character.md → Learner: …)
+  const next = await rewriteAtStep({ character: { name: character.name, role: character.role, city: character.city }, line: last.text, nextStep, level: moveLevelText(move) });
   const { cities } = await import('@/content');
   const city = cities.find((c) => c.id === conv.city_id);
   const place = city?.places.find((p) => p.id === conv.place_id);
   return {
     step: s.step,
     nextStep,
+    to: move.to,
     character: { id: character.id, name: character.name, role: character.role },
     place: place?.name ?? conv.place_id,
     city: city?.name ?? conv.city_id,
@@ -155,15 +213,29 @@ export async function levelUpOffer(learnerId: string, conversationId: string): P
   };
 }
 
-/** The learner's answer: up a step (the count starts over), or not yet (asked again after LEVEL_UP_AFTER more) */
-export async function answerLevelUp(learnerId: string, answer: 'yes' | 'not-yet'): Promise<LearnerStep> {
+/** A level change, from the level up or Settings: the level as Settings sets it, and the count starts over at the new level */
+export async function changeLevel(learnerId: string, level: Level): Promise<void> {
+  await ensureStepColumns();
+  await setLevel(learnerId, level);
+  await query('UPDATE learners SET step_since = now(), level_up_asked_at = NULL WHERE id = $1', [learnerId]);
+}
+
+/**
+ * The learner's answer: yes moves them on (moveFrom: up a step, or at the top of Beginner to Intermediate, from
+ * Intermediate to Advanced) and the count starts over; not yet asks again after LEVEL_UP_AFTER more
+ */
+export async function answerLevelUp(learnerId: string, answer: 'yes' | 'not-yet'): Promise<LearnerStep & { level: Level | null }> {
   await ensureStepColumns();
   if (answer === 'yes') {
-    await query('UPDATE learners SET step = LEAST($2, step + 1), step_since = now(), level_up_asked_at = NULL WHERE id = $1', [learnerId, MAX_STEP]);
+    const { level, s } = await levelAndStep(learnerId);
+    const move = moveFrom({ level, step: s.step });
+    if (move?.to === 'step') await query('UPDATE learners SET step = LEAST($2, step + 1), step_since = now(), level_up_asked_at = NULL WHERE id = $1', [learnerId, MAX_STEP]);
+    else if (move) await changeLevel(learnerId, move.to);
   } else {
     await query('UPDATE learners SET level_up_asked_at = now() WHERE id = $1', [learnerId]);
   }
-  return learnerStep(learnerId);
+  const after = await levelAndStep(learnerId);
+  return { ...after.s, level: after.level };
 }
 
 /** Josh's testing: set the step directly (the Cluster stepper's stored twin) */

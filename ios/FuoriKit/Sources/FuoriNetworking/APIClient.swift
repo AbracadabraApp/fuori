@@ -331,11 +331,15 @@ public actor APIClient {
         return (offer, words)
     }
 
-    /// POST /v1/level-up: the learner's answer, yes or not yet
-    public func answerLevelUp(yes: Bool) async throws {
+    /// POST /v1/level-up: the learner's answer, yes or not yet; the level
+    /// after it (a yes at the top of Beginner moves to Intermediate, at
+    /// Intermediate to Advanced: D34, D35), nil from servers before 2026-11-14
+    @discardableResult
+    public func answerLevelUp(yes: Bool) async throws -> String? {
         struct Body: Encodable { let answer: String }
-        struct Reply: Decodable { let step: Int }
-        let _: Reply = try await send(post("v1/level-up", json: Body(answer: yes ? "yes" : "not-yet")), signedIn: true)
+        struct Reply: Decodable { let step: Int; let level: String? }
+        let r: Reply = try await send(post("v1/level-up", json: Body(answer: yes ? "yes" : "not-yet")), signedIn: true)
+        return r.level
     }
 
     /// POST /v1/learn: the Learn page for this conversation so far. The server

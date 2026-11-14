@@ -46,6 +46,11 @@ export const language = {
     lesson: { go: 'Andiamo!', next: 'Avanti', back: 'Da Magda', done: 'Fatto!', goLabel: "Let's go", nextLabel: 'Next', backLabel: 'Back to Magda', doneLabel: 'Done' },
     youAreHere: 'Sei qui', // departures board: the current city
     /** Level up (sketches/level-up/; lib/level-up.ts): the offer after N conversations; {name} is the character's */
-    levelUp: { theme: 'awning' as const, kicker: "You're doing great with {name}", headline: 'Ready for more?', how: 'How {name} talks to you', now: 'Now', next: 'Next step', play: 'Play', answers: 'Your answers: still two to choose from, and now you can say your own.', yes: 'Sì, più italiano!', yesLabel: 'Yes, more Italian', notYet: 'Not yet' },
+    levelUp: { theme: 'awning' as const, kicker: "You're doing great with {name}", headline: 'Ready for more?', how: 'How {name} talks to you', now: 'Now', next: 'Next step', play: 'Play', answers: 'Your answers: still two to choose from, and now you can say your own.', yes: 'Sì, più italiano!', yesLabel: 'Yes, more Italian', notYet: 'Not yet',
+      /** The offer that moves the level (D34, D35; lib/level-up.ts → moveFrom): the next card's label and the line under the cards */
+      to: {
+        intermediate: { next: 'Intermediate', answers: 'Intermediate: no answers to choose from. You say it your own way, in Italian, and English is there whenever you ask.' },
+        advanced: { next: 'Advanced', answers: 'Advanced: everyone talks to you as someone who speaks Italian well.' },
+      } },
   },
 };
