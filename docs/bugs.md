@@ -36,9 +36,6 @@ Same family as dialogue-ideas.md "The character asks and carries on, as if answe
 ### B7. Too fast, too much Spanish at Beginner step 1
 Josh, 2026-11-13: "mucho mucho inglés por favor" (Raymundo 2008220a); "puede hablar más despacio?", "¿hablo più inglés?" (Ofelia 71dc1d3b); "Perdón, puede hablar más despacio, por favor?" (Josué 8814eb6f). See B1(b). **Status: open.**
 
-### B8. A misheard word taken as the learner's name, and remembered
-Josh, 2026-11-13: "Don Isidro, could I explain to you that you misheard my name? My name is Joshua, not Kieran." Whisper turned "Quiero ver los altares" into "Kiran Velos Altera" (6159f8cb, 2026-11-12); Isidro took it as a name and opened the next visit with "don Kiran" (d335b204). **Status: open.**
-
 ### B9. Wrong facts from memory
 Vale opened with "¿cómo está Silvia?" (the daughter is Sofía), then took Silvia as Josh's name (ba340097, 2026-11-13). Not raised by Josh; Josh corrected it in play ("Mi nombre es no Silvia", "Mi hija se llama Sofia"). **Status: open.**
 
@@ -80,6 +77,9 @@ Not bugs; recorded so a fix doesn't undo them.
 - **A Beginner character asked for more English adapts.** Josh, 2026-11-13: "Some character adapted to use more English." Ofelia, asked "¿hablo più inglés?", answered "Sure, mi reina, I'll use more English" and did (71dc1d3b); Carmen, told "that was a lot of Spanish with no English", said "I'll go slower" (09978a29).
 
 ## Closed
+
+### B8. A misheard word taken as the learner's name, and remembered
+Josh, 2026-11-13: "Don Isidro, could I explain to you that you misheard my name? My name is Joshua, not Kieran." Whisper turned "Quiero ver los altares" into "Kiran Velos Altera" (6159f8cb, 2026-11-12); Isidro took it as a name and opened the next visit with "don Kiran" (d335b204). **Closed** by Josh, 2026-11-14, with no fix: "Kiran was also self-corrected" (he corrected Isidro in play and the memory took the correction), and "I also give different characters different names for me", so a name one character holds isn't wrong for being different.
 
 ### B22. The receipt gate (Giulia, Bar Alba, Palermo)
 Giulia sent Josh to a cash desk that wasn't there for about ten turns; he left without the brioche (d3fb15b8, 2026-11-12 00:02 UTC; dialogue-ideas.md has the entry). Fix: the cassa sentence removed from five bar characters' here lines (4d765c3, live). **Confirmed** 2026-11-13: Giulia served the brioche with no cassa (73415dce).
