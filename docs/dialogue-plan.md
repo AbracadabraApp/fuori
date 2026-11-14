@@ -38,7 +38,7 @@ Today's pairs are mostly yes/no, this/that, two questions to ask and goodbyes, i
 | D31 | **Words**: the learner teaches the character, Josh's favour the other way round | "Se dice 'bell'." / "No sé, ¿cómo se dice?" | build (with Words, D8) |
 | D32 | **Gaps only for words the learner has**: a name, a place, a number ("Me llamo …"); a gap that needs a word in the language stalls | "Soy de …" | build (a rule for all bubbles) |
 | D33 | **A pair is two real things that lead to different places**: no "No, no lo veo", no "No, gracias" that stops the scene, no two echoes | (questions-and-bubbles.md → a test for a pair) | build (a rule for all bubbles) |
-| D40 | **The answer bubbles are never read aloud**, neither the line nor the English under it: the English is printed only (dialogue-model.md → English in answer bubbles, Claude's proposal, Josh 2026-11-05 "fine"; his words then: "spoken by the character or listed underneath"). Josh, 2026-11-14: "unclear if transcrribed underbubble is read in english or just printed - if not read why not". **Decided in part** (Josh, 2026-11-14): "i don't want the character reading any reply bubbles" (dialogue-model.md). Still open: a visible speaker on each bubble that plays its line, as Say it has, or printed only | dialogue-model.md; BeginnerBubbles.swift | Josh |
+| D40 | **A speaker icon on each reply bubble** that plays its line, as Say it has (SayItBubbles.swift, "hear it"); the character never reads them (Josh, 2026-11-14: "use icon"; "i don't want the character reading any reply bubbles"). A new element on the screen, so a mockup to Josh first | dialogue-model.md; BeginnerBubbles.swift | build (iOS) |
 
 ### Promotion (moving up)
 Today (`lib/level-up.ts`): after 3 conversations at a step, each with 3 or more replies, the game offers the next step and the learner chooses ("Not yet" asks again 3 conversations later); no score decides (Josh, 2026-11-11). It runs from step 1 to step 6 and stops there.
@@ -72,7 +72,7 @@ Today (`lib/level-up.ts`): after 3 conversations at a step, each with 3 or more 
 | # | To do | Who |
 |---|---|---|
 | D20 | B10 the learner addressed in the feminine (Ofelia) | build |
-| D21 | B12 the character's bubble stays on screen too long: which bubble, when | Josh, then the screen session |
+| D21 | B12: when the learner replies, the reply bubbles go but the character's last bubble stays until the next line arrives; both should go on the reply (Josh, 2026-11-14) | build (iOS, the screen session) |
 
 ### Docs and code housekeeping
 | # | To do | Who |
