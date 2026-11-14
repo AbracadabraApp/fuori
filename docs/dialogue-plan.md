@@ -11,7 +11,7 @@ Josh, 2026-11-14: "I think no work list has been made. Just documentation. Creat
 ### Bids and endings
 | # | To do | From | Who |
 |---|---|---|---|
-| D1 | A goodbye can carry one invitation from the character's world ("Mañana le enseño la mina"), no question; allowed, not required. Today dialogue.md's goodbye lines say "nothing new" | learner-loop.md (bids for returns) | build |
+| D1 | A goodbye can carry one invitation from the character's world ("Mañana le enseño la mina"), no question; allowed, not required. Today dialogue.md's goodbye lines say "nothing new" | learner-loop.md (bids for returns) | **done** (577a8ea: the goodbye and the close may say what the character would show, do or tell next time, still with no question; replayed goodbyes: Italy 0/16 → 6/16, Mexico Beginner 4/12 → 12/12; watch for a habit at Beginner; not released) |
 | D2 | Keep the bid: the next visit opens on it, whenever it comes. First play a return to Isidro (the mine) or Elena (Ballarò) to see if memory already carries it | learner-loop.md | Josh (2026-11-14: "will do"), then build if it doesn't |
 | D3 | An offered story gets told (Beatrice's devil story: "want to hear it?", yes, never told); same family as B6, the character not taking up what was said | play-readings.md; bugs.md B6 | build, with B6 |
 
@@ -29,7 +29,7 @@ Josh, 2026-11-14: "I think no work list has been made. Just documentation. Creat
 Today's pairs are mostly yes/no, this/that, two questions to ask and goodbyes, in four verbs and two fillers ("me gusta mucho", "es muy bonito"), almost never about the learner (questions-and-bubbles.md → What the visits show). New kinds, each with its pair; one at a time beside D8, played before the next.
 | # | Bubble type | Example | Who |
 |---|---|---|---|
-| D25 | **Help**: the learner can ask for help, offered as a bubble when a turn was hard. None today | "No entiendo." / "¿Otra vez, más despacio?" | build |
+| D25 | **Help**: the learner can ask for help, offered as a bubble when a turn was hard. None today | "No entiendo." / "¿Otra vez, más despacio?" | **done** (eb48ab3: one of the two answers can ask about a word given no English, or for it again more slowly, now and then; replayed: 0/21 → 5/21 turns; not released) |
 | D26 | **About me**: something of the learner's own that opens a thread (the Beginner's way to bring a grandfather) | "Mio nonno era giardiniere." / "Nella mia città ci sono parchi grandi." | build (with D8, D9) |
 | D27 | **A pick with a reason** in place of a bare pick | "El patio, es más tranquilo." | build |
 | D28 | **An answer that asks back** in place of yes or no | "Todavía no. ¿Vale la pena?" | build |
@@ -71,7 +71,7 @@ Today (`lib/level-up.ts`): after 3 conversations at a step, each with 3 or more 
 ### Bugs still open (bugs.md)
 | # | To do | Who |
 |---|---|---|
-| D20 | B10 the learner addressed in the feminine (Ofelia) | build |
+| D20 | B10 the learner addressed in the feminine (Ofelia) | **waiting on Josh**: replayed, Ofelia says "mi reina", "güerita" in 6 of 16 replies when the address is unknown, 1–3 of 16 as "a man" (address-replay.mts). Whether Josh's Mexico learner has an address stored couldn't be read. If unset: set it in Settings; a fix for the unknown case changes test:prompt's rule "says who's in front of them only when known", so needs his yes |
 | D21 | B12: when the learner replies, the reply bubbles go but the character's last bubble stays until the next line arrives; both should go on the reply (Josh, 2026-11-14) | **done** (059fc9f, 2026-11-14: the character's bubble and the answers go when the reply is sent, at every level; make build and package tests pass; not on the phone yet) |
 
 ### Docs and code housekeeping
