@@ -64,7 +64,7 @@ check(['two-en', 'ask-en'].every((id) => CLUSTER_1.some((r) => r.id === id)) && 
   let runs = 0;
   const seq: string[] = [];
   for (let t = 1; t <= 60; t++) { const id = pickSetup({ conversationId: 'rot', turn: t, characterId: 'x' }).id; seq.push(id); if (id !== 'close' && seq.length >= 3 && seq.slice(-3).every((x) => x === id)) runs++; } // from the 8th turn every turn is the close (2026-11-13): the visit ends there
-  check(runs === 0 && !seq.some((x, i) => x === 'notice' && seq[i - 1] === 'notice') && new Set(seq.filter((x) => x !== 'goodbye' && x !== 'close')).size === CLUSTER_1.length, `no setup three times running and Notice never twice over 60 turns, every kind played (2026-11-12d: three kinds, Notice added) (got ${runs} runs of three, kinds ${[...new Set(seq)].join(', ')})`);
+  check(runs === 0 && !seq.some((x, i) => x === 'notice' && seq[i - 1] === 'notice') && new Set(['rot', 'rot2', 'rot3', 'rot4'].flatMap((cid) => Array.from({ length: 6 }, (_, t) => pickSetup({ conversationId: cid, turn: t + 1, characterId: 'x' }).id))).size === CLUSTER_1.length, `no setup three times running and Notice never twice over 60 turns, every kind played across four visits (2026-11-12d: three kinds, Notice added; 2026-11-14: four with the comment, so across visits, not within one) (got ${runs} runs of three, kinds ${[...new Set(seq)].join(', ')})`);
   const q = questionOf('Suba a la silla, climb up. ¿Quiere una boleada?', 'Climb up on the chair. Do you want a shine?');
   check(q?.text === '¿Quiere una boleada?' && q?.en === 'Do you want a shine?', `questionOf: the last question with its English (got ${JSON.stringify(q)})`);
   check(questionOf('Ecco il cornetto.', 'Here is the cornetto.') === undefined, 'questionOf: nothing when the line ends on a statement');
@@ -113,6 +113,16 @@ check(cluster1Brief().startsWith(levelText(CLUSTER_1)) && /When you offer answer
   check(lineWithAnswers({ line: 'Ecco.', en: 'Here.' }, RUNGS.find((x) => x.id === 'free')!).parts.length === 0, 'lineWithAnswers: a setup with no answers gives none');
 }
 check(/with its English beside it/.test(setupText(CLUSTERS[1][0], CLUSTERS[1])) && /with its English right after it/.test(levelText(CLUSTERS[2])), 'steps 2 and 3: every phrase with its English beside it at step 2, the question with its English right after it at step 3 (scaffolding.md 12c)');
+{
+  const c = RUNGS.find((x) => x.id === 'comment')!;
+  const r = lineWithAnswers({ line: 'Suba, suba. Yo boleo aquí desde hace cuarenta años.', en: "Come up. I've been shining shoes here for forty years.", answers: [{ text: 'Cuarenta años es mucho.', en: 'Forty years is a lot.' }, { text: '¿Le gusta su trabajo?', en: 'Do you like your work?' }] }, c, CLUSTER_1);
+  check(r.question?.text === 'Yo boleo aquí desde hace cuarenta años.' && r.question?.en === "I've been shining shoes here for forty years." && r.line.endsWith("I've been shining shoes here for forty years."), `a comment turn's last line is printed with its English and its English is said after it at step 1, as a question's is (D7) (got ${JSON.stringify(r.question)} / ${r.line})`);
+  const r4 = lineWithAnswers({ line: 'Yo boleo aquí desde hace cuarenta años.', en: "I've been shining shoes here for forty years.", answers: [{ text: 'Es mucho.', en: "That's a lot." }] }, c, CLUSTERS[3]);
+  check(r4.question?.en === '' && r4.line.endsWith('forty years.'), 'at step 4 the comment is printed without its English, and its English is said (the ladder)');
+  const joined = lineWithAnswers({ line: "Muy bien, very good. Yo llevo veinte años por estas piedras, I've driven these stones for twenty years.", en: "Very good. I've driven these stones for twenty years.", answers: [{ text: 'Veinte años.', en: 'Twenty years.' }] }, c, CLUSTER_1);
+  check(joined.question?.text === 'Yo llevo veinte años por estas piedras.' && joined.question?.en === "I've driven these stones for twenty years." && !joined.line.endsWith("years. I've driven these stones for twenty years."), `step 1 joins a piece and its English in one sentence: the comment is printed without the English tail, and the English isn't said twice (got ${JSON.stringify(joined.question)})`);
+  check(CLUSTERS.slice(0, 5).every((cl) => cl.some((x) => x.id === 'comment')) && !CLUSTERS[5].some((x) => x.id === 'comment'), 'the comment turn is in steps 1–5 (it gives answers), not step 6');
+}
 check(QUESTION_ECHO_FRAME.slice(0, 5).every(Boolean) && !QUESTION_ECHO_FRAME[5], 'the question\'s English is said at steps 1–5 and not at 6, added by code when the character left it out (the ladder, Josh 2026-11-12; steps 4–6 since D10, 2026-11-14)');
 {
   const r = { line: 'Mire el comal. ¿Le pongo salsa?', en: 'Look at the griddle. Do you want salsa?', answers: [{ text: 'Sí, por favor.', en: 'Yes, please.' }, { text: 'No, gracias.', en: 'No, thanks.' }] };

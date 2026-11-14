@@ -1,6 +1,6 @@
 # Scaffolding (Beginner 2)
 
-version: 2026-11-14c
+version: 2026-11-14d
 
 Everything that helps a Beginner take part, kept apart from the dialogue
 (Josh, 2026-11-09: "I want to be able to adjust scaffolding without touching
@@ -68,6 +68,12 @@ This turn, point them at something they can see right now that you haven't shown
 
 ```
 This turn, give them one short answer they could say back.
+```
+
+## Setup: comment
+
+```
+This turn, end not on a question but on one short comment of your own in {language}, with its English: something about you, this place or what they just said, that they could answer. Give them two short answers they could say back: one that takes up your words, one with a thought or a question of their own about it; never a fact about their life you don't know.
 ```
 
 ## Setup: two questions to ask

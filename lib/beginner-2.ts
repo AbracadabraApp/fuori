@@ -48,6 +48,9 @@ export const RUNGS: Setup[] = [
   // Something they can see right now, two answers (2026-11-12d; Josh's bids: a different kind of question, not only "this or that?")
   { id: 'notice', block: 'Setup: notice', maxAnswers: 2, english: true },
   { id: 'ask-en', block: 'Setup: two questions to ask', maxAnswers: 2, english: true },
+  // A turn that ends on a comment, not a question (D6; Josh, 2026-11-14: "Why always Q? A. Why not just talk - comment
+  // or Q."): one answer on its words, one new (D7). Its last line is printed and said by the question's ladder
+  { id: 'comment', block: 'Setup: comment', maxAnswers: 2, english: true },
   { id: 'invite-en', block: 'Setup: invite English', maxAnswers: 0, english: false, invite: true },
   { id: 'free', block: 'Setup: no answers', maxAnswers: 0, english: false },
 ];
@@ -81,16 +84,16 @@ export const CLUSTERS: Setup[][] = [
   // Cluster 1 (2026-11-11c): two answers and questions to ask, never the same three times running (Josh: "the answers
   // are fine but no variation. It's like Dora the Explorer"). An open question with no answers was tried the same night
   // and pulled (Josh: "difficult for this level")
-  [R('two-en'), R('notice'), R('ask-en')],
-  [R('two-en'), R('notice'), R('ask-en')],
-  [R('two-en'), R('notice'), R('ask-en'), R('free')],
+  [R('two-en'), R('notice'), R('ask-en'), R('comment')],
+  [R('two-en'), R('notice'), R('ask-en'), R('comment')],
+  [R('two-en'), R('notice'), R('ask-en'), R('comment'), R('free')],
   // Steps 4-6 (docs/dialogue-plan.md D10; Josh, 2026-11-14: build the direction, "don't gate on play today"): one
   // screen, one support taken away a step. Step 4: answers as at step 3, mostly the language, the question's English
   // heard, not printed. Step 5: English only when asked (Level 3). Step 6: no answers, their own words, the question in
   // the language only. The answers keep their English at every step (Josh, 2026-11-09: reading Spanish you don't
   // understand "feels odd and coercive"). Were [ask-en, free], [two-en, free], [free] on the parts format
-  [R('two-en'), R('notice'), R('ask-en'), R('free')],
-  [R('two-en'), R('ask-en'), R('free')],
+  [R('two-en'), R('notice'), R('ask-en'), R('comment'), R('free')],
+  [R('two-en'), R('ask-en'), R('comment'), R('free')],
   [R('free')],
 ];
 export const CLUSTER_1 = CLUSTERS[0];
@@ -124,7 +127,7 @@ function seedOf(s: string): number {
 /** Invitations to be curious (questions to ask, an invitation to ask): rarer than answers, never twice running (Renata, 2026-11-10) */
 const INVITES = new Set(['ask-en', 'invite-en']);
 /** How often each setup comes up in its cluster: two answers three times as often as either invitation */
-const WEIGHT: Record<string, number> = { 'two-en': 3, notice: 1, 'ask-en': 1, 'invite-en': 1, free: 2 };
+const WEIGHT: Record<string, number> = { 'two-en': 3, notice: 1, 'ask-en': 1, comment: 2, 'invite-en': 1, free: 2 };
 
 /** The seeded pick by weight, before the rules about the turn before; `not`: a setup left out of the draw */
 function weighted(cluster: Setup[], key: string, not?: string): Setup {
@@ -366,10 +369,12 @@ export function lineWithAnswers(r: { line: string; en: string; done?: boolean; h
     .filter((a) => a.text)
     .slice(0, setup.maxAnswers);
   const at = Math.max(0, CLUSTERS.indexOf(cluster));
-  const found = questionOf(r.line, r.en);
+  // A comment turn's last line stands where the question would (D7: printed and said by the same ladder)
+  const found = setup.id === 'comment' ? lastLineOf(r.line, r.en) : questionOf(r.line, r.en);
   const question = found && !QUESTION_PRINTED[at] ? { ...found, en: '' } : found;
   const echo = QUESTION_ECHO_FRAME[at] ?? false;
-  return { line: echo ? withQuestionEnglish(r.line, r.en) : r.line, en: r.en, ...(r.done !== undefined ? { done: r.done } : {}), ...(r.hard ? { hard: true } : {}), parts: answers, ...(question ? { question } : {}) };
+  const said = echo ? (setup.id === 'comment' ? withLastEnglish(r.line, found) : withQuestionEnglish(r.line, r.en)) : r.line;
+  return { line: said, en: r.en, ...(r.done !== undefined ? { done: r.done } : {}), ...(r.hard ? { hard: true } : {}), parts: answers, ...(question ? { question } : {}) };
 }
 
 /**
@@ -384,6 +389,40 @@ export function lineWithAnswers(r: { line: string; en: string; done?: boolean; h
  * as it came, so the bubble printed the English as the question, or an empty question (Josh's Mexico play: Raymundo,
  * Don Isidro).
  */
+/**
+ * A comment turn's last line (D6, D7): the last sentence in the language, with the last sentence of her English, so
+ * it's printed and said by the question's ladder as a question is. Undefined when the line ends in English
+ */
+export function lastLineOf(line: string, en: string): { text: string; en: string } | undefined {
+  const sentences = (s: string) => s.trim().split(/(?<=[.!?…]["'»”’)]*)\s+/).filter(Boolean);
+  const bare = (s: string) => s.toLowerCase().replace(/[()"'«»“”‘’¿¡]/g, '').replace(/\s+/g, ' ').trim();
+  const wordsOf = (x: string) => new Set(bare(x).split(/[^\p{L}\p{N}]+/u).filter(Boolean));
+  const shared = (a: Set<string>, b: Set<string>) => { const both = [...a].filter((w) => b.has(w)).length; return both / (a.size + b.size - both || 1); };
+  const enSentences = sentences(en);
+  const isEnglish = (x: string) => bare(en).includes(bare(x)) || enSentences.some((e) => shared(wordsOf(x), wordsOf(e)) >= 0.5);
+  const last = sentences(line).at(-1);
+  const lastEn = enSentences.at(-1)?.replace(/^\(|\)$/g, '').trim();
+  if (!last || !lastEn) return undefined;
+  // Step 1 joins a piece and its English into one sentence ("Yo llevo veinte años aquí, I've driven here for twenty
+  // years."; lib/dialogue/pieces.ts): the English tail comes off, and what's left is the comment
+  const tail = bare(lastEn).replace(/[.!?…]+$/, '');
+  const whole = bare(last).replace(/[.!?…]+$/, '');
+  if (tail && whole.endsWith(tail) && whole.length > tail.length) {
+    const cut = last.trim().slice(0, last.trim().length - lastEn.replace(/[.!?…]+$/, '').length - 1).replace(/[\s,;:–—-]+$/, '').trim();
+    const text = /[.!?…]$/.test(cut) ? cut : `${cut}.`;
+    return isEnglish(cut) ? undefined : { text, en: lastEn };
+  }
+  if (isEnglish(last)) return undefined;
+  return { text: last.trim(), en: lastEn };
+}
+
+/** The comment's English said after it (steps 1–5), unless she already said it */
+export function withLastEnglish(line: string, last: { text: string; en: string } | undefined): string {
+  const bare = (x: string) => x.toLowerCase().replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+  if (!last?.en || bare(line).endsWith(bare(last.en))) return line;
+  return `${line.trim()} ${last.en}`;
+}
+
 export function questionOf(line: string, en: string): { text: string; en: string } | undefined {
   const sentences = (s: string) => s.trim().split(/(?<=[.!?…]["'»”’)]*)\s+/).filter(Boolean);
   const bare = (s: string) => s.toLowerCase().replace(/[()"'«»“”‘’¿¡]/g, '').replace(/\s+/g, ' ').trim();
