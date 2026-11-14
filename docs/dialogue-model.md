@@ -147,6 +147,7 @@ Sorted by subject 2026-11-12 (the entries unedited; a line in italics says where
   except where the answer is a tap (mic off, VoiceOver, the welcome's buttons).
   *Since 2026-11-12: answers and their English go at step 6 of the new Beginner, not S4.*
   *"Her bubbles show no English" holds for the parts reply; on the one-line reply her question shows its English (the ladder; "What the screen shows").*
+  *Josh, 2026-11-14: "i don't want the character reading any reply bubbles". The character never says the learner's answers, in the language or in English.*
 - **Who is talking, at a glance** (Josh, 2026-11-05: "I'm interested in if a user can tell who is talking"; "Beginner always being different is not a goal"): one bubble for her and one for the learner, the same on every screen and at every level. Hers on the left in warm parchment (#eee6d6, the Learn page's lessons field) with a thin #d6cab3 edge; the learner's on the right in solid olive (#dbe3c4, the old onboarding answers' green, made solid), its English in dark olive (#3f4a22). Solid, no transparency, so they read over any picture. No tails (Josh: "the left and right are clear and the tails look messy"). Josh: "colors are good". *Built: SpeechBubble.swift, the same bubble at every level.*
 
 - **What the screen shows** (written 2026-11-12 from Josh's decisions that day; the code is `CharacterBubble.swift`, its cases in `CharacterBubbleTests`). Three kinds of rule, kept apart:
