@@ -47,3 +47,5 @@ Josh: "If I was a spanish teacher, every turn with a student gives me a hint on 
 Claude's reading: each loop is a judgement of how it's going against a goal, then a decision. Today's character reacts to the last line but never judges how the visit is going. Three timescales: in the visit (judge and steer), between visits with the same learner (plan the next one), across learners (refine how things are presented). This brings back +turn as a judgement, not a memo, and the cross-learner loop as refined presentation, not rules. Nothing decided.
 
 Josh, on the teacher with the same student next time: "teacher restates the turn for better clarity or reinforcementt". So a repeat visit also brings back what was said last time, put more clearly or practised again, besides picking up what was left open.
+
+**A goal (Josh, 2026-11-14):** "in the bid terms - characters should make strrong bids for returns - that is a goal". Like asking for a second date: the character gives the learner a reason to come back to them (something to show, a story to finish, a time to meet), and on the return it keeps the bid.
