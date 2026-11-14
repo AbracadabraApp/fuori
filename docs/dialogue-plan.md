@@ -25,6 +25,20 @@ Josh, 2026-11-14: "I think no work list has been made. Just documentation. Creat
 | D8 | New kinds of question, one at a time, each played before the next: About you first, with answers that open a thread ("Sì, mio nonno era giardiniere"); then Guess, Remember, Offer, Help, Words, senses beyond sight | bid menu (dialogue-structure-reference.md § 2a, bids.md); questions-and-bubbles.md | build, one by one |
 | D9 | Thread: the turn after a bubble goes one step deeper into whichever was said | questions-and-bubbles.md → Thread; play-readings.md | build with D8 |
 
+### Bubble types (what the learner is offered to say)
+Today's pairs are mostly yes/no, this/that, two questions to ask and goodbyes, in four verbs and two fillers ("me gusta mucho", "es muy bonito"), almost never about the learner (questions-and-bubbles.md → What the visits show). New kinds, each with its pair; one at a time beside D8, played before the next.
+| # | Bubble type | Example | Who |
+|---|---|---|---|
+| D25 | **Help**: the learner can ask for help, offered as a bubble when a turn was hard. None today | "No entiendo." / "¿Otra vez, más despacio?" | build |
+| D26 | **About me**: something of the learner's own that opens a thread (the Beginner's way to bring a grandfather) | "Mio nonno era giardiniere." / "Nella mia città ci sono parchi grandi." | build (with D8, D9) |
+| D27 | **A pick with a reason** in place of a bare pick | "El patio, es más tranquilo." | build |
+| D28 | **An answer that asks back** in place of yes or no | "Todavía no. ¿Vale la pena?" | build |
+| D29 | **A description** that puts the place in the learner's mouth, in place of "es muy bonito" | "Hay muchas flores y veladoras." | build |
+| D30 | **One is right** (comprehension or a guess); a wrong pick gets a light recast in role, since it may be a mishearing | "¿El comal para qué es?" → "Para tostar tortillas." / "Para lavar los platos." | build (with Guess, D8) |
+| D31 | **Words**: the learner teaches the character, Josh's favour the other way round | "Se dice 'bell'." / "No sé, ¿cómo se dice?" | build (with Words, D8) |
+| D32 | **Gaps only for words the learner has**: a name, a place, a number ("Me llamo …"); a gap that needs a word in the language stalls | "Soy de …" | build (a rule for all bubbles) |
+| D33 | **A pair is two real things that lead to different places**: no "No, no lo veo", no "No, gracias" that stops the scene, no two echoes | (questions-and-bubbles.md → a test for a pair) | build (a rule for all bubbles) |
+
 ### The mix and English
 | # | To do | From | Who |
 |---|---|---|---|
@@ -56,7 +70,7 @@ Josh, 2026-11-14: "I think no work list has been made. Just documentation. Creat
 | D23 | One doc for bids and the turn: bids.md, the terms and bid menu of dialogue-structure-reference.md, and questions-and-bubbles.md, once the Mac mini session is done with the last | later |
 | D24 | beginner-prompt-inventory.md describes the old Beginner prompt; the test-designer agent reads it. Redo it for the new prompt or retire it with D22 | later |
 
-Suggested order: D1, D20 and D12 (small, ready); D2 and D4 (your play and reading); then D6–D9 together; D5, D15 and D16 whenever a session is free, since they change nothing.
+Suggested order: D1, D20 and D12 (small, ready); D2 and D4 (your play and reading); then D6–D9 with the bubble types D25–D33 (D25 Help and D26 About me first); D5, D15 and D16 whenever a session is free, since they change nothing.
 
 ## Done (2026-11-12)
 
