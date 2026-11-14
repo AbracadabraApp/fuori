@@ -88,7 +88,10 @@ if (flag('--maps')) {
   const count = Number(value('--maps')) || 2;
   const sample = travel.buildings[travel.sampleBuilding];
   for (const [id, look] of looks) {
-    for (let n = 1; n <= count; n++) await make(`map-${id}-${n}`, mapPrompt(look), travel.mapAspect);
+    // --aspect 5:4 tries another shape without replacing the maps already drawn: the shape goes in the name
+    const aspect = value('--aspect') || travel.mapAspect;
+    const tag = value('--aspect') ? `-${aspect.replace(':', 'x')}` : '';
+    for (let n = 1; n <= count; n++) await make(`map-${id}${tag}-${n}`, mapPrompt(look), aspect);
     await make(`sample-${id}-building-${travel.sampleBuilding}`, buildingPrompt(look, sample.landmark, sample.name), '1:1');
   }
 }
