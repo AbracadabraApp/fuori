@@ -39,3 +39,9 @@ Few, short notes, pruned like an index; each new lesson checked by replay (a vis
 - A town that talks: decided (Josh, 2026-11-14): "i think character knowledge should be siloed - unless we introduce gossip". Each character knows only what the learner told that character; gossip would be its own feature, if ever. So +personal can't carry life facts to every character; those stay in each character's +conversation file. Open: whether +personal keeps only how the learner speaks and learns (level, recurring mistakes, what helps), which pitches the language and isn't something the character "knows".
 - The part Josh can't articulate. Claude's guess: a story of the learner and the town, the threads still open ("Isidro is waiting to show him the mine"), so characters pick them up as people do.
 - What it costs: an observer call per turn (a cheaper model, in the gap), a curator every few visits, cached prefixes.
+
+## The teacher and the date (Josh, 2026-11-14)
+
+Josh: "If I was a spanish teacher, every turn with a student gives me a hint on how to teach the next turn. The next student gets refined presentation. At the end of the day I might have a better idea for a lesson plan the next dday. If I am on a date, I can evaluate how the cconverrsatiomn is going and steer it into directions I wwant. I can evaluate how it is goinng and ask for a second date. On the next date I can make different dedcisions frrom where to go, how to dress, what to discuss"
+
+Claude's reading: each loop is a judgement of how it's going against a goal, then a decision. Today's character reacts to the last line but never judges how the visit is going. Three timescales: in the visit (judge and steer), between visits with the same learner (plan the next one), across learners (refine how things are presented). This brings back +turn as a judgement, not a memo, and the cross-learner loop as refined presentation, not rules. Nothing decided.
