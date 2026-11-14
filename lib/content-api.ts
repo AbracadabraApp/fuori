@@ -78,6 +78,8 @@ export interface ContentTravelMap {
   aspect: number;
   cities: { id: string; x: number; y: number; building: string | null }[];
   anchors: string[];
+  /** 'numbered': the sheet numbers the cities in the order sent and lists them in a key under the map; left out, the names go on the map (content/travel-map.ts) */
+  layout?: string;
 }
 
 export interface Content {
@@ -119,7 +121,10 @@ export const isStation = (placeId: string) => placeId.startsWith('stazione-') ||
 function travelMap(image: (id: string) => string | null, shown: { id: string; name: string }[]): ContentTravelMap | null {
   const map = travelMapFor(country);
   const picture = image('travel/map');
+  const order = Object.keys(map.cities);
   const placed = shown.filter((c) => map.cities[c.id]);
+  // A numbered map counts its cities in the order travel-map.json lists them
+  if (map.layout === 'numbered') placed.sort((a, b) => order.indexOf(a.id) - order.indexOf(b.id));
   if (!picture || placed.length < 2) return null;
   return {
     image: picture,
@@ -130,6 +135,7 @@ function travelMap(image: (id: string) => string | null, shown: { id: string; na
       building: image(`travel/building-${c.id}`),
     })),
     anchors: map.anchors.filter((id) => placed.some((c) => c.id === id)),
+    ...(map.layout ? { layout: map.layout } : {}),
   };
 }
 

@@ -35,6 +35,10 @@ import Testing
         #expect(map.covers(from: "roma-nuova", to: "firenze"))
         #expect(!map.covers(from: "roma-nuova", to: "lecce"))
         #expect(map.spot("firenze")?.building == nil)
+        // No layout sent (Italy, older servers): names on the map. "numbered" (Mexico): dots and a key
+        #expect(!map.numbered)
+        let numbered = try JSONDecoder().decode(TravelMap.self, from: Data(json.replacingOccurrences(of: #""anchors":["firenze"]"#, with: #""anchors":[],"layout":"numbered""#).utf8))
+        #expect(numbered.numbered)
     }
 
     @Test func splitsFirstScreenAndMore() throws {

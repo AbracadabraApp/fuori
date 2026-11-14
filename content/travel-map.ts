@@ -18,6 +18,12 @@ export interface TravelMap {
   cities: Record<string, { x: number; y: number }>;
   /** Cities whose names show on every trip, for orientation */
   anchors: string[];
+  /** How the ticket sheet lays the map out. Left out (Italy): the map with the
+   *  trip's two cities named on it and the ticket across its lower edge.
+   *  'numbered' (Mexico; Josh, 2026-11-13: "stub at top, map, key"): the ticket,
+   *  then the map with a numbered dot for every city, then a written key; the
+   *  numbers follow the order of `cities` */
+  layout?: string;
 }
 
 const maps: Record<CountryId, TravelMap> = { it, 'es-mx': esMx };

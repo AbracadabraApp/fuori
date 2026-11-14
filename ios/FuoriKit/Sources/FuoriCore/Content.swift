@@ -152,6 +152,12 @@ public struct TravelMap: Codable, Sendable, Equatable {
     public let cities: [Spot]
     /// Cities whose names show on every trip, for orientation
     public let anchors: [String]
+    /// "numbered": the sheet shows the ticket, the map with a numbered dot per
+    /// city (in the order of `cities`) and a written key. Absent: the trip's
+    /// two cities are named on the map and the ticket lies across its edge
+    public let layout: String?
+
+    public var numbered: Bool { layout == "numbered" }
 
     public struct Spot: Codable, Sendable, Equatable, Identifiable {
         /// The city's id

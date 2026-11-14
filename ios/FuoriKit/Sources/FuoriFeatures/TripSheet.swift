@@ -19,6 +19,11 @@ extension Trip: Identifiable {
 /// the app draws the two ends of the trip, the route and a few other city
 /// names, so a name can't be misspelled or on the wrong coast. A country with
 /// no map yet shows the ticket alone, at half height.
+///
+/// A map sent as numbered (Mexico; Josh, 2026-11-13: "stub at top, map, key")
+/// is laid out differently: the ticket first, so from and to are clear, then
+/// the map with a numbered dot for every city, then a written key of numbers
+/// and names. Which layout a country gets comes with its map, not from here.
 struct TripSheet: View {
     let trip: Trip
     let content: Content
@@ -38,7 +43,13 @@ struct TripSheet: View {
         NavigationStack {
             ScrollView {
                 VStack(spacing: 0) {
-                    if let map {
+                    if let map, map.numbered {
+                        ticket
+                        TripMap(trip: trip, map: map, content: content)
+                            .padding(.top, Tokens.Space.cardGap)
+                        CityKey(trip: trip, map: map, content: content)
+                            .padding(.top, Tokens.Space.band)
+                    } else if let map {
                         TripMap(trip: trip, map: map, content: content)
                         ticket
                             .rotationEffect(.degrees(-2))
@@ -127,11 +138,19 @@ private struct TripMap: View {
                 // A pale line under the red one, so it shows on any region's colour
                 route(a, b).stroke(Tokens.Colors.receipt.opacity(0.75), style: StrokeStyle(lineWidth: 5, lineCap: .round))
                 route(a, b).stroke(Tokens.Colors.mapRoute, style: StrokeStyle(lineWidth: 2.5, lineCap: .round, dash: [6, 4]))
-                ForEach(map.cities.filter { map.anchors.contains($0.id) && $0.id != from.id && $0.id != to.id }) { spot in
-                    anchor(spot, at: point(spot, in: size))
+                if map.numbered {
+                    // Every city as a numbered dot, the trip's two in red; the names are in the key under the map
+                    ForEach(Array(map.cities.enumerated()), id: \.element.id) { index, spot in
+                        NumberDot(number: index + 1, on: spot.id == from.id || spot.id == to.id)
+                            .position(point(spot, in: size))
+                    }
+                } else {
+                    ForEach(map.cities.filter { map.anchors.contains($0.id) && $0.id != from.id && $0.id != to.id }) { spot in
+                        anchor(spot, at: point(spot, in: size))
+                    }
+                    end(trip.from.name, at: a, other: b, width: size.width, destination: false)
+                    end(trip.to.name, at: b, other: a, width: size.width, destination: true)
                 }
-                end(trip.from.name, at: a, other: b, width: size.width, destination: false)
-                end(trip.to.name, at: b, other: a, width: size.width, destination: true)
             }
         }
     }
@@ -190,6 +209,64 @@ private struct TripMap: View {
         var s = AttributedString(city)
         s.languageIdentifier = content.language.speechLang
         return s
+    }
+}
+
+/// A city's number, on the map and in the key: plain for most, red for the
+/// two ends of this trip (Josh: "I wouldn't change dot colors")
+private struct NumberDot: View {
+    let number: Int
+    let on: Bool
+    @ScaledMetric(relativeTo: .caption2) private var side: CGFloat = 17
+
+    var body: some View {
+        Text("\(number)")
+            .font(.caption2.weight(.bold))
+            .monospacedDigit()
+            .foregroundStyle(on ? Tokens.Colors.receipt : Tokens.Colors.mapInk)
+            .frame(width: side + (on ? 4 : 0), height: side + (on ? 4 : 0))
+            .background(on ? Tokens.Colors.mapRoute : Tokens.Colors.receipt, in: Circle())
+            .overlay(Circle().stroke(on ? Tokens.Colors.receipt : Tokens.Colors.mapInk, lineWidth: 1.5))
+    }
+}
+
+/// The written key under a numbered map: each city's number and name, in two
+/// columns read downwards, the trip's two cities picked out. Numbers and
+/// names only (Josh: "just the written key")
+private struct CityKey: View {
+    let trip: Trip
+    let map: TravelMap
+    let content: Content
+
+    var body: some View {
+        let half = (map.cities.count + 1) / 2
+        HStack(alignment: .top, spacing: Tokens.Space.band) {
+            column(0..<half)
+            column(half..<map.cities.count)
+        }
+    }
+
+    private func column(_ range: Range<Int>) -> some View {
+        VStack(alignment: .leading, spacing: 6) {
+            ForEach(Array(range), id: \.self) { index in row(index) }
+        }
+        .frame(maxWidth: .infinity, alignment: .leading)
+    }
+
+    private func row(_ index: Int) -> some View {
+        let id = map.cities[index].id
+        let on = id == trip.from.id || id == trip.to.id
+        var name = AttributedString(content.city(id)?.name ?? "")
+        name.languageIdentifier = content.language.speechLang
+        return HStack(spacing: 8) {
+            NumberDot(number: index + 1, on: on)
+            Text(name)
+                .typeface(.display, Tokens.Size.badge, relativeTo: .subheadline, weight: on ? .bold : .regular)
+                .foregroundStyle(on ? Tokens.Colors.mapRoute : Tokens.Colors.ink)
+                .lineLimit(1)
+                .minimumScaleFactor(0.8)
+        }
+        .accessibilityElement(children: .combine)
     }
 }
 

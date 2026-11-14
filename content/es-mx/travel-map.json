@@ -1,6 +1,64 @@
 {
-  "about": "The trip map on the ticket sheet (docs/station-feature-decision.md -> Board, map, city). The picture is one painted map of Mexico with no cities on it (image id travel/map); each city's building is its own picture (travel/building-<city id>), shown on the departures board. Here: the picture's width divided by its height, each city's spot on the picture as fractions from the top left (x across, y down), and the cities whose names always show for orientation. No cities listed means the country has no map yet: the ticket sheet shows the ticket alone.",
-  "aspect": 0.6667,
-  "cities": {},
+  "about": "The trip map on the ticket sheet (docs/mexico-trip-map.md -> 2026-11-13, evening). The picture is one drawn map of Mexico with no cities on it (image id travel/map; the sketch it comes from is design/trip-map/mexico/map-soft-flat-cropped-banner-2-clean.png). Here: the picture's width divided by its height, and each city's spot on the picture as fractions from the top left (x across, y down; placed by eye on the picture and checked by Josh on a mock-up, 2026-11-13). layout numbered: the sheet shows the ticket, then the map with a numbered dot for each city, then a written key of numbers and names; the numbers follow the order of the cities here, north-west to south-east. Spots are for fun, not exact (Josh): Tijuana is moved in from the corner so its whole dot is on the map, Guanajuato and San Miguel are nudged apart, and Merida sits beside the pyramid because the crop has no Yucatan. No buildings and no always-named cities in this layout.",
+  "aspect": 1.1513,
+  "layout": "numbered",
+  "cities": {
+    "tijuana": {
+      "x": 0.04,
+      "y": 0.097
+    },
+    "monterrey": {
+      "x": 0.572,
+      "y": 0.397
+    },
+    "mazatlan": {
+      "x": 0.285,
+      "y": 0.509
+    },
+    "zacatecas": {
+      "x": 0.455,
+      "y": 0.539
+    },
+    "guadalajara": {
+      "x": 0.428,
+      "y": 0.647
+    },
+    "guanajuato": {
+      "x": 0.492,
+      "y": 0.639
+    },
+    "san-miguel-de-allende": {
+      "x": 0.536,
+      "y": 0.618
+    },
+    "patzcuaro": {
+      "x": 0.498,
+      "y": 0.705
+    },
+    "ciudad-de-mexico": {
+      "x": 0.568,
+      "y": 0.72
+    },
+    "puebla": {
+      "x": 0.614,
+      "y": 0.747
+    },
+    "veracruz": {
+      "x": 0.682,
+      "y": 0.705
+    },
+    "oaxaca": {
+      "x": 0.672,
+      "y": 0.812
+    },
+    "san-cristobal-de-las-casas": {
+      "x": 0.806,
+      "y": 0.82
+    },
+    "merida": {
+      "x": 0.905,
+      "y": 0.737
+    }
+  },
   "anchors": []
 }
