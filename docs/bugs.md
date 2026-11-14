@@ -46,7 +46,7 @@ Vale opened with "¿cómo está Silvia?" (the daughter is Sofía), then took Sil
 Ofelia: "güerita", "mi reina", "qué gusto verla", "aquí la espero" to Josh (71dc1d3b, 2026-11-13). Not raised by Josh. **Status: open.**
 
 ### B11. Asked for help in English, answered only in the language (Intermediate)
-Josh, 2026-11-13: "Excuse me, Elena. I don't speak Italian perfectly… What do I want to see before?" Elena answered in Italian only (252960a4). CLAUDE.md: a character helps in English when asked. Nunzio did it right the same morning (67edfe03). **Status: open.**
+Josh, 2026-11-13: "Excuse me, Elena. I don't speak Italian perfectly… What do I want to see before?" Elena answered in Italian only (252960a4). CLAUDE.md: a character helps in English when asked. Nunzio did it right the same morning (67edfe03). **Status: watching, likely a one-off.** Josh, 2026-11-13: "intermediate does help in english when asked" (as CLAUDE.md says: it works in play without being in the prompt). The gap is B13: help that doesn't last.
 
 ### B12. The character's bubble stays on screen too long
 Josh, 2026-11-13, in play: "el personaje bubble está en la pantalla demasiado largo" (Ofelia 71dc1d3b). Which bubble and when, to ask. **Status: open (screen).**
