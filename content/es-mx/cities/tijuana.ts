@@ -73,7 +73,7 @@ export const tijuana: CityPantry = {
       neighbourhood: 'Zona Centro',
       real: true,
       characterId: 'rosendo-acordeonista-santa-cecilia',
-      imagePrompt: 'Plaza Santa Cecilia in the Zona Centro of Tijuana, a small pedestrian plaza right under the very tall, slender silver steel arch, strung with thin cables, that stands at the end of Avenida Revolución. Benches, a few trees, and groups of musicians waiting for work: mariachis in dark suits, and a norteño trio with an accordion, a twelve-string bajo sexto and a double bass. An older man in a pressed western shirt sits on a bench with his accordion on his knee.',
+      imagePrompt: 'Plaza Santa Cecilia in the Zona Centro of Tijuana, a small pedestrian plaza right under the very tall, slender arch of smooth silver steel, one solid curve with thin cables inside it, that stands at the end of Avenida Revolución. Benches, a few trees, a newspaper kiosk; office workers, a mother with a child and a man with shopping bags cross the plaza. An older man in a pressed western shirt sits on a bench with his accordion on his knee, waiting for work.',
     },
     {
       id: 'minarete-de-agua-caliente',
