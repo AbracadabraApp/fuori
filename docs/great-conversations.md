@@ -102,3 +102,5 @@ What it had (Claude):
 | Ends | his goodbye, warm | his goodbye, "io sono qui" |
 
 In both, the character asked about Josh through what was in front of them, followed his answer down rather than changing topic, and joined it to their own world. Neither was about the language; both taught it in passing.
+
+Josh, 2026-11-14: "These are both intermediate and I speak moore Italian than Spanish so I can influence convversation, but they still show working dialogue". (The record has Beatrice on the Beginner version of 2026-10-27, glosses in English after each question.) In both, Josh brought the threads: Machiavelli, the sandwich, his grandfather. A learner who can only say back one of two offered answers can't bring them, so at Beginner the depth has to come from the character's questions and the answers it offers. Beatrice's own Beginner-shaped questions were the surface ones ("Quanti biglietti vuoi?", "carta o contanti?"), like Isidro's "¿Lo ve?".
