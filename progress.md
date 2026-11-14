@@ -1,5 +1,12 @@
 # Fuori Development Progress
 
+## 2026-11-14 (laptop, with Josh): the learning loop discussed; bids for returns; Josh's two best visits diagrammed (docs only)
+
+- **Decided by Josh:** character knowledge is siloed ("unless we introduce gossip"), and he gives different characters different names; characters should make strong bids for returns ("that is a goal"). B8 and B9 closed on his word (corrected in play).
+- **Written:** docs/learner-loop.md (the loops pulled apart; the teacher and the date; bids, with Elena, Isidro and Beatrice); new docs/great-conversations.md (Beatrice 09dd40cd and Nunzio 52ae014d diagrammed, and what they share); docs/questions-and-bubbles.md gains Thread (new topic / one step deeper / joined to the character's world) and "next time" in Narration.
+- **Open guesses, untested:** the Beginner shape ends every turn on a question, so Isidro couldn't end (d335b204); bids are rare partly because dialogue.md's goodbye lines allow "nothing new" (since 7cde7df).
+- **Nothing built, no prompt touched.** Neither date (Isidro's mine, Elena at Ballarò) kept yet: no return visit as of 2026-11-14 19:08 UTC.
+
 ## 2026-11-14 (Mac mini, with Josh): Beginner questions and bubbles read and written up (docs only)
 
 - **Josh:** "These questions in the game are very repetitive" (bugs.md B24), then "I'm interested in more question types", then "Why always Q? A. Why not just talk - comment or Q."
