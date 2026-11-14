@@ -12,7 +12,7 @@ Josh, 2026-11-14: "I think no work list has been made. Just documentation. Creat
 | # | To do | From | Who |
 |---|---|---|---|
 | D1 | A goodbye can carry one invitation from the character's world ("Mañana le enseño la mina"), no question; allowed, not required. Today dialogue.md's goodbye lines say "nothing new" | learner-loop.md (bids for returns) | build |
-| D2 | Keep the bid: the next visit opens on it, whenever it comes. First play a return to Isidro (the mine) or Elena (Ballarò) to see if memory already carries it | learner-loop.md | Josh, then build if it doesn't |
+| D2 | Keep the bid: the next visit opens on it, whenever it comes. First play a return to Isidro (the mine) or Elena (Ballarò) to see if memory already carries it | learner-loop.md | Josh (2026-11-14: "will do"), then build if it doesn't |
 | D3 | An offered story gets told (Beatrice's devil story: "want to hear it?", yes, never told); same family as B6, the character not taking up what was said | play-readings.md; bugs.md B6 | build, with B6 |
 
 ### Questions and bubbles (Beginner)
@@ -45,9 +45,9 @@ Today (`lib/level-up.ts`): after 3 conversations at a step, each with 3 or more 
 | # | To do | From | Who |
 |---|---|---|---|
 | D34 | **Step 6 to Intermediate:** nothing is offered at the top of Beginner today | this plan → Steps 4–6 | build, after D10 |
-| D35 | **Intermediate to Advanced:** no offer exists; the level changes only by hand | lib/level-up.ts | Josh (wanted?) |
+| D35 | **Intermediate to Advanced:** an offer to move up, as between steps; the Advanced experience itself not worked on yet (Josh, 2026-11-14: "we can put a step in but not focus on the advanced exxperience yet") | lib/level-up.ts | build |
 | D36 | **Each step hands over more of the bidding**, in its bubbles: answers to say back, then questions to ask, a sentence to finish, About me, then the learner's own words; the bubbles fade from answers to hints. Promotion changes what the learner is offered to say, not only how much English they hear | bids.md → The steps in between; beginner-2.md → The reply ladder; D25–D33 | build, with D10 |
-| D37 | **Going back:** a learner who keeps asking for English ("mucho mucho inglés por favor", B7) is offered the step below, or the visit backs off (D12). A step can be set by hand today, but nothing offers it | bugs.md B7 | Josh |
+| D37 | **Going back:** a learner who keeps asking for English ("mucho mucho inglés por favor", B7) is offered the step below, or the visit backs off (D12). A step can be set by hand today, but nothing offers it | bugs.md B7 | future (Josh, 2026-11-14: "SAVE ON LIST As future") |
 | D38 | **The pace:** how long learners stay at each step, and whether they say yes or "Not yet" | lib/level-up.ts | count |
 | D39 | **The offer's preview** rewrites the character's last line at the next step as one line; steps 4–6 play as separate bubbles, so the preview doesn't match what comes | this plan → What doesn't hold together | build, with D10 |
 
@@ -58,7 +58,7 @@ Today (`lib/level-up.ts`): after 3 conversations at a step, each with 3 or more 
 | D11 | Too fast and too much Spanish at step 1 | bugs.md B7 | build, after play on the live version |
 | D12 | Asking for help moves the hard words into "new, with a gloss" for the rest of the visit, at every level (Nunzio went back to new words after two turns) | mix.md → three bins; bugs.md B13 | build |
 | D13 | Idioms in play: code picks one by weight (importance, due for this learner, not heard just now) and the character may use it, glossed picture then meaning, at a rate per level. The stores exist, unused | mix.md → Idioms | build |
-| D14 | The mix as pieces put together by code, so an unsupported run can't happen | mix.md → How to get it to zero | Josh (proposal) |
+| D14 | The mix as pieces put together by code, so an unsupported run can't happen | mix.md → How to get it to zero | build (Josh, 2026-11-14: "yes") |
 
 ### Memory and learning from play
 | # | To do | From | Who |
@@ -71,7 +71,6 @@ Today (`lib/level-up.ts`): after 3 conversations at a step, each with 3 or more 
 ### Bugs still open (bugs.md)
 | # | To do | Who |
 |---|---|---|
-| D19 | B4 repeats within a visit, B5 double goodbye: recheck on the live version | Josh (by ear) |
 | D20 | B10 the learner addressed in the feminine (Ofelia) | build |
 | D21 | B12 the character's bubble stays on screen too long: which bubble, when | Josh, then the screen session |
 
