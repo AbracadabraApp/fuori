@@ -10,6 +10,7 @@ Status from the entries and the day's commits; "not checked" means nobody has lo
 Bugs moved to [bugs.md](bugs.md) on 2026-11-13 (the entries below stay as the record): the character asks and carries on (B6), the receipt gate (B22, confirmed fixed), a character who steps away comes back (B17), "Stay within your job" (B18), a correction for something said right (B19), "Say this" adds things (B20), a voice that changes mid-line (B21), long Intermediate replies (B13). Still here as ideas:
 - Open-ended talk doesn't need a question every turn: now part of the bids model (a statement can be a bid; dialogue-structure-reference.md § 1a).
 - Managing the lesson out loud: not checked.
+- Comment or question, and what the bubbles offer (Josh, 2026-11-14): entry at the end of this file; the detail is in [questions-and-bubbles.md](questions-and-bubbles.md).
 
 **Fixed or overtaken**
 - "Are you new here?" in almost every opener: character.md 10q; beginner.md 12a (2026-11-12); the intro asks about what it told.
@@ -526,3 +527,14 @@ Not decided; nothing built. Josh's words as written.
 - **The character asks the learner a favor: say it in English.** "another dialogue to to consider is returning to say it in English - In englese come si dice? Explain inn English -- not the previous \"you can answer in Englis\" - the character is asking you for a favor - the system helps put it into sspanish". (The old "invite English" setup is in scaffolding.md, "Setup: invite English"; this is the other way round: the character wants the learner's English.) Josh, later the same day: "in beginner - you'd probably still need bubbles". Then: "but now the bubble could be more testing comprehension thn preference": today's bubbles are nearly all preferences (either is right); here one is right ("¿El comal para qué es?" → "Para tostar tortillas" / "Para lavar los platos"), and a wrong pick gets a light recast in role (it may be a mishearing). With the recall idea (docs/mix.md, "do you remember how we use the comal?"), one feature: once a visit, a check of understanding that feels like conversation.
 - **A pastiche: mixed, then echo, then mixed.** "we might want to come up with pastiche of mixed then echo - then mix".
 - **Levels as plain amounts.** "Could level prompts be as easy as saying not much, a bit more, more" (after seeing that a character asked for less Spanish gave less). First measure, 2026-11-13 (scaffolding.md changelog 13a): a step 1 that only said "mostly in English, with only a little {language}" got 30% Spanish against 45% today, but its Spanish was nearly all the closing question, with no phrases slotted in.
+
+## Comment or question: a turn doesn't have to end on a question (Josh, 2026-11-14; Beginner)
+
+Josh, after reading the closing questions and the offered answers of five Mexico Beginner visits: "Why always Q? A. Why not just talk - comment or Q." The character's turn ends on a comment or a question, and the two bubbles are things to say, usually one comment and one question. On the five visits rewritten that way: "The thing that stands out uid the character question gets an echo. The comment is hard to reply without the English (maybe final sentence is echoed or at least shown in English".
+
+- What the visits showed: 27 of 55 bubble pairs were yes and no, the yes an echo of the question ("¿Quiere ver…?" / "Sí, quiero ver…"); the turns that closed on no question and offered two questions to ask were taken 6 times of 7; Josh added something of his own to 33 of 56 replies, mostly about himself or a question. Across ten days the yes/no share was lower before 11-12i, and lowest where the place sells something.
+- Claude's proposal from Josh's two remarks: every turn ends on one short sentence with its English; one bubble uses that sentence's words (the easy one), the other is new (a question or the learner's own thought).
+- Also there: seven categories of what a turn is about (Josh's Preferences, Senses, Biography, Comprehension; Claude's Words, Help, Play), with example questions, and which gap bubbles ("Me llamo …") learners fill.
+- Close to "Open-ended talk doesn't need a question every turn" above (Josh, 2026-11-04) and to "Interviewing by multiple choice" in the top 10.
+
+Everything is in [questions-and-bubbles.md](questions-and-bubbles.md), a draft. Nothing is built or in a prompt.

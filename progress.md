@@ -1,5 +1,13 @@
 # Fuori Development Progress
 
+## 2026-11-14 (Mac mini, with Josh): Beginner questions and bubbles read and written up (docs only)
+
+- **Josh:** "These questions in the game are very repetitive" (bugs.md B24), then "I'm interested in more question types", then "Why always Q? A. Why not just talk - comment or Q."
+- **Written:** [docs/questions-and-bubbles.md](docs/questions-and-bubbles.md), a draft: what the closing questions and the offered answers were in five Mexico Beginner visits and across ten days of Beginner play, seven categories of question with examples, Josh's comment-or-question idea, and a proposal for the last sentence and the two bubbles. A pointer in dialogue-ideas.md and an addition to B24.
+- **Shown to Josh:** the five visits rewritten by hand, https://claude.ai/artifact/YPDXzxENqYkSjc87aqtiSR (private). He has not said what holds.
+- **Nothing built, no prompt touched.** The five visits predate the 2026-11-13 release; more visits on the live version should be read before any change, and any prompt change needs a card and the dialogue session's knowledge.
+- **Private:** the snapshots used are in `~/fuori-archive/` on the mini, not in git.
+
 ## 2026-11-14 (cloud chat session, with Josh): the northern style samples judged; Tijuana's pictures rewritten
 
 - **Josh:** "they all look fine - but I would redo Tijuana with diffeerent art style and descriptions. Tijuana is known around the world - the pictures looked like anywhere . Musicians in every plaza is a borderline stereotype." He sent the sample card and three photographs (the arch, Playas from above, a mural).
