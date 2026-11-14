@@ -12,7 +12,7 @@
 - The judge flagged 25 of 40 people (`docs/mexico-north-cities.facts.txt`, the mini, 2026-11-13). Eight are a person's own day and stand; nine claims were checked against sources and kept (one number corrected: the cable car rides about 85 m up); ten lines were softened in `zacatecas.ts`, `monterrey.ts` and `mazatlan.ts`. The list is in docs/mexico-north-recipe.md, step 1.
 - **Checked:** tsc, test:names. **Not verified:** the judge was not rerun (no key here); no conversation played.
 - **Closed by Josh, 2026-11-14:** the five older hidden places in Mexico (four bakeries, Puebla's second sweet shop) stay hidden ("no"). Don't ask again.
-- **Still open for Mexico north:** Josh's yes on Tijuana's newest sample; the pictures for all four cities and their upload (the cities are shown and have none).
+- **Corrected 12:30:** this entry first said the four cities had no pictures. The laptop session had drawn and uploaded all 84 at 12:15 (948a29b; entry above). What is open for Mexico north is the release, and Josh's call on the portraits drawn from cut prompts.
 
 ## 2026-11-14 (laptop, with Josh): the learning loop discussed; bids for returns; Josh's two best visits diagrammed (docs only)
 
