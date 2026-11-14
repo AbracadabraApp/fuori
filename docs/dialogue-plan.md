@@ -19,7 +19,7 @@ Josh, 2026-11-14: "I think no work list has been made. Just documentation. Creat
 | # | To do | From | Who |
 |---|---|---|---|
 | D4 | ~~Read the five rewritten visits and say what holds~~ **Done** (Josh, 2026-11-14), so D6–D9 and D25–D33 no longer wait on it | questions-and-bubbles.md → Next step | done |
-| D5 | Recount B24 (the closing questions) on visits played on the live version | bugs.md B24 | count |
+| D5 | Recount B24 (the closing questions) on visits played on the live version | bugs.md B24 | count, **too early** (2026-11-14: one Beginner visit with replies on the live version, Italy; its 5 questions: no "¿Lo ve?", no A or B, but all yes/no, now "Le piace…?" and "Vuole…?"). Recount after more play |
 | D6 | Comment or question: some turns close on a comment, set in the draw of turn kinds (code, no new instruction) | questions-and-bubbles.md | build after D4 |
 | D7 | **The last sentence follows the question's ladder, whether it's a comment or a question:** steps 1–3 its English said and printed under it, steps 4–5 said only, step 6 neither (ladder: dialogue-model.md, 2026-11-12). Josh, 2026-11-14: "i think the distinction was questions are read in english but comments werent but I don't think that holdds"; then, after a print-Spanish-only spec: "ok - my mistakee - follow the laddedr". Today the code finds only a question (`questionOf`, the question echo since 27a7fdb), so a turn ending on a comment gets no English said or shown. One bubble uses its words, one is new | questions-and-bubbles.md | build (with D6) |
 | D8 | New kinds of question, one at a time, each played before the next: About you first, with answers that open a thread ("Sì, mio nonno era giardiniere"); then Guess, Remember, Offer, Help, Words, senses beyond sight | bid menu (dialogue-structure-reference.md § 2a, bids.md); questions-and-bubbles.md | build, one by one |
@@ -56,14 +56,14 @@ Today (`lib/level-up.ts`): after 3 conversations at a step, each with 3 or more 
 |---|---|---|---|
 | D10 | Steps 4–6: **build the direction below** (one screen, one support taken away per step). Decided (Josh, 2026-11-14): "don't gate on play today", so no hearing them as they play first | this plan → Steps 4–6 | build |
 | D11 | Too fast and too much Spanish at step 1 | bugs.md B7 | build, after play on the live version |
-| D12 | Asking for help moves the hard words into "new, with a gloss" for the rest of the visit, at every level (Nunzio went back to new words after two turns) | mix.md → three bins; bugs.md B13 | build |
+| D12 | Asking for help moves the hard words into "new, with a gloss" for the rest of the visit, at every level (Nunzio went back to new words after two turns) | mix.md → three bins; bugs.md B13 | **done** (32c601f, 2026-11-14: a `hard` flag on the reply, dialogue.md's Help asked note on every later turn; Nunzio replayed: "quercia (oak)" 6 of 6, median 29 words against 39; not released) |
 | D13 | Idioms in play: code picks one by weight (importance, due for this learner, not heard just now) and the character may use it, glossed picture then meaning, at a rate per level. The stores exist, unused | mix.md → Idioms | build |
 | D14 | The mix as pieces put together by code, so an unsupported run can't happen | mix.md → How to get it to zero | build (Josh, 2026-11-14: "yes") |
 
 ### Memory and learning from play
 | # | To do | From | Who |
 |---|---|---|---|
-| D15 | How often learners come back to the same character (decides how much a richer character memory is worth) | learner-loop.md | count |
+| D15 | How often learners come back to the same character (decides how much a richer character memory is worth) | learner-loop.md | **done** (2026-11-14, 209 visits since 2026-10-12: 111 of 141 learner–character pairs met once; a third of visits are returns, but half of those are re-entries within the hour; real returns are two learners, median about 3 days apart) |
 | D16 | Which kinds of bid get taken up: rerun `scripts/bid-count.mjs` once there are 20 new-Beginner visits with three or more replies | bids.md; this plan → Later | count |
 | D17 | A shared file of how the learner speaks and learns (level, recurring mistakes, words met; nothing about their life), read by every character and by Magda in place of the study file | learner-loop.md | later |
 | D18 | Observers read family play and flag problems as candidates for bugs.md | learner-loop.md | later |
@@ -72,7 +72,7 @@ Today (`lib/level-up.ts`): after 3 conversations at a step, each with 3 or more 
 | # | To do | Who |
 |---|---|---|
 | D20 | B10 the learner addressed in the feminine (Ofelia) | build |
-| D21 | B12: when the learner replies, the reply bubbles go but the character's last bubble stays until the next line arrives; both should go on the reply (Josh, 2026-11-14) | build (iOS, the screen session) |
+| D21 | B12: when the learner replies, the reply bubbles go but the character's last bubble stays until the next line arrives; both should go on the reply (Josh, 2026-11-14) | **done** (059fc9f, 2026-11-14: the character's bubble and the answers go when the reply is sent, at every level; make build and package tests pass; not on the phone yet) |
 
 ### Docs and code housekeeping
 | # | To do | Who |
