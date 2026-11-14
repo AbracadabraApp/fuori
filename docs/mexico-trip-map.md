@@ -146,3 +146,14 @@ Sources: https://elevenlabs.io/docs/api-reference/text-to-sound-effects/convert 
 - **Order: "stub at top, map, key".** The ticket, then the map, then the key.
 
 **Next:** Josh checks the fourteen dots on a mock-up (spots placed by eye; Guanajuato and San Miguel nudged apart so both numbers read). Then `content/es-mx/travel-map.json`, the sheet's Mexico layout in Swift, and the upload, which waits for his word.
+
+## 2026-11-13, night: Bahía de Banderas, towns as places, and an American in Sayulita (talk only; nothing built)
+
+Josh, from his phone, to the cloud chat session. Ideas, not decisions; nothing is written into content.
+
+- **Josh:** "what do you say of cities like saint john of the cross, san pancho, or bucerias". Read as La Cruz de Huanacaxtle, San Pancho and Bucerías, on the Bay of Banderas north of Puerto Vallarta; he hasn't confirmed the first.
+- **Claude's answer:** one city, not three. Each alone is thin for ten places; together, as **Bahía de Banderas** with the towns as its neighbourhoods, they are the small-town coast where foreigners and locals share the same streets, a different thing from Mazatlán, a working port with a beach. Named from memory and unchecked: Bucerías's oyster divers and its January feast with the boats blessed; La Cruz's fish market at the marina and Sunday market; San Pancho as Echeverría's model town of the 1970s, its community centre and turtle volunteers.
+- **Josh:** "In the Bahía de Banderas towns could sometimes be places". A town can be one card on the city's list: one person with a reason to be there, and the whole town is what you talk about. It is how people there speak ("voy a San Pancho"). It lets a small town in without inventing three spots for it, and lets in the inland side (Valle de Banderas, the old municipal seat, a farming town). What it would take: a place kind "town", drawn wide with no sign, and a person who can carry a town. Pátzcuaro's lake villages have the same shape.
+- **Josh:** "sayulita could fit there with a hippie american surfer running a smoothie shop". The first non-Mexican in Afuera (Rome has its immigrant communities). Claude's points: she is the learner's future self, someone who learned Spanish as an adult; by Josh's caricature rule, keep the smoothie shop and one trait and make her particular, not all four stacked; she is a non-native model of Spanish, which is a choice; and the voice pool is all Mexican, so she needs a Spanish voice with an American accent, found and heard first.
+- **Wrinkles:** no bus terminal (a plane to Puerto Vallarta and a combi up the highway, so the "terminal" is a highway stop and the trip line says plane); and the honest version includes the squeeze on rents, which belongs with the hard side of places (waits on test K1).
+

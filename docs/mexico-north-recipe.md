@@ -27,6 +27,8 @@
 
 ## Open, Josh's
 
+**Closed since this card was written** (docs/mexico-trip-map.md → 2026-11-13 evening; progress.md, the mini's night entry): all four cities are a yes; the map is chosen (soft flat, cropped); no buildings, so step 3 is not run; the sheet is ticket, map with numbered dots, written key, so item 3 below no longer applies. The three items are kept as written for the record.
+
 1. **Which cities.** Only "Tijuana is a yes" is his. Zacatecas, Monterrey and Mazatlán are the cloud session's three other yeses from 2026-11-11, built here on "include the new northern cities". A city he doesn't want stays hidden or is deleted; one he'd add (Chihuahua with Creel, a Baja town, Puerto Vallarta, Cancún) is the same recipe again.
 2. **The map's look**, picked by eye at step 2.
 3. **Fourteen cities and the sheet.** The layout he steered to has a key strip of ten city panels down the left; fourteen don't fit it as sketched. Either some cities go under "more" (his rule: one that sits close to another; San Miguel, then Puebla), or the strip is rethought. The board already handles more than ten rows.

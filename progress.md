@@ -1,5 +1,10 @@
 # Fuori Development Progress
 
+## 2026-11-13 (cloud chat session, with Josh), night: a Bahía de Banderas city talked through (docs only)
+
+- **Josh's ideas, recorded in [docs/mexico-trip-map.md](docs/mexico-trip-map.md) → "2026-11-13, night":** La Cruz, San Pancho and Bucerías; "towns could sometimes be places"; Sayulita "with a hippie american surfer running a smoothie shop". Claude's read: one city, Bahía de Banderas, with some towns as single place cards; she'd be Afuera's first non-Mexican and needs a voice the pool doesn't have.
+- **Nothing built or decided.** The recipe card's "Open" section now says which of its items the mini's sessions closed today.
+
 ## 2026-11-13 (Mac mini, with Josh), night: Mexico's sheet built, all four northern cities a yes, style samples drawn
 
 - **Done:** `content/es-mx/travel-map.json` has the fourteen spots Josh checked and `layout: "numbered"`; `TripSheet.swift` lays a numbered map out as ticket, map with numbered dots, written key (f09a3c7f; app builds, CI passed, content checks pass in both countries). Italy's sheet is untouched. The map picture is ready at `~/fuori/public/images/es-mx/travel/map.jpg` on the mini, not uploaded.
