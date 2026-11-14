@@ -2,6 +2,11 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
 
+### 2026-11-14a: a help answer, now and then
+- **Added, System prompt › Answers:** "Now and then, when your line has a word or a thing you gave no English for, one of your two answers can be them asking you about it, or asking you to say it again more slowly; never about something already explained."
+- **Why:** docs/dialogue-plan.md D25. No answer the Beginner was offered ever asked for help ("No entiendo", "¿Otra vez?": none in five visits, docs/questions-and-bubbles.md), so a learner who didn't follow had nothing to say but the two answers. Josh, 2026-11-14: "ok" to the character deciding when, as one of the two answers (not a third, not always).
+- **Measured** (tests/experiments/help-bubble.mts, three of Josh's Mexico visits replayed at step 1, Ofelia 71dc1d3b, Raymundo 2008220a, Josué 8814eb6f, one take a turn): today 0 of 21 turns; "When your line has a word or a thing they may not know, one of your two answers can be…" 13 of 21, too often, some about words just glossed ("¿Cómo se dice 'bridge'?") and "¿Qué es el quesillo?" three times in one visit; this wording 5 of 21 ("¿Qué es el asiento?", "¿Qué quiere decir «escalinatas»?", "¿Puede mostrarme?").
+
 ### 2026-11-13d: the close moves to dialogue.md: the 8th turn at Beginner, the 15th at Intermediate
 - **Removed, Setup: close:** now dialogue.md → Close, shared by every level; the character closes a Beginner visit itself on the 8th turn (the goodbye offered on the 7th; no second offer), an Intermediate or Advanced one on the 15th.
 - **Why:** Josh, 2026-11-13: "if the learned ends the conversation it should end. If we want the character I'd do it after a high number. 15-20?", then "lets keep 8 for begginer; 15 for intermediate". Ending a visit is mechanics, the same at every level (the character/scaffolding/mechanics split he drew the same day).
