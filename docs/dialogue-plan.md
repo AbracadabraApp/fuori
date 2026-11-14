@@ -49,12 +49,12 @@ Today (`lib/level-up.ts`): after 3 conversations at a step, each with 3 or more 
 | D36 | **Each step hands over more of the bidding**, in its bubbles: answers to say back, then questions to ask, a sentence to finish, About me, then the learner's own words; the bubbles fade from answers to hints. Promotion changes what the learner is offered to say, not only how much English they hear | bids.md → The steps in between; beginner-2.md → The reply ladder; D25–D33 | build, with D10 |
 | D37 | **Going back:** a learner who keeps asking for English ("mucho mucho inglés por favor", B7) is offered the step below, or the visit backs off (D12). A step can be set by hand today, but nothing offers it | bugs.md B7 | future (Josh, 2026-11-14: "SAVE ON LIST As future") |
 | D38 | **The pace:** how long learners stay at each step, and whether they say yes or "Not yet" | lib/level-up.ts | count |
-| D39 | **The offer's preview** rewrites the character's last line at the next step as one line; steps 4–6 play as separate bubbles, so the preview doesn't match what comes | this plan → What doesn't hold together | build, with D10 |
+| D39 | **The offer's preview** rewrites the character's last line at the next step as one line; steps 4–6 play as separate bubbles, so the preview doesn't match what comes | this plan → What doesn't hold together | **done with D10**: every step now plays as one line, so the preview's one line matches |
 
 ### The mix and English
 | # | To do | From | Who |
 |---|---|---|---|
-| D10 | Steps 4–6: **build the direction below** (one screen, one support taken away per step). Decided (Josh, 2026-11-14): "don't gate on play today", so no hearing them as they play first | this plan → Steps 4–6 | build |
+| D10 | Steps 4–6: **build the direction below** (one screen, one support taken away per step). Decided (Josh, 2026-11-14): "don't gate on play today", so no hearing them as they play first | this plan → Steps 4–6 | **done** (67432462: steps 4–6 on the one-line reply; step 4 Level 2b, step 5 Level 3, step 6 no answers; the question's English printed 1–3, said 1–5; answers keep their English at every step, Josh's 2026-11-09 rule, so "step 5: answers in Spanish only" was dropped; not released) |
 | D11 | Too fast and too much Spanish at step 1 | bugs.md B7 | build, after play on the live version |
 | D12 | Asking for help moves the hard words into "new, with a gloss" for the rest of the visit, at every level (Nunzio went back to new words after two turns) | mix.md → three bins; bugs.md B13 | **done** (32c601f, 2026-11-14: a `hard` flag on the reply, dialogue.md's Help asked note on every later turn; Nunzio replayed: "quercia (oak)" 6 of 6, median 29 words against 39; not released) |
 | D13 | Idioms in play: code picks one by weight (importance, due for this learner, not heard just now) and the character may use it, glossed picture then meaning, at a rate per level. The stores exist, unused | mix.md → Idioms | build |
