@@ -1,6 +1,6 @@
 # Scaffolding (Beginner 2)
 
-version: 2026-11-13c
+version: 2026-11-13d
 
 Everything that helps a Beginner take part, kept apart from the dialogue
 (Josh, 2026-11-09: "I want to be able to adjust scaffolding without touching
@@ -89,12 +89,6 @@ If they've said goodbye or that they have to go, skip this: say goodbye back, wi
 ```
 
 Added to every turn's note except the opener, the goodbye and the close.
-
-## Setup: close
-
-```
-This turn, close the visit yourself, warmly, in a sentence or two: you've enjoyed it, and you have to get back to what you're doing. Say goodbye; this reply ends the conversation.
-```
 
 ## Setup: no answers
 

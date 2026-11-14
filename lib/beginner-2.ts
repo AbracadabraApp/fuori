@@ -18,6 +18,7 @@ import { glossEchoes, type Part } from '@/lib/beginner';
 
 export { SCAFFOLDING_FILE as BEGINNER_2_FILE } from '@/lib/beginner';
 import { SCAFFOLDING_FILE } from '@/lib/beginner';
+import { closeNote } from '@/lib/dialogue/rules';
 
 /** Which Beginner plays: the new one (2) unless the app asks for the old one with `x-fuori-beginner: 1` (the cut-over, 2026-11-12) */
 export function beginnerVersionFrom(headers: Headers): 1 | 2 {
@@ -60,12 +61,11 @@ const R = (id: string) => RUNGS.find((r) => r.id === id)!;
  */
 export const GOODBYE: Setup = { id: 'goodbye', block: 'Setup: goodbye', maxAnswers: 2, english: true };
 export const GOODBYE_AFTER = 7;
-/** If the visit carries on past the goodbye: offered once more, then the character closes it (2026-11-13: Josué and
- * Isidro ran to 20 and 24 replies when the 7th turn's goodbye came with no answers; Josh: "Don Insidro, I must insist we
- * stop"). Spaced out, not every turn (Chuy, 2026-11-10) */
-export const GOODBYE_AGAIN = 10;
-export const CLOSE_AT = 13;
-/** The character closes the visit itself; the reply ends it (take-turn sets done) */
+/** If the visit carries on past the goodbye, the character closes it itself: on the 8th turn at Beginner (the goodbye was
+ * offered on the 7th), on the 15th at Intermediate and Advanced (take-turn). Josh, 2026-11-13: "lets keep 8 for begginer; 15
+ * for intermediate"; Josué and Isidro had run to 20 and 24 replies ("Don Insidro, I must insist we stop") */
+export const CLOSE_AT = 8;
+export const CLOSE_AT_INTERMEDIATE = 15;
 export const CLOSE: Setup = { id: 'close', block: 'Setup: close', maxAnswers: 0, english: false };
 
 /** The first turn: the place, not the person (Doña Carmen, 2026-11-10: "¿Usted es de aquí?… ¿Es porque veo africano?") */
@@ -132,7 +132,7 @@ function weighted(cluster: Setup[], key: string, not?: string): Setup {
 }
 
 export function pickSetup(p: { conversationId?: string | null; turn: number; learnerId?: string | null; characterId: string; now?: Date; /** what the learner just said: after their own question, no invitation (the character follows it up) */ learnerSaid?: string }, cluster: Setup[] = CLUSTER_1): Setup {
-  if (p.turn === GOODBYE_AFTER || p.turn === GOODBYE_AGAIN) return GOODBYE;
+  if (p.turn === GOODBYE_AFTER) return GOODBYE;
   if (p.turn >= CLOSE_AT) return CLOSE;
   // The opener is two answers to read when the cluster has them (Arturo, 2026-11-09: an invited-English opener set a pattern the character copied all visit)
   if (p.turn === 0 && cluster.some((s) => s.id === 'two-en')) return OPENER;
@@ -177,7 +177,8 @@ export function setupLine(setup: Setup): string {
   const f = readPromptFile(SCAFFOLDING_FILE);
   // Every turn's note gives way when they're leaving (2026-11-13): in the system prompt alone, the note next to their
   // message won ("Before you go, look at the church's front door…" after "I must see the dentist")
-  const leaving = [OPENER.id, GOODBYE.id, CLOSE.id].includes(setup.id) ? '' : ' ' + f.block('Setup: if they are leaving');
+  if (setup.id === CLOSE.id) return closeNote();
+  const leaving = [OPENER.id, GOODBYE.id].includes(setup.id) ? '' : ' ' + f.block('Setup: if they are leaving');
   return fill(f.block(setup.block) + leaving, { language: language.name }).trim();
 }
 
@@ -185,7 +186,7 @@ export function setupLine(setup: Setup): string {
 export function setupText(setup: Setup, cluster: Setup[] = CLUSTER_1): string {
   const f = readPromptFile(SCAFFOLDING_FILE);
   const level = LEVEL_OF_CLUSTER[Math.max(0, CLUSTERS.indexOf(cluster))];
-  return [f.block(level), f.block(setup.block)].map((b) => fill(b, { language: language.name }).trim()).join('\n');
+  return [fill(f.block(level), { language: language.name }).trim(), setupLine(setup)].join('\n');
 }
 
 /**

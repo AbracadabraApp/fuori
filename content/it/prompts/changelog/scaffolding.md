@@ -2,6 +2,10 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
 
+### 2026-11-13d: the close moves to dialogue.md: the 8th turn at Beginner, the 15th at Intermediate
+- **Removed, Setup: close:** now dialogue.md → Close, shared by every level; the character closes a Beginner visit itself on the 8th turn (the goodbye offered on the 7th; no second offer), an Intermediate or Advanced one on the 15th.
+- **Why:** Josh, 2026-11-13: "if the learned ends the conversation it should end. If we want the character I'd do it after a high number. 15-20?", then "lets keep 8 for begginer; 15 for intermediate". Ending a visit is mechanics, the same at every level (the character/scaffolding/mechanics split he drew the same day).
+
 ### 2026-11-13c: visits end when the learner is leaving; a close; Notice asks about the thing, once a visit
 - **Changed, System prompt › Answers:** "Their goodbye ends the conversation" → "When they say goodbye or that they have to go, that comes before this turn's note too: say goodbye back, with no question; that ends the conversation" (a first wording, "Their goodbye, or saying they have to go, ends the conversation", ended 3 of 8 replayed leavings: the turn's note asking a question won) (with the reply format's done rule: "they are leaving (they said goodbye, or that they have to go or want to stop, in any words)").
 - **Added, Setup: if they are leaving:** "If they've said goodbye or that they have to go, skip this: say goodbye back, with no question", added to every turn's note (not the opener, the goodbye or the close). With the rule in the system prompt alone, 7 of 10 replayed leavings ended; the misses were mostly a Notice note winning ("Before you go, look at the church's front door…").

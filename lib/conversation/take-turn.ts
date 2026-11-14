@@ -18,7 +18,8 @@ import { tutor } from '@/content';
 import { onboardingState } from '@/lib/onboarding';
 import { runBeginnerTurn, beginnerPromptVersion, lineFromParts, type Part } from '@/lib/beginner';
 import { assemblePieces } from '@/lib/dialogue/pieces';
-import { BEGINNER_2_FILE, CLUSTER_1, pickSetup, levelText, setupLine, shapeParts, turnSteps, beginner2Version, type Setup, type TurnSteps, flowingLine, frameBrief, onFrame, lineWithAnswers } from '@/lib/beginner-2';
+import { closeNote } from '@/lib/dialogue/rules';
+import { BEGINNER_2_FILE, CLOSE_AT_INTERMEDIATE, CLUSTER_1, pickSetup, levelText, setupLine, shapeParts, turnSteps, beginner2Version, type Setup, type TurnSteps, flowingLine, frameBrief, onFrame, lineWithAnswers } from '@/lib/beginner-2';
 import { pickShapes, noteOf, shapeIds, beatsBrief } from '@/lib/shapes';
 import { runIntro } from '@/lib/intro';
 import { storedCluster } from '@/lib/level-up';
@@ -181,6 +182,8 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
   const shapeId = shapeIds(shapes);
   // The intro's beats, once, in the system prompt of every later turn: material the character has, not a list to work through
   const beatsText = shaped && !intro ? beatsBrief(beats) : '';
+  // An ordinary Intermediate or Advanced visit that has run long: the character closes it (Beginner: pickSetup → CLOSE)
+  const closing = shaped && setup === null && npcTurns >= CLOSE_AT_INTERMEDIATE;
   const withBeats = (brief: string) => [brief, beatsText].filter(Boolean).join('\n\n');
 
   // A lesson (lib/lesson.ts): every part in the Beginner format with its brief, Magda included;
@@ -246,8 +249,9 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
     system: tutorPrompt?.system,
     firstTurn: tutorPrompt?.firstTurn,
     level: pathLevel ?? level,
-    // Intermediate: this turn's shape, when a signal fired (lib/shapes.ts); nothing otherwise. The intro's beats once, as the brief
-    note: noteOf(shape),
+    // Intermediate: this turn's shape, when a signal fired (lib/shapes.ts); nothing otherwise. The intro's beats once, as the brief.
+    // A long visit's close (the 15th turn; Josh, 2026-11-13): the character closes it itself
+    note: noteOf(shape, closing ? closeNote() : undefined),
     ...(beatsText && !pathLevel && !tutorPrompt ? { brief: beatsText } : {}),
     laps: p.laps,
     onText: p.onText,
@@ -255,6 +259,7 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
     // Their goodbye, said back, ends it (docs/beginner-scaffolding.md 11b)
     withDone: true,
   });
+  if (closing) reply.done = true;
   if (shapeId && !steps) steps = { fixes: [], shape: shapeId };
   p.laps?.lap('claude');
   const replyMs = Math.round(performance.now() - started);

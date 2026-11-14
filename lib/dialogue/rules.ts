@@ -16,6 +16,11 @@ export function withDialogueRules(system: string): string {
   return `${system}\n\n${readPromptFile('dialogue.md').block('Every conversation')}`;
 }
 
+/** The note for the turn where the character closes a long visit itself (the 8th turn at Beginner, the 15th at Intermediate and Advanced) */
+export function closeNote(): string {
+  return readPromptFile('dialogue.md').block('Close');
+}
+
 /** The note that follows the learner's line when it was compared with the answers offered */
 export function heardNote(heard: Heard): string {
   return readPromptFile('dialogue.md').block(heard === 'said-back' ? 'Heard: said back' : 'Heard: other');

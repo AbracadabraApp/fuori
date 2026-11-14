@@ -64,7 +64,7 @@ check(introLine(sentences).line === 'Buenas tardes. ¿Quiere un lechero?' && int
 // The turn wiring: the intro on an opening, shapes on both paths, Beginner 1 untouched
 const tt = readFileSync('lib/conversation/take-turn.ts', 'utf8');
 check(/const shaped = !isTutor && !p\.lesson && !welcome && \(setup !== null \|\| onPath === null\)/.test(tt), 'shapes and the intro: ordinary visits at Intermediate or Beginner 2 only');
-check(/brief: withBeats\(frameBrief\(cluster\)\), note: noteOf\(shape, setupLine\(setup\)\)/.test(tt) && /stageText: withBeats\(levelText\(cluster\)\), turnNote: noteOf\(shape, setupLine\(setup\)\)/.test(tt) && /note: noteOf\(shape\),/.test(tt) && /brief: beatsText/.test(tt), 'the shape note and the beats brief reach the frame clusters, the parts clusters and the Intermediate reply');
+check(/brief: withBeats\(frameBrief\(cluster\)\), note: noteOf\(shape, setupLine\(setup\)\)/.test(tt) && /stageText: withBeats\(levelText\(cluster\)\), turnNote: noteOf\(shape, setupLine\(setup\)\)/.test(tt) && /note: noteOf\(shape(, closing \? closeNote\(\) : undefined)?\),/.test(tt) && /brief: beatsText/.test(tt), 'the shape note and the beats brief reach the frame clusters, the parts clusters and the Intermediate reply');
 
 if (problems.length) {
   console.error(`check-shapes: ${problems.length} problem(s)\n- ${problems.join('\n- ')}`);

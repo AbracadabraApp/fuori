@@ -2,6 +2,11 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../dialogue.md`.
 
+### 2026-11-13a: leaving in any words ends a visit, at every level; a close for long visits
+- **Changed, Every conversation:** "When they say goodbye, even with…" → "When they say goodbye or that they have to go, in any words, even with…".
+- **Added, Close:** the note for the turn where the character closes a long visit itself (the 8th turn at Beginner, the 15th at Intermediate and Advanced; was scaffolding.md's Setup: close on the 13th, Beginner only).
+- **Why:** the 13c fix for Josh's Isidro and Josué visits (scaffolding.md changelog) reached Beginner only. Josh, 2026-11-13: "if the learned ends the conversation it should end. If we want the character I'd do it after a high number. 15-20?", then "lets keep 8 for begginer; 15 for intermediate"
+
 ### 2026-11-12a: a goodbye with something else in the same breath still ends it
 - **Changed:** "When they say goodbye, say goodbye back…" → "When they say goodbye, even with something else in the same breath (their name, a thanks), say goodbye back…".
 - **Why:** Josh's Raymundo visit (409863b2, 2026-11-12): "Mi llama Joshua. Adiós. Que le vaya bien." got a tip and a new question instead of a goodbye, and the visit went on; replayed through today's call, 1 of 4 takes still carried on. A goodbye that comes with a name or a thanks is the common case, not the exception.

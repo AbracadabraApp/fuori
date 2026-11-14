@@ -20,7 +20,7 @@ Josh, 2026-11-13: "In this game, everyone likes to say, lo veo, lo ve." (Vale ba
 
 ### B3. The visit doesn't end when the learner wants to go
 Josh, 2026-11-13, Isidro d335b204 (24 replies): "A bit of a strange question and a long conversation." / "I must see the dentist." / "Don Insidro, we must stop." / "Don Insidro, I must insist we stop." Josué 8814eb6f (20 replies): "Es mucho, mucho, mucho parlano."
-After a goodbye turn, any reply that isn't a goodbye reopens the visit, and the character follows a leave-taking with a new question or a Notice. **Status: fix on main (13c): leaving in any words ends the visit (replayed: 10 of 10, from 0 of 6; ordinary turns 0 of 22); the goodbye offered again on the 10th turn; the character closes on the 13th; answers required, so the goodbye turn always has some.**
+After a goodbye turn, any reply that isn't a goodbye reopens the visit, and the character follows a leave-taking with a new question or a Notice. **Status: fix on main (scaffolding.md 13c–13d, dialogue.md 13a), at every level: leaving in any words ends the visit (replayed: Beginner 10 of 10, Intermediate 6 of 6; ordinary turns 0 of 28); the character closes a visit itself on the 8th turn at Beginner (goodbye offered on the 7th) and the 15th at Intermediate (Josh: "lets keep 8 for begginer; 15 for intermediate"); answers required, so the goodbye turn always has some.**
 
 ### B4. Repeats within a visit (on the version that should stop them)
 Josh, 2026-11-13: "Don Insidro, ¿usted me preguntó esto antes?" (Isidro asked about the altars three times, d335b204). Earlier: Raymundo's back door three times, "Mire" every turn (45764841, 2026-11-12).
