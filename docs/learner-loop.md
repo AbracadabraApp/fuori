@@ -49,3 +49,9 @@ Claude's reading: each loop is a judgement of how it's going against a goal, the
 Josh, on the teacher with the same student next time: "teacher restates the turn for better clarity or reinforcementt". So a repeat visit also brings back what was said last time, put more clearly or practised again, besides picking up what was left open.
 
 **A goal (Josh, 2026-11-14):** "in the bid terms - characters should make strrong bids for returns - that is a goal". Like asking for a second date: the character gives the learner a reason to come back to them (something to show, a story to finish, a time to meet), and on the return it keeps the bid.
+
+Josh: "Isidiro did a good jon at this - also the costume designer in Palermo". What their bids had (Claude, from the transcripts):
+- **Elena, costume maker, Teatro Massimo, Palermo.** First visit (fe9d59f5) ends on "Come next week and I'll have the gold thread ready, il filo d'oro, and we'll start the first flower together." The return (252960a4) opens on what Josh had said he'd do ("Ha poi visto la ballerina in tutù bianco?"), and ends on a new bid built from his story (a *pani ca' meusa* twenty years ago): panelle at Ballarò tomorrow, where she buys her thread, "porti l'appetito".
+- **Isidro, ex-miner, San Cayetano, Guanajuato.** First visit (6159f8cb) ends with Josh leaving before the altars; the return (d335b204) opens on "usted se fue sin ver los altares", and ends on "mañana a las diez aquí en las gradas" and "¿Quiere que mañana le enseñe la bocamina de cerca?"
+- In common: a time and a place, something done together, from the character's own world (her thread, his mine), tied to what the learner said or left unfinished; and the return opens where the last visit left off.
+- Against: Isidro kept talking after the bid, and Josh had to say "Don Insidro, we must stop" and "I must insist we stop".
