@@ -135,11 +135,30 @@ The category is separate from these, and any category can take any value of them
 | | What it says | Values |
 |---|---|---|
 | **Answer form** | The form of the answer | Yes or no, A or B, open, a guess with a right answer |
-| **Narration** | Whether the scene moves | Stays here, moves on |
+| **Narration** | Whether the scene moves | Stays here, moves on now, next time |
+| **Thread** | How it follows the learner's last answer | New topic, one step deeper, joined to the character's world |
 
 "Answer form" is the terms table's **Ask** ("yes/no, either/or or open"). It is not called "shape" here because shape already means the list of moves code picks for a turn (`lib/shapes.ts`).
 
 Narration: "¿Quiere ver la mina?" is a Preferences question that moves the scene; "¿Qué cree que hay detrás de esa puerta?" is a Play question that moves it; "¿Oye eso? Venga." is a Senses one. The five visits were narrow on all three at once: Preferences, yes or no, and moving on by offering to show something.
+
+"Next time" and Thread were added 2026-11-14 from the session on `docs/learner-loop.md` and `docs/great-conversations.md` (Josh: "do it"):
+
+- **Next time** is a bid for a return (Josh: "characters should make strrong bids for returns - that is a goal"): "¿Quiere que mañana le enseñe la bocamina de cerca?" (Isidro, d335b204). Help and Play make natural ones: "Come back and tell me who was right."
+- **Thread** is what separated Josh's two best visits (Beatrice 09dd40cd, Nunzio 52ae014d) from the rest, more than the category: "Le piace leggere?" is plain Preferences, but every question after it went one step deeper into Josh's last answer (reading, history, Machiavelli, the Discourses), and then joined it to her world ("Siena was a republic… Vuole visitare il Palazzo Pubblico?"). More categories answer B24 (repetitive); Thread answers flat.
+
+| Thread | Example |
+|---|---|
+| New topic | "¿Le gusta la plaza?", after he's been talking about his grandfather |
+| One step deeper | Josh: Machiavelli → "Le piace di più Il Principe o i Discorsi?" |
+| Joined to the character's world | Josh: my grandfather worked in a garden → "Allora suo nonno fa il mio stesso mestiere" (Nunzio) |
+
+In both visits Josh brought the threads, in Italian he can steer with (Josh: "I can influence convversation, but they still show working dialogue"). A Beginner can't, so the new bubble (above, "The last sentence, and the two bubbles") is where the learner's thread has to come from: a thing about themselves that opens one, and the next turn goes one step deeper into whichever was said.
+
+> Nel suo paese ci sono giardini così?
+> "Sì, mio nonno era giardiniere." / "Nella mia città ci sono parchi grandi."
+
+When the rewritten visits are read, or the next ones written, each closing line can be marked for Thread as well as category: a line only works in its place in the visit, which is where the two best visits worked.
 
 ## The kinds, with examples
 
