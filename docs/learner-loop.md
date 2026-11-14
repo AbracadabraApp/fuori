@@ -36,6 +36,6 @@ Few, short notes, pruned like an index; each new lesson checked by replay (a vis
 
 ## Questions for later
 
-- A town that talks: CLAUDE.md has characters know only what the learner told them; a shared learner file means Vale knows about Sophia because Don Chucho was told (Josh's family idea leans that way).
+- A town that talks: decided (Josh, 2026-11-14): "i think character knowledge should be siloed - unless we introduce gossip". Each character knows only what the learner told that character; gossip would be its own feature, if ever. So +personal can't carry life facts to every character; those stay in each character's +conversation file. Open: whether +personal keeps only how the learner speaks and learns (level, recurring mistakes, what helps), which pitches the language and isn't something the character "knows".
 - The part Josh can't articulate. Claude's guess: a story of the learner and the town, the threads still open ("Isidro is waiting to show him the mine"), so characters pick them up as people do.
 - What it costs: an observer call per turn (a cheaper model, in the gap), a curator every few visits, cached prefixes.
