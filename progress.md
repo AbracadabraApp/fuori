@@ -1,5 +1,13 @@
 # Fuori Development Progress
 
+## 2026-11-13 (Mac mini, with Josh), night: Mexico's sheet built, all four northern cities a yes, style samples drawn
+
+- **Done:** `content/es-mx/travel-map.json` has the fourteen spots Josh checked and `layout: "numbered"`; `TripSheet.swift` lays a numbered map out as ticket, map with numbered dots, written key (f09a3c7f; app builds, CI passed, content checks pass in both countries). Italy's sheet is untouched. The map picture is ready at `~/fuori/public/images/es-mx/travel/map.jpg` on the mini, not uploaded.
+- **Decided by Josh:** all four northern cities stay ("all Yes"). "don't have Tijuana off the map (not even the edge)… this map is for fun"; no redraw of Baja.
+- **Drawn:** the recipe's step 4, eight style samples (a city card and one place for each of Tijuana, Monterrey, Mazatlán, Zacatecas), in `~/fuori-portraits/public/images/es-mx/` on the mini, not uploaded (the run had the R2 key blanked so it wouldn't upload by itself). Josh is judging them: https://claude.ai/artifact/VQi5xbE2D253wuHYrxDU2d
+- **Not verified:** nobody has seen the new sheet on a screen. It needs a new app build from the laptop; an older build draws Mexico's map the old way.
+- **Next, each on Josh's word:** the other 76 pictures (36 places, 40 portraits) once he passes the styles; sort and fix the fact judge's flags (`docs/mexico-north-cities.facts.txt`); upload the map and the pictures; take `hidden: true` out of the four city files; release.
+
 ## 2026-11-13 (Mac mini, with Josh), evening: Mexico's trip map chosen
 
 - **Done:** the map is picked (Josh: "Lets go with L"): `design/trip-map/mexico/map-soft-flat-cropped-banner-2-clean.png`, the soft flat 4:3 map cropped to his framing, then edited three times by the image model (land cleared and decorations moved, a México banner added, sea name scraps removed). How it was made is in `docs/mexico-trip-map.md` → "2026-11-13, evening". `generate-travel-pictures.mjs` gained `--aspect`.

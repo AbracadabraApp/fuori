@@ -1300,13 +1300,53 @@
       "timestamp": "2026-11-10T06:46:38.181Z",
       "path": "/Users/joshpetersen/fuori/public/images/es-mx/portraits/karla-taquillera-veracruz.jpg",
       "type": "portrait"
+    },
+    "mazatlan/mazatlan": {
+      "timestamp": "2026-11-14T03:55:11.697Z",
+      "path": "/Users/joshpetersen/fuori-portraits/public/images/es-mx/cities/mazatlan.jpg",
+      "type": "city"
+    },
+    "monterrey/monterrey": {
+      "timestamp": "2026-11-14T03:55:34.712Z",
+      "path": "/Users/joshpetersen/fuori-portraits/public/images/es-mx/cities/monterrey.jpg",
+      "type": "city"
+    },
+    "tijuana/tijuana": {
+      "timestamp": "2026-11-14T03:55:59.396Z",
+      "path": "/Users/joshpetersen/fuori-portraits/public/images/es-mx/cities/tijuana.jpg",
+      "type": "city"
+    },
+    "zacatecas/zacatecas": {
+      "timestamp": "2026-11-14T03:56:21.767Z",
+      "path": "/Users/joshpetersen/fuori-portraits/public/images/es-mx/cities/zacatecas.jpg",
+      "type": "city"
+    },
+    "mazatlan/paseo-de-olas-altas": {
+      "timestamp": "2026-11-14T03:56:42.998Z",
+      "path": "/Users/joshpetersen/fuori-portraits/public/images/es-mx/places/paseo-de-olas-altas.jpg",
+      "type": "place"
+    },
+    "monterrey/macroplaza": {
+      "timestamp": "2026-11-14T03:57:04.064Z",
+      "path": "/Users/joshpetersen/fuori-portraits/public/images/es-mx/places/macroplaza.jpg",
+      "type": "place"
+    },
+    "tijuana/plaza-santa-cecilia": {
+      "timestamp": "2026-11-14T03:57:34.430Z",
+      "path": "/Users/joshpetersen/fuori-portraits/public/images/es-mx/places/plaza-santa-cecilia.jpg",
+      "type": "place"
+    },
+    "zacatecas/catedral-de-zacatecas": {
+      "timestamp": "2026-11-14T03:57:59.760Z",
+      "path": "/Users/joshpetersen/fuori-portraits/public/images/es-mx/places/catedral-de-zacatecas.jpg",
+      "type": "place"
     }
   },
   "failed": {},
   "stats": {
-    "total": 260,
-    "completed": 260,
+    "total": 268,
+    "completed": 268,
     "failed": 0,
-    "lastRun": "2026-11-10T07:03:13.660Z"
+    "lastRun": "2026-11-14T03:58:02.762Z"
   }
 }
