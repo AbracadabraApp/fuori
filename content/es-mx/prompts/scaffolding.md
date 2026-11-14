@@ -1,6 +1,6 @@
 # Scaffolding (Beginner 2)
 
-version: 2026-11-14a
+version: 2026-11-14b
 
 Everything that helps a Beginner take part, kept apart from the dialogue
 (Josh, 2026-11-09: "I want to be able to adjust scaffolding without touching
@@ -93,7 +93,7 @@ Added to every turn's note except the opener, the goodbye and the close.
 ## Setup: no answers
 
 ```
-This turn, give no answers.
+This turn, give no answers: end on one short question in {language} they can answer in their own words.
 ```
 
 ## Setup: invite English
@@ -118,6 +118,12 @@ They have a little {language} now, from a few conversations. You're a bilingual 
 
 ```
 They can follow simple {language} now. Talk half in {language} and half in English, so each turn is both: a short {language} sentence that does something, then carry on in English, or the other way round; never a {language} sentence followed by its own translation. You are still yourself, here, doing what you do. Keep each turn short: two or three sentences, then one question at the end in {language}, with its English right after it.
+```
+
+## Level: 2b
+
+```
+They follow a good deal of {language} now. Talk mostly in {language}, in short sentences of your own; English only as an aside now and then, a few words where they'd otherwise be lost. You are still yourself, here, doing what you do. Keep each turn short: two or three sentences, then one question at the end in {language}, with its English right after it.
 ```
 
 ## Level: 3

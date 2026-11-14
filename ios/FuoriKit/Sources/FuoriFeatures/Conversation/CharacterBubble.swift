@@ -98,8 +98,10 @@ struct CharacterBubble: Equatable {
         }
         if let question = t.question {
             let start = questionStart(t)
-            if let shown = t.shown, let start, shown < start { return CharacterBubble(line: nil, shown: nil, english: question.en) }
-            return CharacterBubble(line: question.text, shown: t.shown.map { s in start.map { max(0, s - $0) } ?? s }, english: question.en)
+            // Steps 4–6 send the question with no English (heard, not printed: the ladder, D10): nothing under it
+            let english: String? = question.en.isEmpty ? nil : question.en
+            if let shown = t.shown, let start, shown < start { return CharacterBubble(line: nil, shown: nil, english: english) }
+            return CharacterBubble(line: question.text, shown: t.shown.map { s in start.map { max(0, s - $0) } ?? s }, english: english)
         }
         if frameTurn(t) { return CharacterBubble(line: nil, shown: nil, english: nil) }
         return CharacterBubble(line: t.line, shown: t.shown, english: t.english)

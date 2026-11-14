@@ -2,6 +2,13 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
 
+### 2026-11-14b: steps 4–6 on the one-line reply, one support taken away a step
+- **Added, Level: 2b** (step 4): "They follow a good deal of {language} now. Talk mostly in {language}, in short sentences of your own; English only as an aside now and then, a few words where they'd otherwise be lost. … then one question at the end in {language}, with its English right after it."
+- **Changed, Setup: no answers:** "This turn, give no answers." → "This turn, give no answers: end on one short question in {language} they can answer in their own words." Without it the turn often ended on no question, and the screen, which prints only the question, showed nothing.
+- **Code (lib/beginner-2.ts):** steps 4–6 move from the parts format to the one-line reply steps 1–3 use (one screen at every step; the voice starts on the first sentence again). Step 4: Level 2b, answers as at step 3 (two answers, Notice, two questions to ask, or none). Step 5: Level 3 (English only when asked), two answers or questions to ask, or none. Step 6: Level 3, no answers. The question's English follows Josh's ladder (dialogue-model.md, 2026-11-12): printed and said at steps 1–3, said only at 4–5, neither at 6. The answers keep their English at every step (Josh, 2026-11-09: reading Spanish you don't understand "feels odd and coercive"; the direction's "step 5: answers in Spanish only" was dropped for that).
+- **Why:** docs/dialogue-plan.md D10. Steps 4–6 switched to another screen and a slower start, had step 3's text at step 4, gave back at step 5 the English step 4 took away, and didn't follow the ladder. Josh, 2026-11-14: build the direction, "don't gate on play today".
+- **Looked at** (Ofelia 71dc1d3b replayed at steps 4, 5 and 6, three turns each): step 4 mostly Spanish with the question printed alone and its English heard; step 5 the same with less English; step 6 all Spanish, each turn ending on a short question ("¿Bien picosa?").
+
 ### 2026-11-14a: a help answer, now and then
 - **Added, System prompt › Answers:** "Now and then, when your line has a word or a thing you gave no English for, one of your two answers can be them asking you about it, or asking you to say it again more slowly; never about something already explained."
 - **Why:** docs/dialogue-plan.md D25. No answer the Beginner was offered ever asked for help ("No entiendo", "¿Otra vez?": none in five visits, docs/questions-and-bubbles.md), so a learner who didn't follow had nothing to say but the two answers. Josh, 2026-11-14: "ok" to the character deciding when, as one of the two answers (not a third, not always).

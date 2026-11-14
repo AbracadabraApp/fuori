@@ -84,8 +84,13 @@ export const CLUSTERS: Setup[][] = [
   [R('two-en'), R('notice'), R('ask-en')],
   [R('two-en'), R('notice'), R('ask-en')],
   [R('two-en'), R('notice'), R('ask-en'), R('free')],
-  [R('ask-en'), R('free')],
-  [R('two-en'), R('free')],
+  // Steps 4-6 (docs/dialogue-plan.md D10; Josh, 2026-11-14: build the direction, "don't gate on play today"): one
+  // screen, one support taken away a step. Step 4: answers as at step 3, mostly the language, the question's English
+  // heard, not printed. Step 5: English only when asked (Level 3). Step 6: no answers, their own words, the question in
+  // the language only. The answers keep their English at every step (Josh, 2026-11-09: reading Spanish you don't
+  // understand "feels odd and coercive"). Were [ask-en, free], [two-en, free], [free] on the parts format
+  [R('two-en'), R('notice'), R('ask-en'), R('free')],
+  [R('two-en'), R('ask-en'), R('free')],
   [R('free')],
 ];
 export const CLUSTER_1 = CLUSTERS[0];
@@ -165,7 +170,7 @@ export function pickSetup(p: { conversationId?: string | null; turn: number; lea
 }
 
 /** The level text per cluster (scaffolding.md "Level: 1–3", from Beginner 1's stages S1–S3): clusters 1–2 S1, 3–4 S2, 5–6 S3 */
-export const LEVEL_OF_CLUSTER = ['Level: 1', 'Level: 1b', 'Level: 2', 'Level: 2', 'Level: 3', 'Level: 3'];
+export const LEVEL_OF_CLUSTER = ['Level: 1', 'Level: 1b', 'Level: 2', 'Level: 2b', 'Level: 3', 'Level: 3'];
 
 /** The cluster's level text, in the system prompt after the shared rules */
 export function levelText(cluster: Setup[] = CLUSTER_1): string {
@@ -220,8 +225,11 @@ export function invited(parts: Part[]): Part[] {
 
 /** Clusters where the question is echoed in English right after it (Level 1) */
 export const QUESTION_ECHO = [true, true, false, false, false, false];
-/** On the one-line reply (steps 1–3), the question's English is said after it, added by code when the character left it out (Josh, 2026-11-12: printed and spoken at steps 1–3, the question's English ladder; scaffolding.md 12c) */
-export const QUESTION_ECHO_FRAME = [true, true, true];
+/** On the one-line reply, the question's English is said after it, added by code when the character left it out: Josh's
+ *  ladder (2026-11-12; dialogue-model.md): said at steps 1–5, not at step 6 */
+export const QUESTION_ECHO_FRAME = [true, true, true, true, true, false];
+/** The question's English printed under it: steps 1–3 only (the same ladder); steps 4–5 hear it, step 6 neither */
+export const QUESTION_PRINTED = [true, true, true, false, false, false];
 
 /**
  * Level 1: the question in the language, then its English right after (Josh, 2026-11-09: "questions
@@ -344,7 +352,7 @@ export function frameBrief(cluster: Setup[]): string {
 }
 
 /** Clusters that play on the one-line reply (the frame) rather than the parts format */
-export const FRAME_CLUSTERS = 3;
+export const FRAME_CLUSTERS = 6;
 export const onFrame = (cluster: Setup[]): boolean => Math.max(0, CLUSTERS.indexOf(cluster)) < FRAME_CLUSTERS;
 
 /**
@@ -357,8 +365,10 @@ export function lineWithAnswers(r: { line: string; en: string; done?: boolean; h
     .map((a) => ({ kind: 'answer' as const, text: a.text.trim(), en: a.en.trim(), gloss: '' }))
     .filter((a) => a.text)
     .slice(0, setup.maxAnswers);
-  const question = questionOf(r.line, r.en);
-  const echo = QUESTION_ECHO_FRAME[Math.max(0, CLUSTERS.indexOf(cluster))] ?? false;
+  const at = Math.max(0, CLUSTERS.indexOf(cluster));
+  const found = questionOf(r.line, r.en);
+  const question = found && !QUESTION_PRINTED[at] ? { ...found, en: '' } : found;
+  const echo = QUESTION_ECHO_FRAME[at] ?? false;
   return { line: echo ? withQuestionEnglish(r.line, r.en) : r.line, en: r.en, ...(r.done !== undefined ? { done: r.done } : {}), ...(r.hard ? { hard: true } : {}), parts: answers, ...(question ? { question } : {}) };
 }
 
