@@ -217,7 +217,7 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
       })
     : beginner && onPath && setup && onFrame(cluster)
     ? // Beginner 2, cluster 1 (2026-11-10s): the English frame on the Intermediate reply, one flowing line with the
-      // level block as the brief, the path that made the list Josh judged (docs/summary-and-mixed.md → Frame mix). Not the
+      // level block as the brief, the path that made the list Josh judged (docs/archive/summary-and-mixed.md → Frame mix). Not the
       // parts format: there the character pulls the language out of the sentence into its own box (10q–10r). The two
       // answers to say back come with the line (2026-11-11a: the setup line on the newest message, the answers in the
       // reply) and go to the app as answer parts; her line stays the subtitle. The voice starts early, as at Intermediate

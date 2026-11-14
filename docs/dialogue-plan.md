@@ -108,7 +108,7 @@ What each one resolves, and where the earlier thinking is.
 - **Closing when the talk is done** [5.3]: four endings today (old Beginner: the model offers the goodbye; new Beginner: the goodbye on the 7th turn; lessons: a turn count; Intermediate: the learner's goodbye). Earlier thinking: `dialogue-structure-reference.md` § 11 (the first table); `progress.md` 2026-11-10 mini (Chuy: the goodbye on ten turns running).
 - **Newcomer in the writers** [2.1, 2.2]: CLAUDE.md's learner rule; `progress.md` 2026-11-10 Learn-link ideas; `lesson-flow.md` → Practice; `lesson-steps.md`; `culture.md` → Pick, Choose.
 - **New kinds of question** [4.2]: `dialogue-structure-reference.md` § 1a (bids; what kind of bid gets taken up), § 2a (the menu), § 12.1 (the palette); the count in `dialogue-now.md` § 4; `dialogue-model.md` → Questions (Beginner turns end on a question; the menu varies the kind, not that).
-- **Steps 4–6** [5.4]: `beginner-2.md` → The reply ladder, Progression; `beginner-2-step-2.md`; the Spanish-frame aside on card B2-E5 (`prompt-trials.md`).
+- **Steps 4–6** [5.4]: `beginner-2.md` → The reply ladder, Progression; `archive/beginner-2-step-2.md`; the Spanish-frame aside on card B2-E5 (`prompt-trials.md`).
 - **Old Beginner removal** [5.2, 5.6]: `06-roadmap.md` → Now, "If Beginner 2 replaces Beginner 1: the changes after"; `archive/one-turn-engine.md` § 2.
 
 ## Documentation
@@ -117,6 +117,6 @@ What each one resolves, and where the earlier thinking is.
 
 **Done:** `dialogue-now.md`; CLAUDE.md and the README point at these; `M1-CONVERSATION-MODEL.md` and `04-conversation-engine.md` archived; the Beginner goals moved word for word into `dialogue-model.md`. 2026-11-12, evening: `dialogue-model.md` has the decisions of 11-10 to 11-12 (each quote checked against the record) and a "Tried and dropped" list; the fault log has an index of open and fixed; `level-judge-test.md`, `language-levels-plan.md`, `one-turn-engine.md`, `beginner-plan.md` and `beginner-deep-dive.md` archived, every link updated.
 
-**Next:** after steps 4–6 are decided, `beginner-2-step-2.md` and `summary-and-mixed.md`; `beginner-as-live.md` with the old Beginner; `dialogue-structure-reference.md`'s built-status lines into `dialogue-now.md`.
+**Next:** after steps 4–6 are decided, `archive/beginner-2-step-2.md` and `archive/summary-and-mixed.md`; `archive/beginner-as-live.md` with the old Beginner; `dialogue-structure-reference.md`'s built-status lines into `dialogue-now.md`.
 
 **What's kept when a document moves:** Josh's words and decisions, word for word; evidence (results, counts, quoted turns with character, place and time); one copy of each reason; what the code does only if it still does it. A dropped design keeps one line (tried, dropped, why). Nothing is deleted: what leaves goes to `docs/archive/` with "superseded by …, date" on top. Where it's unclear whether something was decided, it stays open and is put to Josh.

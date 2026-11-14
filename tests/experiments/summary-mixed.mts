@@ -1,4 +1,4 @@
-// Card B2-E5 (docs/prompt-trials.md, 2026-11-10; docs/summary-and-mixed.md): two ways to get away from English
+// Card B2-E5 (docs/prompt-trials.md, 2026-11-10; docs/archive/summary-and-mixed.md): two ways to get away from English
 // after every sentence, each made to be HEARD by Josh (Josh: "Reading is probably 20% the fidelity of hearing").
 //   Arm S (summary): the Intermediate turn exactly as it is ({ line, en }, one string). Code ends a stretch of her
 //     talk past 20 words or at 2 sentences (Josh's guess), and a separate, test-only prompt writes one English

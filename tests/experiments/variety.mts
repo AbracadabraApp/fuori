@@ -4,7 +4,7 @@
 // same conversation with every pharmacist"; "the whole thing falls down into
 // a transaction. How much you pay, credit card or cash? Thank you, bye";
 // "the cappuccino line is also a warning about how these planted lines echo".
-// Plan: docs/conversation-variety.md.) The baseline and the measure for each
+// Plan: docs/archive/conversation-variety.md.) The baseline and the measure for each
 // step. Shops of the same kind in different cities, three visits each on
 // different days by the same learner, memory carried between visits the way
 // the game does (lib/remember.ts), as a Beginner (stage 2) and as
@@ -55,7 +55,7 @@ const PLACES: Record<string, [string, string, string][]> = {
     ['fonda', 'oaxaca', ''], ['fonda', 'puebla', ''],
   ],
 };
-// PLACES=ref: the reference places a shop has to beat (docs/conversation-variety.md: a cultural place, an open space, a role with little to sell)
+// PLACES=ref: the reference places a shop has to beat (docs/archive/conversation-variety.md: a cultural place, an open space, a role with little to sell)
 const REF: Record<string, [string, string, string][]> = {
   it: [
     ['landmark', 'roma-nuova', 'colosseo'], ['landmark', 'roma-nuova', 'pantheon-rotonda'],

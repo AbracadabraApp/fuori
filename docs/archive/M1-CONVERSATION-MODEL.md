@@ -36,7 +36,7 @@ This is the source of truth for how M1 conversations work. Where it disagrees wi
 
 The principle: describe the situation, not how to talk (decided 2026-10-11). The prompt says who the character is, where they are, that this is a spoken face-to-face moment, and what they know about the person. It sets no length rules. It avoids "a foreigner" (turns characters into tour guides) and, so far, "learning Italian".
 
-**Teaching in character is fine** (Josh, 2026-10-11). A barista who slows down, repeats a word or says "si dice *il* caffè, eh" is what a kind Italian does with a newcomer. What's not fine is breaking character: lectures, tour-guide mode, a CV instead of a greeting. So telling a character about the learner's level is allowed if it keeps them in character; whether to do it is an [open question](../open-design-questions.md#11-level-and-speaking-2026-10-11).
+**Teaching in character is fine** (Josh, 2026-10-11). A barista who slows down, repeats a word or says "si dice *il* caffè, eh" is what a kind Italian does with a newcomer. What's not fine is breaking character: lectures, tour-guide mode, a CV instead of a greeting. So telling a character about the learner's level is allowed if it keeps them in character; whether to do it is an [open question](open-design-questions.md#11-level-and-speaking-2026-10-11).
 
 **What phone play shows (2026-10-11):** characters speak B1–B2 to an A1–A2 learner, which is fine (see [Vision → Level](../01-vision.md#level)); the problems are long turns with no opening to reply, traits performed as topics ("local historian" → a history lecture), and corrections of things the character can't hear. Fixes are being tested, not assumed: see [Roadmap → Now](../06-roadmap.md#earlier-list-2026-10-12-to-10-14).
 

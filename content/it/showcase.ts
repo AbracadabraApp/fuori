@@ -51,7 +51,7 @@ export const showcase: Record<string, string[]> = {
     'bottega-artigiana',
     'piazza-duomo', // M2: bench character Alberto (pensionato)
     'stazione-fal', // M2: train station for travel
-    // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
+    // Dialogue variety (Josh, 2026-11-06; docs/archive/conversation-variety.md): the city's own places in, generic businesses out
     'casa-grotta',
     'sassi-belvedere',
     'parco-murgia',
@@ -67,7 +67,7 @@ export const showcase: Record<string, string[]> = {
     'parco-cascine',
     'tram-alamanni',
     'stazione-smn-nuova',
-    // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
+    // Dialogue variety (Josh, 2026-11-06; docs/archive/conversation-variety.md): the city's own places in, generic businesses out
     'giardino-boboli',
     'piazza-signoria',
     'ponte-vecchio',
@@ -83,7 +83,7 @@ export const showcase: Record<string, string[]> = {
     'bottega-del-palio',
     'piazza-salimbeni', // M2: bench character Beatrice (studentessa)
     'stazione-siena', // M2: train station for travel
-    // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
+    // Dialogue variety (Josh, 2026-11-06; docs/archive/conversation-variety.md): the city's own places in, generic businesses out
     'orto-de-pecci',
     'torre-del-mangia',
   ],
@@ -97,7 +97,7 @@ export const showcase: Record<string, string[]> = {
     'libreria-acqua-alta',
     'campo-dei-mori', // M2: bench character Dante (storico locale)
     'stazione-santa-lucia', // M2: train station for travel
-    // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
+    // Dialogue variety (Josh, 2026-11-06; docs/archive/conversation-variety.md): the city's own places in, generic businesses out
     'ponte-rialto',
   ],
   napoli: [
@@ -112,7 +112,7 @@ export const showcase: Record<string, string[]> = {
     'piazza-bellini',
     'spaccanapoli-street', // M2: bench character Nonna Assunta (Via Spaccanapoli) (abitante del quartiere)
     'stazione-centrale-napoli', // M2: train station for travel
-    // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
+    // Dialogue variety (Josh, 2026-11-06; docs/archive/conversation-variety.md): the city's own places in, generic businesses out
     'presepi-san-gregorio',
     'castel-ovo',
   ],
@@ -126,7 +126,7 @@ export const showcase: Record<string, string[]> = {
     'salumeria-simoni',
     'piazza-verdi', // M2: bench character Clara (studentessa)
     'stazione-centrale', // M2: train station for travel
-    // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
+    // Dialogue variety (Josh, 2026-11-06; docs/archive/conversation-variety.md): the city's own places in, generic businesses out
     'due-torri',
     'archiginnasio',
     'ristorante-pappagallo', // kept: it hosts a cultural lesson (Josh, 2026-11-06: "leave them")
@@ -139,7 +139,7 @@ export const showcase: Record<string, string[]> = {
     'piazza-pretoria',
     'giardino-garibaldi',
     'stazione-centrale-palermo', // M2: train station for travel
-    // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
+    // Dialogue variety (Josh, 2026-11-06; docs/archive/conversation-variety.md): the city's own places in, generic businesses out
     'cappella-palatina',
     'teatro-massimo',
     'quattro-canti',
@@ -157,7 +157,7 @@ export const showcase: Record<string, string[]> = {
     'caffe-wunderbar',
     'piazza-ix-aprile',
     'stazione-taormina-giardini', // station (2026-10-14)
-    // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
+    // Dialogue variety (Josh, 2026-11-06; docs/archive/conversation-variety.md): the city's own places in, generic businesses out
     'teatro-greco',
     'villa-comunale-taormina',
     'terrazza-panoramica',
@@ -169,7 +169,7 @@ export const showcase: Record<string, string[]> = {
     'piazza-santoronzo',
     'bottega-cartapesta',
     'stazione-lecce',
-    // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
+    // Dialogue variety (Josh, 2026-11-06; docs/archive/conversation-variety.md): the city's own places in, generic businesses out
     'basilica-santa-croce-lecce',
     'museo-faggiano',
     'anfiteatro-romano',
@@ -183,7 +183,7 @@ export const showcase: Record<string, string[]> = {
     'piazza-santo-stefano',
     'peck',
     'stazione-porta-garibaldi',
-    // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
+    // Dialogue variety (Josh, 2026-11-06; docs/archive/conversation-variety.md): the city's own places in, generic businesses out
     'duomo-milano',
     'galleria-vittorio-emanuele',
   ],
@@ -194,7 +194,7 @@ export const showcase: Record<string, string[]> = {
     'piazza-bra',
     'salumeria-albertini',
     'stazione-porta-nuova',
-    // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
+    // Dialogue variety (Josh, 2026-11-06; docs/archive/conversation-variety.md): the city's own places in, generic businesses out
     'arena-verona',
     'teatro-romano',
     'piazza-signori',
@@ -205,7 +205,7 @@ export const showcase: Record<string, string[]> = {
     'ristorante-metastasio',
     'piazza-comune',
     'stazione-assisi', // station (2026-10-14)
-    // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
+    // Dialogue variety (Josh, 2026-11-06; docs/archive/conversation-variety.md): the city's own places in, generic businesses out
     'basilica-san-francesco',
     'eremo-carceri',
     'rocca-maggiore',
@@ -220,7 +220,7 @@ export const showcase: Record<string, string[]> = {
     'libreria-sant-agostino',
     'parco-della-trucca',
     'stazione-bergamo', // station (2026-10-14)
-    // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
+    // Dialogue variety (Josh, 2026-11-06; docs/archive/conversation-variety.md): the city's own places in, generic businesses out
     'funicolare-bergamo-alta',
     'cappella-colleoni',
     'teatro-donizetti',
@@ -235,7 +235,7 @@ export const showcase: Record<string, string[]> = {
     'casa-del-vermouth',
     'libreria-luxemburg',
     'stazione-porta-nuova-torino', // station (2026-10-14)
-    // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
+    // Dialogue variety (Josh, 2026-11-06; docs/archive/conversation-variety.md): the city's own places in, generic businesses out
     'mole-antonelliana',
     'parco-valentino',
   ],
@@ -247,7 +247,7 @@ export const showcase: Record<string, string[]> = {
     'piazza-archimede',
     'laboratorio-papiro',
     'stazione-siracusa',
-    // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
+    // Dialogue variety (Josh, 2026-11-06; docs/archive/conversation-variety.md): the city's own places in, generic businesses out
     'antica-giudecca',
     'fonte-aretusa',
     'parco-archeologico',
@@ -260,7 +260,7 @@ export const showcase: Record<string, string[]> = {
     'piazza-ferrari',
     'salumeria-fontana',
     'stazione-principe',
-    // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
+    // Dialogue variety (Josh, 2026-11-06; docs/archive/conversation-variety.md): the city's own places in, generic businesses out
     'piazza-boccadasse',
     'lanterna',
     'via-garibaldi',
@@ -272,7 +272,7 @@ export const showcase: Record<string, string[]> = {
     'piazza-anfiteatro',
     'gastronomia-angeli',
     'stazione-lucca', // station (2026-10-14)
-    // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
+    // Dialogue variety (Josh, 2026-11-06; docs/archive/conversation-variety.md): the city's own places in, generic businesses out
     'torre-guinigi',
     'duomo-san-martino',
     'piazza-san-michele',
@@ -286,7 +286,7 @@ export const showcase: Record<string, string[]> = {
     'bottega-michelangeli',
     'giardini-pubblici',
     'stazione-orvieto', // station (2026-10-14)
-    // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
+    // Dialogue variety (Josh, 2026-11-06; docs/archive/conversation-variety.md): the city's own places in, generic businesses out
     'pozzo-san-patrizio',
     'duomo-orvieto',
     'teatro-mancinelli',
@@ -299,7 +299,7 @@ export const showcase: Record<string, string[]> = {
     'piazza-sordello',
     'salumeria-ducale',
     'stazione-mantova',
-    // Dialogue variety (Josh, 2026-11-06; docs/conversation-variety.md): the city's own places in, generic businesses out
+    // Dialogue variety (Josh, 2026-11-06; docs/archive/conversation-variety.md): the city's own places in, generic businesses out
     'palazzo-te',
     'palazzo-ducale-mantova',
     'parco-te',

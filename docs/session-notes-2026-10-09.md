@@ -51,7 +51,7 @@
 
 ## Open Design Questions
 
-**Documented in:** `docs/open-design-questions.md`
+**Documented in:** `docs/archive/open-design-questions.md`
 
 **Product design input (from agent):**
 - Modified Option C navigation validated
@@ -117,7 +117,7 @@
 - `app/api/transcribe/route.ts`
 - `app/api/turn/route.ts`
 - `lib/types.ts`
-- `docs/open-design-questions.md`
+- `docs/archive/open-design-questions.md`
 - `docs/session-notes-2026-10-09.md` (this file)
 
 ## Key Insights from Today

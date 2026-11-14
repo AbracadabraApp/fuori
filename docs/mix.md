@@ -100,3 +100,7 @@ Josh and Claude went through its five layers (A the model, B the brief, C a phra
 ## Measures
 
 The amount of the language, unsupported runs, turn length; and Josh's ear, which decides.
+
+## Earlier
+
+The first try at a mix, the summary and the "mixed" turn of card B2-E5 (2026-11-10: Josh followed 1 of 8, "not good enough to release"), is in [archive/summary-and-mixed.md](archive/summary-and-mixed.md), with the Frame mix list Josh judged "strong" that the Beginner frame grew from.

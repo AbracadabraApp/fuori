@@ -385,7 +385,7 @@ Josh, thinking aloud. Feedback in the session; notes here so they aren't lost.
 
 ## Level, speaking and review (discussion 2026-10-11)
 
-The stance (immersion; characters above your level are fine; teaching in character is fine) is now in [Vision → Level](01-vision.md#level). Saving conversations and the review log are in [Roadmap → M1](06-roadmap.md#m1-navigate-cities-and-hold-a-conversation-thats-remembered); decisions waiting on Josh are in [Open design questions → 11](open-design-questions.md#11-level-and-speaking-2026-10-11). Parked here:
+The stance (immersion; characters above your level are fine; teaching in character is fine) is now in [Vision → Level](01-vision.md#level). Saving conversations and the review log are in [Roadmap → M1](06-roadmap.md#m1-navigate-cities-and-hold-a-conversation-thats-remembered); decisions waiting on Josh are in [Open design questions → 11](archive/open-design-questions.md#11-level-and-speaking-2026-10-11). Parked here:
 
 - **A learner level that travels with you.** Not for making every character speak to it. Starts from what the learner says, updates from how they speak; used by the review log to judge what was likely new, maybe lightly by characters. (M2 in the roadmap.)
 - **Character-judged success.** Did the exchange work? Concrete questions, not a 1–10 score, because characters are generous. Success says you're getting by; review items are what stretch you. (M2.)

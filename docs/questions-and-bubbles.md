@@ -142,7 +142,7 @@ The category is separate from these, and any category can take any value of them
 
 Narration: "¿Quiere ver la mina?" is a Preferences question that moves the scene; "¿Qué cree que hay detrás de esa puerta?" is a Play question that moves it; "¿Oye eso? Venga." is a Senses one. The five visits were narrow on all three at once: Preferences, yes or no, and moving on by offering to show something.
 
-"Next time" and Thread were added 2026-11-14 from the session on `docs/learner-loop.md` and `docs/great-conversations.md` (Josh: "do it"):
+"Next time" and Thread were added 2026-11-14 from the session on `docs/learner-loop.md` and `docs/play-readings.md` (Josh: "do it"):
 
 - **Next time** is a bid for a return (Josh: "characters should make strrong bids for returns - that is a goal"): "¿Quiere que mañana le enseñe la bocamina de cerca?" (Isidro, d335b204). Help and Play make natural ones: "Come back and tell me who was right."
 - **Thread** is what separated Josh's two best visits (Beatrice 09dd40cd, Nunzio 52ae014d) from the rest, more than the category: "Le piace leggere?" is plain Preferences, but every question after it went one step deeper into Josh's last answer (reading, history, Machiavelli, the Discourses), and then joined it to her world ("Siena was a republic… Vuole visitare il Palazzo Pubblico?"). More categories answer B24 (repetitive); Thread answers flat.

@@ -1,6 +1,6 @@
 # Beginner 2: step 2, and the step up
 
-2026-11-10, night · laptop session · a one-page start for tomorrow. Step 1 (the English frame) went in tonight as `scaffolding.md` → "Level: 1" (2026-11-10q), not released. The ladder is in [beginner-2.md](beginner-2.md) → Progression; the research behind it in [summary-and-mixed.md](summary-and-mixed.md) → Frame mix; the screen in [after-conversation.md](after-conversation.md).
+2026-11-10, night · laptop session · a one-page start for tomorrow. Step 1 (the English frame) went in tonight as `scaffolding.md` → "Level: 1" (2026-11-10q), not released. The ladder is in [beginner-2.md](../beginner-2.md) → Progression; the research behind it in [summary-and-mixed.md](summary-and-mixed.md) → Frame mix; the screen in [after-conversation.md](../after-conversation.md).
 
 ## Where things are
 

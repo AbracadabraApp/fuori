@@ -1,6 +1,6 @@
 # Level up: the approved mockups (Josh, 2026-11-10; exported 2026-11-11)
 
-Two artboards from the claude.ai canvas "After-conversation page" (artifact J8E48kaJyscahyhGebkH8t), exported as standalone HTML and saved here as the design reference for the level-up screen (docs/beginner-2-step-2.md → The step up; docs/dialogue-structure-reference.md § 12.2; docs/glossary.md → Level up). The values to replicate are the inline styles; the markup isn't production code. The export's runtime (`support.js`, `vendor/react*.js`) is left out: the files read as plain HTML with inline styles.
+Two artboards from the claude.ai canvas "After-conversation page" (artifact J8E48kaJyscahyhGebkH8t), exported as standalone HTML and saved here as the design reference for the level-up screen (docs/archive/beginner-2-step-2.md → The step up; docs/dialogue-structure-reference.md § 12.2; docs/glossary.md → Level up). The values to replicate are the inline styles; the markup isn't production code. The export's runtime (`support.js`, `vendor/react*.js`) is left out: the files read as plain HTML with inline styles.
 
 - `level-up-mexico.html`: Ximena, Café Amapola, Ciudad de México. Papel picado band across the top (seven pennants in the palette's magenta, yellow, teal, green, terracotta, purple), the colibrí at the foot.
 - `level-up-italy.html`: Luisa, Bar Mattina, Roma. A green-and-cream awning across the top with a terracotta rail, lemons on a branch at the foot.
