@@ -28,6 +28,9 @@ struct CharacterBubble: Equatable {
         var awaitingQuestion: Bool
         /// The new Beginner (not the old one behind the hidden switch)
         var newBeginner: Bool
+        /// The learner's reply has gone and the character's next line hasn't started: the bubble goes with the
+        /// answers to say back (B12; Josh, 2026-11-14: "they should both go afteer reply")
+        var replied = false
     }
 
     /// The words in the bubble; nil: no bubble
@@ -89,7 +92,7 @@ struct CharacterBubble: Equatable {
     /// voice reaches it); nothing on a Beginner turn with no question; the whole line otherwise (Intermediate, and
     /// the parts reply's own bubbles are BeginnerBubbles)
     static func of(_ t: Turn) -> CharacterBubble {
-        if t.awaitingQuestion { return CharacterBubble(line: nil, shown: nil, english: nil) }
+        if t.replied || t.awaitingQuestion { return CharacterBubble(line: nil, shown: nil, english: nil) }
         if let intro = t.intro, let last = intro.last {
             return CharacterBubble(line: last.text, shown: t.shown.map { max(0, $0 - (introStarts(intro).last ?? 0)) }, english: last.en)
         }

@@ -188,10 +188,11 @@ public final class ConversationModel {
         return phase == .finished || (canEnd && [.tapToTalk, .listening, .hearing, .micDenied].contains(phase))
     }
 
-    /// The answers panel shows from the learner's turn until the character answers
+    /// The answers panel shows on the learner's turn; it goes when the reply is sent, with the character's bubble
+    /// (B12; Josh, 2026-11-14: "they should both go afteer reply"), as the Beginner's answers to say back do
     public var showsAnswers: Bool {
         guard scaffolding, replies != nil, sayIt == nil else { return false }
-        return [.tapToTalk, .listening, .hearing, .thinking, .choosing, .micDenied].contains(phase)
+        return [.tapToTalk, .listening, .hearing, .choosing, .micDenied].contains(phase)
     }
 
     /// How loud the character's voice is now (0...1), nil when it can't be
@@ -214,7 +215,7 @@ public final class ConversationModel {
     /// shows once the voice has reached it in `line` (all of them once she's
     /// done); the answers wait for the learner's turn
     public var shownParts: [APIClient.TurnPart] {
-        guard let parts else { return [] }
+        guard let parts, !replied else { return [] }
         var start = 0
         var out: [APIClient.TurnPart] = []
         // With answers shown, her question's gloss isn't said (lib/beginner.ts → lineFromParts)
@@ -242,8 +243,14 @@ public final class ConversationModel {
     private var bubbleTurn: CharacterBubble.Turn {
         CharacterBubble.Turn(line: line, english: english, parts: parts, intro: intro, introHead: introHead, question: question,
                              shown: shown, speaking: phase == .speaking, awaitingQuestion: awaitingQuestion,
-                             newBeginner: beginner && !APIClient.oldBeginner)
+                             newBeginner: beginner && !APIClient.oldBeginner, replied: replied)
     }
+
+    /// The learner's reply has gone (silence, a tap, a tapped answer) and the character's next line hasn't started:
+    /// the character's last bubble goes with the answers (B12). What's stored (`line`, `parts`) stays: a turn that
+    /// comes back to the learner ("Didn't catch that", How do I say it, a failed call) shows it again. Not after an
+    /// interruption, whose line is shown, not said, when it comes
+    private var replied: Bool { phase == .thinking && !interrupted }
 
     /// Where each intro sentence starts in `line`
     private var introStarts: [Int] { CharacterBubble.introStarts(intro) }

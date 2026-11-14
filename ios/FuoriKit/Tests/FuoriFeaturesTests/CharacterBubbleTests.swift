@@ -102,4 +102,21 @@ import FuoriNetworking
         #expect(bubble.line == line)
         #expect(bubble.shown == 12)
     }
+
+    // MARK: The learner's reply sent (B12)
+
+    /// Josh, 2026-11-14: "when the reply is given, the reply bubbles disaappear. The revious character bubble hanges
+    /// there until new dialogue arrives -- they should both go afteer reply"
+    @Test func theCharactersBubbleGoesWhenTheReplyIsSentAtEveryLevel() {
+        var beginner = turn(line: introLine, parts: parts(twoAnswers), intro: intro, shown: nil, speaking: false)
+        #expect(CharacterBubble.of(beginner).line != nil)
+        beginner.replied = true
+        #expect(CharacterBubble.of(beginner) == CharacterBubble(line: nil, shown: nil, english: nil))
+
+        let line = "Questo tunnel era il letto del fiume. Vuole salire?"
+        var intermediate = turn(line: line, english: "This tunnel was the riverbed. Do you want to get on?", shown: nil, speaking: false, newBeginner: false)
+        #expect(CharacterBubble.of(intermediate).line == line)
+        intermediate.replied = true
+        #expect(CharacterBubble.of(intermediate) == CharacterBubble(line: nil, shown: nil, english: nil))
+    }
 }
