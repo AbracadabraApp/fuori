@@ -74,6 +74,20 @@ Today (`lib/level-up.ts`): after 3 conversations at a step, each with 3 or more 
 | D20 | B10 the learner addressed in the feminine (Ofelia) | **waiting on Josh**: replayed, Ofelia says "mi reina", "güerita" in 6 of 16 replies when the address is unknown, 1–3 of 16 as "a man" (address-replay.mts). Whether Josh's Mexico learner has an address stored couldn't be read. If unset: set it in Settings; a fix for the unknown case changes test:prompt's rule "says who's in front of them only when known", so needs his yes |
 | D21 | B12: when the learner replies, the reply bubbles go but the character's last bubble stays until the next line arrives; both should go on the reply (Josh, 2026-11-14) | **done** (059fc9f, 2026-11-14: the character's bubble and the answers go when the reply is sent, at every level; make build and package tests pass; not on the phone yet) |
 
+### Added from the Mac mini's reading (2026-11-14)
+Josh, to the Mac mini session, after it re-read this list against questions-and-bubbles.md: "add missing D items based on today". These are things that reading found and no item above carries.
+| # | To do | From | Who |
+|---|---|---|---|
+| D41 | **Count what the bubbles offer, on the live version:** pairs by kind (yes/no, this/that, two questions to ask, comment and question, goodbyes), the filler lines ("me gusta mucho", "es muy bonito"), how many different verbs, gaps. Today's count was made by hand-written throwaway code; save it as a script beside `scripts/bid-count.mjs`, which counts what learners do after a question, not what they are offered. Run with D5 and D16 | questions-and-bubbles.md → What the visits show | count |
+| D42 | **When the learner adds something of their own to a bubble, does the character take it up?** Josh did in 33 of 56 replies in the five visits (about himself 8, his own questions 7); how the characters answered was not read. Evidence for B6 and D3 | questions-and-bubbles.md → What the learner said | count |
+| D43 | **Bubble type: from what the character remembers about this learner.** One bubble in 110 could belong to no other learner ("Sí, la crema, como siempre"). A wrong memory makes a wrong bubble ("Silvia está bien", B9), so after B8 and B9 | questions-and-bubbles.md | build, after B8, B9 |
+| D44 | **Try the new kinds at sights first.** The narrow pairs come from plazas, churches and murals, where the character has nothing to hand over and offers to show things; a place that sells something gives two real bubbles unprompted ("Con chile." / "Sin chile.") | questions-and-bubbles.md → Ten days | build (the order for D6–D8, D25–D33) |
+| D45 | **The categories are not judged.** Words, Help and Play are Claude's additions to Josh's four; three placements are open (a guess: Play or Comprehension, as in the comal example; belief; "teach me") | questions-and-bubbles.md → Placements not settled | Josh |
+| D46 | **Kinds D8 doesn't name:** in Help, advice ("¿Lo pinto azul o rojo?"), a favour ("¿Me pasa el cepillo?"), settling an argument; in Play, a bet, a dare, imagine. After Guess and Help have been played | questions-and-bubbles.md → The kinds | build, with D8 |
+| D47 | **Keep the questions-to-ask turns when D6 changes the draw.** They were 8 of 55 turns in the five visits, taken 6 times of 7, with the most varied Spanish of any bubbles | questions-and-bubbles.md | build (a guard on D6) |
+| D48 | **Record which bubble a reply was read from, or none.** Nothing does today, so take-up is matched by eye and a misheard bubble looks like the learner's own words; D16, D41 and D42 all lean on it | questions-and-bubbles.md → What the visits show | later |
+| D49 | **This plan below the To do:** the Done table's "Live?" column says No for rows that have been live since c60d638; "What each step plays today" and the deep-dive thread on the intro predate the intro cut and the close on the 8th turn (13b–13d) | this plan | housekeeping |
+
 ### Docs and code housekeeping
 | # | To do | Who |
 |---|---|---|
