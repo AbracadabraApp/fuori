@@ -9,7 +9,6 @@ export const mazatlan: CityPantry = {
   id: 'mazatlan',
   name: 'Mazatlán',
   region: 'Sinaloa',
-  hidden: true,
   neighbourhoods: ['Centro Histórico', 'Olas Altas', 'Playa Norte', 'Cerro del Crestón'],
   places: [
     {

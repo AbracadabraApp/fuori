@@ -2,12 +2,11 @@ import { CityPantry } from '@/lib/types';
 
 // Added 2026-11-13 with Tijuana, Monterrey and Mazatlán (Josh: "include the new northern cities -
 // limit 10 places per city - follow current norms for types of people and places"; the norms are in
-// tijuana.ts). Hidden until its pictures are drawn and Josh has seen them.
+// tijuana.ts). Shown since 2026-11-14 (Josh: "Unhide any mexico cards"), before its pictures are drawn: its cards have no picture until then.
 export const zacatecas: CityPantry = {
   id: 'zacatecas',
   name: 'Zacatecas',
   region: 'Zacatecas',
-  hidden: true,
   neighbourhoods: ['Centro Histórico', 'La Bufa', 'Sierra de Álica', 'Bracho'],
   places: [
     {

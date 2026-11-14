@@ -4,13 +4,12 @@ import { CityPantry } from '@/lib/types';
 // limit 10 places per city - follow current norms for types of people and places"). The norms are
 // the ones the five cities of 2026-11-09 were written to: thick with local qualities, little
 // commerce, at most two food vendors, plazas and monuments, one place no other city has, one bus
-// terminal, and everyone at their place for a reason of their own. Hidden until its pictures are
-// drawn and Josh has seen them.
+// terminal, and everyone at their place for a reason of their own. Shown since 2026-11-14 (Josh: "Unhide any mexico cards"),
+// before its pictures are drawn: its cards have no picture until then.
 export const tijuana: CityPantry = {
   id: 'tijuana',
   name: 'Tijuana',
   region: 'Baja California',
-  hidden: true,
   neighbourhoods: ['Zona Centro', 'Zona Río', 'Playas de Tijuana', 'Agua Caliente', 'La Mesa'],
   places: [
     {

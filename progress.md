@@ -1,5 +1,13 @@
 # Fuori Development Progress
 
+## 2026-11-14 (cloud chat session, with Josh): Mexico's four northern cities shown, ahead of their pictures
+
+- **Josh:** "Unhide any mexico cards". `hidden: true` is out of Tijuana, Zacatecas, Monterrey and Mazatlán. Mexico shows 14 cities, 160 places.
+- **They have no pictures yet:** no city card, place or portrait is uploaded for the four (the mini's eight style samples are not uploaded), so after the next release their cards show with an empty picture. Recipe steps 5 to 7 still to run (docs/mexico-north-recipe.md).
+- **Failing because of that, until the pictures exist:** `COUNTRY=es-mx npm run test:content-api` (84 missing image addresses) and `test:images`. Passing with the four shown: tsc, test:names (160), test:feed, test:weather (14 cities), test:voices, test:roles, test:image-list. The release script doesn't run those two.
+- **Left hidden:** five older places, the four bakeries (Josh, 2026-10-27: "the conversation is poor") and Puebla's second sweet shop (2026-10-29: "hide one"). Three of their people have no surname, so unhiding them fails test:names; they predate the rewrite. Josh's call if he meant those too.
+- **Not verified:** nothing released, no conversation played in the four cities, smoke:live not run.
+
 ## 2026-11-13 (cloud chat session, with Josh), night: a Bahía de Banderas city talked through (docs only)
 
 - **Josh's ideas, recorded in [docs/mexico-trip-map.md](docs/mexico-trip-map.md) → "2026-11-13, night":** La Cruz, San Pancho and Bucerías; "towns could sometimes be places"; Sayulita "with a hippie american surfer running a smoothie shop". Claude's read: one city, Bahía de Banderas, with some towns as single place cards; she'd be Afuera's first non-Mexican and needs a voice the pool doesn't have.

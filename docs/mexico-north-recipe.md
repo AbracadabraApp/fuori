@@ -95,6 +95,7 @@ node --env-file=.env.local scripts/image-masters.mjs --untrack
 Commit `content/es-mx/images.json` and push. Then `COUNTRY=es-mx npm run test:images` and `npm run test:image-list` pass.
 
 **8. Show them**
+- **2026-11-14: already shown.** Josh: "Unhide any mexico cards". The four cities are unhidden ahead of steps 5 to 7, so their cards have no picture until those run.
 - **Josh looks**, then `hidden: true` comes out of the four city files (one line each).
 - `npm run release` when Josh says "release". No app build is needed: cities, the map, the buildings and the positions all come from `/v1/content`.
 - **Josh plays** a bus trip to a northern city and one conversation there. That is the real check.

@@ -15,8 +15,8 @@ import { mazatlan } from './mazatlan';
 
 // Feed order: Mexico City first, then alternating smaller and bigger cities.
 // The five added 2026-11-09 are shown since 2026-11-11 (Josh: "go"; their pictures are made).
-// The four northern cities added 2026-11-13 are hidden (in each file) until their pictures are made
-// and Josh has seen them (docs/mexico-north-recipe.md).
+// The four northern cities added 2026-11-13 are shown since 2026-11-14 (Josh: "Unhide any mexico
+// cards"), ahead of their pictures (docs/mexico-north-recipe.md, steps 5 to 7).
 export const cities = [
   ciudadDeMexico, //        big   · Ciudad de México
   oaxaca, //                town  · Oaxaca
