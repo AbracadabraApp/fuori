@@ -2,6 +2,11 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
 
+### 2026-11-14c: two answers that go somewhere; blanks only for a name, a place or a number
+- **Changed, System prompt › Answers:** added "Make the two answers two different things a person might really say here, each taking the talk somewhere: a choice with its reason, an answer that asks you something back, or something they notice about what's here; not a yes and a no to the same thing, and not a compliment that could be about anything." The blank rule now reads "leave that part blank as …, but only for a name, a place or a number".
+- **Why:** docs/dialogue-plan.md D27–D29, D32, D33 (from docs/questions-and-bubbles.md: most pairs were yes and no, or filler; the learner's whole Spanish was four verbs and two fillers; a blank needing a word in the language stalled the reply).
+- **Measured** (tests/experiments/bubble-pairs.mts; Ofelia, Raymundo, Josué, Carmen, Don Chucho replayed at step 1, 30 pairs, goodbyes included): a yes and a no 10 → 0; filler 9 → 5; an answer that asks back 0 → 4; a description of something there 1 → 3. The second bubble is now usually a question about the place ("¿Cuántos años tiene el túnel?", "¿Usted sale en el mural?"). **To watch:** one answer put a made-up fact in the learner's mouth ("Mi abuelo también bolea zapatos").
+
 ### 2026-11-14b: steps 4–6 on the one-line reply, one support taken away a step
 - **Added, Level: 2b** (step 4): "They follow a good deal of {language} now. Talk mostly in {language}, in short sentences of your own; English only as an aside now and then, a few words where they'd otherwise be lost. … then one question at the end in {language}, with its English right after it."
 - **Changed, Setup: no answers:** "This turn, give no answers." → "This turn, give no answers: end on one short question in {language} they can answer in their own words." Without it the turn often ended on no question, and the screen, which prints only the question, showed nothing.
