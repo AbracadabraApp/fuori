@@ -41,7 +41,7 @@ export interface PromptMessage {
 }
 
 interface BuildTurnPromptParams {
-  /** The learner's level, for the {learning} line (character.md); only 'intermediate' adds one */
+  /** The learner's level, for the {learning} line (character.md): 'intermediate' or 'advanced' add one */
   learnerLevel?: string;
   character: CharacterSheet;
   transcript: Turn[];
@@ -161,7 +161,9 @@ export function buildTurnPrompt(params: BuildTurnPromptParams): TurnPrompt {
     english,
     person: personLine(params.addressedAs),
     // At Intermediate, that they're learning (character.md → Learner: Intermediate; 2026-11-13, B13); empty otherwise
-    learning: params.learnerLevel === 'intermediate' ? fill(readPromptFile('character.md').block('Learner: Intermediate'), { language: language.name }) : '',
+    learning: params.learnerLevel === 'intermediate' || params.learnerLevel === 'advanced'
+      ? fill(readPromptFile('character.md').block(params.learnerLevel === 'intermediate' ? 'Learner: Intermediate' : 'Learner: Advanced'), { language: language.name })
+      : '',
     relationship: relationshipLine(t, memory, now),
   });
   const levelBlock = params.level && !params.system

@@ -4,6 +4,11 @@ Newest first. One entry per version: what changed, why, what prompted it. The pr
 
 Newest first. Each entry: what changed, why, and what prompted it.
 
+### 2026-11-13b: an Advanced character knows the learner speaks the language well
+- **Added, Learner: Advanced:** "They speak {language} well.", the {learning} line at Advanced (13a gave Intermediate its line).
+- **Why:** Advanced had nothing of its own: the same prompt as Intermediate, so the two levels differed only by their name in Settings. A fact the character's own judgement can hold on to, as at Intermediate.
+- **Prompted by:** Josh, 2026-11-13: "do we have anything for the advanced setting? Should we start with: They speak Spanish well".
+
 ### 2026-11-13a: an Intermediate character knows the learner is learning
 - **Added, Who: the learner:** a {learning} line, filled at Intermediate from "Learner: Intermediate": "They're learning {language} and follow most of it." Empty (left out) at every other level: Beginner has its own level text, Advanced is unchanged.
 - **Why:** the Intermediate prompt never said the person was learning, so a character had to guess each turn how much to help. Help in English when asked works (Josh: "intermediate does help in english when asked"), but it doesn't last: Nunzio (67edfe03) said "parlo più semplice" after "non posso capire tutto", then went back to "corteccia" and "scendono" with no English until Josh asked twice (docs/bugs.md B13). Of two ways offered (this fact, or a note on later turns once the learner has said it's hard), Josh chose the fact: the model handles it, given what it needs to know.

@@ -1,6 +1,6 @@
 # Character prompt (Italian)
 
-version: 2026-11-13a
+version: 2026-11-13b
 
 The prompt every character gets, for every conversation turn. It is read by
 `lib/prompts/build-turn-prompt.ts`, which fills in the `{placeholders}` from the
@@ -42,7 +42,15 @@ You are having a conversation. Don't talk too much or correct pronunciation. Tak
 They're learning {language} and follow most of it.
 ```
 
-The {learning} line for a learner at Intermediate (lib/conversation/take-turn.ts); empty, and left out, otherwise. A fact, not a rule (Josh, 2026-11-13: "ok 1").
+The {learning} line for a learner at Intermediate (lib/conversation/take-turn.ts); empty, and left out, at Beginner (it has its own level text). A fact, not a rule (Josh, 2026-11-13: "ok 1").
+
+## Learner: Advanced
+
+```
+They speak {language} well.
+```
+
+The {learning} line for a learner at Advanced (Josh, 2026-11-13: "Should we start with: They speak Spanish well").
 
 ## System prompt › Relationship
 
