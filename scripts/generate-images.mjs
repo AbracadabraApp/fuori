@@ -92,7 +92,7 @@ function parseCityContent(filePath) {
   // Places: id, name (the sign) and imagePrompt (the scene); handles \' inside strings
   const str = `(?:'((?:[^'\\\\]|\\\\.)*)'|"((?:[^"\\\\]|\\\\.)*)")`; // single- or double-quoted
   const placeRegex = new RegExp(`{\\s*id:\\s*['"]([^'"]+)['"],\\s*name:\\s*${str}[^{}\\[]*?imagePrompt:\\s*${str}`, 'g');
-  const unescape = (t) => t.replace(/\\(['"])/g, '$1');
+  const unescape = (t) => t.replace(/\\u([0-9a-fA-F]{4})/g, (_, h) => String.fromCharCode(parseInt(h, 16))).replace(/\\(['"])/g, '$1');
   let match;
   while ((match = placeRegex.exec(content)) !== null) {
     images.push({
@@ -107,12 +107,14 @@ function parseCityContent(filePath) {
   }
 
   // Extract character portraits
-  const charRegex = /{\s*id:\s*['"]([^'"]+)['"],[^}]*portraitPrompt:\s*['"]([^'"]+)['"]/g;
+  // (Same quoting as places: the old pattern stopped at the first apostrophe, so
+  // a double-quoted prompt like "a waiter's jacket" was sent cut short.)
+  const charRegex = new RegExp(`{\\s*id:\\s*['"]([^'"]+)['"],[^}]*?portraitPrompt:\\s*${str}`, 'g');
   while ((match = charRegex.exec(content)) !== null) {
     images.push({
       type: 'portrait',
       id: match[1],
-      prompt: match[2],
+      prompt: unescape(match[2] ?? match[3]),
     });
   }
 
