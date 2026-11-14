@@ -18,7 +18,7 @@ Josh, 2026-11-14: "I think no work list has been made. Just documentation. Creat
 ### Questions and bubbles (Beginner)
 | # | To do | From | Who |
 |---|---|---|---|
-| D4 | Read the five rewritten visits and say what holds | questions-and-bubbles.md → Next step | Josh |
+| D4 | ~~Read the five rewritten visits and say what holds~~ **Done** (Josh, 2026-11-14), so D6–D9 and D25–D33 no longer wait on it | questions-and-bubbles.md → Next step | done |
 | D5 | Recount B24 (the closing questions) on visits played on the live version | bugs.md B24 | count |
 | D6 | Comment or question: some turns close on a comment, set in the draw of turn kinds (code, no new instruction) | questions-and-bubbles.md | build after D4 |
 | D7 | The last sentence always has its English; one bubble uses its words, one is new | questions-and-bubbles.md | build after D4 (card if a number decides it) |
@@ -38,6 +38,7 @@ Today's pairs are mostly yes/no, this/that, two questions to ask and goodbyes, i
 | D31 | **Words**: the learner teaches the character, Josh's favour the other way round | "Se dice 'bell'." / "No sé, ¿cómo se dice?" | build (with Words, D8) |
 | D32 | **Gaps only for words the learner has**: a name, a place, a number ("Me llamo …"); a gap that needs a word in the language stalls | "Soy de …" | build (a rule for all bubbles) |
 | D33 | **A pair is two real things that lead to different places**: no "No, no lo veo", no "No, gracias" that stops the scene, no two echoes | (questions-and-bubbles.md → a test for a pair) | build (a rule for all bubbles) |
+| D40 | **The answer bubbles are never read aloud**, neither the line nor the English under it: the English is printed only (dialogue-model.md → English in answer bubbles, Claude's proposal, Josh 2026-11-05 "fine"; his words then: "spoken by the character or listed underneath"). Josh, 2026-11-14: "unclear if transcrribed underbubble is read in english or just printed - if not read why not". To decide: whether the character says the answers (Spanish, English or both) before the mic opens, or a visible speaker on each bubble plays it, as Say it has | dialogue-model.md; BeginnerBubbles.swift | Josh |
 
 ### Promotion (moving up)
 Today (`lib/level-up.ts`): after 3 conversations at a step, each with 3 or more replies, the game offers the next step and the learner chooses ("Not yet" asks again 3 conversations later); no score decides (Josh, 2026-11-11). It runs from step 1 to step 6 and stops there.
