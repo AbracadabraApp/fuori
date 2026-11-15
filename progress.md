@@ -1,5 +1,14 @@
 # Fuori Development Progress
 
+## 2026-11-14 (cloud chat session, with Josh), evening: Mexico's pictures and hidden cards checked; the map's master added, not uploaded
+
+- **Josh:** "check progress for images and hidden mexico".
+- **Pictures:** all 14 Mexican cities have their card, every shown place and every portrait in R2 (345 images); `test:images`, `test:image-list`, `test:content-api`, `test:image-prompts` and `test:names` pass for es-mx. `live` equals `main` (d4869ec), so the four northern cities are released with their pictures.
+- **Hidden:** no city. Five places, the four bakeries and Puebla's second sweet shop, which stay hidden on Josh's word.
+- **Found missing: Mexico's trip map picture.** `travel/map` is not in `content/es-mx/images.json` (Italy has it), so `/v1/content` sends `travelMap: null` for Mexico and the ticket sheet shows the ticket alone, though `travel-map.json` has the fourteen spots. No check catches it: a country with no map picture is allowed.
+- **Done here:** the chosen sketch (`design/trip-map/mexico/map-soft-flat-cropped-banner-2-clean.png`, 2192 × 1904, aspect 1.1513 as in travel-map.json) saved as the master `public/images/es-mx/travel/map.jpg` and committed with `git add -f`, per the pictures rule for a session that can't reach R2.
+- **Next, on a Mac with the R2 keys:** `COUNTRY=es-mx npm run images:upload`, then `node --env-file=.env.local scripts/image-masters.mjs --untrack`, commit `content/es-mx/images.json`, and release on Josh's word. **Not verified:** nobody has seen Mexico's sheet with its map on a phone.
+
 ## 2026-11-14 (laptop, with Josh): Mexico's northern pictures drawn; a portrait-prompt bug found
 - **Done:** all pictures for Tijuana, Monterrey, Mazatlán and Zacatecas drawn, looked at and uploaded (948a29b); `test:content-api` passes for Mexico with 14 cities. The three approved city cards and samples were on the mini (`~/fuori-portraits`) and never uploaded; now they are.
 - **Tijuana's style with Josh:** bold street-mural colour kept; his first "grit" note came out as ruins, so the style now describes a working city, drawn from the photos he sent (grey asphalt, traffic, plain buildings, colour from murals, kiosks and goods). Plaza Santa Cecilia shows one accordionist, not three bands (Josh: "it looks like a stereotype").
