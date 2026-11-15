@@ -42,17 +42,16 @@ export interface Setting {
 }
 
 /**
- * Steps 1 to 3 are English and echo, more echoed at each: step 1 mostly English with a sentence echoed, step 2
- * most sentences echoed (the rows Josh named by ear, 2026-11-15: "60-70"), step 3 every sentence echoed; the
- * question or last sentence is echoed at all three. No step mixes a phrase into an English sentence beside echoed
- * ones (Josh, the same day: "echo is easier than mixed+echo"; "especially with last sentence echo"); the mix way
- * stays in the code, unused, until he has heard this. Past that the only way to more
+ * Step 1: mostly English with a phrase of the language mixed into its sentences; step 2: half the sentences echoed,
+ * the others mixed; step 3: every sentence echoed. The question or last sentence is echoed at all three (Josh,
+ * 2026-11-15, choosing among three orders: "there should be mixed in 1-3"; "step 2 question echoed"). For an hour
+ * the same day steps 1 and 2 had no mixed sentences, from a misreading of "echo is easier than mixed+echo". Past that the only way to more
  * of the language is to take the English off sentences: step 4 says half of them bare, step 5 all but the question
  * and the last sentence, step 6 everything (and offers no answers: lib/beginner-2.ts).
  */
 export const SETTINGS: (Setting | undefined)[] = [
-  { ways: { echo: 0.3, english: 0.7 }, last: 'echo' },
-  { ways: { echo: 0.6, english: 0.4 }, last: 'echo' },
+  { ways: { mix: 0.7, english: 0.3 }, last: 'echo' },
+  { ways: { echo: 0.5, mix: 0.5 }, last: 'echo' },
   { ways: { echo: 1 }, last: 'echo' },
   { ways: { echo: 0.5, bare: 0.5 }, last: 'echo' },
   { ways: { bare: 1 }, last: 'echo' },

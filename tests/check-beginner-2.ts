@@ -298,7 +298,7 @@ check((exchangeTurns({ learnerSaid: 'Adiós', reply: { line: 'Adiós', en: 'Bye'
   const said = SETTINGS.slice(0, 3).map((setting) => saySentences(raw, setting!, 0.42));
   check(said.every((line) => line.endsWith('¿Le pongo salsa? Do you want salsa?')), 'the question is echoed at steps 1 to 3');
   check(said.every((line) => !/[{}*|]/.test(line)), 'no braces, bars or asterisks are said');
-  check(share(said[0]) <= share(said[1]) && share(said[1]) <= share(said[2]) && share(said[0]) < share(said[2]) && !said.some((line) => /Ese es el comal, the griddle|That's el comal/.test(line)), `the same turn never has less of the language at a higher step, and step 3 has more than step 1; no sentence is mixed (got ${said.map(share).join(', ')})`);
+  check(share(said[0]) < share(said[1]) && share(said[1]) <= share(said[2]) && /el comal, the griddle/.test(said[0]) && said[1].endsWith('¿Le pongo salsa? Do you want salsa?'), `the same turn has more of the language at each step; step 1 mixes a phrase into its English, and step 2's question is echoed (got ${said.map(share).join(', ')})`);
   check(said[2] === 'Pase, pase, siéntese aquí. Come in, sit here. Ese es el comal. That\'s the griddle. Hoy hay mole. Today there is mole. ¿Le pongo salsa? Do you want salsa?', 'step 3 echoes every sentence');
   // The early voice reads the line as it's written: what it has said must open the whole line
   for (const setting of SETTINGS.slice(0, 3)) {
