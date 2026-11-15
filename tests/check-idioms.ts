@@ -4,7 +4,7 @@
 import { readFileSync } from 'fs';
 import { cities, tutor } from '@/content';
 import { idioms, beginnerWeight, pickIdiom, idiomTurn, IDIOM_TURN, usedIdiom, idiomSaidNote } from '@/lib/idioms';
-import { IDIOM, setupLine } from '@/lib/beginner-2';
+import { IDIOM, setupLine, lineWithAnswers, CLUSTER_1, withIdiomFirst } from '@/lib/beginner-2';
 import { exchangeTurns } from '@/lib/recording';
 import { parseTurnRequest } from '@/lib/turn-request';
 
@@ -27,6 +27,9 @@ const line = setupLine({ ...IDIOM, vars: { idiom: first.text, picture: first.pic
 check(line.includes(first.text) && line.includes(first.picture) && !line.includes('{'), 'the idiom turn names the one idiom, its picture and meaning, filled');
 check((idiomSaidNote(first.text) ?? '').includes(first.text) && idiomSaidNote('not an idiom') === undefined, 'the next turn is told what it meant');
 
+const turn = lineWithAnswers({ line: 'Cada loco con su tema, everyone has their own obsession. ¿Qué cree que quiere decir?', en: 'Everyone has their own obsession. What do you think it means?', answers: [{ text: 'Cada uno tiene su cosa.', en: 'Each has their thing.' }] }, { ...IDIOM, vars: { idiom: 'cada loco con su tema', picture: '', meaning: '' } }, CLUSTER_1);
+check(turn.question?.text === 'Cada loco con su tema, ¿qué cree que quiere decir?' && turn.question?.en === 'What do you think it means?', `the printed question opens with the saying (Josh, 2026-11-14) (got ${JSON.stringify(turn.question)})`);
+check(withIdiomFirst({ text: '¿Qué significa «la chancla de mamá»?', en: '' }, 'la chancla (de mamá)').text === '¿Qué significa «la chancla de mamá»?' && withIdiomFirst({ text: '¿Qué quiere decir?', en: '' }, 'al buen entendedor, pocas palabras (bastan)').text === 'Al buen entendedor, pocas palabras, ¿qué quiere decir?', 'not added twice; the bracketed words left out');
 const saved = exchangeTurns({ learnerSaid: 'Sí', reply: { line: 'Dando y dando…', en: 'Giving and giving…', idiom: first.text } }, new Date().toISOString());
 check((saved[1] as { idiom?: string }).idiom === first.text, 'the turn is saved with its idiom');
 const city = cities.find((c) => c.places.some((p) => p.characterId && p.characterId !== tutor.id))!;

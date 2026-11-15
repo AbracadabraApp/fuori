@@ -376,7 +376,8 @@ export function lineWithAnswers(r: { line: string; en: string; done?: boolean; h
   const at = Math.max(0, CLUSTERS.indexOf(cluster));
   // A comment turn's last line stands where the question would (D7: printed and said by the same ladder)
   const found = setup.id === 'comment' ? lastLineOf(r.line, r.en) : questionOf(r.line, r.en);
-  const question = found && !QUESTION_PRINTED[at] ? { ...found, en: '' } : found;
+  const printed = found && !QUESTION_PRINTED[at] ? { ...found, en: '' } : found;
+  const question = printed && setup.id === IDIOM.id ? withIdiomFirst(printed, setup.vars?.idiom) : printed;
   const echo = QUESTION_ECHO_FRAME[at] ?? false;
   const said = echo ? (setup.id === 'comment' ? withLastEnglish(r.line, found) : withQuestionEnglish(r.line, r.en)) : r.line;
   return { line: said, en: r.en, ...(r.done !== undefined ? { done: r.done } : {}), ...(r.hard ? { hard: true } : {}), parts: answers, ...(question ? { question } : {}) };
@@ -398,6 +399,21 @@ export function lineWithAnswers(r: { line: string; en: string; done?: boolean; h
  * A comment turn's last line (D6, D7): the last sentence in the language, with the last sentence of her English, so
  * it's printed and said by the question's ladder as a question is. Undefined when the line ends in English
  */
+/**
+ * The idiom turn's printed question opens with the saying (Josh, 2026-11-14: "Cada loco con su tema, ¿Qué cree que
+ * quiere decir? What do you think it means?"): one sentence, so still only the question is printed. The store's
+ * optional words in brackets ("(bastan)") are left out; nothing added when her question already has it
+ */
+export function withIdiomFirst(q: { text: string; en: string }, idiom: string | undefined): { text: string; en: string } {
+  const saying = (idiom ?? '').replace(/\s*\([^)]*\)/g, '').trim();
+  if (!saying) return q;
+  const bare = (s: string) => s.toLowerCase().normalize('NFD').replace(/\p{M}/gu, '').replace(/[^\p{L}\p{N}]+/gu, ' ').trim();
+  if (bare(q.text).includes(bare(saying))) return q;
+  // After the comma the question goes on in lower case ("…su tema, ¿qué cree…"), its opening mark kept
+  const rest = q.text.replace(/^([^\p{L}]*)(\p{L})/u, (_m, mark: string, first: string) => mark + first.toLowerCase());
+  return { ...q, text: `${saying.charAt(0).toUpperCase()}${saying.slice(1)}, ${rest}` };
+}
+
 export function lastLineOf(line: string, en: string): { text: string; en: string } | undefined {
   const sentences = (s: string) => s.trim().split(/(?<=[.!?…]["'»”’)]*)\s+/).filter(Boolean);
   const bare = (s: string) => s.toLowerCase().replace(/[()"'«»“”‘’¿¡]/g, '').replace(/\s+/g, ' ').trim();
