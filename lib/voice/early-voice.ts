@@ -86,14 +86,14 @@ export function lineWhenWritten(partialJson: string): string | undefined {
  * As much of the line as has been written, decoded, and whether its string
  * has closed. undefined before the line starts.
  */
-export function partialLine(partialJson: string): { text: string; closed: boolean } | undefined {
+export function partialLine(partialJson: string, assemble: (text: string, partial: boolean) => string = assemblePieces): { text: string; closed: boolean } | undefined {
   const m = /"line"\s*:\s*"((?:[^"\\]|\\.)*)(")?/.exec(partialJson);
   if (!m) return undefined;
   // Drop an escape cut off at the end of the chunk (\ or \u00e) before decoding
   const body = m[2] ? m[1] : m[1].replace(/\\(u[0-9a-fA-F]{0,3})?$/, '');
   try {
     // Beginner step 1 writes the language as {piece | English}: the voice and the app get the line as it's said (lib/dialogue/pieces.ts)
-    return { text: assemblePieces(JSON.parse(`"${body}"`), !m[2]), closed: !!m[2] };
+    return { text: assemble(JSON.parse(`"${body}"`), !m[2]), closed: !!m[2] };
   } catch {
     return undefined;
   }
@@ -126,6 +126,8 @@ export function firstSentence(written: string): string | undefined {
 export class LineWatcher {
   private first?: string;
   private done = false;
+  /** How this turn's line is put together from what the character wrote (lib/dialogue/pieces.ts); set by the turn before it starts writing */
+  assemble: (text: string, partial: boolean) => string = assemblePieces;
 
   constructor(private o: { split: boolean; onFirst?: (first: string) => void; onLine: (line: string, first?: string) => void }) {}
 
@@ -136,7 +138,7 @@ export class LineWatcher {
 
   feed(snapshot: string): void {
     if (this.done) return;
-    const p = partialLine(snapshot);
+    const p = partialLine(snapshot, this.assemble);
     if (!p) return;
     if (this.o.split && !this.first && !p.closed) {
       const first = firstSentence(p.text);

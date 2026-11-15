@@ -3,6 +3,7 @@
 // replays the same for a conversation, its line comes from the country's
 // prompt file, the language-only rung hides the answers' English, the turn
 // code takes the switch, and Beginner 2 turns don't move the Beginner 1 path.
+import { SETTINGS, saySentence, saySentences, englishOf, wayOf, seedOf } from '@/lib/dialogue/pieces';
 import { readFileSync } from 'fs';
 import { beginnerVersionFrom, pickSetup, GOODBYE_AFTER, CLOSE_AT, CLOSE, setupText, levelText, setupLine, fullerGlosses, shownParts, shapeParts, turnSteps, beginner2Version, questionEcho, GOODBYE, OPENER, CLUSTER_1, CLUSTERS, RUNGS, clusterFrom, flowingLine, withQuestionEnglish, cluster1Brief, frameBrief, onFrame, lineWithAnswers, questionOf, QUESTION_ECHO_FRAME } from '@/lib/beginner-2';
 import { stageInVersion } from '@/lib/conversation-record';
@@ -54,7 +55,7 @@ const day = new Date('2026-11-09T10:00:00Z');
 check(pickSetup({ turn: 0, learnerId: 'L', characterId: 'luisa', now: day }).id === pickSetup({ turn: 0, learnerId: 'L', characterId: 'luisa', now: day }).id, 'an opening is seeded by learner, place and day');
 
 for (const setup of RUNGS) check(setupText(setup).includes('This turn,') && !/\{\w+\}/.test(setupText(setup)), `${setup.block}: its line is read from scaffolding.md, filled`);
-check(setupText(CLUSTER_1[0], CLUSTER_1).startsWith("They have no") && setupText(CLUSTERS[2][0], CLUSTERS[2]).startsWith('They can follow simple') && setupText(CLUSTERS[5][0], CLUSTERS[5]).startsWith('Where they are now: finding their feet'), 'each cluster gets its level text (S1, S2, S3) before the setup');
+check(setupText(CLUSTER_1[0], CLUSTER_1).startsWith('They are a beginner') && setupText(CLUSTERS[2][0], CLUSTERS[2]).startsWith('They are a beginner') && setupText(CLUSTERS[3][0], CLUSTERS[3]).startsWith('They follow a good deal') && setupText(CLUSTERS[5][0], CLUSTERS[5]).startsWith('Where they are now: finding their feet'), 'each cluster gets its level text before the setup: steps 1 to 3 the shared one (2026-11-15a, the steps as settings), then 2b and 3');
 check(!/Every turn has some English|When you first see them|explain something in English when it helps/.test(readFileSync(`content/${process.env.COUNTRY ?? 'it'}/prompts/scaffolding.md`, 'utf8')), 'the English lines added one per play are gone from the prompt');
 check(CLUSTERS.length === 6, 'six clusters');
 check(CLUSTERS.flat().every((r) => r.maxAnswers === 0 || (r.maxAnswers === 2 && r.english)), 'bubbles are two, always with English (Josh: reading Spanish you don\'t understand is coercive; one answer feels weird)');
@@ -98,9 +99,9 @@ check(shownParts(glossed, CLUSTER_1[0], CLUSTERS[3])[0].gloss === 'like them?', 
 check(shownParts(glossed, CLUSTER_1[0], CLUSTER_1)[1]?.text === 'Do you like them?', 'Level 1: a glossed question gets its full English as the spoken piece after it');
 const para: Part[] = [{ kind: 'english', text: 'Welcome to the barrio.', en: '', gloss: '' }, { kind: 'word', text: 'Aquí pinto todos los días.', en: 'I paint here every day.', gloss: '' }, { kind: 'word', text: 'Bienvenido al barrio.', en: 'Welcome to the barrio.', gloss: '' }, { kind: 'question', text: '¿Le gustan los murales?', en: 'Do you like the murals?', gloss: '' }];
 check(shownParts(para, CLUSTER_1[0], CLUSTER_1)[1].gloss === '' && shownParts(para, CLUSTERS[1][0], CLUSTERS[1])[1].gloss === '', 'no cluster adds the literal English after each phrase by code (2026-11-10q: the frame carries it)');
-check(/mix English and/.test(setupText(CLUSTER_1[0], CLUSTER_1)) && /with its English beside it/.test(setupText(CLUSTER_1[0], CLUSTER_1)) && !/word part/.test(levelText(CLUSTER_1)) && !/say it again/.test(setupText(CLUSTER_1[0], CLUSTER_1)), 'Level 1 is the frame brief as the list used it: one line, no parts, each phrase with its English, no sandwich repeat (Josh: weird)');
+check(/each sentence in braces with its English after a bar/.test(levelText(CLUSTER_1)) && !/word part/.test(levelText(CLUSTER_1)) && !/say it again/.test(setupText(CLUSTER_1[0], CLUSTER_1)), 'Level 1 is the frame brief as the list used it: one line, no parts, each phrase with its English, no sandwich repeat (Josh: weird)');
 check(/setup && onFrame\(cluster\)\n\s*\?[\s\S]*?runTurn\(\{[^\n]*brief: withBeats\(frameBrief\(cluster\)\), note: noteOf\(shape, setupLine\(setup\)\), answers: setup\.maxAnswers > 0/.test(readFileSync('lib/conversation/take-turn.ts', 'utf8')), 'clusters 1-3 run on the Intermediate reply with the cluster\'s brief, the setup line (with any shape and beat) on the newest message and the answers asked for (2026-11-11d)');
-check(onFrame(CLUSTER_1) && onFrame(CLUSTERS[2]) && onFrame(CLUSTERS[3]) && onFrame(CLUSTERS[5]) && frameBrief(CLUSTERS[1]).startsWith(levelText(CLUSTERS[1])) && !/only the first time|new kind of question|only when it's new/.test(levelText(CLUSTERS[1]) + levelText(CLUSTERS[2])) && /half in English/.test(levelText(CLUSTERS[2])), 'steps 2 to 6 on the one-line reply (D10, Josh 2026-11-14: one screen at every step; was the parts format from step 4), with no "English only the first time" or "only for a new kind of question" (Josh, 2026-11-12: removed)');
+check(onFrame(CLUSTER_1) && onFrame(CLUSTERS[2]) && onFrame(CLUSTERS[3]) && onFrame(CLUSTERS[5]) && frameBrief(CLUSTERS[1]).startsWith(levelText(CLUSTERS[1])) && !/only the first time|new kind of question|only when it's new/.test(levelText(CLUSTERS[1]) + levelText(CLUSTERS[2])) && levelText(CLUSTERS[2]) === levelText(CLUSTER_1), 'steps 2 to 6 on the one-line reply (D10, Josh 2026-11-14: one screen at every step; was the parts format from step 4), with no "English only the first time" or "only for a new kind of question" (Josh, 2026-11-12: removed)');
 check([CLUSTERS[1], CLUSTERS[2]].every((c) => /Do you want to see\?$/.test(lineWithAnswers({ line: 'Mire. ¿Quiere ver?', en: 'Look. Do you want to see?', answers: [] }, RUNGS.find((x) => x.id === 'two-en')!, c).line)), 'the question\'s English is said after it at steps 2 and 3, as at step 1 (the ladder: spoken through step 3 on the one-line reply; was steps 1-2 only before 2026-11-12)');
 // Cluster 1's brief: the frame, the answer rules and the one-line format with answers; the setup line is not in it (it goes on the newest message)
 check(cluster1Brief().startsWith(levelText(CLUSTER_1)) && /When you offer answers/.test(cluster1Brief()) && /"answers"/.test(cluster1Brief()) && !/This turn/.test(cluster1Brief()) && !/\{language\}/.test(cluster1Brief()), 'cluster 1 brief: the Level 1 frame, then the answer rules and the line-and-answers format, every placeholder filled');
@@ -112,7 +113,7 @@ check(cluster1Brief().startsWith(levelText(CLUSTER_1)) && /When you offer answer
   check(out.line.endsWith('¿Quiere una boleada? Do you want a shine?') && out.en === r.en && out.done === false, 'lineWithAnswers: the question\'s English after the line, en and done kept');
   check(lineWithAnswers({ line: 'Ecco.', en: 'Here.' }, RUNGS.find((x) => x.id === 'free')!).parts.length === 0, 'lineWithAnswers: a setup with no answers gives none');
 }
-check(/with its English beside it/.test(setupText(CLUSTERS[1][0], CLUSTERS[1])) && /with its English right after it/.test(levelText(CLUSTERS[2])), 'steps 2 and 3: every phrase with its English beside it at step 2, the question with its English right after it at step 3 (scaffolding.md 12c)');
+check(levelText(CLUSTERS[1]) === levelText(CLUSTER_1) && /with its English right after it/.test(levelText(CLUSTERS[3])), 'steps 2 and 3 share step 1\'s level text (2026-11-15a: code says how much of each sentence is in the language); step 4 keeps the question with its English right after it');
 {
   const c = RUNGS.find((x) => x.id === 'comment')!;
   const r = lineWithAnswers({ line: 'Suba, suba. Yo boleo aquí desde hace cuarenta años.', en: "Come up. I've been shining shoes here for forty years.", answers: [{ text: 'Cuarenta años es mucho.', en: 'Forty years is a lot.' }, { text: '¿Le gusta su trabajo?', en: 'Do you like your work?' }] }, c, CLUSTER_1);
@@ -273,6 +274,39 @@ check(setupText(CLOSE).includes('goodbye') && CLOSE.maxAnswers === 0, 'the close
 }
 // Whether a reply ended the visit is saved with the turn
 check((exchangeTurns({ learnerSaid: 'Adiós', reply: { line: 'Adiós', en: 'Bye', done: true } }, 'now').at(-1) as { done?: boolean }).done === true, 'a reply that ends the visit is saved with done');
+
+// The steps as settings (lib/dialogue/pieces.ts, 2026-11-15a): a sentence written in both languages, said four ways
+{
+  const [es, en] = ['Y lo envuelvo *en hoja de maíz*.', 'And I wrap it *in corn husk*.'];
+  check(saySentence(es, en, 'english') === 'And I wrap it in corn husk.', 'a sentence said in English');
+  check(saySentence(es, en, 'mix') === 'And I wrap it en hoja de maíz, in corn husk.', `a sentence mixed: the English with the marked phrase in the language, then its English (got ${saySentence(es, en, 'mix')})`);
+  check(saySentence(es, en, 'echo') === 'Y lo envuelvo en hoja de maíz. And I wrap it in corn husk.', 'a sentence echoed');
+  check(saySentence(es, en, 'bare') === 'Y lo envuelvo en hoja de maíz.', 'a sentence bare');
+  check(saySentence('Y lo envuelvo.', 'And I wrap it.', 'mix') === 'Y lo envuelvo. And I wrap it.', 'no phrase marked: mixed falls back to the echo, so the language keeps its English');
+  check(saySentence('Cantamos en *el Jardín de la Unión*.', 'We sing in *the Jardín de la Unión*.', 'mix') === 'We sing in el Jardín de la Unión.', 'a name is not glossed with itself, article or not (B29)');
+  check(saySentence('*Una canción alegre*, perfecto.', '*A happy song*, perfect.', 'mix') === 'Una canción alegre, a happy song, perfect.', 'a phrase that opens the sentence takes the capital');
+  check(saySentence('Guanajuato.', 'Guanajuato.', 'echo') === 'Guanajuato.', 'English that only repeats the sentence is said once');
+  const raw = '{*Pase, pase*, siéntese aquí. | *Come in*, sit here.} {Ese es *el comal*. | That\'s *the griddle*.} {Hoy hay *mole*. | Today there is *mole*.} {¿Le pongo *salsa*? | Do you want *salsa*?}';
+  const share = (line: string) => line.split(/\s+/).filter((w) => /pase|siéntese|aquí|ese|es|el|comal|hoy|hay|le|pongo/i.test(w.replace(/[^\p{L}]/gu, ''))).length;
+  const said = SETTINGS.slice(0, 3).map((setting) => saySentences(raw, setting!, 0.42));
+  check(said.every((line) => line.endsWith('¿Le pongo salsa? Do you want salsa?')), 'the question is echoed at steps 1 to 3');
+  check(said.every((line) => !/[{}*|]/.test(line)), 'no braces, bars or asterisks are said');
+  check(share(said[0]) < share(said[1]) && share(said[1]) <= share(said[2]), `the same turn has more of the language at each step (got ${said.map(share).join(', ')})`);
+  check(said[2] === 'Pase, pase, siéntese aquí. Come in, sit here. Ese es el comal. That\'s the griddle. Hoy hay mole. Today there is mole. ¿Le pongo salsa? Do you want salsa?', 'step 3 echoes every sentence');
+  // The early voice reads the line as it's written: what it has said must open the whole line
+  for (const setting of SETTINGS.slice(0, 3)) {
+    const whole = saySentences(raw, setting!, 0.42);
+    for (const cut of [30, 61, 62, 90, 120]) {
+      const part = saySentences(raw.slice(0, cut), setting!, 0.42, true);
+      const firstSentence = part.split(/(?<=[.!?])\s+/)[0] ?? '';
+      check(!/[{}*|]/.test(part) && whole.startsWith(firstSentence), `a line still being written is said as the whole line will be (cut at ${cut}: "${part}")`);
+    }
+  }
+  check(englishOf(raw) === "Come in, sit here. That's the griddle. Today there is mole. Do you want salsa?", 'the turn\'s English is each sentence\'s own');
+  check(wayOf(SETTINGS[2]!, 0.1, 0) === 'echo' && seedOf('a:1') === seedOf('a:1') && seedOf('a:1') !== seedOf('a:2'), 'the way is the same every time for a turn');
+  const tt = readFileSync('lib/conversation/take-turn.ts', 'utf8');
+  check(/p\.onAssemble\?\.\(assemble\)/.test(tt) && /line: assemble\(r\.line, false\)/.test(tt) && /onAssemble: \(assemble\) => \{ watcher\.assemble = assemble; \}/.test(readFileSync('app/v1/turn/route.ts', 'utf8')), 'the turn hands the same way of saying the line to the early voice and the whole line');
+}
 
 if (problems.length) {
   console.error(`check-beginner-2: ${problems.length} problem(s)\n- ${problems.join('\n- ')}`);

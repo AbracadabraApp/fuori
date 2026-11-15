@@ -21,6 +21,7 @@ import { CLUSTERS, LEVEL_OF_CLUSTER, type Setup } from '@/lib/beginner-2';
 import { SCAFFOLDING_FILE } from '@/lib/beginner';
 import { characterForVisit } from '@/lib/characters/for-visit';
 import { savesDone } from '@/lib/recording';
+import { SETTINGS, saySentences, englishOf, seedOf, type Setting } from '@/lib/dialogue/pieces';
 import { setLevel, type Level } from '@/lib/onboarding';
 
 export const LEVEL_UP_FILE = 'level-up.md';
@@ -155,7 +156,7 @@ export function rewritePrompt(p: { character: { name: string; role: string; city
 const Rewritten = z.object({ line: z.string(), en: z.string() });
 
 /** Her line again at the next step: one small call */
-export async function rewriteAtStep(p: { character: { name: string; role: string; city: string }; line: string; nextStep: number; level?: string }): Promise<{ line: string; en: string }> {
+export async function rewriteAtStep(p: { character: { name: string; role: string; city: string }; line: string; nextStep: number; level?: string; setting?: Setting }): Promise<{ line: string; en: string }> {
   const response = await anthropic.messages.create({
     model: CLAUDE_MODEL,
     // Thinking counts toward the limit: at 600 the first real offers (2026-11-15, build 16) came back as thinking only
@@ -165,7 +166,16 @@ export async function rewriteAtStep(p: { character: { name: string; role: string
     output_config: { format: { type: 'json_schema', schema: turnOutputJsonSchema } },
   });
   if (response.stop_reason === 'max_tokens') throw new Error(`Level-up rewrite hit max_tokens (${response.usage.output_tokens} tokens)`);
-  return Rewritten.parse(JSON.parse(replyText(response)));
+  return previewAtSetting(Rewritten.parse(JSON.parse(replyText(response))), p.setting, seedOf(p.line));
+}
+
+/**
+ * A step that is a setting (steps 1 to 3, lib/dialogue/pieces.ts): its level text has the character write every
+ * sentence in both languages, in braces, so the preview is put together the way the step's turns are
+ */
+export function previewAtSetting(r: { line: string; en: string }, setting: Setting | undefined, seed: number): { line: string; en: string } {
+  if (!setting || !/\{[^{}]*\|[^{}]*\}/.test(r.line)) return { line: r.line.replace(/[{}*]/g, ''), en: r.en };
+  return { line: saySentences(r.line, setting, seed), en: englishOf(r.line) };
 }
 
 /** The learner's level (null before onboarding) and step, for the offer and the yes */
@@ -200,7 +210,7 @@ export async function levelUpOffer(learnerId: string, conversationId: string, be
   if (!last || !character || character.placeId !== conv.place_id) return null;
   const nextStep = move.to === 'step' ? move.step : s.step;
   // The preview: her last line rewritten for the next step, or for the next level (character.md → Learner: …)
-  const next = await rewriteAtStep({ character: { name: character.name, role: character.role, city: character.city }, line: last.text, nextStep, level: moveLevelText(move) });
+  const next = await rewriteAtStep({ character: { name: character.name, role: character.role, city: character.city }, line: last.text, nextStep, level: moveLevelText(move), ...(move.to === 'step' ? { setting: SETTINGS[nextStep - 1] } : {}) });
   const { cities } = await import('@/content');
   const city = cities.find((c) => c.id === conv.city_id);
   const place = city?.places.find((p) => p.id === conv.place_id);

@@ -1,6 +1,6 @@
 # Scaffolding (Beginner 2)
 
-version: 2026-11-14e
+version: 2026-11-15a
 
 Everything that helps a Beginner take part, kept apart from the dialogue
 (Josh, 2026-11-09: "I want to be able to adjust scaffolding without touching
@@ -118,6 +118,12 @@ This turn, give no answers: end on one short question in {language} they can ans
 
 ```
 This turn, instead of a question of your own, ask in English, in your own words, whether there's anything they'd like to know.
+```
+
+## Level: sentences
+
+```
+They are a beginner in {language}. Write your whole turn in {language}, in short simple sentences a local would really say, each sentence in braces with its English after a bar, like {Prego, si accomodi *qui*. | Please, sit *here*.} In each sentence put asterisks around the one thing or set phrase most worth catching (not a verb on its own), and around exactly those words in its English. Nothing outside the braces. The braces and asterisks come out before it's said, and how much of each sentence they hear in {language} or in English is decided for you, so write every sentence in both. You are still yourself, here, doing what you do: no stories or explanations. Each turn is two short sentences, then one question. A whole turn, like: "{*Prego*, si accomodi qui. | *Please*, sit here.} {Questa è *la moka*, il caffè è quasi pronto. | This is *the moka pot*, the coffee is almost ready.} {Lo vuole *con lo zucchero*? | Do you want it *with sugar*?}"
 ```
 
 ## Level: 1

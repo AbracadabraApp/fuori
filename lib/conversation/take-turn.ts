@@ -17,7 +17,7 @@ import { loadAddressedAs } from '@/lib/learner-address';
 import { tutor } from '@/content';
 import { onboardingState } from '@/lib/onboarding';
 import { runBeginnerTurn, beginnerPromptVersion, lineFromParts, type Part } from '@/lib/beginner';
-import { assemblePieces } from '@/lib/dialogue/pieces';
+import { assemblePieces, saySentences, englishOf, seedOf, SETTINGS } from '@/lib/dialogue/pieces';
 import { closeNote, helpNote } from '@/lib/dialogue/rules';
 import { idiomTurn, pickIdiom, recentIdioms, usedIdiom, idiomSaidNote, type Idiom } from '@/lib/idioms';
 import { BEGINNER_2_FILE, CLOSE_AT_INTERMEDIATE, CLUSTER_1, IDIOM, GOODBYE, CLOSE, pickSetup, levelText, setupLine, shapeParts, turnSteps, beginner2Version, type Setup, type TurnSteps, flowingLine, frameBrief, onFrame, lineWithAnswers } from '@/lib/beginner-2';
@@ -74,6 +74,9 @@ export interface TakeTurnParams {
   welcome?: boolean;
   /** A lesson's turn (lib/lesson.ts): Magda teaching or reviewing, or a practice dialogue */
   lesson?: LessonTurn;
+  /** Called before the reply is written, with how this turn's line is put together from what the character writes
+   *  (lib/dialogue/pieces.ts): the early voice reads the line as it streams and must say it the same way */
+  onAssemble?: (assemble: (text: string, partial: boolean) => string) => void;
   /** Which Beginner plays (lib/beginner-2.ts → beginnerVersionFrom): the new one unless 1, the old one, is asked for */
   beginnerVersion?: 1 | 2;
   /** Beginner 2's cluster of the reply ladder from the app's header (lib/beginner-2.ts → clusterHeaderFrom); the learner's stored step otherwise (lib/level-up.ts) */
@@ -225,6 +228,12 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
   const helped = [transcript.some((t) => t.who === 'npc' && t.hard) ? helpNote() : undefined, idiomSaid].filter(Boolean).join(' ') || undefined;
   const shape = shapes.length ? shapes : null;
   const shapeId = shapeIds(shapes);
+  // How this turn's line is put together: at Beginner steps 1 to 3 by the step's setting, the same way for the early
+  // voice and the whole line (the seed is the visit and the turn, so a turn is said one way however often it's read)
+  const setting = setup ? SETTINGS[Math.max(0, CLUSTERS.indexOf(cluster))] : undefined;
+  const turnSeed = seedOf(`${conversationId ?? `${learnerId ?? ''}:${character.id}`}:${npcTurns}`);
+  const assemble = (text: string, partial: boolean) => (setting ? saySentences(text, setting, turnSeed, partial) : assemblePieces(text, partial));
+  if (setup) p.onAssemble?.(assemble);
   // The intro's beats, once, in the system prompt of every later turn: material the character has, not a list to work through
   const beatsText = shaped && !intro ? beatsBrief(beats) : '';
   // An ordinary Intermediate or Advanced visit that has run long: the character closes it (Beginner: pickSetup → CLOSE)
@@ -267,7 +276,9 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
       // reply) and go to the app as answer parts; her line stays the subtitle. The voice starts early, as at Intermediate
       await runTurn({ character, transcript, learnerSaid, memory, addressedAs, brief: withBeats(frameBrief(cluster)), note: noteOf(shape, setupLine(setup)), answers: setup.maxAnswers > 0, help: helped, laps: p.laps, onText: p.onText, canRetry: p.canRetry, withDone: true }).then((r) => {
         // Step 1 writes the language as {piece | English} (docs/mix.md): the line as it's said, as the voice had it
-        const out = lineWithAnswers({ ...r, line: assemblePieces(r.line) }, setup, cluster);
+        // Steps 1 to 3 write every sentence as {language | English} and the step's setting says how each is said
+        // (docs/mix.md); the English is each sentence's own. The other steps: {piece | English} as written
+        const out = lineWithAnswers({ ...r, line: assemble(r.line, false), ...(setting && /\{[^{}]*\|[^{}]*\}/.test(r.line) ? { en: englishOf(r.line) } : {}) }, setup, cluster);
         // The close (lib/beginner-2.ts CLOSE_AT): the character says goodbye, and the visit ends here whatever the reply says
         if (setup.id === 'close') out.done = true;
         steps = { ...turnSteps(out.parts, setup, cluster, []), ...(shapeId ? { shape: shapeId } : {}) };

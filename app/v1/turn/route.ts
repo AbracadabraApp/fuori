@@ -216,6 +216,8 @@ export async function POST(request: Request) {
             partsWatcher.feed(snapshot);
             introWatcher?.feed(snapshot);
           },
+          // Beginner steps as settings: the turn says how its line is put together, before it starts writing
+          onAssemble: (assemble) => { watcher.assemble = assemble; },
           canRetry: () => !firstSent,
           micOff: body.data.micOff,
           // Beginner 2 when the app's hidden switch is on (lib/beginner-2.ts)
