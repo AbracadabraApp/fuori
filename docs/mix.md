@@ -35,7 +35,7 @@ Josh: "i think we should think of it as scaffolding throughout the game"; "focus
 **Most important** (Josh, 2026-11-15): "learner can follow; level stays consistent; mix progresses; tappable for help".
 
 What that means for the design (Claude's reading, not decided):
-- **The learner can follow:** the one rule above. Every piece they don't know has its English.
+- **The learner can follow:** the one rule (below). Every piece they don't know has its English.
 - **The level stays consistent:** the same mix for a learner's level, turn to turn, character to character and visit to visit. Code sets the mix from the level, not from guesses about how the visit is going.
 - **The mix progresses:** by the level's steps, chosen by the learner at level up. Each step shifts the settings (how much, piece size, what gets English).
 - **Tappable for help:** when the learner wants more English, they ask for it, and help lasts for the rest of the visit (D12). Today help is offered only sometimes, as one of the two answers (D25).
