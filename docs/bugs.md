@@ -37,7 +37,7 @@ Same family as dialogue-ideas.md "The character asks and carries on, as if answe
 Josh, 2026-11-13: "mucho mucho inglés por favor" (Raymundo 2008220a); "puede hablar más despacio?", "¿hablo più inglés?" (Ofelia 71dc1d3b); "Perdón, puede hablar más despacio, por favor?" (Josué 8814eb6f). See B1(b). **Status: open.**
 
 ### B10. The learner addressed in the feminine
-Ofelia: "güerita", "mi reina", "qué gusto verla", "aquí la espero" to Josh (71dc1d3b, 2026-11-13). Not raised by Josh. **Status: open.**
+Ofelia: "güerita", "mi reina", "qué gusto verla", "aquí la espero" to Josh (71dc1d3b, 2026-11-13). Not raised by Josh. Cause (2026-11-14): not his address (set to "a man" on both his learners), but Ofelia's notes from 2026-10-24, written before addresses existed: "Her name is Joshua; she…", "Ofelia calls her güerita and mi reina", copied forward every visit; Nonno Ettore's said "Name is Giosue; a woman". **Status: fix on main** (memory.md 2026-11-14a, b1e1ab33: notes say "they" and never note what the character calls them; not released) **and the two characters' notes corrected in the database** (Josh, 2026-11-14: "just change in db"). Closes when a visit to Ofelia is played without it.
 
 ### B11. Asked for help in English, answered only in the language (Intermediate)
 Josh, 2026-11-13: "Excuse me, Elena. I don't speak Italian perfectly… What do I want to see before?" Elena answered in Italian only (252960a4). CLAUDE.md: a character helps in English when asked. Nunzio did it right the same morning (67edfe03). **Status: watching, likely a one-off.** Josh, 2026-11-13: "intermediate does help in english when asked" (as CLAUDE.md says: it works in play without being in the prompt). The gap is B13: help that doesn't last.

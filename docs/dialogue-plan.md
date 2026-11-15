@@ -71,7 +71,7 @@ Today (`lib/level-up.ts`): after 3 conversations at a step, each with 3 or more 
 ### Bugs still open (bugs.md)
 | # | To do | Who |
 |---|---|---|
-| D20 | B10 the learner addressed in the feminine (Ofelia) | **waiting on Josh**: replayed, Ofelia says "mi reina", "güerita" in 6 of 16 replies when the address is unknown, 1–3 of 16 as "a man" (address-replay.mts). Whether Josh's Mexico learner has an address stored couldn't be read. If unset: set it in Settings; a fix for the unknown case changes test:prompt's rule "says who's in front of them only when known", so needs his yes |
+| D20 | B10 the learner addressed in the feminine (Ofelia) | **fix on main + database** (2026-11-14): Josh's address was already "a man"; the cause was gendered memory notes. memory.md now writes "they" (b1e1ab33, not released); Ofelia's and Nonno Ettore's notes corrected in the database. Closes when Ofelia is played without it |
 | D21 | B12: when the learner replies, the reply bubbles go but the character's last bubble stays until the next line arrives; both should go on the reply (Josh, 2026-11-14) | **done** (059fc9f, 2026-11-14: the character's bubble and the answers go when the reply is sent, at every level; make build and package tests pass; not on the phone yet) |
 
 ### Added from the Mac mini's reading (2026-11-14)
