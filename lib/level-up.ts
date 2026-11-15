@@ -113,9 +113,12 @@ export function moveLevelText(move: Move): string {
 }
 
 /** The screen's words for this offer (the app's LevelUpWords): a level move puts its own label on the next card and its own line under the cards */
-export function offerWords(to: Move['to']) {
-  const { to: levels, ...words } = language.ui.levelUp;
-  return to === 'step' ? words : { ...words, ...levels[to] };
+export function offerWords(to: Move['to'], nextStep?: number) {
+  const { to: levels, steps, ...words } = language.ui.levelUp;
+  if (to !== 'step') return { ...words, ...levels[to] };
+  // The line under the cards says what changes at the step being offered (B34: one sentence stood for every step)
+  const line = (steps as Partial<Record<number, string>>)[nextStep ?? 0];
+  return line ? { ...words, answers: line } : words;
 }
 
 /** The later of the two dates, or null when neither */
@@ -178,6 +181,19 @@ export function previewAtSetting(r: { line: string; en: string }, setting: Setti
   return { line: saySentences(r.line, setting, seed), en: englishOf(r.line) };
 }
 
+/**
+ * The character's turn the offer shows: an ordinary one, not the goodbye. The offer follows a finished visit, whose
+ * last line is the close ("Do sit down, they're coming right up"), the least typical line of it (docs/bugs.md B34;
+ * Josh, 2026-11-15: "do"). So: the last turn that isn't a goodbye or close by its saved turn type; where turns carry
+ * no type (Intermediate), the one before the last when there are three or more; else the last
+ */
+export function previewTurn<T extends { who: 'npc' | 'learner'; text: string; steps?: { setup?: string } }>(turns: T[]): T | undefined {
+  const said = turns.filter((t) => t.who === 'npc' && t.text.trim());
+  const ordinary = said.filter((t) => t.steps?.setup && !['goodbye', 'close'].includes(t.steps.setup));
+  if (ordinary.length) return ordinary[ordinary.length - 1];
+  return said.length >= 3 ? said[said.length - 2] : said[said.length - 1];
+}
+
 /** The learner's level (null before onboarding) and step, for the offer and the yes */
 async function levelAndStep(learnerId: string): Promise<{ level: Level | null; s: LearnerStep }> {
   const s = await learnerStep(learnerId);
@@ -195,7 +211,7 @@ export async function levelUpOffer(learnerId: string, conversationId: string, be
   const beginner = level !== 'intermediate' && level !== 'advanced';
   if (!moveFrom({ level, step: s.step }) || (beginner && beginnerVersion !== 2)) return null;
   await savesDone(conversationId);
-  const r = await query<{ character_id: string; place_id: string | null; city_id: string | null; prompt_version: string | null; turns: { who: 'npc' | 'learner'; text: string; en?: string }[] }>(
+  const r = await query<{ character_id: string; place_id: string | null; city_id: string | null; prompt_version: string | null; turns: { who: 'npc' | 'learner'; text: string; en?: string; steps?: { setup?: string } }[] }>(
     'SELECT character_id, place_id, city_id, prompt_version, turns FROM conversations WHERE id = $1 AND learner_id = $2',
     [conversationId, learnerId]
   );
@@ -205,7 +221,7 @@ export async function levelUpOffer(learnerId: string, conversationId: string, be
   const counted = await countedConversations(learnerId, countFrom(s));
   const move = offerDue({ level, step: s.step, counted });
   if (!move) return null;
-  const last = [...conv.turns].reverse().find((t) => t.who === 'npc' && t.text.trim());
+  const last = previewTurn(conv.turns);
   const character = characterForVisit(conv.city_id, conv.place_id);
   if (!last || !character || character.placeId !== conv.place_id) return null;
   const nextStep = move.to === 'step' ? move.step : s.step;

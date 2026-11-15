@@ -7,7 +7,7 @@ import { readFileSync as readSrc } from 'fs';
 import { readFileSync } from 'node:fs';
 import { cities, language } from '@/content';
 import { characterForPlace } from '@/lib/characters/for-place';
-import { moveFrom, offerDue, ordinaryVisit, moveLevelText, offerWords, rewritePrompt, stepLevelText, LEVEL_UP_AFTER, MAX_STEP } from '@/lib/level-up';
+import { previewTurn, moveFrom, offerDue, ordinaryVisit, moveLevelText, offerWords, rewritePrompt, stepLevelText, LEVEL_UP_AFTER, MAX_STEP } from '@/lib/level-up';
 
 const problems: string[] = [];
 const check = (ok: boolean, what: string) => { if (!ok) problems.push(what); };
@@ -51,7 +51,7 @@ for (const to of ['intermediate', 'advanced'] as const) {
 
 // The wiring: the route, the yes setting learners.level as Settings does, the turn reading it, the app following it
 const route = readFileSync('app/v1/level-up/route.ts', 'utf8');
-check(/levelUpOffer\(learnerId, conversationId, beginnerVersionFrom\(request\.headers\)\)/.test(route) && /words: offerWords\(offer\.to\)/.test(route), '/v1/level-up passes the app\'s Beginner switch (Beginner only) and sends the offer\'s words');
+check(/levelUpOffer\(learnerId, conversationId, beginnerVersionFrom\(request\.headers\)\)/.test(route) && /words: offerWords\(offer\.to, offer\.nextStep\)/.test(route), '/v1/level-up passes the app\'s Beginner switch (Beginner only) and sends the offer\'s words');
 check(!/if \(beginnerVersionFrom\(request\.headers\) !== 2\) return/.test(route), 'the Beginner switch no longer hides the Intermediate offer');
 check(/level: s\.level/.test(route), 'the yes answers with the level after it');
 const lu = readFileSync('lib/level-up.ts', 'utf8');
@@ -69,6 +69,16 @@ check(/await model\.answerLevelUp\(yes: yes\)/.test(readFileSync('ios/FuoriKit/S
   const m = /export async function rewriteAtStep[\s\S]*?max_tokens: (\d+)/.exec(src);
   check(!!m && Number(m[1]) >= 2000 && /Level-up rewrite hit max_tokens/.test(src), 'the preview rewrite has room to think and says so if it is cut off (2026-11-15: at 600 every real offer failed)');
 }
+// B34: the line under the cards says what changes at the step offered, and the preview is an ordinary turn, not the goodbye
+{
+  const lines = [2, 3, 4, 5, 6].map((n) => offerWords('step', n).answers);
+  check(new Set(lines).size === 5 && lines.every((l) => l !== offerWords('step').answers && !/\{\w+\}/.test(l)) && /no answers/.test(lines[4]) && !/no answers/.test(lines[0]), `each step offered has its own line, with nothing left to fill; only step 6 says there are no answers (got ${lines.join(' | ')})`);
+  check(offerWords('step', 99).answers === offerWords('step').answers && !('steps' in offerWords('step', 2)) && !('to' in offerWords('step', 2)), 'a step with no line keeps the general one; the app gets words only');
+  const t = (who: 'npc' | 'learner', text: string, setup?: string) => ({ who, text, ...(setup ? { steps: { setup } } : {}) });
+  check(previewTurn([t('npc', 'a', 'opener'), t('learner', 'x'), t('npc', 'b', 'two-en'), t('npc', 'c', 'goodbye'), t('npc', 'd', 'close')])?.text === 'b', 'the preview is the last turn that is not a goodbye or close');
+  check(previewTurn([t('npc', 'a'), t('npc', 'b'), t('npc', 'c')])?.text === 'b' && previewTurn([t('npc', 'a'), t('npc', 'b')])?.text === 'b' && previewTurn([t('learner', 'x')]) === undefined, 'turns with no type (Intermediate): the one before the last of three or more, else the last; none without a character turn');
+}
+
 if (problems.length) {
   console.error(`check-level-move: ${problems.length} problem(s)\n- ${problems.join('\n- ')}`);
   process.exit(1);

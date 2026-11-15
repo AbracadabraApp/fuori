@@ -100,6 +100,8 @@ What the walk also showed, not fixed (one learner, read by Claude):
 - **The preview is of her last line, which is the close** ("Do sit down, they're coming right up"; "I already told you: I'm well, thanks!"), the least typical line of the visit.
 - **One sentence under the cards for every step**: "Your answers: still two to choose from, and now you can say your own." It is shown going to step 6 too, where the turns came with no answers.
 
+**Fixed on main 2026-11-15, not released (Josh: "do"):** the offer shows the last turn that isn't a goodbye or close, and the line under the cards is the offered step's own (content/<country>/language.ts → levelUp.steps). The previews that look the same or carry more English are answered by the steps becoming settings in code the same day (the preview is put together as the next step's turns are); not seen on a screen.
+
 ### Carried from progress.md's screen list (2026-11-12)
 - **B14.** "The city didn't show" (Valenciana, Don Isidro's place). Which screen, asked. **Open.**
 - **B15.** Doña Chuy's portrait is stereotypical; redraw. **Open.**

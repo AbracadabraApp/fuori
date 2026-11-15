@@ -49,6 +49,14 @@ export const language = {
     youAreHere: 'Sei qui', // departures board: the current city
     /** Level up (sketches/level-up/; lib/level-up.ts): the offer after N conversations; {name} is the character's */
     levelUp: { theme: 'awning' as const, kicker: "You're doing great with {name}", headline: 'Ready for more?', how: 'How {name} talks to you', now: 'Now', next: 'Next step', play: 'Play', answers: 'Your answers: still two to choose from, and now you can say your own.', yes: 'Sì, più italiano!', yesLabel: 'Yes, more Italian', notYet: 'Not yet',
+      /** The line under the cards, by the step being offered: what changes there (lib/dialogue/pieces.ts → SETTINGS). `answers` above is the fallback */
+      steps: {
+        2: 'Next: each sentence in Italian, then in English.',
+        3: 'Next: more of each sentence in Italian, with the key words in English.',
+        4: 'Next: some sentences in Italian only. The question still comes with its English.',
+        5: 'Next: Italian only, except the question.',
+        6: 'Next: all in Italian, and no answers to choose from. English is there whenever you ask.',
+      },
       /** The offer that moves the level (D34, D35; lib/level-up.ts → moveFrom): the next card's label and the line under the cards */
       to: {
         intermediate: { next: 'Intermediate', answers: 'Intermediate: no answers to choose from. You say it your own way, in Italian, and English is there whenever you ask.' },

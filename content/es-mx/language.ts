@@ -49,6 +49,14 @@ export const language = {
     youAreHere: 'Estás aquí', // departures board: the current city
     /** Level up (sketches/level-up/; lib/level-up.ts): the offer after N conversations; {name} is the character's */
     levelUp: { theme: 'pennants' as const, kicker: "You're doing great with {name}", headline: 'Ready for more?', how: 'How {name} talks to you', now: 'Now', next: 'Next step', play: 'Play', answers: 'Your answers: still two to choose from, and now you can say your own.', yes: '¡Sí, más español!', yesLabel: 'Yes, more Spanish', notYet: 'Not yet',
+      /** The line under the cards, by the step being offered: what changes there (lib/dialogue/pieces.ts → SETTINGS). `answers` above is the fallback */
+      steps: {
+        2: 'Next: each sentence in Spanish, then in English.',
+        3: 'Next: more of each sentence in Spanish, with the key words in English.',
+        4: 'Next: some sentences in Spanish only. The question still comes with its English.',
+        5: 'Next: Spanish only, except the question.',
+        6: 'Next: all in Spanish, and no answers to choose from. English is there whenever you ask.',
+      },
       /** The offer that moves the level (D34, D35; lib/level-up.ts → moveFrom): the next card's label and the line under the cards */
       to: {
         intermediate: { next: 'Intermediate', answers: 'Intermediate: no answers to choose from. You say it your own way, in Spanish, and English is there whenever you ask.' },

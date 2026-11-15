@@ -21,7 +21,7 @@ export async function GET(request: Request) {
     if (!z.string().uuid().safeParse(conversationId).success) return apiError('bad_request', 'conversationId must be a uuid');
     const offer = await levelUpOffer(learnerId, conversationId, beginnerVersionFrom(request.headers));
     if (!offer) return Response.json({ due: false });
-    return Response.json({ due: true, offer, words: offerWords(offer.to) });
+    return Response.json({ due: true, offer, words: offerWords(offer.to, offer.nextStep) });
   });
 }
 
