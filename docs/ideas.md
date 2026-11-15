@@ -6,6 +6,15 @@ Ideas about how conversations go (when the learner speaks, characters stepping a
 
 **Adopted on 2026-10-09** and moved into the numbered docs: the open-ended world, Magda the tutor, dialect that grows with level, generated characters, and the Instagram-style interface (see [Game design](02-game-design.md)). Real photos for places and food are in [Visuals](07-visuals.md).
 
+## A new Intermediate: Spanish-heavy, no bubbles, say it in English to learn how (Josh, 2026-11-14)
+
+Josh: "maybe our intermediate is our advanced level - and a new intermediate is in spanish heavy mix - and no bubbles for the learner - you speak spanish if you can or you say what you want in English and get back how to say it - maybe there is more drilling on intermediate wwith learn sheets -- just a few ideas". Not decided.
+
+Claude, building on it:
+- **Three levels:** Beginner (steps 1–6, English with the language slotted in, two bubbles to say back, gone by step 6); a new Intermediate (a heavy mix in the language, an English aside where they'd be lost, no bubbles: the language if they can, English if they can't); Advanced (today's Intermediate: all in the language, English only when asked).
+- **What exists:** Say it (SayItBubbles.swift: a reply in English comes back as how to say it, read out with hear it) would be the new Intermediate's main way in, not a fallback. Step 6 (2026-11-14, D10) is already close: no bubbles, mostly the language; the level up (D34) moves step 6 to Intermediate.
+- **Drilling from their own visits:** every "how do I say…" asked becomes material for a Learn sheet afterwards (docs/learn.md, docs/after-conversation.md), so they practise what they actually wanted to say.
+
 ## Four poses per character (tested 2026-10-16)
 
 Each character gets four stills of the same picture: the original plus three made from it with xAI image editing (listening, talking with a gesture, laughing). The portrait changes on each turn. No video, no lip sync.
