@@ -28,6 +28,15 @@ A draft, not decided (2026-11-13). Josh: "I want to try and formalize this mix u
 
 Measure by replaying the eight visits of 2026-11-14 for the language's share and unsupported runs, then Josh plays. Step 1 is about 25% now and echo about 50%. Where between those is right is for Josh's ear to decide.
 
+## Josh's ear on one line at every tenth (2026-11-15, the other Mac's session)
+
+One real turn (Doña Juana's tamal, San Cristóbal) written at eleven levels, 0% to 100% of the line in Spanish, voiced in her game voice on a page, each level two ways: the Spanish alone, and each Spanish piece followed by its English (echo). Josh listened.
+- **Spanish alone: he stopped following at the 40% row** (39% of words in Spanish, nothing repeated in English). His word: "40".
+- Asked for the echo version: "I think more echo".
+- **With echo: "60-70"**, the rows where five of the line's seven pieces are in Spanish, each with its English after it, and two pieces are in English only. Counted: 36 to 39% Spanish, 59 to 62 words (the same turn is 37 words in English; full echo is 73 words and 48% Spanish). Claude's reading, not confirmed: this is the range he wants, not where he lost it.
+- Against the game today (scripts/walk-live.mjs, both countries): step 1 is 19 to 22% Spanish, step 2 is 31 to 45%, step 3 is 25 to 34% (less than step 2), step 4 is 70 to 73%. So the range he named sits at step 2, and nothing between step 3 and step 4 covers 45 to 70%.
+- The automatic reader (tests/experiments/follow-dial.mts, six turns, Spanish alone) fell under half at about 30% of words, a little before Josh's 40.
+
 ## Scaffolding throughout (Josh, 2026-11-15)
 
 Josh: "i think we should think of it as scaffolding throughout the game"; "focus on characters - i meant at all levels, across characters, betweeen conversations, between turns". On tracking the learner word by word: "not to change the plan - but I'm skeptikal of using be words or errrors".
