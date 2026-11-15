@@ -322,6 +322,9 @@ check((exchangeTurns({ learnerSaid: 'Adiós', reply: { line: 'Adiós', en: 'Bye'
   check(/p\.onAssemble\?\.\(assemble\)/.test(tt) && /line: assemble\(r\.line, false\)/.test(tt) && /onAssemble: \(assemble\) => \{ watcher\.assemble = assemble; \}/.test(readFileSync('app/v1/turn/route.ts', 'utf8')), 'the turn hands the same way of saying the line to the early voice and the whole line');
 }
 
+// A country's own setting for a step replaces the shared one (content/<country>/language.ts → stepSettings): Italy's step 4
+check(process.env.COUNTRY === 'es-mx' ? SETTINGS[3]!.ways.bare === 0.5 : SETTINGS[3]!.ways.bare === 0.7, `step 4 says half its sentences bare on the shared setting and seven in ten in Italy (got ${JSON.stringify(SETTINGS[3])})`);
+
 if (problems.length) {
   console.error(`check-beginner-2: ${problems.length} problem(s)\n- ${problems.join('\n- ')}`);
   process.exit(1);

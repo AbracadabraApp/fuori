@@ -1,3 +1,5 @@
+import { language } from '@/content';
+
 /**
  * The mix in a fixed shape (docs/mix.md; Josh, 2026-11-13: "I bigger issue is the runs of spanish without English
  * support"). At Beginner step 1 the character writes each piece of the language in braces with its English after a
@@ -51,7 +53,7 @@ export interface Setting {
  * of the language is to take the English off sentences: step 4 says half of them bare, step 5 all but the question
  * and the last sentence, step 6 everything (and offers no answers: lib/beginner-2.ts).
  */
-export const SETTINGS: (Setting | undefined)[] = [
+const SHARED: Setting[] = [
   { ways: { mix: 0.7, english: 0.3 }, last: 'echo' },
   { ways: { echo: 1 }, last: 'echo' },
   { ways: { echo: 0.5, gloss: 0.5 }, last: 'echo' },
@@ -59,6 +61,14 @@ export const SETTINGS: (Setting | undefined)[] = [
   { ways: { bare: 1 }, last: 'echo' },
   { ways: { bare: 1 }, last: 'bare' },
 ];
+
+/**
+ * Each step's setting for this country: the shared ones, and where a country's own differs (content/<country>/
+ * language.ts → stepSettings, by step number). The mix is tuned by country when its measured ladder calls for it
+ * (Josh, 2026-11-15: "italy 4 could mix more - mix is your dial"; "i said italy").
+ */
+export const SETTINGS: (Setting | undefined)[] = SHARED.map((shared, i) => (language.stepSettings as Partial<Record<number, Setting>>)[i + 1] ?? shared);
+
 
 /** A number from 0 to 1 out of a string, the same every time (the turn's seed) */
 export function seedOf(s: string): number {

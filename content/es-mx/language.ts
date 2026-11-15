@@ -21,6 +21,8 @@ export const language = {
   formality: { formal: 'usted', informal: 'tú' },
 
   /** Interface words */
+  /** A Beginner step's mix where this country's differs from the shared settings (lib/dialogue/pieces.ts → SETTINGS), by step number. none: Mexico's ladder rises on the shared settings */
+  stepSettings: {},
   ui: {
     showMore: 'Ver más', // under the city and place feeds
     /** The ticket at the bus terminal (app/components/Ticket.tsx) */

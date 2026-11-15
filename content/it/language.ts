@@ -21,6 +21,8 @@ export const language = {
   formality: { formal: 'Lei', informal: 'tu' },
 
   /** Interface words */
+  /** A Beginner step's mix where this country's differs from the shared settings (lib/dialogue/pieces.ts → SETTINGS), by step number. Italy's step 4 measured level with step 3 at the shared setting (51% each), so more of its sentences are said bare (Josh, 2026-11-15: "italy 4 could mix more") */
+  stepSettings: { 4: { ways: { echo: 0.3, bare: 0.7 }, last: 'echo' as const } },
   ui: {
     showMore: 'Mostra altro', // under the city and place feeds
     /** The ticket at the station (app/components/Ticket.tsx) */
