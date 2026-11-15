@@ -198,6 +198,8 @@ export interface Turn {
   beats?: string[];
   /** A character's turn that answered a learner asking for help (D12): the rest of the visit carries the Help asked note */
   hard?: boolean;
+  /** A character's turn that used an idiom from the store (D13): the next turn says what it means */
+  idiom?: string;
 }
 
 export interface SceneRun {
@@ -309,6 +311,8 @@ export interface TurnOutput {
   done?: boolean;
   /** Their last line asked for help or said it's hard (docs/dialogue-plan.md D12): saved on the character's turn */
   hard?: boolean;
+  /** The idiom this reply used (D13; lib/idioms.ts): saved on the character's turn */
+  idiom?: string;
   /** The welcome's opening: the answers are buttons to tap, and the mic stays closed */
   tapAnswers?: boolean;
   /** The welcome after the tap: the end button shows beside the mic, so they can go any time */

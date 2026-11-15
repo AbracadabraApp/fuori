@@ -35,6 +35,8 @@ export interface Setup {
   english: boolean;
   /** An invited English answer: the code adds the invitation and the question's English (invited) */
   invite?: boolean;
+  /** Words filled into the block (the idiom turn: {idiom}, {picture}, {meaning}) */
+  vars?: Record<string, string>;
 }
 
 /**
@@ -70,6 +72,9 @@ export const GOODBYE_AFTER = 7;
 export const CLOSE_AT = 8;
 export const CLOSE_AT_INTERMEDIATE = 15;
 export const CLOSE: Setup = { id: 'close', block: 'Setup: close', maxAnswers: 0, english: false };
+
+/** The idiom turn (D13; lib/idioms.ts): put in by take-turn in place of the drawn setup, with the idiom as vars */
+export const IDIOM: Setup = { id: 'idiom', block: 'Setup: idiom', maxAnswers: 2, english: true };
 
 /** The first turn: the place, not the person (Doña Carmen, 2026-11-10: "¿Usted es de aquí?… ¿Es porque veo africano?") */
 export const OPENER: Setup = { id: 'opener', block: 'Setup: opener', maxAnswers: 2, english: true };
@@ -110,7 +115,7 @@ export function clusterHeaderFrom(headers: Headers): Setup[] | undefined {
 }
 
 /** A stable number from a string (FNV-1a), so a conversation replays with the same setups */
-function seedOf(s: string): number {
+export function seedOf(s: string): number {
   let h = 0x811c9dc5;
   for (let i = 0; i < s.length; i++) {
     h ^= s.charCodeAt(i);
@@ -187,7 +192,7 @@ export function setupLine(setup: Setup): string {
   // message won ("Before you go, look at the church's front door…" after "I must see the dentist")
   if (setup.id === CLOSE.id) return closeNote();
   const leaving = [OPENER.id, GOODBYE.id].includes(setup.id) ? '' : ' ' + f.block('Setup: if they are leaving');
-  return fill(f.block(setup.block) + leaving, { language: language.name }).trim();
+  return fill(f.block(setup.block) + leaving, { language: language.name, ...(setup.vars ?? {}) }).trim();
 }
 
 /** Both together (scripts and looks); the game puts them in different places */

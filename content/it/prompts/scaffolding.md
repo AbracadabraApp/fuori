@@ -1,6 +1,6 @@
 # Scaffolding (Beginner 2)
 
-version: 2026-11-14d
+version: 2026-11-14e
 
 Everything that helps a Beginner take part, kept apart from the dialogue
 (Josh, 2026-11-09: "I want to be able to adjust scaffolding without touching
@@ -74,6 +74,18 @@ This turn, give them one short answer they could say back.
 
 ```
 This turn, end not on a question but on one short comment of your own in {language}, with its English: something about you, this place or what they just said, that they could answer. Give them two short answers they could say back: one that takes up your words, one with a thought or a question of their own about it; never a fact about their life you don't know.
+```
+
+## Setup: idiom
+
+```
+This turn, if it fits what's happening, use this saying: «{idiom}» (word for word: {picture}; it means: {meaning}). Say it in {language} where it fits, its words in English right after it, then ask what they think it means, in {language} with its English. Your two answers are their guesses at what it means, short, one right and one wrong. If it doesn't fit at all, leave it out and give two ordinary answers.
+```
+
+## Setup: idiom said
+
+```
+Last turn you used «{idiom}» and asked what it means ({meaning}). Say first, in a few words, whether they got it, and what it means.
 ```
 
 ## Setup: two questions to ask

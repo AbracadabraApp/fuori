@@ -37,6 +37,8 @@ const TurnRequestSchema = z.object({
         beats: z.array(z.string().max(120)).max(6).optional(),
         // A turn that answered a learner asking for help (D12; lib/recording.ts)
         hard: z.boolean().optional(),
+        // The idiom a character turn used (D13; lib/recording.ts)
+        idiom: z.string().max(200).optional(),
       })
     )
     .max(MAX_TURNS)

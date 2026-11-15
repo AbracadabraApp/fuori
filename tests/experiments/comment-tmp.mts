@@ -1,0 +1,20 @@
+import { readFileSync } from 'node:fs';
+import { characterForVisit } from '@/lib/characters/for-visit';
+import { runTurn } from '@/lib/turn';
+import { CLUSTERS, RUNGS, frameBrief, lineWithAnswers, setupLine } from '@/lib/beginner-2';
+import { assemblePieces } from '@/lib/dialogue/pieces';
+import type { Turn } from '@/lib/types';
+const [file, ...ids] = process.argv.slice(2);
+const all = JSON.parse(readFileSync(file, 'utf8')) as any[];
+const setup = RUNGS.find((r) => r.id === 'comment')!;
+const out: string[] = [];
+await Promise.all(ids.flatMap((id) => [1, 1, 4].map(async (step, k) => {
+  const c = all.find((x) => x.id.startsWith(id)); const character = characterForVisit(c.city_id, c.place_id)!;
+  const i = c.turns.map((t: any, n: number) => (t.who === 'learner' ? n : -1)).filter((n: number) => n > 0)[1 + k];
+  const transcript: Turn[] = c.turns.slice(0, i).map((t: any) => ({ who: t.who, transcript: t.text, ...(t.en ? { translation: t.en } : {}) }));
+  const cluster = CLUSTERS[step - 1];
+  const raw = await runTurn({ character, transcript, learnerSaid: c.turns[i].text, brief: frameBrief(cluster), note: setupLine(setup), answers: true, withDone: true });
+  const r = lineWithAnswers(step < 4 ? { ...raw, line: assemblePieces(raw.line) } : raw, setup, cluster);
+  out.push(`[${id} step ${step}] said: ${r.line}\n   printed: ${r.question?.text ?? '(NOTHING)'}${r.question?.en ? ' / ' + r.question.en : ''}\n   bubbles: ${r.parts.map((p) => p.text).join(' | ')}`);
+})));
+console.log(out.join('\n'));

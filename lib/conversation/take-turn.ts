@@ -19,7 +19,8 @@ import { onboardingState } from '@/lib/onboarding';
 import { runBeginnerTurn, beginnerPromptVersion, lineFromParts, type Part } from '@/lib/beginner';
 import { assemblePieces } from '@/lib/dialogue/pieces';
 import { closeNote, helpNote } from '@/lib/dialogue/rules';
-import { BEGINNER_2_FILE, CLOSE_AT_INTERMEDIATE, CLUSTER_1, pickSetup, levelText, setupLine, shapeParts, turnSteps, beginner2Version, type Setup, type TurnSteps, flowingLine, frameBrief, onFrame, lineWithAnswers } from '@/lib/beginner-2';
+import { idiomTurn, pickIdiom, recentIdioms, usedIdiom, idiomSaidNote, type Idiom } from '@/lib/idioms';
+import { BEGINNER_2_FILE, CLOSE_AT_INTERMEDIATE, CLUSTER_1, IDIOM, GOODBYE, CLOSE, pickSetup, levelText, setupLine, shapeParts, turnSteps, beginner2Version, type Setup, type TurnSteps, flowingLine, frameBrief, onFrame, lineWithAnswers } from '@/lib/beginner-2';
 import { pickShapes, noteOf, shapeIds, beatsBrief } from '@/lib/shapes';
 import { runIntro } from '@/lib/intro';
 import { storedCluster } from '@/lib/level-up';
@@ -165,9 +166,23 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
   const beats = transcript.find((t) => t.who === 'npc' && t.beats?.length)?.beats;
   const npcTurns = transcript.filter((t) => t.who === 'npc').length;
   // Beginner 2's reply setup this turn (docs/beginner-2.md), when the app switched it on
-  const setup = beginner && !p.lesson && newBeginner
+  const drawn = beginner && !p.lesson && newBeginner
     ? pickSetup({ conversationId, turn: npcTurns, learnerId, characterId: character.id, learnerSaid }, cluster)
     : null;
+  // An idiom, about one visit in three, in place of a turn that gives answers (D13; lib/idioms.ts): the character says it,
+  // its words in English, and asks what it means; the learner's recent ones left out
+  let idiom: Idiom | null = null;
+  if (drawn && drawn.maxAnswers > 0 && ![GOODBYE.id, CLOSE.id].includes(drawn.id) && learnerId && idiomTurn(conversationId, npcTurns)) {
+    try {
+      idiom = pickIdiom(conversationId!, await recentIdioms(learnerId));
+    } catch (err) {
+      p.onSoftError('idioms', err);
+    }
+  }
+  const setup = drawn && idiom ? { ...IDIOM, vars: { idiom: idiom.text, picture: idiom.picture, meaning: idiom.meaning } } : drawn;
+  // The turn after an idiom: say whether they got it, and what it means
+  const lastNpc = [...transcript].reverse().find((t) => t.who === 'npc');
+  const idiomSaid = setup && lastNpc?.idiom ? idiomSaidNote(lastNpc.idiom) : undefined;
   // Beginner 2: what the code did to the turn's parts, logged and saved with it; any path: the shape asked for
   let steps: TurnSteps | undefined;
   const pathLevel = !welcome && !newBeginner && onPath?.stage.path === 'character' ? onPath.stage.level : undefined;
@@ -180,7 +195,7 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
   // After the intro, no note unless they asked something: then it's answered first (lib/shapes.ts)
   const shapes = shaped && !intro ? pickShapes({ learnerSaid }) : [];
   // They asked for help or said it's hard earlier in this visit (a character turn saved with hard; D12): keep it easy from here on
-  const helped = transcript.some((t) => t.who === 'npc' && t.hard) ? helpNote() : undefined;
+  const helped = [transcript.some((t) => t.who === 'npc' && t.hard) ? helpNote() : undefined, idiomSaid].filter(Boolean).join(' ') || undefined;
   const shape = shapes.length ? shapes : null;
   const shapeId = shapeIds(shapes);
   // The intro's beats, once, in the system prompt of every later turn: material the character has, not a list to work through
@@ -266,6 +281,8 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
     withDone: true,
   });
   if (closing) reply.done = true;
+  // The idiom, saved on the turn only when it was said (the character may leave it out when it doesn't fit)
+  if (idiom && usedIdiom(reply.line, idiom)) reply.idiom = idiom.text;
   if (shapeId && !steps) steps = { fixes: [], shape: shapeId };
   p.laps?.lap('claude');
   const replyMs = Math.round(performance.now() - started);
