@@ -9,6 +9,7 @@ Newest first. One entry per version: what changed, why, what prompted it. The pr
 - **Steps 4 to 6 too (the same day, same version, nothing released between):** Level: sentences is used by all six steps; step 4 says half the sentences bare, step 5 all but the question and the last sentence, step 6 everything. Level: 2b and 3 stay in the file, unused.
 - **No mixed sentences at steps 1 and 2 (the same day, code only):** Josh: "echo is easier than mixed+echo"; "especially with last sentence echo". Step 1 is English with a sentence echoed, step 2 most sentences echoed, the rest English.
 - **Mixed sentences back (the same day, code only):** Josh: "there should be mixed in 1-3"; "step 2 question echoed". Steps 1 and 2 as first built: step 1 mixed, step 2 half echoed and half mixed, the question echoed at both.
+- **Steps 2 and 3 swapped (the same day, code only):** Josh: "swap 2 & 3". Step 2 echoes every sentence; step 3 is half echoed, half mixed.
 - **Card:** docs/prompt-trials.md → S1.
 
 ### 2026-11-14e: an idiom to guess, about one visit in three

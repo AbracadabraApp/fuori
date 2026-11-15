@@ -42,17 +42,17 @@ export interface Setting {
 }
 
 /**
- * Step 1: mostly English with a phrase of the language mixed into its sentences; step 2: half the sentences echoed,
- * the others mixed; step 3: every sentence echoed. The question or last sentence is echoed at all three (Josh,
- * 2026-11-15, choosing among three orders: "there should be mixed in 1-3"; "step 2 question echoed"). For an hour
- * the same day steps 1 and 2 had no mixed sentences, from a misreading of "echo is easier than mixed+echo". Past that the only way to more
+ * Step 1: mostly English with a phrase of the language mixed into its sentences; step 2: every sentence echoed;
+ * step 3: half the sentences echoed, the others mixed. The question or last sentence is echoed at all three. The
+ * order is by ease, not by the language's share, which is higher at step 2 than at step 3 (Josh, 2026-11-15: "echo
+ * is easier than mixed+echo"; "especially with last sentence echo"; "there should be mixed in 1-3"; "swap 2 & 3"). Past that the only way to more
  * of the language is to take the English off sentences: step 4 says half of them bare, step 5 all but the question
  * and the last sentence, step 6 everything (and offers no answers: lib/beginner-2.ts).
  */
 export const SETTINGS: (Setting | undefined)[] = [
   { ways: { mix: 0.7, english: 0.3 }, last: 'echo' },
-  { ways: { echo: 0.5, mix: 0.5 }, last: 'echo' },
   { ways: { echo: 1 }, last: 'echo' },
+  { ways: { echo: 0.5, mix: 0.5 }, last: 'echo' },
   { ways: { echo: 0.5, bare: 0.5 }, last: 'echo' },
   { ways: { bare: 1 }, last: 'echo' },
   { ways: { bare: 1 }, last: 'bare' },

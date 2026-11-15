@@ -116,6 +116,8 @@ for (let step = 1; step <= STEPS + 1; step++) {
 // The language's share shouldn't fall from one step to the next (5 points of slack: the count is rough)
 for (let i = 1; i < log.steps.length; i++) {
   const [a, b] = [log.steps[i - 1], log.steps[i]];
+  // Step 2 echoes every sentence and step 3 mixes and echoes: easier first, though step 2 has more of the language (Josh, 2026-11-15: "swap 2 & 3")
+  if (b.step === 'step 3') continue;
   if (a.turns && b.turns && b.share < a.share - 0.05) fail(`${b.step} has less of the language than ${a.step} (${Math.round(100 * b.share)}% after ${Math.round(100 * a.share)}%)`);
 }
 

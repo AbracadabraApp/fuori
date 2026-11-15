@@ -298,8 +298,8 @@ check((exchangeTurns({ learnerSaid: 'Adiós', reply: { line: 'Adiós', en: 'Bye'
   const said = SETTINGS.slice(0, 3).map((setting) => saySentences(raw, setting!, 0.42));
   check(said.every((line) => line.endsWith('¿Le pongo salsa? Do you want salsa?')), 'the question is echoed at steps 1 to 3');
   check(said.every((line) => !/[{}*|]/.test(line)), 'no braces, bars or asterisks are said');
-  check(share(said[0]) < share(said[1]) && share(said[1]) <= share(said[2]) && /el comal, the griddle/.test(said[0]) && said[1].endsWith('¿Le pongo salsa? Do you want salsa?'), `the same turn has more of the language at each step; step 1 mixes a phrase into its English, and step 2's question is echoed (got ${said.map(share).join(', ')})`);
-  check(said[2] === 'Pase, pase, siéntese aquí. Come in, sit here. Ese es el comal. That\'s the griddle. Hoy hay mole. Today there is mole. ¿Le pongo salsa? Do you want salsa?', 'step 3 echoes every sentence');
+  check(share(said[0]) < share(said[2]) && share(said[2]) <= share(said[1]) && /el comal, the griddle/.test(said[0]) && said[1].endsWith('¿Le pongo salsa? Do you want salsa?'), `step 1 has the least of the language and mixes a phrase into its English; step 2 echoes everything, so it has the most of the three (Josh: "swap 2 & 3"; got ${said.map(share).join(', ')})`);
+  check(said[1] === 'Pase, pase, siéntese aquí. Come in, sit here. Ese es el comal. That\'s the griddle. Hoy hay mole. Today there is mole. ¿Le pongo salsa? Do you want salsa?', 'step 2 echoes every sentence');
   // The early voice reads the line as it's written: what it has said must open the whole line
   for (const setting of SETTINGS.slice(0, 3)) {
     const whole = saySentences(raw, setting!, 0.42);
@@ -310,7 +310,7 @@ check((exchangeTurns({ learnerSaid: 'Adiós', reply: { line: 'Adiós', en: 'Bye'
     }
   }
   check(englishOf(raw) === "Come in, sit here. That's the griddle. Today there is mole. Do you want salsa?", 'the turn\'s English is each sentence\'s own');
-  check(wayOf(SETTINGS[2]!, 0.1, 0) === 'echo' && seedOf('a:1') === seedOf('a:1') && seedOf('a:1') !== seedOf('a:2'), 'the way is the same every time for a turn');
+  check(wayOf(SETTINGS[1]!, 0.1, 0) === 'echo' && seedOf('a:1') === seedOf('a:1') && seedOf('a:1') !== seedOf('a:2'), 'the way is the same every time for a turn');
   const tt = readFileSync('lib/conversation/take-turn.ts', 'utf8');
   check(/p\.onAssemble\?\.\(assemble\)/.test(tt) && /line: assemble\(r\.line, false\)/.test(tt) && /onAssemble: \(assemble\) => \{ watcher\.assemble = assemble; \}/.test(readFileSync('app/v1/turn/route.ts', 'utf8')), 'the turn hands the same way of saying the line to the early voice and the whole line');
 }

@@ -31,8 +31,8 @@ check(stepLevelText(1) === stepLevelText(MAX_STEP) && SETTINGS.length === MAX_ST
 // The preview of a step that is a setting is put together as that step's turns are
 {
   const written = { line: '{Ese es *el comal*. | That is *the griddle*.} {¿Le pongo *salsa*? | Do you want *salsa*?}', en: 'x' };
-  const at3 = previewAtSetting(written, SETTINGS[2], 0.3);
-  check(at3.line === 'Ese es el comal. That is the griddle. ¿Le pongo salsa? Do you want salsa?' && at3.en === 'That is the griddle. Do you want salsa?', `the preview at step 3 echoes each sentence (got ${at3.line})`);
+  const at3 = previewAtSetting(written, SETTINGS[1], 0.3);
+  check(at3.line === 'Ese es el comal. That is the griddle. ¿Le pongo salsa? Do you want salsa?' && at3.en === 'That is the griddle. Do you want salsa?', `the preview at step 2 echoes each sentence (got ${at3.line})`);
   check(previewAtSetting({ line: 'Tutto in italiano.', en: 'All in Italian.' }, undefined, 0).line === 'Tutto in italiano.', 'a step with no setting: the line as rewritten');
 }
 
