@@ -95,6 +95,7 @@
     "test:onboarding": "node --env-file-if-exists=.env.local node_modules/.bin/tsx tests/check-onboarding.ts",
     "test:sweep": "tsx tests/check-sweep.ts",
     "test:turn-request": "tsx tests/check-turn-request.ts",
+    "test:memory-gender": "tsx tests/check-memory-gender.ts && COUNTRY=es-mx tsx tests/check-memory-gender.ts",
     "test:idioms": "tsx tests/check-idioms.ts && COUNTRY=es-mx tsx tests/check-idioms.ts",
     "test:help-asked": "tsx tests/check-help-asked.ts && COUNTRY=es-mx tsx tests/check-help-asked.ts",
     "test:app-log": "tsx tests/check-app-log.ts",

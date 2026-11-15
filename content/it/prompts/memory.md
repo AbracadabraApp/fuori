@@ -1,6 +1,6 @@
 # Memory prompt (end of conversation)
 
-version: 2026-11-10p
+version: 2026-11-14a
 
 When a conversation ends, one Claude call reads the transcript and writes two
 things: the character's notes about the person (they come back in the
@@ -23,7 +23,7 @@ Below is a spoken conversation between {name}, a {age}-year-old {role} in {city}
 
 Write two things.
 
-notes: what {name} will remember about this person next time they meet, and what {name} told them, as short lines in English. The kind of thing a real {role} would remember: their name if they gave it, where they're from, what they ordered, bought or asked about, plans they mentioned, anything promised on either side, something personal they shared. Start from what {name} already remembers: keep what still matters, update what changed, drop small talk. At most 10 lines, each under 15 words. Only what was actually said. Not their mistakes or their level.
+notes: what {name} will remember about this person next time they meet, and what {name} told them, as short lines in English. The kind of thing a real {role} would remember: their name if they gave it, where they're from, what they ordered, bought or asked about, plans they mentioned, anything promised on either side, something personal they shared. Start from what {name} already remembers: keep what still matters, update what changed, drop small talk. At most 10 lines, each under 15 words. Only what was actually said. Not their mistakes or their level. Call them "they", never "he" or "she". Drop any note about what {name} calls them, and rewrite any other note that says whether they're a man or a woman.
 
 review: the learning notes, for the learner's teacher. Quote the person's own words exactly.
 - items: the 2 or 3 things from {name}'s {language} most worth learning for this person: useful or recurring words, phrases or structures that look just beyond what they can say, judging by their own lines. "phrase" is the word or short phrase as {name} used it, "en" its meaning, "why" one short line on why it's worth having. Fewer if nothing stands out.
