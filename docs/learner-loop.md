@@ -60,3 +60,25 @@ Josh: "Isidiro did a good jon at this - also the costume designer in Palermo". W
 - Neither date has been kept yet: no visit to Isidro or Elena after 2026-11-13 (archive to 2026-11-14 19:08 UTC).
 - **Beatrice, student, Piazza Salimbeni, Siena** (09dd40cd, 2026-10-28, Beginner version 2026-10-27). Josh named it "a great one". The bid grew out of his interests: mystery books, then history, philosophy, Machiavelli, the Discourses and the republic, then "Siena was a republic for centuries… Vuole visitare il Palazzo Pubblico?" They went right away, in the same visit: the walk down to the Campo, tickets ("2. Uno per me e uno per te"), the Lorenzetti fresco of good and bad government, the tyrant, Justice, the cord. 71 turns, Josh's longest. She let him go when he said goodbye.
 - Josh, 2026-11-14: "the bids are very rare from the characters to go someplace - 2 in total" (then three, with Beatrice). A likely cause, Claude's: since 2026-11-05 (7cde7df) the goodbye lines in dialogue.md say "say goodbye back… with nothing new: no question, no new topic", and the character's own close says only "you have to get back to what you're doing". Neither leaves room for next time.
+
+## Memory notes, the learning notes and the loop off each conversation (Josh, 2026-11-14, evening, with the Mac mini session)
+
+Josh, on the memory notes: "this is a section i don't think we are using well". What was said, in order.
+
+**Not knowing his name is right.** The Mac mini session listed "nothing is shared between characters" as a waste (Josh gave his name to four characters in five visits). Josh: "i think not knowing name is normal - unless someone told a character about me, how would they know my name". So that isn't underuse; it matches "character knowledge should be siloed - unless we introduce gossip" above. What his "unless" leaves open is the way a neighbourhood passes things on: a character who knows another character mentions the learner, or a character who has met someone the learner knows says so (his idea in play with Vale, 2026-11-13: when his son-in-law plays, a character could say it had spoken to his father-in-law). Not decided.
+
+**Where the notes are underused, inside one character's relationship with one learner** (the session's list; Josh didn't dispute it, and moved to the learning half):
+- The notes mostly feed the greeting; after it they rarely shape the visit.
+- No loose ends: nothing marks an offer as answered or a promise as kept or open (Isidro offered the altars three times, d335b204).
+- They hold facts about the learner, not what the learner was curious about or what the character was in the middle of telling.
+- The answers offered almost never use them (one in 110 in the five visits of bids.md: "Sí, la crema, como siempre").
+- Most are never read: 111 of 141 learner–character pairs met once (dialogue-plan.md D15).
+- Errors are copied forward, since notes are rewritten from notes: Kiran (B8), Silvia (B9), "she" (B10, fixed 2026-11-14). Nothing checks a note against the transcript.
+
+**The learning half.** Josh: "i think the language learning is not usable". The review written with the notes (useful phrases, mistakes, missed phrases, English used) goes only to Magda's study file, and "Magda haas a totally different role than this now". The session's thought, that what the learner has met in the language is the learner's and could be tracked across characters as a list code acts on (as the idiom pick does: the learner's idioms from their last 30 visits are left out), got: "your 'A thought on what would be usable' is only useable if used".
+
+**Two places it could be used.**
+- *By the learner:* the Learn sheet at the end of every visit, at about a third of today's page, easy to dismiss, more entertaining (dialogue-plan.md D51; after-conversation.md). Josh thought Beginner pages had content and was right: four of his visits through the live writer were all full, though about half the fixes came from an offered answer read aloud or a mishearing (bugs.md B26).
+- *By the game:* Josh: "in terms of learning analysis - i think having conversation data get aggregated on turn would add more than tracking what words were missed", and, when that was first written up as totals per learner, "i was meaning more of loop analysis for the game triggered of each conversation". That is the +dialogue loop and the observers of this page, with a trigger and a unit: when a visit ends, an observer reads its turns and writes flags as data, turn by turn, added up across visits (dialogue-plan.md D50). The session's caution, taken from "Keeping +dialogue honest" above: the flags stay counts that Josh and the sessions read; they don't write rules back into the prompt by themselves. A first step with no model call: a script computing the mechanical flags (a question repeated, the same pair pattern, a visit's length) on saved visits.
+
+Nothing here is decided or built. Josh is playing visits on the release of 2026-11-14 first.

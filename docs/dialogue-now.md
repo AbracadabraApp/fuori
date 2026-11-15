@@ -1,12 +1,12 @@
 # Dialogue now: how it works today
 
-Checked against the code and prompts on `main` at 614da8d, 2026-11-12 (after the cut-over to the new Beginner and today's fixes) (laptop session; both countries, whose prompt texts match apart from example phrases). This describes what the code does, not what was decided or planned: decisions are in [dialogue-model.md](dialogue-model.md), the work in [dialogue-plan.md](dialogue-plan.md), the terms and the bids model in [dialogue-structure-reference.md](dialogue-structure-reference.md), faults in [dialogue-ideas.md](dialogue-ideas.md). Rewrite this page when the code changes; a line here that the code no longer does is a bug in the page.
+Checked against the code and prompts on `main` at f039f1fe, 2026-11-14 (Mac mini session; both countries, whose prompt texts match apart from example phrases). Sections 1 to 3 and 5 were rewritten that day after the fifteen changes of 2026-11-13 and 14 (the intro cut, the endings, the comment, idiom and help turns, steps 4–6, the level-up past the steps, memory without gender); section 4's counts are still the 2026-11-12 snapshot. This describes what the code does, not what was decided or planned: decisions are in [dialogue-model.md](dialogue-model.md), the work in [dialogue-plan.md](dialogue-plan.md), the bids model, the bid menu and how a Beginner turn ends in [bids.md](bids.md), the terms in [dialogue-structure-reference.md](dialogue-structure-reference.md), what plays wrong in [bugs.md](bugs.md), ideas in [dialogue-ideas.md](dialogue-ideas.md). Rewrite this page when the code changes; a line here that the code no longer does is a bug in the page.
 
-**Live or not:** `main` is ahead of what Railway serves; `progress.md` → the top handoff says which commits are live.
+**Live or not:** check `git log origin/live` and `/healthz` (it reports the commit), not `progress.md`. On 2026-11-14 everything described here was live (origin/live at ea5a4838).
 
 ## 1. A turn
 
-`takeTurn` (`lib/conversation/take-turn.ts`) loads the character's memory and the learner's level, then picks one of eight kinds of conversation in a single conditional. Under it are two engines:
+`takeTurn` (`lib/conversation/take-turn.ts`) loads the character's memory and the learner's level, then picks the kind of conversation in a single conditional (eight rows below; two are no longer reached). Under it are two engines:
 
 - **The line engine** (`runTurn`, `lib/turn.ts`): one flowing line in the character's voice with its English; optionally answers to say back and a done flag. The first sentence can go to the voice while the rest is written.
 - **The parts engine** (`runBeginnerTurn`, `lib/beginner.ts`): the reply as parts (english, word, question, answer), which code may rewrite and joins into the spoken line.
@@ -15,11 +15,11 @@ Every reply: thinking off (`noThinkingFor`); the system prompt plus the whole co
 
 | # | Kind | Engine | What it's given | Who gets it |
 |---|---|---|---|---|
-| 1 | Intermediate visit (and Advanced) | line | `character.md` + `dialogue.md` + the place's here line + memory; the intro's beats once; a shape note only when they asked something | Learners at Intermediate or Advanced |
-| 2 | Intro (first turn of a visit) | its own call (`runIntro`, `intro.md`) | `character.md`'s Who and Relationship blocks + the Brief | Intermediate and Beginner 2 visits |
-| 3 | Beginner (the new one, "Beginner 2" until the cut-over), steps 1–3 | line | the Intermediate prompt + `scaffolding.md` → Level 1 / 1b / 2 + Answers + the setup note every turn + shapes + beats | Every Beginner, on the stored step (b45d171) |
-| 4 | Beginner, steps 4–6 | parts | `beginner-2.md` prompt + Level 2 / 3 + the setup note + shapes + beats; the voice waits for the whole reply | The same, from step 4 (never played) |
-| 5 | The old Beginner | parts | `beginner.md` (23 rule blocks) + the path stage's `leveling.md` blocks | Only behind the hidden switch (Version → Beginner: Old), for a week from 2026-11-12 |
+| 1 | Intermediate visit (and Advanced) | line | `character.md` (with the level fact: "They're learning {language} and follow most of it" / "They speak {language} well") + `dialogue.md` + the place's here line + memory; a shape note only when they asked something; the Help asked note after they asked for help; the Close note on the 15th character turn | Learners at Intermediate or Advanced |
+| 2 | Intro | none | Cut on 2026-11-13 at every level (`intro = false` in take-turn; `lib/intro.ts` and `intro.md` remain, unused): a visit opens on the character's first ordinary turn | Nobody |
+| 3 | Beginner, steps 1–6 | line | the Intermediate prompt + `scaffolding.md` → the step's Level text (1, 1b, 2, 2b, 3, 3) + Answers + a setup note on every turn + shapes; the answers come with the reply and go to the app as answer parts | Every Beginner, on the stored step |
+| 4 | (Beginner on the parts format) | parts | The branch is still in take-turn but no step reaches it: all six steps are on the line reply since D10 (`FRAME_CLUSTERS = 6`) | Nobody |
+| 5 | The old Beginner | parts | `beginner.md` (23 rule blocks) + the path stage's `leveling.md` blocks | Only behind the hidden switch (Version → Beginner: Old); due for removal about 2026-11-19 (D22) |
 | 6 | Welcome | parts | `beginner.md` + `welcome.md`, step counted by code; English only | A learner who hasn't finished it |
 | 7 | Lessons | parts (Beginner format) or line (Italy's Intermediate lessons) | `beginner.md` or `character.md` + a `lesson-flow.md` brief; ended by turn count | Learn → Lessons |
 | 8 | Magda outside a lesson | line | her tutor prompt | (the server answers her only inside a lesson) |
@@ -28,17 +28,41 @@ Cultural lessons (`culture.md` → Story) play as a lesson part, in the Beginner
 
 ## 2. By level
 
-**Intermediate.** The intro opens: name and role in one sentence, four or five about what the place is known for, one question out of it (`intro.md` 11e), with the beats (three or four things it set out). Later turns get the beats once in the system prompt ("come back to them when the talk gives you a reason… not a list to work through"). The director is silent except "Answer what they asked first" when the learner's line has `?` or `¿` (`lib/shapes.ts`). No close: the visit ends when the learner says goodbye (`done`).
+**Intermediate and Advanced.** No intro. The character gets one fact about the learner's level (`character.md` → Learner: Intermediate / Advanced) and no other level rules. The director is silent except "Answer what they asked first" when the learner's line has `?` or `¿` (`lib/shapes.ts`). The visit ends when the learner says goodbye or that they have to go, in any words (the reply's `done`), or on the character's 15th turn, when it gets the Close note and closes the visit itself (`CLOSE_AT_INTERMEDIATE`). Once the learner asks for help or says it's hard, the reply's `hard` flag is saved on the turn and every later turn of the visit gets the Help asked note (short sentences, known words, a new word's English right after it).
 
-**Beginner 2** (`lib/beginner-2.ts`; `docs/beginner-2.md`). Six steps, each a cluster of answer setups and a Level text (`LEVEL_OF_CLUSTER`: 1, 1b, 2, 2, 3, 3). Steps 1–3 run on the line engine with the English frame (mostly English, phrases of the language slotted in, the question in the language with its English). Every turn gets a setup by a seeded draw (`pickSetup`: step 1 rotates two answers and questions to ask, never the same three times running), answer first on a question, and the goodbye setup once, on the learner's 7th turn (2026-11-12; the close by the beat count is gone). The step is stored (`learners.step`) and offered up after 3 conversations of 3+ replies (`lib/level-up.ts`).
+**Beginner** (`lib/beginner-2.ts`; `docs/beginner-2.md`). Six steps on one screen and one reply format, each taking a support away:
 
-**The old Beginner** (behind the hidden switch for a week; `lib/path.ts`, `beginner.md`, `leveling.md`). `path.ts` still decides who is a Beginner for everyone. Four stages, moved by counts from each conversation (4 easy of the last 5): S1 two answers and yes-or-no / this-or-that questions only; S2 about half in the language, one answer; S3 mostly the language, the answer as a sentence to finish; S4 the character prompt with `levels.md` → "Beginner: still you, ask" (since the cut-over a learner at S4 plays the new Beginner). Goodbye: the model offers it when it judges the talk is winding down.
+| Step | Level text | Kinds of turn in the draw | The last line's English |
+|---|---|---|---|
+| 1 | 1: English with pieces of the language slotted in as `{piece \| English}`, put together by code (`lib/dialogue/pieces.ts`) | two answers, notice, questions to ask, comment | printed and said |
+| 2 | 1b: English and the language mixed, two or three phrases with their English | the same | printed and said |
+| 3 | 2: half and half | the same, and no answers | printed and said |
+| 4 | 2b: mostly the language, an English aside now and then | the same | said, not printed |
+| 5 | 3: English only when asked | two answers, questions to ask, comment, no answers | said, not printed |
+| 6 | 3 | no answers | neither |
+
+- **The draw** (`pickSetup`): seeded by the conversation and the turn, by weight: two answers 3, comment 2, no answers 2, notice 1, questions to ask 1. Never the same kind three times running; questions to ask never twice running, nor after the learner's own question; notice at most once a visit. The first turn is the opener (the place, two answers).
+- **Comment** (D6, D7): the turn ends on a comment of the character's own, not a question; one answer takes up its words, one is new. Its last line is printed and said by the same ladder as a question's (`lastLineOf`, `withLastEnglish`).
+- **Answers** (`scaffolding.md` → Answers): two different things a person might say there, each taking the talk somewhere; not a yes and a no, not a compliment; a blank only for a name, a place or a number; now and then one answer asks about a word given no English, or for it again more slowly. Answers keep their English at every step. A turn that asks for answers always has them.
+- **Idiom** (D13, `lib/idioms.ts`): about one visit in three, on the 4th character turn, in place of a turn that gives answers. Code picks one from `content/<country>/idioms.json`, weighted to the common and easy, leaving out the learner's idioms from their last 30 visits; the character says it with its words in English and asks what it means; the answers are two guesses; the next turn says what it means. Saved on the turn only when it was said.
+- **Endings:** the goodbye setup once, on the learner's 7th turn (the character winds down, the two answers are goodbyes, and it may invite the learner back for something of its own: D1); on the 8th the Close note, and the visit ends there whatever the reply says. Before that, leaving in any words ends it, and the character winds down by itself when the talk has run its course. Every setup note except the opener's and the goodbye's carries "if they are leaving, skip this".
+- **Help asked:** as at Intermediate.
+- **Moving up** (`lib/level-up.ts`): after 3 conversations of 3 or more replies at a step, the game offers the next; the learner chooses; "not yet" asks again 3 conversations later. At step 6 the offer is Intermediate, and at Intermediate it is Advanced (D34, D35). Nothing offers a step down.
+
+**The old Beginner** (behind the hidden switch; `lib/path.ts`, `beginner.md`, `leveling.md`). `path.ts` still decides who is a Beginner for everyone. Four stages, moved by counts from each conversation. The welcome and the lessons still play in its format (rows 6 and 7).
 
 ## 3. Memory
 
-At the end of a visit `remember.ts` runs `memory.md`: up to 10 notes (what the character would remember, what it told them) and the learner's review. If the visit had an intro, its beats are added to a "Told them about: …" line that accumulates across visits (the told-ledger). Next visit, `character.md` → "Met before" gives the notes and "Don't tell them again what you've already told them"; the intro's Brief picks up where they left off and tells something not yet told.
+At the end of a visit `remember.ts` runs `memory.md` once, as an observer, not the character. It writes two things.
 
-## 4. What the saved visits show (2026-11-12 snapshot)
+- **Notes:** up to 10 short lines in English of what this character would remember about this person and what it told them, rewritten from the character's earlier notes (keep, update, drop). Kept per character and per learner; no character reads another's (Josh, 2026-11-14: "character knowledge should be siloed - unless we introduce gossip"). Next visit `character.md` → "Met before" gives them to the character. Since 2026-11-14 the notes say "they", don't record what the character calls the learner, and rewrite any note that says man or woman; how to address the learner comes only from the learner's own setting.
+- **The review:** useful phrases, mistakes, missed phrases, English used. `lib/study-file.ts` folds it into Magda's study file, which only her lessons read. No turn of an ordinary visit reads it. The Learn page behind the Learn link is a separate call, written when the learner opens it (`lib/learn.ts`).
+
+Because notes are rewritten from notes, an error is carried forward until something removes it: a misheard name (B8), a wrong name for a relative (B9), a gender (B10, fixed). Nothing checks a note against the transcript.
+
+The told-ledger ("Told them about: …") was filled from the intro's beats; with the intro cut nothing new is added to it (seen in take-turn; not traced further).
+
+## 4. What the saved visits show (2026-11-12 snapshot; before the changes above)
 
 From `~/fuori-archive/conversations-2026-11-12.json` (private): 271 ordinary visits by 44 learners, smoke-test learners, lessons, Magda and the welcome left out. Script: `node scripts/bid-count.mjs ~/fuori-archive/conversations-<date>.json`. "Said back" is the reply close to one of the offered answers (word overlap); "left" is the visit ending on that turn, which for a statement is usually the character's goodbye.
 
@@ -68,9 +92,15 @@ Readings, not conclusions (one or two learners carry most rows): offered answers
 - **What learners do after each kind of bid:** `node scripts/bid-count.mjs <snapshot.json>` (§ 4). Rerun after 20 new-Beginner visits with three or more replies (dialogue-plan.md).
 - **The snapshot:** `node scripts/archive-conversations.mjs`, run from `~/fuori` (the folder linked to Railway), writes `~/fuori-archive/conversations-<date>T<hhmm>.json` (private, never in git). `--since=<day>` writes a separate `partial-conversations-…` file, so a full copy is never overwritten.
 
-## 5. Inconsistencies open today
+## 5. Inconsistencies open today (2026-11-14)
 
-The list, with what each resolves, is [dialogue-plan.md](dialogue-plan.md) phases 1, 2 and 5. Fixed 2026-11-12: the where-from lines (1.1), the beat-count close (1.2), intro.md's beats wording (1.3), the S4 gap and the two ladders (cut-over), Beginner 2's dead code (5.6). Still open: newcomer wording in the lesson and culture writers (2.1, 2.2); the welcome and lessons on `beginner.md`, so dialogue fixes reach them separately (5.2); four goodbyes, and a close when the talk is done (5.3); steps 4–6 unplayed with mismatched texts (5.4); length rules in prose (5.5).
+The work list is [dialogue-plan.md](dialogue-plan.md) → To do; what plays wrong is [bugs.md](bugs.md). In the code itself:
+
+- The welcome and the lessons still run on the old Beginner's prompt (`beginner.md`) and the parts format, so a fix to the Beginner's scaffolding doesn't reach them.
+- Two branches in `takeTurn` are no longer reached: the intro (`intro = false`) and the Beginner on the parts format (every step is on the line reply). `lib/intro.ts`, `intro.md` and the told-ledger's source go with the first.
+- The old Beginner is still behind its switch (removal due about 2026-11-19, D22).
+- `scaffolding.md`'s Answers block now holds five rules in one paragraph (one idea each; two different things; blanks; the help answer; winding down), about 1,780 words in the file against 1,270 on 2026-11-12. In the first visits after the release one of them was already not holding ("never about something already explained": bugs.md B24).
+- Section 4's counts predate all of this; rerun `scripts/bid-count.mjs` after 20 visits on the live version (D16).
 
 ## 6. The shared dialogue layer (Claude's proposal, 2026-11-05; Josh: "think about ways the code should be written to make changes to dialogue issues consistent as well as changes to dialogue scaffolding")
 
