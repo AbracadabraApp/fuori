@@ -149,6 +149,9 @@ export function pickSetup(p: { conversationId?: string | null; turn: number; lea
   if (p.turn >= CLOSE_AT) return CLOSE;
   // The opener is two answers to read when the cluster has them (Arturo, 2026-11-09: an invited-English opener set a pattern the character copied all visit)
   if (p.turn === 0 && cluster.some((s) => s.id === 'two-en')) return OPENER;
+  // A step with no answers to offer (step 6) opens on its own turn: the opener gives two answers. Without this the
+  // draw had no turn 0 and the visit failed to open (2026-11-15, Josh at step 6 on the hidden stepper: every place 500)
+  if (p.turn === 0) return cluster[0];
   const day = (p.now ?? new Date()).toISOString().slice(0, 10);
   const key = (turn: number) => (p.conversationId ? `${p.conversationId}|${turn}` : `${p.learnerId ?? ''}|${p.characterId}|${day}|${turn}`);
   // Never the same setup three times running (2026-11-11c, Josh: "no variation"): after two of a kind the draw leaves
