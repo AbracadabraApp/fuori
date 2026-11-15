@@ -3,6 +3,11 @@
 // street and neighbourhood, the place drawn behind them, confident colour. The
 // medium is the city's place style (or, in a city without one, the medium of the
 // person's place picture), and the colours are taken from that place picture.
+// Each person comes from their sheet (name, age, personality, here line), and a
+// city's people are asked to look unlike each other, without postcard types
+// (Josh: "look out for stereotypes and similar portraits"; "they have
+// characteristics in their sheet"; then his watch list: too many moustaches,
+// waving, fat people, young women with the same profile, chefs in toques and whites).
 // Josh, 2026-11-14, after three Italian samples: "Lets redo all the visible (not
 // hidden) portraits in Italy - in the city's style, and characters setting -
 // borrow colors for portrait from place card"; and "none of the new ones look at
@@ -60,14 +65,16 @@ const instruction = `You write prompts for an image model: portraits of the peop
 
 For each person, write one prompt of 90 to 130 words, in this order:
 1. The medium, taken from the style given (for example "Pencil and watercolour portrait on textured paper, loose hand-drawn line, sunlit"). Use the style's way of making a picture and its light; leave out its rules about streets, crowds, scooters or signs.
-2. The person: age, a few true details of face, hair and clothes, and their expression. Keep what the old prompt says about how they look when it fits; drop vague words like "cultured" or "artisan pride".
-3. What they are doing with their hands at work, and that they look up from it straight at the viewer, as if someone they know has just come in.
+2. The person, from their sheet: their age, and a face, build, hair and clothes that fit who the sheet says they are (their personality and their "here" line: where they come from, what they care about, what they're doing today). Show one or two of their traits in what they wear, hold or have around them (Carmine, a devout Maradona fan, has a Maradona shirt or picture nearby), not more.
+3. What they are doing with their hands at work, as their "here" line says, and that they look up from it straight at the viewer, as if someone they know has just come in. Their expression comes from their personality: a dry man doesn't beam, a shy girl doesn't laugh.
 4. "who [their role] at [place name], [neighbourhood], [city]".
 5. "Include" their place behind them, as it is in the place's own description: its counter, shelves, tools, room or view.
 6. "Colour from their place:" three or four colours named the way a painter would (terracotta, sage green, Naples yellow), chosen from the place picture's colours given as hex. Ignore greys and near-whites unless they are most of the picture.
 7. "Full of character. Tall portrait format."
 
-Nothing else: no words, signs or lettering requested, no posing, no rules (they are added after).`;
+Every person in the batch is a different, particular person, and side by side they must not look alike: vary build, face, hair, skin and clothes as the sheets allow, not the same handsome curly-haired man with an open shirt and a grin. No postcard versions of the city or the job (the nonna in a headscarf, the laughing pizzaiolo holding out a pizza, the moustached gondolier): draw the person the sheet describes, today. Josh's watch list: not too many moustaches (most men in a city have none); nobody waving; nobody drawn fat as a type (a heavy person only when the sheet makes them so, and drawn plainly); young women not all the same pretty profile with hair in a bun; cooks, bakers and pastry chefs not in toques and chef's whites (what real Italian cooks wear: a T-shirt or shirt and an apron, a cap or nothing).
+
+Never write the person's name in the prompt (it can come out as lettering, or as the face of a real person with that name). Nothing else: no words, signs or lettering requested, no posing, no rules (they are added after).`;
 
 const schema = {
   type: 'object',
@@ -88,11 +95,12 @@ for (const city of cities.filter((c) => !c.hidden && (!wanted.size || wanted.has
   if (!people.length) continue;
   const items = people.map(({ place, person }) => ({
     id: person!.id,
+    name: person!.name,
     gender: person!.gender,
     age: person!.age,
     role: person!.role,
     personality: person!.personality,
-    oldPrompt: person!.portraitPrompt,
+    here: person!.here,
     place: { name: place.name, kind: place.kind, neighbourhood: place.neighbourhood, description: place.imagePrompt },
     style: placeStyles[city.id] ?? '(no city style: use the medium of the place description)',
     placePictureColours: palette(place.id),
