@@ -102,6 +102,20 @@ What the walk also showed, not fixed (one learner, read by Claude):
 
 **Fixed on main 2026-11-15, not released (Josh: "do"):** the offer shows the last turn that isn't a goodbye or close, and the line under the cards is the offered step's own (content/<country>/language.ts → levelUp.steps). The previews that look the same or carry more English are answered by the steps becoming settings in code the same day (the preview is put together as the next step's turns are); not seen on a screen.
 
+### B35. The step 2 → 3 offer's preview is the same line, word for word
+Found 2026-11-15 evening by the levels check (docs/checks/levels.md), walking a test learner up every step on a local server with the local test database (scripts/walk-live.mjs, WALK_BASE local), once per country. Both walks failed the same check, "the offer's next line is the same as the line as said", at step 2 → 3 only:
+- Italy (main at 7f74c5f6, conversation 6971c2bb): Now and Next both "Un chilo, perfetto! One kilo, perfect! Le scelgo io, le più dolci. I'll pick them myself, the sweetest ones. Vuole anche i mandarini? Would you also like the mandarins?"
+- Mexico (main at 36c982de, conversation 342d1cc6): Now and Next both "Sí, los compañeros eran lo más importante. Yes, the coworkers were the most important thing. Cada día, antes de bajar, nos persignábamos juntos en esta iglesia. Every day, before going down, we crossed ourselves together in this church."
+
+Not chance: since steps became settings, step 2 echoes every sentence and step 3 echoes half and glosses half, and both echo the last sentence. On main at a6827f25 (lib/dialogue/pieces.ts → saySentences, both countries), step 3's rendering of a line equals step 2's for 500 of 1000 seeds on a two-sentence line and 118 of 1000 on three sentences. So B34's note that the settings answer the "Now and Next look the same" preview doesn't hold for this step. (The walks ran before 59e16f03, which changed which turn is previewed, not how it's rendered.) The other step previews showed a change (steps 3 → 4, 4 → 5, 5 → 6 take English off); step 6 → Intermediate and Intermediate → Advanced still change a word or two, as B34 says. **Status: open.**
+
+### B36. A Beginner turn that ends on a comment prints nothing (D7 undone by the step settings)
+Found 2026-11-15 evening by the levels check, playing each step through POST /v1/turn on a local server (local test database, the hidden stepper). D7 (dialogue-plan.md, done d18ac92b): a comment's last line is printed and said by the question's ladder, as a question's is. Every comment turn at steps 1–4 came back with no printed line (question absent), while question turns printed theirs:
+- Italy (a813487a): step 1 6c1b1f37 turn 2 ("…A Bologna l'espresso si beve al banco, in piedi, in un minuto. In Bologna espresso is drunk at the bar, standing, in a minute."); step 3 a76342be turns 2 and 3; step 4 d6fa3788 turn 2.
+- Mexico (36c982de): step 2 04dcfd55 turns 2 and 3 ("…Para mí, este teatro es como una casa. For me, this theatre is like a home.").
+
+Why: the step settings echo the turn's last sentence at steps 1–5, so the line always ends on its English, and lib/beginner-2.ts → lastLineOf returns nothing when the line ends in English ("Undefined when the line ends in English"); questionOf sets the echo aside, lastLineOf doesn't. On main at a6827f25 the same step 3 line gives nothing as a comment, and a printed question when its last sentence ends in "?". **Status: open.**
+
 ### Carried from progress.md's screen list (2026-11-12)
 - **B14.** "The city didn't show" (Valenciana, Don Isidro's place). Which screen, asked. **Open.**
 - **B15.** Doña Chuy's portrait is stereotypical; redraw. **Open.**
