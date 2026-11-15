@@ -27,7 +27,7 @@ const place = city.places.find((pl) => characterForPlace(city, pl))!;
 const c = characterForPlace(city, place)!;
 const prompt = rewritePrompt({ character: { name: c.name, role: c.role, city: c.city }, line: 'Buongiorno, un caffè?', nextStep: 2 });
 check(prompt.includes(c.name) && prompt.includes('Buongiorno, un caffè?') && prompt.includes(stepLevelText(2)) && !/\{\w+\}/.test(prompt) && /"line"/.test(prompt), `the rewrite prompt is filled (got ${[...prompt.matchAll(/\{(\w+)\}/g)].map((m) => m[1]).join(', ') || 'no placeholders'})`);
-check(stepLevelText(1) === stepLevelText(3) && stepLevelText(3) !== stepLevelText(4) && stepLevelText(4) !== stepLevelText(5) && stepLevelText(MAX_STEP + 5) === stepLevelText(MAX_STEP), 'steps 1 to 3 share a level text (2026-11-15a: the step is a setting in code), 4 and 5 have their own; past the top it is the top');
+check(stepLevelText(1) === stepLevelText(MAX_STEP) && SETTINGS.length === MAX_STEP && stepLevelText(MAX_STEP + 5) === stepLevelText(MAX_STEP), 'every step shares the level text and has a setting in code (2026-11-15a); past the top it is the top');
 // The preview of a step that is a setting is put together as that step's turns are
 {
   const written = { line: '{Ese es *el comal*. | That is *the griddle*.} {¿Le pongo *salsa*? | Do you want *salsa*?}', en: 'x' };

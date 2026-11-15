@@ -181,9 +181,9 @@ export function pickSetup(p: { conversationId?: string | null; turn: number; lea
 }
 
 /** The level text per cluster (scaffolding.md "Level: 1–3", from Beginner 1's stages S1–S3): clusters 1–2 S1, 3–4 S2, 5–6 S3 */
-/** Steps 1 to 3 share one level text (2026-11-15): the character writes every sentence in both languages and the
- *  step's setting says how each is said (lib/dialogue/pieces.ts → SETTINGS); steps 4 to 6 keep theirs for now */
-export const LEVEL_OF_CLUSTER = ['Level: sentences', 'Level: sentences', 'Level: sentences', 'Level: 2b', 'Level: 3', 'Level: 3'];
+/** Every step shares one level text (2026-11-15): the character writes every sentence in both languages and the
+ *  step's setting says how each is said (lib/dialogue/pieces.ts → SETTINGS) */
+export const LEVEL_OF_CLUSTER = ['Level: sentences', 'Level: sentences', 'Level: sentences', 'Level: sentences', 'Level: sentences', 'Level: sentences'];
 
 /** The cluster's level text, in the system prompt after the shared rules */
 export function levelText(cluster: Setup[] = CLUSTER_1): string {

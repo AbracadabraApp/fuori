@@ -43,13 +43,17 @@ export interface Setting {
 
 /**
  * Steps 1 to 3. Step 1: mostly English with a phrase of the language in it; step 2: half the sentences echoed
- * (the rows Josh named by ear, 2026-11-15: "60-70"); step 3: every sentence echoed. Steps 4 to 6 keep their level
- * text for now (their settings, with sentences said bare, come next).
+ * (the rows Josh named by ear, 2026-11-15: "60-70"); step 3: every sentence echoed. Past that the only way to more
+ * of the language is to take the English off sentences: step 4 says half of them bare, step 5 all but the question
+ * and the last sentence, step 6 everything (and offers no answers: lib/beginner-2.ts).
  */
 export const SETTINGS: (Setting | undefined)[] = [
   { ways: { mix: 0.7, english: 0.3 }, last: 'echo' },
   { ways: { echo: 0.5, mix: 0.5 }, last: 'echo' },
   { ways: { echo: 1 }, last: 'echo' },
+  { ways: { echo: 0.5, bare: 0.5 }, last: 'echo' },
+  { ways: { bare: 1 }, last: 'echo' },
+  { ways: { bare: 1 }, last: 'bare' },
 ];
 
 /** A number from 0 to 1 out of a string, the same every time (the turn's seed) */

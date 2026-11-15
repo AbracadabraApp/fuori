@@ -55,7 +55,7 @@ const day = new Date('2026-11-09T10:00:00Z');
 check(pickSetup({ turn: 0, learnerId: 'L', characterId: 'luisa', now: day }).id === pickSetup({ turn: 0, learnerId: 'L', characterId: 'luisa', now: day }).id, 'an opening is seeded by learner, place and day');
 
 for (const setup of RUNGS) check(setupText(setup).includes('This turn,') && !/\{\w+\}/.test(setupText(setup)), `${setup.block}: its line is read from scaffolding.md, filled`);
-check(setupText(CLUSTER_1[0], CLUSTER_1).startsWith('They are a beginner') && setupText(CLUSTERS[2][0], CLUSTERS[2]).startsWith('They are a beginner') && setupText(CLUSTERS[3][0], CLUSTERS[3]).startsWith('They follow a good deal') && setupText(CLUSTERS[5][0], CLUSTERS[5]).startsWith('Where they are now: finding their feet'), 'each cluster gets its level text before the setup: steps 1 to 3 the shared one (2026-11-15a, the steps as settings), then 2b and 3');
+check(setupText(CLUSTER_1[0], CLUSTER_1).startsWith('They are a beginner') && setupText(CLUSTERS[2][0], CLUSTERS[2]).startsWith('They are a beginner') && setupText(CLUSTERS[5][0], CLUSTERS[5]).startsWith('They are a beginner'), 'each cluster gets the level text before the setup: one for every step (2026-11-15a, the steps as settings)');
 check(!/Every turn has some English|When you first see them|explain something in English when it helps/.test(readFileSync(`content/${process.env.COUNTRY ?? 'it'}/prompts/scaffolding.md`, 'utf8')), 'the English lines added one per play are gone from the prompt');
 check(CLUSTERS.length === 6, 'six clusters');
 check(CLUSTERS.flat().every((r) => r.maxAnswers === 0 || (r.maxAnswers === 2 && r.english)), 'bubbles are two, always with English (Josh: reading Spanish you don\'t understand is coercive; one answer feels weird)');
@@ -113,7 +113,14 @@ check(cluster1Brief().startsWith(levelText(CLUSTER_1)) && /When you offer answer
   check(out.line.endsWith('¿Quiere una boleada? Do you want a shine?') && out.en === r.en && out.done === false, 'lineWithAnswers: the question\'s English after the line, en and done kept');
   check(lineWithAnswers({ line: 'Ecco.', en: 'Here.' }, RUNGS.find((x) => x.id === 'free')!).parts.length === 0, 'lineWithAnswers: a setup with no answers gives none');
 }
-check(levelText(CLUSTERS[1]) === levelText(CLUSTER_1) && /with its English right after it/.test(levelText(CLUSTERS[3])), 'steps 2 and 3 share step 1\'s level text (2026-11-15a: code says how much of each sentence is in the language); step 4 keeps the question with its English right after it');
+check(levelText(CLUSTERS[1]) === levelText(CLUSTER_1) && levelText(CLUSTERS[5]) === levelText(CLUSTER_1), 'every step shares step 1\'s level text (2026-11-15a: code says how much of each sentence is in the language)');
+{
+  const raw = '{Ese es *el comal*. | That is *the griddle*.} {Hoy hay *mole*. | Today there is *mole*.} {Está *caliente*. | It is *hot*.} {¿Le pongo *salsa*? | Do you want *salsa*?}';
+  const english = (line: string) => line.split(/\s+/).filter((w) => /^(that|is|the|griddle|today|there|it|hot|do|you|want)$/i.test(w.replace(/[^\p{L}]/gu, ''))).length;
+  const counts = SETTINGS.map((setting) => english(saySentences(raw, setting!, 0.42)));
+  check(SETTINGS.length === 6 && counts.every((n, i) => i === 0 || n <= counts[i - 1]) && counts[5] === 0 && counts[3] < counts[2] && counts[4] < counts[3], `from step 3 up, each step says less English of the same turn, and step 6 none (got ${counts.join(', ')})`);
+  check(saySentences(raw, SETTINGS[4]!, 0.42).endsWith('¿Le pongo salsa? Do you want salsa?') && saySentences(raw, SETTINGS[5]!, 0.42).endsWith('¿Le pongo salsa?'), 'the question keeps its English up to step 5 and loses it at step 6');
+}
 {
   const c = RUNGS.find((x) => x.id === 'comment')!;
   const r = lineWithAnswers({ line: 'Suba, suba. Yo boleo aquí desde hace cuarenta años.', en: "Come up. I've been shining shoes here for forty years.", answers: [{ text: 'Cuarenta años es mucho.', en: 'Forty years is a lot.' }, { text: '¿Le gusta su trabajo?', en: 'Do you like your work?' }] }, c, CLUSTER_1);

@@ -37,7 +37,9 @@ One real turn (Doña Juana's tamal, San Cristóbal) written at eleven levels, 0%
 - Against the game today (scripts/walk-live.mjs, both countries): step 1 is 19 to 22% Spanish, step 2 is 31 to 45%, step 3 is 25 to 34% (less than step 2), step 4 is 70 to 73%. So the range he named sits at step 2, and nothing between step 3 and step 4 covers 45 to 70%.
 - The automatic reader (tests/experiments/follow-dial.mts, six turns, Spanish alone) fell under half at about 30% of words, a little before Josh's 40.
 
-## Proposal: the steps as settings in code, not paragraphs (Claude, 2026-11-15; not decided, not built)
+## The steps as settings in code, not paragraphs (proposed and built 2026-11-15; on main, not released, not heard)
+
+**Built** (Josh: "all that in order"; a56303fb and the commit after it; card S1 in prompt-trials.md): all six steps share one level text and lib/dialogue/pieces.ts → SETTINGS says each sentence as English, mix, echo or bare. Measured share of the language by step, Mexico 31/40/46/57/66/87, Italy 31/38/44/51/69/92 (before: 19/31/25/70/63/95 and 22/45/34/73/76/95). The proposal as written:
 
 From Josh's questions the same afternoon ("if you were starting over with the same goals for dialogue in the game what would you still need to keep"; "what if you knew dialogue needed mix and echo"; "so what should we change"). The six Beginner steps are five paragraphs of level text (scaffolding.md, Level: 1 to 3), each written on its own; measured by the walk they don't run in order (above: step 3 under step 2 in both countries, step 5 under step 4 in Mexico, a 40-point leap from 3 to 4).
 

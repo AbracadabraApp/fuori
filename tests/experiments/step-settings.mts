@@ -18,7 +18,8 @@ const words = (s: string) => s.trim().split(/\s+/).filter(Boolean).length;
 
 type Row = { step: number; place: string; raw: string; line: string; en: string; setup: string; answers: number };
 const rows: Row[] = [];
-await Promise.all([1, 2, 3].flatMap((step) => places.map(async (place) => {
+const STEPS = (process.env.S1_STEPS ?? '1,2,3').split(',').map(Number);
+await Promise.all(STEPS.flatMap((step) => places.map(async (place) => {
   const cluster = CLUSTERS[step - 1];
   const setting = SETTINGS[step - 1]!;
   const character = characterForVisit(city, place)!;
@@ -37,7 +38,7 @@ await Promise.all([1, 2, 3].flatMap((step) => places.map(async (place) => {
   }
 })));
 
-for (const step of [1, 2, 3]) {
+for (const step of STEPS) {
   const rs = rows.filter((r) => r.step === step);
   const outside = (raw: string) => raw.replace(/\{[^{}]*\}/g, '').replace(/[\s.,!?…]/g, '');
   const kept = rs.filter((r) => /\{[^{}]*\|[^{}]*\}/.test(r.raw) && !outside(r.raw)).length;
