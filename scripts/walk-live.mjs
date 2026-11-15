@@ -52,7 +52,8 @@ async function turn(body) {
 }
 
 const words = (s) => (s ?? '').toLowerCase().normalize('NFD').replace(/\p{M}/gu, '').match(/[a-z']+/g) ?? [];
-const log = { country: mexico ? 'es-mx' : 'it', base, at: new Date().toISOString(), steps: [] };
+// The throwaway learner's id is kept with the run, so its test conversations can be found and deleted afterwards
+const log = { country: mexico ? 'es-mx' : 'it', base, at: new Date().toISOString(), learnerId: reg.learnerId ?? reg.learner?.id ?? reg.id ?? null, steps: [] };
 let p = 0;
 
 for (let step = 1; step <= STEPS + 1; step++) {
@@ -67,6 +68,7 @@ for (let step = 1; step <= STEPS + 1; step++) {
     let r = await turn({ cityId, placeId });
     if (!r.reply) { fail(`${name}: the visit at ${placeId} didn't open (${r.error?.code ?? 'no reply'}: ${r.error?.message ?? ''})`); continue; }
     const conv = r.reply.conversationId;
+    visit.conversationId = conv;
     visit.turns.push({ who: 'npc', ...r.reply });
     for (let i = 0; i < REPLIES && r.reply; i++) {
       const say = (r.reply.parts ?? []).find((x) => x.kind === 'answer')?.text ?? fallback;
@@ -124,7 +126,7 @@ if (out) {
   mkdirSync(out, { recursive: true });
   const stamp = log.at.slice(0, 16).replace(':', '');
   writeFileSync(join(out, `walk-${log.country}-${stamp}.json`), JSON.stringify(log, null, 1));
-  appendFileSync(join(out, 'walks.jsonl'), JSON.stringify({ at: log.at, country: log.country, problems, steps: log.steps.map((s) => ({ step: s.step, share: Math.round(100 * (s.share ?? 0)), words: s.wordsPerTurn, withAnswers: s.withAnswers, turns: s.turns })) }) + '\n');
+  appendFileSync(join(out, 'walks.jsonl'), JSON.stringify({ at: log.at, country: log.country, learnerId: log.learnerId, problems, steps: log.steps.map((s) => ({ step: s.step, share: Math.round(100 * (s.share ?? 0)), words: s.wordsPerTurn, withAnswers: s.withAnswers, turns: s.turns })) }) + '\n');
 }
 console.log(problems.length ? `walk ${log.country}: ${problems.length} problem(s)` : `walk ${log.country}: ok`);
 process.exit(problems.length ? 1 : 0);
