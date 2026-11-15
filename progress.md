@@ -1,5 +1,13 @@
 # Fuori Development Progress
 
+## 2026-11-14 (Mac mini, with Josh), night: the first real play on the day's release, read
+
+- **Josh played ten visits** after the release (eight Beginner: three in San Cristóbal, five in Italy; two Intermediate in Palermo). Read turn by turn from a private snapshot; the findings are in docs/bugs.md.
+- **Seen working:** every Beginner visit ended on the 8th turn with something for next time (B3); no yes/no pairs to speak of (2 of 56); the comment turn in every visit (13 turns); help that lasts, with Nunzio and Elena (B13); Elena opened on the market plan and Nunzio on the ginkgo.
+- **New bugs:** B27 an idiom turn calling the learner "gringo"; B28 reading an offered "what is…?" answer sets `hard` for the rest of the visit; B29 a word glossed with itself and glosses breaking English sentences (Josh in play: "you are repeating an Italian word with another Italian word"); B30 a plan for "tomorrow" that stays tomorrow. B4 (repeats) again; B25 recounted (10 of 56 pairs have a "what is X?" answer).
+- **Not met by anyone yet:** steps 4–6, the level-up past step 6, Ofelia, Isidro and Vale (the gender and name notes), the four northern cities, the questions-to-ask turn (0 of 72 turns).
+- **Also tonight, docs only:** dialogue-now.md rewritten from the code; the plan has D50 (a loop analysis of the game off every conversation) and D51 (the end-of-visit Learn sheet at a third); learner-loop.md has the evening's talk about memory. Tried offline, nothing in the game: a "shadow" page over 40 real visits (every mistake with where the line came from, the cultural point, a teacher's note). Josh: "i'll do more in the morning".
+
 ## 2026-11-14 (laptop, with Josh, evening): the dialogue to-do list worked; released; build 16 on TestFlight
 
 - **The list:** docs/dialogue-plan.md → To do (D1–D49), made from all the dialogue docs at Josh's ask ("no work list has been made"). Done today: D1 bids in the goodbye; D4; D6/D7 comment endings on the ladder; D10 steps 4–6 on the one-line reply; D12 help that lasts (a `hard` flag, a per-turn note); D13 idioms to guess at Beginner (lib/idioms.ts; the printed question opens with the saying); D15 count; D21 bubbles go on reply; D25 Help bubble; D27–D29, D32, D33 answer pairs; D34/D35 level moves (Intermediate, Advanced); D39; D40 speaker on answer bubbles (variant A). Each with a replay of Josh's visits in its commit and changelog.
