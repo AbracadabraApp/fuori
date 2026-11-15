@@ -290,7 +290,7 @@ export const genova: CityPantry = {
       role: "barista",
       placeId: 'bar-boccadasse',
       personality: ["cheerful", "maritime", "warm"],
-      portraitPrompt: "Pen and ink portrait on white paper of a young woman of Ecuadorian heritage, born in Genoa, a young woman with dark hair in a ponytail, bright smile, casual seaside style, minimal watercolor wash in soft blues, friendly eyes, fine line work",
+      portraitPrompt: "Soft pastel portrait on white paper, gentle watercolour texture, soft Mediterranean light. A 29-year-old young woman of Ecuadorian heritage, born in Genoa, with dark hair tied in a ponytail, a bright open smile, friendly eyes and a casual seaside top. Her hands are busy tamping coffee at the espresso machine, and she looks up from it straight at the viewer, as if someone she knows has just come in. She is Giulia, who is a barista at Bar Marinella, Boccadasse, Genova. Include behind her the bar's pale blue shutters, a weathered wooden door, potted geraniums, and outdoor tables looking over colourful fishing boats. Colour from their place: sand beige, powder blue, dusty ochre, soft terracotta. Full of character. Tall portrait format.",
       here: "You make coffee at this little bar in Boccadasse, where people stop for a quick espresso at the counter before an evening stroll by the colourful fishing houses and boats. Your background: born in Genoa to Ecuadorian parents.",
     },
     {
@@ -313,7 +313,7 @@ export const genova: CityPantry = {
       role: 'pasticciera',
       placeId: 'pasticceria-liquorosa',
       personality: ['artistic', 'refined'],
-      portraitPrompt: 'Pen and ink portrait on white paper of an elegant woman with hair in neat bun, delicate features, wearing white baker\'s coat, minimal watercolor in pale pinks, focused expression, precise linework',
+      portraitPrompt: "Soft pastel portrait on white paper, gentle watercolour texture, warm inviting glow. A 38-year-old woman with her hair in a neat bun, delicate features, a calm focused expression and a white baker's coat. Her hands are piping fine sugar decoration onto a small pastry, and she looks up from it straight at the viewer, as if someone she knows has just come in. She is Anna, who is a pasticciera at Pasticceria Liquorosa, Centro Storico, Genova. Include behind her the historic shop's glass display cases filled with pandolce genovese, elegant gilt details, and the pale green and cream interior. Colour from their place: cream, parchment sand, muted gold, tan ochre. Full of character. Tall portrait format.",
       here: 'You work in this historic Genoese pastry shop, where pandolce genovese is the pride of the house.',
     },
     {
@@ -336,7 +336,7 @@ export const genova: CityPantry = {
       role: 'venditore',
       placeId: 'mercato-orientale',
       personality: ["boisterous", "shrewd", "talkative"],
-      portraitPrompt: 'Pen and ink portrait on white paper of an animated older man with animated expression, weathered hands, flat cap, vest over shirt, minimal watercolor in earthy tones, twinkling eyes, expressive hatching',
+      portraitPrompt: "Soft pastel portrait on white paper, gentle watercolour texture, dappled light filtering through glass. A 63-year-old man with an animated, talkative face, twinkling eyes, weathered hands, a flat cap and a vest over his shirt. His hands are weighing a bunch of tomatoes on a stall scale, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is Paolo, who is a venditore at Mercato Orientale, Centro Storico, Genova. Include behind him the grand covered market's iron and glass roof, abundant produce stalls, hanging herbs and heaps of colourful vegetables. Colour from their place: warm sand, olive green, raw umber, terracotta. Full of character. Tall portrait format.",
       here: "You sell produce at a stall in the Mercato Orientale, a market in Genoa. The market is housed in a former cloister. Genoese pesto is made with small-leaved basil from Prà, on the western edge of the city, which has a protected designation. Pesto is traditionally pounded in a marble mortar with a wooden pestle. Pine nuts and Parmigiano or pecorino go in too.",
     },
     {
@@ -370,7 +370,7 @@ export const genova: CityPantry = {
       role: 'cuoco',
       placeId: 'trattoria-rosmarino',
       personality: ['nostalgic'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a 58-year-old Genoese man with thinning grey hair and a tired, kind face, in a dark apron over a shirt with the sleeves rolled, working basil in a marble mortar with a wooden pestle, looking down at it, minimal watercolor wash in basil green and warm red, detailed linework. The subject is a man.',
+      portraitPrompt: "Soft pastel portrait on white paper, gentle watercolour texture, warm homey light. A 58-year-old Genoese man with thinning grey hair and a tired, kind face, wearing a dark apron over a shirt with the sleeves rolled. His hands are grinding basil in a marble mortar with a wooden pestle, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is Giovanni, who is a cuoco at Trattoria dal Rosmarino, Caruggi, Genova. Include behind him the trattoria's stone archways, hanging copper pots, vintage wine bottles and tables with red and white checkered tablecloths. Colour from their place: cream, burnt umber, warm tan, russet brown. Full of character. Tall portrait format.",
       here: "You cook Genoese food in the caruggi: trofie al pesto (made in a mortar), pansoti with walnut sauce, and farinata, and you'll say why pesto never goes near a blender.",
     },
     {
@@ -426,7 +426,7 @@ export const genova: CityPantry = {
       role: 'guardiano',
       placeId: 'lanterna',
       personality: ['solitary', 'maritime', 'philosophical'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a weathered man with salt-and-pepper beard, sailor\'s sweater, far-seeing eyes, minimal watercolor in sea blues, contemplative expression, textured shading',
+      portraitPrompt: "Soft pastel portrait on white paper, gentle watercolour texture, bright coastal light. A 55-year-old weathered man with a salt-and-pepper beard, far-seeing eyes, a contemplative expression and a thick sailor's sweater. His hands are coiling a length of rope at the foot of the tower, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is Andrea, who is a guardiano at La Lanterna, Centro Storico, Genova. Include behind him the iconic lighthouse tower with its striped stone pattern rising against the coastal sky, and a few seabirds in the distance. Colour from their place: pale sky blue, sea blue, slate blue, warm stone. Full of character. Tall portrait format.",
       here: "You keep La Lanterna, Genoa's lighthouse at the harbour mouth, one of the oldest working lighthouses in the world and the symbol of the city.",
     },
     {
@@ -471,7 +471,7 @@ export const genova: CityPantry = {
       role: 'artista di strada',
       placeId: 'piazza-ferrari',
       personality: ["creative", "free-spirited", "curious"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a young woman with artistic style, paint-stained fingers, bohemian clothing, sketchbook under arm, minimal watercolor in multiple colors, lively eyes, expressive strokes',
+      portraitPrompt: "Soft pastel portrait on white paper, gentle watercolour texture, clear open daylight. A 26-year-old young woman with lively curious eyes, loose bohemian clothing, paint-stained fingers and a sketchbook tucked under her arm. Her hands are sketching with a stick of colour on a page, and she looks up from it straight at the viewer, as if someone she knows has just come in. She is Beatrice, who is an artista di strada at Piazza De Ferrari, Centro Storico, Genova. Include behind her the grand circular plaza with its central fountain, jets of water and the elegant buildings around it. Colour from their place: stone beige, pale water blue, deep bronze, charcoal green. Full of character. Tall portrait format.",
       here: "You draw and paint in Piazza De Ferrari, the city's civic heart, with its big fountain and the grand buildings around it, where Genoese meet and cross all day.",
     },
     {
@@ -483,7 +483,7 @@ export const genova: CityPantry = {
       role: 'pescatore',
       placeId: 'piazza-boccadasse',
       personality: ['taciturn', 'weather-wise'],
-      portraitPrompt: 'Pen and ink portrait on white paper of an old fisherman with deeply lined face, captain\'s cap, thick sweater, rope-scarred hands, minimal watercolor in faded blues, distant gaze, heavy crosshatching. The subject is a man.',
+      portraitPrompt: "Soft pastel portrait on white paper, gentle watercolour texture, soft seaside light. A 71-year-old fisherman with a deeply lined face, a captain's cap, a thick sweater and rope-scarred hands, his expression taciturn and weather-wise. His hands are mending a fishing net, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is Diego, who is a pescatore at Piazzetta di Boccadasse, Boccadasse, Genova. Include behind him the tiny village square with its peach, pink and yellow houses, boats drawn up on the pebble beach and laundry hanging above. Colour from their place: sand, peach pink, pale sea blue, ochre. Full of character. Tall portrait format.",
       here: "You fish from Boccadasse, the old fishing village at the edge of Genoa, with its coloured houses around a little beach, as your father did.",
     },
     {
@@ -540,7 +540,7 @@ export const genova: CityPantry = {
       role: 'bigliettaio',
       placeId: 'stazione-principe',
       personality: ["punctual", "authoritative", "helpful"],
-      portraitPrompt: "Pen and ink portrait on white paper of a uniformed station master with cap, whistle on chain, clipboard, minimal watercolor in railway blues, alert expression, precise hatching. The subject is a man.",
+      portraitPrompt: "Soft pastel portrait on white paper, gentle watercolour texture, warm station lighting. A 52-year-old man with an alert, authoritative but helpful expression, wearing a uniform with a cap and a whistle on a chain. His hands are tearing a ticket from a pad and checking a clipboard, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is Stefano, who is a bigliettaio at Stazione di Genova Principe, Centro Storico, Genova. Include behind him the grand railway station's art nouveau details, vaulted iron and glass ceiling, and platforms stretching back into the distance. Colour from their place: warm taupe, sandy cream, umber brown, dusty mauve. Full of character. Tall portrait format.",
       here: "You sell tickets at Genova Piazza Principe, where travellers arrive for the Riviera, Milan and Turin, and many head straight down to the port and the old town. Your background: from Tirana, here 22 years.",
     },
     {
@@ -575,7 +575,7 @@ export const genova: CityPantry = {
       role: 'salumiere',
       placeId: 'salumeria-fontana',
       personality: ["generous", "proud", "funny"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a 64-year-old man with a bald crown, grey hair at the sides and a short grey moustache, in a white apron over a blue shirt, wrapping a piece of cheese in paper at the counter, glancing up over his glasses, minimal watercolor wash in muted reds and cream, detailed linework. The subject is a man.',
+      portraitPrompt: "Soft pastel portrait on white paper, gentle watercolour texture, warm aromatic light. A 64-year-old man with a bald crown, grey hair at the sides, a short grey moustache and glasses, wearing a white apron over a blue shirt, his expression generous and amused. His hands are wrapping a piece of cheese in paper at the marble counter, and he looks up over his glasses straight at the viewer, as if someone he knows has just come in. He is Ezio, who is a salumiere at Salumeria Fontana, Caruggi, Genova. Include behind him hanging salami, wheels of cheese, jars of pesto and the marble counter. Colour from their place: dark umber, burnt sienna, olive green, golden ochre. Full of character. Tall portrait format.",
       here: "You run this delicatessen in the caruggi, selling cured meats, cheeses, jars of pesto genovese and acciughe sotto sale, the salted anchovies Liguria is known for.",
     },
     {
@@ -587,7 +587,7 @@ export const genova: CityPantry = {
       role: "custode di palazzo",
       placeId: 'via-garibaldi',
       personality: ['distinguished'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a Genoese man of 66 with white hair, a neat dark jacket and a lanyard with a museum pass, standing at the door of a frescoed palazzo, calm and courteous expression. Minimal watercolor wash in stone grays and warm ochre. No lettering anywhere in the picture. The subject is a man.',
+      portraitPrompt: "Soft pastel portrait on white paper, gentle watercolour texture, warm light on old stone. A 66-year-old Genoese man with white hair, a neat dark jacket, a lanyard with a museum pass and a calm, courteous expression. His hands are turning the pages of a visitors' register on a small table, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is Professor Casella, who is a custode di palazzo at Via Garibaldi - Palazzi dei Rolli, Centro Storico, Genova. Include behind him a grand doorway of a Renaissance palace, its ornate stone facade and the line of aristocratic buildings along the street. Colour from their place: warm stone, pale ochre, rose sand, soft umber. Full of character. Tall portrait format.",
       here: "You work as an attendant in one of the Palazzi dei Rolli on Via Garibaldi, the street of palaces where Genoa's noble families once lodged visiting kings and popes.",
     },
     {

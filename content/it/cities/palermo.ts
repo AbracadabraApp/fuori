@@ -350,7 +350,7 @@ export const palermo: CityPantry = {
       role: "barista",
       placeId: 'bar-alba',
       personality: ["quick-witted", "opinionated", "warm"],
-      portraitPrompt: "Pen and ink portrait on white paper of a young Sicilian woman with dark hair tied back, strong features, small gold hoop earrings, wearing white shirt and black vest, knowing expression, minimal watercolor wash in warm sepias, detailed cross-hatching",
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, loose hand-drawn line, strong dry Sicilian sunlight. A young woman of 26 with dark hair tied back, strong features, small gold hoop earrings, a white shirt under a black vest, and a knowing, warm half-smile. She is setting a small coffee cup on its saucer with quick, practised hands, and she looks up from it straight at the viewer, as if someone she knows has just come in. She is a barista who works at Bar Alba, Libertà, Palermo. Include behind her the long glass counter of arancine, cannoli, cassata and brioche with granita, men in jackets drinking coffee at the counter, and through the window a wide street with Liberty-era palazzi and palm trees. Colour from their place: raw umber, honey sandstone, Naples yellow, raw sienna, a touch of cerulean blue. Full of character. Tall portrait format.",
       here: "You work the counter at Bar Alba, an old pastry bar in the Libertà district of Palermo, known for its cannoli, cassata and arancine. In Palermo the brioche col gelato is a classic, eaten at the bar or on the go, and the brioche is the soft round one with the little \"tuppo\" on top. Arancine are named in the feminine here, unlike in Catania. You grew up in the Vucciria.",
     },
     {
@@ -484,7 +484,7 @@ export const palermo: CityPantry = {
       role: 'fruttivendolo',
       placeId: 'mercato-ballaro',
       personality: ["loud", "charismatic", "shrewd"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a 48-year-old Sicilian man with sun-browned skin, short dark hair going grey and a few days of stubble, in a faded polo shirt, stacking aubergines on a market stall and calling a price over his shoulder to the street, minimal watercolor wash in aubergine purple and leaf green, detailed linework. The subject is a man.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, loose hand-drawn line, strong dry Sicilian sunlight. A man of 48 with sun-browned skin, short dark hair going grey, a few days of stubble, and a faded polo shirt, his mouth open mid-call and a shrewd glint in his eyes. He is stacking glossy aubergines on his stall, and he looks up from them straight at the viewer, as if someone he knows has just come in. He is a fruttivendolo at Mercato di Ballarò, Ballarò, Palermo. Include behind him the narrow street of stalls under red, white and blue tarps and big umbrellas, swordfish and tuna on ice, piles of lemons, oranges, aubergines and long green squash, and the majolica-tiled dome of the Carmine church rising above. Colour from their place: sandstone buff, yellow ochre, burnt umber, cobalt blue, soft sky blue. Full of character. Tall portrait format.",
       here: "You sell fruit and vegetables at Ballarò, one of Palermo's oldest street markets, shouting your prices in the traditional vendor's call. You push aubergines for caponata and tenerumi for the summer soup.",
     },
     {
@@ -518,7 +518,7 @@ export const palermo: CityPantry = {
       role: 'cuoca e proprietaria',
       placeId: 'trattoria-ai-cascinari',
       personality: ['motherly'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a 59-year-old Sicilian woman with short dark hair streaked with grey and reading glasses on a chain, in a plain dark apron over a blouse, cleaning wild fennel at a kitchen table, looking down at her hands, minimal watercolor wash in fennel green and warm ochre, detailed linework. The subject is a woman.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, loose hand-drawn line, strong dry Sicilian sunlight. A woman of 59 with short dark hair streaked with grey, reading glasses on a chain, a plain dark apron over a blouse, and a soft, motherly expression. She is cleaning a bundle of wild fennel in her hands, and she looks up from it straight at the viewer, as if someone she knows has just come in. She is the cook and owner at Trattoria ai Cascinari, Ballarò, Palermo. Include behind her the open door of the simple family trattoria, paper tablecloths and old photos on the walls inside, neighbours passing on the quiet old street, and laundry hanging on the iron balconies above. Colour from their place: warm sand, yellow ochre, burnt umber, peachy terracotta, faded blue. Full of character. Tall portrait format.",
       here: "You run Trattoria ai Cascinari, a trattoria of Palermo home cooking. Your menu has pasta con le sarde, made with wild fennel, raisins and pine nuts; anelletti al forno, ring pasta baked with ragù; caponata, sweet-and-sour aubergine with celery, olives and capers; and swordfish involtini, since swordfish is a spring and summer fish in Sicily.",
     },
     {
@@ -530,7 +530,7 @@ export const palermo: CityPantry = {
       role: 'chef e proprietario',
       placeId: 'osteria-ballarò',
       personality: ['gregarious', 'wine-loving'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a 44-year-old Sicilian man with short dark hair and a few days of stubble, in a plain white chef jacket with the sleeves pushed up and no hat, shaping a rice ball in his cupped hands at a kitchen counter, concentrating, a slight smile, minimal watercolor wash in saffron and burgundy, detailed linework. The subject is a man.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, loose hand-drawn line, strong dry Sicilian sunlight. A man of 44 with short dark hair and a few days of stubble, a plain white chef jacket with the sleeves pushed up, no hat, and a slight, easy smile. He is shaping a rice ball in his cupped hands, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is the chef and owner at Osteria Ballarò, Ballarò, Palermo. Include behind him the tall arched doorways of the old stone palazzo open on a room with stone vaulted ceilings, wooden tables with diners talking, and a few tables outside on the paving. Colour from their place: stone beige, yellow ochre, burnt umber, apricot, dusty blue. Full of character. Tall portrait format.",
       here: "You cook Palermo's classics: arancine (with an e, here in Palermo), sarde a beccafico, busiate with pesto trapanese, and cassata to finish, and you correct anyone who says arancini.",
     },
     {
@@ -575,7 +575,7 @@ export const palermo: CityPantry = {
       role: "sarta del teatro",
       placeId: 'teatro-massimo',
       personality: ["local", "lively", "opera lover"],
-      portraitPrompt: 'Pen and ink portrait on white paper of an elegant Sicilian woman with expressive hands, cultured appearance, speaking gestures, professional attire, minimal watercolor wash in operatic golds, dramatic rendering',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, loose hand-drawn line, strong dry Sicilian sunlight. A woman of 41 with dark hair pinned up, a tape measure around her neck, a pincushion on her wrist, a dark cardigan, and a lively, expressive face. She is hemming a heavy gold-trimmed costume with quick stitches, and she looks up from it straight at the viewer, as if someone she knows has just come in. She is the theatre seamstress at Teatro Massimo, Politeama, Palermo. Include behind her the grand neoclassical opera house with its columned facade and monumental steps, pigeons in the piazza, and tourists taking photos. Colour from their place: pale sandstone, warm buff, soft taupe, honey gold, a touch of dusty grey-lilac. Full of character. Tall portrait format.",
       here: "You sew costumes in the workshop of the Teatro Massimo, the largest opera house in Italy, opened in 1897.",
     },
     {
@@ -609,7 +609,7 @@ export const palermo: CityPantry = {
       role: 'giardiniere',
       placeId: 'giardino-garibaldi',
       personality: ["loves-trees", "philosophical", "patient"],
-      portraitPrompt: 'Pen and ink portrait on white paper of an elderly gardener with weathered face, flat cap, pruning shears, surrounded by nature, minimal watercolor wash in garden greens, gentle strokes. The subject is a man.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, loose hand-drawn line, strong dry Sicilian sunlight. A man of 76 with a weathered, deeply lined face, a flat cap, rolled shirtsleeves, a worn work waistcoat, and a patient, thoughtful expression. He is pruning a small branch with his shears, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is a gardener at Giardino Garibaldi, Kalsa, Palermo. Include behind him the enormous old fig tree with aerial roots spreading like a cave, wrought-iron railings, old men on benches, children playing, and the stone palazzi of Piazza Marina around the garden. Colour from their place: olive umber, golden ochre, burnt umber, raw sienna, soft cerulean. Full of character. Tall portrait format.",
       here: "You look after the Giardino Garibaldi in Piazza Marina, in the Kalsa quarter of Palermo. Its giant old Ficus magnolioides trees, brought from Australia in the 19th century, have aerial roots that hang down and spread into trunks like a cave. Palazzo Chiaramonte Steri, once the seat of the Inquisition, faces the square, and the Vucciria market lies a few streets away. Old men play cards on the benches.",
     },
     {
@@ -621,7 +621,7 @@ export const palermo: CityPantry = {
       role: "artista di strada",
       placeId: 'piazza-pretoria',
       personality: ["artistic", "romantic", "curious"],
-      portraitPrompt: "Pen and ink portrait on white paper of a young woman of Tunisian heritage, born in Palermo, a young Palermitan artist of Tunisian descent with sketchbook, bohemian style, creative expression, paint on fingers, minimal watercolor wash in artistic tones, expressive lines. The subject is a woman.",
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, loose hand-drawn line, strong dry Sicilian sunlight. A woman of 27 of Tunisian heritage, born in Palermo, with dark wavy hair loosely pinned up, silver rings, a loose linen shirt, paint on her fingers, and a curious, dreamy expression. She is sketching in her sketchbook with a pencil, and she looks up from it straight at the viewer, as if someone she knows has just come in. She is a street artist at Piazza Pretoria, Kalsa, Palermo. Include behind her the great sixteenth-century fountain in tiers of white marble with its many statues, the balustrade, the town hall palazzo, the church of Santa Caterina at the side, and people sitting on the steps. Colour from their place: umber, sandstone, honey, ultramarine, Naples yellow, burnt sienna. Full of character. Tall portrait format.",
       here: "You sketch the great marble fountain of Piazza Pretoria, which Palermitans call the Fontana della Vergogna, the fountain of shame, because of its nude statues. You draw passers-by and tourists from the steps. Your background: born in Palermo to Tunisian parents.",
     },
     {
@@ -633,7 +633,7 @@ export const palermo: CityPantry = {
       role: 'fotografo',
       placeId: 'quattro-canti',
       personality: ["artistic", "observant", "unhurried"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a photographer with camera around neck, observant eyes, casual professional style, capturing moments, minimal watercolor wash in photo gray tones, detailed work. The subject is a man.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, loose hand-drawn line, strong dry Sicilian sunlight. A man of 54 with close-cropped greying hair, lines around his eyes, a light linen jacket, a camera hanging around his neck, and a calm, observant expression. He is adjusting the lens of his camera with unhurried fingers, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is a photographer at Quattro Canti, Vucciria, Palermo. Include behind him the baroque intersection with its four ornate corner buildings, fountains and statues, pedestrians crossing, and traffic passing. Colour from their place: bone white, warm stone grey, pale sand, soft umber, a hint of faded ochre. Full of character. Tall portrait format.",
       here: "You photograph Palermo, and you often come to the Quattro Canti, the baroque crossroads at the heart of the old city, whose four corner facades show the four seasons, four Spanish kings and four of the city's patron saints.",
     },
     {
@@ -656,7 +656,7 @@ export const palermo: CityPantry = {
       role: 'libraia',
       placeId: 'libreria-del-mare',
       personality: ["literary", "thoughtful", "recommendative"],
-      portraitPrompt: 'Pen and ink portrait on white paper of an intellectual Sicilian woman with reading glasses, book in hand, warm smile, surrounded by literature, minimal watercolor wash in book tones, thoughtful detail',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, loose hand-drawn line, strong dry Sicilian sunlight. A woman of 47 with reading glasses, dark hair with a few silver strands loosely clipped up, a knitted cardigan, and a warm, thoughtful smile. She is wrapping a book in paper with careful hands, and she looks up from it straight at the viewer, as if someone she knows has just come in. She is a bookseller at Libreria del Mare, Kalsa, Palermo. Include behind her the wooden shelves inside the small bookshop on the ground floor of a tall old palazzo, books about the sea and Sicily in the window, and the old harbour and fishing boats glimpsed at the end of the street. Colour from their place: stone beige, dark umber, honey, sea blue, Naples yellow, burnt sienna. Full of character. Tall portrait format.",
       here: "You run a small bookshop of books about the sea and Sicily, close to the old harbour of the Cala. Sicilian writers have a shelf of their own.",
     },
     {
@@ -690,7 +690,7 @@ export const palermo: CityPantry = {
       role: 'bigliettaio',
       placeId: 'stazione-centrale',
       personality: ["helpful", "multilingual", "organized"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a railway official in uniform, helpful expression, cap and badge, professional bearing, minimal watercolor wash in railway blues, structured lines. The subject is a man.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, loose hand-drawn line, strong dry Sicilian sunlight. A man of 43 with short neat dark hair, a tidy railway uniform with a cap and a small badge, and a helpful, attentive expression. He is stamping a ticket and sliding it across the ticket-window counter, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is a ticket clerk at Stazione Centrale, Oreto-Stazione, Palermo. Include behind him the long neoclassical stone front of Palermo Centrale with its columns and clock seen across Piazza Giulio Cesare, buses, taxis and scooters, travellers with suitcases, and palm trees. Colour from their place: warm stone beige, dark umber, raw sienna, honey, ultramarine blue, soft sky blue. Full of character. Tall portrait format.",
       here: "You sell tickets at Palermo Centrale, where trains leave for Messina, Catania and Agrigento. The station opened in 1886 at the southern end of Via Roma. In Palermo the street-food arancina is round, named for the orange, and often filled with ragù; in Catania it's cone-shaped and called arancino. The station stands in the Oreto-Stazione area of the city.",
     },
     {
@@ -702,7 +702,7 @@ export const palermo: CityPantry = {
       role: "restauratore di mosaici",
       placeId: 'cappella-palatina',
       personality: ["patient", "meticulous", "in love with his work"],
-      portraitPrompt: 'Pen and ink portrait on white paper of an art historian with glasses, gesturing to architecture, professorial appearance, enthusiastic expression, minimal watercolor wash in golden tones, academic detail. The subject is a man.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, loose hand-drawn line, soft sunlit glow. A man of 56 with glasses, thinning grey-brown hair, a dust-flecked work coat over a shirt, and an absorbed, quietly happy expression. He is setting a tiny gold tessera into a mosaic panel with a pair of tweezers, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is a mosaic restorer at Cappella Palatina, Kalsa, Palermo. Include behind him the jewel-like chapel interior with its golden Byzantine mosaics, Arab-Norman details, light filtering through small windows, and visitors gazing up in awe. Colour from their place: antique gold, warm sand, ochre, umber, muted slate blue. Full of character. Tall portrait format.",
       here: "You restore the mosaics of the Cappella Palatina, the royal chapel of Palermo's Norman kings, where gold Byzantine mosaics shine under a painted wooden ceiling made by Arab craftsmen.",
     },
     {
@@ -736,7 +736,7 @@ export const palermo: CityPantry = {
       role: 'meusaro',
       placeId: 'pani-ca-meusa-ballaro',
       personality: ['loud', 'theatrical', 'proud of Palermo'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a 63-year-old Sicilian man with a weathered face, a white cap and a white apron, bent over a wide pan, lifting meat with a long fork onto a sesame roll held in his other hand, eyes on the roll, minimal watercolor wash in warm golden and lemon tones, detailed linework. The subject is a man.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, loose hand-drawn line, strong dry Sicilian sunlight. A man of 63 with a weathered face, a white cap and a white apron, a broad theatrical grin, and bright, proud eyes. He is lifting meat from a pan with a long fork onto a sesame roll held in his other hand, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is a meusaro at Pani ca' meusa, Ballarò, Ballarò, Palermo. Include behind him the big round pan simmering in lard, soft sesame rolls piled beside it, grated caciocavallo and ricotta, shoppers waiting among crates of lemons and striped tarps. Colour from their place: deep umber, raw sienna, burnt umber, golden tan, lemon yellow, a spot of cobalt blue. Full of character. Tall portrait format.",
       here: 'You sell pani ca\' meusa at Ballarò market from a pan of spleen simmering in lard, the way your father did: you shout to the crowd and ask everyone "schietta o maritata?", plain with lemon, or "married" with ricotta and caciocavallo. You also do panelle.',
     },
   ],

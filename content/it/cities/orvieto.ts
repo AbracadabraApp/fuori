@@ -368,7 +368,7 @@ export const orvieto: CityPantry = {
       role: 'bigliettaio',
       placeId: 'stazione-orvieto',
       personality: ["jovial", "punctual"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a 58-year-old man with a round face and a white moustache, in a railway uniform jacket and no cap, behind a ticket window, sliding a ticket under the glass and looking at the traveller, minimal sepia watercolor wash, detailed linework. The subject is a man.',
+      portraitPrompt: "Soft pastel sketch on white paper, textured, warm morning light. A 58-year-old man with a round, jovial face and a white moustache, wearing a railway uniform jacket and no cap, a friendly, punctual air. His hands slide a ticket under the glass of the ticket window, and he looks up from it straight at the viewer, as if someone he knows has just come in. Portrait of a man who is the bigliettaio at Stazione di Orvieto, Orvieto Scalo, Orvieto. Include behind him the station at the foot of the tufa cliff, the red funicular car waiting across the square, and travellers with bags. Colour from their place: warm sand, rose beige, khaki olive, soft grey. Full of character. Tall portrait format.",
       here: "You sell train tickets at the station in Orvieto Scalo, the modern district at the foot of the cliff. The old town stands on top of a tall block of volcanic tuff. The funicolare climbs from beside the station to Piazza Cahen, at the edge of the old town. Up there are the Duomo and cellars where Orvieto Classico white wine is made.",
     },
     {
@@ -380,7 +380,7 @@ export const orvieto: CityPantry = {
       role: "barista",
       placeId: 'caffe-montanucci',
       personality: ["quick", "cheerful", "local"],
-      portraitPrompt: "Pen and ink portrait on white paper of a young woman of Moroccan heritage, born in Orvieto, a young woman in her mid twenties with dark hair tied back, a hint of a smile, wearing a white shirt and black vest, confident knowing expression, minimal sepia watercolor wash, skilled hands suggesting years of coffee craft, detailed expressive features",
+      portraitPrompt: "Soft pastel sketch on white paper, textured, warm amber morning light streaming through tall windows. A 24-year-old woman of Moroccan heritage, born in Orvieto, with dark hair tied back, a white shirt and black vest, a quick cheerful hint of a smile and a confident, knowing expression. Her skilled hands tamp coffee into a portafilter, and she looks up from it straight at the viewer, as if someone she knows has just come in. Portrait of a woman who is the barista at Caffè Montanucci, Centro Storico, Orvieto. Include behind her the long marble counter, the gleaming copper vintage espresso machine, rows of pastries under glass domes, and textured walls of faded elegance. Colour from their place: warm taupe, sand, raw umber, walnut brown. Full of character. Tall portrait format.",
       here: "You make coffee and serve pastries at this café in the old town, where people stop for an espresso before the sunset passeggiata along Corso Cavour. Your background: born in Orvieto to Moroccan parents.",
     },
     {
@@ -547,7 +547,7 @@ export const orvieto: CityPantry = {
       role: 'fruttivendolo',
       placeId: 'mercato-coperto',
       personality: ["boisterous", "humorous", "generous"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a 71-year-old man with a lined face, white stubble and a flat cap, in a cardigan over a shirt, scooping lentils into a paper bag at a market stall, smiling at something a customer has said, minimal green watercolor wash, detailed linework. The subject is a man.',
+      portraitPrompt: "Soft pastel sketch on white paper, textured, warm amber light filtering down from above. A 71-year-old man with a deeply lined face, white stubble and a flat cap, wearing a cardigan over a shirt, a broad boisterous smile as if he has just made a joke. His hands scoop lentils from a sack into a paper bag, and he looks up from it straight at the viewer, as if someone he knows has just come in. Portrait of a man who is the fruttivendolo at Mercato Coperto, Centro Storico, Orvieto. Include behind him the covered market hall with its iron and glass roof, stalls piled with fresh vegetables, hanging salumi and wheels of cheese. Colour from their place: sand, burnt umber, ochre, terracotta. Full of character. Tall portrait format.",
       here: "You have sold fruit and vegetables here all your life, and you joke with every customer. You can tell them what is good this week, from local vegetables to Castelluccio lentils.",
     },
     {
@@ -581,7 +581,7 @@ export const orvieto: CityPantry = {
       role: 'chef',
       placeId: 'ristorante-la-grotta',
       personality: ['refined', 'creative', 'ambitious'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a distinguished chef with chef whites, salt-and-pepper hair, intense creative gaze, minimal gray watercolor wash, culinary mastery suggested, detailed refined features. The subject is a man.',
+      portraitPrompt: "Soft pastel sketch on white paper, textured, warm golden candlelight. A 52-year-old man with salt-and-pepper hair, wearing crisp chef whites, with an intense, creative gaze and a composed, refined face. His hands set the final touch on a plated dish, wiping the rim with a cloth, and he looks up from it straight at the viewer, as if someone he knows has just come in. Portrait of a man who is the chef at Ristorante La Grotta, Duomo, Orvieto. Include behind him the restaurant carved into tufa caves, its vaulted stone ceilings, tables with white tablecloths and flickering candles, and textured ancient rock walls. Colour from their place: stone beige, tufa tan, antique gold, umber. Full of character. Tall portrait format.",
       here: "You cook Umbrian food in a restaurant carved into the tufa under Orvieto: umbrichelli (thick hand-rolled pasta), wild boar, and porchetta.",
     },
     {
@@ -637,7 +637,7 @@ export const orvieto: CityPantry = {
       role: 'sacerdote',
       placeId: 'duomo-orvieto',
       personality: ['gentle', 'art-lover'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a distinguished priest with kind eyes, clerical collar, intellectual bearing, peaceful expression, minimal gold watercolor wash, spiritual depth, detailed contemplative face',
+      portraitPrompt: "Soft pastel sketch on white paper, textured, bright sunlight catching gold. A 64-year-old man with kind eyes and a peaceful, gentle expression, wearing a black clerical shirt with a white collar, an intellectual bearing in his face. His hands hold a small worn book, one finger keeping his place between the pages, and he looks up from it straight at the viewer, as if someone he knows has just come in. Portrait of a man who is the sacerdote at Duomo di Orvieto, Duomo, Orvieto. Include behind him the Gothic cathedral façade with its golden mosaics, the intricate rose window, striped marble columns and touches of blue mosaic. Colour from their place: cream, wheat, antique gold, bistre brown. Full of character. Tall portrait format.",
       here: "You're a priest at the Duomo of Orvieto, with its golden façade on the square; inside, the Cappella di San Brizio has Signorelli's frescoes of the end of the world.",
     },
     {
@@ -649,7 +649,7 @@ export const orvieto: CityPantry = {
       role: "custode del pozzo",
       placeId: 'pozzo-san-patrizio',
       personality: ['enthusiastic', 'local'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a young man with expressive gestures, bright eyes, casual professional attire, engaging smile, minimal stone-gray watercolor wash, passion for history, detailed animated features',
+      portraitPrompt: "Soft pastel sketch on white paper, textured, natural daylight filtering down from above. A 28-year-old man with bright eyes, short dark hair and an engaging smile, in a casual open-collared shirt and a jacket, his face lively and enthusiastic. One hand rests on the stone parapet while the other holds a small torch, gesturing as he explains, and he looks up from it straight at the viewer, as if someone he knows has just come in. Portrait of a man who is the custode del pozzo at Pozzo di San Patrizio, Centro Storico, Orvieto. Include behind him the great well with its double helix staircases spiralling down into shadow and textured ancient stonework. Colour from their place: stone ochre, sand, dark olive umber, khaki. Full of character. Tall portrait format.",
       here: "You were born in Orvieto and look after the Pozzo di San Patrizio, the deep well dug for a pope in the 1500s, with two spiral staircases that never meet.",
     },
     {
@@ -672,7 +672,7 @@ export const orvieto: CityPantry = {
       role: 'giardiniere',
       placeId: 'giardini-pubblici',
       personality: ["gentle", "patient", "observant"],
-      portraitPrompt: 'Pen and ink portrait on white paper of an elderly man with sun hat, weathered kind face, soil on hands, peaceful demeanor, minimal green watercolor wash, decades tending gardens, detailed wise gentle features',
+      portraitPrompt: "Soft pastel sketch on white paper, textured, peaceful afternoon light. A 76-year-old man with a weathered, kind face, a worn sun hat, a patient, observant gaze and a calm expression, soil on his hands and sleeves. His hands press a young seedling into dark earth, and he looks up from it straight at the viewer, as if someone he knows has just come in. Portrait of a man who is the giardiniere at Giardini Pubblici, Porta Maggiore, Orvieto. Include behind him the public gardens on the cliff edge, pine trees, wooden benches, children playing and the panoramic valley stretching to the distance. Colour from their place: sage green, olive, deep moss green, straw yellow. Full of character. Tall portrait format.",
       here: "You look after the gardens at the edge of the tufa cliff, where families and walkers come for the view over the valley. You know every tree and bench.",
     },
     {
@@ -684,7 +684,7 @@ export const orvieto: CityPantry = {
       role: 'artista di strada',
       placeId: 'piazza-del-popolo',
       personality: ["bohemian", "social", "curious"],
-      portraitPrompt: 'Pen and ink portrait on white paper of an artistic woman with flowing scarf, paint on fingers, observant eyes, creative spirit, minimal ochre watercolor wash, sketching the piazza, detailed expressive artistic features',
+      portraitPrompt: "Soft pastel sketch on white paper, textured, warm golden afternoon light. A 43-year-old woman with wavy hair pinned loosely, a flowing scarf at her neck, paint on her fingertips, curious observant eyes and a relaxed, sociable smile. Her hands draw with a stick of pastel on a sketchpad, and she looks up from it straight at the viewer, as if someone she knows has just come in. Portrait of a woman who is the artista di strada at Piazza del Popolo, Centro Storico, Orvieto. Include behind her the main square, the tower of the Palazzo del Popolo, outdoor café tables and textured medieval stone walls in ochre and cream. Colour from their place: buff cream, ochre, honey gold, raw sienna. Full of character. Tall portrait format.",
       here: "You sketch the Palazzo del Popolo and the people in the piazza. This is where Orvietani meet for an aperitivo before dinner, and where the Thursday market is held.",
     },
     {
@@ -752,7 +752,7 @@ export const orvieto: CityPantry = {
       role: "maestra ceramista",
       placeId: 'bottega-michelangeli',
       personality: ["artistic", "patient", "proud"],
-      portraitPrompt: "Pen and ink portrait on white paper of an artisan woman with clay on hands, focused intense expression, artist smock, minimal cobalt watercolor wash, centuries of tradition, detailed skilled craftswoman features. The subject is a woman.",
+      portraitPrompt: "Soft pastel sketch on white paper, textured, warm workshop light. A 46-year-old woman with dark hair tied up, an apron-style smock dusted with clay, a focused, intense expression softening into quiet pride, clay on her forearms. Her hands shape the wall of a bowl on a potter's wheel, and she looks up from it straight at the viewer, as if someone she knows has just come in. Portrait of a woman who is the maestra ceramista at La Bottega della Maiolica, Duomo, Orvieto. Include behind her shelves of hand-painted majolica pottery with colourful Orvieto designs, a potter's wheel, and textured clay and glazes. Colour from their place: sand, raw sienna, terracotta buff, dusty cobalt blue. Full of character. Tall portrait format.",
       here: "You make and sell hand-painted ceramics in your workshop near the Duomo. Orvieto has made pottery since the Middle Ages, and you can show customers how it is done. Your background: Orvietana, from a family of ceramists.",
     },
     {
@@ -775,7 +775,7 @@ export const orvieto: CityPantry = {
       role: 'regista teatrale',
       placeId: 'teatro-mancinelli',
       personality: ['visionary'],
-      portraitPrompt: 'Pen and ink portrait on white paper of an elegant woman with expressive gestures, artistic bearing, intense creative eyes, minimal crimson watercolor wash, theatrical spirit, detailed passionate animated features',
+      portraitPrompt: "Soft pastel sketch on white paper, textured, warm evening light of a theatre. A 34-year-old woman with dark hair swept back, elegant in a fitted dark jacket, with intense, creative eyes and a visionary, passionate expression. One hand holds a marked-up script, the other is caught mid-gesture, and she looks up from it straight at the viewer, as if someone she knows has just come in. Portrait of a woman who is the regista teatrale at Teatro Luigi Mancinelli, Centro Storico, Orvieto. Include behind her the 19th-century theatre interior with red velvet seats, ornate balconies and crystal chandeliers, rich with textured baroque detail. Colour from their place: dusty rose, oxblood, crimson, pale tan. Full of character. Tall portrait format.",
       here: "You direct plays at the Teatro Mancinelli, Orvieto's nineteenth-century theatre, named after Luigi Mancinelli, the conductor born in the town.",
     },
   ],

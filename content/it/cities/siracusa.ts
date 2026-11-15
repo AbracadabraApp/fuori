@@ -309,7 +309,7 @@ export const siracusa: CityPantry = {
       role: "proprietaria",
       placeId: 'bar-dolce-vita',
       personality: ["cheerful", "quick", "proud of her family's bar"],
-      portraitPrompt: "Pen and ink portrait on white paper of a young Sicilian woman with dark wavy hair tied back, warm smile lines around eyes, wearing crisp white shirt, minimal watercolor wash of warm skin tones and dark hair, Mediterranean features, expressive and welcoming, white background",
+      portraitPrompt: "Soft pastel portrait on white textured paper, blended chalky strokes, warm morning sunlight. A cheerful Sicilian woman of 29 with dark wavy hair tied back, warm smile lines around her eyes, a crisp white shirt, her expression quick and welcoming. Her hands wipe down a marble counter and set out a small coffee cup, and she looks up from it straight at the viewer, as if someone she knows has just come in. She is the one who is the owner at Bar Dolce Vita, Ortigia, Siracusa. Include behind her the marble counter, open doors with turquoise shutters, outdoor tables with wicker chairs, a pot of jasmine by the entrance and Sicilian ceramic tiles. Colour from their place: cream, sandy ochre, raw umber, Naples yellow and sea-green sage. Full of character. Tall portrait format.",
       here: "You run your family's corner bar in Ortigia, where people stop for espresso at the marble counter. In summer you serve the classic Siracusa breakfast of granita with a soft brioche. Your background: Syracusan, took over her father's bar.",
     },
     {
@@ -366,7 +366,7 @@ export const siracusa: CityPantry = {
       role: 'venditore',
       placeId: 'mercato-ortigia',
       personality: ["boisterous", "honest", "humorous"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a robust man with weathered face, loud voice suggested in expression, work cap, open collar, minimal watercolor wash of sun-bronzed skin, laugh lines, energetic and charismatic, white background',
+      portraitPrompt: "Soft pastel portrait on white textured paper, blended chalky strokes, bright morning light. A robust man of 58 with a weathered, sun-bronzed face, deep laugh lines, a work cap and an open collar, his expression boisterous and honest, mouth ready with a joke. His hands drop blood oranges into a paper bag on the scale, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is the one who is the vendor at Mercato di Ortigia, Ortigia, Siracusa. Include behind him pyramids of blood oranges and lemons, fresh fish on ice, striped awnings and ancient stone buildings. Colour from their place: ochre, terracotta, slate blue, olive brown and a pale rose beige. Full of character. Tall portrait format.",
       here: "You sell at the morning market in Ortigia, where Siracusans come early for fresh fish like swordfish and tuna. Your stall also has blood oranges, Siracusa lemons and capers, and you shout your prices over the crowd.",
     },
     {
@@ -400,7 +400,7 @@ export const siracusa: CityPantry = {
       role: 'chef',
       placeId: 'ristorante-dioniso',
       personality: [],
-      portraitPrompt: 'Pen and ink portrait on white paper of a distinguished man with graying temples, intense dark eyes, chef\'s jacket, minimal watercolor wash of Mediterranean complexion, determined expression, culinary artist, white background',
+      portraitPrompt: "Soft pastel portrait on white textured paper, blended chalky strokes, soft candlelit glow. A man of 44 with graying temples, intense dark eyes and a Mediterranean complexion, wearing a white chef's jacket, his expression determined and focused. His hands set the last leaf on a plated dish, steadying the rim of the plate, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is the one who is the chef at Ristorante Dioniso, Neapolis, Siracusa. Include behind him tables with white tablecloths and elegant place settings, arched windows looking onto the ancient Greek theater, and wine bottles lying in wooden racks. Colour from their place: ivory, warm sand, terracotta brown and deep umber. Full of character. Tall portrait format.",
       here: "You cook the food of Siracusa: spaghetti with sea urchin, swordfish, pasta with sardines, and Siracusa lemons in everything, near the Greek theatre.",
     },
     {
@@ -456,7 +456,7 @@ export const siracusa: CityPantry = {
       role: "ragazza di Ortigia",
       placeId: 'fonte-aretusa',
       personality: ["lively", "proud of Ortigia", "sea-loving"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a young woman with animated expression, modern glasses, professional scarf, minimal watercolor wash of bright eyes and natural beauty, intelligent and engaging, white background',
+      portraitPrompt: "Soft pastel portrait on white textured paper, blended chalky strokes, bright seaside light. A lively woman of 29 with an animated expression, bright eyes, modern glasses and a light scarf at her neck, a smile ready to tell you about her town. Her hands rest on a stone balustrade, one turning a green papyrus stem between her fingers, and she looks up straight at the viewer, as if someone she knows has just come in. She is the one who is a girl of Ortigia at Fonte Aretusa, Ortigia, Siracusa. Include behind her the freshwater spring with papyrus plants in clear water, ducks swimming, ancient walls and the sparkling sea beyond. Colour from their place: sage green, pale straw, celadon, moss green and verdigris. Full of character. Tall portrait format.",
       here: "You grew up on Ortigia in a fisherman's family, and you come to the Fonte Aretusa, the freshwater spring by the sea where papyrus grows, named after the nymph of the Greek legend.",
     },
     {
@@ -468,7 +468,7 @@ export const siracusa: CityPantry = {
       role: 'archeologo',
       placeId: 'parco-archeologico',
       personality: [],
-      portraitPrompt: 'Pen and ink portrait on white paper of a distinguished scholar with sun hat suggested, weathered face from outdoor work, thoughtful expression, minimal watercolor wash of tanned skin and gray-streaked hair, dedicated and knowledgeable, white background. The subject is a man.',
+      portraitPrompt: "Soft pastel portrait on white textured paper, blended chalky strokes, brilliant sunlight under a blue sky. A man of 53 with a weathered, tanned face from outdoor work, gray-streaked hair under a worn sun hat, a thoughtful expression. His hands brush dust from a fragment of limestone with a small soft brush, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is the one who is the archaeologist at Parco Archeologico della Neapolis, Neapolis, Siracusa. Include behind him the ancient Greek theater carved into the hillside, limestone seats descending toward the stage, wildflowers between the stones and Mediterranean pines. Colour from their place: limestone beige, pale stone, sky blue, olive green, pine green and straw yellow. Full of character. Tall portrait format.",
       here: "You're an archaeologist at the Parco Archeologico della Neapolis, with the Greek theatre cut into the rock and the cave called the Ear of Dionysius.",
     },
     {
@@ -480,7 +480,7 @@ export const siracusa: CityPantry = {
       role: 'pensionato',
       placeId: 'piazza-archimede',
       personality: ["sociable", "opinionated", "local fixture"],
-      portraitPrompt: 'Pen and ink portrait on white paper of an elderly gentleman with dignified bearing, newspaper under arm suggested, flat cap, minimal watercolor wash of weathered face and white hair, knowing smile, community elder, white background',
+      portraitPrompt: "Soft pastel portrait on white textured paper, blended chalky strokes, warm dappled light. A man of 72 with white hair under a flat cap, a weathered face and a knowing smile, his bearing dignified, a folded newspaper tucked under one arm. His hands rest on the top of a walking stick, ready to comment on the news, and he looks up straight at the viewer, as if someone he knows has just come in. He is the one who is a retiree at Piazza Archimede, Ortigia, Siracusa. Include behind him the baroque square with the fountain of Artemis, cafe tables outdoors, historic palazzos with ornate balconies, pigeons and shade from palm trees. Colour from their place: sandy ochre, raw umber, burnt sienna, Naples yellow and dusty sky blue. Full of character. Tall portrait format.",
       here: "You spend your mornings in Piazza Archimede in Ortigia, by the fountain of Artemis, reading the paper and chatting with passers-by. In the evening you often come back for the aperitivo and the passeggiata.",
     },
     {
@@ -548,7 +548,7 @@ export const siracusa: CityPantry = {
       role: 'bigliettaio',
       placeId: 'stazione-siracusa',
       personality: ["punctual", "helpful", "efficient"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a uniformed station worker with official cap, whistle suggested, organized expression, minimal watercolor wash of professional bearing, dependable face, railway authority, white background. The subject is a man.',
+      portraitPrompt: "Soft pastel portrait on white textured paper, blended chalky strokes, soft clear daylight. A man of 50 in a neat uniform and official cap, with a dependable, organized face and a calm, helpful expression. His hands slide a stamped ticket across the counter through the window, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is the one who is the ticket clerk at Stazione di Siracusa, Tyche, Siracusa. Include behind him the ticket windows, the arrivals and departures board, platforms with trains waiting, travelers with luggage and palm trees outside. Colour from their place: cream, dusty rose, pale taupe and warm sand. Full of character. Tall portrait format.",
       here: "You sell tickets at Siracusa station, the end of the line, where travelers arrive for Ortigia and the Greek theatre. You help people with platforms and the way to the old island.",
     },
     {
@@ -560,7 +560,7 @@ export const siracusa: CityPantry = {
       role: "pensionato",
       placeId: 'antica-giudecca',
       personality: ["preservationist", "gentle", "proud of Ortigia"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a distinguished historian with thoughtful eyes, slight stoop from study, minimal watercolor wash of intellectual face and gray beard, ancient knowledge, passionate keeper of memory, white background',
+      portraitPrompt: "Soft pastel portrait on white textured paper, blended chalky strokes, warm light and soft shadow. A man of 64 with a gray beard, thoughtful eyes and a slight stoop from years of study, his expression gentle and quietly proud. His hands hold an old folded map and a small notebook, a finger marking a page, and he looks up from them straight at the viewer, as if someone he knows has just come in. He is the one who is a retiree at Antica Giudecca, Ortigia, Siracusa. Include behind him narrow medieval streets, stone archways, glimpses of courtyards, weathered doorways, hanging laundry and potted geraniums. Colour from their place: honey stone, raw umber, warm sand and Naples yellow. Full of character. Tall portrait format.",
       here: "You grew up in the Giudecca, Ortigia's old Jewish quarter, where a Jewish ritual bath was found deep under a palazzo; you walk its narrow streets every morning.",
     },
     {
@@ -572,7 +572,7 @@ export const siracusa: CityPantry = {
       role: "artigiana",
       placeId: 'laboratorio-papiro',
       personality: ["skilled", "patient teacher", "proud of the craft"],
-      portraitPrompt: "Pen and ink portrait on white paper of a craftswoman with work-worn hands, concentration in eyes, artisan apron, minimal watercolor wash of weathered face, ancient craft in expression, dedicated and masterful, white background. The subject is a woman.",
+      portraitPrompt: "Soft pastel portrait on white textured paper, blended chalky strokes, soft warm light. A woman of 63 with a weathered face, concentrated eyes and a patient expression, wearing a work apron, her work-worn hands showing years of craft. Her hands press and smooth thin strips of papyrus on the bench, and she looks up from it straight at the viewer, as if someone she knows has just come in. She is the one who is the craftswoman at Laboratorio del Papiro, Ortigia, Siracusa. Include behind her papyrus plants drying, old paper-making tools, finished papyrus scrolls with painted scenes and a workbench of natural materials. Colour from their place: parchment, khaki ochre, olive green, raw umber and Naples yellow. Full of character. Tall portrait format.",
       here: "You make paper from papyrus in your workshop in Ortigia and show visitors how the stalks are cut, pressed and dried. Papyrus grows in Siracusa, at the Fonte Aretusa and along the Ciane river, and you paint scenes on the finished sheets. Your background: Syracusan, learned the craft in the city.",
     },
     {
@@ -651,7 +651,7 @@ export const siracusa: CityPantry = {
       role: 'casaro',
       placeId: 'caseificio-borderi',
       personality: ['showman', 'generous', 'talks while he works'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a 45-year-old man with curly grey-flecked hair and a big grin, in a white T-shirt and apron, holding up a fat panino with cheese spilling out, minimal watercolor wash in lemon yellow and sea blue, detailed linework.',
+      portraitPrompt: "Soft pastel portrait on white textured paper, blended chalky strokes, bright Sicilian morning light. A man of 45 with curly grey-flecked hair and a big grin, in a white T-shirt and apron, his expression generous and full of showmanship. His hands build a huge panino, spooning ricotta and pistachio pesto onto it, cheese spilling out, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is the one who is the cheesemonger at Caseificio Borderi, Ortigia, Siracusa. Include behind him the shop counter, crates of lemons, wheels of caciocavallo and smoked mozzarella, and sun-dried tomatoes. Colour from their place: cream, lemon ochre, burnt sienna and warm sand. Full of character. Tall portrait format.",
       here: "You make panini to order at your family's cheese shop in the Ortigia market, a caseificio since 1936: you ask what people like, then build the sandwich in front of them with ricotta, smoked mozzarella, caciocavallo and pistachio pesto, and hand out tastes to the queue.",
     },
   ],

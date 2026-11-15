@@ -315,7 +315,7 @@ export const lecce: CityPantry = {
       role: "proprietaria",
       placeId: 'caffe-alvino',
       personality: ["orgogliosa", "accogliente", "elegante"],
-      portraitPrompt: "Pen and ink portrait on white paper of a distinguished woman in her late fifties with silver hair, warm smile, wearing crisp white blouse and vest, confident bearing, kind eyes with crow's feet, minimal watercolor wash in warm sepia tones, detailed crosshatching, proud proprietor of historic café",
+      portraitPrompt: "Soft pastel sketch on white paper, morning light filtering through. A woman of 58 with silver hair, a warm smile, kind eyes with crow's feet, a crisp white blouse and vest, her bearing upright and confident. She is setting an espresso cup on a saucer at the marble counter, and she looks up from it straight at the viewer, as if someone she knows has just come in. She is the owner at Caffè Alvino, Piazza Sant'Oronzo, Lecce. Include behind her the marble counter lined with espresso cups, a delicate awning, and the sunny piazza with wicker chairs and honey-coloured baroque stone. Colour from their place: pale sand, buff, cream, raw sienna. Full of character. Tall portrait format.",
       here: "You run Caffè Alvino, a café on Piazza Sant'Oronzo in Lecce, where you come from a family of café owners. Breakfast here is a pasticciotto, the town's custard-filled shortcrust pastry, often eaten warm. The local caffè in ghiaccio is espresso over ice, often with almond milk, and people drink it even in winter. The piazza has a Roman amphitheatre and a column topped by Saint Oronzo, the patron saint. In the evening the piazza fills for a long aperitivo with rustici.",
     },
     {
@@ -372,7 +372,7 @@ export const lecce: CityPantry = {
       role: 'venditore',
       placeId: 'mercato-comunale',
       personality: ["chiassoso", "simpatico", "generoso"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a 54-year-old man with salt-and-pepper hair and a tanned, lined face, in a work shirt with the sleeves rolled up, tying bunches of wild chicory at a vegetable stall, head tilted as he listens to a customer, minimal watercolor wash in earthy terracotta and chicory green, detailed linework. The subject is a man.',
+      portraitPrompt: "Soft pastel sketch on white paper, soft dappled light coming through market awnings. A man of 54 with salt-and-pepper hair, a tanned, lined face and a broad, generous grin, wearing a work shirt with the sleeves rolled up. He is tying a bunch of wild chicory with twine at his stall, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is the vegetable seller at Mercato Comunale, Piazza Sant'Oronzo, Lecce. Include behind him the vegetable stalls overflowing with produce, strings of hanging peppers, wooden crates of tomatoes and the covered market roof. Colour from their place: pale sand, olive ochre, terracotta, yellow ochre. Full of character. Tall portrait format.",
       here: "You sell vegetables in Lecce, including the wild chicory and dried fava beans that go into fave e cicoria. This is a Salento staple: a fava purée served with bitter boiled greens and local olive oil. Wild chicory is a winter green. Piazza Sant'Oronzo holds a half-uncovered Roman amphitheatre. Its tall column, topped by the patron saint Oronzo, once stood at the end of the Appian Way in Brindisi.",
     },
     {
@@ -406,7 +406,7 @@ export const lecce: CityPantry = {
       role: 'chef e proprietario',
       placeId: 'alle-due-corti',
       personality: ['perfezionista', 'carismatico'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a charismatic chef in his forties with intense eyes, confident smile, chef whites, distinguished salt-and-pepper beard, artistic hands, passionate expression, minimal watercolor wash in warm amber, detailed sophisticated line work, culinary artist',
+      portraitPrompt: "Soft pastel sketch on white paper, soft golden evening light with warm, inviting shadows. A man of 44 with intense eyes, a confident smile and a distinguished salt-and-pepper beard, wearing chef whites. He is wiping the rim of a plated dish with a cloth, his hands steady and precise, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is the chef and owner at Alle Due Corti, Centro Storico, Lecce. Include behind him the courtyard with stone arches, candlelit tables with white linens, and vines climbing the ancient honey-coloured walls. Colour from their place: Naples yellow, buff, raw sienna, raw umber. Full of character. Tall portrait format.",
       here: "You run Alle Due Corti, a restaurant in Lecce's centro storico that serves the peasant cooking of Salento. Ciceri e tria is chickpeas with pasta, part of it fried until crisp. Orecchiette come with turnip tops (cime di rapa). Pittule are fried dough balls, plain or filled. Lecce is known for its honey-coloured baroque stone, soft limestone called pietra leccese, and the menu uses Salentino dialect names.",
     },
     {
@@ -440,7 +440,7 @@ export const lecce: CityPantry = {
       role: 'friggitore',
       placeId: 'rusticceria-santa-croce',
       personality: ['veloce', 'allegro'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a young fry cook in his thirties with quick smile, energetic expression, wearing casual work clothes and cap, confident stance, flour-dusted, happy in his element, minimal watercolor wash in golden yellow, detailed dynamic line work, street food master',
+      portraitPrompt: "Soft pastel sketch on white paper, warm yellow and amber light with a little steam in the air. A man of 33 with a quick smile and an energetic, happy expression, wearing casual work clothes and a cap, flour dusted on his forearms. He is lifting golden panzerotti from the fryer into a paper bag, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is the fry cook at Rusticceria Santa Croce, Santa Croce, Lecce. Include behind him the counter with golden fried rustico pastries in the display, and baskets stacked with pucce and panzerotti. Colour from their place: pale Naples yellow, yellow ochre, raw sienna, cream. Full of character. Tall portrait format.",
       here: "You work the fryer at this rusticceria near Santa Croce, making Lecce's rustico, puff pastry filled with mozzarella, béchamel and tomato, and pittule, little balls of fried dough.",
     },
     {
@@ -452,7 +452,7 @@ export const lecce: CityPantry = {
       role: 'sacerdote',
       placeId: "basilica-santa-croce-lecce",
       personality: ['contemplativo', 'colto', 'disponibile'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a priest in his fifties with gentle scholarly features, wire-rim glasses, serene expression, wearing simple clerical collar, wisdom in eyes, minimal watercolor wash in subtle grey and cream, detailed reverent line work, spiritual guide',
+      portraitPrompt: "Soft pastel sketch on white paper, late afternoon golden light picking out the carved stone. A priest of 56 with gentle, scholarly features, short greying hair, wire-rim glasses and a serene expression, wearing a simple black clerical shirt with a white collar. He is turning the pages of a worn book held in both hands, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is the priest at Basilica di Santa Croce, Santa Croce, Lecce. Include behind him the elaborately carved stone facade, the intricate rose window and the sculptural details in honey-coloured Lecce stone. Colour from their place: pale honey, raw sienna, Naples yellow, raw umber. Full of character. Tall portrait format.",
       here: "You're a priest at the Basilica di Santa Croce, the masterpiece of Lecce's baroque, its façade carved in the soft local stone, pietra leccese.",
     },
     {
@@ -475,7 +475,7 @@ export const lecce: CityPantry = {
       role: "custode del museo",
       placeId: 'museo-faggiano',
       personality: ["storyteller", "enthusiastic", "curious"],
-      portraitPrompt: 'Pen and ink portrait on white paper of an enthusiastic museum owner in his sixties with animated features, bright curious eyes, gesturing hands, casual but dignified dress, storyteller expression, minimal watercolor wash in warm earth tones, detailed expressive line work, accidental archaeologist',
+      portraitPrompt: "Soft pastel sketch on white paper, warm amber light in a textured, mysterious interior. A man of 62 with animated features, bright, curious eyes and an eager half-smile, wearing a casual open-collared shirt and a dark waistcoat. He is holding up a small pottery shard between his fingers to show it, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is the museum custodian at Museo Faggiano, Centro Storico, Lecce. Include behind him the small museum entrance, stone archways revealing archaeological layers, and weathered limestone walls showing centuries of history. Colour from their place: pale sand, raw umber, burnt umber, warm taupe. Full of character. Tall portrait format.",
       here: "You work at the Museo Faggiano, a house in the old town where the family, digging to fix a broken drain in 2001, found layers of Lecce's past beneath it: Messapian tombs, a Roman granary, signs of the Knights Templar.",
     },
     {
@@ -498,7 +498,7 @@ export const lecce: CityPantry = {
       role: 'musicista di strada',
       placeId: 'piazza-santoronzo',
       personality: ["espressivo", "bohémien", "ottimista"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a street musician in his forties with expressive face, guitar strap visible, artistic temperament in features, warm eyes, slight beard, casual bohemian style, minimal watercolor wash in warm golden tones, detailed romantic line work, soul of the piazza',
+      portraitPrompt: "Soft pastel sketch on white paper, late afternoon golden light on pale stone. A man of 45 with an expressive face, a slight beard, warm eyes and an easy, optimistic smile, wearing a loose casual shirt with a guitar strap across his shoulder. He is fingerpicking a guitar, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is the street musician at Piazza Sant'Oronzo, Piazza Sant'Oronzo, Lecce. Include behind him the Roman amphitheatre ruins, the tall column of Sant'Oronzo, cafés with outdoor seating and warm limestone paving. Colour from their place: warm white, pale stone, warm grey, soft taupe. Full of character. Tall portrait format.",
       here: "You play your guitar in the piazza, next to the Roman amphitheater and the column of Sant'Oronzo, the city's patron saint, while people linger over an aperitivo in the evening.",
     },
     {
@@ -566,7 +566,7 @@ export const lecce: CityPantry = {
       role: 'bigliettaio',
       placeId: 'stazione-lecce',
       personality: ["puntuale", "serio", "rispettoso"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a railway station master in his fifties with dignified bearing, uniform cap, serious but kind face, mustache, watch chain visible, responsible expression, minimal watercolor wash in railway blue and grey, detailed authoritative line work, keeper of schedules',
+      portraitPrompt: "Soft pastel sketch on white paper, soft morning light in warm neutral tones. A man of 55 with a dignified bearing, a neat moustache, and a serious but kind face, wearing a uniform jacket and cap with a watch chain showing at his waistcoat. He is tearing a ticket from a book at his window, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is the ticket clerk at Stazione di Lecce, Stazione, Lecce. Include behind him the arched station hall, the departure boards, travellers with luggage and the textured platforms beyond. Colour from their place: charcoal, warm grey, raw umber, pale stone. Full of character. Tall portrait format.",
       here: "You sell tickets at the station near Porta Napoli, where trains from Bari and the rest of Puglia arrive, and you help travelers with platforms and tell them where to find a rustico leccese for the road.",
     },
     {
@@ -578,7 +578,7 @@ export const lecce: CityPantry = {
       role: 'artigiano di cartapesta',
       placeId: 'bottega-cartapesta',
       personality: ["creativo", "paziente", "fiero"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a master papier-mâché artisan in his sixties with paint-stained hands, gentle eyes, slight beard, wearing smock, surrounded by his creations, contemplative expression, minimal watercolor wash in warm ochre and blue, detailed artistic line work, keeper of tradition',
+      portraitPrompt: "Soft pastel sketch on white paper, golden afternoon light in a colourful, textured workshop. A man of 64 with gentle eyes, a slight beard and a calm, contemplative expression, wearing a work smock, his hands stained with paint. He is painting the face of a saint figure with a fine brush, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is the papier-mâché artisan at Bottega della Cartapesta, Santa Croce, Lecce. Include behind him the papier-mâché figures and saints, works in progress, and the workbench with paints and tools scattered across it. Colour from their place: yellow ochre, pale Naples yellow, burnt umber, raw sienna. Full of character. Tall portrait format.",
       here: "You shape and paint papier-mâché figures in your workshop near the Basilica di Santa Croce. Lecce's cartapesta grew up in the 1600s and 1700s, when churches wanted saints lighter and cheaper than stone or wood. The figures are built from paper, straw and glue over a frame of wood and wire. Sant'Oronzo, the city's patron saint, is celebrated every August, and his figure is among those you make.",
     },
     {
@@ -601,7 +601,7 @@ export const lecce: CityPantry = {
       role: "studentessa di archeologia",
       placeId: 'anfiteatro-romano',
       personality: ["enthusiastic", "curious", "talkative"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a young tour guide in her thirties with animated expression, gesturing hands, intelligent eyes, wearing professional but approachable clothing, warm smile, historical knowledge in bearing, minimal watercolor wash in warm stone tones, detailed engaging line work, storyteller',
+      portraitPrompt: "Soft pastel sketch on white paper, warm afternoon sun on ancient stone. A woman of 34 with an animated expression, intelligent eyes and a warm, talkative smile, wearing a simple linen shirt and practical trousers, a notebook tucked under her arm. She is brushing dust from a piece of carved stone with a small soft brush, and she looks up from it straight at the viewer, as if someone she knows has just come in. She is the archaeology student at Anfiteatro Romano, Piazza Sant'Oronzo, Lecce. Include behind her the partially excavated amphitheatre, weathered stone seats and columns, and the modern city built around the ruins. Colour from their place: pale sand, warm buff, yellow ochre, raw umber. Full of character. Tall portrait format.",
       here: "You study archaeology at the University of Salento and spend your lunch break on the edge of Piazza Sant'Oronzo, above the Roman amphitheatre that lay buried under the square until it was found in 1901.",
     },
     {

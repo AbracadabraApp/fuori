@@ -367,7 +367,7 @@ export const milano: CityPantry = {
       role: 'pasticciera',
       placeId: 'pasticceria-marchesi',
       personality: ["elegant", "precise", "proud"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a sophisticated woman in her 40s with hair in an elegant chignon, wearing a pristine white chef\'s jacket, subtle makeup, knowing smile, minimal watercolor wash in mint green and gold tones, detailed linework, refined professional presence',
+      portraitPrompt: "Soft pastel sketch on white paper, textured, warm morning light streaming through tall windows. A woman of 42 with dark hair in a neat chignon, fine features, light makeup, a pristine white chef's jacket, and a knowing, quietly proud smile. Her hands are setting a small pastel-pink pastry onto a tray with precise fingertips, and she looks up from it straight at the viewer, as if someone she knows has just come in. She is the pasticciera at Pasticceria Marchesi, Brera, Milano. Include behind her the mint green wall, vintage glass display cases filled with pastel-coloured pastries, a marble counter and tall arched windows with Art Nouveau curves. Colour from their place: warm cream, pale sage green, sand, muted ochre. Full of character. Tall portrait format.",
       here: "You work in this old Milanese pasticceria, well known for its pastries and its panettone, and in the morning you serve cappuccino with a brioche to customers at the counter.",
     },
     {
@@ -379,7 +379,7 @@ export const milano: CityPantry = {
       role: 'barista',
       placeId: 'bar-rita',
       personality: ["friendly", "local character", "talkative"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a warm middle-aged man with salt-and-pepper hair, laugh lines, wearing casual button-down shirt, friendly open expression, minimal watercolor wash in warm ochre and red tones, detailed expressive features',
+      portraitPrompt: "Soft pastel sketch on white paper, textured, warm morning sunlight reflecting off canal water. A man of 55 with salt-and-pepper hair, deep laugh lines, a weathered tanned face, a casual button-down shirt with the sleeves rolled, and a wide, open, talkative grin. His hands are tamping coffee into the portafilter of an espresso machine, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is the barista at Bar Rita, Navigli, Milano. Include behind him the vintage espresso machine seen through the window, weathered ochre walls, flower boxes, and outdoor tables under red umbrellas beside the canal. Colour from their place: pale ochre, burnt umber, raw sienna, warm sand. Full of character. Tall portrait format.",
       here: "You run the counter of this bar on the Naviglio Grande, the canal that once carried marble for the Duomo by boat. At six the bar fills for aperitivo, the Milanese way: a drink with something to eat. The Negroni sbagliato was invented in Milan, with sparkling wine where the gin should be.",
     },
     {
@@ -512,7 +512,7 @@ export const milano: CityPantry = {
       role: "venditore",
       placeId: 'mercato-di-porta-romana',
       personality: ["boisterous", "humorous", "savvy"],
-      portraitPrompt: "Pen and ink portrait on white paper of a robust man in his mid-60s with weather-beaten face, cap, calling out to customers, big grin, minimal watercolor wash in green and red produce tones, market vendor vitality",
+      portraitPrompt: "Soft pastel sketch on white paper, textured, bright morning light. A robust man of 66 with a weather-beaten, ruddy face, grey stubble, a flat cap, thick forearms in rolled shirt sleeves, a canvas apron, and a big boisterous grin as if mid-joke. His hands are lifting a ripe tomato from a crate to weigh it in his palm, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is the venditore at Mercato di Porta Romana, Porta Romana, Milano. Include behind him his stall under a striped awning, crates of fresh vegetables, salamis hanging from a hook, and a few shoppers browsing in the soft light. Colour from their place: pale olive, dusty terracotta, khaki green, warm stone. Full of character. Tall portrait format.",
       here: "You have a stall at the market in Porta Romana, named for the old city gate on the road to Rome. You sell vegetables, gorgonzola, taleggio and salame milano. Gorgonzola is named after a town just east of Milan. Taleggio is a soft square cheese from Val Taleggio in the Bergamo Alps. Salame milano is a mild, finely ground salami. You're from Naples and have lived in Milan since the 1980s.",
     },
     {
@@ -546,7 +546,7 @@ export const milano: CityPantry = {
       role: 'proprietaria',
       placeId: 'trattoria-masuelli',
       personality: ['authoritative', 'protective'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a distinguished woman in her 50s with elegant updo, classic dress, commanding presence, warm but firm expression, minimal watercolor wash in traditional burgundy tones, old Milan matriarch',
+      portraitPrompt: "Soft pastel sketch on white paper, textured, warm intimate lamplight. A woman of 56 with her hair in an elegant updo, strong composed features, a classic dark dress with a simple necklace, and a warm but firm expression, upright and in charge of her room. Her hands are smoothing a crisp white tablecloth and straightening a folded napkin, and she looks up from it straight at the viewer, as if someone she knows has just come in. She is the proprietaria at Trattoria Masuelli San Marco, Porta Romana, Milano. Include behind her white-clothed tables, wood-panelled walls hung with vintage photographs, and shelves of wine bottles. Colour from their place: walnut brown, warm cream, caramel brown, dark umber. Full of character. Tall portrait format.",
       here: "You run your family's old Milanese trattoria: risotto alla milanese with saffron, cotoletta, ossobuco, and cassoeula in winter.",
     },
     {
@@ -591,7 +591,7 @@ export const milano: CityPantry = {
       role: 'responsabile di reparto',
       placeId: 'peck',
       personality: ["refined", "local", "discerning"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a distinguished man in his 50s with impeccable grooming, suit and tie, refined features, expert expression, minimal watercolor wash in rich gourmet tones, culinary connoisseur',
+      portraitPrompt: "Soft pastel sketch on white paper, textured, warm rich light. A man of 51 with impeccably groomed, neatly combed hair, refined features, a well-cut dark suit, white shirt and tie, and the calm, discerning expression of someone who knows his produce. His hands are drawing a long knife through a wedge of aged cheese, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is the responsabile di reparto at Peck, Duomo, Milano. Include behind him the cheese counter, glass cases of prepared foods, prosciutto hanging overhead, and the entrance to the wine cellar. Colour from their place: dark umber, warm sand, tan, raw sienna. Full of character. Tall portrait format.",
       here: "You manage a counter in this famous Milanese delicatessen, known for its cured meats, cheeses, prepared dishes and panettone at Christmas.",
     },
     {
@@ -626,7 +626,7 @@ export const milano: CityPantry = {
       role: 'sacerdote',
       placeId: 'duomo-milano',
       personality: ["inspiring", "gentle", "Milanese to the core"],
-      portraitPrompt: 'Pen and ink portrait on white paper of an elderly priest with gentle face, clerical collar, wise eyes, serene expression, minimal watercolor wash in cathedral stone tones, spiritual gravitas',
+      portraitPrompt: "Soft pastel sketch on white paper, textured, warm afternoon light. A priest of 67 with thinning white hair, a gentle lined face, kind and wise eyes, a black clerical shirt with a white collar, and a serene, quietly inspiring expression. His hands are holding a small worn prayer book open, one finger keeping the page, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is the sacerdote at Duomo di Milano, Brera, Milano. Include behind him the white marble facade of the Gothic cathedral, its spires reaching skyward, the piazza below with pigeons, and a hazy sky. Colour from their place: pale marble cream, warm stone, soft pinkish beige, faint sky blue. Full of character. Tall portrait format.",
       here: "You're an elderly priest at the Duomo, and you've watched its restorers at work all your life: the Veneranda Fabbrica has looked after the cathedral since 1387.",
     },
     {
@@ -671,7 +671,7 @@ export const milano: CityPantry = {
       role: 'fioraia',
       placeId: 'piazza-santo-stefano',
       personality: ["romantic", "colorful", "kind"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a vibrant woman in her 40s with flowers in hair, bright scarf, arranging bouquet gesture, warm smile, minimal watercolor wash in flower market colors, artistic spirit',
+      portraitPrompt: "Soft pastel sketch on white paper, textured, warm soft daylight. A woman of 41 with loose dark hair with small fresh flowers tucked in, a bright patterned scarf, a gentle open face, and a warm, kind smile. Her hands are tying the stems of a loose bouquet with twine, petals and leaves in her fingers, and she looks up from it straight at the viewer, as if someone she knows has just come in. She is the fioraia at Piazza Santo Stefano, Duomo, Milano. Include behind her buckets of market flowers, cobblestones, a church facade, café tables outdoors, and a few bicycles leaning nearby. Colour from their place: warm sand, olive khaki, straw yellow, soft lilac. Full of character. Tall portrait format.",
       here: "You sell flowers in this square, where people meet for coffee, and you make bouquets for Sunday lunches and birthdays.",
     },
     {
@@ -750,7 +750,7 @@ export const milano: CityPantry = {
       role: 'bigliettaio',
       placeId: 'stazione-porta-garibaldi',
       personality: ["efficient", "helpful", "patient"],
-      portraitPrompt: "Pen and ink portrait on white paper of a young man of Egyptian heritage, born in Milan, in a Milan metro uniform (no lettering), a man in his late 20s with transit uniform, radio, helpful gesture, professional smile, minimal watercolor wash in railway tones, city infrastructure",
+      portraitPrompt: "Soft pastel sketch on white paper, textured, clean morning light. A man of 27 of Egyptian heritage, born in Milan, with short dark hair, warm brown skin, a friendly face, a navy transit uniform with no lettering, a radio clipped to his shoulder, and a patient, professional smile. His hands are holding out a ticket toward the viewer with a helpful gesture, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is the bigliettaio at Stazione Porta Garibaldi, Isola, Milano. Include behind him the modern station, its glass and steel roof, long platforms, and commuters with coffee passing in the bright light. Colour from their place: steel blue, slate blue, warm stone, charcoal. Full of character. Tall portrait format.",
       here: "You sell tickets at Porta Garibaldi, where commuters rush through in the morning with a quick espresso, and you help travellers find the right train and platform. Your background: born in Milan to Egyptian parents.",
     },
     {
@@ -762,7 +762,7 @@ export const milano: CityPantry = {
       role: "sarto",
       placeId: 'galleria-vittorio-emanuele',
       personality: ["proud Milanese", "dapper", "chatty"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a well-dressed man in mid-40s with elegant attire, explaining gesture, passionate expression, minimal watercolor wash in Galleria gold and glass tones, Milanese pride',
+      portraitPrompt: "Soft pastel sketch on white paper, textured, soft light filtering through glass. A man of 46 with neatly trimmed dark hair, a well-kept face, a fitted waistcoat and jacket with a pocket square, and a passionate, chatty expression as if explaining a point. His hands are chalking a line across a length of cloth, a tape measure around his neck, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is the sarto at Galleria Vittorio Emanuele II, Brera, Milano. Include behind him the glass-vaulted arcade with its ornate iron and glass roof, the mosaic floor, elegant boutiques and cafés, and people strolling through. Colour from their place: pale sand, taupe, warm umber, soft lilac. Full of character. Tall portrait format.",
       here: "You're a Milanese tailor, and you walk through the Galleria Vittorio Emanuele II every morning on the way to your workshop, the iron-and-glass arcade Milanesi call il salotto, the city's living room.",
     },
     {

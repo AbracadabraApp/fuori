@@ -351,7 +351,7 @@ export const lucca: CityPantry = {
       role: 'bigliettaia',
       placeId: 'stazione-lucca',
       personality: ["friendly", "unhurried", "helpful"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a woman around forty with wavy chestnut hair tied back, freckles, railway uniform cardigan, behind a ticket window with a bicycle parked outside the glass, minimal sepia watercolor wash, fine lines. A woman. Any signs, timetables or screens are in Italian with Italian place names; no name badge.',
+      portraitPrompt: "Soft pastel portrait on white paper, chalky layered strokes, warm amber morning light. A woman of 40 with wavy chestnut hair tied back, a scatter of freckles, a friendly, unhurried face and a calm smile, wearing a navy railway cardigan over a white collar. Seated behind a ticket window, she slides a freshly stamped ticket across the counter, then looks up from it straight at the viewer, as if someone she knows has just come in. She is Marta, who is the ticket seller at Stazione di Lucca, Porta San Pietro, Lucca. Include behind her the station as it is: a modest ochre station building, bicycles leaning outside the glass, a regional train waiting at the platform and the tree-lined Renaissance walls beyond. Colour from their place: warm cream, pale ochre, amber and soft khaki. Full of character. Tall portrait format.",
       here: "You sell tickets at the station just outside the walls near Porta San Pietro, where visitors arrive and often head straight into the city by bicycle to ride on top of the walls.",
     },
     {
@@ -363,7 +363,7 @@ export const lucca: CityPantry = {
       role: "proprietario",
       placeId: 'caffe-di-simo',
       personality: ["refined", "local", "proud of tradition"],
-      portraitPrompt: "Pen and ink portrait on white paper of distinguished man in his late sixties with white hair neatly combed, elegant bearing, subtle smile, wearing bow tie and vest, minimal sepia watercolor wash, fine lines showing character, background hint of Art Nouveau curves",
+      portraitPrompt: "Soft pastel portrait on white paper, chalky layered strokes, warm morning light falling through tall windows. A distinguished man of 66 with neatly combed white hair, a lined, clean-shaven face and a subtle, courteous smile, wearing a bow tie and a fitted waistcoat over a white shirt. He sets a small porcelain cup onto its saucer with careful fingers, then looks up from it straight at the viewer, as if someone he knows has just come in. He is Sergio, who is the owner at Caffè Di Simo, Centro Storico, Lucca. Include behind him the historic café as it is: marble-topped tables, antique mirrors, ornate chandeliers, textured aged walls and Art Nouveau curves. Colour from their place: warm taupe, pale sand, raw umber and Naples yellow. Full of character. Tall portrait format.",
       here: "You run a historic café on Via Fillungo, open since 1846 and loved for its Art Nouveau interior, where you serve coffee and a slice of buccellato, Lucca's sweet bread with raisins and anise. Your background: Lucchese.",
     },
     {
@@ -530,7 +530,7 @@ export const lucca: CityPantry = {
       role: 'venditore',
       placeId: 'mercato-del-carmine',
       personality: ["loud", "jovial", "generous with samples"],
-      portraitPrompt: 'Pen and ink portrait on white paper of robust market vendor in early fifties with weathered face, broad smile, wearing work vest, minimal warm watercolor wash, expressive animated features, welcoming energy, detailed laugh lines. The subject is a man.',
+      portraitPrompt: "Soft pastel portrait on white paper, chalky layered strokes, warm bright morning light under cover. A robust man of 53 with a weathered, sun-creased face, deep laugh lines, a broad open grin and short greying hair, wearing a worn work vest over rolled-up sleeves. He holds out a slice of cheese on the flat of a knife as a free taste, then looks up from the counter straight at the viewer, as if someone he knows has just come in. He is Tommaso, who is the vendor at Mercato del Carmine, San Frediano, Lucca. Include behind him the covered market as it is: striped awnings, colourful produce displays, salumi hanging from hooks and baskets overflowing. Colour from their place: warm cream, raw sienna, burnt sienna and sage green. Full of character. Tall portrait format.",
       here: "You sell at the Mercato del Carmine, busiest on Saturday morning, offering local salumi like prosciutto bazzone and biroldo and letting people taste before they buy.",
     },
     {
@@ -564,7 +564,7 @@ export const lucca: CityPantry = {
       role: 'chef',
       placeId: 'ristorante-giglio',
       personality: ['traditional recipes', 'demanding excellence'],
-      portraitPrompt: 'Pen and ink portrait on white paper of intense woman in early forties with dark hair pulled back, focused eyes, wearing chef whites, minimal warm watercolor wash, determined passionate expression, strong detailed features, culinary authority',
+      portraitPrompt: "Soft pastel portrait on white paper, chalky layered strokes, warm low candlelight glow. A woman of 41 with dark hair pulled tightly back, strong features, intense focused eyes and a firm, determined mouth, wearing crisp chef whites buttoned to the collar. She tilts a plate in her hands, checking a final sprig of herbs with a critical eye, then looks up from it straight at the viewer, as if someone she knows has just come in. She is Claudia, who is the chef at Ristorante Giglio, Centro Storico, Lucca. Include behind her the traditional dining room as it is: tables with white tablecloths, vaulted ceilings, wine bottles lining the walls and flickering candles. Colour from their place: burnt umber, warm cream, sand and soft clay brown. Full of character. Tall portrait format.",
       here: "You cook Lucca's dishes: zuppa di farro, tordelli lucchesi (meat-filled pasta with ragù), and buccellato for dessert.",
     },
     {
@@ -620,7 +620,7 @@ export const lucca: CityPantry = {
       role: 'proprietaria',
       placeId: 'gastronomia-angeli',
       personality: ["local", "welcoming", "discerning"],
-      portraitPrompt: 'Pen and ink portrait on white paper of elegant woman in early fifties with sophisticated style, knowing smile, wearing elegant casual attire, minimal warm watercolor wash, cultured refined expression, detailed discerning features, food expert',
+      portraitPrompt: "Soft pastel portrait on white paper, chalky layered strokes, warm soft shop light. A woman of 52 with a short, silver-streaked chestnut bob, fine laugh lines and a knowing, welcoming smile, wearing a loose linen shirt with a plain apron and small gold earrings. She wraps a wedge of pecorino in paper with practised fingers, then looks up from it straight at the viewer, as if someone she knows has just come in. She is Beatrice, who is the owner at Gastronomia Angeli, San Martino, Lucca. Include behind her the gourmet food shop as it is: the deli counter, salumi hanging above, shelves of olive oils and preserves, a cheese display and prepared dishes in cases. Colour from their place: warm cream, sand, raw umber and yellow ochre. Full of character. Tall portrait format.",
       here: "You own a gastronomia where you sell the products of the Lucca area: extra virgin olive oil from the Lucchese hills, farro della Garfagnana and local salumi, and you help people choose what to take home.",
     },
     {
@@ -632,7 +632,7 @@ export const lucca: CityPantry = {
       role: 'parroco',
       placeId: 'duomo-san-martino',
       personality: ['gentle', 'art historian'],
-      portraitPrompt: 'Pen and ink portrait on white paper of distinguished elderly priest in late sixties with gray hair, kind eyes behind glasses, wearing clerical collar, minimal purple watercolor wash, serene wise expression, detailed compassionate features, spiritual bearing',
+      portraitPrompt: "Soft pastel portrait on white paper, chalky layered strokes, warm golden daylight on stone. An elderly priest of 68 with short grey hair, kind eyes behind thin-framed glasses, a gentle lined face and a serene half-smile, wearing a black clerical shirt with a white collar. He holds a small worn art book open in both hands, a finger marking the page, then looks up from it straight at the viewer, as if someone he knows has just come in. He is Padre Augusto, who is the parish priest at Duomo di San Martino, San Martino, Lucca. Include behind him the cathedral as it is: the asymmetrical Romanesque façade with green and white marble patterns, ornate carved columns, a grand arched entrance and pigeons on the steps. Colour from their place: ivory, warm stone, sand and soft umber. Full of character. Tall portrait format.",
       here: "You're the parish priest at the Duomo di San Martino, which keeps the Volto Santo, the wooden crucifix that Lucca carries through the streets every 13 September.",
     },
     {
@@ -655,7 +655,7 @@ export const lucca: CityPantry = {
       role: "custode della torre",
       placeId: 'torre-guinigi',
       personality: ['enthusiastic', 'history buff', 'athletic'],
-      portraitPrompt: 'Pen and ink portrait on white paper of energetic young man in mid-twenties with bright eyes, animated expression, wearing casual tour guide attire, minimal green watercolor wash, passionate educator demeanor, detailed youthful features, storyteller energy',
+      portraitPrompt: "Soft pastel portrait on white paper, chalky layered strokes, bright clear daylight under open sky. A young man of 26 with short dark hair, bright eager eyes, a lean athletic build and a quick animated grin, wearing a plain t-shirt and a light jacket with a lanyard around his neck. He turns a heavy iron key from a ring in his hand to unlock the gate, then looks up from it straight at the viewer, as if someone he knows has just come in. He is Alessio, who is the tower keeper at Torre Guinigi, Centro Storico, Lucca. Include behind him the medieval tower as it is: brick and stone walls, oak trees growing on top, the viewing platform high up and the stairway climbing inside against the sky. Colour from their place: pale stone, olive khaki, terracotta tan and muted sage. Full of character. Tall portrait format.",
       here: "You look after the Torre Guinigi, the medieval tower with holm oaks growing on its roof, and you climb its steps every morning.",
     },
     {
@@ -667,7 +667,7 @@ export const lucca: CityPantry = {
       role: 'botanica',
       placeId: 'orto-botanico',
       personality: ['nurturing'],
-      portraitPrompt: 'Pen and ink portrait on white paper of intellectual woman in early sixties with silver hair, gentle features, wearing practical garden clothes, minimal green watercolor wash, wise nurturing expression, detailed observant eyes, nature connection',
+      portraitPrompt: "Soft pastel portrait on white paper, chalky layered strokes, soft dappled garden light. A woman of 61 with silver hair twisted up under a loose clip, gentle observant eyes, a sun-weathered face and a calm, kind smile, wearing a faded canvas work shirt and a linen apron with soil on its pockets. She ties a young seedling to a thin stake with careful fingers, then looks up from it straight at the viewer, as if someone she knows has just come in. She is Isabella, who is the botanist at Orto Botanico, San Martino, Lucca. Include behind her the botanical garden as it is: winding paths, plant specimens in beds, ancient trees, stone benches and old Renaissance walls. Colour from their place: soft sage, pale linen, olive umber and moss green. Full of character. Tall portrait format.",
       here: "You look after the plants at the Orto Botanico of Lucca, the botanical garden from the 1800s against the city walls.",
     },
     {
@@ -679,7 +679,7 @@ export const lucca: CityPantry = {
       role: "musicista di strada",
       placeId: 'piazza-anfiteatro',
       personality: ["artistic", "free-spirited", "crowd-pleaser"],
-      portraitPrompt: "Pen and ink portrait on white paper of bohemian young man in mid twenties with longer hair, creative style, wearing casual artistic clothing, minimal warm watercolor wash, expressive musical features, detailed passionate eyes, performer energy",
+      portraitPrompt: "Soft pastel portrait on white paper, chalky layered strokes, warm ochre afternoon light. A young man of 26 with wavy shoulder-length brown hair, light stubble, bright passionate eyes and an easy, open grin, wearing a loose patterned shirt with rolled sleeves and a leather cord at his neck. He strums an acoustic guitar, fingers resting on the strings, then looks up from it straight at the viewer, as if someone he knows has just come in. He is Matteo, who is the street musician at Piazza Anfiteatro, Centro Storico, Lucca. Include behind him the piazza as it is: the oval curve of colourful building facades built on the old Roman amphitheatre and café tables scattered around the open space. Colour from their place: pale terracotta, dusty rose-grey, warm ochre and brown umber. Full of character. Tall portrait format.",
       here: "You play in Piazza Anfiteatro, the oval square built on the walls of a Roman amphitheatre, where tourists and locals sit at the cafés, and on antique-market days the crowd is even bigger. Your background: Lucchese.",
     },
     {
@@ -691,7 +691,7 @@ export const lucca: CityPantry = {
       role: "insegnante di pianoforte",
       placeId: 'piazza-san-michele',
       personality: ["romantic", "musical", "warm"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a woman from Lucca in her mid-forties, a piano teacher, dark hair pinned up, warm smile, a colorful scarf, sheet music under her arm. Minimal watercolor wash in soft blues and ochre. No lettering anywhere in the picture. The subject is a woman',
+      portraitPrompt: "Soft pastel portrait on white paper, chalky layered strokes, warm golden afternoon light. A woman of 46 with dark hair pinned up in a loose twist, expressive brown eyes, soft smile lines and a warm smile, wearing a colourful silk scarf knotted at her neck over a simple cardigan. She turns the page of a sheet of piano music held against her arm, then looks up from it straight at the viewer, as if someone she knows has just come in. She is Carla, who is the piano teacher at Piazza San Michele, San Michele, Lucca. Include behind her the piazza as it is: the ornate church façade, market stalls, outdoor café seating and pigeons on the stones. Colour from their place: peach sand, yellow ochre, soft clay and dusty mauve. Full of character. Tall portrait format.",
       here: "You teach piano in Lucca, Puccini's town; the house where he was born is a few steps from Piazza San Michele, the square on the old Roman forum.",
     },
     {

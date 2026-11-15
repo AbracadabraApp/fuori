@@ -385,7 +385,7 @@ export const napoli: CityPantry = {
       role: 'barista',
       placeId: 'bar-nilo',
       personality: ["devout Maradona fan", "quick-witted", "philosophical"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a middle-aged Neapolitan man with expressive eyes, salt-and-pepper hair, and a slight smile. Minimal watercolor wash in warm browns for his skin and a hint of blue for his work shirt. Detailed linework showing laugh lines and character.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, loose hand-drawn line, sunlit. A man of 58 with expressive dark eyes, salt-and-pepper hair, deep laugh lines and a slight, knowing smile, in a blue work shirt with the sleeves pushed back. He is pulling an espresso, one hand on the portafilter, the other steadying a small white cup, and he looks up from it straight at the viewer, as if someone he knows has just come in, a man who is a barista at Bar Nilo, Spaccanapoli, Napoli. Include behind him the tiny bar as it is: blue-tiled walls, a chrome espresso machine gleaming on the counter, a small shrine to Maradona on the wall, morning light streaming through the doorway. Colour from their place: raw umber, yellow ochre, burnt sienna and cornflower blue. Full of character. Tall portrait format.",
       here: "You work behind the counter of Bar Nilo on Spaccanapoli, the street that cuts straight through the old Greek-Roman heart of Naples. People drink their espresso standing at the bar, and a small shrine to Maradona, with a relic said to be a hair of his, watches over the room. Naples is where the caffè sospeso began: a coffee paid in advance for a stranger who can't afford one.",
     },
     {
@@ -397,7 +397,7 @@ export const napoli: CityPantry = {
       role: 'cameriera',
       placeId: 'caffe-gambrinus',
       personality: ["elegant", "attentive", "proud of tradition"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a sophisticated young woman with pulled-back dark hair, defined features, and professional demeanor. Minimal watercolor wash in burgundy for her lips and soft beige for her uniform. Refined and graceful linework.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, loose hand-drawn line, sunlit. A woman of 32 with dark hair pulled neatly back, defined cheekbones, calm attentive eyes and a composed, courteous expression, in a crisp cream-beige waiter's jacket. She is setting a cup and saucer onto a small silver tray, and she looks up from it straight at the viewer, as if someone she knows has just come in, a woman who is a cameriera at Caffè Gambrinus, Chiaia, Napoli. Include behind her the grand belle époque café: tall windows showing gilded mirrors and chandeliers, tables outside full of people, waiters in white jackets, and across the wide square the Royal Palace and the Galleria Umberto. Colour from their place: dark umber, buff ochre, burnt sienna and pale slate blue. Full of character. Tall portrait format.",
       here: "You wait tables at Caffè Gambrinus, the grand belle époque café on Piazza Trieste e Trento, open since 1860. You carry coffee, sfogliatelle and babà to tables under gilded mirrors. The café stands steps from the Teatro San Carlo and Palazzo Reale, and writers and artists have long met here. Naples is the home of the caffè sospeso, a coffee paid for in advance for a stranger.",
     },
     {
@@ -486,7 +486,7 @@ export const napoli: CityPantry = {
       role: 'pasticciere',
       placeId: 'pasticceria-poppella',
       personality: ['proud', 'family-oriented'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a sturdy man with flour-dusted apron, strong hands, and determined expression. Minimal watercolor wash in white and cream tones. Honest, hardworking linework.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, loose hand-drawn line, sunlit. A sturdy man of 44 with a broad face, a determined, steady expression, short dark hair and strong forearms, wearing a flour-dusted apron over a white shirt. His large hands are lifting fiocchi di neve and sfogliatelle from a tray into a pastry box, and he looks up from it straight at the viewer, as if someone he knows has just come in, a man who is a pasticciere at Pasticceria Poppella, Centro Storico, Napoli. Include behind him the pasticceria as it is: glass cases full of fiocchi di neve and sfogliatelle, white-tiled walls, customers queuing at the counter. Colour from their place: Naples yellow, raw sienna, deep umber and soft slate blue. Full of character. Tall portrait format.",
       here: 'You serve at the counter of this famous Rione Sanità pastry shop, where people queue for the fiocchi di neve; you fill sfogliatelle and know which come out warm.',
     },
     {
@@ -531,7 +531,7 @@ export const napoli: CityPantry = {
       role: 'fruttivendolo',
       placeId: 'mercato-pignasecca',
       personality: ['loud', 'generous', 'quick-witted'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a 34-year-old Chinese Italian man with short black hair and an easy smile, in a canvas apron over a checked shirt with the sleeves rolled up, weighing tomatoes on a scale and glancing up at a customer, crates of fruit behind him, minimal watercolor wash in lemon yellow, tomato red and leaf green, detailed linework. The subject is a man.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, loose hand-drawn line, sunlit. A Chinese Italian man of 34 with short black hair and an easy, open smile, in a canvas apron over a checked shirt with the sleeves rolled up. He is weighing ripe tomatoes on a hanging scale, and he looks up from it straight at the viewer, as if someone he knows has just come in, a man who is a fruttivendolo at Mercato della Pignasecca, Centro Storico, Napoli. Include behind him his stall in the street market: crates of tomatoes, lemons and greens stacked high, neighbouring produce stalls, salumi hanging from hooks, vendors calling out to buyers. Colour from their place: Naples yellow, raw sienna, dark umber and pale blue-grey. Full of character. Tall portrait format.",
       here: "You run the fruit and vegetable stall at the Pignasecca market that your parents opened when they came from Wenzhou. You were born in Naples, grew up in these streets and call out your prices in Neapolitan like every other vendor in the market; your regulars tease you and you tease them back.",
     },
     {
@@ -565,7 +565,7 @@ export const napoli: CityPantry = {
       role: 'pizzaiolo',
       placeId: 'pizzeria-sorbillo',
       personality: ['charismatic', 'ambassador of pizza'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a vibrant man with intense eyes, animated expression, and flour on his face. Minimal watercolor wash in warm flame orange. Dynamic, passionate linework.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, loose hand-drawn line, sunlit. A vibrant man of 49 with intense dark eyes, an animated, wide-mouthed expression and flour smudged on his cheek, in a white shirt and a dusted apron, forearms strong. He is sliding a pizza on a long wooden peel toward the oven, and he looks up from it straight at the viewer, as if someone he knows has just come in, a man who is a pizzaiolo at Pizzeria Gino Sorbillo, Spaccanapoli, Napoli. Include behind him the pizzeria as it is: a wood-fired oven blazing, other pizza makers tossing dough, customers lined up outside, smoky heat in the air. Colour from their place: yellow ochre, burnt umber, burnt sienna and slate blue. Full of character. Tall portrait format.",
       here: "You make Neapolitan pizza at Sorbillo on Via dei Tribunali, in the old Greek-Roman heart of Naples, where the queue runs down the street. Your menu is built on margherita and marinara, and you also make pizza fritta. The dough is leavened for many hours and baked in a wood-fired oven in about a minute. The margherita is said to be named after Queen Margherita of Savoy, who tasted it in Naples in 1889.",
     },
     {
@@ -654,7 +654,7 @@ export const napoli: CityPantry = {
       role: "pescatore",
       placeId: 'castel-ovo',
       personality: ["local", "cheerful", "storyteller"],
-      portraitPrompt: 'Pen and ink portrait on white paper of an animated man with gesturing hands, bright eyes, and engaging smile. Minimal watercolor wash in stone grey and sea blue. Expressive, engaging linework.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, loose hand-drawn line, sunlit. A man of 38 with a sun-weathered face, bright eyes, short dark hair and an engaging, cheerful smile, in a faded work shirt with the sleeves rolled to the elbow. His hands are busy untangling a fishing net, and he looks up from it straight at the viewer, mid-story, as if someone he knows has just come in, a man who is a pescatore at Castel dell'Ovo, Chiaia, Napoli. Include behind him the ancient seaside castle on its promontory, pale stone walls, waves lapping below and the bay stretching away to the horizon. Colour from their place: pale stone grey, soft bay blue, slate blue and olive grey. Full of character. Tall portrait format.",
       here: "You grew up in the Borgo Marinari, the little fishermen's harbour at the foot of Castel dell'Ovo, and you still mend nets on the quay.",
     },
     {
@@ -677,7 +677,7 @@ export const napoli: CityPantry = {
       role: 'musicista di strada',
       placeId: 'piazza-bellini',
       personality: ["artistic", "bohemian", "idealistic"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a young man with tousled hair, guitar strap visible, and dreamy expression. Minimal watercolor wash in warm amber evening tones. Romantic, artistic linework.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, loose hand-drawn line, sunlit. A young man of 26 with tousled dark hair, a light beard shadow and a dreamy, half-smiling expression, in a loose open shirt with a guitar strap across his shoulder. His fingers are pressing chords on the neck of an acoustic guitar, and he looks up from it straight at the viewer, as if someone he knows has just come in, a man who is a musicista di strada at Piazza Bellini, Centro Storico, Napoli. Include behind him the lively square as it is: ancient Greek walls exposed in the stone, outdoor café tables, young people gathering in the warm light. Colour from their place: dark umber, raw sienna, warm amber and burnt sienna. Full of character. Tall portrait format.",
       here: "You play guitar in the evenings in Piazza Bellini, where parts of the ancient Greek walls of Neapolis show in the middle of the square. Students and friends fill the café tables around you, and you play Neapolitan songs and your own for whatever people drop in the case.",
     },
     {
@@ -745,7 +745,7 @@ export const napoli: CityPantry = {
       role: 'bigliettaia',
       placeId: 'stazione-centrale',
       personality: ["organized", "helpful", "seen-it-all"],
-      portraitPrompt: "Pen and ink portrait on white paper of a uniformed woman with authoritative but kind face, cap, and efficient demeanor. Minimal watercolor wash in railway grey and navy. Solid, dependable linework.",
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, loose hand-drawn line, sunlit. A woman of 50 in a neat uniform jacket and cap, with a firm but kind face, tired knowing eyes, a few lines at the mouth and short hair tucked under the cap. She is sliding a printed ticket across the counter with one hand while the other rests on the window ledge, and she looks up from it straight at the viewer, as if someone she knows has just come in, a woman who is a bigliettaia at Stazione Napoli Centrale, Centro Storico, Napoli. Include behind her the long low station of glass and steel across the huge Piazza Garibaldi: buses, taxis, travellers pulling suitcases, a few palm trees, old city buildings around the square. Colour from their place: warm stone grey, raw sienna, buff ochre and slate blue. Full of character. Tall portrait format.",
       here: "You sell tickets at Napoli Centrale, on Piazza Garibaldi, where the fast trains to Rome and Salerno arrive and the Circumvesuviana to Pompei and Sorrento leaves from the level below. The Circumvesuviana is run by a separate company, EAV, with its own tickets. Regional paper tickets must be validated at the machines before boarding, or they risk a fine. You're from Lviv and have lived in Naples for 25 years.",
     },
     {
@@ -757,7 +757,7 @@ export const napoli: CityPantry = {
       role: 'abitante del quartiere',
       placeId: 'spaccanapoli-street',
       personality: ["watchful", "heart of the neighborhood", "talkative"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a tiny elderly woman with sharp eyes, headscarf, and knowing smile. Minimal watercolor wash in faded ochre and terracotta. Character-filled, timeless linework.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, loose hand-drawn line, sunlit. A tiny woman of 81 with sharp dark eyes, a deeply lined face, a faded headscarf and a knowing smile, in a cardigan over a floral housedress. She sits on a straight chair at her doorway, shelling peas into a bowl in her lap with quick fingers, and she looks up from it straight at the viewer, as if someone she knows has just come in, a woman who is an abitante del quartiere on Via Spaccanapoli, Spaccanapoli, Napoli. Include behind her the narrow street as it is: shops and churches lining both sides, laundry hanging overhead, tall ochre and terracotta walls receding in sharp perspective. Colour from their place: yellow ochre, raw umber, Naples yellow and cornflower blue. Full of character. Tall portrait format.",
       here: "You have lived all your life on Spaccanapoli, the long straight street that cuts the old city in two, and you watch everything from your window. You call down to the neighbors, lower the basket for the bread, and keep a little shrine to the Madonna on your balcony.",
     },
     {
@@ -769,7 +769,7 @@ export const napoli: CityPantry = {
       role: "cioccolatiera",
       placeId: 'gay-odin',
       personality: ["proud", "traditional craftsman", "patient"],
-      portraitPrompt: "Pen and ink portrait on white paper of a dignified woman with silver hair tied back, chocolate-stained apron, meticulous expression, and artisan hands. Minimal watercolor wash in rich cocoa brown. Careful, masterful linework.",
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, loose hand-drawn line, sunlit. A woman of 62 with silver hair tied back, a lined, dignified face, meticulous steady eyes and a faint patient smile, in an apron streaked with chocolate. Her practised hands are setting a Vesuvio-shaped chocolate into its wrapping, and she looks up from it straight at the viewer, as if someone she knows has just come in, a woman who is a cioccolatiera at Gay-Odin, Chiaia, Napoli. Include behind her the historic chocolate shop as it is: art nouveau details on the woodwork, displays of Vesuvio-shaped chocolates, stacks of dark chocolate bars on the shelves, soft golden light. Colour from their place: cocoa brown, antique gold, burnt sienna and dark sepia. Full of character. Tall portrait format.",
       here: "You work in the Gay-Odin chocolate shop in Chiaia. The Neapolitan firm has made chocolate by hand since 1894, and the shop has an art nouveau interior. The chocolates are still made in Naples. Among them are the Vesuvio, shaped like the volcano, and the famous Foresta. You wrap them for people buying a gift. You are Neapolitan, from Chiaia.",
     },
     {
@@ -781,7 +781,7 @@ export const napoli: CityPantry = {
       role: 'artigiano del presepe',
       placeId: 'presepi-san-gregorio',
       personality: ['masterful', 'keeper of tradition'],
-      portraitPrompt: 'Pen and ink portrait on white paper of an elderly master craftsman with magnifying glasses, wise eyes, and delicate hands holding tiny figures. Minimal watercolor wash in warm Christmas tones. Intricate, reverent linework. The subject is a man.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, loose hand-drawn line, sunlit. An elderly man of 70 with thinning white hair, wise pale eyes behind magnifying glasses pushed up on his forehead, a lined face and a gentle, reverent expression, in a worn work smock. His delicate fingers hold a tiny shepherd figure and a fine brush as he paints it, and he looks up from it straight at the viewer, as if someone he knows has just come in, a man who is an artigiano del presepe at Via San Gregorio Armeno, Spaccanapoli, Napoli. Include behind him the workshop street as it is: shelves of miniature nativity figures, strings of small lights, other craftsmen at work in neighbouring shops. Colour from their place: warm cream, tan, raw sienna and Naples yellow. Full of character. Tall portrait format.",
       here: "You make nativity-scene figures by hand in your workshop on Via San Gregorio Armeno, the street of Naples' presepe makers. You're at your bench painting a shepherd.",
     },
     {
@@ -793,7 +793,7 @@ export const napoli: CityPantry = {
       role: 'lattaia',
       placeId: 'mozzarella-spaccanapoli',
       personality: ['warm', 'strict about freshness', 'funny'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a 48-year-old woman with curly dark hair tied up, gold hoop earrings and a white apron, holding a ball of mozzarella in a ladle, minimal watercolor wash in cream and soft blue tones, detailed linework.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, loose hand-drawn line, sunlit. A woman of 48 with curly dark hair tied up, gold hoop earrings, a warm teasing smile and laughing eyes, in a clean white apron. She is lifting a white ball of mozzarella from a tub of milky water with a ladle, ready for a customer, and she looks up from it straight at the viewer, as if someone she knows has just come in, a woman who is a lattaia at Latteria Esposito, Spaccanapoli, Napoli. Include behind her the small shop as it is: tubs of mozzarella di bufala floating in milky water, a braided treccia and smoked provola on the counter, the narrow street outside the door. Colour from their place: warm cream, yellow ochre, deep umber and slate blue. Full of character. Tall portrait format.",
       here: "You run Latteria Esposito, a mozzarella shop on Spaccanapoli, the long straight street that cuts through the old Greek and Roman grid of Naples. You sell mozzarella di bufala, plus treccia and smoked provola. Mozzarella di bufala campana is a protected product, made from buffalo milk. It is sold in its own whey and is best when very fresh.",
     },
     {
@@ -805,7 +805,7 @@ export const napoli: CityPantry = {
       role: 'pizzaiolo',
       placeId: 'pizza-a-portafoglio-tribunali',
       personality: ['fast', 'cheeky', 'proud of Naples'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a 29-year-old Neapolitan man with short curly hair and flour on his forearms, in a white T-shirt, looking down at his hands as he folds a small pizza in four inside a sheet of paper, the folded pizza no bigger than his hand, a slight smile, minimal watercolor wash in tomato red and cream, detailed linework. The subject is a man.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, loose hand-drawn line, sunlit. A man of 29 with short curly dark hair, a quick cheeky half-smile and flour dusted over his forearms, in a plain white T-shirt. His hands are folding a small pizza in four inside a sheet of paper, the folded pizza no bigger than his palm, and he looks up from it straight at the viewer, as if someone he knows has just come in, a man who is a pizzaiolo at Pizza a portafoglio, Via dei Tribunali, Centro Storico, Napoli. Include behind him the pizzeria's street window as it is: small pizzas coming out of the wood-fired oven, a queue on the narrow street under hanging laundry, people eating as they walk. Colour from their place: burnt umber, raw sienna, Naples yellow and burnt sienna. Full of character. Tall portrait format.",
       here: 'You make pizza a portafoglio at the street window of a pizzeria on Via dei Tribunali: a small margherita or marinara folded in four like a wallet and wrapped in paper, eaten walking, for a couple of euros. You also sell the cuoppo, a paper cone of fried things.',
     },
   ],

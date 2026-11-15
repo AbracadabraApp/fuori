@@ -297,7 +297,7 @@ export const matera: CityPantry = {
       role: 'proprietario',
       placeId: 'caffe-schiuma',
       personality: ["warm", "philosophical", "proud of Matera heritage"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a middle-aged Italian man with salt-and-pepper hair, kind wrinkles around eyes, slight smile, wearing casual button-up shirt, minimal sepia watercolor wash on face, white background, detailed cross-hatching, warm character',
+      portraitPrompt: "Soft pastel portrait on white paper, loose watercolour washes, warm golden morning light. A man of 52 with salt-and-pepper hair, kind wrinkles around his eyes and a slight, warm smile, wearing a casual button-up shirt with the sleeves rolled to the elbow. His hands polish a small espresso cup with a cloth, and he looks up from it straight at the viewer, as if someone he knows has just come in. This is a man who is the proprietario at Caffè Schiuma, Sassi Barisano, Matera. Include behind him the cave bar carved into ancient tufa, the espresso machine gleaming in the stone interior, textured limestone walls, and the arched entrance with small round tables outside above the ravine. Colour from their place: warm cream, sand beige, tufa ochre, honey gold, raw umber. Full of character. Tall portrait format.",
       here: "You run this bar carved into the tufa of the Sassi, where people drink their coffee standing at the counter, quick and strong, before looking out over the ravine from the outside tables.",
     },
     {
@@ -354,7 +354,7 @@ export const matera: CityPantry = {
       role: 'venditrice',
       placeId: 'mercato-piccianello',
       personality: ["loud", "generous", "negotiator"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a robust Italian woman with curly hair, animated expression, colorful scarf, market apron, minimal earthy watercolor wash, white background, lively character, bold pen lines',
+      portraitPrompt: "Soft pastel portrait on white paper, textured watercolour washes, lively morning light. A robust woman of 55 with curly hair, a broad animated face, open mouth caught mid-laugh, a colourful scarf at her neck and a market apron over her clothes. Her hands hold out a handful of tomatoes as if weighing a price, and she looks up from them straight at the viewer, as if someone she knows has just come in. This is a woman who is the venditrice at Mercato di Piccianello, Piano, Matera. Include behind her the covered market with vegetable stalls overflowing with peperoni cruschi, tomatoes and wild greens, crates of seasonal produce, and coloured awnings overhead. Colour from their place: terracotta red, sandy peach, sage green, burnt umber, warm ochre. Full of character. Tall portrait format.",
       here: "You sell vegetables at the market and you push the peperoni cruschi, the dried peppers that are fried until crisp, and wild greens like cime di rapa, which go into orecchiette.",
     },
     {
@@ -388,7 +388,7 @@ export const matera: CityPantry = {
       role: 'chef proprietaria',
       placeId: 'ristorante-francesca',
       personality: ['elegant', 'passionate about cuisine'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a sophisticated Italian woman with styled short hair, chef\'s whites, refined features, minimal watercolor wash, white background, confident artistic expression, clean pen lines',
+      portraitPrompt: "Soft pastel portrait on white paper, soft watercolour washes, warm amber candlelit light. A woman of 43 with neat, styled short hair, refined features and a calm, confident expression, wearing chef's whites with the collar crisp. Her hands drizzle oil over a plated dish with careful precision, and she looks up from it straight at the viewer, as if someone she knows has just come in. This is a woman who is the chef proprietaria at Ristorante Francesca, Civita, Matera. Include behind her the elegant cave restaurant with vaulted stone ceilings, tables with white tablecloths and flickering candles, wine bottles lining the walls, and arched windows looking out to the ravine. Colour from their place: warm tan, stone beige, raw sienna, deep umber, amber gold. Full of character. Tall portrait format.",
       here: "You cook the food of Basilicata in your cave restaurant in the Civita, the oldest part of the Sassi, a UNESCO World Heritage site. Your menu has crapiata (a soup of grains and pulses), orecchiette, peperoni cruschi and pane di Matera. The bread is made with durum wheat semolina and has its own IGP label. Peperoni cruschi are sweet peppers dried in the sun, then briefly fried until crisp.",
     },
     {
@@ -433,7 +433,7 @@ export const matera: CityPantry = {
       role: "pensionato",
       placeId: 'sassi-belvedere',
       personality: ["gentle", "nostalgic", "local historian"],
-      portraitPrompt: 'Pen and ink portrait on white paper of an elderly Italian man with white hair, gentle smile, cardigan, walking stick, minimal sepia watercolor wash, white background, scholarly kind expression, detailed portraiture',
+      portraitPrompt: "Soft pastel portrait on white paper, loose watercolour washes, golden afternoon light. A man of 71 with white hair, a gentle smile, deep lines at the corners of his eyes, wearing a soft cardigan over a collared shirt. Both hands rest on the handle of a wooden walking stick, one lifting slightly as if about to point out a landmark, and he looks up straight at the viewer, as if someone he knows has just come in. This is a man who is a pensionato at Belvedere dei Sassi, Civita, Matera. Include behind him the panoramic viewpoint over the ancient Sassi cave dwellings cascading down the ravine, with the Murgia plateau across the canyon. Colour from their place: pale cream, dusty rose, warm sand, soft ochre, taupe. Full of character. Tall portrait format.",
       here: "You were born in the Sassi and left as a boy when the families were moved out. Now retired, you come most afternoons to the Belvedere, where the whole of the Sassi opens below you.",
     },
     {
@@ -456,7 +456,7 @@ export const matera: CityPantry = {
       role: "custode della Casa Grotta",
       placeId: 'casa-grotta',
       personality: ["detail-oriented", "warm", "keeper of memories"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a middle-aged Italian woman with glasses, professional attire, museum badge, minimal watercolor wash, white background, intelligent engaged expression, precise pen detail',
+      portraitPrompt: "Soft pastel portrait on white paper, soft watercolour washes, muted earth light. A woman of 47 with glasses, shoulder-length hair tucked behind one ear, attentive eyes and a warm, patient smile, wearing a simple neat jacket over a plain blouse. Her hands carefully straighten an old hand tool on a wooden table, and she looks up from it straight at the viewer, as if someone she knows has just come in. This is a woman who is the custode at Casa Grotta di Vico Solitario, Sassi Caveoso, Matera. Include behind her the restored cave dwelling with carved stone rooms, period furniture and tools, and small windows letting in pale light. Colour from their place: bone cream, warm greige, pale stone, clay brown, umber. Full of character. Tall portrait format.",
       here: "You look after the Casa Grotta di Vico Solitario, a cave house in the Sassi kept as a family lived in it, with the bed, the loom and the corner for the animals. Your grandparents were born in the Sassi and were moved out in the 1950s, when the government emptied them.",
     },
     {
@@ -468,7 +468,7 @@ export const matera: CityPantry = {
       role: 'guardiaparco',
       placeId: 'parco-murgia',
       personality: ["outdoorsy", "protective", "nature lover"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a fit Italian man with sun-weathered face, ranger uniform, binoculars around neck, minimal green watercolor wash, white background, alert friendly expression, naturalistic pen strokes',
+      portraitPrompt: "Soft pastel portrait on white paper, loose watercolour washes, clear daylight. A fit man of 39 with a sun-weathered face, short dark hair, squint lines at the eyes and an alert, friendly expression, wearing a green ranger uniform shirt with binoculars hanging around his neck. His hands unfold a trail map against his forearm, and he looks up from it straight at the viewer, as if someone he knows has just come in. This is a man who is the guardiaparco at Parco della Murgia Materana, Civita, Matera. Include behind him the wild rocky plateau with ancient rupestrian churches, scrubland trails, wild herbs and flowers, and the Sassi across the ravine. Colour from their place: sage green, dusty gold, warm stone, olive drab, sandy beige. Full of character. Tall portrait format.",
       here: "You're a ranger in the Parco della Murgia Materana, the rocky plateau across the ravine from the Sassi, dotted with cave churches and their old frescoes.",
     },
     {
@@ -480,7 +480,7 @@ export const matera: CityPantry = {
       role: 'studentessa e musicista',
       placeId: 'piazza-vittorio',
       personality: ["artistic", "social", "free-spirited"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a young Italian woman with long hair, bohemian style, guitar case strap visible, minimal watercolor wash, white background, creative dreamy expression, flowing pen lines',
+      portraitPrompt: "Soft pastel portrait on white paper, loose watercolour washes, warm evening light. A woman of 26 with long loose hair, a bohemian style of layered clothes and a guitar case strap across her shoulder, with a dreamy, easy expression and a hint of a smile. Her fingers tune a guitar string, and she looks up from it straight at the viewer, as if someone she knows has just come in. This is a woman who is a studentessa e musicista at Piazza Vittorio Veneto, Piano, Matera. Include behind her the grand square with elegant buildings and balconies, cafés with outdoor seating, a fountain in the centre, and people strolling. Colour from their place: honey, rose beige, peach cream, warm sienna, dusty mauve. Full of character. Tall portrait format.",
       here: "You come to the main square in the evening with your guitar, when the whole town does the passeggiata, strolling up and down and stopping to chat, and you play for the people passing by.",
     },
     {
@@ -492,7 +492,7 @@ export const matera: CityPantry = {
       role: 'pensionato',
       placeId: 'piazza-duomo',
       personality: ["contemplative", "friendly", "daily routine"],
-      portraitPrompt: 'Pen and ink portrait on white paper of an elderly Italian man with cap, sport coat, newspaper tucked under arm, minimal watercolor wash, white background, contented peaceful expression, gentle pen work',
+      portraitPrompt: "Soft pastel portrait on white paper, loose watercolour washes, soft afternoon shadows. A man of 64 with a flat cap, a sport coat over a collared shirt, a rolled newspaper tucked under one arm and a contented, peaceful expression, with a lined face and grey stubble. His hands fold a newspaper slowly, and he looks up from it straight at the viewer, as if someone he knows has just come in. This is a man who is a pensionato at Piazza del Duomo, Civita, Matera. Include behind him the historic cathedral square with stone paving, the cathedral facade rising above, a view to the ravine beyond, and locals chatting in small groups. Colour from their place: limestone cream, warm sand, pale tan, soft taupe, umber. Full of character. Tall portrait format.",
       here: "You spend your mornings in the square by the cathedral in the Civita, the oldest part of Matera, where the Sassi houses are carved into the rock of the ravine. The cathedral is dedicated to the Madonna della Bruna, patron saint of the city. Her festa is on 2 July: a decorated papier-mâché carriage is pulled through the streets, and at the end the crowd tears it apart. Matera's Sassi are a UNESCO World Heritage site.",
     },
     {
@@ -526,7 +526,7 @@ export const matera: CityPantry = {
       role: 'libraia',
       placeId: 'libreria-matera',
       personality: ["literary", "recommends books", "thoughtful"],
-      portraitPrompt: 'Pen and ink portrait on white paper of an Italian woman with glasses, cardigan, book in hand, intelligent eyes, minimal watercolor wash, white background, bookish warm expression, detailed pen rendering',
+      portraitPrompt: "Soft pastel portrait on white paper, soft watercolour washes, warm lamp light. A woman of 36 with glasses, dark hair pulled loosely back, thoughtful eyes and a gentle smile, wearing a knitted cardigan over a simple top. Her hands hold an open book with a finger marking a page, and she looks up from it straight at the viewer, as if someone she knows has just come in. This is a woman who is the libraia at Libreria Matera, Piano, Matera. Include behind her the independent bookshop with floor-to-ceiling shelves, a reading nook with an armchair, and a prominent section of books on local history. Colour from their place: cream, parchment tan, book brown, dark umber, warm ochre. Full of character. Tall portrait format.",
       here: "You run this bookshop in the Piano, with a shelf of books on the Sassi and Basilicata, and visitors ask you how a town that was once a shame became a UNESCO World Heritage Site in 1993.",
     },
     {
@@ -549,7 +549,7 @@ export const matera: CityPantry = {
       role: 'bigliettaio',
       placeId: 'stazione-fal',
       personality: ["punctual", "helpful", "knows all schedules"],
-      portraitPrompt: 'Pen and ink portrait on white paper of an Italian man in railway uniform, cap, whistle, clipboard, minimal blue watercolor wash, white background, reliable efficient expression, structured pen work',
+      portraitPrompt: "Soft pastel portrait on white paper, soft watercolour washes, even daylight. A man of 51 with short neat hair, a clean-shaven face and a reliable, helpful expression, wearing a railway uniform jacket and cap with a whistle on a cord at his chest. His hands slide a ticket across a counter while a clipboard rests beside him, and he looks up straight at the viewer, as if someone he knows has just come in. This is a man who is the bigliettaio at Stazione FAL Matera Centrale, Piano, Matera. Include behind him the ticket office, timetable boards, a platform with waiting passengers and travellers with luggage, in plain functional architecture. Colour from their place: pale grey, cool slate blue, steel blue, soft stone grey, deep navy. Full of character. Tall portrait format.",
       here: "You sell tickets at the station of the FAL, the regional railway, where the trains to Bari leave, and you help the tourists who arrive with their luggage to see the Sassi.",
     },
     {
@@ -583,7 +583,7 @@ export const matera: CityPantry = {
       role: 'artigiano',
       placeId: 'bottega-artigiana',
       personality: ["creative", "master craftsman", "patient"],
-      portraitPrompt: 'Pen and ink portrait on white paper of an Italian artisan with work apron, clay on hands, focused eyes, minimal terracotta watercolor wash, white background, concentrated artistic expression, textured pen strokes. The subject is a man.',
+      portraitPrompt: "Soft pastel portrait on white paper, loose watercolour washes, warm workshop light. A man of 53 with short greying hair, focused eyes, a calm patient face and a work apron over a rolled-sleeve shirt, his forearms and hands marked with clay. His hands shape a small clay cucù whistle, and he looks up from it straight at the viewer, as if someone he knows has just come in. This is a man who is the artigiano at Bottega del Cucù, Sassi Barisano, Matera. Include behind him the cave workshop with shelves of handmade ceramic pieces, cucù whistles, clay and tools on the worktable. Colour from their place: terracotta, clay brown, warm sand, dusty rose beige, dark umber. Full of character. Tall portrait format.",
       here: "You shape terracotta in your workshop in the Sassi, and your specialty is the cucù, the little clay whistle in the shape of a rooster that is a symbol of Matera and a gift for good luck.",
     },
     {

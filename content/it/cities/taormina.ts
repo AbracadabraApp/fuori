@@ -360,7 +360,7 @@ export const taormina: CityPantry = {
       role: 'bigliettaia',
       placeId: 'stazione-taormina-giardini',
       personality: ["brisk", "warm", "patient"],
-      portraitPrompt: 'Pen and ink portrait on white paper with minimal watercolor wash, Sicilian woman in her early 50s, dark hair pinned up, reading glasses on a chain, navy railway uniform jacket, behind a ticket window with a timetable on the wall, detailed cross-hatching, warm amber wash, white background. A woman.',
+      portraitPrompt: "Soft pastel sketch on white paper, textured, warm Mediterranean light. A Sicilian woman of 52 with dark hair pinned up, reading glasses on a chain around her neck, a lined, friendly face and a brisk warm smile, in a navy railway uniform jacket. She slides a printed ticket and change through the window of the ticket office, then looks up from it straight at the viewer, as if someone she knows has just come in. She is the woman who is bigliettaia at Stazione di Taormina-Giardini, Villagonia, Taormina. Include behind her the small Liberty-style station with its ornate stone facade, a regional train at the platform, travellers with bags, palm trees, and the blue sea beyond. Colour from their place: cream, sandy terracotta, warm taupe, navy, pale sky blue. Full of character. Tall portrait format.",
       here: "You sell tickets at the station down by the sea, where visitors arrive and ask how to get up to Taormina, which sits on the hill above.",
     },
     {
@@ -372,7 +372,7 @@ export const taormina: CityPantry = {
       role: "proprietaria",
       placeId: 'bar-turrisi',
       personality: ["proud", "hospitable", "talkative"],
-      portraitPrompt: "Pen and ink portrait on white paper with minimal watercolor wash, Sicilian woman in her late 50s, salt-and-pepper hair, warm smile with laugh lines, holding glass of almond wine, detailed cross-hatching, warm amber wash, welcoming expression, white background",
+      portraitPrompt: "Soft pastel sketch on white paper, textured, warm Mediterranean light. A Sicilian woman of 58 with salt-and-pepper hair swept back from her face, deep laugh lines, a broad warm smile, and a cream linen blouse with the sleeves rolled to the elbow. She pours almond wine from a bottle into a small glass at the counter, then looks up from it straight at the viewer, as if someone she knows has just come in. She is the woman who is proprietaria at Bar Turrisi, Castelmola, Taormina. Include behind her the sunny terrace with ceramic decorations, shelves of almond wine bottles, magenta bougainvillea climbing the wall, and Mount Etna far in the distance. Colour from their place: cream, dusty terracotta, rose pink, magenta, warm umber. Full of character. Tall portrait format.",
       here: "You run this bar in Castelmola, high above Taormina, and pour vino alla mandorla, the sweet almond wine the village is known for, with Mount Etna in view. Your background: from Castelmola.",
     },
     {
@@ -384,7 +384,7 @@ export const taormina: CityPantry = {
       role: 'barista',
       placeId: 'caffe-wunderbar',
       personality: ["elegant", "cultured", "precise"],
-      portraitPrompt: 'Pen and ink portrait on white paper with minimal watercolor wash, sophisticated Sicilian woman in her 40s, dark hair in elegant updo, pearl earrings, preparing espresso, fine line work, soft rose and cream wash, refined expression, white background',
+      portraitPrompt: "Soft pastel sketch on white paper, textured, soft morning light. A Sicilian woman of 42 with dark hair in a neat updo, small pearl earrings, a fine straight nose, calm composed eyes and a slight polite smile, in a fitted dark blouse. She tamps coffee into the portafilter of an espresso machine with steady hands, then looks up from it straight at the viewer, as if someone she knows has just come in. She is the woman who is barista at Caffè Wunderbar, Corso Umberto, Taormina. Include behind her the vintage café interior with gold-framed details, a glass display of coffee cups and cornetti, and outdoor tables on the corso under a striped awning. Colour from their place: cream, sand beige, antique gold, bronze, dark umber. Full of character. Tall portrait format.",
       here: "You make coffee at Wunderbar, a famous café with tables above Piazza IX Aprile, where people stop for granita con brioche in summer and for aperitivo at sunset.",
     },
     {
@@ -473,7 +473,7 @@ export const taormina: CityPantry = {
       role: 'pasticciere',
       placeId: 'pasticceria-etna',
       personality: ['sweet-tempered', 'master craftsman'],
-      portraitPrompt: 'Pen and ink portrait on white paper with minimal watercolor wash, master pastry chef, white chef hat, flour on hands, holding cannolo, detailed cross-hatching, golden cream wash, proud artisan, white background. The subject is a man.',
+      portraitPrompt: "Soft pastel sketch on white paper, textured, warm golden light. A Sicilian man of 62 with a round kind face, grey eyebrows, gentle tired eyes and a soft smile, wearing a white chef's hat and a white jacket dusted with flour. His floury hands fill a crisp cannolo shell with ricotta from a piping bag, then he looks up from it straight at the viewer, as if someone he knows has just come in. He is the man who is pasticciere at Pasticceria Etna, Corso Umberto, Taormina. Include behind him the glass display cases filled with cannoli and cassata, colourful marzipan fruits, and trays of almond pastries. Colour from their place: Naples yellow, warm cream, honey ochre, raw sienna, soft almond brown. Full of character. Tall portrait format.",
       here: 'You make and sell Sicilian pastries here: cannoli filled to order, cassata, and marzipan fruit that looks real.',
     },
     {
@@ -518,7 +518,7 @@ export const taormina: CityPantry = {
       role: "fruttivendolo",
       placeId: 'mercato-giardini',
       personality: ["boisterous", "generous with samples", "produce expert"],
-      portraitPrompt: "Pen and ink portrait on white paper with minimal watercolor wash, of a Tunisian man from Sfax, market vendor with short dark hair and a trimmed beard, animated expression, holding citrus fruit, calling to customers, energetic pen strokes, vibrant green and orange wash, lively character, white background. The subject is a man.",
+      portraitPrompt: "Soft pastel sketch on white paper, textured, bright morning light. A Tunisian man of 38 from Sfax, with short dark hair, a trimmed beard, a wide animated grin and sun-creased eyes, in a rolled-sleeve work shirt and a canvas apron. He stacks oranges into a pyramid and holds out a cut slice on a knife blade, then looks up from it straight at the viewer, as if someone he knows has just come in. He is the man who is fruttivendolo at Mercato di Giardini Naxos, Giardini Naxos, Taormina. Include behind him the market stall with piled citrus, tomatoes and eggplants, fresh fish on ice at the next stall, and striped awnings overhead. Colour from their place: terracotta orange, saffron yellow, sage green, olive, warm cream. Full of character. Tall portrait format.",
       here: "You sell lemons, tomatoes, eggplants and capers at the market in Giardini Naxos, down by the sea, and hand out samples. Caponata here is fried eggplant with celery, olives and capers, in a sweet-and-sour sauce of vinegar and sugar. Giardini Naxos is where the Greeks founded their first colony in Sicily, Naxos, in 734 BC. Taormina sits on the hill above. You're from Sfax, Tunisia, and have been here 14 years.",
     },
     {
@@ -552,7 +552,7 @@ export const taormina: CityPantry = {
       role: 'chef',
       placeId: 'ristorante-baronessa',
       personality: ['refined', 'ambitious', 'Michelin-dreaming'],
-      portraitPrompt: 'Pen and ink portrait on white paper with minimal watercolor wash, elegant chef in whites, carefully plating dish, focused expression, fine detailed work, subtle rose wash, culinary artistry, white background. The subject is a man.',
+      portraitPrompt: "Soft pastel sketch on white paper, textured, soft warm evening light. A Sicilian man of 41 with short neat dark hair, a clean-shaven angular face, sharp focused eyes and a composed, quietly confident look, in pressed white chef's whites. He places a small herb leaf onto a plated dish with tweezers, then looks up from it straight at the viewer, as if someone he knows has just come in. He is the man who is chef at Ristorante La Baronessa, Corso Umberto, Taormina. Include behind him the terrace with white tablecloths and candlelit tables, lemon trees in terracotta pots, and the coastline stretching away below. Colour from their place: warm cream, dusty rose, sand beige, olive, soft umber. Full of character. Tall portrait format.",
       here: "You cook Sicilian food on a terrace above the sea: pasta alla Norma, grilled swordfish, caponata, and cannoli to finish.",
     },
     {
@@ -632,7 +632,7 @@ export const taormina: CityPantry = {
       role: "attore",
       placeId: 'teatro-greco',
       personality: ["dramatic", "warm", "classicist"],
-      portraitPrompt: 'Pen and ink portrait on white paper with minimal watercolor wash, tour guide gesturing dramatically, passionate expression, ancient columns behind, expressive line work, stone beige wash, bringing history alive, white background. The subject is a man.',
+      portraitPrompt: "Soft pastel sketch on white paper, textured, warm afternoon light. A Sicilian man of 53 with thick greying hair swept back, a strong nose, expressive dark eyebrows and a warm, theatrical half-smile, in an open-collared linen shirt and a loose dark jacket. One hand holds a rolled script while the other opens in a sweeping gesture, then he looks up straight at the viewer, as if someone he knows has just come in. He is the man who is attore at Teatro Antico di Taormina, Teatro Greco, Taormina. Include behind him the ancient Greek theatre ruins, tall stone columns and arches, and Mount Etna rising beyond. Colour from their place: pale stone grey, sandstone beige, tawny ochre, warm umber, soft sky blue. Full of character. Tall portrait format.",
       here: "You're an actor from Taormina who performs in the summer season at the Teatro Antico, the Greek theatre rebuilt by the Romans, with Etna and the sea behind the stage.",
     },
     {
@@ -655,7 +655,7 @@ export const taormina: CityPantry = {
       role: 'giardiniera',
       placeId: "villa-comunale-taormina",
       personality: ['botanical expert', 'English garden lover'],
-      portraitPrompt: 'Pen and ink portrait on white paper with minimal watercolor wash, gardener with sun hat, gentle smile, holding pruning shears, surrounded by botanical sketches, green leaf wash, peaceful dedication, white background. The subject is a woman.',
+      portraitPrompt: "Soft pastel sketch on white paper, textured, dappled morning light. A Sicilian woman of 46 with a wide-brimmed straw sun hat, a few brown curls at her temples, a sun-freckled face, gentle eyes and a quiet smile, in a green work shirt and gardening gloves tucked in her belt. She trims a flowering stem with pruning shears, then looks up from it straight at the viewer, as if someone she knows has just come in. She is the woman who is giardiniera at Villa Comunale, Centro Storico, Taormina. Include behind her the public gardens with tall palm trees, beds of Mediterranean flowers, a stone path with a bench, and a panoramic view of the sea. Colour from their place: sage green, moss green, dusty pink, pale lime, warm stone. Full of character. Tall portrait format.",
       here: "You look after the Villa Comunale, Taormina's public gardens, laid out by Florence Trevelyan, an Englishwoman who settled here in the 1800s.",
     },
     {
@@ -667,7 +667,7 @@ export const taormina: CityPantry = {
       role: "musicista di strada",
       placeId: 'piazza-ix-aprile',
       personality: ["romantic", "mandolin virtuoso", "cheerful"],
-      portraitPrompt: "Pen and ink portrait on white paper with minimal watercolor wash, young street musician with mandolin, expressive face mid-song, musician hands detailed, warm terracotta wash, artistic soul, white background. The subject is a man.",
+      portraitPrompt: "Soft pastel sketch on white paper, textured, warm sunlit afternoon. A Sicilian man of 26 with tousled dark curls, a light stubble, bright cheerful eyes and a wide open mouth mid-song, in a rolled-sleeve white shirt and a loose waistcoat. His fingers pick the strings of a mandolin held against his chest, then he looks up from it straight at the viewer, as if someone he knows has just come in. He is the man who is musicista di strada at Piazza IX Aprile, Corso Umberto, Taormina. Include behind him the square with its bell tower and clock tower, checkered pavement, café tables, and the bay glittering in the distance. Colour from their place: terracotta, peach, dusty rose, warm umber, sage green. Full of character. Tall portrait format.",
       here: "You play mandolin on Piazza IX Aprile, where everyone gathers at sunset to watch the sea and Mount Etna before the evening passeggiata. Your background: from Taormina.",
     },
     {
@@ -757,7 +757,7 @@ export const taormina: CityPantry = {
       role: 'poeta locale',
       placeId: 'terrazza-panoramica',
       personality: ['dreamer', 'romantic', 'sunset worshipper'],
-      portraitPrompt: 'Pen and ink portrait on white paper with minimal watercolor wash, young poet with notebook, wind-swept hair, gazing at vista, thoughtful eyes, flowing line work, lavender-gold wash, artistic soul, white background. The subject is a man.',
+      portraitPrompt: "Soft pastel sketch on white paper, textured, golden hour light. A Sicilian man of 36 with wind-swept brown hair, a thin face with light stubble, dreamy thoughtful eyes and a faint wistful smile, in a rumpled linen shirt and a loose scarf. He writes a line in a small notebook with a pencil, then looks up from it straight at the viewer, as if someone he knows has just come in. He is the man who is poeta locale at Terrazza dei Poeti, Teatro Greco, Taormina. Include behind him the scenic terrace overlook with a low stone parapet, the sweeping coastal panorama, and Mount Etna in the hazy distance. Colour from their place: dusty lavender, periwinkle, mauve grey, pale rose, soft gold. Full of character. Tall portrait format.",
       here: "You write poetry and come most evenings to this terrace above the Greek theatre, looking over the bay of Naxos and Etna.",
     },
   ],

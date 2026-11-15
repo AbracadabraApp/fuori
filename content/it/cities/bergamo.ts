@@ -352,7 +352,7 @@ export const bergamo: CityPantry = {
       role: 'bigliettaia',
       placeId: 'stazione-bergamo',
       personality: ["diretta", "gentile", "paziente"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a woman in her thirties with short dark hair and small earrings, railway uniform jacket and scarf, behind a ticket counter with a departures screen behind her, minimal sepia watercolor wash on face, detailed crosshatching, friendly direct gaze. A woman. Any signs, timetables or screens are in Italian with Italian place names; no name badge.',
+      portraitPrompt: "Soft pastel portrait on white paper, loose brushstrokes, warm golden light. A woman of 34 with short dark hair, small earrings and a friendly, patient gaze, wearing a railway uniform jacket and scarf. She is sliding a printed ticket across the counter with one hand while the other rests on the keyboard, and she looks up from it straight at the viewer, as if someone she knows has just come in. She is Sara, who is the ticket clerk at Stazione di Bergamo, Città Bassa, Bergamo. Include behind her the ticket counter and, through a tall window, the long neoclassical facade with its portico and the walled Città Alta on its hill in the distance. Colour from their place: cream, warm sand, golden ochre, umber. Full of character. Tall portrait format.",
       here: "You sell tickets at the station in Città Bassa, on Piazzale Marconi, where commuters and students catch trains to Milan. A funicular climbs to Città Alta from Viale Vittorio Emanuele II. The Venetian walls around Città Alta are a UNESCO World Heritage site.",
     },
     {
@@ -364,7 +364,7 @@ export const bergamo: CityPantry = {
       role: 'proprietario',
       placeId: 'caffe-del-tasso',
       personality: ["orgoglioso", "filosofico", "cordiale"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a distinguished man in his fifties with salt-and-pepper hair, strong nose, wearing a vest and tie, minimal sepia watercolor wash on face, detailed crosshatching, warm wise eyes, proud Bergamasco expression',
+      portraitPrompt: "Soft pastel portrait on white paper, loose brushstrokes, warm golden morning light filtering through. A man of 52 with salt-and-pepper hair, a strong nose and warm, wise eyes, wearing a waistcoat and tie, with a proud, cordial half-smile. He is setting a small white cup onto its saucer on a table with careful fingers, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is Marco, who is the owner at Caffè del Tasso, Città Alta, Bergamo. Include behind him the arched portico, textured stone columns, and outdoor tables under cream-coloured umbrellas. Colour from their place: warm cream, pale sand, raw sienna, burnt umber. Full of character. Tall portrait format.",
       here: "You run this historic café on Piazza Vecchia in Città Alta, where Bergamaschi have their coffee under the portico. Torta Donizetti, the local cake, is named after the composer born in Bergamo. The Campanone, the square's Torre Civica, still rings one hundred strokes every night at ten, as it once signalled the closing of the city gates. Polenta e osei is a yellow sweet topped with little birds.",
     },
     {
@@ -509,7 +509,7 @@ export const bergamo: CityPantry = {
       role: "fruttivendolo",
       placeId: 'mercato-citta-alta',
       personality: ["vivace", "scherzoso", "generoso"],
-      portraitPrompt: "Pen and ink portrait on white paper of a jovial older man with white hair and weathered face, work vest over shirt, hands like tree roots, minimal green watercolor wash, detailed character-filled features, market vendor vitality",
+      portraitPrompt: "Soft pastel portrait on white paper, loose brushstrokes, soft morning light. A man of 67 with white hair, a weathered, sun-lined face and a wide jovial grin, wearing a work vest over a shirt, his big hands knotted like tree roots. He is lifting a ripe tomato from a crate to weigh it in his palm, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is Giovanni, who is the greengrocer at Mercato di Città Alta, Città Alta, Bergamo. Include behind him colourful vegetable stalls under striped awnings, piles of green and red produce, textured cobblestones and medieval buildings. Colour from their place: warm stone beige, sage green, olive khaki, soft terracotta. Full of character. Tall portrait format.",
       here: "You work at the market in Città Alta. You're Bergamasco, you've been there for over forty years, and you know every regular by name. Polenta taragna, made with cornmeal and buckwheat, butter and local cheese, is a Bergamo staple. Polenta e osei is the town's sweet, a dessert shaped like a small mound of polenta with a bird on top. Venetian walls ring Città Alta, and a funicular links it to the lower town.",
     },
     {
@@ -543,7 +543,7 @@ export const bergamo: CityPantry = {
       role: 'chef stellato',
       placeId: 'ristorante-da-vittorio',
       personality: ['visionario'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a distinguished chef with penetrating gaze, chef whites, confident bearing, minimal burgundy watercolor wash, detailed intense features, Michelin-starred excellence. The subject is a man.',
+      portraitPrompt: "Soft pastel portrait on white paper, loose brushstrokes, warm golden light glowing from windows at evening. A man of 56 with a penetrating gaze, a confident upright bearing and a composed, visionary expression, wearing crisp chef whites. He is wiping the rim of a plate with a folded cloth, his fingers precise, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is Vittorio, who is the Michelin-starred chef at Ristorante Da Vittorio, Città Bassa, Bergamo. Include behind him the elegant restaurant exterior, its glowing windows and refined textured stonework. Colour from their place: cream, soft ochre, deep burgundy, umber brown. Full of character. Tall portrait format.",
       here: "You're one of the family who run Da Vittorio, a famous restaurant near Bergamo, and you work front of house in the dining room. Casoncelli are filled pasta served with butter, sage and pancetta, a Bergamo classic. Polenta taragna is made with buckwheat and maize flour and stirred with local mountain cheese, such as Branzi. Bergamo's valleys also give Taleggio.",
     },
     {
@@ -599,7 +599,7 @@ export const bergamo: CityPantry = {
       role: 'guida turistica',
       placeId: 'piazza-vecchia',
       personality: ["entusiasta", "loquace", "curioso"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a 35-year-old man with short curly dark hair and a light beard, in a casual jacket with a small backpack on one shoulder, standing in a square and pointing up at a building as he talks to people out of frame, minimal amber watercolor wash, detailed linework. The subject is a man.',
+      portraitPrompt: "Soft pastel portrait on white paper, loose brushstrokes, warm honey evening light. A man of 35 with short curly dark hair and a light beard, an eager open face and a lively, curious smile, wearing a casual jacket with a small backpack on one shoulder. He is holding a folded paper map open, one finger tracing a route across it, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is Leonardo, who is the tour guide at Piazza Vecchia, Città Alta, Bergamo. Include behind him the Palazzo della Ragione, the fountain in the centre of the piazza and warm honey-coloured Renaissance stone buildings. Colour from their place: pale cream, honey ochre, tan, warm taupe. Full of character. Tall portrait format.",
       here: "You guide visitors around Piazza Vecchia, with the Palazzo della Ragione and the old fountain, and up on the Venetian walls. You also tell them how people ride the funicolare between Città Alta and Città Bassa.",
     },
     {
@@ -622,7 +622,7 @@ export const bergamo: CityPantry = {
       role: "restauratrice",
       placeId: 'cappella-colleoni',
       personality: ['entusiasta'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a scholarly woman with glasses, elegant scarf, notebook in hand suggested, minimal rose watercolor wash, detailed intelligent animated features, art historian passion',
+      portraitPrompt: "Soft pastel portrait on white paper, loose brushstrokes, warm afternoon light. A woman of 41 with brown hair pinned up, glasses, an elegant scarf at her neck and bright, animated eyes, her expression intelligent and enthusiastic. She is cleaning a carved stone detail with a fine soft brush, holding it with delicate care, and she looks up from it straight at the viewer, as if someone she knows has just come in. She is Anna, who is the restorer at Cappella Colleoni, Città Alta, Bergamo. Include behind her the elaborate Renaissance chapel facade of colourful marble in pink and white geometric patterns, with textured sculptural details. Colour from their place: ivory, dusty rose, sandy beige, warm taupe. Full of character. Tall portrait format.",
       here: "You restore the coloured marble of the Cappella Colleoni in Bergamo Alta, the chapel the condottiero Bartolomeo Colleoni built for his own tomb, with Tiepolo's paintings inside.",
     },
     {
@@ -645,7 +645,7 @@ export const bergamo: CityPantry = {
       role: 'giardiniera comunale',
       placeId: 'parco-della-trucca',
       personality: ["attiva", "naturalista", "solare"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a fit young woman in work clothes, sun-touched face, gardening gloves suggested, minimal green watercolor wash, detailed outdoor worker vitality, love of nature evident',
+      portraitPrompt: "Soft pastel portrait on white paper, loose brushstrokes, soft spring light. A woman of 29 with a fit, sun-touched face, a bright open smile and dark hair tied back, wearing practical work clothes and worn gardening gloves. She is pressing a young seedling into the soil with a small trowel, and she looks up from it straight at the viewer, as if someone she knows has just come in. She is Giulia, who is the municipal gardener at Parco della Trucca, Città Bassa, Bergamo. Include behind her the pond, wide lawns, young trees and walking paths, with the walls of Città Alta on its hill in the distance. Colour from their place: sage green, pale straw, moss green, soft blush pink. Full of character. Tall portrait format.",
       here: "You look after the paths and flower beds of this big park in the lower city, with its pond and lawns and Città Alta on its hill in the distance. Locals come here for a walk, a run, or a sit in the sun.",
     },
     {
@@ -690,7 +690,7 @@ export const bergamo: CityPantry = {
       role: 'libraia',
       placeId: 'libreria-sant-agostino',
       personality: ["cultured", "helpful", "reserved"],
-      portraitPrompt: 'Pen and ink portrait on white paper of an intellectual woman with reading glasses, book in hand suggested, thoughtful expression, minimal sepia watercolor wash, detailed literary sensibility, bookseller wisdom',
+      portraitPrompt: "Soft pastel portrait on white paper, loose brushstrokes, warm cosy indoor light. A woman of 36 with reading glasses, hair loosely pinned up, a reserved, thoughtful expression and a quiet, kind gaze, wearing a knitted cardigan. She is sliding a book back into its place on a shelf with careful fingers, and she looks up from it straight at the viewer, as if someone she knows has just come in. She is Beatrice, who is the bookseller at Libreria Sant'Agostino, Città Bassa, Bergamo. Include behind her wooden shelves, book-lined walls and a small reading nook, with a vintage atmosphere. Colour from their place: warm ochre, tan, dark umber, forest green. Full of character. Tall portrait format.",
       here: "You run this independent bookshop in Città Bassa and recommend books to anyone who wants to learn about Bergamo. Around the Festival Donizetti in autumn, people ask you about the composer born in this city.",
     },
     {
@@ -714,7 +714,7 @@ export const bergamo: CityPantry = {
       role: 'macchinista della funicolare',
       placeId: 'funicolare-bergamo-alta',
       personality: ['orgoglioso', 'puntuale'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a neat man in uniform cap, steady hands suggested, responsible expression, minimal red watercolor wash, detailed trustworthy features, funicular operator pride',
+      portraitPrompt: "Soft pastel portrait on white paper, loose brushstrokes, warm vintage railway light. A man of 51 in a neat uniform and cap, with a clean-shaven, steady face and a proud, composed expression. His hand rests firmly on the brass control lever of the cable car, his other hand holding a pocket watch, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is Michele, who is the funicular driver at Funicolare Bergamo Alta, Città Alta, Bergamo. Include behind him the red cable car, the Art Nouveau details of the historic station and its cream walls. Colour from their place: cream, muted brick red, warm tan, umber. Full of character. Tall portrait format.",
       here: "You drive the funicular that has carried people between the lower town and Bergamo Alta since 1887, up through the Venetian walls.",
     },
     {
@@ -726,7 +726,7 @@ export const bergamo: CityPantry = {
       role: 'direttore d\'orchestra',
       placeId: 'teatro-donizetti',
       personality: [],
-      portraitPrompt: 'Pen and ink portrait on white paper of a distinguished conductor with expressive hands mid-gesture, formal concert attire, intense musical gaze, minimal gold watercolor wash, detailed dramatic features, operatic passion. The subject is a man.',
+      portraitPrompt: "Soft pastel portrait on white paper, loose brushstrokes, warm golden evening light. A man of 64 with swept-back silver hair, an intense, dramatic gaze and deep lines around his eyes, wearing formal concert attire. He holds a baton in one raised hand and turns a page of a musical score with the other, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is the Maestro, who is the orchestra conductor at Teatro Donizetti, Città Bassa, Bergamo. Include behind him the elegant neoclassical theatre facade with its columns, archways and textured ornate details. Colour from their place: cream, warm gold, buff, umber. Full of character. Tall portrait format.",
       here: "You conduct at the Teatro Donizetti, Bergamo's opera house, named after the composer born here, which the Donizetti Opera festival fills every autumn.",
     },
     {

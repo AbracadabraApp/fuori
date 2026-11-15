@@ -349,7 +349,7 @@ export const venezia: CityPantry = {
       role: "proprietaria del bar",
       placeId: 'bar-al-timon',
       personality: ["gregarious", "generous", "quick-witted"],
-      portraitPrompt: "Pen and ink portrait on white paper of a friendly woman in her forties with slightly greying curly hair, warm smile lines around eyes, casual button-down shirt, minimal warm sepia watercolor wash, detailed cross-hatching, welcoming expression",
+      portraitPrompt: "Bold watercolour portrait on white paper, saturated colour, washes laid on wet and bright, deep shadows, hard Venetian sunlight. A woman of 42 with slightly greying curly hair, warm smile lines around her eyes, a casual button-down shirt with the sleeves rolled, and a broad, quick-witted grin. She is wiping a wooden table and setting down a glass, and she looks up from it straight at the viewer, as if someone she knows has just come in. Here is a woman who is the owner of the bar at Al Timon, Cannaregio, Venezia. Include behind her the canalside bar with wooden tables along the fondamenta, wine bottles visible through the windows, and morning light glinting off the canal water. Colour from their place: terracotta, ochre, sage green, burnt umber and canal blue. Full of character. Tall portrait format.",
       here: "You run Al Timon, where people take an ombra de vin and a few cicchetti and drink them at the tables right along the canal in Cannaregio, the way Venetians do at aperitivo hour. Your background: Venetian, from Cannaregio.",
     },
     {
@@ -361,7 +361,7 @@ export const venezia: CityPantry = {
       role: "cameriera",
       placeId: 'caffe-florian',
       personality: ["elegant", "hardworking", "friendly"],
-      portraitPrompt: "Pen and ink portrait on white paper of a young South Asian woman of Bangladeshi heritage, born in Venice, a distinguished young woman in her mid twenties with neat dark hair tied back, bow tie and formal vest, subtle blue-grey watercolor wash, refined pen strokes, dignified bearing",
+      portraitPrompt: "Bold watercolour portrait on white paper, saturated colour, washes laid on wet and bright, deep shadows, hard Venetian sunlight. A young woman of 25, of Bangladeshi heritage and born in Venice, with neat dark hair tied back, a bow tie and a formal vest, and a composed, friendly expression. She is setting a small cup and saucer on a round table with a white tablecloth, and she looks up from it straight at the viewer, as if someone she knows has just come in. Here is a woman who is the waitress at Caffè Florian, San Marco, Venezia. Include behind her the arched porticos, small round tables with white tablecloths, glimpses of the ornate interior, and the piazza in warm morning light. Colour from their place: terracotta, Naples yellow, burnt umber and dusty slate blue. Full of character. Tall portrait format.",
       here: "You wait on tables at Caffè Florian, the historic café under the arcades of Piazza San Marco, open since 1720. It is named after its founder, Floriano Francesconi. A coffee at a table costs far more than an espresso drunk standing at the bar, and when the café's orchestra plays on the piazza, a music charge is added to the bill. Your background: born in Venice to Bangladeshi parents.",
     },
     {
@@ -494,7 +494,7 @@ export const venezia: CityPantry = {
       role: "pescivendola",
       placeId: 'mercato-rialto',
       personality: ["boisterous", "hardworking", "direct"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a 55-year-old woman with dark blonde hair tied back under a knitted cap and a lined, attentive face, in a fleece and a waterproof apron, weighing sardines on a scale at a fish stall, looking down at her work, minimal watercolor wash in lagoon blue and silver grey, detailed linework. The subject is a woman.',
+      portraitPrompt: "Bold watercolour portrait on white paper, saturated colour, washes laid on wet and bright, deep shadows, hard Venetian sunlight. A woman of 55 with dark blonde hair tied back under a knitted cap, a lined, attentive face, a fleece and a waterproof apron, and a direct, boisterous look. She is weighing silvery sardines on a scale at her fish stall, and she looks up from it straight at the viewer, as if someone she knows has just come in. Here is a woman who is the fishmonger at Mercato di Rialto, San Polo, Venezia. Include behind her the market stalls under white canopies, crates of seafood and vegetables, and the Grand Canal beyond in lively morning light. Colour from their place: olive green, terracotta, ochre and lagoon blue-grey. Full of character. Tall portrait format.",
       here: "You sell fish at the Rialto market in San Polo, where Venetians shop early for sarde, seppie and moleche. The fish market is closed on Mondays. Moleche are lagoon crabs caught just as they shed their shell, only in certain seasons. Sarde in saor, sardines with sweet-sour onions, is an old Venetian dish. Your background: from Constanța, here 15 years.",
     },
     {
@@ -528,7 +528,7 @@ export const venezia: CityPantry = {
       role: 'chef e proprietario',
       placeId: 'ristorante-antiche-carampane',
       personality: [],
-      portraitPrompt: 'Pen and ink portrait on white paper of a serious chef in his late forties with strong features, chef\'s whites, intense gaze, minimal russet watercolor wash, bold assured strokes, culinary dedication',
+      portraitPrompt: "Bold watercolour portrait on white paper, saturated colour, washes laid on wet and bright, deep shadows, hard Venetian sunlight. A man of 47 with strong features, a serious face, short dark hair and spotless chef's whites, with an intense, steady gaze. He is wiping the rim of a plate he has just finished, and he looks up from it straight at the viewer, as if someone he knows has just come in. Here is a man who is the chef and owner of the restaurant at Antiche Carampane, San Polo, Venezia. Include behind him the quiet calle, white tablecloths glimpsed through the windows, and the intimate dining room in classic Venetian elegance. Colour from their place: terracotta, Naples yellow, burnt umber and slate violet. Full of character. Tall portrait format.",
       here: "You cook Venetian fish in a hidden trattoria near Rialto, in San Polo. The menu has sarde in saor, sweet-and-sour with onions, pine nuts and raisins; fritto misto from the lagoon; and spaghetti al nero di seppia, black with cuttlefish ink. There is no pizza here. The street takes its name from the old Ca' Rampani, and the quarter was where the Republic of Venice once confined its prostitutes.",
     },
     {
@@ -595,7 +595,7 @@ export const venezia: CityPantry = {
       role: 'gondoliere',
       placeId: 'ponte-rialto',
       personality: ['proud', 'skilled', 'charming'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a 43-year-old Venetian man with short dark hair and a tanned face, in the striped shirt gondoliers wear with a dark fleece over his shoulders, sitting on a low wall on his break with a paper cup of coffee, looking at his phone, minimal watercolor wash in canal green and blue, detailed linework. The subject is a man.',
+      portraitPrompt: "Bold watercolour portrait on white paper, saturated colour, washes laid on wet and bright, deep shadows, hard Venetian sunlight. A Venetian man of 43 with short dark hair and a tanned face, wearing the striped shirt of a gondolier with a dark fleece over his shoulders, and a proud, charming half smile. He sits on a low wall on his break, holding a paper cup of coffee and his phone, and he looks up from it straight at the viewer, as if someone he knows has just come in. Here is a man who is a gondolier at Ponte di Rialto, San Marco, Venezia. Include behind him the white stone bridge arching over the Grand Canal, gondolas passing beneath, and the shops on the bridge. Colour from their place: burnt sienna, canal blue, sand ochre and deep green-black. Full of character. Tall portrait format.",
       here: "You're a gondolier, from Cannaregio like your father and grandfather, and you're on your break by the Rialto bridge.",
     },
     {
@@ -618,7 +618,7 @@ export const venezia: CityPantry = {
       role: 'studentessa',
       placeId: 'campo-santa-margherita',
       personality: ["lively", "social", "optimistic"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a young woman with long dark hair, casual university clothes, bright expression, minimal ochre watercolor wash, free spirited lines, youthful energy',
+      portraitPrompt: "Bold watercolour portrait on white paper, saturated colour, washes laid on wet and bright, deep shadows, hard Venetian sunlight. A young woman of 26 with long dark hair, casual university clothes, a bright, open expression and an optimistic smile. She is holding a notebook and a paper cup of coffee, flipping a page with her thumb, and she looks up from it straight at the viewer, as if someone she knows has just come in. Here is a woman who is a student at Campo Santa Margherita, Dorsoduro, Venezia. Include behind her the lively rectangular campo with market stalls, warm ochre building facades, outdoor café tables, and students and families passing. Colour from their place: terracotta, burnt umber, ochre and periwinkle blue. Full of character. Tall portrait format.",
       here: "You study at the university nearby and meet friends in Campo Santa Margherita, the students' square of Dorsoduro, where in the evening everyone stands outside with a spritz in hand.",
     },
     {
@@ -641,7 +641,7 @@ export const venezia: CityPantry = {
       role: 'storico locale',
       placeId: 'campo-dei-mori',
       personality: ["eccentric", "local", "nostalgic"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a 72-year-old Venetian man with neatly combed white hair and reading glasses pushed up on his forehead, a quiet half smile, in a navy cardigan over a shirt, sitting on a stone bench with a folded newspaper on his knee, looking across the square, minimal watercolor wash in terracotta and brick pink, detailed linework. The subject is a man.',
+      portraitPrompt: "Bold watercolour portrait on white paper, saturated colour, washes laid on wet and bright, deep shadows, hard Venetian sunlight. A Venetian man of 72 with neatly combed white hair, reading glasses pushed up on his forehead, a quiet half smile, and a navy cardigan over a shirt. He sits on a stone bench, folding a newspaper on his knee, and he looks up from it straight at the viewer, as if someone he knows has just come in. Here is a man who is the local historian at Campo dei Mori, Cannaregio, Venezia. Include behind him the small quiet campo with the statue of the Moorish merchant, a historic well, and weathered terracotta walls and worn stone. Colour from their place: terracotta, burnt umber, clay pink and sand ochre. Full of character. Tall portrait format.",
       here: "You sit in Campo dei Mori, a quiet square in Cannaregio. Its walls hold statues of merchants in oriental dress, said to be the Mastelli brothers, who came from the Morea and lived here in the twelfth century. One of them, Sior Rioba, has an iron nose, and Venetians count him among the city's \"talking statues\". The square lies near the house of Tintoretto, who lived by the Fondamenta dei Mori.",
     },
     {
@@ -675,7 +675,7 @@ export const venezia: CityPantry = {
       role: 'libraio',
       placeId: 'libreria-acqua-alta',
       personality: ["eccentric", "literary", "whimsical"],
-      portraitPrompt: 'Pen and ink portrait on white paper of an quirky older man with reading glasses on chain, rumpled clothes, cat on shoulder, minimal faded-blue watercolor wash, playful detailed lines, bookish charm',
+      portraitPrompt: "Bold watercolour portrait on white paper, saturated colour, washes laid on wet and bright, deep shadows, hard Venetian sunlight. A quirky man of 66 with reading glasses on a chain, rumpled clothes, untidy grey hair, a whimsical smile, and a cat resting on his shoulder. He is stacking a pile of old books on a table, and he looks up from it straight at the viewer, as if someone he knows has just come in. Here is a man who is the bookseller at Libreria Acqua Alta, Castello, Venezia. Include behind him books piled in a gondola and a bathtub, cats lounging, and stacks of books reaching the ceiling. Colour from their place: terracotta, ochre, cobalt blue and sky blue. Full of character. Tall portrait format.",
       here: "You keep the Libreria Acqua Alta, where books are stacked in a gondola and in bathtubs so that high water won't ruin them, and the shop cats sleep among the shelves.",
     },
     {
@@ -699,7 +699,7 @@ export const venezia: CityPantry = {
       role: 'bigliettaio',
       placeId: 'stazione-santa-lucia',
       personality: ["helpful", "organized", "patient"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a uniformed man in his fifties with cap, official vest, calm demeanor, minimal grey-blue watercolor wash, neat orderly lines, gateway guardian',
+      portraitPrompt: "Bold watercolour portrait on white paper, saturated colour, washes laid on wet and bright, deep shadows, hard Venetian sunlight. A man of 53 in a uniform with a cap and an official vest, with a calm, patient face and a steady, helpful expression. He is sliding a ticket across the counter with one hand and holding a stamp in the other, and he looks up from it straight at the viewer, as if someone he knows has just come in. Here is a man who is the ticket clerk at Stazione Santa Lucia, Cannaregio, Venezia. Include behind him the modernist station front, vaporetti waiting outside by the water, and travellers with luggage passing. Colour from their place: cerulean blue, terracotta, pale periwinkle, olive and deep bottle green. Full of character. Tall portrait format.",
       here: "You sell tickets at Santa Lucia station, where the trains end and the Grand Canal begins right outside the doors, and you point people to the right vaporetto stop.",
     },
     {
@@ -711,7 +711,7 @@ export const venezia: CityPantry = {
       role: 'maestro squerarolo',
       placeId: 'squero-san-trovaso',
       personality: ["masterful", "patient", "proud"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a skilled craftsman in his late fifties with calloused hands, work clothes, wood shavings in hair, minimal wood-tone watercolor wash, expert detailed strokes, artisan pride',
+      portraitPrompt: "Bold watercolour portrait on white paper, saturated colour, washes laid on wet and bright, deep shadows, hard Venetian sunlight. A man of 58 with weathered skin, calloused hands, wood shavings in his greying hair, and worn work clothes, with a patient, proud expression. He is drawing a hand plane along a long wooden plank, curls of wood falling away, and he looks up from it straight at the viewer, as if someone he knows has just come in. Here is a man who is the master boatbuilder at Squero San Trovaso, Dorsoduro, Venezia. Include behind him the traditional gondola boatyard, wooden boats under construction on their stands, and other craftsmen at work. Colour from their place: terracotta, olive brown, burnt umber, ochre and slate. Full of character. Tall portrait format.",
       here: "You work at the Squero San Trovaso, one of the few boatyards in Venice still building and repairing gondolas by hand from several kinds of wood, in a yard that looks like a mountain chalet on the canal.",
     },
     {

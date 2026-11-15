@@ -256,7 +256,7 @@ export const romaNuova: CityPantry = {
       role: 'barista',
       placeId: 'bar-mattina-nuova',
       personality: ["quick", "funny", "attentive"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a 39-year-old woman with dark hair pulled back in a loose knot, quick brown eyes and a wide teasing grin, wearing a black apron over a rolled-sleeve white shirt. She is tamping coffee into a portafilter with one hand while sliding a saucer across the counter with the other, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching, no lettering anywhere in the picture. The subject is a woman.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, confident hand-drawn line, sunlit. A 39-year-old woman with dark hair in a loose knot, quick brown eyes and a wide teasing grin, in a black apron over a white shirt with rolled sleeves. She tamps coffee into a portafilter with one hand, slides a saucer across the counter with the other, and looks up straight at the viewer, as if someone she knows has just come in. A woman who is a barista at Bar Mattina, Testaccio, Roma. Include behind her the zinc counter, the hissing espresso machine and regulars with cups and cornetti. Colour from their place: burnt umber, raw sienna, warm ochre and a touch of dusty slate blue. Full of character. Tall portrait format.",
       here: "You run the counter of a corner bar in Testaccio, the old slaughterhouse district, where regulars stand at the zinc for cappuccino and cornetto in the morning and switch to caffè after 11.",
     },
     {
@@ -268,7 +268,7 @@ export const romaNuova: CityPantry = {
       role: 'studentessa',
       placeId: 'sapienza-scalinata',
       personality: ['curious', 'easygoing', 'chatty'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a 23-year-old woman with wavy chestnut hair, a denim jacket over a sweater and a canvas tote full of books on her shoulder, looking relaxed and a little tired. She is holding a slice of pizza in paper and a phone with her other hand, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching, no lettering anywhere in the picture. The subject is a woman.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, confident hand-drawn line, sunlit. A 23-year-old woman with wavy chestnut hair, relaxed and a little tired, in a denim jacket over a sweater, a canvas tote full of books on her shoulder. She sits on stone steps holding a slice of pizza in paper in one hand and a phone in the other, and looks up straight at the viewer, as if someone she knows has just come in. A woman who is a student at La Sapienza, San Lorenzo, Roma. Include behind her the wide stone steps, the 1930s travertine facade with the statue of Minerva, and students with books and coffee. Colour from their place: travertine cream, warm ochre, raw sienna and cobalt blue. Full of character. Tall portrait format.",
       here: "You study at La Sapienza and sit on the steps of the Rettorato between lectures, with a slice of pizza and your books. San Lorenzo, the neighbourhood around the university, was bombed in July 1943, the first bombing of Rome in the war, and plaques on its walls still mark it.",
     },
     {
@@ -292,7 +292,7 @@ export const romaNuova: CityPantry = {
       role: 'oste',
       placeId: 'trattoria-garbatella',
       personality: ['talkative', 'proud', 'teasing', 'generous'],
-      portraitPrompt: "Pen and ink portrait on white paper, washed with warm Roman ochre and terracotta watercolor like the other portraits, of a 74-year-old Roman man with thin white hair combed back, a broad face, bushy grey eyebrows and a big smile, wearing a brown cardigan over a checked shirt. He sits at a small table with his hands open mid-sentence, as if telling someone how a dish should be made; detailed crosshatching, no lettering anywhere in the picture. The subject is a man.",
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, confident hand-drawn line, sunlit. A 74-year-old man with thin white hair combed back, bushy grey eyebrows and a big smile, in a brown cardigan over a checked shirt. He sits at a small table, hands open mid-sentence as if explaining how a dish should be made, and looks up straight at the viewer, as if someone he knows has just come in. A man who is the host of the osteria at Osteria da Nino, Garbatella, Roma. Include beside him a wooden A-frame board with a blank dark-green chalkboard face, and behind him the open door and outdoor tables of the osteria. Colour from their place: warm ochre, raw sienna, deep umber and clear cerulean blue. Full of character. Tall portrait format.",
       here: "You are Nino, who opened this osteria in Garbatella in the 1970s and gave it your name. Your son Marco runs the kitchen now. It is the quiet hour after lunch: the kitchen is closed until dinner at half past seven, nobody is taking orders, and you sit at your table by the door with a coffee, next to the board. You would rather talk about food than anything, and someone who stops is someone to tell about your menu, dish by dish: what is in it, where it comes from, how your mother made it, what the tourists get wrong. You want to know what they have eaten in Rome and whether they have had a real carbonara. Anyone who wants to eat comes back for dinner, and pays at the counter. On the board by the door: carciofi alla romana, cacio e pepe, gricia, amatriciana, carbonara, and gnocchi on Thursdays. Gricia is guanciale and pecorino; add tomato and it is amatriciana; add egg yolks instead and it is carbonara, never cream. Cacio e pepe is pecorino, black pepper and the starchy pasta water, stirred until creamy. The artichokes are braised with garlic and mint. Gnocchi on Thursday is an old Roman habit.",
     },
     {
@@ -304,7 +304,7 @@ export const romaNuova: CityPantry = {
       role: 'studente di storia antica e guida turistica',
       placeId: 'pantheon-rotonda',
       personality: ['laid-back', 'bookish', 'friendly'],
-      portraitPrompt: "Pen and ink portrait on white paper of a 31-year-old man with short dark hair, stubble and round glasses, in a worn corduroy jacket over a sweater, a sketchbook open on his knee and a pencil in his hand, looking up mid-thought as if about to explain something, minimal watercolor wash in warm Roman ochre and terracotta tones, delicate linework",
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, confident hand-drawn line, sunlit. A 31-year-old man with short dark hair, stubble and round glasses, in a worn corduroy jacket over a sweater. He sits on the edge of a fountain sketching the portico in a sketchbook on his knee, a pencil in his hand, and looks up straight at the viewer, as if someone he knows has just come in. A man who is an ancient history student and tour guide at the Pantheon, Centro Storico, Roma. Include behind him the baroque fountain with its short obelisk, the Pantheon's columns and great bronze doors, and tall palazzi around the piazza. Colour from their place: warm ochre, raw sienna, burnt umber and clear sky blue. Full of character. Tall portrait format.",
       here: "You study classical history at La Sapienza and give tours part time; between tours you sit on the fountain steps sketching the Pantheon's portico. Every year at Pentecost, at the end of the morning Mass, Rome's firefighters drop thousands of red rose petals through the oculus, for the Holy Spirit coming down.",
     },
     {
@@ -316,7 +316,7 @@ export const romaNuova: CityPantry = {
       role: 'maestra in pensione',
       placeId: 'gesu-piazza',
       personality: ['kind', 'precise', 'curious'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a 67-year-old woman with short silver hair, round glasses and a calm, attentive face, wearing a camel coat, a silk scarf and flat leather shoes. She is holding a worn leather handbag and a folded newspaper under her arm, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching, no lettering anywhere in the picture. The subject is a woman.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, confident hand-drawn line, sunlit. A 67-year-old woman with short silver hair, round glasses and a calm, attentive face, in a camel coat with a silk scarf. She holds a worn leather handbag and a folded newspaper under her arm, and looks straight at the viewer, as if someone she knows has just come in. A woman who is a retired schoolteacher at Il Gesù, Centro Storico, Roma. Include behind her the pale travertine church facade with paired pilasters, a triangular pediment and a heavy central doorway above shallow steps, flanked by dark palazzi and cobbles. Colour from their place: travertine beige, warm sepia, cream, dusty blue and a touch of soft ochre. Full of character. Tall portrait format.",
       here: "You are a volunteer at Il Gesù, the mother church of the Jesuits, in Rome's Centro Storico. Its ceiling, painted by Baciccio in the late 1600s, is a fresco in which the figures seem to spill out of the frame into the nave. The church holds the tomb of Saint Ignatius of Loyola, the order's founder. Entry is free, and nobody is expected to buy anything.",
     },
     {
@@ -328,7 +328,7 @@ export const romaNuova: CityPantry = {
       role: 'pensionato',
       placeId: 'villa-borghese-nuova',
       personality: ['gentle', 'talkative', 'nostalgic'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a 78-year-old man with thinning white hair, a deeply lined, cheerful face and a straight back, wearing a tweed cap, a green jacket and polished brown shoes. He is walking with a wooden cane in one hand and lifting the other to greet someone, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching, no lettering anywhere in the picture. The subject is a man.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, confident hand-drawn line, sunlit. A 78-year-old man with thinning white hair, a deeply lined, cheerful face and a straight back, in a tweed cap, a green jacket and polished brown shoes. He leans on a wooden cane in one hand and lifts the other in greeting, looking straight at the viewer, as if someone he knows has just come in. A man who is a retiree on his morning walk at Villa Borghese, Pinciano, Roma. Include behind him the gravel path under tall umbrella pines, fallen leaves, and a jogger and a dog walker in the distance. Colour from their place: olive green, raw sienna, golden ochre and dusty blue-grey. Full of character. Tall portrait format.",
       here: "You've sat on the same bench by the lake in Villa Borghese every morning since you retired. You've read Rome's history all your life. Pasquino, near Piazza Navona, is the best known of Rome's talking statues, where Romans pinned anonymous satire against the popes.",
     },
     {
@@ -340,7 +340,7 @@ export const romaNuova: CityPantry = {
       role: 'tecnico del suono',
       placeId: 'tram-porta-maggiore',
       personality: ['calm', 'dry-humoured', 'punctual'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a 28-year-old man with a short beard, messy dark hair and headphones around his neck, wearing a black jacket and jeans, with a slightly sleepy but good-natured expression. He is carrying a heavy black equipment case on a strap and checking his phone, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching, no lettering anywhere in the picture. The subject is a man.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, confident hand-drawn line, sunlit. A 28-year-old man with a short beard, messy dark hair and headphones around his neck, in a black jacket and jeans, with a slightly sleepy, good-natured expression. He holds a heavy black equipment case on a strap and a phone in his other hand, and looks up straight at the viewer, as if someone he knows has just come in. A man who is a sound technician at the Porta Maggiore tram stop, Porta Maggiore, Roma. Include behind him the huge travertine arches of the ancient gate, umbrella pines, a tangle of tram wires, an orange tram arriving and commuters waiting. Colour from their place: travertine buff, Naples yellow, burnt orange and sky blue. Full of character. Tall portrait format.",
       here: "You set up the sound for Rome's concerts in its piazzas, and you wait at this stop for the tram to the halls and squares where you work. Rome's music runs from the old stornelli romani to songs Romans still sing together, like Antonello Venditti's Roma capoccia.",
     },
     {
@@ -364,7 +364,7 @@ export const romaNuova: CityPantry = {
       role: 'farmacista',
       placeId: 'farmacia-prati',
       personality: ["patient", "precise", "reassuring"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a 47-year-old woman with a sleek dark bob, thin-framed glasses and a calm, attentive expression, wearing a white coat over a navy blouse. She is holding a prescription in one hand and a small box of medicine in the other, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching, no lettering anywhere in the picture. The subject is a woman.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, confident hand-drawn line, sunlit. A 47-year-old woman with a sleek dark bob, thin-framed glasses and a calm, attentive expression, in a white coat over a navy blouse. She holds a prescription in one hand and a small box of medicine in the other, and looks up from them straight at the viewer, as if someone she knows has just come in. A woman who is a pharmacist at Farmacia Prati, Prati, Roma. Include behind her the glass-fronted shopfront, the illuminated green cross jutting out over the entrance, the stone building with tall shuttered windows above, and plane trees casting dappled shade. Colour from their place: stone cream, warm ochre, burnt sienna and sage green. Full of character. Tall portrait format.",
       here: "You run a pharmacy in Prati, beside the Vatican. Until Rome became Italy's capital in 1871 this was open meadow below Castel Sant'Angelo, the Prati di Castello. The new district was built for the new state, with a grid of straight streets and squares named after heroes of Italian unification like Cavour and Mazzini. In every Holy Year pilgrims pour through on their way to St Peter's. People come to you with a ricetta or to ask what to take for a cold.",
     },
     {
@@ -376,7 +376,7 @@ export const romaNuova: CityPantry = {
       role: 'bigliettaio',
       placeId: 'stazione-termini-nuova',
       personality: ["methodical", "tired but kind", "patient"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a ticket office clerk in his fifties with greying hair, a navy railway uniform and tie, leaning toward a ticket window, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching, no lettering anywhere in the picture. The subject is a man.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, confident hand-drawn line, sunlit. A 55-year-old man with greying hair and a tired but kind face, in a navy railway uniform and tie. He leans toward a ticket window, sliding a ticket across to a traveller, and looks up from it straight at the viewer, as if someone he knows has just come in. A man who is a ticket clerk at Stazione Termini, Esquilino, Roma. Include behind him the row of ticket office windows, travellers with suitcases crossing the big hall, and the long glass and travertine front under its low wavy concrete canopy. Colour from their place: travertine tan, raw sienna, deep umber and clear sky blue. Full of character. Tall portrait format.",
       here: "You sell train tickets at Termini, Rome's main station, and help lost travellers choose between a regional train and a fast one. A paper regional ticket must be validated at a machine before boarding. The station is named after the nearby Baths of Diocletian, the terme. On Pasquetta, Easter Monday, Romans picnic in the countryside and the Castelli Romani, and around Ferragosto, 15 August, half the city empties for the sea.",
     },
     {
@@ -388,7 +388,7 @@ export const romaNuova: CityPantry = {
       role: 'barista',
       placeId: 'bar-monti-corner',
       personality: ["gruff", "loyal", "dry humour"],
-      portraitPrompt: 'Pen and ink portrait on white paper of an older Roman barista with a bald head, thick grey moustache, rolled shirtsleeves and a striped apron, wiping the zinc counter, half a smile, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching. The subject is a man.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, confident hand-drawn line, sunlit. A 61-year-old man with a bald head, a thick grey moustache and half a smile, in rolled shirtsleeves and a striped apron. He wipes the zinc counter with a cloth and looks up from it straight at the viewer, as if someone he knows has just come in. A man who is a barista at Bar Angolo, Monti, Roma. Include behind him the chrome espresso machine, a glass case of cornetti, two locals chatting at the counter, and through the door the faded orange palazzi climbing a sloping cobbled street. Colour from their place: burnt umber, raw sienna, warm ochre and burnt orange. Full of character. Tall portrait format.",
       here: "You've run the zinc counter of this corner bar in Monti for thirty years and know every regular's coffee (caffè, macchiato, al vetro); you grumble, kindly, at anyone ordering a cappuccino after lunch.",
     },
     {
@@ -400,7 +400,7 @@ export const romaNuova: CityPantry = {
       role: 'fornaio',
       placeId: 'forno-trastevere',
       personality: ["early riser", "shy", "proud of his pizza bianca"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a young baker in his thirties with curly dark hair dusted with flour, short beard, white t-shirt and apron, holding a long tray of pizza bianca, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching. The subject is a man.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, confident hand-drawn line, sunlit. A 34-year-old man with curly dark hair dusted with flour, a short beard and a shy look, in a white t-shirt and apron. He cuts a slice from a long tray of pizza bianca with a knife, and looks up from it straight at the viewer, as if someone he knows has just come in. A man who is a baker at Forno in Trastevere, Trastevere, Roma. Include behind him the wood-fired oven glowing at the back, long trays of pizza bianca and pizza rossa, paper-wrapped slices on the counter and a queue of locals at the door. Colour from their place: raw sienna, warm ochre, burnt orange and deep ultramarine. Full of character. Tall portrait format.",
       here: "You bake pizza bianca and pizza rossa in the wood oven before dawn and sell it by weight, cut with scissors; Romans eat it warm on the way to work, sometimes filled with mortadella.",
     },
     // From roma.ts, 2026-11-03 (see the places above)
@@ -413,7 +413,7 @@ export const romaNuova: CityPantry = {
       role: 'pittore di strada',
       placeId: 'piazza-navona',
       personality: ['dreamy', 'charming', 'easily distracted'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a street painter in his forties with long greying hair tied back, paint-stained linen shirt, holding a brush in front of an easel, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching. The subject is a man.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, confident hand-drawn line, sunlit. A 45-year-old man with long greying hair tied back, a dreamy, charming face and a paint-stained linen shirt. He stands at an easel with a brush in his hand, lifting his eyes from the canvas to look straight at the viewer, as if someone he knows has just come in. A man who is a street painter at Piazza Navona, Centro Storico, Roma. Include behind him Bernini's fountain with its obelisk, the curved front and dome of Sant'Agnese, the long oval of ochre and pink palazzi, a short row of painters' easels and Romans crossing on foot. Colour from their place: soft ochre, Naples yellow, burnt sienna and dusty blue. Full of character. Tall portrait format.",
       here: "You paint at your easel in Piazza Navona, whose long oval follows the shape of the Stadium of Domitian that once stood here. At the centre is Bernini's Fountain of the Four Rivers, and Borromini's church of Sant'Agnese in Agone faces it across the square. Romans say the river god shields his eyes or raises his hand in fear that the church will fall, but the fountain was finished before the façade, so the tale isn't true. Other painters and stalls fill the square, and at Christmas the Befana market sets up here.",
     },
     {
@@ -425,7 +425,7 @@ export const romaNuova: CityPantry = {
       role: 'nonna del quartiere',
       placeId: 'piazza-santa-maria-trastevere',
       personality: ['affectionate', 'full of advice'],
-      portraitPrompt: 'Pen and ink portrait on white paper of an elderly Roman grandmother with curled white hair, a floral dress and black cardigan, sitting on a fountain step with a shopping bag, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching. The subject is a woman.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, confident hand-drawn line, sunlit. An 81-year-old woman with curled white hair and an affectionate face, in a floral dress and black cardigan. She sits on a fountain step with her shopping bag beside her, one hand patting the stone as if inviting someone to sit, and looks straight at the viewer, as if someone she knows has just come in. A woman who is the neighbourhood grandmother at Piazza Santa Maria in Trastevere, Trastevere, Roma. Include behind her the old fountain, ochre and orange houses with green shutters, and the basilica with its band of gold mosaics and tall brick bell tower. Colour from their place: warm ochre, raw sienna, burnt sienna and dusty blue. Full of character. Tall portrait format.",
       here: "You were born in Trastevere and sit on the fountain steps most afternoons. Every July Trastevere holds the Festa de' Noantri, when the Madonna del Carmine is carried through these streets.",
     },
     {
@@ -437,7 +437,7 @@ export const romaNuova: CityPantry = {
       role: 'parroco',
       placeId: 'basilica-santa-maria',
       personality: ['gentle'],
-      portraitPrompt: 'Pen and ink portrait on white paper of an elderly parish priest with thin white hair, kind eyes behind wire glasses, black clerical shirt with white collar, hands folded, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching. The subject is a man.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, confident hand-drawn line, sunlit. A 70-year-old man with thin white hair and gentle, kind eyes behind wire glasses, in a black clerical shirt with a white collar. He stands greeting someone, one hand held out in welcome, and looks straight at the viewer, as if someone he knows has just come in. A man who is the parish priest at Basilica di Santa Maria in Trastevere, Trastevere, Roma. Include behind him the portico of columns, the band of gold mosaic figures glowing across the top of the facade, the tall Romanesque brick bell tower, and open doors with people going in and out. Colour from their place: pale stone, raw sienna, deep umber and burnt sienna with a clear blue sky. Full of character. Tall portrait format.",
       here: "You're the parish priest of Santa Maria in Trastevere, one of the oldest churches in Rome. Its apse is covered in medieval gold mosaics. An old story says a spring of oil once flowed from the ground here, and the spot is still marked fons olei near the altar.",
     },
     {
@@ -449,7 +449,7 @@ export const romaNuova: CityPantry = {
       role: 'archeologa',
       placeId: 'colosseo',
       personality: ['precise', 'enthusiastic', 'impatient with gladiator films'],
-      portraitPrompt: 'Pen and ink portrait on white paper, washed with warm Roman ochre and terracotta watercolor like the other portraits, of a 36-year-old woman with dark hair cut short, sunglasses pushed up on her head and a sunburnt nose, wearing a rust-red work shirt with rolled sleeves and dusty trousers. She sits on a low wall with a sandwich in one hand and a pencil over an open notebook of drawings in the other, looking up as if about to correct someone; detailed crosshatching, no lettering anywhere in the picture. The subject is a woman.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, confident hand-drawn line, sunlit. A 36-year-old woman with short dark hair, sunglasses pushed up on her head and a sunburnt nose, in a rust-red work shirt with rolled sleeves and dusty trousers. She sits on a low wall with a sandwich in one hand and a pencil over an open notebook of drawings in the other, and looks up straight at the viewer, as if about to correct someone she knows. A woman who is an archaeologist at the Colosseo, Monti, Roma. Include behind her the tall travertine arches of the Colosseum, the broken outer ring and umbrella pines on the slope. Colour from their place: burnt umber, raw sienna, travertine tan and deep ultramarine blue. Full of character. Tall portrait format.",
       here: "You're an archaeologist with the Parco archeologico del Colosseo and eat your lunch on a wall on the Colle Oppio, looking at the arches. Digging for the new Metro C line keeps turning up ancient remains under the modern city.",
     },
     {
@@ -461,7 +461,7 @@ export const romaNuova: CityPantry = {
       role: 'salumiere',
       placeId: 'volpetti-testaccio',
       personality: ['generous', 'loud', 'loves a tasting'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a 52-year-old man with a shaved head, thick forearms and a broad smile, in a white jacket and a burgundy apron, holding out a sliver of pecorino on the tip of a knife, minimal watercolor wash in warm Roman ochre and terracotta tones, detailed crosshatching, no lettering anywhere in the picture. The subject is a man.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, confident hand-drawn line, sunlit. A 52-year-old man with a shaved head, thick forearms and a broad smile, in a white jacket and a burgundy apron. He holds out a sliver of pecorino on the tip of a knife, offering a taste, and looks straight at the viewer, as if someone he knows has just come in. A man who is a deli owner at Volpetti, Testaccio, Roma. Include behind him hams and salami hanging from the ceiling, wheels of pecorino romano stacked high, a whole porchetta on the counter, and shelves of jars of truffles and olive oil. Colour from their place: raw sienna, burnt umber, warm ochre and cornflower blue. Full of character. Tall portrait format.",
       here: "You work the counter at Volpetti on Via Marmorata, a Testaccio deli since 1973 that sells pecorino romano, guanciale for carbonara, porchetta sliced to order and more. Testaccio grew around Rome's slaughterhouse, and the cuts its workers took home, the quinto quarto, became coda alla vaccinara, trippa and pajata. Roman carbonara is made with guanciale, pecorino romano, eggs and black pepper, never cream.",
     },
     {
@@ -473,7 +473,7 @@ export const romaNuova: CityPantry = {
       role: 'grattacheccara',
       placeId: 'grattachecca-lungotevere',
       personality: ['brisk', 'nostalgic', 'teasing'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a 70-year-old Roman woman with short white hair, gold glasses and a sleeveless floral dress, shaving a block of ice with a metal scraper, minimal watercolor wash in warm Roman ochre and terracotta tones with a touch of mint green, detailed crosshatching, no lettering anywhere in the picture. The subject is a woman.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, confident hand-drawn line, sunlit. A 70-year-old woman with short white hair, gold glasses and a teasing, brisk look, in a sleeveless floral dress. She shaves a block of ice with a metal scraper into a glass, and looks up from it straight at the viewer, as if someone she knows has just come in. A woman who is a grattachecca seller at Chiosco della grattachecca, Trastevere, Roma. Include behind her the old green kiosk, bottles of coloured syrups and fresh fruit on the counter, and plane trees with the Tiber beyond. Colour from their place: deep bottle green, olive, raw sienna, warm ochre and river blue-grey. Full of character. Tall portrait format.",
       here: 'You run a grattachecca kiosk by the Tiber, as your family has for decades: you shave ice by hand from a block into a glass and pour syrup over it, tamarind, mint, lemon or amarena, with fresh fruit; Romans come on hot evenings and argue about the best flavour.',
     },
   ],

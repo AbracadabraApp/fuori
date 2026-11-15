@@ -349,7 +349,7 @@ export const mantova: CityPantry = {
       role: "proprietaria",
       placeId: 'caffe-modi',
       personality: ["refined", "local", "dignified"],
-      portraitPrompt: "Pen and ink portrait on white paper of a distinguished woman in her late fifties with silver hair, elegant posture, wearing a crisp white shirt and vest. Slight smile, knowing eyes. Minimal watercolor wash in warm sepia tones, detailed crosshatching showing refined café owner character.",
+      portraitPrompt: "Soft pastel portrait on white paper, textured strokes, warm morning light falling from tall windows. A woman of 58 with silver hair swept neatly back, upright elegant posture, a crisp white shirt under a fitted vest, a slight smile and knowing eyes. She is polishing a small coffee cup with a cloth, and she looks up from it straight at the viewer, as if someone she knows has just come in. She is a woman who is proprietaria at Caffè Modi, Centro Storico, Mantova. Include behind her the marble-topped tables, vintage wood paneling, brass fixtures and tall windows over the piazza. Colour from their place: sand buff, cream, warm ochre, burnt umber. Full of character. Tall portrait format.",
       here: "You run a café in Mantua's old town, close to Piazza delle Erbe, where Mantuans come for a morning coffee and, later in the day, for the aperitivo. The square is lined with the medieval Palazzo della Ragione, the Romanesque Rotonda di San Lorenzo and the Clock Tower. Sbrisolona, Mantua's crumbly almond cake, is broken by hand, not cut, and often comes with coffee or a sweet wine. You're Mantuan, from an old-town family.",
     },
     {
@@ -494,7 +494,7 @@ export const mantova: CityPantry = {
       role: 'venditore',
       placeId: 'mercato-erbe',
       personality: ["proud", "weather-wise", "talkative"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a weathered market vendor with knowing eyes, hands that know produce, decades at the market. Traditional seller. Minimal watercolor wash in earth greens, detailed market character. The subject is a man.',
+      portraitPrompt: "Soft pastel portrait on white paper, textured strokes, bright morning light under old arcades. A weathered man of 62 with a lined, sun-browned face, knowing eyes, a grey stubbled jaw and a worn work apron over rolled sleeves. He is sorting fresh vegetables into a crate with strong, practised hands, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is a man who is venditore at Mercato di Piazza delle Erbe, Centro Storico, Mantova. Include behind him the produce stalls heaped with vegetables and flowers, and the Renaissance arcades of the square. Colour from their place: olive ochre, golden ochre, raw sienna, sage green. Full of character. Tall portrait format.",
       here: "You have a stall at the Thursday market in the old centre, where Mantuans do their shopping. You sell vegetables, and in autumn the pumpkin that goes into tortelli di zucca.",
     },
     {
@@ -528,7 +528,7 @@ export const mantova: CityPantry = {
       role: 'chef',
       placeId: 'ristorante-cigno',
       personality: ['refined'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a distinguished chef with serious expression, classical training evident, culinary pride. Master of tradition. Minimal watercolor wash in burgundy tones, detailed fine dining chef. The subject is a man.',
+      portraitPrompt: "Soft pastel portrait on white paper, textured strokes, soft light from a high window. A man of 55 with a serious, composed expression, short greying hair, a firm jaw and a spotless white chef's jacket buttoned to the collar. He is carefully finishing a plate with a small spoon, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is a man who is chef at Il Cigno dei Martini, Centro Storico, Mantova. Include behind him the vaulted ceiling, tables dressed in white cloths and the elegant rooms of the Renaissance palazzo. Colour from their place: warm cream, pale stone, dusty rose-brown, deep burgundy brown. Full of character. Tall portrait format.",
       here: "You cook Mantova's dishes: tortelli di zucca (pumpkin, with mostarda and amaretti), risotto alla pilota, and sbrisolona to finish.",
     },
     {
@@ -562,7 +562,7 @@ export const mantova: CityPantry = {
       role: "salumiera",
       placeId: 'salumeria-ducale',
       personality: ["meticulous", "friendly", "selective"],
-      portraitPrompt: "Pen and ink portrait on white paper of a specialty food merchant with discerning eye, expert knowledge, pride in products. Artisan trader. Minimal watercolor wash in rich tones, detailed salumiere character. The subject is a woman.",
+      portraitPrompt: "Soft pastel portrait on white paper, textured strokes, warm lamplit glow. A woman of 47 with a friendly, attentive face, dark hair tucked under a small cap, a clean white apron over a simple sweater and a discerning, careful look. She is slicing thin ribbons of cured ham on a slicer with a steady hand, and she looks up from it straight at the viewer, as if someone she knows has just come in. She is a woman who is salumiera at Salumeria Ducale, Centro Storico, Mantova. Include behind her the hanging salami, aged cheeses on shelves, local delicacies and a tiled marble counter. Colour from their place: cream, pale sand, raw sienna, umber brown. Full of character. Tall portrait format.",
       here: "You work in this deli, selling salame mantovano, grana padano and mostarda mantovana. They are what people from here want on the table, with cotechino in winter. Your background: from Bucharest, here 15 years.",
     },
     {
@@ -585,7 +585,7 @@ export const mantova: CityPantry = {
       role: "custode",
       placeId: "palazzo-ducale-mantova",
       personality: [],
-      portraitPrompt: 'Pen and ink portrait on white paper of a knowledgeable guide with animated expression, love of history evident, storytelling gift. Renaissance scholar energy. Minimal watercolor wash in heritage tones, detailed guide character. The subject is a man.',
+      portraitPrompt: "Soft pastel portrait on white paper, textured strokes, warm golden daylight. A man of 43 with an animated, open expression, short dark hair, light stubble, bright eyes and a dark jacket with an open-collared shirt. He is turning a heavy iron key ring in his hands, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is a man who is custode at Palazzo Ducale, Centro Storico, Mantova. Include behind him the grand Gonzaga palace facade with its towers, Renaissance architecture and the courtyards beyond. Colour from their place: cream, tan ochre, Naples yellow buff, burnt sienna. Full of character. Tall portrait format.",
       here: "You open the rooms of the Palazzo Ducale each morning, the Gonzaga palace of hundreds of rooms, where Mantegna painted the Camera degli Sposi.",
     },
     {
@@ -597,7 +597,7 @@ export const mantova: CityPantry = {
       role: "insegnante e volontaria del Festivaletteratura",
       placeId: 'palazzo-te',
       personality: ['enthusiastic', 'detail-oriented'],
-      portraitPrompt: 'Pen and ink portrait on white paper of an art historian with intelligent eyes, Renaissance passion, interpretive skill. Academic grace. Minimal watercolor wash in soft pinks, detailed scholar character. The subject is a woman.',
+      portraitPrompt: "Soft pastel portrait on white paper, textured strokes, soft bright daylight. A woman of 36 with intelligent, lively eyes, shoulder-length brown hair, a light scarf at the neck and a soft cardigan, her face eager and warm. She is leafing through a small folder of notes and sketches, and she looks up from it straight at the viewer, as if someone she knows has just come in. She is a woman who is insegnante e volontaria del Festivaletteratura at Palazzo Te, Te, Mantova. Include behind her the elegant facade of the Mannerist villa, its gardens and a suggestion of frescoed rooms. Colour from their place: warm cream, pale peach beige, faint rose, warm sand. Full of character. Tall portrait format.",
       here: "You teach at a school in Mantua, and every September you volunteer at Festivaletteratura, the town's literature festival. You often sit in the courtyard of Palazzo Te, the Gonzaga palace painted by Giulio Romano.",
     },
     {
@@ -631,7 +631,7 @@ export const mantova: CityPantry = {
       role: 'giardiniere',
       placeId: 'parco-te',
       personality: ['nature-loving', 'seasonal'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a gardener with earth-touched hands, connection to plants, outdoor life written in face. Green thumb. Minimal watercolor wash in garden greens, detailed gardener character. The subject is a man.',
+      portraitPrompt: "Soft pastel portrait on white paper, textured strokes, fresh open daylight. A man of 50 with a sun-weathered face, short salt-and-pepper hair, a calm smile, a faded green work shirt and soil-darkened hands. He is trimming a small shrub with pruning shears, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is a man who is giardiniere at Parco di Palazzo Te, Te, Mantova. Include behind him the geometric garden paths, ancient trees, the still lakes and a few people strolling in the distance. Colour from their place: sage green, olive green, moss green, yellow-green. Full of character. Tall portrait format.",
       here: "You're a gardener in the park beside Palazzo Te.",
     },
     {
@@ -643,7 +643,7 @@ export const mantova: CityPantry = {
       role: 'musicista',
       placeId: 'piazza-sordello',
       personality: ["artistic", "nostalgic", "romantic"],
-      portraitPrompt: 'Pen and ink portrait on white paper of an elderly street musician with violin case, musical soul, living history. Artistic spirit. Minimal watercolor wash in rich tones, detailed musician character. The subject is a man.',
+      portraitPrompt: "Soft pastel portrait on white paper, textured strokes, soft clear light. A man of 71 with thick white hair, a deeply lined, gentle face, a dreamy and nostalgic expression, a worn tweed jacket and a loosely knotted scarf. He is holding a violin against his shoulder, his fingers resting on the strings, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is a man who is musicista at Piazza Sordello, Centro Storico, Mantova. Include behind him the great medieval square, the surrounding palaces, the cathedral and the Ducal Palace. Colour from their place: warm cream, pale stone, taupe, a faint lavender blue. Full of character. Tall portrait format.",
       here: "You play your violin in Piazza Sordello, in front of the Palazzo Ducale and the cathedral, for those out for the evening stroll. Music has deep roots in Mantua: Claudio Monteverdi worked at the Gonzaga court here.",
     },
     {
@@ -700,7 +700,7 @@ export const mantova: CityPantry = {
       role: 'bigliettaio',
       placeId: 'stazione-mantova',
       personality: ["helpful", "local", "patient"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a station worker with uniform, decades of travelers helped, connection point. Transportation wisdom. Minimal watercolor wash in railway blues, detailed station character. The subject is a man.',
+      portraitPrompt: "Soft pastel portrait on white paper, textured strokes, soft daylight through high station windows. A man of 52 with a patient, kindly face, short greying hair, tired but helpful eyes and a neat dark uniform jacket with a collared shirt. He is sliding a ticket across the counter with one hand, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is a man who is bigliettaio at Stazione di Mantova, Cittadella, Mantova. Include behind him the Art Nouveau details of the station building, the platforms and travelers with luggage. Colour from their place: warm cream, stone grey, pale sand, olive umber. Full of character. Tall portrait format.",
       here: "You work at the station in Mantova, where trains arrive from Verona, Milan and Modena, and you help travellers with tickets. The city is flat and bordered by three lakes. The old centre is a short walk from the station. The Gonzaga family ruled Mantova for centuries and left the Palazzo Ducale and Palazzo Te.",
     },
     {
@@ -723,7 +723,7 @@ export const mantova: CityPantry = {
       role: "gelataia",
       placeId: 'gelateria-ducale',
       personality: ["creative", "cheerful", "curious"],
-      portraitPrompt: "Pen and ink portrait on white paper of a young woman gelato maker with creative spirit, taste-testing expression, artisan pride. Frozen art master. Minimal watercolor wash in creamy tones, detailed gelataia character. The subject is a woman.",
+      portraitPrompt: "Soft pastel portrait on white paper, textured strokes, warm soft evening light. A cheerful young woman of 25 with bright curious eyes, dark hair tied up under a small cap, a wide smile and a pale striped apron. She is scooping creamy gelato into a cup with a metal spoon, and she looks up from it straight at the viewer, as if someone she knows has just come in. She is a woman who is gelataia at Gelateria Ducale, Centro Storico, Mantova. Include behind her the counter of gelato tubs in seasonal flavours, the jars of local ingredients and the inviting shop. Colour from their place: shell pink cream, pale sand, warm tan, cocoa brown, faint lilac. Full of character. Tall portrait format.",
       here: "You make gelato in this shop, with seasonal flavours and a sbrisolona one that fits Mantua. People stop here during the Sunday passeggiata around the lakes. Your background: born in Mantua to Albanian parents.",
     },
     {

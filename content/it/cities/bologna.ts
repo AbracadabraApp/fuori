@@ -336,7 +336,7 @@ export const bologna: CityPantry = {
       role: 'torrefattore',
       placeId: 'caffe-terzi',
       personality: ["local", "proud", "meticulous"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a distinguished middle-aged man with salt-and-pepper hair, strong features, wearing apron over button-down shirt, holding coffee cup, slight smile showing pride in craft, minimal sepia watercolor wash for warmth, detailed cross-hatching, capturing dedication of master roaster',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, confident hand-drawn line, rich and warm, lit by warm late-afternoon light. Marco Terzi, 52, has short salt-and-pepper hair, strong features, a lined brow and a slight proud smile. He wears a dark apron over a button-down shirt with the sleeves rolled. His hands pull an espresso, steady and exact, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is a man who works as the coffee roaster at Caffè Terzi, Centro Storico, Bologna. Include behind him a narrow coffee bar with a dark wood counter, sacks of coffee beans, a small roaster, and two students drinking espresso standing at the bar. Colour from their place: burnt umber, raw sienna, caramel brown, a touch of sage green. Full of character. Tall portrait format.",
       here: "You roast and sell coffee at Caffè Terzi, a Bologna name for good coffee, and you serve it the Bolognese way: a quick espresso drunk standing at the bar.",
     },
     {
@@ -427,7 +427,7 @@ export const bologna: CityPantry = {
       role: 'chef',
       placeId: 'ristorante-pappagallo',
       personality: ['refined', 'creative'],
-      portraitPrompt: 'Pen and ink portrait on white paper of distinguished chef with sharp features, chef whites impeccable, tasting spoon in hand, intense focused expression, minimal burgundy watercolor accent, fine detailed work, capturing excellence of high-end chef. The subject is a man.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, confident hand-drawn line, rich and warm, lit by soft golden light. Matteo Ricci, 44, has sharp features, short dark hair, a close-trimmed beard and focused, intelligent eyes. He wears spotless chef whites. His hands carry a plate of tagliatelle al ragù from the kitchen pass toward a table, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is a man who works as the chef at Ristorante I Carracci, Centro Storico, Bologna. Include behind him the old palazzo dining room with its vaulted, frescoed ceiling, white tablecloths on the tables and the lit kitchen pass. Colour from their place: burnt umber, raw sienna, golden ochre, warm sand. Full of character. Tall portrait format.",
       here: "You cook Bologna's classics: tagliatelle al ragù (never spaghetti bolognese), tortellini in brodo, lasagne verdi and cotoletta alla bolognese, and you get passionate about the ragù.",
     },
     {
@@ -472,7 +472,7 @@ export const bologna: CityPantry = {
       role: "ingegnere in pensione",
       placeId: 'due-torri',
       personality: ["precise", "patient", "proud of Bologna"],
-      portraitPrompt: 'Pen and ink portrait on white paper of distinguished elderly academic with white beard, glasses, wearing tweed jacket, gesturing while explaining, animated scholarly expression, minimal sepia wash, detailed refined line work, showing learned guide',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, confident hand-drawn line, rich and warm, with long afternoon shadows and sunlight. Professor Alberti, 68, has thinning white hair, a neat white beard, wire-rimmed glasses and a patient, precise expression. He wears a tweed jacket over an open-collared shirt. One hand gestures toward the towers behind him while the other holds a folded sheet of notes, and he looks up straight at the viewer, as if someone he knows has just come in. He is a man who works as a retired engineer and guide at Le Due Torri, Centro Storico, Bologna. Include behind him the two leaning medieval towers, Asinelli and Garisenda, terracotta rooftops around them, and tourists and locals at their base. Colour from their place: warm cream, raw sienna, sandstone, burnt sienna. Full of character. Tall portrait format.",
       here: "You're a retired engineer from Bologna who has spent a lifetime studying the Due Torri, the Asinelli and the leaning Garisenda, built in the 1100s, when Bologna bristled with towers. You come by most mornings to look at them.",
     },
     {
@@ -484,7 +484,7 @@ export const bologna: CityPantry = {
       role: 'sacerdote',
       placeId: 'santo-stefano',
       personality: ['contemplative', 'gentle'],
-      portraitPrompt: 'Pen and ink portrait on white paper of priest with kind face, clerical collar, serene expression, hands folded, wise eyes, minimal gray watercolor wash, soft careful line work, capturing peaceful spiritual presence',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, confident hand-drawn line, rich and warm, lit by soft warm afternoon sun. Don Giuseppe, 59, has a kind, lined face, short greying hair, gentle dark eyes and a calm, contemplative expression. He wears a dark cassock and sits on the low step by the church door. His hands rest folded on his knee, and he looks up from his talk with a passer-by straight at the viewer, as if someone he knows has just come in. He is a man who works as the priest at the Basilica di Santo Stefano, Santo Stefano, Bologna. Include behind him the plain old brick fronts of the linked churches with arched doorways, the open pale stone piazza and red-brick palazzi with deep arcades. Colour from their place: pale cream, burnt umber, sand, ochre, burnt sienna. Full of character. Tall portrait format.",
       here: "You are a priest at the Basilica di Santo Stefano, a group of linked churches and cloisters on a triangular piazza in the Santo Stefano quarter. The Bolognese call it Sette Chiese, the seven churches, though fewer remain today. Its oldest parts are more than a thousand years old, and the courtyard holds the Pilate basin, the Catino di Pilato. Visitors walk in freely, and nobody is expected to buy anything.",
     },
     {
@@ -518,7 +518,7 @@ export const bologna: CityPantry = {
       role: 'musicista di strada',
       placeId: 'piazza-maggiore',
       personality: ["artistic", "free-spirited", "talented"],
-      portraitPrompt: 'Pen and ink portrait on white paper of man with longer hair, expressive face, holding guitar, wearing scarf and weathered jacket, soulful eyes, minimal warm watercolor accents, flowing musical line work, capturing street artist spirit',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, confident hand-drawn line, rich and warm, lit by warm sun. Franco, 42, has longer dark wavy hair, stubble, an expressive, weathered face and soulful eyes. He wears a loose scarf and a worn jacket. His fingers rest on the strings of his guitar mid-song, and he looks up straight at the viewer, as if someone he knows has just come in. He is a man who works as a street musician at Piazza Maggiore, Centro Storico, Bologna. Include behind him the vast grey-paved piazza, the white and pink marble lower façade of the Basilica di San Petronio with its unfinished rough brick above, the brick Palazzo d'Accursio with battlements, the dark bronze Neptune fountain, cyclists and someone eating gelato. Colour from their place: umber, raw sienna, pale stone grey, terracotta. Full of character. Tall portrait format.",
       here: "You play guitar in Piazza Maggiore, near the Neptune fountain, where Bolognese families come for the Sunday passeggiata and people sit on the steps of San Petronio to listen.",
     },
     {
@@ -530,7 +530,7 @@ export const bologna: CityPantry = {
       role: 'studentessa',
       placeId: 'piazza-verdi',
       personality: ["social", "idealistic", "curious"],
-      portraitPrompt: 'Pen and ink portrait on white paper of young woman with long hair, intelligent eyes, casual student style, holding books, bright engaged expression, minimal blue watercolor accent, fresh clean line work, capturing university life energy',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, confident hand-drawn line, rich and warm, in soft dusk light. Clara, 22, has long brown hair, bright curious eyes and an open, laughing expression. She wears a casual jumper and jeans, with a backpack at her side. She sits on a low wall with her hands round a bottle of water and a phone, and she looks up from her friends straight at the viewer, as if someone she knows has just come in. She is a woman who works as a student at Piazza Verdi, Quartiere Universitario, Bologna. Include behind her the arcades, friends laughing on the low wall with phones and water bottles, and bikes leaning everywhere. Colour from their place: pale cream, burnt umber, ochre, raw sienna, a small touch of slate blue. Full of character. Tall portrait format.",
       here: "You are a student at the University of Bologna, which dates back to 1088 and is often called the oldest in the world. After lectures you come to Piazza Verdi to sit on the low walls with friends. The piazza is named after the composer and faces the Teatro Comunale. Tigelle, small round breads from the Apennines, are a cheap student meal nearby, split and filled with cured meats and soft cheese.",
     },
     {
@@ -575,7 +575,7 @@ export const bologna: CityPantry = {
       role: 'salumiere',
       placeId: 'salumeria-simoni',
       personality: ['proud'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a 61-year-old man with short grey hair and a trimmed grey moustache, glasses on a cord, in a white coat over a shirt and tie, leaning over the counter to slice mortadella by hand with a long knife, eyes on the cut, minimal watercolor wash in pink and gold, detailed linework. The subject is a man.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, confident hand-drawn line, rich and warm, lit by warm shop light. Bruno Simoni, 61, has short grey hair, a trimmed grey moustache and glasses on a cord. He wears a white apron over a shirt and tie. His hands slice mortadella with a long knife at the counter, and he looks up from the cut straight at the viewer, as if someone he knows has just come in. He is a man who works as the salumiere at Salumeria Simoni, Centro Storico, Bologna. Include behind him hams and mortadella hanging from the ceiling, wheels of Parmigiano Reggiano and trays of fresh tortellini in the counter. Colour from their place: burnt umber, raw sienna, golden amber, burnt sienna, warm tan. Full of character. Tall portrait format.",
       here: "You run Salumeria Simoni, a salumeria in the Quadrilatero, the old market streets off Piazza Maggiore, where stalls have sold food since the Middle Ages. You slice mortadella, Bologna's famous cold cut, by hand, and it is sold sliced to order by weight. Parmigiano Reggiano is sold by age, 24 or 36 months. You also sell fresh tortellini, the pasta of Bologna, traditionally eaten in broth.",
     },
     {
@@ -610,7 +610,7 @@ export const bologna: CityPantry = {
       role: 'gelataia',
       placeId: 'sorbetteria-castiglione',
       personality: ['enthusiastic', 'chatty', 'precise'],
-      portraitPrompt: "Pen and ink portrait on white paper, washed with warm Bologna ochre and brick-red watercolor like the other portraits, of a Bolognese woman of 45 with short dark curly hair and laughing eyes, in a white shirt and a cream apron, holding a gelato spatula and leaning on the counter as if asking which flavour you'd like to try; nothing in front of her but the edge of the counter, no tubs, no labels, no cards; detailed crosshatching, no lettering anywhere in the picture. The subject is a woman.",
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, confident hand-drawn line, rich and warm, lit by the warm glow of evening. Sara, 45, has short dark curly hair, laughing eyes and an enthusiastic, chatty smile. She wears a white shirt and a cream apron. Her hand holds out a little spoon for you to taste, and she looks up straight at the viewer, as if someone she knows has just come in. She is a woman who works as the gelataia at La Sorbetteria Castiglione, Santo Stefano, Bologna. Include behind her the bright shop under a portico arch, the long counter of gelato in metal tins, and people strolling past with cones under the arches. Colour from their place: raw sienna, burnt umber, burnt orange, terracotta, sand. Full of character. Tall portrait format.",
       here: "You have worked behind the counter at La Sorbetteria Castiglione, on Via Castiglione near Piazza Santo Stefano, for twenty years, and you would rather talk about flavours than scoop them. The shop has been here since 1994 and has its own house flavours: Dolce Emma (ricotta and figs) and Michelangelo (almonds), with nocciola, pistacchio, stracciatella and fruit of the season beside them. You want to know which ones they've tried, you offer a taste on a little spoon, and you say that nocciola is how you judge a gelateria.",
     },
     {
@@ -634,7 +634,7 @@ export const bologna: CityPantry = {
       role: 'bigliettaia',
       placeId: 'stazione-centrale',
       personality: ["punctual", "helpful", "experienced"],
-      portraitPrompt: "Pen and ink portrait on white paper of woman in conductor uniform with cap, whistle around neck, checking watch, professional friendly expression, minimal navy blue watercolor accent, structured line work, showing railway expertise",
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, confident hand-drawn line, rich and warm, in warm indoor light. Blerta, 38, has dark hair tied back, attentive eyes and a friendly, helpful expression. She wears a neat uniform jacket over a collared shirt. Her hands pass a ticket through the window to a traveller with a suitcase, and she looks up straight at the viewer, as if someone she knows has just come in. She is a woman who works as the ticket seller at Stazione di Bologna Centrale, Centro Storico, Bologna. Include behind her the station ticket hall with old brick walls and glowing departure boards as soft blurs. Colour from their place: burnt umber, warm cream, raw sienna, ochre, a touch of sage green. Full of character. Tall portrait format.",
       here: "You sell tickets at Bologna Centrale, one of Italy's main rail junctions, where high-speed trains between Milan, Florence and Rome meet, and you help travelers find the right platform. Your background: from Tirana, Albania, here 15 years.",
     },
     {
@@ -646,7 +646,7 @@ export const bologna: CityPantry = {
       role: 'guida dei pellegrini',
       placeId: 'portici-san-luca',
       personality: ['spiritual', 'enduring', 'inspiring'],
-      portraitPrompt: 'Pen and ink portrait on white paper of serene woman with walking stick, comfortable walking clothes, peaceful meditative expression, gentle eyes, minimal terracotta watercolor wash, flowing contemplative lines, capturing pilgrim spirit',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, confident hand-drawn line, rich and warm, in dappled sunlight. Angela, 58, has short silver-streaked hair, weathered skin, calm, bright eyes and a serene, inspiring expression. She wears walking shoes and a light jacket. One hand points up the path ahead and the other grips a walking stick, and she looks round straight at the viewer, as if someone she knows has just come in. She is a woman who works as a pilgrim guide at Portici di San Luca, Saragozza, Bologna. Include behind her the long arched covered walk climbing a green hill, arch after arch into the distance, two walkers following, and the domed sanctuary of the Madonna di San Luca at the top. Colour from their place: burnt umber, burnt sienna, ochre, soft sage green, pale sky grey. Full of character. Tall portrait format.",
       here: "You walk the Portico di San Luca most mornings and guide pilgrims and walkers up it. It runs almost four kilometres under 666 arches, from Porta Saragozza up the hill to the Sanctuary of the Madonna di San Luca, and is the longest portico in the world. Bologna's porticoes began in the Middle Ages, when houses stretched their upper floors out over the street. They became a UNESCO World Heritage Site in 2021.",
     },
     {
@@ -658,7 +658,7 @@ export const bologna: CityPantry = {
       role: 'sfoglina',
       placeId: 'sfoglia-rina',
       personality: ['masterful', 'loving'],
-      portraitPrompt: 'Pen and ink portrait on white paper of elderly woman with weathered hands, flour-dusted apron, hair in traditional style, holding rolling pin, wise experienced expression, minimal golden watercolor for pasta, detailed reverent line work, showing pasta-making mastery',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, confident hand-drawn line, rich and warm, lit by warm daylight through a shop window. Nonna Rina, 74, has silver hair pinned back, a lined, kind face, strong flour-dusted hands and a loving, masterful expression. She wears an apron over a simple blouse. Her hands roll a huge thin sheet of sfoglia on a wooden board with a long mattarello, and she looks up straight at the viewer, as if someone she knows has just come in. She is a woman who works as the sfoglina at Sfoglia Rina, Quartiere Universitario, Bologna. Include behind her the big shop window, trays of tortellini beside her, the old wooden portico with dark timber posts on brick, terracotta pots outside, and a passer-by stopping to watch. Colour from their place: dark umber, burnt sienna, golden ochre, warm sand. Full of character. Tall portrait format.",
       here: "You roll the sfoglia by hand in the window of your pasta shop in Bologna's university quarter, as you have since you were a girl. The dough is flour and eggs, about one egg to a hundred grams, rolled with a long mattarello until you can see through it. You make tagliatelle, tortellini and tortelloni. Tortellini are traditionally eaten in broth, above all at Christmas. The university next door dates from 1088.",
     },
     {
@@ -670,7 +670,7 @@ export const bologna: CityPantry = {
       role: 'bibliotecario',
       placeId: 'archiginnasio',
       personality: ["dignified", "warm with strangers"],
-      portraitPrompt: 'Pen and ink portrait on white paper of distinguished scholar with gray hair, glasses, formal academic attire, holding ancient book, intellectual authoritative expression, minimal sepia watercolor wash, refined scholarly line work, capturing academic tradition. The subject is a man.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, confident hand-drawn line, rich and warm, lit by soft parchment-toned light. Dottore Bianchi, 65, has neat grey hair, glasses, a dignified bearing and a warm, welcoming expression. He wears a dark jacket, a shirt and a tie. His hands hold open an old book, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is a man who works as the librarian at the Archiginnasio, Centro Storico, Bologna. Include behind him walls covered in coats of arms, the wooden tiers of the ancient anatomical theatre, the Renaissance courtyard, and students studying in the reading room. Colour from their place: warm cream, parchment, burnt umber, sand, soft wood brown. Full of character. Tall portrait format.",
       here: "You work in the library of the Archiginnasio, the building from the 1500s that was the seat of Bologna's university, the oldest in Europe, its walls covered in the coats of arms of its old students.",
     },
     {

@@ -312,7 +312,7 @@ export const assisi: CityPantry = {
       role: "bigliettaio",
       placeId: 'stazione-assisi',
       personality: ["calm", "helpful", "precise"],
-      portraitPrompt: "Pen and ink portrait on white paper of a man in his late thirties with short dark hair and a trimmed beard, navy railway uniform with a tie, behind a ticket window with a timetable behind him, minimal sepia watercolor wash, detailed cross-hatching. A man. Any signs, timetables or screens are in Italian with Italian place names; no name badge.",
+      portraitPrompt: "Soft pastel sketch on white paper, chalky soft strokes, warm morning light. A man of 37 with short dark hair and a trimmed beard, a calm, precise and helpful expression, in a navy railway uniform with a tie. His hands slide a printed ticket through the window and rest on the counter, and he looks up straight at the viewer, as if someone he knows has just come in. He is a man who is a bigliettaio at Stazione di Assisi, Santa Maria degli Angeli, Assisi. Include behind him the small station, a regional train at the platform, pilgrims and students with backpacks, and the hill town with the basilica of San Francesco on the slope above. Colour from their place: cream, warm sand, soft taupe, olive grey. Full of character. Tall portrait format.",
       here: "You sell tickets at the station in Santa Maria degli Angeli, in the valley below the hill town, where pilgrims, students and visitors arrive. Assisi's old town is a few kilometres up the hill, reached by local bus. The basilica near the station shelters the Porziuncola, the small chapel where Saint Francis began his order. October 4th, the Festa di San Francesco, brings crowds. You're from Iași, Romania, and have been here 14 years.",
     },
     {
@@ -324,7 +324,7 @@ export const assisi: CityPantry = {
       role: 'barista',
       placeId: 'caffe-duomo',
       personality: ["philosophical", "warm", "patient"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a man in his forties with salt-and-pepper hair, kind eyes with smile lines, wearing casual button-down shirt, minimal sepia watercolor wash, detailed cross-hatching, wise expression',
+      portraitPrompt: "Soft pastel sketch on white paper, chalky soft strokes, warm morning light. A man of 42 with salt-and-pepper hair, kind eyes with smile lines and a warm, patient expression, in a casual button-down shirt. His hands tamp fresh coffee into a portafilter, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is a man who is a barista at Caffè del Duomo, Centro Storico, Assisi. Include behind him the café counter and espresso machine, outdoor tables, a green awning, potted geraniums and textured stone walls, with the cathedral beyond. Colour from their place: cream, pale sand, raw umber, ochre. Full of character. Tall portrait format.",
       here: "You run the morning coffee at the tables facing the cathedral, and you serve local sweets like rocciata and pinoccate with it. You chat with pilgrims and regulars about the Festa di San Francesco on October 4th.",
     },
     {
@@ -381,7 +381,7 @@ export const assisi: CityPantry = {
       role: 'fruttivendolo',
       placeId: 'mercato-coperto',
       personality: ["jovial", "loud", "generous"],
-      portraitPrompt: 'Pen and ink portrait on white paper of an older man with weathered face, cap, full expressive features, minimal earth-tone watercolor wash, laugh lines, hands gesturing, robust presence',
+      portraitPrompt: "Soft pastel sketch on white paper, chalky soft strokes, dappled light through openings in the roof. A man of 62 with a weathered face, a flat cap, deep laugh lines and broad, expressive features, his grin wide and generous. His hands arrange ripe oranges in a basket on his stall, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is a man who is a fruttivendolo at Mercato Coperto di Assisi, Centro Storico, Assisi. Include behind him his stall heaped with baskets of fruit and vegetables, stone arches and the warm terracotta roof of the market hall. Colour from their place: warm sand, stone beige, terracotta, ochre. Full of character. Tall portrait format.",
       here: "You work at the covered market in Assisi's old town, and you keep Umbrian lentils from Castelluccio for those who ask. Castelluccio lentils are tiny, grown on a high plateau near Norcia, and cook without soaking. Olives around Assisi are harvested in autumn, and by November the new oil, green and peppery, comes from the presses.",
     },
     {
@@ -415,7 +415,7 @@ export const assisi: CityPantry = {
       role: 'chef',
       placeId: 'ristorante-metastasio',
       personality: ['refined', 'creative'],
-      portraitPrompt: 'Pen and ink portrait on white paper of an elegant woman with pulled-back hair, chef jacket, intense focused eyes, minimal cool watercolor wash, strong features, artistic authority',
+      portraitPrompt: "Soft pastel sketch on white paper, chalky soft strokes, soft golden light. A woman of 44 with hair pulled back, strong features, intense focused eyes and a composed, creative expression, in a white chef jacket. Her hands wipe the rim of a plated dish with a cloth and set a single herb leaf on top, and she looks up from it straight at the viewer, as if someone she knows has just come in. She is a woman who is a chef at Ristorante Metastasio, Centro Storico, Assisi. Include behind her the stone archway of the entrance, windows showing tables with white tablecloths, and climbing vines on the wall. Colour from their place: cream, pale sand, golden ochre, umber. Full of character. Tall portrait format.",
       here: "You cook Umbrian food: strangozzi with black truffle, torta al testo filled with greens and sausage, and lentils from Castelluccio.",
     },
     {
@@ -460,7 +460,7 @@ export const assisi: CityPantry = {
       role: 'frate',
       placeId: 'basilica-san-francesco',
       personality: ['serene', 'multilingual'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a gentle-faced friar in brown Franciscan robes, peaceful expression, kind eyes, minimal earth-tone watercolor wash, detailed habit folds, spiritual presence',
+      portraitPrompt: "Soft pastel sketch on white paper, chalky soft strokes, soft afternoon light. A man of 67 with a gentle face, kind eyes and a serene, peaceful expression, in a brown Franciscan habit with a knotted rope cord, the folds of the cloth falling softly. His hands turn the pages of a small worn book, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is a man who is a frate at Basilica di San Francesco, San Francesco, Assisi. Include behind him the grand basilica in pink and white stone, its several levels of arches and walls, and tall cypress trees. Colour from their place: pale rose, dusty pink, warm stone, olive green. Full of character. Tall portrait format.",
       here: "You're a Franciscan friar at the Basilica di San Francesco, where Saint Francis is buried, and you've lived in the friary for forty years.",
     },
     {
@@ -505,7 +505,7 @@ export const assisi: CityPantry = {
       role: 'artista di strada',
       placeId: 'piazza-comune',
       personality: ["artistic", "free-spirited", "engaging"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a young woman with expressive features, flowing hair, artistic clothing, minimal vibrant watercolor wash, creative energy, bohemian charm',
+      portraitPrompt: "Soft pastel sketch on white paper, chalky soft strokes, warm evening light. A woman of 33 with expressive features, long flowing hair and a free, engaging smile, in loose artistic clothes with a patterned scarf. Her hands draw quickly with charcoal on a sketchpad, fingertips smudged, and she looks up from it straight at the viewer, as if someone she knows has just come in. She is a woman who is an artista di strada at Piazza del Comune, Centro Storico, Assisi. Include behind her the medieval square with ancient stone buildings, a fountain, outdoor café tables, people strolling and warm light on the stone pavement. Colour from their place: cream, soft peach, sandstone, umber. Full of character. Tall portrait format.",
       here: "You perform in Piazza del Comune, where the old Roman temple of Minerva stands, and your audience is people on the evening passeggiata. You know how the square fills up for Calendimaggio.",
     },
     {
@@ -517,7 +517,7 @@ export const assisi: CityPantry = {
       role: "ragazzo del posto",
       placeId: 'piazza-san-rufino',
       personality: ["outgoing", "proud of Assisi", "sociable"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a young man with friendly face, casual professional attire, enthusiastic expression, minimal warm watercolor wash, open demeanor',
+      portraitPrompt: "Soft pastel sketch on white paper, chalky soft strokes, dappled shade and gentle daylight. A man of 28 with a friendly face, short tidy hair and an open, enthusiastic expression, in a neat collared shirt and light jacket. His hands hold a paper cup of coffee while he gestures as he talks, and he looks up straight at the viewer, as if someone he knows has just come in. He is a man who is a ragazzo del posto at Piazza San Rufino, Rocca Maggiore, Assisi. Include behind him the cathedral facade, an old stone well, locals chatting in small groups and trees casting dappled shade over the quiet square. Colour from their place: warm stone grey, cream, taupe, olive. Full of character. Tall portrait format.",
       here: "You grew up in Assisi and meet your friends in Piazza San Rufino, in front of the cathedral where Saint Francis and Saint Clare were baptised.",
     },
     {
@@ -586,7 +586,7 @@ export const assisi: CityPantry = {
       role: "custode della Rocca",
       placeId: 'rocca-maggiore',
       personality: ['historical', 'engaging'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a man with animated expression, gesturing hand, period-appropriate vest, minimal stone-gray watercolor wash, storyteller energy',
+      portraitPrompt: "Soft pastel sketch on white paper, chalky soft strokes, soft golden sunset light. A man of 39 with an animated, engaging expression, quick bright eyes and a half-smile as if mid-story, in a period-style waistcoat over a rolled-sleeve shirt. One hand holds a large iron key, the other gestures as he explains, and he looks up straight at the viewer, as if someone he knows has just come in. He is a man who is a custode della Rocca at Rocca Maggiore, Rocca Maggiore, Assisi. Include behind him the medieval fortress on its hilltop, its stone walls and towers, and the wide panoramic view over the valley. Colour from their place: pale cream, golden sand, tawny olive, slate green-grey. Full of character. Tall portrait format.",
       here: "You look after the Rocca Maggiore, the castle above Assisi, and from its walls you see the whole Umbrian valley.",
     },
     {
@@ -598,7 +598,7 @@ export const assisi: CityPantry = {
       role: 'frate eremita',
       placeId: 'eremo-carceri',
       personality: ['contemplative', 'sparse-spoken', 'spiritual'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a friar with deep contemplative eyes, simple robes, peaceful weathered face, minimal forest-green watercolor wash, meditative presence',
+      portraitPrompt: "Soft pastel sketch on white paper, chalky soft strokes, soft dim light filtered through trees. A man of 52 with deep, contemplative eyes, a peaceful weathered face and a quiet, still expression, in a simple coarse brown robe tied with a cord. His hands sweep fallen leaves from a stone path with a twig broom, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is a man who is a frate eremita at Eremo delle Carceri, Rocca Maggiore, Assisi. Include behind him the small stone chapel, ancient oak trees and the wooded mountainside rising in layers. Colour from their place: sage green, moss, stone grey, deep forest brown-green. Full of character. Tall portrait format.",
       here: "You live at the Eremo delle Carceri, the hermitage in the woods on Monte Subasio where Saint Francis came to pray.",
     },
     {
@@ -621,7 +621,7 @@ export const assisi: CityPantry = {
       role: 'ceramista',
       placeId: 'laboratorio-ceramiche',
       personality: ['artistic'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a man with clay-stained hands, artisan apron, focused creative eyes, minimal blue-and-yellow watercolor wash, craftsman pride',
+      portraitPrompt: "Soft pastel sketch on white paper, chalky soft strokes, bright soft daylight. A man of 37 with focused, creative eyes and a calm, absorbed expression, in a work apron, his forearms and fingers stained with clay. His hands paint a fine blue and yellow pattern on a plate with a thin brush, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is a man who is a ceramista at Laboratorio Ceramiche Assisi, Santa Chiara, Assisi. Include behind him shelves of colourful pottery in traditional Deruta patterns and a work table with lumps of clay and tools. Colour from their place: cream, warm sand, powder blue, clay brown. Full of character. Tall portrait format.",
       here: "You make and paint ceramics by hand in your workshop in Assisi, in the Umbrian tradition of Deruta nearby; you're at the wheel.",
     },
     {

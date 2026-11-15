@@ -339,7 +339,7 @@ export const torino: CityPantry = {
       role: 'bigliettaio',
       placeId: 'stazione-porta-nuova-torino',
       personality: ["efficient", "dry humour", "patient"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a man in his mid forties with close-cropped dark hair going grey at the temples, railway uniform with a tie, behind a ticket window in a grand station hall, a hint of a wry smile, minimal warm sepia wash on face, detailed crosshatching. A man. Any signs, timetables or screens are in Italian with Italian place names; no name badge.',
+      portraitPrompt: "Soft pastel portrait on white paper, textured, with warm light and rich golds and creams. A man of 45 with close-cropped dark hair going grey at the temples, a dry, patient face and a hint of a wry smile, wearing a railway uniform with a tie. His hands are sliding a printed ticket and a few coins across the counter of a ticket window, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is a man who is the ticket clerk at Stazione di Torino Porta Nuova, San Salvario, Torino. Include behind him the grand nineteenth-century arched facade, travellers with suitcases, a tram passing and the Alps faint in the distance. Colour from their place: cream, rust brown, tan, sandstone. Full of character. Tall portrait format.",
       here: "You sell tickets at Torino Porta Nuova, the city's main station, opened in the 19th century on Corso Vittorio Emanuele, where trains leave for Milan, Genoa and the mountains; you can help anyone with every trip.",
     },
     {
@@ -351,7 +351,7 @@ export const torino: CityPantry = {
       role: "barista",
       placeId: 'caffe-san-carlo',
       personality: ["quick", "cheerful", "proud of her coffee"],
-      portraitPrompt: "Pen and ink portrait on white paper of a young woman of Moroccan heritage, born in Turin, a young Italian barista in her mid twenties with dark wavy hair tied back, wearing a crisp white shirt and black bow tie. Confident expression, hint of a smile. Minimal warm sepia wash on face. Detailed crosshatching, classic composition.",
+      portraitPrompt: "Soft pastel portrait on white paper, textured and nostalgic, with atmospheric light falling through tall windows. A young woman of 26, of Moroccan heritage, with dark wavy hair tied back, wearing a crisp white shirt and a black bow tie. Her face is quick and confident, with a hint of a cheerful smile. Her hands are tamping coffee and setting a cup on a saucer, and she looks up from it straight at the viewer, as if someone she knows has just come in. She is a woman who is the barista at Caffè San Carlo, Centro, Torino. Include behind her the classic bar counter, gilded mirrors, ornate chandeliers and marble-topped tables. Colour from their place: deep coffee brown, warm sand, walnut brown, dusty rose. Full of character. Tall portrait format.",
       here: "You work the counter at Caffè San Carlo, a historic café with gilded mirrors and chandeliers on Piazza San Carlo, the square Turinese call their \"salotto,\" or drawing room. Most people drink their coffee standing at the bar. Bicerin, Turin's layered drink of espresso, chocolate and cream, is on the menu. Vermouth was invented in Turin, and it's the aperitivo drink here. You were born in Turin to Moroccan parents.",
     },
     {
@@ -363,7 +363,7 @@ export const torino: CityPantry = {
       role: 'proprietaria',
       placeId: 'bicerin-dal-1763',
       personality: ["warm", "local", "guardian of tradition"],
-      portraitPrompt: 'Pen and ink portrait on white paper of an elegant elderly Italian woman with white hair in a bun, wearing a traditional apron over refined clothing. Kind eyes, wise expression. Minimal amber watercolor wash. Detailed linework, dignified presence.',
+      portraitPrompt: "Soft pastel portrait on white paper, textured, intimate and cozy, in soft morning light. A woman of 68 with white hair in a neat bun, kind lined eyes and a calm, wise expression, wearing a traditional apron over a refined cardigan and blouse. Her hands are wiping a small marble table and setting down a glass of hot drink, and she looks up from it straight at the viewer, as if someone she knows has just come in. She is a woman who is the owner at Al Bicerin, Quadrilatero Romano, Torino. Include behind her the dark wood paneling, antique coffee equipment, textured walls and small marble tables of the tiny café. Colour from their place: dark espresso, chocolate brown, warm beige, mocha. Full of character. Tall portrait format.",
       here: "You run Al Bicerin, a tiny café with marble tables in Turin. It has served the bicerin since 1763. The drink is coffee, chocolate and cream in separate layers, and it is never stirred. \"Bicerin\" is Piedmontese for \"small glass,\" which is what it comes in. Turin has been a chocolate city for centuries, and the chocolate is why the bicerin is local. Nearby bars also serve the gianduiotto, Turin's hazelnut chocolate.",
     },
     {
@@ -408,7 +408,7 @@ export const torino: CityPantry = {
       role: 'fruttivendola',
       placeId: 'mercato-porta-palazzo',
       personality: ["loud", "friendly", "no-nonsense"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a robust market vendor woman in her forties with curly hair, wearing a practical apron. Broad smile, expressive face. Minimal warm terracotta wash. Energetic lines, vital personality.',
+      portraitPrompt: "Soft pastel portrait on white paper, textured and energetic, in bright morning light. A robust woman of 45 with curly hair, a broad open smile and an expressive, weathered face, wearing a practical apron over a rolled-sleeve shirt. Her hands are weighing tomatoes and peaches into a paper bag, and she looks up from it straight at the viewer, as if someone she knows has just come in. She is a woman who is the fruit and vegetable seller at Mercato di Porta Palazzo, Quadrilatero Romano, Torino. Include behind her the produce stalls piled with greens, red tomatoes and yellow fruit, the awnings, other vendors and the cobblestones of the market. Colour from their place: straw ochre, olive green, sage green, terracotta. Full of character. Tall portrait format.",
       here: "You sell fruit and vegetables at Porta Palazzo, one of the biggest open-air markets in Europe, where Turinese shop for the peppers, cardoons and herbs behind dishes like bagna cauda and acciughe al verde.",
     },
     {
@@ -442,7 +442,7 @@ export const torino: CityPantry = {
       role: 'maître',
       placeId: 'ristorante-del-cambio',
       personality: ['elegant', 'formal', 'impeccable'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a distinguished maître d\' in his fifties with silver temples, wearing an elegant suit. Refined posture, discerning expression. Minimal burgundy watercolor accent. Sophisticated linework, aristocratic bearing.',
+      portraitPrompt: "Soft pastel portrait on white paper, textured and refined, in warm candlelight. A man of 52 with silver temples, a composed, attentive face and a slight, discerning raise of the brow, wearing a dark tailored suit, white shirt and burgundy tie. His hands are smoothing a white tablecloth and straightening a crystal glass, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is a man who is the maître d' at Ristorante Del Cambio, Centro, Torino. Include behind him the frescoed ceiling, crystal chandeliers and tables laid with white tablecloths of the opulent Savoy-era dining room. Colour from their place: oxblood brown, antique gold, ivory, warm bronze. Full of character. Tall portrait format.",
       here: "You're the maître at Del Cambio, open since 1757 across from Palazzo Carignano, where Cavour had his table; you recommend Piedmont's classics: agnolotti del plin, vitello tonnato, bunet.",
     },
     {
@@ -487,7 +487,7 @@ export const torino: CityPantry = {
       role: "addetta del Museo del Cinema",
       placeId: 'mole-antonelliana',
       personality: ['local', 'animated', 'city-proud'],
-      portraitPrompt: 'Pen and ink portrait on white paper of an articulate young woman with expressive eyes, wearing professional but stylish clothing with a museum badge. Engaging expression, intelligent gaze. Minimal blue watercolor accent. Detailed, articulate lines.',
+      portraitPrompt: "Soft pastel portrait on white paper, textured and gentle, in soft diffused sky light. A woman of 31 with expressive eyes, an animated, intelligent face and a warm engaging smile, wearing a stylish dark jacket over a light blouse, with a museum lanyard around her neck. Her hands are opening a folded city map and pointing out a route, and she looks up from it straight at the viewer, as if someone she knows has just come in. She is a woman who is the museum guide at Mole Antonelliana, Centro, Torino. Include behind her the towering Mole with its slender spire rising against a soft sky, and the surrounding Turin rooftops. Colour from their place: pale stone, slate grey, warm stone, dark slate blue. Full of character. Tall portrait format.",
       here: "You work at the Museo Nazionale del Cinema inside the Mole Antonelliana, the tower that is the symbol of Turin.",
     },
     {
@@ -521,7 +521,7 @@ export const torino: CityPantry = {
       role: 'giardiniere',
       placeId: 'parco-valentino',
       personality: ['nature-loving', 'philosophical'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a weathered gardener in his late fifties with sun-worn face, wearing work clothes and cap. Peaceful expression, knowing eyes. Minimal green watercolor wash. Organic lines, earthy character.',
+      portraitPrompt: "Soft pastel portrait on white paper, textured and serene, in dappled sunlight. A man of 59 with a sun-worn, weathered face, deep lines around calm knowing eyes and a peaceful expression, wearing a faded work jacket and a flat cap. His hands are trimming a small shrub with pruning shears, soil on his fingers, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is a man who is the gardener at Parco del Valentino, San Salvario, Torino. Include behind him the tree-lined paths, the Po River and the Castello del Valentino in the distance of the riverside park. Colour from their place: moss green, olive, straw yellow, deep forest green. Full of character. Tall portrait format.",
       here: "You're a gardener in the Parco del Valentino, Turin's big park along the Po, with the Castello del Valentino and the Borgo Medievale.",
     },
     {
@@ -533,7 +533,7 @@ export const torino: CityPantry = {
       role: "musicista di strada",
       placeId: 'piazza-castello',
       personality: ["artistic", "romantic", "free-spirited"],
-      portraitPrompt: "Pen and ink portrait on white paper of a young man of Peruvian Andean heritage, born in Turin, a bohemian musician in his twenties with tousled dark hair and expressive face, wearing a scarf. Dreamy expression, creative soul. Minimal amber watercolor wash. Flowing lines, artistic temperament.",
+      portraitPrompt: "Soft pastel portrait on white paper, textured and vibrant, in atmospheric golden light. A young man of 27 of Peruvian Andean heritage, with tousled dark hair, an expressive face and a dreamy, creative look, wearing a loose knitted scarf and a worn jacket. His fingers are moving over the strings of a guitar, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is a man who is the street musician at Piazza Castello, Centro, Torino. Include behind him the grand baroque square, the arcaded buildings, the Palazzo Madama and people strolling under a sky blue sky. Colour from their place: sand, ochre, taupe, deep umber. Full of character. Tall portrait format.",
       here: "You play in Piazza Castello, in front of Palazzo Madama and the Palazzo Reale, where people cross the square on the Sunday stroll or on their way to the arcades; you know every café around it. Your background: born in Turin to Peruvian parents.",
     },
     {
@@ -578,7 +578,7 @@ export const torino: CityPantry = {
       role: 'libraia',
       placeId: 'libreria-luxemburg',
       personality: ["literary", "thoughtful", "recommends perfectly"],
-      portraitPrompt: 'Pen and ink portrait on white paper of an intellectual bookseller in her forties with reading glasses on a chain, surrounded by literary atmosphere. Thoughtful expression, book-lover\'s eyes. Minimal sepia wash. Detailed, bibliophile character.',
+      portraitPrompt: "Soft pastel portrait on white paper, textured and intimate, in soft natural light. A woman of 48 with a thoughtful, attentive face, warm book-lover's eyes and a gentle half-smile, reading glasses hanging on a chain at her chest, wearing a cream cardigan over a sage blouse. Her hands are holding a paperback open at a page, ready to recommend it, and she looks up from it straight at the viewer, as if someone she knows has just come in. She is a woman who is the bookseller at Libreria Luxemburg, Centro, Torino. Include behind her the wooden shelves packed with books, a reading nook and a few posters on the wall. Colour from their place: dark walnut, oak brown, sage green, honey. Full of character. Tall portrait format.",
       here: "You work at Libreria Luxemburg, a much-loved bookshop in the centre, and you'll point people to Turin writers like Primo Levi, Cesare Pavese and Natalia Ginzburg, perhaps with a bicerin afterwards.",
     },
     {
@@ -612,7 +612,7 @@ export const torino: CityPantry = {
       role: "cioccolatiera",
       placeId: 'guido-gobino',
       personality: ["precise", "proud", "patient"],
-      portraitPrompt: "Pen and ink portrait on white paper of a master chocolatier in her thirties with intense focus, wearing chef whites. Precise expression, artisan pride. Minimal chocolate-brown watercolor wash. Detailed lines, craftsman character.",
+      portraitPrompt: "Soft pastel portrait on white paper, textured and tempting, in warm light. A woman of 36 with a precise, focused expression, steady patient eyes and a quiet proud smile, her hair tucked under a cap, wearing crisp white chef's whites. Her hands are placing a glossy giandujotto into a tray with small tweezers, and she looks up from it straight at the viewer, as if someone she knows has just come in. She is a woman who is the chocolatier at Guido Gobino, Centro, Torino. Include behind her the glass displays of giandujotti, cremino and gourmet pralines, and gold foil wrappers in the artisan atelier. Colour from their place: deep chocolate brown, cocoa, caramel cream, golden tan. Full of character. Tall portrait format.",
       here: "You make and sell chocolate at Guido Gobino, a Turin name for artisan giandujotti, the hazelnut chocolates the city is famous for; you'll let people taste and explain the difference between a gianduiotto and a cremino. Your background: from Cuneo, here for 15 years.",
     },
     {
@@ -624,7 +624,7 @@ export const torino: CityPantry = {
       role: 'esperto di vermut',
       placeId: 'casa-del-vermouth',
       personality: ["botanical knowledge", "patient", "nostalgic"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a distinguished vermouth expert in his sixties with a sophisticated manner, wearing vintage-style vest. Knowledgeable eyes, refined taste. Minimal amber vermouth wash. Classic lines, heritage keeper.',
+      portraitPrompt: "Soft pastel portrait on white paper, textured, warm and aromatic. A man of 64 with swept-back grey hair, a neat trimmed moustache, knowing patient eyes and a nostalgic expression, wearing a vintage-style waistcoat over a white shirt with rolled sleeves. His hands are pouring amber vermouth into a small tasting glass, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is a man who is the vermouth expert at Casa del Vermouth, Quadrilatero Romano, Torino. Include behind him the vintage bottles on the shelves, framed botanical illustrations and the tasting counter of the specialty shop. Colour from their place: dark olive brown, deep amber, antique tan, muted mauve. Full of character. Tall portrait format.",
       here: "You guide tastings at Casa del Vermouth, explaining vermouth di Torino, a wine flavoured with herbs and spices that Turin made famous and that is the heart of the aperitivo hour.",
     },
     {

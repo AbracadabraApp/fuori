@@ -296,7 +296,7 @@ export const verona: CityPantry = {
       role: "proprietaria",
       placeId: 'caffe-wallner',
       personality: ["refined", "local", "proud"],
-      portraitPrompt: "Pen and ink portrait on white paper of a distinguished woman in her fifties with silver-streaked dark hair, warm brown eyes, wearing crisp white blouse and dark vest, holding espresso cup, gentle smile showing pride in her historic café, detailed crosshatching with subtle watercolor wash in warm sepia tones",
+      portraitPrompt: "Soft pastel sketch on white paper, warm golden morning light streaming in. A woman of 52 with dark hair streaked with silver, warm brown eyes, a crisp white blouse under a dark vest, and a gentle, proud smile. She sets a small espresso cup onto its saucer with both hands, then looks up from it straight at the viewer, as if someone she knows has just come in. She is the proprietaria (owner) at Caffè Wallner, Centro Storico, Verona. Include behind her the marble-topped bar, the gleaming brass espresso machine, glass cases of delicate pastries, and tall windows with a red awning and a textured stone street beyond. Colour from their place: golden ochre, Naples yellow, burnt sienna, coffee brown. Full of character. Tall portrait format.",
       here: "You run a café in the centre where Veronese start the morning with an espresso and a pastry, like in the city's other historic cafés, and you chat with regulars at the marble tables. Your background: Veronese, runs the café her family started.",
     },
     {
@@ -353,7 +353,7 @@ export const verona: CityPantry = {
       role: 'fruttivendolo',
       placeId: 'mercato-piazza-erbe',
       personality: ["jovial", "loud", "generous"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a robust man in his forties with weathered face, bright expressive eyes, wearing work apron, hands gesturing animatedly, big genuine smile, detailed ink work with watercolor wash in sun-bronzed tones and green',
+      portraitPrompt: "Soft pastel sketch on white paper, dappled sunlight under market umbrellas. A robust man of 48 with a weathered, sun-bronzed face, bright expressive eyes, a work apron over rolled sleeves, and a big, genuine, open-mouthed smile. His broad hands pack deep red heads of radicchio rosso into a crate, then he looks up from them straight at the viewer, as if someone he knows has just come in. He is the fruttivendolo (fruit and vegetable seller) at Mercato di Piazza delle Erbe, Centro Storico, Verona. Include behind him the stall with its striped awning, piles of radicchio and fresh vegetables, market umbrellas, and ancient buildings around the square. Colour from their place: olive green, sage green, yellow ochre, terracotta brown. Full of character. Tall portrait format.",
       here: "You sell fruit and vegetables at a stall in the Mercato di Piazza delle Erbe, in Verona's old centre. The square was the Roman forum, and the fountain in its middle carries the statue called Madonna Verona, which dates from Roman times. Red radicchio rosso di Verona is the winter crop. The stalls stand under big white umbrellas.",
     },
     {
@@ -387,7 +387,7 @@ export const verona: CityPantry = {
       role: 'sommelier',
       placeId: 'ristorante-dodici-apostoli',
       personality: ['elegant', 'local', 'diplomatic'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a refined man in his forties with styled dark hair, intelligent eyes, wearing formal vest and tie, holding wine bottle with expertise, sophisticated smile, detailed crosshatching with watercolor wash in burgundy and gold',
+      portraitPrompt: "Soft pastel sketch on white paper, soft candlelit glow. A refined man of 43 with styled dark hair, intelligent eyes, a formal vest and tie, and a calm, sophisticated smile. He eases the cork from a bottle of wine, his fingers steady on the neck, then looks up from it straight at the viewer, as if someone he knows has just come in. He is the sommelier at Ristorante Dodici Apostoli, Centro Storico, Verona. Include behind him the vaulted ceiling, crisp white tablecloths on the tables, and ancient stone walls lined with wine bottles in the candlelight. Colour from their place: warm cream, golden ochre, raw umber, tawny tan. Full of character. Tall portrait format.",
       here: "You wait tables at the Ristorante Dodici Apostoli, one of Verona's oldest restaurants, in the Centro Storico. The menu is local: risotto all'Amarone, made with the red wine of the Valpolicella hills just north of the city; bigoli, thick pasta pressed through a bronze die, served with duck; and pastissada de caval, a traditional Veronese stew of horse meat simmered in red wine, served with polenta.",
     },
     {
@@ -432,7 +432,7 @@ export const verona: CityPantry = {
       role: "corista",
       placeId: 'arena-verona',
       personality: ['enthusiastic', 'educated'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a young woman with elegant features, bright intelligent eyes, dark hair in professional style, wearing smart casual clothes, gesture of explanation, passionate expression, detailed pen work with watercolor in rose and cream tones',
+      portraitPrompt: "Soft pastel sketch on white paper, warm afternoon light casting soft shadows. A woman of 29 with elegant features, bright intelligent eyes, dark hair swept up neatly, a smart casual jacket over a cream top, and a passionate, enthusiastic expression. She holds open a choir score and turns a page with one hand, then looks up from it straight at the viewer, as if someone she knows has just come in. She is the corista (choir singer) at Arena di Verona, Centro Storico, Verona. Include behind her the great Roman amphitheatre with its pink Verona marble arches, ancient weathered stone, and the piazza in front of it. Colour from their place: pale rose-beige, dusty rose, warm mauve-brown, soft cream. Full of character. Tall portrait format.",
       here: "You sing in the chorus of the summer opera season at the Arena di Verona, the Roman amphitheatre on Piazza Bra that still fills with thousands of people on summer nights.",
     },
     {
@@ -477,7 +477,7 @@ export const verona: CityPantry = {
       role: "musicista di strada",
       placeId: 'piazza-bra',
       personality: ["artistic", "charming", "easygoing"],
-      portraitPrompt: "Pen and ink portrait on white paper of a young Black man of Senegalese heritage, born in Verona, a bohemian young man in his twenties with short dark hair, expressive eyes, wearing casual artistic clothes, holding violin, creative spirit visible in smile, detailed pen work with watercolor in warm gold and burgundy",
+      portraitPrompt: "Soft pastel sketch on white paper, evening light with a gold streetlight glow and soft shadows. A young Black man of 24, of Senegalese heritage and born in Verona, with short dark hair, expressive eyes, a loose casual artistic jacket and scarf, and a charming, easygoing smile. He tunes a violin under his chin, bow in his other hand, then looks up from it straight at the viewer, as if someone he knows has just come in. He is the musicista di strada (street musician) at Piazza Bra, Centro Storico, Verona. Include behind him the Arena looming over the piazza, outdoor café tables, and grand palatial buildings in warm pink stone. Colour from their place: dusty pink, clay brown, apricot ochre, dark umber. Full of character. Tall portrait format.",
       here: "You play your violin in Piazza Bra, in the shadow of the Arena, where people come for the sunset passeggiata, and in the opera season you play for the crowds going in and out. Your background: born in Verona to Senegalese parents.",
     },
     {
@@ -489,7 +489,7 @@ export const verona: CityPantry = {
       role: 'architetta',
       placeId: 'piazza-signori',
       personality: ['elegant'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a sophisticated woman in her mid-thirties with sleek dark hair, sharp intelligent eyes, wearing professional attire, holding architectural drawings, confident composed expression, detailed crosshatching with watercolor in cool gray and cream',
+      portraitPrompt: "Soft pastel sketch on white paper, soft even daylight in a shaded square. A woman of 36 with sleek dark hair, sharp intelligent eyes, tailored dark professional attire, and a composed, confident expression. She holds a roll of architectural drawings flat with one hand and traces a line with a pencil in the other, then looks up from them straight at the viewer, as if someone she knows has just come in. She is the architetta (architect) at Piazza dei Signori, Centro Storico, Verona. Include behind her the enclosed square with the Dante statue, medieval palaces, and outdoor tables set under the arches. Colour from their place: warm cream, sand, soft tan, burnt umber. Full of character. Tall portrait format.",
       here: "You're an architect who works in the old centre and crosses Piazza dei Signori every day, the square of the Scaligeri, Verona's medieval rulers, with a statue of Dante in the middle.",
     },
     {
@@ -546,7 +546,7 @@ export const verona: CityPantry = {
       role: 'salumiere',
       placeId: 'salumeria-albertini',
       personality: ["generous", "traditional", "talkative"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a 63-year-old man with grey hair and a grey moustache, in a white apron over a checked shirt, cutting a wedge from a wheel of cheese on the counter, eyes on the knife, minimal watercolor wash in rose red and cream, detailed linework. The subject is a man.',
+      portraitPrompt: "Soft pastel sketch on white paper, warm soft light of a shop interior. A man of 63 with grey hair and a grey moustache, a white apron over a checked shirt, and a kind, talkative face with deep smile lines. He cuts a wedge from a wheel of cheese on the counter, the knife steady in his hand, then looks up from it straight at the viewer, as if someone he knows has just come in. He is the salumiere (cured meat seller) at Salumeria Albertini, San Zeno, Verona. Include behind him hanging soppressa and pancetta, aged prosciutto on the slicer, wheels of cheese, and aged wood shelves. Colour from their place: rose-brown, madder red, apricot tan, dark walnut brown. Full of character. Tall portrait format.",
       here: "You run a salumeria near San Zeno, selling soppressa veneta and Monte Veronese DOP cheese, and families stop in on the way to Sunday lunch, where lesso with pearà is a classic.",
     },
     {
@@ -581,7 +581,7 @@ export const verona: CityPantry = {
       role: 'bigliettaio',
       placeId: 'stazione-porta-nuova',
       personality: ["punctual", "helpful", "organized"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a neat man in his fifties with graying hair, alert eyes, wearing railway uniform with cap, checking pocket watch, professional efficient expression, detailed crosshatching with watercolor in railway blue and gray',
+      portraitPrompt: "Soft pastel sketch on white paper, soft daylight falling through the station hall. A neat man of 55 with graying hair, alert eyes, a railway uniform and cap, and a calm, efficient, helpful expression. He holds a ticket in one hand and a pocket watch in the other, checking the time, then looks up from them straight at the viewer, as if someone he knows has just come in. He is the bigliettaio (ticket clerk) at Stazione di Verona Porta Nuova, Porta Nuova, Verona. Include behind him the ticket windows, the grand hall with Art Nouveau details, travelers with luggage, and pigeons on the forecourt. Colour from their place: warm stone, pale sand, taupe, raw umber. Full of character. Tall portrait format.",
       here: "You sell tickets at Porta Nuova station, on the Milan–Venice line and the Brenner line toward Munich, and you help people find their platforms and trains.",
     },
     {
@@ -593,7 +593,7 @@ export const verona: CityPantry = {
       role: 'regista',
       placeId: 'teatro-romano',
       personality: ['visionary'],
-      portraitPrompt: 'Pen and ink portrait on white paper of an expressive woman in her forties with flowing dark hair, intense artistic eyes, wearing bohemian scarf and artistic clothing, gesturing dramatically, creative fire in expression, detailed pen work with watercolor in deep purple and gold',
+      portraitPrompt: "Soft pastel sketch on white paper, warm summer sunset light with deep shadow. A woman of 44 with flowing dark hair, intense artistic eyes, a bohemian scarf over dark layered clothes, and a visionary, fiery expression. She grips a rolled script in one hand and gestures with the other, then looks up straight at the viewer, as if someone she knows has just come in. She is the regista (theatre director) at Teatro Romano, Veronetta, Verona. Include behind her the ancient Roman theatre carved into the hillside, semicircular stone seating, stage ruins, and a view over terracotta roofs and the Adige river. Colour from their place: sandstone beige, sunset ochre, burnt sienna, dark olive umber. Full of character. Tall portrait format.",
       here: "You direct plays for the Estate Teatrale Veronese, the summer festival in the Roman theatre across the Adige, where Shakespeare's plays come back every year.",
     },
     {

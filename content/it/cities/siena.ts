@@ -310,7 +310,7 @@ export const siena: CityPantry = {
       role: 'barista',
       placeId: 'bar-il-palio',
       personality: ["energetic", "loyal-to-her-contrada", "quick-witted"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a young woman with bright eyes, dark hair in ponytail, friendly smile, wearing black apron, minimal watercolor wash in soft peachy tones, confident expression, detailed linework.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, loose hand-drawn line, sunlit. A woman of 28 with bright eyes, dark hair in a high ponytail and a quick, friendly smile, wearing a black apron. She is sliding a coffee cup across the counter, and looks up from it straight at the viewer, as if someone she knows has just come in. She is the barista at Bar Il Palio, Terzo di San Martino, Siena. Include behind her a polished wooden counter with pastries under glass, old photographs of the Palio horse race on the walls, and locals arguing at the counter. Colour from their place: dark umber, burnt umber, raw sienna and burnt sienna. Full of character. Tall portrait format.",
       here: "You make coffee in a bar hung with Palio flags and contrada banners, and every customer gets your opinion on the next Palio, run on 2 July and 16 August in the Campo.",
     },
     {
@@ -333,7 +333,7 @@ export const siena: CityPantry = {
       role: 'pasticciera',
       placeId: 'pasticceria-bini',
       personality: ['sweet', 'artistic'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a woman with flour-dusted apron, gentle smile, hair in neat bun, delicate hands, minimal watercolor wash in soft powdery pinks, warm and nurturing expression, fine detailed linework.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, loose hand-drawn line, sunlit. A woman of 38 with hair in a neat bun, a gentle smile and a flour-dusted apron over a simple blouse. She is wrapping a round panforte in paper with careful, delicate hands, and looks up from it straight at the viewer, as if someone she knows has just come in. She is the pasticciera at Pasticceria Bini, Terzo di Città, Siena. Include behind her the small old shop's counter and window stacked with round panforte in paper, ricciarelli dusted with icing sugar, cavallucci and cantucci. Colour from their place: dark umber, raw sienna, burnt sienna and warm ochre. Full of character. Tall portrait format.",
       here: "You work the counter at Pasticceria Bini, an old pastry shop in the Terzo di Città, one of Siena's three historic districts. Ricciarelli are soft almond biscuits dusted with icing sugar, and panforte is a dense cake of candied fruit, nuts and spices; both are Sienese Christmas sweets with medieval roots. Ricciarelli are often sold in boxes. Cavallucci, spiced walnut biscuits, sit beside them.",
     },
     {
@@ -356,7 +356,7 @@ export const siena: CityPantry = {
       role: "venditrice",
       placeId: 'mercato-della-terra',
       personality: ["jovial", "generous", "hard-working"],
-      portraitPrompt: "Pen and ink portrait on white paper of a robust woman with sun-weathered skin, dark hair tied back, broad smile, wearing work vest, hands gesture expressively, minimal watercolor wash in earthy terracotta, animated and warm expression.",
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, loose hand-drawn line, sunlit. A robust woman of 47 with sun-weathered skin, dark hair tied back, a broad smile and a work vest. She is weighing a wedge of pecorino, one hand open in a generous gesture, and looks up from it straight at the viewer, as if someone she knows has just come in. She is the venditrice at Mercato della Terra, Piazza del Campo, Siena. Include behind her rows of white canvas stalls on the sloping red brick of the square, crates of vegetables, honey and bread, the Palazzo Pubblico and the Torre del Mangia. Colour from their place: canvas white, dark umber, raw sienna and burnt sienna. Full of character. Tall portrait format.",
       here: "You sell seasonal vegetables and herbs at your stall: cavolo nero for ribollita, beans for fagioli all'uccelletto, tomatoes to go with stale pane toscano in a panzanella. Sienese cooks know exactly what they want from you. Your background: from Tirana, here 22 years.",
     },
     {
@@ -390,7 +390,7 @@ export const siena: CityPantry = {
       role: 'chef',
       placeId: 'osteria-le-logge',
       personality: ['creative', 'ambitious'],
-      portraitPrompt: 'Pen and ink portrait on white paper of an elegant woman with sharp features, hair tied back, chef whites, determined expression, minimal watercolor wash in soft sienna, confident and talented demeanor.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, loose hand-drawn line, sunlit. An elegant woman of 35 with sharp features, hair tied back and a determined expression, in chef whites. She is plating a dish with a spoon and fine tweezers, and looks up from it straight at the viewer, as if someone she knows has just come in. She is the chef at Osteria Le Logge, Terzo di Città, Siena. Include behind her the old wooden shop counter and glass-fronted cabinets full of wine bottles, tables set with white cloths, and a few tables outside on the stone paving. Colour from their place: dark umber, burnt umber, raw sienna and warm tan. Full of character. Tall portrait format.",
       here: "You run Osteria Le Logge in the Terzo di Città, a short walk from the Campo. Your pici are thick hand-rolled spaghetti of flour and water, no egg, typical of Siena. You dress them with cacio e pepe or with aglione, a big garlic from the Val di Chiana. Ribollita means \"reboiled\": a bean and black cabbage soup made from the day before. Cinta senese pigs are black with a white belt across the shoulders.",
     },
     {
@@ -457,7 +457,7 @@ export const siena: CityPantry = {
       role: "guida turistica",
       placeId: 'piazza-del-campo',
       personality: ["proud-senese", "engaging", "contrada-loyal"],
-      portraitPrompt: "Pen and ink portrait on white paper of a young man of Moroccan heritage, born in Siena, a handsome young man with dark curly hair, animated expression, gesturing hands, casual but neat clothing, bright eyes, minimal watercolor wash in warm terracotta, passionate and articulate.",
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, loose hand-drawn line, sunlit. A man of 33, of Moroccan heritage and born in Siena, with dark curly hair, bright eyes, an animated expression and a neat casual shirt. He is unfolding a map and gesturing with his free hand, and looks up from it straight at the viewer, as if someone he knows has just come in. He is the guida turistica at Piazza del Campo, Siena. Include behind him the great shell-shaped square of red brick sloping to the Palazzo Pubblico, the slender Torre del Mangia rising above, people sitting on the warm brick. Colour from their place: pale stone white, dark umber, raw sienna and burnt sienna. Full of character. Tall portrait format.",
       here: "You show visitors around Piazza del Campo in Siena. The square is shell-shaped, its paving divided into nine sections. The Palazzo Pubblico stands at the bottom of the slope, under the Torre del Mangia. The Palio is run here twice a year, on 2 July and 16 August, on earth laid over the paving, with ten of the seventeen contrade racing. You were born in Siena to Moroccan parents.",
     },
     {
@@ -469,7 +469,7 @@ export const siena: CityPantry = {
       role: 'studentessa',
       placeId: 'piazza-salimbeni',
       personality: ["thoughtful", "romantic", "curious"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a young woman with book under arm, thoughtful gaze, flowing hair, simple scarf, minimal watercolor wash in soft lavender, intellectual and dreamy expression.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, loose hand-drawn line, sunlit. A young woman of 26 with flowing hair, a thoughtful, dreamy gaze and a simple scarf at her neck. She is turning a page of the book held open in her hands, and looks up from it straight at the viewer, as if someone she knows has just come in. She is the studentessa at Piazza Salimbeni, Terzo di Camollia, Siena. Include behind her the Gothic Palazzo Salimbeni of brick and stone with pointed triple windows, the statue of Sallustio Bandini on its tall plinth, students sitting on the steps. Colour from their place: pale stone, dark umber, raw sienna and burnt sienna. Full of character. Tall portrait format.",
       here: "You study at the University of Siena, founded in 1240, and come to this quiet square to read on a bench, in front of Palazzo Salimbeni, the seat of the Monte dei Paschi bank, among the oldest banks in the world.",
     },
     {
@@ -481,7 +481,7 @@ export const siena: CityPantry = {
       role: 'custode',
       placeId: 'torre-del-mangia',
       personality: ['fit'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a lean athletic man with weathered face from sun, knowing smile, casual uniform, minimal watercolor wash in warm stone colors, steady and reliable expression.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, loose hand-drawn line, sunlit. A lean, athletic man of 45 with a sun-weathered face, a knowing smile and a plain casual uniform shirt. He is sorting a ring of keys by the tower door, and looks up from it straight at the viewer, as if someone he knows has just come in. He is the custode at Torre del Mangia, Piazza del Campo, Siena. Include behind him the soaring medieval brick bell tower seen from below, rising above terracotta rooftops to its white stone crown. Colour from their place: cream, warm sand, raw umber and burnt umber. Full of character. Tall portrait format.",
       here: "You look after the Torre del Mangia, the tall tower of the Palazzo Pubblico on the Piazza del Campo, and you climb its four hundred or so steps every day.",
     },
     {
@@ -493,7 +493,7 @@ export const siena: CityPantry = {
       role: "mamma",
       placeId: 'orto-de-pecci',
       personality: ["warm", "talkative", "proud of her contrada"],
-      portraitPrompt: "Pen and ink portrait on white paper of a Sienese woman of 38 with dark hair tied back, a light jacket and a scarf, smiling as she watches her children play, a red ball under her arm. Minimal watercolor wash in soft green and terracotta tones, warm and lively. No lettering anywhere in the picture. The subject is a woman.",
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, loose hand-drawn line, sunlit. A Sienese woman of 38 with dark hair tied back, a warm, lively smile, a light jacket and a scarf. She has a red ball tucked under one arm and a hand raised toward children playing out of sight, and turns from watching them to look straight at the viewer, as if someone she knows has just come in. She is the mamma at Orto de' Pecci, Terzo di San Martino, Siena. Include behind her the terraced garden with geometric beds of medicinal herbs, stone pathways, dappled shade and a view over the Tuscan countryside. Colour from their place: sage green, olive, warm sand and raw umber. Full of character. Tall portrait format.",
       here: "You're a Sienese mum, and most afternoons you bring your two children to the Orto de' Pecci, the green valley just below the Piazza del Campo, to run around. Your family has belonged to the same contrada for generations.",
     },
     {
@@ -539,7 +539,7 @@ export const siena: CityPantry = {
       role: "artigiano",
       placeId: 'bottega-del-palio',
       personality: ["proud", "patient", "meticulous"],
-      portraitPrompt: "Pen and ink portrait on white paper of an elderly craftsman with skillful hands, concentrated expression, wearing contrada scarf, white hair, minimal watercolor wash in silk banner colors, dedicated and authentic. The subject is a man.",
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, loose hand-drawn line, sunlit. A man of 68 with white hair, a lined, patient face and a contrada scarf at his neck. He is hemming a silk flag with a fine needle in skilful hands, and looks up from it straight at the viewer, as if someone he knows has just come in. He is the artigiano at Bottega del Palio, Piazza del Campo, Siena. Include behind him the small shop with silk scarves and flags in contrada colours hanging around its door, ceramic horses and hand-painted banners. Colour from their place: raw sienna, dark umber, burnt umber and burnt sienna. Full of character. Tall portrait format.",
       here: "You work in your shop on the Campo, selling silk scarves in contrada colors and flags. You are Sienese and have kept this shop for decades. The Palio's prize is the drappellone, a banner painted anew by a different artist for each race. The Palio is run twice each summer, on 2 July and 16 August, and ten of Siena's seventeen contrade race in each one. Each contrada has its own colors and emblem, such as the Eagle or the Snail.",
     },
     {
@@ -630,7 +630,7 @@ export const siena: CityPantry = {
       role: 'bigliettaio',
       placeId: 'stazione-siena',
       personality: ["efficient", "helpful", "patient"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a ticket office clerk in his late forties, navy railway uniform, friendly professional expression, minimal watercolor wash in transit blues, reliable and approachable. The subject is a man.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, loose hand-drawn line, sunlit. A man of 48 in a navy railway uniform, with a friendly, patient face and a calm professional expression. He is sliding a ticket across the counter, and looks up from it straight at the viewer, as if someone he knows has just come in. He is the bigliettaio at Stazione di Siena, Terzo di Camollia, Siena. Include behind him the plain modern station building on its square, buses and taxis, travellers with suitcases, and above it on the hill the red brick city with its towers. Colour from their place: raw sienna, burnt umber, warm sand and dark umber. Full of character. Tall portrait format.",
       here: "You sell tickets at Siena's station to students, commuters and visitors taking the train to Florence. The station lies below the old centre, so the walk into town is uphill. Camollia is one of the three terzi of Siena, along with Città and San Martino. Porta Camollia, the old gate to the north, is inscribed \"Cor magis tibi Sena pandit\": Siena opens its heart to you even wider than this gate.",
     },
     {
@@ -642,7 +642,7 @@ export const siena: CityPantry = {
       role: 'pizzicagnolo',
       placeId: 'pizzicheria-de-miccoli',
       personality: ['joking', 'proud of Siena', 'quick with a knife'],
-      portraitPrompt: 'Pen and ink portrait on white paper of a 40-year-old man with a dark beard and a flat cap, sleeves rolled up, holding a panino stuffed with porchetta, minimal watercolor wash in warm terracotta and Siena earth tones, detailed linework.',
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, loose hand-drawn line, sunlit. A man of 40 with a dark beard and a flat cap, sleeves rolled up, and a cheerful, teasing grin. He is slicing porchetta with a knife to fill a panino, and looks up from it straight at the viewer, as if someone he knows has just come in. He is the pizzicagnolo at Pizzicheria de' Miccoli, Terzo di Città, Siena. Include behind him the narrow old deli on a steep street: a stuffed wild boar's head over the door, salami and hams hanging in the doorway, wheels of pecorino and a porchetta on the counter. Colour from their place: dark umber, raw sienna, ochre and burnt sienna. Full of character. Tall portrait format.",
       here: "You work at the pizzicheria on Via di Città with the boar's head over the door: salami of cinta senese, the black-and-white Sienese pig, pecorino, and porchetta panini you fill while people wait in the street.",
     },
   ],

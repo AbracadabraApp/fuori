@@ -393,7 +393,7 @@ export const firenze: CityPantry = {
       role: 'barista',
       placeId: 'ditta-artigianale-nuova',
       personality: ["friendly", "energetic", "meticulous about coffee"],
-      portraitPrompt: 'Pen and ink portrait on white paper, washed with warm Tuscan ochre and terracotta watercolor, of a Florentine man of 27 with short dark curly hair, a trimmed beard and olive skin, wearing a mustard-yellow shirt under a dark green apron and a knitted rust-coloured beanie. He smiles warmly while holding a small ceramic cup of espresso he has just made. Detailed crosshatching, no lettering anywhere in the picture. The subject is a man.',
+      portraitPrompt: "Soft pastel portrait on white paper, textured strokes, warm morning light. A man of 27 with short dark curly hair, a trimmed beard, olive skin and a warm, energetic smile, wearing a mustard-yellow shirt under a dark green apron and a knitted rust-coloured beanie. His hands set a small ceramic cup of freshly made espresso on a saucer, and he looks up from it straight at the viewer, as if someone he knows has just come in. He is a man who is a barista at Ditta Artigianale, Sant'Ambrogio, Firenze. Include behind him the open door and large windows of the coffee bar, its warm interior and the stone front of the apartment building rising above. Colour from their place: cream, warm sand, ochre, raw umber. Full of character. Tall portrait format.",
       here: "You make coffee at Ditta Artigianale near the Sant'Ambrogio market, one of the bars that brought speciality coffee to Florence: single-origin beans, roasted lighter, made slowly as an espresso or a filter coffee. It tastes quite different from the usual bar coffee. The Sant'Ambrogio market nearby is where Florentines buy their vegetables, and you shop there.",
     },
     {
@@ -405,7 +405,7 @@ export const firenze: CityPantry = {
       role: 'tassista',
       placeId: 'lampredotto-pollini',
       personality: ["talkative", "good-humoured", "opinionated about food"],
-      portraitPrompt: 'Pen and ink portrait on white paper, washed with warm Tuscan ochre and terracotta watercolor, of a Florentine man of 61 with grey hair, a weathered ruddy face and a grey moustache, wearing a bright blue checked shirt, a tan jacket and a loosened red tie. He is mid-bite into a lampredotto sandwich, a paper napkin in hand and a contented look on his face. Detailed crosshatching, no lettering anywhere in the picture. The subject is a man.',
+      portraitPrompt: "Soft pastel portrait on white paper, textured strokes, warm midday light. A man of 61 with grey hair, a weathered ruddy face and a grey moustache, wearing a bright blue checked shirt, a tan jacket and a loosened red tie. His hands hold a lampredotto sandwich wrapped in paper and a paper napkin, one bite taken, and he looks up from it straight at the viewer, as if someone he knows has just come in, with a contented, talkative grin. He is a man who is a taxi driver at Lampredotto da Pollini, Sant'Ambrogio, Firenze. Include behind him the small van-like food cart with its steaming counter and awning, and the tall stone apartment buildings of the street. Colour from their place: warm sand, cream, dusty ochre, umber brown. Full of character. Tall portrait format.",
       here: "You stop your taxi at the lampredotto stall near Sant'Ambrogio for a quick lunch: a bread roll filled with the slow-cooked fourth stomach of the cow, dipped in its broth and topped with green sauce. For Florentines it's real street food.",
     },
     {
@@ -417,7 +417,7 @@ export const firenze: CityPantry = {
       role: 'cameriere',
       placeId: 'trattoria-mario-nuova',
       personality: ['quick and efficient', 'kind', 'dryly funny'],
-      portraitPrompt: 'Pen and ink portrait on white paper, washed with warm Tuscan ochre and terracotta watercolor, of a man of 44 from Durres in Albania, with short dark hair going grey at the temples, dark eyes and a tanned face, wearing a burgundy shirt with rolled sleeves and a long dark-green apron. He holds two plates of pasta on one arm and gives a tired but friendly smile. Detailed crosshatching, no lettering anywhere in the picture. The subject is a man.',
+      portraitPrompt: "Soft pastel portrait on white paper, textured strokes, warm lunchtime light. A man of 44 from Durres in Albania, with short dark hair greying at the temples, dark eyes and a tanned face, wearing a burgundy shirt with rolled sleeves and a long dark green apron. He balances two plates of pasta along one arm, and he looks up from them straight at the viewer, as if someone he knows has just come in, with a tired but friendly, dryly amused smile. He is a man who is a waiter at Trattoria Mario, San Lorenzo, Firenze. Include behind him the plain doorway and windows of the trattoria, long shared tables full of diners inside, and the tall stone building above. Colour from their place: sand, raw sienna, burnt umber, warm ochre. Full of character. Tall portrait format.",
       here: "You wait tables at a lunch-only trattoria by the San Lorenzo market where strangers share tables: ribollita, trippa alla fiorentina, and bistecca alla fiorentina, served rare or not at all. You came from Durrës and Florence is home now.",
     },
     {
@@ -429,7 +429,7 @@ export const firenze: CityPantry = {
       role: 'studentessa',
       placeId: 'santo-spirito-scalini',
       personality: ["curious", "creative", "a little shy"],
-      portraitPrompt: 'Pen and ink portrait on white paper, washed with warm Tuscan ochre and terracotta watercolor, of a woman of 22 from Lecce with long wavy dark-brown hair tied up with a pencil, olive skin and dark eyes, wearing an orange scarf, a teal sweater and wide blue jeans. She looks up from her sketchbook, pencil in hand, with a thoughtful, concentrated expression. Detailed crosshatching, no lettering anywhere in the picture. The subject is a woman.',
+      portraitPrompt: "Soft pastel portrait on white paper, textured strokes, soft October sunlight. A woman of 22 from Lecce with long wavy dark-brown hair tied up with a pencil, olive skin and dark eyes, wearing an orange scarf, a teal sweater and wide blue jeans. Her hands hold an open sketchbook and a pencil, mid-drawing, and she looks up from the page straight at the viewer, as if someone she knows has just come in, with a thoughtful, slightly shy expression. She is a woman who is a student at Santo Spirito, Oltrarno, Firenze. Include behind her the wide stone steps and plain pale facade of the church, plane trees, market stalls at the side and a few pigeons. Colour from their place: pale sand, raw sienna, dark umber, golden ochre. Full of character. Tall portrait format.",
       here: "You sit on the steps of Santo Spirito, the church Brunelleschi designed, with its plain pale facade, and sketch in the Oltrarno square where people meet for coffee and where a market is set up.",
     },
     {
@@ -441,7 +441,7 @@ export const firenze: CityPantry = {
       role: 'pensionato',
       placeId: 'santa-croce-piazza',
       personality: ["gentle", "nostalgic", "proud of his craft"],
-      portraitPrompt: 'Pen and ink portrait on white paper, washed with warm Tuscan ochre and terracotta watercolor, of a Florentine man of 76 with thin white hair, a lined kind face and strong, work-worn hands, wearing a burgundy cardigan over a checked green shirt, brown corduroy trousers and a flat cap. He holds his dog on a lead and smiles softly as he watches the square. Detailed crosshatching, no lettering anywhere in the picture. The subject is a man.',
+      portraitPrompt: "Soft pastel portrait on white paper, textured strokes, soft morning light. A man of 76 with thin white hair, a lined, kind face and strong, work-worn hands, wearing a burgundy cardigan over a checked green shirt, brown corduroy trousers and a flat cap. One hand holds the lead of his small dog and the other rests on its head, and he looks up from the dog straight at the viewer, as if someone he knows has just come in, with a gentle, nostalgic smile. He is a man who is retired at Piazza Santa Croce, Santa Croce, Firenze. Include behind him the white-and-green marble facade of Santa Croce, the statue of Dante on its plinth, the open paving and tall stone buildings around the edge. Colour from their place: cream, warm sand, raw sienna, soft umber. Full of character. Tall portrait format.",
       here: "You walk your dog across Piazza Santa Croce every day, past the statue of Dante, and you remember when the square was only for neighbours. Every June the Calcio Storico, the rough old Florentine football game, is played here on sand.",
     },
     {
@@ -453,7 +453,7 @@ export const firenze: CityPantry = {
       role: 'cuoca',
       placeId: 'parco-cascine',
       personality: ["warm", "hardworking", "protective"],
-      portraitPrompt: 'Pen and ink portrait on white paper, washed with warm Tuscan ochre and terracotta watercolor, of a woman of 39 from Lima in Peru with long black hair in a braid, warm brown skin and dark eyes, wearing a bright fuchsia jacket over a yellow top and blue jeans. She smiles tenderly while holding a small bag of snacks and watching her son. Detailed crosshatching, no lettering anywhere in the picture. The subject is a woman.',
+      portraitPrompt: "Soft pastel portrait on white paper, textured strokes, soft early-autumn light. A woman of 39 from Lima in Peru with long black hair in a braid, warm brown skin and dark eyes, wearing a bright fuchsia jacket over a yellow top and blue jeans. Her hands hold a small bag of snacks, ready to hand one out, and she looks up from it straight at the viewer, as if someone she knows has just come in, with a tender, protective smile. She is a woman who is a cook at Parco delle Cascine, Cascine, Firenze. Include behind her the bench she sits on, a broad path under tall trees, fallen yellow leaves, a lawn where a small boy plays with a ball and a jogger far off. Colour from their place: straw yellow, yellow ochre, olive brown, amber. Full of character. Tall portrait format.",
       here: "You bring your son to the Cascine, the big green park along the Arno, to run on the grass after school. On Tuesday mornings the park also holds a large open-air market, where you sometimes shop for the kitchen.",
     },
     {
@@ -465,7 +465,7 @@ export const firenze: CityPantry = {
       role: 'infermiera',
       placeId: 'tram-alamanni',
       personality: ["calm", "dutiful", "observant"],
-      portraitPrompt: 'Pen and ink portrait on white paper, washed with warm Tuscan ochre and terracotta watercolor, of a woman of 34 from Romania with light brown hair in a neat ponytail, fair skin and tired but kind grey-green eyes, wearing a coral-red coat over teal scrubs and white sneakers. She checks her phone for the time, holding a tote bag with her lunch. Detailed crosshatching, no lettering anywhere in the picture. The subject is a woman.',
+      portraitPrompt: "Soft pastel portrait on white paper, textured strokes, bright clear daylight. A woman of 34 from Romania with light brown hair in a neat ponytail, fair skin and tired but kind grey-green eyes, wearing a coral-red coat over teal scrubs and white sneakers. One hand holds her phone, glancing at the time, and the other holds a tote bag with her lunch, and she looks up from the screen straight at the viewer, as if someone she knows has just come in. She is a woman who is a nurse at Fermata del tram, Alamanni, Santa Maria Novella, Firenze. Include behind her the covered tram platform, a tram arriving on the tracks and the station buildings beyond. Colour from their place: cream, pale sand, warm taupe, umber. Full of character. Tall portrait format.",
       here: "You wait at the Alamanni tram stop, next to Santa Maria Novella station, for the T1 tram that takes you to your shift at the hospital. You pack your lunch because there is hardly time for a bar.",
     },
     {
@@ -477,7 +477,7 @@ export const firenze: CityPantry = {
       role: 'tabaccaia',
       placeId: 'tabaccheria-nesi',
       personality: ["sharp-witted", "motherly", "knows everyone in the neighbourhood"],
-      portraitPrompt: 'Pen and ink portrait on white paper, washed with warm Tuscan ochre and terracotta watercolor, of a woman of 66 with short silver-grey hair, round glasses on a chain and a lined, cheerful face, wearing a plum-purple cardigan over a floral blouse and a gold necklace. She leans on the door frame with a warm, knowing smile and holds a folded newspaper. Detailed crosshatching, no lettering anywhere in the picture. The subject is a woman.',
+      portraitPrompt: "Soft pastel portrait on white paper, textured strokes, warm daylight. A woman of 66 with short silver-grey hair, round glasses on a chain and a lined, cheerful face, wearing a plum-purple cardigan over a floral blouse and a gold necklace. She leans on the door frame with a folded newspaper in her hands, and she looks up from it straight at the viewer, as if someone she knows has just come in, with a warm, knowing smile. She is a woman who is a tobacconist at Tabaccheria Nesi, Campo di Marte, Firenze. Include behind her the glass door and the shop window of newspapers, lottery tickets and cards, with the tall stone apartment building rising above. Colour from their place: sand, warm ochre, raw umber, tan. Full of character. Tall portrait format.",
       here: "You run the tabaccheria in Campo di Marte, where people buy bus tickets, newspapers and lottery tickets and always say good morning when they come in. On match days the neighbourhood fills with Fiorentina fans in purple, and you hear every opinion about the team.",
     },
     {
@@ -501,7 +501,7 @@ export const firenze: CityPantry = {
       role: 'bigliettaio',
       placeId: 'stazione-smn-nuova',
       personality: ["dry-humoured", "patient", "seen it all"],
-      portraitPrompt: 'Pen and ink portrait on white paper, washed with warm Tuscan ochre and terracotta watercolor, of a Florentine man of 57 with thinning grey-brown hair, reading glasses pushed up on his forehead and a short salt-and-pepper beard, wearing a light blue shirt, a mustard-yellow knitted vest and a lanyard. He looks up from his screen with a wry half-smile, a printed ticket in his hand. Detailed crosshatching, no lettering anywhere in the picture. The subject is a man.',
+      portraitPrompt: "Soft pastel portrait on white paper, textured strokes, warm light falling from high windows. A man of 57 with thinning grey-brown hair, reading glasses pushed up on his forehead and a short salt-and-pepper beard, wearing a light blue shirt, a mustard-yellow knitted vest and a lanyard. One hand holds a freshly printed ticket and the other rests on his keyboard, and he looks up from his screen straight at the viewer, as if someone he knows has just come in, with a wry, patient half-smile. He is a man who is a ticket clerk at Stazione Santa Maria Novella, Santa Maria Novella, Firenze. Include behind him the long counter behind glass, ticket machines to one side and the high ceiling of the hall. Colour from their place: cream, warm sand, golden ochre, raw sienna. Full of character. Tall portrait format.",
       here: "You sell train tickets at Santa Maria Novella, the station named after the church across the street, in a modernist building from the 1930s. Every day travellers ask you which platform and which train, and many of them are in a hurry to get to Rome or Pisa.",
     },
     {
@@ -656,7 +656,7 @@ export const firenze: CityPantry = {
       role: 'gioielliere',
       placeId: 'ponte-vecchio',
       personality: ["reserved", "master craftsman", "storyteller"],
-      portraitPrompt: 'Pen and ink portrait on white paper of a refined jeweler with careful eyes, magnifying loupe around neck, skilled hands, formal attire, minimal golden watercolor wash, quiet expertise. The subject is a man.',
+      portraitPrompt: "Soft pastel portrait on white paper, soft strokes, warm sunset light. A man of 52 with a reserved, watchful face, short neat grey-flecked hair, careful dark eyes and a magnifying loupe hanging round his neck, wearing a dark jacket over a white shirt and waistcoat. His skilled hands hold a small gold ring and fine tweezers over a velvet tray, and he looks up from the work straight at the viewer, as if someone he knows has just come in, a quiet half-smile on his lips. He is a man who is a jeweller at Ponte Vecchio, Oltrarno, Firenze. Include behind him his tiny shop on the old bridge, glass cases of golden jewellery glowing in the window, and the Arno flowing below with reflections in the water. Colour from their place: cream, Naples yellow, raw sienna, burnt umber. Full of character. Tall portrait format.",
       here: "You make and repair jewellery in your family's tiny workshop on the Ponte Vecchio, the bridge of the goldsmiths. Today you're at your bench resizing a ring.",
     },
     {
@@ -679,7 +679,7 @@ export const firenze: CityPantry = {
       role: 'capo giardiniere',
       placeId: 'giardino-boboli',
       personality: ['local', 'speaks to plants'],
-      portraitPrompt: 'Pen and ink portrait on white paper of an older gardener with sun-weathered face, cap, work shirt, gentle smile, earth under fingernails, minimal green watercolor wash, connection to nature evident. The subject is a man.',
+      portraitPrompt: "Soft pastel portrait on white paper, soft strokes, gentle garden daylight. A man of 63 with a sun-weathered, deeply lined face, a gentle smile, a worn cap, a faded work shirt with sleeves rolled up and earth under his fingernails. His hands hold a small potted seedling and pruning shears, and he looks up from it straight at the viewer, as if someone he knows has just come in, as though he had been murmuring to the plant. He is a man who is the head gardener at Giardino di Boboli, Oltrarno, Firenze. Include behind him clipped geometric hedges, a gravel path, tall cypress trees, a classical statue, a fountain in the distance and the facade of Palazzo Pitti beyond. Colour from their place: sage green, deep cypress green, warm stone beige, pale sand. Full of character. Tall portrait format.",
       here: "You're the head gardener at the Giardino di Boboli, the Medici garden behind Palazzo Pitti, laid out in the 1500s.",
     },
     {
@@ -691,7 +691,7 @@ export const firenze: CityPantry = {
       role: "tamburino del Corteo Storico",
       placeId: 'piazza-signoria',
       personality: ["sociable", "history buff", "proud Florentine"],
-      portraitPrompt: 'Pen and ink portrait on white paper of an animated young guide with expressive face, gesturing hand, casual professional attire, energetic eyes, minimal warm watercolor wash, passionate storyteller. The subject is a man.',
+      portraitPrompt: "Soft pastel portrait on white paper, soft strokes, warm afternoon light. A man of 35 with an animated, expressive face, short dark hair, bright eager eyes and a proud grin, wearing a Renaissance-style crimson doublet and a soft cap. His hands grip a pair of drumsticks over a snare drum hung at his waist, mid-roll, and he looks up from the drum straight at the viewer, as if someone he knows has just come in. He is a man who is a drummer of the Corteo Storico at Piazza della Signoria, Santa Croce, Firenze. Include behind him the tall tower of Palazzo Vecchio, the statues of the open-air sculpture gallery, the Neptune fountain, café tables at the edge and the warm stone paving. Colour from their place: pale peach, warm sand, dusty rose, soft umber. Full of character. Tall portrait format.",
       here: "You drum in the Corteo Storico della Repubblica Fiorentina, the parade in sixteenth-century costume that marches through Florence for its great feasts, like the Calcio Storico in June. You're in Piazza della Signoria, the political heart of Florence for centuries.",
     },
     {
