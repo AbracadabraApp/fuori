@@ -14,6 +14,8 @@ Claude, building on it:
 - **Three levels:** Beginner (steps 1–6, English with the language slotted in, two bubbles to say back, gone by step 6); a new Intermediate (a heavy mix in the language, an English aside where they'd be lost, no bubbles: the language if they can, English if they can't); Advanced (today's Intermediate: all in the language, English only when asked).
 - **What exists:** Say it (SayItBubbles.swift: a reply in English comes back as how to say it, read out with hear it) would be the new Intermediate's main way in, not a fallback. Step 6 (2026-11-14, D10) is already close: no bubbles, mostly the language; the level up (D34) moves step 6 to Intermediate.
 - **Drilling from their own visits:** every "how do I say…" asked becomes material for a Learn sheet afterwards (docs/learn.md, docs/after-conversation.md), so they practise what they actually wanted to say.
+- Josh, the same day: "I don;'t know if the \"translator\" mode is a great way to learn - but the gap between our beginner and intermediate today is vast".
+- Claude: the gap has two sides. Understanding her (step 5 mostly Spanish with asides, Intermediate all Spanish at full length) is a moderate step. Saying something themselves is the vast one: up to step 5 a whole answer is said back; at Intermediate every sentence is made from nothing. A ladder of fading bubbles could fill it: a whole answer, then a frame with a gap ("Quisiera … , por favor."), then only the opening words ("Yo creo que…"), then two key words (salsa · picante), then nothing. Translator mode only as a net for when they're stuck. (Close to bids.md → the steps hand the bidding over, and dialogue-plan.md D36.)
 
 ## Four poses per character (tested 2026-10-16)
 
