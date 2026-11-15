@@ -2851,6 +2851,11 @@
       "key": "es-mx/posters/800.b84a7b6d5e.webp",
       "src": "7ccec2ffc7383c49",
       "bytes": 26542
+    },
+    "travel/map": {
+      "key": "es-mx/travel/map.a30b15596f.webp",
+      "src": "005dc0b37d2c0687",
+      "bytes": 226608
     }
   }
 }
