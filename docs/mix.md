@@ -37,6 +37,17 @@ One real turn (Doña Juana's tamal, San Cristóbal) written at eleven levels, 0%
 - Against the game today (scripts/walk-live.mjs, both countries): step 1 is 19 to 22% Spanish, step 2 is 31 to 45%, step 3 is 25 to 34% (less than step 2), step 4 is 70 to 73%. So the range he named sits at step 2, and nothing between step 3 and step 4 covers 45 to 70%.
 - The automatic reader (tests/experiments/follow-dial.mts, six turns, Spanish alone) fell under half at about 30% of words, a little before Josh's 40.
 
+## Proposal: the steps as settings in code, not paragraphs (Claude, 2026-11-15; not decided, not built)
+
+From Josh's questions the same afternoon ("if you were starting over with the same goals for dialogue in the game what would you still need to keep"; "what if you knew dialogue needed mix and echo"; "so what should we change"). The six Beginner steps are five paragraphs of level text (scaffolding.md, Level: 1 to 3), each written on its own; measured by the walk they don't run in order (above: step 3 under step 2 in both countries, step 5 under step 4 in Mexico, a 40-point leap from 3 to 4).
+
+- **The character writes every sentence in both languages**, the key phrase marked in each, at every Beginner step. It stops deciding how much of the language to use.
+- **Code says each sentence one of four ways:** English ("I wrap it in corn husk."), mix ("I wrap it en hoja de maíz, in corn husk."), echo ("Y lo envuelvo en hoja de maíz. And I wrap it in corn husk."), bare ("Y lo envuelvo en hoja de maíz."). The braces of step 1, extended to whole sentences.
+- **A step is a setting:** 1 mostly English, two mixed phrases, the question echoed (about 20%); 2 about half the sentences echoed (35 to 40%, the rows Josh named); 3 every sentence echoed (50%); 4 easy sentences bare, the rest echoed (65%); 5 mostly bare, the hard sentence echoed (85%); 6 all in the language, no answers (95%). Past 50% the only way up is to take the English off some sentences; nothing does that gradually today.
+- **What comes with it:** steps can't run out of order; the mix is counted exactly; the level-up preview is the same line rendered at the next setting by code (B34's previews that looked the same); asking for help moves the visit down a setting.
+- **Risks:** lines put together by code may sound stitched (one line heard so far, on the page); the character writes twice as much a turn, so the first words may come later.
+- **Test:** scripts/walk-live.mjs for the order, Josh's ear through the hidden Step setting, the debug panel's measured mix. Josh's to decide: whether new learners start at step 1 or step 2, and which session builds it.
+
 ## Scaffolding throughout (Josh, 2026-11-15)
 
 Josh: "i think we should think of it as scaffolding throughout the game"; "focus on characters - i meant at all levels, across characters, betweeen conversations, between turns". On tracking the learner word by word: "not to change the plan - but I'm skeptikal of using be words or errrors".
