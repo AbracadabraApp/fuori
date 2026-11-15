@@ -10,6 +10,7 @@
  * conversation ends; a problem is logged there and nothing else is affected.
  */
 
+import { setLevel } from '@/lib/onboarding';
 import { tutorSheet } from '@/lib/tutor';
 import { z } from 'zod';
 import { anthropic, CLAUDE_MODEL, replyText } from '@/lib/claude';
@@ -146,7 +147,9 @@ export async function checkLearnerLevel(conversationId: string, learnerId: strin
   const judged = await judge(answers, picked.map((c) => ({ name: characterName(c.city_id, c.character_id), turns: c.turns.map((t) => ({ who: t.who, text: t.text })) })));
   const after = levelAfter(learner.level, checks, judged.level);
   const check: LevelCheck = { at: new Date().toISOString(), conversationId, before: learner.level, level: judged.level, after, reason: judged.reason, promptVersion: learnerLevelPromptVersion() };
-  await query('UPDATE learners SET level = $2, level_checks = $3 WHERE id = $1', [learnerId, after, JSON.stringify([...checks, check])]);
+  await query('UPDATE learners SET level_checks = $2 WHERE id = $1', [learnerId, JSON.stringify([...checks, check])]);
+  // The level through setLevel, the one writer after onboarding (it starts the level-up count over)
+  if (after && after !== learner.level) await setLevel(learnerId, after);
   console.log(JSON.stringify({ level: 'info', event: 'level check', conversationId, learnerId, check: checks.length + 1, before: learner.level, judged: judged.level, after, conversations: picked.length }));
   return after === learner.level ? 'kept' : 'changed';
 }

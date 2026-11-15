@@ -241,7 +241,10 @@ export async function answerLevelUp(learnerId: string, answer: 'yes' | 'not-yet'
   await ensureStepColumns();
   if (answer === 'yes') {
     const { level, s } = await levelAndStep(learnerId);
-    const move = moveFrom({ level, step: s.step });
+    // Only when an offer is due (state-machine review, 2026-11-15; Josh: "yes"): a yes with nothing offered, or a
+    // second yes (a double tap, a retried request), did a second move, two steps up, or Beginner straight to Advanced.
+    // A yes starts the count over, so the second finds nothing due
+    const move = offerDue({ level, step: s.step, counted: await countedConversations(learnerId, countFrom(s)) });
     if (move?.to === 'step') await query('UPDATE learners SET step = LEAST($2, step + 1), step_since = now(), level_up_asked_at = NULL WHERE id = $1', [learnerId, MAX_STEP]);
     else if (move) await changeLevel(learnerId, move.to);
   } else {

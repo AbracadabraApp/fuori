@@ -94,6 +94,12 @@ export function startingStep(level: Level, record: Record<string, unknown>): num
 /** Settings: the learner changes their level; onboarding is left as it is */
 export async function setLevel(learnerId: string, level: Level): Promise<void> {
   await query('UPDATE learners SET level = $2 WHERE id = $1', [learnerId, level]);
+  // The one way a level changes after onboarding (Settings, the level up, the old path's move up, the level check):
+  // the level-up count starts over at the new level (state-machine review, 2026-11-15: four of five writers skipped it,
+  // so conversations at the old level counted toward the next offer)
+  const { ensureStepColumns } = await import('@/lib/level-up');
+  await ensureStepColumns();
+  await query('UPDATE learners SET step_since = now(), level_up_asked_at = NULL WHERE id = $1', [learnerId]);
 }
 
 /** Settings → Restart onboarding: she greets them again. Conversations, visits and memories stay. */
