@@ -1,5 +1,14 @@
 # Fuori Development Progress
 
+## 2026-11-14 (laptop, with Josh, evening): the dialogue to-do list worked; released; build 16 on TestFlight
+
+- **The list:** docs/dialogue-plan.md → To do (D1–D49), made from all the dialogue docs at Josh's ask ("no work list has been made"). Done today: D1 bids in the goodbye; D4; D6/D7 comment endings on the ladder; D10 steps 4–6 on the one-line reply; D12 help that lasts (a `hard` flag, a per-turn note); D13 idioms to guess at Beginner (lib/idioms.ts; the printed question opens with the saying); D15 count; D21 bubbles go on reply; D25 Help bubble; D27–D29, D32, D33 answer pairs; D34/D35 level moves (Intermediate, Advanced); D39; D40 speaker on answer bubbles (variant A). Each with a replay of Josh's visits in its commit and changelog.
+- **Released** by Josh (npm run release, d4869ec); smoke:live failed only on a stale check expecting the cut intro, fixed with his yes (64ccc05c), now passing in both countries. **Build 16** uploaded to TestFlight (D21, D40, the empty-English fix, the level moves).
+- **Decided by Josh today:** character knowledge siloed; bids for returns a goal; the character never reads reply bubbles; last line follows the ladder; idiom turns print only the question, opening with the saying; Words waits for step 6 or Intermediate (the English gives the answer away).
+- **Open, his:** D2 (a return visit to Isidro or Elena); D20 (is an address set on his Mexico learner? Ofelia's "güerita"); Help and Play categories (D45); Sophia offered Advanced from her next visit, or count from the release.
+- **Held until he's played:** new question kinds (D8, D9, D26, D30, D31, D44, D46), D36, D11.
+- **Watch in play:** goodbye bids at every Beginner goodbye (make rarer if a habit); one bubble made up a fact about the learner; comment turns at step 1 sometimes end in English (nothing printed).
+
 ## 2026-11-14 (cloud chat session, with Josh), evening: Mexico's pictures and hidden cards checked; the map's master added, not uploaded
 
 - **Josh:** "check progress for images and hidden mexico".
