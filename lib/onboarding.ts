@@ -73,6 +73,22 @@ export async function onboardingState(learnerId: string): Promise<{ level: Level
 export async function finishOnboarding(learnerId: string, level: Level, record: Record<string, unknown>): Promise<void> {
   // Merged into what's there, so the name from the address step stays (a reset record's path is replaced)
   await query(`UPDATE learners SET level = $2, onboarded_at = now(), onboarding = COALESCE(onboarding, '{}'::jsonb) || $3::jsonb WHERE id = $1`, [learnerId, level, JSON.stringify(record)]);
+  // Onboarding sets the starting step, and the level up takes them on from there (Josh, 2026-11-15: "ok"): the step
+  // onboarding placed them at, the count starting over. The new Beginner had read only learners.step, so a speaker
+  // placed at step 3 played step 1. Intermediate and Advanced keep whatever step they had (it isn't played)
+  const step = startingStep(level, record);
+  if (step !== null) {
+    const { ensureStepColumns } = await import('@/lib/level-up');
+    await ensureStepColumns();
+    await query('UPDATE learners SET step = $2, step_since = now(), level_up_asked_at = NULL WHERE id = $1', [learnerId, step]);
+  }
+}
+
+/** The Beginner step onboarding starts them at: its startStep (1–6), step 1 otherwise; null above Beginner */
+export function startingStep(level: Level, record: Record<string, unknown>): number | null {
+  if (level !== 'beginner') return null;
+  const s = Number(record.startStep);
+  return Number.isInteger(s) && s >= 1 && s <= 6 ? s : 1;
 }
 
 /** Settings: the learner changes their level; onboarding is left as it is */
