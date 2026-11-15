@@ -33,7 +33,8 @@ const fold = (s: string) => s.normalize('NFD').replace(/\p{M}/gu, '').replace(/[
  * ways, by the step's setting. Before this each step had its own paragraph of level text, written on its own;
  * measured on the live servers they didn't run in order (step 3 had less of the language than step 2).
  */
-export type Way = 'english' | 'mix' | 'echo' | 'bare';
+/** `gloss` is the mix the other way round: the sentence in the language, its marked phrase followed by the English ("Y lo envuelvo en hoja de maíz, in corn husk.") */
+export type Way = 'english' | 'mix' | 'gloss' | 'echo' | 'bare';
 
 /** How a step says its sentences: the share said each way, and how a question or the turn's last sentence is said */
 export interface Setting {
@@ -43,16 +44,17 @@ export interface Setting {
 
 /**
  * Step 1: mostly English with a phrase of the language mixed into its sentences; step 2: every sentence echoed;
- * step 3: half the sentences echoed, the others mixed. The question or last sentence is echoed at all three. The
- * order is by ease, not by the language's share, which is higher at step 2 than at step 3 (Josh, 2026-11-15: "echo
- * is easier than mixed+echo"; "especially with last sentence echo"; "there should be mixed in 1-3"; "swap 2 & 3"). Past that the only way to more
+ * step 3: half the sentences echoed, the others mixed the other way round (the sentence in the language, its marked
+ * phrase glossed). The question or last sentence is echoed at all three. Josh, 2026-11-15: "mixed is good the ear.
+ * echo is easy to follow"; "echo is easier than mixed+echo"; "there should be mixed in 1-3"; "swap 2 & 3"; and of
+ * step 3, which then had less of the language than step 2, "you couuld increase the mix". Past that the only way to more
  * of the language is to take the English off sentences: step 4 says half of them bare, step 5 all but the question
  * and the last sentence, step 6 everything (and offers no answers: lib/beginner-2.ts).
  */
 export const SETTINGS: (Setting | undefined)[] = [
   { ways: { mix: 0.7, english: 0.3 }, last: 'echo' },
   { ways: { echo: 1 }, last: 'echo' },
-  { ways: { echo: 0.5, mix: 0.5 }, last: 'echo' },
+  { ways: { echo: 0.5, gloss: 0.5 }, last: 'echo' },
   { ways: { echo: 0.5, bare: 0.5 }, last: 'echo' },
   { ways: { bare: 1 }, last: 'echo' },
   { ways: { bare: 1 }, last: 'bare' },
@@ -69,7 +71,7 @@ export function seedOf(s: string): number {
 export function wayOf(setting: Setting, seed: number, index: number): Way {
   const u = (seed + (index + 1) * 0.6180339887) % 1;
   let sum = 0;
-  const order: Way[] = ['echo', 'mix', 'bare', 'english'];
+  const order: Way[] = ['echo', 'mix', 'gloss', 'bare', 'english'];
   for (const way of order) {
     sum += setting.ways[way] ?? 0;
     if (u < sum) return way;
@@ -107,6 +109,14 @@ export function saySentence(piece: string, en: string, way: Way): string {
       return unmarked(en.replace(/\*([^*]+)\*/, both)).trim();
     }
     // No phrase marked: the echo keeps the language and its support
+  }
+  if (way === 'gloss') {
+    const [inPiece, inEn] = [marks(piece), marks(en)];
+    if (inPiece.length === 1 && inEn.length === 1 && inPiece[0] && inEn[0]) {
+      const both = repeats(inPiece[0], inEn[0]) ? inPiece[0] : `${inPiece[0]}, ${lowerFirst(inEn[0])}`;
+      // The English goes before the phrase's own closing punctuation: "…en hoja de maíz, in corn husk."
+      return unmarked(piece.replace(/\*([^*]+)\*/, both)).trim();
+    }
   }
   return endsSentence(p) ? `${p} ${e}` : `${p}, ${lowerFirst(e)}`;
 }

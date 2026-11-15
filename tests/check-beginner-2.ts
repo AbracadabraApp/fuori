@@ -118,7 +118,7 @@ check(levelText(CLUSTERS[1]) === levelText(CLUSTER_1) && levelText(CLUSTERS[5]) 
   const raw = '{Ese es *el comal*. | That is *the griddle*.} {Hoy hay *mole*. | Today there is *mole*.} {Está *caliente*. | It is *hot*.} {¿Le pongo *salsa*? | Do you want *salsa*?}';
   const english = (line: string) => line.split(/\s+/).filter((w) => /^(that|is|the|griddle|today|there|it|hot|do|you|want)$/i.test(w.replace(/[^\p{L}]/gu, ''))).length;
   const counts = SETTINGS.map((setting) => english(saySentences(raw, setting!, 0.42)));
-  check(SETTINGS.length === 6 && counts.every((n, i) => i === 0 || n <= counts[i - 1]) && counts[5] === 0 && counts[3] < counts[2] && counts[4] < counts[3], `from step 3 up, each step says less English of the same turn, and step 6 none (got ${counts.join(', ')})`);
+  check(SETTINGS.length === 6 && counts.every((n, i) => i === 0 || n <= counts[i - 1]) && counts[5] === 0 && counts[2] < counts[1] && counts[4] < counts[3], `no step says more English of the same turn than the one before; step 3 says less than step 2, step 5 less than step 4, step 6 none (steps 3 and 4 can be level; got ${counts.join(', ')})`);
   check(saySentences(raw, SETTINGS[4]!, 0.42).endsWith('¿Le pongo salsa? Do you want salsa?') && saySentences(raw, SETTINGS[5]!, 0.42).endsWith('¿Le pongo salsa?'), 'the question keeps its English up to step 5 and loses it at step 6');
 }
 {
@@ -298,7 +298,14 @@ check((exchangeTurns({ learnerSaid: 'Adiós', reply: { line: 'Adiós', en: 'Bye'
   const said = SETTINGS.slice(0, 3).map((setting) => saySentences(raw, setting!, 0.42));
   check(said.every((line) => line.endsWith('¿Le pongo salsa? Do you want salsa?')), 'the question is echoed at steps 1 to 3');
   check(said.every((line) => !/[{}*|]/.test(line)), 'no braces, bars or asterisks are said');
-  check(share(said[0]) < share(said[2]) && share(said[2]) <= share(said[1]) && /el comal, the griddle/.test(said[0]) && said[1].endsWith('¿Le pongo salsa? Do you want salsa?'), `step 1 has the least of the language and mixes a phrase into its English; step 2 echoes everything, so it has the most of the three (Josh: "swap 2 & 3"; got ${said.map(share).join(', ')})`);
+  check(share(said[0]) < share(said[1]) && share(said[0]) < share(said[2]) && /el comal, the griddle/.test(said[0]) && said[1].endsWith('¿Le pongo salsa? Do you want salsa?'), `step 1 has the least of the language and mixes a phrase into its English; step 2 echoes everything (got ${said.map(share).join(', ')})`);
+  check(saySentence('Y lo envuelvo *en hoja de maíz*.', 'And I wrap it *in corn husk*.', 'gloss') === 'Y lo envuelvo en hoja de maíz, in corn husk.', `the mix the other way round: the sentence in the language, its phrase glossed (got ${saySentence('Y lo envuelvo *en hoja de maíz*.', 'And I wrap it *in corn husk*.', 'gloss')})`);
+  check(saySentence('Hoy hay *mole*.', 'Today there is *mole*.', 'gloss') === 'Hoy hay mole.' && saySentence('Hoy hay mole.', 'Today there is mole.', 'gloss') === 'Hoy hay mole. Today there is mole.', 'glossed: a name is not repeated; with no phrase marked the sentence is echoed');
+  {
+    const english3 = said[2].split(/\s+/).filter((w) => /^(come|in|sit|here|that's|the|griddle|today|there|is|do|you|want)$/i.test(w.replace(/[^\p{L}']/gu, ''))).length;
+    const english2 = said[1].split(/\s+/).filter((w) => /^(come|in|sit|here|that's|the|griddle|today|there|is|do|you|want)$/i.test(w.replace(/[^\p{L}']/gu, ''))).length;
+    check(english3 < english2, `step 3 says less English of the same turn than step 2 (got ${english3} and ${english2})`);
+  }
   check(said[1] === 'Pase, pase, siéntese aquí. Come in, sit here. Ese es el comal. That\'s the griddle. Hoy hay mole. Today there is mole. ¿Le pongo salsa? Do you want salsa?', 'step 2 echoes every sentence');
   // The early voice reads the line as it's written: what it has said must open the whole line
   for (const setting of SETTINGS.slice(0, 3)) {
