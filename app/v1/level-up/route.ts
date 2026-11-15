@@ -11,11 +11,13 @@ import { z } from 'zod';
 import { withLearner, apiError } from '@/lib/api';
 import { badRequest } from '@/lib/onboarding-api';
 import { beginnerVersionFrom } from '@/lib/beginner-2';
+import { levelUpConversationId } from '@/lib/level-up-address';
 import { answerLevelUp, levelUpOffer, offerWords, setStep, MAX_STEP } from '@/lib/level-up';
 
 export async function GET(request: Request) {
   return withLearner(request, 'v1 level-up', async (learnerId) => {
-    const conversationId = new URL(request.url).searchParams.get('conversationId') ?? '';
+    // However the app wrote the address: builds up to 16 put the "?" in the path (lib/level-up-address.ts)
+    const conversationId = levelUpConversationId(request);
     if (!z.string().uuid().safeParse(conversationId).success) return apiError('bad_request', 'conversationId must be a uuid');
     const offer = await levelUpOffer(learnerId, conversationId, beginnerVersionFrom(request.headers));
     if (!offer) return Response.json({ due: false });

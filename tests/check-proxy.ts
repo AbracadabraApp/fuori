@@ -2,6 +2,7 @@
 // /v1, admin and healthz are served; the web pages and web /api routes 404
 import { NextRequest } from 'next/server';
 import { served, levelUpIdInPath, proxy } from '../proxy';
+import { levelUpConversationId, LEVEL_UP_ID_HEADER } from '../lib/level-up-address';
 
 const failures: string[] = [];
 for (const p of ['/v1/turn', '/v1/content', '/v1/conversations/abc/end', '/v1', '/api/admin/conversations', '/healthz']) {
@@ -22,6 +23,14 @@ for (const p of ['/v1/level-up', '/v1/level-up%3FconversationId=not-an-id', '/v1
 const rewritten = proxy(new NextRequest(`https://example.test/v1/level-up%3FconversationId=${id}`)).headers.get('x-middleware-rewrite');
 if (rewritten !== `https://example.test/v1/level-up?conversationId=${id}`) failures.push(`an old build's level-up request should be rewritten to the route, got ${rewritten}`);
 if (proxy(new NextRequest(`https://example.test/v1/level-up?conversationId=${id}`)).headers.get('x-middleware-rewrite')) failures.push('a correct level-up request should pass untouched');
+// The route finds the id however the address was written: its request.url is the address as the app sent it, so the
+// rewrite alone left the route answering 400 on the live server (2026-11-15)
+if (levelUpConversationId(new Request(`https://example.test/v1/level-up?conversationId=${id}`)) !== id) failures.push('the id from the query');
+if (levelUpConversationId(new Request(`https://example.test/v1/level-up%3FconversationId=${id}`)) !== id) failures.push('the id from an encoded "?" in the path, as the route sees an old build\'s request');
+if (levelUpConversationId(new Request('https://example.test/v1/level-up', { headers: { [LEVEL_UP_ID_HEADER]: id } })) !== id) failures.push('the id from the header the proxy adds');
+if (levelUpConversationId(new Request('https://example.test/v1/level-up')) !== '') failures.push('no id: empty');
+if (!proxy(new NextRequest(`https://example.test/v1/level-up%3FconversationId=${id}`)).headers.get('x-middleware-override-headers')?.includes(LEVEL_UP_ID_HEADER)) failures.push('the proxy passes the id on as a header');
+
 
 if (failures.length) { console.error(failures.join('\n')); process.exit(1); }
 console.log('OK: only /v1, /api/admin and /healthz are served; the website is not found');

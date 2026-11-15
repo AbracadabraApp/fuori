@@ -10,19 +10,13 @@
  * experiments read it), /healthz (Railway's check).
  */
 import { NextResponse, type NextRequest } from 'next/server';
+import { levelUpIdInPath, LEVEL_UP_ID_HEADER } from '@/lib/level-up-address';
 
 export function served(pathname: string): boolean {
   return /^\/v1(\/|$)/.test(pathname) || /^\/api\/admin(\/|$)/.test(pathname) || pathname === '/healthz';
 }
 
-/**
- * App builds up to 16 ask for the level up at /v1/level-up%3FconversationId=<id>: the "?" was written into the path
- * and percent-encoded, so no route matched, the app got 404 and no level up was ever offered (docs/bugs.md B33;
- * fixed in the app after build 16). The conversation id out of such a path, so those builds get their offer too
- */
-export function levelUpIdInPath(pathname: string): string | null {
-  return /^\/v1\/level-up(?:%3F|\?)conversationId=([0-9a-f-]{36})$/i.exec(pathname)?.[1] ?? null;
-}
+export { levelUpIdInPath };
 
 export function proxy(request: NextRequest) {
   const levelUpId = levelUpIdInPath(request.nextUrl.pathname);
@@ -30,7 +24,10 @@ export function proxy(request: NextRequest) {
     const url = request.nextUrl.clone();
     url.pathname = '/v1/level-up';
     url.search = `?conversationId=${levelUpId}`;
-    return NextResponse.rewrite(url);
+    // The id also goes on as a header: the route's own request.url keeps the address as the app sent it
+    const headers = new Headers(request.headers);
+    headers.set(LEVEL_UP_ID_HEADER, levelUpId);
+    return NextResponse.rewrite(url, { request: { headers } });
   }
   if (served(request.nextUrl.pathname)) return NextResponse.next();
   return new NextResponse('Not found', { status: 404, headers: { 'content-type': 'text/plain; charset=utf-8' } });
