@@ -97,6 +97,7 @@
     "test:sweep": "tsx tests/check-sweep.ts",
     "test:turn-request": "tsx tests/check-turn-request.ts",
     "test:memory-gender": "tsx tests/check-memory-gender.ts && COUNTRY=es-mx tsx tests/check-memory-gender.ts",
+    "test:level-read": "tsx tests/check-level-read.ts",
     "test:starting-step": "tsx tests/check-starting-step.ts",
     "test:no-downlevel": "tsx tests/check-no-downlevel.ts",
     "test:idioms": "tsx tests/check-idioms.ts && COUNTRY=es-mx tsx tests/check-idioms.ts",

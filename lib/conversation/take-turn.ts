@@ -162,12 +162,11 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
   let onPath: { stage: Stage; supportBack: boolean } | null = null;
   let learnerLevel: string | null | undefined;
   if (learnerId && !isTutor) {
-    try {
-      learnerLevel = (await onboardingState(learnerId)).level;
-      if (learnerLevel === 'beginner' || learnerLevel === null) onPath = stageFor(await pathState(learnerId));
-    } catch (err) {
-      p.onSoftError('learner level', err);
-    }
+    // Not caught (Josh, 2026-11-15: "Show an error… the app already offers a retry"): a failed read used to fall
+    // through to the Intermediate prompt, so a Beginner silently played at the wrong level and the visit couldn't count
+    // toward the level up. Now the turn fails as a server error, which the app offers to retry
+    learnerLevel = (await onboardingState(learnerId)).level;
+    if (learnerLevel === 'beginner' || learnerLevel === null) onPath = stageFor(await pathState(learnerId));
   }
   // The welcome (lib/welcome.ts): its character, for a learner who hasn't finished it, plays it in the Beginner format
   let welcome = false;
