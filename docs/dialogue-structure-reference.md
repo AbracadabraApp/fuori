@@ -28,49 +28,7 @@ The sections below are the discussion and the options. Sections 6 and 7 (turn ps
 
 ## 1a. How a conversation works: bids (Josh, 2026-11-12, with John Gottman's research)
 
-This section is the model the rest of the document can be read through. It came after test X1 (card in [prompt-trials.md](prompt-trials.md)) and J10: a learner can't follow fine differences in how a character talks, but can follow what they are being invited to do.
-
-**Whose words are whose.** The model is Josh's. The research is Gottman's. The mapping onto the game, the sorting of the terms (§ 2a) and the measure are Claude's, and none of it is built or tested.
-
-### Gottman's bids
-
-John Gottman studied couples by watching them talk. His unit is the **bid**: any small attempt to get a response from the other person. A bid can be a question, a remark ("look at that boat"), a joke, an offer, a sigh, something shared about yourself. The other person **turns toward** it (takes it up), **turns away** (misses it, carries on with their own subject) or **turns against** it (answers with irritation).
-
-- **The finding.** In his study of newlyweds observed in the lab and followed up six years later, the couples still married had turned toward each other's bids 86% of the time; the couples who had divorced, 33% ([Gottman Institute: Turn toward instead of away](https://www.gottman.com/blog/turn-toward-instead-of-away/)).
-- **How bids are met predicts, and how a bid is made shapes how it's met.** (Rewritten 2026-11-12 after Josh: reading Gottman as indifferent to the content and style of a bid is "pretty naive". The line here said "what predicts is the response, not the bid".) His best-known finding about openings is the harsh and the soft start-up: a conversation that opens with criticism or sarcasm tends to end badly, one that opens gently tends to go well, and he reported predicting the outcome from the first three minutes. *The Relationship Cure* also covers why bids fail in the making: unclear, buried in a complaint, or badly timed. Both from Claude's memory of his books, unchecked.
-- **Turning away is the common failure, and it is mostly inattention,** not hostility.
-- **Most bids are small and ordinary.** He stresses the mundane moments over the big ones.
-- **A missed bid is rarely tried again.** This is from *The Relationship Cure* (Gottman and DeClaire, 2001) as Claude remembers it; a search on 2026-11-12 confirmed the 86% and 33% figures and did not find this one, so it is unchecked.
-- **His sorting of bids by what they ask for** (same book, from memory): attention, interest, play, humour, help, affection, sharing something personal.
-
-Limits: he studied couples, not strangers and not language learners. Everything below about the game is extrapolation.
-
-### Josh's model
-
-- **"A conversation is all about bids. And because it's a conversation every turn is an opportunity to bid/accept."**
-- **The chain:** "Character makes a bid. Learner accepts and makes their bid. Character accepts, repeat."
-- **A bid can fail:** "if the bid stinks it doesn't get accepted."
-- **Variety of bids, so it isn't ping-pong:** "Dora the Explorer / do you want to ride the bus / do you want to see the church."
-- **At Beginner:** "the learner bid is continuing to play." The terms table is the menu of the character's bids (§ 2a).
-
-### What follows for the game (Claude)
-
-- **Two moves a turn.** A character's turn accepts what the learner just offered, then makes a bid. Nunzio's best exchange: Josh, "Mia nonno lavora in una giardina in San Francisco" (a bid: something shared); Nunzio, "Ma guarda! Allora suo nonno fa il mio stesso mestiere" (accepts), "Che tipo di giardino cura, lo sa?" (bids, on Josh's subject).
-- **It covers both speakers.** § 13.4 says the table's missing piece is the pairs across speakers; bid and accept are that pair.
-- **The failures get plain names:** no accept (the character carries on with its own subject: the "asks and carries on as if answered" fault in [dialogue-ideas.md](dialogue-ideas.md)); no bid (a dead end); a bid that only allows an accept (either-or, the ping-pong); a bid that costs too much to answer.
-- **A statement can be a bid.** "Lo mangiavo da ragazzo anche io" has no question mark and invites a response. The issue is whether a turn leaves something to accept, not whether it ends on a question.
-- **A good bid above Beginner leaves room for the learner's own bid.** "Vede le radici che scendono dai rami?" got Josh's own bid back (walking in the gardens, his name); "Nel suo paese ci sono giardini come questo?" got his grandfather; "Lei è di passaggio a Palermo?" got a polite line and nothing of his own.
-- **Josh's point is Gottman's, not a second one** (Josh's correction, 2026-11-12, to the line that stood here calling variety "Josh's hunch and untested"): "Mine is the same as his. I just spelled out that a bad bid is not likely to be accepted, like talking to Dora to answer I like her backpack. Gottman says it's based on how it's met. Claude just hasn't researched what type of bid gets what type of pickup." So the question is which kinds of bid get taken up, and how; variety matters only because some kinds get a better pickup than others.
-- **Variety is not a claim about Gottman, and Dora is the nearer precedent** (Josh, 2026-11-12: "He never built one sided conversational edu-tainment. Dora the Explorer did. I never claimed he said variety is the key."). Earlier lines here answered a claim Josh didn't make. Gottman gives the unit (bid, and how it's met); the craft of bidding to someone you can't fully hear, turn after turn, without it going flat, belongs to shows like *Dora the Explorer* and *Blue's Clues*: a character asks, pauses, and carries on as if answered. That is the game's genre, and its research (what kinds of ask children actually answered, and what they learned when they did) is the place to look next; not yet looked at.
-- **What kind of bid gets what pickup: a first pass at the research** (the cloud session, 2026-11-12; from what Claude knows of the field, with a search that found each source by title and read none of the pages, so every line is unchecked):
-  - *A turn can press for a response more or less.* Stivers and Rossano (2010, "Mobilizing Response"): a question's form, its tone, being about something the listener knows better than the speaker, and looking at them each add pressure to respond; a remark with none of these can go by with no reply. So "about you or what you can see" presses harder than "about me".
-  - *Some bids have an easy answer built in.* Conversation analysis (Pomerantz; Schegloff on "preference"): offers and invitations expect a yes, and a yes comes fast and short; a no comes late, with a reason. An assessment ("good, isn't it?") expects a second one in agreement. Easy to accept, and the accept is small.
-  - *Questions the asker already knows the answer to get short answers.* Classroom studies (Long and Sato 1983; Brock 1986): "display" questions got brief replies; "referential" questions, where the teacher didn't know the answer, got longer and more complex ones from learners.
-  - *Telling something about yourself gets something back.* The disclosure-reciprocity findings (Jourard; Collins and Miller's 1994 review; Sprecher's getting-acquainted studies): people answer a disclosure with one of their own, at about the same depth. Nunzio's "lo mangiavo da ragazzo" and Josh's grandfather fit this.
-  - *News gets a small pickup; a puzzle gets a bigger one.* A plain telling is usually met with a token ("ah, really"); something left unexplained draws a question (the Hook of § 13.2).
-  - *Cost.* Whatever the kind, a bid the listener can't answer with the words they have is turned away from; for a learner that is most open questions (Josh, 2026-11-11: "difficult for this level").
-  - None of this was studied with a beginner talking to a game character by voice. The game's own saved visits are the nearer evidence: for each kind of bid, did they reply, how much, and did the visit go on.
-- **The learner's reply is the verdict on a bid.** No judge is needed. At Beginner, where the learner's bid is continuing to play, a bad bid gets silence, a closed mic or the learner leaving; so for each kind of bid, count from real play whether they replied and whether the visit went on (the same yardstick as flashcards: length of visit, then coming back). Above Beginner, count whether the learner came back with something of their own or with one word. Not built; it reads saved visits and changes no prompt.
+Moved word for word to [bids.md](bids.md) → Background: Gottman, and Josh's model (2026-11-14), so bids, the turn's ending and the bubbles are one document.
 
 ## 2. Terms (labels for the parts of a dialogue)
 
@@ -116,35 +74,9 @@ From reading the syllabus notes (Josh asked for ideas, 2026-11-11):
 
 In the product today: T10 to T15 exist as setups or prompt content; T1 to T3 are the live cluster-1 frame; T6 is back on the live cluster-1 path since 2026-11-11a (answers on the one-line reply; missing between fe38bc2 and that); T16 to T21 have no rule.
 
-## 2a. The Beginner bid menu, and the terms sorted (Josh's idea, 2026-11-12: "I was hoping the table of terms could be the menu of character bids in beginner"; the sorting and the table are Claude's)
+## 2a. The Beginner bid menu, and the terms sorted
 
-Sorting the terms by one question, "does this hand the learner something to do", splits them. The numbers are those of § 2, § 10.1, § 12.1 and § 13.2.
-
-- **Bids** (the menu below): Ask (T5), Say-back (T6), Invite (T12), Learner asks (T13), Blank (T14), Confirm (T17), Do (T38), Rest (T41) when it carries a Hook (T42), Say more (T43), Offer (T44), and the palette of asks A1 to A8.
-- **Accepts** (how the character takes up what the learner offered): Take (T16), Expand (T21), Recast (T18), Help (T7), Repair offered (T19), Reassure (T40), Praise (T39), and the answer-first shape (§ 11).
-- **Material** (what a bid or an accept is made from): Scene (T1), Fact (T15), Anchor (T20), Story (T37), Serve (T35), Refer (T36), Manner (T31, with Insist T45 and Deflect T46), Function (T28), Cognate (T30).
-- **Delivery** (how it is said or shown): Slot (T2), Gloss (T3), Echo (T4), Full (T33), Translation (T34), Subtitle (T27), Register (T32), Heard-first (T29), Fade (T9).
-- **Position in the visit:** Open (T10), Intro (T22), Close (T11).
-- **Kept across turns:** Recycle (T8), Build (T23), Thread (T24), Learner facts (T25), Chunk ledger (T26).
-
-**The menu, by the learner's job.** Each row is one kind of bid; the bubbles are how a Beginner accepts it.
-
-| Bid | From | What the character does | What the learner does | Today |
-|---|---|---|---|---|
-| Say it back | T6, A6 | Says a phrase worth having | Repeats it from a bubble | Live (the two-answers setup) |
-| Choose | A2 | Holds up two things | Picks one | Live by habit: two answers usually come out as this |
-| Ask me | T13, A4 | Tells a little, then stops | Asks one of two questions | Live (the questions-to-ask setup) |
-| Guess | A3 | "What do you think this hook is for?" | Picks a guess; one is right | Designed (§ 12.1) |
-| Finish it | A5 | "El café se sirve con…" | Supplies the ending | Designed |
-| Remember | A1 | "Do you recall what this sauce is called?" | Says the word from earlier | Designed; needs something told earlier (§ 12.3) |
-| About you | T14, A7 | Offers a phrase with a gap | Fills in their own detail | Designed |
-| Notice or do | T38, T20 | "See those old men on the benches?" | Looks, says yes or what they see | New to the menu |
-| Offer | T44 | "Want to try one?" | Accepts or declines | New to the menu |
-| Left open | T42, A8 | Shares something and asks nothing | Says anything, or asks | Designed; an open question with no bubbles was tried on 2026-11-11 and pulled (Josh: "difficult for this level"), so at Beginner it needs bubbles to answer with |
-
-**Variety.** The point of the menu is that the learner's job changes: not the same kind of bid turn after turn. The code already has the mechanism for the two live setups (`pickSetup`: a seeded draw, never the same setup three times running). The opening is built to end on an either-or with two answers, the ping-pong shape, on every visit.
-
-**What it would take.** Each new row is a line of setup text and a rule for its bubbles, added one at a time and played before the next (§ 12.1's rule). Each is a prompt change and needs a card. The count of what learners do after each kind of bid (§ 1a) can be made first from saved visits, for the three live rows.
+Moved word for word to [bids.md](bids.md) → The Beginner bid menu, and the terms sorted (2026-11-14).
 
 ## 3. Findings (what research says; strength)
 

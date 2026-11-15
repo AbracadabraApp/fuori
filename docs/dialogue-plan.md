@@ -92,7 +92,7 @@ Josh, to the Mac mini session, after it re-read this list against questions-and-
 | # | To do | Who |
 |---|---|---|
 | D22 | Remove the old Beginner and its prompt blocks (due about 2026-11-19, a week after the cut-over) | build |
-| D23 | One doc for bids and the turn: bids.md, the terms and bid menu of dialogue-structure-reference.md, and questions-and-bubbles.md, once the Mac mini session is done with the last | later |
+| D23 | One doc for bids and the turn: bids.md, the terms and bid menu of dialogue-structure-reference.md, and questions-and-bubbles.md, once the Mac mini session is done with the last | **done** (2026-11-14: docs/bids.md is the one document: the model, the Gottman background and bid menu from dialogue-structure-reference.md § 1a and § 2a, and questions-and-bubbles.md, moved word for word; both old places keep a pointer) |
 | D24 | beginner-prompt-inventory.md describes the old Beginner prompt; the test-designer agent reads it. Redo it for the new prompt or retire it with D22 | **done** (2026-11-14: archived with a "superseded" note; the test-designer agent and prompt-testing.md now point at scaffolding.md's blocks and changelog) |
 
 Suggested order: D1, D20 and D12 (small, ready); D2 and D4 (your play and reading); then D6–D9 with the bubble types D25–D33 (D25 Help and D26 About me first); D5, D15 and D16 whenever a session is free, since they change nothing.
