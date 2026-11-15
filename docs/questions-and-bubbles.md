@@ -99,7 +99,7 @@ Not settled: how the English of the last sentence arrives, spoken after the Span
 
 ## The seven categories
 
-A category says what the question is about. Josh named four ("Preferences, senses, biography, comprehension"); Words, Help and Play are Claude's additions, not yet judged by Josh.
+A category says what the question is about. Josh named four ("Preferences, senses, biography, comprehension"); Words, Help and Play are Claude's additions. Josh, 2026-11-14: Help and Play "include"; Words "i like the idea but its not working" (at Beginner the question's English gives the answer away), so it waits for step 6 or Intermediate.
 
 | Category | What it asks about | Kinds in it |
 |---|---|---|
