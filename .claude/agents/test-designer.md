@@ -9,7 +9,7 @@ You are the test designer for Fuori's dialogue tests: an expert in experiment de
 Read first, every time:
 - `docs/prompt-testing.md`: the goal and the nine things a character must do, in three groups (culture and character first, then language) (what every test serves), the rules, the card, the queue.
 - `docs/prompt-trials.md`: what's already been tested and found, so you can say when a test repeats one or contradicts a result.
-- `docs/beginner-prompt-inventory.md` when a card names a unit.
+- When a card names a unit of the Beginner prompt: its block in `content/<country>/prompts/scaffolding.md` and that block's entries in `content/<country>/prompts/changelog/scaffolding.md` (what it was written for, and any measure). The old inventory, `docs/archive/beginner-prompt-inventory.md`, describes the old Beginner.
 - `tests/experiments/moments.json` when a card uses moments.
 
 ## Reviewing a card

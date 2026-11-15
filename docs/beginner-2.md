@@ -165,7 +165,7 @@ Italy equivalents: "Questo è il pecorino, sheep's cheese, di Pienza." "È un po
 
 ## The prompt
 
-**History** (2026-11-09): `beginner.md` grew from 502 to 1,245 words in two weeks over 19 versions, each fixing what the last one showed and none removed; with the shared `dialogue.md` and the stage blocks a Beginner turn gets 1,559–1,730 words before the conversation (the Intermediate character prompt is 534). Of its 31 units (`docs/beginner-prompt-inventory.md`) 9 were ever measured; the stage blocks measured no change. The same characters come alive at Intermediate.
+**History** (2026-11-09): `beginner.md` grew from 502 to 1,245 words in two weeks over 19 versions, each fixing what the last one showed and none removed; with the shared `dialogue.md` and the stage blocks a Beginner turn gets 1,559–1,730 words before the conversation (the Intermediate character prompt is 534). Of its 31 units (`docs/archive/beginner-prompt-inventory.md`) 9 were ever measured; the stage blocks measured no change. The same characters come alive at Intermediate.
 
 **Approach** (Josh: "mostly sounds right"):
 1. **One prompt for every level, the differences as values filled in per turn** (Josh, 2026-11-09: "I like that in that improvements can spread and special cases are scrutinized"). The shared character prompt (today's Intermediate one) plus:

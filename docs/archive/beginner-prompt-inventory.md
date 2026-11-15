@@ -1,3 +1,5 @@
+> **Superseded 2026-11-14:** this lists the old Beginner prompt (`beginner.md`), which plays only behind the hidden switch until it is removed (dialogue-plan.md D22). The Beginner every learner plays is `content/<country>/prompts/scaffolding.md`: its named blocks are the units, and `changelog/scaffolding.md` dates each and says what it was written for.
+
 # The Beginner prompt, unit by unit
 
 The map for testing the Beginner prompt (Josh, 2026-11-06: "enumerate the

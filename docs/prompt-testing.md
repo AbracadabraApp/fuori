@@ -43,7 +43,7 @@ So the job now is less adding and more finding out what each part does.
 
 ## The rules
 
-1. **Know the parts.** Every prompt has an inventory: each unit, its size in words, the dated problem it was written for, whether it was ever measured (`docs/beginner-prompt-inventory.md` for the Beginner prompt). A test names the unit it touches.
+1. **Know the parts.** Every prompt has an inventory: each unit, its size in words, the dated problem it was written for, whether it was ever measured (`docs/archive/beginner-prompt-inventory.md, the old Beginner; for the Beginner that plays, the blocks of scaffolding.md with their changelog` for the Beginner prompt). A test names the unit it touches.
 2. **Cutting is the default.** A unit stays only if removing it measurably hurts. A new unit has to beat cutting an old one: the prompt does not grow without a test that shows the words pay. Examples go first.
 3. **One variable, one measure.** A test changes one thing and measures it one way, on one item (Josh, 2026-11-07: "Tests should have a single measure for each variable"). Two changes at once (a sentence and its example; a topic and an instruction) can't be told apart afterwards.
 4. **Write the card before running.** The question, the variable, what's held constant, the measure, the hypothesis with its threshold, and what each other outcome would mean. A threshold set after seeing the data isn't a threshold. Every test script calls `startTest(<card title>)` (`tests/experiments/common.mts`) first: it refuses to run without the card in the log, every line filled, a `Reviewed:` line, and `Josh: yes` when the time is over 5 minutes (Josh, 2026-11-07: "We need a strict methodology for testing").

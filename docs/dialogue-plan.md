@@ -86,18 +86,20 @@ Josh, to the Mac mini session, after it re-read this list against questions-and-
 | D46 | **Kinds D8 doesn't name:** in Help, advice ("¿Lo pinto azul o rojo?"), a favour ("¿Me pasa el cepillo?"), settling an argument; in Play, a bet, a dare, imagine. After Guess and Help have been played | questions-and-bubbles.md → The kinds | build, with D8 |
 | D47 | **Keep the questions-to-ask turns when D6 changes the draw.** They were 8 of 55 turns in the five visits, taken 6 times of 7, with the most varied Spanish of any bubbles | questions-and-bubbles.md | build (a guard on D6) |
 | D48 | **Record which bubble a reply was read from, or none.** Nothing does today, so take-up is matched by eye and a misheard bubble looks like the learner's own words; D16, D41 and D42 all lean on it | questions-and-bubbles.md → What the visits show | later |
-| D49 | **This plan below the To do:** the Done table's "Live?" column says No for rows that have been live since c60d638; "What each step plays today" and the deep-dive thread on the intro predate the intro cut and the close on the 8th turn (13b–13d) | this plan | housekeeping |
+| D49 | **This plan below the To do:** the Done table's "Live?" column says No for rows that have been live since c60d638; "What each step plays today" and the deep-dive thread on the intro predate the intro cut and the close on the 8th turn (13b–13d) | this plan | **done** (2026-11-14: the Done table's "Live?" column checked against origin/live; every row live) |
 
 ### Docs and code housekeeping
 | # | To do | Who |
 |---|---|---|
 | D22 | Remove the old Beginner and its prompt blocks (due about 2026-11-19, a week after the cut-over) | build |
 | D23 | One doc for bids and the turn: bids.md, the terms and bid menu of dialogue-structure-reference.md, and questions-and-bubbles.md, once the Mac mini session is done with the last | later |
-| D24 | beginner-prompt-inventory.md describes the old Beginner prompt; the test-designer agent reads it. Redo it for the new prompt or retire it with D22 | later |
+| D24 | beginner-prompt-inventory.md describes the old Beginner prompt; the test-designer agent reads it. Redo it for the new prompt or retire it with D22 | **done** (2026-11-14: archived with a "superseded" note; the test-designer agent and prompt-testing.md now point at scaffolding.md's blocks and changelog) |
 
 Suggested order: D1, D20 and D12 (small, ready); D2 and D4 (your play and reading); then D6–D9 with the bubble types D25–D33 (D25 Help and D26 About me first); D5, D15 and D16 whenever a session is free, since they change nothing.
 
 ## Done (2026-11-12)
+
+"Live?" checked against origin/live on 2026-11-14 (git merge-base --is-ancestor).
 
 | What | Commit | Live? |
 |---|---|---|
@@ -106,20 +108,19 @@ Suggested order: D1, D20 and D12 (small, ready); D2 and D4 (your play and readin
 | Dead code out: the summary call, the answer said inside her line [5.6] | f5a8ca5 | Yes |
 | CLAUDE.md points at dialogue-now, dialogue-model and this plan; the M1 and October designs archived | 614da8d | (docs) |
 | Every Beginner on the new Beginner; the old one behind the hidden switch for a week (the screen session) [5.1, 5.2] | b45d171 | Yes |
-| Shorter step 1 (median 60 → 37–47 words on your Guanajuato visits replayed) [A] | b27cb88 | No |
-| A goodbye with your name or a thanks still ends the visit [part of 5.3] | b27cb88 | No |
-| "Take up what they just said before you add anything of your own" (the accept half of your bids model) [4.1] | b27cb88 | No |
-| Beginner intro question six words at most (the screen session) | intro.md 12b | No |
-| The question's English shown and said at steps 1–3; the "English only the first time or when new" rules removed ("i never proposed that"; the screen session) | 27a7fdb | No |
-| The lesson and culture writers say "learner", not "newcomer"; Magda sees the learner's example lines as "you" (146 lines in saved lessons were labelled newcomer); the lesson practice patch against "where they're from" removed [2.1, 2.2] | 8be8049 | No |
-| A new kind of question at steps 1–3, Notice: the character points at something you can see and asks whether you see it ("¿Los ve? Do you see them?"), with two answers; in the rotation beside two answers and questions to ask [4.2] | e2412d4, adjusted in 95af83e | No |
-| A Beginner visit winds down when the talk has run its course, before the turn's setup; the goodbye on the 7th turn stays as the fallback [5.3, your "c"] | 95af83e | No |
-| Cultural lessons: the teller's question varies (what you make of it, something to picture or notice, something of your own like it) instead of "Have you ever…?" every turn; the answer taken up [4.3] | f612b53 | No |
-| Beginner "questions to ask" turns stay, and the questions offered come out of what the character just said ("¿Qué es el huitlacoche?" after she names it), not stock ones like the bus fare (Josh: "I appreciate variety, but also coherent play") | 9a23f81 | No |
-| Step 2 as short as step 1 (two short sentences and the question) with two or three Spanish phrases against step 1's one or two | 20926c8 | No |
-| From Josh's evening play (Don Chucho, Raymundo): a return visit greets you as someone known, asks after what you told the character, and talks about something other than the work; "talk like a regular" for every character you've met; no "mire" given as a model; the goodbye left to you (no double goodbye); no repeats within a visit | ed467dd | No |
+| Shorter step 1 (median 60 → 37–47 words on your Guanajuato visits replayed) [A] | b27cb88 | Yes |
+| A goodbye with your name or a thanks still ends the visit [part of 5.3] | b27cb88 | Yes |
+| "Take up what they just said before you add anything of your own" (the accept half of your bids model) [4.1] | b27cb88 | Yes |
+| Beginner intro question six words at most (the screen session) | intro.md 12b | Yes |
+| The question's English shown and said at steps 1–3; the "English only the first time or when new" rules removed ("i never proposed that"; the screen session) | 27a7fdb | Yes |
+| The lesson and culture writers say "learner", not "newcomer"; Magda sees the learner's example lines as "you" (146 lines in saved lessons were labelled newcomer); the lesson practice patch against "where they're from" removed [2.1, 2.2] | 8be8049 | Yes |
+| A new kind of question at steps 1–3, Notice: the character points at something you can see and asks whether you see it ("¿Los ve? Do you see them?"), with two answers; in the rotation beside two answers and questions to ask [4.2] | e2412d4, adjusted in 95af83e | Yes |
+| A Beginner visit winds down when the talk has run its course, before the turn's setup; the goodbye on the 7th turn stays as the fallback [5.3, your "c"] | 95af83e | Yes |
+| Cultural lessons: the teller's question varies (what you make of it, something to picture or notice, something of your own like it) instead of "Have you ever…?" every turn; the answer taken up [4.3] | f612b53 | Yes |
+| Beginner "questions to ask" turns stay, and the questions offered come out of what the character just said ("¿Qué es el huitlacoche?" after she names it), not stock ones like the bus fare (Josh: "I appreciate variety, but also coherent play") | 9a23f81 | Yes |
+| Step 2 as short as step 1 (two short sentences and the question) with two or three Spanish phrases against step 1's one or two | 20926c8 | Yes |
+| From Josh's evening play (Don Chucho, Raymundo): a return visit greets you as someone known, asks after what you told the character, and talks about something other than the work; "talk like a regular" for every character you've met; no "mire" given as a model; the goodbye left to you (no double goodbye); no repeats within a visit | ed467dd | Yes |
 | Measures: what learners do after each kind of question (`scripts/bid-count.mjs`); turn length on replayed real visits (`tests/experiments/b2-turn-length.mts`) [3.1, A] | 8423712, 970ba64 | (tools) |
-
 ## For the deep dive (Josh, "later tonight or tomorrow")
 
 The frame is [bids.md](bids.md) (a draft, not agreed): a turn as take-up, bid and supply. The threads to bring:
