@@ -158,10 +158,13 @@ const Rewritten = z.object({ line: z.string(), en: z.string() });
 export async function rewriteAtStep(p: { character: { name: string; role: string; city: string }; line: string; nextStep: number; level?: string }): Promise<{ line: string; en: string }> {
   const response = await anthropic.messages.create({
     model: CLAUDE_MODEL,
-    max_tokens: 600,
+    // Thinking counts toward the limit: at 600 the first real offers (2026-11-15, build 16) came back as thinking only
+    // ("Claude returned no text… stop: max_tokens") or cut off mid-JSON, so no offer showed. As the memory call (8000)
+    max_tokens: 4000,
     messages: [{ role: 'user', content: rewritePrompt(p) }],
     output_config: { format: { type: 'json_schema', schema: turnOutputJsonSchema } },
   });
+  if (response.stop_reason === 'max_tokens') throw new Error(`Level-up rewrite hit max_tokens (${response.usage.output_tokens} tokens)`);
   return Rewritten.parse(JSON.parse(replyText(response)));
 }
 

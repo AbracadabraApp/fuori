@@ -3,6 +3,7 @@
 // in but not focus on the advanced exxperience yet"); Advanced gets none. Same count, learner's choice, not yet asks
 // again. Without a test database: the pure rules, the words and preview prompt, and the wiring by source (the yes
 // sets learners.level as Settings does, which the turn reads). Run in both countries: npm run test:level-move
+import { readFileSync as readSrc } from 'fs';
 import { readFileSync } from 'node:fs';
 import { cities, language } from '@/content';
 import { characterForPlace } from '@/lib/characters/for-place';
@@ -63,6 +64,11 @@ const app = readFileSync('ios/FuoriKit/Sources/FuoriFeatures/AppModel.swift', 'u
 check(/func answerLevelUp\(yes: Bool\)/.test(app) && /level = after\s+SettingsKey\.applyDefaults\(forLevel: after\)/.test(app), 'the app takes the new level and its defaults after a yes');
 check(/await model\.answerLevelUp\(yes: yes\)/.test(readFileSync('ios/FuoriKit/Sources/FuoriFeatures/RootView.swift', 'utf8')), 'the level-up sheet answers through the app model');
 
+{
+  const src = readSrc('lib/level-up.ts', 'utf8');
+  const m = /export async function rewriteAtStep[\s\S]*?max_tokens: (\d+)/.exec(src);
+  check(!!m && Number(m[1]) >= 2000 && /Level-up rewrite hit max_tokens/.test(src), 'the preview rewrite has room to think and says so if it is cut off (2026-11-15: at 600 every real offer failed)');
+}
 if (problems.length) {
   console.error(`check-level-move: ${problems.length} problem(s)\n- ${problems.join('\n- ')}`);
   process.exit(1);
