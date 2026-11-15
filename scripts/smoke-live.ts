@@ -132,11 +132,13 @@ async function appApi(cityId: string, placeId: string, characterId: string, said
   const open = await v1('/v1/turn', { cityId, placeId });
   const o = (await open.json()) as { line: string; conversationId: string; replies?: unknown; stage?: unknown; parts?: { kind: string; text: string }[]; intro?: unknown[]; promptVersion?: string };
   // No level yet counts as a Beginner, and every Beginner plays the new one (the cut-over, 2026-11-12): the visit
-  // opens on the intro (lib/intro.ts), sentences with their English, and two answers to say back; no answer panel
+  // opens on the character's first ordinary turn, a line and two answers to say back; no intro (cut 2026-11-13, B23:
+  // "I'd cut the intro as it is now and just start as before in the charracters conversation"); no answer panel.
+  // Changed 2026-11-14 with Josh's yes: it still expected the intro and failed every release since the cut
   const kinds = (o.parts ?? []).map((p) => p.kind);
-  (o.intro?.length ?? 0) >= 2 && kinds.length === 2 && kinds.every((k) => k === 'answer') && o.stage === null && o.line?.length > 0 && o.promptVersion?.startsWith('beginner-2-')
-    ? pass(`v1 turn: the Beginner opens on the intro (${o.intro?.length} sentences, 2 answers, ${o.promptVersion})`)
-    : fail('v1 turn Beginner intro', JSON.stringify({ intro: o.intro?.length, parts: o.parts, stage: o.stage, promptVersion: o.promptVersion }).slice(0, 300));
+  !(o.intro?.length) && kinds.length === 2 && kinds.every((k) => k === 'answer') && o.stage === null && o.line?.length > 0 && o.promptVersion?.startsWith('beginner-2-')
+    ? pass(`v1 turn: the Beginner opens on a line and 2 answers, no intro (${o.promptVersion})`)
+    : fail('v1 turn Beginner opening', JSON.stringify({ intro: o.intro?.length, parts: o.parts, stage: o.stage, promptVersion: o.promptVersion }).slice(0, 300));
   // The old Beginner, while the hidden switch can still ask for it (a week from the cut-over): in parts, with a question
   const old = (await (await v1('/v1/turn', { cityId, placeId }, { 'x-fuori-beginner': '1' })).json()) as { parts?: { kind: string }[]; stage?: unknown; promptVersion?: string };
   const oldKinds = (old.parts ?? []).map((p) => p.kind);
