@@ -202,6 +202,9 @@ final class FlashcardsModel {
         } else {
             await giveHelp(item)
         }
+        // Paused while the word played (a call, Siri, backgrounding): the tap was for the word, not for a mic after a
+        // pause (state-machine review, 2026-11-15; CLAUDE.md: the mic never reopens by itself)
+        guard !held else { return }
         guard settled == nil || settled == item.id else { return }
         await listen(item, byItself: false)
     }

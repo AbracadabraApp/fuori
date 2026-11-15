@@ -1228,7 +1228,14 @@ public final class ConversationModel {
 
     /// The learner leaves (back, swipe, or the app going to the background):
     /// stop everything and save what the character remembers
+    /// Left once already: the welcome and lessons call leave() and then the screen's onDisappear calls it again, which
+    /// saved twice and asked twice for the level up (state-machine review, 2026-11-15). A model never starts again
+    /// after its first start (start() guards on .starting), so once is enough
+    private var left = false
+
     public func leave() {
+        guard !left else { return }
+        left = true
         generation += 1
         listenTask?.cancel()
         repliesTask?.cancel()
