@@ -38,7 +38,7 @@ What that means for the design (Claude's reading, not decided):
 - **The learner can follow:** the one rule (below). Every piece they don't know has its English.
 - **The level stays consistent:** the same mix for a learner's level, turn to turn, character to character and visit to visit. Code sets the mix from the level, not from guesses about how the visit is going.
 - **The mix progresses:** by the level's steps, chosen by the learner at level up. Each step shifts the settings (how much, piece size, what gets English).
-- **Tappable for help:** when the learner wants more English, they ask for it, and help lasts for the rest of the visit (D12). Today help is offered only sometimes, as one of the two answers (D25).
+- **Tappable for help** (Josh: "tappable I only meant available"): help is always there. The learner asks, in English or the language, and the character helps in English as much as it takes; help lasts for the rest of the visit (D12). This already works.
 
 What bilinguals do when they talk to someone who doesn't share their language: they speak English, slip in a phrase of their own language because it carries the meaning, the feeling or the place, and **gloss** it (say what it means in English). Linguists call it **code-switching** (within a sentence, **code-mixing**); the wider view is **translanguaging**. Josh's research, 2026-11-13: idioms and culturally loaded phrases are said in the language and then glossed; ordinary ideas are said straight in English.
 
