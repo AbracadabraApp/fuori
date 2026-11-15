@@ -32,12 +32,6 @@ export function pickShapes(p: { learnerSaid?: string }): Shape[] {
   return shapes;
 }
 
-/** The intro's beats, given to the character once in the system prompt of every later turn (intro.md → Beats); empty without beats */
-export function beatsBrief(beats: string[] | undefined): string {
-  if (!beats?.length) return '';
-  return fill(readPromptFile('intro.md').block('Beats'), { language: language.name, beats: beats.join('; ') }).trim();
-}
-
 /** The first shape, for callers that record one; null when none */
 export function pickShape(p: { learnerSaid?: string }): Shape | null {
   return pickShapes(p)[0] ?? null;

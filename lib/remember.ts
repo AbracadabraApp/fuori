@@ -124,12 +124,8 @@ export async function rememberConversation(
     }
 
     const out = await summarize({ character, notes: known.notes, turns: claim.turns });
-    // The told-ledger (intro.md 11d): what the opening set out, kept with the notes so the next intro picks something new
-    // Accumulates across visits (the earlier line's items first), so a third intro knows the first two; capped at 12 items
-    const toldNow = (claim.turns as { beats?: string[] }[]).find((t) => t.beats?.length)?.beats ?? [];
-    const toldBefore = known.notes.find((n) => n.startsWith('Told them about:'))?.slice('Told them about:'.length).split(';').map((x) => x.trim()).filter(Boolean) ?? [];
-    const told = [...new Set([...toldBefore, ...toldNow])].slice(-12);
-    const notes = told.length ? [...out.notes.filter((n) => !n.startsWith('Told them about:')).slice(0, 9), `Told them about: ${told.join('; ')}`] : out.notes;
+    // The intro's told-ledger (a "Told them about:" note built from its beats) went with the intro, 2026-11-15
+    const notes = out.notes;
     await saveConversationMemory({
       conversationId,
       learnerId,

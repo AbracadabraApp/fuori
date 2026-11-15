@@ -10,7 +10,7 @@ import { language } from '@/content';
 import { characterForVisit } from '@/lib/characters/for-visit';
 import { runTurn } from '@/lib/turn';
 import { CLUSTER_1, frameBrief, levelText, lineWithAnswers, pickSetup, setupLine } from '@/lib/beginner-2';
-import { beatsBrief, noteOf, pickShapes } from '@/lib/shapes';
+import { noteOf, pickShapes } from '@/lib/shapes';
 import type { Turn } from '@/lib/types';
 import { ask } from './common.mjs';
 import { assemblePieces } from '@/lib/dialogue/pieces';
@@ -44,13 +44,12 @@ for (const id of ids) {
     if (c.turns[i].who !== 'learner') continue;
     const transcript: Turn[] = c.turns.slice(0, i).map((t) => {
       const offered = (t.parts ?? []).filter((x) => x.kind === 'answer').map((x) => x.text);
-      return { who: t.who, transcript: t.text, ...(t.en ? { translation: t.en } : {}), ...(offered.length ? { offered } : {}), ...(t.beats?.length ? { beats: t.beats } : {}) };
+      return { who: t.who, transcript: t.text, ...(t.en ? { translation: t.en } : {}), ...(offered.length ? { offered } : {}) };
     });
     const learnerSaid = c.turns[i].text;
-    const beats = transcript.find((t) => t.who === 'npc' && t.beats?.length)?.beats;
     const npcTurns = transcript.filter((t) => t.who === 'npc').length;
     const setup = pickSetup({ conversationId: c.id, turn: npcTurns, learnerId: null, characterId: character.id, learnerSaid }, CLUSTER_1);
-    const brief = [level ? frameBrief(CLUSTER_1).replace(levelText(CLUSTER_1), level) : frameBrief(CLUSTER_1), beatsBrief(beats)].filter(Boolean).join('\n\n');
+    const brief = level ? frameBrief(CLUSTER_1).replace(levelText(CLUSTER_1), level) : frameBrief(CLUSTER_1);
     for (let k = 0; k < takes; k++) {
       const raw = await runTurn({ character, transcript, learnerSaid, brief, note: noteOf(pickShapes({ learnerSaid }), setupLine(setup)), answers: setup.maxAnswers > 0, withDone: true });
       const r0 = pieces ? { ...raw, line: assemble(raw.line) } : raw;

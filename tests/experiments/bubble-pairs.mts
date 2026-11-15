@@ -8,7 +8,7 @@ import { readFileSync } from 'node:fs';
 import { characterForVisit } from '@/lib/characters/for-visit';
 import { runTurn } from '@/lib/turn';
 import { CLUSTER_1, frameBrief, lineWithAnswers, pickSetup, setupLine } from '@/lib/beginner-2';
-import { beatsBrief, noteOf, pickShapes } from '@/lib/shapes';
+import { noteOf, pickShapes } from '@/lib/shapes';
 import type { Turn } from '@/lib/types';
 import { ask, pool } from './common.mjs';
 
@@ -25,11 +25,10 @@ for (const id of ids) {
     if (c.turns[i].who !== 'learner') continue;
     const transcript: Turn[] = c.turns.slice(0, i).map((t) => ({ who: t.who, transcript: t.text, ...(t.en ? { translation: t.en } : {}) }));
     const learnerSaid = c.turns[i].text;
-    const beats = c.turns.find((t) => t.who === 'npc' && t.beats?.length)?.beats;
     const setup = pickSetup({ conversationId: c.id, turn: transcript.filter((t) => t.who === 'npc').length, learnerId: null, characterId: character.id, learnerSaid }, CLUSTER_1);
     if (setup.maxAnswers === 0 || setup.id === 'ask-en') continue;
     jobs.push(async () => {
-      const raw = await runTurn({ character, transcript, learnerSaid, brief: [frameBrief(CLUSTER_1), beatsBrief(beats)].filter(Boolean).join('\n\n'), note: noteOf(pickShapes({ learnerSaid }), setupLine(setup)), answers: true, withDone: true });
+      const raw = await runTurn({ character, transcript, learnerSaid, brief: frameBrief(CLUSTER_1), note: noteOf(pickShapes({ learnerSaid }), setupLine(setup)), answers: true, withDone: true });
       const r = lineWithAnswers(raw, setup, CLUSTER_1);
       const answers = r.parts.filter((p) => p.kind === 'answer').map((p) => p.text);
       const j = JSON.parse(await ask(`A character said: ${r.line}\nThe learner is offered two answers to say back:\n1. ${answers[0] ?? ''}\n2. ${answers[1] ?? ''}\n\nyesNo: one is a yes and the other a no to the same thing. filler: either is a stock compliment or "I like it a lot" with nothing particular to the place. reason: either gives a reason for a choice. asksBack: either answers and then asks something back. describes: either describes something there in particular. wordGap: either has a blank (…) that needs a word in the language (not a name, a place or a number). twoPlaces: both are things a person might really say here, and they would take the talk in different directions. Reply with JSON.`, { schema, max: 2000 }));

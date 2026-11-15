@@ -9,7 +9,7 @@ import { readFileSync } from 'node:fs';
 import { characterForVisit } from '@/lib/characters/for-visit';
 import { runTurn } from '@/lib/turn';
 import { CLUSTER_1, frameBrief, lineWithAnswers, pickSetup, setupLine } from '@/lib/beginner-2';
-import { beatsBrief, noteOf, pickShapes } from '@/lib/shapes';
+import { noteOf, pickShapes } from '@/lib/shapes';
 import type { Turn } from '@/lib/types';
 import { ask, pool } from './common.mjs';
 
@@ -25,16 +25,15 @@ for (const id of ids) {
   const i = c.turns.map((t) => t.who).lastIndexOf('learner');
   const transcript: Turn[] = c.turns.slice(0, i).map((t) => {
     const offered = (t.parts ?? []).filter((x) => x.kind === 'answer').map((x) => x.text);
-    return { who: t.who, transcript: t.text, ...(t.en ? { translation: t.en } : {}), ...(offered.length ? { offered } : {}), ...(t.beats?.length ? { beats: t.beats } : {}) };
+    return { who: t.who, transcript: t.text, ...(t.en ? { translation: t.en } : {}), ...(offered.length ? { offered } : {}) };
   });
   const learnerSaid = c.turns[i].text;
   const beginner = c.prompt_version.startsWith('beginner');
   for (let k = 0; k < Number(takes); k++) jobs.push(async () => {
     let line: string; let done: boolean;
     if (beginner) {
-      const beats = transcript.find((t) => t.who === 'npc' && t.beats?.length)?.beats;
       const setup = pickSetup({ conversationId: c.id, turn: transcript.filter((t) => t.who === 'npc').length, learnerId: null, characterId: character.id, learnerSaid }, CLUSTER_1);
-      const raw = await runTurn({ character, transcript, learnerSaid, brief: [frameBrief(CLUSTER_1), beatsBrief(beats)].filter(Boolean).join('\n\n'), note: noteOf(pickShapes({ learnerSaid }), setupLine(setup)), answers: setup.maxAnswers > 0, withDone: true });
+      const raw = await runTurn({ character, transcript, learnerSaid, brief: frameBrief(CLUSTER_1), note: noteOf(pickShapes({ learnerSaid }), setupLine(setup)), answers: setup.maxAnswers > 0, withDone: true });
       const r = lineWithAnswers(raw, setup, CLUSTER_1); line = r.line; done = raw.done === true;
     } else {
       const r = await runTurn({ character, transcript, learnerSaid, withDone: true }); line = r.line; done = r.done === true;

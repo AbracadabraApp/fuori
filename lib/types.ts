@@ -194,8 +194,6 @@ export interface Turn {
   translation?: string;
   /** A character's turn: the answers to say back she offered, as shown (Beginner parts; lib/dialogue/heard.ts) */
   offered?: string[];
-  /** The opening's beats (lib/intro.ts), on the intro turn only */
-  beats?: string[];
   /** A character's turn that answered a learner asking for help (D12): the rest of the visit carries the Help asked note */
   hard?: boolean;
   /** A character's turn that used an idiom from the store (D13): the next turn says what it means */
@@ -300,12 +298,8 @@ export interface TurnOutput {
   en: string;
   /** Beginner level dialogue (lib/beginner.ts): the turn in parts; `line` is them all, in order */
   parts?: import('@/lib/beginner').Part[];
-  /** The intro (lib/intro.ts): the opening's sentences with their English, shown as subtitles on the portrait; `line` is them joined */
-  intro?: { text: string; en: string }[];
   /** A one-line Beginner 2 reply (cluster 1): the question that ends it, with its English; the app prints only this of the turn */
   question?: { text: string; en: string };
-  /** The intro's beats: the things it set out, in order; the visit's later turns take them up one at a time (lib/shapes.ts → THREAD) */
-  beats?: string[];
   /** The last turn: the welcome's (the app shows the button in place of the mic), a lesson's, or an
    *  ordinary conversation's after their goodbye (the app closes the screen after it's said) */
   done?: boolean;

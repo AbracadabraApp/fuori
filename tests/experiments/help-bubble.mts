@@ -8,7 +8,7 @@ import { readFileSync } from 'node:fs';
 import { characterForVisit } from '@/lib/characters/for-visit';
 import { runTurn } from '@/lib/turn';
 import { CLUSTER_1, frameBrief, lineWithAnswers, pickSetup, setupLine } from '@/lib/beginner-2';
-import { beatsBrief, noteOf, pickShapes } from '@/lib/shapes';
+import { noteOf, pickShapes } from '@/lib/shapes';
 import type { Turn } from '@/lib/types';
 import { ask, pool } from './common.mjs';
 
@@ -25,14 +25,13 @@ for (const id of ids) {
     if (c.turns[i].who !== 'learner') continue;
     const transcript: Turn[] = c.turns.slice(0, i).map((t) => {
       const offered = (t.parts ?? []).filter((x) => x.kind === 'answer').map((x) => x.text);
-      return { who: t.who, transcript: t.text, ...(t.en ? { translation: t.en } : {}), ...(offered.length ? { offered } : {}), ...(t.beats?.length ? { beats: t.beats } : {}) };
+      return { who: t.who, transcript: t.text, ...(t.en ? { translation: t.en } : {}), ...(offered.length ? { offered } : {}) };
     });
     const learnerSaid = c.turns[i].text;
-    const beats = transcript.find((t) => t.who === 'npc' && t.beats?.length)?.beats;
     const setup = pickSetup({ conversationId: c.id, turn: transcript.filter((t) => t.who === 'npc').length, learnerId: null, characterId: character.id, learnerSaid }, CLUSTER_1);
     if (setup.maxAnswers === 0) continue;
     jobs.push(async () => {
-      const raw = await runTurn({ character, transcript, learnerSaid, brief: [frameBrief(CLUSTER_1), beatsBrief(beats)].filter(Boolean).join('\n\n'), note: noteOf(pickShapes({ learnerSaid }), setupLine(setup)), answers: true, withDone: true });
+      const raw = await runTurn({ character, transcript, learnerSaid, brief: frameBrief(CLUSTER_1), note: noteOf(pickShapes({ learnerSaid }), setupLine(setup)), answers: true, withDone: true });
       const r = lineWithAnswers(raw, setup, CLUSTER_1);
       const answers = r.parts.filter((p) => p.kind === 'answer').map((p) => p.text);
       const help = (JSON.parse(await ask(`Answers a learner can say back in a conversation:\n${answers.map((a, k) => `${k + 1}. ${a}`).join('\n')}\n\nFor each, true if it asks the other person for help: what something means, to say it again, or more slowly. Reply with JSON: help, one boolean per answer.`, { schema, max: 300 })) as { help: boolean[] }).help;

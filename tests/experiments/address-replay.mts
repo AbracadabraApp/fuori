@@ -6,7 +6,7 @@ import { readFileSync } from 'node:fs';
 import { characterForVisit } from '@/lib/characters/for-visit';
 import { runTurn } from '@/lib/turn';
 import { CLUSTER_1, frameBrief, pickSetup, setupLine } from '@/lib/beginner-2';
-import { beatsBrief, noteOf, pickShapes } from '@/lib/shapes';
+import { noteOf, pickShapes } from '@/lib/shapes';
 import type { Gender, Turn } from '@/lib/types';
 import { ask, pool } from './common.mjs';
 
@@ -20,10 +20,9 @@ for (const as of [undefined, 'm'] as (Gender | undefined)[]) for (let i = 1; i <
   if (c.turns[i].who !== 'learner') continue;
   const transcript: Turn[] = c.turns.slice(0, i).map((t) => ({ who: t.who, transcript: t.text, ...(t.en ? { translation: t.en } : {}) }));
   const learnerSaid = c.turns[i].text;
-  const beats = c.turns.find((t) => t.who === 'npc' && t.beats?.length)?.beats;
   const setup = pickSetup({ conversationId: c.id, turn: transcript.filter((t) => t.who === 'npc').length, learnerId: null, characterId: character.id, learnerSaid }, CLUSTER_1);
   for (let k = 0; k < Number(takes); k++) jobs.push(async () => {
-    const r = await runTurn({ character, transcript, learnerSaid, addressedAs: as, brief: [frameBrief(CLUSTER_1), beatsBrief(beats)].filter(Boolean).join('\n\n'), note: noteOf(pickShapes({ learnerSaid }), setupLine(setup)), answers: setup.maxAnswers > 0, withDone: true });
+    const r = await runTurn({ character, transcript, learnerSaid, addressedAs: as, brief: frameBrief(CLUSTER_1), note: noteOf(pickShapes({ learnerSaid }), setupLine(setup)), answers: setup.maxAnswers > 0, withDone: true });
     const j = JSON.parse(await ask(`A line of Spanish said to one person:\n${r.line}\n\nfeminine: it addresses or describes that person as a woman (a feminine ending, "reina", "güerita", "verla", "señora"…). masculine: as a man. Reply with JSON.`, { schema, max: 800 }));
     return { as: as ?? 'unknown', line: r.line, ...j };
   });
