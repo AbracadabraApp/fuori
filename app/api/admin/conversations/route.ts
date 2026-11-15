@@ -15,7 +15,8 @@
  * learner (lib/study-export.ts, docs/study-export-demo.md): a Markdown file
  * for Gemini Notebook, by default the last 14 days. format=learners lists
  * learner ids by number of conversations, to find whose export to make.
- * format=errors&since=…&limit=50 lists the iPhone app's error reports, every
+ * format=ratings&since=…&limit=100 lists the turns rated from the app's debug
+ * panel, with the line rated (lib/turn-ratings.ts). format=errors&since=…&limit=50 lists the iPhone app's error reports, every
  * country, newest first (lib/app-errors.ts). format=sayit&since=… lists every
  * "How do I say it" decision (lib/say-it-log.ts). format=records gives
  * words spoken per learner per week, every country, with the path's steps
@@ -29,6 +30,7 @@ import { gradeTrendAsText } from '@/lib/grade-trend';
 import type { ConversationScore } from '@/lib/quality';
 import { learnersWithConversations, loadStudyExport, studyExportMarkdown } from '@/lib/study-export';
 import { recentAppErrors, appErrorsAsText } from '@/lib/app-errors';
+import { recentTurnRatings } from '@/lib/turn-ratings';
 import { recentSayIts, sayItsAsText } from '@/lib/say-it-log';
 import { recordsByWeek } from '@/lib/conversation-record';
 
@@ -62,6 +64,12 @@ export async function GET(request: NextRequest) {
     return new NextResponse(sayItsAsText(rows) || 'No say it decisions yet.', {
       headers: { 'Content-Type': 'text/plain; charset=utf-8', 'Cache-Control': 'no-store' },
     });
+  }
+  // Turns rated from the app's debug panel (lib/turn-ratings.ts), newest first, as JSON
+  if (url.searchParams.get('format') === 'ratings') {
+    const since = url.searchParams.get('since');
+    const rows = await recentTurnRatings(Number(url.searchParams.get('limit') ?? 100) || 100, since && !isNaN(Date.parse(since)) ? new Date(since) : undefined);
+    return NextResponse.json(rows, { headers: { 'Cache-Control': 'no-store' } });
   }
   if (url.searchParams.get('format') === 'errors') {
     const since = url.searchParams.get('since');

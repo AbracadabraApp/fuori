@@ -89,8 +89,44 @@ public final class ConversationModel {
         /// Milliseconds per step of the last turn: transcribe, turn, voice
         public var timings: [String: Int] = [:]
         public var lastError: String?
+        /// The last turn as the server played it: level, step, turn type, the mix
+        public var turn: APIClient.TurnDebug?
+        /// Visits counted toward the level-up offer, from the visit's first turn
+        public var levelUp: APIClient.TurnDebug.LevelUpCount?
+        /// The rating sent for the turn showing ("good", "bad", "bug"), or that it couldn't be sent
+        public var rated: String?
     }
     public private(set) var debug = DebugInfo()
+
+    /// The debug panel's facts from a reply; a new turn hasn't been rated yet
+    private func showTurn(_ turn: APIClient.TurnDebug?) {
+        debug.turn = turn
+        if let count = turn?.levelUp { debug.levelUp = count }
+        debug.rated = nil
+    }
+
+    /// Rates the turn showing, from the debug panel: saved with what the panel shows for it
+    public func rate(_ rating: String, note text: String? = nil) {
+        guard let id = conversationId, let turn = debug.turn else { return }
+        var context: [String: String] = ["level": turn.level, "prompt": debug.promptVersion ?? ""]
+        if let step = turn.step { context["step"] = String(step) }
+        if let setup = turn.setup { context["setup"] = setup }
+        if let shape = turn.shape { context["shape"] = shape }
+        if let share = turn.share { context["share"] = String(share) }
+        if let share = turn.visitShare { context["visitShare"] = String(share) }
+        if let heard = debug.heard { context["heard"] = heard }
+        if let voice = debug.voice { context["voice"] = voice }
+        if let error = debug.lastError { context["error"] = error }
+        debug.rated = rating
+        Task {
+            do {
+                try await api.rate(conversationId: id, turn: turn.turn, rating: rating, note: text, context: context)
+            } catch {
+                debug.rated = "not sent"
+                report(error, step: "rate")
+            }
+        }
+    }
 
     private static func now() -> TimeInterval { ProcessInfo.processInfo.systemUptime }
     private func time(_ step: String, since start: TimeInterval) {
@@ -325,7 +361,7 @@ public final class ConversationModel {
             let started = Self.now()
             let reply = try await requestTurn(learnerSaid: nil)
             time("opening", since: started)
-            debug.promptVersion = reply.promptVersion
+            debug.promptVersion = reply.promptVersion; showTurn(reply.debug)
             conversationId = reply.conversationId
             await present(reply, generation: generation)
         } catch {
@@ -875,7 +911,7 @@ public final class ConversationModel {
         let reply = try await requestTurn(learnerSaid: said)
         learnerLines += 1
         time("turn", since: started)
-        debug.promptVersion = reply.promptVersion
+        debug.promptVersion = reply.promptVersion; showTurn(reply.debug)
         if let id = reply.conversationId { conversationId = id }
         await present(reply, generation: generation)
     }
@@ -1094,7 +1130,7 @@ public final class ConversationModel {
             let next = try await requestTurn(learnerSaid: line)
             learnerLines += 1
             time("turn", since: started)
-            debug.promptVersion = next.promptVersion
+            debug.promptVersion = next.promptVersion; showTurn(next.debug)
             if let id = next.conversationId { conversationId = id }
             await present(next, generation: generation)
         } catch {

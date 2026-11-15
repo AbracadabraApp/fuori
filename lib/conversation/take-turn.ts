@@ -31,6 +31,9 @@ import { lessonBrief, lessonVersion, type LessonTurn } from '@/lib/lesson';
 import type { Gender } from '@/lib/types';
 import type { CharacterSheet, Turn, TurnOutput } from '@/lib/types';
 import type { Laps } from '@/lib/timing';
+import { languageShare } from '@/lib/dialogue/share';
+import { CLOSE_AT, CLUSTERS } from '@/lib/beginner-2';
+import { learnerStep, countedConversations, countFrom, LEVEL_UP_AFTER } from '@/lib/level-up';
 
 export interface TakeTurnParams {
   /** null when there's no database (local runs): no memory, nothing recorded */
@@ -77,6 +80,28 @@ export interface TakeTurnParams {
   beginnerCluster?: Setup[];
 }
 
+/** This turn as the game played it, for the app's debug panel: nothing here changes play */
+export interface TurnDebug {
+  /** The level the turn was played at */
+  level: string;
+  /** The Beginner step, 1 to 6; absent at other levels */
+  step?: number;
+  /** The Beginner turn type drawn (two answers, comment, idiom, goodbye, close…) */
+  setup?: string;
+  /** The shape note, when a signal fired (lib/shapes.ts) */
+  shape?: string;
+  /** The character's turn in the visit, from 1, and the turn the visit closes on */
+  turn: number;
+  closeAt?: number;
+  /** The language's share of this line's words and of the visit's so far, 0 to 100 (rough: lib/dialogue/share.ts) */
+  share: number | null;
+  visitShare: number | null;
+  /** Help was asked earlier in the visit, so it's kept easy (D12) */
+  help: boolean;
+  /** On a visit's first turn: visits counted toward the level-up offer, and how many it takes */
+  levelUp?: { counted: number; after: number };
+}
+
 export interface TakeTurnResult {
   reply: TurnOutput;
   promptVersion: string;
@@ -84,6 +109,8 @@ export interface TakeTurnResult {
   conversationId: string | null;
   memory?: CharacterMemory;
   isTutor: boolean;
+  /** What the app's debug panel shows for this turn (Josh, 2026-11-15: "instrument the debug panel") */
+  debug?: TurnDebug;
   /** Only for a deferred save: saves the exchange (once), with the learner's own words when given, and what they waited for the reply (replyMs) when given */
   commit?: (learnerSaid?: string, replyMs?: number) => void;
 }
@@ -351,6 +378,26 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
   }
   p.laps?.lap('record');
 
-  return { reply, promptVersion: version, conversationId: savedId, memory, isTutor, ...(commit ? { commit } : {}) };
+  // The debug panel's facts for this turn: read from what was decided above, nothing is changed by it
+  const ordinary = !isTutor && !p.lesson && !welcome;
+  const debug: TurnDebug = {
+    level: isTutor ? 'magda' : p.lesson ? 'lesson' : welcome ? 'welcome' : beginner ? 'beginner' : learnerLevel ?? 'none',
+    ...(setup ? { step: Math.max(0, CLUSTERS.indexOf(cluster)) + 1, setup: setup.id } : {}),
+    ...(shapeId ? { shape: shapeId } : {}),
+    turn: npcTurns + 1,
+    ...(setup ? { closeAt: CLOSE_AT + 1 } : ordinary && shaped ? { closeAt: CLOSE_AT_INTERMEDIATE + 1 } : {}),
+    share: languageShare([{ line: reply.line, en: reply.en }]),
+    visitShare: languageShare([...transcript.filter((t) => t.who === 'npc').map((t) => ({ line: t.transcript, en: t.translation ?? '' })), { line: reply.line, en: reply.en }]),
+    help: Boolean(helped && transcript.some((t) => t.who === 'npc' && t.hard)),
+  };
+  if (learnerId && ordinary && transcript.length === 0) {
+    try {
+      debug.levelUp = { counted: await countedConversations(learnerId, countFrom(await learnerStep(learnerId))), after: LEVEL_UP_AFTER };
+    } catch (err) {
+      p.onSoftError('debug level up', err);
+    }
+  }
+
+  return { reply, promptVersion: version, conversationId: savedId, memory, isTutor, debug, ...(commit ? { commit } : {}) };
 }
 

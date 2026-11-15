@@ -122,6 +122,17 @@ CREATE TABLE IF NOT EXISTS app_errors (
   context     jsonb
 );
 CREATE INDEX IF NOT EXISTS idx_app_errors_at ON app_errors(at DESC);
+-- Turns rated from the app's debug panel (lib/turn-ratings.ts, 2026-11-15)
+CREATE TABLE IF NOT EXISTS turn_ratings (
+  id              bigserial PRIMARY KEY,
+  learner_id      uuid NOT NULL,
+  conversation_id uuid NOT NULL,
+  turn            int NOT NULL,
+  rating          text NOT NULL,
+  note            text,
+  context         jsonb,
+  created_at      timestamptz NOT NULL DEFAULT now()
+);
 -- Every "How do I say it" decision (lib/say-it-log.ts, 2026-10-23)
 CREATE TABLE IF NOT EXISTS say_it_log (
   id              bigserial PRIMARY KEY,

@@ -272,7 +272,7 @@ export async function POST(request: Request) {
         if (result.memory) headers['x-memory'] = `${result.memory.visits} visits, ${result.memory.notes.length} notes`;
         if (result.isTutor) headers['x-study-file'] = `${result.memory?.notes.length ?? 0} lines, ${result.memory?.visits ?? 0} lessons`;
         return {
-          body: { ...result.reply, conversationId: result.conversationId, promptVersion: result.promptVersion, replies, stage },
+          body: { ...result.reply, conversationId: result.conversationId, promptVersion: result.promptVersion, replies, stage, ...(result.debug ? { debug: result.debug } : {}) },
           headers,
           ...(draft ? { after: (saidNow?: string, replyMs?: number) => { result.commit?.(saidNow, replyMs); learnAhead(saidNow); } } : {}),
         };

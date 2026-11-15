@@ -152,6 +152,30 @@ public actor APIClient {
         /// English; the app prints only this of the turn (Josh, 2026-11-11).
         /// Nil for other turns and from older servers
         public var question: IntroSentence? = nil
+        /// This turn as the server played it, for the debug panel
+        /// (Settings → Developer). Nil from servers before 2026-11-15
+        public var debug: TurnDebug? = nil
+    }
+
+    /// What the debug panel shows about a turn: the level and step it was
+    /// played at, the turn type, where the visit is, and the mix
+    public struct TurnDebug: Codable, Sendable, Equatable {
+        public struct LevelUpCount: Codable, Sendable, Equatable {
+            public let counted: Int
+            public let after: Int
+        }
+        public let level: String
+        public var step: Int? = nil
+        public var setup: String? = nil
+        public var shape: String? = nil
+        public let turn: Int
+        public var closeAt: Int? = nil
+        /// The language's share of this line's words and of the visit's so far, 0 to 100
+        public var share: Int? = nil
+        public var visitShare: Int? = nil
+        public var help: Bool? = nil
+        /// On a visit's first turn only: visits counted toward the level-up offer
+        public var levelUp: LevelUpCount? = nil
     }
 
     /// One sentence of the intro, with its English subtitle
@@ -330,6 +354,14 @@ public actor APIClient {
         let r: Reply = try await send(request("v1/level-up", query: [URLQueryItem(name: "conversationId", value: conversationId)]), signedIn: true)
         guard r.due, let offer = r.offer, let words = r.words else { return nil }
         return (offer, words)
+    }
+
+    /// POST /v1/rate: a turn rated from the debug panel ("good", "bad" or
+    /// "bug"), with an optional note and what the panel showed for it
+    public func rate(conversationId: String, turn: Int, rating: String, note: String?, context: [String: String]) async throws {
+        struct Body: Encodable { let conversationId: String; let turn: Int; let rating: String; let note: String?; let context: [String: String] }
+        struct Reply: Decodable { let ok: Bool }
+        let _: Reply = try await send(post("v1/rate", json: Body(conversationId: conversationId, turn: turn, rating: rating, note: note, context: context)), signedIn: true)
     }
 
     /// POST /v1/level-up: the learner's answer, yes or not yet; the level

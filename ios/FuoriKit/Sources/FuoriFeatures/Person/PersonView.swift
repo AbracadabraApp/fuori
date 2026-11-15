@@ -44,7 +44,7 @@ struct PersonView: View {
                 Portrait(url: model.character.portrait, name: model.character.name)
                     .ignoresSafeArea(edges: .bottom)
                 if debug {
-                    DebugPanel(info: model.debug, conversationId: model.conversationId)
+                    DebugPanel(info: model.debug, conversationId: model.conversationId) { rating, note in model.rate(rating, note: note) }
                         .frame(maxHeight: .infinity, alignment: .top)
                         .padding(.horizontal, Tokens.Space.gutter)
                         .padding(.top, 8)
@@ -312,20 +312,41 @@ extension String {
     var capitalizingFirstLetter: String { prefix(1).uppercased() + dropFirst() }
 }
 
-/// The hidden debug panel (Settings → Developer), as the web's ?debug=1:
-/// prompt version, whether the conversation is saved, what was heard, which
-/// voice spoke, step timings and the last error code
+/// The hidden debug panel (Settings → Developer): what is playing and how to
+/// say what you think of it (Josh, 2026-11-15: "instrument the debug panel -
+/// useless now"; "rate turns"; "report bugs"). First the turn as the server
+/// played it (level and step, the turn type, where the visit is, the mix, the
+/// count toward the level up), then three buttons that rate the turn showing,
+/// saved with those facts (/v1/rate); then what was heard, the voice, timings
+/// and the last error, as before. English, since it's a developer's tool
 private struct DebugPanel: View {
     let info: ConversationModel.DebugInfo
     let conversationId: String?
+    let rate: (_ rating: String, _ note: String?) -> Void
+
+    @State private var askingBug = false
+    @State private var bugNote = ""
 
     var body: some View {
         VStack(alignment: .leading, spacing: 2) {
-            row("Prompt", info.promptVersion)
-            row("Saved", conversationId.map { "yes (\(String($0.prefix(8))))" } ?? "no")
+            row("Playing", playing)
+            row("Mix", mix)
+            row("Level up", info.levelUp.map { "\($0.counted) of \($0.after) visits" })
+            HStack(spacing: 8) {
+                rateButton("Good", "good")
+                rateButton("Bad", "bad")
+                Button("Bug…") { askingBug = true }
+                    .buttonStyle(.bordered)
+                    .disabled(info.turn == nil || conversationId == nil)
+                if let rated = info.rated { Text(rated == "not sent" ? "not sent" : "sent: \(rated)").bold() }
+            }
+            .controlSize(.small)
+            .padding(.vertical, 2)
             row("Heard", info.heard)
             row("Voice", info.voice)
             row("Timings", info.timings.isEmpty ? nil : info.timings.sorted { $0.key < $1.key }.map { "\($0.key) \($0.value) ms" }.joined(separator: " · "))
+            row("Prompt", info.promptVersion)
+            row("Saved", conversationId.map { "yes (\(String($0.prefix(8))))" } ?? "no")
             if let error = info.lastError { row("Error", error).foregroundStyle(Tokens.Colors.errorInk) }
         }
         .font(.caption.monospaced())
@@ -333,7 +354,37 @@ private struct DebugPanel: View {
         .padding(8)
         .frame(maxWidth: .infinity, alignment: .leading)
         .background(Tokens.Colors.card.opacity(0.92), in: RoundedRectangle(cornerRadius: 8))
-        .accessibilityElement(children: .combine)
+        .alert("What's wrong with this turn?", isPresented: $askingBug) {
+            TextField("A few words (optional)", text: $bugNote)
+            Button("Send") {
+                rate("bug", bugNote.trimmingCharacters(in: .whitespacesAndNewlines).isEmpty ? nil : bugNote)
+                bugNote = ""
+            }
+            Button("Cancel", role: .cancel) { bugNote = "" }
+        }
+    }
+
+    /// "Beginner step 2 · turn 4 of 9 · comment · help asked"
+    private var playing: String? {
+        guard let t = info.turn else { return nil }
+        var parts = [t.step.map { "\(t.level.capitalizingFirstLetter) step \($0)" } ?? t.level.capitalizingFirstLetter]
+        parts.append(t.closeAt.map { "turn \(t.turn) of \($0)" } ?? "turn \(t.turn)")
+        if let setup = t.setup { parts.append(setup) }
+        if let shape = t.shape { parts.append(shape) }
+        if t.help == true { parts.append("help asked") }
+        return parts.joined(separator: " · ")
+    }
+
+    /// "41% in the language this turn · 38% this visit"
+    private var mix: String? {
+        guard let t = info.turn, let share = t.share else { return nil }
+        return "\(share)% in the language this turn" + (t.visitShare.map { " · \($0)% this visit" } ?? "")
+    }
+
+    private func rateButton(_ label: String, _ rating: String) -> some View {
+        Button(label) { rate(rating, nil) }
+            .buttonStyle(.bordered)
+            .disabled(info.turn == nil || conversationId == nil)
     }
 
     private func row(_ label: String, _ value: String?) -> Text {
