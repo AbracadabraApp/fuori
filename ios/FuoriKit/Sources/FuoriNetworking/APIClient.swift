@@ -326,7 +326,8 @@ public actor APIClient {
     /// conversation, with the screen's words; nil otherwise
     public func levelUp(conversationId: String) async throws -> (offer: LevelUp, words: LevelUpWords)? {
         struct Reply: Decodable { let due: Bool; let offer: LevelUp?; let words: LevelUpWords? }
-        let r: Reply = try await send(request("v1/level-up?conversationId=\(conversationId)"), signedIn: true)
+        // The id as a query item, not written into the path: see `address`
+        let r: Reply = try await send(request("v1/level-up", query: [URLQueryItem(name: "conversationId", value: conversationId)]), signedIn: true)
         guard r.due, let offer = r.offer, let words = r.words else { return nil }
         return (offer, words)
     }
@@ -644,8 +645,16 @@ public actor APIClient {
         return device.token
     }
 
-    private func request(_ path: String, timeout: TimeInterval? = nil) -> URLRequest {
-        var req = URLRequest(url: baseURL.appending(path: path))
+    /// A request's address. Anything after a "?" goes in `query`, never in `path`: `appending(path:)` percent-encodes
+    /// a "?" written into the path, so "v1/level-up?conversationId=…" went out as /v1/level-up%3FconversationId=…,
+    /// the server answered 404, and no level up was ever offered (2026-11-11 to 2026-11-14; docs/bugs.md B33)
+    static func address(_ base: URL, _ path: String, query: [URLQueryItem] = []) -> URL {
+        let url = base.appending(path: path)
+        return query.isEmpty ? url : url.appending(queryItems: query)
+    }
+
+    private func request(_ path: String, query: [URLQueryItem] = [], timeout: TimeInterval? = nil) -> URLRequest {
+        var req = URLRequest(url: Self.address(baseURL, path, query: query))
         if let timeout { req.timeoutInterval = timeout }
         req.setValue("application/json", forHTTPHeaderField: "Accept")
         // Lets the server turn away builds that are too old (426, lib/app-version.ts)

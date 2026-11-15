@@ -15,7 +15,23 @@ export function served(pathname: string): boolean {
   return /^\/v1(\/|$)/.test(pathname) || /^\/api\/admin(\/|$)/.test(pathname) || pathname === '/healthz';
 }
 
+/**
+ * App builds up to 16 ask for the level up at /v1/level-up%3FconversationId=<id>: the "?" was written into the path
+ * and percent-encoded, so no route matched, the app got 404 and no level up was ever offered (docs/bugs.md B33;
+ * fixed in the app after build 16). The conversation id out of such a path, so those builds get their offer too
+ */
+export function levelUpIdInPath(pathname: string): string | null {
+  return /^\/v1\/level-up(?:%3F|\?)conversationId=([0-9a-f-]{36})$/i.exec(pathname)?.[1] ?? null;
+}
+
 export function proxy(request: NextRequest) {
+  const levelUpId = levelUpIdInPath(request.nextUrl.pathname);
+  if (levelUpId) {
+    const url = request.nextUrl.clone();
+    url.pathname = '/v1/level-up';
+    url.search = `?conversationId=${levelUpId}`;
+    return NextResponse.rewrite(url);
+  }
   if (served(request.nextUrl.pathname)) return NextResponse.next();
   return new NextResponse('Not found', { status: 404, headers: { 'content-type': 'text/plain; charset=utf-8' } });
 }

@@ -218,3 +218,13 @@ Josh, after reading the closing questions and the offered answers of five Mexico
 - Close to "Open-ended talk doesn't need a question every turn" above (Josh, 2026-11-04) and to "Interviewing by multiple choice" in the top 10.
 
 Everything is in [questions-and-bubbles.md](questions-and-bubbles.md), a draft. Nothing is built or in a prompt.
+
+## The levels re-cut: today's Intermediate as Advanced, a new Intermediate in between (Josh, 2026-11-14, night)
+
+After playing Nunzio and Elena at Intermediate ("the intermediate is Hard"; "its also vocab with Nunzio and verb tense with ELena"; bugs.md B13), Josh: "Just a thought while I was waiting - maybe our intermediate is our advanced level - and a new intermediate is in spanish heavy mix - and no bubbles for the learner - you speak spanish if you can or you say what you want in English and get back how to say it - maybe there is more drilling on intermediate wwith learn sheets -- just a few ideas".
+
+So, as he put it:
+- Today's Intermediate (all in the language, new vocabulary and tenses as they come) becomes Advanced.
+- A new Intermediate: a mix that is mostly the language; no offered answers; the learner speaks the language if they can, or says it in English and is given how to say it ("How do I say it", say-it.md); more drilling, through the Learn sheets (dialogue-plan.md D51).
+
+Close to what exists: Beginner steps 4–6 (mostly the language, then no answers; built 2026-11-14, played by nobody: bugs.md B33); the say-it flow. Nothing decided.

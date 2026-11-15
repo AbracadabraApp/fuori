@@ -352,7 +352,12 @@ public final class AppModel {
                 // Still in the same country: refresh the visit stamps, and ask whether a level up is due
                 if conversationServer == server {
                     visits = (try? await api.me().visits) ?? visits
-                    if let due = try? await api.levelUp(conversationId: id) { levelUp = due }
+                    // A failure here is reported, not swallowed: with `try?` the offer's 404 went unseen for three days (docs/bugs.md B33)
+                    do {
+                        if let due = try await api.levelUp(conversationId: id) { levelUp = due }
+                    } catch {
+                        report(error, step: "level-up", context: ["conversationId": id], using: api)
+                    }
                 }
             } catch {
                 // Kept in the pending list and retried at the next launch
