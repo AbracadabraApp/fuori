@@ -11,7 +11,7 @@ import { cities, language, pack, tutor } from '@/content';
 import { characterForPlace } from '@/lib/characters/for-place';
 import { runBeginnerTurn } from '@/lib/beginner';
 import { lessonBrief } from '@/lib/lesson';
-import { STAGES, stageText } from '@/lib/path';
+import { STAGES, stageText } from '@/tests/experiments/stages';
 import type { CharacterSheet, Turn } from '@/lib/types';
 
 const N = Number(process.argv[2] ?? 4);

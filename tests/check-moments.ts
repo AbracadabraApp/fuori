@@ -6,7 +6,7 @@
 import { readFileSync } from 'node:fs';
 import { pack } from '@/content';
 import { characterForVisit } from '@/lib/characters/for-visit';
-import { STAGES } from '@/lib/path';
+import { STAGES } from '@/tests/experiments/stages';
 import { findStep } from '@/lib/lesson';
 import type { Moment } from './experiments/moments.mts';
 

@@ -51,8 +51,8 @@ for (const to of ['intermediate', 'advanced'] as const) {
 
 // The wiring: the route, the yes setting learners.level as Settings does, the turn reading it, the app following it
 const route = readFileSync('app/v1/level-up/route.ts', 'utf8');
-check(/levelUpOffer\(learnerId, conversationId, beginnerVersionFrom\(request\.headers\)\)/.test(route) && /words: offerWords\(offer\.to, offer\.nextStep\)/.test(route), '/v1/level-up passes the app\'s Beginner switch (Beginner only) and sends the offer\'s words');
-check(!/if \(beginnerVersionFrom\(request\.headers\) !== 2\) return/.test(route), 'the Beginner switch no longer hides the Intermediate offer');
+check(/levelUpOffer\(learnerId, conversationId\)/.test(route) && /words: offerWords\(offer\.to, offer\.nextStep\)/.test(route), '/v1/level-up asks for the offer by learner and conversation alone and sends the offer\'s words');
+check(!/beginnerVersion|x-fuori-beginner/.test(route) && !/beginnerVersion/.test(readFileSync('lib/level-up.ts', 'utf8')), 'the offer no longer depends on the app\'s Old/New Beginner switch (removed 2026-11-15)');
 check(/level: s\.level/.test(route), 'the yes answers with the level after it');
 const lu = readFileSync('lib/level-up.ts', 'utf8');
 check(/else if \(move\) await changeLevel\(learnerId, move\.to\)/.test(lu) && /await setLevel\(learnerId, level\)/.test(lu), 'a yes to a level move goes through changeLevel → setLevel');

@@ -10,7 +10,7 @@
 import { cities, pack } from '@/content';
 import { characterForPlace } from '@/lib/characters/for-place';
 import { runBeginnerTurn } from '@/lib/beginner';
-import { STAGES, stageText } from '@/lib/path';
+import { STAGES, stageText } from '@/tests/experiments/stages';
 import type { CharacterSheet, Turn } from '@/lib/types';
 import { ask } from './common.mjs';
 

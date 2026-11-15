@@ -1,11 +1,12 @@
-// Beginner 2 behind the app's hidden switch (lib/beginner-2.ts, docs/beginner-2.md):
-// the switch is read from the header, the setup is picked from cluster 1 and
-// replays the same for a conversation, its line comes from the country's
-// prompt file, the language-only rung hides the answers' English, the turn
-// code takes the switch, and Beginner 2 turns don't move the Beginner 1 path.
+// The Beginner level (lib/beginner-2.ts, docs/beginner-2.md; called Beginner 2 while the old Beginner played beside
+// it): the setup is picked from the learner's cluster and replays the same for a conversation, its line comes from the
+// country's prompt file, every step plays on the one-line reply, and nothing of the old Beginner, its stages or its
+// Old/New switch is left in the turn (removed 2026-11-15). The parts-format shaping it used to play
+// (tests/experiments/parts-shaping.ts, for experiments only) is still checked here.
 import { SETTINGS, saySentence, saySentences, englishOf, wayOf, seedOf } from '@/lib/dialogue/pieces';
 import { readFileSync } from 'fs';
-import { beginnerVersionFrom, pickSetup, GOODBYE_AFTER, CLOSE_AT, CLOSE, setupText, levelText, setupLine, fullerGlosses, shownParts, shapeParts, turnSteps, beginner2Version, questionEcho, GOODBYE, OPENER, CLUSTER_1, CLUSTERS, RUNGS, clusterFrom, flowingLine, withQuestionEnglish, cluster1Brief, frameBrief, onFrame, lineWithAnswers, questionOf, QUESTION_ECHO_FRAME } from '@/lib/beginner-2';
+import { pickSetup, GOODBYE_AFTER, CLOSE_AT, CLOSE, setupText, levelText, setupLine, turnSteps, beginner2Version, GOODBYE, OPENER, CLUSTER_1, CLUSTERS, RUNGS, clusterFrom, withQuestionEnglish, cluster1Brief, frameBrief, lineWithAnswers, questionOf, QUESTION_ECHO_FRAME } from '@/lib/beginner-2';
+import { fullerGlosses, shownParts, shapeParts, questionEcho } from './experiments/parts-shaping';
 import { stageInVersion } from '@/lib/conversation-record';
 import { lineFromParts, type Part } from '@/lib/beginner';
 import { buildBeginnerPrompt, SCAFFOLDING_FILE, dialogueWithoutFormat } from '@/lib/beginner';
@@ -26,82 +27,13 @@ check(withQuestionEnglish('Cosa ti preparo? (What can I make for you?)', 'What c
 check(withQuestionEnglish('What can I get you? Cosa prendi?', 'What can I get you? What will you have?') === 'What can I get you? Cosa prendi?', 'not when the English question is already right before hers');
 check(withQuestionEnglish('Ecco il cornetto, still warm.', 'Here is the cornetto, still warm.') === 'Ecco il cornetto, still warm.', 'no question, nothing added');
 
-// The spoken line for the English frame: a phrase inside an English sentence is joined with commas, a sentence with full stops
-{
-  const frame: Part[] = [{ kind: 'english', text: "I'm just flipping the first picadas on", en: '', gloss: '' }, { kind: 'word', text: 'el comal', en: 'the griddle', gloss: 'the griddle' }, { kind: 'english', text: "and they're hot right now.", en: '', gloss: '' }, { kind: 'question', text: '¿Quiere una?', en: 'Want one?', gloss: '' }];
-  check(flowingLine(frame).line === "I'm just flipping the first picadas on el comal, the griddle, and they're hot right now. ¿Quiere una?", `flowingLine: a phrase inside a sentence joined with spaces, its gloss set off by commas, a full stop at the sentence's end (got "${flowingLine(frame).line}")`);
-  const bare: Part[] = [{ kind: 'english', text: "I'm mixing a fresh batch of", en: '', gloss: '' }, { kind: 'word', text: 'tejuino', en: 'tejuino', gloss: '' }, { kind: 'english', text: 'here, nice and cold.', en: '', gloss: '' }];
-  check(flowingLine(bare).line === "I'm mixing a fresh batch of tejuino here, nice and cold.", `flowingLine: no gloss, no commas (got "${flowingLine(bare).line}")`);
-  const twice: Part[] = [{ kind: 'english', text: 'I put it on el comal, the griddle, first.', en: '', gloss: '' }, { kind: 'word', text: 'el comal.', en: 'the griddle', gloss: '' }, { kind: 'question', text: '¿Quiere una?', en: 'Want one?', gloss: '' }];
-  check(flowingLine(twice).line === 'I put it on el comal, the griddle, first. ¿Quiere una?', `a phrase already said inside the English isn't said again (got "${flowingLine(twice).line}")`);
-  const echoed: Part[] = [{ kind: 'english', text: "I'm making a fresh batch of", en: '', gloss: '' }, { kind: 'word', text: 'tejuino', en: 'tejuino', gloss: '' }, { kind: 'english', text: 'here.', en: '', gloss: '' }, { kind: 'question', text: '¿Quiere probar un tejuino?', en: 'Do you want to try a tejuino?', gloss: '' }, { kind: 'english', text: 'Do you want to try a tejuino?', en: '', gloss: '' }];
-  check(/batch of tejuino here\./.test(flowingLine(echoed).line), `the question's echo doesn't count as having said her phrase (got "${flowingLine(echoed).line}")`);
-  const sentences: Part[] = [{ kind: 'word', text: 'Aquí está la silla.', en: 'Here is the chair.', gloss: 'the chair' }, { kind: 'english', text: 'You climb up.', en: '', gloss: '' }];
-  check(flowingLine(sentences).line === 'Aquí está la silla. the chair. You climb up.', `flowingLine: a gloss before a new sentence closes with a full stop (got "${flowingLine(sentences).line}")`);
-  check(flowingLine([{ kind: 'question', text: '¿Un café?', en: 'A coffee?', gloss: 'a coffee?' }, { kind: 'answer', text: 'Sí.', en: 'Yes.', gloss: '' }]).line === '¿Un café?', 'flowingLine: with answers shown the question\'s gloss is not said, as lineFromParts');
-}
-
 // No cluster adds English by code since 2026-11-10q (the Level 1 frame carries its own); the summary side call was removed 2026-11-12 (Josh: dead code)
 
-// The cut-over (Josh, 2026-11-12): the new Beginner by default; the old one only when the app asks for it
-check(beginnerVersionFrom(new Headers()) === 2 && beginnerVersionFrom(new Headers({ 'x-fuori-beginner': '2' })) === 2, 'no header, or 2: the new Beginner');
-check(beginnerVersionFrom(new Headers({ 'x-fuori-beginner': '1' })) === 1, 'header 1: the old Beginner');
-
-const a = pickSetup({ conversationId: 'conv-1', turn: 3, characterId: 'luisa' });
-check(pickSetup({ conversationId: 'conv-1', turn: 3, characterId: 'luisa' }).id === a.id, 'the same conversation and turn get the same setup');
-const seen = new Set(Array.from({ length: 40 }, (_, i) => pickSetup({ conversationId: `conv-${i}`, turn: 1 + (i % (GOODBYE_AFTER - 1)), characterId: 'luisa' }).id));
-check(seen.size === CLUSTER_1.length && [...seen].every((id) => CLUSTER_1.some((s) => s.id === id)), `over 40 turns every setup of cluster 1 comes up (got ${[...seen].join(', ')})`);
-const day = new Date('2026-11-09T10:00:00Z');
-check(pickSetup({ turn: 0, learnerId: 'L', characterId: 'luisa', now: day }).id === pickSetup({ turn: 0, learnerId: 'L', characterId: 'luisa', now: day }).id, 'an opening is seeded by learner, place and day');
-
-for (const setup of RUNGS) check(setupText(setup).includes('This turn,') && !/\{\w+\}/.test(setupText(setup)), `${setup.block}: its line is read from scaffolding.md, filled`);
-check(setupText(CLUSTER_1[0], CLUSTER_1).startsWith('They are a beginner') && setupText(CLUSTERS[2][0], CLUSTERS[2]).startsWith('They are a beginner') && setupText(CLUSTERS[5][0], CLUSTERS[5]).startsWith('They are a beginner'), 'each cluster gets the level text before the setup: one for every step (2026-11-15a, the steps as settings)');
-check(!/Every turn has some English|When you first see them|explain something in English when it helps/.test(readFileSync(`content/${process.env.COUNTRY ?? 'it'}/prompts/scaffolding.md`, 'utf8')), 'the English lines added one per play are gone from the prompt');
-check(CLUSTERS.length === 6, 'six clusters');
-check(CLUSTERS.flat().every((r) => r.maxAnswers === 0 || (r.maxAnswers === 2 && r.english)), 'bubbles are two, always with English (Josh: reading Spanish you don\'t understand is coercive; one answer feels weird)');
-check(['two-en', 'ask-en'].every((id) => CLUSTER_1.some((r) => r.id === id)) && !CLUSTER_1.some((r) => r.id === 'free') && !CLUSTERS.flat().some((r) => r.id === 'invite-en'), 'cluster 1 mixes two answers and questions to ask, no open question (Josh: difficult for this level); no cluster invites a question');
-{
-  // Never the same setup twice running (2026-11-11c)
-  let runs = 0;
-  const seq: string[] = [];
-  for (let t = 1; t <= 60; t++) { const id = pickSetup({ conversationId: 'rot', turn: t, characterId: 'x' }).id; seq.push(id); if (id !== 'close' && seq.length >= 3 && seq.slice(-3).every((x) => x === id)) runs++; } // from the 8th turn every turn is the close (2026-11-13): the visit ends there
-  check(runs === 0 && !seq.some((x, i) => x === 'notice' && seq[i - 1] === 'notice') && new Set(['rot', 'rot2', 'rot3', 'rot4'].flatMap((cid) => Array.from({ length: 6 }, (_, t) => pickSetup({ conversationId: cid, turn: t + 1, characterId: 'x' }).id))).size === CLUSTER_1.length, `no setup three times running and Notice never twice over 60 turns, every kind played across four visits (2026-11-12d: three kinds, Notice added; 2026-11-14: four with the comment, so across visits, not within one) (got ${runs} runs of three, kinds ${[...new Set(seq)].join(', ')})`);
-  const q = questionOf('Suba a la silla, climb up. ¿Quiere una boleada?', 'Climb up on the chair. Do you want a shine?');
-  check(q?.text === '¿Quiere una boleada?' && q?.en === 'Do you want a shine?', `questionOf: the last question with its English (got ${JSON.stringify(q)})`);
-  check(questionOf('Ecco il cornetto.', 'Here is the cornetto.') === undefined, 'questionOf: nothing when the line ends on a statement');
-  // Josh's Mexico play, 2026-11-12 (visits 409863b2, 6159f8cb): the English echo after the question, and the English in
-  // brackets, were taken as the question; the bubble showed the English twice, or no Spanish at all
-  const echoed = questionOf('Look at the arches over us. ¿Le gustan los túneles? Do you like the tunnels?', 'Look at the arches over us. Do you like the tunnels?');
-  check(echoed?.text === '¿Le gustan los túneles?' && echoed?.en === 'Do you like the tunnels?', `questionOf: the spoken English echo is not the question (got ${JSON.stringify(echoed)})`);
-  const bracketed = questionOf('Mire, I used to look at the altars. ¿Quiere entrar a ver los altares? (Do you want to go in and see the altars?)', 'Look, I used to look at the altars. Do you want to go in and see the altars?');
-  check(bracketed?.text === '¿Quiere entrar a ver los altares?' && bracketed?.en === 'Do you want to go in and see the altars?', `questionOf: English in brackets is not the question (got ${JSON.stringify(bracketed)})`);
-  check(questionOf('Es un ratito, "es un ratito", and the lights glow orange.', 'It\'s a short ride, and the lights glow orange.') === undefined, 'questionOf: a turn with questions to ask, no question of its own: nothing');
-  check(questionOf('¿Ver? Hmm, maybe you want a boleada? Sorry, my ears are old, and this morning is so cold. I shine shoes here, so just climb up on the chair if you want one.', 'See? Hmm, maybe you want a shoe shine? Sorry, my ears are old, and this morning is so cold. I shine shoes here, so just climb up on the chair if you want one.') === undefined, 'questionOf: an English question with a word of the language in it is not the question, nor a question earlier in the turn (Don Chucho, 2026-11-12)');
-  check(questionOf('Look at the arches. ¿Le gustan? Do you like them, the tunnels?', 'Look at the arches. Do you like them?')?.text === '¿Le gustan?', 'questionOf: an echo that is mostly the translation is still set aside');
-  check(questionOf('Hoy hay de todo. ¿Le sirvo carne en su jugo o pozole?', 'Today there is everything. Shall I serve you carne en su jugo or pozole?')?.text === '¿Le sirvo carne en su jugo o pozole?', 'questionOf: a question built from dish names the translation keeps is still the question (Doña Chuy, 2026-11-12)');
-  check(questionOf('Ecco il banco. Preferisce lo stracchino o la formaggella?', 'Here is the counter. Would you prefer the stracchino or the formaggella?')?.text === 'Preferisce lo stracchino o la formaggella?', 'questionOf: the same in Italian');
-  check(questionOf('Well, ya llegamos. Que le vaya muy bien.', 'Well, we have arrived. May all go well for you.') === undefined, 'questionOf: a goodbye with no question: nothing');
-  check(lineWithAnswers({ line: 'Mire. ¿Quiere ver?', en: 'Look. Do you want to see?', answers: [] }, RUNGS.find((x) => x.id === 'free')!).question?.text === '¿Quiere ver?', 'lineWithAnswers carries the question');
-}
-check(clusterFrom(new Headers({ 'x-fuori-cluster': '4' })) === CLUSTERS[3] && clusterFrom(new Headers()) === CLUSTER_1 && clusterFrom(new Headers({ 'x-fuori-cluster': '9' })) === CLUSTER_1, 'the cluster header picks clusters 1-6, cluster 1 otherwise');
-const seen6 = new Set(Array.from({ length: 40 }, (_, i) => pickSetup({ conversationId: `c-${i}`, turn: 1 + (i % (GOODBYE_AFTER - 1)), characterId: 'x' }, CLUSTERS[5]).id));
-check(seen6.size === 1 && seen6.has('free'), `cluster 6 plays its own three rungs (got ${[...seen6].join(', ')})`);
-
-const parts: Part[] = [{ kind: 'question', text: 'Un caffè?', en: 'A coffee?', gloss: '' }, { kind: 'answer', text: 'Sì, grazie.', en: 'Yes, thanks.', gloss: '' }];
-check(shownParts(parts, RUNGS.find((r) => r.id === 'two-en')!).find((x) => x.kind === 'answer')!.en === 'Yes, thanks.', 'bubbles keep their English');
-
-
-const bare: Part[] = [{ kind: 'word', text: 'Qué bueno.', en: 'Great.', gloss: '' }, { kind: 'question', text: '¿Cuál le gusta más?', en: 'Which do you like best?', gloss: '' }, { kind: 'answer', text: 'Me gusta el de allá.', en: 'I like that one.', gloss: '' }];
-const fixed = shownParts(bare, CLUSTER_1[0], CLUSTERS[2]);
-check(fixed.find((x) => x.kind === 'question')!.gloss === 'Which do you like best?', 'a turn with no English gets its question\'s English as a gloss (Hugo, 2026-11-09)');
-const glossed: Part[] = [{ kind: 'question', text: '¿Le gustan?', en: 'Do you like them?', gloss: 'like them?' }];
-check(shownParts(glossed, CLUSTER_1[0], CLUSTERS[3])[0].gloss === 'like them?', 'later clusters: a turn that already has English is left alone');
-check(shownParts(glossed, CLUSTER_1[0], CLUSTER_1)[1]?.text === 'Do you like them?', 'Level 1: a glossed question gets its full English as the spoken piece after it');
 const para: Part[] = [{ kind: 'english', text: 'Welcome to the barrio.', en: '', gloss: '' }, { kind: 'word', text: 'Aquí pinto todos los días.', en: 'I paint here every day.', gloss: '' }, { kind: 'word', text: 'Bienvenido al barrio.', en: 'Welcome to the barrio.', gloss: '' }, { kind: 'question', text: '¿Le gustan los murales?', en: 'Do you like the murals?', gloss: '' }];
 check(shownParts(para, CLUSTER_1[0], CLUSTER_1)[1].gloss === '' && shownParts(para, CLUSTERS[1][0], CLUSTERS[1])[1].gloss === '', 'no cluster adds the literal English after each phrase by code (2026-11-10q: the frame carries it)');
 check(/each sentence in braces with its English after a bar/.test(levelText(CLUSTER_1)) && !/word part/.test(levelText(CLUSTER_1)) && !/say it again/.test(setupText(CLUSTER_1[0], CLUSTER_1)), 'Level 1 is the frame brief as the list used it: one line, no parts, each phrase with its English, no sandwich repeat (Josh: weird)');
-check(/setup && onFrame\(cluster\)\n\s*\?[\s\S]*?runTurn\(\{[^\n]*brief: frameBrief\(cluster\), note: noteOf\(shape, setupLine\(setup\)\), answers: setup\.maxAnswers > 0/.test(readFileSync('lib/conversation/take-turn.ts', 'utf8')), 'clusters 1-3 run on the Intermediate reply with the cluster\'s brief, the setup line (with any shape and beat) on the newest message and the answers asked for (2026-11-11d)');
-check(onFrame(CLUSTER_1) && onFrame(CLUSTERS[2]) && onFrame(CLUSTERS[3]) && onFrame(CLUSTERS[5]) && frameBrief(CLUSTERS[1]).startsWith(levelText(CLUSTERS[1])) && !/only the first time|new kind of question|only when it's new/.test(levelText(CLUSTERS[1]) + levelText(CLUSTERS[2])) && levelText(CLUSTERS[2]) === levelText(CLUSTER_1), 'steps 2 to 6 on the one-line reply (D10, Josh 2026-11-14: one screen at every step; was the parts format from step 4), with no "English only the first time" or "only for a new kind of question" (Josh, 2026-11-12: removed)');
+check(/: beginner && setup\n\s*\?[\s\S]*?runTurn\(\{[^\n]*brief: frameBrief\(cluster\), note: noteOf\(shape, setupLine\(setup\)\), answers: setup\.maxAnswers > 0/.test(readFileSync('lib/conversation/take-turn.ts', 'utf8')), 'every step runs on the Intermediate reply with the cluster\'s brief, the setup line (with any shape and beat) on the newest message and the answers asked for (2026-11-11d)');
+check(frameBrief(CLUSTERS[1]).startsWith(levelText(CLUSTERS[1])) && !/only the first time|new kind of question|only when it's new/.test(levelText(CLUSTERS[1]) + levelText(CLUSTERS[2])) && levelText(CLUSTERS[2]) === levelText(CLUSTER_1), 'steps 2 to 6 on the one-line reply (D10, Josh 2026-11-14: one screen at every step; was the parts format from step 4), with no "English only the first time" or "only for a new kind of question" (Josh, 2026-11-12: removed)');
 check([CLUSTERS[1], CLUSTERS[2]].every((c) => /Do you want to see\?$/.test(lineWithAnswers({ line: 'Mire. ¿Quiere ver?', en: 'Look. Do you want to see?', answers: [] }, RUNGS.find((x) => x.id === 'two-en')!, c).line)), 'the question\'s English is said after it at steps 2 and 3, as at step 1 (the ladder: spoken through step 3 on the one-line reply; was steps 1-2 only before 2026-11-12)');
 // Cluster 1's brief: the frame, the answer rules and the one-line format with answers; the setup line is not in it (it goes on the newest message)
 check(cluster1Brief().startsWith(levelText(CLUSTER_1)) && /When you offer answers/.test(cluster1Brief()) && /"answers"/.test(cluster1Brief()) && !/This turn/.test(cluster1Brief()) && !/\{language\}/.test(cluster1Brief()), 'cluster 1 brief: the Level 1 frame, then the answer rules and the line-and-answers format, every placeholder filled');
@@ -172,7 +104,7 @@ check(fuller[0].gloss === "I'm preparing the candles." && fuller[1].gloss === 'c
   check(built.messages[built.messages.length - 1].content.endsWith(`(${setupLine(RUNGS[0])})`) && !built.system.includes(setupLine(RUNGS[0])), 'the setup line is said next to the latest message, not in the system prompt');
   check(built.system.includes(levelText(CLUSTER_1)), 'the level text stays in the system prompt');
 }
-check(/turnNote: noteOf\(shape, setupLine\(setup\)\)/.test(readFileSync('lib/conversation/take-turn.ts', 'utf8')), 'the game puts the setup (with any shape) next to the latest message');
+check(/note: noteOf\(shape, setupLine\(setup\)\)/.test(readFileSync('lib/conversation/take-turn.ts', 'utf8')), 'the game puts the setup (with any shape) next to the latest message');
 const stored = exchangeTurns({ reply: { line: 'x', en: 'y', parts: [{ kind: 'word', text: 'Preparo las velas.', en: 'I prepare the candles.', gloss: 'preparing the candles' }] } } as never, new Date().toISOString());
 check((stored[0] as { parts?: { gloss?: string; en?: string }[] }).parts?.[0].gloss === 'preparing the candles' && (stored[0] as { parts?: { en?: string }[] }).parts?.[0].en === 'I prepare the candles.', 'stored parts keep their gloss and English');
 // The setup mix (Renata, 2026-11-10)
@@ -206,12 +138,26 @@ check(v.startsWith('beginner-2-') && !stageInVersion(v), `Beginner 2 turns carry
 
 const route = readFileSync('app/v1/turn/route.ts', 'utf8');
 const take = readFileSync('lib/conversation/take-turn.ts', 'utf8');
-check(/flowingLine\(parts\)/.test(take) && /promptFile: BEGINNER_2_FILE/.test(take) && !/canRetry: p\.canRetry, promptFile: BEGINNER_2_FILE[^\n]*onText/.test(take), 'the spoken line is rebuilt from the rewritten parts, and the voice waits for them');
-check(/beginnerVersion: beginnerVersionFrom\(request\.headers\)/.test(route) && /beginnerCluster: clusterHeaderFrom\(request\.headers\)/.test(route), 'the route passes the switch and the cluster to the turn');
-check(/const newBeginner = p\.beginnerVersion !== 1;/.test(take) && /promptFile: BEGINNER_2_FILE/.test(take), 'the turn plays the new Beginner unless the old one is asked for');
-check(/onPath !== null && \(newBeginner \|\| onPath\.stage\.path === 'beginner'\)/.test(take) && /!newBeginner && onPath\?\.stage\.path === 'character'/.test(take), 'a learner past the old stage 3 plays the new Beginner too, not the character prompt with a Beginner block');
-check(/: beginner && onPath\n\s+\? \/\/ Beginner 1 as it has always run[^\n]*\n\s+await runBeginnerTurn\(\{ character, transcript: transcript\.map\(\(\{ offered: _offered, \.\.\.t \}\) => t\), learnerSaid, memory, addressedAs, laps: p\.laps, onText: p\.onText, canRetry: p\.canRetry, stageText: stageText\(onPath\.stage/.test(take), 'Beginner 1\'s turn is unchanged: same stage text, and still without the offered answers (no heard note)');
-check(/promptFile: BEGINNER_2_FILE/.test(take) && !/setup[\s\S]{0,40}transcript\.map\(\(\{ offered/.test(take.slice(take.indexOf('beginner && onPath && setup'), take.indexOf(': beginner && onPath\n'))), 'Beginner 2 keeps the offered answers, so its heard note works');
+// The old Beginner is gone from the turn (Josh, 2026-11-15: switch off "the old Beginner and its Old/New switch … then
+// the stages, paths and parts format"): the header older apps still send is read nowhere, a Beginner is decided from
+// the level alone, and an ordinary Beginner visit has one way to play, the one-line reply
+check(/beginnerCluster: clusterHeaderFrom\(request\.headers\)/.test(route), 'the route passes the app\'s cluster to the turn');
+{
+  const levelUpRoute = readFileSync('app/v1/level-up/route.ts', 'utf8');
+  const levelUp = readFileSync('lib/level-up.ts', 'utf8');
+  const lib2 = readFileSync('lib/beginner-2.ts', 'utf8');
+  const code = (src: string) => src.replace(/\/\*[\s\S]*?\*\//g, '').replace(/^\s*\/\/.*$/gm, '').replace(/\s\/\/ .*$/gm, '');
+  for (const [name, src] of [['the turn route', route], ['the turn', take], ['the level-up route', levelUpRoute], ['the level up', levelUp], ['lib/beginner-2.ts', lib2]] as const) {
+    check(!/x-fuori-beginner|beginnerVersion|newBeginner/.test(code(src)), `${name} no longer reads the Old/New Beginner switch (x-fuori-beginner)`);
+  }
+  check(/isBeginner = learnerLevel === 'beginner' \|\| learnerLevel === null;/.test(take) && /const beginner = !welcome && isBeginner;/.test(take), 'a Beginner is decided from the level alone: Beginner, or no level yet');
+  check(/const drawn = beginner && !p\.lesson\n\s*\? pickSetup\(/.test(take), 'every Beginner\'s ordinary visit draws a setup (the Beginner level of lib/beginner-2.ts)');
+  check(!/onPath|pathState|stageFor|stageText\(|stageTag|pathLevel|lib\/path/.test(code(take)), 'no path or stage is left in the turn');
+  check(!/promptFile|shapeParts|flowingLine|onFrame/.test(code(take)), 'no parts-format Beginner visit is left in the turn (the welcome and lessons keep the parts format)');
+  // The parts format is still there for the welcome and lessons
+  check((code(take).match(/runBeginnerTurn\(/g) ?? []).length === 2 && /stageText: lessonBriefed\.brief/.test(take) && /stageText: welcomeBrief\(/.test(take), 'runBeginnerTurn is called twice: for a lesson and for the welcome');
+  check(!/transcript\.map\(\(\{ offered/.test(take), 'a Beginner turn keeps the offered answers, so its heard note works');
+}
 
 // The split (Josh, 2026-11-09): the dialogue is the Intermediate prompt itself, then the scaffolding
 {

@@ -16,15 +16,13 @@ import { studyFileReady } from '@/lib/study-file';
 import { loadAddressedAs } from '@/lib/learner-address';
 import { tutor } from '@/content';
 import { onboardingState } from '@/lib/onboarding';
-import { runBeginnerTurn, beginnerPromptVersion, lineFromParts, type Part } from '@/lib/beginner';
+import { runBeginnerTurn } from '@/lib/beginner';
 import { assemblePieces, saySentences, englishOf, seedOf, SETTINGS } from '@/lib/dialogue/pieces';
 import { closeNote, helpNote } from '@/lib/dialogue/rules';
 import { idiomTurn, pickIdiom, recentIdioms, usedIdiom, idiomSaidNote, type Idiom } from '@/lib/idioms';
-import { BEGINNER_2_FILE, CLOSE_AT_INTERMEDIATE, CLUSTER_1, IDIOM, GOODBYE, CLOSE, pickSetup, levelText, setupLine, shapeParts, turnSteps, beginner2Version, type Setup, type TurnSteps, flowingLine, frameBrief, onFrame, lineWithAnswers } from '@/lib/beginner-2';
+import { CLOSE_AT_INTERMEDIATE, CLUSTER_1, IDIOM, GOODBYE, CLOSE, pickSetup, setupLine, turnSteps, beginner2Version, type Setup, type TurnSteps, frameBrief, lineWithAnswers } from '@/lib/beginner-2';
 import { pickShapes, noteOf, shapeIds } from '@/lib/shapes';
 import { storedCluster } from '@/lib/level-up';
-import { stageFor, stageTag, stageText, type Stage } from '@/lib/path';
-import { pathState } from '@/lib/conversation-record';
 import { welcomeContent, welcomed, welcomeVersion, welcomeStep, welcomeBrief, learnerLines, addressAnswers, welcomeTurnFlags } from '@/lib/welcome';
 import { lessonBrief, lessonVersion, type LessonTurn } from '@/lib/lesson';
 import type { Gender } from '@/lib/types';
@@ -76,9 +74,7 @@ export interface TakeTurnParams {
   /** Called before the reply is written, with how this turn's line is put together from what the character writes
    *  (lib/dialogue/pieces.ts): the early voice reads the line as it streams and must say it the same way */
   onAssemble?: (assemble: (text: string, partial: boolean) => string) => void;
-  /** Which Beginner plays (lib/beginner-2.ts → beginnerVersionFrom): the new one unless 1, the old one, is asked for */
-  beginnerVersion?: 1 | 2;
-  /** Beginner 2's cluster of the reply ladder from the app's header (lib/beginner-2.ts → clusterHeaderFrom); the learner's stored step otherwise (lib/level-up.ts) */
+  /** The Beginner's cluster of the reply ladder from the app's header (lib/beginner-2.ts → clusterHeaderFrom); the learner's stored step otherwise (lib/level-up.ts) */
   beginnerCluster?: Setup[];
 }
 
@@ -155,18 +151,16 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
   // A level block for learners in the trial (off unless LEVEL_TRIAL is set); never Magda
   const level = tutorPrompt ? undefined : trialLevel(learnerId);
 
-  // Beginner level dialogue (lib/beginner.ts; Josh, 2026-10-25): a Beginner,
-  // or a learner with no level yet, is on the path (lib/path.ts; Josh,
-  // 2026-11-02): the stage sets the parts reply's settings, or from step 4
-  // the character prompt with a Beginner block; never Magda
-  let onPath: { stage: Stage; supportBack: boolean } | null = null;
+  // A Beginner is a learner whose level is Beginner, or who has no level yet: decided from the level alone (the old
+  // Beginner's path and stages, and the app's Old/New switch, went 2026-11-15; Josh: "switch off"); never Magda
+  let isBeginner = false;
   let learnerLevel: string | null | undefined;
   if (learnerId && !isTutor) {
     // Not caught (Josh, 2026-11-15: "Show an error… the app already offers a retry"): a failed read used to fall
     // through to the Intermediate prompt, so a Beginner silently played at the wrong level and the visit couldn't count
     // toward the level up. Now the turn fails as a server error, which the app offers to retry
     learnerLevel = (await onboardingState(learnerId)).level;
-    if (learnerLevel === 'beginner' || learnerLevel === null) onPath = stageFor(await pathState(learnerId));
+    isBeginner = learnerLevel === 'beginner' || learnerLevel === null;
   }
   // The welcome (lib/welcome.ts): its character, for a learner who hasn't finished it, plays it in the Beginner format
   let welcome = false;
@@ -177,13 +171,11 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
       p.onSoftError('welcome', err);
     }
   }
-  // The new Beginner (the cut-over, Josh 2026-11-12) for every Beginner, whatever stage the old path had reached:
-  // its steps replace the stages. The old Beginner only when the app asks for it (x-fuori-beginner: 1)
-  const newBeginner = p.beginnerVersion !== 1;
-  const beginner = !welcome && onPath !== null && (newBeginner || onPath.stage.path === 'beginner');
-  // Beginner 2's cluster: the app's header (Josh's Cluster stepper), else the learner's stored step (level up)
+  // Every Beginner's ordinary visit plays the Beginner level of lib/beginner-2.ts (the cut-over, Josh 2026-11-12)
+  const beginner = !welcome && isBeginner;
+  // The learner's cluster: the app's header (Josh's Cluster stepper), else the learner's stored step (level up)
   let cluster = p.beginnerCluster ?? CLUSTER_1;
-  if (!p.beginnerCluster && beginner && newBeginner && learnerId) {
+  if (!p.beginnerCluster && beginner && learnerId) {
     try {
       cluster = await storedCluster(learnerId);
     } catch (err) {
@@ -191,8 +183,8 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
     }
   }
   const npcTurns = transcript.filter((t) => t.who === 'npc').length;
-  // Beginner 2's reply setup this turn (docs/beginner-2.md), when the app switched it on
-  const drawn = beginner && !p.lesson && newBeginner
+  // A Beginner's reply setup this turn (docs/beginner-2.md)
+  const drawn = beginner && !p.lesson
     ? pickSetup({ conversationId, turn: npcTurns, learnerId, characterId: character.id, learnerSaid }, cluster)
     : null;
   // An idiom, about one visit in three, in place of a turn that gives answers (D13; lib/idioms.ts): the character says it,
@@ -209,12 +201,11 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
   // The turn after an idiom: say whether they got it, and what it means
   const lastNpc = [...transcript].reverse().find((t) => t.who === 'npc');
   const idiomSaid = setup && lastNpc?.idiom ? idiomSaidNote(lastNpc.idiom) : undefined;
-  // Beginner 2: what the code did to the turn's parts, logged and saved with it; any path: the shape asked for
+  // Beginner: the setup and step played, logged and saved with the turn; any level: the shape asked for
   let steps: TurnSteps | undefined;
-  const pathLevel = !welcome && !newBeginner && onPath?.stage.path === 'character' ? onPath.stage.level : undefined;
-  // An ordinary visit at Intermediate (no path) or Beginner 2: a shape is picked per turn
-  // (lib/shapes.ts; docs/dialogue-structure-reference.md § 11). Beginner 1, the welcome, lessons and Magda: untouched
-  const shaped = !isTutor && !p.lesson && !welcome && (setup !== null || onPath === null);
+  // An ordinary visit, at Beginner or above: a shape is picked per turn
+  // (lib/shapes.ts; docs/dialogue-structure-reference.md § 11). The welcome, lessons and Magda: untouched
+  const shaped = !isTutor && !p.lesson && !welcome && (setup !== null || !isBeginner);
   // A visit opens on the character's first ordinary turn: the intro was cut (Josh, 2026-11-13; docs/bugs.md B23) and its code removed 2026-11-15
   // No note unless they asked something: then it's answered first (lib/shapes.ts)
   const shapes = shaped ? pickShapes({ learnerSaid }) : [];
@@ -234,7 +225,7 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
   // A lesson (lib/lesson.ts): every part in the Beginner format with its brief, Magda included;
   // the Intermediate lessons in the speaking mode, the character prompt with its brief
   // A cultural lesson (part story) follows the learner's level: the Beginner format below Intermediate
-  const lessonBriefed = p.lesson && learnerId ? await lessonBrief(p.lesson, learnerId, transcript, learnerSaid, undefined, p.lesson.part !== 'story' || onPath !== null) : null;
+  const lessonBriefed = p.lesson && learnerId ? await lessonBrief(p.lesson, learnerId, transcript, learnerSaid, undefined, p.lesson.part !== 'story' || isBeginner) : null;
 
   const reply: TurnOutput = lessonBriefed?.speaking
     ? // The Intermediate lessons (Josh, 2026-11-03): the character prompt with the lesson's brief, no answers to say back
@@ -252,8 +243,8 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
         const parts = step === 'opening' ? [...r.parts, ...addressAnswers()] : r.parts;
         return { ...r, parts, done: step === 'answers' && r.done === true, ...welcomeTurnFlags(step) };
       })()
-    : beginner && onPath && setup && onFrame(cluster)
-    ? // Beginner 2, cluster 1 (2026-11-10s): the English frame on the Intermediate reply, one flowing line with the
+    : beginner && setup
+    ? // A Beginner's ordinary visit, every step (cluster 1 2026-11-10s, all six 2026-11-14): the English frame on the Intermediate reply, one flowing line with the
       // level block as the brief, the path that made the list Josh judged (docs/archive/summary-and-mixed.md → Frame mix). Not the
       // parts format: there the character pulls the language out of the sentence into its own box (10q–10r). The two
       // answers to say back come with the line (2026-11-11a: the setup line on the newest message, the answers in the
@@ -268,18 +259,6 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
         steps = { ...turnSteps(out.parts, setup, cluster, []), ...(shapeId ? { shape: shapeId } : {}) };
         return out;
       })
-    : beginner && onPath && setup
-    ? // Beginner 2, steps 4-6: the parts are rewritten after the reply (glosses, English), so the
-      // spoken line is rebuilt from them, and the voice waits for the whole reply (no early first sentence:
-      // it would be spoken from the parts before they were rewritten, then again)
-      await runBeginnerTurn({ character, transcript, learnerSaid, memory, addressedAs, laps: p.laps, canRetry: p.canRetry, promptFile: BEGINNER_2_FILE, stageText: levelText(cluster), turnNote: noteOf(shape, setupLine(setup)), help: helped, maxAnswers: setup.maxAnswers, withDone: true }).then((r) => {
-        const { parts, fixes } = shapeParts(r.parts, setup, cluster);
-        steps = { ...turnSteps(r.parts, setup, cluster, fixes), ...(shapeId ? { shape: shapeId } : {}) };
-        return { ...r, ...flowingLine(parts), parts };
-      })
-    : beginner && onPath
-    ? // Beginner 1 as it has always run in the app: without the offered answers, so no heard note (production untouched, Josh)
-      await runBeginnerTurn({ character, transcript: transcript.map(({ offered: _offered, ...t }) => t), learnerSaid, memory, addressedAs, laps: p.laps, onText: p.onText, canRetry: p.canRetry, stageText: stageText(onPath.stage, character.role), maxAnswers: onPath.stage.answers, withDone: true })
     : await runTurn({
     character,
     transcript,
@@ -288,7 +267,7 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
     addressedAs,
     system: tutorPrompt?.system,
     firstTurn: tutorPrompt?.firstTurn,
-    level: pathLevel ?? level,
+    level,
     // Intermediate: this turn's shape, when a signal fired (lib/shapes.ts); nothing otherwise
     // A long visit's close (the 15th turn; Josh, 2026-11-13): the character closes it itself
     note: noteOf(shape, closing ? closeNote() : undefined),
@@ -317,7 +296,7 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
     ? welcomeVersion()
     : setup
     ? beginner2Version(cluster)
-    : `${beginner ? beginnerPromptVersion() : promptVersion(pathLevel ?? level)}${onPath ? stageTag(onPath.stage, onPath.supportBack) : ''}`;
+    : promptVersion(level);
   console.log(
     JSON.stringify({
       level: 'info',
@@ -326,7 +305,7 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
       character: character.id,
       turn: transcript.length === 0 ? 'opening' : 'reply',
       promptVersion: version,
-      // Beginner 2: this turn's rung of the reply ladder, its cluster, and the code's fixes to Claude's parts (lib/beginner-2.ts)
+      // Beginner: this turn's rung of the reply ladder and its cluster (lib/beginner-2.ts)
       ...(setup ? { setup: setup.id } : {}),
       ...(steps ? { cluster: steps.cluster, fixes: steps.fixes } : {}),
       ...(steps?.shape ? { shape: steps.shape } : {}),

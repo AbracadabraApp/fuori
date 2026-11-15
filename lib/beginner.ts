@@ -218,7 +218,7 @@ export function buildBeginnerPrompt(p: {
   memory?: RememberedLearner;
   addressedAs?: Gender;
   now?: Date;
-  /** The path's stage (lib/path.ts → stageText): leveling.md blocks added after the system prompt */
+  /** The brief added after the system prompt: the welcome's step or a lesson's part (the old Beginner's stage text, until 2026-11-15) */
   stageText?: string;
   /** Said next to the learner's latest message, where the model weighs it most (Beginner 2's setup line, 2026-11-09: in the system prompt it lost to the pattern of the character's own recent turns) */
   turnNote?: string;
@@ -319,7 +319,7 @@ export class PartsWatcher {
 }
 
 /** One Beginner turn: the parts, and the line and English derived from them */
-export async function runBeginnerTurn(p: Parameters<typeof buildBeginnerPrompt>[0] & { /** internal: the one retry after a reply that ran past the limit */ retried?: boolean; laps?: Laps; onText?: (snapshot: string) => void; canRetry?: () => boolean; /** The stage's answers to say back, at most (lib/path.ts) */ maxAnswers?: number; /** The reply also says whether this is its last turn (the welcome; an ordinary conversation, on their goodbye) */ withDone?: boolean }): Promise<{ line: string; en: string; parts: Part[]; done?: boolean }> {
+export async function runBeginnerTurn(p: Parameters<typeof buildBeginnerPrompt>[0] & { /** internal: the one retry after a reply that ran past the limit */ retried?: boolean; laps?: Laps; onText?: (snapshot: string) => void; canRetry?: () => boolean; /** Answers to say back kept, at most */ maxAnswers?: number; /** The reply also says whether this is its last turn (the welcome; an ordinary conversation, on their goodbye) */ withDone?: boolean }): Promise<{ line: string; en: string; parts: Part[]; done?: boolean }> {
   const prompt = buildBeginnerPrompt(p);
   const started = performance.now();
   // A deadline and one retry (lib/claude.ts): a stalled reply hung Doña Rosa

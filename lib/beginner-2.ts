@@ -2,9 +2,10 @@
  * The Beginner level (docs/beginner-2.md; called "Beginner 2" while it was played beside the old one): the
  * Intermediate prompt as the dialogue, with the scaffolding (content/<country>/prompts/scaffolding.md) and the reply
  * setup picked here each turn from the learner's step. Every Beginner plays it since the cut-over (Josh, 2026-11-12:
- * "the sooner we cut over the clearer this will be"); the old Beginner (lib/beginner.ts with its stages) plays only
- * when the app sends `x-fuori-beginner: 1` (Settings → touch and hold Version → Beginner: Old), for a week of
- * comparison before it goes.
+ * "the sooner we cut over the clearer this will be"). The old Beginner, its stages and the Old/New switch
+ * (`x-fuori-beginner`, which older apps still send and nothing reads) went 2026-11-15, with this Beginner's own
+ * parts-format reply (every step is the one-line reply since 2026-11-14); the parts format stays for the welcome and
+ * lessons (lib/beginner.ts).
  *
  * The reply ladder (docs/beginner-2.md): eight rungs by how much of the language a reply takes, played in six
  * overlapping steps (`CLUSTERS` in code). The learner's step is the stored one (lib/level-up.ts), or the app's hidden
@@ -14,16 +15,8 @@
  */
 import { fill, readPromptFile } from '@/lib/prompts/template';
 import { language } from '@/content';
-import { glossEchoes, type Part } from '@/lib/beginner';
-
-export { SCAFFOLDING_FILE as BEGINNER_2_FILE } from '@/lib/beginner';
-import { SCAFFOLDING_FILE } from '@/lib/beginner';
+import { SCAFFOLDING_FILE, type Part } from '@/lib/beginner';
 import { closeNote } from '@/lib/dialogue/rules';
-
-/** Which Beginner plays: the new one (2) unless the app asks for the old one with `x-fuori-beginner: 1` (the cut-over, 2026-11-12) */
-export function beginnerVersionFrom(headers: Headers): 1 | 2 {
-  return headers.get('x-fuori-beginner')?.trim() === '1' ? 1 : 2;
-}
 
 export interface Setup {
   id: string;
@@ -33,7 +26,7 @@ export interface Setup {
   maxAnswers: number;
   /** The English under each answer shown */
   english: boolean;
-  /** An invited English answer: the code adds the invitation and the question's English (invited) */
+  /** An invited English answer */
   invite?: boolean;
   /** Words filled into the block (the idiom turn: {idiom}, {picture}, {meaning}) */
   vars?: Record<string, string>;
@@ -207,128 +200,12 @@ export function setupText(setup: Setup, cluster: Setup[] = CLUSTER_1): string {
   return [fill(f.block(level), { language: language.name }).trim(), setupLine(setup)].join('\n');
 }
 
-/**
- * English on every turn (Josh, 2026-11-09: "almost no character dialogue in english"): a turn
- * with no English part and no gloss gets the English of her question (or of her last phrase)
- * as its gloss, so it's heard after the language. The prompt asks for it; this makes sure
- */
-export function withEnglish(parts: Part[]): Part[] {
-  const said = parts.filter((x) => x.kind !== 'answer');
-  if (said.some((x) => (x.kind === 'english' && x.text.trim()) || ((x.kind === 'word' || x.kind === 'question') && x.gloss?.trim()))) return parts;
-  const target = [...said].reverse().find((x) => x.kind === 'question' && x.en.trim()) ?? [...said].reverse().find((x) => x.kind === 'word' && x.en.trim());
-  return target ? parts.map((x) => (x === target ? { ...x, gloss: x.en } : x)) : parts;
-}
-
-/**
- * An invited English answer, made sure of in code: twice live (Doña Chayo, 2026-11-09) the character asked a
- * plain yes/no question in the language instead. Her question gets its English spoken, and the "Line: invite
- * English" block is said after it, unless the turn already says English answers are fine
- */
-export function invited(parts: Part[]): Part[] {
-  const lead = fill(readPromptFile(SCAFFOLDING_FILE).block('Line: invite English'), { language: language.name }).trim();
-  // Anywhere in what's said: the character sometimes writes the invitation into the question itself (Hugo, 2026-11-09)
-  const english = parts.filter((x) => x.kind !== 'answer').map((x) => `${x.text} ${x.gloss ?? ''} ${x.kind === 'question' ? x.en : ''}`).join(' ').toLowerCase();
-  // Already invited, in the character's own words ("ask me in English", "you can ask me anything")
-  const lang = language.name.toLowerCase();
-  const already = new RegExp(`ask me (anything|in english|in ${lang})|in (english|${lang}) or`).test(english);
-  const echoed = parts.some((x, i) => x.kind === 'question' && parts[i + 1]?.kind === 'english');
-  const out = echoed ? parts : parts.map((x) => (x.kind === 'question' && !x.gloss?.trim() && x.en.trim() ? { ...x, gloss: x.en } : x));
-  return already ? out : [...out.filter((x) => x.kind !== 'answer'), { kind: 'english', text: lead, en: '', gloss: '' }];
-}
-
-/** Clusters where the question is echoed in English right after it (Level 1) */
-export const QUESTION_ECHO = [true, true, false, false, false, false];
 /** On the one-line reply, the question's English is said after it, added by code when the character left it out: Josh's
  *  ladder (2026-11-12; dialogue-model.md): said at steps 1–5, not at step 6 */
 export const QUESTION_ECHO_FRAME = [true, true, true, true, true, false];
 /** The question's English printed under it: steps 1–3 only (the same ladder); steps 4–5 hear it, step 6 neither */
 export const QUESTION_PRINTED = [true, true, true, false, false, false];
 
-/**
- * Level 1: the question in the language, then its English right after (Josh, 2026-11-09: "questions
- * should be spanish then english - near same is fine"). Added as an English piece after the question,
- * not as its gloss: with answers shown a question's gloss isn't spoken (lib/beginner.ts → lineFromParts,
- * mirrored by the app), while an English piece is spoken by both
- */
-/**
- * Level 1: a gloss of one word on a phrase of three or more words becomes the phrase's English, so the
- * sentence is understood (Josh, 2026-11-09, Lupita: "Estoy preparando las velas. candles." against
- * the second time's "preparing the candles", which explained what she was doing)
- */
-export function fullerGlosses(parts: Part[]): Part[] {
-  const words = (s: string) => s.trim().split(/\s+/).filter(Boolean).length;
-  return parts.map((x) => (x.kind === 'word' && x.gloss?.trim() && words(x.gloss) === 1 && words(x.text) >= 3 && x.en.trim() ? { ...x, gloss: x.en } : x));
-}
-
-export function questionEcho(parts: Part[]): Part[] {
-  const i = parts.findIndex((x) => x.kind === 'question');
-  if (i < 0) return parts;
-  const q = parts[i];
-  // Its full English (the gloss can hold something else: "you can answer in English")
-  const en = q.en.trim() || q.gloss?.trim() || '';
-  // English on either side is enough (Josh: "it could go english-spanish or spanish english"): an English question
-  // just before it ("What can I get you? ¿Qué le sirvo?") or English just after means no echo, so nothing is said three times
-  const before = parts[i - 1];
-  const englishBefore = before?.kind === 'english' && /\?["'»”’)]*\s*$/.test(before.text.trim());
-  if (!en || glossEchoes(en, q.text) || englishBefore || parts[i + 1]?.kind === 'english') return parts;
-  return [...parts.slice(0, i), { ...q, gloss: '' }, { kind: 'english', text: en, en: '', gloss: '' }, ...parts.slice(i + 1)];
-}
-
-/**
- * The character announcing the answers ("You could ask me one of these:", "Here are two things you can say:"):
- * a closing English sentence that ends on a colon, just before the bubbles, is dropped; the bubbles speak for
- * themselves (automated runs, 2026-11-10: 36 of 42 announcements on questions-to-ask turns; Josh: "a teacher
- * managing the lesson"). By punctuation, so any language
- */
-export function withoutAnnouncing(parts: Part[]): Part[] {
-  if (!parts.some((x) => x.kind === 'answer')) return parts;
-  return parts
-    .map((x) => {
-      if (x.kind !== 'english') return x;
-      const sentences = x.text.split(/(?<=[.!?:])\s+/);
-      const kept = sentences.filter((s) => !/:\s*$/.test(s.trim()));
-      return kept.length === sentences.length ? x : { ...x, text: kept.join(' ').trim() };
-    })
-    .filter((x) => x.kind !== 'english' || x.text);
-}
-
-/**
- * The spoken line for the English frame (Level 1, 2026-11-10q): the pieces in order, as lineFromParts, but a piece
- * with no closing punctuation gets a comma when the next piece carries the sentence on (starts lowercase: "picadas on"
- * + "el comal" + "and they're hot") and a full stop only before a new sentence. lineFromParts puts a full stop after
- * every piece, which was right when every part was a sentence (connection test, 2026-11-10: "picadas on. el comal. and")
- */
-export function flowingLine(parts: Part[]): { line: string; en: string } {
-  const spoken = withoutSaidInEnglish(parts).filter((p) => p.kind !== 'answer');
-  const answered = parts.some((p) => p.kind === 'answer' && p.text.trim());
-  // Each piece with whether it is a gloss: a gloss is set off by commas ("el comal, the griddle,"); a phrase inside an
-  // English sentence is joined with plain spaces ("a batch of tejuino here"), not commas (run 2026-11-10: "a fresh batch of, tejuino, here")
-  const pieces = spoken.flatMap((p) => [{ text: p.text.trim(), gloss: false }, { text: p.kind === 'question' && answered ? '' : p.gloss?.trim() ?? '', gloss: true }]).filter((x) => x.text);
-  const closed = (s: string) => /[.!?…:;,]["'»”’)]*$/.test(s);
-  const continues = (s: string) => /^[\p{Ll}]/u.test(s);
-  const line = pieces
-    .map((piece, i) => {
-      const next = pieces[i + 1];
-      if (closed(piece.text)) return piece.text;
-      if (!next || !continues(next.text)) return `${piece.text}.`;
-      return piece.gloss || next.gloss ? `${piece.text},` : piece.text;
-    })
-    .join(' ');
-  const en = spoken.map((p) => (p.kind === 'english' ? p.text : p.en).trim()).filter(Boolean);
-  return { line, en: en.join(' ') };
-}
-
-/**
- * A word part whose text the character already said inside an English part (the frame invites "my polish, la grasa"
- * as English text, then "la grasa" again as a word part: run 2026-11-10, "el comal… el comal.") is dropped from what's
- * spoken; it stays on screen as the turn's bubble. By text, so any language
- */
-export function withoutSaidInEnglish(parts: Part[]): Part[] {
-  // Not the question's echo (the English part right after the question, added by questionEcho): it names the same
-  // things as her phrases ("Do you want to try a tejuino?"), which dropped "tejuino" from speech (run 2026-11-10)
-  const english = parts.filter((p, i) => p.kind === 'english' && parts[i - 1]?.kind !== 'question').map((p) => p.text.toLowerCase()).join(' ');
-  return parts.filter((p) => !(p.kind === 'word' && p.text.trim() && english.includes(p.text.trim().replace(/[.!?…]+$/, '').toLowerCase())));
-}
 
 /**
  * The question's English after it, on the one-line reply (cluster 1, 2026-11-10s): when the line ends on a question
@@ -356,17 +233,13 @@ export function cluster1Brief(): string {
   return frameBrief(CLUSTER_1);
 }
 
-/** The brief for a cluster on the one-line reply (clusters 1–3, 2026-11-11d: steps 1 to 3 of the ladder are the frame with less English each step) */
+/** The brief for a step on the one-line reply (every step since 2026-11-14) */
 export function frameBrief(cluster: Setup[]): string {
   const f = readPromptFile(SCAFFOLDING_FILE);
   return [levelText(cluster), f.block('System prompt › Answers'), f.block('Reply: line and answers')]
     .map((b) => fill(b, { language: language.name }).trim())
     .join('\n\n');
 }
-
-/** Clusters that play on the one-line reply (the frame) rather than the parts format */
-export const FRAME_CLUSTERS = 6;
-export const onFrame = (cluster: Setup[]): boolean => Math.max(0, CLUSTERS.indexOf(cluster)) < FRAME_CLUSTERS;
 
 /**
  * The one-line reply with its answers as the app's parts: the line with the question's English after it
@@ -474,7 +347,7 @@ export function questionOf(line: string, en: string): { text: string; en: string
   return { text: q.trim(), en: qEn };
 }
 
-/** What the code did to one turn's parts: the setup and cluster it played, the shaping steps that changed something, and Claude's parts when one did */
+/** What is recorded of one turn: the setup and cluster it played and the shape asked for. `fixes` and `claudeParts` were the parts format's shaping (gone 2026-11-15); `fixes` stays, empty, for the records that read it */
 export interface TurnSteps {
   /** Beginner 2: the reply setup played (two answers, questions to ask, opener, goodbye) */
   setup?: string;
@@ -482,36 +355,8 @@ export interface TurnSteps {
   cluster?: number;
   fixes: string[];
   claudeParts?: Part[];
-  /** The shape code asked for this turn (lib/shapes.ts), or the intro (lib/intro.ts); absent on a turn written by habit */
+  /** The shape code asked for this turn (lib/shapes.ts); absent on a turn written by habit */
   shape?: string;
-}
-
-/**
- * Display: English on every turn; the question's English where the cluster echoes it; the invitation where set up.
- * Each step is named, and the names of those that changed the parts are returned, so a turn shows what the code fixed
- */
-export function shapeParts(raw: Part[], setup: Setup, cluster: Setup[] = CLUSTER_1): { parts: Part[]; fixes: string[] } {
-  const fixes: string[] = [];
-  const step = (name: string, f: (x: Part[]) => Part[]) => (x: Part[]) => {
-    const y = f(x);
-    if (JSON.stringify(y) !== JSON.stringify(x)) fixes.push(name);
-    return y;
-  };
-  const at = Math.max(0, CLUSTERS.indexOf(cluster));
-  const echo = (x: Part[]) => (QUESTION_ECHO[at] ? step('questionEcho', questionEcho)(step('fullerGlosses', fullerGlosses)(x)) : x);
-  const parts = step('withoutAnnouncing', withoutAnnouncing)(step('withEnglish', withEnglish)(raw));
-  const done = (x: Part[]) => ({ parts: x, fixes });
-  if (setup.invite) return done(step('invited', invited)(echo(parts)));
-  // Questions to ask, and none came (the character asked its own, deep in a visit): treated as an invited
-  // English answer, so the learner always has a way to answer (2026-11-09, a twelve-turn look: 4 of 5)
-  if (setup.id === 'ask-en' && !parts.some((x) => x.kind === 'answer' && x.text.trim())) return done(step('invited', invited)(echo(parts)));
-  if (QUESTION_ECHO[at]) return done(echo(parts));
-  return done(setup.english ? parts : step('answersWithoutEnglish', (x) => x.map((y) => (y.kind === 'answer' ? { ...y, en: '' } : y)))(parts));
-}
-
-/** The parts as shown and spoken (shapeParts without the record of what changed) */
-export function shownParts(raw: Part[], setup: Setup, cluster: Setup[] = CLUSTER_1): Part[] {
-  return shapeParts(raw, setup, cluster).parts;
 }
 
 /** What to record of a turn's shaping (TurnSteps): Claude's parts only when the code changed them */

@@ -17,7 +17,7 @@ import { anthropic, CLAUDE_MODEL, replyText } from '@/lib/claude';
 import { cities } from '@/content';
 import { characterForPlace } from '@/lib/characters/for-place';
 import { runBeginnerTurn } from '@/lib/beginner';
-import { STAGES, stageText } from '@/lib/path';
+import { STAGES, stageText } from '@/tests/experiments/stages';
 import { buildMemoryPrompt } from '@/lib/prompts/build-memory-prompt';
 import { memoryOutputJsonSchema } from '@/lib/prompts/memory-output-schema';
 import type { Turn } from '@/lib/types';

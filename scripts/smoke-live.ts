@@ -139,12 +139,12 @@ async function appApi(cityId: string, placeId: string, characterId: string, said
   !(o.intro?.length) && kinds.length === 2 && kinds.every((k) => k === 'answer') && o.stage === null && o.line?.length > 0 && o.promptVersion?.startsWith('beginner-2-')
     ? pass(`v1 turn: the Beginner opens on a line and 2 answers, no intro (${o.promptVersion})`)
     : fail('v1 turn Beginner opening', JSON.stringify({ intro: o.intro?.length, parts: o.parts, stage: o.stage, promptVersion: o.promptVersion }).slice(0, 300));
-  // The old Beginner, while the hidden switch can still ask for it (a week from the cut-over): in parts, with a question
+  // The old Beginner is gone (2026-11-15): the header an older app's Old/New switch still sends changes nothing
   const old = (await (await v1('/v1/turn', { cityId, placeId }, { 'x-fuori-beginner': '1' })).json()) as { parts?: { kind: string }[]; stage?: unknown; promptVersion?: string };
   const oldKinds = (old.parts ?? []).map((p) => p.kind);
-  oldKinds.includes('question') && oldKinds.includes('answer') && old.stage === null && old.promptVersion?.startsWith('beginner-') && !old.promptVersion.startsWith('beginner-2-')
-    ? pass(`v1 turn: the old Beginner when asked for (${oldKinds.join(', ')})`)
-    : fail('v1 turn old Beginner', JSON.stringify({ parts: old.parts, stage: old.stage, promptVersion: old.promptVersion }).slice(0, 300));
+  oldKinds.length === 2 && oldKinds.every((k) => k === 'answer') && old.stage === null && old.promptVersion === o.promptVersion
+    ? pass('v1 turn: the old Beginner header (x-fuori-beginner: 1) is ignored, the same Beginner plays')
+    : fail('v1 turn old Beginner header', JSON.stringify({ parts: old.parts, stage: old.stage, promptVersion: old.promptVersion }).slice(0, 300));
   // Two learner lines: memory is only written after at least two (lib/remember.ts)
   let reply = open;
   let r: { line?: string; conversationId?: string; stage?: unknown } = {};

@@ -10,8 +10,9 @@
  * - turns in their own words, said back (one of the answers the game
  *   offered), in English, help asks about one word, help asks for the whole
  *   line
- * - for a learner on the path (lib/path.ts): the step and stage it played,
- *   how it felt (easy, hard, neither) and why, and the path's state after it
+ * - for an Intermediate learner: how it felt (easy, hard, neither) and why,
+ *   and the run of hard ones (the old Beginner's path, its step and stage per
+ *   conversation, went 2026-11-15; older records still carry them)
  *
  * Which language each line was in and what kind of help it asked for comes
  * from one call (content/<country>/prompts/record.md); said back is compared
@@ -26,8 +27,8 @@ import { anthropic, TURN_MODEL, replyText, WAITING } from '@/lib/claude';
 import { cities, country, language, tutor } from '@/content';
 import { query } from '@/lib/db';
 import { readPromptFile, fill } from '@/lib/prompts/template';
-import { setLevel, type Level } from '@/lib/onboarding';
-import { decide, INTERMEDIATE_STEP, RULES, startAt, type Felt, type PathState } from '@/lib/path';
+import type { Level } from '@/lib/onboarding';
+import { INTERMEDIATE_STEP, RULES, startAt, type Felt, type PathState } from '@/lib/path';
 
 let tableReady = false;
 async function ensureTable() {
@@ -229,36 +230,12 @@ export async function labelLines(turns: StoredTurn[], name: string): Promise<Lab
   return out;
 }
 
-// ---------- The path's state ----------
+// ---------- The state kept with a record ----------
 
-/** The stage tag in a prompt version ("beginner-2026-10-29+S2+back"), lib/path.ts → stageTag */
+/** The stage tag the old Beginner put in a prompt version ("beginner-2026-10-29+S2+back"); nothing writes one since 2026-11-15, older conversations still have them */
 export function stageInVersion(version: string | null): { stage: string; supportBack: boolean } | null {
   const m = /\+(S\d)(\+back)?/.exec(version ?? '');
   return m ? { stage: m[1], supportBack: !!m[2] } : null;
-}
-
-/**
- * Where a learner is on the path: the state after their last recorded
- * conversation on it, or the first step. A learner who chose Beginner again
- * after reaching Intermediate starts at the first step.
- */
-export async function pathState(learnerId: string, leaveOut: string | null = null): Promise<PathState> {
-  await ensureTable();
-  // Records from before the welcome placed them (lib/welcome.ts → placedAt) don't count;
-  // nor does the record being rewritten (recordConversation), so it isn't counted twice
-  const r = await query<{ state: PathState }>(
-    `SELECT state FROM conversation_records r WHERE learner_id = $1 AND state IS NOT NULL
-       AND at > COALESCE((SELECT (onboarding->>'placedAt')::timestamptz FROM learners WHERE id = $1), 'epoch')
-       AND conversation_id IS DISTINCT FROM $2
-     ORDER BY at DESC LIMIT 1`,
-    [learnerId, leaveOut]
-  );
-  const s = r.rows[0]?.state;
-  if (s) return s.step < INTERMEDIATE_STEP ? s : startAt(1);
-  // Nothing recorded on the path yet: where onboarding placed them (lib/path.ts → placement)
-  const placed = await query<{ step: number | null }>("SELECT (onboarding->>'startStep')::int AS step FROM learners WHERE id = $1", [learnerId]);
-  const step = placed.rows[0]?.step;
-  return startAt(step && step >= 1 && step < INTERMEDIATE_STEP ? step : 1);
 }
 
 /** An Intermediate learner's run of hard conversations, from their last record */
@@ -279,10 +256,10 @@ export interface ExistingRecord { learnerTurns: number; moved: boolean; latest: 
  * early and go on: backgrounding or a locked phone ends it (the app's one
  * leave function), and coming back continues the same conversation (Josh's
  * Giulia and Elira, 2026-11-08: 12 and 18 turns, recorded at 5 and 4, so
- * neither counted on the path). It's rewritten when it has more learner
- * turns than its record, unless that record already moved the learner (the
- * level has changed on it) or a later conversation's record was built on
- * it (not the learner's latest). The path still moves once per conversation.
+ * neither counted on the old path). It's rewritten when it has more learner
+ * turns than its record, unless that record already moved the learner (an
+ * old path record: the level changed on it) or a later conversation's record
+ * was built on it (not the learner's latest).
  */
 export function recordAction(existing: ExistingRecord | null, learnerTurns: number): 'write' | 'rewrite' | 'keep' {
   if (!existing) return 'write';
@@ -310,7 +287,7 @@ export async function recordConversation(conversationId: string, learnerId: stri
   if (!row || row.character_id === tutor?.id || row.prompt_version?.startsWith('onboarding')) return 'none';
   const action = recordAction(row.existing, row.turns.filter((t) => t.who === 'learner').length);
   if (action === 'keep') return 'none';
-  // Rewriting: the path state from before this conversation, not its own first record
+  // Rewriting: the state from before this conversation, not its own first record
   const leaveOut = action === 'rewrite' ? conversationId : null;
 
   const name = cities.flatMap((c) => c.characters ?? []).find((c) => c.id === row.character_id)?.name ?? 'Them';
@@ -318,16 +295,10 @@ export async function recordConversation(conversationId: string, learnerId: stri
   const silent = !row.turns.some((t) => t.who === 'learner');
   const counts = silent ? countsOf([]) : countsOf(await labelLines(row.turns, name));
 
-  // On the path: a Beginner, or no level yet, whose conversation played a stage
+  // A conversation the old Beginner played carries a stage tag (none written since 2026-11-15); its stage is still recorded
   const played = stageInVersion(row.prompt_version);
-  const onPath = played && (row.level === 'beginner' || row.level === null);
   let path: { step: number; felt: Felt; why: string; moved: boolean; state: PathState } | null = null;
-  if (onPath && !silent) {
-    const before = await pathState(learnerId, leaveOut);
-    const { felt, why, counted } = feltOf(counts);
-    const { next, moved } = decide(before, felt, counted);
-    path = { step: before.step, felt, why, moved, state: next };
-  } else if (row.level === 'intermediate' && !played && !row.prompt_version?.startsWith('lesson-')) {
+  if (row.level === 'intermediate' && !played && !row.prompt_version?.startsWith('lesson-')) {
     // Intermediate: how it felt and the run of hard ones are still recorded, but nobody is moved back to Beginner
     // (Josh, 2026-11-15: "we arent ready for downlevelling yet"; the level is the learner's choice, and the old
     // score-based move undid a chosen Intermediate, then the level up offered it again). RULES.backFromIntermediate unused
@@ -337,7 +308,7 @@ export async function recordConversation(conversationId: string, learnerId: stri
     path = { step: INTERMEDIATE_STEP, felt, why, moved: false, state: { ...before, hardRun } };
   }
 
-  const inserted = await query(
+  await query(
     `INSERT INTO conversation_records (conversation_id, learner_id, country, character_id, prompt_version, learner_turns, words, words_language, words_own, own_turns, said_back, english, help_word, help_whole, step, stage, felt, felt_why, moved, state, reply_ranks)
      VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12, $13, $14, $15, $16, $17, $18, $19, $20, $21)
      ON CONFLICT (conversation_id) DO UPDATE SET prompt_version = EXCLUDED.prompt_version, learner_turns = EXCLUDED.learner_turns, words = EXCLUDED.words, words_language = EXCLUDED.words_language, words_own = EXCLUDED.words_own, own_turns = EXCLUDED.own_turns, said_back = EXCLUDED.said_back, english = EXCLUDED.english, help_word = EXCLUDED.help_word, help_whole = EXCLUDED.help_whole, step = EXCLUDED.step, stage = EXCLUDED.stage, felt = EXCLUDED.felt, felt_why = EXCLUDED.felt_why, moved = EXCLUDED.moved, state = EXCLUDED.state, reply_ranks = EXCLUDED.reply_ranks
@@ -345,8 +316,6 @@ export async function recordConversation(conversationId: string, learnerId: stri
     [conversationId, learnerId, country, row.character_id, row.prompt_version, counts.learnerTurns, counts.words, counts.wordsLanguage, counts.wordsOwn, counts.ownTurns, counts.saidBack, counts.english, counts.helpWord, counts.helpWhole,
       path?.step ?? null, played ? `${played.stage}${played.supportBack ? '+back' : ''}` : null, path?.felt ?? null, path?.why ?? null, path?.moved ?? null, path ? JSON.stringify(path.state) : null, JSON.stringify(counts.ranks)]
   );
-  // Past the last step of the old path: Intermediate, the character prompt as it is. Never back down (Josh, 2026-11-15)
-  if (inserted.rowCount && path?.moved && path.state.step === INTERMEDIATE_STEP) await setLevel(learnerId, 'intermediate');
   console.log(JSON.stringify({ level: 'info', event: 'record', conversationId, ...(leaveOut ? { rewritten: true } : {}), words: counts.words, wordsLanguage: counts.wordsLanguage, wordsOwn: counts.wordsOwn, ...(path ? { step: path.step, felt: path.felt, why: path.why, moved: path.moved, stepAfter: path.state.step } : {}) }));
   return 'saved';
 }
@@ -356,7 +325,7 @@ export async function recordConversation(conversationId: string, learnerId: stri
 /**
  * One line per learner, country and week, newest first: conversations, words
  * spoken per conversation, the share in the language and in their own words,
- * and for the path the steps reached and how the conversations felt (Josh,
+ * and the steps reached and how the conversations felt (Josh,
  * 2026-11-02: words spoken is the main signal; this shows whether the model
  * is working without asking). /api/admin/conversations?format=records
  */

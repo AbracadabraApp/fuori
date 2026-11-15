@@ -15,7 +15,7 @@ import { pack } from '@/content';
 import { characterForVisit } from '@/lib/characters/for-visit';
 import { setPromptOverride } from '@/lib/prompts/template';
 import { runBeginnerTurn } from '@/lib/beginner';
-import { STAGES } from '@/lib/path';
+import { STAGES } from '@/tests/experiments/stages';
 import { ask, askGrok, pool, startTest } from './common.mjs';
 import { loadMoments, replay, asTurns, type Moment } from './moments.mjs';
 import { FLOOR, noRules } from './floor-prompt.mjs';

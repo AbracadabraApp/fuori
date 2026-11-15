@@ -36,7 +36,7 @@ const fail = (what) => { problems.push(what); console.log(`  FAIL ${what}`); };
 const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
 
 const reg = await (await fetch(`${base}/v1/auth/device`, { method: 'POST' })).json();
-const stream = { Authorization: `Bearer ${reg.token}`, 'Content-Type': 'application/json', 'x-fuori-beginner': '2', Accept: 'application/x-ndjson' };
+const stream = { Authorization: `Bearer ${reg.token}`, 'Content-Type': 'application/json', Accept: 'application/x-ndjson' };
 const json = { ...stream, Accept: 'application/json' };
 
 /** One turn as the app sends it; waits out the rate limit */

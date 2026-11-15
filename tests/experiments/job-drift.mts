@@ -12,7 +12,7 @@ import { cities } from '@/content';
 import { characterForPlace } from '@/lib/characters/for-place';
 import { runBeginnerTurn } from '@/lib/beginner';
 import { runTurn } from '@/lib/turn';
-import { STAGES, stageText } from '@/lib/path';
+import { STAGES, stageText } from '@/tests/experiments/stages';
 import type { Turn } from '@/lib/types';
 
 const city = cities.find((c) => c.id === 'san-miguel-de-allende')!;

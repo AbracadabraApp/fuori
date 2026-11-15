@@ -110,7 +110,7 @@ export async function finishWelcome(learnerId: string, conversationId: string): 
     welcomed: true,
     conversationId,
     startStep,
-    // The path starts again from here, whatever was recorded before (lib/conversation-record.ts → pathState)
+    // When the welcome placed them. The old Beginner's path started again from here; nothing reads it since the path went (2026-11-15)
     placedAt: new Date().toISOString(),
     promptVersion: welcomeVersion(),
   });

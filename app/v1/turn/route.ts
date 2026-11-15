@@ -41,7 +41,7 @@ import { writeLearnAhead } from '@/lib/learn-ahead';
 import { startEarlyVoice, DEFAULT_APP_SPEED, LineWatcher } from '@/lib/voice/early-voice';
 import { PartsWatcher, type Part } from '@/lib/beginner';
 import { DraftStore } from '@/lib/draft-turns';
-import { beginnerVersionFrom, clusterHeaderFrom } from '@/lib/beginner-2';
+import { clusterHeaderFrom } from '@/lib/beginner-2';
 import { isSaidBack } from '@/lib/conversation-record';
 
 /** Asked for in Accept, the reply streams: { first }, then { reply } or { error } */
@@ -175,7 +175,7 @@ export async function POST(request: Request) {
         // Split: the rest carries on from the first sentence. Not split: the whole line
         onLine: (line, first) => (first ? voice(line.slice(first.length), first) : voice(line)),
       });
-      // Beginner turns come in parts (lib/beginner.ts): the first parts start the voice
+      // The welcome and lessons come in parts (lib/beginner.ts): the first parts start the voice
       let partsFirst: string | undefined;
       const partsWatcher = new PartsWatcher((first, leadParts) => {
         if (!onFirst) return; // the app doesn't stream: the whole line's voice is started below
@@ -206,15 +206,15 @@ export async function POST(request: Request) {
           onAssemble: (assemble) => { watcher.assemble = assemble; },
           canRetry: () => !firstSent,
           micOff: body.data.micOff,
-          // Beginner 2 when the app's hidden switch is on (lib/beginner-2.ts)
-          beginnerVersion: beginnerVersionFrom(request.headers),
+          // The app's hidden step picker, when set; the learner's stored step otherwise. (The old Old/New Beginner
+          // header, x-fuori-beginner, isn't read any more: older apps still send it)
           beginnerCluster: clusterHeaderFrom(request.headers),
           welcome: body.data.welcome,
           lesson: body.data.lesson,
         });
         if (result.reply.parts && !watcher.handled) {
-          // Beginner: the voice for the rest (after the first parts), or the whole line. Not when the line watcher
-          // already started it: Beginner 2's cluster 1 is a one-line reply whose parts are only the answers
+          // A parts reply: the voice for the rest (after the first parts), or the whole line. Not when the line watcher
+          // already started it: a Beginner's ordinary turn is a one-line reply whose parts are only the answers
           if (partsFirst && result.reply.line.startsWith(partsFirst)) voice(result.reply.line.slice(partsFirst.length), partsFirst);
           else voice(result.reply.line);
         }

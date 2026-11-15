@@ -12,7 +12,7 @@ import { startTest, pool, OUT } from './common.mjs';
 import { loadMoments, asTurns, type Moment } from './moments.mjs';
 import { characterForVisit } from '@/lib/characters/for-visit';
 import { runBeginnerTurn, buildBeginnerPrompt, type Part } from '@/lib/beginner';
-import { STAGES, stageText } from '@/lib/path';
+import { STAGES, stageText } from '@/tests/experiments/stages';
 
 const CARD_P = "B2-P (2026-11-09): Beginner 2's prompt (one prompt, the level and reply setup filled in) against today's Beginner, on stored moments";
 const CARD_S = "B2-S (2026-11-09): does Beginner 2's character follow each reply setup line? (runs with B2-P)";

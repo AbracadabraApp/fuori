@@ -204,12 +204,10 @@ async function levelAndStep(learnerId: string): Promise<{ level: Level | null; s
 /**
  * The offer for a learner who has just left this conversation, or null: not due, not their conversation, not an
  * ordinary visit at their level (the welcome, lessons and Magda don't count), or already at the top (Advanced).
- * `beginnerVersion` is the app's switch: at Beginner the offer comes only on Beginner 2
  */
-export async function levelUpOffer(learnerId: string, conversationId: string, beginnerVersion: 1 | 2 = 2): Promise<LevelUpOffer | null> {
+export async function levelUpOffer(learnerId: string, conversationId: string): Promise<LevelUpOffer | null> {
   const { level, s } = await levelAndStep(learnerId);
-  const beginner = level !== 'intermediate' && level !== 'advanced';
-  if (!moveFrom({ level, step: s.step }) || (beginner && beginnerVersion !== 2)) return null;
+  if (!moveFrom({ level, step: s.step })) return null;
   await savesDone(conversationId);
   const r = await query<{ character_id: string; place_id: string | null; city_id: string | null; prompt_version: string | null; turns: { who: 'npc' | 'learner'; text: string; en?: string; steps?: { setup?: string } }[] }>(
     'SELECT character_id, place_id, city_id, prompt_version, turns FROM conversations WHERE id = $1 AND learner_id = $2',

@@ -9,7 +9,7 @@
 import { cities } from '@/content';
 import { characterForPlace } from '@/lib/characters/for-place';
 import { runBeginnerTurn } from '@/lib/beginner';
-import { STAGES, stageText } from '@/lib/path';
+import { STAGES, stageText } from '@/tests/experiments/stages';
 import { readPromptFile } from '@/lib/prompts/template';
 import { ask } from './common.mjs';
 

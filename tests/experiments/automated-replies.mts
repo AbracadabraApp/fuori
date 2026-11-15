@@ -13,7 +13,8 @@ import { cities, language } from '@/content';
 import { characterForVisit } from '@/lib/characters/for-visit';
 import { runBeginnerTurn, lineFromParts, SCAFFOLDING_FILE, type Part } from '@/lib/beginner';
 import { TURN_MODEL } from '@/lib/claude';
-import { CLUSTERS, levelText, setupLine, shapeParts, pickSetup } from '@/lib/beginner-2';
+import { CLUSTERS, levelText, setupLine, pickSetup } from '@/lib/beginner-2';
+import { shapeParts } from './parts-shaping';
 import { summarizeWithClaude } from '@/lib/remember';
 import { repeatsFromEarlier } from '@/lib/dialogue-stats';
 import type { CharacterMemory } from '@/lib/memory';
@@ -206,7 +207,7 @@ const goodbyeTurns = [...new Set(ok.map((x) => `${x.character}|${x.visit}`))].ma
 console.log(`  goodbye turns a visit: ${goodbyeTurns.join(', ')} (a goodbye that drags on shows as more than 2)`);
 console.log(`  learner kinds: ${Object.entries(rows.reduce((m, x) => ({ ...m, [x.kind ?? 'opening']: (m[x.kind ?? 'opening'] ?? 0) + 1 }), {} as Record<string, number>)).map(([k, n]) => `${k} ${n}`).join(', ')}`);
 console.log(`  saved ${file}`);
-// Which code fixes changed Claude's parts, and how often (lib/beginner-2.ts → shapeParts)
+// Which code fixes changed Claude's parts, and how often (./parts-shaping.ts → shapeParts)
 const fixCounts = new Map<string, number>();
 for (const x of ok) for (const f of x.fixes ?? []) fixCounts.set(f, (fixCounts.get(f) ?? 0) + 1);
 console.log(`  code fixes over ${ok.length} turns: ${[...fixCounts].sort((a, b) => b[1] - a[1]).map(([f, n]) => `${f} ${n}`).join(' · ') || 'none'}`);

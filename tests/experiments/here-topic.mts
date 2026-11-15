@@ -15,7 +15,7 @@ import { join } from 'node:path';
 import { cities } from '@/content';
 import { characterForPlace } from '@/lib/characters/for-place';
 import { runBeginnerTurn } from '@/lib/beginner';
-import { STAGES, stageText } from '@/lib/path';
+import { STAGES, stageText } from '@/tests/experiments/stages';
 import { summarizeWithClaude } from '@/lib/remember';
 import type { CharacterSheet, Turn } from '@/lib/types';
 import { ask, pool, OUT } from './common.mjs';

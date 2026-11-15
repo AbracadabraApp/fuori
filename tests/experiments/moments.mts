@@ -1,6 +1,6 @@
 // The fixed moments (moments.json; docs/prompt-testing.md, rules 5 and 20),
 // replayed through the server's own turn code: a Beginner moment with its
-// stage's settings (lib/path.ts), an Intermediate one with the character
+// stage's settings (./stages.ts; the old Beginner's, no longer played by the game), an Intermediate one with the character
 // prompt, a lesson moment with its brief and Magda. A test imports these and
 // changes only the one thing it's testing (a prompt file swapped by the shell,
 // a setting passed in).
@@ -11,7 +11,7 @@ import { pack } from '@/content';
 import { characterForVisit } from '@/lib/characters/for-visit';
 import { runBeginnerTurn } from '@/lib/beginner';
 import { runTurn } from '@/lib/turn';
-import { STAGES, stageText, type StageId } from '@/lib/path';
+import { STAGES, stageText, type StageId } from '@/tests/experiments/stages';
 import { lessonBrief, type LessonTurn } from '@/lib/lesson';
 import { tutorSheet } from '@/lib/tutor';
 import type { Turn } from '@/lib/types';

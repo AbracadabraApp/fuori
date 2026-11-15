@@ -37,7 +37,7 @@ check(built.messages[built.messages.length - 1].content.endsWith(`(${helpNote()}
 
 const take = readFileSync('lib/conversation/take-turn.ts', 'utf8');
 check(/transcript\.some\(\(t\) => t\.who === 'npc' && t\.hard\) \? helpNote\(\)/.test(take), 'the turn looks for a character turn saved with hard');
-check((take.match(/help: helped/g) ?? []).length === 3, 'the help note goes to all three ordinary paths (Intermediate, Beginner steps 1-3, steps 4-6)');
+check((take.match(/help: helped/g) ?? []).length === 2, 'the help note goes to both ordinary paths (Intermediate and Advanced; Beginner, every step on the one-line reply)');
 check(readFileSync('lib/recording.ts', 'utf8').includes("...(t.hard ? { hard: true } : {})"), 'loading a conversation reads hard back');
 check(/offered, hard[,}]/.test(readFileSync('app/v1/turn/route.ts', 'utf8')), '/v1/turn passes hard from the stored transcript');
 check(/buildTurnPrompt\(\{ \.\.\.params, note: \[params\.help, params\.note\]/.test(readFileSync('lib/turn.ts', 'utf8')), 'runTurn says the help note with the turn note');

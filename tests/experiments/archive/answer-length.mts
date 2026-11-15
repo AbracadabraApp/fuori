@@ -9,7 +9,7 @@ import { anthropic, TURN_MODEL, replyText } from '@/lib/claude';
 import { cities, language, pack } from '@/content';
 import { characterForPlace } from '@/lib/characters/for-place';
 import { runBeginnerTurn } from '@/lib/beginner';
-import { STAGES, stageText } from '@/lib/path';
+import { STAGES, stageText } from '@/tests/experiments/stages';
 
 const N = Number(process.argv[2] ?? 2);
 // Eight shown places with a character, spread over the cities

@@ -1,35 +1,26 @@
-// The leveling model v0 (lib/path.ts) and each conversation's record
-// (lib/conversation-record.ts), without the database or Claude: the stages
-// each step plays, moving up on 4 easy of the last 5 counted, a support back
-// after 2 hard, the step never down; the counts and easy/hard from labelled
-// lines; the stage read back from a prompt version. Run for each country (the
-// leveling.md blocks must exist in both).
+// What is left of the leveling model v0 (lib/path.ts) and each conversation's record
+// (lib/conversation-record.ts), without the database or Claude: onboarding's placement, the counts and easy/hard
+// from labelled lines, a record rewritten when a conversation goes on, the stage read back from an old prompt
+// version. The path itself (the stages each step played, moving up on 4 easy of 5, a support back after 2 hard)
+// went with the old Beginner 2026-11-15, and its checks with it; the stages' leveling.md blocks are still read by
+// experiments (tests/experiments/stages.ts), so they're still checked in each country.
+import { readFileSync } from 'fs';
 import { pack } from '@/content';
-import { decide, INTERMEDIATE_STEP, placement, STAGES, STEPS, stageFor, stageTag, stageText, startAt, type PathState } from '@/lib/path';
+import { INTERMEDIATE_STEP, placement, startAt } from '@/lib/path';
+import * as path from '@/lib/path';
+import { STAGES, stageText } from '@/tests/experiments/stages';
+import * as record from '@/lib/conversation-record';
 import { countsOf, feltOf, isSaidBack, recordAction, stageInVersion, type LabelledLine } from '@/lib/conversation-record';
 
 const failures: string[] = [];
 const expect = (what: string, got: unknown, want: unknown) => { if (JSON.stringify(got) !== JSON.stringify(want)) failures.push(`${what}: expected ${JSON.stringify(want)}, got ${JSON.stringify(got)}`); };
 
-// Josh's fading plan within the steps, then S4
-expect('step 1 plays S1 five times', STEPS[0], ['S1', 'S1', 'S1', 'S1', 'S1']);
-expect('step 2 plays 1,2,1,1,2', [0, 1, 2, 3, 4].map((k) => stageFor({ ...startAt(2), atStep: k }).stage.id), ['S1', 'S2', 'S1', 'S1', 'S2']);
-expect('step 3 plays 2,2,2,3,3', [0, 1, 2, 3, 4].map((k) => stageFor({ ...startAt(3), atStep: k }).stage.id), ['S2', 'S2', 'S2', 'S3', 'S3']);
-expect('step 4 is the character prompt with a Beginner block', [stageFor(startAt(4)).stage.path, stageFor(startAt(4)).stage.level], ['character', 'Beginner: still you, ask']);
-expect('past step 4 is Intermediate', INTERMEDIATE_STEP, 5);
-
-// Moving up, supports back, never down
-const play = (start: PathState, felts: ('easy' | 'hard' | 'neither')[], counted = true) => felts.reduce<{ s: PathState; steps: number[] }>((a, f) => { const s = decide(a.s, f, counted).next; return { s, steps: [...a.steps, s.step] }; }, { s: start, steps: [] });
-expect('up after 4 easy', play(startAt(1), ['easy', 'easy', 'easy', 'easy']).steps, [1, 1, 1, 2]);
-expect('4 of the last 5', play(startAt(1), ['easy', 'hard', 'easy', 'easy', 'easy']).steps, [1, 1, 1, 1, 2]);
-expect('not counted: no move', play(startAt(1), ['easy', 'easy', 'easy', 'easy', 'easy'], false).steps, [1, 1, 1, 1, 1]);
-expect('never down', play(startAt(3), Array(6).fill('hard')).steps, [3, 3, 3, 3, 3, 3]);
-expect('to Intermediate from step 4', play(startAt(4), ['easy', 'easy', 'easy', 'easy']).steps, [4, 4, 4, 5]);
-const back = play(startAt(3), ['hard', 'hard']).s;
-expect('a support back after 2 hard', back.supportsBack, true);
-expect('with a support back, S2 plays S1', stageFor({ ...back, atStep: 1 }).stage.id, 'S1');
-expect('with a support back, S1 adds the support-back talk', stageFor({ ...startAt(1), supportsBack: true }).stage.blocks.includes('Talk: support back'), true);
-expect('the support goes after 2 not hard', play(back, ['neither', 'neither']).s.supportsBack, false);
+// The old path is gone from the server: no stages, no moving by counts, no path state read for a turn
+expect('the step past the old path, kept with Intermediate records', INTERMEDIATE_STEP, 5);
+expect('a state starts clean', startAt(5), { step: 5, atStep: 0, window: [], supportsBack: false, hardRun: 0, notHardRun: 0 });
+for (const gone of ['STAGES', 'STEPS', 'stageFor', 'stageText', 'stageTag', 'decide']) expect(`lib/path.ts no longer has ${gone}`, gone in path, false);
+expect('no path state is read any more', 'pathState' in record, false);
+expect('a record never moves a level (the level up does, by the learner\'s choice)', /setLevel|decide\(/.test(readFileSync('lib/conversation-record.ts', 'utf8')), false);
 
 // Placement by onboarding: fairly well → Intermediate; not yet → step 1, or step 3 in their own words
 expect('fairly well', placement({ speaks: true, ownWords: true }), { level: 'intermediate', startStep: 5 });
@@ -44,11 +35,11 @@ expect('ended again, nothing new: keep', recordAction({ learnerTurns: 18, moved:
 expect('the first record moved the level: keep', recordAction({ learnerTurns: 4, moved: true, latest: true }, 18), 'keep');
 expect('a later conversation built on it: keep', recordAction({ learnerTurns: 4, moved: false, latest: false }, 18), 'keep');
 
-// The stage in the prompt version, both ways
-expect('stage tag read back', stageInVersion(`beginner-2026-10-29${stageTag(STAGES.S2, true)}`), { stage: 'S2', supportBack: true });
+// The stage in an old conversation's prompt version
+expect('an old stage tag read back', stageInVersion('beginner-2026-10-29+S2+back'), { stage: 'S2', supportBack: true });
 expect('no stage', stageInVersion('2026-10-21'), null);
 
-// The blocks exist and fill in this country
+// The stages' blocks exist and fill in this country (experiments only)
 for (const s of Object.values(STAGES)) {
   try { if (/\{\w+\}/.test(stageText(s, 'barista'))) failures.push(`${s.id}: unfilled placeholder`); } catch (e) { failures.push(`${s.id}: ${e}`); }
 }
@@ -73,4 +64,4 @@ const hard = countsOf([line('What?', { lang: 'english', help: 'whole' }), line('
 expect('lost on 3 of 4 is hard', feltOf(hard).felt, 'hard');
 
 if (failures.length) { console.error(`[${pack.id}] FAIL\n${failures.join('\n')}`); process.exit(1); }
-console.log(`[${pack.id}] OK: the path's steps and stages, moving up, supports back, the record's counts`);
+console.log(`[${pack.id}] OK: placement, the record's counts and how it felt, old stage tags read back; no path left on the server`);

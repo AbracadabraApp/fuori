@@ -12,7 +12,7 @@ import { join } from 'node:path';
 import { cities } from '@/content';
 import { characterForPlace } from '@/lib/characters/for-place';
 import { runBeginnerTurn, type Part } from '@/lib/beginner';
-import { STAGES } from '@/lib/path';
+import { STAGES } from '@/tests/experiments/stages';
 import { summarizeWithClaude } from '@/lib/remember';
 import type { CharacterSheet, Turn } from '@/lib/types';
 import { pool, startTest } from './common.mjs';
