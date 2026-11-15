@@ -328,12 +328,13 @@ export async function recordConversation(conversationId: string, learnerId: stri
     const { next, moved } = decide(before, felt, counted);
     path = { step: before.step, felt, why, moved, state: next };
   } else if (row.level === 'intermediate' && !played && !row.prompt_version?.startsWith('lesson-')) {
-    // Intermediate: back to the path's last step after RULES.backFromIntermediate hard conversations in a row
+    // Intermediate: how it felt and the run of hard ones are still recorded, but nobody is moved back to Beginner
+    // (Josh, 2026-11-15: "we arent ready for downlevelling yet"; the level is the learner's choice, and the old
+    // score-based move undid a chosen Intermediate, then the level up offered it again). RULES.backFromIntermediate unused
     const before = await intermediateState(learnerId, leaveOut);
     const { felt, why } = silent ? { felt: 'hard' as const, why: 'left without a word' } : feltOf(counts);
     const hardRun = felt === 'hard' ? before.hardRun + 1 : 0;
-    const back = hardRun >= RULES.backFromIntermediate;
-    path = { step: INTERMEDIATE_STEP, felt, why, moved: back, state: back ? startAt(INTERMEDIATE_STEP - 1) : { ...before, hardRun } };
+    path = { step: INTERMEDIATE_STEP, felt, why, moved: false, state: { ...before, hardRun } };
   }
 
   const inserted = await query(
@@ -344,9 +345,8 @@ export async function recordConversation(conversationId: string, learnerId: stri
     [conversationId, learnerId, country, row.character_id, row.prompt_version, counts.learnerTurns, counts.words, counts.wordsLanguage, counts.wordsOwn, counts.ownTurns, counts.saidBack, counts.english, counts.helpWord, counts.helpWhole,
       path?.step ?? null, played ? `${played.stage}${played.supportBack ? '+back' : ''}` : null, path?.felt ?? null, path?.why ?? null, path?.moved ?? null, path ? JSON.stringify(path.state) : null, JSON.stringify(counts.ranks)]
   );
-  // Past the last step: Intermediate, the character prompt as it is; back from it: Beginner, on the path's last step
+  // Past the last step of the old path: Intermediate, the character prompt as it is. Never back down (Josh, 2026-11-15)
   if (inserted.rowCount && path?.moved && path.state.step === INTERMEDIATE_STEP) await setLevel(learnerId, 'intermediate');
-  if (inserted.rowCount && path?.moved && path.step === INTERMEDIATE_STEP) await setLevel(learnerId, 'beginner');
   console.log(JSON.stringify({ level: 'info', event: 'record', conversationId, ...(leaveOut ? { rewritten: true } : {}), words: counts.words, wordsLanguage: counts.wordsLanguage, wordsOwn: counts.wordsOwn, ...(path ? { step: path.step, felt: path.felt, why: path.why, moved: path.moved, stepAfter: path.state.step } : {}) }));
   return 'saved';
 }
