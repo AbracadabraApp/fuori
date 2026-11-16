@@ -186,7 +186,7 @@ Checked from the code, not on a phone: the server sends Mexico's map as `layout:
 
 ### B38. Two-line names on place and city cards are spaced like two sentences
 Josh, 2026-11-16, on the build of 3d13c55: "the place/city cards have large leading with chosen font - it looks off for place names - reads more like two sentences." No conversation; the city and place lists.
-He raised the same on 2026-10-21, and `PolaroidCard.swift` has asked for 1.1 times the point size since then (`.lineHeight(.multiple(factor: 1.1))`; Alegreya's own is 1.36). So either that line isn't taking effect in the build, or 1.1 still reads loose at 32 pt, or it is the long new Mexican names that break after a comma ("Chiles y Moles Doña Estela, Mercado Hidalgo"). Not seen on a phone from this session. A side-by-side of 1.36, 1.1 and 1.0 on two long names is board 4 of the "Card studies" canvas (https://claude.ai/artifact/AHEGUxWKMoCVqPSHeCkGvy) for Josh to say which one his phone looks like. **Status: open.**
+He raised the same on 2026-10-21, and `PolaroidCard.swift` has asked for 1.1 times the point size since then (`.lineHeight(.multiple(factor: 1.1))`; Alegreya's own is 1.36). So either that line isn't taking effect in the build, or 1.1 still reads loose at 32 pt, or it is the long new Mexican names that break after a comma ("Chiles y Moles Doña Estela, Mercado Hidalgo"). Not seen on a phone from this session. A side-by-side of 1.36, 1.1 and 1.0 on two long names is board 4 of the "Card studies" canvas (https://claude.ai/artifact/AHEGUxWKMoCVqPSHeCkGvy) for Josh to say which one his phone looks like. **Status: fix on main (32734158; Josh, 2026-11-16: "B38 is fixed on main"). Not released, not seen on a phone.**
 
 ## Kept: what play says works
 
