@@ -157,6 +157,7 @@ Josh sent the cloud chat session two screenshots of the page at 08:54, with no w
 **Josh, 2026-11-16:** "swap 2 - terracotta for yellow". Study 2 is now paper with lemon for Next; all three studies left use lemon for Next.
 **Josh, 2026-11-16:** "make all white stay/dot/button - light grey". Stay and the bar's Now segment are light grey on all three studies; Next stays yellow.
 **Colour, 2026-11-16:** Josh asked "do you have a preference" and sent a screenshot of the three; Claude, having seen them: teal for Mexico (paper washed out, olive drab and bleeding into the portrait's plants), with the portrait taller to fill the empty bottom third; Josh: "ok". Board 8 now holds the one mockup: paper band "Checking in!", Doña Chela's portrait, her bubble, the six-step bar, Stay (grey, pause) and Next (yellow, play), on teal. **Open before a build:** Italy's page colour (teal is one of Mexico's); the band's second line; what each step is said to change. **Status: mockup agreed for Mexico; nothing built in the app.**
+**Josh, 2026-11-16:** "do italy". Board 8 now has the agreed Mexico page and Italy three ways, with Luisa Cocco's portrait and "Italian" in the bubble and bar: awning green (Italy's level-up theme today), terracotta, slate (from her picture). **Waiting on his pick for Italy.**
 
 ### B43. The level up page came up over a conversation that had already started
 Josh, 2026-11-16, on the build of 3d13c55: "this level up page deployed after a conversation had started and sat/spoke behind it"; "it wasn't interstitial". No conversation id given.
