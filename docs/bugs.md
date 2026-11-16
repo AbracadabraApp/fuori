@@ -81,6 +81,7 @@ Josh, 2026-11-14 night, to Giuseppe in Lecce (6ee0e530): "I also have to notice 
 ### B30. A date in the notes stays "tomorrow"
 2026-11-14 night, Elena, Palermo (5279b94e): she opened on the plan made on 2026-11-13 ("Domani alle nove e mezza ci vediamo davanti al Massimo, vero?"), which is the thread kept (dialogue-plan.md D2). But it was still "tomorrow" a day later, and when Josh asked why she hadn't come on Thursday she said they had only met in the workshop and "domani andiamo a Ballarò per la prima volta". The notes have no dates, so a plan for "tomorrow" never arrives. **Status: open.**
 
+Again 2026-11-16 at step 2 (beginner-2-2026-11-15a), Chuy, Guadalajara (f71312f9): Josh tapped Bug on turn 5, "Repeats exclamation", and turn 6, "Repetitive character". Chuy opened turns 2 and 6 on "¡Qué bueno!" and turn 5 on "¡Ja! Sí,…"; three of his eight lines open by agreeing ("Sí, los lunes tocamos menos", "Sí, descanso un poco").
 ### B31. Every visit closes on "I have to get back to my work"
 Josh, 2026-11-14 night, after ten visits on 11-14e: "i found the ending on I have to gett back to my job repetitive". All eight Beginner closes say it: "Now I must go back to my tamales", "I must get these boughs inside to my saint", "now I have to get back to the roaster", "now I must go back to my guitar", "now I must get back to my notes", "now I must get back to the candles", "now I must get back to my guitar, the people are waiting", "the fryer is calling"; Nunzio too ("Ora io torno agli alberi"). Cause: dialogue.md's Close block gives it as the thing to say ("you've enjoyed it, and you have to get back to what you're doing"), and each close also follows the same order: enjoyed it, back to work, next time, goodbye. An instruction that names an example gets the example every time. **Status: open.**
 
@@ -117,6 +118,12 @@ Found 2026-11-15 evening by the levels check, playing each step through POST /v1
 - Mexico (36c982de): step 2 04dcfd55 turns 2 and 3 ("…Para mí, este teatro es como una casa. For me, this theatre is like a home.").
 
 Why: the step settings echo the turn's last sentence at steps 1–5, so the line always ends on its English, and lib/beginner-2.ts → lastLineOf returns nothing when the line ends in English ("Undefined when the line ends in English"); questionOf sets the echo aside, lastLineOf doesn't. On main at a6827f25 the same step 3 line gives nothing as a comment, and a printed question when its last sentence ends in "?". **Status: open.**
+
+### B39. A visit replays the last one with the same character
+Josh, 2026-11-16, to Andrés at the Hospicio Cabañas (step 1, 16:50 UTC): "I think you told me almost all the same things last time we talked." Andrés's notes from before already held the Man of Fire in the dome and Orozco; this visit was the flames of the Man of Fire again, on five of seven turns ("¿Quieres ver las llamas?", "las llamas son lo más bonito", "I draw las llamas", "the fire is red and orange"). Andrés: "You're right, sorry. I always draw lo mismo". Repeating a topic is fine (it helps learning); replaying a visit as if it were new is the fault. **Status: open.**
+
+### B40. The visit closes in the middle of something the learner asked for
+2026-11-16, Chuy, Guadalajara (f71312f9, step 2): Josh asked for a song, "Sí, toque Si nos dejan, por favor. Pair Jennifer." On the 7th turn Chuy answered "Esta canción es para Jennifer. Hoy me gustó mucho platicar con usted" and closed on the 8th; the song was never played. Josh: "Chuy, could you say that again? Who is the love song for?" Memo (tejuino) and Valeria (café) started closing on turn 6 too, before Josh's goodbye ("Gracias por venir otra vez", "Que disfrute su café de olla"). The 8-turn close (B3) doesn't wait for a moment to finish. **Status: open.**
 
 ### Carried from progress.md's screen list (2026-11-12)
 - **B14.** "The city didn't show" (Valenciana, Don Isidro's place). Which screen, asked. **Open.**
