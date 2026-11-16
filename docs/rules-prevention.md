@@ -1,6 +1,6 @@
-# Rule ideas: fixes that would add a rule
+# Rules prevention: fixes that would add a rule
 
-A fix that would add a rule to a prompt (an instruction to the character, a "never" or "always") waits here instead of going in. Each one sits for a while and gets reviewed for a better way: code instead of an instruction, a change to something that already exists, or nothing. Started 2026-11-16 (Josh: "careful with rules: Maybe we should start a list of ideas that would require new rules and we let them sit and review to see if there is a better way"). The reason: every rule added so far has a cost; instructions get repeated or followed too literally (docs/dialogue-model.md → What we've learned; B31: one example in the Close block, and every visit closed on it).
+A fix that would add a rule to a prompt (an instruction to the character, a "never" or "always") waits here instead of going in. Each one sits for a while and gets reviewed for a better way: code instead of an instruction, a change to something that already exists, or nothing. Started 2026-11-16 (Josh: "careful with rules: Maybe we should start a list of ideas that would require new rules and we let them sit and review to see if there is a better way"; the name: "maybe call it rules-prevention not ideas"). The reason: every rule added so far has a cost; instructions get repeated or followed too literally (docs/dialogue-model.md → What we've learned; B31: one example in the Close block, and every visit closed on it).
 
 How to use it: one entry per idea, with the bug or play it answers, the rule as proposed, and other ways found since. Nothing here is scheduled. An idea leaves the list when Josh picks a way, or when the problem goes away by itself.
 
