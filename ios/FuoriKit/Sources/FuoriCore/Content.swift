@@ -83,8 +83,10 @@ public struct UIWords: Codable, Sendable, Equatable {
     public let ticket: TicketWords
 }
 
-/// The level-up screen (sketches/level-up/): its words, the yes in the
-/// language, and which decoration the country wears ("pennants" or "awning")
+/// The level-up screen: its words, and which colour the country's page wears
+/// (`theme`: "pennants" Mexico's teal, "awning" Italy's terracotta; the names
+/// are from the earlier page's decorations). The words down to `notYet` are
+/// the earlier page's, still sent for builds that draw it
 public struct LevelUpWords: Codable, Sendable, Equatable {
     public let theme: String
     public let kicker: String
@@ -97,6 +99,20 @@ public struct LevelUpWords: Codable, Sendable, Equatable {
     public let yes: String
     public let yesLabel: String
     public let notYet: String
+    /// The page from 2026-11-16 (docs/bugs.md B42): the paper band's words,
+    /// the asker's two sentences, the bar's ends and marks, the two buttons.
+    /// Optional, so a server from before them still decodes
+    public let band: String?
+    public let line: String?
+    public let question: String?
+    public let barFrom: String?
+    public let barTo: String?
+    public let barNow: String?
+    public let barNext: String?
+    /// VoiceOver's reading of the bar, with {now}, {total} and {next}
+    public let barLabel: String?
+    public let stay: String?
+    public let go: String?
 }
 
 /// A lesson's buttons (lib/lesson.ts), in the language, with their English

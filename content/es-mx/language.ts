@@ -49,6 +49,19 @@ export const language = {
     youAreHere: 'Estás aquí', // departures board: the current city
     /** Level up (sketches/level-up/; lib/level-up.ts): the offer after N conversations; {name} is the character's */
     levelUp: { theme: 'pennants' as const, kicker: "You're doing great with {name}", headline: 'Ready for more?', how: 'How {name} talks to you', now: 'Now', next: 'Next step', play: 'Play', answers: 'Your answers: still two to choose from, and now you can say your own.', yes: '¡Sí, más español!', yesLabel: 'Yes, more Spanish', notYet: 'Not yet',
+      /** The page from 2026-11-16 (docs/bugs.md B42; Josh's words throughout): the welcome's character asks, in the
+       *  game's own speech bubble, under a paper band; a bar of the steps; two buttons side by side in the bar's
+       *  colours. The words above stay for app builds that still draw the earlier page */
+      band: 'Checking in!',
+      line: 'Every few conversations we check to see if things are too easy.',
+      question: 'Do you want to increase the amount of Spanish you hear or are you comfortable now?',
+      barFrom: 'More English',
+      barTo: 'All Spanish',
+      barNow: 'Now',
+      barNext: 'Next',
+      barLabel: 'Step {now} of {total} now. Step {next} is next.',
+      stay: 'Stay',
+      go: 'Next',
       /** The line under the cards, by the step being offered: what changes there (lib/dialogue/pieces.ts → SETTINGS). `answers` above is the fallback */
       steps: {
         2: 'Next: each sentence in Spanish, then in English.',

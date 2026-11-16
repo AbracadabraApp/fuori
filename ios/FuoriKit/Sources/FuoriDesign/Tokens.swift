@@ -49,6 +49,12 @@ public enum Tokens {
         public static let levelUpCardInk = Color(red: 0.1686, green: 0.1333, blue: 0.0000) // #2b2200
         public static let levelUpCardLabel = Color(red: 0.2902, green: 0.2275, blue: 0.0196) // #4a3a05
         public static let levelUpBody = Color(red: 0.3333, green: 0.3333, blue: 0.3333) // #555555
+        public static let levelUpTeal = Color(red: 0.0824, green: 0.4353, blue: 0.5020) // #156f80
+        public static let levelUpTealRest = Color(red: 0.2980, green: 0.5922, blue: 0.6471) // #4c97a5
+        public static let levelUpTerracottaRest = Color(red: 0.7882, green: 0.5176, blue: 0.4078) // #c98468
+        public static let levelUpStay = Color(red: 0.8510, green: 0.8510, blue: 0.8510) // #d9d9d9
+        public static let levelUpStayEdge = Color(red: 0.6627, green: 0.6627, blue: 0.6627) // #a9a9a9
+        public static let levelUpGoEdge = Color(red: 0.6902, green: 0.5490, blue: 0.0000) // #b08c00
         public static let magenta = Color(red: 0.8784, green: 0.1882, blue: 0.4353) // #e0306f
         public static let magentaInk = Color(red: 0.7216, green: 0.1373, blue: 0.3529) // #b8235a
         public static let awningGreen = Color(red: 0.1843, green: 0.4196, blue: 0.2706) // #2f6b45

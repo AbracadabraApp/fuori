@@ -16,7 +16,7 @@ import { query } from '@/lib/db';
 import { anthropic, CLAUDE_MODEL, replyText } from '@/lib/claude';
 import { fill, readPromptFile } from '@/lib/prompts/template';
 import { turnOutputJsonSchema } from '@/lib/prompts/turn-output-schema';
-import { language } from '@/content';
+import { cities, language, onboarding } from '@/content';
 import { CLUSTERS, LEVEL_OF_CLUSTER, type Setup } from '@/lib/beginner-2';
 import { SCAFFOLDING_FILE } from '@/lib/beginner';
 import { characterForVisit } from '@/lib/characters/for-visit';
@@ -156,6 +156,34 @@ export interface LevelUpOffer {
   now: { line: string; en: string };
   /** The same line, written at the next step */
   next: { line: string; en: string };
+  /** Who asks on the page (B42): the welcome's character; absent when the country has none */
+  asker?: { id: string; name: string };
+  /** The bar of steps on the page (B42): how many, where the learner is, where a yes leads */
+  bar: { total: number; now: number; next: number };
+}
+
+/**
+ * Who asks the level-up question (docs/bugs.md B42; Josh, 2026-11-16: "i just want the fucking person", "we want some
+ * one who is the front door of the game"): the character who plays the welcome, not whoever was last talked with
+ */
+export function levelUpAsker(): { id: string; name: string } | undefined {
+  const id = onboarding.welcome?.characterId;
+  if (!id) return undefined;
+  for (const city of cities) {
+    const c = city.characters?.find((x) => x.id === id);
+    if (c) return { id: c.id, name: c.name };
+  }
+  return undefined;
+}
+
+/**
+ * The page's bar (B42): the Beginner steps, the learner's and the next one. A level move has no step to light, so the
+ * bar grows by the two levels past the steps (Intermediate, Advanced) and the move is drawn along it the same way
+ */
+export function levelUpBar(step: number, move: Move): { total: number; now: number; next: number } {
+  if (move.to === 'step') return { total: MAX_STEP, now: step, next: move.step };
+  const now = move.to === 'intermediate' ? MAX_STEP : MAX_STEP + 1;
+  return { total: MAX_STEP + 2, now, next: now + 1 };
 }
 
 /** The level text of a step, as the character sees it (scaffolding.md "Level: …") */
@@ -256,6 +284,8 @@ export async function levelUpOffer(learnerId: string, conversationId: string): P
     city: city?.name ?? conv.city_id,
     now: { line: last.text, en: last.en ?? '' },
     next,
+    asker: levelUpAsker(),
+    bar: levelUpBar(s.step, move),
   };
 }
 

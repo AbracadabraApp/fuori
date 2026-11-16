@@ -338,6 +338,12 @@ public actor APIClient {
         public let city: String
         public let now: Line
         public let next: Line
+        /// Who asks on the page (B42): the welcome's character; nil from a server before it
+        public struct Asker: Codable, Sendable, Equatable { public let id: String; public let name: String }
+        public let asker: Asker?
+        /// The bar of steps: how many, the learner's, and the one a yes leads to
+        public struct Bar: Codable, Sendable, Equatable { public let total: Int; public let now: Int; public let next: Int }
+        public let bar: Bar?
         public var id: String { "\(character.id)-\(step)" }
     }
 

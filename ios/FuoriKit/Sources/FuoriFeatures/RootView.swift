@@ -148,8 +148,11 @@ public struct RootView: View {
         // The level up, offered over the place list after the conversation it followed (sketches/level-up/);
         // never over a conversation: an offer that arrives during one waits until it's left (B43)
         .sheet(item: Binding(get: { model.levelUpItem }, set: { model.levelUpItem = $0 })) { offer in
-            if let words = model.levelUp?.words, let api = model.api, let content = model.content {
-                LevelUpView(offer: offer, words: words, language: content.language, api: api) { yes in
+            if let words = model.levelUp?.words, let content = model.content {
+                // Who asks: the welcome's character (the offer's asker, B42); the
+                // character just talked with when a server from before it names none
+                let asker = content.character(offer.asker?.id) ?? content.character(offer.character.id)
+                LevelUpView(offer: offer, words: words, askerName: asker?.name ?? offer.asker?.name ?? offer.character.name, portrait: asker?.portrait) { yes in
                     await model.answerLevelUp(yes: yes)
                 }
             }
@@ -189,15 +192,16 @@ public struct RootView: View {
         #endif
     }
 
-    /// `-FuoriLevelUp YES` (Debug): the level-up sheet with sample lines, for one look at the screen (sketches/level-up/)
+    /// `-FuoriLevelUp YES` (Debug): the level-up sheet with a sample offer, for one look at the screen (docs/bugs.md B42)
     private func sampleLevelUp() {
         #if DEBUG
-        // `-FuoriLevelUp YES`: the level-up sheet with sample lines, for one look at the screen (sketches/level-up/)
         if UserDefaults.standard.bool(forKey: "FuoriLevelUp"), let content = model.content, let words = content.language.ui.levelUp,
            let city = content.cities.first, let place = city.places.first(where: { $0.characterId != nil }), let person = content.character(place.characterId) {
             let now = #"{"line":"So the café de olla, we make it with canela and piloncillo. ¿Quieres probarlo?","en":"We make it with cinnamon and piloncillo. Do you want to try it?"}"#
             let next = #"{"line":"El café de olla lo hacemos con canela, and a little piloncillo. ¿Quieres probarlo?","en":"We make the café de olla with cinnamon, and a little piloncillo. Do you want to try it?"}"#
-            let data = #"{"step":1,"nextStep":2,"character":{"id":"\#(person.id)","name":"\#(person.name)","role":"\#(person.role)"},"place":"\#(place.name)","city":"\#(city.name)","now":"# + now + #","next":"# + next + "}"
+            // Asked by the welcome's character, as the server sends it (B42)
+            let asker = content.character(content.onboarding?.welcome?.characterId) ?? person
+            let data = #"{"step":1,"nextStep":2,"character":{"id":"\#(person.id)","name":"\#(person.name)","role":"\#(person.role)"},"place":"\#(place.name)","city":"\#(city.name)","now":"# + now + #","next":"# + next + #","asker":{"id":"\#(asker.id)","name":"\#(asker.name)"},"bar":{"total":6,"now":1,"next":2}}"#
             if let offer = try? JSONDecoder().decode(APIClient.LevelUp.self, from: Data(data.utf8)) { model.levelUp = (offer, words) }
         }
         #endif

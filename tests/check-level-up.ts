@@ -4,7 +4,8 @@ import { readFileSync, existsSync } from 'node:fs';
 import { cities, language } from '@/content';
 import { characterForPlace } from '@/lib/characters/for-place';
 import { SETTINGS } from '@/lib/dialogue/pieces';
-import { previewAtSetting, isDue, countFrom, rewritePrompt, stepLevelText, LEVEL_UP_AFTER, MAX_STEP } from '@/lib/level-up';
+import { previewAtSetting, isDue, countFrom, rewritePrompt, stepLevelText, levelUpAsker, levelUpBar, LEVEL_UP_AFTER, MAX_STEP } from '@/lib/level-up';
+import { onboarding } from '@/content';
 import { CLUSTERS, clusterHeaderFrom, clusterFrom, CLUSTER_1 } from '@/lib/beginner-2';
 
 const problems: string[] = [];
@@ -43,6 +44,20 @@ check(/cluster = await storedCluster\(learnerId\)/.test(tt) && /pickSetup\(\{[^}
 check(/beginnerCluster: clusterHeaderFrom\(request\.headers\)/.test(readFileSync('app/v1/turn/route.ts', 'utf8')), '/v1/turn passes the header alone');
 check(existsSync('app/v1/level-up/route.ts') && /export async function GET/.test(readFileSync('app/v1/level-up/route.ts', 'utf8')) && /export async function POST/.test(readFileSync('app/v1/level-up/route.ts', 'utf8')), '/v1/level-up has GET and POST');
 check(/ADD COLUMN IF NOT EXISTS step int/.test(readFileSync('scripts/db-migrate.mjs', 'utf8')), 'the step columns are in the migration');
+
+// The page from 2026-11-16 (docs/bugs.md B42): the welcome's character asks, the bar of steps, the page's own words
+{
+  const asker = levelUpAsker();
+  const inCities = cities.flatMap((c) => c.characters ?? []).find((c) => c.id === onboarding.welcome?.characterId);
+  check(!!asker && !!inCities && asker.id === inCities.id && asker.name === inCities.name, `the asker is the welcome's character (got ${JSON.stringify(asker)})`);
+  const b1 = levelUpBar(1, { to: 'step', step: 2 }), bTop = levelUpBar(MAX_STEP, { to: 'intermediate' }), bAdv = levelUpBar(MAX_STEP, { to: 'advanced' });
+  check(b1.total === MAX_STEP && b1.now === 1 && b1.next === 2, 'a step move: the bar is the steps, now and next');
+  check(bTop.total === MAX_STEP + 2 && bTop.now === MAX_STEP && bTop.next === MAX_STEP + 1 && bAdv.now === MAX_STEP + 1 && bAdv.next === MAX_STEP + 2 && bAdv.next <= bAdv.total, 'a level move: the bar runs on past the steps');
+  const page = ['band', 'line', 'question', 'barFrom', 'barTo', 'barNow', 'barNext', 'barLabel', 'stay', 'go'] as const;
+  check(page.every((k) => typeof w[k] === 'string' && w[k].length > 0), 'the page has its words (band, line, question, the bar, stay, go)');
+  check(w.question.includes(language.name) && w.barTo.includes(language.name) && ['{now}', '{total}', '{next}'].every((p) => w.barLabel.includes(p)), 'the question and the bar name the language; the bar\'s reading has its three places');
+  check(/asker: levelUpAsker\(\)/.test(readFileSync('lib/level-up.ts', 'utf8')) && /bar: levelUpBar\(s\.step, move\)/.test(readFileSync('lib/level-up.ts', 'utf8')), 'the offer carries the asker and the bar');
+}
 
 if (problems.length) {
   console.error(`check-level-up: ${problems.length} problem(s)\n- ${problems.join('\n- ')}`);
