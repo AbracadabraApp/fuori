@@ -163,6 +163,9 @@ Josh sent the cloud chat session two screenshots of the page at 08:54, with no w
 Josh, 2026-11-16, on the build of 3d13c55: "this level up page deployed after a conversation had started and sat/spoke behind it"; "it wasn't interstitial". No conversation id given.
 Cause, from the code: the app asks for the offer only after the conversation just left has been saved (`AppModel.save`: end the conversation, refresh visits, then ask), which takes seconds, and shows the sheet whenever the answer arrives. A learner who has already opened the next person gets the sheet over that conversation, which goes on. **Status: fix on main, not on a phone** (AppModel.conversationOpen; an offer that arrives during a conversation waits and shows on the place list when it's left; LevelUpHoldTests). Left as it is: the offer still names the earlier person ("You're doing great with…"), now possibly two conversations back.
 
+### B44. Luisa Cocco's portrait is not good
+Josh, 2026-11-16, seeing her on the level-up mockup (she plays Italy's welcome, so every Italian learner meets her first and, by B42, she would ask the level-up question): "wow that is not a good portrait in italy". What shows, as Claude's reading and not his: a grey-brown pencil and wash drawing with little colour, a crowd of half-drawn men behind her, the espresso machine cut off at the edge; beside Mexico's Doña Chela it looks unfinished. Her prompt (`content/it/cities/roma-nuova.ts`, `luisa-cocco-nuova`) asks for "Pencil and watercolour portrait on textured paper, loose confident hand-drawn line", Roma nuova's style. What he wants in its place, not yet asked. **Open.**
+
 ### Carried from progress.md's screen list (2026-11-12)
 - **B14.** "The city didn't show" (Valenciana, Don Isidro's place). Which screen, asked. **Open.**
 - **B15.** Doña Chuy's portrait is stereotypical; redraw. **Open.**
