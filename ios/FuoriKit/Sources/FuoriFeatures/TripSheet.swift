@@ -24,6 +24,9 @@ extension Trip: Identifiable {
 /// is laid out differently: the ticket first, so from and to are clear, then
 /// the map with a numbered dot for every city, then a written key of numbers
 /// and names. Which layout a country gets comes with its map, not from here.
+/// All three show at once: the map gives up height so the key isn't left
+/// under the bottom of the sheet, where nothing says it's there (B37; Josh,
+/// 2026-11-16: "the city key is missing on the mexico map").
 struct TripSheet: View {
     let trip: Trip
     let content: Content
@@ -33,6 +36,10 @@ struct TripSheet: View {
     /// How far the ticket lies over the map's lower edge. Small enough that
     /// the southernmost city on the map stays clear of it
     @ScaledMetric(relativeTo: .body) private var overlap: CGFloat = 30
+    /// The numbered sheet's ticket and key as laid out, so the map can be
+    /// given the height that's left (0 until measured)
+    @State private var ticketHeight: CGFloat = 0
+    @State private var keyHeight: CGFloat = 0
 
     private var map: TravelMap? {
         guard let map = content.travelMap, map.covers(from: trip.from.id, to: trip.to.id) else { return nil }
@@ -41,24 +48,31 @@ struct TripSheet: View {
 
     var body: some View {
         NavigationStack {
-            ScrollView {
-                VStack(spacing: 0) {
-                    if let map, map.numbered {
-                        ticket
-                        TripMap(trip: trip, map: map, content: content)
-                            .padding(.top, Tokens.Space.cardGap)
-                        CityKey(trip: trip, map: map, content: content)
-                            .padding(.top, Tokens.Space.band)
-                    } else if let map {
-                        TripMap(trip: trip, map: map, content: content)
-                        ticket
-                            .rotationEffect(.degrees(-2))
-                            .padding(.top, -overlap)
-                    } else {
-                        ticket
+            GeometryReader { room in
+                ScrollView {
+                    VStack(spacing: 0) {
+                        if let map, map.numbered {
+                            ticket
+                                .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { ticketHeight = $0 }
+                            // The map is as tall as the room left by the ticket and the key (B37);
+                            // narrower than the sheet when it has to be, and centred
+                            TripMap(trip: trip, map: map, content: content)
+                                .frame(maxHeight: mapHeight(in: room.size.height))
+                                .padding(.top, Tokens.Space.cardGap)
+                            CityKey(trip: trip, map: map, content: content)
+                                .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { keyHeight = $0 }
+                                .padding(.top, Tokens.Space.band)
+                        } else if let map {
+                            TripMap(trip: trip, map: map, content: content)
+                            ticket
+                                .rotationEffect(.degrees(-2))
+                                .padding(.top, -overlap)
+                        } else {
+                            ticket
+                        }
                     }
+                    .padding(Tokens.Space.gutter)
                 }
-                .padding(Tokens.Space.gutter)
             }
             .background(Tokens.Colors.paper)
             #if os(iOS)
@@ -71,6 +85,15 @@ struct TripSheet: View {
             }
         }
         .presentationDetents(map == nil ? [.medium] : [.large])
+    }
+
+    /// The numbered map's height: what the sheet has left once the ticket,
+    /// the key and the gaps between them are in. No limit (nil) until both are
+    /// measured. At very large text the map keeps a least height and the
+    /// sheet scrolls, as before
+    private func mapHeight(in room: CGFloat) -> CGFloat? {
+        let gaps = Tokens.Space.gutter * 2 + Tokens.Space.cardGap + Tokens.Space.band
+        return TravelMap.fittedHeight(room: room, ticket: ticketHeight, key: keyHeight, gaps: gaps).map { CGFloat($0) }
     }
 
     /// The ticket and its stub. The shadow is heavy on purpose (Josh: "don't

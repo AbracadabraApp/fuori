@@ -1,5 +1,12 @@
 # Fuori Development Progress
 
+## 2026-11-16 (cloud chat session, with Josh): B37, Mexico's map key not showing
+
+- **Josh, on the build of 3d13c55:** "the city key is missing on the mexico map"; then, asked what the map shows, "numbers. - i cant check in game play".
+- **Found:** the server sends the numbered layout with 14 cities and the app draws the key under the map, so the key is in the sheet. Most likely it sits under the bottom of the sheet, which scrolls with nothing to say so (ticket about 140 pt, map about 314 pt, then the key).
+- **Changed (ios, not on a phone):** on a numbered sheet the map now takes the height the ticket and the key leave, so the three show at once; it gets narrower and centred when it has to. At very large text the map keeps 180 pt and the sheet scrolls as before. The rule is `TravelMap.fittedHeight` with tests (TripSheetFitTests). Italy's sheet is untouched.
+- **Not verified:** written without Xcode; CI is the build check. Nobody has seen it. It needs a new build on Josh's phone, and his look, since the map will be smaller than the one he approved. If the key is still missing on that build, the cause is the key's rows, not the fold (docs/bugs.md B37).
+
 ## 2026-11-16 (laptop): on Josh's phone
 
 - **Installed on Josh's iPhone 16 Pro** a Debug build of main at 3d13c55 (his word: "release to phone", "update phone"). Nothing to release on the server: live was already 3d13c55. The build includes the debug panel's ratings and the removal of the Old/New Beginner picker and the intro code from the app. Not yet played.

@@ -173,6 +173,18 @@ public struct TravelMap: Codable, Sendable, Equatable {
 
     /// The map can show this trip: both ends have a spot
     public func covers(from: String, to: String) -> Bool { spot(from) != nil && spot(to) != nil }
+
+    /// How tall a numbered sheet's map may be so the ticket, the map and the
+    /// key all show at once (B37: the key sat under the bottom of the sheet).
+    /// `room` is the sheet's height, `ticket` and `key` their heights as laid
+    /// out, `gaps` the padding and spacing around the three. nil until the
+    /// ticket and the key have been measured. Never less than `least`: when
+    /// the text is too large for all three to fit, the map stays readable and
+    /// the sheet scrolls
+    public static func fittedHeight(room: Double, ticket: Double, key: Double, gaps: Double, least: Double = 180) -> Double? {
+        guard room > 0, ticket > 0, key > 0 else { return nil }
+        return max(least, room - ticket - key - gaps)
+    }
 }
 
 public struct TicketTheme: Codable, Sendable, Equatable {
