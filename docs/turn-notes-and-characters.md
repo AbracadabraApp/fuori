@@ -194,3 +194,19 @@ Josh: the bid sentence to use is "Each answer replies to you, then makes a bid: 
 - **With the notes' subjects out, "look at X" went again** (five of five notice turns stayed on the talk), as in the earlier look.
 - **But "do you like" isn't only the notes.** With the opener's subject gone Don Anselmo still opened "Do you like the plaza?" and Chuy "Do you like the music?"; Lalo's notice turn became "Do you like this park?". And as predicted, one opener of seven went back to "Is it your first time in this church?" (Lupita, who later asked "Does your family live near here?").
 - Read side by side, the three versions of each visit are close. One run; nothing here is a result.
+
+## A look: a description of a bid, in Josh's words (2026-11-16)
+
+Josh: "does claude need a description of a bid? I also think the model needs a direction - like curious or personal or cultural", then two descriptions: "a bid is an offer to keep the conersation going. or a bid shows you are curious". `tests/experiments/bid-defined-look.mts`: each in the Answers rule in place of the list of kinds, notes as on main, the same seven visits, one run, 84 bubbles.
+
+| The bid sentence | Words a bubble | Answer + question | Answer + statement | One part |
+|---|---|---|---|---|
+| As it is (list of three kinds) | 6.0 | 9 | 3 | 72 |
+| "…one more short thing of their own that gives you something to respond to" | 6.5 | 26 | 20 (mostly filler) | 38 |
+| "…an offer to keep the conversation going" | 5.6 | 23 | 0 | 61 |
+| "…a few words that show they are curious" | 6.3 | 38 | 8 | 38 |
+
+- **"An offer to keep the conversation going" lost the filler entirely** and kept the bubbles short: "Yes, it's very pretty. Do you come a lot?", "Not much. Which team do you like?", "Yes, please. Do you make the cajón yourself?", "Yes, I like baseball. And you?" ("And you?" twice in 84). Its one-part bubbles are often a question by itself, which keeps the talk going too.
+- **"Curious" made more two-part bubbles but the word leaked into them:** "How interesting!" four times, "I'm curious", "I like history".
+- Directions (curious, personal, cultural) drawn per turn or split across the two bubbles: Claude's suggestion, not tried.
+- One run; no prompt changed.
