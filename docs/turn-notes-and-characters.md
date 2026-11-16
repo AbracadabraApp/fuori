@@ -135,4 +135,6 @@ Josh, after asking for three level 1 questions, the answer offered, and the answ
 - A bid can be a question to the character, or something about the learner. Josh on the second: "you give bubble choices - they are just a bid - they don't always need to be true". The answers rule's "never make it up" about the learner is ours, and stands in the way of that.
 - Josh's concern with Claude's first wording ("one of the two answers the question, then asks the character the same thing back"): it names one bid, and would become the next "¿Lo ve?". Any wording has to leave the bid open; check by counting the bids in a few visits.
 - Fits the counts above: he takes "answers and adds" most; a week ago 68% of bubbles just answered.
+- Josh: "some of the bids we looked at worked a lot better than others". Claude's sort: the ones that stayed on the subject of the question and passed it across read well ("¿Qué cocina usted?", "Mi hija juega."); the ones that changed the subject or could follow anything didn't ("¿Por qué?", "Soy de Seattle."). That sort is Claude's, not his.
+- Josh's whole hypothesis, in his words: "i don't have a single hypothesis other than we've only been replying rather than reply+bid". Hold it at that size.
 - A principle, not a spec. Nothing built.
