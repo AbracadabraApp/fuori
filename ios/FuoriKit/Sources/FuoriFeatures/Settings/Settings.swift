@@ -40,19 +40,11 @@ struct SettingsToolbar: ViewModifier {
     @State private var watching = false
     /// Inside the cinema already: no film reel to open it again
     @Environment(\.insideCinema) private var insideCinema
-    /// The intro's sheet is up (PersonView): it has to close before another sheet can open
-    @Environment(\.introSheetUp) private var introSheetUp
 
-    /// Opens one of the header's sheets. The conversation is paused first (its intro sheet, if up, closes then), and
-    /// while the intro's sheet slides away the new one waits for it, since iOS shows one sheet at a time and drops a
-    /// second asked for meanwhile: one tap, not two (Josh, 2026-11-12)
+    /// Opens one of the header's sheets. The conversation is paused first
     private func open(_ show: @escaping @MainActor () -> Void) {
         NotificationCenter.default.post(name: .fuoriSheetOpening, object: nil)
-        guard introSheetUp else { show(); return }
-        Task { @MainActor in
-            try? await Task.sleep(for: .milliseconds(550))
-            show()
-        }
+        show()
     }
 
     func body(content: Content) -> some View {
@@ -102,11 +94,6 @@ struct SettingsToolbar: ViewModifier {
     }
 }
 
-extension EnvironmentValues {
-    /// The intro plays in its sheet (PersonView), so the header's sheets wait for it to close
-    @Entry var introSheetUp = false
-}
-
 extension View {
     func settingsToolbar() -> some View { modifier(SettingsToolbar()) }
 }
@@ -121,7 +108,6 @@ struct SettingsSheet: View {
     @AppStorage(SettingsKey.english) private var english = false
     @AppStorage(SettingsKey.dialect) private var dialect = false
     @AppStorage(SettingsKey.debug) private var debug = false
-    @AppStorage(APIClient.oldBeginnerKey) private var oldBeginner = false
     @AppStorage(APIClient.beginnerStepKey) private var beginnerStep = 1
     @Environment(\.dismiss) private var dismiss
     @State private var confirmingRestart = false
@@ -249,20 +235,8 @@ struct SettingsSheet: View {
                         LabeledContent("Server", value: model.server?.host() ?? "—")
                         LabeledContent("Learner", value: model.learnerId ?? "—")
                             .textSelection(.enabled)
-                        // The Beginner since the cut-over (2026-11-12), or the old one, kept a week for comparison; the next turn uses it
-                        LabeledContent("Beginner") {
-                            Picker("Beginner", selection: $oldBeginner) {
-                                Text("Old").tag(true)
-                                Text("New").tag(false)
-                            }
-                            .pickerStyle(.segmented)
-                            .labelsHidden()
-                            .fixedSize()
-                        }
                         // The step of scaffolding (docs/glossary.md → Level up); 1 leaves it to the learner's stored step
-                        if !oldBeginner {
-                            Stepper("Step \(beginnerStep)", value: $beginnerStep, in: 1...6)
-                        }
+                        Stepper("Step \(beginnerStep)", value: $beginnerStep, in: 1...6)
                         // Back to the country choice, as on first launch (applied once the sheet has closed)
                         Button("Restart onboarding") {
                             model.pendingRestart = true

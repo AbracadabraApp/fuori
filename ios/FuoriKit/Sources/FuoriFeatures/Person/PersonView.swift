@@ -23,22 +23,12 @@ struct PersonView: View {
     @Environment(AppModel.self) private var appModel
     @Environment(\.dismiss) private var dismiss
 
-    /// The space under the name band: its height (as width) and the home indicator's (as height), for the intro sheet
-    @State private var below = CGSize.zero
-    /// Paper between the name band and the intro sheet, so its rounded corners show
-    private static let introGap: CGFloat = 13
-    private static let introCorner: CGFloat = 38
-
     init(model: ConversationModel) {
         _model = State(initialValue: model)
     }
 
     var body: some View {
         VStack(spacing: 0) {
-            // The name band always, the intro included (Josh, 2026-11-12: the intro
-            // screen stays standard, minus the circle): it came and went around
-            // the intro, and the portrait jumped with it. The chat comes in on
-            // the first question
             band
             ZStack(alignment: .bottom) {
                 Portrait(url: model.character.portrait, name: model.character.name)
@@ -51,32 +41,13 @@ struct PersonView: View {
                 }
                 // Over the portrait; when it doesn't fit (the largest text
                 // sizes), it scrolls from the bottom, and the portrait stays put
-                if !model.inIntro {
-                    ViewThatFits(in: .vertical) {
-                        overlay
-                        ScrollView { overlay }
-                            .defaultScrollAnchor(.bottom)
-                            .scrollIndicators(.hidden)
-                    }
-                    .transition(.opacity)
+                ViewThatFits(in: .vertical) {
+                    overlay
+                    ScrollView { overlay }
+                        .defaultScrollAnchor(.bottom)
+                        .scrollIndicators(.hidden)
                 }
             }
-            // The space under the name band, and the home indicator's: the intro sheet's height
-            .onGeometryChange(for: CGSize.self) { CGSize(width: $0.size.height, height: $0.safeAreaInsets.bottom) } action: { below = $0 }
-        }
-        .animation(.easeInOut(duration: 0.4), value: model.inIntro)
-        // The intro in a sheet (Josh, 2026-11-12, from the mockups: "I think it looks great"): its top is the top of
-        // the picture, just under the name band, which stays as it is. Swiping it down or its close button ends the
-        // intro early (Josh: "users want control"), and the character says just the question. Ending by itself, it
-        // slides down as the question starts and the question types out in its bubble (Josh: "A")
-        .sheet(isPresented: Binding(get: { model.inIntro }, set: { shown in if !shown { Task { await model.skipIntro() } } })) {
-            IntroSheet(model: model)
-                .presentationDetents([.height(max(200, below.width + below.height - Self.introGap))])
-                .presentationCornerRadius(Self.introCorner)
-                .presentationDragIndicator(.hidden)
-                // The header stays as it is, undimmed, and its buttons work
-                .presentationBackgroundInteraction(.enabled)
-                .presentationBackground(Tokens.Colors.flapTile)
         }
         .background(Tokens.Colors.paper)
         #if os(iOS)
@@ -87,8 +58,6 @@ struct PersonView: View {
             LearnSheet(model: model)
         }
         .settingsToolbar()
-        // The header's sheets wait for the intro's to close (Settings.swift → SettingsToolbar.open)
-        .environment(\.introSheetUp, model.inIntro)
         .task { await model.start() }
         // Hands-free means no taps, so without this the phone auto-locks
         // mid-conversation and backgrounding ends the learner's turn
@@ -171,112 +140,8 @@ struct PersonView: View {
         .padding(.top, Tokens.Space.band / 2)
         .padding(.bottom, Tokens.Space.band)
         .background(Tokens.Colors.paper)
-        // No divider while the intro sheet is up: its curved top is the edge (Josh: "the rule and the top of sheet compete")
-        .overlay(alignment: .bottom) { if !model.inIntro { Divider() } }
+        .overlay(alignment: .bottom) { Divider() }
         .zIndex(1)
-    }
-}
-
-/// The intro's sheet: the portrait, a light grabber on it, the glass close button top right of the picture, and the
-/// charcoal subtitle band (the mockup Josh approved, 2026-11-12)
-struct IntroSheet: View {
-    let model: ConversationModel
-    @ScaledMetric(relativeTo: .body) private var closeSize: CGFloat = 44
-
-    var body: some View {
-        ZStack(alignment: .bottom) {
-            Portrait(url: model.character.portrait, name: model.character.name)
-                .ignoresSafeArea(edges: .bottom)
-            if let subtitle = model.introSubtitle {
-                IntroSubtitle(english: subtitle.en, progress: subtitle.shown.map { Double($0) / Double(max(1, subtitle.text.count)) } ?? 0)
-            }
-        }
-        .overlay(alignment: .top) {
-            // Light, with a soft shadow, so it shows on any picture (Josh: "dont lose grabber")
-            Capsule()
-                .fill(.white.opacity(0.95))
-                .frame(width: 36, height: 5)
-                .shadow(color: .black.opacity(0.5), radius: 3)
-                .padding(.top, 6)
-                .accessibilityHidden(true)
-        }
-        .overlay(alignment: .topTrailing) {
-            Button { Task { await model.skipIntro() } } label: {
-                Image(systemName: "xmark")
-                    .font(.title3.weight(.semibold))
-                    .foregroundStyle(Tokens.Colors.ink)
-                    .frame(width: closeSize, height: closeSize)
-            }
-            .buttonStyle(.glass)
-            .buttonBorderShape(.circle)
-            .padding(.top, 14)
-            .padding(.trailing, Tokens.Space.gutter)
-            .accessibilityLabel("Close")
-            .accessibilityHint("Ends the introduction and goes to the question")
-        }
-    }
-}
-
-/// The intro's subtitle, like a film's (Josh, 2026-11-11, after playing it):
-/// the language runs as one continuous dialogue with nothing of it written,
-/// and the English of the sentence being said shows on its own, replaced by
-/// the next as the speech moves on. The charcoal band (design/intro-subtitle/
-/// README.md, the agreed look): solid, full width, running on under the home
-/// indicator, a hard top edge with a light 6 pt shadow on the portrait above
-/// it; a fixed height with room for three lines, so it never changes size as
-/// sentences change; the words in the label face, centred vertically in the
-/// band above the safe area. A long sentence shows two lines at a time
-/// (SubtitleChunks; Josh, 2026-11-12), each piece while the voice is on its
-/// share of the sentence. The chat's own bubble takes over on the question.
-struct IntroSubtitle: View {
-    let english: String
-    /// How much of the spoken sentence is out, 0...1
-    let progress: Double
-    /// The band above the bottom safe area: 145 pt on Josh's phone less its 34 pt home-indicator area
-    @ScaledMetric(relativeTo: .title3) private var bandHeight: CGFloat = 111
-    @ScaledMetric(relativeTo: .title3) private var lineSpacing: CGFloat = Tokens.Size.subtitle * 0.28
-    @Environment(\.legibilityWeight) private var legibilityWeight
-    @State private var textWidth: CGFloat = 0
-
-    private var shownText: String {
-        let chunks = SubtitleChunks.split(english, maxWidth: textWidth * 0.96, width: Self.measure(bold: legibilityWeight == .bold))
-        return chunks[SubtitleChunks.index(chunks, progress: progress)]
-    }
-
-    var body: some View {
-        Text(shownText)
-            .typeface(.label, Tokens.Size.subtitle, relativeTo: .title3, weight: .medium)
-            .lineSpacing(lineSpacing)
-            .foregroundStyle(Tokens.Colors.flapInk)
-            .multilineTextAlignment(.leading)
-            .id(shownText)
-            .transition(.opacity)
-            .frame(maxWidth: .infinity, alignment: .leading)
-            .onGeometryChange(for: CGFloat.self) { $0.size.width } action: { textWidth = $0 }
-            .padding(.horizontal, Tokens.Space.gutter)
-            .frame(height: bandHeight)
-            .frame(maxWidth: .infinity)
-            .background(Tokens.Colors.flapTile.ignoresSafeArea(edges: .bottom))
-            // A minimal shadow on the portrait just above the band's hard edge
-            .overlay(alignment: .top) {
-                LinearGradient(colors: [Tokens.Colors.flapTile.opacity(0.22), Tokens.Colors.flapTile.opacity(0)], startPoint: .bottom, endPoint: .top)
-                    .frame(height: 6)
-                    .offset(y: -6)
-                    .allowsHitTesting(false)
-            }
-            .animation(.easeInOut(duration: 0.25), value: shownText)
-    }
-
-    /// The width of a line of the subtitle, as the band sets it (the label face, medium, or bold with Bold Text,
-    /// scaled like .title3); without UIKit, no measure, so the sentence shows whole
-    static func measure(bold: Bool) -> (String) -> CGFloat {
-        #if canImport(UIKit)
-        let size = UIFontMetrics(forTextStyle: .title3).scaledValue(for: Tokens.Size.subtitle)
-        let font = UIFont(name: bold ? "AlegreyaSans-Bold" : "AlegreyaSans-Medium", size: size) ?? .systemFont(ofSize: size, weight: bold ? .bold : .medium)
-        return { ($0 as NSString).size(withAttributes: [.font: font]).width }
-        #else
-        return { _ in 0 }
-        #endif
     }
 }
 

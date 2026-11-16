@@ -143,11 +143,6 @@ public actor APIClient {
         /// The welcome after the tap: the end button shows beside the mic, so
         /// they can go any time. Nil otherwise
         public var canEnd: Bool? = nil
-        /// The intro (lib/intro.ts): the opening in sentences with their
-        /// English, shown as subtitles on the portrait until the last one, the
-        /// question, which is the chat's first bubble. `line` is them joined.
-        /// Nil for every other turn and from older servers
-        public var intro: [IntroSentence]? = nil
         /// A one-line Beginner 2 reply: the question that ends it, with its
         /// English; the app prints only this of the turn (Josh, 2026-11-11).
         /// Nil for other turns and from older servers
@@ -178,7 +173,8 @@ public actor APIClient {
         public var levelUp: LevelUpCount? = nil
     }
 
-    /// One sentence of the intro, with its English subtitle
+    /// A sentence with its English: the question that ends a Beginner turn (`TurnReply.question`). Named for the
+    /// intro, which used it first and was removed (the server 2026-11-15, the app after it)
     public struct IntroSentence: Codable, Sendable, Equatable, Hashable {
         public let text: String
         public let en: String
@@ -216,8 +212,7 @@ public actor APIClient {
     /// `onFirst` also gets the first parts of a Beginner turn (nil otherwise),
     /// so they show as bubbles while they're said
     /// `welcome`: this conversation is the welcome (lib/welcome.ts); `micOff`: the mic was refused, she says once where to turn it on; `lesson`: a lesson's turn (lib/lesson.ts)
-    /// `onFirst`'s third value: the first sentence of an intro with its English (nil otherwise), so the intro shows from its first word
-    public func turnStreamed(cityId: String, placeId: String, tripTo: String? = nil, conversationId: String? = nil, learnerSaid: String? = nil, speed: Double? = nil, welcome: Bool? = nil, micOff: Bool? = nil, lesson: LessonTurn? = nil, onFirst: @escaping @Sendable (String, [TurnPart]?, IntroSentence?) -> Void) async throws -> TurnReply {
+    public func turnStreamed(cityId: String, placeId: String, tripTo: String? = nil, conversationId: String? = nil, learnerSaid: String? = nil, speed: Double? = nil, welcome: Bool? = nil, micOff: Bool? = nil, lesson: LessonTurn? = nil, onFirst: @escaping @Sendable (String, [TurnPart]?) -> Void) async throws -> TurnReply {
         struct Body: Encodable { let cityId: String; let placeId: String; let tripTo: String?; let conversationId: String?; let learnerSaid: String?; let speed: Double?; let welcome: Bool?; let micOff: Bool?; let lesson: LessonTurn? }
         var req = try post("v1/turn", json: Body(cityId: cityId, placeId: placeId, tripTo: tripTo, conversationId: conversationId, learnerSaid: learnerSaid, speed: speed, welcome: welcome, micOff: micOff, lesson: lesson))
         req.setValue("application/x-ndjson", forHTTPHeaderField: "Accept")
@@ -236,7 +231,7 @@ public actor APIClient {
         }
         for try await line in bytes.lines {
             switch try TurnStreamEvent.parse(line) {
-            case .first(let first, let parts, let intro): onFirst(first, parts, intro)
+            case .first(let first, let parts): onFirst(first, parts)
             case .reply(let reply): return reply
             case .error(var error):
                 error.requestId = requestId
@@ -251,7 +246,7 @@ public actor APIClient {
 
     /// One line of a streamed /v1/turn
     public enum TurnStreamEvent: Equatable, Sendable {
-        case first(String, [TurnPart]?, IntroSentence?)
+        case first(String, [TurnPart]?)
         case reply(TurnReply)
         case error(APIError)
 
@@ -260,9 +255,9 @@ public actor APIClient {
         public static func parse(_ line: String) throws -> TurnStreamEvent? {
             let data = Data(line.utf8)
             guard !line.trimmingCharacters(in: .whitespaces).isEmpty else { return nil }
-            struct Event: Decodable { let first: String?; let parts: [TurnPart]?; let intro: IntroSentence?; let reply: TurnReply?; let error: APIError?; let status: Int? }
+            struct Event: Decodable { let first: String?; let parts: [TurnPart]?; let reply: TurnReply?; let error: APIError?; let status: Int? }
             let event = try JSONDecoder().decode(Event.self, from: data)
-            if let first = event.first { return .first(first, event.parts, event.intro) }
+            if let first = event.first { return .first(first, event.parts) }
             if let reply = event.reply { return .reply(reply) }
             if var error = event.error {
                 error.status = event.status ?? 0
@@ -691,24 +686,12 @@ public actor APIClient {
         req.setValue("application/json", forHTTPHeaderField: "Accept")
         // Lets the server turn away builds that are too old (426, lib/app-version.ts)
         if let version = Self.appVersion { req.setValue(version, forHTTPHeaderField: "X-App-Version") }
-        // The new Beginner unless the old one is chosen in the hidden Settings rows (the cut-over, 2026-11-12;
-        // lib/beginner-2.ts → beginnerVersionFrom). Sent either way, so the server's default never decides for this build
-        if Self.oldBeginner {
-            req.setValue("1", forHTTPHeaderField: "x-fuori-beginner")
-        } else {
-            req.setValue("2", forHTTPHeaderField: "x-fuori-beginner")
-            // A step set on the hidden stepper (Josh's override, 2–6); otherwise the server uses the learner's stored step
-            let step = UserDefaults.standard.integer(forKey: Self.beginnerStepKey)
-            if step > 1 { req.setValue(String(step), forHTTPHeaderField: "x-fuori-cluster") }
-        }
+        // A step set on the hidden stepper (Josh's override, 2–6); otherwise the server uses the learner's stored step
+        let step = UserDefaults.standard.integer(forKey: Self.beginnerStepKey)
+        if step > 1 { req.setValue(String(step), forHTTPHeaderField: "x-fuori-cluster") }
         return req
     }
 
-    /// Settings → touch and hold Version → Beginner: Old, the Beginner from before the cut-over (2026-11-12), kept a
-    /// week for comparison. A new key, so nobody's earlier choice of "1" or "2" carries over: everyone starts on the new one
-    public static let oldBeginnerKey = "settings.oldBeginner"
-    /// Whether the old Beginner is chosen
-    public static var oldBeginner: Bool { UserDefaults.standard.bool(forKey: oldBeginnerKey) }
     /// Settings → touch and hold Version → Step: the step of scaffolding, 1–6 (docs/glossary.md → Level up)
     public static let beginnerStepKey = "settings.beginnerCluster"
 

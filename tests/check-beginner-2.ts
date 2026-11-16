@@ -157,6 +157,10 @@ check(/beginnerCluster: clusterHeaderFrom\(request\.headers\)/.test(route), 'the
   // The parts format is still there for the welcome and lessons
   check((code(take).match(/runBeginnerTurn\(/g) ?? []).length === 2 && /stageText: lessonBriefed\.brief/.test(take) && /stageText: welcomeBrief\(/.test(take), 'runBeginnerTurn is called twice: for a lesson and for the welcome');
   check(!/transcript\.map\(\(\{ offered/.test(take), 'a Beginner turn keeps the offered answers, so its heard note works');
+  // The app: no Old/New picker, no header, no intro handling (removed with the server's, 2026-11-15)
+  const swift = ['FuoriNetworking/APIClient.swift', 'FuoriFeatures/Settings/Settings.swift', 'FuoriFeatures/Conversation/ConversationModel.swift', 'FuoriFeatures/Conversation/CharacterBubble.swift', 'FuoriFeatures/Person/PersonView.swift'].map((f) => readFileSync(`ios/FuoriKit/Sources/${f}`, 'utf8')).join('\n');
+  check(!/x-fuori-beginner|oldBeginner/.test(swift), 'the app has no Old/New Beginner switch and sends no x-fuori-beginner header');
+  check(!/inIntro|introHead|skipIntro|IntroSheet|introSubtitle/.test(swift) && /public var question: IntroSentence\?/.test(swift), 'the app has no intro handling left; the question of a Beginner turn stays');
 }
 
 // The split (Josh, 2026-11-09): the dialogue is the Intermediate prompt itself, then the scaffolding

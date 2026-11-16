@@ -7,14 +7,15 @@ import Testing
 /// server that doesn't stream sends the reply itself.
 @Suite struct TurnStreamTests {
     @Test func readsFirstSentence() throws {
-        #expect(try APIClient.TurnStreamEvent.parse(#"{"first":"Hola, ¿cómo está? "}"#) == .first("Hola, ¿cómo está? ", nil, nil))
-        #expect(try APIClient.TurnStreamEvent.parse(#"{"first":"Buenas tardes. ","intro":{"text":"Buenas tardes.","en":"Good afternoon."}}"#) == .first("Buenas tardes. ", nil, APIClient.IntroSentence(text: "Buenas tardes.", en: "Good afternoon.")))
+        #expect(try APIClient.TurnStreamEvent.parse(#"{"first":"Hola, ¿cómo está? "}"#) == .first("Hola, ¿cómo está? ", nil))
+        // An older server's intro sentence beside the first sentence is ignored (the intro was removed 2026-11-15)
+        #expect(try APIClient.TurnStreamEvent.parse(#"{"first":"Buenas tardes. ","intro":{"text":"Buenas tardes.","en":"Good afternoon."}}"#) == .first("Buenas tardes. ", nil))
     }
 
     /// A Beginner turn's first piece carries its parts, to show as bubbles
     @Test func readsFirstWithParts() throws {
         let event = try APIClient.TurnStreamEvent.parse(#"{"first":"Welcome! Hola. hi ","parts":[{"kind":"english","text":"Welcome!","en":"","gloss":""},{"kind":"word","text":"Hola.","en":"Hello.","gloss":"hi"}]}"#)
-        guard case .first(let first, let parts, _) = event else { Issue.record("not a first: \(String(describing: event))"); return }
+        guard case .first(let first, let parts) = event else { Issue.record("not a first: \(String(describing: event))"); return }
         #expect(first == "Welcome! Hola. hi ")
         #expect(parts?.count == 2)
     }

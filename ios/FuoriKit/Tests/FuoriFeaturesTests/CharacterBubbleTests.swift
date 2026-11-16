@@ -11,49 +11,11 @@ import FuoriNetworking
     private let twoAnswers = #"[{"kind":"answer","text":"Sí, me gustan mucho.","en":"Yes, I like them a lot."},{"kind":"answer","text":"Son muy bonitos.","en":"They're very pretty."}]"#
     private let twoQuestions = #"[{"kind":"answer","text":"¿Cuánto cuesta el pasaje?","en":"How much is the fare?"},{"kind":"answer","text":"¿Adónde llega este camión?","en":"Where does this bus go?"}]"#
 
-    private let intro: [APIClient.IntroSentence] = [
-        .init(text: "Soy Raymundo, chofer de este camión.", en: "I'm Raymundo, driver of this bus."),
-        .init(text: "Este túnel era el cauce del río.", en: "This tunnel was the riverbed."),
-        .init(text: "¿Sube conmigo o mira desde aquí?", en: "Will you ride with me or watch from here?"),
-    ]
-    private var introLine: String { intro.map(\.text).joined(separator: " ") }
-
-    private func turn(line: String? = nil, english: String? = nil, parts: [APIClient.TurnPart]? = nil, intro: [APIClient.IntroSentence]? = nil,
-                      introHead: APIClient.IntroSentence? = nil, question: APIClient.IntroSentence? = nil, shown: Int? = nil,
-                      speaking: Bool = true, awaitingQuestion: Bool = false, newBeginner: Bool = true) -> CharacterBubble.Turn {
-        .init(line: line, english: english, parts: parts, intro: intro, introHead: introHead, question: question, shown: shown,
-              speaking: speaking, awaitingQuestion: awaitingQuestion, newBeginner: newBeginner)
-    }
-
-    // MARK: The intro
-
-    @Test func theIntroSheetShowsTheEnglishOfTheSentenceBeingSaid() {
-        let second = intro[0].text.count + 1 + 3
-        let t = turn(line: introLine, parts: parts(twoAnswers), intro: intro, shown: second)
-        #expect(CharacterBubble.inIntro(t))
-        #expect(CharacterBubble.introSubtitle(t)?.en == "This tunnel was the riverbed.")
-    }
-
-    @Test func theIntroEndsWhenTheQuestionStartsAndTheQuestionTypesInTheBubble() {
-        let questionAt = CharacterBubble.introStarts(intro).last!
-        let t = turn(line: introLine, parts: parts(twoAnswers), intro: intro, shown: questionAt + 4)
-        #expect(!CharacterBubble.inIntro(t))
-        let bubble = CharacterBubble.of(t)
-        #expect(bubble.line == "¿Sube conmigo o mira desde aquí?")
-        #expect(bubble.shown == 4)
-        #expect(bubble.english == "Will you ride with me or watch from here?")
-    }
-
-    @Test func theFirstSentenceShowsBeforeTheReplyHasCome() {
-        let t = turn(introHead: intro[0], shown: 5)
-        #expect(CharacterBubble.inIntro(t))
-        #expect(CharacterBubble.introSubtitle(t)?.en == "I'm Raymundo, driver of this bus.")
-    }
-
-    @Test func anInterruptedIntroGoesStraightToTheQuestion() {
-        let t = turn(line: introLine, parts: parts(twoAnswers), intro: intro, shown: nil, speaking: false)
-        #expect(!CharacterBubble.inIntro(t))
-        #expect(CharacterBubble.of(t).line == "¿Sube conmigo o mira desde aquí?")
+    private func turn(line: String? = nil, english: String? = nil, parts: [APIClient.TurnPart]? = nil,
+                      question: APIClient.IntroSentence? = nil, shown: Int? = nil,
+                      speaking: Bool = true, awaitingQuestion: Bool = false, beginner: Bool = true) -> CharacterBubble.Turn {
+        .init(line: line, english: english, parts: parts, question: question, shown: shown,
+              speaking: speaking, awaitingQuestion: awaitingQuestion, beginner: beginner)
     }
 
     // MARK: Beginner turns (the one-line reply)
@@ -97,7 +59,7 @@ import FuoriNetworking
 
     @Test func intermediatePrintsTheWholeLine() {
         let line = "Questo tunnel era il letto del fiume. Vuole salire?"
-        let t = turn(line: line, english: "This tunnel was the riverbed. Do you want to get on?", shown: 12, newBeginner: false)
+        let t = turn(line: line, english: "This tunnel was the riverbed. Do you want to get on?", shown: 12, beginner: false)
         let bubble = CharacterBubble.of(t)
         #expect(bubble.line == line)
         #expect(bubble.shown == 12)
@@ -108,13 +70,13 @@ import FuoriNetworking
     /// Josh, 2026-11-14: "when the reply is given, the reply bubbles disaappear. The revious character bubble hanges
     /// there until new dialogue arrives -- they should both go afteer reply"
     @Test func theCharactersBubbleGoesWhenTheReplyIsSentAtEveryLevel() {
-        var beginner = turn(line: introLine, parts: parts(twoAnswers), intro: intro, shown: nil, speaking: false)
+        var beginner = turn(line: tunnels, english: "…", parts: parts(twoAnswers), question: .init(text: "¿Le gustan los túneles?", en: "Do you like the tunnels?"), shown: nil, speaking: false)
         #expect(CharacterBubble.of(beginner).line != nil)
         beginner.replied = true
         #expect(CharacterBubble.of(beginner) == CharacterBubble(line: nil, shown: nil, english: nil))
 
         let line = "Questo tunnel era il letto del fiume. Vuole salire?"
-        var intermediate = turn(line: line, english: "This tunnel was the riverbed. Do you want to get on?", shown: nil, speaking: false, newBeginner: false)
+        var intermediate = turn(line: line, english: "This tunnel was the riverbed. Do you want to get on?", shown: nil, speaking: false, beginner: false)
         #expect(CharacterBubble.of(intermediate).line == line)
         intermediate.replied = true
         #expect(CharacterBubble.of(intermediate) == CharacterBubble(line: nil, shown: nil, english: nil))

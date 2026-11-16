@@ -55,10 +55,6 @@ public final class ConversationModel {
     public private(set) var english: String?
     /// Beginner level dialogue: her turn in parts (APIClient.TurnPart), or nil
     public private(set) var parts: [APIClient.TurnPart]?
-    /// The intro (lib/intro.ts): the opening's sentences, once the reply is here; nil for other turns
-    public private(set) var intro: [APIClient.IntroSentence]?
-    /// The intro's first sentence, from the streamed head, before the reply has come
-    public private(set) var introHead: APIClient.IntroSentence?
     /// A one-line Beginner 2 reply: the question that ends it, with its English, the only thing printed of the turn
     public private(set) var question: APIClient.IntroSentence?
     /// A Beginner 2 one-line reply whose head has come but not its question: nothing is printed yet
@@ -275,13 +271,13 @@ public final class ConversationModel {
         return p.count + (p.range(of: #"[.!?…:;]["'»”’)]*$"#, options: .regularExpression) == nil ? 1 : 0)
     }
 
-    // MARK: - The intro (lib/intro.ts; Josh's design, 2026-11-11)
+    // MARK: - The character's bubble
 
     /// The turn as CharacterBubble reads it (what the character's side shows: CharacterBubble.swift)
     private var bubbleTurn: CharacterBubble.Turn {
-        CharacterBubble.Turn(line: line, english: english, parts: parts, intro: intro, introHead: introHead, question: question,
+        CharacterBubble.Turn(line: line, english: english, parts: parts, question: question,
                              shown: shown, speaking: phase == .speaking, awaitingQuestion: awaitingQuestion,
-                             newBeginner: beginner && !APIClient.oldBeginner, replied: replied)
+                             beginner: beginner, replied: replied)
     }
 
     /// The learner's reply has gone (silence, a tap, a tapped answer) and the character's next line hasn't started:
@@ -289,15 +285,6 @@ public final class ConversationModel {
     /// comes back to the learner ("Didn't catch that", How do I say it, a failed call) shows it again. Not after an
     /// interruption, whose line is shown, not said, when it comes
     private var replied: Bool { phase == .thinking && !interrupted }
-
-    /// Where each intro sentence starts in `line`
-    private var introStarts: [Int] { CharacterBubble.introStarts(intro) }
-
-    /// The intro is playing (its sheet is up), until the question starts and the chat takes over
-    public var inIntro: Bool { CharacterBubble.inIntro(bubbleTurn) }
-
-    /// The intro's subtitle: the sentence being said, and how much of it is out
-    public var introSubtitle: (text: String, en: String, shown: Int?)? { CharacterBubble.introSubtitle(bubbleTurn) }
 
     /// The character's bubble in the chat, its typewriter progress and its English (CharacterBubble.of)
     public var chatLine: String? { CharacterBubble.of(bubbleTurn).line }
@@ -396,7 +383,6 @@ public final class ConversationModel {
             line = reply.line
             english = reply.en
             parts = reply.parts
-            intro = reply.intro
             question = reply.question
             awaitingQuestion = false
             shown = nil
@@ -417,8 +403,6 @@ public final class ConversationModel {
         line = reply.line
         english = reply.en
         parts = reply.parts
-        intro = reply.intro
-        introHead = nil
         question = reply.question
         awaitingQuestion = false
         shown = 0
@@ -474,14 +458,13 @@ public final class ConversationModel {
         let generation = self.generation
         let micOff = micOffToSay ? true : nil
         micOffToSay = false
-        return try await api.turnStreamed(cityId: city.id, placeId: place.id, tripTo: trip?.to.id, conversationId: conversationId, learnerSaid: learnerSaid, speed: speed, welcome: welcome ? true : nil, micOff: micOff, lesson: lesson) { [weak self] first, parts, intro in
-            Task { @MainActor in self?.startHead(first, parts: parts, intro: intro, generation: generation) }
+        return try await api.turnStreamed(cityId: city.id, placeId: place.id, tripTo: trip?.to.id, conversationId: conversationId, learnerSaid: learnerSaid, speed: speed, welcome: welcome ? true : nil, micOff: micOff, lesson: lesson) { [weak self] first, parts in
+            Task { @MainActor in self?.startHead(first, parts: parts, generation: generation) }
         }
     }
 
     /// `parts`: a Beginner turn's first parts, shown as bubbles while they're said
-    /// `intro`: an intro's first sentence with its English, shown as the subtitle on the portrait from the first word
-    private func startHead(_ first: String, parts headParts: [APIClient.TurnPart]? = nil, intro headIntro: APIClient.IntroSentence? = nil, generation: Int) {
+    private func startHead(_ first: String, parts headParts: [APIClient.TurnPart]? = nil, generation: Int) {
         // Only while still waiting for the reply: once it's here, present() says the whole line
         guard awaitingReply, head == nil, generation == self.generation, phase == .thinking || phase == .starting else { return }
         stoppedByTap = false
@@ -501,11 +484,9 @@ public final class ConversationModel {
                 self.sayIt = nil
                 self.line = first
                 self.parts = headParts
-                self.intro = nil
-                self.introHead = headIntro
                 self.question = nil
                 // The Beginner's one-line reply: nothing printed until the question comes with the reply
-                self.awaitingQuestion = self.beginner && headParts == nil && headIntro == nil && !APIClient.oldBeginner
+                self.awaitingQuestion = self.beginner && headParts == nil
                 self.english = nil
                 self.shown = 0
                 self.replies = nil
@@ -546,8 +527,6 @@ public final class ConversationModel {
         line = reply.line
         english = reply.en
         parts = reply.parts
-        intro = reply.intro
-        introHead = nil
         question = reply.question
         awaitingQuestion = false
         replies = nil
@@ -608,49 +587,8 @@ public final class ConversationModel {
     /// moves on the generation, so a stale wait never blocks a new turn)
     private var openingMic: Int?
 
-    // MARK: - Ending the intro early (the intro sheet; Josh, 2026-11-12: "users want control")
-
-    /// The learner closed the intro (the X, or swiping the sheet down): the rest of it isn't said, only its question
-    private var introSkipped = false
-
-    /// Ends the intro early: the voice stops as a tap stops it, the chat comes in on the question, and the character
-    /// says just the question (when the reply is still on its way, once it comes)
-    public func skipIntro() async {
-        guard inIntro else { return }
-        introSkipped = true
-        await tapTurn()
-    }
-
-    /// After a skipped intro: the question said by itself, typed out in its bubble, before the learner's turn
-    private func sayQuestionAfterSkip() async {
-        guard introSkipped else { return }
-        introSkipped = false
-        guard let question = intro?.last, intro?.count ?? 0 > 1, let start = introStarts.last else { return }
-        let generation = self.generation
-        phase = .speaking
-        do {
-            let audio = try await api.speak(text: question.text, characterId: character.id, speed: speed)
-            guard generation == self.generation, phase == .speaking else { return }
-            startReveal(question.text, offset: start)
-            try await voice.play(audio)
-        } catch {
-            guard generation == self.generation, phase == .speaking else { return }
-            report(error, step: "speak")
-            startReveal(question.text, offset: start)
-            await voice.speak(question.text, language: language.speechLang, rate: Float(speed), gender: character.gender)
-        }
-        finishReveal()
-    }
-
     /// `micClosed`: after an interruption the mic waits for a tap, hands-free too
     private func openTurn(micClosed: Bool = false) async {
-        // A skipped intro: its question is said first
-        if introSkipped, !micClosed {
-            let generation = self.generation
-            await sayQuestionAfterSkip()
-            guard generation == self.generation else { return }
-        }
-        introSkipped = false
         ring = 0
         // The last line has been said: the end button, or the screen closes; never the mic
         if finished {
