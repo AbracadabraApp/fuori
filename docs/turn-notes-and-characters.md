@@ -73,3 +73,11 @@ Josh on all three wordings: "these seem off bases too". Each is a stage directio
 
 - `scaffolding.md` 2026-11-16a, both countries: the notice wording in the table's second row. On main on Josh's "ok - sounds like a good change"; not released, not walked, not heard. If the form-only notes go ahead, this is moot.
 - Nothing else. No background, no other note, no code.
+
+## What the same day's play showed (eight visits, Mazatlán and Guadalajara, steps 1 and 2; read 2026-11-16)
+
+- **Notes copied word for word, again:** the Notice turn as "¿Qué le parece…?" in five of eight visits (bugs.md B2), and every visit closed on the Close note's three beats: enjoyed it, have to get back, next time I'll show you (B31).
+- **The best visit was the thickest character.** Memo at the tejuino cart: the stone on his table ("¿Qué cree que es?", a guess with a right answer), his mother who ground corn on it, her saying "Madre sólo hay una", the tub where the masa ferments two days. A family, a past and something in his hands.
+- **The thinnest was told so.** Andrés has one subject, the flames of the Man of Fire, on five of seven turns and on the last visit too; Josh told him he'd said almost all the same things last time (B39).
+- **The turn constraint's cost:** the 7th-turn goodbye cut off a song Josh had just asked for (B40). A character that knew the visit was short might have played it sooner.
+- **Ratings from the debug panel, the first:** five taps. Good: Lalo's "desde hace mucho, for a long time" turn. Bad: Lupita's turn 4, Chuy's turn 5. Bug: Chuy, "Repeats exclamation" and "Repetitive character" (B4).
