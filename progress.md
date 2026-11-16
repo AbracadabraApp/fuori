@@ -1,5 +1,13 @@
 # Fuori Development Progress
 
+## 2026-11-16 (Mac mini, with Josh): "do you like the kiosk", turn notes and thicker characters
+
+- **From Josh's play:** characters ask whether you like plain things (the square, the church, the flowers). Cause found in our own prompt: the notice note's "what they make of it, which they like, what they think it's for". Logged in dialogue-ideas.md.
+- **Changed, on main, not released:** scaffolding.md 2026-11-16a, both countries: notice says one thing a local would know, then asks what follows (Josh: "ok - sounds like a good change"). A look (tests/experiments/notice-look.mts): "do you like" the plain thing 10 of 10 → 4 of 10. Live (3d13c55) still has the original wording.
+- **Talked through, nothing built:** the four layers of what a character is told; the notice note patched three times; whether the trouble is source material, phrasing or over-constraining; notes that keep the form and lose the subject; telling the character the visit is short; thicker characters; "wikipedia in a shrimp captains background". Lists, a calendar and a line per month were proposed by Claude and dropped (Josh: scripting facts "feels wrong"). All in docs/turn-notes-and-characters.md, for Josh to come back to after more play.
+- **Also:** read Anthropic's product-management plugin's files; advice was not to install it.
+- **Open:** Josh's play on the new build (debug panel ratings, steps 1–6 by the Step setting); the walk has not been run on 3d13c55 by this session; test learners still in the live database (needs the laptop or Josh's OK on Railway's SSH key here).
+
 ## 2026-11-16 (cloud chat session, with Josh): B37, Mexico's map key not showing
 
 - **Josh, on the build of 3d13c55:** "the city key is missing on the mexico map"; then, asked what the map shows, "numbers. - i cant check in game play".
