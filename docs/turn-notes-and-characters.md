@@ -138,3 +138,14 @@ Josh, after asking for three level 1 questions, the answer offered, and the answ
 - Josh: "some of the bids we looked at worked a lot better than others". Claude's sort: the ones that stayed on the subject of the question and passed it across read well ("¿Qué cocina usted?", "Mi hija juega."); the ones that changed the subject or could follow anything didn't ("¿Por qué?", "Soy de Seattle."). That sort is Claude's, not his.
 - Josh's whole hypothesis, in his words: "i don't have a single hypothesis other than we've only been replying rather than reply+bid". Hold it at that size.
 - A principle, not a spec. Nothing built.
+
+## A look: the same ten moments, with a bid added (2026-11-16)
+
+Josh's design ("just an experiment", no card): ten questions from his visits of 11-15 and 11-16 where he answered with the plain bubble (A, B), what the character said next (C), then the same moment replayed with B as it was and with B plus a bid (D), two bids a moment, one run each. `tests/experiments/bid-look.mts`; the moments and output hold his lines and stay in the private scratchpad. The bids were Claude's, written to fit each question. No memory of earlier visits was given, and the prompt was main's (notice 16a), so D is read against the replay of B, not against C.
+
+- **The bid got its answer, first, in 19 of 20.** A question to the character was answered every time (12 of 12), with something not said before in the visit: Lalo works Monday to Saturday and lives a few blocks away, Chuy plays violin in a mariachi, Memo makes the tejuino himself from masa, piloncillo, lime and salt, Juana's mother taught her the dough, Elena's farm is near Guatemala. The one ignored: "Mi familia come mucho pescado" on a notice turn.
+- **Something about the learner got taken up, and twice got something back.** "Es para mi esposa" drew "A mi mamá también le gusta el café suave"; "Mi hija toca el piano" drew the violin and the piano together. "Mi mamá está enferma" changed the whole turn: Lupita pointed at the Christ where people leave candles for the sick and asked "¿Quiere prender una vela por su mamá?" in place of "¿Le gustan las flores?".
+- **The turn note still decided where the turn ended.** On the notice and two-answers turns the bid changed the first sentence and the turn then went where the note sent it: all three versions of Don Anselmo's shrimp turn ended "look at the bandstand… ¿Le gusta la música?"; Lupita's ended "¿Le gustan las flores?" twice in three; Memo's "¿Ya conoce el mercado?" twice in three. On comment turns, which set no subject, the bid shaped the whole turn.
+- **The next bubbles followed the bid's material:** "¿Qué es el piloncillo?", "¿Cómo es la finca?", "¿Quién fue don Juan Machado?".
+- An opinion ("Me gusta este parque") got a word of agreement and nothing else, as the bids doc predicted.
+- What it reaches: one run a cell, ten moments, Claude's bids. A look, not a result.
