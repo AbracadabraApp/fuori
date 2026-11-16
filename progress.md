@@ -1,5 +1,11 @@
 # Fuori Development Progress
 
+## 2026-11-16 (cloud chat session, with Josh), later: B43, the level up page over a running conversation
+
+- **Josh:** "this level up page deployed after a conversation had started and sat/spoke behind it"; "it wasn't interstitial". Cause: the offer is asked for after the last conversation's save, seconds later, and the sheet showed whenever it arrived. **Fixed on main, not on a phone:** while a person's screen is up the offer waits, and shows on the place list afterwards (AppModel.conversationOpen, RootView; LevelUpHoldTests; docs/state-machines.md updated).
+- **B42, his proposal for the page (logged for the session making the mockup):** drop the examples; say the learner's own numbers ("You've had 3 conversations and heard about 434 words of Spanish (23%)"); ask whether to hear more of the language or "practice more at this level"; and say "that every few conversations you'll check back".
+- **Needs:** a new build on his phone for B37 and B43.
+
 ## 2026-11-16 (Mac mini, with Josh): "do you like the kiosk", turn notes and thicker characters
 
 - **From Josh's play:** characters ask whether you like plain things (the square, the church, the flowers). Cause found in our own prompt: the notice note's "what they make of it, which they like, what they think it's for". Logged in dialogue-ideas.md.

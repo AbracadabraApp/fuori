@@ -135,6 +135,9 @@ public struct RootView: View {
                                 if let person = content.character(route.place.characterId),
                                    let conversation = model.conversation(city: route.city, place: route.place, character: person) {
                                     PersonView(model: conversation)
+                                        // A level-up offer waits while this is on screen (B43)
+                                        .onAppear { model.conversationOpen = true }
+                                        .onDisappear { model.conversationOpen = false }
                                 }
                             }
                     }
@@ -142,7 +145,8 @@ public struct RootView: View {
             }
         }
         .tint(Tokens.Colors.green)
-        // The level up, offered over the place list after the conversation it followed (sketches/level-up/)
+        // The level up, offered over the place list after the conversation it followed (sketches/level-up/);
+        // never over a conversation: an offer that arrives during one waits until it's left (B43)
         .sheet(item: Binding(get: { model.levelUpItem }, set: { model.levelUpItem = $0 })) { offer in
             if let words = model.levelUp?.words, let api = model.api, let content = model.content {
                 LevelUpView(offer: offer, words: words, language: content.language, api: api) { yes in

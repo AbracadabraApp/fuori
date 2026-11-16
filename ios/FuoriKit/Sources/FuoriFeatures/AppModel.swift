@@ -130,10 +130,23 @@ public final class AppModel {
     public var pendingRestart = false
     /// The level-up offer due after the conversation just left (lib/level-up.ts); the sheet shows it and clears it
     public var levelUp: (offer: APIClient.LevelUp, words: LevelUpWords)?
-    /// The offer as an item for the sheet
+    /// A conversation is on screen (RootView sets it as the person's screen
+    /// appears and goes). The offer is asked for after the last conversation
+    /// is saved, which takes seconds, so it can arrive once the learner is in
+    /// the next one: it then covered that conversation, which went on speaking
+    /// behind it (B43; Josh, 2026-11-16: "it wasn't interstitial")
+    public var conversationOpen = false
+    /// The offer as an item for the sheet: none while a conversation is on
+    /// screen. It waits, and shows over the place list when the learner is back
     public var levelUpItem: APIClient.LevelUp? {
-        get { levelUp?.offer }
-        set { if newValue == nil { levelUp = nil } }
+        get { Self.showable(levelUp?.offer, conversationOpen: conversationOpen) }
+        // Hiding the sheet for a conversation must not throw the offer away
+        set { if newValue == nil, !conversationOpen { levelUp = nil } }
+    }
+
+    /// What the level-up sheet may show now: nothing over a conversation (B43)
+    nonisolated static func showable<Offer>(_ offer: Offer?, conversationOpen: Bool) -> Offer? {
+        conversationOpen ? nil : offer
     }
 
     /// Called when the settings sheet has gone: switch to the country picked in
