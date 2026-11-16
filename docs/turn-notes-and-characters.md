@@ -92,3 +92,37 @@ Josh, on Memo's mother and metate being made up in the visit, not written: "rule
 - **What didn't:** nothing like Memo's visit. The life came late (turns 4 and 5), usually after an offered answer asked for it ("Did your dad work here too?"). Don Anselmo never got to baseball or a family in any version, and opened on "Do you like the plaza?" in all three. Three of the invented lives were the same one: my father did this before me.
 - **Reading:** the line helps a little and costs a sentence; alone it isn't the answer. What drew a life out of Memo was a turn that needed one (a saying needs someone who said it); what drew it out here was a question from the learner's side.
 - Not put in any prompt.
+
+## Are the learner's bubbles interesting enough? Josh's replies against the bubbles offered (2026-11-16)
+
+Josh: "maybe the learner's bubbles aren't interesting enough"; then, to going through what he said when he ignored them, "yes - try to note also how often a bubble answered and added vs. just answered". All of Josh's Beginner visits since 2026-11-09 on his two learner records (Mexico and Italy): 49 visits, 463 replies, 421 of them on turns with bubbles. Each reply matched to that turn's bubbles by a script, then the "added" and "own words" replies sorted by hand (mishearings of a bubble counted as reading it). His lines stay in the private scratchpad; only counts and bubbles are here.
+
+**What he did with the bubbles (421 replies)**
+- Read a bubble as it was: about 70%.
+- Read a bubble and added something real: about 13%.
+- Read a bubble and added a note for us about the game ("your bubble has no English"): about 5%.
+- Said something of his own: about 12%.
+- By day it swings: 2026-11-13, 45 read / 30 added / 17 own; 2026-11-16, 46 read / 5 added / 5 own.
+
+**What he added or said instead (the description of a bubble he'd want)**
+- His name, 15 times, most often at the goodbye. No bubble offers it once the character hasn't asked.
+- A question of his own, about 30: about the person (what time do you finish work; is your name from here; tell me about your life, next time), a why (why sell tickets if it's private), what a name means, where to get something.
+- Something about himself, about 20: where he has lived or been, his family, what he's doing today, an opinion.
+- "Both", or a third thing, 6 times, where the bubbles were either-or.
+- Correcting what the character assumed about him, 4 times; telling the character it repeats itself or won't end, 14 times (mostly before 11-13c).
+
+**The bubbles themselves: just answers, or answers and adds**
+
+| Bubble shape | Nov 9–13: offered | taken, of those offered | Nov 15–16: offered | taken, of those offered |
+|---|---|---|---|---|
+| Just answers ("Sí, me gusta.") | 68% | 41% | 22% | 51% |
+| Answers and adds a thought ("Sí, me gusta. Es muy bonita.") | 10% | 52% | 22% | 64% |
+| Answers and asks back ("Son cafés. ¿Usted trabaja aquí desde hace mucho?") | 2% | 42% | 18% | 44% |
+| A question only ("¿Qué es una flota?") | 18% | 33% | 36% | 31% |
+
+Mean length 4.2 words, then 5.6. The change is scaffolding.md 2026-11-14c ("two answers that go somewhere") and the comment and questions-to-ask turns.
+
+- **The bubbles are much richer than a week ago,** and he reads them more and adds less: on 11-16, nine replies in ten were a bubble as offered. Either they now say what he would have added, or reading is easier than adding; this can't tell which.
+- **He takes "answers and adds" most, at both dates, and a question alone least.** A question-only bubble is now the most common kind offered (36%) and the least taken.
+- **What no bubble does yet:** opens a subject about the person that the character hasn't raised; lets him say something about himself; offers "both".
+- A correction: Claude told Josh that several of his best lines on 11-16 were his own words ("Do you do this every day?", "Why do you use a clay pot?", "I take my coffee black"). They were bubbles.
