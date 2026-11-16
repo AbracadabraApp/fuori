@@ -7,7 +7,7 @@ import { join } from 'node:path';
 import { characterForVisit } from '@/lib/characters/for-visit';
 import { runTurn } from '@/lib/turn';
 import { CLUSTERS, OPENER, frameBrief, pickSetup, setupLine, type Setup } from '@/lib/beginner-2';
-import { assemblePieces, englishOf } from '@/lib/dialogue/pieces';
+import { englishOf } from '@/lib/dialogue/pieces';
 import type { Turn } from '@/lib/types';
 import { OUT, ask, askGrok, pool, startTest } from './common.mjs';
 
@@ -49,7 +49,7 @@ const visits = await pool(places.flatMap((p) => ARMS.map(({ arm, cluster, brief 
     const started = Date.now();
     const raw = await runTurn({ character, transcript, learnerSaid: said, brief, note: setupLine(setup), answers: true, withDone: true });
     const answers = (raw.answers ?? []).filter((a) => a.text.trim());
-    turns.push({ turn, setup: setup.id, line: assemblePieces(raw.line), en: englishOf(raw.line), answers, ms: Date.now() - started, said });
+    turns.push({ turn, setup: setup.id, line: raw.line.replace(/\{([^|}]*)\|[^}]*\}/g, '$1').replace(/\*/g, ''), en: englishOf(raw.line), answers, ms: Date.now() - started, said });
     if (raw.done) { endedEarly = turn < TURNS; break; }
     if (said) transcript.push({ who: 'learner', transcript: said });
     transcript.push({ who: 'npc', transcript: raw.line, translation: raw.en });
