@@ -286,8 +286,11 @@ private struct CityKey: View {
             Text(name)
                 .typeface(.display, Tokens.Size.badge, relativeTo: .subheadline, weight: on ? .bold : .regular)
                 .foregroundStyle(on ? Tokens.Colors.mapRoute : Tokens.Colors.ink)
-                .lineLimit(1)
+                // A long name takes a second line; it was cut to "San Cristóbal de las Ca…" (B37)
+                .lineLimit(2)
                 .minimumScaleFactor(0.8)
+                .multilineTextAlignment(.leading)
+                .fixedSize(horizontal: false, vertical: true)
         }
         .accessibilityElement(children: .combine)
     }
