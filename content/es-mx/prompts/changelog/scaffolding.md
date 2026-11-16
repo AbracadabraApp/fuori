@@ -2,6 +2,13 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
 
+### 2026-11-16d: Josh's two changes, in: notice out of the draw; the answers make a bid
+- **Removed, Setup: notice** and its place in the draw (`CLUSTERS`, `WEIGHT` and the once-a-visit rule in `lib/beginner-2.ts`). The other notes are drawn by the same weights.
+- **Changed, System prompt › Answers:** the sentence listing three kinds of answer and two things to avoid is now "Each answer replies to you, then makes a bid: an offer to keep the conversation going. Make the two different."
+- **Why:** these are the two changes Josh set on 2026-11-16 ("so move notice & bid=keep the conversation going?"), after a day on "do you like the kiosk": "usually if we withdraw rules problems go away"; "we've only been replying rather than reply+bid"; "a bid is an offer to keep the conersation going". They are word for word what 16b held; 16c took them out because Claude had put them in unasked. Josh, afterwards: "the reason we aren't in the endzone is you are moving the goaline"; "im going to hear the same thing because we made no changes".
+- **Judged by:** Josh, in play, after a release on his word. Card N1 (docs/prompt-trials.md) could not decide and is not a condition on this.
+- **To undo:** the prompt and `lib/beginner-2.ts` as at 16c.
+
 ### 2026-11-16c: 16b taken back out; the prompt is as it was at 16a
 - **Restored:** Setup: notice and its place in the draw, and the Answers rule's sentence ("Make the two answers two different things a person might really say here, each taking the talk somewhere…"). The file and `lib/beginner-2.ts` are word for word as at 2026-11-16a.
 - **Why:** 16b was put on main by Claude without Josh asking for it. His go (2026-11-16) was to a plan in which the two changes went to main only if a test held; the test (card N1) could not decide, and he did not then ask for them. Claude put them on main and recorded it as his word. Josh: "nor have I asked them to be released". Taken out so that a release of main by any session can't carry a change he hasn't asked for.
