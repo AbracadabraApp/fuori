@@ -155,6 +155,7 @@ Josh sent the cloud chat session two screenshots of the page at 08:54, with no w
 **Josh, 2026-11-16:** "I'd put the tan header on with \"Checking in!\"". The studies now open on the conversation screen's paper band (`PersonView.band`: display bold 31, left) reading "Checking in!", with her name on the second line where the role goes (the name line is Claude's, not his), then her portrait.
 **Josh, 2026-11-16, colour:** "remove 1, 4, 6 7, 8". Left on the board: 2 paper with terracotta for Next, 3 olive with lemon, 5 teal with lemon. Out: level-up yellow, awning green, her dress blue, charcoal, purple.
 **Josh, 2026-11-16:** "swap 2 - terracotta for yellow". Study 2 is now paper with lemon for Next; all three studies left use lemon for Next.
+**Josh, 2026-11-16:** "make all white stay/dot/button - light grey". Stay and the bar's Now segment are light grey on all three studies; Next stays yellow.
 
 ### B43. The level up page came up over a conversation that had already started
 Josh, 2026-11-16, on the build of 3d13c55: "this level up page deployed after a conversation had started and sat/spoke behind it"; "it wasn't interstitial". No conversation id given.
