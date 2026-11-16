@@ -245,3 +245,4 @@ Reading Don Anselmo's background (`here`, content/es-mx/cities/mazatlan.ts) whil
 - Not every background reads this way. Trade backgrounds hold what the person handles (Oaxaca's mezcal bar: copitas, sal de gusano, espadín; Bologna's salumeria: mortadella sliced by hand, Parmigiano by age). The plaque kind is strongest for people at sights and in Mexico's newer cities, where each city's real history was added on purpose (2026-11-09) so characters wouldn't invent it.
 - The same day Josh on writing facts for characters to say (a list of things to notice, a calendar, a line per character per month, all proposed by Claude): "when i think about all that scripting of facts it feels wrong". All three dropped.
 - Nothing changed in any background.
+- The whole morning's notes (the four layers, how notice got here, the ideas dropped and open, thicker characters) are in [turn-notes-and-characters.md](turn-notes-and-characters.md).
