@@ -29,7 +29,12 @@
 
 ## 2026-11-16 (laptop): on Josh's phone
 
-- **Installed on Josh's iPhone 16 Pro** a Debug build of main at 3d13c55 (his word: "release to phone", "update phone"). Nothing to release on the server: live was already 3d13c55. The build includes the debug panel's ratings and the removal of the Old/New Beginner picker and the intro code from the app. Not yet played.
+- **Installed on Josh's iPhone 16 Pro** a Debug build of main at 3d13c55 (his word: "release to phone", "update phone"). Nothing to release on the server: live was already 3d13c55. The build includes the debug panel's ratings and the removal of the Old/New Beginner picker and the intro code from the app. Played the same morning: eight visits in Mexico, steps 1 and 2.
+- **Josh's verdict:** "The dialogue of todays 8 sessions were mostly very good. Notice was an issue. Names repeated. Some open UI questions on level 2".
+- **The level up offered and taken in play for the first time** (B33 confirmed): step 1 → 2 after Lupita (ce527f6f). The page baffled him (B42: "what is missing is just the basic \"what is happening?\""); Josh is working on it with the cloud session. A mockup (the explanation first, one sentence as the example) is in this session's chat only.
+- **Bugs from the review** (docs/bugs.md): B2 Notice back to open (six of eight visits); B39 Andrés replayed his last visit; B40 the 8-turn close cut off a song Josh asked for; B41 the echo says names and exclamations twice.
+- **docs/rules-prevention.md, new** (Josh: "careful with rules"): a fix that would add a prompt rule waits there to be reviewed for a better way. R1 is B41's.
+- **Step 2 by ear:** "once i was on level 2 - 40% was bin spanish - but only questio printed"; an observation, not a change (dialogue-ideas.md).
 
 ## 2026-11-15 (Mac mini, with Josh): mix, loop and level up. All on main, none of it released or heard
 
