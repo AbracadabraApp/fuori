@@ -126,3 +126,13 @@ Mean length 4.2 words, then 5.6. The change is scaffolding.md 2026-11-14c ("two 
 - **He takes "answers and adds" most, at both dates, and a question alone least.** A question-only bubble is now the most common kind offered (36%) and the least taken.
 - **What no bubble does yet:** opens a subject about the person that the character hasn't raised; lets him say something about himself; offers "both".
 - A correction: Claude told Josh that several of his best lines on 11-16 were his own words ("Do you do this every day?", "Why do you use a clay pot?", "I take my coffee black"). They were bubbles.
+
+## The learner's bubbles can make bids that feed the character (Josh, 2026-11-16)
+
+Josh, after asking for three level 1 questions, the answer offered, and the answer revised as "answered + bid" (with different bids: "¿Y usted?", "¿Por qué?", "¿Desde cuándo?"; then bids about the learner): "im not trying to drive specifics - i am just trying to point out our learner responses can make bids that feed the character".
+
+- The principle: we write both sides. The morning went on the character's side (his turn notes, his background, a line giving him a life). The bubbles are the other half of the talk, and a bubble that answers and then bids gives the character a turn that calls for something of his own, with nothing scripted for him.
+- A bid can be a question to the character, or something about the learner. Josh on the second: "you give bubble choices - they are just a bid - they don't always need to be true". The answers rule's "never make it up" about the learner is ours, and stands in the way of that.
+- Josh's concern with Claude's first wording ("one of the two answers the question, then asks the character the same thing back"): it names one bid, and would become the next "¿Lo ve?". Any wording has to leave the bid open; check by counting the bids in a few visits.
+- Fits the counts above: he takes "answers and adds" most; a week ago 68% of bubbles just answered.
+- A principle, not a spec. Nothing built.
