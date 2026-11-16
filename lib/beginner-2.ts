@@ -40,8 +40,6 @@ export interface Setup {
  */
 export const RUNGS: Setup[] = [
   { id: 'two-en', block: 'Setup: two answers', maxAnswers: 2, english: true },
-  // Something they can see right now, two answers (2026-11-12d; Josh's bids: a different kind of question, not only "this or that?")
-  { id: 'notice', block: 'Setup: notice', maxAnswers: 2, english: true },
   { id: 'ask-en', block: 'Setup: two questions to ask', maxAnswers: 2, english: true },
   // A turn that ends on a comment, not a question (D6; Josh, 2026-11-14: "Why always Q? A. Why not just talk - comment
   // or Q."): one answer on its words, one new (D7). Its last line is printed and said by the question's ladder
@@ -81,16 +79,17 @@ export const CLUSTERS: Setup[][] = [
   // asked it again and again: "you can just remove the ask question". Questions to ask stay, as bubbles only
   // Cluster 1 (2026-11-11c): two answers and questions to ask, never the same three times running (Josh: "the answers
   // are fine but no variation. It's like Dora the Explorer"). An open question with no answers was tried the same night
-  // and pulled (Josh: "difficult for this level")
-  [R('two-en'), R('notice'), R('ask-en'), R('comment')],
-  [R('two-en'), R('notice'), R('ask-en'), R('comment')],
-  [R('two-en'), R('notice'), R('ask-en'), R('comment'), R('free')],
+  // and pulled (Josh: "difficult for this level"). Notice (point at something in sight, 2026-11-12d) left the draw
+  // 2026-11-16b: it sent the character to the next sight whatever was being said (Josh: "do you like the kiosk")
+  [R('two-en'), R('ask-en'), R('comment')],
+  [R('two-en'), R('ask-en'), R('comment')],
+  [R('two-en'), R('ask-en'), R('comment'), R('free')],
   // Steps 4-6 (docs/dialogue-plan.md D10; Josh, 2026-11-14: build the direction, "don't gate on play today"): one
   // screen, one support taken away a step. Step 4: answers as at step 3, mostly the language, the question's English
   // heard, not printed. Step 5: English only when asked (Level 3). Step 6: no answers, their own words, the question in
   // the language only. The answers keep their English at every step (Josh, 2026-11-09: reading Spanish you don't
   // understand "feels odd and coercive"). Were [ask-en, free], [two-en, free], [free] on the parts format
-  [R('two-en'), R('notice'), R('ask-en'), R('comment'), R('free')],
+  [R('two-en'), R('ask-en'), R('comment'), R('free')],
   [R('two-en'), R('ask-en'), R('comment'), R('free')],
   [R('free')],
 ];
@@ -125,7 +124,7 @@ export function seedOf(s: string): number {
 /** Invitations to be curious (questions to ask, an invitation to ask): rarer than answers, never twice running (Renata, 2026-11-10) */
 const INVITES = new Set(['ask-en', 'invite-en']);
 /** How often each setup comes up in its cluster: two answers three times as often as either invitation */
-const WEIGHT: Record<string, number> = { 'two-en': 3, notice: 1, 'ask-en': 1, comment: 2, 'invite-en': 1, free: 2 };
+const WEIGHT: Record<string, number> = { 'two-en': 3, 'ask-en': 1, comment: 2, 'invite-en': 1, free: 2 };
 
 /** The seeded pick by weight, before the rules about the turn before; `not`: a setup left out of the draw */
 function weighted(cluster: Setup[], key: string, not?: string): Setup {
@@ -160,10 +159,6 @@ export function pickSetup(p: { conversationId?: string | null; turn: number; lea
     let w = weighted(cluster, key(turn), cluster.length > 1 && p1 && p2 && p1.id === p2.id ? p1.id : undefined);
     // Renata (2026-11-10): the same invitation every other turn; an invitation never follows an invitation
     if (INVITES.has(w.id) && p1 && INVITES.has(p1.id)) w = cluster.find((s) => !INVITES.has(s.id)) ?? w;
-    // Notice never twice running (2026-11-12, a replay of Raymundo's visit: the same arches and "¿Los ve?" on two turns in a row)
-    // Notice once a visit (2026-11-13, Josh: "In this game, everyone likes to say, lo veo, lo ve"; 17 turns in 100, five in
-    // one visit): a second Notice becomes two answers. It also covers the old rule, never twice running (2026-11-12)
-    if (w.id === 'notice' && Array.from({ length: turn - 1 }, (_, k) => at(k + 1)).some((s) => s?.id === 'notice')) w = cluster.find((s) => s.id === 'two-en') ?? w;
     chain.set(turn, w);
     return w;
   };

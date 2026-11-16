@@ -81,7 +81,7 @@ From `dialogue-structure-reference.md` § 2a (Josh, 2026-11-12: "I was hoping th
 | **Say it back** | Says a phrase worth having | Repeats it from a bubble | Live: the two-answers setup. Said back on 82% of replies at Beginner 2 |
 | **Choose** | Holds up two things ("¿Crema o grasa?") | Picks one | Live by habit: two answers usually come out as this; the intro's question too ("Preferisce…") |
 | **Ask me** | Tells a little, then stops | Asks one of two questions about what was just said | Live: questions to ask, tied to the character's line since scaffolding.md 12g ("¿Qué es el huitlacoche?") |
-| **Notice** | Points at something new in sight ("¿Los ve? Do you see them?") | Looks, says yes or what they see | Live since 12d; never twice running since 12f. Watch that "¿Lo ve?" doesn't become a habit |
+| **Notice** | Points at something new in sight ("¿Los ve? Do you see them?") | Looks, says yes or what they see | Live since 12d; never twice running since 12f. Watch that "¿Lo ve?" doesn't become a habit **Out of the draw since scaffolding 2026-11-16b** (Josh: it sent the character to the next sight, "do you like the kiosk") |
 | **Finish it** | "El café se sirve con…" | Supplies the ending | In the old Beginner (stage 3, a sentence to finish); learners left the visit on it more than any other bid (27%) |
 | **Guess** | "What do you think this hook is for?" | Picks a guess; one is right | Live for idioms since 2026-11-14 (D13): about one Beginner visit in three, an idiom said with its words in English, "¿Qué cree que quiere decir?", two guesses, one right; the next turn says what it means |
 | **Remember** | "Do you recall what this sauce is called?" | Says the word from earlier | Designed; needs memory that's been seen working on a return visit |

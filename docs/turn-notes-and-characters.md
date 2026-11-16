@@ -210,3 +210,9 @@ Josh: "does claude need a description of a bid? I also think the model needs a d
 - **"Curious" made more two-part bubbles but the word leaked into them:** "How interesting!" four times, "I'm curious", "I like history".
 - Directions (curious, personal, cultural) drawn per turn or split across the two bubbles: Claude's suggestion, not tried.
 - One run; no prompt changed.
+
+## What was done with it (2026-11-16, evening)
+
+- Card N1 tested Josh's two changes as one package (notice out; the bubble rule's "each answer replies to you, then makes a bid: an offer to keep the conversation going") and did not pass: the bubbles did bid more at the same length; the liking question was too rare on main to decide; the count of turns telling something about the place could not be trusted (the two judges disagreed). Claude first reported that count as a failure and this morning's notice wording as the fix; neither was shown (Josh: "how can you say that about notice if the test failed").
+- Josh on the testing: "we have had about 2 site changes after 50+ tests"; "the test criteria are set too high and the juding is not calibrated"; "testing is just an argument forr doing nothing - it should test itself"; "ive done the testing myself as judge and never been approved"; "that is when I say its better the test says no".
+- **Both changes are on main on his word, scaffolding 2026-11-16b, both countries, not released.** His ear at the next release is the test.
