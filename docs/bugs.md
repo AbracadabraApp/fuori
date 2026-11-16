@@ -97,6 +97,8 @@ Josh, 2026-11-14 night, after a night of play on two learners: "no step ups offe
 
 **Released 2026-11-15 (live dcc3ab65) and walked in both countries the same evening: the old address reached the offer at every step and at Intermediate, the offer came after the third visit each time and never as an error, each yes moved the step or level. So B33 and B34's token limit are fixed on the live servers by the walk's account; no real player on build 16 has been seen to get the offer yet.**
 
+**Confirmed 2026-11-16:** Josh was offered step 2 after Lupita (Tlaquepaque, ce527f6f, his third step 1 visit of the morning) and took it (Josh: "i took the offer"); his next visit, Chuy (f71312f9), played at step 2. The page itself is B42.
+
 ### B34. The offer fails one time in three once it is due
 Found 2026-11-15, about 20:14–20:25 UTC, by this session walking a throwaway learner up every step on Italy's live server (three visits a step, the offer, a yes; Bologna; answers said back by script). The server side works end to end: the offer came at every step, 1 to 6, and then for Intermediate, and each yes moved the step, then the level. But on 3 of the 9 visits where the offer was due the route answered 500: the rewrite call had 600 tokens with thinking on ("Claude returned no text (blocks: thinking; stop: max_tokens)", "Unterminated string in JSON"), and the offer came after the next visit instead. **Fixed on main the same hour by the laptop session (539365da: 4,000 tokens, a max_tokens error by name). Not released.** Those log lines were this probe's, not Josh on build 16 as that commit guessed; whether a real learner has been offered a step is still unknown. Intermediate to Advanced not walked (the probe hit the turn rate limit).
 
@@ -129,6 +131,9 @@ Josh, 2026-11-16, to Andrés at the Hospicio Cabañas (step 1, 16:50 UTC): "I th
 
 ### B41. A name or an exclamation said twice by the echo
 Josh, 2026-11-16, Chuy, Guadalajara (f71312f9, step 2, every sentence echoed), Bug on turn 5, "Repeats exclamation", and turn 6, "Repetitive character"; then: "he might say Ahhh! Joshua (in Spanish) and then Ahh! Joshua in English. When characters use my name its strange to here it repeated - because it isn't in 2 languages". From today's step 2 turns: "¡Ja! Sí, es muy grave… Ha! Yes, it's very deep…" (Chuy); "Gracias, Joshua. Aquí todos somos vecinos. Thank you, Joshua. Here we are all neighbors." (Lupita); "Mucho gusto, Joshua. Nice to meet you, Joshua." (Valeria); "¡Eso es, Joshua, lo entendió muy bien! That's it, Joshua, you got it just right!" (Memo). The echo repeats the whole sentence, so a name or an exclamation, which sound the same in both languages, comes twice. **Status: open.**
+
+### B42. The level up page needs work
+Josh, 2026-11-16, after taking the offer from step 1 to 2 (after Lupita, ce527f6f): "i took the offer - that page needs some help". What's wrong with it: asked. **Status: open.**
 
 ### Carried from progress.md's screen list (2026-11-12)
 - **B14.** "The city didn't show" (Valenciana, Don Isidro's place). Which screen, asked. **Open.**
