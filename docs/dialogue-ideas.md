@@ -246,3 +246,7 @@ Reading Don Anselmo's background (`here`, content/es-mx/cities/mazatlan.ts) whil
 - The same day Josh on writing facts for characters to say (a list of things to notice, a calendar, a line per character per month, all proposed by Claude): "when i think about all that scripting of facts it feels wrong". All three dropped.
 - Nothing changed in any background.
 - The whole morning's notes (the four layers, how notice got here, the ideas dropped and open, thicker characters) are in [turn-notes-and-characters.md](turn-notes-and-characters.md).
+
+## Hearing more of the language than you can read (Josh, 2026-11-16)
+
+After his first visits at step 2 (every sentence echoed; Chuy, Memo, Valeria in Guadalajara, f71312f9 and two more that morning): "it felt strange to hear more spanish but not read it - not trying to change the design". The app prints only the question and its English (his 2026-11-11 call), so the step that adds the language adds it to the ear only. An observation, not a request; nothing changed.
