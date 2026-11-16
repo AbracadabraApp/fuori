@@ -274,10 +274,6 @@ export function lineWithAnswers(r: { line: string; en: string; done?: boolean; h
  * Don Isidro).
  */
 /**
- * A comment turn's last line (D6, D7): the last sentence in the language, with the last sentence of her English, so
- * it's printed and said by the question's ladder as a question is. Undefined when the line ends in English
- */
-/**
  * The idiom turn's printed question opens with the saying (Josh, 2026-11-14: "Cada loco con su tema, ¿Qué cree que
  * quiere decir? What do you think it means?"): one sentence, so still only the question is printed. The store's
  * optional words in brackets ("(bastan)") are left out; nothing added when her question already has it
@@ -292,6 +288,13 @@ export function withIdiomFirst(q: { text: string; en: string }, idiom: string | 
   return { ...q, text: `${saying.charAt(0).toUpperCase()}${saying.slice(1)}, ${rest}` };
 }
 
+/**
+ * A comment turn's last line (D6, D7): the last sentence in the language, with the last sentence of her English, so
+ * it's printed and said by the question's ladder as a question is. An English echo after it is set aside, as
+ * questionOf does (B36: since the steps became settings, steps 1–5 echo the turn's last sentence, so the line always
+ * ended in English and every comment turn printed nothing). Undefined when the line ends in English with nothing in
+ * the language before it
+ */
 export function lastLineOf(line: string, en: string): { text: string; en: string } | undefined {
   const sentences = (s: string) => s.trim().split(/(?<=[.!?…]["'»”’)]*)\s+/).filter(Boolean);
   const bare = (s: string) => s.toLowerCase().replace(/[()"'«»“”‘’¿¡]/g, '').replace(/\s+/g, ' ').trim();
@@ -299,7 +302,9 @@ export function lastLineOf(line: string, en: string): { text: string; en: string
   const shared = (a: Set<string>, b: Set<string>) => { const both = [...a].filter((w) => b.has(w)).length; return both / (a.size + b.size - both || 1); };
   const enSentences = sentences(en);
   const isEnglish = (x: string) => bare(en).includes(bare(x)) || enSentences.some((e) => shared(wordsOf(x), wordsOf(e)) >= 0.5);
-  const last = sentences(line).at(-1);
+  // Only the turn's last two sentences: the comment and, after it, its English echo
+  const [end, before] = sentences(line).slice(-2).reverse();
+  const last = end && isEnglish(end) && before && !isEnglish(before) ? before : end;
   const lastEn = enSentences.at(-1)?.replace(/^\(|\)$/g, '').trim();
   if (!last || !lastEn) return undefined;
   // Step 1 joins a piece and its English into one sentence ("Yo llevo veinte años aquí, I've driven here for twenty

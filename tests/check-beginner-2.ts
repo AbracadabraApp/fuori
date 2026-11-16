@@ -61,6 +61,17 @@ check(levelText(CLUSTERS[1]) === levelText(CLUSTER_1) && levelText(CLUSTERS[5]) 
   check(r4.question?.en === '' && r4.line.endsWith('forty years.'), 'at step 4 the comment is printed without its English, and its English is said (the ladder)');
   const joined = lineWithAnswers({ line: "Muy bien, very good. Yo llevo veinte años por estas piedras, I've driven these stones for twenty years.", en: "Very good. I've driven these stones for twenty years.", answers: [{ text: 'Veinte años.', en: 'Twenty years.' }] }, c, CLUSTER_1);
   check(joined.question?.text === 'Yo llevo veinte años por estas piedras.' && joined.question?.en === "I've driven these stones for twenty years." && !joined.line.endsWith("years. I've driven these stones for twenty years."), `step 1 joins a piece and its English in one sentence: the comment is printed without the English tail, and the English isn't said twice (got ${JSON.stringify(joined.question)})`);
+  // B36: since the steps became settings, the turn's last sentence is echoed at steps 1–5, so the said line ends on its
+  // English; the comment before the echo is printed (Mexico 04dcfd55 and Italy 6c1b1f37, the levels check, 2026-11-15)
+  for (const [raw, text, en] of [
+    ['{Aquí cantamos todas las noches. | We sing here every night.} {Para mí, este teatro es *como una casa*. | For me, this theatre is *like a home*.}', 'Para mí, este teatro es como una casa.', 'For me, this theatre is like a home.'],
+    ["{Benvenuto! | Welcome!} {A Bologna l'espresso si beve *al banco*, in piedi, in un minuto. | In Bologna espresso is drunk *at the bar*, standing, in a minute.}", "A Bologna l'espresso si beve al banco, in piedi, in un minuto.", 'In Bologna espresso is drunk at the bar, standing, in a minute.'],
+  ] as const) {
+    for (const step of [1, 2, 3, 4]) {
+      const echoed = lineWithAnswers({ line: saySentences(raw, SETTINGS[step - 1]!, 0.42), en: englishOf(raw), answers: [{ text: 'Sí.', en: 'Yes.' }] }, c, CLUSTERS[step - 1]);
+      check(echoed.question?.text === text && echoed.question?.en === (step <= 3 ? en : '') && echoed.line.endsWith(`${text} ${en}`), `B36: an echoed comment is printed at step ${step} (got ${JSON.stringify(echoed.question)} / ${echoed.line})`);
+    }
+  }
   check(CLUSTERS.slice(0, 5).every((cl) => cl.some((x) => x.id === 'comment')) && !CLUSTERS[5].some((x) => x.id === 'comment'), 'the comment turn is in steps 1–5 (it gives answers), not step 6');
 }
 check(CLUSTERS.every((cl) => { try { return !!pickSetup({ conversationId: null, turn: 0, learnerId: 'l', characterId: 'c' }, cl).id && !!pickSetup({ conversationId: 'v', turn: 0, characterId: 'c' }, cl).id; } catch { return false; } }) && pickSetup({ conversationId: null, turn: 0, learnerId: 'l', characterId: 'c' }, CLUSTERS[5]).maxAnswers === 0, 'every step can open a visit; step 6 opens on its own no-answers turn (2026-11-15: step 6 had no turn 0, every visit failed to open)');
