@@ -2,8 +2,11 @@
 
 ## 2026-11-16 (cloud chat session, with Josh), later still: mockups of the new level up page
 
-- **Josh:** "new level up needs mockups". Four versions on the card studies canvas, board 8 (https://claude.ai/artifact/AHEGUxWKMoCVqPSHeCkGvy), from his B42 proposal: his words as written; numbers as tiles with a bar; the bar leading; his words plus samples to hear. All drop the example boxes, give two equal choices and say the app checks back every few conversations.
-- **Not done:** nothing in the app or in the level-up words; the numbers on the page (conversations, words heard, share) aren't sent by the server yet. Waiting on his pick.
+- **Josh:** "new level up needs mockups". Worked through with him on the card studies canvas, board 8 (https://claude.ai/artifact/AHEGUxWKMoCVqPSHeCkGvy); every step and his words are in docs/bugs.md B42.
+- **Where it stands:** the character just talked with asks, in the game's own speech bubble: "Every few conversations we check to see if things are too easy. Do you want to increase the amount of Spanish you hear or are you comfortable now?" Under it a six-step bar (Now, Next; More English to All Spanish), then two buttons side by side in the bar's colours: Stay (pause sign, left) and Next (play triangle, right). No examples, no counts, nothing needed from the server.
+- **Open:** the colour (eight studies on the board, his pick awaited); what each step is said to change (his: "we need to nail down what changes by level"; today's steps are listed in B42).
+- **Not done:** nothing in the app or the level-up words.
+
 
 ## 2026-11-16 (cloud chat session, with Josh), later: B43, the level up page over a running conversation
 
