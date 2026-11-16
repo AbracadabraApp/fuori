@@ -169,3 +169,19 @@ Josh: "what if the prompt just got the goal setting and the person and the assig
 - **The goal's second half shows up as the learner saying the thing:** "Plazuela Machado!", "The heart of Mazatlán!".
 - **Weak:** the goal leaks into his mouth as a teacher's line ("Say it to your friends tonight", "Say that and people will nod"); one of Don Anselmo's paths circles ("the 1830s" three times); his history is the Wikipedia in his background.
 - Three paths of 64 read for each; English, so nothing here about level or the mix.
+
+## A look: the bubble rule tells the model to make a bid, as curiosity (2026-11-16)
+
+Josh's position: do both of his ideas (the model writes the bid; rules withdrawn), the third ("let the model do more, tell it less") being what the two add up to. On the wording of the bid, "thing" and "something" were the vague words; his draft: "Each answer replies to you, then shows you curiosity about culture you know: a few more words of their own that ask you about something. Make the two different." Then: "i fear culture may be to broad". `tests/experiments/curiosity-look.mts`: only that sentence of the Answers rule changed (the list of three kinds and its two prohibitions out), turn notes as on main, the seven characters, opener + 5 turns, one run, 84 bubbles an arm.
+
+| | Words a bubble | Answer + question | Question only | Answer only |
+|---|---|---|---|---|
+| As it is | 5.4 | 11 | 36 | 38 |
+| "…curiosity about what you know of this place and its culture…" | 8.9 | 74 | 6 | 4 |
+| "…curiosity about what you know…" | 7.4 | 60 | 17 | 7 |
+
+- **The model does what the sentence says.** No kinds named, and nearly every bubble answered and then asked.
+- **"Culture" was too broad, as Josh feared.** The bubbles became a visitor's interview ("Why is mariachi from Jalisco?", "Why is it called Americana?", "Who lived in those houses?", "What fiestas are there in November?", "Is it typical of here?" twice), and Lalo the shoeshiner became a guide to the neighbourhood's cafés and streets.
+- **Without "culture" the curiosity was about the person and the work:** "Which shoe is the hardest one?", "What do you miss most about the sea?", "What time do you start?", "How many shoes did you shine today?".
+- **Costs in both:** bubbles half as long again to say; the plain answer nearly gone, so nearly every learner turn asks; and the turn notes still sent the character to a sight (Don Anselmo: "Look, the Ángela Peralta Theater… would you like to go in someday?"), with the next bubble pulling him back ("Were you a captain of a shrimp boat?").
+- One run. Nothing in the game changed.
