@@ -197,6 +197,7 @@ Not bugs; recorded so a fix doesn't undo them.
 - **A Beginner character asked for more English adapts.** Josh, 2026-11-13: "Some character adapted to use more English." Ofelia, asked "¿hablo più inglés?", answered "Sure, mi reina, I'll use more English" and did (71dc1d3b); Carmen, told "that was a lot of Spanish with no English", said "I'll go slower" (09978a29).
 
 ## Closed
+**Fix on main, 2026-11-16 (Josh: "done"; not released, not seen on a phone).** With the card look he chose in the studies: `PolaroidCard` is a polaroid (a 12 pt white frame around the picture, 3 pt corners, a thin shadow plus a deeper one under the two lower corners, as curled corners throw); the name's line height is 1.0 times the point size (was 1.1); the visited stamp sits beside the name as ink (`VisitStamp(paper: .ink)`), nothing over the picture; the chalk menu is placed inside the frame. If 1.0 still reads loose on a phone, `.multiple(factor:)` is not doing what its comment says and the next step is a fixed line height or another face (his: "or look to different font"). Checks for whoever has a Mac: docs/cards-and-level-up-recipe.md.
 
 ### B9. Wrong facts from memory
 Vale opened with "¿cómo está Silvia?" (the daughter is Sofía), then took Silvia as Josh's name (ba340097, 2026-11-13). Not raised by Josh; Josh corrected it in play ("Mi nombre es no Silvia", "Mi hija se llama Sofia"). **Closed** by Josh, 2026-11-14, with no fix, as with B8: he corrected it in play and the memory takes corrections.

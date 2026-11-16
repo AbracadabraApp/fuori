@@ -15,8 +15,7 @@ struct CityListView: View {
                 ForEach(DailyOrder.cities(content.firstScreenCities, visits: model.visits, day: DailyOrder.today())
                         + DailyOrder.cities(content.moreCities, visits: model.visits, day: DailyOrder.today())) { city in
                     NavigationLink(value: city) {
-                        PolaroidCard(image: city.image, title: city.name, subtitle: city.region)
-                            .overlay(alignment: .topTrailing) { visitBadge(city) }
+                        PolaroidCard(image: city.image, title: city.name, subtitle: city.region) { visitBadge(city) }
                     }
                     .buttonStyle(PressableStyle())
                 }
@@ -28,12 +27,12 @@ struct CityListView: View {
         .settingsToolbar()
     }
 
-    /// A ticket stub in the picture's corner after the first conversation
-    /// anywhere in the city; cities have one stage (Josh, 2026-10-29)
+    /// The stamp beside the name after the first conversation anywhere in the
+    /// city (Josh, 2026-11-16; before it a ticket stub in the picture's
+    /// corner); cities have one stage (Josh, 2026-10-29)
     @ViewBuilder private func visitBadge(_ city: City) -> some View {
         if let words = content.language.ui.stamp, city.places.contains(where: { (model.visits[$0.id] ?? 0) > 0 }) {
-            VisitStamp(paper: .ticket, stage: .visited, word: words.visited, label: words.visitedLabel, seed: city.id)
-                .padding(10)
+            VisitStamp(paper: .ink, stage: .visited, word: words.visited, label: words.visitedLabel, seed: city.id)
         }
     }
 }

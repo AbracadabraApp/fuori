@@ -2,7 +2,9 @@
 
 2026-10-29 · Josh · **Locked** (Josh: "keep the circle - its all locked"). Replaces today's green circle with a number on the place card. Mockup with every exploration: the "Visited Badges" artifact in the Claude app (https://claude.ai/artifact/7cDsHADmkNh6GwRsmsLt5U); the final, at phone-card size: [design/visited-badge/final.png](../design/visited-badge/final.png). **Built 2026-10-30** (`ios/FuoriKit/Sources/FuoriDesign/VisitStamp.swift`; words in `content/<country>/language.ts` → `ui.stamp`); not yet seen on Josh's phone.
 
-## The badge
+**2026-11-16 · Josh · changed.** "The visited mark was a good start but its too intrusive and also not very compelling"; "I think stamp in namespace". The round stamp alone now sits beside the card's name, inked straight on the polaroid's white (`VisitStamp(paper: .ink)`, about 60 pt): no receipt, no ticket stub, no label under it, nothing over the picture. Its two inks and its words are as below. The receipt and the stub are still in `VisitStamp.swift`, unused by the lists. Studies: the card studies canvas, boards 3 and 7 (docs/bugs.md B38).
+
+## The badge (2026-10-29 to 2026-11-16)
 
 - **Where:** pinned in the **top right corner of the place picture**, over the sky where most pictures are empty. Not on the edge between picture and caption, not in the caption (tested side by side; the corner adds to the scene and leaves the name clean).
 - **What:** a **scontrino**, the till receipt every Italian bar hands you: off-white thermal paper (#fffdf7), a torn zigzag bottom edge, cut tight around its contents, a soft shadow (0, 3, 8, 25%), tilted a few degrees (about −4° and +4°, varying by card so a list doesn't look machine-stamped).

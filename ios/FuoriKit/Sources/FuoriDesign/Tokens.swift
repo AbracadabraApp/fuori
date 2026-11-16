@@ -92,6 +92,7 @@ public enum Tokens {
         public static let stampWord: CGFloat = 11
         public static let stampLabel: CGFloat = 12
         public static let stampStripe: CGFloat = 7
+        public static let stampInk: CGFloat = 60
         public static let bubbleText: CGFloat = 18
         public static let bubbleEnglish: CGFloat = 15
         public static let note: CGFloat = 15
@@ -104,16 +105,20 @@ public enum Tokens {
         public static let cardGap: CGFloat = 20
         public static let captionPadding: CGFloat = 16
         public static let band: CGFloat = 12
+        public static let polaroidFrame: CGFloat = 12
     }
 
     public enum Radius {
         public static let card: CGFloat = 8
         public static let poster: CGFloat = 16
         public static let bubble: CGFloat = 18
+        public static let polaroid: CGFloat = 3
     }
 
     public enum Shadow {
         public static let card = (x: CGFloat(0), y: CGFloat(2), radius: CGFloat(4), opacity: 0.1)
         public static let stamp = (x: CGFloat(0), y: CGFloat(3), radius: CGFloat(4), opacity: 0.25)
+        public static let polaroid = (x: CGFloat(0), y: CGFloat(1), radius: CGFloat(1.5), opacity: 0.22)
+        public static let curl = (x: CGFloat(0), y: CGFloat(16), radius: CGFloat(7), opacity: 0.45)
     }
 }

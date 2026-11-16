@@ -75,9 +75,9 @@ struct PlaceListView: View {
     }
 
     private func card(_ place: Place) -> some View {
-        PolaroidCard(image: place.image, title: place.name, subtitle: subtitle(place))
-            .overlay(alignment: .top) { chalkMenu(place) }
-            .overlay(alignment: .topTrailing) { visitBadge(place) }
+        PolaroidCard(image: place.image, title: place.name, subtitle: subtitle(place)) { visitBadge(place) }
+            // Inside the polaroid's frame, so the board's place is still a fraction of the picture
+            .overlay(alignment: .top) { chalkMenu(place).padding(Tokens.Space.polaroidFrame) }
     }
 
     /// The menu written in chalk on the picture's blank board (Josh,
@@ -118,15 +118,15 @@ struct PlaceListView: View {
         return "\(person.name), \(person.role) · \(place.neighbourhood)"
     }
 
-    /// The scontrino in the picture's corner (docs/visited-badge.md):
-    /// visited after the first conversation there, regular from the third
+    /// The stamp beside the name (Josh, 2026-11-16; before it a scontrino in
+    /// the picture's corner, docs/visited-badge.md): visited after the first
+    /// conversation there, regular from the third
     @ViewBuilder private func visitBadge(_ place: Place) -> some View {
         if let words = content.language.ui.stamp, let stage = VisitStamp.Stage(visits: model.visits[place.id] ?? 0) {
-            VisitStamp(paper: .receipt, stage: stage,
+            VisitStamp(paper: .ink, stage: stage,
                        word: stage == .regular ? words.regular : words.visited,
                        label: stage == .regular ? words.regularLabel : words.visitedLabel,
                        seed: place.id)
-                .padding(10)
         }
     }
 }

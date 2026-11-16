@@ -6,7 +6,9 @@ import SwiftUI
 /// from the third), a train ticket stub for a city (visited only). The words
 /// come from /v1/content, never from Swift.
 public struct VisitStamp: View {
-    public enum Paper { case receipt, ticket }
+    /// `ink`: the round stamp alone, inked beside a card's name (Josh, 2026-11-16:
+    /// the scontrino over the picture was "too intrusive"; "I think stamp in namespace")
+    public enum Paper { case receipt, ticket, ink }
     public enum Stage { case visited, regular }
 
     let paper: Paper
@@ -43,9 +45,23 @@ public struct VisitStamp: View {
         return side * (3 + Double(sum % 3))
     }
 
+    @ScaledMetric(relativeTo: .footnote) private var inkDiameter: CGFloat = Tokens.Size.stampInk
+
     public var body: some View {
+        if paper == .ink {
+            stamp(min(inkDiameter, Tokens.Size.stampInk * 1.5))
+                .rotationEffect(.degrees(tilt))
+                .accessibilityElement(children: .ignore)
+                .accessibilityLabel(label)
+        } else {
+            onPaper
+        }
+    }
+
+    /// The stamp on its slip of paper, with the English label under it
+    private var onPaper: some View {
         let size = min(diameter, Tokens.Size.stamp * 1.8)
-        VStack(spacing: 4) {
+        return VStack(spacing: 4) {
             stamp(size)
             Text(label.uppercased())
                 .typeface(.label, Tokens.Size.stampLabel, relativeTo: .caption, weight: .bold)
@@ -165,6 +181,7 @@ struct Smile: Shape {
         VisitStamp(paper: .receipt, stage: .visited, word: "già visto", label: "Visited", seed: "bar-mattina")
         VisitStamp(paper: .receipt, stage: .regular, word: "di casa", label: "Regular", seed: "pizzeria")
         VisitStamp(paper: .ticket, stage: .visited, word: "già visto", label: "Visited", seed: "roma")
+        VisitStamp(paper: .ink, stage: .visited, word: "già visto", label: "Visited", seed: "roma")
     }
     .padding(40)
     .background(Tokens.Colors.sand)
