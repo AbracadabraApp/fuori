@@ -81,3 +81,4 @@ Josh on all three wordings: "these seem off bases too". Each is a stage directio
 - **The thinnest was told so.** Andrés has one subject, the flames of the Man of Fire, on five of seven turns and on the last visit too; Josh told him he'd said almost all the same things last time (B39).
 - **The turn constraint's cost:** the 7th-turn goodbye cut off a song Josh had just asked for (B40). A character that knew the visit was short might have played it sooner.
 - **Ratings from the debug panel, the first:** five taps. Good: Lalo's "desde hace mucho, for a long time" turn. Bad: Lupita's turn 4, Chuy's turn 5. Bug: Chuy, "Repeats exclamation" and "Repetitive character" (B4).
+- **Step 1's mixed sentences with a verb or adjective in Spanish** ("very bonito, pretty", "the children juegan, play there"): Claude listed them as a bug from the page; Josh: "This is actually nice on the ear - like practical vocab pointer". Kept (bugs.md).
