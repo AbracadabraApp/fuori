@@ -1,5 +1,9 @@
 # Fuori Development Progress
 
+## 2026-11-16 (laptop): on Josh's phone
+
+- **Installed on Josh's iPhone 16 Pro** a Debug build of main at 3d13c55 (his word: "release to phone", "update phone"). Nothing to release on the server: live was already 3d13c55. The build includes the debug panel's ratings and the removal of the Old/New Beginner picker and the intro code from the app. Not yet played.
+
 ## 2026-11-15 (Mac mini, with Josh): mix, loop and level up. All on main, none of it released or heard
 
 - **Level up walked end to end** on the live servers by a throwaway learner (scripts/walk-live.mjs, new): the offer comes at every step and for Intermediate and Advanced, a yes moves the step or level. Found: the offer failed one time in three on a token limit (B34; the laptop session fixed it the same hour), and **build 16 still gets no offer after the release** (the route never saw the id from the old address; fixed on main, 22787d49, not verified live).
