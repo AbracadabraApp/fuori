@@ -1,5 +1,10 @@
 # Fuori Development Progress
 
+## 2026-11-16 (cloud chat session, with Josh), later still: mockups of the new level up page
+
+- **Josh:** "new level up needs mockups". Four versions on the card studies canvas, board 8 (https://claude.ai/artifact/AHEGUxWKMoCVqPSHeCkGvy), from his B42 proposal: his words as written; numbers as tiles with a bar; the bar leading; his words plus samples to hear. All drop the example boxes, give two equal choices and say the app checks back every few conversations.
+- **Not done:** nothing in the app or in the level-up words; the numbers on the page (conversations, words heard, share) aren't sent by the server yet. Waiting on his pick.
+
 ## 2026-11-16 (cloud chat session, with Josh), later: B43, the level up page over a running conversation
 
 - **Josh:** "this level up page deployed after a conversation had started and sat/spoke behind it"; "it wasn't interstitial". Cause: the offer is asked for after the last conversation's save, seconds later, and the sheet showed whenever it arrived. **Fixed on main, not on a phone:** while a person's screen is up the offer waits, and shows on the place list afterwards (AppModel.conversationOpen, RootView; LevelUpHoldTests; docs/state-machines.md updated).
