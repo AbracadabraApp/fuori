@@ -1,5 +1,15 @@
 # Fuori Development Progress
 
+## 2026-11-16 (cloud chat session, with Josh), afternoon: the level up page and the new cards built; a recipe for the Mac
+
+- **Josh:** "done" of the agreed mockups and of B38; "all good - write any recipe you need".
+- **B42, the level up page (525872e):** rebuilt to the mockup. Server: the offer carries `asker` (the welcome's character) and `bar` (steps, now, next); new `levelUp` words in both countries. App: `LevelUpView` redrawn (paper band "Checking in!", portrait, speech bubble, step bar, Stay and Next); teal in Mexico, terracotta in Italy. The earlier page's words and example lines are still sent for older builds.
+- **B38, the cards (3273415):** `PolaroidCard` is a polaroid with a curled-corner shadow, names at 1.0 line height, the visited stamp as ink beside the name (`VisitStamp(paper: .ink)`), the chalk menu inset by the frame.
+- **Checked:** CI passed on both (build and tests); tsc (only the standing `LayoutProps` error of this clone), `test:level-up`, `test:level-move`, `tokens --check`. **Not verified:** written without a Swift toolchain and never seen on a screen; not released.
+- **Decided in the build, Josh's to overrule:** the band's second line is the asker's name; a level move's bar has eight places and asks the same question; the question is not said aloud.
+- **Next (docs/cards-and-level-up-recipe.md, for a laptop session):** build, one look at each screen in both countries against boards 7 and 8, fix what's off, untrack the Mexico map master, then release and a phone build on Josh's word. He then checks B37, B38, B42, B43 and B44 on his phone.
+- **Open:** what each step is said to change (B42); Luisa's portrait (B44, Josh: skip).
+
 ## 2026-11-16 (cloud chat session, with Josh), midday: Nino is Italy's front door; the level up page agreed as a mockup
 
 - **Josh, on Luisa Cocco's portrait:** "wow that is not a good portrait in italy"; "we want some one who is the front door of the game"; "Let's swap to Nino - the level up page is good as is and he should work fine for the welcome" (B44).
