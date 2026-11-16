@@ -228,3 +228,12 @@ So, as he put it:
 - A new Intermediate: a mix that is mostly the language; no offered answers; the learner speaks the language if they can, or says it in English and is given how to say it ("How do I say it", say-it.md); more drilling, through the Learn sheets (dialogue-plan.md D51).
 
 Close to what exists: Beginner steps 4–6 (mostly the language, then no answers; built 2026-11-14, played by nobody: bugs.md B33); the say-it flow. Nothing decided.
+
+## "Do you like" asked about plain things (Josh, 2026-11-16, after play)
+
+Josh: "the characters like to ask the question do you like some plain thing in the game that we don't normally ask someone if they like like do you like the square or do you like the church or do you like the flowers?"
+
+- Example, Mazatlán, Don Anselmo (Beginner, prompt beginner-2-2026-11-15a): "¿Qué le parece el kiosco?" with the offered answers "Es muy bonito, me gusta." / "¿Para qué sirve el kiosco?".
+- A likely cause, in our own words: the "point at something" setup in scaffolding.md tells the character to "ask them something about it: what they make of it, which they like, what they think it's for." The example line and both answers follow those three almost word for word. Instructions cause repetition (dialogue-less-is-more).
+- Close to "Interviewing by multiple choice" in the top 10 and to the preference-heavy bubbles in questions-and-bubbles.md (most bubbles are preferences; either is right).
+- Nothing changed. More examples wanted before a fix.
