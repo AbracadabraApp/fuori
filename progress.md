@@ -1,5 +1,13 @@
 # Fuori Development Progress
 
+## 2026-11-16 (cloud chat session, with Josh), midday: Nino is Italy's front door; the level up page agreed as a mockup
+
+- **Josh, on Luisa Cocco's portrait:** "wow that is not a good portrait in italy"; "we want some one who is the front door of the game"; "Let's swap to Nino - the level up page is good as is and he should work fine for the welcome" (B44).
+- **Changed, on main, not released:** Italy's welcome is played by Nino Ferretti of Osteria da Nino, Garbatella (`content/it/onboarding.ts`). Checked: tsc (only the standing `LayoutProps` error in app/layout.tsx, from this clone having no generated Next types), `test:welcome`. **Not verified:** the welcome was not played (onboarding isn't run without Josh's say).
+- **Level up page (B42):** mockups agreed for both countries on the canvas, board 8: paper band "Checking in!", the welcome's character (Doña Chela on teal, Nino on terracotta), his bubble, the six-step bar, Stay and Next. Nothing built.
+- **Seen, not touched:** `test:language` fails on main on `ios/FuoriKit/Tests/FuoriCoreTests/ContentTests.swift:120` (an Italian trailer fixture), not from this session.
+- **Next:** build the level up page from the mockup (needs a spec for what each step is said to change, and the band's second line); a release and phone build for B37, B43 and Nino.
+
 ## 2026-11-16 (cloud chat session, with Josh), later still: mockups of the new level up page
 
 - **Josh:** "new level up needs mockups". Worked through with him on the card studies canvas, board 8 (https://claude.ai/artifact/AHEGUxWKMoCVqPSHeCkGvy); every step and his words are in docs/bugs.md B42.

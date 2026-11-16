@@ -99,9 +99,13 @@ export const onboarding = {
    *  plays it from content/it/prompts/welcome.md, once for everyone; its last
    *  turn ends on this button, not the mic */
   welcome: {
-    /** Josh, 2026-11-02: Luisa Cocco, the barista at Roma nuova's morning bar,
-     *  in place of the script's Giulia, who lives in the hidden original Rome */
-    characterId: 'luisa-cocco-nuova',
+    /** Josh, 2026-11-16: Nino Ferretti, who opened Osteria da Nino in Garbatella
+     *  ("we want some one who is the front door of the game"; "Let's swap to
+     *  Nino"; docs/bugs.md B44). He also asks the level-up question (B42).
+     *  Before him Luisa Cocco, the barista at Roma nuova's morning bar (Josh,
+     *  2026-11-02), in place of the script's Giulia, who lives in the hidden
+     *  original Rome */
+    characterId: 'nino-garbatella',
     go: { line: 'Andiamo!', en: "Let's go!" },
   },
 };
