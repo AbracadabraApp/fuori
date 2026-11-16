@@ -159,3 +159,13 @@ Josh: "usually if we withdraw rules problems go away (not always - ending visits
 - **What was told about the place came out about even.** Gained: Don Anselmo got to aguachile, Memo to the market's two names and tortas ahogadas. Lost: Lupita's white flowers for the dead in November came from her notice turn and didn't appear without it; Elena's harvest months didn't come up.
 - **"Do you want to…?" is the commonest question both ways** (about 10 live, 12 withdrawn; Chuy's "do you want to hear a song" three and four times).
 - One run a visit, read by Claude. A look, not a result.
+
+## A look: one call writes the whole visit as a tree, from the goal, the person and the setting (2026-11-16)
+
+Josh: "what if the prompt just got the goal setting and the person and the assignment is to write 7 turns with 2 branches at each turn". `tests/experiments/tree-look.mts`, in English, Memo and Don Anselmo: 127 character lines each (64 endings), written in one call in about two minutes. Josh, while it ran: "it seems like it would take too long but maybe the content tells us something".
+
+- **With the goal in view the visit aims at one thing.** Memo's tree is about what tejuino is (corn masa, piloncillo, lime, salt, nieve) or about the market; Don Anselmo's about the plaza's name and age, or about him and baseball. The two first bubbles choose between the place and the person.
+- **The character mostly doesn't ask.** His turns end on something told; the bubbles do the asking, in two to four words: "Corn? Really?", "Is it alcohol?", "Salt in a drink?", "Who was Machado?", "Which team?". No "do you like" anywhere in the three paths read of each.
+- **The goal's second half shows up as the learner saying the thing:** "Plazuela Machado!", "The heart of Mazatlán!".
+- **Weak:** the goal leaks into his mouth as a teacher's line ("Say it to your friends tonight", "Say that and people will nod"); one of Don Anselmo's paths circles ("the 1830s" three times); his history is the Wikipedia in his background.
+- Three paths of 64 read for each; English, so nothing here about level or the mix.
