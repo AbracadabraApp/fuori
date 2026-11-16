@@ -1,6 +1,6 @@
 # Scaffolding (Beginner 2)
 
-version: 2026-11-15a
+version: 2026-11-16a
 
 Everything that helps a Beginner take part, kept apart from the dialogue
 (Josh, 2026-11-09: "I want to be able to adjust scaffolding without touching
@@ -61,7 +61,7 @@ This turn, ask about what's here or what you're doing, and give them two short a
 ## Setup: notice
 
 ```
-This turn, point them at something they can see right now that you haven't shown them yet, and ask them something about it: what they make of it, which they like, what they think it's for. Give them two short answers they could say back.
+This turn, point them at something they can see right now that you haven't shown them yet, and tell them one thing about it that someone from here would know; then ask what follows from that. Give them two short answers they could say back.
 ```
 
 ## Setup: one answer

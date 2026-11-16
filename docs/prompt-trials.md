@@ -769,6 +769,11 @@ Limits: judges not calibrated (F1); item 7 left out (no memory in the export)
 - Checked after:
 - Decision:
 
+### Notice: one thing a local would know (2026-11-16; scaffolding.md 2026-11-16a, both countries)
+- **Tried:** the notice setup's "ask them something about it: what they make of it, which they like, what they think it's for" replaced by "tell them one thing about it that someone from here would know; then ask what follows from that". Prompted by Josh's play ("do you like the square or do you like the church or do you like the flowers?"; dialogue-ideas.md).
+- **A run showed** (`tests/experiments/notice-look.mts`, five sights, two runs each wording, a first reply at step 2): asking about liking or opinion of the thing itself, 10 of 10 → 4 of 10; a turn that says something about the thing, 3 of 10 → 10 of 10. Some of those things are invented.
+- **Status:** on main on Josh's "ok - sounds like a good change"; not released, not walked, not heard.
+
 ### S1 (2026-11-15): Beginner steps 1 to 3 as settings in code, one level text for the three
 A short card, as Josh asked for dialogue changes the same day ("the judging of test cards is broken"; then, to a card of four plain lines tested by the walk, his play and the panel's ratings: "all that in order"). No reviewer stamp, no model judge.
 - **Problem:** each step's mix comes from its own paragraph of level text, and they don't run in order: on the live servers step 3 had less of the language than step 2 (Mexico 25% after 31%, Italy 34% after 45%; scripts/walk-live.mjs). Josh by ear the same day wanted the mix of the echoed "60-70" rows (five of seven sentences in the language, each with its English), which no step is built to give.
