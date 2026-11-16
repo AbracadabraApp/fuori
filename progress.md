@@ -4,7 +4,8 @@
 
 - **Josh:** "new level up needs mockups". Worked through with him on the card studies canvas, board 8 (https://claude.ai/artifact/AHEGUxWKMoCVqPSHeCkGvy); every step and his words are in docs/bugs.md B42.
 - **Where it stands:** the welcome's character asks (Josh: "i just want the fucking person"; Doña Chela in Mexico, Luisa Cocco in Italy), in the game's own speech bubble: "Every few conversations we check to see if things are too easy. Do you want to increase the amount of Spanish you hear or are you comfortable now?" Under it a six-step bar (Now, Next; More English to All Spanish), then two buttons side by side in the bar's colours: Stay (pause sign, left) and Next (play triangle, right). No examples, no counts, nothing needed from the server.
-- **Open:** the colour (eight studies on the board, his pick awaited); what each step is said to change (his: "we need to nail down what changes by level"; today's steps are listed in B42).
+- **Colour:** teal for Mexico, with a "Checking in!" paper band on top (his words) and the portrait tall; Josh: "ok". Italy's colour is open.
+- **Open:** what each step is said to change (his: "we need to nail down what changes by level"; today's steps are listed in B42).
 - **Not done:** nothing in the app or the level-up words.
 
 
