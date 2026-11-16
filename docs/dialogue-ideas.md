@@ -249,4 +249,4 @@ Reading Don Anselmo's background (`here`, content/es-mx/cities/mazatlan.ts) whil
 
 ## Hearing more of the language than you can read (Josh, 2026-11-16)
 
-After his first visits at step 2 (every sentence echoed; Chuy, Memo, Valeria in Guadalajara, f71312f9 and two more that morning): "it felt strange to hear more spanish but not read it - not trying to change the design". The app prints only the question and its English (his 2026-11-11 call), so the step that adds the language adds it to the ear only. An observation, not a request; nothing changed.
+After his first visits at step 2 (every sentence echoed; Chuy, Memo, Valeria in Guadalajara, f71312f9 and two more that morning): "it felt strange to hear more spanish but not read it - not trying to change the design". The app prints only the question and its English (his 2026-11-11 call), so the step that adds the language adds it to the ear only. Then: "once i was on level 2 - 40% was bin spanish - but only questio printed". The debug panel's share for his step 2 turns that morning was 45–48% (the ratings' context, f71312f9). An observation, not a request; nothing changed.
