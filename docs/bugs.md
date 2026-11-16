@@ -130,6 +130,10 @@ Why: the step settings echo the turn's last sentence at steps 1–5, so the line
 - **B20.** "Say this" adds things the learner didn't say. Not checked.
 - **B21.** A voice that seems to change mid-line. Not checked.
 
+### B37. The city key is missing on Mexico's trip map
+Josh, 2026-11-16, on the build of 3d13c55: "the city key is missing on the mexico map". No conversation; the ticket sheet after picking a destination in Mexico.
+Checked from the code, not on a phone: the server sends Mexico's map as `layout: "numbered"` with all 14 cities, in order (`buildContent`, es-mx), and `TripSheet.swift` draws ticket, map with numbered dots, then `CityKey` (f09a3c7f). So on paper the key is there. Not yet known which of these it is: (a) the key is below the bottom of the sheet, which scrolls with nothing to show that it does (ticket about 140 pt, map about 314 pt on a 393 pt phone, so the key starts near 560 pt of roughly 750 visible, and its last rows are cut; worse on a smaller phone or at a larger text size); (b) the sheet is showing the older layout, names on the map and no numbers; (c) the key's rows draw with no names. Asked Josh whether the map shows numbers and whether scrolling the sheet shows the key. **Status: open.** If (a): fit ticket, map and key on one screen with no scrolling (the map gives up height first).
+
 ## Kept: what play says works
 
 Not bugs; recorded so a fix doesn't undo them.
