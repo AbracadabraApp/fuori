@@ -57,7 +57,14 @@ export async function learnerStep(learnerId: string): Promise<LearnerStep> {
   await ensureStepColumns();
   const r = await query<{ step: number; step_since: Date | null; level_up_asked_at: Date | null }>('SELECT step, step_since, level_up_asked_at FROM learners WHERE id = $1', [learnerId]);
   const row = r.rows[0];
-  return { step: Math.min(MAX_STEP, Math.max(1, row?.step ?? 1)), since: row?.step_since ?? null, askedAt: row?.level_up_asked_at ?? null };
+  let since = row?.step_since ?? null;
+  // A learner from before the step existed starts counting now, not from every conversation ever played
+  // (Josh, 2026-11-16: existing players' counts start fresh; the levels check: 54 counted for his Mexico learner)
+  if (row && !since) {
+    const u = await query<{ step_since: Date }>('UPDATE learners SET step_since = coalesce(step_since, now()) WHERE id = $1 RETURNING step_since', [learnerId]);
+    since = u.rows[0]?.step_since ?? null;
+  }
+  return { step: Math.min(MAX_STEP, Math.max(1, row?.step ?? 1)), since, askedAt: row?.level_up_asked_at ?? null };
 }
 
 /** The learner's cluster of the reply ladder from their stored step (Beginner 2 with no cluster header) */
@@ -65,13 +72,25 @@ export async function storedCluster(learnerId: string): Promise<Setup[]> {
   return CLUSTERS[(await learnerStep(learnerId)).step - 1];
 }
 
-/** Conversations since `since` (all, when null) with at least COUNTED_REPLIES learner replies */
+/** Prompt versions of a Beginner visit, and those that aren't an Intermediate or Advanced one (also used in SQL, so plain patterns) */
+export const BEGINNER_VISIT = /^beginner-2-/;
+export const NOT_UPPER_VISIT = /^(beginner-|lesson-|magda-|onboarding)/;
+
+/**
+ * Ordinary visits at the learner's level since `since` (all, when null) with at least COUNTED_REPLIES learner replies.
+ * Lessons, Magda, the welcome, the old Beginner and visits at another level don't count (Josh, 2026-11-16: "no"),
+ * by the same rule as ordinaryVisit; a Beginner visit counts only at the learner's step (its version ends +C<step>, so one
+ * played at another step through the hidden stepper doesn't).
+ */
 export async function countedConversations(learnerId: string, since: Date | null): Promise<number> {
   const r = await query<{ n: string }>(
-    `SELECT count(*) AS n FROM conversations c
+    `SELECT count(*) AS n FROM conversations c JOIN learners l ON l.id = c.learner_id
      WHERE c.learner_id = $1 AND ($2::timestamptz IS NULL OR c.started_at > $2)
-       AND (SELECT count(*) FROM jsonb_array_elements(c.turns) t WHERE t->>'who' = 'learner') >= $3`,
-    [learnerId, since, COUNTED_REPLIES]
+       AND (SELECT count(*) FROM jsonb_array_elements(c.turns) t WHERE t->>'who' = 'learner') >= $3
+       AND CASE WHEN l.level IN ('intermediate', 'advanced')
+                THEN coalesce(c.prompt_version, '') <> '' AND c.prompt_version !~ $4
+                ELSE coalesce(c.prompt_version, '') ~ ($5 || '.*\\+C' || l.step || '$') END`,
+    [learnerId, since, COUNTED_REPLIES, NOT_UPPER_VISIT.source, BEGINNER_VISIT.source]
   );
   return Number(r.rows[0]?.n ?? 0);
 }
@@ -102,8 +121,8 @@ export function offerDue(p: { level: Level | null; step: number; counted: number
  */
 export function ordinaryVisit(level: Level | null, promptVersion: string | null): boolean {
   const v = promptVersion ?? '';
-  if (level === 'intermediate' || level === 'advanced') return v !== '' && !/^(beginner-|lesson-|magda-|onboarding)/.test(v);
-  return /^beginner-2-/.test(v);
+  if (level === 'intermediate' || level === 'advanced') return v !== '' && !NOT_UPPER_VISIT.test(v);
+  return BEGINNER_VISIT.test(v);
 }
 
 /** The level text the rewrite is written for: the step's (scaffolding.md) or the level's (character.md → Learner: …) */

@@ -23,6 +23,7 @@
     "test:shapes": "tsx tests/check-shapes.ts && COUNTRY=es-mx tsx tests/check-shapes.ts",
     "test:share": "tsx tests/check-share.ts",
     "test:level-up": "tsx tests/check-level-up.ts && COUNTRY=es-mx tsx tests/check-level-up.ts",
+    "test:level-count": "tsx --env-file-if-exists=.env.local tests/check-level-count.ts",
     "test:level-move": "tsx tests/check-level-move.ts && COUNTRY=es-mx tsx tests/check-level-move.ts",
     "test:learn-route": "tsx tests/check-learn-route.ts",
     "test:level-trial": "tsx tests/check-level-trial.ts",
@@ -121,15 +122,15 @@
     "zod": "^4.6.5"
   },
   "devDependencies": {
-    "@types/node": "^20",
+    "@types/node": "20.19.43",
     "@types/pg": "^8.23.1",
-    "@types/react": "^19",
+    "@types/react": "19.3.0",
     "@types/react-dom": "^19",
     "aws4fetch": "^1.0.20",
     "eslint": "^9",
     "eslint-config-next": "16.4.5",
     "sharp": "^0.35.5",
     "tsx": "^4.23.15",
-    "typescript": "^5"
+    "typescript": "5.9.3"
   }
 }

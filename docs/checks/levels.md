@@ -26,6 +26,10 @@ Read first (the design, in this order):
    step 4 mostly the language with English asides; steps 5–6 the language, English only when asked.
 3. Level up: after 3 counted conversations at a step (3+ learner replies each), the app offers the
    next step. The learner chooses (yes / "Not yet"); "Not yet" asks again after 3 more.
+   - only ordinary visits at the learner's level count: at Beginner, visits played at their stored step;
+     not lessons, Magda, the welcome, the old Beginner, or visits at another step or level (Josh, 2026-11-16: "no")
+   - a learner with no step start (from before steps existed) starts counting from their first visit after this
+     change, not from every conversation ever (Josh, 2026-11-16: "Yes" to starting fresh)
    - at step 6 the offer is Intermediate; at Intermediate it's Advanced; Advanced gets none
    - a yes changes the stored step or level, and the next visit plays at it
    - the offer's preview line is the character's last line rewritten at the next step or level
@@ -54,11 +58,11 @@ e. The app: build 16 is the first with the level-up screen and the reply-bubble 
    for that request.
 
 Known edges to look at and report on (not to fix unasked):
-- a learner whose step_since is null counts every conversation ever, so long-time players
-  are offered a step at once (Sophia, Intermediate, would be offered Advanced)
+- (decided 2026-11-16, built) a learner whose step_since was null counted every conversation ever; the count now
+  starts fresh for them
 - the older rule in lib/conversation-record.ts that moves an Intermediate back to Beginner
   after hard conversations: does it bounce with the step-6 → Intermediate offer?
-- lessons with 3+ replies count toward the offer; should they?
+- (decided 2026-11-16, built) lessons and other visits don't count toward the offer
 - the old Beginner (x-fuori-beginner: 1) gets no step offers, by design
 
 Report:
