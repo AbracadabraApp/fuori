@@ -82,3 +82,13 @@ Josh on all three wordings: "these seem off bases too". Each is a stage directio
 - **The turn constraint's cost:** the 7th-turn goodbye cut off a song Josh had just asked for (B40). A character that knew the visit was short might have played it sooner.
 - **Ratings from the debug panel, the first:** five taps. Good: Lalo's "desde hace mucho, for a long time" turn. Bad: Lupita's turn 4, Chuy's turn 5. Bug: Chuy, "Repeats exclamation" and "Repetitive character" (B4).
 - **Step 1's mixed sentences with a verb or adjective in Spanish** ("very bonito, pretty", "the children juegan, play there"): Claude listed them as a bug from the page; Josh: "This is actually nice on the ear - like practical vocab pointer". Kept (bugs.md).
+
+## Rules or prompt: can one line give a thin character a life? (a look, 2026-11-16)
+
+Josh, on Memo's mother and metate being made up in the visit, not written: "rules vs prompt". Tried (`tests/experiments/life-line-look.mts`): three thin characters (Don Anselmo; Don Lalo, Guadalajara's bolero; Don Chucho, Mexico City's bolero), an opener and five turns each at step 2 with a stand-in learner who takes the offered answers, three ways, one run each: as it is; with a standing line ("You have a whole life of your own: family, a past, tastes, opinions, something on today. Draw on it when it fits. What you say about the real place and its history stays to what you know."); and with the line and "no stories or explanations" taken out of the level text.
+
+- **Turns that carry something of a life** (family, a feeling, an opinion, a past beyond years on the job), of 18 each: as it is 1; with the line 5; with the line and stories allowed 4. One run each, so the gap between the last two means nothing.
+- **What came out:** Don Chucho, "My dad left it to me, he was a shoe shiner too… I still feel like he's watching me when I work in this chair"; Don Lalo, "My wife sewed it for me from an old shirt, and that's why I'm fond of it"; Don Anselmo, "the best shrimp are the ones you eat fresh off the boat… That's my opinion as a captain, and nobody takes it from me."
+- **What didn't:** nothing like Memo's visit. The life came late (turns 4 and 5), usually after an offered answer asked for it ("Did your dad work here too?"). Don Anselmo never got to baseball or a family in any version, and opened on "Do you like the plaza?" in all three. Three of the invented lives were the same one: my father did this before me.
+- **Reading:** the line helps a little and costs a sentence; alone it isn't the answer. What drew a life out of Memo was a turn that needed one (a saying needs someone who said it); what drew it out here was a question from the learner's side.
+- Not put in any prompt.
