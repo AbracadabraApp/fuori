@@ -2,6 +2,13 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
 
+### 2026-11-16f: Josh's two changes, in on his instruction: notice out of the draw; the answers make a bid
+- **Removed, Setup: notice** and its place in the draw (`CLUSTERS`, `WEIGHT` and the once-a-visit rule in `lib/beginner-2.ts`). The other notes are drawn by the same weights.
+- **Changed, System prompt › Answers:** the sentence listing three kinds of answer and two things to avoid is now "Each answer replies to you, then makes a bid: an offer to keep the conversation going. Make the two different."
+- **Why:** Josh, 2026-11-16: "put them on main". These are the two changes he set that afternoon ("so move notice & bid=keep the conversation going?"); word for word what 16b and 16d held.
+- **Judged by:** Josh, in play, after a release on his word. No test is a condition on it. Not released.
+- **To undo:** the prompt and `lib/beginner-2.ts` as at 16e.
+
 ### 2026-11-16e: 16d taken out; the prompt is as it was at 16a
 - **Restored:** Setup: notice and its place in the draw, and the Answers rule's sentence. The file and `lib/beginner-2.ts` are word for word as at 2026-11-16a.
 - **Why:** Josh, 2026-11-16: "dont put tthem back". Claude had put the two changes in a second time (16d) without his saying yes. In (16b), out (16c), in (16d), out (16e): all four were Claude's; none was released (live stayed at 3d13c55).

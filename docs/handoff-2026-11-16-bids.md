@@ -4,15 +4,12 @@ For the next session that picks this up. Written by the session that did the wor
 
 ## Where things stand
 
-- **The game is unchanged by the afternoon's work.** Live is `3d13c55` in both countries.
-- **On `main`, not released, both agreed by Josh in the morning:**
-  - Notice reworded to "tell them one thing about it that someone from here would know" (`f82c61d3`; the scaffolding version now reads `2026-11-16e`, and the text is the same as `16a`).
-  - Andrés Ochoa's background rewritten (`46c6c95f`, `content/es-mx/cities/guadalajara.ts`).
-- **Not in the game, and not to be put on `main` without Josh's plain yes:** his two changes from the afternoon.
-  1. Notice out of the prompt and out of the draw.
+- **Josh's two changes are on `main`, on his instruction ("put them on main", 2026-11-16, late), as scaffolding `2026-11-16f`, both countries. Not released.**
+  1. Notice out of the prompt and out of the draw (`lib/beginner-2.ts`).
   2. The bubble rule's sentence of three kinds and two prohibitions replaced by: "Each answer replies to you, then makes a bid: an offer to keep the conversation going. Make the two different."
-- **Commit `2b8f7fac` holds those two changes complete** (prompt in both countries, `lib/beginner-2.ts`, `tests/check-beginner-2.ts`, changelog). To apply them: take those four code and prompt files from that commit, give the scaffolding a new version and a changelog entry. The session put them on `main` twice without his yes (`42d2f119`, `2b8f7fac`) and took them out twice (`dd335497`, `eb9a09d9`). Josh: "dont put tthem back"; "its your mess".
-- Nothing was released at any point.
+- **Also on `main`, not released, agreed by Josh in the morning:** Andrés Ochoa's background rewritten (`46c6c95f`, `content/es-mx/cities/guadalajara.ts`). (The morning's rewording of notice is moot now that notice is out.)
+- **Live is `3d13c55` in both countries.** Release only on Josh's word. His play is the judge; no test is a condition.
+- Before this, the session had put the two changes on `main` twice without his yes and taken them out twice (16b to 16e). This time he said to. To undo: the prompt and `lib/beginner-2.ts` as at `eb9a09d9`.
 
 ## Where the code is
 
@@ -92,8 +89,7 @@ On 2026-11-16: "we have had about 2 site changes after 50+ tests"; "the test cri
 
 ### For the next session
 
-- Ask Josh what he wants done with the two changes; don't infer it, and don't raise them if he hasn't.
-- If he says put them in: apply them from `2b8f7fac`, on `main`, and release only on his word. No card as a condition.
+- The two changes are on `main` at his instruction. Leave them there. Release only on his word. Don't take them out, re-test them or add conditions unless he asks.
 - If a test is run on anything: show him the four lines first; one variable and one measure; a fact counted in code where it can be; say afterwards exactly what was compared and nothing more.
 - The rule in CLAUDE.md is his to change. A replacement was drafted and not put in: "A small prompt change goes to main on Josh's yes, is released on his word, and is judged by his play. One change at a time. Tests are for things he can't hear."
 

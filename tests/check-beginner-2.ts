@@ -122,7 +122,7 @@ check((stored[0] as { parts?: { gloss?: string; en?: string }[] }).parts?.[0].gl
 {
   const picks = Array.from({ length: 400 }, (_, i) => pickSetup({ conversationId: `mix-${i}`, turn: 1 + (i % (GOODBYE_AFTER - 1)), characterId: 'x' }, CLUSTER_1).id);
   const share = (id: string) => picks.filter((x) => x === id).length / picks.length;
-  check(share('two-en') > share('notice') && share('notice') > 0.1 && share('ask-en') < 0.35, `two answers the most, Notice and questions to ask now and then (2026-11-12f; 2026-11-11c: never three of a kind running) (notice ${share('notice').toFixed(2)}) (two ${share('two-en').toFixed(2)}, ask ${share('ask-en').toFixed(2)}, invite ${share('invite-en').toFixed(2)})`);
+  check(share('two-en') > share('ask-en') && share('notice') === 0 && share('ask-en') < 0.35, `two answers the most, questions to ask now and then, no Notice (2026-11-16b; 2026-11-11c: never three of a kind running) (two ${share('two-en').toFixed(2)}, ask ${share('ask-en').toFixed(2)}, invite ${share('invite-en').toFixed(2)}, notice ${share('notice').toFixed(2)})`);
   let twice = 0;
   for (let c = 0; c < 200; c++) for (let t = 2; t < 8; t++) {
     const a = pickSetup({ conversationId: `run-${c}`, turn: t - 1, characterId: 'x' }, CLUSTER_1).id, b = pickSetup({ conversationId: `run-${c}`, turn: t, characterId: 'x' }, CLUSTER_1).id;
@@ -228,11 +228,11 @@ check(firstHeard === 'Pase, pase, come in, sit here. ' && lineHeard === 'Pase, p
 // Visits that end (2026-11-13, bugs.md B3): the goodbye on the 7th turn, the close from the 8th; Intermediate closes on the 15th (take-turn)
 check(CLOSE_AT === 8 && pickSetup({ conversationId: 'c', turn: CLOSE_AT, characterId: 'x' }).id === 'close' && pickSetup({ conversationId: 'c', turn: CLOSE_AT + 2, characterId: 'x' }).id === 'close', 'Beginner: goodbye offered on the 7th turn, the close from the 8th (Josh: "8 for begginer")');
 check(setupText(CLOSE).includes('goodbye') && CLOSE.maxAnswers === 0, 'the close says goodbye itself and offers no answers');
-// Notice once a visit (2026-11-13, Josh: "everyone likes to say, lo veo, lo ve")
+// Notice is out of the draw (2026-11-16b, Josh: "do you like the kiosk"; it was once a visit since 2026-11-13)
 {
-  let twice = 0;
-  for (let c = 0; c < 300; c++) { const seq = Array.from({ length: 12 }, (_, t) => pickSetup({ conversationId: `n-${c}`, turn: t + 1, characterId: 'x' }).id); if (seq.filter((x) => x === 'notice').length > 1) twice++; }
-  check(twice === 0, `Notice at most once a visit (got ${twice} visits with two)`);
+  let drawn = 0;
+  for (let c = 0; c < 300; c++) for (let t = 1; t <= 12; t++) for (const cluster of CLUSTERS) if (pickSetup({ conversationId: `n-${c}`, turn: t, characterId: 'x' }, cluster).id === 'notice') drawn++;
+  check(drawn === 0, `Notice is never drawn, at any step (got ${drawn})`);
 }
 // The reply format (2026-11-13, bugs.md B1, B3): answers required when asked; leaving counts as goodbye
 {
