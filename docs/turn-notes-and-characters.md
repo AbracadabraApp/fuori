@@ -149,3 +149,13 @@ Josh's design ("just an experiment", no card): ten questions from his visits of 
 - **The next bubbles followed the bid's material:** "¿Qué es el piloncillo?", "¿Cómo es la finca?", "¿Quién fue don Juan Machado?".
 - An opinion ("Me gusta este parque") got a word of agreement and nothing else, as the bids doc predicted.
 - What it reaches: one run a cell, ten moments, Claude's bids. A look, not a result.
+
+## A look: the notes keep their form and lose their subject (2026-11-16)
+
+Josh: "usually if we withdraw rules problems go away (not always - ending visits)", then yes to a look. `tests/experiments/withdraw-look.mts`: seven characters (Don Anselmo, Lalo, Chuy, Lupita, Memo, Juana, Elena), opener + 5 turns each, a stand-in learner alternating the two bubbles, the same draw of notes both ways, one run. Live: the released notes. Withdrawn: no notice (its turn becomes two answers), and two answers reads "End on a question, and give them two short answers they could say back." Nothing in the game changed.
+
+- **"Look at X; do you like it / what do you think of it":** live, 5 of the 7 visits drew a notice turn and all 5 pointed away at a new sight (the fountain, the altar flowers, the market, the bandstand, the green beans), 3 of them with "do you like / what do you think of". Withdrawn, the same 5 turns stayed on what was being talked about ("fried or raw?", "are your boots new?", "what does it smell like to you?") and none asked about a plain sight.
+- **The opener still asks it** in both ("Do you like the plaza?", "Do you like the church?"): its note wasn't touched.
+- **What was told about the place came out about even.** Gained: Don Anselmo got to aguachile, Memo to the market's two names and tortas ahogadas. Lost: Lupita's white flowers for the dead in November came from her notice turn and didn't appear without it; Elena's harvest months didn't come up.
+- **"Do you want to…?" is the commonest question both ways** (about 10 live, 12 withdrawn; Chuy's "do you want to hear a song" three and four times).
+- One run a visit, read by Claude. A look, not a result.
