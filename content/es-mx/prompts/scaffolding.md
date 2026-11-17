@@ -1,6 +1,6 @@
 # Scaffolding (the Beginner)
 
-version: 2026-11-17b
+version: 2026-11-17c
 
 Everything that helps a Beginner take part, kept apart from the dialogue
 (Josh, 2026-11-09: "I want to be able to adjust scaffolding without touching
@@ -84,7 +84,7 @@ This turn, don't ask them anything: carry on with what you're saying, and give t
 ## Setup: goodbye
 
 ```
-This turn, wind down warmly. Now and then, if there's something of yours you'd like to show them, do with them or tell them next time, say so. Give them two short ways to leave, as their answers.
+This turn, in a sentence or two: you've enjoyed it. If there's something specific you'd like to do with them or tell them next time, say so.
 ```
 
 ## Setup: close

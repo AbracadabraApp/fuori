@@ -2,6 +2,11 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
 
+### 2026-11-17c: line 8 in Josh's words
+- **Changed, Setup: goodbye** (the character's 8th line): "This turn, wind down warmly. Now and then, if there's something of yours you'd like to show them, do with them or tell them next time, say so. Give them two short ways to leave, as their answers." → "This turn, in a sentence or two: you've enjoyed it. If there's something specific you'd like to do with them or tell them next time, say so."
+- **Why:** Josh, of 17b's wording: "this seems sketchy". 17b's next-time sentence was the old Close note's, nearly word for word ("something of yours… show them, do with them or tell them"), and "now and then" asks the model to keep a count it can't.
+- **Prompted by:** Josh, 2026-11-17, who wrote the new line. Not released.
+
 ### 2026-11-17b: the ending in two lines: the wind-down with no goodbye in it, then a short goodbye
 - **Changed, Setup: goodbye** (the character's 8th line, after the learner's 7th reply): "This turn, wind down: say something warm, but leave the goodbye to them (don't say goodbye yourself), and give them two short ways to say goodbye, as their answers." → "This turn, wind down warmly. Now and then, if there's something of yours you'd like to show them, do with them or tell them next time, say so. Give them two short ways to leave, as their answers."
 - **Added, Setup: close** (the 9th line, after the learner's 8th reply, usually their goodbye): "Say goodbye in a few words; this reply ends the conversation." At Beginner it replaces dialogue.md's Close note ("…you have to get back to what you're doing…"), which Intermediate and Advanced keep. Code: lib/beginner-2.ts → setupLine reads this block for the close, without the "if they are leaving" line.
