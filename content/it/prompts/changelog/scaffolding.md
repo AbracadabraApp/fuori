@@ -2,6 +2,13 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
 
+### 2026-11-17b: the ending in two lines: the wind-down with no goodbye in it, then a short goodbye
+- **Changed, Setup: goodbye** (the character's 8th line, after the learner's 7th reply): "This turn, wind down: say something warm, but leave the goodbye to them (don't say goodbye yourself), and give them two short ways to say goodbye, as their answers." → "This turn, wind down warmly. Now and then, if there's something of yours you'd like to show them, do with them or tell them next time, say so. Give them two short ways to leave, as their answers."
+- **Added, Setup: close** (the 9th line, after the learner's 8th reply, usually their goodbye): "Say goodbye in a few words; this reply ends the conversation." At Beginner it replaces dialogue.md's Close note ("…you have to get back to what you're doing…"), which Intermediate and Advanced keep. Code: lib/beginner-2.ts → setupLine reads this block for the close, without the "if they are leaving" line.
+- **Why:** on 11-17 every Beginner visit ended the same way: the learner said one of the offered goodbyes as their 8th reply, and the 9th line answered it with the Close note, so all 9 Italy closes said "adesso devo tornare a…" (B31; Josh: "i found the ending on I have to gett back to my job repetitive"), and in 5 of 9 the character had already said goodbye on the 8th line despite "don't say goodbye yourself" (B5; Josh: "No need for 2 closer").
+- **Prompted by:** Josh, 2026-11-17, working out the ending: "leave 8 to wind down and next time - no goodbye and 9 is goodbye - short phrase"; then "telling the prompt what not to do often backfires. I'd leave out anything about goodbye in 8 - just sometimes say what we could do next time etc." So line 8 says nothing about the character's goodbye.
+- **Judged by:** Josh's play. Not released.
+
 ### 2026-11-17a: the file says what it is; six sections nothing reads taken out
 - **Removed:** Level: 1, Level: 1b, Level: 2, Level: 2b, Level: 3 (every step reads Level: sentences since 2026-11-15, `LEVEL_OF_CLUSTER` in lib/beginner-2.ts) and Setup: one answer (no setup in the draw names it).
 - **Changed, the header** (not sent to the model): it said the file plays "only when Beginner 2 is switched on" and is read by lib/beginner.ts; since the cut-over every Beginner turn plays it, through lib/beginner-2.ts. It now says which parts a turn reads and that the System prompt's Who and parts format are read only by tests/check-beginner-2.ts.

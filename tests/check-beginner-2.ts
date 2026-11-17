@@ -10,6 +10,7 @@ import { fullerGlosses, shownParts, shapeParts, questionEcho } from './experimen
 import { stageInVersion } from '@/lib/conversation-record';
 import { lineFromParts, type Part } from '@/lib/beginner';
 import { buildBeginnerPrompt, SCAFFOLDING_FILE, dialogueWithoutFormat } from '@/lib/beginner';
+import { readPromptFile } from '@/lib/prompts/template';
 import { exchangeTurns } from '@/lib/recording';
 import { assemblePieces } from '@/lib/dialogue/pieces';
 import { turnOutputWithAnswersJsonSchema, doneField } from '@/lib/prompts/turn-output-schema';
@@ -100,7 +101,8 @@ check(questionEcho([{ kind: 'question', text: '¿Le gusta?', en: 'Do you like it
 const twice = shownParts([{ kind: 'question', text: '¿Quiere saber algo del barrio? You can ask me anything.', en: 'Do you want to know anything about the barrio? You can ask me anything.', gloss: '' }], RUNGS.find((r) => r.id === 'invite-en')!, CLUSTER_1);
 check(!twice.some((x) => x.kind === 'english' && /^You can ask me in English or/.test(x.text)), 'the invitation isn\'t added when the character already gave it');
 check(pickSetup({ conversationId: 'c', turn: 7, characterId: 'x' }).id === 'goodbye' && pickSetup({ conversationId: 'c', turn: 6, characterId: 'x' }).id !== 'goodbye' && pickSetup({ conversationId: 'c', turn: 8, characterId: 'x' }).id !== 'goodbye' && pickSetup({ conversationId: 'c', turn: 12, characterId: 'x' }).id !== 'goodbye', 'the goodbye is offered once, on the 7th turn (Josh, 2026-11-12), not on every turn after it (Chuy)');
-check(setupText(GOODBYE).includes('goodbye'), 'the goodbye setup line comes from scaffolding.md');
+check(setupText(GOODBYE).includes(readPromptFile(SCAFFOLDING_FILE).block('Setup: goodbye').trim()), 'the goodbye setup line comes from scaffolding.md');
+check(setupLine(CLOSE) === readPromptFile(SCAFFOLDING_FILE).block('Setup: close').trim(), 'Beginner\'s close is scaffolding.md\'s short goodbye, not dialogue.md\'s Close note (Josh, 2026-11-17)');
 const noAsk = shownParts([{ kind: 'question', text: '¿De dónde es usted?', en: 'Where are you from?', gloss: '' }], RUNGS.find((r) => r.id === 'ask-en')!, CLUSTER_1);
 check(noAsk.some((x) => x.kind === 'english' && /ask me in English or/.test(x.text)), 'questions to ask with none given becomes an invitation to ask');
 // The four of 2026-11-09 evening

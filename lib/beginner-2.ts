@@ -16,7 +16,6 @@
 import { fill, readPromptFile } from '@/lib/prompts/template';
 import { language } from '@/content';
 import { SCAFFOLDING_FILE, type Part } from '@/lib/beginner';
-import { closeNote } from '@/lib/dialogue/rules';
 
 export interface Setup {
   id: string;
@@ -183,8 +182,7 @@ export function setupLine(setup: Setup): string {
   const f = readPromptFile(SCAFFOLDING_FILE);
   // Every turn's note gives way when they're leaving (2026-11-13): in the system prompt alone, the note next to their
   // message won ("Before you go, look at the church's front door…" after "I must see the dentist")
-  if (setup.id === CLOSE.id) return closeNote();
-  const leaving = [OPENER.id, GOODBYE.id].includes(setup.id) ? '' : ' ' + f.block('Setup: if they are leaving');
+  const leaving = [OPENER.id, GOODBYE.id, CLOSE.id].includes(setup.id) ? '' : ' ' + f.block('Setup: if they are leaving');
   return fill(f.block(setup.block) + leaving, { language: language.name, ...(setup.vars ?? {}) }).trim();
 }
 

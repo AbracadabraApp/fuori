@@ -16,7 +16,7 @@ export function withDialogueRules(system: string): string {
   return `${system}\n\n${readPromptFile('dialogue.md').block('Every conversation')}`;
 }
 
-/** The note for the turn where the character closes a long visit itself (the 8th turn at Beginner, after the 10th reply at Intermediate and Advanced) */
+/** The note for the turn where the character closes a long visit itself (after the 10th reply at Intermediate and Advanced; Beginner's close is scaffolding.md → Setup: close) */
 export function closeNote(): string {
   return readPromptFile('dialogue.md').block('Close');
 }
