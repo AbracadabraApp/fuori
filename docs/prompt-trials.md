@@ -1037,13 +1037,18 @@ A short card, as Josh asked for dialogue changes the same day ("the judging of t
 ### The Beginner ending (2026-11-17): line 8 "start to wrap up", line 9 a short goodbye (scaffolding.md 17d), against the old ending
 A product change on Josh's word (no card); this is the direction run. `tests/experiments/rewrite-trial.mts` with TRIAL_STEPS=1,4 TRIAL_KINDS=long TRIAL_REPEAT=2 on the Mac mini, the learner saying the first offered answer: 16 long visits an arm a country, the same four characters each (Italy: Palermo's bar, chapel, garden, theatre; Mexico: Oaxaca's tlayudas, the Palacio murals, the Alameda, Guanajuato's tunnel bus). Arm A: main at 347f2a3c (Setup: goodbye "wind down… don't say goodbye yourself", then dialogue.md's Close note). Arm B: 3f6d4231 (17d). Lines 8 and 9 printed by `tests/experiments/ending-lines.mts`; counts below from the English of each line, read for direction.
 
-| | Italy A | Italy B | Mexico A | Mexico B |
+Counted per visit, across the ending's two lines (lines 8 and 9):
+
+| In the visit's ending | Italy A | Italy B | Mexico A | Mexico B |
 |---|---|---|---|---|
 | Visits that ended on line 9; failed turns | 16/16; 0 | 16/16; 0 | 16/16; 0 | 16/16; 0 |
-| Line 9 "I have to get back to…" | 16 | 0 | 12 | 1 |
-| Line 8 "I have to get back to work / finish…" | 0 | 10 | 0 | 2 |
-| Line 8 says what's next time | 4 | 15 | 1 | 13 |
-| Line 9 says what's next time | 16 | 13 | 16 | 12 |
+| "I have to get back to…" anywhere | 16 | 10 | 12 | 3 |
+| … on line 8 | 0 | 10 | 0 | 2 |
+| … on line 9 | 16 | 0 | 12 | 1 |
+| "Next time I'll show you…" anywhere | 16 | 15 | 16 | 15 |
+| … said twice (lines 8 and 9) | 0 | 7 | 0 | 12 |
+
+(An earlier version of this table counted single lines and had "line 9 says what's next time 16 → 13", which read as a repeat; per visit the repeat is 0 → 7 and 0 → 12.)
 
 - Read: "back to work" left line 9 in both countries; in Italy it moved to line 8 ("Now I have to get back to work, the tiles are waiting for me!"), so "start to wrap up" is read as a reason to go. The next-time line is now on almost every line 8 ("maybe" isn't "now and then") and is often said again on line 9, sometimes word for word (Elena: "next time I'll show you the oldest dresses in the theatre", both lines). Line 8 often still ends on a farewell ("It was a pleasure", "see you soon"), as in arm A. Line 9 is shorter and its goodbyes vary.
 - Seen once, separate: an Italy step-4 line 8 with its sentences doubled (Nunzio: "Next time I'll show you the smallest figs, near the wall." twice); not in arm A; not traced.
