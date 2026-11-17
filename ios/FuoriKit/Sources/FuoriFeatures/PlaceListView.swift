@@ -71,6 +71,12 @@ struct PlaceListView: View {
         }) { trip in
             TripSheet(trip: trip, content: content) { boarding = trip.to }
         }
+        // The station under the thumb (Josh, 2026-11-16): a light tick as the
+        // ticket comes up for the city picked on the board, a firm one on
+        // boarding. Played here, since the board and the ticket sheet are
+        // gone by the time theirs would play. No microphone is open at the station.
+        .sensoryFeedback(.selection, trigger: trip != nil) { _, shown in shown }
+        .sensoryFeedback(.impact(weight: .heavy), trigger: boarding != nil) { _, going in going }
         .navigationDestination(for: CinemaRoute.self) { route in CinemaView(place: route.place) }
     }
 
