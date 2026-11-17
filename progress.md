@@ -1,5 +1,12 @@
 # Fuori Development Progress
 
+## 2026-11-17 (laptop, with Josh): build 17 on his phone directly
+
+- **TestFlight:** build 17 was uploaded 2026-11-16 ("Upload succeeded", archive CFBundleVersion 17, export compliance set) but never reached Josh's TestFlight (he only had 16). Not diagnosed: App Store Connect isn't reachable from the laptop without an API key; worth a look there for the family.
+- **On Josh's phone:** on his "just build to the phone", built Release with development signing and installed with devicectl on his iPhone 16 Pro; the phone reports Fuori 0.1.0 (17). Server side live since d7d7551.
+- **Seen by Josh on 17:** the polaroid curl isn't like the mockup ("the polaroids don't seem to have the same slightly bent bottoms"). Another session reopened B38 the same morning and has a fix on main (the curl bars made solid, the card's shadow on the card's shape only), not yet seen on a screen; it needs a new build on the phone.
+- **Next:** a build with the B38 fix on Josh's phone, on his word; App Store Connect for why 17 isn't in TestFlight.
+
 ## 2026-11-16 (cloud chat session, with Josh), evening: the station gets haptics, a sound and a timer; a Europe spec
 
 - **Station (Josh: "just the ones you mention - and on the map page a sound effect and timer for page advance"; "3.5 and you can also advance from the ticket"; "you need road noise for mx bus"):** a selection haptic as the ticket comes up and a firm one on boarding (d3d2191); the ticket-and-map page plays the country's travel sound and starts the trip by itself after 3.5 s, or at once on the arrow; Cancel ends both; no timer with VoiceOver. The sound's name comes from each country's pack (`travelSound`: rails in Italy, road in Mexico); the two files are bundled in FuoriAudio and played as system sounds, so they follow the silent switch (conventions updated with this one exception).
