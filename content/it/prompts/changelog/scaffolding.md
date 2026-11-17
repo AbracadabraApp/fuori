@@ -2,6 +2,11 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
 
+### 2026-11-16g: each answer is two short sentences, a reply and then something that keeps it going
+- **Changed, System prompt › Answers:** "Each answer replies to you, then makes a bid: an offer to keep the conversation going." → "Each answer is two short sentences of a few words each: the first replies to you, the next keeps the conversation going."
+- **Why:** Josh, 2026-11-16, on 16f's bubbles: "the first sentencr replies to you, the next keeps the conversation going"; "i think the model has no idea what bid means here"; then "how would you keep it shorter". With "makes a bid" the character often wrote only the reply ("Sí, son muy bonitos.") and left the keeping-going to the other bubble.
+- **Looked at** (tests/experiments/bubble-pairs.mts, the same 34 pairs from five of Josh's Mexico visits at step 1): answers that ask something back, live 6, "two short sentences" 23 (but 13 of 68 answers over eight words), "a word or two, then a few words" 10, this wording 22 (median six words; "Sí, me encanta. ¿Es de Oaxaca?", "Qué bien. ¿Hay muchos estudiantes?"). "Both answers make a bid…" was tried first and was no better than live. One sentence replaced, nothing added. Josh: "OK".
+
 ### 2026-11-16f: Josh's two changes, in on his instruction: notice out of the draw; the answers make a bid
 - **Removed, Setup: notice** and its place in the draw (`CLUSTERS`, `WEIGHT` and the once-a-visit rule in `lib/beginner-2.ts`). The other notes are drawn by the same weights.
 - **Changed, System prompt › Answers:** the sentence listing three kinds of answer and two things to avoid is now "Each answer replies to you, then makes a bid: an offer to keep the conversation going. Make the two different."
