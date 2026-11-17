@@ -53,6 +53,12 @@ struct Subtitles: View {
     /// only once the line has been spoken. The unspoken
     /// rest of the line is laid out but invisible, so the card takes its full
     /// size at once and doesn't grow as the text types out.
+    /// The line in the bubble has been said: the voice is done, or has gone past its end
+    var lineSaid: Bool {
+        guard let shown else { return true }
+        return line.map { shown >= $0.count } ?? false
+    }
+
     private var text: some View {
         VStack(alignment: .leading, spacing: 2) {
             if let line {
@@ -61,7 +67,10 @@ struct Subtitles: View {
                     .foregroundStyle(Tokens.Colors.ink)
                     .accessibilityLabel(Text(tagged(String(line.prefix(shown ?? line.count)))))
             }
-            if let english, shown == nil {
+            // The English once what it translates has been said: the whole line, or on a Beginner turn the
+            // question, whose voice goes on into its English aloud (B49; Josh, 2026-10-15: no English until
+            // the character has finished speaking it)
+            if let english, lineSaid {
                 BubbleEnglish(text: english, speaker: .her)
             }
             if let hint, shown == nil {

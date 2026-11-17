@@ -37,6 +37,18 @@ import FuoriNetworking
         #expect(bubble.english == "Do you like the tunnels?")
     }
 
+    // B49 (Josh, 2026-11-17: "never does the screen show moment 2 with transtation"): the question's English shows
+    // once the Italian question has been said, while the voice goes on into its English aloud, not with the bubbles
+    @Test func theQuestionsEnglishShowsOnceTheQuestionHasBeenSaid() {
+        let q = APIClient.IntroSentence(text: "¿Le gustan los túneles?", en: "Do you like the tunnels?")
+        let start = tunnels.distance(from: tunnels.startIndex, to: tunnels.range(of: "¿Le gustan")!.lowerBound)
+        let mid = CharacterBubble.of(turn(line: tunnels, english: "…", parts: parts(twoAnswers), question: q, shown: start + 5))
+        #expect(!Subtitles(line: mid.line, shown: mid.shown, english: mid.english, note: nil).lineSaid)
+        let past = CharacterBubble.of(turn(line: tunnels, english: "…", parts: parts(twoAnswers), question: q, shown: start + q.text.count + 3))
+        #expect(Subtitles(line: past.line, shown: past.shown, english: past.english, note: nil).lineSaid)
+        #expect(Subtitles(line: "Ciao.", shown: nil, english: "Hi.", note: nil).lineSaid)
+    }
+
     @Test func aTurnWithQuestionsToAskPrintsNothing() {
         let line = "Perfect, then climb up, \"suba, suba\", watch the step. It's a short ride, \"es un ratito\"."
         let t = turn(line: line, english: line, parts: parts(twoQuestions), question: nil, shown: nil, speaking: false)
