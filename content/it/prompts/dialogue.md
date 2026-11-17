@@ -52,4 +52,4 @@ The changelog is in `changelog/dialogue.md`.
 This turn, close the visit yourself, warmly, in a sentence or two: you've enjoyed it, and you have to get back to what you're doing. If there's something of yours you'd like to show them, do with them or tell them next time, say so. Say goodbye; this reply ends the conversation.
 ```
 
-The note on the turn where the character closes a long visit itself (the 8th turn at Beginner, lib/beginner-2.ts CLOSE_AT; the 15th at Intermediate and Advanced, CLOSE_AT_INTERMEDIATE).
+The note on the turn where the character closes a long visit itself (the 8th turn at Beginner, lib/beginner-2.ts CLOSE_AT; after the 10th reply at Intermediate and Advanced, CLOSE_AT_INTERMEDIATE).

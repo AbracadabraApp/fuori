@@ -15,7 +15,7 @@ Every reply: thinking off (`thinking: between_tools`; `noThinkingFor` in the par
 
 | # | Kind | Engine | What it's given | Who gets it |
 |---|---|---|---|---|
-| 1 | Intermediate visit (and Advanced) | line | `character.md` (with the level fact: "They're learning {language} and follow most of it" / "They speak {language} well") + `dialogue.md` + the place's here line + memory; a shape note only when they asked something; the Help asked note after they asked for help; the Close note after the learner's 15th reply | Learners at Intermediate or Advanced |
+| 1 | Intermediate visit (and Advanced) | line | `character.md` (with the level fact: "They're learning {language} and follow most of it" / "They speak {language} well") + `dialogue.md` + the place's here line + memory; a shape note only when they asked something; the Help asked note after they asked for help; the Close note after the learner's 10th reply | Learners at Intermediate or Advanced |
 | 2 | Intro | none | Cut on 2026-11-13 at every level; its code and `intro.md` removed 2026-11-15 (e2ae62cc): a visit opens on the character's first ordinary turn | Nobody |
 | 3 | Beginner, steps 1–6 | line | the Intermediate prompt + `scaffolding.md` → Level: sentences (one text for every step: each sentence in the language and in English, in braces) + Answers + Reply: line and answers + a setup note on every turn + shapes; code says each sentence by the step's setting; the answers come with the reply and go to the app as answer parts | Every Beginner, on the stored step |
 | 4, 5 | (Beginner on the parts format; the old Beginner) | parts | Removed 2026-11-15 (5f523ea7 the server, 6ce24283 the iPhone's Old/New picker, D22). The app's `x-fuori-beginner` header is no longer read | Nobody |
@@ -27,7 +27,7 @@ Cultural lessons (`culture.md` → Story) play as a lesson part, in the Beginner
 
 ## 2. By level
 
-**Intermediate and Advanced.** No intro. The character gets one fact about the learner's level (`character.md` → Learner: Intermediate / Advanced) and no other level rules. The director is silent except "Answer what they asked first" when the learner's line has `?` or `¿` (`lib/shapes.ts`). The visit ends when the learner says goodbye or that they have to go, in any words (the reply's `done`), or after the learner's 15th reply, when the character gets the Close note and closes the visit itself (`CLOSE_AT_INTERMEDIATE`). Once the learner asks for help or says it's hard, the reply's `hard` flag is saved on the turn and every later turn of the visit gets the Help asked note (short sentences, known words, a new word's English right after it).
+**Intermediate and Advanced.** No intro. The character gets one fact about the learner's level (`character.md` → Learner: Intermediate / Advanced) and no other level rules. The director is silent except "Answer what they asked first" when the learner's line has `?` or `¿` (`lib/shapes.ts`). The visit ends when the learner says goodbye or that they have to go, in any words (the reply's `done`), or after the learner's 10th reply, when the character gets the Close note and closes the visit itself (`CLOSE_AT_INTERMEDIATE`; Josh, 2026-11-17: "Change Intermediate to 10", it was the 15th). Once the learner asks for help or says it's hard, the reply's `hard` flag is saved on the turn and every later turn of the visit gets the Help asked note (short sentences, known words, a new word's English right after it).
 
 **Beginner** (`lib/beginner-2.ts`; `docs/beginner-2.md`). Six steps on one screen and one reply format, each taking a support away:
 

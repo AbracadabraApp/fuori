@@ -58,10 +58,10 @@ const R = (id: string) => RUNGS.find((r) => r.id === id)!;
 export const GOODBYE: Setup = { id: 'goodbye', block: 'Setup: goodbye', maxAnswers: 2, english: true };
 export const GOODBYE_AFTER = 7;
 /** If the visit carries on past the goodbye, the character closes it itself: on the 8th turn at Beginner (the goodbye was
- * offered on the 7th), on the 15th at Intermediate and Advanced (take-turn). Josh, 2026-11-13: "lets keep 8 for begginer; 15
+ * offered on the 7th), after the 10th reply at Intermediate and Advanced (take-turn; Josh, 2026-11-17: "Change Intermediate to 10"; it was the 15th). Josh, 2026-11-13: "lets keep 8 for begginer; 15
  * for intermediate"; Josué and Isidro had run to 20 and 24 replies ("Don Insidro, I must insist we stop") */
 export const CLOSE_AT = 8;
-export const CLOSE_AT_INTERMEDIATE = 15;
+export const CLOSE_AT_INTERMEDIATE = 10;
 export const CLOSE: Setup = { id: 'close', block: 'Setup: close', maxAnswers: 0, english: false };
 
 /** The idiom turn (D13; lib/idioms.ts): put in by take-turn in place of the drawn setup, with the idiom as vars */

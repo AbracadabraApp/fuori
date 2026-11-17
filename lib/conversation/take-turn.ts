@@ -269,7 +269,7 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
     firstTurn: tutorPrompt?.firstTurn,
     level,
     // Intermediate: this turn's shape, when a signal fired (lib/shapes.ts); nothing otherwise
-    // A long visit's close (the 15th turn; Josh, 2026-11-13): the character closes it itself
+    // A long visit's close (after the 10th reply; Josh, 2026-11-17, was the 15th): the character closes it itself
     note: noteOf(shape, closing ? closeNote() : undefined),
     help: helped,
     // An ordinary Intermediate or Advanced visit: what the character knows of their language (character.md → Learner: …)

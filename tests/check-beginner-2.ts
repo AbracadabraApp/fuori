@@ -5,7 +5,7 @@
 // (tests/experiments/parts-shaping.ts, for experiments only) is still checked here.
 import { SETTINGS, saySentence, saySentences, englishOf, wayOf, seedOf } from '@/lib/dialogue/pieces';
 import { readFileSync } from 'fs';
-import { pickSetup, GOODBYE_AFTER, CLOSE_AT, CLOSE, setupText, levelText, setupLine, turnSteps, beginner2Version, GOODBYE, OPENER, CLUSTER_1, CLUSTERS, RUNGS, clusterFrom, withQuestionEnglish, cluster1Brief, frameBrief, lineWithAnswers, questionOf, QUESTION_ECHO_FRAME } from '@/lib/beginner-2';
+import { pickSetup, GOODBYE_AFTER, CLOSE_AT, CLOSE_AT_INTERMEDIATE, CLOSE, setupText, levelText, setupLine, turnSteps, beginner2Version, GOODBYE, OPENER, CLUSTER_1, CLUSTERS, RUNGS, clusterFrom, withQuestionEnglish, cluster1Brief, frameBrief, lineWithAnswers, questionOf, QUESTION_ECHO_FRAME } from '@/lib/beginner-2';
 import { fullerGlosses, shownParts, shapeParts, questionEcho } from './experiments/parts-shaping';
 import { stageInVersion } from '@/lib/conversation-record';
 import { lineFromParts, type Part } from '@/lib/beginner';
@@ -225,8 +225,9 @@ w.feed(streamed);
 w.feed('{"line":"{Pase, pase | come in}, sit here. Look at {el comal | the griddle}. {¿Le gusta? | Do you like it?}","en":"');
 check(firstHeard === 'Pase, pase, come in, sit here. ' && lineHeard === 'Pase, pase, come in, sit here. Look at el comal, the griddle. ¿Le gusta? Do you like it?' && lineHeard.startsWith(firstHeard), 'pieces: the voice gets the first sentence and the whole line put together, the first a prefix of the line');
 
-// Visits that end (2026-11-13, bugs.md B3): the goodbye on the 7th turn, the close from the 8th; Intermediate closes on the 15th (take-turn)
+// Visits that end (2026-11-13, bugs.md B3): the goodbye on the 7th turn, the close from the 8th; Intermediate closes after the 10th reply (take-turn; Josh, 2026-11-17)
 check(CLOSE_AT === 8 && pickSetup({ conversationId: 'c', turn: CLOSE_AT, characterId: 'x' }).id === 'close' && pickSetup({ conversationId: 'c', turn: CLOSE_AT + 2, characterId: 'x' }).id === 'close', 'Beginner: goodbye offered on the 7th turn, the close from the 8th (Josh: "8 for begginer")');
+check(CLOSE_AT_INTERMEDIATE === 10, 'Intermediate and Advanced: the character closes the visit after the 10th reply (Josh, 2026-11-17: "Change Intermediate to 10")');
 check(setupText(CLOSE).includes('goodbye') && CLOSE.maxAnswers === 0, 'the close says goodbye itself and offers no answers');
 // Notice is out of the draw (2026-11-16b, Josh: "do you like the kiosk"; it was once a visit since 2026-11-13)
 {
