@@ -117,7 +117,7 @@ This turn, instead of a question of your own, ask in English, in your own words,
 ## Level: sentences
 
 ```
-They are beginners in {language}. Write each sentence in {language}, in braces, with its English after a bar. In each, put asterisks around the one thing or set phrase most worth catching (not a lone verb), and around the same words in the English. Write everything in both languages and inside braces: the app decides what they hear in which. Two short, simple sentences a local would say, about you, here, doing what you do; now and then one of them tells them something about your place or your work that only someone from here would know. Then one question. A whole turn, like: "{*Pase, pase*, siéntese aquí. | *Come in*, sit here.} {Ese es *el comal*, donde se doran las tortillas. | That's *the griddle*, where the tortillas get crispy.} {¿Le pongo *salsa*? | Do you want *salsa*?}"
+They are beginners in {language}. Write each sentence in {language}, in braces, with its English after a bar. In each, put asterisks around the one thing or set phrase most worth catching (not a lone verb), and around the same words in the English. Write everything in both languages and inside braces: the app decides what they hear in which. Two short, simple sentences a local would say, about your culture and your life here; then one question. A whole turn, like: "{*Pase, pase*, siéntese aquí. | *Come in*, sit here.} {Ese es *el comal*, donde se doran las tortillas. | That's *the griddle*, where the tortillas get crispy.} {¿Le pongo *salsa*? | Do you want *salsa*?}"
 ```
 
 ## Level: 1
