@@ -2,6 +2,13 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
 
+### 2026-11-17a: the file says what it is; six sections nothing reads taken out
+- **Removed:** Level: 1, Level: 1b, Level: 2, Level: 2b, Level: 3 (every step reads Level: sentences since 2026-11-15, `LEVEL_OF_CLUSTER` in lib/beginner-2.ts) and Setup: one answer (no setup in the draw names it).
+- **Changed, the header** (not sent to the model): it said the file plays "only when Beginner 2 is switched on" and is read by lib/beginner.ts; since the cut-over every Beginner turn plays it, through lib/beginner-2.ts. It now says which parts a turn reads and that the System prompt's Who and parts format are read only by tests/check-beginner-2.ts.
+- **Kept:** Setup: invite English (its rung is still in lib/beginner-2.ts → RUNGS, though in no step's draw), Line: invite English (test:beginner-2 reads it through tests/experiments/parts-shaping.ts), and the System prompt's Who and parts format (a check reads them; taking them out needs that check changed, Josh's call).
+- **Why:** the documentation review of 2026-11-17 found the header wrong and the sections unread. Josh: "yes" to cleaning it. What a turn sends is unchanged: no removed section is read by code that plays a turn.
+- **Prompted by:** the review; Josh's yes.
+
 ### 2026-11-16h: the Beginner text said as what to do; about your culture and your life here
 - **Changed, Level: sentences:** shorter; "two short, simple sentences a local would say, about your culture and your life here; then one question".
 - **Changed, System prompt › Answers:** "Offer two answers, each a different idea, each two short sentences a local would say: one replying to you, then one keeping the talk going." (in place of 16g's wording), and the wind-down shorter.
