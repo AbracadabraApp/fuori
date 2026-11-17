@@ -2,6 +2,15 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
 
+### 2026-11-16h: the Beginner text said as what to do; about your culture and your life here
+- **Changed, Level: sentences:** shorter; "two short, simple sentences a local would say, about your culture and your life here; then one question".
+- **Changed, System prompt › Answers:** "Offer two answers, each a different idea, each two short sentences a local would say: one replying to you, then one keeping the talk going." (in place of 16g's wording), and the wind-down shorter.
+- **Changed, Reply: line and answers:** says only what differs from the character's JSON (the line in braces, add answers), no second full format.
+- **Changed, Setup: two answers and if they are leaving:** shorter.
+- **Why:** Josh, 2026-11-16: "I suspect these are all much longer than they need to be" (a Beginner step-1 turn read about 900 words of instructions, the character about 200 of them; docs/dialogue-plan.md D53). His rewrite, said as what to do and shorter, worked through with him the same day: the job is the way in and culture is the content ("about your culture and your life here"); culture first had never been stated in the conversation prompt; the "not the customs everyone hears" patch had been written for a cause in the old Beginner prompt (an errand script and an example about paying at the till) that is gone.
+- **Looked at** (tests/experiments/rewrite-trial.mts on the Mac mini, four characters a country of four kinds, steps 1 and 4 and Intermediate, 172 turns a version a country, today against the rewrite): nothing broke (goodbye ends the visit 12 of 12, the goodbye back asks nothing 12 of 12, no failed turns, answers in two parts about as often); culture, read, better where it was weakest (the Cappella Palatina from words only to the Arab-Norman ceiling and nine hundred years of gold; Guanajuato's tunnels along the old riverbed); turns a little longer (step 1 about 41 words against 33; Josh: "shorter turns not a goal - just not long"); Intermediate turns with two questions 8 and 14 against 3 and 5, muddied by the trial's learner who only says "Sí.". Not re-run: the old bug replays (job drift, the receipt gate), though "Stay within your job" and "What happens follows what you've said" are shortened.
+- **Prompted by:** Josh, 2026-11-16: "yes" to putting it on main.
+
 ### 2026-11-16g: each answer is two short sentences, a reply and then something that keeps it going
 - **Changed, System prompt › Answers:** "Each answer replies to you, then makes a bid: an offer to keep the conversation going." → "Each answer is two short sentences of a few words each: the first replies to you, the next keeps the conversation going."
 - **Why:** Josh, 2026-11-16, on 16f's bubbles: "the first sentencr replies to you, the next keeps the conversation going"; "i think the model has no idea what bid means here"; then "how would you keep it shorter". With "makes a bid" the character often wrote only the reply ("Sí, son muy bonitos.") and left the keeping-going to the other bubble.
