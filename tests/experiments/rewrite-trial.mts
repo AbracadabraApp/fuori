@@ -34,7 +34,10 @@ async function run() {
   // Intermediate (Josh, 2026-11-16: yes): the rewrite changes character.md and dialogue.md, which every level reads
   const intermediateId = randomUUID();
   await query("INSERT INTO learners (id, level, onboarded_at) VALUES ($1, 'intermediate', now())", [intermediateId]);
-  const STEPS = [1, 4, 0];
+  // TRIAL_STEPS=1,4 and TRIAL_KINDS=long and TRIAL_REPEAT=n narrow or widen a run (the ending, 2026-11-17)
+  const STEPS = process.env.TRIAL_STEPS ? process.env.TRIAL_STEPS.split(',').map(Number) : [1, 4, 0];
+  const KINDS = (process.env.TRIAL_KINDS?.split(',') ?? ['leave', 'long']) as ('leave' | 'long')[];
+  const REPEAT = Number(process.env.TRIAL_REPEAT ?? 1);
   const LEAVE_AFTER = 4; // the learner says goodbye after the character's 4th turn
   const MAX_TURNS = 10; // the close is due on the 8th; past 10 is a failure to end
   const goodbye = pack.id === 'it' ? 'Bene, devo andare. Grazie, arrivederci.' : 'Bueno, me tengo que ir. Gracias, adiós.';
@@ -57,7 +60,7 @@ async function run() {
   };
   const spots = SPOTS[pack.id].filter((s) => { const c = cities.find((x) => x.id === s.city); const p = c?.places.find((x) => x.id === s.place); return c && p && characterForPlace(c, p); });
   if (spots.length !== 4) throw new Error(`a named character is missing in ${pack.id}`);
-  const jobs: Visit[] = STEPS.flatMap((step) => spots.flatMap((s) => (['leave', 'long'] as const).map((kind) => ({ step, ...s, kind, turns: [] }))));
+  const jobs: Visit[] = Array.from({ length: REPEAT }).flatMap(() => STEPS.flatMap((step) => spots.flatMap((s) => KINDS.map((kind) => ({ step, ...s, kind, turns: [] as T[] })))));
 
   async function play(v: Visit) {
     const character = characterForVisit(v.city, v.place)!;
