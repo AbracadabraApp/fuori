@@ -31,7 +31,7 @@ Each rule: what to do, the HIG page, and where it applies in Fuori.
 ### Navigation and hierarchy
 - **One `NavigationStack`; drill-down screens push, scoped tasks use sheets.** City list → place list → conversation are pushes. [Toolbars: Navigation][toolbars] · Applies to: all.
 - **Use the standard Back button, showing the previous screen's title; never a text "Back" or a custom arrow.** The edge swipe must work everywhere. [Toolbars][toolbars], [Gestures][gestures] · Applies to: place list, conversation, Magda.
-- **Every way out of a screen runs the same code.** Swipe-back, the back button and boarding ("Sali" / "Subir") all reach `leaveConversation()`; no exit may skip saving, and we don't disable the swipe to force a path. · Applies to: conversation.
+- **Every way out of a screen runs the same code.** Swipe-back, the back button and boarding ("Sali" / "Subir") all reach `ConversationModel.leave()`; no exit may skip saving, and we don't disable the swipe to force a path. · Applies to: conversation.
 - **Don't title the root screen with the app name.** Use a title that says what's there. Keep titles short (under about 15 characters). [Toolbars: Titles][toolbars] · Applies to: city list.
 - **Use a large title on top-level lists**, which shrinks as you scroll. [Toolbars: iOS][toolbars] · Applies to: city list, place list.
 - **A tab bar has not been decided.** It would be a navigation redesign, so it gets its own decision, from a sketch. If one comes, the HIG's rules apply: tabs are for navigation only, always visible except under a modal, never disabled, an SF Symbol and a one-word label each. [Tab bars][tab-bars] · Applies to: nothing yet.
@@ -104,7 +104,7 @@ Each rule: what to do, the HIG page, and where it applies in Fuori.
 ### Privacy and the microphone
 - **Ask for the microphone when it's first needed, with context**, not at launch. In Fuori that is the first moment someone is asked to speak (onboarding). [Privacy: Requesting permission][privacy] · Applies to: onboarding.
 - **A screen before the system prompt may have exactly one button, titled "Continue"**: no "Allow", no "Not now", no close button. [Privacy: Pre-alert screens][privacy] · Applies to: onboarding.
-- **Purpose string: one active, specific sentence ending in a full stop.** Proposed: *"Fuori listens when it's your turn to speak and sends the recording to be transcribed, so the person you're talking to can answer you."* [Privacy][privacy] · Applies to: `Info.plist`.
+- **Purpose string: one active, specific sentence ending in a full stop.** Proposed: *"Fuori listens when it's your turn to speak and sends the recording to be transcribed, so the person you're talking to can answer you."* As shipped (`ios/project.yml`, `NSMicrophoneUsageDescription`): *"Fuori listens while it's your turn, so the person you're talking with can hear and answer you. What you say is sent to Fuori's server and AI services to understand it."* [Privacy][privacy] · Applies to: `Info.plist`.
 - **If the learner refuses, the app still works where it can** and shows a button that opens Settings, with a one-line explanation. [Settings][settings], [Writing][writing] · Applies to: conversation.
 - **Say plainly that audio and text go to servers**, and to whom, in onboarding and the privacy label. [Generative AI: Privacy][generative-ai] · Applies to: onboarding, App Store.
 - **Token in Keychain (done); nothing sensitive in `UserDefaults`.** [Privacy: Protecting data][privacy]
@@ -182,7 +182,9 @@ Each rule: what to do, the HIG page, and where it applies in Fuori.
 | A16 | `FuoriDesign/PolaroidCard.swift:21-27` | Image failure and loading look the same (sand) forever, with no retry; images aren't dimmed in Dark Mode. | Keep the sand placeholder; retry on reappear; slight dim in dark. Decorative image is correctly covered by the combined element (line 51). | Consider |
 | A17 | `FuoriFeatures/PlaceListView.swift:29` | Subtitle mixes the target-language role ("barista", "taquero") and English punctuation in one string, read by VoiceOver in English. | Build it from parts and tag the target-language parts with the speech language. | Consider |
 
-Good already: one `NavigationStack` (`RootView.swift:11`), standard back swipe, card combined into one VoiceOver element (`PolaroidCard.swift:51`), portrait-only declared, token in Keychain, target-language words from the pack.
+**Status, 2026-11-17** (the line numbers above are N0's and no longer match): fixed: A1 (`UIUserInterfaceStyle: Light`), A3 (`Typography.swift`: `relativeTo:` and Bold Text), A4 (the badge is now the visited stamp, `VisitStamp.swift`), A6 (`PressableStyle`), A9 (`ContentUnavailableView` with Try Again), A13 (`LaunchBackground`), A14 (`Assets.xcassets` with `AppIcon`), A15 (`NSMicrophoneUsageDescription`). Still as found: A5 (`CityListView.swift:26` titles the screen with `appName`), A12 (`RootView.swift:147` `.tint(Tokens.Colors.green)`), A2 (light colours only, as D1 allows). The rest not rechecked.
+
+Good already: one `NavigationStack` (`RootView.swift:11` at N0; line 76 now), standard back swipe, card combined into one VoiceOver element (`PolaroidCard.swift:51`), portrait-only declared, token in Keychain, target-language words from the pack.
 
 ## 6. Done checklist for any iOS screen
 

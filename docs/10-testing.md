@@ -64,6 +64,8 @@ Not doing: A/B testing on real users (one user; it would be noise).
 
 ## Testing Layers
 
+What exists today, layer by layer, is in [testing-map.md](testing-map.md); the code samples in sections 1–3 below are the original plan (files such as `lib/prompt-builder.test.ts`, `tests/conversation-runner.ts` and `tests/factories.ts` were never built).
+
 ```
 1. Unit tests (code correctness)
 2. Integration tests (API flows)
@@ -387,11 +389,11 @@ describe('Conversation regression tests', () => {
 ### Running conversation tests:
 
 ```bash
-# Run all conversation tests (uses real Claude API)
+# Simulated conversations through the game's turn code (uses real Claude API)
 npm run test:conversations
 
-# Run specific test
-npm run test:conversations -- giulia-day1
+# Options (--count, --visits, --turns, --variant, --card and the rest): see the header of tests/conversations/run.ts
+npm run test:conversations -- --count=10 --seed=7
 
 # Replay real learner lines against a prompt change
 npm run test:replay
@@ -561,6 +563,8 @@ Before inviting other players:
 Fuori is **mobile-first**. The primary experience is voice conversations on a phone. Desktop is secondary.
 
 ### Mobile testing workflow
+
+From the web era: the website is switched off (`proxy.ts`), pushing to `main` deploys nothing (Railway deploys `live`, put there by `npm run release`), and the phone is tested with the iPhone app (CLAUDE.md → iPhone app, Testing a screen). Kept as history.
 
 **Standard cycle (fast iteration):**
 

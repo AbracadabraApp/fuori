@@ -1,6 +1,6 @@
 # Language Services for Italian
 
-The game is voice-first and Italian-focused. This requires careful choices for speech recognition, text-to-speech, and the conversation model. Browser APIs are free but limited; hosted services cost money but deliver better quality, especially for Italian.
+The game is voice-first, in Italy (Italian) and Mexico (Spanish); this page was written for Italian. This requires careful choices for speech recognition, text-to-speech, and the conversation model. Browser APIs are free but limited; hosted services cost money but deliver better quality, especially for Italian.
 
 ## Speech-to-Text (STT)
 
@@ -12,69 +12,40 @@ The prototype uses the browser's Web Speech API with `lang = "it-IT"`, but in pr
 - Language lock is unreliable, especially when system language is English
 - Quality varies by device/browser (Safari vs Chrome, iOS vs Android)
 
-### Decision: Whisper on Groq for M1
+### Decision: Whisper on Groq (built)
 
-Skip browser STT entirely. Use Whisper, locked to Italian, from the start, hosted by **Groq**:
+Skip browser STT entirely. Use Whisper, locked to the language being learned, from the start, hosted by **Groq**:
 
 1. **Better experience:** no English gibberish, accurate Italian transcription
 2. **Language lock works:** Italian-only transcription for turns, English for "Come si dice?"
 3. **Handles noise and accents**
 4. **Free at prototype scale:** Groq's free tier allows several hours of audio a day, with no card. OpenAI's hosted Whisper (about $0.006 a minute) is the fallback if Groq's terms change.
-5. **Swappable:** it sits behind one route, `/api/transcribe`, so changing provider touches one file
+5. **Swappable:** it sits behind one route, `/v1/transcribe`, and one provider interface (`lib/speech/providers/`, chosen by `SPEECH_PROVIDER`; only `whisper-groq` is implemented), so changing provider touches one place
 
 Note: **Groq** (with a q) hosts open models such as Whisper. It is unrelated to **Grok** (with a k), xAI's model.
 
-**Implementation sketch** (check Groq's current docs for exact model names and SDK details):
-```typescript
-// app/api/transcribe/route.ts
-import Groq from 'groq-sdk';
+**As built:**
+- `lib/speech/providers/whisper-groq.ts` calls Groq's `whisper-large-v3-turbo`, with the language code from `content/<country>/language.ts` (never a hard-coded `'it'` or an Italian hint: a Whisper hint in Italian once slipped into the web route and was echoed into learners' lines; `npm run test:language` now catches it).
+- `/v1/transcribe` (multipart: `audio`, `mode`) → `{ text, language }`. `mode` is `target` (the language being learned, the default), `en` (asking how to say something), `any` (onboarding: Whisper detects the language) or `turn` (a conversation turn, the language being learned or English for "How do I say it"). An empty `text` means nothing was understood.
 
-export async function POST(request: Request) {
-  const formData = await request.formData();
-  // Must be a File with a filename whose extension matches the audio format
-  // (Whisper detects the format from it). See "Browser side" below.
-  const audio = formData.get('audio') as File;
-  // 'it' for normal turns; 'en' for the "Come si dice?" button, where the learner speaks English
-  const language = formData.get('language') === 'en' ? 'en' : 'it';
-
-  const groq = new Groq({ apiKey: process.env.GROQ_API_KEY });
-
-  const transcription = await groq.audio.transcriptions.create({
-    file: audio,
-    model: 'whisper-large-v3-turbo',
-    language,
-    ...(language === 'it' && { prompt: 'Trascrizione in italiano di una conversazione naturale.' }),
-  });
-
-  return Response.json({ text: transcription.text });
-}
-```
-
-**Browser side:**
-- Use MediaRecorder to capture audio while mic button is pressed
-- iPhone Safari records `audio/mp4`; Chrome records `audio/webm`. Read `recorder.mimeType` and append the blob with a matching filename, e.g. `formData.append('audio', blob, mime.includes('mp4') ? 'turn.mp4' : 'turn.webm')`. A bare blob has no filename and Whisper rejects it as an unrecognized format
-- Send audio blob to `/api/transcribe` with `language` set to `it` (or `en` for "Come si dice?")
-- Show Italian text in input field
-- Loading states: "Ascolto..." → "Trascrivo..." → show result
-
-**Limits and errors:**
-- Max recording length 60 seconds per turn
-- Network timeout: allow retry
-- API failure or rate limit: fall back to text input
+**App side:**
+- The iPhone app records m4a and sends it named `speech.m4a`. Groq needs a file name whose extension matches the format; the server fixes the name if it doesn't (`lib/speech/audio-file.ts`)
+- The app skips uploading recordings with no voice in them; the route refuses files over 10 MB
+- Errors are shown plainly with a code (see README → Debugging on the phone)
 
 ## Text-to-Speech (TTS)
 
 ### Browser TTS Limitations
 
 Browser `speechSynthesis` works but:
-- Limited voice variety (need 8+ distinct voices for Roma cast)
+- Limited voice variety (need many distinct voices for a city's cast)
 - Quality varies dramatically (iOS "Alice" is decent, Android often robotic)
 - No emotional control (all characters sound similar)
 - Can't tune for character personality
 
-### Decision: Hosted TTS in M3
+### Decision: ElevenLabs (built)
 
-Character voices are core to the experience, but browser voices are enough to start. Hosted TTS comes in M3, first for the anchors and Magda.
+Character voices are core to the experience. Built: **ElevenLabs** (`lib/voice/providers/elevenlabs.ts`, Flash v2.5) through `/v1/speak` `{ text, characterId, speed? }` → `audio/mpeg`. The server picks the voice from the character id: a city character's stored `voice` (assigned once per city by `npm run voices:assign`), otherwise one from `content/<country>/voices.ts` by age group. Any error means the app uses the phone's own voice (`AVSpeechSynthesizer`). The comparison below is from before the choice.
 
 **Service comparison:**
 
@@ -94,18 +65,6 @@ Character voices are core to the experience, but browser voices are enough to st
 - ElevenLabs: ~$8 per learner for full season
 - Azure: ~$0.72 per learner for full season
 
-**Implementation approach:**
-1. Pick voice profiles for the anchors and Magda; generated characters share a small pool of voices matched by age and gender
-2. Server-side TTS generation for each NPC response
-3. Stream audio to browser or return URL
-4. Cache frequent phrases ("Buongiorno!", "Prego", "Ciao!") to reduce costs
-
-**Until M3:**
-- Use best available browser Italian voices
-- Pick distinct voices where possible (different genders, speeds)
-- Accept that character distinction is limited
-- Plan migration path to hosted TTS
-
 ## Conversation Model (Claude)
 
 ### Language validation
@@ -122,22 +81,15 @@ If reports show systematic issues: adjust prompts first, then raise effort, then
 
 ### Model Settings
 
+Model ids live only in `lib/claude.ts` (`CLAUDE_MODEL`, and `TURN_MODEL` for the characters' replies); don't copy them here.
+
 **In-scene turns (latency-sensitive):**
-- Model: Claude Opus 5.5 (`claude-opus-5-5`)
-- Effort: Low (optimize for speed)
-- Stream: Yes
+- Thinking: off (`noThinkingFor`)
+- Stream: Yes (`lib/turn.ts`)
 - Target: <2s to first word
+- To try a faster model on turns only, set `TURN_MODEL` in a test and compare
 
-**End-of-day diario (not latency-sensitive):**
-- Model: Claude Opus 5.5
-- Effort: Medium or High
-- Stream: No (single response)
-- Can use stronger thinking for better summary
-
-**Test Haiku 5.5 if Opus is too slow:**
-- `claude-haiku-5-5` is much faster
-- Compare quality: does correction/character quality suffer?
-- Only switch if Opus latency is unacceptable
+**End of a conversation (not latency-sensitive):** one call writes the character's notes and the learning notes, then Magda's study file (`lib/remember.ts`). The end-of-day diario is not built.
 
 ## Cost Model
 
@@ -176,7 +128,7 @@ With Azure TTS instead: ~$4-6 per learner
 Required API keys:
 - `ANTHROPIC_API_KEY` - Claude API
 - `GROQ_API_KEY` - Whisper STT on Groq
-- `ELEVENLABS_API_KEY` or `AZURE_SPEECH_KEY` - TTS (M3)
+- `ELEVENLABS_API_KEY` - character voices
 
 Stored in:
 - `.env.local` for local development

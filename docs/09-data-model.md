@@ -1,16 +1,18 @@
 # Data Model
 
-Hand-written content (city pantries, anchor characters, Magda, level rules, the suggested route) lives in the repo as TypeScript files under `content/it/` (one folder per language). Everything generated during play (characters, scenes, suggestions) and all learner progress is learner data, stored in Railway Postgres (from M1; see [Storage Strategy](#storage-strategy)).
+Hand-written content (city pantries and their people, Magda, level rules, prompts) lives in the repo as TypeScript, JSON and Markdown files under `content/<country>/` (`content/it/`, `content/es-mx/`; one folder per country pack). Everything generated during play and all learner progress is learner data, stored in Railway Postgres (from M1; see [Storage Strategy](#storage-strategy)). Generating characters, scenes and suggestions during play is not built yet; today every character but Magda comes from the city files.
+
+The types are in `lib/types.ts`. Those marked *not built* below are there but unused.
 
 ## Content Types
 
-Hand-written ones live in `content/it/` as `.ts` files, committed to the repo. Generated characters and scenes use the same shapes and are stored with learner data.
+Hand-written ones live in `content/<country>/`, committed to the repo. Generated characters and scenes use the same shapes and are stored with learner data.
 
 ### Character Sheet
 
 ```typescript
 type Mood = 'warm' | 'amused' | 'curious' | 'busy';
-type Formality = 'Lei' | 'tu';
+type Formality = 'formal' | 'informal';  // each language's words for them are in its language.ts (Lei / tu, usted / tú)
 type Pace = 'slow' | 'normal' | 'quick';
 type Familiarity = 'sconosciuto' | 'cliente' | 'habitue' | 'amico';
 
@@ -30,11 +32,14 @@ interface CharacterSheet {
   };
 
   speech: {
-    formality: Formality;        // "tu" - switches based on familiarity
+    formality: Formality;        // "informal" - switches based on familiarity
     pace: Pace;                  // "quick" - affects TTS speed in UI
     regionalisms: string[];      // ["anvedi", "daje"] for Romans
     description: string;         // "Fast-talking, informal, lots of questions"
   };
+
+  englishAbility?: 'fluent' | 'basic' | 'none';
+  gender?: 'f' | 'm';            // picks a male or female voice
 
   appearance: {
     description: string;         // "Italian woman in her early 30s, dark curly hair..."
@@ -42,43 +47,28 @@ interface CharacterSheet {
   };
 
   portrait: {
-    kind: 'illustrated' | 'svg'; // illustrated for anchors and Magda, SVG avatar for generated people
+    kind: 'illustrated' | 'svg' | 'placeholder';
     prompt?: string;             // Image prompt for illustrated portraits (see Visuals)
     avatarSeed?: string;         // Drives the SVG avatar (age, hair, skin, colours) so it stays consistent
   };
 }
 ```
 
-**Example:** `content/it/characters/giulia.ts`
+The only hand-written `CharacterSheet` is Magda (`content/<country>/characters/magda.ts`, `origin: 'tutor'`). Everyone else is a `CityCharacter` in the city files:
 
 ```typescript
-import { CharacterSheet } from '@/lib/types';
-
-export const giulia: CharacterSheet = {
-  id: 'giulia',
-  name: 'Giulia',
-  age: 32,
-  role: 'barista',
-  city: 'Roma',
-  origin: 'anchor',
-  placeId: 'roma-bar-giulia',
-  personality: {
-    traits: ['quick', 'funny', 'warm', 'curious'],
-    caresAbout: ['good coffee', 'neighborhood gossip', 'her regulars'],
-    secret: 'Wants to open her own place someday',
-  },
-  speech: {
-    formality: 'tu',
-    pace: 'quick',
-    regionalisms: ['daje', 'anvedi'],   // used sparingly at A1–A2
-    description: 'Fast-talking, informal, uses Roman slang, lots of questions',
-  },
-  appearance: {
-    description: 'Italian woman in her early 30s, dark curly hair tied up messily, small silver hoop earrings, black barista apron over a striped shirt, quick lively eyes',
-    setting: 'Behind the counter of a small Roman coffee bar',
-  },
-  portrait: { kind: 'illustrated' },
-};
+interface CityCharacter {
+  id: string;
+  name: string;
+  gender: 'f' | 'm';
+  age: number;
+  role: string;
+  placeId: string;
+  personality: string[];
+  portraitPrompt: string;
+  here?: string;                 // why they're at the place, one line to them ("You work the counter here between lectures")
+  voice?: string;                // their ElevenLabs voice, assigned once per city (npm run voices:assign)
+}
 ```
 
 ### City Pantry
@@ -92,27 +82,36 @@ interface Place {
   kind: string;                  // "market" | "bar" | "landmark" | "trattoria" | ...
   neighbourhood: string;         // "Trastevere"
   real: boolean;                 // true for real landmarks (facts must be right, real photos)
+  characterId?: string;
+  imagePrompt?: string;
+  hidden?: boolean;              // not shown in the feed (content/it/showcase.ts)
+  menu?: string[];               // a food place's menu, shown over its picture
+  menuBoard?: { x: number; y: number; width: number; height: number };
+  pictures?: { id: string; shows: string; imagePrompt: string }[];
 }
 
 interface CityPantry {
   id: string;                    // "roma"
   name: string;                  // "Roma"
+  region?: string;               // shown under the city name in the feed
   neighbourhoods: string[];      // ["Trastevere", "Monti", "Testaccio", ...]
   places: Place[];
+  characters?: CityCharacter[];  // the city's people (above)
   food: string[];                // ["supplì", "cacio e pepe", ...]
   customs: string[];             // ["Pay at the cassa first, then order at the bar", ...]
   localTouches: string[];        // ["daje", "aò"], used sparingly at A1–A2
-  anchorIds: string[];           // ["rita", "giulia"]
-  seedCharacters: string[];      // short briefs Claude may use ("Enzo, 60s, theatrical vegetable seller")
-  dayTrips: string[];            // ["orvieto"]
+  seedCharacters?: string[];     // short briefs Claude may use ("Enzo, 60s, theatrical vegetable seller")
+  dayTrips?: string[];           // ["orvieto"]
+  hidden?: boolean;              // not shown anywhere
+  more?: boolean;                // after "Mostra altro" in the city list
 }
 ```
 
-A suggested route (`content/it/route.ts`) lists city ids in order, as inspiration for the director only.
+A suggested route (planned as `content/it/route.ts`, as inspiration for the director) doesn't exist; the feed order is in `content/<country>/cities/index.ts`.
 
-### Suggestion
+### Suggestion (not built)
 
-What the director (`/api/suggest`) returns each morning.
+What the director (`/api/suggest`, not built) would return each morning.
 
 ```typescript
 interface Suggestion {
@@ -127,9 +126,9 @@ interface Suggestion {
 }
 ```
 
-### Scene
+### Scene (not built)
 
-What `/api/scene` creates from a suggestion or a "vai dove vuoi" request.
+What `/api/scene` (not built) would create from a suggestion or a "vai dove vuoi" request.
 
 ```typescript
 interface Scene {
@@ -157,9 +156,11 @@ interface Scene {
 
 ## Learner Data (Dynamic)
 
-These are stored per learner in Postgres. M1 builds only `learners` and `character_memories` (see [Storage Strategy](#storage-strategy)); the rest arrive with the milestones that need them.
+These are stored per learner in Postgres. What's built is in [Storage Strategy](#storage-strategy); the interfaces below are the original design, and those marked *not built* arrive with the features that need them.
 
-### Learner Profile
+### Learner Profile (not built as such)
+
+Built instead: columns on `learners` (below): `level` (beginner, intermediate, advanced), `step`, `addressed_as`, the onboarding record. The app's display settings stay on the phone.
 
 ```typescript
 type Level = 'A1' | 'A1+' | 'A2' | 'A2+' | 'B1';
@@ -181,7 +182,7 @@ interface LearnerProfile {
 }
 ```
 
-### Journey State
+### Journey State (not built)
 
 ```typescript
 interface JourneyState {
@@ -196,9 +197,9 @@ interface JourneyState {
 }
 ```
 
-### Relationship Memory
+### Relationship Memory (not built)
 
-*The fuller M2 version.* M1 uses the minimal `character_memories` table below (visit count and short notes); M2 adds familiarity levels (sconosciuto → amico, Lei → tu) and structured facts, promises and topics.
+*The fuller M2 version.* What's built is the minimal `character_memories` table below (visit count and short notes); M2 adds familiarity levels (sconosciuto → amico, Lei → tu) and structured facts, promises and topics.
 
 Per learner, per character. Tracks what each character knows about you.
 
@@ -217,9 +218,9 @@ interface Relationship {
 }
 ```
 
-### Scene Run
+### Scene Run (not built)
 
-A completed conversation, with full transcript.
+A completed conversation, with full transcript. Built instead: the `conversations` table (below).
 
 ```typescript
 interface Turn {
@@ -254,7 +255,7 @@ interface SceneRun {
 }
 ```
 
-### Quaderno (Vocabulary)
+### Quaderno (Vocabulary) (not built)
 
 All words and phrases the learner has encountered.
 
@@ -270,7 +271,7 @@ interface Word {
 }
 ```
 
-### Magda Message
+### Magda Message (not built)
 
 ```typescript
 interface MagdaMessage {
@@ -284,7 +285,7 @@ interface MagdaMessage {
 }
 ```
 
-### Mistake Pattern
+### Mistake Pattern (not built)
 
 Recurring errors worth tracking for "try tomorrow" goals.
 
@@ -305,7 +306,7 @@ interface Mistake {
 }
 ```
 
-### Diario Entry
+### Diario Entry (not built)
 
 End-of-day summary and reflection.
 
@@ -344,63 +345,64 @@ interface DiarioEntry {
 
 ## Turn Output Schema (API Response)
 
-What `/api/turn` returns to the UI.
+What Claude returns for a character's turn (`lib/prompts/turn-output-schema.ts`; the `TurnOutput` type in `lib/types.ts`). Deliberately simple: corrections, help and mood happen in the conversation itself.
 
 ```typescript
 interface TurnOutput {
-  understood: string;            // Reconstructed Italian
-  it: string;                    // Character's reply
-  en: string;                    // Translation
-
-  correction: {
-    said: string;
-    better: string;
-    why: string;                 // Under 15 words
-  } | null;
-
-  words: Array<{
-    it: string;
-    en: string;
-  }>;                            // 0-2 new words this turn
-
-  steps_done: number[];          // Cumulative completed steps [0, 1]
-
-  hint: string | null;           // Only when confused or requested
-  confused: boolean;             // true only when genuinely didn't understand
-
-  mood: Mood;                    // "warm" | "amused" | "curious" | "busy"
-  scene_over: boolean;           // true when scene should end
-
-  memory_notes: string[];        // Facts to remember about learner
+  line: string;                  // what the character says, in the language being learned
+  en: string;                    // its English
+  done?: boolean;                // this reply ends the conversation (they left, the character said goodbye)
+  hard?: boolean;                // their last line asked for help or said it's hard
+  parts?: Part[];                // Beginner: the turn in parts; `line` is them all, in order
+  question?: { text: string; en: string };  // Beginner 2: the question that ends the reply
+  idiom?: string;                // the idiom this reply used (lib/idioms.ts)
+  tapAnswers?: boolean;          // the welcome's opening: answers are buttons
+  canEnd?: boolean;              // the welcome after the tap: the end button shows
 }
 ```
+
+`/v1/turn` returns `{ line, en, conversationId, promptVersion, replies, stage }` to the app (`app/v1/turn/route.ts`).
 
 ## Storage Strategy
 
 Decided 2026-10-10: learner data lives in **Railway Postgres from M1**, not localStorage. Why: Safari erases site storage after ~7 days without a visit, the server needs memory for messages, and a database can be inspected. See [Architecture → Where learner data lives](05-architecture.md#where-learner-data-lives-decided-2026-10-10).
 
-### M1: minimal memory
+### What's built
+
+`scripts/db-migrate.mjs` creates the tables; several also create themselves on first use, so they ship without a manual migration. One database is shared by both countries' servers; tables that need it have a `country` column.
 
 ```sql
--- One row per learner. The id is created on first visit and kept in an
--- HTTP-only cookie set by the server (no login in M1).
+-- One row per learner (per country: each country's server makes its own learner for a device)
 learners (
-  id          uuid primary key,
-  created_at  timestamptz not null default now()
+  id                 uuid primary key,
+  created_at         timestamptz not null default now(),
+  level              text,          -- beginner, intermediate, advanced; null until placed
+  onboarded_at       timestamptz,
+  onboarding         jsonb,         -- what they said and why they were placed there
+  level_checks       jsonb,         -- the level check after the first conversations (lib/learner-level.ts)
+  addressed_as       text,          -- 'f' or 'm'; null until they say
+  addressed_from     text,          -- how it was learned ('chose')
+  step               int not null default 1,  -- Beginner step (lib/level-up.ts)
+  step_since         timestamptz,
+  level_up_asked_at  timestamptz,
+  scaffold_from      timestamptz    -- scaffolding counts only conversations after this
 )
+
+-- The app's sign-in: one bearer token per device, stored only as a SHA-256 hash
+learner_tokens (token_hash text primary key, learner_id uuid, created_at, last_used_at)
 
 -- What each character remembers about each learner.
 character_memories (
   learner_id    uuid references learners(id),
-  character_id  text,            -- 'giulia', 'antonio-russo', ...
+  character_id  text,            -- 'antonio-russo', ..., or 'magda' for her study file
   visits        int not null default 0,
   last_visit    timestamptz,
   notes         text[] not null default '{}',  -- short, written by Claude after each conversation
   primary key (learner_id, character_id)
 )
 
--- Each conversation, kept so it can be reviewed (by Magda later, and by us
--- to judge conversation quality). No audio. Added 2026-10-11.
+-- Each conversation, kept so it can be reviewed (by Magda, and by us
+-- to judge conversation quality). Added 2026-10-11.
 conversations (
   id              uuid primary key,
   learner_id      uuid references learners(id),
@@ -410,27 +412,40 @@ conversations (
   prompt_version  text,
   started_at      timestamptz not null,
   ended_at        timestamptz,
-  turns           jsonb not null,  -- [{ who, text, en?, at }]
+  turns           jsonb not null,  -- [{ who, text, en?, at, parts?, ms? }] (ConversationTurn, lib/memory.ts)
   review          jsonb,           -- learning notes written when it ends: 2–3 things worth learning, real mistakes (said / better), phrases not understood, English fallbacks
+  reviewed_at     timestamp,
   analysis        jsonb,           -- unused since 2026-10-14 (the per-conversation M2 "Review", replaced by Magda's study file)
   memory_turns    int not null default 0,  -- turns already written into memory (written once per new stretch of talk)
-  memory_at_start jsonb            -- what the character remembered when it started (same {relationship} for every turn)
+  memory_at_start jsonb,           -- what the character remembered when it started (same {relationship} for every turn)
+  quality         jsonb,           -- the dialogue scorecard (lib/quality.ts)
+  quality_history jsonb not null default '[]'  -- earlier scores, oldest first
 )
+
+-- Counts per conversation for scaffolding and level up (lib/conversation-record.ts)
+conversation_records (conversation_id, learner_id, country, at, character_id, prompt_version, learner_turns, words, …, step, stage, felt, moved, state, reply_ranks)
+
+-- Tools and debugging
+app_errors    -- errors from the app (/v1/log; lib/app-errors.ts)
+turn_ratings  -- turns rated from the debug panel (/v1/rate; lib/turn-ratings.ts)
+say_it_log    -- every "How do I say it" decision (lib/say-it-log.ts)
 ```
+
+Nothing is deleted with a learner (Josh, 2026-11-10: "we shouldn't delete"): a learner with conversations or character memories can't be deleted until those are removed on purpose. Sign-in tokens still go with the learner.
+
+No audio is kept in the database. Recordings of learners listed in `KEEP_RECORDINGS_FOR` are kept 30 days in a private R2 bucket (`lib/speech/keep-recording.ts`).
 
 **Flow:**
 1. Opening a conversation loads that character's row (if any). The visit count and notes go into the character's prompt ("You've met them 3 times. You remember: their name is Josh; from Seattle; always orders a cappuccino").
 2. Each turn is saved to the conversation's row as it happens, so nothing is lost if the screen closes.
-3. When the conversation ends (leaving the screen after at least a few exchanges), one Claude call reads the transcript and writes two things: updated notes for the character (keep what matters, drop what doesn't, at most ~10 short lines; `visits` goes up by one) and the learning notes (the review log). Then a small call folds those learning notes into Magda's study file: her `character_memories` row (`character_id` = the pack's tutor, `magda`), up to ~20 lines, cumulative, not shown to the learner. Its `visits` counts lessons only. A lesson with Magda updates the study file again when it ends. See [Game design → The study file](02-game-design.md#the-learner-profile-is-magdas-the-study-file).
-
-Only `learners`, `character_memories` and `conversations` are built in M1.
+3. When the conversation ends (leaving the screen after at least a few exchanges; the app calls `/v1/conversations/{id}/end`), one Claude call reads the transcript and writes two things: updated notes for the character (keep what matters, drop what doesn't, at most ~10 short lines; `visits` goes up by one) and the learning notes (the review log). Then a small call folds those learning notes into Magda's study file: her `character_memories` row (`character_id` = the pack's tutor, `magda`), up to ~20 lines, cumulative, not shown to the learner. Its `visits` counts lessons only. A lesson with Magda updates the study file again when it ends. See [Game design → The study file](02-game-design.md#the-learner-profile-is-magdas-the-study-file).
 
 ### Later milestones
 
 Added when the features that need them are built:
 
 ```sql
-learners            -- + name, home_town, level, settings; email for sign-in (M4)
+learners            -- + name, home_town, settings (email sign-in was cut: 12-native-app.md decision 3)
 journey_state       (learner_id, day, current_city, neighbourhood, days_in_city, cities_visited)
 characters          (id, learner_id, sheet, origin, created_at)       -- generated characters
 scenes              (id, learner_id, character_id, scene, created_at)
@@ -442,44 +457,15 @@ mistakes            (learner_id, pattern, category, examples, count, last_seen, 
 diario_entries      (learner_id, day, summary, corrections, new_words, try_tomorrow, character_note)
 ```
 
-**localStorage** is used only for per-device conveniences that don't matter if lost (debug mode).
+The app's display settings and the debug switch stay on the phone; nothing that matters if lost.
 
 ## Validation
 
-Use Zod schemas for all types, especially for API boundaries:
-
-```typescript
-import { z } from 'zod';
-
-export const TurnOutputSchema = z.object({
-  understood: z.string(),
-  it: z.string(),
-  en: z.string(),
-  correction: z.object({
-    said: z.string(),
-    better: z.string(),
-    why: z.string().max(100),
-  }).nullable(),
-  words: z.array(z.object({
-    it: z.string(),
-    en: z.string(),
-  })).max(2),
-  steps_done: z.array(z.number()),
-  hint: z.string().nullable(),
-  confused: z.boolean(),
-  mood: z.enum(['warm', 'amused', 'curious', 'busy']),
-  scene_over: z.boolean(),
-  memory_notes: z.array(z.string()),
-});
-
-export type TurnOutput = z.infer<typeof TurnOutputSchema>;
-```
-
-Use with Claude's structured outputs (`output_config.format`) via the SDK's `messages.parse()`, so the response is validated against the schema. Check the current Anthropic SDK docs for the exact helper that converts a Zod schema; these details change.
+Every Claude call that returns data passes a JSON schema in `output_config.format` (structured outputs), so the response comes back in that shape. The schemas are in `lib/prompts/*-output-schema.ts` (`turn-output-schema.ts`, `memory-output-schema.ts`, `learn-output-schema.ts`…). Where the code checks the result again, it uses Zod (for example `lib/turn.ts`).
 
 ## Sample Data
 
-For testing and development, create sample data files:
+Planned, not made: sample data files for testing and development:
 
 - `content/it/characters/__fixtures__/giulia-day1.json` - Sample conversation transcript
 - `content/it/__fixtures__/suggestions-roma-day3.json` - Sample director output

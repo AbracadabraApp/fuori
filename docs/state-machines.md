@@ -4,27 +4,27 @@ Every part of Fuori that moves through states: what the states are, what moves i
 
 Made 2026-11-15 from a review of the whole app (two agents read the iPhone app and the server; Josh: "Find all the state machines in the app. make the best decision that will evaluate all 3: ux, dev x, agent x always without breaking anything"). The decision: map them and fix what reaches a player, each fix with a test; no rewrite into a formal state-machine library (the conversation screen and the turn code are the most played code; a rewrite would break things).
 
-**Words that mean more than one thing:** "step" is the Beginner step 1–6 (`learners.step`), the old path's step 1–5 (`conversation_records.state`), a lesson's step id, and the welcome's step; "stage" is the old Beginner's S1–S4 and the scaffold's read/choose. When writing about them, say which.
+**Words that mean more than one thing:** "step" is the Beginner step 1–6 (`learners.step`), the old path's step 1–5 (`conversation_records.state`, still written for Intermediate records), a lesson's step id, and the welcome's step; "stage" is the old Beginner's S1–S4 (in older records only) and the scaffold's read/choose. When writing about them, say which.
 
 ## Server
 
 ### 1. Level and Beginner step: the level up
 - **State:** `learners.level` (null, beginner, intermediate, advanced); `learners.step` 1–6, `step_since`, `level_up_asked_at` (lib/level-up.ts).
-- **Moves:** after 3 counted conversations (3+ learner replies each, since `step_since` or the last "Not yet") the app's offer; "yes" goes up a step, at step 6 to Intermediate, at Intermediate to Advanced (`moveFrom`, `offerDue`, `answerLevelUp`); "Not yet" sets `level_up_asked_at`. Josh's stepper: `setStep`. Settings: `/v1/me/level` → `changeLevel`.
-- **Must hold:** the level is written after onboarding only by `setLevel` (lib/onboarding.ts), which restarts the count; a "yes" moves only when an offer is due (a double tap moves once); nobody is moved down by a score (Josh, 2026-11-15: "we arent ready for downlevelling yet"); onboarding sets the starting step (`finishOnboarding` → `startingStep`: 3 for a speaker judged Beginner, else 1).
-- **Tests:** test:level-up, test:level-move, test:level-writers, test:no-downlevel, test:starting-step.
-- **Known:** the count includes lessons, Magda and the welcome (Josh, 2026-11-15: skip for now); `isDue` (used only by test:level-up) still says no offer at step 6; the old Beginner (x-fuori-beginner: 1) counts but is never offered.
+- **Moves:** after 3 counted conversations (ordinary visits at the learner's level with 3+ learner replies; at Beginner only those played at the stored step; since `step_since` or the last "Not yet"; `countedConversations`) the app's offer; "yes" goes up a step, at step 6 to Intermediate, at Intermediate to Advanced (`moveFrom`, `offerDue`, `answerLevelUp`); "Not yet" sets `level_up_asked_at`. Josh's stepper: `setStep`. Settings: `/v1/me/level` → `changeLevel`.
+- **Must hold:** the level is written after onboarding only by `setLevel` (lib/onboarding.ts), which restarts the count; a "yes" moves only when an offer is due (a double tap moves once); nobody is moved down by a score (Josh, 2026-11-15: "we arent ready for downlevelling yet"); onboarding sets the starting step (`finishOnboarding` → `startingStep`: the record's `startStep`, which is 3 for a speaker judged Beginner and 1 from the welcome); an empty `step_since` is set to now on first read (`learnerStep`), so older players start counting fresh.
+- **Tests:** test:level-up, test:level-count, test:level-move, test:level-writers, test:no-downlevel, test:starting-step.
+- **Known:** `isDue` (used only by test:level-up) still says no offer at step 6. (Lessons, Magda and the welcome no longer count: 92a97783, 2026-11-16, Josh: "no".)
 
 ### 2. The old path and its records
 - **State:** `conversation_records.state` (PathState: step 1–5, window, runs), `step`, `stage`, `moved`; placement `onboarding.startStep`, `placedAt` (lib/path.ts, lib/conversation-record.ts).
-- **Moves:** `decide` at a conversation's end, only for versions with a `+S` tag (the old Beginner); frozen for the new Beginner. At Intermediate, `felt` and the hard run are still recorded but move nobody (2026-11-15).
-- **Read by:** `pathState` on every Beginner turn (take-turn), only to tell Beginner from not; the step the new Beginner plays is `learners.step`.
-- **Tests:** test:path. `recordConversation` and `pathState` untested.
+- **Moves:** nothing. The old Beginner's `decide` went with it (2026-11-15); `recordConversation` (lib/conversation-record.ts) still writes a record of counts for every conversation, and for an Intermediate learner `felt` and the hard run, which move nobody. A `+S` stage tag is read from older versions only.
+- **Read by:** no turn. A Beginner is told from the level alone (take-turn); the step the Beginner plays is `learners.step`. `placement` (lib/path.ts) is still onboarding's (app/v1/onboarding/send-off).
+- **Tests:** test:path. `recordConversation` untested.
 - **Known:** idle-swept conversations (lib/sweep.ts) get memory but no record.
 
 ### 3. The Beginner turn's setup
 - **State:** none stored; derived each request from the number of character turns, the step's cluster and a seed (`pickSetup`, lib/beginner-2.ts).
-- **Moves:** turn 0 the opener (or, at a step with no answers, the step's own turn: fixed 2026-11-15, step 6 failed to open); turn 7 the goodbye; turn 8 on the close (take-turn ends the visit); between, a weighted draw with rules (no three in a row, no invitation after an invitation, Notice once a visit). About one visit in three an idiom replaces turn 3 (lib/idioms.ts). After the learner asks for help, every later turn carries the Help asked note (`hard` on a saved character turn).
+- **Moves:** turn 0 the opener (or, at a step with no answers, the step's own turn: fixed 2026-11-15, step 6 failed to open); turn 7 the goodbye; turn 8 on the close (take-turn ends the visit); between, a weighted draw with rules (no three in a row, no invitation after an invitation, none after the learner's own question; Notice left the draw 2026-11-16). About one visit in three an idiom replaces turn 3 (lib/idioms.ts). After the learner asks for help, every later turn carries the Help asked note (`hard` on a saved character turn).
 - **Must hold:** every step can open a visit.
 - **Tests:** test:beginner-2, test:idioms, test:help-asked.
 - **Known:** the draw's chain doesn't know the idiom replaced turn 3.
@@ -46,7 +46,7 @@ Made 2026-11-15 from a review of the whole app (two agents read the iPhone app a
 
 ### 7. Others
 - **Level check** (lib/learner-level.ts): off unless LEVEL_CHECK; through `setLevel`.
-- **Hidden switches:** `x-fuori-beginner: 1` (old Beginner), `x-fuori-cluster` 2–6 (plays that step for the request; the level up counts the stored step).
+- **Hidden switches:** `x-fuori-cluster` 1–6 (plays that step for the request; a visit played at another step than the stored one doesn't count toward the level up). `x-fuori-beginner` (the old Beginner) is no longer read (2026-11-15).
 - **A failed level read** fails the turn with a retryable error (2026-11-15), never a silent wrong level.
 - **Magda's study file:** last write wins; two endings at once can drop one's notes.
 

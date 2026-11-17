@@ -30,7 +30,7 @@ Safari workarounds that disappear on iOS: the silent-WAV audio unlock, `MediaRec
 
 ## iOS client
 
-**Stack:** SwiftUI + Observation (`@Observable`). iOS 26 minimum (decision 8). No third-party runtime dependencies; `swift-snapshot-testing` only as a test dependency.
+**Stack:** SwiftUI + Observation (`@Observable`). iOS 26 minimum (decision 8). No third-party runtime dependencies; `swift-snapshot-testing` only as a test dependency. As built (2026-11-17): one runtime dependency, YouTube's `youtube-ios-player-helper`, for the cinema's trailers; no snapshot-testing package (`ios/FuoriKit/Package.swift`).
 
 ```
 ios/
@@ -45,15 +45,34 @@ ios/
     FuoriFeatures/         CityFeed, PlaceFeed, Conversation, Station, Magda, Settings, Onboarding
 ```
 
-- **Navigation:** one `NavigationStack` with a typed `Route` enum. Settings is a sheet, opened from the top-right button on every screen. Onboarding is a full-screen cover. Use one `@Observable` view model per screen; no TCA, coordinators or Combine.
+As built (2026-11-17), the layout differs from the plan above:
+
+```
+ios/
+  project.yml              XcodeGen; *.xcodeproj is git-ignored
+  Makefile                 project, build, test, archive, export, upload
+  Fuori/                   FuoriApp.swift (@main), KeychainTokenStore.swift, Info.plist, Resources (icon, fonts, launch art)
+  FuoriKit/                one local Swift package, five libraries
+    Sources/FuoriCore/       Content, DailyOrder, Departure, EndOfTurn, ErrorCode, Heard, Reveal
+    Sources/FuoriNetworking/ APIClient, APIError
+    Sources/FuoriAudio/      AudioSession, Recorder, VoiceGate, Voice (ElevenLabs and the phone's voice), TravelSound
+    Sources/FuoriDesign/     Tokens.swift (generated), Typography, PolaroidCard, VisitStamp, SettingsIcon, PressableStyle
+    Sources/FuoriFeatures/   RootView, AppModel, LaunchView, CityListView, PlaceListView, DeparturesView, TripSheet,
+                             Person/PersonView, Conversation/, Learn/ (Learn sheet, lessons, flashcards), LevelUp/,
+                             Onboarding/, Settings/, Cinema/
+    Tests/                   FuoriCoreTests, FuoriNetworkingTests, FuoriAudioTests, FuoriFeaturesTests
+```
+
+- **Navigation:** one `NavigationStack` with a typed `Route` enum. Settings is a sheet, opened from the top-right button on every screen. Onboarding is a full-screen cover. Use one `@Observable` view model per screen; no TCA, coordinators or Combine. As built: `RootView` holds one `NavigationStack` over a `NavigationPath`, with a destination per type (`City`, `PersonRoute`, `CinemaRoute`) rather than one `Route` enum.
 - **On the device:** settings cache (`UserDefaults`; the server holds the real copy), the learner token (Keychain), the language pack JSON and images (disk cache). Everything else stays on the server. The app needs a network connection, as today.
-- **Strings:** English UI text goes in a String Catalog. Words in the target language ("Binario", "Sali", "Mostra altro") come from the pack JSON (`language.ui`) and are never Swift literals. Extend `test:language` to scan `ios/**/*.swift` (it already missed "Start conversation" on the web).
+- **Strings:** English UI text goes in a String Catalog. Words in the target language ("Binario", "Sali", "Mostra altro") come from the pack JSON (`language.ui`) and are never Swift literals. Extend `test:language` to scan `ios/**/*.swift` (it already missed "Start conversation" on the web). As built (2026-11-17): there's no String Catalog yet; English chrome is written as literals in Swift.
 
 ### Audio pipeline
 
 - **Session:** `.playAndRecord` with `.defaultToSpeaker` and `.allowBluetooth`. Turn it on when a conversation starts and off when it ends. Try `.default` mode first for TTS quality and switch to `.voiceChat` (echo cancellation) only if echo is a problem. Decide on a real device.
 - **Recording:** `AVAudioEngine` input tap → 16 kHz mono → AAC `speech.m4a`. One code path feeds both the voice gate and the file.
 - **Voice gate (M3 item 5), works in any language:** measure energy (RMS in dBFS) against a noise floor taken from the first 300 ms. Trim silence from both ends and keep 200 ms of padding. If there's less than about 250 ms of voice, don't upload. That means no Groq charge and no Whisper inventions on silence. Send the voiced milliseconds as a header. Add Apple's `SoundAnalysis` only if fans or traffic get through.
+- **Superseded for what's built:** hands-free is on for everyone since 2026-10-26 (Josh: "hands free on 5s"; CLAUDE.md, [bottom-bar.md](bottom-bar.md)), with no Hands-free setting. In the app the first word is waited for 5 s (`ConversationModel.swift`), and the silence that ends a turn is set by punctuation, 2.5 s usual, 1.2 s after a finished sentence, 3.5 s trailing off, shorter for Intermediate and Advanced (`EndOfTurn.swift`). The 10 s and 4 s below are the first plan.
 - **Tap to talk by default, hands-free as a setting (decision 4, revised by Josh 2026-10-15 after trying it).** The character always speaks by himself. Default: the pill turns into a mic when it's the learner's turn; tap to start, tap again when done (no silence timer; a turn is capped at 90 s). Settings → Hands-free (off by default) runs the conversation like a call, as below.
   1. Entering a place starts the conversation, and the character greets you.
   2. When the character finishes, the mic opens and the screen shows it's your turn. **The mic is closed while the character speaks**, so the phone never hears the character through its own speaker. A tap stops the character and opens your turn. Interrupting by voice would need Apple's echo cancellation (`setVoiceProcessingEnabled`); try that later, behind a setting.
@@ -69,7 +88,7 @@ ios/
   9. Asking in English ("Come si dice?") has a button on the web. Hands-free, Whisper's language detection could notice English on its own; decide in N1.
 - **Playback:** download, then `AVAudioPlayer`. Replies are short, and you get the exact duration for the subtitle reveal. Stream only if measurements show it's needed. Fallback voice: `AVSpeechSynthesizer` with the pack's speech code and the best-quality voice, picked consistently from the character id. Show the fallback honestly with its E-code.
 - **Interruptions:** recording stops all playback first (barge-in). On a call or Siri, stop everything and don't resume. If AirPods are removed, stop playback; never switch to the speaker. If the route changes mid-recording, rebuild the converter. Test Whisper accuracy with the AirPods microphone early. No background audio: silence when `scenePhase != .active`.
-- **Saving on leave:** every exit (back, station, going to the background) goes through one `leaveConversation()`. It calls `POST …/end` inside `beginBackgroundTask`. If that fails, it keeps the id on disk and retries at the next launch, and the failure is shown, not swallowed. As a backstop, the server closes conversations that have been idle for more than 30 minutes, so memory never depends on the phone.
+- **Saving on leave:** every exit (back, station, going to the background) goes through one `leaveConversation()`. It calls `POST …/end` inside `beginBackgroundTask`. If that fails, it keeps the id on disk and retries at the next launch, and the failure is shown, not swallowed. As a backstop, the server closes conversations that have been idle for more than 30 minutes, so memory never depends on the phone. As built: the screen's exits call `ConversationModel.leave()` (going to the background, `backgrounded()`), and the save itself is `AppModel.save(conversationId:)`, which keeps failed ids per server and retries them at launch.
 
 ### Apple features
 
@@ -120,9 +139,10 @@ Today's turn makes 3 serial phone round trips (transcribe → turn → speak) pl
 
 - **Server changes:** `npx tsc --noEmit`, the relevant `test:*`, then `smoke:live` for both countries after deploy, plus `railway logs`. Rewrite `smoke:live` as a `/v1` client (register a device, converse by `characterId`, end, check `/v1/me`, second-visit memory, Magda). It becomes the contract test the app has to agree with.
 - **iOS changes:** `swift test` in the packages (voice gate fed with synthetic PCM, pack decoding, error mapping, ports of the `reveal` and `leave` tests), snapshot tests at 390×844, and a few XCUITests against a mock API.
-- **Simulator smoke (`make smoke-sim`):** a debug-only "inject audio" source plays a recorded `.m4a` through city → place → conversation → leave. Then the server-side checks confirm the conversation ended and memory was written. It's off by default.
+  As built (2026-11-17): `swift test` over four test targets (`FuoriCoreTests`, `FuoriNetworkingTests`, `FuoriAudioTests`, `FuoriFeaturesTests`); no snapshot tests and no XCUITests.
+- **Simulator smoke (`make smoke-sim`):** a debug-only "inject audio" source plays a recorded `.m4a` through city → place → conversation → leave. Then the server-side checks confirm the conversation ended and memory was written. It's off by default. Not built: the Makefile has no `smoke-sim` target. Debug launch arguments exist instead: `-FuoriServer <url>`, `-FuoriMute YES`, `-FuoriOpen <city>/<place>` (CLAUDE.md → Builds).
 - **Device gate:** anything that touches audio counts as done only after it has been used on Josh's iPhone. Checklist: speak a turn, interrupt the character, background the app mid-speech, unplug AirPods, take a call. Anything not checked says "not verified" in the commit.
-- **CI:** a GitHub Actions macOS job runs `xcodebuild test` on changes under `ios/**`. It's what makes Swift edits from the cloud session safe.
+- **CI:** a GitHub Actions macOS job (`.github/workflows/ios.yml`) runs on changes under `ios/**` and `design/**`: it checks `Tokens.swift` against `design/tokens.json`, runs `swift test` in `FuoriKit`, and builds for the simulator (`xcodebuild build`, not `test`). It's what makes Swift edits from the cloud session safe.
 
 ## Working with Xcode, MCP and several sessions
 

@@ -1,6 +1,6 @@
 # Flashcards
 
-2026-10-21 · Josh · A production candidate, not built. Word lists: `content/it/flashcards.json`, `content/es-mx/flashcards.json` (20 each, Josh's words: the word, article, English, which sense the card teaches, a picture idea). Mockups: the "Flashcards" canvas in the Claude app (sizes A–D, the four modes).
+2026-10-21 · Josh · A production candidate. Built from 2026-10-27 (version 1), in `ios/FuoriKit/Sources/FuoriFeatures/Learn/` (`FlashcardsView.swift`, `FlashcardsModel.swift`, `FlashcardSchedule.swift`, `CardBanner.swift`), opened from the Learn page. Word lists: `content/it/flashcards.json`, `content/es-mx/flashcards.json` (20 each, Josh's words: the word, article, English, which sense the card teaches, a picture idea). Mockups: the "Flashcards" canvas in the Claude app (sizes A–D, the four modes).
 
 ## The card
 
@@ -32,7 +32,7 @@ Every noun is shown, spoken and asked for with its article: *il banco*, *l'albic
 
 Why (Josh, 2026-10-28): "if it's there it should be required". Until then stage 2 moved on with a tap and checked nothing, so after saying a word once a card reached the test, and stage 3 cards looked greyed out (iOS dims a disabled button); now no card is dimmed: taps where there's nothing to do are simply ignored.
 
-**The banner and help (Josh, 2026-10-29, the "Flashcard Stages" mockup, https://claude.ai/artifact/FUNHhqHNmt5pAzSCfb3hkW → row B). Not built yet:**
+**The banner and help (Josh, 2026-10-29, the "Flashcard Stages" mockup, https://claude.ai/artifact/FUNHhqHNmt5pAzSCfb3hkW → row B). Built 2026-10-29** (`FlashcardsView.swift`; help after 4 s of quiet, `FlashcardsModel.swift:328`):
 
 | Stage | Left of the banner | Right |
 |---|---|---|
@@ -52,6 +52,9 @@ Why (Josh, 2026-10-28): "if it's there it should be required". Until then stage 
 
 ## The feed (Josh, 2026-10-28: "think of it like an instagram feed"; "endless with frequency"; Anki-style, Claude's recommendation)
 
+The spacing, the five-word limit and "Your words" below were replaced on 2026-10-29 by steps 4–6 of the plan further down; `FlashcardSchedule.swift` now has gaps of 12, 25 and 50 cards, then days, no limit on words in play, and no "Your words".
+
+
 - **Endless scroll.** More cards load below; scroll past any card, and it comes back later (after 5 cards). Answered cards stay as they were, with a tick or a "comes back" mark.
 - **Spacing, not dice** (`FlashcardSchedule.swift`), as Anki's learning steps: after passing stage 1 a word comes back 3 cards later, after stage 2 6 cards later, after a miss 2 cards later; never closer than 4 cards apart.
 - **Five words in progress at a time**; a new word comes in when there's room (as Anki's new-cards limit), so words in progress get finished first.
@@ -60,8 +63,8 @@ Why (Josh, 2026-10-28): "if it's there it should be required". Until then stage 
 - Gaps between cards live in memory for the session; stages and the days are saved on the phone, per country.
 - Earlier (2026-10-27, replaced): a weighted shuffle of all 20 (not met 1, met 2, recalled 3, missed 4, yours ¼); each card appeared once, so the weights only changed the order and nothing repeated.
 
-### Next (agreed 2026-10-28, not built)
-- **One master deck per country, filtered per learner.** A build script collects the words on everyone's Learn pages (Things and Doing), most frequent first, writes cards (word, article, English, picture idea, base word), makes the pictures once and adds them for everyone. Each learner's new cards come first from their own Learn pages, then the starter words, then the rest. Matching by base word, which the build asks Claude for (nothing language-specific in code). No personal decks (Josh: "a bit fancy").
+### Next (agreed 2026-10-28; partly built)
+- **One master deck per country, filtered per learner.** A build script collects the words on everyone's Learn pages (Things and Doing), most frequent first, writes cards (word, article, English, picture idea, base word), makes the pictures once and adds them for everyone. Each learner's new cards come first from their own Learn pages, then the starter words, then the rest. Matching by base word, which the build asks Claude for (nothing language-specific in code). No personal decks (Josh: "a bit fancy"). Built so far: one shared deck per country, `content/<country>/flashcard-deck.json`, pictures and recordings made by `scripts/build-flashcard-deck.mjs`; not built: collecting the words from Learn pages and putting each learner's own first.
 
 ## Plan under discussion (2026-10-29; steps 1, 4, 5 and 6 built the same day, 2 and 3 not yet)
 
@@ -74,7 +77,7 @@ Prompted by Josh's Mexico session on 2026-10-29: the five-words-in-progress feed
 3. **The mic ready when the card settles,** not half a second later plus start-up: keep the recorder running between cards.
 4. **Spacing with decay, not slots (Josh: "some sort of decay on repetition / new cards - not a rigid repetition"):** each word's pull to come back drops to nothing after it's shown and grows again; the next card is a weighted random pick. New words weigh heavily at first and ease off as more words are in play, never to zero. Never the same word within 6 cards.
    - **Longer gaps, not equal for every word (Josh, 2026-10-29: "they shouldn't all go equal amounts back"; 3 cards was "too fast"):** about 12 cards, then 25, then 50+, then another day. Each pass without help stretches that word's later gaps, each help shortens them (ease 0.6–1.6×), and every gap has a random spread (0.7–1.5×). Help brings a word back after about 6–12 cards at the same stage.
-5. **No "your words" (Josh, 2026-10-29: "i don't love the your words concept"):** no finish line, no list in the toolbar, nothing leaves the feed. After stage 3 a word stays at stage 3 and keeps coming back, its gaps stretching as it gets easier (50+ cards, then days); a word you know well turns up rarely, but never stops. Where it came from: the 2026-10-21 design had "a list of 'own' words" (credited to Josh, "nothing more for now"); the name, the toolbar list and stage 3 as a finish line were Claude's, in version 1 (2026-10-27). The built app still has them, to be removed with this plan.
+5. **No "your words" (Josh, 2026-10-29: "i don't love the your words concept"):** no finish line, no list in the toolbar, nothing leaves the feed. After stage 3 a word stays at stage 3 and keeps coming back, its gaps stretching as it gets easier (50+ cards, then days); a word you know well turns up rarely, but never stops. Where it came from: the 2026-10-21 design had "a list of 'own' words" (credited to Josh, "nothing more for now"); the name, the toolbar list and stage 3 as a finish line were Claude's, in version 1 (2026-10-27). Removed with this plan (`FlashcardsView.swift:11`).
 6. **Endless, and a skipped card waits its turn (Josh, 2026-10-29: "go through 60 cards (trying none) the 61 card is the 1st"):** a card scrolled past without trying isn't counted as seen and doesn't come back early; it goes to the back of the deck. Scroll through all 60 trying none and card 61 is card 1 again, in the same order. Words you've tried come back by their gaps, mixed in.
 
 **A full 60-card run** (Mexico deck, simulated with rule 4 and 1 in 4 stage-2/3 answers needing help, the rate Josh saw; every card tried; `Then` is the gap the card schedules):

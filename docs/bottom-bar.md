@@ -1,6 +1,6 @@
 # Bottom bar: one circle, two colours
 
-2026-10-22 · Josh · Decided with the cloud session on the design canvas ("Reply buttons", row F: https://claude.ai/artifact/X2FsYUrGWzXzf2tJxBALBV). **Not built.** For every conversation screen, scaffolding or not.
+2026-10-22 · Josh · Decided with the cloud session on the design canvas ("Reply buttons", row F: https://claude.ai/artifact/X2FsYUrGWzXzf2tJxBALBV). **Built 2026-10-22** (`ios/FuoriKit/Sources/FuoriFeatures/Conversation/ConversationControls.swift`). For every conversation screen, scaffolding or not.
 
 ![The four states](../design/bottom-bar/states.jpg)
 
@@ -31,9 +31,9 @@
 - Circle 68 pt (the canvas; 64–72 is fine), centred, about 34 pt above the bottom edge; soft shadow.
 - Green `Tokens.Colors.green` (#566330) with white glyphs; terracotta `Tokens.Colors.terracotta` (#C0603A) with white glyphs. Glyphs: `mic.fill`; a live level waveform for you and for her; three dots for sending.
 - Reduce Motion: the dots and the wave hold still.
-- Accessibility labels: "Tap to talk", "Tap to send", "Sending", "Stops her and starts your turn".
+- Accessibility labels: "Tap to talk", "Tap to send", "Sending", "Stops her and starts your turn". As built: in hands-free the talking label is "Listening. Stop talking to send, or tap", and her turn reads "<name> is speaking" with the hint "Stops <name> and starts your turn" (`ConversationControls.swift:191-211`).
 
-## What changes in the code (for the laptop)
+## What changes in the code (done 2026-10-22)
 
 - `ConversationControls.swift`: the pill becomes the circle; remove the Pause/Resume button and the stop square; `pillFill` maps your turn and talking to green, thinking (sending) and speaking to terracotta; speaking shows her voice's level as a wave.
 - Interruptions and failures go to your turn (`tapToTalk`) instead of a paused state; hands-free keeps reopening the mic by itself between turns, with no Pause.
