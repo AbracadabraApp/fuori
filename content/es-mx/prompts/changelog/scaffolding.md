@@ -2,6 +2,11 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
 
+### 2026-11-17d: line 8, the shorter version, with the answers as goodbyes
+- **Changed, Setup: goodbye** (the character's 8th line): "This turn, in a sentence or two: you've enjoyed it. If there's something specific you'd like to do with them or tell them next time, say so." → "This turn, start to wrap up, maybe with something you could show them next time. Their two answers are goodbyes."
+- **Why:** 17c didn't say what the two offered answers are, so they would have carried the talk on and line 9 would close over them. Of two versions put to him (17c with "Their two answers are goodbyes." added, or this one), Josh: "start with 2".
+- **Prompted by:** Josh, 2026-11-17. Not released.
+
 ### 2026-11-17c: line 8 in Josh's words
 - **Changed, Setup: goodbye** (the character's 8th line): "This turn, wind down warmly. Now and then, if there's something of yours you'd like to show them, do with them or tell them next time, say so. Give them two short ways to leave, as their answers." → "This turn, in a sentence or two: you've enjoyed it. If there's something specific you'd like to do with them or tell them next time, say so."
 - **Why:** Josh, of 17b's wording: "this seems sketchy". 17b's next-time sentence was the old Close note's, nearly word for word ("something of yours… show them, do with them or tell them"), and "now and then" asks the model to keep a count it can't.
