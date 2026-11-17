@@ -97,6 +97,10 @@
 - **Bugs from the review** (docs/bugs.md): B2 Notice back to open (six of eight visits); B39 Andrés replayed his last visit; B40 the 8-turn close cut off a song Josh asked for; B41 the echo says names and exclamations twice.
 - **docs/rules-prevention.md, new** (Josh: "careful with rules"): a fix that would add a prompt rule waits there to be reviewed for a better way. R1 is B41's.
 - **Step 2 by ear:** "once i was on level 2 - 40% was bin spanish - but only questio printed"; an observation, not a change (dialogue-ideas.md).
+- **B36 fixed on main** (13b2f2f1, Josh: "ok"): a Beginner comment turn prints its last line again; lastLineOf sets the English echo aside as questionOf does. Test added (8 of 8 failed before); the morning's 11 real comment turns: 0 printed as played, 11 with the fix. Not released, not seen on a phone.
+- **B38** marked fix on main (32734158) on Josh's word; reopened by another session on 11-17 after build 17 (see above).
+- **B28** (an offered "what is…?" answer marks the learner as finding it hard): proposed, Josh: "skip".
+- **Next:** B30 (notes keep the day they were written, so "tomorrow" ages): proposed, waiting on Josh's go or skip. R1 (B41) sits in rules-prevention.md.
 
 ## 2026-11-15 (Mac mini, with Josh): mix, loop and level up. All on main, none of it released or heard
 
