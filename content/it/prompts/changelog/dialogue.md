@@ -2,6 +2,10 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../dialogue.md`.
 
+### 2026-11-16b: leave the choosing to whoever sells it
+- **Changed, Every conversation:** "When they want something else, tell them where to get it, then go back to your place or your talk." → "…tell them where to get it and leave the choosing to whoever sells it; then go back to your place or your talk."
+- **Why:** 16a dropped the old rule's "ask nothing about it (not which one, not how they'd like it)". The taxi replay (tests/experiments/job-drift.mts, Beto in San Miguel, Josh's 2026-11-06 visit) then had Beto point to a stall and ask "¿Quiere una torta de pollo o de jamón?" in 6 of 20 Beginner replies (Intermediate 0 of 20). Josh: "this is fine", then, shown the next turn (after "De pollo, por favor", two of three takes offered him a drink: "Con una limonada, claro. ¿Quiere una limonada o una Coca?"), "ok - put it back and test". Said as what to do, not a "never".
+
 ### 2026-11-16a: the shared rules said as what to do; culture, work or life at your place or city
 - **Changed, Every conversation:** each rule rewritten shorter and as what to do (mishearing, staying within the place's trade, the order things happen, the goodbye with a bid for next time). "When you tell them how things work… not the customs everyone hears in every shop or bar of the country; they've heard those already" → "When you tell them things about your culture, your work or your life, tell them about your place or city, as you know it."
 - **Why:** Josh, 2026-11-16: "I suspect these are all much longer than they need to be" (a Beginner step-1 turn read about 900 words of instructions, the character about 200 of them; docs/dialogue-plan.md D53). His rewrite, said as what to do and shorter, worked through with him the same day: the job is the way in and culture is the content ("about your culture and your life here"); culture first had never been stated in the conversation prompt; the "not the customs everyone hears" patch had been written for a cause in the old Beginner prompt (an errand script and an example about paying at the till) that is gone.
