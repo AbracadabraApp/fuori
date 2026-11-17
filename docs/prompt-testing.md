@@ -2,6 +2,18 @@
 
 Draft, 2026-11-06, for Josh's review. Josh: "You need to organize work in a disciplined way. You need to enumerate the prompt and decide which parts to test. You need to pick the smallest effective test size. You need tests that favor information gathering not 'guessed right', you need to consistently log tests." Then: "a prompt that doubled in size and got worse."
 
+## What the record shows (2026-11-16)
+
+Josh asked how many tests have passed, whether the structure is wrong and whether it's falsifiable; then: "all of the cited results were measurable directionally ad hoc". From a read of docs/prompt-trials.md, the changelogs and the handoffs:
+
+- **The count.** 41 carded experiments; 6 changed what ships (4 changes: the here-line rewrite, "Don't tell them again what you've already told them", a sale is a turn or two, "It's rude to ask where they're from"), plus one partial. 12 failed, 7 met their hypothesis but weren't applied, 5 couldn't decide, 4 never ran or finished, 1 invalid. Josh: "we have had about 2 site changes after 50+ tests" (handoff-2026-11-16-bids.md).
+- **What worked was a quick count of a big, frequent problem:** where are you from 37 → 9 of 189 conversations; café de olla in a here line 15/15 → 0/15; "Mire" 72% → 33% of openings; language with no English 41% (best wording) → 15% (the shape in code); steps out of order 19/31/25 → in order. Each would have shown in a dozen turns; the card, stamp, lock, thresholds and gate added nothing.
+- **Where a card and Josh's ear disagreed, his ear was right:** the mixed turn passed "sounds like a person" 8/8 and he followed 1/8 (B2-E5); notice "do you like" 10/10 → 4/10, and "these seem off bases too"; the steps measured in order, and he swapped 2 and 3 by ear.
+- **Why the structure failed:** bars that make "no" the likely answer (8 of 10 preferences needed; at a true 60% preference that passes about 17% of the time); a gate (`lib/scorecard.ts` → gate) that today's prompt fails against itself; judges never calibrated against Josh, written, reviewed and judged by Claude; problems carded before anyone counted how often they happen; runs too small to separate the arms; more than one change per arm; goalposts moved after results.
+- **Falsifiable on paper** (thresholds before the run, locked by hash), but some cards weren't in practice (a "shorter wins" default that wins on noise; a run that can be called "not trusted"; thresholds set after a pilot), and most put Josh's ear after a mechanical gate.
+
+**So, from 2026-11-16 (CLAUDE.md → Testing):** count how often a problem happens; try the change; count again on a small run, both versions side by side, no thresholds or verdicts; Josh plays and decides. Counts by code over judges. A card only for a true unknown a quick count can't answer. The method below stays as the reference for those.
+
 ## Our pedagogy and what we test (Josh, 2026-11-07)
 
 **Goal.** Cultural fluency: talking with local people about their place, in their language. Tipico, local and accurate.
