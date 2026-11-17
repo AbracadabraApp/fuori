@@ -9,7 +9,8 @@
 import { readFileSync, writeFileSync } from 'fs';
 import { languageShare } from '@/lib/dialogue/share';
 
-type T = { setup?: string; line: string; en: string; raw?: string; answers: number; done: boolean; error?: string };
+type T = { setup?: string; line: string; en: string; raw?: string; answers: number; answerTexts?: string[]; done: boolean; error?: string };
+// step 0 is Intermediate (no Beginner step: character.md and dialogue.md as every Intermediate visit reads them)
 type Visit = { step: number; city: string; place: string; kind: 'leave' | 'long'; turns: T[]; culture?: string[] };
 
 const args = process.argv.slice(2);
@@ -30,16 +31,32 @@ async function run() {
   const { randomUUID } = await import('crypto');
   const learnerId = randomUUID();
   await query("INSERT INTO learners (id, level) VALUES ($1, 'beginner')", [learnerId]);
-  const STEPS = [1, 4];
+  // Intermediate (Josh, 2026-11-16: yes): the rewrite changes character.md and dialogue.md, which every level reads
+  const intermediateId = randomUUID();
+  await query("INSERT INTO learners (id, level, onboarded_at) VALUES ($1, 'intermediate', now())", [intermediateId]);
+  const STEPS = [1, 4, 0];
   const LEAVE_AFTER = 4; // the learner says goodbye after the character's 4th turn
   const MAX_TURNS = 10; // the close is due on the 8th; past 10 is a failure to end
   const goodbye = pack.id === 'it' ? 'Bene, devo andare. Grazie, arrivederci.' : 'Bueno, me tengo que ir. Gracias, adiós.';
 
-  // Four characters from four cities: the first shown place with someone at it
-  const spots = cities.filter((c) => !c.hidden).slice(0, 4).map((c) => {
-    const pl = c.places.find((p) => !p.hidden && characterForPlace(c, p))!;
-    return { city: c.id, place: pl.id };
-  });
+  // Four characters a country Josh knows, one of each kind of visit: food, a sight, a person in a public place, work
+  // or a ride (Josh, 2026-11-16: yes to naming them; the same four every run, so runs compare)
+  const SPOTS: Record<string, { city: string; place: string }[]> = {
+    'es-mx': [
+      { city: 'oaxaca', place: 'tlayudas-mercado-20-de-noviembre' },
+      { city: 'ciudad-de-mexico', place: 'murales-palacio-nacional' },
+      { city: 'ciudad-de-mexico', place: 'alameda-central' },
+      { city: 'guanajuato', place: 'calle-subterranea-hidalgo' },
+    ],
+    it: [
+      { city: 'palermo', place: 'bar-alba' },
+      { city: 'palermo', place: 'cappella-palatina' },
+      { city: 'palermo', place: 'giardino-garibaldi' },
+      { city: 'palermo', place: 'teatro-massimo' },
+    ],
+  };
+  const spots = SPOTS[pack.id].filter((s) => { const c = cities.find((x) => x.id === s.city); const p = c?.places.find((x) => x.id === s.place); return c && p && characterForPlace(c, p); });
+  if (spots.length !== 4) throw new Error(`a named character is missing in ${pack.id}`);
   const jobs: Visit[] = STEPS.flatMap((step) => spots.flatMap((s) => (['leave', 'long'] as const).map((kind) => ({ step, ...s, kind, turns: [] }))));
 
   async function play(v: Visit) {
@@ -51,13 +68,13 @@ async function run() {
     for (let t = 0; t < MAX_TURNS; t++) {
       try {
         const r = await takeTurn({
-          learnerId, character, cityId: v.city, transcript: transcript as never, learnerSaid: said,
+          learnerId: v.step === 0 ? intermediateId : learnerId, character, cityId: v.city, transcript: transcript as never, learnerSaid: said,
           conversationId, onSoftError: () => {},
-          beginnerCluster: CLUSTERS[v.step - 1], onText: (s) => { raw = s; },
+          ...(v.step === 0 ? {} : { beginnerCluster: CLUSTERS[v.step - 1] }), onText: (s) => { raw = s; },
         });
         conversationId = r.conversationId ?? conversationId;
         const answers = (r.reply.parts ?? []).filter((p) => p.kind === 'answer');
-        v.turns.push({ setup: r.debug?.setup, line: r.reply.line, en: r.reply.en, raw, answers: answers.length, done: !!r.reply.done });
+        v.turns.push({ setup: r.debug?.setup, line: r.reply.line, en: r.reply.en, raw, answers: answers.length, answerTexts: answers.map((a) => a.text), done: !!r.reply.done });
         if (said) transcript.push({ who: 'learner', transcript: said });
         transcript.push({ who: 'npc', transcript: r.reply.line, translation: r.reply.en });
         if (r.reply.done) break;
@@ -76,30 +93,36 @@ async function run() {
   for (let i = 0; i < jobs.length; i += 4) await Promise.all(jobs.slice(i, i + 4).map(play));
   writeFileSync(out, JSON.stringify(jobs, null, 1));
   await query('DELETE FROM conversations WHERE learner_id = $1', [learnerId]);
-  await query('DELETE FROM learners WHERE id = $1', [learnerId]);
+  await query('DELETE FROM conversations WHERE learner_id = $1', [intermediateId]);
+  await query('DELETE FROM learners WHERE id = ANY($1)', [[learnerId, intermediateId]]);
   console.log(`\n${jobs.length} visits → ${out}`);
 }
 
 function summary(vs: Visit[]) {
   const words = (s: string) => s.trim().split(/\s+/).filter(Boolean).length;
   const rows: Record<string, string> = {};
+  const label = (step: number) => (step === 0 ? 'intermediate' : `step ${step}`);
   for (const step of [...new Set(vs.map((v) => v.step))]) {
     const at = vs.filter((v) => v.step === step);
     const shares = at.map((v) => languageShare(v.turns.filter((t) => t.line).map((t) => ({ line: t.line, en: t.en }))) ?? 0);
     const mean = shares.reduce((a, b) => a + b, 0) / shares.length;
     const sd = Math.sqrt(shares.reduce((a, b) => a + (b - mean) ** 2, 0) / shares.length);
-    rows[`step ${step} · language share, mean (spread)`] = `${Math.round(mean)}% (±${Math.round(sd)}, ${Math.min(...shares)}–${Math.max(...shares)})`;
+    rows[`${label(step)} · language share, mean (spread)`] = `${Math.round(mean)}% (±${Math.round(sd)}, ${Math.min(...shares)}–${Math.max(...shares)})`;
     const ts = at.flatMap((v) => v.turns).filter((t) => t.line);
-    rows[`step ${step} · words a turn`] = String(Math.round(ts.reduce((n, t) => n + words(t.line), 0) / ts.length));
-    rows[`step ${step} · turns with 2+ questions (English)`] = `${ts.filter((t) => (t.en.match(/\?/g) ?? []).length > 1).length}/${ts.length}`;
+    rows[`${label(step)} · words a turn`] = String(Math.round(ts.reduce((n, t) => n + words(t.line), 0) / ts.length));
+    rows[`${label(step)} · turns with 2+ questions (English)`] = `${ts.filter((t) => (t.en.match(/\?/g) ?? []).length > 1).length}/${ts.length}`;
     const asks = ts.filter((t) => !['comment', 'close', 'goodbye'].includes(t.setup ?? ''));
-    rows[`step ${step} · question last (turns meant to ask)`] = `${asks.filter((t) => /\?["'»”)]*\s*$/.test(t.en.trim())).length}/${asks.length}`;
+    rows[`${label(step)} · question last (turns meant to ask)`] = `${asks.filter((t) => /\?["'»”)]*\s*$/.test(t.en.trim())).length}/${asks.length}`;
+    // Each answer a reply and then something that keeps the talk going: two sentences (Josh's bubble rule, 2026-11-16)
+    const answers = ts.flatMap((t) => t.answerTexts ?? []);
+    if (answers.length) rows[`${label(step)} · answers in two parts`] = `${answers.filter((a) => (a.match(/[.!?…]+(\s|$)/g) ?? []).length >= 2).length}/${answers.length}`;
   }
   const leave = vs.filter((v) => v.kind === 'leave');
   rows['endings · goodbye ends the visit at once'] = `${leave.filter((v) => v.turns.length === 5 && v.turns[4].done).length}/${leave.length}`;
   rows['endings · the goodbye back asks nothing'] = `${leave.filter((v) => v.turns[4] && !/\?/.test(v.turns[4].en)).length}/${leave.length}`;
   const long = vs.filter((v) => v.kind === 'long');
-  rows['endings · long visit closes by the 8th turn'] = `${long.filter((v) => v.turns.some((t, i) => t.done && i < 8)).length}/${long.length} (turns: ${long.map((v) => v.turns.length).join(' ')})`;
+  // The close is the 9th character turn (the learner's 8th), as designed; counted off by one before 2026-11-16
+  rows['endings · long visit closes by the learner\'s 8th turn'] = `${long.filter((v) => v.turns.some((t, i) => t.done && i <= 8)).length}/${long.length} (turns: ${long.map((v) => v.turns.length).join(' ')})`;
   const all = vs.flatMap((v) => v.turns);
   rows['plumbing · turns that failed'] = `${all.filter((t) => t.error).length}/${all.length}`;
   const written = all.filter((t) => t.raw);
