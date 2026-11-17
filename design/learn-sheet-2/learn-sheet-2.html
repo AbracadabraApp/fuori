@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Lesson Door Sheet</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Alegreya:wght@700&family=Alegreya+Sans:wght@400;500&family=Caveat:wght@600&family=Fraunces:opsz,wght@9..144,600&family=Public+Sans:wght@400;600&display=swap">
+<style>
+:root{color-scheme:light} *{box-sizing:border-box} body{margin:0}
+/* Layout: a short note, then two phones side by side (stacked on a phone), the same sheet with words or with verbs; one look only, the game's paper palette (the app is light-only) */
+:root {
+  --paper: #f5f1ed; --card: #ffffff; --ink: #1d1b19; --text: #333333; --muted: #666666;
+  --sand: #e8d5c4; --rule: #d6cab3; --green: #566330; --terracotta: #a84f2c; --field: #eee6d6;
+  --display: "Fraunces", Georgia, serif; --body: "Public Sans", system-ui, -apple-system, sans-serif;
+}
+body { background: var(--paper); color: var(--text); font-family: var(--body); font-size: 1rem; line-height: 1.5;
+  padding-block: 1.5rem 3rem; padding-left: max(16px, env(safe-area-inset-left, 0px)); padding-right: max(16px, env(safe-area-inset-right, 0px)); }
+main { max-width: 52rem; margin: 0 auto; display: flex; flex-direction: column; gap: 1.5rem; }
+h1 { font-family: var(--display); font-weight: 600; font-size: 1.75rem; line-height: 1.15; margin: 0; color: var(--ink); text-wrap: balance; }
+p { margin: 0; max-width: 38rem; }
+.muted { color: var(--muted); font-size: .9375rem; }
+.versions { display: flex; flex-wrap: wrap; gap: 2rem 1.5rem; justify-content: center; }
+.version { display: flex; flex-direction: column; gap: .6rem; width: min(100%, 22rem); min-width: 0; }
+.vlabel { font-family: var(--body); font-weight: 600; font-size: .8125rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); margin: 0; }
+.phone { width: 100%; min-height: 43rem; border: 1px solid var(--rule); border-radius: 2.2rem; background: var(--paper); position: relative; overflow: hidden; display: flex; flex-direction: column; }
+.bar { padding: 2.2rem 1.1rem .5rem; display: flex; justify-content: space-between; align-items: baseline; }
+.city { font-family: var(--display); font-weight: 600; font-size: 1.5rem; color: var(--ink); }
+.small { font-size: .8125rem; color: var(--muted); }
+.places { padding: .3rem 1.1rem; display: flex; flex-direction: column; gap: .5rem; opacity: .45; }
+.place { background: var(--card); border: 1px solid var(--rule); border-radius: .8rem; padding: .6rem .8rem; display: flex; flex-direction: column; }
+.place b { color: var(--ink); font-weight: 600; }
+.sheet { position: absolute; left: 0; right: 0; bottom: 0; background: var(--card); border-top: 1px solid var(--rule); border-radius: 1.2rem 1.2rem 0 0; padding: .6rem 1.1rem 1.1rem; display: flex; flex-direction: column; gap: .7rem; box-shadow: 0 -8px 24px rgba(29, 27, 25, .12); }
+.grab { align-self: center; width: 2.4rem; height: .3rem; border-radius: 1rem; background: var(--rule); }
+.card { border-radius: .9rem; overflow: hidden; background: var(--field); }
+
+.point i { font-style: italic; color: var(--ink); }
+.culture { display: flex; flex-direction: column; gap: .15rem; }
+.hand { font-family: "Caveat", "Bradley Hand", cursive; font-size: 1.6rem; line-height: 1.05; color: var(--ink); }
+.point { font-size: .9375rem; color: var(--text); }
+.rule { display: flex; align-items: center; gap: .6rem; font-size: .75rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.rule::after { content: ""; flex: 1; height: 1px; background: var(--rule); }
+.taught { display: flex; flex-direction: column; gap: .55rem; }
+.row { display: flex; gap: .6rem; align-items: flex-start; }
+.play { flex: none; width: 1.7rem; height: 1.7rem; border-radius: 50%; background: var(--terracotta); display: grid; place-items: center; margin-top: .1rem; }
+.play i { display: block; width: 0; height: 0; border-left: .55rem solid #ffffff; border-top: .35rem solid transparent; border-bottom: .35rem solid transparent; margin-left: .12rem; }
+.words { min-width: 0; display: flex; flex-direction: column; }
+.pair { display: flex; flex-wrap: wrap; gap: 0 .5rem; align-items: baseline; }
+.pair b { color: var(--ink); font-weight: 600; font-size: 1.0625rem; }
+.en { color: var(--muted); font-size: .9375rem; }
+.phrase { font-size: .875rem; color: var(--text); font-style: italic; }
+.said { color: var(--ink); font-weight: 600; font-size: 1rem; }
+.chips { display: flex; flex-wrap: wrap; gap: .3rem .4rem; margin-top: .25rem; }
+.chip { background: var(--field); border-radius: 1rem; padding: .1rem .6rem; font-size: .8125rem; color: var(--text); }
+.chip b { color: var(--ink); font-weight: 600; }
+.tiles { display: grid; grid-template-columns: 1fr 1fr; gap: .5rem; }
+.tile { background: var(--field); border-radius: .7rem; padding: .5rem .7rem; display: flex; flex-direction: column; min-width: 0; }
+.tile b { color: var(--ink); font-weight: 600; font-size: 1.0625rem; }
+.boxes { display: flex; flex-direction: column; gap: .55rem; }
+.box { background: var(--field); border-radius: .8rem; padding: .6rem .75rem .7rem; display: flex; flex-direction: column; gap: .2rem; min-width: 0; }
+.kind { font-size: .6875rem; letter-spacing: .08em; text-transform: uppercase; color: var(--muted); }
+.box .tiles { margin-top: .2rem; }
+.box .tile { background: var(--card); }
+.box .chip { background: var(--card); }
+.sayrow { display: flex; gap: .6rem; align-items: flex-start; }
+.strong { color: var(--ink); }
+.history { gap: .45rem; }
+.history .en i, .history .point i { font-style: italic; color: var(--ink); }
+.history .sayrow { margin-block: .1rem; }
+.later { text-align: center; color: var(--terracotta); font-weight: 600; padding: .2rem; }
+ul { margin: 0; padding-left: 1.1rem; display: flex; flex-direction: column; gap: .4rem; max-width: 38rem; }
+
+.pic { width: 100%; height: 6rem; background-size: cover; background-position: 50% 22%; }
+.pic.juana { background-image: none; background-position: 50% 10%; }
+.pic.nunzio { background-image: none; }
+h2 { font-family: var(--display); font-weight: 600; font-size: 1.35rem; line-height: 1.2; margin: 1rem 0 0; color: var(--ink); }
+h3 { font-family: var(--display); font-weight: 600; font-size: 1.15rem; margin: 0; color: var(--ink); }
+h3.vlabel { font-family: var(--body); font-size: .8125rem; }
+.group { display: flex; flex-direction: column; gap: .5rem; }
+.types { display: grid; grid-template-columns: repeat(auto-fill, minmax(16rem, 1fr)); gap: 1rem; align-items: start; }
+.type { display: flex; flex-direction: column; gap: .4rem; min-width: 0; }
+.type .box { background: var(--card); border: 1px solid var(--rule); }
+.type .box .tile { background: var(--field); }
+.when { font-size: .8125rem; color: var(--muted); max-width: none; }
+.when b { color: var(--text); font-weight: 600; }
+.made { display: inline-block; border: 1px solid var(--rule); border-radius: 1rem; padding: 0 .45rem; font-size: .6875rem; white-space: nowrap; }
+.was { color: var(--muted); text-decoration: line-through; font-size: .9375rem; }
+.sum { display: flex; flex-wrap: wrap; gap: 0 .6rem; align-items: baseline; }
+.sum b { font-family: var(--display); font-weight: 600; font-size: 1.5rem; color: var(--ink); font-variant-numeric: tabular-nums; }
+.box.door, .type .box.door { background: var(--card); border: 1.5px solid var(--green); }
+.box.door .kind { color: var(--green); }
+.go::after { content: " \203A"; color: var(--green); }
+.reg { display: flex; gap: .6rem; align-items: center; }
+.stamp { flex: none; width: 2rem; height: 2rem; border-radius: 50%; border: 2px solid var(--terracotta); color: var(--terracotta); display: grid; place-items: center; font-family: var(--display); font-weight: 600; transform: rotate(-8deg); }
+.places.haslit { opacity: 1; }
+.places.haslit .place { opacity: .45; }
+.places.haslit .place.lit { opacity: 1; border: 1.5px solid var(--green); }
+.box.lang, .type .box.lang { background: var(--card); border: 1px solid var(--rule); border-left: 4px solid var(--green); }
+.box.lang .tile { background: var(--field); } .box.lang .chip { background: var(--field); color: var(--ink); font-weight: 600; }
+.kindrow { display: flex; justify-content: space-between; align-items: baseline; gap: .5rem; }
+.doortag { font-size: .75rem; color: var(--green); font-weight: 600; white-space: nowrap; }
+.tiles.two .tile b { font-size: 1rem; } .tiles.two .en { font-size: .8125rem; }
+.said.big { font-size: 1.2rem; }
+.pairrow { display: grid; grid-template-columns: 2.2rem 1fr; column-gap: .4rem; align-items: baseline; }
+.pairrow .who { font-size: .75rem; color: var(--muted); } .pairrow .en { grid-column: 2; font-size: .8125rem; }
+.scroll { overflow-x: auto; }
+table { border-collapse: collapse; width: 100%; min-width: 34rem; font-size: .875rem; }
+th, td { text-align: left; vertical-align: top; padding: .5rem .6rem; border-top: 1px solid var(--rule); }
+thead th { border-top: 0; font-size: .75rem; letter-spacing: .06em; text-transform: uppercase; color: var(--muted); font-weight: 600; }
+tbody th { color: var(--ink); font-weight: 600; white-space: nowrap; }
+.n { margin-left: .4rem; color: var(--muted); font-weight: 400; font-variant-numeric: tabular-nums; }
+.box.ptrs { background: var(--card); border: 1px solid var(--rule); padding: 0 .75rem; gap: 0; }
+.ptr { display: grid; grid-template-columns: 1fr auto; column-gap: .5rem; align-items: center; padding: .5rem 0; border-top: 1px solid var(--rule); }
+.ptr:first-child { border-top: 0; }
+.ptr .kind { grid-column: 1; } .ptr .said { grid-column: 1; }
+.ptr .chev { grid-column: 2; grid-row: 1 / span 2; color: var(--green); font-size: 1.3rem; }
+.morewrap { max-width: 22rem; }
+.xrow { display: grid; grid-template-columns: 3.3rem 1fr; column-gap: .4rem; align-items: baseline; }
+.xrow .who { font-size: .75rem; color: var(--muted); }
+.why { border-top: 1px solid var(--rule); padding-top: .4rem; margin-top: .25rem; }
+.why i { font-style: italic; color: var(--ink); }
+.box.hap { background: var(--field); }
+.why0 i { font-style: italic; color: var(--ink); }
+.fam { display: grid; grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr)); gap: 1.5rem; }
+.fam > div { display: flex; flex-direction: column; gap: .6rem; min-width: 0; }
+.fam ul { font-size: .9375rem; }
+.phone.p2 { min-height: 0; background: #8d877f; }
+.scrim { height: 3.5rem; }
+.sheet.s2 { position: static; box-shadow: none; gap: .8rem; padding-bottom: 1.3rem; }
+.sheet.s2 .boxes { gap: .8rem; }
+.hcard { background: #fffaf0; border-radius: 1rem; padding: .8rem .9rem .9rem; display: flex; flex-direction: column; gap: .5rem; box-shadow: 0 2px 0 var(--rule), 0 6px 16px rgba(29,27,25,.14); border: 1px solid var(--rule); }
+.ctitle { font-family: var(--display); font-weight: 600; font-size: 1.25rem; line-height: 1.15; color: var(--ink); }
+.bubs { display: flex; flex-direction: column; gap: .35rem; }
+.bub { max-width: 88%; padding: .4rem .75rem; border-radius: 1.1rem; font-weight: 600; font-size: 1.0625rem; line-height: 1.3; color: var(--ink); }
+.bub.them { align-self: flex-start; background: #f4d9cb; border-bottom-left-radius: .3rem; }
+.bub.me { align-self: flex-end; background: #dfe6c4; border-bottom-right-radius: .3rem; }
+.tcard { border-radius: 1rem; overflow: hidden; background: var(--card); border: 2px solid var(--green); display: flex; flex-direction: column; box-shadow: 0 6px 16px rgba(29,27,25,.14); }
+.band { background: var(--green); color: #fff; font-family: var(--display); font-weight: 600; font-size: 1.15rem; line-height: 1.2; padding: .45rem .9rem .5rem; }
+.tbody { padding: .6rem .9rem .75rem; display: flex; flex-direction: column; gap: .2rem; }
+.hand.big { font-size: 2rem; }
+.tpoint { font-size: 1rem; color: var(--ink); }
+.open { border-top: 1px solid var(--rule); padding: .55rem .9rem; color: var(--green); font-weight: 600; display: flex; justify-content: space-between; }
+.shead { font-weight: 600; font-size: 1.0625rem; color: var(--ink); display: flex; justify-content: space-between; gap: .5rem; margin-bottom: .15rem; }
+.chev2 { color: var(--green); }
+.srow { display: flex; flex-direction: column; line-height: 1.3; padding-top: .3rem; }
+.srow .en { font-size: .875rem; }
+.srow b { color: var(--ink); font-weight: 600; }
+.type .box.sum1 { background: var(--field); border: 0; }
+.box.try { background: var(--card); border: 1.5px solid var(--green); }
+.box.try .shead { color: var(--green); }
+.type .box.try { background: var(--card); border: 1.5px solid var(--green); }
+.ask { color: var(--ink); }
+.fact { color: var(--ink); } .fact i { font-style: italic; }
+.sheet.s3 { padding-top: .7rem; padding-bottom: 1.6rem; }
+.sheet.s3 .pic { height: 8.5rem; }
+.sheet.s3 .pic.juana { background-position: 50% 9%; }
+.sheet.s3 .pic.nunzio { background-position: 50% 17%; }
+.topbar { display: flex; justify-content: flex-end; align-items: center; height: 2.4rem; margin-top: -.2rem; }
+.close { width: 2rem; height: 2rem; border-radius: 50%; background: var(--field); color: var(--text); display: grid; place-items: center; font-size: .9rem; font-weight: 600; }
+.phone.p4 { min-height: 0; background-color: #8d877f; background-size: 100% auto; background-repeat: no-repeat; background-position: top center; }
+.phone.bg-juana { background-image: none; }
+.phone.bg-nunzio { background-image: none; }
+.peek { height: 13.5rem; }
+.p4 .sheet.s3 { flex: 1; box-shadow: 0 -8px 24px rgba(29,27,25,.25); }
+.p4 .topbar { height: 2rem; margin-top: -.6rem; }
+.p4 .topbar.t5 { justify-content: space-between; height: auto; margin-top: -.1rem; gap: .6rem; align-items: center; }
+.stitle { font-weight: 600; font-size: 1.2rem; line-height: 1.2; color: var(--ink); padding-left: .2rem; }
+.box.nohead .srow:first-child { padding-top: 0; }
+.study { gap: 1.2rem .8rem; }
+.study .version { width: 22rem; zoom: .56; }
+.study .vlabel { font-size: 1.3rem; letter-spacing: .04em; }
+.cv-white .box.sum1:not(.try) { background: #fff; border: 1px solid var(--rule); }
+.cv-paper .sheet { background: var(--paper); } .cv-paper .box.sum1 { background: #fff; } .cv-paper .close { background: #fff; }
+.cv-sage .box.sum1:not(.try) { background: #e2e8d2; } .cv-sage .close { background: #e2e8d2; }
+.cv-teal .box.sum1:not(.try) { background: #e0efee; } .cv-teal .close { background: #e0efee; } .cv-teal .box.try { border-color: #2f6f73; } .cv-teal .box.try .shead { color: #2f6f73; }
+.cv-slate .box.sum1:not(.try) { background: #e3e8f0; } .cv-slate .close { background: #e3e8f0; } .cv-slate .box.try { border-color: #3f5878; } .cv-slate .box.try .shead { color: #3f5878; }
+.cv-gold .box.sum1:not(.try) { background: #f7e6b8; } .cv-gold .close { background: #f7e6b8; }
+.cv-clay .box.sum1:not(.try) { background: #f1e0d4; } .cv-clay .close { background: #f1e0d4; }
+.p4 .box.sum1:not(.try) { background: #e2e8d2; } .p4 .close { background: #e2e8d2; }
+.cv-tan .box.sum1:not(.try) { background: var(--field); } .cv-tan .close { background: var(--field); }
+.type .box.sum1:not(.try) { background: #e2e8d2; }
+.story { display: flex; flex-wrap: wrap; gap: 1.2rem 1rem; justify-content: center; }
+.frame { width: 22rem; zoom: .72; display: flex; flex-direction: column; gap: .6rem; }
+.frame .vlabel { font-size: 1.05rem; letter-spacing: .02em; text-transform: none; color: var(--ink); min-height: 2.8rem; }
+.num { display: inline-grid; place-items: center; width: 1.6rem; height: 1.6rem; border-radius: 50%; background: var(--ink); color: #fff; font-size: .9rem; margin-right: .3rem; }
+.fphone { height: 45rem; border: 1px solid var(--rule); border-radius: 2.2rem; background: var(--paper); overflow: hidden; display: flex; flex-direction: column; position: relative; }
+.nav { display: flex; justify-content: space-between; align-items: center; padding: 1.6rem 1rem .3rem; color: var(--green); font-size: 1.05rem; min-height: 3.6rem; }
+.gear { color: var(--text); display: grid; }
+.pband { padding: .3rem 1rem .75rem; display: flex; flex-direction: column; border-bottom: 1px solid var(--rule); background: var(--paper); }
+.pname { font-family: "Alegreya", Georgia, serif; font-weight: 700; font-size: 1.95rem; line-height: 1.15; color: #000; }
+.prole { font-family: "Alegreya Sans", sans-serif; font-size: 1.2rem; color: var(--muted); }
+.portrait { flex: 1; position: relative; background-size: 124% auto; background-position: top center; background-repeat: no-repeat; background-color: #8d877f; }
+.portrait.bg-juana { background-image: none; } .portrait.bg-nunzio { background-image: none; }
+.over { position: absolute; left: 1rem; right: 1rem; bottom: 1.4rem; display: flex; flex-direction: column; gap: 1.1rem; align-items: flex-start; }
+.her { background: #eee6d6; border: 1px solid #d6cab3; border-radius: 18px; padding: .6rem .9rem; display: flex; flex-direction: column; gap: .1rem; max-width: 92%; }
+.hl { font-size: 1.125rem; color: #000; } .he { font-size: .9375rem; color: var(--muted); }
+.mic { align-self: center; width: 4.6rem; height: 4.6rem; border-radius: 50%; background: #c0603a; display: flex; align-items: center; justify-content: center; gap: 4px; }
+.mic i { display: block; width: 4px; border-radius: 2px; background: #fff; height: 1rem; } .mic i:nth-child(2), .mic i:nth-child(4) { height: 1.7rem; } .mic i:nth-child(3) { height: 1.2rem; }
+.sheet.s2.fsheet { position: absolute; left: 0; right: 0; bottom: 0; box-shadow: 0 -8px 24px rgba(29,27,25,.28); padding-bottom: 2rem; }
+.fsheet .box.sum1:not(.try) { background: #e2e8d2; } .fsheet .close { background: #e2e8d2; }
+.fsheet .topbar.t5 { justify-content: space-between; height: auto; margin-top: -.1rem; gap: .6rem; align-items: center; display: flex; }
+.bigtitle { font-family: "Alegreya", Georgia, serif; font-weight: 700; font-size: 2.1rem; color: #000; padding: 0 1rem .6rem; }
+.pols { padding: .2rem 1rem; display: flex; flex-direction: column; gap: 1.25rem; }
+.pol { background: #fff; border-radius: 3px; padding: 12px; box-shadow: 0 1px 1.5px rgba(0,0,0,.22), 0 14px 10px -8px rgba(0,0,0,.25); display: flex; flex-direction: column; }
+.polimg { aspect-ratio: 1; background: #e8d5c4; }
+.polrow { display: flex; justify-content: space-between; align-items: flex-start; gap: .6rem; padding: 14px 4px 0; }
+.poltitle { font-family: "Alegreya", Georgia, serif; font-weight: 700; font-size: 2rem; line-height: 1; color: #000; }
+.polsub { font-family: "Alegreya Sans", sans-serif; font-size: 1.0625rem; color: var(--muted); padding: 6px 4px 6px; }
+.vstamp { flex: none; border: 2px solid #a84f2c; color: #a84f2c; border-radius: 50%; width: 3.4rem; height: 3.4rem; display: grid; place-items: center; font-size: .6rem; letter-spacing: .08em; text-transform: uppercase; font-weight: 600; transform: rotate(-10deg); }
+.earlier { border-top: 1px solid var(--rule); padding-top: 1.5rem; display: flex; flex-direction: column; gap: 1rem; }
+</style></head><body>
+<main>
+  <p class="muted">Copy for the repo, 2026-11-17: the portraits are left out (they are the game's own pictures; grey stands in for them). The page with pictures: https://claude.ai/artifact/XVeopuYsxXoP2ibkiSwunm. Notes: docs/learn-sheet-2.md.</p>
+  <h1>Learn sheet 2.0: the design</h1>
+  <p>Closed with Josh on 17 November. The sheet comes up after a visit and instructs: it reinforces the vocabulary and grammar the conversation used. It is a quick look, not something to work through.</p>
+  <h2>The moment, on the standard person screen</h2>
+  <p>The character says goodbye, the screen stays as it is, the sheet slides up over its lower part, and closing it returns you to the place list.</p>
+  <div class="story"><section class="frame"><h3 class="vlabel"><span class="num">1</span> The character says goodbye</h3><div class="fphone" role="img" aria-label="Frame 1: the person screen as Nunzio Palmeri says goodbye"><div class="nav"><span class="back">‹ Palermo</span><span class="gear"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.8v3M12 18.2v3M2.8 12h3M18.2 12h3M5.5 5.5l2.1 2.1M16.4 16.4l2.1 2.1M5.5 18.5l2.1-2.1M16.4 7.6l2.1-2.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span></div>
+<div class="pband"><span class="pname">Nunzio Palmeri</span><span class="prole">Giardiniere, Kalsa</span></div>
+<div class="portrait bg-nunzio"><div class="over"><div class="her"><span class="hl" lang="it">Arrivederci, Joshua. Buona giornata!</span><span class="he">Goodbye, Joshua. Have a good day!</span></div><div class="mic"><i></i><i></i><i></i><i></i><i></i></div></div></div></div></section><section class="frame"><h3 class="vlabel"><span class="num">2</span> The card stays, the sheet slides up</h3><div class="fphone" role="img" aria-label="Frame 2: the same screen with the sheet slid up over its lower part"><div class="nav"><span class="back">‹ Palermo</span><span class="gear"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.8v3M12 18.2v3M2.8 12h3M18.2 12h3M5.5 5.5l2.1 2.1M16.4 16.4l2.1 2.1M5.5 18.5l2.1-2.1M16.4 7.6l2.1-2.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span></div>
+<div class="pband"><span class="pname">Nunzio Palmeri</span><span class="prole">Giardiniere, Kalsa</span></div>
+<div class="portrait bg-nunzio"><div class="sheet s2 s3 fsheet"><div class="grab"></div><div class="topbar t5"><span class="stitle">When you introduce yourself</span><span class="close" aria-hidden="true">✕</span></div><div class="boxes"><div class="box sum1 nohead"><div class="srow"><b lang="it">Mi chiamo Joshua.</b><span class="en">My name is Joshua.</span></div><div class="srow"><b lang="it">Come si chiama?</b><span class="en">What's your name? </span></div><div class="srow"><b lang="it">Piacere.</b><span class="en">Nice to meet you.</span></div></div><div class="box sum1"><span class="shead">Formal and informal</span><div class="srow"><b lang="it">Come si chiama?</b><span class="en">What's your name? · formal</span></div><div class="srow"><b lang="it">Come ti chiami?</b><span class="en">What's your name? · informal</span></div></div></div></div></div></div></section><section class="frame"><h3 class="vlabel"><span class="num">3</span> Closing returns to the place list</h3><div class="fphone" role="img" aria-label="Frame 3: the place list of Palermo"><div class="nav"><span></span><span class="gear"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.8v3M12 18.2v3M2.8 12h3M18.2 12h3M5.5 5.5l2.1 2.1M16.4 16.4l2.1 2.1M5.5 18.5l2.1-2.1M16.4 7.6l2.1-2.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span></div><div class="bigtitle">Palermo</div><div class="pols"><div class="pol"><div class="polimg"></div><div class="polrow"><span class="poltitle">Giardino Garibaldi</span><span class="vstamp">Visited</span></div><span class="polsub">Kalsa</span></div><div class="pol"><div class="polimg"></div><div class="polrow"><span class="poltitle">Mercato della Vucciria</span></div><span class="polsub">Vucciria</span></div></div></div></section></div><div class="story"><section class="frame"><h3 class="vlabel"><span class="num">1</span> The character says goodbye</h3><div class="fphone" role="img" aria-label="Frame 1: the person screen as Doña Juana Velasco says goodbye"><div class="nav"><span class="back">‹ San Cristóbal</span><span class="gear"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.8v3M12 18.2v3M2.8 12h3M18.2 12h3M5.5 5.5l2.1 2.1M16.4 16.4l2.1 2.1M5.5 18.5l2.1-2.1M16.4 7.6l2.1-2.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span></div>
+<div class="pband"><span class="pname">Doña Juana Velasco</span><span class="prole">Cocinera, Centro</span></div>
+<div class="portrait bg-juana"><div class="over"><div class="her"><span class="hl" lang="es">Que le vaya bien, Joshua.</span><span class="he">Have a good day, Joshua.</span></div><div class="mic"><i></i><i></i><i></i><i></i><i></i></div></div></div></div></section><section class="frame"><h3 class="vlabel"><span class="num">2</span> The card stays, the sheet slides up</h3><div class="fphone" role="img" aria-label="Frame 2: the same screen with the sheet slid up over its lower part"><div class="nav"><span class="back">‹ San Cristóbal</span><span class="gear"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.8v3M12 18.2v3M2.8 12h3M18.2 12h3M5.5 5.5l2.1 2.1M16.4 16.4l2.1 2.1M5.5 18.5l2.1-2.1M16.4 7.6l2.1-2.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span></div>
+<div class="pband"><span class="pname">Doña Juana Velasco</span><span class="prole">Cocinera, Centro</span></div>
+<div class="portrait bg-juana"><div class="sheet s2 s3 fsheet"><div class="grab"></div><div class="topbar t5"><span class="stitle">When you order</span><span class="close" aria-hidden="true">✕</span></div><div class="boxes"><div class="box sum1 nohead"><div class="srow"><b lang="es">¿Qué le damos?</b><span class="en">What can I get you?</span></div><div class="srow"><b lang="es">Me da un tamal, por favor.</b><span class="en">Can I have a tamal, please?</span></div></div><div class="box sum1"><span class="shead">About this comedor</span><span class="point fact">Chiapas tamales come three ways: <i lang="es">de chipilín</i>, <i lang="es">de bola</i>, and <i lang="es">de hoja de plátano</i>, wrapped in banana leaf.</span></div></div></div></div></div></section><section class="frame"><h3 class="vlabel"><span class="num">3</span> Closing returns to the place list</h3><div class="fphone" role="img" aria-label="Frame 3: the place list of San Cristóbal"><div class="nav"><span></span><span class="gear"><svg viewBox="0 0 24 24" width="22" height="22" aria-hidden="true"><circle cx="12" cy="12" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M12 2.8v3M12 18.2v3M2.8 12h3M18.2 12h3M5.5 5.5l2.1 2.1M16.4 16.4l2.1 2.1M5.5 18.5l2.1-2.1M16.4 7.6l2.1-2.1" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></svg></span></div><div class="bigtitle">San Cristóbal</div><div class="pols"><div class="pol"><div class="polimg"></div><div class="polrow"><span class="poltitle">Comedor Doña Juana</span><span class="vstamp">Visited</span></div><span class="polsub">Centro</span></div><div class="pol"><div class="polimg"></div><div class="polrow"><span class="poltitle">Catedral de San Cristóbal</span></div><span class="polsub">Centro</span></div></div></div></section></div>
+  <p class="muted">The person screen follows the app's own layout: the name band, the portrait to the bottom edge, the character's bubble and the round control. The place pictures are blank stand-ins, the visited mark is approximate, and the goodbye lines are made up.</p>
+  <h2>The sheets</h2>
+  <div class="versions"><section class="version"><h3 class="vlabel">You introduced yourself · Nunzio</h3>
+<div class="phone p4 bg-nunzio" role="img" aria-label="Mock-up: the sheet with when you introduce yourself, formal and informal, and a try it card"><div class="peek"></div>
+<div class="sheet s2 s3"><div class="grab"></div><div class="topbar t5"><span class="stitle">When you introduce yourself</span><span class="close" aria-hidden="true">✕</span></div>
+<div class="boxes"><div class="box sum1 nohead"><div class="srow"><b lang="it">Mi chiamo Joshua.</b><span class="en">My name is Joshua.</span></div><div class="srow"><b lang="it">Come si chiama?</b><span class="en">What's your name? </span></div><div class="srow"><b lang="it">Piacere.</b><span class="en">Nice to meet you.</span></div></div><div class="box sum1"><span class="shead">Formal and informal</span><div class="srow"><b lang="it">Come si chiama?</b><span class="en">What's your name? · formal</span></div><div class="srow"><b lang="it">Come ti chiami?</b><span class="en">What's your name? · informal</span></div></div></div></div></div></section><section class="version"><h3 class="vlabel">You ordered · Doña Juana</h3>
+<div class="phone p4 bg-juana" role="img" aria-label="Mock-up: the sheet with when you order, from the place, and a try it card"><div class="peek"></div>
+<div class="sheet s2 s3"><div class="grab"></div><div class="topbar t5"><span class="stitle">When you order</span><span class="close" aria-hidden="true">✕</span></div>
+<div class="boxes"><div class="box sum1 nohead"><div class="srow"><b lang="es">¿Qué le damos?</b><span class="en">What can I get you?</span></div><div class="srow"><b lang="es">Me da un tamal, por favor.</b><span class="en">Can I have a tamal, please?</span></div></div><div class="box sum1"><span class="shead">About this comedor</span><span class="point fact">Chiapas tamales come three ways: <i lang="es">de chipilín</i>, <i lang="es">de bola</i>, and <i lang="es">de hoja de plátano</i>, wrapped in banana leaf.</span></div></div></div></div></section><section class="version"><h3 class="vlabel">With a fact about the place · Nunzio</h3>
+<div class="phone p4 bg-nunzio" role="img" aria-label="Mock-up: the sheet with when you introduce yourself and a fact about the garden"><div class="peek"></div>
+<div class="sheet s2 s3"><div class="grab"></div><div class="topbar t5"><span class="stitle">When you introduce yourself</span><span class="close" aria-hidden="true">✕</span></div>
+<div class="boxes"><div class="box sum1 nohead"><div class="srow"><b lang="it">Mi chiamo Joshua.</b><span class="en">My name is Joshua.</span></div><div class="srow"><b lang="it">Come si chiama?</b><span class="en">What's your name? </span></div><div class="srow"><b lang="it">Piacere.</b><span class="en">Nice to meet you.</span></div></div><div class="box sum1"><span class="shead">About this garden</span><span class="point fact">Its giant fig trees were brought from Australia in the 1800s. Their roots hang down and grow into new trunks.</span></div></div></div></div></section></div>
+  <h2>Color study</h2>
+  <p>The same two sheets with eight card colors. Only the cards and the close button change.</p>
+  <div class="versions study"><section class="version cv cv-tan"><h3 class="vlabel">Tan (before)</h3>
+<div class="phone p4 bg-juana" role="img" aria-label="Color study: Tan (before)"><div class="peek"></div>
+<div class="sheet s2 s3"><div class="grab"></div><div class="topbar t5"><span class="stitle">When you order</span><span class="close" aria-hidden="true">✕</span></div>
+<div class="boxes"><div class="box sum1 nohead"><div class="srow"><b lang="es">¿Qué le damos?</b><span class="en">What can I get you?</span></div><div class="srow"><b lang="es">Me da un tamal, por favor.</b><span class="en">Can I have a tamal, please?</span></div></div><div class="box sum1"><span class="shead">About this comedor</span><span class="point fact">Chiapas tamales come three ways: <i lang="es">de chipilín</i>, <i lang="es">de bola</i>, and <i lang="es">de hoja de plátano</i>, wrapped in banana leaf.</span></div></div></div></div></section><section class="version cv cv-white"><h3 class="vlabel">White, thin line</h3>
+<div class="phone p4 bg-juana" role="img" aria-label="Color study: White, thin line"><div class="peek"></div>
+<div class="sheet s2 s3"><div class="grab"></div><div class="topbar t5"><span class="stitle">When you order</span><span class="close" aria-hidden="true">✕</span></div>
+<div class="boxes"><div class="box sum1 nohead"><div class="srow"><b lang="es">¿Qué le damos?</b><span class="en">What can I get you?</span></div><div class="srow"><b lang="es">Me da un tamal, por favor.</b><span class="en">Can I have a tamal, please?</span></div></div><div class="box sum1"><span class="shead">About this comedor</span><span class="point fact">Chiapas tamales come three ways: <i lang="es">de chipilín</i>, <i lang="es">de bola</i>, and <i lang="es">de hoja de plátano</i>, wrapped in banana leaf.</span></div></div></div></div></section><section class="version cv cv-paper"><h3 class="vlabel">Paper sheet, white cards</h3>
+<div class="phone p4 bg-juana" role="img" aria-label="Color study: Paper sheet, white cards"><div class="peek"></div>
+<div class="sheet s2 s3"><div class="grab"></div><div class="topbar t5"><span class="stitle">When you order</span><span class="close" aria-hidden="true">✕</span></div>
+<div class="boxes"><div class="box sum1 nohead"><div class="srow"><b lang="es">¿Qué le damos?</b><span class="en">What can I get you?</span></div><div class="srow"><b lang="es">Me da un tamal, por favor.</b><span class="en">Can I have a tamal, please?</span></div></div><div class="box sum1"><span class="shead">About this comedor</span><span class="point fact">Chiapas tamales come three ways: <i lang="es">de chipilín</i>, <i lang="es">de bola</i>, and <i lang="es">de hoja de plátano</i>, wrapped in banana leaf.</span></div></div></div></div></section><section class="version cv cv-sage"><h3 class="vlabel">Sage (chosen)</h3>
+<div class="phone p4 bg-juana" role="img" aria-label="Color study: Sage (chosen)"><div class="peek"></div>
+<div class="sheet s2 s3"><div class="grab"></div><div class="topbar t5"><span class="stitle">When you order</span><span class="close" aria-hidden="true">✕</span></div>
+<div class="boxes"><div class="box sum1 nohead"><div class="srow"><b lang="es">¿Qué le damos?</b><span class="en">What can I get you?</span></div><div class="srow"><b lang="es">Me da un tamal, por favor.</b><span class="en">Can I have a tamal, please?</span></div></div><div class="box sum1"><span class="shead">About this comedor</span><span class="point fact">Chiapas tamales come three ways: <i lang="es">de chipilín</i>, <i lang="es">de bola</i>, and <i lang="es">de hoja de plátano</i>, wrapped in banana leaf.</span></div></div></div></div></section><section class="version cv cv-teal"><h3 class="vlabel">Pale teal</h3>
+<div class="phone p4 bg-juana" role="img" aria-label="Color study: Pale teal"><div class="peek"></div>
+<div class="sheet s2 s3"><div class="grab"></div><div class="topbar t5"><span class="stitle">When you order</span><span class="close" aria-hidden="true">✕</span></div>
+<div class="boxes"><div class="box sum1 nohead"><div class="srow"><b lang="es">¿Qué le damos?</b><span class="en">What can I get you?</span></div><div class="srow"><b lang="es">Me da un tamal, por favor.</b><span class="en">Can I have a tamal, please?</span></div></div><div class="box sum1"><span class="shead">About this comedor</span><span class="point fact">Chiapas tamales come three ways: <i lang="es">de chipilín</i>, <i lang="es">de bola</i>, and <i lang="es">de hoja de plátano</i>, wrapped in banana leaf.</span></div></div></div></div></section><section class="version cv cv-slate"><h3 class="vlabel">Blue-grey</h3>
+<div class="phone p4 bg-juana" role="img" aria-label="Color study: Blue-grey"><div class="peek"></div>
+<div class="sheet s2 s3"><div class="grab"></div><div class="topbar t5"><span class="stitle">When you order</span><span class="close" aria-hidden="true">✕</span></div>
+<div class="boxes"><div class="box sum1 nohead"><div class="srow"><b lang="es">¿Qué le damos?</b><span class="en">What can I get you?</span></div><div class="srow"><b lang="es">Me da un tamal, por favor.</b><span class="en">Can I have a tamal, please?</span></div></div><div class="box sum1"><span class="shead">About this comedor</span><span class="point fact">Chiapas tamales come three ways: <i lang="es">de chipilín</i>, <i lang="es">de bola</i>, and <i lang="es">de hoja de plátano</i>, wrapped in banana leaf.</span></div></div></div></div></section><section class="version cv cv-gold"><h3 class="vlabel">Marigold</h3>
+<div class="phone p4 bg-juana" role="img" aria-label="Color study: Marigold"><div class="peek"></div>
+<div class="sheet s2 s3"><div class="grab"></div><div class="topbar t5"><span class="stitle">When you order</span><span class="close" aria-hidden="true">✕</span></div>
+<div class="boxes"><div class="box sum1 nohead"><div class="srow"><b lang="es">¿Qué le damos?</b><span class="en">What can I get you?</span></div><div class="srow"><b lang="es">Me da un tamal, por favor.</b><span class="en">Can I have a tamal, please?</span></div></div><div class="box sum1"><span class="shead">About this comedor</span><span class="point fact">Chiapas tamales come three ways: <i lang="es">de chipilín</i>, <i lang="es">de bola</i>, and <i lang="es">de hoja de plátano</i>, wrapped in banana leaf.</span></div></div></div></div></section><section class="version cv cv-clay"><h3 class="vlabel">Soft clay</h3>
+<div class="phone p4 bg-juana" role="img" aria-label="Color study: Soft clay"><div class="peek"></div>
+<div class="sheet s2 s3"><div class="grab"></div><div class="topbar t5"><span class="stitle">When you order</span><span class="close" aria-hidden="true">✕</span></div>
+<div class="boxes"><div class="box sum1 nohead"><div class="srow"><b lang="es">¿Qué le damos?</b><span class="en">What can I get you?</span></div><div class="srow"><b lang="es">Me da un tamal, por favor.</b><span class="en">Can I have a tamal, please?</span></div></div><div class="box sum1"><span class="shead">About this comedor</span><span class="point fact">Chiapas tamales come three ways: <i lang="es">de chipilín</i>, <i lang="es">de bola</i>, and <i lang="es">de hoja de plátano</i>, wrapped in banana leaf.</span></div></div></div></div></section></div><div class="versions study"><section class="version cv cv-tan"><h3 class="vlabel">Tan (before)</h3>
+<div class="phone p4 bg-nunzio" role="img" aria-label="Color study: Tan (before)"><div class="peek"></div>
+<div class="sheet s2 s3"><div class="grab"></div><div class="topbar t5"><span class="stitle">When you introduce yourself</span><span class="close" aria-hidden="true">✕</span></div>
+<div class="boxes"><div class="box sum1 nohead"><div class="srow"><b lang="it">Mi chiamo Joshua.</b><span class="en">My name is Joshua.</span></div><div class="srow"><b lang="it">Come si chiama?</b><span class="en">What's your name? </span></div><div class="srow"><b lang="it">Piacere.</b><span class="en">Nice to meet you.</span></div></div><div class="box sum1"><span class="shead">Formal and informal</span><div class="srow"><b lang="it">Come si chiama?</b><span class="en">What's your name? · formal</span></div><div class="srow"><b lang="it">Come ti chiami?</b><span class="en">What's your name? · informal</span></div></div></div></div></div></section><section class="version cv cv-white"><h3 class="vlabel">White, thin line</h3>
+<div class="phone p4 bg-nunzio" role="img" aria-label="Color study: White, thin line"><div class="peek"></div>
+<div class="sheet s2 s3"><div class="grab"></div><div class="topbar t5"><span class="stitle">When you introduce yourself</span><span class="close" aria-hidden="true">✕</span></div>
+<div class="boxes"><div class="box sum1 nohead"><div class="srow"><b lang="it">Mi chiamo Joshua.</b><span class="en">My name is Joshua.</span></div><div class="srow"><b lang="it">Come si chiama?</b><span class="en">What's your name? </span></div><div class="srow"><b lang="it">Piacere.</b><span class="en">Nice to meet you.</span></div></div><div class="box sum1"><span class="shead">Formal and informal</span><div class="srow"><b lang="it">Come si chiama?</b><span class="en">What's your name? · formal</span></div><div class="srow"><b lang="it">Come ti chiami?</b><span class="en">What's your name? · informal</span></div></div></div></div></div></section><section class="version cv cv-paper"><h3 class="vlabel">Paper sheet, white cards</h3>
+<div class="phone p4 bg-nunzio" role="img" aria-label="Color study: Paper sheet, white cards"><div class="peek"></div>
+<div class="sheet s2 s3"><div class="grab"></div><div class="topbar t5"><span class="stitle">When you introduce yourself</span><span class="close" aria-hidden="true">✕</span></div>
+<div class="boxes"><div class="box sum1 nohead"><div class="srow"><b lang="it">Mi chiamo Joshua.</b><span class="en">My name is Joshua.</span></div><div class="srow"><b lang="it">Come si chiama?</b><span class="en">What's your name? </span></div><div class="srow"><b lang="it">Piacere.</b><span class="en">Nice to meet you.</span></div></div><div class="box sum1"><span class="shead">Formal and informal</span><div class="srow"><b lang="it">Come si chiama?</b><span class="en">What's your name? · formal</span></div><div class="srow"><b lang="it">Come ti chiami?</b><span class="en">What's your name? · informal</span></div></div></div></div></div></section><section class="version cv cv-sage"><h3 class="vlabel">Sage (chosen)</h3>
+<div class="phone p4 bg-nunzio" role="img" aria-label="Color study: Sage (chosen)"><div class="peek"></div>
+<div class="sheet s2 s3"><div class="grab"></div><div class="topbar t5"><span class="stitle">When you introduce yourself</span><span class="close" aria-hidden="true">✕</span></div>
+<div class="boxes"><div class="box sum1 nohead"><div class="srow"><b lang="it">Mi chiamo Joshua.</b><span class="en">My name is Joshua.</span></div><div class="srow"><b lang="it">Come si chiama?</b><span class="en">What's your name? </span></div><div class="srow"><b lang="it">Piacere.</b><span class="en">Nice to meet you.</span></div></div><div class="box sum1"><span class="shead">Formal and informal</span><div class="srow"><b lang="it">Come si chiama?</b><span class="en">What's your name? · formal</span></div><div class="srow"><b lang="it">Come ti chiami?</b><span class="en">What's your name? · informal</span></div></div></div></div></div></section><section class="version cv cv-teal"><h3 class="vlabel">Pale teal</h3>
+<div class="phone p4 bg-nunzio" role="img" aria-label="Color study: Pale teal"><div class="peek"></div>
+<div class="sheet s2 s3"><div class="grab"></div><div class="topbar t5"><span class="stitle">When you introduce yourself</span><span class="close" aria-hidden="true">✕</span></div>
+<div class="boxes"><div class="box sum1 nohead"><div class="srow"><b lang="it">Mi chiamo Joshua.</b><span class="en">My name is Joshua.</span></div><div class="srow"><b lang="it">Come si chiama?</b><span class="en">What's your name? </span></div><div class="srow"><b lang="it">Piacere.</b><span class="en">Nice to meet you.</span></div></div><div class="box sum1"><span class="shead">Formal and informal</span><div class="srow"><b lang="it">Come si chiama?</b><span class="en">What's your name? · formal</span></div><div class="srow"><b lang="it">Come ti chiami?</b><span class="en">What's your name? · informal</span></div></div></div></div></div></section><section class="version cv cv-slate"><h3 class="vlabel">Blue-grey</h3>
+<div class="phone p4 bg-nunzio" role="img" aria-label="Color study: Blue-grey"><div class="peek"></div>
+<div class="sheet s2 s3"><div class="grab"></div><div class="topbar t5"><span class="stitle">When you introduce yourself</span><span class="close" aria-hidden="true">✕</span></div>
+<div class="boxes"><div class="box sum1 nohead"><div class="srow"><b lang="it">Mi chiamo Joshua.</b><span class="en">My name is Joshua.</span></div><div class="srow"><b lang="it">Come si chiama?</b><span class="en">What's your name? </span></div><div class="srow"><b lang="it">Piacere.</b><span class="en">Nice to meet you.</span></div></div><div class="box sum1"><span class="shead">Formal and informal</span><div class="srow"><b lang="it">Come si chiama?</b><span class="en">What's your name? · formal</span></div><div class="srow"><b lang="it">Come ti chiami?</b><span class="en">What's your name? · informal</span></div></div></div></div></div></section><section class="version cv cv-gold"><h3 class="vlabel">Marigold</h3>
+<div class="phone p4 bg-nunzio" role="img" aria-label="Color study: Marigold"><div class="peek"></div>
+<div class="sheet s2 s3"><div class="grab"></div><div class="topbar t5"><span class="stitle">When you introduce yourself</span><span class="close" aria-hidden="true">✕</span></div>
+<div class="boxes"><div class="box sum1 nohead"><div class="srow"><b lang="it">Mi chiamo Joshua.</b><span class="en">My name is Joshua.</span></div><div class="srow"><b lang="it">Come si chiama?</b><span class="en">What's your name? </span></div><div class="srow"><b lang="it">Piacere.</b><span class="en">Nice to meet you.</span></div></div><div class="box sum1"><span class="shead">Formal and informal</span><div class="srow"><b lang="it">Come si chiama?</b><span class="en">What's your name? · formal</span></div><div class="srow"><b lang="it">Come ti chiami?</b><span class="en">What's your name? · informal</span></div></div></div></div></div></section><section class="version cv cv-clay"><h3 class="vlabel">Soft clay</h3>
+<div class="phone p4 bg-nunzio" role="img" aria-label="Color study: Soft clay"><div class="peek"></div>
+<div class="sheet s2 s3"><div class="grab"></div><div class="topbar t5"><span class="stitle">When you introduce yourself</span><span class="close" aria-hidden="true">✕</span></div>
+<div class="boxes"><div class="box sum1 nohead"><div class="srow"><b lang="it">Mi chiamo Joshua.</b><span class="en">My name is Joshua.</span></div><div class="srow"><b lang="it">Come si chiama?</b><span class="en">What's your name? </span></div><div class="srow"><b lang="it">Piacere.</b><span class="en">Nice to meet you.</span></div></div><div class="box sum1"><span class="shead">Formal and informal</span><div class="srow"><b lang="it">Come si chiama?</b><span class="en">What's your name? · formal</span></div><div class="srow"><b lang="it">Come ti chiami?</b><span class="en">What's your name? · informal</span></div></div></div></div></div></section></div>
+  <h2>Three card types</h2>
+  <ul>
+    <li><b>When you…</b> One topic the conversation involved (introductions, ordering, asking the price), as that lesson's phrases.</li>
+    <li><b>Formal and informal.</b> The two forms, one above the other.</li>
+    <li><b>About this place.</b> One fact about where you were. It doesn't have to come from the conversation.</li>
+  </ul>
+  <h2>Rules</h2>
+  <ul>
+    <li>One topic per card, and nothing under it: no footer, no second topic.</li>
+    <li>Whole sentences, no blanks. The English goes under each line.</li>
+    <li>Lines run in the order they're said: the question, then the answer.</li>
+    <li>Cards are sage green.</li>
+    <li>Plain cards. No audio, no replayed moments, nothing about the next visit, no city or day, no red.</li>
+    <li>Cards are often picked by what the conversation involved, but not always. A card can stand by itself, as About this place does.</li>
+    <li>The first card's headline sits at the top of the sheet, level with the close button. No Done at the bottom.</li>
+    <li>No picture inside the sheet. After the goodbye it slides up over the person screen, which stays as it is. Closing returns to the place list.</li>
+  </ul>
+  <h2>Still open</h2>
+  <ul>
+    <li>A footer for the sheet. Two candidates so far: Try it, and Open the lesson. Neither is on the sheet for now.</li>
+    <li>How many cards a sheet can hold. Three fit comfortably under the picture.</li>
+    <li>The close button's exact look.</li>
+    <li>Whether Words and the history card ("Something she mentioned") stay as types.</li>
+  </ul>
+  <h2>More examples</h2>
+  <h3>Set aside for now: Try it</h3>
+  <p class="muted">Cut from the sheet as a card. It is one of two candidates for a footer.</p>
+  <div class="types"><div class="type"><div class="box sum1 try"><span class="shead">Try it</span><span class="point ask">Ask the next person you meet.</span><div class="srow"><b lang="it">Come si chiama?</b><span class="en">What's your name?</span></div></div><p class="when">Italy · after introducing yourself</p></div><div class="type"><div class="box sum1 try"><span class="shead">Try it</span><span class="point ask">Say it to the next person who serves you.</span><div class="srow"><b lang="es">Me da un café, por favor.</b><span class="en">Can I have a coffee, please?</span></div></div><p class="when">Mexico · after ordering</p></div><div class="type"><div class="box sum1 try"><span class="shead">Try it</span><span class="point ask">Ask the next person selling something.</span><div class="srow"><b lang="it">Quanto costa?</b><span class="en">How much is it?</span></div></div><p class="when">Italy · after asking a price</p></div><div class="type"><div class="box sum1 try"><span class="shead">Try it</span><span class="point ask">Say it to the next person as you leave.</span><div class="srow"><b lang="es">Que le vaya bien.</b><span class="en">Have a good day.</span></div></div><p class="when">Mexico · after a goodbye</p></div></div>
+  <h3>Summaries, one lesson each</h3>
+  <div class="types"><div class="type"><div class="box sum1"><span class="shead">When you introduce yourself</span><div class="srow"><b lang="it">Mi chiamo Joshua.</b><span class="en">My name is Joshua.</span></div><div class="srow"><b lang="it">Come si chiama?</b><span class="en">What's your name? </span></div><div class="srow"><b lang="it">Piacere.</b><span class="en">Nice to meet you.</span></div></div><p class="when">Italy · from the lesson Name</p></div><div class="type"><div class="box sum1"><span class="shead">When you order</span><div class="srow"><b lang="it">Vorrei un cappuccino.</b><span class="en">I'd like a cappuccino.</span></div><div class="srow"><b lang="it">Prendo un caffè.</b><span class="en">I'll have a coffee.</span></div></div><p class="when">Italy · from Order politely</p></div><div class="type"><div class="box sum1"><span class="shead">When you ask the price</span><div class="srow"><b lang="it">Quanto costa?</b><span class="en">How much is it?</span></div><div class="srow"><b lang="it">Costa due euro.</b><span class="en">It's two euros.</span></div></div><p class="when">Italy · from How much</p></div><div class="type"><div class="box sum1"><span class="shead">When you pay by card</span><div class="srow"><b lang="it">Posso pagare con la carta?</b><span class="en">Can I pay by card?</span></div></div><p class="when">Italy · from Card or cash</p></div><div class="type"><div class="box sum1"><span class="shead">Formal and informal</span><div class="srow"><b lang="it">Come si chiama?</b><span class="en">What's your name? · formal</span></div><div class="srow"><b lang="it">Come ti chiami?</b><span class="en">What's your name? · informal</span></div></div><p class="when">Italy · from Be polite</p></div><div class="type"><div class="box sum1"><span class="shead">When you introduce yourself</span><div class="srow"><b lang="es">Me llamo Joshua.</b><span class="en">My name is Joshua.</span></div><div class="srow"><b lang="es">¿Cómo se llama?</b><span class="en">What's your name? </span></div><div class="srow"><b lang="es">Mucho gusto.</b><span class="en">Nice to meet you.</span></div></div><p class="when">Mexico · from Name</p></div><div class="type"><div class="box sum1"><span class="shead">When you order</span><div class="srow"><b lang="es">¿Qué le damos?</b><span class="en">What can I get you?</span></div><div class="srow"><b lang="es">Me da un tamal, por favor.</b><span class="en">Can I have a tamal, please?</span></div></div><p class="when">Mexico · from Order politely</p></div><div class="type"><div class="box sum1"><span class="shead">When you say goodbye</span><div class="srow"><b lang="es">Que le vaya bien</b><span class="en">Have a good day</span></div><div class="srow"><b lang="es">Gracias, igualmente</b><span class="en">Thanks, same to you</span></div></div><p class="when">Mexico · from Goodbye</p></div></div>
+  <h2>Earlier today: you, here, next</h2>
+  <p>Round two of today, before the language cards: one about <b>you</b>, one about <b>here</b>, one about what's <b>next</b>.</p>
+  <div class="versions"><section class="version"><h3 class="vlabel">You ordered · Doña Juana</h3>
+<div class="phone" role="img" aria-label="Mock-up: the sheet after ordering from Doña Juana: a fix, what it cost, and a lesson">
+<div class="bar"><span class="city">San Cristóbal</span></div>
+<div class="places"><div class="place"><b>Comedor Doña Juana</b><span class="small">Juana, tamales</span></div><div class="place"><b>Andador de Guadalupe</b><span class="small">A short walk</span></div></div>
+<div class="sheet"><div class="grab"></div><div class="card"><div class="pic juana" role="img" aria-label="Doña Juana in her red shawl holding a steaming tamal beside the pot"></div></div>
+<div class="boxes"><div class="box "><span class="kind">Say it this way</span><span class="was" lang="es">Quiero un tamal</span><span class="said" lang="es">¿Me da un tamal, por favor?</span><span class="point">Softer. It's how people ask at a counter.</span></div><div class="box "><span class="kind">What it cost</span><span class="sum"><b>45 pesos</b><span class="said" lang="es">cuarenta y cinco</span></span><span class="point">Three tamales at <i lang="es">quince</i> each.</span></div><div class="box door"><span class="kind">A lesson for this</span><span class="said go">Ordering for more than one</span><span class="point">You ordered three tamales. Two minutes with Magda.</span></div></div><div class="later">Done</div></div></div></section><section class="version"><h3 class="vlabel">You talked · Nunzio</h3>
+<div class="phone" role="img" aria-label="Mock-up: the sheet after talking with Nunzio: what you did, something from the place, and a place to try, lit in the list behind">
+<div class="bar"><span class="city">Palermo</span></div>
+<div class="places haslit"><div class="place lit"><b>Mercato della Vucciria</b><span class="small">A short walk</span></div><div class="place"><b>Giardino Garibaldi</b><span class="small">Nunzio, gardener</span></div></div>
+<div class="sheet"><div class="grab"></div><div class="card"><div class="pic nunzio" role="img" aria-label="Nunzio the gardener under the great fig tree, pruning shears in hand"></div></div>
+<div class="boxes"><div class="box "><span class="kind">What you did</span><span class="point strong">You told Nunzio about your grandfather, a gardener in San Francisco, in Italian.</span></div><div class="box "><span class="kind">From the place</span><span class="hand" lang="it">il pani ca meusa</span><span class="point">Palermo's sandwich: spleen, ricotta and a little lemon.</span></div><div class="box door"><span class="kind">A place to try</span><span class="said go" lang="it">Mercato della Vucciria</span><span class="point">Nunzio says the best <i lang="it">pani ca meusa</i> is there. A short walk.</span></div></div><div class="later">Done</div></div></div></section><section class="version"><h3 class="vlabel">You came back · Doña Juana</h3>
+<div class="phone" role="img" aria-label="Mock-up: the sheet after a return visit: what she will remember, a custom, and next time">
+<div class="bar"><span class="city">San Cristóbal</span></div>
+<div class="places"><div class="place"><b>Comedor Doña Juana</b><span class="small">Juana, tamales</span></div><div class="place"><b>Andador de Guadalupe</b><span class="small">A short walk</span></div></div>
+<div class="sheet"><div class="grab"></div><div class="card"><div class="pic juana" role="img" aria-label="Doña Juana in her red shawl holding a steaming tamal beside the pot"></div></div>
+<div class="boxes"><div class="box "><span class="kind">She'll remember</span><span class="point strong">Juana knows you take your atole without sugar.</span></div><div class="box "><span class="kind">How it works here</span><span class="hand" lang="es">¡Provecho!</span><span class="point">Say it to anyone eating as you pass their table. Strangers too.</span></div><div class="box door"><span class="kind">Next time</span><span class="said" lang="es">el tamal de bola</span><span class="point">The round one, with pork, prunes and raisins. She told you to try it next time.</span></div></div><div class="later">Done</div></div></div></section><section class="version"><h3 class="vlabel">It touched history · Nunzio</h3>
+<div class="phone" role="img" aria-label="Mock-up: the sheet as one history card alone">
+<div class="bar"><span class="city">Palermo</span></div>
+<div class="places"><div class="place"><b>Giardino Garibaldi</b><span class="small">Nunzio, gardener</span></div><div class="place"><b>Mercato della Vucciria</b><span class="small">A short walk</span></div></div>
+<div class="sheet"><div class="grab"></div><div class="card"><div class="pic nunzio" role="img" aria-label="Nunzio the gardener under the great fig tree, pruning shears in hand"></div></div>
+<div class="boxes"><div class="box history"><span class="kind">Something he mentioned</span><span class="hand" lang="it">gli arabi a Palermo</span><span class="point">Arab rulers held Palermo for about 240 years, from 831 until the Normans took it in 1072.</span><span class="point">They brought lemons, oranges and sugar to Sicily, and the irrigation to grow them.</span><span class="point strong">The lemon on your sandwich came with them.</span></div></div><div class="later">Done</div></div></div></section></div>
+  <h3>The types, and what calls for each</h3>
+  <p class="muted">Cards marked "made up" use invented details to show the shape. The rest come from your two real visits.</p>
+  <section class="group"><h3>You</h3><p class="muted">What you did or said. Read only.</p><div class="types"><div class="type"><div class="box "><span class="kind">What you did</span><span class="point strong">You told Nunzio about your grandfather, a gardener in San Francisco, in Italian.</span></div><p class="when"><b>Shows when</b> you told a story or got something done in the language.</p></div><div class="type"><div class="box "><span class="kind">A first</span><span class="point strong">Your first whole visit without a word of English.</span></div><p class="when"><b>Shows when</b> the game can count a first: no English, a first question, a first joke. <span class="made">made up</span></p></div><div class="type"><div class="box "><span class="kind">Say it this way</span><span class="was" lang="es">Quiero un tamal</span><span class="said" lang="es">¿Me da un tamal, por favor?</span><span class="point">Softer. It's how people ask at a counter.</span></div><p class="when"><b>Shows when</b> one slip mattered. One only, as text, with the reason. <span class="made">made up</span></p></div><div class="type"><div class="box "><span class="kind">She'll remember</span><span class="point strong">Juana knows you take your atole without sugar.</span></div><p class="when"><b>Shows when</b> you told them something about yourself that they will keep. <span class="made">made up</span></p></div></div></section><section class="group"><h3>Here</h3><p class="muted">What the place or the person put in front of you. Read only.</p><div class="types"><div class="type"><div class="box "><span class="kind">From the place</span><span class="hand" lang="es">el chipilín</span><span class="point">The green herb in Doña Juana's tamales. She mixes it right into the dough.</span></div><p class="when"><b>Shows when</b> they named a local thing: a herb, a dish, a building.</p></div><div class="type"><div class="box "><span class="kind">Words</span><div class="tiles"><div class="tile"><b lang="es">el atole</b><span class="en">warm corn drink</span></div><div class="tile"><b lang="es">quiere</b><span class="en">do you want</span></div><div class="tile"><b lang="es">el frío</b><span class="en">the cold</span></div><div class="tile"><b lang="es">sabe mejor</b><span class="en">tastes better</span></div></div></div><p class="when"><b>Shows when</b> new things and verbs came up. Four at most, text only.</p></div><div class="type"><div class="box "><span class="kind">How it works here</span><span class="hand" lang="es">¡Provecho!</span><span class="point">Say it to anyone eating as you pass their table. Strangers too.</span></div><p class="when"><b>Shows when</b> a custom came up, or you ran into one. <span class="made">made up</span></p></div><div class="type"><div class="box "><span class="kind">What it cost</span><span class="sum"><b>45 pesos</b><span class="said" lang="es">cuarenta y cinco</span></span><span class="point">Three tamales at <i lang="es">quince</i> each.</span></div><p class="when"><b>Shows when</b> money or numbers came up. <span class="made">made up</span></p></div><div class="type"><div class="box history"><span class="kind">Something he mentioned</span><span class="hand" lang="it">gli arabi a Palermo</span><span class="point">Arab rulers held Palermo for about 240 years, from 831 until the Normans took it in 1072.</span><span class="point">They brought lemons, oranges and sugar to Sicily, and the irrigation to grow them.</span><span class="point strong">The lemon on your sandwich came with them.</span></div><p class="when"><b>Shows when</b> the talk touched history. It takes the whole sheet.</p></div></div></section><section class="group"><h3>Next</h3><p class="muted">A reason to come back or go somewhere. The ones with an arrow can be tapped.</p><div class="types"><div class="type"><div class="box door"><span class="kind">Next time</span><span class="said" lang="es">el tamal de bola</span><span class="point">The round one, with pork, prunes and raisins. She told you to try it next time.</span></div><p class="when"><b>Shows when</b> they told you what to come back for.</p></div><div class="type"><div class="box door"><span class="kind">A place to try</span><span class="said go" lang="it">Mercato della Vucciria</span><span class="point">Nunzio says the best <i lang="it">pani ca meusa</i> is there. A short walk.</span></div><p class="when"><b>Shows when</b> they named a place that is in the game. <span class="made">made up</span></p></div><div class="type"><div class="box door"><span class="kind">A lesson for this</span><span class="said go">Ordering for more than one</span><span class="point">You ordered three tamales. Two minutes with Magda.</span></div><p class="when"><b>Shows when</b> something you did matches a lesson you have not finished. <span class="made">made up</span></p></div><div class="type"><div class="box door"><span class="kind">A regular</span><span class="reg"><span class="stamp" aria-hidden="true">3</span><span class="point strong">Third visit. Juana knows your face now.</span></span></div><p class="when"><b>Shows when</b> your visits with this person cross a count. <span class="made">made up</span></p></div></div></section>
+  <p class="muted">The history facts (the dates, the lemons) are written from general knowledge and have not been checked against a source; in the game they would need checking, as the culture stories are. The pictures are the characters' real portraits. The place names behind each sheet show the layout only.</p>
+  <h2>Earlier today: bubbles and green cards</h2>
+  <p class="muted">Out: overthought.</p>
+  <p><b>What happened</b> is a slip of the conversation: their line on the left, yours on the right, in the game's own colours. <b>What teaches</b> is a green card with the topic as its title, and it opens the lesson.</p>
+  <div class="versions"><section class="version"><h3 class="vlabel">One of each · Nunzio</h3>
+<div class="phone p2" role="img" aria-label="Mock-up: the sheet with a conversation card, you met Nunzio, and a green teaching card on piacere"><div class="scrim"></div>
+<div class="sheet s2"><div class="grab"></div><div class="card"><div class="pic nunzio" role="img" aria-label="Nunzio the gardener under the great fig tree, pruning shears in hand"></div></div>
+<div class="boxes"><div class="hcard"><span class="ctitle">You met Nunzio</span><div class="bubs"><span class="bub them" lang="it">Mi chiamo Nunzio.</span><span class="bub me" lang="it">Mi chiamo Joshua.</span><span class="bub them" lang="it">Piacere.</span></div></div><div class="tcard"><span class="band">Introductions</span><div class="tbody"><span class="hand big" lang="it">Piacere</span><span class="tpoint">"A pleasure." What you say when you meet someone.</span></div><span class="open">Open the lesson <span aria-hidden="true">›</span></span></div></div><div class="later">Done</div></div></div></section><section class="version"><h3 class="vlabel">Mixed · Doña Juana</h3>
+<div class="phone p2" role="img" aria-label="Mock-up: the sheet with you ordered, from the place, and for next time"><div class="scrim"></div>
+<div class="sheet s2"><div class="grab"></div><div class="card"><div class="pic juana" role="img" aria-label="Doña Juana in her red shawl holding a steaming tamal beside the pot"></div></div>
+<div class="boxes"><div class="hcard"><span class="ctitle">You ordered</span><div class="bubs"><span class="bub them" lang="es">¿Qué le doy?</span><span class="bub me" lang="es">Me da un tamal, por favor.</span></div></div><div class="tcard"><span class="band">From the place</span><div class="tbody"><span class="hand big" lang="es">el chipilín</span><span class="tpoint">A green herb from Chiapas, mixed right into the tamal dough.</span></div></div><div class="hcard"><span class="ctitle">For next time</span><div class="bubs"><span class="bub them" lang="es">El tamal de bola.</span></div><span class="tpoint">The round one, with pork, prunes and raisins.</span></div></div><div class="later">Done</div></div></div></section><section class="version"><h3 class="vlabel">What happened · Doña Juana</h3>
+<div class="phone p2" role="img" aria-label="Mock-up: the sheet with two conversation cards"><div class="scrim"></div>
+<div class="sheet s2"><div class="grab"></div><div class="card"><div class="pic juana" role="img" aria-label="Doña Juana in her red shawl holding a steaming tamal beside the pot"></div></div>
+<div class="boxes"><div class="hcard"><span class="ctitle">You ordered</span><div class="bubs"><span class="bub them" lang="es">¿Qué le doy?</span><span class="bub me" lang="es">Me da un tamal, por favor.</span></div></div><div class="hcard"><span class="ctitle">You paid</span><div class="bubs"><span class="bub me" lang="es">¿Cuánto es?</span><span class="bub them" lang="es">Cuarenta y cinco.</span></div></div></div><div class="later">Done</div></div></div></section><section class="version"><h3 class="vlabel">What teaches · Doña Juana</h3>
+<div class="phone p2" role="img" aria-label="Mock-up: the sheet with two green teaching cards"><div class="scrim"></div>
+<div class="sheet s2"><div class="grab"></div><div class="card"><div class="pic juana" role="img" aria-label="Doña Juana in her red shawl holding a steaming tamal beside the pot"></div></div>
+<div class="boxes"><div class="tcard"><span class="band">From the place</span><div class="tbody"><span class="hand big" lang="es">el chipilín</span><span class="tpoint">A green herb from Chiapas, mixed right into the tamal dough.</span></div></div><div class="tcard"><span class="band">Ordering</span><div class="tbody"><span class="hand big" lang="es">Me da ___, por favor</span><span class="tpoint">"Give me," made polite. How everyone orders at a counter.</span></div><span class="open">Open the lesson <span aria-hidden="true">›</span></span></div></div><div class="later">Done</div></div></div></section></div>
+  <p class="muted">The lines on these cards are made up to show the shape. In the game they would be the visit's own. The grey above each sheet stands for the dimmed screen behind it.</p>
+  <h2>Earlier today: the two families, first look</h2>
+  <p class="muted">Out: the cards looked apologetic, and the small grey labels and faded rows were unclear.</p>
+  <div class="fam"><div><h3>Happened</h3><p class="muted">A record of the visit. Tinted, speaker names, past tense. Nothing to tap.</p><div class="box hap"><span class="kind">You met</span><div class="xrow"><span class="who">Nunzio</span><span class="said" lang="it">Mi chiamo Nunzio.</span></div><div class="xrow"><span class="who">You</span><span class="said" lang="it">Mi chiamo Joshua.</span></div><div class="xrow"><span class="who">Nunzio</span><span class="said" lang="it">Piacere.</span></div></div><ul><li>You met, you ordered, you paid: the lines where a topic came up</li><li>She told you: what to come back for</li><li>What you did · A first · She'll remember</li></ul></div><div><h3>Teaches</h3><p class="muted">Makes sense without the visit. White with a green edge. Opens a lesson when there is one.</p><div class="box lang"><span class="kindrow"><span class="kind">Introductions</span><span class="doortag">Lesson ›</span></span><span class="hand" lang="it">Piacere</span><span class="point why0">"A pleasure." What you say when you meet someone. <i lang="it">Mi chiamo</i> is "I call myself."</span></div><ul><li>A topic: its phrase and one line of why</li><li>From the place</li><li>Something they mentioned, the history card</li><li>How it works here · Words</li></ul></div></div>
+  <div class="versions"><section class="version"><h3 class="vlabel">One of each · Nunzio</h3>
+<div class="phone" role="img" aria-label="Mock-up: a sheet with one card of what happened, the introductions exchange, and one card that teaches, on piacere">
+<div class="bar"><span class="city">Palermo</span></div>
+<div class="places"><div class="place"><b>Giardino Garibaldi</b><span class="small">Nunzio, gardener</span></div><div class="place"><b>Mercato della Vucciria</b><span class="small">A short walk</span></div></div>
+<div class="sheet"><div class="grab"></div><div class="card"><div class="pic nunzio" role="img" aria-label="Nunzio the gardener under the great fig tree, pruning shears in hand"></div></div>
+<div class="boxes"><div class="box hap"><span class="kind">You met</span><div class="xrow"><span class="who">Nunzio</span><span class="said" lang="it">Mi chiamo Nunzio.</span></div><div class="xrow"><span class="who">You</span><span class="said" lang="it">Mi chiamo Joshua.</span></div><div class="xrow"><span class="who">Nunzio</span><span class="said" lang="it">Piacere.</span></div></div><div class="box lang"><span class="kindrow"><span class="kind">Introductions</span><span class="doortag">Lesson ›</span></span><span class="hand" lang="it">Piacere</span><span class="point why0">"A pleasure." What you say when you meet someone. <i lang="it">Mi chiamo</i> is "I call myself."</span></div></div><div class="later">Done</div></div></div></section><section class="version"><h3 class="vlabel">Mixed · Doña Juana</h3>
+<div class="phone" role="img" aria-label="Mock-up: a mixed sheet: you ordered, from the place, she told you">
+<div class="bar"><span class="city">San Cristóbal</span></div>
+<div class="places"><div class="place"><b>Comedor Doña Juana</b><span class="small">Juana, tamales</span></div><div class="place"><b>Andador de Guadalupe</b><span class="small">A short walk</span></div></div>
+<div class="sheet"><div class="grab"></div><div class="card"><div class="pic juana" role="img" aria-label="Doña Juana in her red shawl holding a steaming tamal beside the pot"></div></div>
+<div class="boxes"><div class="box hap"><span class="kind">You ordered</span><div class="xrow"><span class="who">Juana</span><span class="said" lang="es">¿Qué le doy?</span></div><div class="xrow"><span class="who">You</span><span class="said" lang="es">Me da un tamal, por favor.</span></div></div><div class="box lang"><span class="kindrow"><span class="kind">From the place</span></span><span class="hand" lang="es">el chipilín</span><span class="point why0">A green herb from Chiapas, mixed right into the tamal dough.</span></div><div class="box hap"><span class="kind">She told you</span><span class="said" lang="es">el tamal de bola</span><span class="point">The round one, with pork, prunes and raisins. For next time.</span></div></div><div class="later">Done</div></div></div></section><section class="version"><h3 class="vlabel">What happened · Doña Juana</h3>
+<div class="phone" role="img" aria-label="Mock-up: a sheet of three cards of what happened: you ordered, you paid, she told you">
+<div class="bar"><span class="city">San Cristóbal</span></div>
+<div class="places"><div class="place"><b>Comedor Doña Juana</b><span class="small">Juana, tamales</span></div><div class="place"><b>Andador de Guadalupe</b><span class="small">A short walk</span></div></div>
+<div class="sheet"><div class="grab"></div><div class="card"><div class="pic juana" role="img" aria-label="Doña Juana in her red shawl holding a steaming tamal beside the pot"></div></div>
+<div class="boxes"><div class="box hap"><span class="kind">You ordered</span><div class="xrow"><span class="who">Juana</span><span class="said" lang="es">¿Qué le doy?</span></div><div class="xrow"><span class="who">You</span><span class="said" lang="es">Me da un tamal, por favor.</span></div></div><div class="box hap"><span class="kind">You paid</span><div class="xrow"><span class="who">You</span><span class="said" lang="es">¿Cuánto es?</span></div><div class="xrow"><span class="who">Juana</span><span class="said" lang="es">Cuarenta y cinco.</span></div></div><div class="box hap"><span class="kind">She told you</span><span class="said" lang="es">el tamal de bola</span><span class="point">The round one, with pork, prunes and raisins. For next time.</span></div></div><div class="later">Done</div></div></div></section><section class="version"><h3 class="vlabel">What teaches · Doña Juana</h3>
+<div class="phone" role="img" aria-label="Mock-up: a sheet of two cards that teach: from the place, and ordering">
+<div class="bar"><span class="city">San Cristóbal</span></div>
+<div class="places"><div class="place"><b>Comedor Doña Juana</b><span class="small">Juana, tamales</span></div><div class="place"><b>Andador de Guadalupe</b><span class="small">A short walk</span></div></div>
+<div class="sheet"><div class="grab"></div><div class="card"><div class="pic juana" role="img" aria-label="Doña Juana in her red shawl holding a steaming tamal beside the pot"></div></div>
+<div class="boxes"><div class="box lang"><span class="kindrow"><span class="kind">From the place</span></span><span class="hand" lang="es">el chipilín</span><span class="point why0">A green herb from Chiapas, mixed right into the tamal dough.</span></div><div class="box lang"><span class="kindrow"><span class="kind">Ordering</span><span class="doortag">Lesson ›</span></span><span class="hand" lang="es">Me da ___, por favor</span><span class="point why0">"Give me," made polite. It's how everyone orders at a counter.</span></div></div><div class="later">Done</div></div></div></section></div>
+  <p class="muted">The lines on these cards are made up to show the shape. In the game they would be the visit's own.</p>
+  <h2>Earlier today: what was said plus why, on one card</h2>
+  <p class="muted">The right weight, but it mixes the two families.</p>
+  <p>For a topic the conversation involved, the card shows the two or three lines where it happened and explains them in a sentence. "Lesson" opens the lesson.</p>
+  <div class="versions"><section class="version"><h3 class="vlabel">You met · Nunzio</h3>
+<div class="phone" role="img" aria-label="Mock-up: a sheet with one topic card on introductions: three lines of the exchange and one line explaining it">
+<div class="bar"><span class="city">Palermo</span></div>
+<div class="places"><div class="place"><b>Giardino Garibaldi</b><span class="small">Nunzio, gardener</span></div><div class="place"><b>Mercato della Vucciria</b><span class="small">A short walk</span></div></div>
+<div class="sheet"><div class="grab"></div><div class="card"><div class="pic nunzio" role="img" aria-label="Nunzio the gardener under the great fig tree, pruning shears in hand"></div></div>
+<div class="boxes"><div class="box lang mid"><span class="kindrow"><span class="kind">Introductions</span><span class="doortag">Lesson ›</span></span><div class="xrow"><span class="who">Nunzio</span><span class="said" lang="it">Mi chiamo Nunzio.</span></div><div class="xrow"><span class="who">You</span><span class="said" lang="it">Mi chiamo Joshua.</span></div><div class="xrow"><span class="who">Nunzio</span><span class="said" lang="it">Piacere.</span></div><span class="point why"><i lang="it">Mi chiamo</i> is "I call myself." <i lang="it">Piacere</i> is "a pleasure": what you say when you meet someone.</span></div></div><div class="later">Done</div></div></div></section><section class="version"><h3 class="vlabel">You ordered and paid · Doña Juana</h3>
+<div class="phone" role="img" aria-label="Mock-up: a sheet with two topic cards, ordering and how much">
+<div class="bar"><span class="city">San Cristóbal</span></div>
+<div class="places"><div class="place"><b>Comedor Doña Juana</b><span class="small">Juana, tamales</span></div><div class="place"><b>Andador de Guadalupe</b><span class="small">A short walk</span></div></div>
+<div class="sheet"><div class="grab"></div><div class="card"><div class="pic juana" role="img" aria-label="Doña Juana in her red shawl holding a steaming tamal beside the pot"></div></div>
+<div class="boxes"><div class="box lang mid"><span class="kindrow"><span class="kind">Ordering</span><span class="doortag">Lesson ›</span></span><div class="xrow"><span class="who">Juana</span><span class="said" lang="es">¿Qué le doy?</span></div><div class="xrow"><span class="who">You</span><span class="said" lang="es">Me da un tamal, por favor.</span></div><span class="point why"><i lang="es">Me da</i> is "give me." With <i lang="es">por favor</i> it's how everyone orders at a counter.</span></div><div class="box lang mid"><span class="kindrow"><span class="kind">How much</span><span class="doortag">Lesson ›</span></span><div class="xrow"><span class="who">You</span><span class="said" lang="es">¿Cuánto es?</span></div><div class="xrow"><span class="who">Juana</span><span class="said" lang="es">Cuarenta y cinco.</span></div><span class="point why">45 pesos. <i lang="es">Cuarenta</i> is forty, and <i lang="es">y cinco</i> adds the five.</span></div></div><div class="later">Done</div></div></div></section><section class="version"><h3 class="vlabel">With the place · Nunzio</h3>
+<div class="phone" role="img" aria-label="Mock-up: a sheet with a card from the place and one topic card">
+<div class="bar"><span class="city">Palermo</span></div>
+<div class="places"><div class="place"><b>Giardino Garibaldi</b><span class="small">Nunzio, gardener</span></div><div class="place"><b>Mercato della Vucciria</b><span class="small">A short walk</span></div></div>
+<div class="sheet"><div class="grab"></div><div class="card"><div class="pic nunzio" role="img" aria-label="Nunzio the gardener under the great fig tree, pruning shears in hand"></div></div>
+<div class="boxes"><div class="box "><span class="kind">From the place</span><span class="hand" lang="it">il pani ca meusa</span><span class="point">Palermo's sandwich: spleen, ricotta and a little lemon.</span></div><div class="box lang mid"><span class="kindrow"><span class="kind">Time here</span><span class="doortag">Lesson ›</span></span><div class="xrow"><span class="who">Nunzio</span><span class="said" lang="it">Da quanto tempo è qui?</span></div><div class="xrow"><span class="who">You</span><span class="said" lang="it">Sono qui da due settimane.</span></div><span class="point why">Word for word, "I am here since two weeks." Italian keeps it in the present.</span></div></div><div class="later">Done</div></div></div></section></div>
+  <p class="muted">The lines on these cards are made up to show the shape. In the game they would be the visit's own.</p>
+  <h2>Earlier today: topic pointers</h2>
+  <p class="muted">Out: too compact.</p>
+  <p>One line per topic the conversation involved: the topic and its phrase. Nothing to read through. Tap one and its lesson opens.</p>
+  <div class="versions"><section class="version"><h3 class="vlabel">You met, ordered and paid · Doña Juana</h3>
+<div class="phone" role="img" aria-label="Mock-up: a sheet with three one-line pointers: introductions, ordering, how much">
+<div class="bar"><span class="city">San Cristóbal</span></div>
+<div class="places"><div class="place"><b>Comedor Doña Juana</b><span class="small">Juana, tamales</span></div><div class="place"><b>Andador de Guadalupe</b><span class="small">A short walk</span></div></div>
+<div class="sheet"><div class="grab"></div><div class="card"><div class="pic juana" role="img" aria-label="Doña Juana in her red shawl holding a steaming tamal beside the pot"></div></div>
+<div class="boxes"><div class="box ptrs"><div class="ptr"><span class="kind">Introductions</span><span class="said" lang="es">Me llamo ___</span><span class="chev" aria-hidden="true">›</span></div><div class="ptr"><span class="kind">Ordering</span><span class="said" lang="es">Me da ___, por favor</span><span class="chev" aria-hidden="true">›</span></div><div class="ptr"><span class="kind">How much</span><span class="said" lang="es">¿Cuánto es?</span><span class="chev" aria-hidden="true">›</span></div></div></div><div class="later">Done</div></div></div></section><section class="version"><h3 class="vlabel">With the place and next time · Doña Juana</h3>
+<div class="phone" role="img" aria-label="Mock-up: a sheet with a card from the place, two one-line pointers and next time">
+<div class="bar"><span class="city">San Cristóbal</span></div>
+<div class="places"><div class="place"><b>Comedor Doña Juana</b><span class="small">Juana, tamales</span></div><div class="place"><b>Andador de Guadalupe</b><span class="small">A short walk</span></div></div>
+<div class="sheet"><div class="grab"></div><div class="card"><div class="pic juana" role="img" aria-label="Doña Juana in her red shawl holding a steaming tamal beside the pot"></div></div>
+<div class="boxes"><div class="box "><span class="kind">From the place</span><span class="hand" lang="es">el chipilín</span><span class="point">The green herb in Doña Juana's tamales. She mixes it right into the dough.</span></div><div class="box ptrs"><div class="ptr"><span class="kind">Ordering</span><span class="said" lang="es">Me da ___, por favor</span><span class="chev" aria-hidden="true">›</span></div><div class="ptr"><span class="kind">How much</span><span class="said" lang="es">¿Cuánto es?</span><span class="chev" aria-hidden="true">›</span></div></div><div class="box door"><span class="kind">Next time</span><span class="said" lang="es">el tamal de bola</span><span class="point">The round one, with pork, prunes and raisins. She told you to try it next time.</span></div></div><div class="later">Done</div></div></div></section><section class="version"><h3 class="vlabel">One pointer · Nunzio</h3>
+<div class="phone" role="img" aria-label="Mock-up: a sheet with a card from the place and one pointer">
+<div class="bar"><span class="city">Palermo</span></div>
+<div class="places"><div class="place"><b>Giardino Garibaldi</b><span class="small">Nunzio, gardener</span></div><div class="place"><b>Mercato della Vucciria</b><span class="small">A short walk</span></div></div>
+<div class="sheet"><div class="grab"></div><div class="card"><div class="pic nunzio" role="img" aria-label="Nunzio the gardener under the great fig tree, pruning shears in hand"></div></div>
+<div class="boxes"><div class="box "><span class="kind">From the place</span><span class="hand" lang="it">il pani ca meusa</span><span class="point">Palermo's sandwich: spleen, ricotta and a little lemon.</span></div><div class="box ptrs"><div class="ptr"><span class="kind">Time here</span><span class="said" lang="it">Abito qui da ___</span><span class="chev" aria-hidden="true">›</span></div></div></div><div class="later">Done</div></div></div></section></div>
+  <h3>More pointers, one per lesson</h3>
+  <p class="muted">Each phrase is the lesson's own.</p>
+  <div class="morewrap"><div class="box ptrs"><div class="ptr"><span class="kind">Hello</span><span class="said" lang="it">Buonasera</span><span class="chev" aria-hidden="true">›</span></div><div class="ptr"><span class="kind">Polite or friendly</span><span class="said" lang="es">¿Cómo está?</span><span class="chev" aria-hidden="true">›</span></div><div class="ptr"><span class="kind">When you're lost</span><span class="said" lang="it">Non ho capito</span><span class="chev" aria-hidden="true">›</span></div><div class="ptr"><span class="kind">Ask for a word</span><span class="said" lang="it">Come si dice ___?</span><span class="chev" aria-hidden="true">›</span></div><div class="ptr"><span class="kind">Card or cash</span><span class="said" lang="it">Posso pagare con la carta?</span><span class="chev" aria-hidden="true">›</span></div><div class="ptr"><span class="kind">Goodbye</span><span class="said" lang="es">Que le vaya bien</span><span class="chev" aria-hidden="true">›</span></div><div class="ptr"><span class="kind">With or without</span><span class="said" lang="es">con todo · sin cebolla</span><span class="chev" aria-hidden="true">›</span></div><div class="ptr"><span class="kind">Say it softly</span><span class="said" lang="es">un momentito</span><span class="chev" aria-hidden="true">›</span></div><div class="ptr"><span class="kind">A little extra</span><span class="said" lang="es">¿Me regala ___?</span><span class="chev" aria-hidden="true">›</span></div><div class="ptr"><span class="kind">Hear a price</span><span class="said" lang="it">quattro e cinquanta</span><span class="chev" aria-hidden="true">›</span></div></div></div>
+  <h2>Earlier today: topic cards, the dense version</h2>
+  <p class="muted">Out: too much on each card. Kept for the lesson sorting underneath.</p>
+  <p>One type of card: it explains a topic the conversation involved. If you introduced yourself, ordered and asked the price, those are three topic cards. The topic is a lesson, the words on the card are the visit's own, and "Lesson" opens it.</p>
+  <div class="versions"><section class="version"><h3 class="vlabel">You met, ordered and paid · Doña Juana</h3>
+<div class="phone" role="img" aria-label="Mock-up: a sheet with three topic cards: introductions, ordering and how much">
+<div class="bar"><span class="city">San Cristóbal</span></div>
+<div class="places"><div class="place"><b>Comedor Doña Juana</b><span class="small">Juana, tamales</span></div><div class="place"><b>Andador de Guadalupe</b><span class="small">A short walk</span></div></div>
+<div class="sheet"><div class="grab"></div><div class="card"><div class="pic juana" role="img" aria-label="Doña Juana in her red shawl holding a steaming tamal beside the pot"></div></div>
+<div class="boxes"><div class="box lang"><span class="kindrow"><span class="kind">Introductions</span><span class="doortag">Lesson ›</span></span><span class="hand" lang="es">Me llamo ___ · Soy de ___</span><span class="point">Your name, then where you're from. She asked with <i lang="es">¿Cómo se llama?</i></span></div><div class="box lang"><span class="kindrow"><span class="kind">Ordering</span><span class="doortag">Lesson ›</span></span><span class="hand" lang="es">Me da ___, por favor</span><span class="chips"><span class="chip" lang="es">un tamal</span><span class="chip" lang="es">un atole</span><span class="chip" lang="es">dos de chipilín</span></span></div><div class="box lang"><span class="kindrow"><span class="kind">How much</span><span class="doortag">Lesson ›</span></span><span class="said" lang="es">¿Cuánto es?</span><span class="sum"><b>45 pesos</b><span class="said" lang="es">cuarenta y cinco</span></span><span class="point">Three tamales at <i lang="es">quince</i> each.</span></div></div><div class="later">Done</div></div></div></section><section class="version"><h3 class="vlabel">A mixed sheet · Doña Juana</h3>
+<div class="phone" role="img" aria-label="Mock-up: a sheet with one card from the place, one language card and next time">
+<div class="bar"><span class="city">San Cristóbal</span></div>
+<div class="places"><div class="place"><b>Comedor Doña Juana</b><span class="small">Juana, tamales</span></div><div class="place"><b>Andador de Guadalupe</b><span class="small">A short walk</span></div></div>
+<div class="sheet"><div class="grab"></div><div class="card"><div class="pic juana" role="img" aria-label="Doña Juana in her red shawl holding a steaming tamal beside the pot"></div></div>
+<div class="boxes"><div class="box "><span class="kind">From the place</span><span class="hand" lang="es">el chipilín</span><span class="point">The green herb in Doña Juana's tamales. She mixes it right into the dough.</span></div><div class="box lang"><span class="kindrow"><span class="kind">Ordering</span><span class="doortag">Lesson ›</span></span><span class="hand" lang="es">Me da ___, por favor</span><span class="chips"><span class="chip" lang="es">un tamal</span><span class="chip" lang="es">un atole</span><span class="chip" lang="es">dos de chipilín</span></span></div><div class="box door"><span class="kind">Next time</span><span class="said" lang="es">el tamal de bola</span><span class="point">The round one, with pork, prunes and raisins. She told you to try it next time.</span></div></div><div class="later">Done</div></div></div></section></div>
+  <h3>Seven layouts cover all 77 lessons</h3>
+  <p>A topic card is one type, but topics don't all explain the same way. Ordering is an opening you fill in; polite or friendly is a choice of two; a price is a number. Sorting every lesson that isn't a culture story by what it teaches gives seven layouts.</p>
+  <div class="types"><div class="type"><div class="box lang"><span class="kindrow"><span class="kind">Polite or friendly</span><span class="doortag">Lesson ›</span></span><div class="tiles two"><div class="tile"><b lang="es">¿Cómo está?</b><span class="en">Doña Juana, anyone older, a stranger</span></div><div class="tile"><b lang="es">¿Cómo estás?</b><span class="en">a friend, a child</span></div></div></div><p class="when"><b>Layout: this or that.</b> Two ways to say one thing, and who or when each is for.</p></div><div class="type"><div class="box lang"><span class="kindrow"><span class="kind">Ordering</span><span class="doortag">Lesson ›</span></span><span class="hand" lang="es">Me da ___, por favor</span><span class="chips"><span class="chip" lang="es">un tamal</span><span class="chip" lang="es">un atole</span><span class="chip" lang="es">dos de chipilín</span></span></div><p class="when"><b>Layout: fill it in.</b> One opening that takes whatever you want after it.</p></div><div class="type"><div class="box lang"><span class="kindrow"><span class="kind">Saying goodbye</span><span class="doortag">Lesson ›</span></span><span class="said big" lang="es">Que le vaya bien</span><span class="point">Goodbye, to someone you call <i lang="es">usted</i>. Learn it as one piece.</span></div><p class="when"><b>Layout: say it whole.</b> A phrase to learn as one piece, not to take apart.</p></div><div class="type"><div class="box lang"><span class="kindrow"><span class="kind">When they ask you</span><span class="doortag">Lesson ›</span></span><div class="pairrow"><span class="who">She</span><span class="said" lang="es">¿Qué le doy?</span><span class="en">What can I get you?</span></div><div class="pairrow"><span class="who">You</span><span class="said" lang="es">Me da un tamal.</span></div></div><p class="when"><b>Layout: they say, you say.</b> A line you will hear, and what to say back.</p></div><div class="type"><div class="box lang"><span class="kindrow"><span class="kind">How much</span><span class="doortag">Lesson ›</span></span><span class="said" lang="es">¿Cuánto es?</span><span class="sum"><b>45 pesos</b><span class="said" lang="es">cuarenta y cinco</span></span><span class="point">Three tamales at <i lang="es">quince</i> each.</span></div><p class="when"><b>Layout: numbers and letters.</b> A price, a count, a spelling: the figure and its words.</p></div><div class="type"><div class="box lang"><span class="kindrow"><span class="kind">Time here</span><span class="doortag">Lesson ›</span></span><span class="said big" lang="it">Abito qui da un anno.</span><span class="point">Word for word: I live here since a year. Italian keeps it in the present.</span></div><p class="when"><b>Layout: not like English.</b> The language builds the sentence another way.</p></div><div class="type"><div class="box lang"><span class="kindrow"><span class="kind">Saying it softly</span><span class="doortag">Lesson ›</span></span><span class="hand" lang="es">un momentito</span><span class="point">The <i lang="es">-ito</i> makes it smaller and kinder. It can still be ten minutes.</span></div><p class="when"><b>Layout: a little word.</b> One small word or ending that changes the tone or the meaning.</p></div></div>
+  <h3>Which lessons use each layout</h3>
+  <p class="muted">Lesson names are the chips on the Learn page. The sorting is a first pass; some lessons could sit in two rows.</p>
+  <div class="scroll"><table><thead><tr><th scope="col">Layout</th><th scope="col">Italy, first set</th><th scope="col">Mexico</th><th scope="col">Italy, later sets</th></tr></thead><tbody><tr><th scope="row">This or that<span class="n">19</span></th><td>Hello, Be polite, How much</td><td>Be polite, Hello, Hello, everyone, Thanks and sorry, Excuse me, Señor, señora</td><td>I need…, How much?, Polite commands, Then suddenly, Already, Before!, I think, It's true, Say how you feel, Imagine</td></tr><tr><th scope="row">Fill it in<span class="n">20</span></th><td>Name, Where you're from, Order politely, Card or cash</td><td>Say it again, Ask politely, Name, Where you're from, Where you live, Order politely, Name the filling, A little extra</td><td>Better?, OK?, My work, Who made it?, Give advice, Hope it went well, How great!, I'd like you to</td></tr><tr><th scope="row">Say it whole<span class="n">7</span></th><td>When you're lost, Ask for a word</td><td>Goodbye, When you're lost, Pardon?</td><td>Invite politely, I'll manage</td></tr><tr><th scope="row">They say, you say<span class="n">9</span></th><td>How are you, Got it</td><td>How are you, Ask about them, When they ask you</td><td>Instructions, How come?, Local history, Good luck</td></tr><tr><th scope="row">Numbers and letters<span class="n">4</span></th><td>Order one or two, Hear a price</td><td>Spell it, Order two</td><td><span class="en">none</span></td></tr><tr><th scope="row">Not like English<span class="n">6</span></th><td>Time here</td><td>Time here</td><td>Which one?, What?, How long, Nobody</td></tr><tr><th scope="row">A little word<span class="n">12</span></th><td><span class="en">none</span></td><td>Say it softly, With or without</td><td>Describe it, Give it to me, Do it for someone, More?, I forgot, Some, every, Because, I mean…, As long as, If only</td></tr></tbody></table></div>
+  <div class="earlier">
+    <h2>Earlier round, 15 November</h2>
+    <p class="muted">Kept for reference. These still show play buttons and quoted lines, which are now out.</p>
+    <div class="versions">
+  <section class="version">
+    <h2 class="vlabel">Beginner · Doña Juana, San Cristóbal</h2>
+    <div class="phone" role="img" aria-label="Mock-up: the sheet after a Beginner visit to Doña Juana, as three cards">
+      <div class="bar"><span class="city">San Cristóbal</span></div>
+      <div class="places">
+        <div class="place"><b>Comedor Doña Juana</b><span class="small">Juana, tamales</span></div>
+        <div class="place"><b>Andador de Guadalupe</b><span class="small">A short walk</span></div>
+      </div>
+      <div class="sheet">
+        <div class="grab"></div>
+        <div class="card">
+          <div class="pic juana" role="img" aria-label="Doña Juana in her red shawl holding a steaming tamal beside the pot"></div>
+        </div>
+        <div class="boxes"><div class="box"><span class="kind">From the place</span><span class="hand" lang="es">el chipilín</span><span class="point">The green herb in Doña Juana's tamales. She mixes it right into the dough.</span></div><div class="box"><span class="kind">Words</span><div class="tiles"><div class="tile"><b lang="es">el atole</b><span class="en">warm corn drink</span></div><div class="tile"><b lang="es">quiere</b><span class="en">do you want</span></div><div class="tile"><b lang="es">el frío</b><span class="en">the cold</span></div><div class="tile"><b lang="es">sabe mejor</b><span class="en">tastes better</span></div></div></div><div class="box"><span class="kind">Next time</span><span class="said" lang="es">el tamal de bola</span><span class="point">The round one, with pork, prunes and raisins. She told you to try it next time.</span></div></div>
+        <div class="later">Done</div>
+      </div>
+    </div>
+  </section>
+  <section class="version">
+    <h2 class="vlabel">Intermediate · Nunzio, Palermo</h2>
+    <div class="phone" role="img" aria-label="Mock-up: the sheet after a visit as three cards">
+      <div class="bar"><span class="city">Palermo</span></div>
+      <div class="places">
+        <div class="place"><b>Giardino Garibaldi</b><span class="small">Nunzio, gardener</span></div>
+        <div class="place"><b>Mercato della Vucciria</b><span class="small">A short walk</span></div>
+      </div>
+      <div class="sheet">
+        <div class="grab"></div>
+        <div class="card">
+        <div class="pic nunzio" role="img" aria-label="Nunzio the gardener under the great fig tree, pruning shears in hand"></div>
+      </div>
+        <div class="boxes"><div class="box"><span class="kind">From the place</span><span class="hand" lang="it">il pani ca meusa</span><span class="point">Palermo's sandwich: spleen, ricotta and a little lemon.</span></div><div class="box"><span class="kind">Something they said</span><span class="sayrow"><span class="play" aria-hidden="true"><i></i></span><span class="words"><span class="said" lang="it">«L'albero cammina.»</span><span class="en">The tree walks.</span></span></span><span class="chips"><span class="chip"><b lang="it">le radici</b> roots</span><span class="chip"><b lang="it">scendono</b> come down</span></span></div><div class="box"><span class="kind">What you did</span><span class="point strong">You told Nunzio about your grandfather, a gardener in San Francisco, in Italian.</span></div></div>
+        <div class="later">Done</div>
+      </div>
+    </div>
+  </section>
+  <section class="version">
+    <h2 class="vlabel">One card alone · Nunzio</h2>
+    <div class="phone" role="img" aria-label="Mock-up: the sheet after a visit as a single history card on the Arabs in Palermo">
+      <div class="bar"><span class="city">Palermo</span></div>
+      <div class="places">
+        <div class="place"><b>Giardino Garibaldi</b><span class="small">Nunzio, gardener</span></div>
+        <div class="place"><b>Mercato della Vucciria</b><span class="small">A short walk</span></div>
+      </div>
+      <div class="sheet">
+        <div class="grab"></div>
+        <div class="card">
+        <div class="pic nunzio" role="img" aria-label="Nunzio the gardener under the great fig tree, pruning shears in hand"></div>
+      </div>
+        <div class="boxes"><div class="box history"><span class="kind">Something he mentioned</span><span class="hand" lang="it">gli arabi a Palermo</span><span class="sayrow"><span class="play" aria-hidden="true"><i></i></span><span class="words"><span class="said" lang="it">«Arabi, normanni, spagnoli: ognuno ha lasciato qualcosa.»</span><span class="en">Arabs, Normans, Spanish: each left something.</span></span></span><span class="point">Arab rulers held Palermo for about 240 years, from 831 until the Normans took it in 1072.</span><span class="point">They brought lemons, oranges and sugar to Sicily, and the irrigation to grow them.</span><span class="point strong">The lemon on your sandwich came with them.</span></div></div>
+        <div class="later">Done</div>
+      </div>
+    </div>
+  </section>
+  <section class="version">
+    <h2 class="vlabel">One card alone · Doña Juana</h2>
+    <div class="phone" role="img" aria-label="Mock-up: the sheet after a Beginner visit to Doña Juana, as a single card on the coletos, the people of San Cristóbal">
+      <div class="bar"><span class="city">San Cristóbal</span></div>
+      <div class="places">
+        <div class="place"><b>Comedor Doña Juana</b><span class="small">Juana, tamales</span></div>
+        <div class="place"><b>Andador de Guadalupe</b><span class="small">A short walk</span></div>
+      </div>
+      <div class="sheet">
+        <div class="grab"></div>
+        <div class="card">
+          <div class="pic juana" role="img" aria-label="Doña Juana in her red shawl holding a steaming tamal beside the pot"></div>
+        </div>
+        <div class="boxes"><div class="box history"><span class="kind">Something she mentioned</span><span class="hand" lang="es">los coletos</span><span class="sayrow"><span class="play" aria-hidden="true"><i></i></span><span class="words"><span class="said">"A coleto is someone born here, in this town, like me."</span><span class="en">Doña Juana, when you asked <i lang="es">¿Qué es un coleto?</i></span></span></span><span class="point">Spaniards founded San Cristóbal in 1528, high in the cold mountains of Chiapas.</span><span class="point">The name is said to come from the <i lang="es">coleta</i>, the ponytail the Spanish settlers wore.</span><span class="point strong">The sopa de pan she offered you is what coletos eat at fiestas.</span></div></div>
+        <div class="later">Done</div>
+      </div>
+    </div>
+  </section>
+  </div>
+  
+  </div>
+</main>
+</body></html>

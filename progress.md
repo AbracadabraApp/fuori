@@ -1,5 +1,15 @@
 # Fuori Development Progress
 
+## 2026-11-17 (cloud chat session, with Josh), afternoon: Learn sheet 2.0 designed in mock-ups, then paused
+
+- **Asked:** "lets go back to learn sheets", meaning the sheet after a visit mocked up on 2026-11-15 (the private page "Lesson Door Sheet"), which was in no doc. Josh: "I want to have several types that could show and be contextual to the conversation".
+- **Where it ended, all in [docs/learn-sheet-2.md](docs/learn-sheet-2.md):** the sheet instructs (Josh: "the sheet is to instruct"; "only about reinforcing vocab, grammar, etc"). The character says goodbye, the person screen stays, the sheet slides up, closing returns to the place list. Three card types: **When you…** (one lesson's phrases under a situation headline), **Formal and informal**, **About this place** (a fact; needn't come from the conversation). One topic per card with no footer, whole sentences with no blanks, the English under each line, lines in the order they're said, sage cards, the first headline level with the close button, no Done, no picture in the sheet, no audio, no replayed moments, nothing about the next visit. Try it and Open the lesson are two candidates for a footer, off the sheet for now.
+- **Paused (Josh):** "Save all the work but I think I'm deterred to go forward right now given the first set of feedback." The feedback was this session's own assessment, which led with five weaknesses and no verdict; two fell to Josh's questions ("why would you do this" of the claim it would repeat; "how is this measured" of the claim that mistakes are the most valuable thing). The doc keeps the assessment with what was withdrawn. Asked directly, the session's view is that it is worth doing. **Don't build it until Josh picks it up.**
+- **Read on the way:** all 77 non-cultural lessons. About 66 take a "When you…" headline naturally (the two beginner sets nearly whole; about 8 of Italy's later 38 are grammar with no situation). No paying lesson in Mexico's `lessons.json`; no goodbye lesson in Italy's first set.
+- **Files:** docs/learn-sheet-2.md (new); design/learn-sheet-2/learn-sheet-2.html (the mock-up page without its pictures); a pointer at the top of docs/after-conversation.md. The same notes are in the Claude project as `plans/learn-sheet-2.md`.
+- **Not verified:** nothing built, nothing played. The mock-ups' conversation lines are made up; the place facts come from the characters' `here` lines and were not checked against a source.
+- **Noticed:** Doña Juana's portrait has a painted sign reading "Comedor La Esperanza"; the place is "Comedor Doña Juana" (content/es-mx/cities/san-cristobal-de-las-casas.ts).
+
 ## 2026-11-17 (laptop): documentation checked against the code
 
 - **Asked:** "update and review documentation". Four reviewers checked the source-of-truth docs against the code and fixed stale facts only (paths, names, built vs planned, released vs on main); decisions and Josh's quotes kept as written. Not run: nothing played; docs only.

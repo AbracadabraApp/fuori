@@ -1,5 +1,7 @@
 # After a conversation: the page between leaving and the city
 
+**2026-11-17: the Learn page (Kind 2 below) was redesigned as [learn-sheet-2.md](learn-sheet-2.md), then paused by Josh. Level up is unchanged.**
+
 2026-11-10 · Josh and the cloud session · everything from the brainstorm and the first decisions, not a spec. Nothing here is built.
 
 Josh: "I want to create a new page type. Its a sort of interstitial page that is triggered by the end of a conversation. The page can have different content on different conditions. 1. a level up page; 2. a trial lesson review page; 3 more to come." Then: "the 2nd type is a new learn page we discussed". Mockups: the canvas "After-conversation page" (claude.ai artifact J8E48kaJyscahyhGebkH8t): level up in Mexico (Ximena, Café Amapola) and Italy (Luisa, Bar Mattina), the Learn page in Mexico (Don Chema, the Veracruz malecón). Portraits there are placeholder circles; the lines are made up to show the shape.
