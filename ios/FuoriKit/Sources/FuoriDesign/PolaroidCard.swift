@@ -1,6 +1,6 @@
 import SwiftUI
 
-/// The feed card, as a polaroid (docs/bugs.md B38 and the card studies, Josh,
+/// The feed card, as a polaroid (spec: docs/polaroid-card.md; docs/bugs.md B38 and the card studies, Josh,
 /// 2026-11-16: "polaroid - but with a different shadow", "i think curled
 /// corners on poloroids", "I think stamp in namespace"): a white frame around
 /// a square picture, the name below it, and a shadow that lifts at the two
