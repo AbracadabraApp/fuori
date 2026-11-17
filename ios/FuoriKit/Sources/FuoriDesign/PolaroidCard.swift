@@ -61,13 +61,19 @@ public struct PolaroidCard<Mark: View>: View {
             .padding(.bottom, 6)
         }
         .padding(Tokens.Space.polaroidFrame)
-        .background(Tokens.Colors.card, in: RoundedRectangle(cornerRadius: Tokens.Radius.polaroid))
-        .shadow(
-            color: .black.opacity(Tokens.Shadow.polaroid.opacity),
-            radius: Tokens.Shadow.polaroid.radius,
-            x: Tokens.Shadow.polaroid.x,
-            y: Tokens.Shadow.polaroid.y
-        )
+        // The thin shadow on the white card only: a .shadow on the whole card
+        // gave every letter of the name its own drop shadow (Josh's screenshot,
+        // 2026-11-17)
+        .background {
+            RoundedRectangle(cornerRadius: Tokens.Radius.polaroid)
+                .fill(Tokens.Colors.card)
+                .shadow(
+                    color: .black.opacity(Tokens.Shadow.polaroid.opacity),
+                    radius: Tokens.Shadow.polaroid.radius,
+                    x: Tokens.Shadow.polaroid.x,
+                    y: Tokens.Shadow.polaroid.y
+                )
+        }
         .background { CurledCorners() }
         .accessibilityElement(children: .combine)
     }
@@ -96,7 +102,11 @@ struct CurledCorners: View {
 
     private func bar(_ width: CGFloat) -> some View {
         Rectangle()
-            .fill(Color.black.opacity(Tokens.Shadow.curl.opacity))
+            // Solid, so its shadow is as dark as board 7's box-shadow; a
+            // see-through bar cast a shadow half as dark, which read as one
+            // faint band rather than two lifted corners (2026-11-17). The bar
+            // itself stays hidden behind the card.
+            .fill(Color.black)
             .frame(width: width, height: 24)
             .shadow(
                 color: .black.opacity(Tokens.Shadow.curl.opacity),
