@@ -1,0 +1,1172 @@
+[
+ {
+  "step": 1,
+  "city": "roma-nuova",
+  "place": "bar-mattina-nuova",
+  "kind": "leave",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Good morning! I'm cleaning il bancone, the counter. Here in Testaccio the morning is always piena di gente, full of people. Cosa le preparo oggi? What can I make for you today?",
+    "en": "Good morning! I'm cleaning the counter. Here in Testaccio the morning is always full of people. What can I make for you today?",
+    "raw": "{\"line\":\"{Buongiorno! Sto pulendo *il bancone*. | Good morning! I'm cleaning *the counter*.} {Qui a Testaccio la mattina è sempre *piena di gente*. | Here in Testaccio the morning is always *full of people*.} {Cosa le preparo *oggi*? | What can I make for you *today*?}\",\"en\":\"Good morning! I'm cleaning the counter. Here in Testaccio the morning is always full of people. What can I make for you today?\",\"answers\":[{\"text\":\"Buongiorno! Un cappuccino, per favore.\",\"en\":\"Good morning! A cappuccino, please.\"},{\"text\":\"Un cornetto, per favore. Cosa mi consiglia?\",\"en\":\"A cornetto (a sweet croissant), please. What do you recommend?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Right away! Il cappuccino is coming. Here in Testaccio people drink cappuccino la mattina, in the morning. Lo vuole con un cornetto? Do you want it with a cornetto?",
+    "en": "Right away! The cappuccino is coming. Here in Testaccio people drink cappuccino in the morning. Do you want it with a cornetto?",
+    "raw": "{\"line\":\"{Subito! *Il cappuccino* arriva. | Right away! *The cappuccino* is coming.} {Qui a Testaccio il cappuccino si beve *la mattina*. | Here in Testaccio people drink cappuccino *in the morning*.} {Lo vuole *con un cornetto*? | Do you want it *with a cornetto*?}\",\"en\":\"Right away! The cappuccino is coming. Here in Testaccio people drink cappuccino in the morning. Do you want it with a cornetto?\",\"answers\":[{\"text\":\"Sì, grazie. Che cornetti ha?\",\"en\":\"Yes, thanks. What cornetti (sweet croissants) do you have?\"},{\"text\":\"No, grazie. Il bar è molto bello!\",\"en\":\"No, thanks. The bar is very nice!\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "I have the il cornetto vuoto, with custard and with jam. The custard one is the most loved. Quale preferisce? Which one do you prefer?",
+    "en": "I have the plain cornetto, with custard and with jam. The custard one is the most loved. Which one do you prefer?",
+    "raw": "{\"line\":\"{Ho *il cornetto vuoto*, alla crema e alla marmellata. | I have the *plain cornetto*, with custard and with jam.} {Quello alla crema è *il più amato*. | The custard one is *the most loved*.} {Quale *preferisce*? | Which one do you *prefer*?}\",\"en\":\"I have the plain cornetto, with custard and with jam. The custard one is the most loved. Which one do you prefer?\",\"answers\":[{\"text\":\"Alla crema, grazie. Sono tutti freschi?\",\"en\":\"Custard, thanks. Are they all fresh?\"},{\"text\":\"Alla marmellata, per favore. Che marmellata è?\",\"en\":\"Jam, please. What kind of jam is it?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Yes, tutti freschi, all fresh! The baker brings them ogni mattina, every morning at five. Quello alla crema è ancora caldo, lo sento dal profumo. The custard one is still warm, I can tell by the smell.",
+    "en": "Yes, all fresh! The baker brings them every morning at five. The custard one is still warm, I can tell by the smell.",
+    "raw": "{\"line\":\"{Sì, *tutti freschi*! | Yes, *all fresh*!} {Il fornaio li porta *ogni mattina* alle cinque. | The baker brings them *every morning* at five.} {Quello alla crema è *ancora caldo*, lo sento dal profumo. | The custard one is *still warm*, I can tell by the smell.}\",\"en\":\"Yes, all fresh! The baker brings them every morning at five. The custard one is still warm, I can tell by the smell.\",\"answers\":[{\"text\":\"Che bello! Mi piace il caldo.\",\"en\":\"How nice! I like it warm.\"},{\"text\":\"Alle cinque? Che presto! Lei inizia presto?\",\"en\":\"At five? That's early! Do you start early?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Goodbye, see you soon! Il cappuccino e il cornetto sono pronti, buona giornata. The cappuccino and the cornetto are ready, have a good day.",
+    "en": "Goodbye, see you soon! The cappuccino and the cornetto are ready, have a good day.",
+    "raw": "{\"line\":\"{*Arrivederci*, a presto! | *Goodbye*, see you soon!} {Il cappuccino e il cornetto sono pronti, *buona giornata*. | The cappuccino and the cornetto are ready, *have a good day*.}\",\"en\":\"Goodbye, see you soon! The cappuccino and the cornetto are ready, have a good day.\",\"answers\":[{\"text\":\"Grazie, a presto!\",\"en\":\"Thank you, see you soon!\"},{\"text\":\"Buona giornata anche a lei!\",\"en\":\"Have a good day too!\"}],\"done\":true,\"hard\":false}",
+    "answers": 2,
+    "done": true
+   }
+  ]
+ },
+ {
+  "step": 1,
+  "city": "roma-nuova",
+  "place": "bar-mattina-nuova",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Good morning! I'm pulendo il banco, wiping the counter right now. Qui a Testaccio il bar apre molto presto. Here in Testaccio the bar opens very early. Le piace il nostro bar? Le piace il nostro bar?",
+    "en": "Good morning! I'm wiping the counter right now. Here in Testaccio the bar opens very early. Le piace il nostro bar?",
+    "raw": "{\"line\":\"{Buongiorno! Sto *pulendo il banco* proprio adesso. | Good morning! I'm *wiping the counter* right now.} {Qui a Testaccio il bar apre *molto presto*. | Here in Testaccio the bar opens *very early*.} {Le piace *il nostro bar*?\",\"en\":\"Good morning! I'm wiping the counter right now. Here in Testaccio the bar opens very early. Do you like our bar?\",\"answers\":[{\"text\":\"Sì, è molto carino. Il banco è bello.\",\"en\":\"Yes, it's very nice. The counter is beautiful.\"},{\"text\":\"Buongiorno! Cosa significa \\\"banco\\\"?\",\"en\":\"Good morning! What does \\\"banco\\\" mean?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Grazie mille, thank you so much! The counter is zinc, it's very old. Here the customers have their coffee in piedi, standing up. Vuole un caffè o un cappuccino? Would you like a coffee or a cappuccino?",
+    "en": "Thank you so much! The counter is zinc, it's very old. Here the customers have their coffee standing up. Would you like a coffee or a cappuccino?",
+    "raw": "{\"line\":\"{*Grazie mille*! Il banco è di zinco, è molto vecchio. | *Thank you so much*! The counter is zinc, it's very old.} {Qui i clienti prendono il caffè *in piedi*. | Here the customers have their coffee *standing up*.} {Vuole un caffè o *un cappuccino*? | Would you like a coffee or *a cappuccino*?}\",\"en\":\"Thank you so much! The counter is zinc, it's very old. Here the customers have their coffee standing up. Would you like a coffee or a cappuccino?\",\"answers\":[{\"text\":\"Un cappuccino, per favore. Che cos'è lo zinco?\",\"en\":\"A cappuccino, please. What is zinc?\"},{\"text\":\"Un caffè, grazie. Lei lavora qui da tanto?\",\"en\":\"A coffee, thanks. Have you worked here a long time?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Zinc is a grey metal, shiny and cold. Here is your cappuccino, hot and ready. Mi piace il banco la mattina, quando il bar è ancora tranquillo. I like the counter in the morning, when the bar is still quiet.",
+    "en": "Zinc is a grey metal, shiny and cold. Here is your cappuccino, hot and ready. I like the counter in the morning, when the bar is still quiet.",
+    "raw": "{\"line\":\"{Lo *zinco* è un metallo grigio, lucido e freddo. | *Zinc* is a grey metal, shiny and cold.} {Ecco il suo *cappuccino*, caldo e pronto. | Here is your *cappuccino*, hot and ready.} {Mi piace *il banco* la mattina, quando il bar è ancora tranquillo. | I like *the counter* in the morning, when the bar is still quiet.}\",\"en\":\"Zinc is a grey metal, shiny and cold. Here is your cappuccino, hot and ready. I like the counter in the morning, when the bar is still quiet.\",\"answers\":[{\"text\":\"Anch'io, è molto tranquillo. Il cappuccino è buono!\",\"en\":\"Me too, it's very quiet. The cappuccino is good!\"},{\"text\":\"Il banco è davvero bello. Da quanto tempo lavori qui?\",\"en\":\"The counter is really beautiful. How long have you worked here?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "How nice, I'm glad! I make the cappuccino with il latte fresco, fresh milk every morning. Di solito lei beve il caffè anche a casa? Do you usually drink coffee at home too?",
+    "en": "How nice, I'm glad! I make the cappuccino with fresh milk every morning. Do you usually drink coffee at home too?",
+    "raw": "{\"line\":\"{Che bello, *sono contenta*! | How nice, *I'm glad*!} {Faccio il cappuccino con *il latte fresco* ogni mattina. | I make the cappuccino with *fresh milk* every morning.} {Di solito lei beve *il caffè* anche a casa? | Do you usually drink *coffee* at home too?}\",\"en\":\"How nice, I'm glad! I make the cappuccino with fresh milk every morning. Do you usually drink coffee at home too?\",\"answers\":[{\"text\":\"Sì, ogni mattina. Mi piace il caffè forte.\",\"en\":\"Yes, every morning. I like strong coffee.\"},{\"text\":\"No, preferisco il tè. Che cos'è il latte fresco?\",\"en\":\"No, I prefer tea. What is fresh milk?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Forte, strong, just like me! Here at Bar Mattina the coffee is sempre, always very good. Io bevo cinque caffè ogni giorno. I drink five coffees every day.",
+    "en": "Strong, just like me! Here at Bar Mattina the coffee is always very good. I drink five coffees every day.",
+    "raw": "{\"line\":\"{*Forte*, come me! | *Strong*, just like me!} {Qui a Bar Mattina il caffè è *sempre* molto buono. | Here at Bar Mattina the coffee is *always* very good.} {Io bevo *cinque caffè* ogni giorno. | I drink *five coffees* every day.}\",\"en\":\"Strong, just like me! Here at Bar Mattina the coffee is always very good. I drink five coffees every day.\",\"answers\":[{\"text\":\"Cinque caffè! Sono tanti.\",\"en\":\"Five coffees! That's a lot.\"},{\"text\":\"Il caffè forte mi piace tanto. Quale caffè consiglia?\",\"en\":\"I really like strong coffee. Which coffee do you recommend?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Yes, sono tanti, that's a lot, but they're small! After eleven, here in Testaccio, everyone drinks il caffè, coffee. Lei cosa preferisce la mattina? What do you prefer in the morning?",
+    "en": "Yes, that's a lot, but they're small! After eleven, here in Testaccio, everyone drinks coffee. What do you prefer in the morning?",
+    "raw": "{\"line\":\"{Sì, *sono tanti*, ma sono piccoli! | Yes, *that's a lot*, but they're small!} {Dopo le undici, qui in Testaccio, tutti bevono *il caffè*. | After eleven, here in Testaccio, everyone drinks *coffee*.} {Lei *cosa* preferisce la mattina? | *What* do you prefer in the morning?}\",\"en\":\"Yes, that's a lot, but they're small! After eleven, here in Testaccio, everyone drinks coffee. What do you prefer in the morning?\",\"answers\":[{\"text\":\"Preferisco il cappuccino. E lei, cosa preferisce?\",\"en\":\"I prefer cappuccino. And you, what do you prefer?\"},{\"text\":\"Preferisco il caffè. Cosa mangia di solito?\",\"en\":\"I prefer coffee. What do you usually eat?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "I prefer a ristretto coffee, very short and strong. The cappuccino is for breakfast, with il cornetto. Vuole un cornetto con il cappuccino? Do you want a cornetto with your cappuccino?",
+    "en": "I prefer a ristretto coffee, very short and strong. The cappuccino is for breakfast, with the cornetto. Do you want a cornetto with your cappuccino?",
+    "raw": "{\"line\":\"{Io preferisco *il caffè* ristretto, molto corto e forte. | I prefer a *ristretto coffee*, very short and strong.} {Il cappuccino è per la colazione, con *il cornetto*. | The cappuccino is for breakfast, with *the cornetto*.} {Vuole *un cornetto* con il cappuccino? | Do you want *a cornetto* with your cappuccino?}\",\"en\":\"I prefer a ristretto coffee, very short and strong. The cappuccino is for breakfast, with the cornetto. Do you want a cornetto with your cappuccino?\",\"answers\":[{\"text\":\"Sì, grazie. È fresco?\",\"en\":\"Yes, thanks. Is it fresh?\"},{\"text\":\"No, grazie. Cos'è un cornetto?\",\"en\":\"No, thanks. What is a cornetto?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Yes, è fresco, it's fresh! It arrives every morning. Ecco il suo cornetto, buona colazione. Here is your cornetto, enjoy your breakfast.",
+    "en": "Yes, it's fresh! It arrives every morning. Here is your cornetto, enjoy your breakfast.",
+    "raw": "{\"line\":\"{Sì, *è fresco*! Lo faccio arrivare ogni mattina. | Yes, *it's fresh*! It arrives every morning.} {Ecco il suo cornetto, *buona colazione*. | Here is your cornetto, *enjoy your breakfast*.}\",\"en\":\"Yes, it's fresh! It arrives every morning. Here is your cornetto, enjoy your breakfast.\",\"answers\":[{\"text\":\"Grazie mille. Arrivederci!\",\"en\":\"Thank you so much. Goodbye!\"},{\"text\":\"Buona giornata! A presto.\",\"en\":\"Have a good day! See you soon.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "Thank you, it was a piacere, pleasure! Ora devo tornare al banco, arrivederci e a presto! Now I have to get back to the counter, goodbye and see you soon!",
+    "en": "Thank you, it was a pleasure! Now I have to get back to the counter, goodbye and see you soon!",
+    "raw": "{\"line\":\"{Grazie a lei, è stato un *piacere*! | Thank you, it was a *pleasure*!} {Ora devo tornare al banco, *arrivederci* e a presto! | Now I have to get back to the counter, *goodbye* and see you soon!}\",\"en\":\"Thank you, it was a pleasure! Now I have to get back to the counter, goodbye and see you soon!\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "done": true
+   }
+  ],
+  "culture": [
+   "Testaccio is a neighborhood in Rome",
+   "Italian bars open very early in the morning",
+   "Italian bar counters are often made of zinc, and zinc is a grey, shiny, cold metal",
+   "Customers typically drink their coffee standing at the counter (in piedi)",
+   "Cappuccino is made with fresh milk (il latte fresco)",
+   "Cappuccino is a breakfast drink, usually paired with a cornetto (Italian croissant)",
+   "Cornetti arrive fresh every morning",
+   "Italians often drink many small coffees a day",
+   "Coffee is often drunk after eleven in the morning, when cappuccino is no longer typical",
+   "A ristretto is a very short, strong coffee",
+   "Italian words: pulendo il banco (wiping the counter), il banco (counter), in piedi (standing), il caffè (coffee), il cornetto, la colazione (breakfast), sempre (always), forte (strong), fresco (fresh), tanti (a lot), piacere (pleasure)",
+   "Italian phrases: Le piace...? (Do you like...?), Mi piace (I like), Vuole...? (Would you like...?), Ecco... (Here is...), Buona colazione (enjoy your breakfast), Arrivederci e a presto (goodbye and see you soon)",
+   "Italian uses formal 'lei' to address customers politely"
+  ]
+ },
+ {
+  "step": 1,
+  "city": "matera",
+  "place": "caffe-schiuma",
+  "kind": "leave",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Good morning! This is my bar, Caffè Schiuma. I'm making i caffè, the coffees for the morning. Ne vuole uno? Would you like one?",
+    "en": "Good morning! This is my bar, Caffè Schiuma. I'm making the coffees for the morning. Would you like one?",
+    "raw": "{\"line\":\"{*Buongiorno*! Questo è il mio bar, *Caffè Schiuma*. | *Good morning*! This is my bar, *Caffè Schiuma*.} {Sto preparando *i caffè* per la mattina. | I'm making *the coffees* for the morning.} {Ne vuole *uno*? | Would you like *one*?}\",\"en\":\"Good morning! This is my bar, Caffè Schiuma. I'm making the coffees for the morning. Would you like one?\",\"answers\":[{\"text\":\"Sì, un caffè, per favore. Com'è il caffè qui?\",\"en\":\"Yes, a coffee, please. What's the coffee like here?\"},{\"text\":\"Buongiorno! Bel bar. Che cosa c'è da bere?\",\"en\":\"Good morning! Nice bar. What is there to drink?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "The coffee here is forte, strong and quick. You drink it at the counter, standing, the way we do. Le piace il caffè forte? Do you like strong coffee?",
+    "en": "The coffee here is strong and quick. You drink it at the counter, standing, the way we do. Do you like strong coffee?",
+    "raw": "{\"line\":\"{Il caffè qui è *forte* e veloce. | The coffee here is *strong* and quick.} {Si beve *al banco*, in piedi, come da noi. | You drink it *at the counter*, standing, the way we do.} {Le piace il caffè *forte*? | Do you like *strong* coffee?}\",\"en\":\"The coffee here is strong and quick. You drink it at the counter, standing, the way we do. Do you like strong coffee?\",\"answers\":[{\"text\":\"Sì, mi piace forte. Il caffè è buono.\",\"en\":\"Yes, I like it strong. The coffee is good.\"},{\"text\":\"Non troppo forte. Cosa significa \\\"al banco\\\"?\",\"en\":\"Not too strong. What does \\\"al banco\\\" mean?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Ecco il caffè, here is the coffee, nice and hot. Afterwards, you can look at the ravine from the tables outside. Le piace la vista? Do you like the view?",
+    "en": "Here is the coffee, nice and hot. Afterwards, you can look at the ravine from the tables outside. Do you like the view?",
+    "raw": "{\"line\":\"{*Ecco il caffè*, bello caldo. | *Here is the coffee*, nice and hot.} {Dopo, può guardare *il burrone* dai tavoli fuori. | Afterwards, you can look at *the ravine* from the tables outside.} {Le piace *la vista*? | Do you like *the view*?}\",\"en\":\"Here is the coffee, nice and hot. Afterwards, you can look at the ravine from the tables outside. Do you like the view?\",\"answers\":[{\"text\":\"Sì, è molto bella. Posso sedermi fuori?\",\"en\":\"Yes, it's very beautiful. Can I sit outside?\"},{\"text\":\"Non lo so ancora. Cosa c'è da vedere?\",\"en\":\"I don't know yet. What is there to see?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Of course, make yourself comfortable outside! Il tavolo vicino al muro ha la vista migliore. The table by the wall has the best view. A novembre, la mattina, il burrone è tutto d'oro. In November, in the morning, the ravine is all golden.",
+    "en": "Of course, make yourself comfortable outside! The table by the wall has the best view. In November, in the morning, the ravine is all golden.",
+    "raw": "{\"line\":\"{Certo, *si accomodi* fuori! | Of course, *make yourself comfortable* outside!} {Il tavolo vicino al muro ha la vista migliore. | The table by the wall has the best view.} {A novembre, la mattina, *il burrone* è tutto d'oro. | In November, in the morning, *the ravine* is all golden.}\",\"en\":\"Of course, make yourself comfortable outside! The table by the wall has the best view. In November, in the morning, the ravine is all golden.\",\"answers\":[{\"text\":\"Che bello! Mi piace l'oro.\",\"en\":\"How lovely! I like the gold.\"},{\"text\":\"Quel tavolo, per favore. Come si dice burrone?\",\"en\":\"That table, please. How do you say ravine?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Goodbye and buona giornata, have a good day! Torni presto, il caffè è sempre caldo. Come back soon, the coffee is always hot.",
+    "en": "Goodbye and have a good day! Come back soon, the coffee is always hot.",
+    "raw": "{\"line\":\"{Arrivederci e *buona giornata*! | Goodbye and *have a good day*!} {Torni presto, il caffè è sempre caldo. | Come back soon, the coffee is always hot.}\",\"en\":\"Goodbye and have a good day! Come back soon, the coffee is always hot.\",\"answers\":[{\"text\":\"Arrivederci!\",\"en\":\"Goodbye!\"},{\"text\":\"A presto!\",\"en\":\"See you soon!\"}],\"done\":true,\"hard\":false}",
+    "answers": 2,
+    "done": true
+   }
+  ]
+ },
+ {
+  "step": 1,
+  "city": "matera",
+  "place": "caffe-schiuma",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Good morning! This is my bar, Caffè Schiuma. I'm making il caffè, the coffee for the customers. Lo vuole al banco, o fuori? Do you want it at the counter, or outside?",
+    "en": "Good morning! This is my bar, Caffè Schiuma. I'm making the coffee for the customers. Do you want it at the counter, or outside?",
+    "raw": "{\"line\":\"{*Buongiorno*! Questo è il mio bar, *Caffè Schiuma*. | *Good morning*! This is my bar, *Caffè Schiuma*.} {Sto preparando *il caffè* per i clienti. | I'm making *the coffee* for the customers.} {Lo vuole *al banco*, o fuori? | Do you want it *at the counter*, or outside?}\",\"en\":\"Good morning! This is my bar, Caffè Schiuma. I'm making the coffee for the customers. Do you want it at the counter, or outside?\",\"answers\":[{\"text\":\"Al banco, grazie. Che bel posto!\",\"en\":\"At the counter, thanks. What a lovely place!\"},{\"text\":\"Fuori, per favore. Posso vedere il burrone?\",\"en\":\"Outside, please. Can I see the ravine?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Grazie, thank you, that's very kind! The bar is carved nel tufo, into the tufa, the stone of the Sassi. Lei prende un caffè? Will you have a coffee?",
+    "en": "Thank you, that's very kind! The bar is carved into the tufa, the stone of the Sassi. Will you have a coffee?",
+    "raw": "{\"line\":\"{*Grazie*, è molto gentile! | *Thank you*, that's very kind!} {Il bar è scavato *nel tufo*, la pietra dei Sassi. | The bar is carved *into the tufa*, the stone of the Sassi.} {Lei prende *un caffè*? | Will you have *a coffee*?}\",\"en\":\"Thank you, that's very kind! The bar is carved into the tufa, the stone of the Sassi. Will you have a coffee?\",\"answers\":[{\"text\":\"Sì, un caffè, per favore. Mi piace molto qui.\",\"en\":\"Yes, a coffee, please. I like it a lot here.\"},{\"text\":\"Che cos'è il tufo? Può ripetere, più piano?\",\"en\":\"What is tufa? Can you say it again, more slowly?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "ask-en",
+    "line": "Here you are, your coffee, strong and hot. Qui il caffè si beve in piedi, al banco, e poi si guarda il burrone. Here coffee is drunk standing up, at the counter, and then you look at the ravine.",
+    "en": "Here you are, your coffee, strong and hot. Here coffee is drunk standing up, at the counter, and then you look at the ravine.",
+    "raw": "{\"line\":\"{*Ecco*, il suo caffè, forte e caldo. | *Here you are*, your coffee, strong and hot.} {Qui il caffè si beve *in piedi*, al banco, e poi si guarda il burrone. | Here coffee is drunk *standing up*, at the counter, and then you look at the ravine.}\",\"en\":\"Here you are, your coffee, strong and hot. Here coffee is drunk standing up, at the counter, and then you look at the ravine.\",\"answers\":[{\"text\":\"Perché il bar è nel tufo?\",\"en\":\"Why is the bar in the tufa?\"},{\"text\":\"Posso guardare il burrone?\",\"en\":\"Can I look at the ravine?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "idiom",
+    "line": "Because in Matera the houses and the bars are scavati nel tufo, dug into the tufa. The tufa is cool in summer and warm in winter, but when the coffee runs out, I have a devil for every hair! Cosa pensa che significhi? What do you think it means?",
+    "en": "Because in Matera the houses and the bars are dug into the tufa. The tufa is cool in summer and warm in winter, but when the coffee runs out, I have a devil for every hair! What do you think it means?",
+    "raw": "{\"line\":\"{Perché a Matera le case e i bar sono *scavati nel tufo*. | Because in Matera the houses and the bars are *dug into the tufa*.} {Il tufo è fresco d'estate e caldo d'inverno, ma quando il caffè finisce, ho *un diavolo per capello*! | The tufa is cool in summer and warm in winter, but when the coffee runs out, I have *a devil for every hair*!} {Cosa pensa che *significhi*? | What do you think it *means*?}\",\"en\":\"Because in Matera the houses and the bars are dug into the tufa. The tufa is cool in summer and warm in winter, but when the coffee runs out, I have a devil for every hair! What do you think it means?\",\"answers\":[{\"text\":\"Sei molto arrabbiato. Capisco!\",\"en\":\"You are very angry. I understand!\"},{\"text\":\"Sei molto contento. Capisco!\",\"en\":\"You are very happy. I understand!\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "ask-en",
+    "line": "You're ragione, right, I get very angry! Ma con il caffè buono, sto tranquillo. But with good coffee, I stay calm.",
+    "en": "You're right, I get very angry! But with good coffee, I stay calm.",
+    "raw": "{\"line\":\"{Ha *ragione*, I get very angry! | You're *right*, I get very angry!} {Ma con il caffè buono, sto *tranquillo*. | But with good coffee, I stay *calm*.}\",\"en\":\"You're right, I get very angry! But with good coffee, I stay calm.\",\"answers\":[{\"text\":\"Il tufo è freddo d'estate?\",\"en\":\"Is the tufa cold in summer?\"},{\"text\":\"Il caffè è sempre forte qui?\",\"en\":\"Is the coffee always strong here?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Yes, the tufa is cool in summer. And in winter it is più caldo, warmer than outside. Oggi, a novembre, qui dentro si sta bene. Today, in November, it feels good in here.",
+    "en": "Yes, the tufa is cool in summer. And in winter it is warmer than outside. Today, in November, it feels good in here.",
+    "raw": "{\"line\":\"{*Sì*, il tufo è *fresco* d'estate. | *Yes*, the tufa is *cool* in summer.} {E d'inverno è *più caldo* fuori. | And in winter it is *warmer* than outside.} {Oggi, a novembre, qui dentro si sta *bene*. | Today, in November, it feels *good* in here.}\",\"en\":\"Yes, the tufa is cool in summer. And in winter it is warmer than outside. Today, in November, it feels good in here.\",\"answers\":[{\"text\":\"Sì, si sta bene. Posso vedere il burrone?\",\"en\":\"Yes, it feels good. Can I see the ravine?\"},{\"text\":\"Che bello! Il tufo è molto antico?\",\"en\":\"How lovely! Is the tufa very old?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Of course, prego, go ahead! The ravine is fuori, outside, near the tables. Vuole portare il caffè sul tavolino? Do you want to take your coffee to the little table?",
+    "en": "Of course, go ahead! The ravine is outside, near the tables. Do you want to take your coffee to the little table?",
+    "raw": "{\"line\":\"{Certo, *prego*! | Of course, *go ahead*!} {Il burrone è *fuori*, vicino ai tavoli. | The ravine is *outside*, near the tables.} {Vuole portare il caffè *sul tavolino*? | Do you want to take your coffee *to the little table*?}\",\"en\":\"Of course, go ahead! The ravine is outside, near the tables. Do you want to take your coffee to the little table?\",\"answers\":[{\"text\":\"Sì, volentieri. Il burrone è molto bello.\",\"en\":\"Yes, gladly. The ravine is very beautiful.\"},{\"text\":\"No, resto al banco. Cos'è un tavolino?\",\"en\":\"No, I'll stay at the counter. What is a tavolino?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Che bello, how nice, I'm glad! Si goda il caffè e la vista, con calma. Enjoy your coffee and the view, take your time.",
+    "en": "How nice, I'm glad! Enjoy your coffee and the view, take your time.",
+    "raw": "{\"line\":\"{*Che bello*, sono contento! | *How nice*, I'm glad!} {Si goda il caffè e la vista, con calma. | Enjoy your coffee and the view, take your time.}\",\"en\":\"How nice, I'm glad! Enjoy your coffee and the view, take your time.\",\"answers\":[{\"text\":\"Grazie di tutto. Arrivederci!\",\"en\":\"Thanks for everything. Goodbye!\"},{\"text\":\"Grazie, Antonio. A presto!\",\"en\":\"Thanks, Antonio. See you soon!\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "Thank Lei, you, it was a pleasure! Now I have to get back to the counter, but until next time: next time I'll show you the back of the bar, carved into the tufa. Arrivederci! Goodbye!",
+    "en": "Thank you, it was a pleasure! Now I have to get back to the counter, but until next time: next time I'll show you the back of the bar, carved into the tufa. Goodbye!",
+    "raw": "{\"line\":\"{Grazie a *Lei*, è stato un piacere! | Thank *you*, it was a pleasure!} {Ora devo tornare al banco, ma *alla prossima*: la prossima volta le faccio vedere il retro del bar, scavato nel tufo. | Now I have to get back to the counter, but *until next time*: next time I'll show you the back of the bar, carved into the tufa.} {Arrivederci! | Goodbye!}\",\"en\":\"Thank you, it was a pleasure! Now I have to get back to the counter, but until next time: next time I'll show you the back of the bar, carved into the tufa. Goodbye!\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "done": true
+   }
+  ],
+  "culture": [
+   "Caffè Schiuma is a bar in Matera",
+   "Il caffè means coffee",
+   "Bars in Italy ask whether you want coffee al banco (at the counter) or fuori (outside)",
+   "Grazie means thank you",
+   "Matera's Sassi district has bars and houses carved into tufa stone (nel tufo)",
+   "Lei is the formal 'you' in Italian, as in 'Lei prende un caffè?'",
+   "Italians customarily drink coffee standing up at the counter",
+   "Matera sits beside a ravine (burrone) that you look out over",
+   "Scavati nel tufo means dug into the tufa",
+   "Tufa keeps buildings cool in summer and warmer than outside in winter",
+   "Italian idiom: 'avere un diavolo per capello' (a devil for every hair) means being very angry",
+   "Avere ragione means to be right",
+   "Con il caffè buono, sto tranquillo means 'with good coffee, I stay calm'",
+   "Più caldo means warmer",
+   "Oggi means today and novembre means November",
+   "Qui dentro si sta bene means it feels good in here",
+   "Prego means 'go ahead' or 'you're welcome'",
+   "Fuori means outside",
+   "Il tavolino means little table",
+   "Che bello means how nice",
+   "Si goda means enjoy, said politely; con calma means take your time",
+   "Arrivederci means goodbye"
+  ]
+ },
+ {
+  "step": 1,
+  "city": "firenze",
+  "place": "ponte-vecchio",
+  "kind": "leave",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Buongiorno! Sono al banco e sistemo un anello. Good morning! I'm at my bench fixing a ring. This is the family workshop, on the bridge. Le piacciono i gioielli? Do you like jewellery?",
+    "en": "Good morning! I'm at my bench fixing a ring. This is the family workshop, on the bridge. Do you like jewellery?",
+    "raw": "{\"line\":\"{Buongiorno! Sono *al banco* e sistemo *un anello*. | Good morning! I'm *at my bench* fixing *a ring*.} {Questa è *la bottega* di famiglia, sul ponte. | This is the family *workshop*, on the bridge.} {Le piacciono *i gioielli*? | Do you like *jewellery*?}\",\"en\":\"Good morning! I'm at my bench fixing a ring. This is the family workshop, on the bridge. Do you like jewellery?\",\"answers\":[{\"text\":\"Sì, mi piacciono molto. Che bella bottega!\",\"en\":\"Yes, I like them a lot. What a lovely workshop!\"},{\"text\":\"Un po'. Che cosa fa con l'anello?\",\"en\":\"A little. What are you doing with the ring?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Thanks, it's very small, but it's a family place. We've worked here da tanti anni, for many years, on the bridge. Mi piace il silenzio del banco, quando lavoro. I like the quiet of the bench when I work.",
+    "en": "Thanks, it's very small, but it's a family place. We've worked here for many years, on the bridge. I like the quiet of the bench when I work.",
+    "raw": "{\"line\":\"{Grazie, è *molto piccola*, ma è di famiglia. | Thanks, it's *very small*, but it's a family place.} {Qui lavoriamo *da tanti anni*, sul ponte. | We've worked here *for many years*, on the bridge.} {Mi piace *il silenzio* del banco, quando lavoro. | I like *the quiet* of the bench when I work.}\",\"en\":\"Thanks, it's very small, but it's a family place. We've worked here for many years, on the bridge. I like the quiet of the bench when I work.\",\"answers\":[{\"text\":\"Capisco, è un bel lavoro. Cosa sta facendo adesso?\",\"en\":\"I understand, it's a lovely job. What are you making right now?\"},{\"text\":\"Che bello! Posso guardare?\",\"en\":\"How nice! May I watch?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "I'm stringendo un anello, making a ring smaller: it was too big for the finger. Con il fuoco e un martello piccolo, piano piano. With fire and a small hammer, bit by bit. Ha mai visto fare un gioiello? Have you ever seen a piece of jewellery being made?",
+    "en": "I'm making a ring smaller: it was too big for the finger. With fire and a small hammer, bit by bit. Have you ever seen a piece of jewellery being made?",
+    "raw": "{\"line\":\"{Sto *stringendo un anello*: era troppo largo per il dito. | I'm *making a ring smaller*: it was too big for the finger.} {Con il fuoco e un martello piccolo, piano piano. | With fire and a small hammer, bit by bit.} {Ha mai visto *fare un gioiello*? | Have you ever seen *a piece of jewellery being made*?}\",\"en\":\"I'm making a ring smaller: it was too big for the finger. With fire and a small hammer, bit by bit. Have you ever seen a piece of jewellery being made?\",\"answers\":[{\"text\":\"No, mai. Posso guardare?\",\"en\":\"No, never. Can I watch?\"},{\"text\":\"Sì, una volta. Che cosa fa con il fuoco?\",\"en\":\"Yes, once. What do you do with the fire?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Of course, venga qui, come here, next to the bench! Look, now I'm heating l'oro, the gold with the flame. Le piace l'oro giallo o l'oro bianco? Do you like yellow gold or white gold?",
+    "en": "Of course, come here, next to the bench! Look, now I'm heating the gold with the flame. Do you like yellow gold or white gold?",
+    "raw": "{\"line\":\"{Certo, *venga qui*, vicino al banco! | Of course, *come here*, next to the bench!} {Guardi, adesso scaldo *l'oro* con la fiamma. | Look, now I'm heating *the gold* with the flame.} {Le piace *l'oro giallo* o l'oro bianco? | Do you like *yellow gold* or white gold?}\",\"en\":\"Of course, come here, next to the bench! Look, now I'm heating the gold with the flame. Do you like yellow gold or white gold?\",\"answers\":[{\"text\":\"Mi piace l'oro giallo. È molto caldo.\",\"en\":\"I like yellow gold. It's very warm.\"},{\"text\":\"Preferisco l'oro bianco. Che cos'è quel martello?\",\"en\":\"I prefer white gold. What is that hammer?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Thank you, arrivederci, goodbye! Torni a trovarmi quando vuole, c'è sempre l'oro sul banco. Come visit me again whenever you like, there's always gold on the bench.",
+    "en": "Thank you, goodbye! Come visit me again whenever you like, there's always gold on the bench.",
+    "raw": "{\"line\":\"{Grazie a lei, *arrivederci*! | Thank you, *goodbye*!} {Torni *a trovarmi* quando vuole, c'è sempre l'oro sul banco. | Come *visit me again* whenever you like, there's always gold on the bench.}\",\"en\":\"Thank you, goodbye! Come visit me again whenever you like, there's always gold on the bench.\",\"answers\":[{\"text\":\"Grazie, a presto!\",\"en\":\"Thanks, see you soon!\"},{\"text\":\"Buona giornata, Matteo!\",\"en\":\"Have a good day, Matteo!\"}],\"done\":true,\"hard\":false}",
+    "answers": 2,
+    "done": true
+   }
+  ]
+ },
+ {
+  "step": 1,
+  "city": "firenze",
+  "place": "ponte-vecchio",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Good morning! I'm stringendo un anello, resizing a ring here at my bench. This is our tiny workshop on the Ponte Vecchio. Le piacciono i gioielli antichi? Do you like antique jewellery?",
+    "en": "Good morning! I'm resizing a ring here at my bench. This is our tiny workshop on the Ponte Vecchio. Do you like antique jewellery?",
+    "raw": "{\"line\":\"{Buongiorno! Sto *stringendo un anello* qui al banco. | Good morning! I'm *resizing a ring* here at my bench.} {Questa è la nostra *piccola bottega* sul Ponte Vecchio. | This is our *tiny workshop* on the Ponte Vecchio.} {Le piacciono *i gioielli antichi*? | Do you like *antique jewellery*?}\",\"en\":\"Good morning! I'm resizing a ring here at my bench. This is our tiny workshop on the Ponte Vecchio. Do you like antique jewellery?\",\"answers\":[{\"text\":\"Sì, mi piacciono molto. Che bell'anello!\",\"en\":\"Yes, I like them a lot. What a beautiful ring!\"},{\"text\":\"Non lo so. Posso guardare?\",\"en\":\"I don't know. Can I look?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Grazie, thank you, it's a gold ring. I'm stringendo, resizing it for a lady. Vuole vedere il banco da lavoro? Do you want to see the workbench?",
+    "en": "Thank you, it's a gold ring. I'm resizing it for a lady. Do you want to see the workbench?",
+    "raw": "{\"line\":\"{*Grazie*, è un anello d'oro. | *Thank you*, it's a gold ring.} {Lo sto *stringendo* per una signora. | I'm *resizing it* for a lady.} {Vuole vedere *il banco da lavoro*? | Do you want to see *the workbench*?}\",\"en\":\"{*Thank you*, it's a gold ring. | *Thank you*, it's a gold ring.} {I'm *resizing it* for a lady. | I'm *resizing it* for a lady.} {Do you want to see *the workbench*? | Do you want to see *the workbench*?}\",\"answers\":[{\"text\":\"Sì, volentieri! Che strumenti usa?\",\"en\":\"Yes, gladly! What tools do you use?\"},{\"text\":\"Sì, grazie. Lavora qui da molto?\",\"en\":\"Yes, thanks. Have you worked here a long time?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Prego, please, come here. I use a small hammer, a file and a thin saw. Le piace lavorare con le mani? Do you like working with your hands?",
+    "en": "Please, come here. I use a small hammer, a file and a thin saw. Do you like working with your hands?",
+    "raw": "{\"line\":\"{*Prego*, venga qui. | *Please*, come here.} {Uso *un martello* piccolo, *una lima* e *una sega* sottile. | I use a small *hammer*, *a file* and a thin *saw*.} {Le piace lavorare con le mani? | Do you like working with your hands?}\",\"en\":\"Please, come here. I use a small hammer, a file and a thin saw. Do you like working with your hands?\",\"answers\":[{\"text\":\"Sì, mi piace molto. Lei lavora qui da solo?\",\"en\":\"Yes, I like it a lot. Do you work here alone?\"},{\"text\":\"Non so fare niente. Che cos'è la lima?\",\"en\":\"I can't make anything. What is a 'lima'?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "idiom",
+    "line": "No, I work lavoro con mio figlio, with my son. He is young and always wears jeans, but l'abito non fa il monaco, the habit doesn't make the monk. Cosa pensa che voglia dire? What do you think it means?",
+    "en": "No, I work with my son. He is young and always wears jeans, but the habit doesn't make the monk. What do you think it means?",
+    "raw": "{\"line\":\"{No, *lavoro con mio figlio*. | No, I work *with my son*.} {Lui è giovane e porta sempre i jeans, ma *l'abito non fa il monaco*: the habit doesn't make the monk. | He is young and always wears jeans, but *the habit doesn't make the monk*.} {Cosa pensa che voglia dire? | What do you think it means?}\",\"en\":\"No, I work with my son. He is young and always wears jeans, but the habit doesn't make the monk. What do you think it means?\",\"answers\":[{\"text\":\"Non giudicare dall'apparenza. È un bel proverbio!\",\"en\":\"Don't judge by appearances. It's a nice saying!\"},{\"text\":\"Il monaco ha un bel vestito. Lei lavora ogni giorno?\",\"en\":\"The monk has a nice outfit. Do you work every day?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Well done, exactly! The proverb is true. My son works well, even in i jeans, jeans. Le piace questo anello d'oro? Do you like this gold ring?",
+    "en": "Well done, exactly! The proverb is true. My son works well, even in jeans. Do you like this gold ring?",
+    "raw": "{\"line\":\"{Bravo, *esatto*! Il proverbio è vero. | Well done, *exactly*! The proverb is true.} {Mio figlio lavora bene, anche con *i jeans*. | My son works well, even in *jeans*.} {Le piace *questo anello* d'oro? | Do you like *this gold ring*?}\",\"en\":\"Well done, exactly! The proverb is true. My son works well, even in jeans. Do you like this gold ring?\",\"answers\":[{\"text\":\"Sì, è bellissimo. Quanto costa?\",\"en\":\"Yes, it's beautiful. How much does it cost?\"},{\"text\":\"Sì, mi piace. Lei lavora qui da molto?\",\"en\":\"Yes, I like it. Have you worked here a long time?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "This ring is not for sale, it belongs to a lady. But in the shop there are tanti anelli, many rings like it. Le piacciono gli anelli o le collane? Do you like rings or necklaces?",
+    "en": "This ring is not for sale, it belongs to a lady. But in the shop there are many rings like it. Do you like rings or necklaces?",
+    "raw": "{\"line\":\"{Questo anello *non è in vendita*, è di una signora. | This ring *is not for sale*, it belongs to a lady.} {Ma nel negozio ci sono *tanti anelli* simili. | But in the shop there are *many rings* like it.} {Le piacciono *gli anelli* o le collane? | Do you like *rings* or necklaces?}\",\"en\":\"This ring is not for sale, it belongs to a lady. But in the shop there are many rings like it. Do you like rings or necklaces?\",\"answers\":[{\"text\":\"Mi piacciono gli anelli. Sono più eleganti.\",\"en\":\"I like rings. They are more elegant.\"},{\"text\":\"Preferisco le collane. Sono più delicate.\",\"en\":\"I prefer necklaces. They are more delicate.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "I agree, un anello, a ring is always elegant. My favourite is an antique ring with a small pearl. Qui sul ponte, ogni giorno faccio un anello nuovo. Here on the bridge, every day I make a new ring.",
+    "en": "I agree, a ring is always elegant. My favourite is an antique ring with a small pearl. Here on the bridge, every day I make a new ring.",
+    "raw": "{\"line\":\"{Sono d'accordo, *un anello* è sempre elegante. | I agree, *a ring* is always elegant.} {Il mio preferito è *un anello antico* con una piccola perla. | My favourite is *an antique ring* with a small pearl.} {Qui sul ponte, *ogni giorno* faccio un anello nuovo. | Here on the bridge, *every day* I make a new ring.}\",\"en\":\"I agree, a ring is always elegant. My favourite is an antique ring with a small pearl. Here on the bridge, every day I make a new ring.\",\"answers\":[{\"text\":\"Anche per me! Posso vedere l'anello con la perla?\",\"en\":\"For me too! Can I see the ring with the pearl?\"},{\"text\":\"Che bel lavoro! Lavora anche la domenica?\",\"en\":\"What lovely work! Do you work on Sundays too?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Of course, ecco la perla, here is the pearl! It's an antique ring, and I like it very much. Grazie per la visita, è stato un piacere. Thank you for the visit, it was a pleasure.",
+    "en": "Of course, here is the pearl! It's an antique ring, and I like it very much. Thank you for the visit, it was a pleasure.",
+    "raw": "{\"line\":\"{Certo, *ecco la perla*! | Of course, *here is the pearl*!} {È un anello antico, e *mi piace molto*. | It's an antique ring, and *I like it very much*.} {Grazie per la visita, *è stato un piacere*. | Thank you for the visit, *it was a pleasure*.}\",\"en\":\"Of course, here is the pearl! It's an antique ring, and I like it very much. Thank you for the visit, it was a pleasure.\",\"answers\":[{\"text\":\"Grazie a lei, è bellissimo. Arrivederci!\",\"en\":\"Thank you, it's beautiful. Goodbye!\"},{\"text\":\"È stato un piacere. A presto!\",\"en\":\"It was a pleasure. See you soon!\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "Grazie a lei, it was a real pleasure! Now I must go back to my ring, ma torni presto, but come back soon, and I'll show you my newest pearl pieces. Arrivederci!",
+    "en": "Thank you, it was a real pleasure! Now I must go back to my ring, but come back soon, and I'll show you my newest pearl pieces. Goodbye!",
+    "raw": "{\"line\":\"Grazie a lei, it was a real pleasure! Now I must go back to my ring, ma torni presto, but come back soon, and I'll show you my newest pearl pieces. Arrivederci!\",\"en\":\"Thank you, it was a real pleasure! Now I must go back to my ring, but come back soon, and I'll show you my newest pearl pieces. Goodbye!\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "done": true
+   }
+  ],
+  "culture": [
+   "Ponte Vecchio in Florence has small jewellery workshops",
+   "stringere un anello means to resize a ring",
+   "Do you like antique jewellery: Le piacciono i gioielli antichi?",
+   "il banco da lavoro means workbench",
+   "Italian goldsmiths use hand tools like a small hammer, a file and a thin saw",
+   "Do you like working with your hands: Le piace lavorare con le mani?",
+   "lavoro con mio figlio means I work with my son",
+   "Family businesses passed down to sons are common in Italian crafts",
+   "L'abito non fa il monaco (the habit doesn't make the monk) is an Italian proverb meaning appearances can be deceiving",
+   "i jeans means jeans",
+   "l'anello d'oro means the gold ring",
+   "tanti anelli means many rings",
+   "le collane means necklaces",
+   "un anello means a ring",
+   "la perla means the pearl",
+   "Ecco means here is",
+   "Qui sul ponte, ogni giorno faccio un anello nuovo means here on the bridge, every day I make a new ring",
+   "Grazie per la visita, è stato un piacere means thank you for the visit, it was a pleasure",
+   "Grazie a lei is the formal way to say thank you to you",
+   "Ma torni presto means but come back soon (formal)",
+   "Arrivederci means goodbye",
+   "Italians use formal Lei address with visitors and strangers (Le piace, Vuole, torni)",
+   "Prego means please or you're welcome"
+  ]
+ },
+ {
+  "step": 1,
+  "city": "siena",
+  "place": "bar-il-palio",
+  "kind": "leave",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Buongiorno! Sono dietro il bancone, la macchina è già calda. Good morning! I'm behind the counter, the machine is already hot. Here in the bar we have the Palio flags on all the walls. Le piace la bandiera gialla e rossa? Do you like the yellow and red flag?",
+    "en": "Good morning! I'm behind the counter, the machine is already hot. Here in the bar we have the Palio flags on all the walls. Do you like the yellow and red flag?",
+    "raw": "{\"line\":\"{*Buongiorno*! Sono *dietro il bancone*, la macchina è già calda. | *Good morning*! I'm *behind the counter*, the machine is already hot.} {Qui al bar abbiamo *le bandiere del Palio* su tutti i muri. | Here in the bar we have *the Palio flags* on all the walls.} {Le piace *la bandiera* gialla e rossa? | Do you like the yellow and red *flag*?}\",\"en\":\"Good morning! I'm behind the counter, the machine is already hot. Here in the bar we have the Palio flags on all the walls. Do you like the yellow and red flag?\",\"answers\":[{\"text\":\"Sì, è molto bella. Cos'è il Palio?\",\"en\":\"Yes, it's very beautiful. What is the Palio?\"},{\"text\":\"Buongiorno! Un caffè, per favore.\",\"en\":\"Good morning! A coffee, please.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "The Palio is the horse race in the square. It's run here in Siena, in the Campo, twice a year. Lei vuole un caffè? Do you want a coffee?",
+    "en": "The Palio is the horse race in the square. It's run here in Siena, in the Campo, twice a year. Do you want a coffee?",
+    "raw": "{\"line\":\"{Il *Palio* è la corsa dei cavalli in piazza. | The *Palio* is the horse race in the square.} {Si corre qui a Siena, nel *Campo*, due volte l'anno. | It's run here in Siena, in the *Campo*, twice a year.} {Lei vuole *un caffè*? | Do you want *a coffee*?}\",\"en\":\"The Palio is the horse race in the square. It's run here in Siena, in the Campo, twice a year. Do you want a coffee?\",\"answers\":[{\"text\":\"Sì, un caffè, per favore.\",\"en\":\"Yes, a coffee, please.\"},{\"text\":\"Che bello! Cos'è il Campo?\",\"en\":\"How lovely! What is the Campo?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Right away! The coffee is coming. Here in Siena the Palio is our life. Quale contrada vince il prossimo Palio, secondo Lei? Which contrada (district of Siena) will win the next Palio, in your opinion?",
+    "en": "Right away! The coffee is coming. Here in Siena the Palio is our life. Which contrada (district of Siena) will win the next Palio, in your opinion?",
+    "raw": "{\"line\":\"{*Subito*! Il caffè arriva. | *Right away*! The coffee is coming.} {Qui a Siena il *Palio* è la nostra vita. | Here in Siena the *Palio* is our life.} {Quale *contrada* vince il prossimo Palio, secondo Lei? | Which *contrada* (district of Siena) will win the next Palio, in your opinion?}\",\"en\":\"Right away! The coffee is coming. Here in Siena the Palio is our life. Which contrada (district of Siena) will win the next Palio, in your opinion?\",\"answers\":[{\"text\":\"Non lo so. Quale contrada è la tua?\",\"en\":\"I don't know. Which contrada is yours?\"},{\"text\":\"Forse la tua! Cosa pensi tu?\",\"en\":\"Maybe yours! What do you think?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "My contrada is il Leocorno, the Unicorn, here in San Martino. Here is il suo caffè, your coffee, hot and good. Le piacciono i cavalli? Do you like horses?",
+    "en": "My contrada is the Unicorn, here in San Martino. Here is your coffee, hot and good. Do you like horses?",
+    "raw": "{\"line\":\"{La mia contrada è *il Leocorno*, qui a San Martino. | My contrada is *the Unicorn*, here in San Martino.} {Ecco *il suo caffè*, caldo e buono. | Here is *your coffee*, hot and good.} {Le piacciono *i cavalli*? | Do you like *horses*?}\",\"en\":\"My contrada is the Unicorn, here in San Martino. Here is your coffee, hot and good. Do you like horses?\",\"answers\":[{\"text\":\"Sì, mi piacciono molto. Il caffè è ottimo!\",\"en\":\"Yes, I like them a lot. The coffee is excellent!\"},{\"text\":\"Non lo so ancora. Cos'è il Leocorno?\",\"en\":\"I don't know yet. What is the Leocorno (the Unicorn)?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "ask-en",
+    "line": "Thank you, arrivederci, goodbye! La prossima volta Le racconto del Palio e del mio Leocorno. Next time I'll tell you about the Palio and my Unicorn.",
+    "en": "Thank you, goodbye! Next time I'll tell you about the Palio and my Unicorn.",
+    "raw": "{\"line\":\"{Grazie a Lei, *arrivederci*! | Thank you, *goodbye*!} {La prossima volta Le racconto *del Palio* e del mio Leocorno. | Next time I'll tell you *about the Palio* and my Unicorn.}\",\"en\":\"Thank you, goodbye! Next time I'll tell you about the Palio and my Unicorn.\",\"answers\":[{\"text\":\"Arrivederci, Giulia. A presto!\",\"en\":\"Goodbye, Giulia. See you soon!\"},{\"text\":\"Grazie, buona giornata!\",\"en\":\"Thanks, have a good day!\"}],\"done\":true,\"hard\":false}",
+    "answers": 2,
+    "done": true
+   }
+  ]
+ },
+ {
+  "step": 1,
+  "city": "siena",
+  "place": "bar-il-palio",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Buongiorno, good morning! I'm Giulia, welcome to Bar Il Palio. I'm making the coffees for the morning. Le piacciono le bandiere qui sul muro? Do you like the flags here on the wall?",
+    "en": "Good morning! I'm Giulia, welcome to Bar Il Palio. I'm making the coffees for the morning. Do you like the flags here on the wall?",
+    "raw": "{\"line\":\"{*Buongiorno*! Sono Giulia, benvenuto al Bar Il Palio. | *Good morning*! I'm Giulia, welcome to Bar Il Palio.} {Sto preparando *i caffè* per la mattina. | I'm making *the coffees* for the morning.} {Le piacciono *le bandiere* qui sul muro? | Do you like *the flags* here on the wall?}\",\"en\":\"Good morning! I'm Giulia, welcome to Bar Il Palio. I'm making the coffees for the morning. Do you like the flags here on the wall?\",\"answers\":[{\"text\":\"Sì, sono belle. Cosa sono?\",\"en\":\"Yes, they're beautiful. What are they?\"},{\"text\":\"Buongiorno! Un caffè, per favore.\",\"en\":\"Good morning! A coffee, please.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "They are the flags of the Siena contrade (city districts). This is la mia contrada, my district, San Martino. Lei vuole un caffè? Would you like a coffee?",
+    "en": "They are the flags of the Siena contrade (city districts). This is my district, San Martino. Would you like a coffee?",
+    "raw": "{\"line\":\"{Sono *le bandiere* delle contrade di Siena. | They are the *flags* of the Siena *contrade* (city districts).} {Questa è *la mia contrada*, San Martino. | This is *my district*, San Martino.} {Lei vuole *un caffè*? | Would you like *a coffee*?}\",\"en\":\"They are the flags of the Siena contrade (city districts). This is my district, San Martino. Would you like a coffee?\",\"answers\":[{\"text\":\"Sì, un caffè, per favore.\",\"en\":\"Yes, a coffee, please.\"},{\"text\":\"Che bella! Cos'è il Palio?\",\"en\":\"How lovely! What is the Palio?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Subito, right away! Here is your coffee. This is the flag of mia contrada, my district, the Torre. Le piace il Palio? Do you like the Palio?",
+    "en": "Right away! Here is your coffee. This is the flag of my district, the Torre. Do you like the Palio?",
+    "raw": "{\"line\":\"{*Subito*! Ecco il suo caffè. | *Right away*! Here is your coffee.} {Questa è la bandiera della *mia contrada*, la Torre. | This is the flag of *my district*, the Torre.} {Le piace *il Palio*? | Do you like *the Palio*?}\",\"en\":\"Right away! Here is your coffee. This is the flag of my district, the Torre. Do you like the Palio?\",\"answers\":[{\"text\":\"Sì, mi piace molto. Cos'è il Palio?\",\"en\":\"Yes, I like it a lot. What is the Palio?\"},{\"text\":\"Non lo so ancora. Mi racconti del Palio?\",\"en\":\"I don't know it yet. Will you tell me about the Palio?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "idiom",
+    "line": "The Palio is la corsa dei cavalli, the horse race in the Piazza del Campo. Each district has a jockey, and the captain gives the jockey carta bianca (give white paper). Cosa pensa che significhi dare carta bianca? What do you think dare carta bianca means?",
+    "en": "The Palio is the horse race in the Piazza del Campo. Each district has a jockey, and the captain gives the jockey carta bianca (give white paper). What do you think dare carta bianca means?",
+    "raw": "{\"line\":\"{Il Palio è *la corsa dei cavalli* nella Piazza del Campo. | The Palio is *the horse race* in the Piazza del Campo.} {Ogni contrada ha un fantino, e il capitano *dà carta bianca* al fantino (give white paper). | Each district has a jockey, and the captain *gives the jockey carta bianca* (give white paper).} {Cosa pensa che significhi *dare carta bianca*? | What do you think *dare carta bianca* means?}\",\"en\":\"The Palio is the horse race in the Piazza del Campo. Each district has a jockey, and the captain gives the jockey carta bianca (give white paper). What do you think dare carta bianca means?\",\"answers\":[{\"text\":\"Dare piena libertà di decidere.\",\"en\":\"To give full freedom to decide.\"},{\"text\":\"Dare un foglio bianco.\",\"en\":\"To hand over a blank sheet of paper.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Esatto, brava! Carta bianca vuol dire piena libertà. Exactly, well done! Carta bianca means full freedom. Here il caffè, the coffee is always hot for the contrada. Le piace lo zucchero nel caffè? Do you like sugar in your coffee?",
+    "en": "Exactly, well done! Carta bianca means full freedom. Here the coffee is always hot for the contrada. Do you like sugar in your coffee?",
+    "raw": "{\"line\":\"{Esatto, *brava*! Carta bianca vuol dire *piena libertà*. | Exactly, well done! Carta bianca means *full freedom*.} {Qui *il caffè* è sempre caldo per la contrada. | Here *the coffee* is always hot for the contrada.} {Le piace *lo zucchero* nel caffè? | Do you like *sugar* in your coffee?}\",\"en\":\"Exactly, well done! Carta bianca means full freedom. Here the coffee is always hot for the contrada. Do you like sugar in your coffee?\",\"answers\":[{\"text\":\"Sì, un po' di zucchero. Il caffè è buono.\",\"en\":\"Yes, a little sugar. The coffee is good.\"},{\"text\":\"No, senza zucchero. Cos'è questa bandiera?\",\"en\":\"No, without sugar. What is this flag?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Here is the sugar, please. I'm glad, the coffee is buono, good today! A novembre, nel bar, fa freddo fuori, ma qui è caldo. In November it's cold outside, but here it's warm.",
+    "en": "Here is the sugar, please. I'm glad, the coffee is good today! In November it's cold outside, but here it's warm.",
+    "raw": "{\"line\":\"{Ecco *lo zucchero*, prego. | Here is *the sugar*, please.} {Sono contenta, il caffè è *buono* oggi! | I'm glad, the coffee is *good* today!} {A novembre, nel bar, *fa freddo* fuori, ma qui è caldo. | In November *it's cold* outside, but here it's warm.}\",\"en\":\"Here is the sugar, please. I'm glad, the coffee is good today! In November it's cold outside, but here it's warm.\",\"answers\":[{\"text\":\"Sì, qui è caldo. Il bar è molto bello.\",\"en\":\"Yes, it's warm here. The bar is very nice.\"},{\"text\":\"Che bandiera è questa? Mi piace.\",\"en\":\"Which flag is this? I like it.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Thank you, sono contenta, I'm glad! I really like lavorare qui, working here. Ogni mattina le bandiere mi fanno compagnia. Every morning the flags keep me company.",
+    "en": "Thank you, I'm glad! I really like working here. Every morning the flags keep me company.",
+    "raw": "{\"line\":\"{Grazie, *sono contenta*! | Thank you, *I'm glad*!} {Mi piace molto *lavorare qui*. | I really like *working here*.} {Ogni mattina *le bandiere* mi fanno compagnia. | Every morning *the flags* keep me company.}\",\"en\":\"Thank you, I'm glad! I really like working here. Every morning the flags keep me company.\",\"answers\":[{\"text\":\"Sì, le bandiere sono belle. Hai una bandiera preferita?\",\"en\":\"Yes, the flags are beautiful. Do you have a favorite flag?\"},{\"text\":\"Che bello lavorare qui! Qual è il tuo caffè preferito?\",\"en\":\"How nice to work here! What is your favorite coffee?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Yes! My favorite is the Torre la bandiera, flag. It's red and white, and it brings me luck. È stato un piacere chiacchierare con lei. It was a pleasure chatting with you.",
+    "en": "Yes! My favorite is the Torre flag. It's red and white, and it brings me luck. It was a pleasure chatting with you.",
+    "raw": "{\"line\":\"{Sì! La mia preferita è *la bandiera* della Torre. | Yes! My favorite is the Torre *flag*.} {È rossa e bianca, e mi porta fortuna. | It's red and white, and it brings me luck.} {È stato un piacere *chiacchierare* con lei. | It was a pleasure *chatting* with you.}\",\"en\":\"Yes! My favorite is the Torre flag. It's red and white, and it brings me luck. It was a pleasure chatting with you.\",\"answers\":[{\"text\":\"Grazie di tutto. Arrivederci!\",\"en\":\"Thanks for everything. Goodbye!\"},{\"text\":\"Devo andare. Buona giornata!\",\"en\":\"I have to go. Have a good day!\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "Arrivederci, goodbye, thank you! I really enjoyed chatting, but I have to get back to the coffees. La prossima volta le racconto del Palio di luglio! Next time I'll tell you about the July Palio!",
+    "en": "Goodbye, thank you! I really enjoyed chatting, but I have to get back to the coffees. Next time I'll tell you about the July Palio!",
+    "raw": "{\"line\":\"{*Arrivederci*, grazie a lei! | *Goodbye*, thank you!} {Mi è piaciuto molto chiacchierare, ma devo tornare ai caffè. | I really enjoyed chatting, but I have to get back to the coffees.} {La prossima volta le racconto *del Palio di luglio*! | Next time I'll tell you *about the July Palio*!}\",\"en\":\"Goodbye, thank you! I really enjoyed chatting, but I have to get back to the coffees. Next time I'll tell you about the July Palio!\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "done": true
+   }
+  ],
+  "culture": [
+   "Buongiorno means good morning",
+   "Siena is divided into districts called contrade",
+   "Contrade are represented by flags, displayed in places like bars",
+   "The Palio is a horse race held in the Piazza del Campo in Siena",
+   "Each contrada has a jockey in the Palio, and the captain gives the jockey carta bianca",
+   "Carta bianca (literally white paper) means full freedom",
+   "Italian bars serve coffee (caffè) with optional sugar (zucchero)",
+   "Subito means right away",
+   "Lei is the formal 'you' used with strangers (e.g., Lei vuole un caffè?)",
+   "Contrada pride: people identify with their own district (e.g., San Martino, Torre)",
+   "The Torre contrada's flag is red and white",
+   "Flags can be seen as lucky by contrada members",
+   "There are two Palio races, one in July (Palio di luglio)",
+   "Useful words: la mia contrada (my district), la bandiera (flag), la corsa dei cavalli (horse race), buono (good), contenta (glad), lavorare (to work)",
+   "Arrivederci means goodbye",
+   "È stato un piacere chiacchierare con lei means it was a pleasure chatting with you",
+   "Novembre is November; fa freddo means it's cold",
+   "Esatto means exactly; brava means well done (feminine)"
+  ]
+ },
+ {
+  "step": 4,
+  "city": "roma-nuova",
+  "place": "bar-mattina-nuova",
+  "kind": "leave",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Buongiorno! Sto pulendo il bancone. Oggi fa freddo, ci vuole un caffè caldo. It's cold today, you need a hot coffee. Che cosa le preparo? What can I make for you?",
+    "en": "Good morning! I'm cleaning the counter. It's cold today, you need a hot coffee. What can I make for you?",
+    "raw": "{\"line\":\"{Buongiorno! Sto pulendo *il bancone*. | Good morning! I'm cleaning *the counter*.} {Oggi fa freddo, ci vuole *un caffè caldo*. | It's cold today, you need *a hot coffee*.} {Che cosa le *preparo*? | What can I *make* for you?}\",\"en\":\"Good morning! I'm cleaning the counter. It's cold today, you need a hot coffee. What can I make for you?\",\"answers\":[{\"text\":\"Un cappuccino, per favore. Fa molto freddo!\",\"en\":\"A cappuccino, please. It's very cold!\"},{\"text\":\"Buongiorno! Cosa mi consiglia?\",\"en\":\"Good morning! What do you recommend?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "ask-en",
+    "line": "Subito! Il cappuccino è pronto in due minuti. Right away! The cappuccino is ready in two minutes. A novembre qui a Testaccio la mattina è sempre fredda, ma il bar si riempie. In November here in Testaccio the morning is always cold, but the bar fills up.",
+    "en": "Right away! The cappuccino is ready in two minutes. In November here in Testaccio the morning is always cold, but the bar fills up.",
+    "raw": "{\"line\":\"{*Subito*! Il cappuccino è pronto in due minuti. | *Right away*! The cappuccino is ready in two minutes.} {A novembre qui a Testaccio la mattina è *sempre fredda*, ma il bar si riempie. | In November here in Testaccio the morning is *always cold*, but the bar fills up.}\",\"en\":\"Right away! The cappuccino is ready in two minutes. In November here in Testaccio the morning is always cold, but the bar fills up.\",\"answers\":[{\"text\":\"Che bello! Chi viene al bar la mattina?\",\"en\":\"How nice! Who comes to the bar in the morning?\"},{\"text\":\"Capisco. Cosa prendono di solito i clienti?\",\"en\":\"I see. What do the customers usually have?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Vengono i clienti abituali, i vicini del quartiere. Prendono il cappuccino e un cornetto al banco. Lei di solito fa colazione al bar? Do you usually have breakfast at a bar?",
+    "en": "The regulars come, the neighbors from the district. They have a cappuccino and a cornetto at the counter. Do you usually have breakfast at a bar?",
+    "raw": "{\"line\":\"{Vengono *i clienti abituali*, i vicini del quartiere. | The *regulars* come, the neighbors from the district.} {Prendono il cappuccino e un cornetto *al banco*. | They have a cappuccino and a cornetto *at the counter*.} {Lei di solito fa colazione *al bar*? | Do you usually have breakfast *at a bar*?}\",\"en\":\"The regulars come, the neighbors from the district. They have a cappuccino and a cornetto at the counter. Do you usually have breakfast at a bar?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Bene, allora è di casa! Ecco il suo cappuccino, ben caldo. Vuole anche un cornetto con il cappuccino? Do you want a cornetto with your cappuccino?",
+    "en": "Good, then you're at home here! Here's your cappuccino, nice and hot. Do you want a cornetto with your cappuccino?",
+    "raw": "{\"line\":\"{Bene, allora è *di casa*! | Good, then you're *at home* here!} {Ecco il suo cappuccino, *ben caldo*. | Here's your cappuccino, *nice and hot*.} {Vuole anche *un cornetto* con il cappuccino? | Do you want *a cornetto* with your cappuccino?}\",\"en\":\"Good, then you're at home here! Here's your cappuccino, nice and hot. Do you want a cornetto with your cappuccino?\",\"answers\":[{\"text\":\"Sì, un cornetto. Cosa c'è dentro?\",\"en\":\"Yes, a cornetto. What's inside?\"},{\"text\":\"No, grazie. Il cappuccino è perfetto!\",\"en\":\"No, thank you. The cappuccino is perfect!\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Grazie a lei, arrivederci! Torni presto, qui al bar c'è sempre un caffè caldo ad aspettarla. Come back soon, there's always a hot coffee waiting for you here at the bar.",
+    "en": "Thank you, goodbye! Come back soon, there's always a hot coffee waiting for you here at the bar.",
+    "raw": "{\"line\":\"Grazie a lei, arrivederci! Torni presto, qui al bar c'è sempre un caffè caldo ad aspettarla.\",\"en\":\"Thank you, goodbye! Come back soon, there's always a hot coffee waiting for you here at the bar.\",\"answers\":[{\"text\":\"Grazie, a presto!\",\"en\":\"Thanks, see you soon!\"},{\"text\":\"Arrivederci, buona giornata!\",\"en\":\"Goodbye, have a good day!\"}],\"done\":true,\"hard\":false}",
+    "answers": 2,
+    "done": true
+   }
+  ]
+ },
+ {
+  "step": 4,
+  "city": "roma-nuova",
+  "place": "bar-mattina-nuova",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Buongiorno! Sto pulendo il bancone. Qui a Testaccio, la mattina, il bar è sempre pieno. Here in Testaccio, in the morning, the bar is always full. Che cosa le preparo oggi? What can I make for you today?",
+    "en": "Good morning! I'm cleaning the counter. Here in Testaccio, in the morning, the bar is always full. What can I make for you today?",
+    "raw": "{\"line\":\"{Buongiorno! Sto pulendo *il bancone*. | Good morning! I'm cleaning *the counter*.} {Qui a Testaccio, la mattina, il bar è *sempre pieno*. | Here in Testaccio, in the morning, the bar is *always full*.} {Che cosa le preparo *oggi*? | What can I make for you *today*?}\",\"en\":\"Good morning! I'm cleaning the counter. Here in Testaccio, in the morning, the bar is always full. What can I make for you today?\",\"answers\":[{\"text\":\"Un cappuccino, per favore. Ha anche un cornetto?\",\"en\":\"A cappuccino, please. Do you also have a cornetto (a sweet croissant)?\"},{\"text\":\"Buongiorno! Che cosa consiglia?\",\"en\":\"Good morning! What do you recommend?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Certo, il cappuccino arriva subito. Of course, the cappuccino is coming right up. Il cornetto è caldo, è appena uscito dal forno. Lo preferisce semplice o con la crema? Do you prefer it plain or with custard?",
+    "en": "Of course, the cappuccino is coming right up. The cornetto is warm, it just came out of the oven. Do you prefer it plain or with custard?",
+    "raw": "{\"line\":\"{*Certo*, il cappuccino arriva subito. | *Of course*, the cappuccino is coming right up.} {Il cornetto è *caldo*, è appena uscito dal forno. | The cornetto is *warm*, it just came out of the oven.} {Lo preferisce *semplice* o con la crema? | Do you prefer it *plain* or with custard?}\",\"en\":\"Of course, the cappuccino is coming right up. The cornetto is warm, it just came out of the oven. Do you prefer it plain or with custard?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Va bene, lo faccio semplice. Il cornetto è appena sfornato, ancora caldo. Lei è mai stato in un bar di Testaccio? Have you ever been in a Testaccio bar?",
+    "en": "Fine, I'll make it plain. The cornetto is fresh from the oven, still warm. Have you ever been in a Testaccio bar?",
+    "raw": "{\"line\":\"{Va bene, *lo faccio semplice*. | Fine, I'll make it *plain*.} {Il cornetto è *appena sfornato*, ancora caldo. | The cornetto is *fresh from the oven*, still warm.} {Lei è mai stato *in un bar di Testaccio*? | Have you ever been *in a Testaccio bar*?}\",\"en\":\"Fine, I'll make it plain. The cornetto is fresh from the oven, still warm. Have you ever been in a Testaccio bar?\",\"answers\":[{\"text\":\"Sì, è bello qui. Il bar è molto carino.\",\"en\":\"Yes, it's nice here. The bar is very pretty.\"},{\"text\":\"No, è la prima volta. Che cosa mi consiglia?\",\"en\":\"No, it's the first time. What do you recommend?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Grazie, mi fa piacere! Ecco il suo cappuccino e il cornetto, ancora caldi. Here are your cappuccino and cornetto, still warm. Questo bar è il mio posto preferito, qui conosco tutti. This bar is my favorite place, I know everyone here.",
+    "en": "Thanks, I'm glad! Here are your cappuccino and cornetto, still warm. This bar is my favorite place, I know everyone here.",
+    "raw": "{\"line\":\"{Grazie, *mi fa piacere*! | Thanks, *I'm glad*!} {Ecco il suo cappuccino e il cornetto, *ancora caldi*. | Here are your cappuccino and cornetto, *still warm*.} {Questo bar è *il mio posto preferito*, qui conosco tutti. | This bar is *my favorite place*, I know everyone here.}\",\"en\":\"Thanks, I'm glad! Here are your cappuccino and cornetto, still warm. This bar is my favorite place, I know everyone here.\",\"answers\":[{\"text\":\"Si sente. Posso sedermi qui?\",\"en\":\"You can tell. Can I sit here?\"},{\"text\":\"Che bello! Chi viene qui la mattina?\",\"en\":\"How nice! Who comes here in the morning?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Certo, si accomodi pure! Of course, have a seat please! Quel tavolino vicino alla finestra è libero. Le piace la musica in sottofondo, la mattina? Do you like the music in the background in the morning?",
+    "en": "Of course, have a seat please! That little table by the window is free. Do you like the music in the background in the morning?",
+    "raw": "{\"line\":\"{Certo, *si accomodi* pure! | Of course, *have a seat* please!} {Quel tavolino vicino alla *finestra* è libero. | That little table by the *window* is free.} {Le piace *la musica* in sottofondo, la mattina? | Do you like the *music* in the background in the morning?}\",\"en\":\"Of course, have a seat please! That little table by the window is free. Do you like the music in the background in the morning?\",\"answers\":[{\"text\":\"Sì, mi piace molto. La musica è bella.\",\"en\":\"Yes, I like it a lot. The music is nice.\"},{\"text\":\"Grazie, mi siedo lì. Come si chiama questo cornetto?\",\"en\":\"Thanks, I'll sit there. What is this cornetto called?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "ask-en",
+    "line": "Sono contenta! La radio la accendo ogni mattina alle sei. A quest'ora il bar è ancora vuoto e tranquillo. At that hour the bar is still empty and quiet.",
+    "en": "I'm glad! I turn on the radio every morning at six. At that hour the bar is still empty and quiet.",
+    "raw": "{\"line\":\"{Sono contenta! *La radio* la accendo ogni mattina alle sei. | I'm glad! I turn on *the radio* every morning at six.} {A quest'ora il bar è ancora vuoto e *tranquillo*. | At that hour the bar is still empty and *quiet*.}\",\"en\":\"I'm glad! I turn on the radio every morning at six. At that hour the bar is still empty and quiet.\",\"answers\":[{\"text\":\"Ci credo. Apre alle sei?\",\"en\":\"I believe it. Do you open at six?\"},{\"text\":\"Che musica ascolta? Mi piace il jazz.\",\"en\":\"What music do you listen to? I like jazz.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Sì, apro alle sei. Prima del bar, preparo sempre le brioche. Before the bar opens, I always get the pastries ready. Lei di solito fa colazione al bar? Do you usually have breakfast at a bar?",
+    "en": "Yes, I open at six. Before the bar opens, I always get the pastries ready. Do you usually have breakfast at a bar?",
+    "raw": "{\"line\":\"{Sì, *apro alle sei*. | Yes, I *open at six*.} {Prima del bar, preparo sempre le brioche. | Before the bar opens, I always get the pastries ready.} {Lei di solito *fa colazione* al bar? | Do you usually *have breakfast* at a bar?}\",\"en\":\"Yes, I open at six. Before the bar opens, I always get the pastries ready. Do you usually have breakfast at a bar?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Allora è proprio nel posto giusto! Mi fa piacere averla qui stamattina. Buona colazione, e buona giornata!",
+    "en": "Then you're in just the right place! I'm glad to have you here this morning. Enjoy your breakfast, and have a good day!",
+    "raw": "{\"line\":\"Allora è proprio nel posto giusto! Mi fa piacere averla qui stamattina. Buona colazione, e buona giornata!\",\"en\":\"Then you're in just the right place! I'm glad to have you here this morning. Enjoy your breakfast, and have a good day!\",\"answers\":[{\"text\":\"Grazie di tutto. Arrivederci!\",\"en\":\"Thanks for everything. Goodbye!\"},{\"text\":\"Buona giornata. A presto!\",\"en\":\"Have a good day. See you soon!\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "Grazie a lei, è stato un piacere! Adesso torno ai miei clienti, ma la prossima volta le faccio provare la nostra crostata. Now I'm going back to my customers, but next time I'll let you try our tart. Arrivederci, a presto! Goodbye, see you soon!",
+    "en": "Thank you, it was a pleasure! Now I'm going back to my customers, but next time I'll let you try our tart. Goodbye, see you soon!",
+    "raw": "{\"line\":\"{*Grazie* a lei, è stato un piacere! | *Thank you*, it was a pleasure!} {Adesso torno ai miei clienti, ma la prossima volta le faccio provare la nostra crostata. | Now I'm going back to my customers, but next time I'll let you try our tart.} {*Arrivederci*, a presto! | *Goodbye*, see you soon!}\",\"en\":\"Thank you, it was a pleasure! Now I'm going back to my customers, but next time I'll let you try our tart. Goodbye, see you soon!\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "done": true
+   }
+  ],
+  "culture": [
+   "Testaccio is a neighborhood in Rome known for its local life and bars",
+   "Italian bars are busy in the morning, when people stop for breakfast",
+   "Cappuccino is a typical Italian breakfast drink",
+   "The cornetto is the Italian version of a croissant, a typical breakfast pastry",
+   "Cornetti can be plain (semplice) or filled with custard (crema)",
+   "Cornetti are served fresh and warm from the oven (appena sfornato)",
+   "Breakfast is commonly eaten at the bar, standing or sitting at a table",
+   "Bar owners often know their regulars, and the neighborhood bar is a community place",
+   "Italian bars open very early, around 6 a.m., and the pastries are prepared before opening",
+   "Many bars play the radio or background music in the morning",
+   "Crostata is a traditional Italian tart often offered in bars",
+   "Formal address with 'Lei' is used with customers (e.g., Che cosa le preparo?)",
+   "Useful words: Buongiorno, Grazie, Certo, Va bene, Si accomodi, Arrivederci, A presto, Buona giornata"
+  ]
+ },
+ {
+  "step": 4,
+  "city": "matera",
+  "place": "caffe-schiuma",
+  "kind": "leave",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Buongiorno! Siamo aperti, il caffè è pronto. Qui si beve il caffè al banco, in piedi. Lo vuole un caffè? Do you want a coffee?",
+    "en": "Good morning! We're open, the coffee is ready. Here you drink coffee at the counter, standing up. Do you want a coffee?",
+    "raw": "{\"line\":\"{*Buongiorno*! Siamo aperti, il caffè è pronto. | *Good morning*! We're open, the coffee is ready.} {Qui si beve *il caffè al banco*, in piedi. | Here you drink *coffee at the counter*, standing up.} {Lo vuole *un caffè*? | Do you want *a coffee*?}\",\"en\":\"Good morning! We're open, the coffee is ready. Here you drink coffee at the counter, standing up. Do you want a coffee?\",\"answers\":[{\"text\":\"Sì, un caffè, per favore. Dove devo stare?\",\"en\":\"Yes, a coffee, please. Where should I stand?\"},{\"text\":\"Buongiorno! Che bel posto.\",\"en\":\"Good morning! What a lovely place.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Ecco il banco, si metta qui. Il caffè arriva subito, è forte. The coffee comes right away, it's strong. Dopo, vuole guardare il burrone dai tavoli fuori? Afterwards, do you want to look at the ravine from the tables outside?",
+    "en": "Here is the counter, stand here. The coffee comes right away, it's strong. Afterwards, do you want to look at the ravine from the tables outside?",
+    "raw": "{\"line\":\"{Ecco *il banco*, si metta qui. | Here is *the counter*, stand here.} {Il caffè arriva subito, è *forte*. | The coffee comes right away, it's *strong*.} {Dopo, vuole guardare *il burrone* dai tavoli fuori? | Afterwards, do you want to look at *the ravine* from the tables outside?}\",\"en\":\"Here is the counter, stand here. The coffee comes right away, it's strong. Afterwards, do you want to look at the ravine from the tables outside?\",\"answers\":[{\"text\":\"Sì, grazie. Com'è la vista?\",\"en\":\"Yes, thanks. What's the view like?\"},{\"text\":\"No, resto qui. Il bar è bello.\",\"en\":\"No, I'll stay here. The bar is nice.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "La vista è bellissima, si vede tutto il burrone. Ecco il suo caffè, forte e caldo. Here is your coffee, strong and hot. Le piace il caffè forte? Do you like strong coffee?",
+    "en": "The view is beautiful, you can see the whole ravine. Here is your coffee, strong and hot. Do you like strong coffee?",
+    "raw": "{\"line\":\"{La vista è *bellissima*, si vede tutto il burrone. | The view is *beautiful*, you can see the whole ravine.} {Ecco il suo *caffè*, forte e caldo. | Here is your *coffee*, strong and hot.} {Le piace *il caffè forte*? | Do you like *strong coffee*?}\",\"en\":\"The view is beautiful, you can see the whole ravine. Here is your coffee, strong and hot. Do you like strong coffee?\",\"answers\":[{\"text\":\"Sì, mi piace molto. Il caffè è buonissimo!\",\"en\":\"Yes, I like it a lot. The coffee is very good!\"},{\"text\":\"Un po' forte. Cos'è quel burrone?\",\"en\":\"A bit strong. What is that ravine?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "idiom",
+    "line": "Grazie! Il mio caffè fa sempre bella figura, qui al banco. Thanks! My coffee always makes a good impression, here at the counter. Fare bella figura Secondo lei, cosa vuol dire fare bella figura? What do you think fare bella figura means?",
+    "en": "Thanks! My coffee always makes a good impression, here at the counter. Fare bella figura (word for word: to cut a fine figure). What do you think fare bella figura means?",
+    "raw": "{\"line\":\"{Grazie! Il mio caffè *fa sempre bella figura*, qui al banco. | Thanks! My coffee *always makes a good impression*, here at the counter.} {*Fare bella figura* | *Fare bella figura* (word for word: to cut a fine figure).} {Secondo lei, cosa vuol dire *fare bella figura*? | What do you think *fare bella figura* means?}\",\"en\":\"Thanks! My coffee always makes a good impression, here at the counter. Fare bella figura (word for word: to cut a fine figure). What do you think fare bella figura means?\",\"answers\":[{\"text\":\"Vuol dire fare una bella impressione. Ha ragione!\",\"en\":\"It means to make a good impression. Am I right?\"},{\"text\":\"Vuol dire avere una bella faccia. È giusto?\",\"en\":\"It means to have a nice face. Is that right?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Arrivederci! Buona giornata. Torni a trovarci, il caffè è sempre pronto. Come back and see us, the coffee is always ready.",
+    "en": "Goodbye! Have a good day. Come back and see us, the coffee is always ready.",
+    "raw": "{\"line\":\"{Arrivederci! *Buona giornata*. | Goodbye! *Have a good day*.} {Torni a trovarci, il caffè è sempre pronto. | Come back and see us, the coffee is always ready.}\",\"en\":\"Goodbye! Have a good day. Come back and see us, the coffee is always ready.\",\"answers\":[{\"text\":\"Grazie, altrettanto.\",\"en\":\"Thank you, same to you.\"},{\"text\":\"A presto!\",\"en\":\"See you soon!\"}],\"done\":true,\"hard\":false}",
+    "answers": 2,
+    "done": true
+   }
+  ]
+ },
+ {
+  "step": 4,
+  "city": "matera",
+  "place": "caffe-schiuma",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Buongiorno! Questo è il mio bar, Caffè Schiuma. Sto preparando i caffè per la mattina. Ne vuole uno? Would you like one?",
+    "en": "Good morning! This is my bar, Caffè Schiuma. I'm making the coffees for the morning. Would you like one?",
+    "raw": "{\"line\":\"{*Buongiorno*! Questo è il mio bar, *Caffè Schiuma*. | *Good morning*! This is my bar, *Caffè Schiuma*.} {Sto preparando *i caffè* per la mattina. | I'm making *the coffees* for the morning.} {Ne vuole *uno*? | Would you like *one*?}\",\"en\":\"Good morning! This is my bar, Caffè Schiuma. I'm making the coffees for the morning. Would you like one?\",\"answers\":[{\"text\":\"Sì, un caffè, per favore. Com'è buono qui!\",\"en\":\"Yes, a coffee, please. How good it is here!\"},{\"text\":\"Buongiorno! Che bel posto.\",\"en\":\"Good morning! What a lovely place.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Grazie! Ecco il suo caffè, forte e caldo. Qui si beve al banco, in piedi. Le piace la vista sui Sassi? Do you like the view over the Sassi?",
+    "en": "Thank you! Here is your coffee, strong and hot. Here we drink at the counter, standing up. Do you like the view over the Sassi?",
+    "raw": "{\"line\":\"{*Grazie*! Ecco il suo caffè, forte e caldo. | *Thank you*! Here is your coffee, strong and hot.} {Qui si beve *al banco*, in piedi. | Here we drink *at the counter*, standing up.} {Le piace *la vista* sui Sassi? | Do you like *the view* over the Sassi?}\",\"en\":\"Thank you! Here is your coffee, strong and hot. Here we drink at the counter, standing up. Do you like the view over the Sassi?\",\"answers\":[{\"text\":\"Sì, mi piace molto. È bellissimo!\",\"en\":\"Yes, I like it a lot. It's beautiful!\"},{\"text\":\"Che cosa sono i Sassi?\",\"en\":\"What are the Sassi?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Sono contento! Questo bar è scavato nel tufo. Dopo il caffè, può uscire e guardare il burrone dai tavolini. After the coffee, you can go out and look at the ravine from the tables. Vuole sedersi fuori? Do you want to sit outside?",
+    "en": "I'm glad! This bar is carved into the tufa. After the coffee, you can go out and look at the ravine from the tables. Do you want to sit outside?",
+    "raw": "{\"line\":\"{Sono contento! Questo bar è *scavato nel tufo*. | I'm glad! This bar is *carved into the tufa*.} {Dopo il caffè, può uscire e guardare il burrone dai tavolini. | After the coffee, you can go out and look at the ravine from the tables.} {Vuole sedersi *fuori*? | Do you want to sit *outside*?}\",\"en\":\"I'm glad! This bar is carved into the tufa. After the coffee, you can go out and look at the ravine from the tables. Do you want to sit outside?\",\"answers\":[{\"text\":\"Sì, grazie. Fa freddo fuori?\",\"en\":\"Yes, thank you. Is it cold outside?\"},{\"text\":\"Prima finisco il caffè. Cos'è il tufo?\",\"en\":\"First I'll finish my coffee. What is tufa?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Un po', è novembre. Ma il sole è bello oggi. Beve il caffè qui o fuori? Do you drink the coffee here or outside?",
+    "en": "A bit, it's November. But the sun is nice today. Do you drink the coffee here or outside?",
+    "raw": "{\"line\":\"{Un po', è novembre. | A bit, it's *November*.} {Ma il sole è *bello* oggi. | But the sun is *nice* today.} {Beve il caffè *qui* o fuori? | Do you drink the coffee *here* or outside?}\",\"en\":\"A bit, it's November. But the sun is nice today. Do you drink the coffee here or outside?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Va bene, il sole è bello. All right, the sun is nice. Prenda pure il caffè e esca con calma. Le piace il caffè forte? Do you like coffee strong?",
+    "en": "All right, the sun is nice. Take your coffee and go out at your own pace. Do you like coffee strong?",
+    "raw": "{\"line\":\"{Va bene, *il sole* è bello. | All right, *the sun* is nice.} {Prenda pure il caffè e *esca* con calma. | Take your coffee and *go out* at your own pace.} {Le piace il caffè *forte*? | Do you like coffee *strong*?}\",\"en\":\"All right, the sun is nice. Take your coffee and go out at your own pace. Do you like coffee strong?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Bene, qui il caffè è sempre forte. Good, here the coffee is always strong. Lo faccio con la moka, come a casa. Vuole un bicchiere d'acqua con il caffè? Do you want a glass of water with the coffee?",
+    "en": "Good, here the coffee is always strong. I make it with the moka pot, like at home. Do you want a glass of water with the coffee?",
+    "raw": "{\"line\":\"{Bene, qui il caffè è *sempre forte*. | Good, here the coffee is *always strong*.} {Lo faccio con *la moka*, come a casa. | I make it with *the moka pot*, like at home.} {Vuole *un bicchiere d'acqua* con il caffè? | Do you want *a glass of water* with the coffee?}\",\"en\":\"Good, here the coffee is always strong. I make it with the moka pot, like at home. Do you want a glass of water with the coffee?\",\"answers\":[{\"text\":\"Sì, grazie. Dov'è il bagno?\",\"en\":\"Yes, thank you. Where is the bathroom?\"},{\"text\":\"No, grazie. Che cos'è la moka?\",\"en\":\"No, thank you. What is the moka pot?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Ecco l'acqua, prego. Il bagno è in fondo, a sinistra. The bathroom is at the back, on the left. Questo bar è dentro il tufo, e fa fresco anche d'estate. This bar is inside the tufa, and it stays cool even in summer.",
+    "en": "Here is the water, please. The bathroom is at the back, on the left. This bar is inside the tufa, and it stays cool even in summer.",
+    "raw": "{\"line\":\"{Ecco *l'acqua*, prego. | Here is *the water*, please.} {Il bagno è *in fondo*, a sinistra. | The bathroom is *at the back*, on the left.} {Questo bar è dentro il tufo, e fa fresco anche d'estate. | This bar is inside the tufa, and it stays cool even in summer.}\",\"en\":\"Here is the water, please. The bathroom is at the back, on the left. This bar is inside the tufa, and it stays cool even in summer.\",\"answers\":[{\"text\":\"Che bello! Mi piace questo posto.\",\"en\":\"How nice! I like this place.\"},{\"text\":\"Perché fa fresco nel tufo?\",\"en\":\"Why is it cool in the tufa?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Grazie, mi fa piacere! Il caffè è finito, ma il sole è ancora bello fuori. The coffee is finished, but the sun is still nice outside.",
+    "en": "Thank you, I'm glad! The coffee is finished, but the sun is still nice outside.",
+    "raw": "{\"line\":\"{Grazie, *mi fa piacere*! | Thank you, *I'm glad*!} {Il caffè è finito, ma il sole è ancora bello fuori. | The coffee is finished, but the sun is still nice outside.}\",\"en\":\"Thank you, I'm glad! The coffee is finished, but the sun is still nice outside.\",\"answers\":[{\"text\":\"Grazie di tutto. Arrivederci!\",\"en\":\"Thanks for everything. Goodbye!\"},{\"text\":\"Ora vado fuori. A presto!\",\"en\":\"Now I'm going outside. See you soon!\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "Grazie a lei, è stato un piacere! Ora devo tornare ai miei caffè. Arrivederci e buona giornata! La prossima volta le faccio vedere la moka. Next time I'll show you the moka pot.",
+    "en": "Thank you, it was a pleasure! Now I have to get back to my coffees. Goodbye and have a good day! Next time I'll show you the moka pot.",
+    "raw": "{\"line\":\"{Grazie a lei, è stato un piacere! | Thank *you*, it was a pleasure!} {Ora devo tornare ai miei caffè. *Arrivederci* e buona giornata! | Now I have to get back to my coffees. *Goodbye* and have a good day!} {La prossima volta le faccio vedere la moka. | Next time I'll show you the moka pot.}\",\"en\":\"Thank you, it was a pleasure! Now I have to get back to my coffees. Goodbye and have a good day! Next time I'll show you the moka pot.\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "done": true
+   }
+  ],
+  "culture": [
+   "Italians commonly drink coffee standing at the bar counter (al banco)",
+   "Matera's Sassi are historic cave dwellings with a view over a ravine",
+   "Buildings and bars in Matera are carved into tufa rock",
+   "Tufa-carved interiors stay cool even in summer",
+   "Italian coffee is typically strong and served hot",
+   "Many Italians make coffee at home with a moka pot",
+   "A glass of water is commonly offered with coffee",
+   "Formal address uses the 'lei' form with customers (e.g., Le piace, Vuole)",
+   "Greetings: Buongiorno, Grazie, Prego, Arrivederci, Buona giornata",
+   "Bathroom is 'il bagno'",
+   "Italian cafés often have outdoor tables (tavolini)",
+   "November can be chilly in southern Italy even on sunny days"
+  ]
+ },
+ {
+  "step": 4,
+  "city": "firenze",
+  "place": "ponte-vecchio",
+  "kind": "leave",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Buongiorno! Io sistemo un anello qui al banco. Good morning! I'm resizing a ring here at my bench. Questa è la bottega della mia famiglia. Le piace questo anello? Do you like this ring?",
+    "en": "Good morning! I'm resizing a ring here at my bench. This is my family's workshop. Do you like this ring?",
+    "raw": "{\"line\":\"{Buongiorno! Io *sistemo un anello* qui al banco. | Good morning! I'm *resizing a ring* here at my bench.} {Questa è *la bottega* della mia famiglia. | This is my family's *workshop*.} {Le piace *questo anello*?  | Do you like *this ring*?}\",\"en\":\"Good morning! I'm resizing a ring here at my bench. This is my family's workshop. Do you like this ring?\",\"answers\":[{\"text\":\"Sì, è molto bello. Che cos'è quella pietra?\",\"en\":\"Yes, it's very beautiful. What is that stone?\"},{\"text\":\"Buongiorno! Lavora qui da tanto tempo?\",\"en\":\"Good morning! Have you worked here a long time?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Quella pietra è un granato, rosso scuro. That stone is a garnet, deep red. Lo uso spesso per gli anelli di famiglia. Le piacciono le pietre rosse? Do you like red stones?",
+    "en": "That stone is a garnet, deep red. I often use it for family rings. Do you like red stones?",
+    "raw": "{\"line\":\"{Quella pietra è *un granato*, rosso scuro. | That stone is *a garnet*, deep red.} {Lo uso spesso per *gli anelli* di famiglia. | I often use it for family *rings*.} {Le piacciono *le pietre rosse*? | Do you like *red stones*?}\",\"en\":\"That stone is a garnet, deep red. I often use it for family rings. Do you like red stones?\",\"answers\":[{\"text\":\"Sì, mi piacciono. Il rosso è il mio colore.\",\"en\":\"Yes, I like them. Red is my color.\"},{\"text\":\"Non molto. Preferisco le pietre blu.\",\"en\":\"Not much. I prefer blue stones.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Il rosso è un bel colore, forte e caldo. Qui sul ponte ho anche un anello con un rubino. Lo vuole vedere? Do you want to see it?",
+    "en": "Red is a lovely colour, strong and warm. Here on the bridge I also have a ring with a ruby. Do you want to see it?",
+    "raw": "{\"line\":\"{Il rosso è *un bel colore*, forte e caldo. | Red is *a lovely colour*, strong and warm.} {Qui sul ponte ho anche *un anello* con un rubino. | Here on the bridge I also have *a ring* with a ruby.} {Lo vuole *vedere*? | Do you want to *see* it?}\",\"en\":\"Red is a lovely colour, strong and warm. Here on the bridge I also have a ring with a ruby. Do you want to see it?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "done": false
+   },
+   {
+    "setup": "idiom",
+    "line": "Ecco, il rubino, guardi come brilla! Aspetti, faccio un colpo di telefono a mio figlio, ha la scatola. Secondo lei, cosa vuol dire un colpo di telefono? What do you think a stroke of telephone means?",
+    "en": "Here, the ruby, look how it shines! Wait, I'll make a stroke of telephone to my son, he has the box. What do you think a stroke of telephone means?",
+    "raw": "{\"line\":\"{Ecco, *il rubino*, guardi come brilla! | Here, *the ruby*, look how it shines!} {Aspetti, faccio *un colpo di telefono* a mio figlio, ha la scatola. | Wait, I'll make *a stroke of telephone* to my son, he has the box.} {Secondo lei, cosa vuol dire *un colpo di telefono*? | What do you think *a stroke of telephone* means?}\",\"en\":\"Here, the ruby, look how it shines! Wait, I'll make a stroke of telephone to my son, he has the box. What do you think a stroke of telephone means?\",\"answers\":[{\"text\":\"Una telefonata veloce. Va bene, aspetto.\",\"en\":\"A quick phone call. Okay, I'll wait.\"},{\"text\":\"Un telefono rotto. Che peccato!\",\"en\":\"A broken phone. What a shame!\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Arrivederci, e grazie a lei! La prossima volta le faccio vedere il rubino con calma. Next time I'll show you the ruby at leisure.",
+    "en": "Goodbye, and thank you! Next time I'll show you the ruby at leisure.",
+    "raw": "{\"line\":\"{*Arrivederci*, e grazie a lei! | *Goodbye*, and thank you!} {La prossima volta le faccio vedere *il rubino* con calma. | Next time I'll show you *the ruby* at leisure.}\",\"en\":\"Goodbye, and thank you! Next time I'll show you the ruby at leisure.\",\"answers\":[{\"text\":\"Volentieri, a presto!\",\"en\":\"Gladly, see you soon!\"},{\"text\":\"Grazie, buona giornata!\",\"en\":\"Thanks, have a good day!\"}],\"done\":true,\"hard\":false}",
+    "answers": 2,
+    "done": true
+   }
+  ]
+ },
+ {
+  "step": 4,
+  "city": "firenze",
+  "place": "ponte-vecchio",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Buongiorno! Sto stringendo un anello qui al banco. Good morning! I'm resizing a ring here at my bench. Questa è la bottega della mia famiglia, sul Ponte Vecchio. Le piacciono i gioielli fatti a mano? Do you like handmade jewellery?",
+    "en": "Good morning! I'm resizing a ring here at my bench. This is my family's workshop, on the Ponte Vecchio. Do you like handmade jewellery?",
+    "raw": "{\"line\":\"{Buongiorno! Sto *stringendo un anello* qui al banco. | Good morning! I'm *resizing a ring* here at my bench.} {Questa è la *bottega* della mia famiglia, sul Ponte Vecchio. | This is my family's *workshop*, on the Ponte Vecchio.} {Le piacciono *i gioielli* fatti a mano? | Do you like *handmade jewellery*?}\",\"en\":\"Good morning! I'm resizing a ring here at my bench. This is my family's workshop, on the Ponte Vecchio. Do you like handmade jewellery?\",\"answers\":[{\"text\":\"Sì, mi piacciono molto. Che bella bottega!\",\"en\":\"Yes, I like them a lot. What a beautiful workshop!\"},{\"text\":\"Non lo so. Che cosa fa con l'anello?\",\"en\":\"I don't know. What are you doing with the ring?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Grazie mille! La bottega è piccola, ma è di famiglia. Thank you very much! The workshop is small, but it's a family one. Qui lavoriamo l'oro da tanti anni. Cerca un anello o una collana? Are you looking for a ring or a necklace?",
+    "en": "Thank you very much! The workshop is small, but it's a family one. Here we work gold for many years. Are you looking for a ring or a necklace?",
+    "raw": "{\"line\":\"{*Grazie mille*! La bottega è piccola, ma è di famiglia. | *Thank you very much*! The workshop is small, but it's a family one.} {Qui lavoriamo *l'oro* da tanti anni. | Here we work *gold* for many years.} {Cerca *un anello* o una collana? | Are you looking for *a ring* or a necklace?}\",\"en\":\"Thank you very much! The workshop is small, but it's a family one. Here we work gold for many years. Are you looking for a ring or a necklace?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Va bene, con calma! Qui faccio anelli e collane a mano. Vuole vedere l'anello che sto stringendo? Do you want to see the ring I'm resizing?",
+    "en": "All right, take your time! Here I make rings and necklaces by hand. Do you want to see the ring I'm resizing?",
+    "raw": "{\"line\":\"{Va bene, con calma! | All right, take your time!} {Qui faccio *anelli* e *collane* a mano. | Here I make *rings* and *necklaces* by hand.} {Vuole vedere *l'anello* che sto stringendo? | Do you want to see *the ring* I'm resizing?}\",\"en\":\"All right, take your time! Here I make rings and necklaces by hand. Do you want to see the ring I'm resizing?\",\"answers\":[{\"text\":\"Sì, volentieri. È molto bello!\",\"en\":\"Yes, gladly. It's very beautiful!\"},{\"text\":\"Non adesso, grazie. Posso guardare le collane?\",\"en\":\"Not now, thank you. Can I look at the necklaces?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Ecco, guardi questo anello. È d'oro giallo, lo sto stringendo a mano. Mio padre lavorava a questo banco, e prima di lui mio nonno. My father worked at this bench, and before him my grandfather.",
+    "en": "Here, look at this ring. It's yellow gold, I'm resizing it by hand. My father worked at this bench, and before him my grandfather.",
+    "raw": "{\"line\":\"{*Ecco*, guardi *questo anello*. | *Here*, look at *this ring*.} {È d'oro giallo, lo sto stringendo *a mano*. | It's yellow gold, I'm resizing it *by hand*.} {Mio padre lavorava a questo banco, *e prima di lui mio nonno*. | My father worked at this bench, *and before him my grandfather*.}\",\"en\":\"Here, look at this ring. It's yellow gold, I'm resizing it by hand. My father worked at this bench, and before him my grandfather.\",\"answers\":[{\"text\":\"Che bella tradizione! Lei lavora qui da molto?\",\"en\":\"What a beautiful tradition! Have you worked here a long time?\"},{\"text\":\"Che bello! Posso guardare l'anello da vicino?\",\"en\":\"How lovely! Can I look at the ring up close?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Sì, lavoro qui da trent'anni. Mi piace il lavoro a mano, è lento ma bello. I like work done by hand, it's slow but beautiful. Le piace l'oro giallo o l'oro bianco? Do you like yellow gold or white gold?",
+    "en": "Yes, I've worked here for thirty years. I like work done by hand, it's slow but beautiful. Do you like yellow gold or white gold?",
+    "raw": "{\"line\":\"{Sì, lavoro qui *da trent'anni*. | Yes, I've worked here *for thirty years*.} {Mi piace *il lavoro a mano*, è lento ma bello. | I like *work done by hand*, it's slow but beautiful.} {Le piace *l'oro giallo* o l'oro bianco? | Do you like *yellow gold* or white gold?}\",\"en\":\"Yes, I've worked here for thirty years. I like work done by hand, it's slow but beautiful. Do you like yellow gold or white gold?\",\"answers\":[{\"text\":\"Mi piace l'oro giallo. È molto classico.\",\"en\":\"I like yellow gold. It's very classic.\"},{\"text\":\"Preferisco l'oro bianco. Che differenza c'è?\",\"en\":\"I prefer white gold. What's the difference?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "ask-en",
+    "line": "Sono d'accordo, l'oro giallo è classico. I agree, yellow gold is classic. Qui a Firenze lo lavoriamo da secoli, e io amo questo mestiere. Here in Florence we've worked it for centuries, and I love this trade.",
+    "en": "I agree, yellow gold is classic. Here in Florence we've worked it for centuries, and I love this trade.",
+    "raw": "{\"line\":\"{Sono d'accordo, *l'oro giallo* è classico. | I agree, *yellow gold* is classic.} {Qui a Firenze lo lavoriamo *da secoli*, e io amo questo mestiere. | Here in Florence we've worked it *for centuries*, and I love this trade.}\",\"en\":\"I agree, yellow gold is classic. Here in Florence we've worked it for centuries, and I love this trade.\",\"answers\":[{\"text\":\"Che bello! Lei fa anche anelli nuovi?\",\"en\":\"How lovely! Do you also make new rings?\"},{\"text\":\"Interessante! Come si lavora l'oro?\",\"en\":\"Interesting! How do you work gold?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Sì, faccio anelli nuovi a mano, anche su misura. Il lavoro più lungo è il disegno, poi si lavora l'oro. Che tipo di anello le piace? What kind of ring do you like?",
+    "en": "Yes, I make new rings by hand, even custom-made. The longest part is the design, then you work the gold. What kind of ring do you like?",
+    "raw": "{\"line\":\"{Sì, faccio *anelli nuovi* a mano, anche su misura. | Yes, I make *new rings* by hand, even custom-made.} {Il lavoro più lungo è *il disegno*, poi si lavora l'oro. | The longest part is *the design*, then you work the gold.} {Che tipo di anello le piace? | What kind of ring do you like?}\",\"en\":\"Yes, I make new rings by hand, even custom-made. The longest part is the design, then you work the gold. What kind of ring do you like?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Va bene, nessuna fretta! Ora torno al mio anello, ma lei può guardare con calma. Now I'll go back to my ring, but you can look around at your leisure.",
+    "en": "All right, no hurry! Now I'll go back to my ring, but you can look around at your leisure.",
+    "raw": "{\"line\":\"{Va bene, nessuna fretta! | All right, no hurry!} {Ora torno al mio *anello*, ma lei può guardare con calma. | Now I'll go back to my *ring*, but you can look around at your leisure.}\",\"en\":\"All right, no hurry! Now I'll go back to my ring, but you can look around at your leisure.\",\"answers\":[{\"text\":\"Grazie mille! Arrivederci.\",\"en\":\"Thank you so much! Goodbye.\"},{\"text\":\"Molto gentile. Buona giornata!\",\"en\":\"Very kind. Have a good day!\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "Grazie a lei, è stato un piacere! Ora devo tornare al mio anello, ma la prossima volta le faccio vedere i miei disegni. Arrivederci! Goodbye!",
+    "en": "Thank you, it was a pleasure! Now I have to get back to my ring, but next time I'll show you my designs. Goodbye!",
+    "raw": "{\"line\":\"{Grazie a lei, è stato un piacere! | Thank you, it was a pleasure!} {Ora devo tornare al mio *anello*, ma la prossima volta le faccio vedere i miei disegni. | Now I have to get back to my *ring*, but next time I'll show you my designs.} {*Arrivederci*! | *Goodbye*!}\",\"en\":\"Thank you, it was a pleasure! Now I have to get back to my ring, but next time I'll show you my designs. Goodbye!\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "done": true
+   }
+  ],
+  "culture": [
+   "Ponte Vecchio is a famous bridge in Florence known for its jewellery workshops",
+   "Family-run workshops (botteghe) passing from grandfather to father to son are a Italian tradition",
+   "Florence has worked gold for centuries and is known for handmade gold jewellery",
+   "Italian greeting 'Buongiorno' means good morning",
+   "'Grazie mille' means thank you very much",
+   "'Bottega' means a small workshop or shop",
+   "'Anello' means ring and 'collana' means necklace",
+   "'Oro giallo' means yellow gold and 'oro bianco' means white gold",
+   "'Su misura' means made-to-measure or custom-made",
+   "'Con calma' means calmly, take your time, and 'nessuna fretta' means no hurry",
+   "'Va bene' means okay or all right",
+   "'Sono d'accordo' means I agree",
+   "'Arrivederci' is the standard Italian goodbye",
+   "Italians use the formal 'lei' form when speaking politely to customers or strangers",
+   "Handmade craftsmanship (lavoro a mano) is valued as slow but beautiful",
+   "Yellow gold is considered the classic choice in Italian jewellery"
+  ]
+ },
+ {
+  "step": 4,
+  "city": "siena",
+  "place": "bar-il-palio",
+  "kind": "leave",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Buongiorno! Sono Giulia, benvenuto al Bar Il Palio. Good morning! I'm Giulia, welcome to Bar Il Palio. Sto preparando i caffè per la mattina. Le piacciono le bandiere del Palio qui sul muro? Do you like the flags of the Palio here on the wall?",
+    "en": "Good morning! I'm Giulia, welcome to Bar Il Palio. I'm making the coffees for the morning. Do you like the flags of the Palio here on the wall?",
+    "raw": "{\"line\":\"{*Buongiorno*! Sono Giulia, benvenuto al Bar Il Palio. | *Good morning*! I'm Giulia, welcome to Bar Il Palio.} {Sto preparando *i caffè* per la mattina. | I'm making *the coffees* for the morning.} {Le piacciono *le bandiere* del Palio qui sul muro? | Do you like *the flags* of the Palio here on the wall?}\",\"en\":\"Good morning! I'm Giulia, welcome to Bar Il Palio. I'm making the coffees for the morning. Do you like the Palio flags here on the wall?\",\"answers\":[{\"text\":\"Sì, sono belle. Cosa sono?\",\"en\":\"Yes, they're beautiful. What are they?\"},{\"text\":\"Buongiorno! Un caffè, per favore.\",\"en\":\"Good morning! A coffee, please.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Sono le bandiere delle contrade, i quartieri di Siena. Ogni contrada ha i suoi colori. Each contrada has its own colors. Vuole un caffè mentre guarda? Would you like a coffee while you look?",
+    "en": "They are the flags of the contrade, the neighborhoods of Siena. Each contrada has its own colors. Would you like a coffee while you look?",
+    "raw": "{\"line\":\"{Sono *le bandiere delle contrade*, i quartieri di Siena. | They are *the flags of the contrade*, the neighborhoods of Siena.} {Ogni contrada ha *i suoi colori*. | Each contrada has *its own colors*.} {Vuole *un caffè* mentre guarda? | Would you like *a coffee* while you look?}\",\"en\":\"They are the flags of the contrade, the neighborhoods of Siena. Each contrada has its own colors. Would you like a coffee while you look?\",\"answers\":[{\"text\":\"Sì, un caffè, grazie. Quale bandiera è la sua?\",\"en\":\"Yes, a coffee, thanks. Which flag is yours?\"},{\"text\":\"Un cappuccino, per favore. Cosa vuol dire contrada?\",\"en\":\"A cappuccino, please. What does contrada mean?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Ecco il suo caffè, prego. La mia è la bandiera di San Martino, il mio quartiere. E a lei, quale bandiera piace di più? And which flag do you like best?",
+    "en": "Here is your coffee, please. Mine is the flag of San Martino, my neighborhood. And which flag do you like best?",
+    "raw": "{\"line\":\"{Ecco il suo *caffè*, prego. | Here is your *coffee*, please.} {La mia è la bandiera di *San Martino*, il mio quartiere. | Mine is the flag of *San Martino*, my neighborhood.} {E a lei, quale *bandiera* piace di più? | And which *flag* do you like best?}\",\"en\":\"Here is your coffee, please. Mine is the flag of San Martino, my neighborhood. And which flag do you like best?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Ah, bene! Ah, good! La bandiera di San Martino è rossa e verde. Per me, è la più bella di Siena! For me, it's the most beautiful in Siena!",
+    "en": "Ah, good! The flag of San Martino is red and green. For me, it's the most beautiful in Siena!",
+    "raw": "{\"line\":\"{Ah, *bene*! | Ah, *good*!} {La bandiera di San Martino è *rossa e verde*. | The flag of San Martino is *red and green*.} {Per me, è la più bella di Siena! | For me, it's the most beautiful in Siena!}\",\"en\":\"Ah, good! The flag of San Martino is red and green. For me, it's the most beautiful in Siena!\",\"answers\":[{\"text\":\"Sì, è bella. Il rosso mi piace.\",\"en\":\"Yes, it's beautiful. I like the red.\"},{\"text\":\"Perché è la più bella? Cosa significa?\",\"en\":\"Why is it the most beautiful? What does it mean?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Arrivederci, e buona giornata! Torni presto a trovarmi al bar. Come back and see me at the bar soon.",
+    "en": "Goodbye, and have a nice day! Come back and see me at the bar soon.",
+    "raw": "{\"line\":\"{*Arrivederci*, e buona giornata! | *Goodbye*, and have a nice day!} {Torni presto a trovarmi al bar. | Come back and see me at the bar soon.}\",\"en\":\"Goodbye, and have a nice day! Come back and see me at the bar soon.\",\"answers\":[{\"text\":\"Grazie, a presto!\",\"en\":\"Thanks, see you soon!\"},{\"text\":\"Buona giornata, ciao!\",\"en\":\"Have a nice day, bye!\"}],\"done\":true,\"hard\":false}",
+    "answers": 2,
+    "done": true
+   }
+  ]
+ },
+ {
+  "step": 4,
+  "city": "siena",
+  "place": "bar-il-palio",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Buongiorno! Sono Giulia, benvenuti al Bar Il Palio. Good morning! I'm Giulia, welcome to Bar Il Palio. Sto preparando i caffè sotto le bandiere della contrada. Le piacciono le bandiere? Do you like the flags?",
+    "en": "Good morning! I'm Giulia, welcome to Bar Il Palio. I'm making the coffees under the contrada flags. Do you like the flags?",
+    "raw": "{\"line\":\"{*Buongiorno*! Sono Giulia, benvenuti al Bar Il Palio. | *Good morning*! I'm Giulia, welcome to Bar Il Palio.} {Sto preparando *i caffè* sotto le bandiere della contrada. | I'm making *the coffees* under the contrada flags.} {Le piacciono *le bandiere*? | Do you like *the flags*?}\",\"en\":\"Good morning! I'm Giulia, welcome to Bar Il Palio. I'm making the coffees under the contrada flags. Do you like the flags?\",\"answers\":[{\"text\":\"Sì, sono belle. Cosa sono?\",\"en\":\"Yes, they're beautiful. What are they?\"},{\"text\":\"Buongiorno! Un caffè, per favore.\",\"en\":\"Good morning! A coffee, please.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Sono le bandiere delle contrade, i quartieri di Siena. Qui siamo nella contrada di San Martino. Vuole un caffè? Do you want a coffee?",
+    "en": "They are the flags of the contrade, the neighborhoods of Siena. Here we are in the contrada of San Martino. Do you want a coffee?",
+    "raw": "{\"line\":\"{Sono *le bandiere delle contrade*, i quartieri di Siena. | They are *the flags of the contrade*, the neighborhoods of Siena.} {Qui siamo nella contrada *di San Martino*. | Here we are in the contrada *of San Martino*.} {Vuole *un caffè*? | Do you want *a coffee*?}\",\"en\":\"They are the flags of the contrade, the neighborhoods of Siena. Here we are in the contrada of San Martino. Do you want a coffee?\",\"answers\":[{\"text\":\"Sì, un caffè, per favore. Quante contrade ci sono?\",\"en\":\"Yes, a coffee, please. How many contrade are there?\"},{\"text\":\"Che bello! Cos'è il Palio?\",\"en\":\"How nice! What is the Palio?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Ecco il caffè, subito pronto. Ci sono diciassette contrade, ma solo dieci corrono il Palio. There are seventeen contrade, but only ten run the Palio. Lei per quale contrada fa il tifo? Which contrada do you root for?",
+    "en": "Here is the coffee, ready right away. There are seventeen contrade, but only ten run the Palio. Which contrada do you root for?",
+    "raw": "{\"line\":\"{Ecco *il caffè*, subito pronto. | Here is *the coffee*, ready right away.} {Ci sono *diciassette contrade*, ma solo dieci corrono il Palio. | There are *seventeen contrade*, but only ten run the Palio.} {Lei per quale contrada fa il tifo? | Which contrada do you root for?}\",\"en\":\"Here is the coffee, ready right away. There are seventeen contrade, but only ten run the Palio. Which contrada do you root for?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Ah, forse non è chiaro! Ah, maybe that wasn't clear! Qui tifiamo tutti per San Martino. Vuole sapere quando si corre il Palio? Do you want to know when the Palio is run?",
+    "en": "Ah, maybe that wasn't clear! Here we all root for San Martino. Do you want to know when the Palio is run?",
+    "raw": "{\"line\":\"{Ah, forse non è chiaro! | Ah, maybe that wasn't clear!} {Qui *tifiamo* tutti per San Martino. | Here we all *root for* San Martino.} {Vuole sapere *quando* si corre il Palio? | Do you want to know *when* the Palio is run?}\",\"en\":\"Ah, maybe that wasn't clear! Here we all root for San Martino. Do you want to know when the Palio is run?\",\"answers\":[{\"text\":\"Sì, quando? Sono curioso.\",\"en\":\"Yes, when? I'm curious.\"},{\"text\":\"Cosa vuol dire tifiamo?\",\"en\":\"What does tifiamo mean?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Il Palio si corre il due luglio e il sedici agosto. The Palio is run on the second of July and the sixteenth of August. Ogni anno, in Piazza del Campo, io non dormo per l'emozione! Every year, in Piazza del Campo, I can't sleep from the excitement!",
+    "en": "The Palio is run on the second of July and the sixteenth of August. Every year, in Piazza del Campo, I can't sleep from the excitement!",
+    "raw": "{\"line\":\"{Il Palio si corre *il due luglio* e *il sedici agosto*. | The Palio is run on *the second of July* and *the sixteenth of August*.} {Ogni anno, in Piazza del Campo, io non dormo per l'emozione! | Every year, in Piazza del Campo, I can't sleep from the excitement!}\",\"en\":\"The Palio is run on the second of July and the sixteenth of August. Every year, in Piazza del Campo, I can't sleep from the excitement!\",\"answers\":[{\"text\":\"Che bello! Io vorrei vederlo.\",\"en\":\"How lovely! I would like to see it.\"},{\"text\":\"Quanto dura la corsa?\",\"en\":\"How long does the race last?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Venga in estate, è bellissimo! Il Campo è pieno di gente e di colori. Ha già visto Piazza del Campo? Have you already seen Piazza del Campo?",
+    "en": "Come in summer, it's beautiful! The Campo is full of people and colors. Have you already seen Piazza del Campo?",
+    "raw": "{\"line\":\"{Venga in estate, *è bellissimo*! | Come in summer, *it's beautiful*!} {Il Campo è pieno di gente e di colori. | The Campo is full of people and colors.} {Ha già visto *Piazza del Campo*? | Have you already seen *Piazza del Campo*?}\",\"en\":\"Come in summer, it's beautiful! The Campo is full of people and colors. Have you already seen Piazza del Campo?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Allora conosce la piazza! Io, ogni mattina, preparo i caffè per i miei clienti. Every morning I make coffees for my customers. Le piace il caffè qui? Do you like the coffee here?",
+    "en": "So you know the square! Every morning I make coffees for my customers. Do you like the coffee here?",
+    "raw": "{\"line\":\"{Allora conosce *la piazza*! | So you know *the square*!} {Io, ogni mattina, preparo *i caffè* per i miei clienti. | Every morning I make *coffees* for my customers.} {Le piace *il caffè* qui? | Do you like *the coffee* here?}\",\"en\":\"So you know the square! Every morning I make coffees for my customers. Do you like the coffee here?\",\"answers\":[{\"text\":\"Sì, è buonissimo. Come si dice \\\"cornetto\\\"?\",\"en\":\"Yes, it's very good. How do you say \\\"cornetto\\\"?\"},{\"text\":\"Sì, mi piace. Può parlare più lentamente?\",\"en\":\"Yes, I like it. Can you speak more slowly?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Grazie, che bello! Cornetto si dice così: è un croissant dolce. È stato un piacere parlare con lei. It was a pleasure talking with you.",
+    "en": "Thank you, how nice! Cornetto is said just like that: it's a sweet croissant. It was a pleasure talking with you.",
+    "raw": "{\"line\":\"{Grazie, *che bello*! | Thank you, *how nice*!} {*Cornetto* si dice così: è un croissant dolce. | *Cornetto* is said just like that: it's a sweet croissant.} {È stato un piacere parlare con lei. | It was a pleasure talking with you.}\",\"en\":\"Thank you, how nice! Cornetto is said just like that: it's a sweet croissant. It was a pleasure talking with you.\",\"answers\":[{\"text\":\"Grazie, Giulia! Arrivederci!\",\"en\":\"Thank you, Giulia! Goodbye!\"},{\"text\":\"Grazie mille! A presto!\",\"en\":\"Thanks a lot! See you soon!\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "Grazie a lei, è stato un piacere! Torni presto, la prossima volta le racconto di più sul Palio. Ora devo tornare ai miei caffè. Arrivederci!",
+    "en": "Thank you, it was a pleasure! Come back soon, next time I'll tell you more about the Palio. Now I have to get back to my coffees. Goodbye!",
+    "raw": "{\"line\":\"Grazie a lei, è stato un piacere! Torni presto, la prossima volta le racconto di più sul Palio. Ora devo tornare ai miei caffè. Arrivederci!\",\"en\":\"Thank you, it was a pleasure! Come back soon, next time I'll tell you more about the Palio. Now I have to get back to my coffees. Goodbye!\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "done": true
+   }
+  ],
+  "culture": [
+   "Italian greeting 'Buongiorno' (good morning)",
+   "Siena is divided into contrade, which are neighborhoods/districts",
+   "Contrade have their own flags, displayed in bars and streets",
+   "Each contrada has loyal supporters who root for it (e.g., San Martino)",
+   "There are seventeen contrade in Siena, but only ten run in each Palio",
+   "The Palio is run on July 2 and August 16",
+   "The Palio takes place in Piazza del Campo, Siena's main square",
+   "The Palio brings great excitement and the Campo fills with crowds and colors",
+   "Summer is a great time to visit Siena",
+   "Italian bars serve coffee, prepared fresh each morning",
+   "A 'cornetto' is a sweet Italian croissant",
+   "Formal 'Lei' is used to address customers politely",
+   "Italian polite phrases: 'Arrivederci', 'Torni presto', 'È stato un piacere'"
+  ]
+ }
+]
