@@ -42,6 +42,8 @@ export const pack = {
   tutorStudio: magdaStudio,
   /** Colours of the station ticket: Italian rail green, red accent, pale green security stripes */
   ticketTheme: { band: '#1d5c3a', bandInk: '#ffffff', stripe: 'rgba(29, 92, 58, 0.09)', accent: '#b8252f' },
+  /** What the trip sounds like on the ticket-and-map page: a train on rails (Josh, 2026-11-16). One of the app's bundled sounds */
+  travelSound: 'rails',
   /** Kinds of place that are open spaces or landmarks, where nobody is
    *  selling and there's time to talk: the app puts one in the first few cards
    *  of a city's daily order (Josh, 2026-11-08) */

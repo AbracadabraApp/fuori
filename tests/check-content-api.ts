@@ -19,6 +19,9 @@ for (const field of ['imagePrompt', 'portraitPrompt', 'personality', 'traits', '
   check(!text.includes(`"${field}":`), `content must not include "${field}"`);
 }
 
+// The trip's sound (Josh, 2026-11-16) is one the app carries: a name with no file would play nothing
+check(typeof c.travelSound === 'string' && existsSync(join('ios/FuoriKit/Sources/FuoriAudio/Sounds', `${c.travelSound}.wav`)), `travelSound "${c.travelSound}" has no sound file in the app (ios/FuoriKit/Sources/FuoriAudio/Sounds)`);
+
 const base = /^https:\/\/[^/]+\/.+\.webp$/;
 const shownCities = cities.filter((x) => !x.hidden);
 check(c.cities.length === shownCities.length && c.cities.length > 0, `expected ${shownCities.length} shown cities, got ${c.cities.length}`);

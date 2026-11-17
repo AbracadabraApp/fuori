@@ -1,5 +1,13 @@
 # Fuori Development Progress
 
+## 2026-11-16 (cloud chat session, with Josh), evening: the station gets haptics, a sound and a timer; a Europe spec
+
+- **Station (Josh: "just the ones you mention - and on the map page a sound effect and timer for page advance"; "3.5 and you can also advance from the ticket"; "you need road noise for mx bus"):** a selection haptic as the ticket comes up and a firm one on boarding (d3d2191); the ticket-and-map page plays the country's travel sound and starts the trip by itself after 3.5 s, or at once on the arrow; Cancel ends both; no timer with VoiceOver. The sound's name comes from each country's pack (`travelSound`: rails in Italy, road in Mexico); the two files are bundled in FuoriAudio and played as system sounds, so they follow the silent switch (conventions updated with this one exception).
+- **The two sounds are synthesized by code and unheard** (this session has no ears): replace `ios/FuoriKit/Sources/FuoriAudio/Sounds/rails.wav` and `road.wav` with recordings if they sound wrong; same names, WAV, about 3.5 s.
+- **Europe and Asia spin-off:** a draft spec is in the Claude project (`plans/europe-spinoff-spec.md`), not in the repo. Decided by Josh: 5 cities a continent, 5 places a city; Prague first, with the Astronomical Clock, the Castle, Charles Bridge, a pub and Vyšehrad; characters are tour guides and English leads. Open questions are listed there.
+- **Checked:** tsc (only the standing `LayoutProps` error of this clone), `test:content-api` in both countries; CI for the Swift. **Not verified:** nothing felt or heard on a phone; not released. `test:language` still fails on main on an iOS test fixture, not from this work.
+- **Next:** Josh's phone for the haptics, sound and timer (with the build that also carries B37, B38, B42, B43); docs/cards-and-level-up-recipe.md for the laptop.
+
 ## 2026-11-16 (laptop, with Josh): state machines, the prompt rewrite, culture in the prompt; released; build 17
 
 - **State machines:** docs/state-machines.md maps about 20 (iPhone and server), with a CLAUDE.md pointer. Fixed with tests: no downlevelling (Josh: "we arent ready for downlevelling yet"); onboarding sets the starting step; a failed level read is a retryable error; a level-up yes moves only when due; one writer of the level (setLevel restarts the count); a visit's end runs once; a flashcard paused during its word keeps the mic closed. Skipped on Josh's word: the mic reopening after an interruption; lessons counting toward the level up (since done by another session).

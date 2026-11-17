@@ -36,4 +36,11 @@ import Testing
     @Test func theMapKeepsALeastHeight() {
         #expect(TravelMap.fittedHeight(room: 500, ticket: 220, key: 320, gaps: gaps) == 180)
     }
+
+    /// The page leaves by itself after 3.5 s (Josh, 2026-11-16), but never
+    /// while VoiceOver is reading it
+    @Test func thePageBoardsByItselfExceptWithVoiceOver() {
+        #expect(TravelMap.boardsAfter(voiceOver: false) == 3.5)
+        #expect(TravelMap.boardsAfter(voiceOver: true) == nil)
+    }
 }

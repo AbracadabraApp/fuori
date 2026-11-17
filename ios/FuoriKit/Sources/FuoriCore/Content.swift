@@ -10,6 +10,9 @@ public struct Content: Codable, Sendable, Equatable {
     public let card: CountryCard?
     public let language: Language
     public let ticketTheme: TicketTheme
+    /// The trip's sound on the ticket-and-map page (a train on rails, a bus
+    /// on the road): the name of a bundled sound; nil from servers before 2026-11-16
+    public let travelSound: String?
     /// The greeter; nil from servers before 2026-10-17 (then there's no onboarding)
     public let onboarding: Onboarding?
     public let cities: [City]
@@ -189,6 +192,14 @@ public struct TravelMap: Codable, Sendable, Equatable {
 
     /// The map can show this trip: both ends have a spot
     public func covers(from: String, to: String) -> Bool { spot(from) != nil && spot(to) != nil }
+
+    /// How long the ticket-and-map page waits before the trip starts by
+    /// itself (Josh, 2026-11-16: "3.5 and you can also advance from the
+    /// ticket"). Nil with VoiceOver on: a page that leaves by itself while
+    /// it is being read aloud is the timer the app avoids elsewhere
+    public static func boardsAfter(voiceOver: Bool) -> Double? {
+        voiceOver ? nil : 3.5
+    }
 
     /// How tall a numbered sheet's map may be so the ticket, the map and the
     /// key all show at once (B37: the key sat under the bottom of the sheet).

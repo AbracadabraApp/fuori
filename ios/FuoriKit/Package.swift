@@ -22,7 +22,7 @@ let package = Package(
         .target(name: "FuoriCore"),
         .target(name: "FuoriNetworking", dependencies: ["FuoriCore"]),
         .target(name: "FuoriDesign"),
-        .target(name: "FuoriAudio"),
+        .target(name: "FuoriAudio", resources: [.process("Sounds")]),
         .target(name: "FuoriFeatures", dependencies: [
             "FuoriCore", "FuoriNetworking", "FuoriDesign", "FuoriAudio",
             .product(name: "YouTubeiOSPlayerHelper", package: "youtube-ios-player-helper", condition: .when(platforms: [.iOS])),

@@ -1,4 +1,5 @@
 import SwiftUI
+import FuoriAudio
 import FuoriCore
 import FuoriDesign
 
@@ -33,6 +34,7 @@ struct TripSheet: View {
     /// The learner tapped the stub: travel once the sheet has gone
     let onBoard: () -> Void
     @Environment(\.dismiss) private var dismiss
+    @Environment(\.accessibilityVoiceOverEnabled) private var voiceOver
     /// How far the ticket lies over the map's lower edge. Small enough that
     /// the southernmost city on the map stays clear of it
     @ScaledMetric(relativeTo: .body) private var overlap: CGFloat = 30
@@ -47,6 +49,22 @@ struct TripSheet: View {
     }
 
     var body: some View {
+        sheet
+            // The trip is heard as the page comes up, and starts by itself
+            // after a few seconds (Josh, 2026-11-16: a sound and a timer for
+            // the page's advance; "3.5 and you can also advance from the
+            // ticket"). Cancel, or swiping the sheet away, ends the wait:
+            // the task is cancelled with the view.
+            .task {
+                TravelSound.play(content.travelSound)
+                guard let wait = TravelMap.boardsAfter(voiceOver: voiceOver) else { return }
+                do { try await Task.sleep(for: .seconds(wait)) } catch { return }
+                onBoard()
+                dismiss()
+            }
+    }
+
+    private var sheet: some View {
         NavigationStack {
             GeometryReader { room in
                 ScrollView {
@@ -80,7 +98,10 @@ struct TripSheet: View {
             #endif
             .toolbar {
                 ToolbarItem(placement: .cancellationAction) {
-                    Button("Cancel") { dismiss() }
+                    Button("Cancel") {
+                        TravelSound.stop()
+                        dismiss()
+                    }
                 }
             }
         }

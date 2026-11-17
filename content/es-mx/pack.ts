@@ -22,6 +22,8 @@ export const pack = {
   tutorStudio: magdaStudio,
   /** Colours of the terminal ticket: deep red band, cobalt accent, pale red security stripes */
   ticketTheme: { band: '#a3182b', bandInk: '#ffffff', stripe: 'rgba(163, 24, 43, 0.08)', accent: '#1f4fa3' },
+  /** What the trip sounds like on the ticket-and-map page: Mexico travels by bus (Josh, 2026-11-16: "you need road noise for mx bus"). One of the app's bundled sounds */
+  travelSound: 'road',
   /** Kinds of place that are open spaces or landmarks, where nobody is
    *  selling and there's time to talk: the app puts one in the first few cards
    *  of a city's daily order (Josh, 2026-11-08) */

@@ -95,6 +95,8 @@ export interface Content {
     ui: typeof language.ui;
   };
   ticketTheme: typeof pack.ticketTheme;
+  /** The trip's sound on the ticket-and-map page: the name of a sound bundled in the app ('rails', 'road') */
+  travelSound: string;
   /** The trip map shown after boarding (content/<country>/travel-map.json); null until the country has its picture and positions */
   travelMap: ContentTravelMap | null;
   onboarding: ContentOnboarding;
@@ -220,6 +222,7 @@ export function buildContent(): Content {
       ui: language.ui,
     },
     ticketTheme: pack.ticketTheme,
+    travelSound: pack.travelSound,
     travelMap: travelMap(image, shown),
     onboarding: {
       guide: {
