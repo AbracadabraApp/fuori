@@ -1,10 +1,16 @@
 # Testing Strategy
 
-> **M1 note:** Dialogue quality is judged by the scorecard and the replay test ("Dialogue quality" below, and `tests/README.md`). `npm run test:conversations` remains for exploring. The simulated-learner suite and judge rubric described below were archived to `tests/archive/` on 2026-10-10.
+## How testing works now (2026-11-16)
 
-Testing a voice-first language game means validating not just code, but conversation quality, language accuracy, and the learner experience. This document covers automated tests, manual test protocols, and quality checks.
+CLAUDE.md → Testing is the rule; this page follows it. **Count for direction, Josh's play decides** (Josh, 2026-11-16: "this is just a trial run for direction -- not a scientific test"; "all of the cited results were measurable directionally ad hoc").
 
-**For a one-person prototype, what matters now is section 4 (level rules and the simulated learner) and testing on your phone (section 9).** The rest is reference for later milestones.
+- When play shows a problem, count how often it happens on real or replayed turns; try the change; count again on a small run, both versions side by side, **no thresholds or verdicts**; then Josh plays.
+- Counts by code over model judges. A judge only where nothing else can see it, reported, never deciding.
+- An effect too small to see in a small run is for Josh's ear, not a bigger test. Where a count and his ear disagree, his ear is right (the record: [prompt-testing.md](prompt-testing.md) → What the record shows).
+- Cards are for experiments, a true unknown a quick count can't answer ([prompt-trials.md](prompt-trials.md)); a change Josh asks for from play ships on his word with a changelog entry, the suites and a live run (the walk, `scripts/walk-live.mjs`, for what characters say).
+- Code is checked by the `check-*` suites, `npx tsc --noEmit` and, for anything live, `npm run smoke:live` in both countries. What exists, layer by layer: [testing-map.md](testing-map.md).
+
+Most of the rest of this page is history: the 2026-10-12 scorecard loop, the original test plan and the web-era phone workflow. Where it says otherwise, the rules above win.
 
 ## The one grade per conversation (2026-11-10)
 
@@ -15,28 +21,28 @@ Josh, 2026-11-10: "a scorecard that scores every conversation on several variabl
 - **Where it shows:** `GRADE:` and `READINGS:` lines in the admin text (`format=text`), an "Overall grade" row on the scorecard, `format=grade` (by week and by prompt version, the view of progress), `npm run test:grade`.
 - **Keeping everything:** nothing is deleted with a learner (the migration restricts it), a re-score keeps the score it replaces in `quality_history`, `scripts/archive-conversations.mjs` writes a private dated copy to `~/fuori-archive/` (never git), `scripts/score-missing.mts` scores conversations that slipped through, `scripts/grade-conversations.mts` grades saved conversations offline, and `scripts/gold-set.mts` packs ten conversations for Josh to grade blind and checks the rule against his grades (card Q1).
 
-## Dialogue quality (decided 2026-10-12)
+## Dialogue quality (decided 2026-10-12; the gate and targets retired 2026-11-16)
 
-Josh will never test at scale himself, and he doesn't read transcripts: automated review does, and he asks for a transcript when he wants one. One loop covers measuring, grading, testing and prompt changes, so prompts are never adjusted ad hoc.
+As first decided, automated review read the transcripts and a gate decided prompt changes. That is replaced by "How testing works now" above: Josh plays and listens (he grades by ear), the scorecard and the grade are readings that show direction, and nothing passes or fails on a number. The scorecard below is still built and still useful for counting.
 
 ### 1. One scorecard
 
 Every recorded conversation is scored when it ends (`lib/quality.ts`, after the memory call), and every score carries the prompt version that produced the conversation. The scorecard (`lib/scorecard.ts`) adds scores up:
 
-| Measure | Target | How |
-|---|---|---|
-| Reply length (median words) | ≤ 20 for now, heading toward 10 | Code |
-| Opener length (words) | ≤ 25 | Code |
-| Replies with 2+ questions | ≤ 10% | Code |
-| Pulls back when you're lost | ≥ 80%: the next reply is shorter (code) and simpler (judge) | Code + judge |
-| Pronunciation corrections | 0 (characters only see text) | Judge |
-| Unprompted corrections | ≤ 2 per conversation, not every turn | Judge |
-| Understands garbled speech | ≥ 90% | Judge |
-| English nobody asked for | 0 | Judge |
-| Memory on return | Remembers name, facts and corrections | Checked by hand for now |
-| Feels alive | Josh's call | Josh |
+| Measure | How |
+|---|---|
+| Reply length (median words) | Code |
+| Opener length (words) | Code |
+| Replies with 2+ questions | Code |
+| Pulls back when you're lost: the next reply is shorter (code) and simpler (judge) | Code + judge |
+| Pronunciation corrections (characters only see text) | Judge |
+| Unprompted corrections | Judge |
+| Understands garbled speech | Judge |
+| English nobody asked for | Judge |
+| Memory on return | Checked by hand |
+| Feels alive | Josh |
 
-The judge is one Claude call with its own versioned prompt (`content/it/prompts/quality.md`). It only counts; it doesn't grade taste.
+The targets this table once carried (≤ 20 words, ≥ 90% and the rest) are retired: the measures are read side by side, before and after, for direction. The judge is one Claude call with its own versioned prompt (`content/it/prompts/quality.md`). It only counts; it doesn't grade taste, and its counts are reported, never deciding.
 
 **Not failures** (Josh, 2026-10-12): being asked "are you a tourist?" (realistic for an American ordering coffee; correcting it is a memory test), teaching when the learner asks about a word, and one or two unprompted corrections a conversation (an explicit correction teaches more than an echo). Rita correcting on every turn is the problem, not correcting.
 
@@ -44,23 +50,21 @@ The judge is one Claude call with its own versioned prompt (`content/it/prompts/
 
 ### 2. Real transcripts are the main source; simulation has one job
 
-Real play is what's measured. Simulation is only the **gate** for a prompt change: the replay test (`npm run test:replay`) replays Josh's real learner lines against the prompt, with the characters he talked to plus a seeded sample he hasn't met (breadth across the ~634 characters), and scores them with the same scorer. Two runs on the same lines are a fair before-and-after. `npm run test:conversations` (simulated learners, 1–10 grades) stays for exploring, not for decisions.
+Real play is what's measured, and Josh's play decides. The replay test (`npm run test:replay`) replays Josh's real learner lines against the prompt, with the characters he talked to plus a seeded sample he hasn't met, and scores them with the same scorer: two runs on the same lines are a fair before-and-after, read for direction. `npm run test:conversations` (simulated learners) is for exploring. Neither is a gate.
 
 ### 3. How measurements become changes
 
-1. **Problem list.** Scorecard misses, ranked by how often and how much they hurt. Prompt changes come only from the top of the list (roadmap → Now).
-2. **One change at a time, stated as a prediction** in the prompt changelog: "fewer turns of history should cut median reply length from ~60 to under 30 without hurting understanding."
-3. **Gate.** The replay test must move the target measure and leave no other measure worse beyond its tolerance (`gate()` in `lib/scorecard.ts`).
-4. **Two kinds of change.** Factual fixes ("characters can't hear pronunciation") go in directly. Taste changes pass the gate and then need Josh's OK.
-5. **Confirm in real play.** The next ~10 real conversations on the new version confirm the gain on the scorecard, or it's rolled back.
+1. **A problem from play.** Josh hears it, or a read of real transcripts finds it; it goes in [bugs.md](bugs.md) with his words and the conversation id.
+2. **Count it** on real or replayed turns: how often does it happen?
+3. **Try the change and count again** on a small run, both versions side by side. No thresholds, no verdicts. (`gate()` in `lib/scorecard.ts` still exists, called only by its own checks; nothing decides by it.)
+4. **Josh plays.** His ear decides whether it stays. A prompt change carries a changelog entry saying what changed, why and what prompted it.
 
 ### 4. Rhythm
 
-- **Each conversation:** scored when it ends (built, M1).
-- **Digest:** every few hours or every N new conversations, refreshes the problem list and the scorecard by version, and catches conversations that never sent an end signal (M2). Until then, Claude runs the same analysis when Josh asks.
-- **Josh hears about it** only when something gets worse or a taste change waits for his call.
+- **Each conversation:** scored when it ends, and graded (`lib/grade.ts`) as a view of progress.
+- **Josh's ratings** in the debug panel and his reports from play are the main signal; the scorecard and grade show direction between prompt versions.
 
-Not doing: A/B testing on real users (one user; it would be noise).
+Not doing: A/B testing on real users (a handful of users; it would be noise).
 
 ## Testing Layers
 
@@ -405,9 +409,9 @@ npm run test:replay
 - Run affected tests on prompt changes
 - Cache results when prompt/character hasn't changed
 
-## 4. Language Validation (automated)
+## 4. Language Validation (history)
 
-The creator is an A1–A2 learner, so Italian quality can't depend on anyone's personal judgement. Two automated pieces replace manual review:
+The original plan (2026-10): because the creator is an A1–A2 learner, two automated pieces would replace manual review. Since 2026-11-16 that's not how quality is judged: Josh's play decides, and these pieces give counts for direction at most. The level rules files exist but no code reads them.
 
 ### 4a. Level rules from published standards
 
@@ -448,9 +452,7 @@ Claude plays a beginner and another Claude call judges the result. Today this is
    - Scene goals ticked correctly; `confused` and `hint` used sparingly
 4. **Report**: a score per criterion and per character, with the worst examples quoted, saved to `tests/reports/<date>.md`.
 
-Run it whenever prompts or character sheets change, and compare against the previous report. It costs a little per run (real API calls), so run it on changes, not on every commit.
-
-Not independent of Claude, but it is systematic and repeatable, which manual review by a beginner can't be. A native speaker reading a few transcripts later remains a nice-to-have, never a gate.
+Not independent of Claude: its reports show direction, never a verdict. A native speaker reading a few transcripts remains a nice-to-have, never a gate.
 
 ## 5. User Testing
 

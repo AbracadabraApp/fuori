@@ -30,7 +30,7 @@ Safari workarounds that disappear on iOS: the silent-WAV audio unlock, `MediaRec
 
 ## iOS client
 
-**Stack:** SwiftUI + Observation (`@Observable`). iOS 26 minimum (decision 8). No third-party runtime dependencies; `swift-snapshot-testing` only as a test dependency. As built (2026-11-17): one runtime dependency, YouTube's `youtube-ios-player-helper`, for the cinema's trailers; no snapshot-testing package (`ios/FuoriKit/Package.swift`).
+**Stack:** SwiftUI + Observation (`@Observable`). iOS 26 minimum (decision 8). No third-party runtime dependencies (the planned `swift-snapshot-testing` dropped with snapshot tests, 2026-11-06). As built (2026-11-17): one runtime dependency, YouTube's `youtube-ios-player-helper`, for the cinema's trailers; no snapshot-testing package (`ios/FuoriKit/Package.swift`).
 
 ```
 ios/
@@ -65,7 +65,7 @@ ios/
 
 - **Navigation:** one `NavigationStack` with a typed `Route` enum. Settings is a sheet, opened from the top-right button on every screen. Onboarding is a full-screen cover. Use one `@Observable` view model per screen; no TCA, coordinators or Combine. As built: `RootView` holds one `NavigationStack` over a `NavigationPath`, with a destination per type (`City`, `PersonRoute`, `CinemaRoute`) rather than one `Route` enum.
 - **On the device:** settings cache (`UserDefaults`; the server holds the real copy), the learner token (Keychain), the language pack JSON and images (disk cache). Everything else stays on the server. The app needs a network connection, as today.
-- **Strings:** English UI text goes in a String Catalog. Words in the target language ("Binario", "Sali", "Mostra altro") come from the pack JSON (`language.ui`) and are never Swift literals. Extend `test:language` to scan `ios/**/*.swift` (it already missed "Start conversation" on the web). As built (2026-11-17): there's no String Catalog yet; English chrome is written as literals in Swift.
+- **Strings:** English UI text is written in Swift (a String Catalog was planned; dropped 2026-11-17, English is the only UI language). Words in the target language ("Binario", "Sali", "Mostra altro") come from the pack JSON (`language.ui`) and are never Swift literals. Extend `test:language` to scan `ios/**/*.swift` (it already missed "Start conversation" on the web).
 
 ### Audio pipeline
 
@@ -138,8 +138,7 @@ Today's turn makes 3 serial phone round trips (transcribe → turn → speak) pl
 ## Testing and "done means used"
 
 - **Server changes:** `npx tsc --noEmit`, the relevant `test:*`, then `smoke:live` for both countries after deploy, plus `railway logs`. Rewrite `smoke:live` as a `/v1` client (register a device, converse by `characterId`, end, check `/v1/me`, second-visit memory, Magda). It becomes the contract test the app has to agree with.
-- **iOS changes:** `swift test` in the packages (voice gate fed with synthetic PCM, pack decoding, error mapping, ports of the `reveal` and `leave` tests), snapshot tests at 390×844, and a few XCUITests against a mock API.
-  As built (2026-11-17): `swift test` over four test targets (`FuoriCoreTests`, `FuoriNetworkingTests`, `FuoriAudioTests`, `FuoriFeaturesTests`); no snapshot tests and no XCUITests.
+- **iOS changes:** `swift test` in the packages (voice gate fed with synthetic PCM, pack decoding, error mapping, ports of the `reveal` and `leave` tests): four test targets (`FuoriCoreTests`, `FuoriNetworkingTests`, `FuoriAudioTests`, `FuoriFeaturesTests`). Beyond that, CLAUDE.md → Testing a screen (2026-11-06): the build and CI pass, Josh sees one quick look at a new screen, and anything he'd notice is played on his iPhone with the mic. No snapshot tests, XCUITests or routine simulator runs.
 - **Simulator smoke (`make smoke-sim`):** a debug-only "inject audio" source plays a recorded `.m4a` through city → place → conversation → leave. Then the server-side checks confirm the conversation ended and memory was written. It's off by default. Not built: the Makefile has no `smoke-sim` target. Debug launch arguments exist instead: `-FuoriServer <url>`, `-FuoriMute YES`, `-FuoriOpen <city>/<place>` (CLAUDE.md → Builds).
 - **Device gate:** anything that touches audio counts as done only after it has been used on Josh's iPhone. Checklist: speak a turn, interrupt the character, background the app mid-speech, unplug AirPods, take a call. Anything not checked says "not verified" in the commit.
 - **CI:** a GitHub Actions macOS job (`.github/workflows/ios.yml`) runs on changes under `ios/**` and `design/**`: it checks `Tokens.swift` against `design/tokens.json`, runs `swift test` in `FuoriKit`, and builds for the simulator (`xcodebuild build`, not `test`). It's what makes Swift edits from the cloud session safe.

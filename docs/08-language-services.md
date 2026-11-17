@@ -69,7 +69,7 @@ Character voices are core to the experience. Built: **ElevenLabs** (`lib/voice/p
 
 ### Language validation
 
-Italian quality is validated automatically: level rules built from published standards, plus a simulated-learner test with a judge. See [Testing → Language validation](10-testing.md#4-language-validation-automated).
+Language quality is judged by Josh's play; counts show direction, never a verdict. See [Testing → How testing works now](10-testing.md#how-testing-works-now-2026-11-16).
 
 What the judge looks for:
 - Character staying in Italian (never switches to English unprompted)

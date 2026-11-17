@@ -189,11 +189,11 @@ Stored in:
 
 ## Language validation for Italian
 
-Italian quality is checked automatically rather than by manual review (the creator is an A1–A2 learner):
+Language quality is judged by Josh's play: counts on real or replayed turns show direction, his ear decides (CLAUDE.md → Testing, 2026-11-16). The tools for counting:
 
-1. **Level rules** (`content/it/levels/`: `a1.ts`, `a1plus.ts`, `a2.ts`, `a2plus.ts`, `b1.ts`), built once from CEFR descriptors, a frequency word list and typical grammar coverage. Not yet used by the character prompt (M3: language levels).
-2. **Simulated learner and judge:** `npm run test:conversations` (scripted learners against the real turn code) and `npm run test:replay` (Josh's real lines, scored by the same judge as live conversations, `lib/quality.ts`). The first simulated-learner script is archived in `tests/archive/`.
+1. **Level rules** (`content/it/levels/`: `a1.ts`, `a1plus.ts`, `a2.ts`, `a2plus.ts`, `b1.ts`), built once from CEFR descriptors, a frequency word list and typical grammar coverage. No code reads them today.
+2. **Replay and simulated learners:** `npm run test:replay` (Josh's real lines against a prompt, scored by the same scorer as live conversations, `lib/quality.ts`) and `npm run test:conversations` (scripted learners against the real turn code). Both read side by side for direction, never as a gate.
 
-Details in [Testing → Language validation](10-testing.md#4-language-validation-automated). If the reports show systematic problems: adjust the house rules or character sheets first, then try a higher effort setting, and only then consider another model.
+How testing works now: [Testing](10-testing.md#how-testing-works-now-2026-11-16).
 
 See [Language Services](08-language-services.md) for more on STT/TTS choices and Italian-specific considerations.
