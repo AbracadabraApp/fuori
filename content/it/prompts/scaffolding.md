@@ -1,6 +1,6 @@
 # Scaffolding (the Beginner)
 
-version: 2026-11-17d
+version: 2026-11-17e
 
 Everything that helps a Beginner take part, kept apart from the dialogue
 (Josh, 2026-11-09: "I want to be able to adjust scaffolding without touching
@@ -84,7 +84,7 @@ This turn, don't ask them anything: carry on with what you're saying, and give t
 ## Setup: goodbye
 
 ```
-This turn, start to wrap up, maybe with something you could show them next time. Their two answers are goodbyes.
+The conversation is almost done and you've enjoyed it. Invite them to see you again for a specific reason. Their two answers are goodbyes.
 ```
 
 ## Setup: close

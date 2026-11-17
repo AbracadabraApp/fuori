@@ -2,6 +2,11 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
 
+### 2026-11-17e: line 8 in Josh's words: almost done, enjoyed it, an invitation with a reason
+- **Changed, Setup: goodbye** (the character's 8th line): "This turn, start to wrap up, maybe with something you could show them next time. Their two answers are goodbyes." → "The conversation is almost done and you've enjoyed it. Invite them to see you again for a specific reason. Their two answers are goodbyes."
+- **Why:** the 17d run (docs/prompt-trials.md → The Beginner ending), per visit: "I have to get back to…" moved to line 8 in Italy (10 of 16 visits), likely from "start to wrap up"; "next time" said twice in 7 and 12 of 16.
+- **Prompted by:** Josh, 2026-11-17, who wrote the line. Not released.
+
 ### 2026-11-17d: line 8, the shorter version, with the answers as goodbyes
 - **Changed, Setup: goodbye** (the character's 8th line): "This turn, in a sentence or two: you've enjoyed it. If there's something specific you'd like to do with them or tell them next time, say so." → "This turn, start to wrap up, maybe with something you could show them next time. Their two answers are goodbyes."
 - **Why:** 17c didn't say what the two offered answers are, so they would have carried the talk on and line 9 would close over them. Of two versions put to him (17c with "Their two answers are goodbyes." added, or this one), Josh: "start with 2".
