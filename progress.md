@@ -1,5 +1,13 @@
 # Fuori Development Progress
 
+## 2026-11-15 to 16 (laptop, with Josh): the mix as scaffolding; the levels checked; what counts toward level up
+
+- **The mix (docs/mix.md):** brought up to date (the shape built, idioms in play, B29, B32), then Josh's model: the mix is scaffolding "at all levels, across characters, betweeen conversations, between turns"; most important "learner can follow; level stays consistent; mix progresses; tappable for help" ("tappable I only meant available"); "we might have 100 levels of mix by % of English - and the fine tune to game level". Tracking what the learner met and said is a learning feature, not the mix: D52 (recycling, recall in character, level up from what's known, material for Learn). Josh is sceptical of using words or errors to set the English.
+- **The levels check (docs/checks/levels.md):** run end to end on a local server in both countries by an agent: the six steps, the turns, the level up and the hidden stepper pass; B35 (step 2 → 3 preview identical) and B36 (comment turns print nothing) logged. Production read only: nobody offered anything yet.
+- **Built, on main, not released (92a97783):** only ordinary visits at the learner's step count toward the offer (not lessons, Magda, the welcome, the old Beginner, or another step or level; Josh: "no"); learners with no step start count from now (Josh: "Yes" to starting fresh). test:level-count (local test database). Not run on a server.
+- **Open, Josh's:** steps 3–5 sometimes give no answers (the "free" setup): keep, always two, or leave to the answers-fade item; whether B35 and B36 go to the step-settings session.
+- **Next:** research on prompts vs rules (Josh, 2026-11-16).
+
 ## 2026-11-16 (cloud chat session, with Josh), afternoon: the level up page and the new cards built; a recipe for the Mac
 
 - **Josh:** "done" of the agreed mockups and of B38; "all good - write any recipe you need".
