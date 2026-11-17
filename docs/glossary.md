@@ -20,7 +20,11 @@
 - **Step** (Josh, 2026-11-12, "these are very badly named"): one step of scaffolding inside the Beginner level, 1 to 6; level up moves the learner to the next. One word for it: "cluster" stays a name inside the code (`CLUSTERS` in `lib/beginner-2.ts`), and "stage" goes with the old Beginner.
 - **The Beginner** is the one every Beginner plays since the cut-over (2026-11-12), built and played as "Beginner 2" beside the old one. **The old Beginner** (`lib/beginner.ts` with its stages S1–S4, "Beginner 1") stayed a week behind Settings → touch and hold Version → Beginner: Old, for comparison; it, the switch and the stages were taken out of the turn and the app on 2026-11-15 (5f523ea7, 6ce24283). "Beginner 1" and "Beginner 2" are retired as names: they read as two levels, and they were two versions of one.
 - **Conversation**: one visit to one character. **Turn**: one exchange. **Line**: what one person says. **Scene**: the setting a conversation opens in (place, moment, why you came). "Dialogue" is the name of the area, not the thing.
-- **Replies**: the two buttons in a conversation.
+- **Answers** (once "replies"): the two sentences a Beginner is offered to say back, each a different idea; printed with their English (`scaffolding.md` → Answers; [dialogue-now.md](dialogue-now.md)). "Answers to say back" was Claude's proposal (Josh, 2026-11-05: "fine").
+- **Bid** (from Gottman, [bids.md](bids.md)): any small attempt to get a response from the other person: a question, a remark, a joke, an offer, something shared. A character's turn accepts what the learner just offered, then makes a bid.
+- **The mix** ([mix.md](mix.md), a draft): a turn in English with pieces of the language in it.
+- **The welcome**: the first conversation, in onboarding: the country, its places, and whether to speak to the learner as masculine or feminine (`lib/welcome.ts`, [onboarding-design.md](onboarding-design.md)). Played by Nino Ferretti in Italy (B44).
+- **The walk** (`scripts/walk-live.mjs`): an automatic check of the live game after a release: a throwaway learner plays every Beginner step, three visits a step, the level-up offer, a yes, on to Intermediate. CLAUDE.md: the live run for a change to what characters say.
 - **Character** for everyone you meet; "person" only in "person screen".
 - **World**: cities, places, the pantry, the day's suggestions.
 - **Learner**: who you are, your level, your history.

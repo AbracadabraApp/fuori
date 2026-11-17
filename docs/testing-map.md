@@ -38,6 +38,23 @@ One page: every kind of testing in Fuori, what it is for, which one decides what
 | Historical (real conversations from the admin export) | Finding and counting a problem before choosing a test | Testing a change |
 | Variety gate (invented learners, `variety.mts`; `test:conversations` run plain does the same job) | A free-play check once a change is kept | Testing a change |
 
+## The npm scripts, by area
+
+Every script in `package.json` (2026-11-17), by name; each runs one file in `tests/` or `scripts/`, and every one of those files exists. The grouping is by name, for finding one; it isn't a rule about when to run them.
+
+- **Repo-wide checks:** `lint`, `test:language` (nothing country-specific in code), `test:prompt` (a prompt change has its changelog entry), `test:schema`, `test:models`, `test:pack`, `test:content-api`; plus `npx tsc --noEmit`.
+- **The turn and what characters say:** `test:dialogue`, `test:beginner-2`, `test:beginner`, `test:shapes`, `test:share`, `test:prompt-parts`, `test:parts-off`, `test:moments`, `test:reply`, `test:replies-prompt`, `test:replies-route`, `test:reply-ranks`, `test:reply-deadline`, `test:draft`, `test:help-asked`, `test:idioms`, `test:say-it`, `test:turn-request`, `test:in-flight`, `test:claude-limits`, `test:mojibake`, `test:names`, `test:culture`, `test:roles`.
+- **Levels and steps:** `test:level-up`, `test:level-count`, `test:level-move`, `test:level-writers`, `test:level-read`, `test:level`, `test:learner-level`, `test:level-prompt`, `test:level-trial`, `test:starting-step`, `test:no-downlevel`, `test:scaffold`, `test:path`.
+- **Memory, records and onboarding:** `test:memory`, `test:memory-gender`, `test:history`, `test:leave`, `test:save-later`, `test:onboarding`, `test:welcome`, `test:stats`, `test:sweep`.
+- **Voice and recordings:** `test:transcribe`, `test:recording`, `test:keep-recording`, `test:hear-recording`, `test:silence`, `test:audio`, `test:early-voice`, `test:reveal`, `test:voice-outcomes`, `test:voices`, `voices`, `voices:assign`, `voice:failures`, `replay:recordings`.
+- **Scoring (read for direction, layer 3):** `test:quality`, `test:scorecard`, `test:grade`, `test:real-play-scores`, `test:repeats`.
+- **Learn, Magda, flashcards, culture:** `test:learn-route`, `test:learn-ahead`, `test:magda`, `test:lesson-areas`, `test:flashcards`, `test:cards`, `card:review`, `test:vocab`, `test:study-export`.
+- **World and pictures:** `test:feed`, `test:today`, `test:weather`, `test:images`, `test:image-list`, `test:image-prompts`, `test:country-card`, `images`, `images:upload`, `style-test`.
+- **App and server plumbing:** `test:proxy`, `test:app-log`, `test:app-version`, `test:tokens`, `tokens`, `hig`.
+- **Conversations (layer 2 and 4):** `test:conversations`, `test:replay`.
+- **Live and timing:** `smoke:live`, `release`, `deploy:wait`, `measure:turn`, `bench`; the walk is `node scripts/walk-live.mjs`.
+- **Running locally:** `dev`, `build`, `start`, `dev:sim`.
+
 ## Retired or old
 
 - The first simulated-learner suite: `tests/archive/`.
