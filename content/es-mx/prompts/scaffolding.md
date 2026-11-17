@@ -41,9 +41,7 @@ Reply with JSON: parts, in the order you say them. Each part is { "kind": "engli
 ## Reply: line and answers
 
 ```
-Respond with JSON:
-{ "line": "your turn, in braces as above", "en": "its English", "answers": [ { "text": "what they can say back, in {language}", "en": "its English" } ] }
-The answers appear on their screen; your line leaves them out. When an answer names a local food or drink with no English word, its English says what it is: ("El quesillo, por favor." → "The quesillo (Oaxacan string cheese), please.").
+In your JSON, "line" is your turn in braces as above, and add "answers": [ { "text": "what they can say back, in {language}", "en": "its English" } ]. The answers appear on their screen; your line leaves them out. When an answer names a local food or drink with no English word, its English says what it is: "El quesillo, por favor." → "The quesillo (Oaxacan string cheese), please."
 ```
 
 ## Setup: opener
