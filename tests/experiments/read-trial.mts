@@ -4,6 +4,7 @@
 //   ... --person=Sara                       one person's visits side by side, turn by turn (English)
 //   ... --turn=4                            everyone's 4th turn, A against B
 //   ... --full                             with --person, --turn or --blind: not just the English but the whole turn (the line as the character says it, with the language and its glosses, the English, the answers offered, the step's setup)
+//   ... --repeats                           repeated words: the words said most within a visit, and the words that turn up in the most visits, per arm (English)
 //   ... --blind[=seed]                      every visit shuffled, arm hidden, for reading; add --reveal for the key
 // Custom measures live in trial-measures.mts (CUSTOM) and show in the paired table and the totals.
 import { readFileSync } from 'fs';
@@ -30,7 +31,23 @@ const turnText = (v: Visit | undefined, i: number) => {
 
 const person = arg('person'), turn = arg('turn'), pattern = arg('count'), blind = arg('blind');
 
-if (person) {
+const STOP = new Set('a an the and or but of to in on at for with from by is are was were be been it its this that these those i you he she we they me my your our their his her them us do does did have has had not no yes so if as than then there here what which who how when where why can will would just very really also too more most some any all one two come back please thank thanks okay oh well good great nice glad'.split(' '));
+const content = (v: Visit) => (english(v).toLowerCase().match(/[a-záéíóúñü']+/g) ?? []).map((w) => w.replace(/^'+|'+$/g, '')).filter((w) => w.length > 2 && !STOP.has(w));
+if (process.argv.includes('--repeats')) {
+  for (const [label, vs] of [['A', A], ['B', B]] as const) {
+    const within = new Map<string, number>(), across = new Map<string, number>();
+    let rep = 0, total = 0;
+    for (const v of vs) {
+      const c = new Map<string, number>(); for (const w of content(v)) c.set(w, (c.get(w) ?? 0) + 1);
+      total += content(v).length; rep += [...c.values()].filter((n) => n >= 3).length;
+      for (const [w, n] of c) { if (n >= 3) within.set(w, (within.get(w) ?? 0) + n); across.set(w, (across.get(w) ?? 0) + 1); }
+    }
+    const top = (m: Map<string, number>, k: number) => [...m].sort((x, y) => y[1] - x[1]).slice(0, k).map(([w, n]) => `${w} ${n}`).join(', ');
+    console.log(`\n${label}: ${vs.length} visits, ${total} content words; words said 3+ times in a visit: ${rep} (${(rep / vs.length).toFixed(1)} a visit)`);
+    console.log(`  said 3+ times within a visit (total mentions): ${top(within, 20)}`);
+    console.log(`  in the most visits (visits): ${top(across, 20)}`);
+  }
+} else if (person) {
   for (const p of pairs.filter((p) => new RegExp(person, 'i').test(`${name(p.a)} ${p.id}`))) {
     console.log(`\n=== ${name(p.a)} (${p.id}) ===`);
     for (let i = 0; i < Math.max(p.a.turns.length, p.b.turns.length); i++) console.log(`\n[turn ${i + 1}]\n A: ${turnText(p.a, i)}\n B: ${turnText(p.b, i)}`);
