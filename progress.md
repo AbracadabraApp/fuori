@@ -1,5 +1,9 @@
 # Fuori Development Progress
 
+## 2026-11-17 (Mac laptop), evening: four portrait candidates for the Venice gondolier, for the cloud session to judge
+
+- Four candidates for the Venice gondolier (`venezia/carlo-gondoliere`, now on the traghetto at Ponte di Rialto, no paper cup) are in `sketches/portraits/carlo-gondoliere/` (1.jpg to 4.jpg, each under 400 KB, committed with `git add -f`), from the new prompt unchanged at 2:3, 2k; not uploaded, `content/it/images.json` untouched. Sandra Mugnai's four (Florence, `carlo-guida`) were already pushed to `sketches/portraits/sandra-mugnai/` earlier today; her prompt is unchanged since, so they weren't regenerated. The cloud session judges both sets; then the laptop uploads the picks, runs the masters step and commits `images.json`.
+
 ## 2026-11-17 (laptop, with Josh), evening: the visit's ending rewritten; released; build 18 on his phone
 
 - **Intermediate and Advanced close after the 10th reply**, not the 15th (Josh: "Change Intermediate to 10"; 347f2a3c).
