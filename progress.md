@@ -1,5 +1,9 @@
 # Fuori Development Progress
 
+## 2026-11-17 (Mac laptop): four portrait candidates for Sandra Mugnai, for the cloud session to judge
+
+- Four candidates for Sandra Mugnai (Florence, Piazza della Signoria, `carlo-guida`) are in `sketches/portraits/sandra-mugnai/` (1.jpg to 4.jpg, each under 400 KB, committed with `git add -f`), from the new prompt unchanged at 2:3, 2k; not uploaded, `content/it/images.json` untouched. The cloud session picks one against Josh's rules (face clearly visible, no lettering, not posed, not a caricature, a guard and not a tourist); then the laptop uploads the pick, runs the masters step and commits `images.json`.
+
 ## 2026-11-17 (cloud chat session, with Josh), late afternoon: Florence's costumed drummer replaced
 
 - **Josh:** "there is a jackass in costume playing a drum in Florence - he is a totally embarrassing character". That was Carlo Bencini, "tamburino del Corteo Storico", in a sixteenth-century doublet with a snare drum in Piazza della Signoria: someone who would only stand there in costume for visitors. Of four people with their own reasons to be in the square (the Loggia's guard, the wedding hall's usher, a dawn street sweeper, a stone restorer), Josh picked the guard.
