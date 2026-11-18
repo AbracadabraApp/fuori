@@ -1,5 +1,17 @@
 # Fuori Development Progress
 
+## 2026-11-17 (cloud), night: the whole-city San Miguel run read: one sentence ends the repeats and loses the town
+
+- **Read:** `san-miguel-city-a-2026-11-17.json` (main, today's lines) and `-b-` (branch `san-miguel-one-sentence`), all 13 people once each at step 4. The learner taps the first answer; one visit a person.
+- **By code, on the English, of 13 visits:** Zeferino Gutiérrez 4 on today's lines, 0 on one sentence. The Alborada 2, 0. Allende the man 2, 1 (the history teacher). The Parroquia or pink church 7, 4. Concha or café de olla 1, 3 (the barista, and now the taxi driver and a retired man). UNESCO 0 in both. Words a visit 240, 244.
+- **The visits themselves are no worse.** Same length, same warmth, each person on their own work: the sacristan's candles, the potter's wheel, the flower seller's cempasúchil.
+- **The two retired men:** on today's lines both said Zeferino; on one sentence one talked about his bench and sweet bread, the other about his father the carpenter and a door he made. So their repeat came from the shared facts in their lines, not from sharing a job.
+- **What one sentence loses:** what was the person's own and local. Doña Chelo's enchiladas mineras and gorditas became mole and pozole "the way it's done in San Miguel". Ramiro's pastor lost its Lebanese origin. The history teacher lost 1769, 1810, Dolores and 1826 and invented the museum's rooms. Nobody in the city mentioned Zeferino or the Alborada at all, the sacristan included. Rocío invented the tumbagón again in both arms (a sweet-potato candy with fruit; a sweet-potato paste with coconut): four wrong recipes in six visits tonight.
+- **What the model added unprompted and true:** the sacristan's corn-cane Christ, the taxi driver's Oratorio.
+- **So:** Josh's hypothesis holds for dialogue (a simple line plays as well) and for repetition (it ends it). It costs the city's own things where the line was carrying them. That is the case the cloud session said would make the middle worth a run: branch `san-miguel-trim` keeps each person's own local thing and gives each shared fact one owner.
+- **Ready for the mini, on Josh's word,** from a worktree of `san-miguel-trim`, 13 visits, read against tonight's two arms: `COUNTRY=es-mx TRIAL_SPOTS=san-miguel-de-allende/mercado-ignacio-ramirez,san-miguel-de-allende/jardin-allende,san-miguel-de-allende/parroquia-san-miguel-arcangel,san-miguel-de-allende/la-cucaracha,san-miguel-de-allende/cafe-de-la-calzada,san-miguel-de-allende/fabrica-la-aurora,san-miguel-de-allende/miscelanea-los-arcos,san-miguel-de-allende/fonda-la-palmita,san-miguel-de-allende/tacos-el-pastor-atascadero,san-miguel-de-allende/parque-juarez,san-miguel-de-allende/casa-del-tumbagon,san-miguel-de-allende/casa-de-allende,san-miguel-de-allende/el-mirador-san-miguel TRIAL_STEPS=4 TRIAL_KINDS=long TRIAL_REPEAT=1 npx tsx --env-file=.env.local tests/experiments/rewrite-trial.mts --out=tests/experiments/results/san-miguel-city-c-2026-11-17.json`
+- Main's content is unchanged.
+
 ## 2026-11-17 (cloud), night: the whole of San Miguel, today's lines against one sentence each: for the mini
 
 - **The question:** are simple, direct lines as good as today's longer ones, and what does a learner who visits all of San Miguel hear from each? (Josh: "crafted longer lines are rarely better than the simpler direct ones"; "dialogue quality is less problem than repetition".)
