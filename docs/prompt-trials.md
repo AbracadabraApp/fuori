@@ -1069,3 +1069,18 @@ Arm A: production (`live`, 42d920f7: the goodbye setup "wind down… don't say g
 
 - Read: line 8 is now an invitation with a day and a reason in every visit ("Come see me on Thursday: the Bronte pistachios are coming in", "Come back on Saturday, when there are more people and we grill cecina enchilada"), and line 9 is a short goodbye that picks up the day ("Thank you, see you Thursday! Have a lovely day!"). "Back to work" is gone apart from two Italy line 8s ("Now I have to get back to my buttons"). Leaving without a goodbye word still ends the visit at both levels.
 - Not decided: Josh plays.
+
+### The Intermediate ending against production (2026-11-17): dialogue.md 17b (Wind down after the 9th reply, Close after the 10th), against live
+Arm A: production (`live`, 35a8e48: the old Close note after the 10th reply, "…you have to get back to what you're doing…", no wind-down). Arm B: main at b6ea1773 (lib/dialogue/ending.ts; dialogue.md's Wind down "The conversation is almost done and you've enjoyed it. Invite them to see you again for a specific reason." and Close "In a colloquial phrase say goodbye and stop, this ends the conversation."). `tests/experiments/rewrite-trial.mts`, TRIAL_STEPS=0 TRIAL_KINDS=long TRIAL_REPEAT=3 TRIAL_MAX_TURNS=13, on the Mac mini: 12 long Intermediate visits an arm a country, the same four characters three times. The trial's learner says only "Sí." at Intermediate (no offered answers), which no real Intermediate learner does.
+
+| Per visit | Italy A | Italy B | Mexico A | Mexico B |
+|---|---|---|---|---|
+| Visits that ended; failed turns | 12/12; 0 | 12/12; 0 | 12/12; 0 | 12/12; 0 |
+| Ended on line 11 (the close) | 12 | 8 | 12 | 11 |
+| … ended on line 10 (the wind-down said goodbye and ended it) | 0 | 2 | 0 | 0 |
+| … ended on line 9 (before any ending note) | 0 | 2 | 0 | 1 |
+| "I have to get back to…" in the last lines | 12 | 3 | 10 | 1 |
+| The close, words, median (range) | 37 (29–45) | 14 (8–36) | 44 (36–55) | 12 (8–20) |
+
+- Read: the wind-down invites them back with a reason ("come back to see me tomorrow morning: I have to prune the branches and I'll show you how it's done"; "come back tomorrow and I'll make you one with chile-marinated cecina"), and the close is a short goodbye ("See you later, take care, off you go!"). The "back to work" left: twice on line 9, before the wind-down (Nunzio "I have to take a look at the flower beds"; Giuseppe "I'm going back to my angel"), once on a wind-down (Renata "I have to get back to my corner"). The early endings follow the trial learner's "Sí." after the character offered to leave them to it.
+- Not decided: Josh plays.
