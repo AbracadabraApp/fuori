@@ -1,0 +1,514 @@
+[
+ {
+  "step": 4,
+  "city": "ciudad-de-mexico",
+  "place": "tacos-el-trompo-rojo",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "¡Buenas tardes! Bienvenido a Tacos El Trompo Rojo. Good afternoon! Welcome to Tacos El Trompo Rojo. Estoy cortando el trompo, el pastor con piña arriba. ¿Le gustan los tacos al pastor? Do you like tacos al pastor?",
+    "en": "Good afternoon! Welcome to Tacos El Trompo Rojo. I'm cutting the trompo, the spit of pastor with pineapple on top. Do you like tacos al pastor?",
+    "raw": "{\"line\":\"{¡Buenas tardes! *Bienvenido* a Tacos El Trompo Rojo. | Good afternoon! *Welcome* to Tacos El Trompo Rojo.} {Estoy cortando *el trompo*, el pastor con piña arriba. | I'm cutting *the trompo*, the spit of pastor with pineapple on top.} {¿Le gustan *los tacos al pastor*? | Do you like *tacos al pastor*?}\",\"en\":\"Good afternoon! Welcome to Tacos El Trompo Rojo. I'm cutting the trompo, the spit of pastor with pineapple on top. Do you like tacos al pastor?\",\"answers\":[{\"text\":\"Sí, me gustan mucho. Huele muy rico.\",\"en\":\"Yes, I like them a lot. It smells very good.\"},{\"text\":\"Quiero probar uno. ¿Qué es el trompo?\",\"en\":\"I want to try one. What is the trompo?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, me gustan mucho. Huele muy rico.",
+     "Quiero probar uno. ¿Qué es el trompo?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "¡Qué bueno! Aquí el pastor sale todo el día, bien doradito. Great! Here the pastor comes off the spit all day, nice and golden. Y la piña de arriba cae sobre el taco con un cuchillazo. And the pineapple from the top lands on your taco with one slice of the knife. ¿Cuántos tacos le preparo? How many tacos shall I make you?",
+    "en": "Great! Here the pastor comes off the spit all day, nice and golden. And the pineapple from the top lands on your taco with one slice of the knife. How many tacos shall I make you?",
+    "raw": "{\"line\":\"{¡Qué bueno! Aquí *el pastor* sale todo el día, bien doradito. | Great! Here *the pastor* comes off the spit all day, nice and golden.} {Y la piña de arriba cae sobre el taco con un cuchillazo. | And the pineapple from the top lands on your taco with one slice of the knife.} {¿Cuántos tacos le preparo? | How many tacos shall I make you?}\",\"en\":\"Great! Here the pastor comes off the spit all day, nice and golden. And the pineapple from the top lands on your taco with one slice of the knife. How many tacos shall I make you?\",\"answers\":[{\"text\":\"Cuatro tacos, por favor. Con todo.\",\"en\":\"Four tacos, please. With everything.\"},{\"text\":\"¿Qué quiere decir \\\"cuchillazo\\\"? ¿Puede decirlo más despacio?\",\"en\":\"What does \\\"cuchillazo\\\" mean? Can you say it more slowly?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Cuatro tacos, por favor. Con todo.",
+     "¿Qué quiere decir \"cuchillazo\"? ¿Puede decirlo más despacio?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "¡Claro que sí! Con todo va la cebolla, el cilantro y la salsa. Of course! With everything means onion, cilantro and salsa. Ya le corto la piña del trompo, mire. ¿Le gusta la salsa picosa? Do you like your salsa spicy?",
+    "en": "Of course! With everything means onion, cilantro and salsa. I'm cutting the pineapple off the trompo for you now, look. Do you like your salsa spicy?",
+    "raw": "{\"line\":\"{¡Claro que sí! *Con todo* va la cebolla, el cilantro y la salsa. | Of course! *With everything* means onion, cilantro and salsa.} {Ya le corto *la piña* del trompo, mire. | I'm cutting *the pineapple* off the trompo for you now, look.} {¿Le gusta la salsa *picosa*? | Do you like your salsa *spicy*?}\",\"en\":\"Of course! With everything means onion, cilantro and salsa. I'm cutting the pineapple off the trompo for you now, look. Do you like your salsa spicy?\",\"answers\":[{\"text\":\"Sí, me gusta picosa. Échele bastante, por favor.\",\"en\":\"Yes, I like it spicy. Put plenty on, please.\"},{\"text\":\"Me gusta tu trompo. ¿Qué significa \\\"picosa\\\"?\",\"en\":\"I like your trompo. What does \\\"picosa\\\" mean?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, me gusta picosa. Échele bastante, por favor.",
+     "Me gusta tu trompo. ¿Qué significa \"picosa\"?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "¡Va! Bastante salsa para usted. Aquí la roja pica de verdad, ya verá. ¿Quiere también algo de tomar? Do you want something to drink too?",
+    "en": "Okay! Plenty of salsa for you. The red one here really burns, you'll see. Do you want something to drink too?",
+    "raw": "{\"line\":\"{¡Va! *Bastante salsa* para usted. | Okay! *Plenty of salsa* for you.} {Aquí la roja pica de verdad, ya verá. | The red one here really burns, you'll see.} {¿Quiere también algo de tomar? | Do you want something to drink too?}\",\"en\":\"Okay! Plenty of salsa for you. The red one here really burns, you'll see. Do you want something to drink too?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Aquí vendemos agua de horchata, bien fría. También tengo refrescos y agua de jamaica. I also have sodas and hibiscus water. ¿Cuál le sirvo? Which one shall I pour you?",
+    "en": "Here we sell horchata, a sweet rice-and-cinnamon drink, nice and cold. I also have sodas and hibiscus water. Which one shall I pour you?",
+    "raw": "{\"line\":\"{Aquí vendemos *agua de horchata*, bien fría. | Here we sell *horchata*, a sweet rice-and-cinnamon drink, nice and cold.} {También tengo refrescos y agua de jamaica. | I also have sodas and hibiscus water.} {¿Cuál le sirvo? | Which one shall I pour you?}\",\"en\":\"Here we sell horchata, a sweet rice-and-cinnamon drink, nice and cold. I also have sodas and hibiscus water. Which one shall I pour you?\",\"answers\":[{\"text\":\"Una horchata, por favor. Se ve muy rica.\",\"en\":\"A horchata (sweet rice-and-cinnamon drink), please. It looks very good.\"},{\"text\":\"¿Qué es el agua de jamaica? ¿Es dulce?\",\"en\":\"What is agua de jamaica (hibiscus water)? Is it sweet?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Una horchata, por favor. Se ve muy rica.",
+     "¿Qué es el agua de jamaica? ¿Es dulce?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "¡Con gusto! Aquí está la horchata, bien fría. With pleasure! Here's the horchata, nice and cold. Ya casi salen sus cuatro tacos, con todo. Your four tacos are almost ready, with everything. La horchata es dulce, así que la salsa roja le va a caer perfecta. The horchata is sweet, so the red salsa is going to go perfectly with it.",
+    "en": "With pleasure! Here's the horchata, nice and cold. Your four tacos are almost ready, with everything. The horchata is sweet, so the red salsa is going to go perfectly with it.",
+    "raw": "{\"line\":\"{¡Con gusto! Aquí está *la horchata*, bien fría. | With pleasure! Here's *the horchata*, nice and cold.} {Ya casi salen sus cuatro tacos, *con todo*. | Your four tacos are almost ready, *with everything*.} {La horchata es *dulce*, así que la salsa roja le va a caer perfecta. | The horchata is *sweet*, so the red salsa is going to go perfectly with it.}\",\"en\":\"With pleasure! Here's the horchata, nice and cold. Your four tacos are almost ready, with everything. The horchata is sweet, so the red salsa is going to go perfectly with it.\",\"answers\":[{\"text\":\"Qué bueno. Me encanta lo dulce con lo picoso.\",\"en\":\"Great. I love sweet with spicy.\"},{\"text\":\"¿Qué lleva la horchata? ¿Es de arroz?\",\"en\":\"What's in the horchata? Is it made with rice?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Qué bueno. Me encanta lo dulce con lo picoso.",
+     "¿Qué lleva la horchata? ¿Es de arroz?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Aquí están sus tacos, bien calientitos. Here they are, your tacos, nice and hot. Ese truco del dulce con lo picoso es muy de aquí, de la Roma. Yo siempre me tomo una horchata cuando acabo de cortar el trompo. I always have a horchata when I finish cutting the trompo.",
+    "en": "Here they are, your tacos, nice and hot. That trick of sweet with spicy is very much from here, from the Roma. I always have a horchata when I finish cutting the trompo.",
+    "raw": "{\"line\":\"{*Aquí están* sus tacos, bien calientitos. | *Here they are*, your tacos, nice and hot.} {Ese truco del dulce con lo picoso es muy de aquí, de la Roma. | That trick of sweet with spicy is very much from here, from the Roma.} {Yo siempre me tomo una horchata cuando acabo de cortar el trompo. | I always have a horchata when I finish cutting the trompo.}\",\"en\":\"Here they are, your tacos, nice and hot. That trick of sweet with spicy is very much from here, from the Roma. I always have a horchata when I finish cutting the trompo.\",\"answers\":[{\"text\":\"Qué buena idea. Seguro la necesita después del trabajo.\",\"en\":\"What a good idea. You surely need it after work.\"},{\"text\":\"Están muy ricos. ¿Cuánto tiempo lleva cortando el trompo?\",\"en\":\"They're very tasty. How long have you been cutting the trompo?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Qué buena idea. Seguro la necesita después del trabajo.",
+     "Están muy ricos. ¿Cuánto tiempo lleva cortando el trompo?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Sí, con tanto fuego del trompo, ¡me hace falta! Yes, with all the heat from the spit, I need it! Gracias por la visita, fue un gusto platicar con usted. Thanks for the visit, it was a pleasure chatting with you. Vuelva el viernes, que ese día sale el pastor más jugoso. Come back on Friday, that's the day the juiciest pastor comes off the spit.",
+    "en": "Yes, with all the heat from the spit, I need it! Thanks for the visit, it was a pleasure chatting with you. Come back on Friday, that's the day the juiciest pastor comes off the spit.",
+    "raw": "{\"line\":\"Sí, con tanto fuego del trompo, ¡me hace falta! Yes, with all the heat from the spit, I need it! Gracias por la visita, fue un gusto platicar con usted. Thanks for the visit, it was a pleasure chatting with you. Vuelva el viernes, que ese día sale el pastor más jugoso. Come back on Friday, that's the day the juiciest pastor comes off the spit.\",\"en\":\"Yes, with all the heat from the spit, I need it! Thanks for the visit, it was a pleasure chatting with you. Come back on Friday, that's the day the juiciest pastor comes off the spit.\",\"answers\":[{\"text\":\"Gracias por todo, Chema. Aquí vuelvo el viernes.\",\"en\":\"Thanks for everything, Chema. I'll be back on Friday.\"},{\"text\":\"Muy ricos los tacos. Hasta luego.\",\"en\":\"The tacos were delicious. See you later.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Gracias por todo, Chema. Aquí vuelvo el viernes.",
+     "Muy ricos los tacos. Hasta luego."
+    ],
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "¡Aquí lo espero, que le vaya bonito! Cuídese mucho. I'll be here waiting for you, take care! Look after yourself.",
+    "en": "I'll be here waiting for you, take care! Look after yourself.",
+    "raw": "{\"line\":\"¡Aquí lo espero, que le vaya bonito! Cuídese mucho. I'll be here waiting for you, take care! Look after yourself.\",\"en\":\"I'll be here waiting for you, take care! Look after yourself.\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": true
+   }
+  ],
+  "person": "Chema Rosales",
+  "arm": "production",
+  "culture": [
+   "Tacos al pastor are cooked on a vertical spit called a trompo",
+   "Tacos al pastor are topped with pineapple sliced off the top of the trompo",
+   "\"Con todo\" means a taco with onion, cilantro and salsa",
+   "Red salsa is typically very spicy",
+   "Agua de horchata is a sweet, cold rice-based drink sold at taquerias",
+   "Agua de jamaica is a hibiscus drink",
+   "Sodas (refrescos) are common taqueria drinks",
+   "Pairing sweet drinks with spicy food is a local trick in La Roma, Mexico City",
+   "Roma is a neighborhood in Mexico City",
+   "\"¡Va!\" is a casual way to say okay or deal",
+   "\"Con gusto\" is a polite way to say with pleasure",
+   "\"Que le vaya bonito\" is a friendly Mexican farewell wishing someone well",
+   "Taqueros commonly address customers with the formal \"usted\"",
+   "Taco stands serve food freshly cut from the spit all day"
+  ]
+ },
+ {
+  "step": 4,
+  "city": "san-cristobal-de-las-casas",
+  "place": "templo-de-guadalupe-sancris",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Buenos días, joven. Good morning, young one. Estoy dejando las flores para la Virgen, como cada mañana. I'm leaving the flowers for the Virgin, like every morning. ¿Ya conoce el templo? Do you already know the church?",
+    "en": "Good morning, young one. I'm leaving the flowers for the Virgin, like every morning. Do you already know the church?",
+    "raw": "{\"line\":\"{*Buenos días*, joven. | *Good morning*, young one.} {Estoy dejando *las flores* para la Virgen, como cada mañana. | I'm leaving *the flowers* for the Virgin, like every morning.} {¿Ya conoce *el templo*? | Do you already know *the church*?}\",\"en\":\"Good morning, young one. I'm leaving the flowers for the Virgin, like every morning. Do you already know the church?\",\"answers\":[{\"text\":\"No, todavía no lo conozco. Es muy bonito.\",\"en\":\"No, I don't know it yet. It's very pretty.\"},{\"text\":\"Buenos días, señora. ¿Qué significa \\\"joven\\\"?\",\"en\":\"Good morning, ma'am. What does \\\"joven\\\" mean?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "No, todavía no lo conozco. Es muy bonito.",
+     "Buenos días, señora. ¿Qué significa \"joven\"?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Gracias, joven. Es muy bonito, y desde aquí arriba se ve todo el barrio. Yo subo las escaleras todas las mañanas con mis flores. Para el doce de diciembre, esta calle se llena de música y fuegos artificiales. Before the twelfth of December, this street fills with music and fireworks.",
+    "en": "Thank you, young one. It's very pretty, and from up here you can see the whole neighborhood. I climb the steps every morning with my flowers. Before the twelfth of December, this street fills with music and fireworks.",
+    "raw": "{\"line\":\"{Gracias, joven. *Es muy bonito*, y desde aquí arriba se ve todo el barrio. | Thank you, young one. *It's very pretty*, and from up here you can see the whole neighborhood.} {Yo subo *las escaleras* todas las mañanas con mis flores. | I climb *the steps* every morning with my flowers.} {Para el doce de diciembre, esta calle se llena de música y *fuegos artificiales*. | Before the twelfth of December, this street fills with music and *fireworks*.}\",\"en\":\"Thank you, young one. It's very pretty, and from up here you can see the whole neighborhood. I climb the steps every morning with my flowers. Before the twelfth of December, this street fills with music and fireworks.\",\"answers\":[{\"text\":\"Qué bonito. Me gustaría ver los fuegos artificiales.\",\"en\":\"How lovely. I would like to see the fireworks.\"},{\"text\":\"¿Por qué suben las escaleras con flores todos los días?\",\"en\":\"Why do you climb the steps with flowers every day?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Qué bonito. Me gustaría ver los fuegos artificiales.",
+     "¿Por qué suben las escaleras con flores todos los días?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Ay, qué bonito es verlos, joven. Oh, it's so beautiful to see them, young one. Llegan corredores con antorchas desde muy lejos, y todo el barrio sale a la calle. Yo siempre me quedo despierta hasta tarde esa noche. I always stay up late that night.",
+    "en": "Oh, it's so beautiful to see them, young one. Runners arrive with torches from very far away, and the whole neighborhood comes out to the street. I always stay up late that night.",
+    "raw": "{\"line\":\"{Ay, *qué bonito* es verlos, joven. | Oh, it's *so beautiful* to see them, young one.} {Llegan corredores con antorchas desde muy lejos, y todo el barrio sale a la calle. | Runners arrive with torches from very far away, and the whole neighborhood comes out to the street.} {Yo siempre me quedo despierta hasta tarde esa noche. | I always stay up late that night.}\",\"en\":\"Oh, it's so beautiful to see them, young one. Runners arrive with torches from very far away, and the whole neighborhood comes out to the street. I always stay up late that night.\",\"answers\":[{\"text\":\"Qué bonito que se quede despierta. Debe ser una noche muy especial.\",\"en\":\"How nice that you stay up. It must be a very special night.\"},{\"text\":\"¿Qué son las antorchas? ¿Me puede explicar más?\",\"en\":\"What are the torches? Can you explain more to me?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Qué bonito que se quede despierta. Debe ser una noche muy especial.",
+     "¿Qué son las antorchas? ¿Me puede explicar más?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "idiom",
+    "line": "Sí, joven, es una noche muy especial. Yes, young one, it's a very special night. Los corredores llevan la fe de todo el pueblo hasta la Virgen, que es como una madre para nosotros. The runners carry the whole town's faith to the Virgin, who is like a mother to us. Y como dice el dicho: «Madre sólo hay una». ¿Usted qué cree que quiere decir? What do you think it means?",
+    "en": "Yes, young one, it's a very special night. The runners carry the whole town's faith to the Virgin, who is like a mother to us. And as the saying goes: \"There's only one mother\". What do you think it means?",
+    "raw": "{\"line\":\"{Sí, joven, es *una noche muy especial*. | Yes, young one, it's *a very special night*.} {Los corredores llevan la fe de todo el pueblo hasta la Virgen, que es como una madre para nosotros. | The runners carry the whole town's faith to the Virgin, who is like a mother to us.} {Y como dice el dicho: *«Madre sólo hay una»*. | And as the saying goes: *\\\"There's only one mother\\\"*.} {¿Usted qué cree que quiere decir? | What do you think it means?}\",\"en\":\"Yes, young one, it's a very special night. The runners carry the whole town's faith to the Virgin, who is like a mother to us. And as the saying goes: \\\"There's only one mother.\\\" What do you think it means?\",\"answers\":[{\"text\":\"Creo que una madre no se puede reemplazar. Es muy importante.\",\"en\":\"I think a mother can't be replaced. She is very important.\"},{\"text\":\"Creo que solo hay una madre en el mundo. Las demás no existen.\",\"en\":\"I think there is only one mother in the world. The others don't exist.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Creo que una madre no se puede reemplazar. Es muy importante.",
+     "Creo que solo hay una madre en el mundo. Las demás no existen."
+    ],
+    "done": false
+   },
+   {
+    "setup": "ask-en",
+    "line": "Tiene razón, joven, una madre no se puede reemplazar. Por eso subo aquí cada mañana, a dejarle flores a la Virgen. That's why I come up here every morning, to leave flowers for the Virgin.",
+    "en": "You're right, young one, a mother can't be replaced. That's why I come up here every morning, to leave flowers for the Virgin.",
+    "raw": "{\"line\":\"{Tiene razón, joven, una madre *no se puede reemplazar*. | You're right, young one, a mother *can't be replaced*.} {Por eso subo aquí cada mañana, a dejarle *flores* a la Virgen. | That's why I come up here every morning, to leave *flowers* for the Virgin.}\",\"en\":\"You're right, young one, a mother can't be replaced. That's why I come up here every morning, to leave flowers for the Virgin.\",\"answers\":[{\"text\":\"¿Qué flores le deja a la Virgen?\",\"en\":\"What flowers do you leave for the Virgin?\"},{\"text\":\"¿Cuántos años lleva subiendo las escaleras?\",\"en\":\"How many years have you been climbing the steps?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "¿Qué flores le deja a la Virgen?",
+     "¿Cuántos años lleva subiendo las escaleras?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Le dejo alcatraces blancos y rosas de mi jardín. I leave her white calla lilies and roses from my garden. Las corto temprano, cuando todavía tienen el rocío. ¿Le gustaría subir las escaleras conmigo para ver el templo? Would you like to climb the steps with me to see the church?",
+    "en": "I leave her white calla lilies and roses from my garden. I cut them early, while they still have the dew. Would you like to climb the steps with me to see the church?",
+    "raw": "{\"line\":\"{Le dejo *alcatraces* blancos y rosas de mi jardín. | I leave her white *calla lilies* and roses from my garden.} {Las corto temprano, cuando todavía tienen el rocío. | I cut them early, while they still have the dew.} {¿Le gustaría subir las escaleras conmigo para ver el templo? | Would you like to climb the steps with me to see the church?}\",\"en\":\"I leave her white calla lilies and roses from my garden. I cut them early, while they still have the dew. Would you like to climb the steps with me to see the church?\",\"answers\":[{\"text\":\"Sí, me gustaría mucho. Las flores son muy bonitas.\",\"en\":\"Yes, I would like that very much. The flowers are very pretty.\"},{\"text\":\"Gracias, doña. ¿Qué quiere decir «alcatraces»?\",\"en\":\"Thank you, ma'am. What does \\\"alcatraces\\\" mean?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, me gustaría mucho. Las flores son muy bonitas.",
+     "Gracias, doña. ¿Qué quiere decir «alcatraces»?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Venga, joven, despacito, que son muchos escalones. Come on, young one, nice and slow, there are a lot of steps. Arriba hay un patio con veladoras y se ve todo el barrio. ¿Quiere que le regale una rosa para dejarla a la Virgen? Would you like me to give you a rose to leave for the Virgin?",
+    "en": "Come on, young one, nice and slow, there are a lot of steps. Up top there's a courtyard with candles and you can see the whole neighborhood. Would you like me to give you a rose to leave for the Virgin?",
+    "raw": "{\"line\":\"{Venga, joven, *despacito*, que son muchos escalones. | Come on, young one, *nice and slow*, there are a lot of steps.} {Arriba hay un patio con *veladoras* y se ve todo el barrio. | Up top there's a courtyard with *candles* and you can see the whole neighborhood.} {¿Quiere que le regale *una rosa* para dejarla a la Virgen? | Would you like me to give you *a rose* to leave for the Virgin?}\",\"en\":\"Come on, young one, nice and slow, there are a lot of steps. Up top there's a courtyard with candles and you can see the whole neighborhood. Would you like me to give you a rose to leave for the Virgin?\",\"answers\":[{\"text\":\"Sí, gracias. Me gustaría dejarle una rosa.\",\"en\":\"Yes, thank you. I would like to leave her a rose.\"},{\"text\":\"Vamos despacio. ¿Qué es una veladora?\",\"en\":\"Let's go slowly. What is a veladora (a votive candle)?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, gracias. Me gustaría dejarle una rosa.",
+     "Vamos despacio. ¿Qué es una veladora?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Tome, joven, esta es la más bonita. Here, young one, this is the prettiest one. Déjela ahí, junto a las veladoras, y pídale lo que quiera. Leave it there, next to the candles, and ask for whatever you like. Y si viene el once de diciembre, venga temprano y vemos juntos llegar a los corredores. And if you come on the eleventh of December, come early and we'll watch the runners arrive together.",
+    "en": "Here, young one, this is the prettiest one. Leave it there, next to the candles, and ask for whatever you like. And if you come on the eleventh of December, come early and we'll watch the runners arrive together.",
+    "raw": "{\"line\":\"Tome, joven, esta es la más bonita. Here, young one, this is the prettiest one. Déjela ahí, junto a las veladoras, y pídale lo que quiera. Leave it there, next to the candles, and ask for whatever you like. Y si viene el once de diciembre, venga temprano y vemos juntos llegar a los corredores. And if you come on the eleventh of December, come early and we'll watch the runners arrive together.\",\"en\":\"Here, young one, this is the prettiest one. Leave it there, next to the candles, and ask for whatever you like. And if you come on the eleventh of December, come early and we'll watch the runners arrive together.\",\"answers\":[{\"text\":\"Muchas gracias, doña Chayo. Sí, vengo el once de diciembre.\",\"en\":\"Thank you very much, Doña Chayo. Yes, I'll come on the eleventh of December.\"},{\"text\":\"Hasta luego, doña Chayo. Que tenga un bonito día.\",\"en\":\"See you later, Doña Chayo. Have a lovely day.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Muchas gracias, doña Chayo. Sí, vengo el once de diciembre.",
+     "Hasta luego, doña Chayo. Que tenga un bonito día."
+    ],
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "Aquí la espero, joven. I'll be here waiting for you, young one. Que Dios lo bendiga, y cuídese mucho. May God bless you, and take good care. ¡Hasta luego!",
+    "en": "I'll be here waiting for you, young one. May God bless you, and take good care. See you later!",
+    "raw": "{\"line\":\"Aquí la espero, joven. I'll be here waiting for you, young one. Que Dios lo bendiga, y cuídese mucho. May God bless you, and take good care. ¡Hasta luego!\",\"en\":\"I'll be here waiting for you, young one. May God bless you, and take good care. See you later!\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": true
+   }
+  ],
+  "person": "Doña Chayo Molina",
+  "arm": "production",
+  "culture": [
+   "Mexicans commonly greet people with \"Buenos días\" and address a younger person respectfully as \"joven\"",
+   "Devotion to the Virgin Mary (the Virgin of Guadalupe) is central to Mexican religious life",
+   "Leaving fresh flowers at a church for the Virgin is a daily devotional custom",
+   "Neighborhood churches are often reached by steps and give views over the surrounding barrio",
+   "December 12 is the Virgin of Guadalupe's feast day, celebrated with music and fireworks in the streets",
+   "Runners carry torches from far away to bring the town's faith to the Virgin",
+   "The whole neighborhood comes out into the street to welcome the runners, and people stay up late that night",
+   "The Virgin is regarded as a mother to the people",
+   "The proverb \"Madre sólo hay una\" (there is only one mother) expresses that a mother cannot be replaced",
+   "Calla lilies (alcatraces) and roses are traditional flowers to offer, ideally cut early in the morning while still dewy",
+   "Veladoras (devotional candles) are lit in a church patio, where people leave flowers and make petitions",
+   "Offering a flower to a visitor is a gesture of hospitality and generosity",
+   "People ask the Virgin for what they wish by leaving a rose beside the candles",
+   "Runners arrive on December 11, the eve of the feast, and people gather early to watch them",
+   "Farewells include blessings like \"Que Dios lo bendiga\" and \"cuídese mucho\"",
+   "Polite speech uses \"usted\" with strangers and elders",
+   "\"Despacito\" means nice and slow"
+  ]
+ },
+ {
+  "step": 4,
+  "city": "guadalajara",
+  "place": "tacos-el-compa-nacho",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "¡Buenas noches! Pase, pase, ya salieron los tacos dorados. Aquí la salsa es bien picosa, pero muy rica. Here the salsa is really hot, but very tasty. ¿Quiere probar un taco dorado? Do you want to try a taco dorado?",
+    "en": "Good evening! Come on in, the fried tacos just came out. Here the salsa is really hot, but very tasty. Do you want to try a taco dorado?",
+    "raw": "{\"line\":\"{¡Buenas noches! *Pase, pase*, ya salieron los tacos dorados. | Good evening! *Come on in*, the fried tacos just came out.} {Aquí la salsa es *bien picosa*, pero muy rica. | Here the salsa is *really hot*, but very tasty.} {¿Quiere probar *un taco dorado*? | Do you want to try *a taco dorado*?}\",\"en\":\"Good evening! Come on in, the fried tacos just came out. The salsa here is really hot, but very tasty. Do you want to try a taco dorado (crispy fried taco)?\",\"answers\":[{\"text\":\"Sí, quiero un taco dorado. Se ve muy rico.\",\"en\":\"Yes, I want a taco dorado (crispy fried taco). It looks very tasty.\"},{\"text\":\"Me gusta el picante. ¿Qué lleva la salsa?\",\"en\":\"I like spicy food. What is in the salsa?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, quiero un taco dorado. Se ve muy rico.",
+     "Me gusta el picante. ¿Qué lleva la salsa?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "¡Ahorita se lo preparo! Los tacos dorados se fríen hasta quedar bien crujientes. Y la salsa nunca sale sin que yo la pruebe. And I never send the salsa out without tasting it first. ¿Le gusta el picante? Do you like spicy food?",
+    "en": "Coming right up! The tacos dorados are fried until they're nice and crunchy. And I never send the salsa out without tasting it first. Do you like spicy food?",
+    "raw": "{\"line\":\"{¡Ahorita se lo preparo! | Coming right up!} {Los *tacos dorados* se fríen hasta quedar bien crujientes. | The *tacos dorados* are fried until they're nice and crunchy.} {Y la salsa nunca sale sin que yo la pruebe. | And I never send the salsa out without tasting it first.} {¿Le gusta el picante? | Do you like spicy food?}\",\"en\":\"Coming right up! The tacos dorados are fried until they're nice and crunchy. And I never send the salsa out without tasting it first. Do you like spicy food?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "ask-en",
+    "line": "¡Qué bueno! Great! Aquí en Guadalajara, los tacos de la madrugada son una costumbre. Mi salsa es bien picosa, pero se la dejo aparte. My salsa is really hot, but I'll leave it on the side for you.",
+    "en": "Great! Here in Guadalajara, tacos in the early hours are a custom. My salsa is really hot, but I'll leave it on the side for you.",
+    "raw": "{\"line\":\"{¡Qué bueno! | *Great!*} {Aquí en Guadalajara, los tacos de la *madrugada* son una costumbre. | Here in Guadalajara, tacos in *the early hours* are a custom.} {Mi salsa es *bien picosa*, pero se la dejo aparte. | My salsa is *really hot*, but I'll leave it on the side for you.}\",\"en\":\"Great! Here in Guadalajara, tacos in the early hours are a custom. My salsa is really hot, but I'll leave it on the side for you.\",\"answers\":[{\"text\":\"¿De qué es la salsa? ¿Es muy picosa?\",\"en\":\"What is the salsa made of? Is it very hot?\"},{\"text\":\"¿Por qué comen tacos en la madrugada?\",\"en\":\"Why do people eat tacos in the early hours?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "¿De qué es la salsa? ¿Es muy picosa?",
+     "¿Por qué comen tacos en la madrugada?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "La salsa es de chile de árbol con tomate y ajo. The salsa is made of chile de árbol with tomato and garlic. Sí, pica mucho, pero se acompaña muy bien con el taco dorado. Yes, it's very hot, but it goes great with the taco dorado. ¿Quiere que se la ponga poquita? Do you want me to put just a little?",
+    "en": "The salsa is made of chile de árbol with tomato and garlic. Yes, it's very hot, but it goes great with the taco dorado. Do you want me to put just a little?",
+    "raw": "{\"line\":\"{La salsa es de *chile de árbol* con tomate y ajo. | The salsa is made of *chile de árbol* with tomato and garlic.} {Sí, *pica mucho*, pero se acompaña muy bien con el taco dorado. | Yes, it's *very hot*, but it goes great with the taco dorado.} {¿Quiere que se la ponga *poquita*? | Do you want me to put *just a little*?}\",\"en\":\"The salsa is made of chile de árbol with tomato and garlic. Yes, it's very hot, but it goes great with the taco dorado. Do you want me to put just a little?\",\"answers\":[{\"text\":\"Sí, poquita, por favor. Me gusta el picante, pero no tanto.\",\"en\":\"Yes, just a little, please. I like spicy food, but not that much.\"},{\"text\":\"No, ponga bastante. ¿Cuántos tacos dorados hace usted en una noche?\",\"en\":\"No, put plenty. How many tacos dorados do you make in a night?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, poquita, por favor. Me gusta el picante, pero no tanto.",
+     "No, ponga bastante. ¿Cuántos tacos dorados hace usted en una noche?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Muy bien, poquita salsa para usted. Aquí la salsa nunca sale sin que yo la pruebe. Here the salsa never leaves without me tasting it. Mi salsa tiene fama de ser la más picosa de Chapultepec. My salsa is famous for being the hottest in Chapultepec.",
+    "en": "Very good, just a little salsa for you. Here the salsa never leaves without me tasting it. My salsa is famous for being the hottest in Chapultepec.",
+    "raw": "{\"line\":\"{Muy bien, *poquita salsa* para usted. | Very good, *just a little salsa* for you.} {Aquí la salsa nunca sale sin que yo la pruebe. | Here the salsa never leaves without me tasting it.} {Mi salsa tiene fama de ser la más picosa de Chapultepec. | My salsa is famous for being the hottest in Chapultepec.}\",\"en\":\"Very good, just a little salsa for you. Here the salsa never leaves without me tasting it. My salsa is famous for being the hottest in Chapultepec.\",\"answers\":[{\"text\":\"Qué bueno que la prueba siempre. Debe ser muy rica.\",\"en\":\"How good that you always taste it. It must be very tasty.\"},{\"text\":\"¿Usted la prueba todos los días? ¿No le pica mucho?\",\"en\":\"Do you taste it every day? Doesn't it burn too much for you?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Qué bueno que la prueba siempre. Debe ser muy rica.",
+     "¿Usted la prueba todos los días? ¿No le pica mucho?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "¡Gracias! Aquí se prueba todo antes de servir. Ahorita le sirvo su taco dorado, bien calientito. I'll serve you your taco dorado right now, nice and hot. ¿Es su primera vez en una taquería de Chapultepec? Is this your first time at a taquería in Chapultepec?",
+    "en": "Thanks! Here we taste everything before serving. I'll serve you your taco dorado right now, nice and hot. Is this your first time at a taquería in Chapultepec?",
+    "raw": "{\"line\":\"{¡Gracias! *Aquí se prueba todo* antes de servir. | Thanks! *Here we taste everything* before serving.} {Ahorita le sirvo su taco dorado, bien calientito. | I'll serve you your taco dorado right now, nice and hot.} {¿Es su primera vez en *una taquería* de Chapultepec? | Is this your first time at *a taquería* in Chapultepec?}\",\"en\":\"Thanks! Here we taste everything before serving. I'll serve you your taco dorado right now, nice and hot. Is this your first time at a taquería in Chapultepec?\",\"answers\":[{\"text\":\"Sí, es mi primera vez. Me gusta mucho este lugar.\",\"en\":\"Yes, it's my first time. I really like this place.\"},{\"text\":\"No, ya vine antes. ¿Qué otros tacos tiene?\",\"en\":\"No, I've been before. What other tacos do you have?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, es mi primera vez. Me gusta mucho este lugar.",
+     "No, ya vine antes. ¿Qué otros tacos tiene?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "¡Qué gusto que le guste! Aquí en Chapultepec hay mucha vida de noche, y la gente viene por los tacos. Tenga, su taco dorado, bien calientito. Here you go, your taco dorado, nice and hot. ¿Qué le parece el taco? What do you think of the taco?",
+    "en": "I'm glad you like it! Here in Chapultepec there's a lot of nightlife, and people come for the tacos. Here you go, your taco dorado, nice and hot. What do you think of the taco?",
+    "raw": "{\"line\":\"¡Qué gusto que le guste! Aquí en Chapultepec hay mucha vida de noche, y la gente viene por los tacos. Tenga, su taco dorado, bien calientito. Here you go, your taco dorado, nice and hot. ¿Qué le parece el taco? What do you think of the taco?\",\"en\":\"I'm glad you like it! Here in Chapultepec there's a lot of nightlife, and people come for the tacos. Here you go, your taco dorado, nice and hot. What do you think of the taco?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "¡Me alegra mucho! Cuando quiera más, aquí estoy. Vuelva el viernes, que sale la birria y la salsa nueva. Come back Friday, when the birria and the new salsa come out. ¡Que le vaya muy bien! Take care!",
+    "en": "I'm so glad! Whenever you want more, I'm here. Come back Friday, when the birria and the new salsa come out. Take care!",
+    "raw": "{\"line\":\"¡Me alegra mucho! Cuando quiera más, aquí estoy. Vuelva el viernes, que sale la birria y la salsa nueva. Come back Friday, when the birria and the new salsa come out. ¡Que le vaya muy bien! Take care!\",\"en\":\"I'm so glad! Whenever you want more, I'm here. Come back Friday, when the birria and the new salsa come out. Take care!\",\"answers\":[{\"text\":\"Gracias, el viernes vengo. ¡Hasta luego!\",\"en\":\"Thanks, I'll come Friday. See you later!\"},{\"text\":\"Muchas gracias por todo. ¡Buenas noches!\",\"en\":\"Thank you for everything. Good night!\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Gracias, el viernes vengo. ¡Hasta luego!",
+     "Muchas gracias por todo. ¡Buenas noches!"
+    ],
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "¡Aquí lo espero, buen provecho! ¡Hasta luego, que descanse!",
+    "en": "I'll be waiting for you here, enjoy your meal! See you later, rest well!",
+    "raw": "{\"line\":\"¡Aquí lo espero, buen provecho! ¡Hasta luego, que descanse!\",\"en\":\"I'll be waiting for you here, enjoy your meal! See you later, rest well!\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": true
+   }
+  ],
+  "person": "Nacho Robles",
+  "arm": "production",
+  "culture": [
+   "Tacos dorados are fried until crispy",
+   "Salsa made from chile de árbol, tomato, and garlic is very hot",
+   "Late-night tacos (tacos de la madrugada) are a custom in Guadalajara",
+   "Chapultepec is a lively nightlife area in Guadalajara where people go for tacos",
+   "Taquerías often serve salsa on the side so you can control the heat",
+   "Birria is a dish served on certain days, such as Fridays at this taquería",
+   "Taquerías may make a new salsa on specific days",
+   "Ahorita is a common word meaning right now or in a moment",
+   "Buen provecho is said to wish someone a good meal",
+   "Poquita (a little) is a way to ask for a small amount of salsa"
+  ]
+ },
+ {
+  "step": 4,
+  "city": "guanajuato",
+  "place": "enchiladas-baratillo",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Buenas tardes, pase, pase. Hoy hay enchiladas mineras, la especialidad de la casa. ¿Le sirvo una comida corrida? Shall I serve you a set lunch?",
+    "en": "Good afternoon, come in, come in. Today there are enchiladas mineras, the house specialty. Shall I serve you a set lunch?",
+    "raw": "{\"line\":\"{*Buenas tardes*, pase, pase. | *Good afternoon*, come in, come in.} {Hoy hay *enchiladas mineras*, la especialidad de la casa. | Today there are *enchiladas mineras*, the house specialty.} {¿Le sirvo una *comida corrida*? | Shall I serve you a *set lunch*?}\",\"en\":\"Good afternoon, come in, come in. Today there are enchiladas mineras, the house specialty. Shall I serve you a set lunch?\",\"answers\":[{\"text\":\"Sí, por favor. Me gustan las enchiladas.\",\"en\":\"Yes, please. I like enchiladas.\"},{\"text\":\"Huele muy rico aquí. ¿Qué son las enchiladas mineras?\",\"en\":\"It smells really good here. What are enchiladas mineras?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, por favor. Me gustan las enchiladas.",
+     "Huele muy rico aquí. ¿Qué son las enchiladas mineras?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "¡Qué bueno! Siéntese aquí, ahorita le traigo sus enchiladas mineras. Llevan salsa de chile guajillo, queso y cebolla, con papas y zanahorias fritas encima. They have guajillo chile sauce, cheese and onion, with fried potatoes and carrots on top. ¿Le pongo un poquito de salsa extra? Shall I give you a little extra salsa?",
+    "en": "How nice! Sit here, I'll bring you your enchiladas mineras right away. They have guajillo chile sauce, cheese and onion, with fried potatoes and carrots on top. Shall I give you a little extra salsa?",
+    "raw": "{\"line\":\"{¡Qué bueno! Siéntese aquí, ahorita le traigo *sus enchiladas mineras*. | How nice! Sit here, I'll bring you *your enchiladas mineras* right away.} {Llevan *salsa de chile guajillo*, queso y cebolla, con papas y zanahorias fritas encima. | They have *guajillo chile sauce*, cheese and onion, with fried potatoes and carrots on top.} {¿Le pongo un poquito de salsa extra? | Shall I give you a little extra salsa?}\",\"en\":\"How nice! Sit here, I'll bring you your enchiladas mineras right away. They have guajillo chile sauce, cheese and onion, with fried potatoes and carrots on top. Shall I give you a little extra salsa?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "ask-en",
+    "line": "Con gusto, salsa extra para usted. Estas enchiladas eran la comida de los mineros, baratas y muy llenadoras. These enchiladas were the miners' food, cheap and very filling.",
+    "en": "Gladly, extra salsa for you. These enchiladas were the miners' food, cheap and very filling.",
+    "raw": "{\"line\":\"{Con gusto, *salsa extra* para usted. | Gladly, *extra salsa* for you.} {Estas enchiladas eran *la comida de los mineros*, baratas y muy llenadoras. | These enchiladas were *the miners' food*, cheap and very filling.}\",\"en\":\"Gladly, extra salsa for you. These enchiladas were the miners' food, cheap and very filling.\",\"answers\":[{\"text\":\"¿Los mineros comían esto todos los días?\",\"en\":\"Did the miners eat this every day?\"},{\"text\":\"¿La salsa de guajillo pica mucho?\",\"en\":\"Is the guajillo sauce very spicy?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "¿Los mineros comían esto todos los días?",
+     "¿La salsa de guajillo pica mucho?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Sí, casi todos los días, porque era comida barata y llenadora. Yes, almost every day, because it was cheap, filling food. Hoy vienen los estudiantes de la universidad, y también comen aquí por poco dinero. ¿Quiere un agua fresca para acompañar sus enchiladas? Would you like a fruit water to go with your enchiladas?",
+    "en": "Yes, almost every day, because it was cheap, filling food. Today the students from the university come, and they also eat here for little money. Would you like a fruit water to go with your enchiladas?",
+    "raw": "{\"line\":\"{Sí, casi todos los días, porque *era comida barata y llenadora*. | Yes, almost every day, because it was *cheap, filling food*.} {Hoy vienen *los estudiantes* de la universidad, y también comen aquí por poco dinero. | Today *the students* from the university come, and they also eat here for little money.} {¿Quiere *un agua fresca* para acompañar sus enchiladas? | Would you like *a fruit water* to go with your enchiladas?}\",\"en\":\"Yes, almost every day, because it was cheap, filling food. Today the students from the university come, and they also eat here for little money. Would you like a fruit water to go with your enchiladas?\",\"answers\":[{\"text\":\"Sí, quiero un agua de jamaica. Se ve muy rica.\",\"en\":\"Yes, I'd like a jamaica water (hibiscus drink). It looks very good.\"},{\"text\":\"No, gracias. ¿Los estudiantes vienen todos los días?\",\"en\":\"No, thank you. Do the students come every day?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, quiero un agua de jamaica. Se ve muy rica.",
+     "No, gracias. ¿Los estudiantes vienen todos los días?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "¡Claro que sí! Ahorita le traigo su agua de jamaica, bien fría. Of course! I'll bring you your agua de jamaica right away, nice and cold. La jamaica es una flor roja, y con ella hacemos el agua todas las mañanas. A mis clientes de siempre les encanta con las enchiladas. My regular customers love it with the enchiladas.",
+    "en": "Of course! I'll bring you your agua de jamaica right away, nice and cold. Jamaica is a red flower, and we make the water with it every morning. My regular customers love it with the enchiladas.",
+    "raw": "{\"line\":\"{¡Claro que sí! Ahorita le traigo *su agua de jamaica*, bien fría. | Of course! I'll bring you *your agua de jamaica* right away, nice and cold.} {La jamaica es una flor roja, y con ella hacemos el agua todas las mañanas. | Jamaica is a red flower, and we make the water with it every morning.} {A mis clientes de siempre les encanta con las enchiladas. | My regular customers love it with the enchiladas.}\",\"en\":\"Of course! I'll bring you your agua de jamaica right away, nice and cold. Jamaica is a red flower, and we make the water with it every morning. My regular customers love it with the enchiladas.\",\"answers\":[{\"text\":\"Qué bien. Me gusta el color rojo.\",\"en\":\"How nice. I like the red color.\"},{\"text\":\"¿La flor de jamaica es dulce?\",\"en\":\"Is the jamaica flower sweet?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Qué bien. Me gusta el color rojo.",
+     "¿La flor de jamaica es dulce?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Aquí todo es rojo: la salsa, el agua y hasta las servilletas. Mis clientes de siempre dicen que la comida se ve alegre. My regular customers say the food looks cheerful. ¿Ya probó el chile guajillo alguna vez? Have you ever tried guajillo chile before?",
+    "en": "Here everything is red: the sauce, the water and even the napkins. My regular customers say the food looks cheerful. Have you ever tried guajillo chile before?",
+    "raw": "{\"line\":\"{Aquí todo es rojo: *la salsa*, el agua y hasta las servilletas. | Here everything is red: *the sauce*, the water and even the napkins.} {Mis clientes de siempre dicen que la comida se ve alegre. | My regular customers say the food looks cheerful.} {¿Ya probó *el chile guajillo* alguna vez? | Have you ever tried *guajillo chile* before?}\",\"en\":\"Here everything is red: the sauce, the water and even the napkins. My regular customers say the food looks cheerful. Have you ever tried guajillo chile before?\",\"answers\":[{\"text\":\"No, nunca lo probé. ¿Pica mucho?\",\"en\":\"No, I never tried it. Is it very spicy?\"},{\"text\":\"Sí, me gusta la comida picante. ¿Qué más cocina usted?\",\"en\":\"Yes, I like spicy food. What else do you cook?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "No, nunca lo probé. ¿Pica mucho?",
+     "Sí, me gusta la comida picante. ¿Qué más cocina usted?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "No, el guajillo pica poquito, es más bien dulce y ahumado. A little spicy, more sweet and smoky. Aquí lo remojamos y lo molemos para la salsa de las enchiladas. We soak it and grind it for the enchilada sauce. ¿Usted come comida picante? Do you eat spicy food?",
+    "en": "No, guajillo is only a little spicy, more sweet and smoky. Here we soak it and grind it for the enchilada sauce. Do you eat spicy food?",
+    "raw": "{\"line\":\"No, el guajillo pica poquito, es más bien dulce y ahumado. A little spicy, more sweet and smoky. Aquí lo remojamos y lo molemos para la salsa de las enchiladas. We soak it and grind it for the enchilada sauce. ¿Usted come comida picante?\",\"en\":\"No, guajillo is only a little spicy, more sweet and smoky. Here we soak it and grind it for the enchilada sauce. Do you eat spicy food?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Entonces le va a gustar mi salsa, le pongo la extra, como le dije. Vuelva el jueves, que hago mole con arroz, y se lo sirvo con su agua de jamaica. Come back Thursday, I make mole with rice, and I'll serve it with your agua de jamaica.",
+    "en": "Then you'll like my salsa, I'll put the extra on, as I told you. Come back Thursday, I'm making mole with rice, and I'll serve it with your agua de jamaica.",
+    "raw": "{\"line\":\"Entonces le va a gustar mi salsa, le pongo la extra, como le dije. Vuelva el jueves, que hago mole con arroz, y se lo sirvo con su agua de jamaica. Come back Thursday, I make mole with rice, and I'll serve it with your agua de jamaica.\",\"en\":\"Then you'll like my salsa, I'll put the extra on, as I told you. Come back Thursday, I'm making mole with rice, and I'll serve it with your agua de jamaica.\",\"answers\":[{\"text\":\"Muchas gracias, Doña Lupe. Vengo el jueves.\",\"en\":\"Thank you very much, Doña Lupe. I'll come on Thursday.\"},{\"text\":\"Todo estuvo muy rico. Hasta luego.\",\"en\":\"Everything was very tasty. See you later.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Muchas gracias, Doña Lupe. Vengo el jueves.",
+     "Todo estuvo muy rico. Hasta luego."
+    ],
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "¡Con mucho gusto! Aquí la espero el jueves. ¡Que le vaya bonito! See you Thursday. Go well!",
+    "en": "With great pleasure! I'll be waiting for you here on Thursday. Go well!",
+    "raw": "{\"line\":\"¡Con mucho gusto! Aquí la espero el jueves. ¡Que le vaya bonito! See you Thursday. Go well!\",\"en\":\"With great pleasure! I'll be waiting for you here on Thursday. Go well!\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": true
+   }
+  ],
+  "person": "Doña Lupe Arredondo",
+  "arm": "production",
+  "culture": [
+   "Comida corrida is a set-price multi-course lunch served at fondas and small restaurants",
+   "Enchiladas mineras (miners' enchiladas) are a specialty from Guanajuato, made with guajillo chile sauce, cheese and onion, topped with fried potatoes and carrots",
+   "Enchiladas mineras were the cheap, filling everyday food of miners",
+   "Students at the university also eat there cheaply",
+   "Agua fresca is a fruit-based drink served with meals",
+   "Agua de jamaica is made from the red hibiscus flower (jamaica) and served cold",
+   "Mexican meals often feature red foods such as salsa and jamaica water",
+   "Guajillo chile is mild, sweet and smoky rather than very hot",
+   "Dried chiles are soaked and ground to make sauce",
+   "Mole with rice is a traditional dish",
+   "Ahorita means right away or in a little while",
+   "Que le vaya bonito is a warm Mexican farewell meaning go well",
+   "Doña is a respectful title for an older woman",
+   "Pase, pase is a warm welcome inviting you in",
+   "Siéntese and usted are polite forms for addressing customers",
+   "Extra salsa is commonly offered with meals",
+   "Regular customers (clientes de siempre) are valued and treated warmly",
+   "Restaurants may serve different dishes on specific days of the week"
+  ]
+ }
+]

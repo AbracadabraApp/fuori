@@ -9,6 +9,7 @@
   `COUNTRY=es-mx TRIAL_SPOTS=ciudad-de-mexico/tacos-el-trompo-rojo,san-cristobal-de-las-casas/templo-de-guadalupe-sancris,guadalajara/tacos-el-compa-nacho,guanajuato/enchiladas-baratillo TRIAL_STEPS=4 TRIAL_KINDS=long TRIAL_REPEAT=1 npx tsx --env-file=.env.local tests/experiments/rewrite-trial.mts --out=tests/experiments/results/rerun4-mx-a-2026-11-17.json`
   `COUNTRY=es-mx TRIAL_NO_HERE=1 TRIAL_SPOTS=ciudad-de-mexico/tacos-el-trompo-rojo,san-cristobal-de-las-casas/templo-de-guadalupe-sancris,guadalajara/tacos-el-compa-nacho,guanajuato/enchiladas-baratillo TRIAL_STEPS=4 TRIAL_KINDS=long TRIAL_REPEAT=1 npx tsx --env-file=.env.local tests/experiments/rewrite-trial.mts --out=tests/experiments/results/rerun4-mx-b-2026-11-17.json`
 - **Read with:** `read-trial.mts` on the `rerun4-*` files (then `--repeats`, `--person`, `--full`); the earlier visits of the same people are in `random-*-2026-11-17.json`.
+- **Done (laptop, 2026-11-17):** all four finished from main (200a5d7f), one after the other on the local test database: 4 visits each, 8 an arm, 16 in all, 0 failed turns. Results: `tests/experiments/results/rerun4-it-a-…`, `rerun4-mx-a-…`, `rerun4-it-b-…`, `rerun4-mx-b-…` (all `-2026-11-17.json`). Not read.
 
 ## 2026-11-17 (laptop, with Josh), night: a random-sample trial, production against header only: built, not yet run
 
