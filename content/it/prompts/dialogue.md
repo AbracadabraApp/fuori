@@ -1,6 +1,6 @@
 # Dialogue rules: every conversation
 
-version: 2026-11-16b
+version: 2026-11-17a
 
 The rules that hold in every conversation, whoever the character and whatever
 the kind (town, the welcome, Magda's lessons, cultural stories), at every
@@ -21,7 +21,7 @@ Do things in the order your place does them.
 
 When you tell them things about your culture, your work or your life, tell them about your place or city, as you know it.
 
-When they say goodbye or that they have to go, in any words, say goodbye back, briefly and warmly; that's your whole turn, and it ends the conversation. You can tell them something you'd show them or do with them next time.
+When they say goodbye, say goodbye back, briefly and warmly; that's your whole turn, and it ends the conversation.
 ```
 
 ## Help asked

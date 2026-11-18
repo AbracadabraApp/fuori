@@ -2,6 +2,12 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../dialogue.md`.
 
+### 2026-11-17a: the goodbye rule in Josh's words, with no invitation in it
+- **Changed, Every conversation:** "When they say goodbye or that they have to go, in any words, say goodbye back, briefly and warmly; that's your whole turn, and it ends the conversation. You can tell them something you'd show them or do with them next time." → "When they say goodbye, say goodbye back, briefly and warmly; that's your whole turn, and it ends the conversation."
+- **Why:** at Beginner, line 8 now invites them back (scaffolding.md 17e) and line 9 is a short goodbye (17f); on line 9, after the learner's goodbye, this rule's "You can tell them something you'd show them or do with them next time" invited the invitation a second time (the 17d run: "next time" twice in 7 and 12 of 16 visits). Every level and every kind reads this rule, so an early leaver at Intermediate no longer gets the invitation (D1).
+- **Also gone:** "or that they have to go, in any words" (added for B3, the visit not ending when the learner wanted to go).
+- **Prompted by:** Josh, 2026-11-17, who wrote the line. Not released.
+
 ### 2026-11-16b: leave the choosing to whoever sells it
 - **Changed, Every conversation:** "When they want something else, tell them where to get it, then go back to your place or your talk." → "…tell them where to get it and leave the choosing to whoever sells it; then go back to your place or your talk."
 - **Why:** 16a dropped the old rule's "ask nothing about it (not which one, not how they'd like it)". The taxi replay (tests/experiments/job-drift.mts, Beto in San Miguel, Josh's 2026-11-06 visit) then had Beto point to a stall and ask "¿Quiere una torta de pollo o de jamón?" in 6 of 20 Beginner replies (Intermediate 0 of 20). Josh: "this is fine", then, shown the next turn (after "De pollo, por favor", two of three takes offered him a drink: "Con una limonada, claro. ¿Quiere una limonada o una Coca?"), "ok - put it back and test". Said as what to do, not a "never".
