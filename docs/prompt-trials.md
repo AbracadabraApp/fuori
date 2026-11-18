@@ -1053,3 +1053,19 @@ Counted per visit, across the ending's two lines (lines 8 and 9):
 - Read: "back to work" left line 9 in both countries; in Italy it moved to line 8 ("Now I have to get back to work, the tiles are waiting for me!"), so "start to wrap up" is read as a reason to go. The next-time line is now on almost every line 8 ("maybe" isn't "now and then") and is often said again on line 9, sometimes word for word (Elena: "next time I'll show you the oldest dresses in the theatre", both lines). Line 8 often still ends on a farewell ("It was a pleasure", "see you soon"), as in arm A. Line 9 is shorter and its goodbyes vary.
 - Seen once, separate: an Italy step-4 line 8 with its sentences doubled (Nunzio: "Next time I'll show you the smallest figs, near the wall." twice); not in arm A; not traced.
 - Not decided: Josh plays.
+
+### The Beginner ending against production (2026-11-17): scaffolding.md 17e–17f and dialogue.md 17a, against live
+Arm A: production (`live`, 42d920f7: the goodbye setup "wind down… don't say goodbye yourself", then dialogue.md's Close note; the shared rule with "or that they have to go" and its next-time sentence). Arm B: main at f4b70e85 (line 8 "The conversation is almost done and you've enjoyed it. Invite them to see you again for a specific reason. Their two answers are goodbyes."; line 9 "In a colloquial phrase say goodbye and stop, this ends the conversation."; the shared rule "When they say goodbye, say goodbye back, briefly and warmly; that's your whole turn, and it ends the conversation."). `tests/experiments/rewrite-trial.mts` on the Mac mini: 16 long Beginner visits an arm a country (steps 1 and 4, the same four characters twice), and 8 short visits (Beginner step 1 and Intermediate) where the learner says only "Scusi, devo andare." / "Perdón, me tengo que ir." after the 4th turn (TRIAL_LEAVE=go). Per visit, from each line's English; the invitation and farewells read by Claude.
+
+| | Italy A | Italy B | Mexico A | Mexico B |
+|---|---|---|---|---|
+| Long visits ended on line 9; failed turns | 16/16; 0 | 16/16; 0 | 16/16; 0 | 16/16; 0 |
+| "I have to get back to…" anywhere in lines 8–9 | 16 | 2 (both line 8) | 12 | 0 |
+| Line 9 words, median (range) | 42 (27–64) | 14 (4–24) | 54 (36–68) | 20 (12–31) |
+| Line 8 invites them back for a specific reason (read) | — | 16 | — | 16 |
+| The invitation said again on line 9 (read; "see you Thursday" counted as not) | — | 0 | — | 0 |
+| Line 8 also says a farewell ("it was a pleasure", "see you soon") (read) | — | about 5 | — | about 4 |
+| "I have to go" alone ends the visit at once | 8/8 | 8/8 | 8/8 | 8/8 |
+
+- Read: line 8 is now an invitation with a day and a reason in every visit ("Come see me on Thursday: the Bronte pistachios are coming in", "Come back on Saturday, when there are more people and we grill cecina enchilada"), and line 9 is a short goodbye that picks up the day ("Thank you, see you Thursday! Have a lovely day!"). "Back to work" is gone apart from two Italy line 8s ("Now I have to get back to my buttons"). Leaving without a goodbye word still ends the visit at both levels.
+- Not decided: Josh plays.
