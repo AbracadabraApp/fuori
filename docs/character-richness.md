@@ -1,0 +1,369 @@
+# Character richness, read 2026-11-17
+
+Every reachable character (343: 197 Italy, 146 Mexico; ticket sellers left out) read by Claude and put in one of four groups, on Josh's ask. A judgment by reading, not a count by code.
+
+- 1: a life of their own (family, history, opinions) and the place's culture told through it
+- 2: one of the two is strong
+- 3: a job plus facts about the place, or a job with one local detail
+- 4: a bare job sentence that could be anywhere
+
+| | 1 | 2 | 3 | 4 |
+|---|---|---|---|---|
+| Italy | 5 | 25 | 105 | 62 |
+| Mexico | 12 | 62 | 69 | 3 |
+| All | 17 | 87 | 174 | 65 |
+
+## Group 1
+
+- it roma-nuova `nino-garbatella` Nino Ferretti, oste
+- it matera `giovanni-montemurro` Giovanni Montemurro, pensionato
+- it napoli `marco-chen` Marco Chen, fruttivendolo
+- it napoli `nonna-assunta` Nonna Assunta Capuano, abitante del quartiere
+- it palermo `toto-meusaro` Totò Lo Cascio, meusaro
+- es-mx guadalajara `andres-cabanas` Andrés Ochoa, estudiante de arte
+- es-mx veracruz `rodrigo-guia-ulua` Rodrigo Cházaro Pavón, cadete naval
+- es-mx veracruz `chema-estibador` Don Chema Barradas, estibador jubilado
+- es-mx patzcuaro `elvira-veladora-janitzio` Doña Elvira Campos, vecina de Janitzio
+- es-mx merida `leydi-oficinista` Leydi Pech Chan, oficinista
+- es-mx merida `ana-arqueologa` Doña Hilaria Poot Cen, abuela
+- es-mx merida `jorge-kibis` Jorge Abraham Dájer, cocinero
+- es-mx san-cristobal-de-las-casas `mariano-guia-chamula` Mariano Gómez Pérez, mayordomo
+- es-mx tijuana `estela-chiles-mercado-hidalgo` Doña Estela Cisneros, vendedora de chiles
+- es-mx tijuana `fermin-ajedrecista-teniente-guerrero` Don Fermín Valenzuela, jubilado
+- es-mx zacatecas `yareli-estudiante-acueducto` Yareli Luévano, estudiante
+- es-mx monterrey `eleazar-obrero-fundidora` Don Eleazar Cantú, obrero jubilado
+
+## Group 2
+
+- it roma-nuova `matteo-rinaldi` Matteo Rinaldi, studente di storia antica e guida turistica
+- it roma-nuova `sandro-bar-angolo` Sandro Pieri, barista
+- it roma-nuova `dario-fornaio` Dario Ferri, fornaio
+- it roma-nuova `serena-archeologa` Serena Lupi, archeologa
+- it roma-nuova `claudio-salumiere` Claudio Marini, salumiere
+- it roma-nuova `mirella-grattachecca` Mirella Ceccarelli, grattacheccara
+- it matera `teresa-morelli` Teresa Morelli, custode della Casa Grotta
+- it firenze `tommaso-bini` Tommaso Bini, barista
+- it firenze `andrea-becattini` Andrea Becattini, tassista
+- it firenze `ardit-hoxha` Ardit Hoxha, cameriere
+- it firenze `lorenzo-marchi` Lorenzo Marchi, pensionato
+- it firenze `rosa-quispe` Rosa Quispe, cuoca
+- it firenze `graziella-nesi` Graziella Nesi, tabaccaia
+- it siena `giulia-neri` Giulia Neri, barista
+- it siena `paolo-rossi` Elira Kola, venditrice
+- it siena `carla-nesti` Carla Nesti, mamma
+- it venezia `carlo-gondoliere` Carlo Vianello, gondoliere
+- it napoli `carmine-russo` Carmine Russo, barista
+- it napoli `gennaro-pizzaiolo` Gennaro Amitrano, pizzaiolo
+- it bologna `professor-alberti` Professor Alberti, ingegnere in pensione
+- it bologna `sara-sorbetteria` Sara Bertolini, gelataia
+- it bologna `nonna-rina` Nonna Rina Fabbri, sfoglina
+- it lecce `michele-alvino` Michela Alvino, proprietaria
+- it siracusa `davide-storia` Davide Levi, pensionato
+- it siracusa `andrea-casaro` Andrea Gulino, casaro
+- es-mx ciudad-de-mexico `lupe-quesadillera` Doña Lupe Hernández, quesadillera
+- es-mx ciudad-de-mexico `chema-taquero` Chema Rosales, taquero
+- es-mx ciudad-de-mexico `cuca-cocinera` Doña Cuca Villanueva, cocinera y dueña
+- es-mx ciudad-de-mexico `tono-churrero` Toño Gallardo, churrero
+- es-mx ciudad-de-mexico `fidel-tamalero` Fidel Zárate, tamalero
+- es-mx oaxaca `emiliano-los-amantes` Emiliano Matus, cantinero
+- es-mx oaxaca `chela-chapulines` Doña Chela Martínez, vendedora del mercado
+- es-mx oaxaca `tere-fonda` Doña Tere Jiménez, cocinera y dueña de la fonda
+- es-mx oaxaca `concha-sacristana` Doña Concha Cruz, sacristana
+- es-mx oaxaca `ruben-abarrotes` Don Rubén Bautista, tendero
+- es-mx oaxaca `rufina-molinera` Doña Rufina García, molinera de chocolate
+- es-mx oaxaca `efren-monte-alban` Efrén Martínez, custodio de la zona arqueológica
+- es-mx oaxaca `lucia-grabadora` Lucía Santiago, grabadora
+- es-mx puebla `ruben-la-pasita` Don Rubén Contreras, cantinero
+- es-mx puebla `daniela-farmacia-san-rafael` Daniela Pacheco, farmacéutica
+- es-mx puebla `hugo-muralista` Hugo Sosa, muralista
+- es-mx guanajuato `raymundo-chofer-tuneles` Raymundo Ortega Silva, chofer de camión
+- es-mx guanajuato `ruben-estudiantino` Rubén Olmos, estudiantino
+- es-mx guanajuato `hugo-fotografo-pipila` Hugo Barrón, operador del funicular
+- es-mx guanajuato `fernanda-estudiante-derecho` Fernanda Robles Zamora, estudiante de derecho
+- es-mx guanajuato `isidro-minero` Don Isidro Puente, minero jubilado
+- es-mx guanajuato `lupe-enchiladera` Doña Lupe Arredondo, cocinera
+- es-mx veracruz `arturo-mesero-parroquia` Don Arturo Lagunes, mesero
+- es-mx veracruz `mercedes-danzonera` Doña Mercedes Ochoa, bailadora de danzón
+- es-mx veracruz `yesenia-jaranera` Yesenia Cruz Malpica, jaranera
+- es-mx veracruz `ignacio-historiador` Don Ignacio Alarcón, jugador de dominó
+- es-mx veracruz `lalo-pescador` Lalo Hernández Vela, pescador
+- es-mx veracruz `rosario-picadera` Doña Rosario Villa, cocinera
+- es-mx patzcuaro `salvador-lanchero` Salvador Tzintzun, lanchero
+- es-mx patzcuaro `gerardo-profe-jubilado` Profe Gerardo Villaseñor, maestro jubilado
+- es-mx patzcuaro `sor-guadalupe-achoques` Sor Guadalupe Mendoza, monja dominica
+- es-mx patzcuaro `juan-carlos-danzante` Juan Carlos Bautista, maestro de danza
+- es-mx patzcuaro `martin-nevero` Martín Alcaraz, cocinero
+- es-mx merida `socorro-maestra-maya` Socorro Ek Balam, maestra de maya
+- es-mx merida `rosy-cochinitera` Doña Rosy Couoh, cocinera
+- es-mx merida `gaspar-hamaquero` Don Gaspar Chi, tejedor de hamacas
+- es-mx san-cristobal-de-las-casas `petrona-tejedora` Petrona Hernández Vázquez, tejedora
+- es-mx san-cristobal-de-las-casas `efrain-marimbista` Don Efraín Nájera, marimbista
+- es-mx san-cristobal-de-las-casas `chayo-vecina-guadalupe` Doña Chayo Molina, vecina del barrio
+- es-mx san-cristobal-de-las-casas `elena-cafetalera` Elena Ruiz Morales, tostadora de café
+- es-mx san-cristobal-de-las-casas `rosa-poeta-tsotsil` Rosa Díaz Gómez, poeta
+- es-mx san-cristobal-de-las-casas `juana-tamalera` Doña Juana Velasco, cocinera
+- es-mx san-cristobal-de-las-casas `arnulfo-sacristan` Don Arnulfo Ruiz Penagos, sacristán
+- es-mx tijuana `sergio-mesero-caesars` Don Sergio Montaño, mesero
+- es-mx tijuana `paola-muralista-playas` Paola Ceseña, muralista
+- es-mx tijuana `ana-lucia-chelista-cecut` Ana Lucía Félix, chelista
+- es-mx tijuana `ivan-taquero-el-mezquite` Iván Leyva, taquero
+- es-mx tijuana `rosendo-acordeonista-santa-cecilia` Don Rosendo Meza, acordeonista
+- es-mx zacatecas `refugio-cantero-catedral-zacatecas` Don Refugio Escobedo, cantero
+- es-mx zacatecas `eulalia-capilla-la-bufa` Doña Eulalia Murillo, encargada de la capilla
+- es-mx zacatecas `abel-trompetista-tamborazo` Abel Reveles, músico de tamborazo
+- es-mx zacatecas `cata-cocinera-gorditas` Doña Cata Esquivel, cocinera
+- es-mx zacatecas `ismael-cofrade-bracho` Ismael Rodarte, cofrade de las Morismas
+- es-mx monterrey `adrian-discos-barrio-antiguo` Adrián Saldívar, vendedor de discos
+- es-mx monterrey `baldemar-asador-los-sauces` Don Baldemar Tijerina, asador
+- es-mx monterrey `rolando-cantinero-regiomontana` Rolando Cavazos, cantinero
+- es-mx monterrey `licha-taquera-mananeros` Doña Licha Rentería, taquera
+- es-mx mazatlan `anselmo-capitan-machado` Don Anselmo Osuna, capitán camaronero jubilado
+- es-mx mazatlan `marco-antonio-pulmonia-olas-altas` Marco Antonio Zataráin, chofer de pulmonía
+- es-mx mazatlan `irma-changuera-aquiles-serdan` Doña Irma Tirado, changuera
+- es-mx mazatlan `joel-carretero-patasalada` Joel Camacho, carretero de mariscos
+- es-mx mazatlan `heriberto-tambora-los-pinos` Heriberto Lizárraga, tamborero de banda
+
+## Group 3
+
+- it roma-nuova `luisa-cocco-nuova` Luisa Cocco, barista
+- it roma-nuova `franca-mattei` Franca Mattei, maestra in pensione
+- it roma-nuova `ettore-gentili-nuova` Ettore Gentili, pensionato
+- it roma-nuova `daniele-sorrentino` Daniele Sorrentino, tecnico del suono
+- it roma-nuova `silvia-bruni-nuova` Dott.ssa Silvia Bruni, farmacista
+- it roma-nuova `tommaso-pittore` Tommaso Ricci, pittore di strada
+- it roma-nuova `nonna-gina` Gina Proietti, nonna del quartiere
+- it roma-nuova `don-paolo` Don Paolo Severi, parroco
+- it roma-nuova `giorgia-ferri` Giorgia Ferri, studentessa
+- it matera `carmela-gentile` Carmela Gentile, venditrice
+- it matera `francesca-clemente` Francesca Clemente, chef proprietaria
+- it matera `alberto-rizzi` Alberto Rizzi, pensionato
+- it matera `beatrice-loperfido` Beatrice Loperfido, libraia
+- it matera `maurizio-stigliano` Maurizio Stigliano, artigiano
+- it firenze `matteo-orafo` Matteo Pagliai, gioielliere
+- it firenze `carlo-guida` Sandra Mugnai, custode della Loggia dei Lanzi
+- it firenze `chiara-russo` Chiara Russo, studentessa
+- it firenze `ioana-popescu` Ioana Popescu, infermiera
+- it siena `lucia-bini` Lucia Bini, pasticciera
+- it siena `chiara-castellani` Chiara Castellani, chef
+- it siena `leonardo-conti` Karim Benali, guida turistica
+- it siena `beatrice-salvi` Beatrice Salvi, studentessa
+- it siena `giovanni-bacci` Giovanni Bacci, artigiano
+- it siena `duccio-pizzicagnolo` Duccio Ferri, pizzicagnolo
+- it venezia `marco-timon` Marta Zanon, proprietaria del bar
+- it venezia `antonio-florian` Nusrat Rahman, cameriera
+- it venezia `sergio-rialto` Mirela Dumitru, pescivendola
+- it venezia `lorenzo-carampane` Lorenzo Carampane, chef e proprietario
+- it venezia `dante-mori` Dante Mori, storico locale
+- it venezia `luigi-libri` Luigi Frizzo, libraio
+- it venezia `andrea-gondola` Andrea Tramontin, maestro squerarolo
+- it napoli `sofia-esposito` Sofia Esposito, cameriera
+- it napoli `ciro-poppella` Ciro Poppella, pasticciere
+- it napoli `gino-sorbillo` Gino Sorbillo, pizzaiolo
+- it napoli `marco-ferri` Marco Ferri, pescatore
+- it napoli `davide-amato` Davide Amato, musicista di strada
+- it napoli `mario-magliulo` Mariella Magliulo, cioccolatiera
+- it napoli `maestro-ferrigno` Maestro Gennaro Capuano, artigiano del presepe
+- it napoli `rosaria-mozzarella` Rosaria Iovine, lattaia
+- it bologna `chef-matteo-ricci` Matteo Ricci, chef
+- it bologna `don-giuseppe` Don Giuseppe Guidotti, sacerdote
+- it bologna `student-clara` Clara Martinelli, studentessa
+- it bologna `bruno-simoni` Bruno Simoni, salumiere
+- it bologna `pilgrim-angela` Angela Peregrino, guida dei pellegrini
+- it palermo `salvatore-russo` Giulia Cusimano, barista
+- it palermo `vito-abbate` Vito Abbate, fruttivendolo
+- it palermo `carmela-todaro` Carmela Todaro, cuoca e proprietaria
+- it palermo `filippo-basile` Filippo Basile, chef e proprietario
+- it palermo `nunzio-palmeri` Nunzio Palmeri, giardiniere
+- it palermo `grazia-salamone` Yasmine Trabelsi, artista di strada
+- it palermo `alberto-marino` Alberto Marino, fotografo
+- it taormina `paolo-turrisi` Paola Turrisi, proprietaria
+- it taormina `giuliana-rosi` Giuliana Rosi, barista
+- it taormina `filippo-verde` Mehdi Jlassi, fruttivendolo
+- it lecce `salvatore-leone` Salvatore Leone, venditore
+- it lecce `leonardo-rizzo` Leonardo Rizzo, chef e proprietario
+- it lecce `giuseppe-taurino` Giuseppe Taurino, friggitore
+- it lecce `lucio-faggiano` Rocco Melcarne, custode del museo
+- it lecce `maestro-orlando` Maestro Orlando, artigiano di cartapesta
+- it lecce `guida-alessandra` Alessandra Ricci, studentessa di archeologia
+- it milano `roberto-costa` Roberto Costa, barista
+- it milano `mario-esposito` Mario Esposito, venditore
+- it milano `anna-masuelli` Anna Masuelli, proprietaria
+- it milano `padre-stefano` Padre Stefano Colombo, sacerdote
+- it milano `emanuele-rossini` Emanuele Brambilla, sarto
+- it verona `marco-verdure` Marco Verdure, fruttivendolo
+- it verona `pietro-apostoli` Pietro Apostoli, sommelier
+- it verona `francesco-bra` Moussa Diop, musicista di strada
+- it verona `bruno-albertini` Bruno Albertini, salumiere
+- it assisi `marco-bartoli` Marco Bartoli, barista
+- it assisi `vincenzo-monti` Vincenzo Monti, fruttivendolo
+- it bergamo `marco-villa` Marco Villa, proprietario
+- it bergamo `giovanni-rota` Giovanni Rota, fruttivendolo
+- it bergamo `vittorio-cerea` Vittorio Cerea, chef stellato
+- it bergamo `beatrice-castelli` Beatrice Castelli, libraia
+- it torino `michele-barista` Nadia Haddad, barista
+- it torino `franca-proprietaria` Franca Cavallo, proprietaria
+- it torino `anna-fruttivendola` Anna Bianchi, fruttivendola
+- it torino `stefano-maitre` Stefano Del Cambio, maître
+- it torino `luca-musicista` Diego Quispe, musicista di strada
+- it torino `teresa-libraio` Teresa Pavese, libraia
+- it torino `marco-cioccolataio` Chiara Rinaldi, cioccolatiera
+- it torino `antonio-esperto` Antonio Carpano, esperto di vermut
+- it siracusa `salvatore-bar` Giusy Scirè, proprietaria
+- it siracusa `pietro-mercato` Pietro D'Amico, venditore
+- it siracusa `elena-guide` Elena Scirè, ragazza di Ortigia
+- it siracusa `arturo-papiro` Antonella Pappalardo, artigiana
+- it genova `giulia-costa` Camila Andrade, barista
+- it genova `paolo-doria` Paolo Doria, venditore
+- it genova `giovanni-repetto` Giovanni Repetto, cuoco
+- it genova `diego-vento` Diego Parodi, pescatore
+- it genova `ezio-ruffini` Ezio Ruffini, salumiere
+- it lucca `sergio-di-simo` Sergio Di Simo, proprietario
+- it lucca `tommaso-venturi` Tommaso Venturi, venditore
+- it lucca `beatrice-angeli` Beatrice Angeli, proprietaria
+- it lucca `carla-innocenti` Carla Innocenti, insegnante di pianoforte
+- it orvieto `alberto-santini` Alberto Santini, chef
+- it orvieto `matteo-galeotti` Matteo Galeotti, custode del pozzo
+- it orvieto `pietro-michelangeli` Marta Pieroni, maestra ceramista
+- it mantova `giorgio-bar` Giorgia Mantovani, proprietaria
+- it mantova `stefano-ortolano` Stefano Gardoni, venditore
+- it mantova `federico-salumiere` Daniela Munteanu, salumiera
+- it mantova `beatrice-storica` Beatrice Zanetti, insegnante e volontaria del Festivaletteratura
+- it mantova `vincenzo-musicista` Vincenzo Monteverdi, musicista
+- it mantova `antonio-gelataio` Sofia Bushati, gelataia
+- es-mx ciudad-de-mexico `chucho-lustrabotas` Don Chucho Mendoza, bolero
+- es-mx ciudad-de-mexico `vale-libros-tecolote` Vale Ortiz, librera
+- es-mx ciudad-de-mexico `ximena-barista` Ximena Castañeda, barista
+- es-mx ciudad-de-mexico `beto-paseador` Beto Salinas, paseador de perros
+- es-mx ciudad-de-mexico `alicia-catequista` Alicia Paredes, voluntaria y guía de la iglesia
+- es-mx ciudad-de-mexico `efrain-mesero` Don Efraín Olvera, mesero
+- es-mx ciudad-de-mexico `carmen-jubilada` Doña Carmen Ibarra, jubilada
+- es-mx ciudad-de-mexico `renata-restauradora` Renata Villaseñor, restauradora de murales
+- es-mx ciudad-de-mexico `elvira-coyoacan` Doña Elvira Huerta, abuela
+- es-mx oaxaca `ofelia-tlayudas` Doña Ofelia Santiago, tlayudera
+- es-mx oaxaca `marisol-cafe-pocito` Marisol Ruiz, barista
+- es-mx oaxaca `nacho-nevero` Don Nacho Vásquez, nevero
+- es-mx oaxaca `luis-guia-jardin` Luis Aquino, guía del jardín
+- es-mx oaxaca `arturo-jubilado` Don Arturo López, jubilado
+- es-mx guadalajara `memo-tejuino` Memo Orozco, tejuinero
+- es-mx guadalajara `rigoberto-cantinero` Rigoberto Plascencia, cantinero
+- es-mx guadalajara `valeria-barista` Valeria Cortés, barista
+- es-mx guadalajara `efren-panadero` Don Efrén Arreola, panadero
+- es-mx guadalajara `lalo-bolero` Don Lalo Gutiérrez, bolero
+- es-mx guadalajara `nacho-taquero` Nacho Robles, taquero
+- es-mx guadalajara `ximena-ceramica` Ximena Godínez, alfarera
+- es-mx guadalajara `lupita-sacristana` Lupita Barajas, sacristana
+- es-mx guadalajara `chuy-cocinera` Doña Chuy Hermosillo, cocinera
+- es-mx guadalajara `rosa-estudiante` Rosa Núñez, estudiante universitaria
+- es-mx guadalajara `chuy-mariachi` Chuy Arellano, violinista de mariachi
+- es-mx san-miguel-de-allende `rosa-flores-ignacio-ramirez` Doña Rosa Ledesma, florista
+- es-mx san-miguel-de-allende `aurelio-sacristan` Don Aurelio Becerra, sacristán
+- es-mx san-miguel-de-allende `tomas-cantinero` Tomás Villagómez, cantinero
+- es-mx san-miguel-de-allende `ximena-barista-san-miguel` Ximena Ortega, barista
+- es-mx san-miguel-de-allende `marisol-ceramista` Marisol Aguilar, ceramista
+- es-mx san-miguel-de-allende `efrain-tendero` Don Efraín Muñoz, tendero
+- es-mx san-miguel-de-allende `chelo-cocinera` Doña Chelo Guerrero, cocinera
+- es-mx san-miguel-de-allende `ramiro-taquero` Ramiro Cervantes, taquero
+- es-mx san-miguel-de-allende `victor-jubilado` Don Víctor Arteaga, jubilado
+- es-mx san-miguel-de-allende `marisol-tumbagones` Rocío Mancera, dulcera
+- es-mx san-miguel-de-allende `gabriela-maestra` Gabriela Ramírez, maestra de historia
+- es-mx san-miguel-de-allende `ramon-mirador` Don Ramón Ledesma, jubilado
+- es-mx puebla `sofia-dulces-la-gloria` Sofía Quintero, ayuda en la dulcería de su familia
+- es-mx puebla `padre-tomas-santo-domingo` Padre Tomás Herrera, sacerdote
+- es-mx puebla `lupe-cemitas-dona-lupe` Lupe Rojas, cemitera
+- es-mx puebla `tere-fonda-dona-tere` Doña Chayo Sánchez, cocinera y dueña
+- es-mx puebla `chuy-tacos-arabes-el-puente` Chuy Haddad, taquero
+- es-mx puebla `efrain-zocalo-de-puebla` Don Efraín Tlapale, bolero
+- es-mx puebla `beatriz-abuela` Doña Beatriz Ávila, abuela del barrio
+- es-mx puebla `mariana-palafoxiana` Mariana Castañeda, restauradora de libros
+- es-mx guanajuato `claudia-teatro-juarez` Claudia Vargas Reyes, jefa de escena
+- es-mx guanajuato `marisol-guia-alhondiga` Marisol Liceaga, restauradora
+- es-mx guanajuato `monica-profesora-pintura` Mónica Arriaga Pons, profesora de pintura
+- es-mx veracruz `lorena-guia-lara` Lorena Uscanga, cantante de boleros
+- es-mx patzcuaro `marta-bibliotecaria` Marta Chávez Ayala, bibliotecaria
+- es-mx patzcuaro `lucia-maquera` Lucía Ruiz Equihua, artesana del maque
+- es-mx patzcuaro `beatriz-arqueologa` Beatriz Sosa Huerta, arqueóloga
+- es-mx merida `wilberth-trovador` Don Wilberth Canché, trovador
+- es-mx merida `josue-guia-montejo` Josué May Tun, arquitecto restaurador
+- es-mx merida `genaro-sacristan` Don Genaro Pacheco, sacristán
+- es-mx san-cristobal-de-las-casas `itzel-guia-na-bolom` Itzel Morales Kin, viverista
+- es-mx tijuana `emilio-serigrafista-pasaje-rodriguez` Emilio Carrillo Luna, serigrafista
+- es-mx tijuana `veronica-maestra-agua-caliente` Verónica Zepeda Ruiz, maestra de historia
+- es-mx zacatecas `uriel-operador-teleferico` Uriel Dávila, operador del teleférico
+- es-mx zacatecas `leticia-restauradora-coronel` Leticia Robledo, restauradora de máscaras
+- es-mx zacatecas `teodoro-cantinero-quince-letras` Don Teodoro Bañuelos, cantinero
+- es-mx monterrey `regina-estudiante-macroplaza` Regina Treviño Garza, estudiante de arquitectura
+- es-mx monterrey `fabian-lanchero-santa-lucia` Fabián Elizondo, lanchero
+- es-mx monterrey `cecilia-historiadora-obispado` Cecilia Villarreal Leal, historiadora
+- es-mx monterrey `hortensia-voluntaria-roble` Doña Hortensia Guajardo, voluntaria de la basílica
+- es-mx mazatlan `camila-bailarina-angela-peralta` Camila Peraza, bailarina
+- es-mx mazatlan `lizbeth-enfermera-faro` Lizbeth Arámburo, enfermera
+- es-mx mazatlan `maribel-artesana-carnaval` Maribel Velarde, artesana del Carnaval
+- es-mx mazatlan `nicolas-sacristan-catedral-mazatlan` Don Nicolás Rendón, sacristán
+
+## Group 4
+
+- it matera `antonio-russo` Antonio Russo, proprietario
+- it matera `saverio-gattini` Saverio Gattini, guardiaparco
+- it matera `elena-laterza` Elena Laterza, studentessa e musicista
+- it firenze `giuseppe-giardiniere` Giuseppe Nocentini, capo giardiniere
+- it siena `matteo-torre` Matteo Bindi, custode
+- it venezia `giovanna-campo` Giovanna Rizzo, studentessa
+- it bologna `marco-terzi` Marco Terzi, torrefattore
+- it bologna `street-musician-franco` Franco Melodia, musicista di strada
+- it bologna `librarian-dottore-bianchi` Dottore Bianchi, bibliotecario
+- it palermo `elena-bianchi` Elena Bianchi, sarta del teatro
+- it palermo `beatrice-amato` Beatrice Amato, libraia
+- it palermo `dottor-giuseppe-randazzo` Giuseppe Randazzo, restauratore di mosaici
+- it taormina `antonio-messina` Antonio Messina, pasticciere
+- it taormina `stefano-barone` Stefano Barone, chef
+- it taormina `dario-storia` Dario Cacciola, attore
+- it taormina `elena-giardini` Elena Moschella, giardiniera
+- it taormina `massimo-piazza` Massimo Piazza, musicista di strada
+- it taormina `federico-poeta` Federico Lo Giudice, poeta locale
+- it lecce `padre-roberto` Padre Roberto Quarta, sacerdote
+- it lecce `mario-santoro` Mario Santoro, musicista di strada
+- it milano `giulia-marchesi` Giulia Marchesi, pasticciera
+- it milano `lorenzo-peck` Lorenzo Peck, responsabile di reparto
+- it milano `giovanna-sartori` Giovanna Sartori, fioraia
+- it verona `stefano-wallner` Elena Wallner, proprietaria
+- it verona `silvia-arena` Silvia Bonomi, corista
+- it verona `alessandra-signori` Alessandra Pasetto, architetta
+- it verona `emilia-teatro` Emilia Righetti, regista
+- it assisi `lucia-greco` Lucia Greco, chef
+- it assisi `padre-giovanni` Padre Giovanni Mencarelli, frate
+- it assisi `isabella-conti` Isabella Conti, artista di strada
+- it assisi `matteo-galli` Matteo Galli, ragazzo del posto
+- it assisi `alberto-ferretti` Alberto Ferretti, custode della Rocca
+- it assisi `fra-antonio` Fra Antonio Marini, frate eremita
+- it assisi `marco-angelini` Marco Angelini, ceramista
+- it bergamo `leonardo-marchesi` Leonardo Marchesi, guida turistica
+- it bergamo `anna-santoro` Anna Santoro, restauratrice
+- it bergamo `giulia-mazzoleni` Giulia Mazzoleni, giardiniera comunale
+- it bergamo `michele-pezzotta` Michele Pezzotta, macchinista della funicolare
+- it bergamo `maestro-grassi` Maestro Grassi, direttore d'orchestra
+- it torino `elena-guida` Elena Bertola, addetta del Museo del Cinema
+- it torino `giacomo-giardiniere` Giacomo Bosio, giardiniere
+- it siracusa `lorenzo-dioniso` Lorenzo Greco, chef
+- it siracusa `marco-archeologo` Marco Alberti, archeologo
+- it siracusa `alberto-piazza` Alberto Messina, pensionato
+- it genova `anna-nervi` Anna Nervi, pasticciera
+- it genova `andrea-colombo` Andrea Ferrando, guardiano
+- it genova `beatrice-ravenna` Beatrice Ravenna, artista di strada
+- it genova `professor-casella` Vittorio Casella, custode di palazzo
+- it lucca `claudia-stefani` Claudia Stefani, chef
+- it lucca `padre-augusto` Padre Augusto Del Carlo, parroco
+- it lucca `alessio-martinelli` Alessio Martinelli, custode della torre
+- it lucca `isabella-galli` Isabella Galli, botanica
+- it lucca `matteo-fabbri` Matteo Fabbri, musicista di strada
+- it orvieto `paolo-montanucci` Sara El Amrani, barista
+- it orvieto `mario-benedetti` Mario Benedetti, fruttivendolo
+- it orvieto `don-michele-volpi` Don Michele Volpi, sacerdote
+- it orvieto `gino-marziani` Gino Marziani, giardiniere
+- it orvieto `lucia-moretti` Lucia Moretti, artista di strada
+- it orvieto `irene-vitali` Irene Vitali, regista teatrale
+- it mantova `alberto-chef` Alberto Cignaroli, chef
+- it mantova `marcello-guida` Marcello Andreoli, custode
+- it mantova `andrea-giardiniere` Andrea Bellintani, giardiniere
+- es-mx guadalajara `mari-tendera` Doña Mari Esparza, tendera
+- es-mx san-miguel-de-allende `beto-taxi` Beto Rangel, taxista
+- es-mx puebla `mateo-cafe-cielo-rojo` Mateo Lozano, barista

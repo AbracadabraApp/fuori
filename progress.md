@@ -1,5 +1,16 @@
 # Fuori Development Progress
 
+## 2026-11-17 (cloud): every reachable character ranked by richness
+
+Josh: "read all visible charachters and rank in quartiles how rich in life and culure they are (1) to how bare/generic (4) - keep track of IDs but report counts per 4 groups". All 343 read; the list with ids is `docs/character-richness.md`. A judgment by reading.
+
+- Group 1 (a life and the place's culture through it): 17 (Italy 5, Mexico 12)
+- Group 2: 87 (Italy 25, Mexico 62)
+- Group 3 (job plus place facts): 174 (Italy 105, Mexico 69)
+- Group 4 (bare job sentence): 65 (Italy 62, Mexico 3)
+
+Italy's weak cities are bare (Assisi 7 of 9 in group 4, Orvieto 6 of 9, Taormina 6 of 9); Mexico's weak ones are fact-heavy (San Miguel de Allende 12 of 13 in group 3, Guadalajara 11 of 13). The newer Mexican cities carry most of group 1. Nothing rewritten.
+
 ## 2026-11-17 (cloud chat session), evening: Mexico's `here` lines read for encyclopedia-style material
 
 - **Josh:** "read all character descriptions in Mexico and highlight any that have material that reads like a wikipedia entry". All 160 `here` lines read (146 people who can be met; the 14 ticket sellers left out). A judgement by reading, not a count by code. Nothing changed.
