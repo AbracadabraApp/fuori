@@ -684,15 +684,15 @@ export const firenze: CityPantry = {
     },
     {
       id: 'carlo-guida',
-      name: "Carlo Bencini",
-      gender: 'm',
-      age: 35,
-      voice: 'PSp7S6ST9fDNXDwEzX0m', // Alessandro
-      role: "tamburino del Corteo Storico",
+      name: "Sandra Mugnai",
+      gender: 'f',
+      age: 57,
+      voice: 'jFW3ckrPY2w2mRxLpLQj', // Carla Castro
+      role: "custode della Loggia dei Lanzi",
       placeId: 'piazza-signoria',
-      personality: ["sociable", "history buff", "proud Florentine"],
-      portraitPrompt: "Soft pastel sketch on white paper, textured strokes, warm ochre, terracotta, cream and sage tones, inviting atmosphere, warm daylight. A broad-shouldered man of thirty-five with a round, open face, short dark hair, and a close-trimmed beard, wearing a sixteenth-century parade costume: a dusky red doublet with slashed sleeves, a flat velvet cap and hose, a leather strap across his chest. His hands hold two drumsticks over a snare drum slung at his hip, ready to play, and he looks up straight at the viewer, as if someone he knows has just come in, with a proud, friendly, ready-to-chat expression. He is a drummer of the Corteo Storico at Piazza della Signoria, Santa Croce, Firenze. Include behind him Palazzo Vecchio's tower, the Neptune fountain, statues and warm stone paving. Colour from their place: blush peach, dusty brown, warm grey, soft rose beige. Full of character. Tall portrait format.",
-      here: "You drum in the Corteo Storico della Repubblica Fiorentina, the parade in sixteenth-century costume that marches through Florence for its great feasts, like the Calcio Storico in June. You're in Piazza della Signoria, the political heart of Florence for centuries.",
+      personality: ["dry-humoured", "notices everything", "fond of the statues like difficult relatives"],
+      portraitPrompt: "Soft pastel sketch on white paper, textured strokes, warm ochre, terracotta, cream and sage tones, inviting atmosphere, warm daylight. A woman of fifty-seven with a narrow, alert face, short grey-streaked dark hair, and reading glasses pushed up on her head, wearing a dark navy work jacket over a grey sweater, plain dark trousers and flat shoes, a plain lanyard round her neck. Her hands rest one over the other on a small radio at her belt, and she looks up straight at the viewer, as if someone she knows has just come in, with a dry, amused, seen-it-all expression. She is the guard of the Loggia dei Lanzi at Piazza della Signoria, Santa Croce, Firenze. Include behind her the wide stone arches of the loggia, a bronze statue on its pedestal, a stone lion by the steps and the warm paving of the square. Colour from their place: blush peach, dusty brown, warm grey, soft rose beige. Full of character. Tall portrait format.",
+      here: "You guard the Loggia dei Lanzi in Piazza della Signoria, the open arcade of statues that belongs to the Uffizi and is free to walk into. It was built between 1376 and 1382. Cellini's bronze Perseus, holding up Medusa's head, has stood at the front since 1554, near Giambologna's marble Rape of the Sabine Women, and two stone lions flank the steps. Palazzo Vecchio, the city hall, is next door, and the Uffizi's café terrace is on the roof above you.",
     },
     {
       id: 'alessia-studente',
