@@ -1,5 +1,15 @@
 # Fuori Development Progress
 
+## 2026-11-17 (cloud), night: a run for the mini: bare `here` lines against lines with a life, to be read
+
+- **The unknown (Josh: "We do tests to gather information about the unknown"):** nobody has looked at what a bare `here` line produces in play. The cloud session's ranking (docs/character-richness.md) assumed bare is worse, and claimed bare characters fall back on stock Italy (cappuccino hours, the till); Josh: "These are not true", and he is right: those lines were planted. What is known: a planted fact gets said (T1, C4). Not known: whether a visit with a one-sentence character differs from a visit with one who has a life written in.
+- **The run (a direction run, read by the cloud session; nothing for Josh to play):** `rewrite-trial.mts` now takes `TRIAL_SPOTS=city/place,…`. Eight Italians, today's lines, no content changed. Bare: Andrea Bellintani (Mantua, gardener, 9 words), Antonio Messina (Taormina, pastry), Claudia Stefani (Lucca, chef), Elena Bianchi (Palermo, theatre seamstress). With a life: Nino Ferretti (Rome), Marco Chen (Naples), Totò Lo Cascio (Palermo), Giovanni Montemurro (Matera).
+- **For the mini** (local test database, from a checkout of main):
+  `TRIAL_SPOTS=mantova/parco-te,taormina/pasticceria-etna,lucca/ristorante-giglio,palermo/teatro-massimo,roma-nuova/trattoria-garbatella,napoli/mercato-pignasecca,palermo/pani-ca-meusa-ballaro,matera/sassi-belvedere TRIAL_STEPS=1,4 TRIAL_KINDS=long TRIAL_REPEAT=2 npx tsx --env-file=.env.local tests/experiments/rewrite-trial.mts --out=tests/experiments/results/here-bare-vs-life-it-2026-11-17.json`
+  32 visits. Commit the JSON and push; say here that it's done.
+- **Then (cloud):** read all 32 and report what each group's visits contain: what was said that only that person could say, what was recited from the line, what is general. If the gap can't be shown in three or four quoted exchanges, the answer is "no difference" and the lines stay.
+- **Limits:** two different people differ in more than their line (job, place, traits), and the trial's learner only says the first offered answer. The TRIAL_SPOTS change is type-checked, **not run** (no keys here).
+
 ## 2026-11-17 (cloud): every reachable character ranked by richness
 
 Josh: "read all visible charachters and rank in quartiles how rich in life and culure they are (1) to how bare/generic (4) - keep track of IDs but report counts per 4 groups". All 343 read; the list with ids is `docs/character-richness.md`. A judgment by reading.

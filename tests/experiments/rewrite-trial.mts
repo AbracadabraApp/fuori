@@ -61,8 +61,13 @@ async function run() {
       { city: 'palermo', place: 'teatro-massimo' },
     ],
   };
-  const spots = SPOTS[pack.id].filter((s) => { const c = cities.find((x) => x.id === s.city); const p = c?.places.find((x) => x.id === s.place); return c && p && characterForPlace(c, p); });
-  if (spots.length !== 4) throw new Error(`a named character is missing in ${pack.id}`);
+  // TRIAL_SPOTS=city/place,city/place plays other people than the usual four (2026-11-17: bare `here` lines against
+  // lines with a life in them, read side by side)
+  const wanted = process.env.TRIAL_SPOTS
+    ? process.env.TRIAL_SPOTS.split(',').map((x) => { const [city, place] = x.split('/'); return { city, place }; })
+    : SPOTS[pack.id];
+  const spots = wanted.filter((s) => { const c = cities.find((x) => x.id === s.city); const p = c?.places.find((x) => x.id === s.place); return c && p && characterForPlace(c, p); });
+  if (spots.length !== wanted.length) throw new Error(`a named character is missing in ${pack.id}`);
   const jobs: Visit[] = Array.from({ length: REPEAT }).flatMap(() => STEPS.flatMap((step) => spots.flatMap((s) => KINDS.map((kind) => ({ step, ...s, kind, turns: [] as T[] })))));
 
   async function play(v: Visit) {
