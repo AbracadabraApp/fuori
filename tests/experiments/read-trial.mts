@@ -5,6 +5,7 @@
 //   ... --turn=4                            everyone's 4th turn, A against B
 //   ... --full                             with --person, --turn or --blind: not just the English but the whole turn (the line as the character says it, with the language and its glosses, the English, the answers offered, the step's setup)
 //   ... --repeats                           repeated words: the words said most within a visit, and the words that turn up in the most visits, per arm (English)
+//   ... --description                       repeats of the terms in the person's `here` description: which of its words the visit says, how often, A against B (B had no description, so it shows what is said anyway)
 //   ... --blind[=seed]                      every visit shuffled, arm hidden, for reading; add --reveal for the key
 // Custom measures live in trial-measures.mts (CUSTOM) and show in the paired table and the totals.
 import { readFileSync } from 'fs';
@@ -33,7 +34,25 @@ const person = arg('person'), turn = arg('turn'), pattern = arg('count'), blind 
 
 const STOP = new Set('a an the and or but of to in on at for with from by is are was were be been it its this that these those i you he she we they me my your our their his her them us do does did have has had not no yes so if as than then there here what which who how when where why can will would just very really also too more most some any all one two come back please thank thanks okay oh well good great nice glad'.split(' '));
 const content = (v: Visit) => (english(v).toLowerCase().match(/[a-záéíóúñü']+/g) ?? []).map((w) => w.replace(/^'+|'+$/g, '')).filter((w) => w.length > 2 && !STOP.has(w));
-if (process.argv.includes('--repeats')) {
+if (process.argv.includes('--description')) {
+  const { packs } = await import('@/content');
+  const hereOf = (v: Visit) => { for (const pk of Object.values(packs)) { const c = pk.cities.find((x) => x.id === v.city); const pl = c?.places.find((x) => x.id === v.place); const who = c?.characters?.find((x) => x.id === pl?.characterId); if (who) return who.here ?? ''; } return ''; };
+  const terms = (h: string) => [...new Set((h.toLowerCase().match(/[a-záéíóúñü']+/g) ?? []).map((w) => w.replace(/^'+|'+$/g, '')).filter((w) => w.length > 3 && !STOP.has(w) && !/^(your|youre|here|between|their|they|with|from|have|that|this|into|every|often|since|about|only|when|just)$/.test(w)))];
+  const tot = { A: { said: 0, of: 0, mentions: 0, repeated: 0 }, B: { said: 0, of: 0, mentions: 0, repeated: 0 } };
+  console.log('Terms from each person\'s `here` description, said in the English of the visit. said = how many of the description\'s terms the visit uses; 2+ = how many of them it says twice or more.\n');
+  console.log('person'.padEnd(28), 'terms', ' A said  A 2+  A mentions |  B said  B 2+  B mentions   repeated in A (term xN)');
+  for (const p of pairs) {
+    const ts = terms(hereOf(p.a)); if (!ts.length) continue;
+    const count = (v: Visit) => { const w = content(v); return Object.fromEntries(ts.map((t) => [t, w.filter((x) => x === t || x === t + 's' || x + 's' === t).length])); };
+    const ca = count(p.a), cb = count(p.b);
+    const f = (c: Record<string, number>) => ({ said: Object.values(c).filter((n) => n > 0).length, rep: Object.values(c).filter((n) => n > 1).length, men: Object.values(c).reduce((a, b) => a + b, 0) });
+    const a = f(ca), b = f(cb);
+    for (const [k, x] of [['A', a], ['B', b]] as const) { tot[k].said += x.said; tot[k].of += ts.length; tot[k].mentions += x.men; tot[k].repeated += x.rep; }
+    const reps = Object.entries(ca).filter(([, n]) => n > 1).sort((x, y) => y[1] - x[1]).map(([t, n]) => `${t} x${n}`).join(', ');
+    console.log(name(p.a).slice(0, 27).padEnd(28), String(ts.length).padStart(5), String(a.said).padStart(7), String(a.rep).padStart(5), String(a.men).padStart(10), ' |', String(b.said).padStart(6), String(b.rep).padStart(5), String(b.men).padStart(10), '  ', reps);
+  }
+  console.log(`\nAll people: A said ${tot.A.said} of ${tot.A.of} description terms (${Math.round(100 * tot.A.said / tot.A.of)}%), ${tot.A.repeated} of them twice or more, ${tot.A.mentions} mentions. B said ${tot.B.said} (${Math.round(100 * tot.B.said / tot.B.of)}%), ${tot.B.repeated} twice or more, ${tot.B.mentions} mentions.`);
+} else if (process.argv.includes('--repeats')) {
   for (const [label, vs] of [['A', A], ['B', B]] as const) {
     const within = new Map<string, number>(), across = new Map<string, number>();
     let rep = 0, total = 0;
