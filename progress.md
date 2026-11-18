@@ -1,5 +1,13 @@
 # Fuori Development Progress
 
+## 2026-11-17 (cloud), night: Mexico's bare / fact-list / with-a-life run read
+
+- **Read:** all 22 visits of `tests/experiments/results/here-bare-fact-life-mx-2026-11-17.json` (11 people twice, step 4). A reading; the learner taps the first answer.
+- **Bare (Doña Mari, Beto Rangel, Mateo Lozano): here a short line does cost something.** Doña Mari's corner shop in Guadalajara and Mateo's café in Puebla gave nearly the same visit: a concha, vanilla or chocolate, with café de olla and cinnamon. Beto gave the pink church, cobbled streets, colourful houses and his mother's talavera plates. Pleasant, and it could be anywhere in Mexico. Italy's bare lines named the place's own things (tordelli, cannoli, Palazzo Te) and the model built on them; these three lines name bread, coffee and a taxi stand.
+- **Fact lists (San Miguel's four): the same facts from different people.** Zeferino Gutiérrez in 5 of 8 visits, from three people (the sacristan, the man at the Mirador, the man in the park); the Alborada in 3 of 8; Allende in 2; UNESCO in none. Doña Rosa is the exception: both her visits are cempasúchil and her altar.
+- **With a life (Andrés Ochoa, Doña Hilaria, Don Fermín, Don Chema): the only visits nobody else could have given, and the same ones twice.** Orozco painting with one hand and the portfolio due in December; reading the Maya labels to a bored grandson and teaching "Dios bo'otik"; the Sinaia arriving in 1939. Each said the same things in both visits. Parts of the written life never came out: Don Fermín's Michoacán and California in neither visit, Andrés's father, the pottery workshop and Atlas in neither.
+- **Across both countries:** what's in the line gets said, every visit, and the model builds on whatever specific thing the line names. Length isn't what matters; a short line that names something only that person has does the work (Doña Rosa's flowers, Antonio's cannoli). A list of town facts gives a town's worth of people saying the same thing. Nothing changed in content.
+
 ## 2026-11-17 (cloud), night: Italy's bare-against-life run read: no gap; Mexico's run ready for the mini
 
 - **Read:** all 32 visits of `tests/experiments/results/here-bare-vs-life-it-2026-11-17.json`, step 1 first and apart from step 4 (Josh: "Just segregate 1/4 and analyze 1 first"). A reading, two visits a person a step, the trial's learner tapping the first answer.
