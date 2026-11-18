@@ -1,5 +1,16 @@
 # Fuori Development Progress
 
+## 2026-11-17 (cloud), night: four of the longest lines, production against header only: for the mini
+
+- **Josh:** "lets test … as in production vs edited prompts"; Nino is out ("he runs a restaurant not an inn"; "nino was a test case"); "nexr longest italian"; "for the test prompt, use only the header". So: the two longest Italian lines after Nino and the two longest Mexican ones, each with its line as it ships against no line at all.
+- **People:** Tommaso Ricci, street painter, Piazza Navona, Rome (93 words); Sara Bertolini, gelataia, La Sorbetteria Castiglione, Bologna (89); Andrés Ochoa, art student, Hospicio Cabañas, Guadalajara (144); Profe Gerardo Villaseñor, retired teacher, Plaza Vasco de Quiroga, Pátzcuaro (121).
+- **Arm A:** main. **Arm B:** branch `here-none-four`, the four `here` lines removed, so the prompt gets name, age, role, traits and the place's name, kind and neighbourhood (lib/characters/for-place.ts already handles a missing line). Not for main.
+- **For the mini:** each person twice at step 4, 8 visits an arm, 16 in all. From main, then the same two commands from a worktree of `here-none-four` with `-b-` in the file names:
+  `TRIAL_SPOTS=roma-nuova/piazza-navona,bologna/sorbetteria-castiglione TRIAL_STEPS=4 TRIAL_KINDS=long TRIAL_REPEAT=2 npx tsx --env-file=.env.local tests/experiments/rewrite-trial.mts --out=tests/experiments/results/longest-it-a-2026-11-17.json`
+  `COUNTRY=es-mx TRIAL_SPOTS=guadalajara/hospicio-cabanas,patzcuaro/plaza-vasco-de-quiroga TRIAL_STEPS=4 TRIAL_KINDS=long TRIAL_REPEAT=2 npx tsx --env-file=.env.local tests/experiments/rewrite-trial.mts --out=tests/experiments/results/longest-mx-a-2026-11-17.json`
+  Commit the four JSON files to main by path, push, and say here it's done.
+- **Read for (cloud):** counts first (the run's culture count and words a visit, per person per arm; names said), then, side by side with equal weight, what each arm said that the other didn't. No verdict on which list is worth more: that is Josh's.
+
 ## 2026-11-17 (cloud), night: the whole-city San Miguel run read: one sentence ends the repeats and loses the town
 
 - **Read:** `san-miguel-city-a-2026-11-17.json` (main, today's lines) and `-b-` (branch `san-miguel-one-sentence`), all 13 people once each at step 4. The learner taps the first answer; one visit a person.
