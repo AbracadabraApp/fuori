@@ -1,0 +1,1013 @@
+[
+ {
+  "step": 4,
+  "city": "ciudad-de-mexico",
+  "place": "tacos-el-trompo-rojo",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Buenas tardes, bienvenido. Estoy cortando el trompo, la carne del pastor. I'm slicing the trompo, the spit of pork al pastor. ¿Le gustan los tacos al pastor? Do you like tacos al pastor?",
+    "en": "Good afternoon, welcome. I'm slicing the trompo, the spit of pork al pastor. Do you like tacos al pastor?",
+    "raw": "{\"line\":\"{*Buenas tardes*, bienvenido. | *Good afternoon*, welcome.} {Estoy cortando *el trompo*, la carne del pastor. | I'm slicing *the trompo*, the spit of pork al pastor.} {¿Le gustan *los tacos al pastor*? | Do you like *tacos al pastor*?}\",\"en\":\"Good afternoon, welcome. I'm slicing the trompo, the spit of pork al pastor. Do you like tacos al pastor?\",\"answers\":[{\"text\":\"Sí, me gustan mucho. Huele muy rico.\",\"en\":\"Yes, I like them a lot. It smells so good.\"},{\"text\":\"Quiero probar uno. ¿Qué lleva el pastor?\",\"en\":\"I want to try one. What goes in the pastor?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, me gustan mucho. Huele muy rico.",
+     "Quiero probar uno. ¿Qué lleva el pastor?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Gracias, qué amable. Thank you, how kind. El secreto es el trompo: la carne gira y se dora poco a poco. ¿Cuántos tacos quiere que le prepare? How many tacos do you want me to make you?",
+    "en": "Thank you, how kind. The secret is the trompo: the meat turns and browns little by little. How many tacos do you want me to make you?",
+    "raw": "{\"line\":\"{Gracias, qu\\u00e9 amable. | Thank you, how kind.} {El secreto es *el trompo*: la carne gira y se dora poco a poco. | The secret is *the trompo*: the meat turns and browns little by little.} {\\u00bfCu\\u00e1ntos tacos quiere que le prepare? | How many tacos do you want me to make you?}\",\"en\":\"Thank you, how kind. The secret is the trompo: the meat turns and browns little by little. How many tacos do you want me to make you?\",\"answers\":[{\"text\":\"Quiero cuatro tacos, por favor.\",\"en\":\"I want four tacos, please.\"},{\"text\":\"\\u00bfQu\\u00e9 significa \\u00abel trompo\\u00bb?\",\"en\":\"What does \\u00abel trompo\\u00bb mean?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Quiero cuatro tacos, por favor.",
+     "¿Qué significa «el trompo»?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Con gusto, cuatro tacos al pastor. Les pongo piña, cilantro y cebolla, como se come aquí en la Roma. I'll put pineapple, cilantro and onion on them, the way people eat them here in the Roma. ¿Quiere salsa roja o salsa verde? Do you want red salsa or green salsa?",
+    "en": "Gladly, four tacos al pastor. I'll put pineapple, cilantro and onion on them, the way people eat them here in the Roma. Do you want red salsa or green salsa?",
+    "raw": "{\"line\":\"{Con gusto, *cuatro tacos al pastor*. | Gladly, *four tacos al pastor*.} {Les pongo piña, cilantro y cebolla, como se come aquí en la Roma. | I'll put pineapple, cilantro and onion on them, the way people eat them here in the Roma.} {¿Quiere *salsa roja* o *salsa verde*? | Do you want *red salsa* or *green salsa*?}\",\"en\":\"Gladly, four tacos al pastor. I'll put pineapple, cilantro and onion on them, the way people eat them here in the Roma. Do you want red salsa or green salsa?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "idiom",
+    "line": "Ja, roja o verde, tiene que escoger una. Mientras, ¿quiere también el chesco? Es lo que tomamos con los tacos. Meanwhile, do you also want el chesco? It's what we drink with the tacos. ¿Qué cree que es el chesco? What do you think el chesco is?",
+    "en": "Ha, red or green, you have to pick one. Meanwhile, do you also want el chesco? It's what we drink with the tacos. What do you think el chesco is?",
+    "raw": "{\"line\":\"{Ja, *roja o verde*, tiene que escoger una. | Ha, *red or green*, you have to pick one.} {Mientras, ¿quiere también *el chesco*? Es lo que tomamos con los tacos. | Meanwhile, do you also want *el chesco*? It's what we drink with the tacos.} {¿Qué cree que es *el chesco*? | What do you think *el chesco* is?}\",\"en\":\"Ha, red or green, you have to pick one. Meanwhile, do you also want el chesco (word for word: no picture)? It's what we drink with the tacos. What do you think el chesco is?\",\"answers\":[{\"text\":\"Creo que es un refresco.\",\"en\":\"I think it's a soft drink.\"},{\"text\":\"Creo que es una salsa picante.\",\"en\":\"I think it's a spicy salsa.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Creo que es un refresco.",
+     "Creo que es una salsa picante."
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Exacto, es un refresco, aquí le decimos chesco a la soda. Exactly, it's a soda, here we call it chesco. Yo estoy sirviendo la salsa, para que no se enfríen los tacos. ¿Quiere salsa roja o salsa verde? Do you want red salsa or green salsa?",
+    "en": "Exactly, it's a soda, here we call it chesco. I'm putting on the salsa, so the tacos don't get cold. Do you want red salsa or green salsa?",
+    "raw": "{\"line\":\"{*Exacto*, es un refresco, aquí le decimos *chesco* a la soda. | *Exactly*, it's a soda, here we call it *chesco*.} {Yo estoy sirviendo *la salsa*, para que no se enfríen los tacos. | I'm putting on *the salsa*, so the tacos don't get cold.} {¿Quiere *salsa roja* o *salsa verde*? | Do you want *red salsa* or *green salsa*?}\",\"en\":\"Exactly, it's a soda, here we call it chesco. I'm putting on the salsa, so the tacos don't get cold. Do you want red salsa or green salsa?\",\"answers\":[{\"text\":\"La salsa roja, por favor. Me gusta el picante.\",\"en\":\"The red salsa, please. I like spicy food.\"},{\"text\":\"¿Qué es el chesco? ¿Puede decirlo más despacio?\",\"en\":\"What is chesco? Can you say it more slowly?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "La salsa roja, por favor. Me gusta el picante.",
+     "¿Qué es el chesco? ¿Puede decirlo más despacio?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Muy bien, salsa roja para los cuatro tacos. Very good, red salsa for all four tacos. Aquí la hacemos con chile de árbol, y sí pica. ¿Qué tan picante le gusta, poco o mucho? How spicy do you like it, a little or a lot?",
+    "en": "Very good, red salsa for all four tacos. Here we make it with chile de árbol, and it does burn. How spicy do you like it, a little or a lot?",
+    "raw": "{\"line\":\"{Muy bien, *salsa roja* para los cuatro tacos. | Very good, *red salsa* for all four tacos.} {Aquí la hacemos con chile de árbol, y sí pica. | Here we make it with chile de árbol, and it does burn.} {¿Qué tan picante le gusta, poco o mucho? | How spicy do you like it, a little or a lot?}\",\"en\":\"Very good, red salsa for all four tacos. Here we make it with chile de árbol, and it does burn. How spicy do you like it, a little or a lot?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "ask-en",
+    "line": "Jaja, entonces le pongo mucha, ¿verdad? Ha ha, so I'll put on a lot, right? Aquí el chile de árbol es muy picoso, pero la gente lo aguanta. Here the chile de árbol is very hot, but people can take it. Ya casi están listos sus tacos, solo les falta la piña. Your tacos are almost ready, they just need the pineapple.",
+    "en": "Ha ha, so I'll put on a lot, right? Here the chile de árbol is very hot, but people can take it. Your tacos are almost ready, they just need the pineapple.",
+    "raw": "{\"line\":\"{Jaja, entonces *le pongo mucha*, ¿verdad? | Ha ha, so I'll *put on a lot*, right?} {Aquí el chile de árbol es *muy picoso*, pero la gente lo aguanta. | Here the chile de árbol is *very hot*, but people can take it.} {Ya casi están listos sus tacos, solo les falta la piña. | Your tacos are almost ready, they just need the pineapple.}\",\"en\":\"Ha ha, so I'll put on a lot, right? Here the chile de árbol is very hot, but people can take it. Your tacos are almost ready, they just need the pineapple.\",\"answers\":[{\"text\":\"¿Por qué le ponen piña al pastor?\",\"en\":\"Why do you put pineapple on the pastor?\"},{\"text\":\"¿Qué es el chile de árbol?\",\"en\":\"What is chile de árbol (a thin, very hot red chile)?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "¿Por qué le ponen piña al pastor?",
+     "¿Qué es el chile de árbol?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Buena pregunta. La piña le da un toque dulce y fresco a la carne. Aquí cortamos un pedacito desde arriba del trompo, y así cae directo al taco. Here we slice a little piece from the top of the trompo, and it falls right onto the taco. Ya están sus tacos; vuelva pronto, que los martes sacamos el trompo recién hecho. Here are your tacos; come back soon, because on Tuesdays we bring out a freshly made trompo.",
+    "en": "Good question. The pineapple gives the meat a sweet, fresh touch. Here we slice a little piece from the top of the trompo, and it falls right onto the taco. Here are your tacos; come back soon, because on Tuesdays we bring out a freshly made trompo.",
+    "raw": "{\"line\":\"{Buena pregunta. *La piña* le da un toque dulce y fresco a la carne. | Good question. *The pineapple* gives the meat a sweet, fresh touch.} {Aquí cortamos un pedacito desde arriba del trompo, y así cae directo al taco. | Here we slice a little piece from the top of the trompo, and it falls right onto the taco.} {Ya están sus tacos; *vuelva pronto*, que los martes sacamos el trompo recién hecho. | Here are your tacos; *come back soon*, because on Tuesdays we bring out a freshly made trompo.}\",\"en\":\"Good question. The pineapple gives the meat a sweet, fresh touch. Here we slice a little piece from the top of the trompo, and it falls right onto the taco. Here are your tacos; come back soon, because on Tuesdays we bring out a freshly made trompo.\",\"answers\":[{\"text\":\"Gracias, Chema. Vuelvo el martes.\",\"en\":\"Thank you, Chema. I'll come back on Tuesday.\"},{\"text\":\"Los tacos se ven muy ricos. Hasta luego.\",\"en\":\"The tacos look delicious. See you later.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Gracias, Chema. Vuelvo el martes.",
+     "Los tacos se ven muy ricos. Hasta luego."
+    ],
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "¡Ándale, aquí lo espero! Cuídese mucho y buen provecho. Sure thing, I'll be here waiting for you! Take care and enjoy your meal.",
+    "en": "Sure thing, I'll be here waiting for you! Take care and enjoy your meal.",
+    "raw": "{\"line\":\"¡Ándale, aquí lo espero! Cuídese mucho y buen provecho. Sure thing, I'll be here waiting for you! Take care and enjoy your meal.\",\"en\":\"Sure thing, I'll be here waiting for you! Take care and enjoy your meal.\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": true
+   }
+  ],
+  "person": "Chema Rosales",
+  "arm": "header",
+  "culture": [
+   "Tacos al pastor are made from pork sliced off a vertical spit called a trompo",
+   "The trompo rotates so the meat browns slowly",
+   "Tacos al pastor are topped with pineapple, cilantro and onion",
+   "The Roma is a neighborhood in Mexico City where tacos al pastor are eaten this way",
+   "Tacos are served with red salsa or green salsa",
+   "Chesco is a local slang word for soda or soft drink",
+   "Soda or chesco is the usual drink with tacos",
+   "Red salsa is made with chile de árbol, which is very spicy",
+   "Chile de árbol is very hot but locals tolerate it",
+   "Pineapple adds a sweet, fresh touch to the meat",
+   "The taquero slices a piece of pineapple from the top of the trompo so it falls onto the taco",
+   "Some taquerías bring out a freshly made trompo on certain days, such as Tuesdays",
+   "Ándale is a common expression meaning sure thing or all right",
+   "Buen provecho is said to wish someone an enjoyable meal"
+  ]
+ },
+ {
+  "step": 4,
+  "city": "san-cristobal-de-las-casas",
+  "place": "templo-de-guadalupe-sancris",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Buenas tardes, pase, pase. Estoy barriendo el atrio del templo, porque hoy es martes de limpieza. ¿Ya conoce el templo de Guadalupe? Have you seen the Guadalupe church yet?",
+    "en": "Good afternoon, come in, come in. I'm sweeping the churchyard of the temple, because today is Tuesday cleaning day. Have you seen the Guadalupe church yet?",
+    "raw": "{\"line\":\"{Buenas tardes, *pase, pase*. | Good afternoon, *come in*, come in.} {Estoy barriendo *el atrio* del templo, porque hoy es martes de limpieza. | I'm sweeping *the churchyard* of the temple, because today is Tuesday cleaning day.} {¿Ya conoce *el templo de Guadalupe*? | Have you seen *the Guadalupe church* yet?}\",\"en\":\"Good afternoon, come in, come in. I'm sweeping the churchyard of the temple, because today is Tuesday cleaning day. Have you seen the Guadalupe church yet?\",\"answers\":[{\"text\":\"Sí, es muy bonito. ¿Puedo ayudarle?\",\"en\":\"Yes, it's very pretty. Can I help you?\"},{\"text\":\"Todavía no. ¿Cómo es por dentro?\",\"en\":\"Not yet. What is it like inside?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, es muy bonito. ¿Puedo ayudarle?",
+     "Todavía no. ¿Cómo es por dentro?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Qué amable, mijo, sí, tome esta escoba. Entre más manos, más rápido se acaba. The more hands, the faster it gets done. Todos los martes vengo a barrer porque esta es mi iglesia desde niña. Every Tuesday I come to sweep because this is my church since I was a girl.",
+    "en": "How kind, dear, yes, take this broom. The more hands, the faster it gets done. Every Tuesday I come to sweep because this is my church since I was a girl.",
+    "raw": "{\"line\":\"{*Qué amable*, mijo, sí, tome esta escoba. | *How kind*, dear, yes, take this broom.} {Entre más manos, más rápido se acaba. | The more hands, the faster it gets done.} {Todos los martes vengo a barrer porque *esta es mi iglesia* desde niña. | Every Tuesday I come to sweep because *this is my church* since I was a girl.}\",\"en\":\"How kind, dear, yes, take this broom. The more hands, the faster it gets done. Every Tuesday I come to sweep because this is my church since I was a girl.\",\"answers\":[{\"text\":\"Qué bonito. Yo barro aquí.\",\"en\":\"How nice. I'll sweep here.\"},{\"text\":\"¿Hay una fiesta en noviembre?\",\"en\":\"Is there a festival in November?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Qué bonito. Yo barro aquí.",
+     "¿Hay una fiesta en noviembre?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Muy bien, barra por las orillas, ahí se junta toda la hojarasca. En noviembre caen muchas hojas del árbol de aquí, y yo digo que el atrio se ve más bonito limpio. In November lots of leaves fall from the tree here, and I say the churchyard looks prettier clean. Me da gusto verlo trabajar con ganas. It makes me happy to see you working with such enthusiasm.",
+    "en": "Very good, sweep along the edges, that's where all the dry leaves pile up. In November lots of leaves fall from the tree here, and I say the churchyard looks prettier clean. It makes me happy to see you working with such enthusiasm.",
+    "raw": "{\"line\":\"{Muy bien, *barra por las orillas*, ahí se junta toda la hojarasca. | Very good, *sweep along the edges*, that's where all the dry leaves pile up.} {En noviembre caen muchas hojas del árbol de aquí, y yo digo que el atrio se ve más bonito limpio. | In November lots of leaves fall from the tree here, and I say the churchyard looks prettier clean.} {Me da gusto verlo trabajar con ganas. | It makes me happy to see you working with such enthusiasm.}\",\"en\":\"Very good, sweep along the edges, that's where all the dry leaves pile up. In November lots of leaves fall from the tree here, and I say the churchyard looks prettier clean. It makes me happy to see you working with such enthusiasm.\",\"answers\":[{\"text\":\"Sí, hay muchas hojas. Me gusta ayudar.\",\"en\":\"Yes, there are lots of leaves. I like to help.\"},{\"text\":\"¿Qué significa hojarasca? ¿Lo puede repetir más despacio?\",\"en\":\"What does hojarasca mean? Can you say it again more slowly?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, hay muchas hojas. Me gusta ayudar.",
+     "¿Qué significa hojarasca? ¿Lo puede repetir más despacio?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Qué buen corazón tiene usted. What a good heart you have. Cuando terminemos, le invito un atole calientito, porque en las mañanas de noviembre hace frío aquí. When we finish, I'll treat you to a warm atole (hot corn drink), because November mornings are chilly here. ¿Le gusta el atole? Do you like atole?",
+    "en": "What a good heart you have. When we finish, I'll treat you to a warm atole (hot corn drink), because November mornings are chilly here. Do you like atole?",
+    "raw": "{\"line\":\"{Qué buen corazón tiene usted. | What a *good heart* you have.} {Cuando terminemos, le invito un *atole* calientito, porque en las mañanas de noviembre hace frío aquí. | When we finish, I'll treat you to a warm *atole* (hot corn drink), because November mornings are chilly here.} {¿Le gusta el atole? | Do you like atole?}\",\"en\":\"What a good heart you have. When we finish, I'll treat you to a warm atole (hot corn drink), because November mornings are chilly here. Do you like atole?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Qué bueno, entonces le invito un atole cuando terminemos. Yo lo hago de champurrado, con chocolate de aquí de Chiapas. ¿Qué le gusta más, lo dulce o lo amargo? Which do you like more, sweet or bitter?",
+    "en": "Good, then I'll treat you to an atole when we finish. I make it as champurrado (chocolate atole), with chocolate from here in Chiapas. Which do you like more, sweet or bitter?",
+    "raw": "{\"line\":\"{Qué bueno, entonces *le invito un atole* cuando terminemos. | Good, then *I'll treat you to an atole* when we finish.} {Yo lo hago de *champurrado*, con chocolate de aquí de Chiapas. | I make it as *champurrado* (chocolate atole), with chocolate from here in Chiapas.} {¿Qué le gusta más, lo dulce o lo amargo? | Which do you like more, sweet or bitter?}\",\"en\":\"Good, then I'll treat you to an atole when we finish. I make it as champurrado (chocolate atole), with chocolate from here in Chiapas. Which do you like more, sweet or bitter?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Ay, mijo, creo que no me entendió. Le preguntaba si le gusta lo dulce o lo amargo. I was asking if you like sweet or bitter. ¿Cómo le gusta el chocolate? How do you like chocolate?",
+    "en": "Oh dear, I think you didn't catch that. I was asking if you like sweet or bitter. How do you like chocolate?",
+    "raw": "{\"line\":\"{Ay, mijo, creo que no me entendió. | Oh dear, I think you didn't catch that.} {Le preguntaba si le gusta *lo dulce* o *lo amargo*. | I was asking if you like *sweet* or *bitter*.} {¿Cómo le gusta *el chocolate*? | How do you like *chocolate*?}\",\"en\":\"Oh dear, I think you didn't catch that. I was asking if you like sweet or bitter. How do you like chocolate?\",\"answers\":[{\"text\":\"Me gusta dulce. Con mucha azúcar.\",\"en\":\"I like it sweet. With a lot of sugar.\"},{\"text\":\"¿Qué significa amargo? Más despacio, por favor.\",\"en\":\"What does amargo mean? Slower, please.\"}],\"done\":false,\"hard\":true}",
+    "answers": 2,
+    "answerTexts": [
+     "Me gusta dulce. Con mucha azúcar.",
+     "¿Qué significa amargo? Más despacio, por favor."
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "¡Ándale, bien dulce! Aquí en Chiapas el chocolate se muele con canela y azúcar. Here in Chiapas the chocolate is ground with cinnamon and sugar. ¿Quiere que barramos ahora el pasillo de la entrada? Shall we sweep the walkway at the entrance now?",
+    "en": "Great, nice and sweet! Here in Chiapas the chocolate is ground with cinnamon and sugar. Shall we sweep the walkway at the entrance now?",
+    "raw": "{\"line\":\"{¡Ándale, *bien dulce*! | Great, *nice and sweet*!} {Aquí en Chiapas el chocolate se muele con canela y azúcar. | Here in Chiapas the chocolate is ground with cinnamon and sugar.} {¿Quiere que barramos ahora *el pasillo* de la entrada? | Shall we sweep *the walkway* at the entrance now?}\",\"en\":\"Great, nice and sweet! Here in Chiapas the chocolate is ground with cinnamon and sugar. Shall we sweep the walkway at the entrance now?\",\"answers\":[{\"text\":\"Sí, vamos al pasillo. Yo llevo la escoba.\",\"en\":\"Yes, let's go to the walkway. I'll carry the broom.\"},{\"text\":\"¿Qué significa pasillo? ¿Puede repetir más despacio?\",\"en\":\"What does pasillo mean? Can you repeat it more slowly?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, vamos al pasillo. Yo llevo la escoba.",
+     "¿Qué significa pasillo? ¿Puede repetir más despacio?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Qué buen ayudante es usted, mijo. What a good helper you are, dear. Cuando terminemos, el atole se lo debo. Venga el martes que viene, y barremos juntos otra vez. Come next Tuesday, and we'll sweep together again.",
+    "en": "What a good helper you are, dear. When we finish, I owe you that atole. Come next Tuesday, and we'll sweep together again.",
+    "raw": "{\"line\":\"{*Qué buen ayudante* es usted, mijo. | *What a good helper* you are, dear.} {Cuando terminemos, el atole se lo debo. | When we finish, I owe you that atole.} {*Venga el martes que viene*, y barremos juntos otra vez. | *Come next Tuesday*, and we'll sweep together again.}\",\"en\":\"What a good helper you are, dear. When we finish, I owe you that atole. Come next Tuesday, and we'll sweep together again.\",\"answers\":[{\"text\":\"Gracias, doña Chayo. Hasta el martes.\",\"en\":\"Thank you, Doña Chayo. See you Tuesday.\"},{\"text\":\"Con gusto, vengo el martes. Adiós.\",\"en\":\"Gladly, I'll come Tuesday. Goodbye.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Gracias, doña Chayo. Hasta el martes.",
+     "Con gusto, vengo el martes. Adiós."
+    ],
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "¡Hasta el martes, mijo! Que Dios lo bendiga y vaya con bien. Until Tuesday, dear! God bless you and go well.",
+    "en": "Until Tuesday, dear! God bless you and go well.",
+    "raw": "{\"line\":\"¡Hasta el martes, mijo! Que Dios lo bendiga y vaya con bien. Until Tuesday, dear! God bless you and go well.\",\"en\":\"Until Tuesday, dear! God bless you and go well.\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": true
+   }
+  ],
+  "person": "Doña Chayo Molina",
+  "arm": "header",
+  "culture": [
+   "Many Mexican towns have a Guadalupe church (templo de Guadalupe), reflecting devotion to the Virgin of Guadalupe",
+   "The atrio is the churchyard or forecourt of a church, and people sweep and keep it clean as community service",
+   "Community members volunteer to maintain their local church, often for a lifetime",
+   "Many hands make work faster (Entre más manos, más rápido se acaba)",
+   "Atole is a warm corn-based drink, popular on chilly mornings",
+   "Champurrado is a type of atole made with chocolate",
+   "Chiapas is known for its chocolate",
+   "Mexican chocolate is ground with cinnamon and sugar",
+   "\"Mijo\" is an affectionate term meaning 'my son' or 'dear', used even with younger non-relatives",
+   "\"Doña\" is a respectful title for an older woman",
+   "\"Ándale\" is an expression of approval or encouragement",
+   "Hospitality: offering food or drink as thanks for help",
+   "Blessings like \"Que Dios lo bendiga y vaya con bien\" are common farewells",
+   "Using formal \"usted\" when speaking respectfully with others",
+   "November mornings can be cold in highland Chiapas",
+   "Falling leaves in November in the church courtyard"
+  ]
+ },
+ {
+  "step": 4,
+  "city": "guadalajara",
+  "place": "tacos-el-compa-nacho",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Buenas tardes, bienvenido a El Compa Nacho. Estoy preparando el trompo, la carne del pastor. I'm getting the trompo ready, the spit of marinated pork. ¿Quiere unos tacos? Do you want some tacos?",
+    "en": "Good afternoon, welcome to El Compa Nacho. I'm getting the trompo ready, the spit of marinated pork. Do you want some tacos?",
+    "raw": "{\"line\":\"{*Buenas tardes*, bienvenido a El Compa Nacho. | *Good afternoon*, welcome to El Compa Nacho.} {Estoy preparando *el trompo*, la carne del pastor. | I'm getting *the trompo* ready, the spit of marinated pork.} {¿Quiere *unos tacos*? | Do you want *some tacos*?}\",\"en\":\"Good afternoon, welcome to El Compa Nacho. I'm getting the trompo ready, the spit of marinated pork. Do you want some tacos?\",\"answers\":[{\"text\":\"Buenas tardes. Sí, quiero unos tacos, por favor.\",\"en\":\"Good afternoon. Yes, I want some tacos, please.\"},{\"text\":\"Huele muy rico. ¿Qué es el trompo?\",\"en\":\"It smells very good. What is the trompo?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Buenas tardes. Sí, quiero unos tacos, por favor.",
+     "Huele muy rico. ¿Qué es el trompo?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "¡Claro que sí! Con mucho gusto. Of course! My pleasure. Aquí los más pedidos son los tacos al pastor, con piña y cilantro. Here the most popular are the tacos al pastor, with pineapple and cilantro. ¿Los quiere con todo o sin cebolla? Do you want them with everything or without onion?",
+    "en": "Of course! My pleasure. Here the most popular are the tacos al pastor, with pineapple and cilantro. Do you want them with everything or without onion?",
+    "raw": "{\"line\":\"{¡Claro que sí! *Con mucho gusto*. | Of course! *My pleasure*.} {Aquí los más pedidos son *los tacos al pastor*, con piña y cilantro. | Here the most popular are *the tacos al pastor*, with pineapple and cilantro.} {¿Los quiere *con todo* o sin cebolla? | Do you want them *with everything* or without onion?}\",\"en\":\"Of course! My pleasure. Here the most popular are the tacos al pastor, with pineapple and cilantro. Do you want them with everything or without onion?\",\"answers\":[{\"text\":\"Con todo, por favor. Me gusta el pastor.\",\"en\":\"With everything, please. I like the pastor.\"},{\"text\":\"Quiero tres tacos. ¿Qué lleva el pastor?\",\"en\":\"I want three tacos. What's in the pastor?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Con todo, por favor. Me gusta el pastor.",
+     "Quiero tres tacos. ¿Qué lleva el pastor?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "¡Qué bueno que le gusta el pastor! I'm glad you like the pastor! Ya le preparo sus tacos, con piña y cilantro. ¿Le pongo salsa? Do you want salsa?",
+    "en": "I'm glad you like the pastor! I'm making your tacos now, with pineapple and cilantro. Do you want salsa?",
+    "raw": "{\"line\":\"{¡Qué bueno que le gusta *el pastor*! | I'm glad you like *the pastor*!} {Ya le *preparo sus tacos*, con piña y cilantro. | I'm *making your tacos* now, with pineapple and cilantro.} {¿Le pongo *salsa*? | Do you want *salsa*?}\",\"en\":\"I'm glad you like the pastor! I'm making your tacos now, with pineapple and cilantro. Do you want salsa?\",\"answers\":[{\"text\":\"Sí, con salsa, por favor. Me gusta un poco picante.\",\"en\":\"Yes, with salsa, please. I like it a little spicy.\"},{\"text\":\"Se ve muy rico. ¿Cuál salsa me recomienda?\",\"en\":\"It looks very good. Which salsa do you recommend?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, con salsa, por favor. Me gusta un poco picante.",
+     "Se ve muy rico. ¿Cuál salsa me recomienda?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "idiom",
+    "line": "Perfecto, una salsa poquito picante, ni tan fuerte ni tan suave. Perfect, a mildly spicy salsa, not too strong, not too mild. Aquí la salsa roja es de chile de árbol, y mucha gente dice: «Calladitos, nos vemos más bonitos». ¿Qué cree que quiere decir? What do you think it means?",
+    "en": "Perfect, a mildly spicy salsa, not too strong, not too mild. Here the red salsa is made of chile de árbol, and many people say: «We look prettier quiet». What do you think it means?",
+    "raw": "{\"line\":\"{Perfecto, una salsa *poquito picante*, ni tan fuerte ni tan suave. | Perfect, a *mildly spicy* salsa, not too strong, not too mild.} {Aquí la salsa roja es de chile de árbol, y mucha gente dice: «Calladitos, nos vemos más bonitos». | Here the red salsa is made of chile de árbol, and many people say: «We look prettier quiet».} {¿Qué cree que quiere decir? | What do you think it means?}\",\"en\":\"Perfect, a mildly spicy salsa, not too strong, not too mild. Here the red salsa is made of chile de árbol, and many people say: «We look prettier quiet». What do you think it means?\",\"answers\":[{\"text\":\"Creo que es mejor no hablar. Es mejor callarse.\",\"en\":\"I think it's better not to talk. It's better to keep quiet.\"},{\"text\":\"Creo que la salsa es muy bonita. Me gusta el color.\",\"en\":\"I think the salsa is very pretty. I like the color.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Creo que es mejor no hablar. Es mejor callarse.",
+     "Creo que la salsa es muy bonita. Me gusta el color."
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "¡Eso es! Así mero. Aquí todo el mundo come calladito, porque los tacos están muy buenos. Here everybody eats quietly, because the tacos are so good. ¿Usted ya conoce la torta ahogada, la comida de Guadalajara? Do you already know the torta ahogada, Guadalajara's famous food?",
+    "en": "That's it! Exactly. Here everybody eats quietly, because the tacos are so good. Do you already know the torta ahogada, Guadalajara's famous food?",
+    "raw": "{\"line\":\"{¡Eso es! Así mero. | That's it! Exactly.} {Aquí todo el mundo come *calladito*, porque los tacos están muy buenos. | Here everybody eats *quietly*, because the tacos are so good.} {¿Usted ya conoce *la torta ahogada*, la comida de Guadalajara? | Do you already know *the torta ahogada*, Guadalajara's famous food?}\",\"en\":\"That's it! Exactly. Here everybody eats quietly, because the tacos are so good. Do you already know the torta ahogada, Guadalajara's famous food?\",\"answers\":[{\"text\":\"No la conozco todavía. Me gustaría probarla.\",\"en\":\"I don't know it yet. I would like to try it.\"},{\"text\":\"¿Qué es una torta ahogada? ¿Es picante?\",\"en\":\"What is a torta ahogada (a pork sandwich drowned in spicy sauce)? Is it spicy?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "No la conozco todavía. Me gustaría probarla.",
+     "¿Qué es una torta ahogada? ¿Es picante?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Se la recomiendo mucho, la torta ahogada es un pan con carne, bañado en salsa. Aquí no la vendemos, pero la encuentra en las tortas de la calle. We don't sell it here, but you can find it at the street torta stands. Yo prefiero los tacos, claro, porque son lo mío. I prefer the tacos, of course, because they're my thing.",
+    "en": "I really recommend it, the torta ahogada is a roll with meat, drenched in salsa. We don't sell it here, but you can find it at the street torta stands. I prefer the tacos, of course, because they're my thing.",
+    "raw": "{\"line\":\"{Se la recomiendo mucho, *la torta ahogada* es un pan con carne, bañado en salsa. | I really recommend it, *the torta ahogada* is a roll with meat, drenched in salsa.} {Aquí no la vendemos, pero la encuentra en las tortas de la calle. | We don't sell it here, but you can find it at the street torta stands.} {Yo prefiero *los tacos*, claro, porque son lo mío. | I prefer *the tacos*, of course, because they're my thing.}\",\"en\":\"I really recommend it, the torta ahogada is a roll with meat, drenched in salsa. We don't sell it here, but you can find it at the street torta stands. I prefer the tacos, of course, because they're my thing.\",\"answers\":[{\"text\":\"Voy a buscarla después. Gracias por la recomendación.\",\"en\":\"I'll look for it later. Thanks for the recommendation.\"},{\"text\":\"Los tacos están muy ricos. ¿Cuánto tiempo lleva usted trabajando aquí?\",\"en\":\"The tacos are very tasty. How long have you been working here?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Voy a buscarla después. Gracias por la recomendación.",
+     "Los tacos están muy ricos. ¿Cuánto tiempo lleva usted trabajando aquí?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "De nada, con gusto. You're welcome, my pleasure. Aquí ya casi están sus tacos, el trompo está bien dorado hoy. A mí me encanta cortar la carne del trompo, es lo mejor de mi trabajo. I love slicing the meat off the trompo, it's the best part of my job.",
+    "en": "You're welcome, my pleasure. Here your tacos are almost ready, the trompo is nicely browned today. I love slicing the meat off the trompo, it's the best part of my job.",
+    "raw": "{\"line\":\"{De nada, con gusto. | You're welcome, my pleasure.} {Aquí *ya casi están sus tacos*, el trompo está bien dorado hoy. | Here *your tacos are almost ready*, the trompo is nicely browned today.} {A mí me encanta *cortar la carne* del trompo, es lo mejor de mi trabajo. | I love *slicing the meat* off the trompo, it's the best part of my job.}\",\"en\":\"You're welcome, my pleasure. Your tacos are almost ready, the trompo is nicely browned today. I love slicing the meat off the trompo, it's the best part of my job.\",\"answers\":[{\"text\":\"Qué bien. Huele muy rico.\",\"en\":\"How nice. It smells very good.\"},{\"text\":\"¿Cuánto tiempo lleva cortando carne? ¿Es difícil?\",\"en\":\"How long have you been slicing meat? Is it hard?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Qué bien. Huele muy rico.",
+     "¿Cuánto tiempo lleva cortando carne? ¿Es difícil?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "¡Gracias! Aquí usted es bienvenido cuando quiera. Thanks! Here you're welcome anytime. Vuelva mañana y le tengo un taco con queso, bien doradito. Que disfrute sus tacos. Enjoy your tacos.",
+    "en": "Thanks! Here you're welcome anytime. Come back tomorrow and I'll have a taco with cheese for you, nicely crisped. Enjoy your tacos.",
+    "raw": "{\"line\":\"{¡Gracias! Aquí *usted es bienvenido* cuando quiera. | Thanks! Here *you're welcome* anytime.} {Vuelva mañana y le tengo *un taco con queso*, bien doradito. | Come back tomorrow and I'll have *a taco with cheese* for you, nicely crisped.} {Que *disfrute sus tacos*. | *Enjoy your tacos*.}\",\"en\":\"Thanks! Here you're welcome anytime. Come back tomorrow and I'll have a taco with cheese for you, nicely crisped. Enjoy your tacos.\",\"answers\":[{\"text\":\"Gracias por todo. Vuelvo mañana por el taco con queso.\",\"en\":\"Thanks for everything. I'll come back tomorrow for the taco with cheese.\"},{\"text\":\"Hasta luego, Nacho. Que tenga buena tarde.\",\"en\":\"See you later, Nacho. Have a good afternoon.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Gracias por todo. Vuelvo mañana por el taco con queso.",
+     "Hasta luego, Nacho. Que tenga buena tarde."
+    ],
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "¡Aquí lo espero, que le vaya muy bien! I'll be waiting for you here, take care! ¡Hasta mañana, amigo! See you tomorrow, friend!",
+    "en": "I'll be waiting for you here, take care! See you tomorrow, friend!",
+    "raw": "{\"line\":\"¡Aquí lo espero, que le vaya muy bien! I'll be waiting for you here, take care! ¡Hasta mañana, amigo! See you tomorrow, friend!\",\"en\":\"I'll be waiting for you here, take care! See you tomorrow, friend!\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": true
+   }
+  ],
+  "person": "Nacho Robles",
+  "arm": "header",
+  "culture": [
+   "Tacos al pastor are made from marinated pork cooked on a vertical spit called a trompo",
+   "Tacos al pastor are traditionally served with pineapple and cilantro",
+   "Tacos can be ordered 'con todo' (with everything) or without onion",
+   "Taco stands offer salsa, and you can ask for it mild or spicy",
+   "Red salsa is often made with chile de árbol",
+   "The saying 'Calladitos, nos vemos más bonitos' (quiet, we look prettier) is used when people eat quietly because the food is so good",
+   "Torta ahogada is a famous dish from Guadalajara: bread filled with meat and drowned in salsa",
+   "Torta ahogada is typically found at street torta stands rather than taco stands",
+   "Taco vendors slice the meat directly off the trompo",
+   "Tacos with cheese, toasted until golden, are a common variation",
+   "Common polite phrases: 'con mucho gusto', 'de nada', 'que disfrute', 'que le vaya muy bien', 'hasta mañana'",
+   "'Así mero' is a colloquial way of saying 'exactly'",
+   "'Lo mío' is an expression meaning 'my thing'"
+  ]
+ },
+ {
+  "step": 4,
+  "city": "guanajuato",
+  "place": "enchiladas-baratillo",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Buenas tardes, bienvenido a mi fonda. Hoy preparé enchiladas mineras, son de aquí de Guanajuato. Today I made enchiladas mineras, they're from right here in Guanajuato. ¿Quiere pasar a comer? Would you like to come in and eat?",
+    "en": "Good afternoon, welcome to my restaurant. Today I made enchiladas mineras, they're from right here in Guanajuato. Would you like to come in and eat?",
+    "raw": "{\"line\":\"{*Buenas tardes*, bienvenido a mi fonda. | *Good afternoon*, welcome to my restaurant.} {Hoy preparé *enchiladas mineras*, son de aquí de Guanajuato. | Today I made *enchiladas mineras*, they're from right here in Guanajuato.} {¿Quiere *pasar a comer*? | Would you like *to come in and eat*?}\",\"en\":\"Good afternoon, welcome to my restaurant. Today I made enchiladas mineras, they're from right here in Guanajuato. Would you like to come in and eat?\",\"answers\":[{\"text\":\"Sí, gracias. Huele muy rico.\",\"en\":\"Yes, thank you. It smells very good.\"},{\"text\":\"¿Qué son las enchiladas mineras? Quiero probarlas.\",\"en\":\"What are enchiladas mineras (Guanajuato-style enchiladas with a red chile sauce, potatoes and carrots)? I want to try them.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, gracias. Huele muy rico.",
+     "¿Qué son las enchiladas mineras? Quiero probarlas."
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Qué bueno, pase, pase, siéntese aquí. Es el olor del chile guajillo, lo tuesto en el comal desde temprano. ¿Le sirvo unas enchiladas mineras? Shall I serve you some enchiladas mineras?",
+    "en": "How nice, come in, have a seat here. That's the smell of guajillo chile, I toast it on the griddle since early morning. Shall I serve you some enchiladas mineras?",
+    "raw": "{\"line\":\"{Qué bueno, *pase, pase*, siéntese aquí. | How nice, *come in*, have a seat here.} {Es el olor del *chile guajillo*, lo tuesto en el comal desde temprano. | That's the smell of *guajillo chile*, I toast it on the griddle since early morning.} {¿Le sirvo *unas enchiladas mineras*? | Shall I serve you *some enchiladas mineras*?}\",\"en\":\"How nice, come in, have a seat here. That's the smell of guajillo chile, I toast it on the griddle since early morning. Shall I serve you some enchiladas mineras?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "ask-en",
+    "line": "Ahorita se las traigo, calientitas. I'll bring them right now, nice and hot. Las enchiladas mineras las hacían las esposas de los mineros de aquí. Llevan papa y zanahoria, con queso por encima. They come with potato and carrot, with cheese on top.",
+    "en": "I'll bring them right now, nice and hot. Enchiladas mineras were made by the miners' wives from around here. They come with potato and carrot, with cheese on top.",
+    "raw": "{\"line\":\"{Ahorita se las traigo, calientitas. | I'll bring them right now, nice and hot.} {Las *enchiladas mineras* las hacían las esposas de los mineros de aquí. | *Enchiladas mineras* were made by the miners' wives from around here.} {Llevan papa y zanahoria, con queso por encima. | They come with potato and carrot, with cheese on top.}\",\"en\":\"I'll bring them right now, nice and hot. Enchiladas mineras were made by the miners' wives from around here. They come with potato and carrot, with cheese on top.\",\"answers\":[{\"text\":\"¿Por qué se llaman mineras?\",\"en\":\"Why are they called mineras?\"},{\"text\":\"¿Usted las hace todos los días?\",\"en\":\"Do you make them every day?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "¿Por qué se llaman mineras?",
+     "¿Usted las hace todos los días?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "idiom",
+    "line": "Se llaman mineras porque Guanajuato era un pueblo de minas de plata. Las esposas las preparaban para los mineros, que salían con hambre de la mina. My mother taught me the recipe, y como se dice: «Madre sólo hay una». (There's only one mother.) ¿Usted qué cree que significa? What do you think it means?",
+    "en": "They're called mineras because Guanajuato was a silver-mining town. The wives made them for the miners, who came out of the mine hungry. My mother taught me the recipe, and as they say: «Madre sólo hay una». (There's only one mother.) What do you think it means?",
+    "raw": "{\"line\":\"Se llaman mineras porque Guanajuato era un pueblo de minas de plata. Las esposas las preparaban para los mineros, que salían con hambre de la mina. My mother taught me the recipe, y como se dice: «Madre sólo hay una». (There's only one mother.) ¿Usted qué cree que significa? What do you think it means?\",\"en\":\"They're called mineras because Guanajuato was a silver-mining town. The wives made them for the miners, who came out of the mine hungry. My mother taught me the recipe, and as they say: «Madre sólo hay una». (There's only one mother.) What do you think it means?\",\"answers\":[{\"text\":\"Creo que significa que su mamá es insustituible. Mi mamá también es muy especial.\",\"en\":\"I think it means your mother is irreplaceable. My mom is very special too.\"},{\"text\":\"Creo que significa que solo hay una receta. Es la receta de su mamá.\",\"en\":\"I think it means there's only one recipe. It's your mother's recipe.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Creo que significa que su mamá es insustituible. Mi mamá también es muy especial.",
+     "Creo que significa que solo hay una receta. Es la receta de su mamá."
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Exacto, es insustituible. Qué bonito que su mamá sea tan especial. How nice that your mother is so special. Yo todavía uso el molcajete de mi mamá para la salsa. I still use my mother's molcajete (stone mortar) for the salsa.",
+    "en": "Exactly, she's irreplaceable. How nice that your mother is so special. I still use my mother's molcajete (stone mortar) for the salsa.",
+    "raw": "{\"line\":\"{*Exacto*, es insustituible. | *Exactly*, she's irreplaceable.} {Qué bonito que su mamá sea tan especial. | How nice that your mother is so special.} {Yo todavía uso el molcajete de mi mamá para la salsa. | I still use my mother's molcajete (stone mortar) for the salsa.}\",\"en\":\"Exactly, she's irreplaceable. How nice that your mother is so special. I still use my mother's molcajete (stone mortar) for the salsa.\",\"answers\":[{\"text\":\"Qué bonito, es un recuerdo de ella. Seguro la salsa sale muy rica.\",\"en\":\"How nice, it's a memory of her. The salsa must come out very tasty.\"},{\"text\":\"¿Cuántos años tiene el molcajete? ¿Puedo probar la salsa?\",\"en\":\"How old is the molcajete? Can I try the salsa?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Qué bonito, es un recuerdo de ella. Seguro la salsa sale muy rica.",
+     "¿Cuántos años tiene el molcajete? ¿Puedo probar la salsa?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Gracias, sí es un recuerdo muy querido. La salsa lleva chile de árbol y tomate asado. The salsa has chile de árbol and roasted tomato. ¿Le gusta el picante? Do you like spicy food?",
+    "en": "Thank you, yes, it's a very dear keepsake. The salsa has chile de árbol and roasted tomato. Do you like spicy food?",
+    "raw": "{\"line\":\"{Gracias, sí es un recuerdo muy querido. | Thank you, yes, it's a very dear keepsake.} {La salsa lleva *chile de árbol* y tomate asado. | The salsa has *chile de árbol* and roasted tomato.} {¿Le gusta el picante? | Do you like spicy food?}\",\"en\":\"Thank you, yes, it's a very dear keepsake. The salsa has chile de árbol (a thin, very hot red chile) and roasted tomato. Do you like spicy food?\",\"answers\":[{\"text\":\"Sí, me gusta un poco picante. Mi salsa favorita es la verde.\",\"en\":\"Yes, I like it a little spicy. My favorite salsa is the green one.\"},{\"text\":\"No mucho, soy muy delicado. ¿Qué es el chile de árbol?\",\"en\":\"Not much, I'm very sensitive. What is chile de árbol?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, me gusta un poco picante. Mi salsa favorita es la verde.",
+     "No mucho, soy muy delicado. ¿Qué es el chile de árbol?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Ah, la verde también me gusta mucho, la hago con tomatillo y cilantro. I also like the green one a lot, I make it with tomatillo and cilantro. Si quiere, le doy una probadita en su plato. If you want, I'll give you a little taste on your plate. ¿Quiere probar la salsa del molcajete? Do you want to try the salsa from the molcajete?",
+    "en": "Ah, I like the green one a lot too, I make it with tomatillo and cilantro. If you want, I'll give you a little taste on your plate. Do you want to try the salsa from the molcajete?",
+    "raw": "{\"line\":\"Ah, la verde también me gusta mucho, la hago con tomatillo y cilantro. I also like the green one a lot, I make it with tomatillo and cilantro. Si quiere, le doy una probadita en su plato. If you want, I'll give you a little taste on your plate. ¿Quiere probar la salsa del molcajete?\",\"en\":\"Ah, I like the green one a lot too, I make it with tomatillo and cilantro. If you want, I'll give you a little taste on your plate. Do you want to try the salsa from the molcajete?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Con gusto, aquí tiene su probadita. Here's your little taste. Vuelva el domingo, que hago pozole verde para la familia, y la salsa sale todavía más rica. Come back on Sunday, I make pozole verde for the family, and the salsa comes out even better.",
+    "en": "My pleasure, here's your little taste. Come back on Sunday, I make pozole verde for the family, and the salsa comes out even better.",
+    "raw": "{\"line\":\"Con gusto, aquí tiene su probadita. Here's your little taste. Vuelva el domingo, que hago pozole verde para la familia, y la salsa sale todavía más rica. Come back on Sunday, I make pozole verde for the family, and the salsa comes out even better.\",\"en\":\"My pleasure, here's your little taste. Come back on Sunday, I make pozole verde for the family, and the salsa comes out even better.\", \"answers\":[{\"text\":\"Gracias por todo, doña Lupe. El domingo vuelvo.\",\"en\":\"Thank you for everything, Doña Lupe. I'll be back on Sunday.\"},{\"text\":\"Todo estuvo muy rico. Hasta luego.\",\"en\":\"Everything was very tasty. See you later.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Gracias por todo, doña Lupe. El domingo vuelvo.",
+     "Todo estuvo muy rico. Hasta luego."
+    ],
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "Aquí lo espero, que le vaya muy bien. I'll be here waiting for you, take care. ¡Hasta el domingo! See you Sunday!",
+    "en": "I'll be here waiting for you, take care. See you Sunday!",
+    "raw": "{\"line\":\"Aquí lo espero, que le vaya muy bien. I'll be here waiting for you, take care. ¡Hasta el domingo! See you Sunday!\",\"en\":\"I'll be here waiting for you, take care. See you Sunday!\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": true
+   }
+  ],
+  "person": "Doña Lupe Arredondo",
+  "arm": "header",
+  "culture": [
+   "Fondas are small family-run Mexican eateries serving home-style meals",
+   "Enchiladas mineras are a traditional dish from Guanajuato",
+   "Enchiladas mineras are made with potato and carrot and topped with cheese",
+   "The dish is named for miners because Guanajuato was a silver-mining town",
+   "Miners' wives prepared the dish for miners coming out hungry from the mine",
+   "Guajillo chile is toasted on a comal (flat griddle) to make the dish",
+   "Recipes are passed down from mothers to children",
+   "Proverb: «Madre sólo hay una» means a mother is irreplaceable",
+   "The molcajete is a stone mortar used to make salsa, often inherited from one's mother",
+   "Red salsa is made with chile de árbol and roasted tomato",
+   "Green salsa is made with tomatillo and cilantro",
+   "Offering a probadita (little taste) of salsa is a hospitable custom",
+   "Pozole verde is a family dish made on Sundays",
+   "Sunday is a day for family meals",
+   "Polite, hospitable phrases like 'pase, pase', 'siéntese', 'ahorita' and 'con gusto' are used when welcoming guests",
+   "Ahorita means 'right now' or 'in a moment' and diminutives like calientitas and probadita are common in Mexican Spanish",
+   "Using 'usted' is a respectful way to address customers and strangers",
+   "Mexican farewell: 'que le vaya muy bien' and 'hasta el domingo'"
+  ]
+ },
+ {
+  "step": 4,
+  "city": "veracruz",
+  "place": "gran-cafe-de-la-parroquia",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Buenas tardes, bienvenido al Gran Café de la Parroquia. Good afternoon, welcome to the Gran Café de la Parroquia. Aquí, cuando quiere más café, golpea el vaso con una cuchara, y yo llego. Here, when you want more coffee, you tap your glass with a spoon, and I come. ¿Le traigo un lechero? Shall I bring you a lechero?",
+    "en": "Good afternoon, welcome to the Gran Café de la Parroquia. Here, when you want more coffee, you tap your glass with a spoon, and I come. Shall I bring you a lechero?",
+    "raw": "{\"line\":\"{Buenas tardes, *bienvenido* al Gran Café de la Parroquia. | Good afternoon, *welcome* to the Gran Café de la Parroquia.} {Aquí, cuando quiere más café, *golpea el vaso con una cuchara*, y yo llego. | Here, when you want more coffee, you *tap your glass with a spoon*, and I come.} {¿Le traigo *un lechero*? | Shall I bring you *a lechero*?}\",\"en\":\"Good afternoon, welcome to the Gran Café de la Parroquia. Here, when you want more coffee, you tap your glass with a spoon, and I come. Shall I bring you a lechero?\",\"answers\":[{\"text\":\"Sí, un lechero, por favor. Me gusta el café con leche.\",\"en\":\"Yes, a lechero (coffee with hot milk), please. I like coffee with milk.\"},{\"text\":\"¿Qué es un lechero? ¿Puede repetir más despacio?\",\"en\":\"What is a lechero? Can you repeat that more slowly?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, un lechero, por favor. Me gusta el café con leche.",
+     "¿Qué es un lechero? ¿Puede repetir más despacio?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Con gusto, un lechero para usted. Gladly, a lechero for you. Aquí lo servimos con la leche caliente, y usted golpea el vaso con la cuchara. ¿Quiere también un pan dulce? Would you also like a sweet roll?",
+    "en": "Gladly, a lechero for you. Here we serve it with the hot milk, and you tap the glass with the spoon. Would you also like a sweet roll?",
+    "raw": "{\"line\":\"{Con gusto, *un lechero* para usted. | Gladly, *a lechero* for you.} {Aquí lo servimos con *la leche caliente*, y usted golpea el vaso con la cuchara. | Here we serve it with *the hot milk*, and you tap the glass with the spoon.} {¿Quiere también *un pan dulce*? | Would you also like *a sweet roll*?}\",\"en\":\"Gladly, a lechero for you. Here we serve it with the hot milk, and you tap the glass with the spoon. Would you also like a sweet roll?\",\"answers\":[{\"text\":\"Sí, un pan dulce, por favor. Me gusta mucho el pan.\",\"en\":\"Yes, a sweet roll, please. I like bread a lot.\"},{\"text\":\"No, gracias. ¿Qué significa «lechero»?\",\"en\":\"No, thank you. What does \\\"lechero\\\" mean?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, un pan dulce, por favor. Me gusta mucho el pan.",
+     "No, gracias. ¿Qué significa «lechero»?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Claro que sí, ahorita se lo traigo. Of course, I'll bring it right away. Aquí el pan dulce se come mojado en el café. ¿Ya conoce el Malecón? Do you already know the Malecón?",
+    "en": "Of course, I'll bring it right away. Here the sweet roll is eaten dipped in the coffee. Do you already know the Malecón?",
+    "raw": "{\"line\":\"{*Claro que sí*, ahorita se lo traigo. | *Of course*, I'll bring it right away.} {Aquí el pan dulce se come mojado en el café. | Here the sweet roll is eaten *dipped in the coffee*.} {¿Ya conoce *el Malecón*? | Do you already know *the Malecón*?}\",\"en\":\"Of course, I'll bring it right away. Here the sweet roll is eaten dipped in the coffee. Do you already know the Malecón?\",\"answers\":[{\"text\":\"Todavía no conozco el Malecón. ¿Está cerca?\",\"en\":\"I don't know the Malecón yet. Is it close?\"},{\"text\":\"Sí, me gusta mucho. ¿Qué significa \\\"mojado\\\"?\",\"en\":\"Yes, I like it a lot. What does \\\"mojado\\\" mean?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Todavía no conozco el Malecón. ¿Está cerca?",
+     "Sí, me gusta mucho. ¿Qué significa \"mojado\"?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Sí, está muy cerca, aquí enfrente. Después del café, puede caminar por el Malecón y ver los barcos. ¿Le gusta caminar por la tarde? Do you like walking in the afternoon?",
+    "en": "Yes, it's very close, right across from here. After your coffee, you can walk along the Malecón and see the ships. Do you like walking in the afternoon?",
+    "raw": "{\"line\":\"{Sí, *está muy cerca*, aquí enfrente. | Yes, *it's very close*, right across from here.} {Después del café, puede caminar por el Malecón y ver los barcos. | After your coffee, you can walk along the Malecón and see the ships.} {¿Le gusta caminar por la tarde? | Do you like walking in the afternoon?}\",\"en\":\"Yes, it's very close, right across from here. After your coffee, you can walk along the Malecón and see the ships. Do you like walking in the afternoon?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Qué bueno, la tarde es lo mejor para el Malecón. Hay brisa del mar y mucha gente caminando. There's a sea breeze and lots of people walking. ¿Ya vio los barcos del puerto desde la ventana? Have you seen the ships in the port from the window?",
+    "en": "How nice, the afternoon is the best time for the Malecón. There's a sea breeze and lots of people walking. Have you seen the ships in the port from the window?",
+    "raw": "{\"line\":\"{Qué bueno, *la tarde* es lo mejor para el Malecón. | How nice, *the afternoon* is the best time for the Malecón.} {Hay brisa del mar y mucha gente caminando. | There's a sea breeze and lots of people walking.} {¿Ya vio *los barcos* del puerto desde la ventana? | Have you seen *the ships* in the port from the window?}\",\"en\":\"How nice, the afternoon is the best time for the Malecón. There's a sea breeze and lots of people walking. Have you seen the ships in the port from the window?\",\"answers\":[{\"text\":\"Todavía no los veo. ¿Cuáles barcos hay?\",\"en\":\"I don't see them yet. Which ships are there?\"},{\"text\":\"Sí, los veo desde aquí. Son muy grandes.\",\"en\":\"Yes, I see them from here. They are very big.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Todavía no los veo. ¿Cuáles barcos hay?",
+     "Sí, los veo desde aquí. Son muy grandes."
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Hay barcos grandes de carga, que traen y llevan mercancía. There are big cargo ships, which bring and take away goods. También hay barcos pequeños de pescadores, que salen muy temprano. There are also small boats of fishermen, who go out very early. A mí me gusta mirarlos cuando termina mi turno. I like watching them when my shift ends.",
+    "en": "There are big cargo ships, which bring and take away goods. There are also small boats of fishermen, who go out very early. I like watching them when my shift ends.",
+    "raw": "{\"line\":\"{Hay barcos grandes de carga, que traen y llevan mercancía. | There are big *cargo ships*, which bring and take away goods.} {También hay barcos pequeños de pescadores, que salen muy temprano. | There are also small boats of *fishermen*, who go out very early.} {A mí me gusta mirarlos cuando termina mi turno. | I like watching them when my shift ends.}\",\"en\":\"There are big cargo ships, which bring and take away goods. There are also small fishermen's boats, which go out very early. I like watching them when my shift ends.\",\"answers\":[{\"text\":\"A mí también me gusta mirar los barcos. Son muy bonitos.\",\"en\":\"I like watching ships too. They're very pretty.\"},{\"text\":\"¿A qué hora termina su turno? ¿Cuándo puedo ver los barcos?\",\"en\":\"What time does your shift end? When can I see the ships?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "A mí también me gusta mirar los barcos. Son muy bonitos.",
+     "¿A qué hora termina su turno? ¿Cuándo puedo ver los barcos?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Qué bueno que le gustan los barcos. How nice that you like the ships. Mire, su lechero ya viene, y el pan dulce también. Desde hace treinta años, miro los barcos cada tarde. For thirty years, I have watched the ships every afternoon.",
+    "en": "How nice that you like the ships. Look, your lechero is coming, and the sweet roll too. For thirty years, I have watched the ships every afternoon.",
+    "raw": "{\"line\":\"{Qué bueno que *le gustan* los barcos. | How nice that you *like* the ships.} {Mire, su lechero ya viene, y *el pan dulce* también. | Look, your lechero is coming, and *the sweet roll* too.} {Desde hace treinta años, miro los barcos cada tarde. | For thirty years, I have watched the ships every afternoon.}\",\"en\":\"How nice that you like the ships. Look, your lechero is coming, and the sweet roll too. For thirty years, I have watched the ships every afternoon.\",\"answers\":[{\"text\":\"Treinta años es mucho tiempo. Usted tiene suerte.\",\"en\":\"Thirty years is a long time. You are lucky.\"},{\"text\":\"Gracias por el café y el pan. ¿Cuál barco le gusta más?\",\"en\":\"Thank you for the coffee and the bread. Which ship do you like the most?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Treinta años es mucho tiempo. Usted tiene suerte.",
+     "Gracias por el café y el pan. ¿Cuál barco le gusta más?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Muchas gracias, sí tengo mucha suerte. Vuelva mañana por la tarde, y le sirvo otro lechero junto a la ventana. Así ve los barcos conmigo. That way you can watch the ships with me.",
+    "en": "Thank you very much, yes I am very lucky. Come back tomorrow afternoon, and I'll serve you another lechero by the window. That way you can watch the ships with me.",
+    "raw": "{\"line\":\"{Muchas gracias, sí tengo *mucha suerte*. | Thank you very much, yes I am *very lucky*.} {Vuelva mañana por la tarde, y le sirvo otro lechero *junto a la ventana*. | Come back tomorrow afternoon, and I'll serve you another lechero *by the window*.} {Así ve los barcos conmigo. | That way you can watch the ships with me.}\",\"en\":\"Thank you very much, yes I am very lucky. Come back tomorrow afternoon, and I'll serve you another lechero by the window. That way you can watch the ships with me.\",\"answers\":[{\"text\":\"Muchas gracias, Don Arturo. Mañana vuelvo.\",\"en\":\"Thank you very much, Don Arturo. I'll be back tomorrow.\"},{\"text\":\"Hasta mañana. Que le vaya bien.\",\"en\":\"See you tomorrow. Take care.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Muchas gracias, Don Arturo. Mañana vuelvo.",
+     "Hasta mañana. Que le vaya bien."
+    ],
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "Aquí lo espero, que le vaya muy bien. I'll be here waiting for you, take care. ¡Hasta mañana!",
+    "en": "I'll be here waiting for you, take care. See you tomorrow!",
+    "raw": "{\"line\":\"Aquí lo espero, que le vaya muy bien. I'll be here waiting for you, take care. ¡Hasta mañana!\",\"en\":\"I'll be here waiting for you, take care. See you tomorrow!\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": true
+   }
+  ],
+  "person": "Don Arturo Lagunes",
+  "arm": "header",
+  "culture": [
+   "The Gran Café de la Parroquia is a famous café in Veracruz port",
+   "Customers tap their glass with a spoon to call the waiter for more coffee",
+   "A lechero is a coffee served with hot milk",
+   "Pan dulce (sweet bread) is eaten dunked in coffee",
+   "The Malecón is a seaside promenade across from the café, good for walking and watching ships",
+   "Walking the Malecón in the afternoon is popular, with a sea breeze and many people strolling",
+   "The port has big cargo ships carrying goods and small fishermen's boats that go out early",
+   "\"Ahorita\" means right away or in a moment",
+   "\"Con gusto\" and \"Claro que sí\" are polite ways to say gladly and of course",
+   "\"Que le vaya muy bien\" is a courteous farewell, and \"Hasta mañana\" means see you tomorrow",
+   "Waiters address customers politely with \"usted\" and \"Don\" is a respectful title for an older man"
+  ]
+ },
+ {
+  "step": 4,
+  "city": "monterrey",
+  "place": "horno-3-parque-fundidora",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Buenas tardes, joven. Este es el Horno 3, donde antes se hacía el acero. This is Furnace 3, where steel used to be made. ¿Le gusta el parque? Do you like the park?",
+    "en": "Good afternoon, young one. This is Furnace 3, where steel used to be made. Do you like the park?",
+    "raw": "{\"line\":\"{*Buenas tardes*, joven. | *Good afternoon*, young one.} {Este es *el Horno 3*, donde antes se hacía el acero. | This is *Furnace 3*, where steel used to be made.} {¿Le gusta *el parque*? | Do you like *the park*?}\",\"en\":\"Good afternoon, young one. This is Furnace 3, where steel used to be made. Do you like the park?\",\"answers\":[{\"text\":\"Sí, me gusta mucho. Es muy bonito.\",\"en\":\"Yes, I like it a lot. It's very pretty.\"},{\"text\":\"¿Usted trabajaba aquí? ¿Qué hacía?\",\"en\":\"Did you work here? What did you do?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, me gusta mucho. Es muy bonito.",
+     "¿Usted trabajaba aquí? ¿Qué hacía?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Me alegra, joven. Yo trabajé aquí treinta años, en el horno. I worked here thirty years, at the furnace. Ahora vengo todos los martes a caminar por el parque. Now I come every Tuesday to walk around the park.",
+    "en": "I'm glad, young one. I worked here thirty years, at the furnace. Now I come every Tuesday to walk around the park.",
+    "raw": "{\"line\":\"{Me alegra, *joven*. | I'm glad, *young one*.} {Yo trabajé aquí *treinta años*, en el horno. | I worked here *thirty years*, at the furnace.} {Ahora vengo todos los martes a *caminar* por el parque. | Now I come every Tuesday to *walk* around the park.}\",\"en\":\"I'm glad, young one. I worked here thirty years, at the furnace. Now I come every Tuesday to walk around the park.\",\"answers\":[{\"text\":\"Qué bonito. Treinta años es mucho tiempo.\",\"en\":\"How nice. Thirty years is a long time.\"},{\"text\":\"¿Cómo era el trabajo en el horno?\",\"en\":\"What was the work at the furnace like?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Qué bonito. Treinta años es mucho tiempo.",
+     "¿Cómo era el trabajo en el horno?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Sí, treinta años es mucho. Yes, thirty years is a lot. Aquí el calor era fuerte, pero éramos como una familia. Todavía extraño a mis compañeros. I still miss my coworkers.",
+    "en": "Yes, thirty years is a lot. Here the heat was strong, but we were like a family. I still miss my coworkers.",
+    "raw": "{\"line\":\"{Sí, *treinta años* es mucho. | Yes, *thirty years* is a lot.} {Aquí el calor era fuerte, pero éramos como una familia. | Here the heat was strong, but we were like a family.} {Todavía extraño a mis compañeros. | I still miss my coworkers.}\",\"en\":\"Yes, thirty years is a lot. Here the heat was strong, but we were like a family. I still miss my coworkers.\",\"answers\":[{\"text\":\"Qué bonito que eran como una familia. Seguro fue un trabajo difícil.\",\"en\":\"How nice that you were like a family. It must have been hard work.\"},{\"text\":\"¿Todavía ve a sus compañeros? ¿Qué hacían en el horno?\",\"en\":\"Do you still see your coworkers? What did you do at the furnace?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Qué bonito que eran como una familia. Seguro fue un trabajo difícil.",
+     "¿Todavía ve a sus compañeros? ¿Qué hacían en el horno?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Sí, joven, fue un trabajo muy duro, pero me dio todo. Yes, young one, it was very hard work, but it gave me everything. Con ese sueldo saqué adelante a mis hijos. ¿Usted en qué trabaja? What do you do for work?",
+    "en": "Yes, young one, it was very hard work, but it gave me everything. With that pay I raised my children. What do you do for work?",
+    "raw": "{\"line\":\"{Sí, joven, fue un trabajo *muy duro*, pero me dio todo. | Yes, young one, it was *very hard* work, but it gave me everything.} {Con ese sueldo *saqué adelante a mis hijos*. | With that pay I *raised my children*.} {¿Usted en qué trabaja? | What do you do for work?}\",\"en\":\"Yes, young one, it was very hard work, but it gave me everything. With that pay I raised my children. What do you do for work?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "ask-en",
+    "line": "Ya veo, joven, no hay prisa. Mis hijos ya son grandes, y uno vive aquí en Monterrey. My children are grown now, and one lives here in Monterrey. Cada martes me trae un café y caminamos juntos por el parque. Every Tuesday he brings me a coffee and we walk through the park together.",
+    "en": "I see, young one, no rush. My children are grown now, and one lives here in Monterrey. Every Tuesday he brings me a coffee and we walk through the park together.",
+    "raw": "{\"line\":\"{Ya veo, joven, no hay prisa. | I see, young one, no rush.} {Mis hijos ya son grandes, y uno vive aquí en *Monterrey*. | My children are grown now, and one lives here in *Monterrey*.} {Cada martes me trae un café y caminamos juntos por el parque. | Every Tuesday he brings me a coffee and we walk through the park together.}\",\"en\":\"I see, young one, no rush. My children are grown now, and one lives here in Monterrey. Every Tuesday he brings me a coffee and we walk through the park together.\",\"answers\":[{\"text\":\"¿Cuántos hijos tiene?\",\"en\":\"How many children do you have?\"},{\"text\":\"¿Qué hacía usted en el horno?\",\"en\":\"What did you do at the furnace?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "¿Cuántos hijos tiene?",
+     "¿Qué hacía usted en el horno?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Tengo tres hijos, dos hombres y una mujer. Mi hijo Beto es el que vive aquí, en Monterrey. ¿Ya conoce usted el Horno 3 por dentro? Have you seen Furnace 3 from the inside yet?",
+    "en": "I have three children, two sons and a daughter. My son Beto is the one who lives here, in Monterrey. Have you seen Furnace 3 from the inside yet?",
+    "raw": "{\"line\":\"{Tengo *tres hijos*, dos hombres y una mujer. | I have *three children*, two sons and a daughter.} {Mi hijo Beto es el que vive aquí, en Monterrey. | My son Beto is the one who lives here, in Monterrey.} {¿Ya conoce usted *el Horno 3* por dentro? | Have you seen *Furnace 3* from the inside yet?}\",\"en\":\"I have three children, two sons and a daughter. My son Beto is the one who lives here, in Monterrey. Have you seen Furnace 3 from the inside yet?\",\"answers\":[{\"text\":\"Qué bonito, tres hijos. Todavía no conozco el Horno 3 por dentro.\",\"en\":\"How nice, three children. I haven't seen Furnace 3 from the inside yet.\"},{\"text\":\"¿Qué quiere decir \\\"por dentro\\\"? ¿Puede decirlo más despacio?\",\"en\":\"What does \\\"por dentro\\\" mean? Can you say it more slowly?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Qué bonito, tres hijos. Todavía no conozco el Horno 3 por dentro.",
+     "¿Qué quiere decir \"por dentro\"? ¿Puede decirlo más despacio?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Pues vaya por dentro, joven, vale la pena. Well, go inside, young one, it's worth it. Hay una subida alta, y arriba se ve toda la ciudad. ¿Le gustaría subir hoy? Would you like to go up today?",
+    "en": "Well, go inside, young one, it's worth it. There's a high climb, and from the top you see the whole city. Would you like to go up today?",
+    "raw": "{\"line\":\"{Pues *vaya por dentro*, joven, vale la pena. | Well, *go inside*, young one, it's worth it.} {Hay una subida alta, y arriba se ve *toda la ciudad*. | There's a high climb, and from the top you see *the whole city*.} {¿Le gustaría subir hoy? | Would you like to go up today?}\",\"en\":\"Well, go inside, young one, it's worth it. There's a high climb, and from the top you see the whole city. Would you like to go up today?\",\"answers\":[{\"text\":\"Sí, quiero subir hoy. Me gustaría ver la ciudad.\",\"en\":\"Yes, I want to go up today. I'd like to see the city.\"},{\"text\":\"Hoy no puedo. ¿Qué más hay en el parque?\",\"en\":\"I can't today. What else is there in the park?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, quiero subir hoy. Me gustaría ver la ciudad.",
+     "Hoy no puedo. ¿Qué más hay en el parque?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Qué bueno, joven, suba con calma, que son muchos escalones. How good, young one, go up slowly, there are many steps. Yo vengo aquí todos los martes; el próximo martes me cuenta qué le pareció la vista. Con gusto lo espero. I'll gladly wait for you.",
+    "en": "How good, young one, go up slowly, there are many steps. I come here every Tuesday; next Tuesday you can tell me how you liked the view. I'll gladly wait for you.",
+    "raw": "{\"line\":\"{Qué bueno, joven, *suba con calma*, que son muchos escalones. | How good, young one, *go up slowly*, there are many steps.} {Yo vengo aquí *todos los martes*; el próximo martes me cuenta qué le pareció la vista. | I come here *every Tuesday*; next Tuesday you can tell me how you liked the view.} {Con gusto lo espero. | I'll gladly wait for you.}\",\"en\":\"How good, young one, go up slowly, there are many steps. I come here every Tuesday; next Tuesday you can tell me how you liked the view. I'll gladly wait for you.\",\"answers\":[{\"text\":\"Gracias, Don Eleazar. El próximo martes vengo a verlo.\",\"en\":\"Thank you, Don Eleazar. Next Tuesday I'll come to see you.\"},{\"text\":\"Hasta luego, Don Eleazar. Que le vaya bien.\",\"en\":\"See you later, Don Eleazar. Take care.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Gracias, Don Eleazar. El próximo martes vengo a verlo.",
+     "Hasta luego, Don Eleazar. Que le vaya bien."
+    ],
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "Aquí lo espero, joven. Here I'll be waiting, young one. ¡Hasta el martes, que le vaya muy bien! Until Tuesday, take care!",
+    "en": "Here I'll be waiting, young one. Until Tuesday, take care!",
+    "raw": "{\"line\":\"Aquí lo espero, joven. Here I'll be waiting, young one. ¡Hasta el martes, que le vaya muy bien! Until Tuesday, take care!\",\"en\":\"Here I'll be waiting, young one. Until Tuesday, take care!\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": true
+   }
+  ],
+  "person": "Don Eleazar Cantú",
+  "arm": "header",
+  "culture": [
+   "Furnace 3 (Horno 3) is a former steel furnace in Monterrey that is now part of a public park",
+   "Monterrey has a history as an industrial steel-making city",
+   "Former steel workers often feel a strong sense of family and camaraderie with their coworkers",
+   "Retirees commonly spend time walking in parks, with a regular weekly routine",
+   "Adult children often stay close to their parents and visit them regularly, such as bringing coffee and walking together",
+   "Mexicans commonly address a younger person as \"joven\" (young one) as a polite, friendly term",
+   "Using \"usted\" is the polite, respectful form of address with strangers and elders",
+   "Hard industrial work was seen as a way to provide for and raise a family",
+   "From the top of Furnace 3 you can see views of the whole city of Monterrey",
+   "Common courtesy phrases: \"Buenas tardes\", \"Con gusto\", \"Que le vaya muy bien\", \"Hasta el martes\"",
+   "\"Vale la pena\" means \"it's worth it\"",
+   "\"Sacar adelante a los hijos\" means to raise and provide for one's children",
+   "\"Extrañar\" means to miss someone",
+   "\"Escalones\" means steps (stairs)"
+  ]
+ },
+ {
+  "step": 4,
+  "city": "zacatecas",
+  "place": "gorditas-dona-cata",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "¡Buenas tardes! Pase, pase, ya salieron las gorditas. Good afternoon! Come in, come in, the gorditas just came off the comal. Hoy hay de chicharrón, de papa y de frijol. ¿Cuál se le antoja? Which one are you in the mood for?",
+    "en": "Good afternoon! Come in, come in, the gorditas just came off the comal. Today we have pork rind, potato and bean. Which one are you in the mood for?",
+    "raw": "{\"line\":\"{¡Buenas tardes! *Pase, pase*, ya salieron las gorditas. | Good afternoon! *Come in, come in*, the gorditas just came off the comal.} {Hoy hay de chicharrón, de papa y de frijol. | Today we have pork rind, potato and bean.} {¿Cuál se le antoja? | Which one are you in the mood for?}\",\"en\":\"Good afternoon! Come in, come in, the gorditas just came off the comal. Today we have pork rind, potato and bean. Which one are you in the mood for?\",\"answers\":[{\"text\":\"Quiero una de chicharrón, por favor. Huele muy rico.\",\"en\":\"I want a pork rind one (chicharrón, fried pork skin), please. It smells very good.\"},{\"text\":\"No sé cuál pedir. ¿Cuál me recomienda?\",\"en\":\"I don't know which to order. Which do you recommend?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Quiero una de chicharrón, por favor. Huele muy rico.",
+     "No sé cuál pedir. ¿Cuál me recomienda?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Con gusto, ahorita se la preparo. La masa se hace con maíz y se cuece en el comal de barro. The dough is made with corn and cooked on the clay griddle. ¿Le gusta el picante? Do you like spicy food?",
+    "en": "Gladly, I'll make it for you right now. The dough is made with corn and cooked on the clay griddle. Do you like spicy food?",
+    "raw": "{\"line\":\"{*Con gusto*, ahorita se la preparo. | *Gladly*, I'll make it for you right now.} {La masa se hace con maíz y se cuece en el comal de barro. | The dough is made with corn and cooked on the clay griddle.} {¿Le gusta el picante? | Do you like spicy food?}\",\"en\":\"Gladly, I'll make it for you right now. The dough is made with corn and cooked on the clay griddle. Do you like spicy food?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "¡Qué bueno! Le pongo salsa de chile pasilla, es la de la casa. Great! I'll put on chile pasilla salsa, it's the house one. Aquí en Zacatecas las gorditas son de toda la vida. Here in Zacatecas gorditas are a lifelong tradition. ¿Quiere también algo de tomar? Would you like something to drink too?",
+    "en": "Great! I'll put on chile pasilla salsa, it's the house one. Here in Zacatecas gorditas are a lifelong tradition. Would you like something to drink too?",
+    "raw": "{\"line\":\"{¡Qué bueno! Le pongo *salsa de chile pasilla*, es la de la casa. | Great! I'll put on *chile pasilla salsa*, it's the house one.} {Aquí en Zacatecas *las gorditas* son de toda la vida. | Here in Zacatecas *gorditas* are a lifelong tradition.} {¿Quiere también algo de tomar? | Would you like something to drink too?}\",\"en\":\"Great! I'll put on chile pasilla salsa, it's the house one. Here in Zacatecas gorditas are a lifelong tradition. Would you like something to drink too?\",\"answers\":[{\"text\":\"Sí, un agua de jamaica, por favor. Me gusta mucho.\",\"en\":\"Yes, a jamaica water (hibiscus drink), please. I like it a lot.\"},{\"text\":\"Gracias, doña. ¿Qué significa pasilla?\",\"en\":\"Thank you, ma'am. What does pasilla mean?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, un agua de jamaica, por favor. Me gusta mucho.",
+     "Gracias, doña. ¿Qué significa pasilla?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "idiom",
+    "line": "¡Claro que sí! El agua de jamaica es de las que más se piden aquí. Of course! Hibiscus water is one of the most popular here. Mi hermano hace unas gorditas buenísimas, pero ya ve, nadie es profeta en su tierra: en su pueblo no le compran, y aquí sí. ¿Qué cree que quiere decir ese dicho? What do you think that saying means?",
+    "en": "Of course! Hibiscus water is one of the most popular here. My brother makes great gorditas, but you know, no one is a prophet in his own land: in his town nobody buys, and here they do. What do you think that saying means?",
+    "raw": "{\"line\":\"{¡Claro que sí! *El agua de jamaica* es de las que más se piden aquí. | Of course! *Hibiscus water* is one of the most popular here.} {Mi hermano hace unas gorditas buenísimas, pero ya ve, *nadie es profeta en su tierra*: en su pueblo no le compran, y aquí sí. | My brother makes great gorditas, but you know, *no one is a prophet in his own land*: in his town nobody buys, and here they do.} {¿Qué cree que quiere decir ese dicho? | What do you think that saying means?}\",\"en\":\"Of course! Hibiscus water is one of the most popular here. My brother makes great gorditas, but you know, no one is a prophet in his own land: in his town nobody buys, and here they do. What do you think that saying means?\",\"answers\":[{\"text\":\"Creo que la gente no valora a los suyos. Es muy interesante.\",\"en\":\"I think people don't value their own. It's very interesting.\"},{\"text\":\"Creo que significa que nadie quiere comer en casa. ¿Y usted?\",\"en\":\"I think it means nobody wants to eat at home. And you?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Creo que la gente no valora a los suyos. Es muy interesante.",
+     "Creo que significa que nadie quiere comer en casa. ¿Y usted?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "¡Eso es! A veces no valoramos lo de casa. Aquí en el Centro, la gente viene por las gorditas desde hace muchos años. ¿Ya conoce la Catedral de Zacatecas? Have you seen the Cathedral of Zacatecas yet?",
+    "en": "That's it! Sometimes we don't value what's at home. Here in the Centro, people have come for the gorditas for many years. Have you seen the Cathedral of Zacatecas yet?",
+    "raw": "{\"line\":\"{¡Eso es! A veces *no valoramos lo de casa*. | That's it! Sometimes *we don't value what's at home*.} {Aquí en el Centro, la gente viene por *las gorditas* desde hace muchos años. | Here in the Centro, people have come for *the gorditas* for many years.} {¿Ya conoce *la Catedral* de Zacatecas? | Have you seen *the Cathedral* of Zacatecas yet?}\",\"en\":\"That's it! Sometimes we don't value what's at home. Here in the Centro, people have come for the gorditas for many years. Have you seen the Cathedral of Zacatecas yet?\",\"answers\":[{\"text\":\"Todavía no la conozco. Quiero ir mañana.\",\"en\":\"I haven't seen it yet. I want to go tomorrow.\"},{\"text\":\"¿Está cerca de aquí? ¿Cómo llego?\",\"en\":\"Is it close to here? How do I get there?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Todavía no la conozco. Quiero ir mañana.",
+     "¿Está cerca de aquí? ¿Cómo llego?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "ask-en",
+    "line": "Qué bueno que va a ir. La Catedral es de cantera rosa, y en la tarde se ve preciosa con el sol. The Cathedral is made of pink quarry stone, and in the afternoon it looks beautiful in the sun. Queda cerquita, se llega caminando desde aquí. It's very close, you can walk there from here.",
+    "en": "How nice that you're going. The Cathedral is made of pink quarry stone, and in the afternoon it looks beautiful in the sun. It's very close, you can walk there from here.",
+    "raw": "{\"line\":\"{Qué bueno que va a ir. | How nice that you're going.} {La Catedral es de *cantera rosa*, y en la tarde se ve preciosa con el sol. | The Cathedral is made of *pink quarry stone*, and in the afternoon it looks beautiful in the sun.} {Queda cerquita, se llega caminando desde aquí. | It's very close, you can walk there from here.}\",\"en\":\"How nice that you're going. The Cathedral is made of pink quarry stone, and in the afternoon it looks beautiful in the sun. It's very close, you can walk there from here.\",\"answers\":[{\"text\":\"¿A qué hora es mejor ir?\",\"en\":\"What time is best to go?\"},{\"text\":\"¿Qué más hay cerca de la Catedral?\",\"en\":\"What else is there near the Cathedral?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "¿A qué hora es mejor ir?",
+     "¿Qué más hay cerca de la Catedral?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Vaya como a las cinco de la tarde, cuando el sol le pega a la cantera. Go around five in the afternoon, when the sun hits the stone. Ya se ve toda rosita y hay menos calor. ¿Y usted prefiere caminar en la mañana o en la tarde? And do you prefer to walk in the morning or in the afternoon?",
+    "en": "Go around five in the afternoon, when the sun hits the stone. It looks all pink then and it's less hot. And do you prefer to walk in the morning or in the afternoon?",
+    "raw": "{\"line\":\"{Vaya *como a las cinco de la tarde*, cuando el sol le pega a la cantera. | Go *around five in the afternoon*, when the sun hits the stone.} {Ya se ve toda rosita y hay menos calor. | It looks all pink then and it's less hot.} {¿Y usted prefiere caminar en la mañana o en la tarde? | And do you prefer to walk in the morning or in the afternoon?}\",\"en\":\"Go around five in the afternoon, when the sun hits the stone. It looks all pink then and it's less hot. And do you prefer to walk in the morning or in the afternoon?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Bueno, ya me dio mucho gusto platicar con usted. Well, it was a real pleasure chatting with you. Mañana, cuando regrese de la Catedral, venga y me cuenta qué le pareció. Aquí le tengo otra gordita, de papa o de frijol, para que las pruebe todas. I'll have another gordita here for you, potato or bean, so you can try them all.",
+    "en": "Well, it was a real pleasure chatting with you. Tomorrow, when you're back from the Cathedral, come tell me what you thought of it. I'll have another gordita here for you, potato or bean, so you can try them all.",
+    "raw": "{\"line\":\"{Bueno, ya me dio mucho gusto platicar con usted. | Well, it was a real pleasure chatting with you.} {Mañana, cuando regrese de la Catedral, venga y me cuenta *qué le pareció*. | Tomorrow, when you're back from the Cathedral, come tell me *what you thought of it*.} {Aquí le tengo otra gordita, de papa o de frijol, para que las pruebe todas. | I'll have another gordita here for you, potato or bean, so you can try them all.}\",\"en\":\"Well, it was a real pleasure chatting with you. Tomorrow, when you're back from the Cathedral, come tell me what you thought of it. I'll have another gordita here for you, potato or bean, so you can try them all.\",\"answers\":[{\"text\":\"Gracias, Doña Cata. Mañana vengo a contarle.\",\"en\":\"Thank you, Doña Cata. Tomorrow I'll come tell you.\"},{\"text\":\"Hasta mañana. Muchas gracias por todo.\",\"en\":\"See you tomorrow. Thank you for everything.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Gracias, Doña Cata. Mañana vengo a contarle.",
+     "Hasta mañana. Muchas gracias por todo."
+    ],
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "¡Aquí la espero! Que le vaya muy bien y buen provecho. I'll be waiting for you here! Take care and enjoy your meal. ¡Hasta mañana! See you tomorrow!",
+    "en": "I'll be waiting for you here! Take care and enjoy your meal. See you tomorrow!",
+    "raw": "{\"line\":\"¡Aquí la espero! Que le vaya muy bien y buen provecho. I'll be waiting for you here! Take care and enjoy your meal. ¡Hasta mañana! See you tomorrow!\",\"en\":\"I'll be waiting for you here! Take care and enjoy your meal. See you tomorrow!\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": true
+   }
+  ],
+  "person": "Doña Cata Esquivel",
+  "arm": "header",
+  "culture": [
+   "Gorditas are stuffed corn dough pockets, with fillings like chicharrón, potato, and beans",
+   "Gordita dough is made from corn and cooked on a clay comal (griddle)",
+   "Chile pasilla salsa is a spicy salsa served with gorditas",
+   "Gorditas are a long-standing, traditional food in Zacatecas",
+   "Agua de jamaica (hibiscus water) is a popular drink",
+   "The saying \"nadie es profeta en su tierra\" means people often aren't appreciated in their own hometown",
+   "The Cathedral of Zacatecas is a landmark in the city center, made of pink quarry stone (cantera rosa)",
+   "The Cathedral looks especially pink and beautiful in the afternoon sun, and is walkable from the center",
+   "\"Buen provecho\" is said to wish someone an enjoyable meal",
+   "\"Doña\" is a respectful title for an older woman, and \"usted\" is the polite form of address",
+   "\"Ahorita\" means right away or in a moment",
+   "\"Se le antoja\" expresses what you are in the mood for or craving"
+  ]
+ },
+ {
+  "step": 4,
+  "city": "tijuana",
+  "place": "taller-de-serigrafia-pasaje-rodriguez",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Pase, pase, está abierto. Come in, come in, we're open. Aquí hacemos playeras a mano con serigrafía. Here we make T-shirts by hand with screen printing. ¿Le gustaría ver cómo se imprime una? Would you like to see how one gets printed?",
+    "en": "Come in, come in, we're open. Here we make T-shirts by hand with screen printing. Would you like to see how one gets printed?",
+    "raw": "{\"line\":\"{*Pase*, pase, está abierto. | *Come in*, come in, we're open.} {Aquí hacemos *playeras* a mano con serigrafía. | Here we make *T-shirts* by hand with screen printing.} {¿Le gustaría ver cómo se imprime una? | Would you like to see how one gets printed?}\",\"en\":\"Come in, come in, we're open. Here we make T-shirts by hand with screen printing. Would you like to see how one gets printed?\",\"answers\":[{\"text\":\"Sí, me gustaría verlo. Me gusta mucho su taller.\",\"en\":\"Yes, I'd like to see it. I like your workshop a lot.\"},{\"text\":\"Gracias. ¿Qué es la serigrafía?\",\"en\":\"Thank you. What is screen printing?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, me gustaría verlo. Me gusta mucho su taller.",
+     "Gracias. ¿Qué es la serigrafía?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Qué bueno, muchas gracias. How nice, thank you very much. Primero ponemos la malla sobre la playera, y con el rasero jalamos la tinta. Este taller era de mi abuelo, y me da mucho gusto trabajar aquí en el Pasaje Rodríguez. This workshop was my grandfather's, and I'm very happy to work here in Pasaje Rodríguez.",
+    "en": "How nice, thank you very much. First we place the screen over the shirt, and with the squeegee we pull the ink. This workshop was my grandfather's, and I'm very happy to work here in Pasaje Rodríguez.",
+    "raw": "{\"line\":\"{Qué bueno, *muchas gracias*. | How nice, *thank you very much*.} {Primero ponemos *la malla* sobre la playera, y con *el rasero* jalamos la tinta. | First we place *the screen* over the shirt, and with *the squeegee* we pull the ink.} {Este taller era de mi abuelo, y me da mucho gusto trabajar aquí en el Pasaje Rodríguez. | This workshop was my grandfather's, and I'm very happy to work here in Pasaje Rodríguez.}\",\"en\":\"How nice, thank you very much. First we place the screen over the shirt, and with the squeegee we pull the ink. This workshop was my grandfather's, and I'm very happy to work here in Pasaje Rodríguez.\",\"answers\":[{\"text\":\"Qué bonito, un taller de familia. Me gusta el Pasaje Rodríguez.\",\"en\":\"How lovely, a family workshop. I like Pasaje Rodríguez.\"},{\"text\":\"¿Qué es el rasero? ¿Lo puedo ver, por favor?\",\"en\":\"What is the rasero (squeegee)? Can I see it, please?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Qué bonito, un taller de familia. Me gusta el Pasaje Rodríguez.",
+     "¿Qué es el rasero? ¿Lo puedo ver, por favor?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Sí, es un taller de familia. Mi abuelo empezó aquí hace muchos años. En el Pasaje, todos nos conocemos, y eso me gusta mucho. In the Pasaje, we all know each other, and I like that a lot.",
+    "en": "Yes, it's a family workshop. My grandfather started here many years ago. In the Pasaje, we all know each other, and I like that a lot.",
+    "raw": "{\"line\":\"{Sí, *es un taller de familia*. Mi abuelo empezó aquí hace muchos años. | Yes, *it's a family workshop*. My grandfather started here many years ago.} {En el Pasaje, *todos nos conocemos*, y eso me gusta mucho. | In the Pasaje, *we all know each other*, and I like that a lot.}\",\"en\":\"Yes, it's a family workshop. My grandfather started here many years ago. In the Pasaje, we all know each other, and I like that a lot.\",\"answers\":[{\"text\":\"Qué bueno que se conocen todos. Es muy bonito.\",\"en\":\"How nice that everyone knows each other. It's very nice.\"},{\"text\":\"¿Qué significa \\\"rasero\\\"? ¿Me lo puede decir más despacio?\",\"en\":\"What does \\\"rasero\\\" mean (the squeegee)? Can you say it more slowly for me?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Qué bueno que se conocen todos. Es muy bonito.",
+     "¿Qué significa \"rasero\"? ¿Me lo puede decir más despacio?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Sí, somos como una familia aquí. Los vecinos siempre vienen a tomar un café en la tarde. The neighbors always come by to have a coffee in the afternoon. ¿Le gustaría probar una playera? Would you like to try on a shirt?",
+    "en": "Yes, we're like a family here. The neighbors always come by to have a coffee in the afternoon. Would you like to try on a shirt?",
+    "raw": "{\"line\":\"{Sí, *somos como una familia* aquí. | Yes, we're *like a family* here.} {Los vecinos siempre vienen a *tomar un café* en la tarde. | The neighbors always come by to *have a coffee* in the afternoon.} {¿Le gustaría *probar una playera*? | Would you like to *try on a shirt*?}\",\"en\":\"Yes, we're like a family here. The neighbors always come by to have a coffee in the afternoon. Would you like to try on a shirt?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Perfecto, aquí tiene. Las playeras están en esta mesa, y hay chicas, medianas y grandes. Esta tiene un diseño de Tijuana, con el arco de la Avenida Revolución. ¿Qué talla usa usted? What size do you wear?",
+    "en": "Perfect, here you go. The shirts are on this table, and there are small, medium and large. This one has a Tijuana design, with the arch of Avenida Revolución. What size do you wear?",
+    "raw": "{\"line\":\"Perfecto, aquí tiene. Las playeras están en esta mesa, y hay chicas, medianas y grandes. Esta tiene un diseño de Tijuana, con el arco de la Avenida Revolución. ¿Qué talla usa usted?\",\"en\":\"Perfect, here you go. The shirts are on this table, and there are small, medium and large. This one has a Tijuana design, with the arch of Avenida Revolución. What size do you wear?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Parece que no entendió, no se preocupe. Esta playera tiene el arco de la Avenida Revolución. ¿Le gusta el diseño? Do you like the design?",
+    "en": "Looks like that didn't land, no worries. This shirt has the arch of Avenida Revolución. Do you like the design?",
+    "raw": "{\"line\":\"{Parece que no entendió, no se preocupe. | Looks like that didn't land, no worries.} {Esta playera tiene *el arco* de la Avenida Revolución. | This shirt has *the arch* of Avenida Revolución.} {¿Le gusta *el diseño*? | Do you like *the design*?}\",\"en\":\"Looks like that didn't land, no worries. This shirt has the arch of Avenida Revolución. Do you like the design?\",\"answers\":[{\"text\":\"Sí, me gusta mucho el diseño. Es muy bonito.\",\"en\":\"Yes, I like the design a lot. It's very pretty.\"},{\"text\":\"¿Qué significa \\\"el arco\\\"? Más despacio, por favor.\",\"en\":\"What does \\\"el arco\\\" mean? Slower, please.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, me gusta mucho el diseño. Es muy bonito.",
+     "¿Qué significa \"el arco\"? Más despacio, por favor."
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Qué bueno, ese diseño lo dibujó mi hermana. Lo imprimimos con tinta de agua, y se siente suave en la tela. We print it with water-based ink, and it feels soft on the fabric. ¿Quiere ver la malla por dentro? Do you want to see the screen up close?",
+    "en": "I'm glad, my sister drew that design. We print it with water-based ink, and it feels soft on the fabric. Do you want to see the screen up close?",
+    "raw": "{\"line\":\"{Qué bueno, ese diseño lo dibujó mi hermana. | I'm glad, my sister drew that design.} {Lo imprimimos con *tinta de agua*, y se siente suave en la tela. | We print it with *water-based ink*, and it feels soft on the fabric.} {¿Quiere ver *la malla* por dentro? | Do you want to see *the screen* up close?}\",\"en\":\"I'm glad, my sister drew that design. We print it with water-based ink, and it feels soft on the fabric. Do you want to see the screen up close?\",\"answers\":[{\"text\":\"Sí, quiero verla. ¿Cómo se hace el dibujo en la malla?\",\"en\":\"Yes, I want to see it. How is the drawing made on the screen?\"},{\"text\":\"Su hermana dibuja muy bien. ¿Ella trabaja aquí también?\",\"en\":\"Your sister draws very well. Does she work here too?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, quiero verla. ¿Cómo se hace el dibujo en la malla?",
+     "Su hermana dibuja muy bien. ¿Ella trabaja aquí también?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Primero se pone una emulsión sobre la malla, y se deja secar. Luego la luz pasa por el dibujo, y lo que no se endurece se lava con agua. Then light shines through the drawing, and whatever doesn't harden washes away with water. Ya casi me voy a cerrar, pero vuelva el sábado, y le imprimo una playera con su nombre. I'm about to close up, but come back Saturday, and I'll print you a shirt with your name.",
+    "en": "First we spread an emulsion on the screen and let it dry. Then light shines through the drawing, and whatever doesn't harden washes away with water. I'm about to close up, but come back Saturday, and I'll print you a shirt with your name.",
+    "raw": "{\"line\":\"{Primero se pone *una emulsión* sobre la malla, y se deja secar. | First we spread *an emulsion* on the screen and let it dry.} {Luego la luz pasa por el dibujo, y lo que no se endurece se lava con agua. | Then light shines through the drawing, and whatever doesn't harden washes away with water.} {Ya casi me voy a cerrar, pero *vuelva el sábado*, y le imprimo una playera con su nombre. | I'm about to close up, but *come back Saturday*, and I'll print you a shirt with your name.}\",\"en\":\"First we spread an emulsion on the screen and let it dry. Then light shines through the drawing, and whatever doesn't harden washes away with water. I'm about to close up, but come back Saturday, and I'll print you a shirt with your name.\",\"answers\":[{\"text\":\"Muchas gracias, Emilio. Vuelvo el sábado.\",\"en\":\"Thank you very much, Emilio. I'll be back Saturday.\"},{\"text\":\"Fue un gusto conocerlo. Hasta luego.\",\"en\":\"It was a pleasure to meet you. See you later.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Muchas gracias, Emilio. Vuelvo el sábado.",
+     "Fue un gusto conocerlo. Hasta luego."
+    ],
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "¡Hasta el sábado! Que le vaya muy bien.",
+    "en": "See you Saturday! Take care.",
+    "raw": "{\"line\":\"¡Hasta el sábado! Que le vaya muy bien.\",\"en\":\"See you Saturday! Take care.\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": true
+   }
+  ],
+  "person": "Emilio Carrillo Luna",
+  "arm": "header",
+  "culture": [
+   "Screen printing (serigrafía) T-shirts by hand is a craft practiced in Mexican workshops",
+   "Playera is the Mexican Spanish word for T-shirt",
+   "Family-run workshops are passed down from grandparents to grandchildren",
+   "Pasaje Rodríguez is a place in Tijuana with small shops and workshops",
+   "Neighbors in a pasaje know each other and feel like a family",
+   "Neighbors drop by in the afternoon to have coffee together",
+   "Shirt sizes are called chicas, medianas and grandes",
+   "The arch on Avenida Revolución is a famous Tijuana landmark used in shirt designs",
+   "Water-based ink is used for soft prints on fabric",
+   "Pase, pase, está abierto is a friendly way to invite someone into a shop",
+   "Usted is the polite form of address used with customers",
+   "Hasta el sábado and Que le vaya muy bien are polite, warm farewells",
+   "Qué bueno and me da mucho gusto are common expressions of pleasure"
+  ]
+ }
+]

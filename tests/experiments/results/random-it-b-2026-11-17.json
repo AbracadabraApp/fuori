@@ -1,0 +1,1004 @@
+[
+ {
+  "step": 4,
+  "city": "roma-nuova",
+  "place": "farmacia-prati",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Buongiorno, benvenuto alla Farmacia Prati! Oggi c'Ú molta gente, Ú arrivato il freddo di novembre. Today it's very busy, the November cold has arrived. Cerca qualcosa per il raffreddore? Are you looking for something for a cold?",
+    "en": "Good morning, welcome to Farmacia Prati! Today it's very busy, the November cold has arrived. Are you looking for something for a cold?",
+    "raw": "{\"line\":\"{*Buongiorno*, benvenuto alla Farmacia Prati! | *Good morning*, welcome to Farmacia Prati!} {Oggi *c'Ú molta gente*, Ú arrivato il freddo di novembre. | Today *it's very busy*, the November cold has arrived.} {Cerca qualcosa *per il raffreddore*? | Are you looking for something *for a cold*?}\",\"en\":\"Good morning, welcome to Farmacia Prati! Today it's very busy, the November cold has arrived. Are you looking for something for a cold?\",\"answers\":[{\"text\":\"Sì, ho il raffreddore. Può aiutarmi?\",\"en\":\"Yes, I have a cold. Can you help me?\"},{\"text\":\"No, grazie. Guardo solo un momento.\",\"en\":\"No, thank you. I'm just looking for a moment.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sì, ho il raffreddore. Può aiutarmi?",
+     "No, grazie. Guardo solo un momento."
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Certo, la aiuto volentieri. Qui a Prati, in autunno, vendo molto sciroppo per la tosse e spray per il naso. Ha anche la tosse o solo il naso chiuso? Do you also have a cough or just a blocked nose?",
+    "en": "Of course, I'm happy to help you. Here in Prati, in autumn, I sell a lot of cough syrup and nasal spray. Do you also have a cough or just a blocked nose?",
+    "raw": "{\"line\":\"{*Certo*, la aiuto volentieri. | *Of course*, I'm happy to help you.} {Qui a Prati, in autunno, vendo molto *sciroppo per la tosse* e spray per il naso. | Here in Prati, in autumn, I sell a lot of *cough syrup* and nasal spray.} {Ha anche *la tosse* o solo il naso chiuso? | Do you also have *a cough* or just a blocked nose?}\",\"en\":\"Of course, I'm happy to help you. Here in Prati, in autumn, I sell a lot of cough syrup and nasal spray. Do you also have a cough or just a blocked nose?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Va bene, allora le preparo qualcosa. All right, then I'll get something ready for you. Qui a Prati molti clienti vengono da noi dopo l'ufficio, e la sera la farmacia Ú piena. Preferisce lo sciroppo o le pastiglie per la gola? Do you prefer the syrup or the throat lozenges?",
+    "en": "All right, then I'll get something ready for you. Here in Prati many customers come to us after the office, and in the evening the pharmacy is full. Do you prefer the syrup or the throat lozenges?",
+    "raw": "{\"line\":\"{*Va bene*, allora le preparo qualcosa. | *All right*, then I'll get something ready for you.} {Qui a Prati molti clienti vengono da noi *dopo l'ufficio*, e la sera la farmacia Ú piena. | Here in Prati many customers come to us *after the office*, and in the evening the pharmacy is full.} {Preferisce *lo sciroppo* o le pastiglie per la gola? | Do you prefer *the syrup* or the throat lozenges?}\",\"en\":\"All right, then I'll get something ready for you. Here in Prati many customers come to us after the office, and in the evening the pharmacy is full. Do you prefer the syrup or the throat lozenges?\",\"answers\":[{\"text\":\"Preferisco lo sciroppo, per favore. Ho la tosse da due giorni.\",\"en\":\"I prefer the syrup, please. I've had a cough for two days.\"},{\"text\":\"Che cosa significa \\\"pastiglie\\\"? Può ripetere più lentamente?\",\"en\":\"What does \\\"pastiglie\\\" mean? Can you repeat it more slowly?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Preferisco lo sciroppo, per favore. Ho la tosse da due giorni.",
+     "Che cosa significa \"pastiglie\"? Può ripetere più lentamente?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "idiom",
+    "line": "Due giorni, capisco. Ecco lo sciroppo: se vuole, mi dà carta bianca e le consiglio io il migliore. Secondo lei, che cosa vuol dire dare carta bianca? What do you think dare carta bianca means?",
+    "en": "Two days, I see. Here is the syrup: if you like, you give me carta bianca (white paper) and I'll recommend the best one. What do you think dare carta bianca means?",
+    "raw": "{\"line\":\"{Due giorni, capisco. | Two days, I see.} {Ecco *lo sciroppo*: se vuole, mi dà *carta bianca* e le consiglio io il migliore. | Here is *the syrup*: if you like, you give me *carta bianca* (white paper) and I'll recommend the best one.} {Secondo lei, che cosa vuol dire *dare carta bianca*? | What do you think *dare carta bianca* means?}\",\"en\":\"Two days, I see. Here is the syrup: if you like, you give me carta bianca (white paper) and I'll recommend the best one. What do you think dare carta bianca means?\",\"answers\":[{\"text\":\"Vuol dire dare libertà di scegliere. Va bene, scelga lei!\",\"en\":\"It means giving the freedom to choose. Fine, you choose!\"},{\"text\":\"Vuol dire dare un foglio di carta. Mi serve anche questo?\",\"en\":\"It means giving a sheet of paper. Do I need that too?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Vuol dire dare libertà di scegliere. Va bene, scelga lei!",
+     "Vuol dire dare un foglio di carta. Mi serve anche questo?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Esatto, proprio così! Allora le do questo sciroppo, è dolce e va bene anche per la notte. Then I'll give you this syrup, it's sweet and also good for the night. Le piace il miele? Qui a Roma tanti lo mettono nella tisana. Do you like honey? Here in Rome many people put it in their herbal tea.",
+    "en": "Exactly, just like that! Then I'll give you this syrup, it's sweet and also good for the night. Do you like honey? Here in Rome many people put it in their herbal tea.",
+    "raw": "{\"line\":\"{*Esatto*, proprio così! | *Exactly*, just like that!} {Allora le do questo sciroppo, è dolce e va bene anche per la notte. | Then I'll give you this syrup, it's sweet and also good for the night.} {Le piace *il miele*? Qui a Roma tanti lo mettono nella tisana. | Do you like *honey*? Here in Rome many people put it in their herbal tea.}\",\"en\":\"Exactly, just like that! Then I'll give you this syrup, it's sweet and also good for the night. Do you like honey? Here in Rome many people put it in their herbal tea.\",\"answers\":[{\"text\":\"Sì, mi piace il miele. Lo metto spesso nel tè.\",\"en\":\"Yes, I like honey. I often put it in my tea.\"},{\"text\":\"Cosa vuol dire tisana? Può ripetere più lentamente?\",\"en\":\"What does tisana (herbal tea) mean? Can you repeat more slowly?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sì, mi piace il miele. Lo metto spesso nel tè.",
+     "Cosa vuol dire tisana? Può ripetere più lentamente?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "ask-en",
+    "line": "Il miele nel tè fa bene alla gola. Honey in tea is good for the throat. Qui in farmacia, d'inverno, consiglio sempre una tisana calda con il limone. Here at the pharmacy, in winter, I always recommend a hot herbal tea with lemon.",
+    "en": "Honey in tea is good for the throat. Here at the pharmacy, in winter, I always recommend a hot herbal tea with lemon.",
+    "raw": "{\"line\":\"{*Il miele nel tè* fa bene alla gola. | *Honey in tea* is good for the throat.} {Qui in farmacia, d'inverno, consiglio sempre *una tisana calda* con il limone. | Here at the pharmacy, in winter, I always recommend *a hot herbal tea* with lemon.}\",\"en\":\"Honey in tea is good for the throat. Here at the pharmacy, in winter, I always recommend a hot herbal tea with lemon.\",\"answers\":[{\"text\":\"Che tisana mi consiglia?\",\"en\":\"Which herbal tea do you recommend?\"},{\"text\":\"Quanto limone devo mettere?\",\"en\":\"How much lemon should I put in?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Che tisana mi consiglia?",
+     "Quanto limone devo mettere?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Le consiglio una tisana al timo, Ú ottima per la tosse. La beva calda la sera, con un cucchiaino di miele. Ha giÃ  qualcosa di caldo da bere a casa? Do you already have something warm to drink at home?",
+    "en": "I recommend a thyme herbal tea, it's excellent for a cough. Drink it hot in the evening, with a teaspoon of honey. Do you already have something warm to drink at home?",
+    "raw": "{\"line\":\"{Le consiglio *una tisana al timo*, Ú ottima per la tosse. | I recommend *a thyme herbal tea*, it's excellent for a cough.} {La beva calda la sera, con un cucchiaino di miele. | Drink it hot in the evening, with a teaspoon of honey.} {Ha giÃ  *qualcosa di caldo* da bere a casa? | Do you already have *something warm* to drink at home?}\",\"en\":\"I recommend a thyme herbal tea, it's excellent for a cough. Drink it hot in the evening, with a teaspoon of honey. Do you already have something warm to drink at home?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Bene, allora Ú tutto pronto: sciroppo, tisana e un po' di riposo. Se la tosse non passa tra qualche giorno, torni da me: la aspetto qui in farmacia, e controlliamo insieme come sta. Buona guarigione!",
+    "en": "Good, then everything is ready: syrup, herbal tea and a bit of rest. If the cough doesn't go away in a few days, come back to me: I'll be waiting here at the pharmacy, and we'll check together how you are. Get well soon!",
+    "raw": "{\"line\":\"Bene, allora Ú tutto pronto: sciroppo, tisana e un po' di riposo. Se la tosse non passa tra qualche giorno, torni da me: la aspetto qui in farmacia, e controlliamo insieme come sta. Buona guarigione!\",\"en\":\"Good, then everything is ready: syrup, herbal tea and a bit of rest. If the cough doesn't go away in a few days, come back to me: I'll be waiting here at the pharmacy, and we'll check together how you are. Get well soon!\",\"answers\":[{\"text\":\"Grazie mille, torno volentieri. Arrivederci!\",\"en\":\"Thank you very much, I'll gladly come back. Goodbye!\"},{\"text\":\"Grazie del consiglio, dottoressa. Buona giornata!\",\"en\":\"Thanks for the advice, doctor. Have a nice day!\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Grazie mille, torno volentieri. Arrivederci!",
+     "Grazie del consiglio, dottoressa. Buona giornata!"
+    ],
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "Arrivederci, e stia al caldo! Buona giornata!",
+    "en": "Goodbye, and stay warm! Have a nice day!",
+    "raw": "{\"line\":\"Arrivederci, e stia al caldo! Buona giornata!\",\"en\":\"Goodbye, and stay warm! Have a nice day!\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": true
+   }
+  ],
+  "person": "Dott.ssa Silvia Bruni",
+  "arm": "header",
+  "culture": [
+   "Farmacia Prati is a pharmacy in the Prati neighborhood of Rome",
+   "Cold weather arrives in November, bringing colds and heavy pharmacy traffic",
+   "In autumn Italian pharmacies sell lots of cough syrup and nasal spray",
+   "Many Prati customers visit the pharmacy after work, so it is full in the evening",
+   "Pharmacists in Italy give advice and recommend remedies such as syrup or throat lozenges (pastiglie per la gola)",
+   "The idiom 'dare carta bianca' means to give someone full freedom to decide",
+   "Romans often put honey in herbal tea (tisana)",
+   "Honey in tea is considered good for the throat",
+   "In winter a hot herbal tea with lemon is a customary remedy",
+   "Thyme herbal tea (tisana al timo) is a traditional remedy for coughs, drunk hot in the evening with a teaspoon of honey",
+   "Pharmacists invite customers to come back if symptoms persist, and check on them together",
+   "Italian farewell phrases: 'Buona guarigione!' (get well soon), 'Arrivederci', 'stia al caldo' (stay warm), 'Buona giornata'",
+   "Formal polite address with 'lei' is used between pharmacist and customer",
+   "Italians greet with 'Buongiorno' and welcome with 'benvenuto'",
+   "Useful words: raffreddore (cold), tosse (cough), sciroppo (syrup), naso chiuso (blocked nose), gola (throat), miele (honey), tisana (herbal tea)"
+  ]
+ },
+ {
+  "step": 4,
+  "city": "taormina",
+  "place": "ristorante-baronessa",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Buongiorno, benvenuto alla Baronessa! Oggi in cucina preparo la pasta alla Norma, un piatto tipico siciliano. Le piacciono le melanzane? Do you like eggplant?",
+    "en": "Good morning, welcome to La Baronessa! Today in the kitchen I'm making pasta alla Norma, a typical Sicilian dish. Do you like eggplant?",
+    "raw": "{\"line\":\"{Buongiorno, *benvenuto* alla Baronessa! | Good morning, *welcome* to La Baronessa!} {Oggi in cucina preparo *la pasta alla Norma*, un piatto tipico siciliano. | Today in the kitchen I'm making *pasta alla Norma*, a typical Sicilian dish.} {Le piacciono *le melanzane*? | Do you like *eggplant*?}\",\"en\":\"Good morning, welcome to La Baronessa! Today in the kitchen I'm making pasta alla Norma, a typical Sicilian dish. Do you like eggplant?\",\"answers\":[{\"text\":\"Sì, mi piacciono molto. Che cos'è la pasta alla Norma?\",\"en\":\"Yes, I like them a lot. What is pasta alla Norma?\"},{\"text\":\"Buongiorno! Che buon profumo, cosa c'è nel menu oggi?\",\"en\":\"Good morning! What a good smell, what's on the menu today?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sì, mi piacciono molto. Che cos'è la pasta alla Norma?",
+     "Buongiorno! Che buon profumo, cosa c'è nel menu oggi?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "La pasta alla Norma è pasta con melanzane fritte, pomodoro e ricotta salata. È un piatto di Catania, ma in Sicilia lo mangiamo tutti. It's a dish from Catania, but all of us in Sicily eat it. Vuole un tavolo per il pranzo? Would you like a table for lunch?",
+    "en": "Pasta alla Norma is pasta with fried eggplant, tomato and salted ricotta. It's a dish from Catania, but all of us in Sicily eat it. Would you like a table for lunch?",
+    "raw": "{\"line\":\"{La pasta alla Norma è *pasta con melanzane fritte*, pomodoro e ricotta salata. | Pasta alla Norma is *pasta with fried eggplant*, tomato and salted ricotta.} {È un piatto di Catania, ma in Sicilia lo mangiamo tutti. | It's a dish from Catania, but all of us in Sicily eat it.} {Vuole *un tavolo* per il pranzo? | Would you like *a table* for lunch?}\",\"en\":\"Pasta alla Norma is pasta with fried eggplant, tomato and salted ricotta. It's a dish from Catania, but all of us in Sicily eat it. Would you like a table for lunch?\",\"answers\":[{\"text\":\"Sì, un tavolo per uno, per favore. Vorrei provare la pasta alla Norma.\",\"en\":\"Yes, a table for one, please. I would like to try the pasta alla Norma.\"},{\"text\":\"Che cos'è la ricotta salata? Può dirlo più lentamente?\",\"en\":\"What is ricotta salata (a firm, salted, aged sheep's milk cheese)? Can you say it more slowly?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sì, un tavolo per uno, per favore. Vorrei provare la pasta alla Norma.",
+     "Che cos'è la ricotta salata? Può dirlo più lentamente?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Perfetto, si accomodi qui, vicino alla finestra. Da qui vede il Corso Umberto, la strada principale di Taormina. Vuole dell'acqua con la pasta? Would you like some water with the pasta?",
+    "en": "Perfect, please sit here, by the window. From here you can see Corso Umberto, the main street of Taormina. Would you like some water with the pasta?",
+    "raw": "{\"line\":\"{*Perfetto*, si accomodi qui, vicino alla finestra. | *Perfect*, please sit here, by the window.} {Da qui vede *il Corso Umberto*, la strada principale di Taormina. | From here you can see *Corso Umberto*, the main street of Taormina.} {Vuole *dell'acqua* con la pasta? | Would you like *some water* with the pasta?}\",\"en\":\"Perfect, please sit here, by the window. From here you can see Corso Umberto, the main street of Taormina. Would you like some water with the pasta?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Subito, la porto. Right away, I'll bring it. La pasta alla Norma è il piatto preferito di mia madre. Per me, in novembre, è il piatto più buono. For me, in November, it's the best dish.",
+    "en": "Right away, I'll bring it. Pasta alla Norma is my mother's favorite dish. For me, in November, it's the best dish.",
+    "raw": "{\"line\":\"{*Subito*, la porto. | *Right away*, I'll bring it.} {La pasta alla Norma è il piatto preferito di mia madre. | Pasta alla Norma is my *mother's favorite* dish.} {Per me, in novembre, è il piatto più buono. | For me, in November, it's the *best* dish.}\",\"en\":\"Right away, I'll bring it. Pasta alla Norma is my mother's favorite dish. For me, in November, it's the best dish.\",\"answers\":[{\"text\":\"Anche mia madre ama la pasta. Che bella tradizione!\",\"en\":\"My mother loves pasta too. What a beautiful tradition!\"},{\"text\":\"Perché la pasta alla Norma è più buona in novembre?\",\"en\":\"Why is pasta alla Norma better in November?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Anche mia madre ama la pasta. Che bella tradizione!",
+     "Perché la pasta alla Norma è più buona in novembre?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Che bello! Allora ecco la sua acqua, e la pasta arriva tra poco. Qui a Taormina, la domenica, tutta la famiglia mangia insieme da noi. Here in Taormina, on Sundays, the whole family eats together with us. Vuole un po' di pane con la pasta? Would you like some bread with the pasta?",
+    "en": "How nice! Here is your water, then, and the pasta is coming soon. Here in Taormina, on Sundays, the whole family eats together with us. Would you like some bread with the pasta?",
+    "raw": "{\"line\":\"{*Che bello*! Allora ecco la sua acqua, e la pasta arriva tra poco. | *How nice*! Here is your water, then, and the pasta is coming soon.} {Qui a Taormina, la domenica, tutta la famiglia mangia *insieme* da noi. | Here in Taormina, on Sundays, the whole family eats *together* with us.} {Vuole *un po' di pane* con la pasta? | Would you like *some bread* with the pasta?}\",\"en\":\"How nice! Here is your water, then, and the pasta is coming soon. Here in Taormina, on Sundays, the whole family eats together with us. Would you like some bread with the pasta?\",\"answers\":[{\"text\":\"Sì, volentieri. Il pane siciliano è buonissimo.\",\"en\":\"Yes, gladly. Sicilian bread is delicious.\"},{\"text\":\"No, grazie. Ma cosa significa \\\"insieme\\\"?\",\"en\":\"No, thank you. But what does \\\"insieme\\\" mean?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sì, volentieri. Il pane siciliano è buonissimo.",
+     "No, grazie. Ma cosa significa \"insieme\"?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Ecco il pane, ancora caldo. Lo facciamo ogni mattina con la farina di grano duro e i semi di sesamo. Le piace cucinare a casa? Do you like cooking at home?",
+    "en": "Here is the bread, still warm. We make it every morning with durum wheat flour and sesame seeds. Do you like cooking at home?",
+    "raw": "{\"line\":\"{Ecco il pane, *ancora caldo*. | Here is the bread, *still warm*.} {Lo facciamo ogni mattina con la farina di grano duro e i semi di sesamo. | We make it every morning with durum wheat flour and sesame seeds.} {Le piace *cucinare* a casa? | Do you like *cooking* at home?}\",\"en\":\"Here is the bread, still warm. We make it every morning with durum wheat flour and sesame seeds. Do you like cooking at home?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "ask-en",
+    "line": "Bravo! Cucinare a casa è sempre bello. Bravo! Cooking at home is always nice. Ecco la sua pasta alla Norma, ancora fumante. Sopra mettiamo la ricotta salata e una foglia di basilico. On top we put the salted ricotta and a basil leaf.",
+    "en": "Bravo! Cooking at home is always nice. Here is your pasta alla Norma, still steaming. On top we put the salted ricotta and a basil leaf.",
+    "raw": "{\"line\":\"{*Bravo*! Cucinare a casa è sempre bello. | *Bravo*! Cooking at home is always nice.} {Ecco la sua pasta alla Norma, ancora *fumante*. | Here is your pasta alla Norma, still *steaming*.} {Sopra mettiamo la ricotta salata e una foglia di *basilico*. | On top we put the salted ricotta and a basil leaf.}\",\"en\":\"Bravo! Cooking at home is always nice. Here is your pasta alla Norma, still steaming. On top we put the salted ricotta and a basil leaf.\",\"answers\":[{\"text\":\"Come fate il pane ogni mattina?\",\"en\":\"How do you make the bread every morning?\"},{\"text\":\"Perché mettete la ricotta salata?\",\"en\":\"Why do you put on the salted ricotta?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Come fate il pane ogni mattina?",
+     "Perché mettete la ricotta salata?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Mi alzo alle cinque, impasto la farina con acqua, lievito e sale. Poi lo lascio riposare e lo cuocio nel forno a legna. È stato un piacere parlare con lei: torni a dicembre, per la nostra cena di Natale! It was a pleasure talking with you: come back in December, for our Christmas dinner!",
+    "en": "I get up at five, I knead the flour with water, yeast and salt. Then I let it rest and bake it in the wood oven. It was a pleasure talking with you: come back in December, for our Christmas dinner!",
+    "raw": "{\"line\":\"{Mi alzo *alle cinque*, impasto la farina con acqua, lievito e sale. | I get up *at five*, I knead the flour with water, yeast and salt.} {Poi lo lascio riposare e lo cuocio nel forno a legna. | Then I let it rest and bake it in the wood oven.} {È stato un piacere parlare con lei: torni *a dicembre*, per la nostra cena di Natale! | It was a pleasure talking with you: come back *in December*, for our Christmas dinner!}\",\"en\":\"I get up at five, I knead the flour with water, yeast and salt. Then I let it rest and bake it in the wood oven. It was a pleasure talking with you: come back in December, for our Christmas dinner!\",\"answers\":[{\"text\":\"Grazie di tutto, tornerò a dicembre. Arrivederci!\",\"en\":\"Thank you for everything, I'll come back in December. Goodbye!\"},{\"text\":\"Mi è piaciuto molto, la pasta era buonissima. A presto!\",\"en\":\"I liked it a lot, the pasta was delicious. See you soon!\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Grazie di tutto, tornerò a dicembre. Arrivederci!",
+     "Mi è piaciuto molto, la pasta era buonissima. A presto!"
+    ],
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "Grazie a lei! Arrivederci e a presto, buona giornata!",
+    "en": "Thank you! Goodbye and see you soon, have a nice day!",
+    "raw": "{\"line\":\"Grazie a lei! Arrivederci e a presto, buona giornata!\",\"en\":\"Thank you! Goodbye and see you soon, have a nice day!\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": true
+   }
+  ],
+  "person": "Stefano Barone",
+  "arm": "header",
+  "culture": [
+   "Pasta alla Norma is a Sicilian dish of pasta with fried eggplant, tomato and salted ricotta",
+   "Pasta alla Norma comes from Catania, but is eaten all over Sicily",
+   "Taormina is a town in Sicily",
+   "Corso Umberto is the main street of Taormina",
+   "In Sicily, families traditionally eat together on Sundays",
+   "Bread is eaten with pasta at the meal",
+   "Traditional bread is made with durum wheat flour and sesame seeds",
+   "Bread can be baked fresh every morning in a wood-fired oven",
+   "Pasta alla Norma is topped with salted ricotta and a basil leaf",
+   "Italian bread dough is made from flour, water, yeast and salt",
+   "Restaurants may hold a special Christmas dinner (cena di Natale)",
+   "Italian greetings: Buongiorno (good morning), Arrivederci, A presto, Buona giornata",
+   "Italian phrases: Si accomodi (please take a seat), Vuole...? (Would you like...?), Le piace...? (Do you like...?), È stato un piacere (it was a pleasure)",
+   "Italian words: Subito (right away), Ecco (here is), Bravo (well done), Che bello (how nice), Grazie (thank you), Perfetto (perfect)"
+  ]
+ },
+ {
+  "step": 4,
+  "city": "venezia",
+  "place": "ristorante-antiche-carampane",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Buongiorno, benvenuto alle Antiche Carampane. Sto preparando il pesce fresco del mercato di Rialto. Le piace il pesce? Do you like fish?",
+    "en": "Good morning, welcome to Antiche Carampane. I'm preparing the fresh fish from the Rialto market. Do you like fish?",
+    "raw": "{\"line\":\"{*Buongiorno*, benvenuto alle Antiche Carampane. | *Good morning*, welcome to Antiche Carampane.} {Sto preparando *il pesce fresco* del mercato di Rialto. | I'm preparing *the fresh fish* from the Rialto market.} {Le piace *il pesce*? | Do you like *fish*?}\",\"en\":\"Good morning, welcome to Antiche Carampane. I'm preparing the fresh fish from the Rialto market. Do you like fish?\",\"answers\":[{\"text\":\"Sì, mi piace molto. Che pesce c'è oggi?\",\"en\":\"Yes, I like it a lot. What fish is there today?\"},{\"text\":\"Che cos'è Rialto? Può ripetere più lentamente?\",\"en\":\"What is Rialto? Can you repeat that more slowly?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sì, mi piace molto. Che pesce c'è oggi?",
+     "Che cos'è Rialto? Può ripetere più lentamente?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Oggi abbiamo le sarde in saor, un piatto veneziano con cipolle e uvetta. Today we have sardines in saor, a Venetian dish with onions and raisins. C'è anche il branzino, arrivato stamattina da Rialto. Vuole sedersi e assaggiare qualcosa? Would you like to sit down and try something?",
+    "en": "Today we have sardines in saor, a Venetian dish with onions and raisins. There's also sea bass, which came this morning from Rialto. Would you like to sit down and try something?",
+    "raw": "{\"line\":\"{Oggi abbiamo *le sarde in saor*, un piatto veneziano con cipolle e uvetta. | Today we have *sardines in saor*, a Venetian dish with onions and raisins.} {C'è anche *il branzino*, arrivato stamattina da Rialto. | There's also *sea bass*, which came this morning from Rialto.} {Vuole sedersi e assaggiare qualcosa? | Would you like to sit down and try something?}\",\"en\":\"Today we have sardines in saor, a Venetian dish with onions and raisins. There's also sea bass, which came this morning from Rialto. Would you like to sit down and try something?\",\"answers\":[{\"text\":\"Sì, mi siedo volentieri. Prendo il branzino.\",\"en\":\"Yes, I'll gladly sit down. I'll have the sea bass.\"},{\"text\":\"Le sarde in saor sembrano interessanti. Come si preparano?\",\"en\":\"The sardines in saor sound interesting. How are they prepared?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sì, mi siedo volentieri. Prendo il branzino.",
+     "Le sarde in saor sembrano interessanti. Come si preparano?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Perfetto, si accomodi pure qui al tavolo. Perfect, please sit down here at the table. Il branzino lo faccio al forno con le erbe, come si usa a Venezia. Le piace il pesce semplice, o con tante salse? Do you like fish simple, or with lots of sauces?",
+    "en": "Perfect, please sit down here at the table. I make the sea bass in the oven with herbs, the way it's done in Venice. Do you like fish simple, or with lots of sauces?",
+    "raw": "{\"line\":\"{*Perfetto*, si accomodi pure qui al tavolo. | *Perfect*, please sit down here at the table.} {Il branzino lo faccio *al forno* con le erbe, come si usa a Venezia. | I make the sea bass *in the oven* with herbs, the way it's done in Venice.} {Le piace il pesce *semplice*, o con tante salse? | Do you like fish *simple*, or with lots of sauces?}\",\"en\":\"Perfect, please sit down here at the table. I make the sea bass in the oven with herbs, the way it's done in Venice. Do you like fish simple, or with lots of sauces?\",\"answers\":[{\"text\":\"Lo preferisco semplice. Il pesce fresco ha già tanto sapore.\",\"en\":\"I prefer it simple. Fresh fish already has a lot of flavor.\"},{\"text\":\"Che cosa significa \\\"al forno\\\"? Può ripetere più lentamente?\",\"en\":\"What does \\\"al forno\\\" mean? Can you repeat more slowly?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Lo preferisco semplice. Il pesce fresco ha già tanto sapore.",
+     "Che cosa significa \"al forno\"? Può ripetere più lentamente?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Ha ragione, il pesce fresco non ha bisogno di niente. Qui a Venezia il pesce arriva ogni mattina dalla laguna e da Rialto. Per me la semplicità è la regola della cucina. For me simplicity is the rule of cooking.",
+    "en": "You're right, fresh fish needs nothing. Here in Venice the fish arrives every morning from the lagoon and from Rialto. For me simplicity is the rule of cooking.",
+    "raw": "{\"line\":\"{*Ha ragione*, il pesce fresco non ha bisogno di niente. | You're *right*, fresh fish needs nothing.} {Qui a Venezia *il pesce* arriva ogni mattina dalla laguna e da Rialto. | Here in Venice *the fish* arrives every morning from the lagoon and from Rialto.} {Per me *la semplicità* è la regola della cucina. | For me *simplicity* is the rule of cooking.}\",\"en\":\"You're right, fresh fish needs nothing. Here in Venice the fish arrives every morning from the lagoon and from Rialto. For me simplicity is the rule of cooking.\",\"answers\":[{\"text\":\"Anche per me la semplicità è la cosa migliore.\",\"en\":\"For me too, simplicity is the best thing.\"},{\"text\":\"Il mercato di Rialto è lontano da qui?\",\"en\":\"Is the Rialto market far from here?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Anche per me la semplicità è la cosa migliore.",
+     "Il mercato di Rialto è lontano da qui?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Allora ci capiamo bene! Intanto il branzino va in forno con un filo d'olio. Meanwhile the sea bass goes in the oven with a drizzle of oil. Vuole un bicchiere di vino bianco mentre aspetta? Would you like a glass of white wine while you wait?",
+    "en": "Then we understand each other well! Meanwhile the sea bass goes in the oven with a drizzle of oil. Would you like a glass of white wine while you wait?",
+    "raw": "{\"line\":\"{Allora ci capiamo bene! | Then we understand each other well!} {Intanto *il branzino* va in forno con un filo d'olio. | Meanwhile *the sea bass* goes in the oven with a drizzle of oil.} {Vuole *un bicchiere di vino bianco* mentre aspetta? | Would you like *a glass of white wine* while you wait?}\",\"en\":\"Then we understand each other well! Meanwhile the sea bass goes in the oven with a drizzle of oil. Would you like a glass of white wine while you wait?\",\"answers\":[{\"text\":\"Sì, volentieri. Che vino mi consiglia?\",\"en\":\"Yes, gladly. What wine do you recommend?\"},{\"text\":\"Il suo ristorante è molto bello. Da quanto tempo lavora qui?\",\"en\":\"Your restaurant is very nice. How long have you worked here?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sì, volentieri. Che vino mi consiglia?",
+     "Il suo ristorante è molto bello. Da quanto tempo lavora qui?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Con il branzino le consiglio un Soave, è un bianco fresco del Veneto. Lo servo sempre ben freddo, come piace a noi. I always serve it well chilled, the way we like it. Questo vino mi ricorda le cene con mio padre, qui in trattoria. This wine reminds me of dinners with my father, here in the trattoria.",
+    "en": "With the sea bass I recommend a Soave, it's a fresh white from the Veneto. I always serve it well chilled, the way we like it. This wine reminds me of dinners with my father, here in the trattoria.",
+    "raw": "{\"line\":\"{Con il branzino le consiglio *un Soave*, è un bianco fresco del Veneto. | With the sea bass I recommend *a Soave*, it's a fresh white from the Veneto.} {Lo servo sempre *ben freddo*, come piace a noi. | I always serve it *well chilled*, the way we like it.} {Questo vino mi ricorda le cene con mio padre, qui in trattoria. | This wine reminds me of dinners with my father, here in the trattoria.}\",\"en\":\"With the sea bass I recommend a Soave, it's a fresh white from the Veneto. I always serve it well chilled, the way we like it. This wine reminds me of dinners with my father, here in the trattoria.\",\"answers\":[{\"text\":\"Che bel ricordo! Questo posto ha una bella atmosfera.\",\"en\":\"What a lovely memory! This place has a nice atmosphere.\"},{\"text\":\"Suo padre era anche lui cuoco? Cosa cucinava?\",\"en\":\"Was your father a chef too? What did he cook?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Che bel ricordo! Questo posto ha una bella atmosfera.",
+     "Suo padre era anche lui cuoco? Cosa cucinava?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Grazie, mi fa piacere! Thank you, that makes me happy! Le Carampane sono qui da tanto tempo, e per me questa è casa. The Carampane have been here a long time, and for me this is home.",
+    "en": "Thank you, that makes me happy! The Carampane have been here a long time, and for me this is home.",
+    "raw": "{\"line\":\"{Grazie, mi fa piacere! | Thank you, that makes me happy!} {Le Carampane sono qui da tanto tempo, e per me *questa è casa*. | The Carampane have been here a long time, and for me *this is home*.}\",\"en\":\"Thank you, that makes me happy! The Carampane have been here a long time, and for me this is home.\",\"answers\":[{\"text\":\"Si sente che è una casa. Il Soave è davvero ottimo.\",\"en\":\"You can feel that it's a home. The Soave is really excellent.\"},{\"text\":\"Era già un ristorante quando c'era suo padre?\",\"en\":\"Was it already a restaurant when your father was here?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Si sente che è una casa. Il Soave è davvero ottimo.",
+     "Era già un ristorante quando c'era suo padre?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Sono contento che il vino le piaccia. Torni venerdì: arrivano le moleche, i granchi di laguna, e le faccio assaggiare. Ora il branzino è quasi pronto: buon appetito! Now the sea bass is almost ready: enjoy your meal!",
+    "en": "I'm glad you like the wine. Come back on Friday: the moleche are coming, the lagoon crabs, and I'll let you taste them. Now the sea bass is almost ready: enjoy your meal!",
+    "raw": "{\"line\":\"{Sono contento che *il vino* le piaccia. | I'm glad you like *the wine*.} {Torni *venerdì*: arrivano le moleche, i granchi di laguna, e le faccio assaggiare. | Come back *on Friday*: the moleche are coming, the lagoon crabs, and I'll let you taste them.} {Ora il branzino è quasi pronto: *buon appetito*! | Now the sea bass is almost ready: *enjoy your meal*!}\",\"en\":\"I'm glad you like the wine. Come back on Friday: the moleche are coming, the lagoon crabs, and I'll let you taste them. Now the sea bass is almost ready: enjoy your meal!\",\"answers\":[{\"text\":\"Grazie mille, Lorenzo! Torno venerdì, a presto!\",\"en\":\"Thank you so much, Lorenzo! I'll come back Friday, see you soon!\"},{\"text\":\"Grazie di tutto. Arrivederci e buona giornata!\",\"en\":\"Thanks for everything. Goodbye and have a good day!\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Grazie mille, Lorenzo! Torno venerdì, a presto!",
+     "Grazie di tutto. Arrivederci e buona giornata!"
+    ],
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "A venerdì, allora! Ciao, e buona giornata! See you Friday, then! Bye, and have a good day!",
+    "en": "See you Friday, then! Bye, and have a good day!",
+    "raw": "{\"line\":\"A venerdì, allora! Ciao, e buona giornata! See you Friday, then! Bye, and have a good day!\",\"en\":\"See you Friday, then! Bye, and have a good day!\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": true
+   }
+  ],
+  "person": "Lorenzo Carampane",
+  "arm": "header",
+  "culture": [
+   "Antiche Carampane is a restaurant (trattoria) in Venice",
+   "Rialto market in Venice supplies fresh fish",
+   "Sarde in saor is a Venetian dish of sardines with onions and raisins",
+   "Branzino (sea bass) is a common fish, baked with herbs in Venice",
+   "Fresh fish from the lagoon and Rialto arrives every morning in Venice",
+   "Simplicity is a rule of Italian cooking; fresh fish needs little",
+   "Fish is often cooked with a drizzle of olive oil",
+   "Soave is a fresh white wine from the Veneto region",
+   "White wine is served well chilled with fish",
+   "Moleche are soft-shell lagoon crabs, a Venetian seasonal specialty",
+   "Italian greetings: Buongiorno, Ciao, Buona giornata, A venerdì",
+   "Buon appetito is said before a meal",
+   "Si accomodi is a polite phrase inviting someone to sit",
+   "Venetian trattorias are often family-run, passed down through generations"
+  ]
+ },
+ {
+  "step": 4,
+  "city": "bologna",
+  "place": "piazza-maggiore",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Buongiorno! Sono un musicista di strada, suono qui in piazza. Good morning! I'm a street musician, I play here in the square. Il mercoledì c'è poca gente, ma l'aria di novembre è bella per la musica. Le piace la musica dal vivo? Do you like live music?",
+    "en": "Good morning! I'm a street musician, I play here in the square. On Wednesdays there are few people, but the November air is good for music. Do you like live music?",
+    "raw": "{\"line\":\"{Buongiorno! Sono *un musicista di strada*, suono qui in piazza. | Good morning! I'm *a street musician*, I play here in the square.} {Il mercoledì c'è *poca gente*, ma l'aria di novembre è bella per la musica. | On Wednesdays there are *few people*, but the November air is good for music.} {Le piace *la musica dal vivo*? | Do you like *live music*?}\",\"en\":\"Good morning! I'm a street musician, I play here in the square. On Wednesdays there are few people, but the November air is good for music. Do you like live music?\",\"answers\":[{\"text\":\"Sì, mi piace molto. Suona bene!\",\"en\":\"Yes, I like it a lot. You play well!\"},{\"text\":\"Cosa suona oggi? È una canzone di Bologna?\",\"en\":\"What are you playing today? Is it a song from Bologna?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sì, mi piace molto. Suona bene!",
+     "Cosa suona oggi? È una canzone di Bologna?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Grazie mille! Mi fa molto piacere. Suono qui in Piazza Maggiore da tanti anni, vicino alla fontana del Nettuno. I've played here in Piazza Maggiore for many years, near the Neptune fountain. Le piace questa piazza? Do you like this square?",
+    "en": "Thank you very much! That makes me very happy. I've played here in Piazza Maggiore for many years, near the Neptune fountain. Do you like this square?",
+    "raw": "{\"line\":\"{*Grazie mille*! Mi fa molto piacere. | *Thank you very much*! That makes me very happy.} {Suono qui in Piazza Maggiore da tanti anni, vicino alla *fontana del Nettuno*. | I've played here in Piazza Maggiore for many years, near *the Neptune fountain*.} {Le piace questa piazza? | Do you like this square?}\",\"en\":\"Thank you very much! That makes me very happy. I've played here in Piazza Maggiore for many years, near the Neptune fountain. Do you like this square?\",\"answers\":[{\"text\":\"Sì, è bellissima. Ci sono molti edifici antichi.\",\"en\":\"Yes, it's beautiful. There are many ancient buildings.\"},{\"text\":\"Che cos'è la fontana del Nettuno?\",\"en\":\"What is the Neptune fountain?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sì, è bellissima. Ci sono molti edifici antichi.",
+     "Che cos'è la fontana del Nettuno?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Sì, gli edifici antichi sono il cuore di Bologna. Dietro di noi c'è la Basilica di San Petronio, enorme e incompiuta. Ha già visto la basilica da vicino? Have you already seen the basilica up close?",
+    "en": "Yes, the old buildings are the heart of Bologna. Behind us is the Basilica of San Petronio, huge and unfinished. Have you already seen the basilica up close?",
+    "raw": "{\"line\":\"{Sì, *gli edifici antichi* sono il cuore di Bologna. | Yes, *the old buildings* are the heart of Bologna.} {Dietro di noi c'è *la Basilica di San Petronio*, enorme e incompiuta. | Behind us is *the Basilica of San Petronio*, huge and unfinished.} {Ha già visto *la basilica* da vicino? | Have you already seen *the basilica* up close?}\",\"en\":\"Yes, the old buildings are the heart of Bologna. Behind us is the Basilica of San Petronio, huge and unfinished. Have you already seen the basilica up close?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "idiom",
+    "line": "Bene! Io vado pazzo per quella facciata, è così strana. Good! I am mad about that facade, it is so strange. Andare pazzo per vuol dire, parola per parola, to go crazy for. Cosa pensa che significhi? What do you think it means?",
+    "en": "Good! I am mad about that facade, it is so strange. Andare pazzo per means, word for word, to go crazy for. What do you think it means?",
+    "raw": "{\"line\":\"{Bene! Io *vado pazzo per* quella facciata, è così strana. | Good! I *am mad about* that facade, it is so strange.} {*Andare pazzo per* vuol dire, parola per parola, *to go crazy for*. | *Andare pazzo per* means, word for word, *to go crazy for*.} {Cosa pensa che significhi? | What do you think it means?}\",\"en\":\"Good! I am mad about that facade, it is so strange. Andare pazzo per means, word for word, to go crazy for. What do you think it means?\",\"answers\":[{\"text\":\"Significa amare molto una cosa.\",\"en\":\"It means to love something a lot.\"},{\"text\":\"Significa essere molto stanco.\",\"en\":\"It means to be very tired.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Significa amare molto una cosa.",
+     "Significa essere molto stanco."
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Esatto, bravo! A Bologna tanta gente passa di qui, e la piazza è sempre piena di vita. Le piacerebbe sentire una canzone? Would you like to hear a song?",
+    "en": "Exactly, well done! In Bologna many people pass through here, and the square is always full of life. Would you like to hear a song?",
+    "raw": "{\"line\":\"{*Esatto*, bravo! | *Exactly*, well done!} {A Bologna tanta gente passa di qui, e la piazza è sempre piena di vita. | In Bologna many people pass through here, and the square is always full of life.} {Le piacerebbe *sentire una canzone*? | Would you like *to hear a song*?}\",\"en\":\"Exactly, well done! In Bologna many people pass through here, and the square is always full of life. Would you like to hear a song?\",\"answers\":[{\"text\":\"Sì, grazie. Mi piace la musica italiana.\",\"en\":\"Yes, thanks. I like Italian music.\"},{\"text\":\"Cosa significa «sentire»? Può ripetere più lentamente?\",\"en\":\"What does \\\"sentire\\\" mean? Can you repeat that more slowly?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sì, grazie. Mi piace la musica italiana.",
+     "Cosa significa «sentire»? Può ripetere più lentamente?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Perfetto, allora suono qualcosa di Lucio Dalla. Era di Bologna, e le sue canzoni sono nel cuore della città. He was from Bologna, and his songs are in the heart of the city. Conosce già qualche canzone di Lucio Dalla? Do you already know any songs by Lucio Dalla?",
+    "en": "Perfect, then I'll play something by Lucio Dalla. He was from Bologna, and his songs are in the heart of the city. Do you already know any songs by Lucio Dalla?",
+    "raw": "{\"line\":\"{Perfetto, allora *suono* qualcosa di Lucio Dalla. | Perfect, then I'll *play* something by Lucio Dalla.} {Era di Bologna, e le sue canzoni sono *nel cuore* della città. | He was from Bologna, and his songs are *in the heart* of the city.} {Conosce già qualche canzone di Lucio Dalla? | Do you already know any songs by Lucio Dalla?}\",\"en\":\"Perfect, then I'll play something by Lucio Dalla. He was from Bologna, and his songs are in the heart of the city. Do you already know any songs by Lucio Dalla?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "ask-en",
+    "line": "Allora siamo d'accordo! Il mio pezzo preferito è Caruso, lo suono quasi ogni giorno. Quando arriva il ritornello, tanti si fermano ad ascoltare. When the chorus comes, many people stop to listen.",
+    "en": "Then we agree! My favorite piece is Caruso, I play it almost every day. When the chorus comes, many people stop to listen.",
+    "raw": "{\"line\":\"{Allora siamo d'accordo! | Then we agree!} {Il mio pezzo preferito è *Caruso*, lo suono quasi ogni giorno. | My favorite piece is *Caruso*, I play it almost every day.} {Quando arriva il ritornello, tanti si fermano ad ascoltare. | When the chorus comes, many people stop to listen.}\",\"en\":\"Then we agree! My favorite piece is Caruso, I play it almost every day. When the chorus comes, many people stop to listen.\",\"answers\":[{\"text\":\"Perché ti piace tanto Caruso?\",\"en\":\"Why do you like Caruso so much?\"},{\"text\":\"Posso ascoltarla adesso?\",\"en\":\"Can I listen to it now?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Perché ti piace tanto Caruso?",
+     "Posso ascoltarla adesso?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Mi piace perché è una canzone piena di emozione. I like it because it is a song full of emotion. Quando la suono, sento tutta la storia di Bologna. Torni giovedì pomeriggio, suono tutto Lucio Dalla, e Caruso per ultimo! Come back Thursday afternoon, I'll play all of Lucio Dalla, and Caruso last!",
+    "en": "I like it because it is a song full of emotion. When I play it, I feel all of Bologna's history. Come back Thursday afternoon, I'll play all of Lucio Dalla, and Caruso last!",
+    "raw": "{\"line\":\"{Mi piace *perché è una canzone piena di emozione*. | I like it *because it is a song full of emotion*.} {Quando la suono, sento tutta la storia di Bologna. | When I play it, I feel all of Bologna's history.} {Torni *giovedì pomeriggio*, suono tutto Lucio Dalla, e Caruso per ultimo! | Come back *Thursday afternoon*, I'll play all of Lucio Dalla, and Caruso last!}\",\"en\":\"I like it because it is a song full of emotion. When I play it, I feel all of Bologna's history. Come back Thursday afternoon, I'll play all of Lucio Dalla, and Caruso last!\",\"answers\":[{\"text\":\"Grazie, a giovedì! Arrivederci.\",\"en\":\"Thank you, see you Thursday! Goodbye.\"},{\"text\":\"Che bella idea! Buona giornata, Franco.\",\"en\":\"What a lovely idea! Have a good day, Franco.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Grazie, a giovedì! Arrivederci.",
+     "Che bella idea! Buona giornata, Franco."
+    ],
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "A giovedì, allora! Arrivederci e buona giornata!",
+    "en": "See you Thursday, then! Goodbye and have a nice day!",
+    "raw": "{\"line\":\"A giovedì, allora! Arrivederci e buona giornata!\",\"en\":\"See you Thursday, then! Goodbye and have a nice day!\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": true
+   }
+  ],
+  "person": "Franco Melodia",
+  "arm": "header",
+  "culture": [
+   "Piazza Maggiore is the main square of Bologna",
+   "The Neptune fountain (Fontana del Nettuno) stands near Piazza Maggiore in Bologna",
+   "The Basilica of San Petronio overlooks Piazza Maggiore; it is huge and unfinished, with an incomplete facade",
+   "The Italian expression 'andare pazzo per' means to be mad about something (literally 'to go crazy for')",
+   "Lucio Dalla was a singer-songwriter from Bologna whose songs are part of the city's heart",
+   "Caruso is a famous song by Lucio Dalla",
+   "Street musicians play in Italian city squares",
+   "Italian greetings and farewells: Buongiorno, Arrivederci, Buona giornata, A giovedì (see you Thursday)",
+   "Formal Italian address uses 'Lei' (e.g. 'Le piace...?', 'Torni giovedì')"
+  ]
+ },
+ {
+  "step": 4,
+  "city": "napoli",
+  "place": "presepi-san-gregorio",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Buongiorno, signore! Sto sistemando i pastori per il presepe, a novembre c'è tanto lavoro. Le piace il presepe napoletano? Do you like the Neapolitan nativity scene?",
+    "en": "Good morning, sir! I'm arranging the shepherd figurines for the nativity scene, in November there's so much work. Do you like the Neapolitan nativity scene?",
+    "raw": "{\"line\":\"{*Buongiorno*, signore! | *Good morning*, sir!} {Sto sistemando *i pastori* per il presepe, a novembre c'è tanto lavoro. | I'm arranging *the shepherd figurines* for the nativity scene, in November there's so much work.} {Le piace *il presepe napoletano*? | Do you like *the Neapolitan nativity scene*?}\",\"en\":\"Good morning, sir! I'm arranging the shepherd figurines for the nativity scene, in November there's so much work. Do you like the Neapolitan nativity scene?\",\"answers\":[{\"text\":\"Sì, è molto bello. Quanti pastori fa?\",\"en\":\"Yes, it's very beautiful. How many shepherd figurines do you make?\"},{\"text\":\"Non conosco i pastori. Cosa sono?\",\"en\":\"I don't know the pastori. What are they?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sì, è molto bello. Quanti pastori fa?",
+     "Non conosco i pastori. Cosa sono?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Ne faccio tanti, circa duecento ogni anno. Ogni pastore è fatto a mano, con la terracotta e la stoffa. Vuole vedere il pastore a cui sto lavorando adesso? Would you like to see the figurine I'm working on right now?",
+    "en": "I make a lot, about two hundred every year. Every figurine is made by hand, with terracotta and fabric. Would you like to see the figurine I'm working on right now?",
+    "raw": "{\"line\":\"{Ne faccio *tanti*, circa duecento ogni anno. | I make *a lot*, about two hundred every year.} {Ogni pastore è fatto a mano, con la terracotta e la stoffa. | Every figurine is made by hand, with terracotta and fabric.} {Vuole vedere *il pastore* a cui sto lavorando adesso? | Would you like to see *the figurine* I'm working on right now?}\",\"en\":\"{I make *a lot*, about two hundred every year. Every figurine is made by hand, with terracotta and fabric. Would you like to see *the figurine* I'm working on right now?}\",\"answers\":[{\"text\":\"Sì, volentieri. Mi fa vedere?\",\"en\":\"Yes, gladly. Will you show me?\"},{\"text\":\"Duecento! Quanto tempo ci vuole per uno?\",\"en\":\"Two hundred! How long does it take for one?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sì, volentieri. Mi fa vedere?",
+     "Duecento! Quanto tempo ci vuole per uno?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Ecco, guardi questo pastore. Here, look at this figurine. È un pastore con la lana, e il vestito è di vera stoffa. Quale personaggio del presepe le piace di più? Which character of the nativity scene do you like the most?",
+    "en": "Here, look at this figurine. It's a shepherd with wool, and the clothes are real fabric. Which character of the nativity scene do you like the most?",
+    "raw": "{\"line\":\"{*Ecco*, guardi questo pastore. | *Here*, look at this figurine.} {È un pastore con la lana, e il vestito è di vera stoffa. | It's a shepherd with wool, and the clothes are real fabric.} {Quale personaggio del presepe le piace di più? | Which character of the nativity scene do you like the most?}\",\"en\":\"Here, look at this figurine. It's a shepherd with wool, and the clothes are real fabric. Which character of the nativity scene do you like the most?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Non importa, si guardi intorno! Never mind, look around! Qui in via San Gregorio Armeno ci sono i pastori di tutti i tipi, anche famosi come Maradona. A noi napoletani piace scherzare, anche nel presepe! We Neapolitans love to joke around, even in the nativity scene!",
+    "en": "Never mind, look around! Here on Via San Gregorio Armeno there are figurines of all kinds, even famous people like Maradona. We Neapolitans love to joke around, even in the nativity scene!",
+    "raw": "{\"line\":\"{Non importa, *si guardi intorno*! | Never mind, *look around*!} {Qui in via San Gregorio Armeno ci sono *i pastori* di tutti i tipi, anche famosi come Maradona. | Here on Via San Gregorio Armeno there are *figurines* of all kinds, even famous people like Maradona.} {A noi napoletani *piace scherzare*, anche nel presepe! | We Neapolitans *love to joke around*, even in the nativity scene!}\",\"en\":\"Never mind, look around! Here on Via San Gregorio Armeno there are figurines of all kinds, even famous people like Maradona. We Neapolitans love to joke around, even in the nativity scene!\",\"answers\":[{\"text\":\"Davvero? Che bello, mi piace scherzare.\",\"en\":\"Really? How nice, I like joking around.\"},{\"text\":\"Che cosa significa \\\"scherzare\\\"?\",\"en\":\"What does \\\"scherzare\\\" mean?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Davvero? Che bello, mi piace scherzare.",
+     "Che cosa significa \"scherzare\"?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Davvero, signore! Ogni anno facciamo i pastori dei personaggi del momento. Anche i politici e i calciatori finiscono nel presepe! Even politicians and footballers end up in the nativity scene! Vuole vedere la bottega, qui dietro? Would you like to see the workshop, back here?",
+    "en": "Really, sir! Every year we make figurines of the people of the moment. Even politicians and footballers end up in the nativity scene! Would you like to see the workshop, back here?",
+    "raw": "{\"line\":\"{*Davvero*, signore! Ogni anno facciamo i pastori dei personaggi del momento. | *Really*, sir! Every year we make figurines of the people of the moment.} {Anche i politici e i calciatori finiscono nel presepe! | Even politicians and footballers end up in the nativity scene!} {Vuole vedere *la bottega*, qui dietro? | Would you like to see *the workshop*, back here?}\",\"en\":\"Really, sir! Every year we make figurines of the people of the moment. Even politicians and footballers end up in the nativity scene! Would you like to see the workshop, back here?\",\"answers\":[{\"text\":\"Sì, grazie. Mi piacerebbe vedere la bottega.\",\"en\":\"Yes, thank you. I would like to see the workshop.\"},{\"text\":\"Che bella idea! Chi è il personaggio più strano?\",\"en\":\"What a great idea! Who is the strangest character?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sì, grazie. Mi piacerebbe vedere la bottega.",
+     "Che bella idea! Chi è il personaggio più strano?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Prego, venga con me, la bottega è qui dietro. Qui facciamo tutto a mano, con la terracotta e il pennello. Le piace lavorare con le mani? Do you like working with your hands?",
+    "en": "Please, come with me, the workshop is right back here. Here we make everything by hand, with terracotta and the paintbrush. Do you like working with your hands?",
+    "raw": "{\"line\":\"{Prego, *venga con me*, la bottega è qui dietro. | Please, *come with me*, the workshop is right back here.} {Qui facciamo tutto a mano, con la terracotta e il pennello. | Here we make everything by hand, with terracotta and the paintbrush.} {Le piace lavorare con le mani? | Do you like working with your hands?}\",\"en\":\"Please, come with me, the workshop is right back here. Here we make everything by hand, with terracotta and the paintbrush. Do you like working with your hands?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "ask-en",
+    "line": "Bene, allora si accomodi! Prego, guardi qui: questi sono i volti dei pastori, prima di essere dipinti. Ogni faccia si modella con le dita, e ci vogliono molte ore. Dopo si cuoce nel forno, e solo alla fine si dipinge. Per questo il lavoro a novembre non finisce mai!",
+    "en": "Good, then make yourself comfortable! Please, look here: these are the faces of the figurines, before they are painted. Every face is shaped with the fingers, and it takes many hours. Afterwards it is fired in the kiln, and only at the end is it painted. That's why the work in November never ends!",
+    "raw": "{\"line\":\"Bene, allora si accomodi! Prego, guardi qui: questi sono i volti dei pastori, prima di essere dipinti. Ogni faccia si modella con le dita, e ci vogliono molte ore. Dopo si cuoce nel forno, e solo alla fine si dipinge. Per questo il lavoro a novembre non finisce mai!\",\"en\":\"Good, then make yourself comfortable! Please, look here: these are the faces of the figurines, before they are painted. Every face is shaped with the fingers, and it takes many hours. Afterwards it is fired in the kiln, and only at the end is it painted. That's why the work in November never ends!\",\"answers\":[{\"text\":\"Quante ore ci vogliono per una faccia?\",\"en\":\"How many hours does it take for one face?\"},{\"text\":\"Chi dipinge i pastori?\",\"en\":\"Who paints the figurines?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Quante ore ci vogliono per una faccia?",
+     "Chi dipinge i pastori?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Per una faccia ci vogliono circa tre ore, poi il forno e il pennello. Mi ha fatto piacere parlare con lei! Torni a dicembre, quando il presepe è finito e la bottega è piena di luci. It was a pleasure talking with you! Come back in December, when the nativity scene is finished and the workshop is full of lights.",
+    "en": "For one face it takes about three hours, then the kiln and the paintbrush. It was a pleasure talking with you! Come back in December, when the nativity scene is finished and the workshop is full of lights.",
+    "raw": "{\"line\":\"{Per una faccia ci vogliono *circa tre ore*, poi il forno e il pennello. | For one face it takes *about three hours*, then the kiln and the paintbrush.} {Mi ha fatto piacere parlare con lei! *Torni a dicembre*, quando il presepe è finito e la bottega è piena di luci. | It was a pleasure talking with you! *Come back in December*, when the nativity scene is finished and the workshop is full of lights.}\",\"en\":\"For one face it takes about three hours, then the kiln and the paintbrush. It was a pleasure talking with you! Come back in December, when the nativity scene is finished and the workshop is full of lights.\",\"answers\":[{\"text\":\"Grazie, Maestro! Torno a dicembre, arrivederci.\",\"en\":\"Thank you, Maestro! I'll come back in December, goodbye.\"},{\"text\":\"Mi è piaciuto molto. Buona giornata e a presto!\",\"en\":\"I liked it very much. Have a good day and see you soon!\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Grazie, Maestro! Torno a dicembre, arrivederci.",
+     "Mi è piaciuto molto. Buona giornata e a presto!"
+    ],
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "Arrivederci, e buon lavoro... anzi, buona passeggiata! A dicembre la aspetto, stia bene!",
+    "en": "Goodbye, and have a good... rather, enjoy your walk! I'll be expecting you in December, take care!",
+    "raw": "{\"line\":\"Arrivederci, e buon lavoro... anzi, buona passeggiata! A dicembre la aspetto, stia bene!\",\"en\":\"Goodbye, and have a good... rather, enjoy your walk! I'll be expecting you in December, take care!\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": true
+   }
+  ],
+  "person": "Maestro Gennaro Capuano",
+  "arm": "header",
+  "culture": [
+   "Neapolitan nativity scenes (presepe napoletano) are a famous tradition in Naples",
+   "Nativity figurines are called pastori",
+   "Pastori are handmade from terracotta and real fabric",
+   "Artisans make hundreds of figurines each year, with November being the busiest month",
+   "Via San Gregorio Armeno in Naples is the street famous for nativity scene workshops and figurines",
+   "Figurines of famous people like Maradona are made for the nativity scene",
+   "Neapolitans love joking, even in the nativity scene",
+   "Each year figurines are made of topical personalities such as politicians and footballers",
+   "Faces are modeled by hand with the fingers, baked in a kiln, and only then painted",
+   "Making one face takes about three hours, plus kiln and painting",
+   "Workshops are called botteghe and are full of lights in December when the nativity scene is finished",
+   "Useful Italian words and phrases: buongiorno, prego, si accomodi, arrivederci, stia bene, buona passeggiata, torni a dicembre, mi ha fatto piacere, venga con me, guardi, si guardi intorno"
+  ]
+ },
+ {
+  "step": 4,
+  "city": "torino",
+  "place": "bicerin-dal-1763",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Buongiorno! Che freddo oggi, con tutta questa pioggia. Qui da noi, quando fa così, tutti vogliono un bicerin caldo. Ha già provato il bicerin? Have you already tried the bicerin?",
+    "en": "Good morning! What cold weather today, with all this rain. Here, when it's like this, everyone wants a bicerin (a hot drink of espresso, chocolate and cream). Have you already tried the bicerin?",
+    "raw": "{\"line\":\"{Buongiorno! *Che freddo oggi*, con tutta questa pioggia. | Good morning! *What cold weather today*, with all this rain.} {Qui da noi, quando fa così, tutti vogliono *un bicerin* caldo. | Here, when it's like this, everyone wants *a bicerin* (a hot drink of espresso, chocolate and cream).} {Ha già provato *il bicerin*? | Have you already tried *the bicerin*?}\",\"en\":\"Good morning! What cold weather today, with all this rain. Here, when it's like this, everyone wants a bicerin, a hot drink of espresso, chocolate and cream. Have you already tried the bicerin?\",\"answers\":[{\"text\":\"No, non l'ho mai provato. Che cos'è?\",\"en\":\"No, I've never tried it. What is it?\"},{\"text\":\"Sì, è buonissimo. Fa proprio freddo oggi!\",\"en\":\"Yes, it's delicious. It's really cold today!\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "No, non l'ho mai provato. Che cos'è?",
+     "Sì, è buonissimo. Fa proprio freddo oggi!"
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Il bicerin è una bevanda calda di Torino. The bicerin is a hot drink from Turin. Ha caffè, cioccolata e crema di latte, in tre strati. Mia nonna lo faceva già così, e non l'ho mai cambiato. My grandmother already made it this way, and I have never changed it.",
+    "en": "The bicerin is a hot drink from Turin. It has coffee, chocolate and cream, in three layers. My grandmother already made it this way, and I have never changed it.",
+    "raw": "{\"line\":\"{Il bicerin è *una bevanda calda* di Torino. | The bicerin is *a hot drink* from Turin.} {Ha *caffè, cioccolata e crema di latte*, in tre strati. | It has *coffee, chocolate and cream*, in three layers.} {Mia nonna lo faceva già così, e non l'ho mai cambiato. | My grandmother already made it this way, and I have never changed it.}\",\"en\":\"The bicerin is a hot drink from Turin. It has coffee, chocolate and cream, in three layers. My grandmother already made it this way, and I have never changed it.\",\"answers\":[{\"text\":\"Che bella tradizione! Lo voglio provare.\",\"en\":\"What a beautiful tradition! I want to try it.\"},{\"text\":\"Perché ci sono tre strati? Non si mescola?\",\"en\":\"Why are there three layers? Don't you mix it?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Che bella tradizione! Lo voglio provare.",
+     "Perché ci sono tre strati? Non si mescola?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Benissimo, glielo preparo subito. Qui nel Quadrilatero Romano la gente viene per il bicerin da più di cento anni. Here in the Quadrilatero Romano people have come for the bicerin for more than a hundred years. Con questo freddo, è proprio il momento giusto. With this cold, it's really the right moment.",
+    "en": "Very good, I'll make it for you right away. Here in the Quadrilatero Romano people have come for the bicerin for more than a hundred years. With this cold, it's really the right moment.",
+    "raw": "{\"line\":\"{*Benissimo*, glielo preparo subito. | *Very good*, I'll make it for you right away.} {Qui nel Quadrilatero Romano la gente viene per *il bicerin* da più di cento anni. | Here in the Quadrilatero Romano people have come for *the bicerin* for more than a hundred years.} {Con questo freddo, è proprio *il momento giusto*. | With this cold, it's really *the right moment*.}\",\"en\":\"Very good, I'll make it for you right away. Here in the Quadrilatero Romano people have come for the bicerin for more than a hundred years. With this cold, it's really the right moment.\",\"answers\":[{\"text\":\"Sì, ci vuole proprio qualcosa di caldo. Non vedo l'ora di assaggiarlo!\",\"en\":\"Yes, something hot is just what's needed. I can't wait to taste it!\"},{\"text\":\"Più di cento anni, che storia! Come si fanno i tre strati?\",\"en\":\"More than a hundred years, what a history! How do you make the three layers?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sì, ci vuole proprio qualcosa di caldo. Non vedo l'ora di assaggiarlo!",
+     "Più di cento anni, che storia! Come si fanno i tre strati?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Ecco, il suo bicerin è pronto. Non lo mescoli: si beve a strati, tutto insieme. Vuole sedersi vicino alla finestra, a guardare la pioggia? Would you like to sit by the window, to watch the rain?",
+    "en": "Here, your bicerin is ready. Don't stir it: you drink it in layers, all together. Would you like to sit by the window, to watch the rain?",
+    "raw": "{\"line\":\"{Ecco, il suo *bicerin* è pronto. | Here, your *bicerin* is ready.} {Non lo mescoli: si beve *a strati*, tutto insieme. | Don't stir it: you drink it *in layers*, all together.} {Vuole sedersi *vicino alla finestra*, a guardare la pioggia? | Would you like to sit *by the window*, to watch the rain?}\",\"en\":\"Here, your bicerin is ready. Don't stir it: you drink it in layers, all together. Would you like to sit by the window, to watch the rain?\",\"answers\":[{\"text\":\"Sì, volentieri. Il bicerin ha un profumo buonissimo!\",\"en\":\"Yes, gladly. The bicerin smells delicious!\"},{\"text\":\"Che bel locale! Da quanto tempo lavora qui?\",\"en\":\"What a lovely place! How long have you worked here?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sì, volentieri. Il bicerin ha un profumo buonissimo!",
+     "Che bel locale! Da quanto tempo lavora qui?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "ask-en",
+    "line": "Prego, si accomodi pure là, al tavolino piccolo. You're welcome, sit down right there, at the little table. Il profumo viene dal cioccolato fondente: lo faccio io, ogni mattina, con una ricetta di famiglia. Con questo freddo, i clienti arrivano subito per scaldarsi. In this cold, the customers come straight in to warm up.",
+    "en": "You're welcome, sit down right there, at the little table. The smell comes from the dark chocolate: I make it myself, every morning, from a family recipe. In this cold, the customers come straight in to warm up.",
+    "raw": "{\"line\":\"{*Prego*, si accomodi pure là, al tavolino piccolo. | *You're welcome*, sit down right there, at the little table.} {Il profumo viene dal cioccolato fondente: lo faccio io, ogni mattina, con una ricetta di famiglia. | The smell comes from the dark chocolate: I make it myself, every morning, from a family recipe.} {Con questo freddo, *i clienti* arrivano subito per scaldarsi. | In this cold, *the customers* come straight in to warm up.}\",\"en\":\"{*Prego*, si accomodi pure là, al tavolino piccolo. | *You're welcome*, sit down right there, at the little table.} {Il profumo viene dal cioccolato fondente: lo faccio io, ogni mattina, con una ricetta di famiglia. | The smell comes from the dark chocolate: I make it myself, every morning, from a family recipe.} {Con questo freddo, *i clienti* arrivano subito per scaldarsi. | In this cold, *the customers* come straight in to warm up.}\",\"answers\":[{\"text\":\"Che bella ricetta! Come fa il cioccolato?\",\"en\":\"What a lovely recipe! How do you make the chocolate?\"},{\"text\":\"Il locale è molto bello. Da quanto tempo è qui?\",\"en\":\"The place is very beautiful. How long has it been here?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Che bella ricetta! Come fa il cioccolato?",
+     "Il locale è molto bello. Da quanto tempo è qui?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Lo faccio piano piano, con cioccolato fondente, latte e un po' di zucchero. Lo giro sul fuoco finché è denso e lucido. Com'è il suo bicerin, le piace? How is your bicerin, do you like it?",
+    "en": "I make it slowly, bit by bit, with dark chocolate, milk and a little sugar. I stir it over the heat until it is thick and shiny. How is your bicerin, do you like it?",
+    "raw": "{\"line\":\"{Lo faccio *piano piano*, con cioccolato fondente, latte e un po' di zucchero. | I make it *slowly, bit by bit*, with dark chocolate, milk and a little sugar.} {Lo giro sul fuoco finché è denso e lucido. | I stir it over the heat until it is thick and shiny.} {Com'è il suo bicerin, *le piace*? | How is your bicerin, *do you like it*?}\",\"en\":\"{I make it *slowly, bit by bit*, with dark chocolate, milk and a little sugar.} {I stir it over the heat until it is thick and shiny.} {How is your bicerin, *do you like it*?}\",\"answers\":[{\"text\":\"Mi piace tantissimo! È caldo e cremoso.\",\"en\":\"I like it so much! It's hot and creamy.\"},{\"text\":\"Cosa significa \\\"piano piano\\\"? Può ripetere più lentamente?\",\"en\":\"What does \\\"piano piano\\\" mean? Can you repeat it more slowly?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Mi piace tantissimo! È caldo e cremoso.",
+     "Cosa significa \"piano piano\"? Può ripetere più lentamente?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Che bello, mi fa molto piacere! La crema di latte è fresca, la monto a mano ogni mattina. The cream is fresh, I whip it by hand every morning. Ha visto i vecchi specchi qui dietro? Sono qui da più di un secolo. Have you seen the old mirrors back here? They've been here for more than a century.",
+    "en": "How nice, I'm very happy to hear it! The cream is fresh, I whip it by hand every morning. Have you seen the old mirrors back here? They've been here for more than a century.",
+    "raw": "{\"line\":\"{Che bello, mi fa molto piacere! | How nice, I'm very happy to hear it!} {La crema di latte *è fresca*, la monto a mano ogni mattina. | The cream *is fresh*, I whip it by hand every morning.} {Ha visto *i vecchi specchi* qui dietro? Sono qui da più di un secolo. | Have you seen *the old mirrors* back here? They've been here for more than a century.}\",\"en\":\"How nice, I'm very happy to hear it! The cream is fresh, I whip it by hand every morning. Have you seen the old mirrors back here? They've been here for more than a century.\",\"answers\":[{\"text\":\"Sì, gli specchi sono bellissimi. Sembra un posto molto antico.\",\"en\":\"Yes, the mirrors are beautiful. It seems like a very old place.\"},{\"text\":\"Non li avevo visti! Posso guardarli mentre bevo il bicerin?\",\"en\":\"I hadn't seen them! Can I look at them while I drink the bicerin?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sì, gli specchi sono bellissimi. Sembra un posto molto antico.",
+     "Non li avevo visti! Posso guardarli mentre bevo il bicerin?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Sì, qui il tempo sembra fermo, ed è proprio quello che piace alla gente. Time seems to stand still here, and that's exactly what people like. Torni a trovarmi quando fa ancora freddo: a dicembre faccio il bicerin con le spezie di Natale. Come back to see me when it's still cold: in December I make the bicerin with Christmas spices.",
+    "en": "Yes, here time seems to stand still, and that's exactly what people like. Come back to see me when it's still cold: in December I make the bicerin with Christmas spices.",
+    "raw": "{\"line\":\"Sì, qui il tempo sembra fermo, ed è proprio quello che piace alla gente. Time seems to stand still here, and that's exactly what people like. Torni a trovarmi quando fa ancora freddo: a dicembre faccio il bicerin con le spezie di Natale. Come back to see me when it's still cold: in December I make the bicerin with Christmas spices.\",\"en\":\"Yes, here time seems to stand still, and that's exactly what people like. Come back to see me when it's still cold: in December I make the bicerin with Christmas spices.\",\"answers\":[{\"text\":\"Grazie di tutto, tornerò a dicembre! Arrivederci!\",\"en\":\"Thank you for everything, I'll come back in December! Goodbye!\"},{\"text\":\"Che bella idea! Buona giornata, a presto!\",\"en\":\"What a lovely idea! Have a good day, see you soon!\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Grazie di tutto, tornerò a dicembre! Arrivederci!",
+     "Che bella idea! Buona giornata, a presto!"
+    ],
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "Grazie a lei, a presto! Stia al caldo e ci vediamo a dicembre. Arrivederci!",
+    "en": "Thank you, see you soon! Stay warm and see you in December. Goodbye!",
+    "raw": "{\"line\":\"Grazie a lei, a presto! Stia al caldo e ci vediamo a dicembre. Arrivederci!\",\"en\":\"Thank you, see you soon! Stay warm and see you in December. Goodbye!\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": true
+   }
+  ],
+  "person": "Franca Cavallo",
+  "arm": "header",
+  "culture": [
+   "The bicerin is a hot drink from Turin made of coffee, chocolate and milk cream in three layers",
+   "The bicerin is not stirred; it is drunk in layers, all together",
+   "Turin's Quadrilatero Romano is a neighborhood where people have come for bicerin for over a hundred years",
+   "Bicerin is made with dark chocolate, milk and a little sugar, stirred over the fire until thick and glossy",
+   "Cafés in Turin can keep old mirrors that are more than a century old",
+   "In December, bicerin can be made with Christmas spices",
+   "Bicerin is a traditional recipe passed down in families",
+   "Italian greeting 'Buongiorno' means good morning",
+   "Italian 'Prego, si accomodi' means you're welcome, sit down (formal politeness)",
+   "Italian 'Arrivederci' and 'a presto' are farewells meaning goodbye and see you soon",
+   "Italians use the formal 'lei' form with customers and strangers"
+  ]
+ },
+ {
+  "step": 4,
+  "city": "lucca",
+  "place": "gastronomia-angeli",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Buongiorno! Benvenuto alla Gastronomia Angeli. Stamattina ho fatto la torta di verdure, è ancora calda. Le va di assaggiarne un pezzetto? Would you like to taste a little piece?",
+    "en": "Good morning! Welcome to Gastronomia Angeli. This morning I made the vegetable pie, it's still warm. Would you like to taste a little piece?",
+    "raw": "{\"line\":\"{*Buongiorno*! Benvenuto alla Gastronomia Angeli. | *Good morning*! Welcome to Gastronomia Angeli.} {Stamattina ho fatto *la torta di verdure*, è ancora calda. | This morning I made *the vegetable pie*, it's still warm.} {Le va di assaggiarne *un pezzetto*? | Would you like to taste *a little piece*?}\",\"en\":\"Good morning! Welcome to Gastronomia Angeli. This morning I made the vegetable pie, it's still warm. Would you like to taste a little piece?\",\"answers\":[{\"text\":\"Sì, volentieri. Sembra buona.\",\"en\":\"Yes, gladly. It looks good.\"},{\"text\":\"Che cos'è la torta di verdure?\",\"en\":\"What is the vegetable pie?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sì, volentieri. Sembra buona.",
+     "Che cos'è la torta di verdure?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Ecco, un pezzetto per lei, ancora caldo. La torta di verdure è una specialità di Lucca, la faccio con le erbe di stagione. Le piace la cucina semplice, con le verdure? Do you like simple cooking, with vegetables?",
+    "en": "Here, a little piece for you, still warm. The vegetable pie is a Lucca specialty, I make it with seasonal greens. Do you like simple cooking, with vegetables?",
+    "raw": "{\"line\":\"{Ecco, *un pezzetto* per lei, ancora caldo. | Here, *a little piece* for you, still warm.} {La *torta di verdure* è una specialità di Lucca, la faccio con le erbe di stagione. | The *vegetable pie* is a Lucca specialty, I make it with seasonal greens.} {Le piace la cucina semplice, con le verdure? | Do you like simple cooking, with vegetables?}\",\"en\":\"Here, a little piece for you, still warm. The vegetable pie is a Lucca specialty, I make it with seasonal greens. Do you like simple cooking, with vegetables?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Bene, allora è nel posto giusto! Oggi in vetrina c'è il farro alla lucchese, una zuppa tipica di qui. Today in the window there's the farro soup, Lucca style, a typical soup from here. Vuole sentire com'è fatta, o preferisce guardare cosa c'è in vetrina? Would you like to hear how it's made, or would you rather look at what's in the window?",
+    "en": "Good, then you're in the right place! Today in the window there's the farro soup, Lucca style, a typical soup from here. Would you like to hear how it's made, or would you rather look at what's in the window?",
+    "raw": "{\"line\":\"{Bene, allora è nel posto giusto! | Good, then you're in the right place!} {Oggi in vetrina c'è *il farro alla lucchese*, una zuppa tipica di qui. | Today in the window there's *the farro soup, Lucca style*, a typical soup from here.} {Vuole sentire com'è fatta, o preferisce guardare cosa c'è in vetrina? | Would you like to hear how it's made, or would you rather look at what's in the window?}\",\"en\":\"Good, then you're in the right place! Today in the window there's the farro soup, Lucca style, a typical soup from here. Would you like to hear how it's made, or would you rather look at what's in the window?\",\"answers\":[{\"text\":\"Mi piace molto il farro. Com'è fatto?\",\"en\":\"I like farro very much. How is it made?\"},{\"text\":\"Voglio guardare la vetrina. Cosa c'è?\",\"en\":\"I want to look at the window. What is there?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Mi piace molto il farro. Com'è fatto?",
+     "Voglio guardare la vetrina. Cosa c'è?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Il farro si cuoce piano con i fagioli, la cipolla e il sedano. The farro cooks slowly with the beans, the onion and the celery. Alla fine ci metto un filo d'olio nuovo, qui a Lucca l'olio è tutto. In novembre è la stagione migliore, e la mia nonna la faceva proprio così. November is the best season, and my grandmother made it just like this.",
+    "en": "The farro cooks slowly with the beans, the onion and the celery. At the end I add a drizzle of oil, the new oil, here in Lucca oil is everything. November is the best season, and my grandmother made it just like this.",
+    "raw": "{\"line\":\"{Il farro si cuoce piano con *i fagioli*, la cipolla e il sedano. | The farro cooks slowly with *the beans*, the onion and the celery.} {Alla fine ci metto *un filo d'olio* nuovo, qui a Lucca l'olio è tutto. | At the end I add *a drizzle of oil*, the new oil, here in Lucca oil is everything.} {In novembre è la stagione migliore, e la mia nonna la faceva proprio così. | November is the best season, and my grandmother made it just like this.}\",\"en\":\"The farro cooks slowly with the beans, the onion and the celery. At the end I add a drizzle of new oil, here in Lucca oil is everything. November is the best season, and my grandmother made it just like this.\",\"answers\":[{\"text\":\"Che bella tradizione! Sembra molto buona.\",\"en\":\"What a lovely tradition! It sounds very good.\"},{\"text\":\"Posso assaggiare anche la zuppa? Cosa significa «un filo d'olio»?\",\"en\":\"Can I taste the soup too? What does \\\"un filo d'olio\\\" mean?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Che bella tradizione! Sembra molto buona.",
+     "Posso assaggiare anche la zuppa? Cosa significa «un filo d'olio»?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Grazie, è una ricetta di famiglia! A Lucca in novembre c'è anche l'olio nuovo, appena fatto. Ne vuole un assaggio con il pane? Would you like a taste with bread?",
+    "en": "Thank you, it's a family recipe! In Lucca in November there's also the new oil, just pressed. Would you like a taste with bread?",
+    "raw": "{\"line\":\"{Grazie, *è una ricetta di famiglia*! | Thank you, *it's a family recipe*!} {A Lucca in novembre c'è anche *l'olio nuovo*, appena fatto. | In Lucca in November there's also *the new oil*, just pressed.} {Ne vuole *un assaggio con il pane*? | Would you like *a taste with bread*?}\",\"en\":\"Thank you, it's a family recipe! In Lucca in November there's also the new oil, just pressed. Would you like a taste with bread?\",\"answers\":[{\"text\":\"Sì, volentieri. Mi piace l'olio buono.\",\"en\":\"Yes, gladly. I like good oil.\"},{\"text\":\"Che cos'è l'olio nuovo? Me lo può spiegare?\",\"en\":\"What is the new oil? Can you explain it to me?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sì, volentieri. Mi piace l'olio buono.",
+     "Che cos'è l'olio nuovo? Me lo può spiegare?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "ask-en",
+    "line": "Ecco il pane con l'olio nuovo, è verde e un po' piccante. Lo prendo dai frantoi qui vicino, sulle colline di Lucca. I get it from the olive mills near here, in the hills of Lucca.",
+    "en": "Here is the bread with the new oil, it's green and a little spicy. I get it from the olive mills near here, in the hills of Lucca.",
+    "raw": "{\"line\":\"{Ecco il pane con *l'olio nuovo*, è verde e un po' piccante. | Here is the bread with *the new oil*, it's green and a little spicy.} {Lo prendo dai frantoi qui vicino, sulle colline di Lucca. | I get it from the olive mills near here, in the hills of Lucca.}\",\"en\":\"Here is the bread with the new oil, it's green and a little spicy. I get it from the olive mills near here, in the hills of Lucca.\",\"answers\":[{\"text\":\"Perché è piccante?\",\"en\":\"Why is it spicy?\"},{\"text\":\"Cos'è un frantoio?\",\"en\":\"What is a frantoio (an olive mill)?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Perché è piccante?",
+     "Cos'è un frantoio?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Perché le olive sono appena raccolte, e l'olio nuovo ha un sapore forte. Because the olives are just picked, and the new oil has a strong flavor. È il segno che l'olio è buono e fresco. Le piace il piccante? Do you like spicy?",
+    "en": "Because the olives are just picked, and the new oil has a strong flavor. It's the sign that the oil is good and fresh. Do you like spicy?",
+    "raw": "{\"line\":\"{Perché le olive sono appena raccolte, e l'olio nuovo ha *un sapore forte*. | Because the olives are just picked, and the new oil has *a strong flavor*.} {È il segno che l'olio è buono e fresco. | It's the sign that the oil is good and fresh.} {Le piace *il piccante*? | Do you like *spicy*?}\",\"en\":\"Because the olives are just picked, and the new oil has a strong flavor. It's the sign that the oil is good and fresh. Do you like spicy?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Allora torni a trovarmi sabato, quando faccio il farro alla lucchese. Then come see me again on Saturday, when I make the Lucca-style farro soup. Le tengo una porzione, con l'olio nuovo sopra! Arrivederci e buona giornata! Goodbye and have a good day!",
+    "en": "Then come see me again on Saturday, when I make the Lucca-style farro soup. I'll save you a portion, with the new oil on top! Goodbye and have a good day!",
+    "raw": "{\"line\":\"{Allora *torni a trovarmi* sabato, quando faccio il farro alla lucchese. | Then *come see me again* on Saturday, when I make the Lucca-style farro soup.} {Le tengo una porzione, con l'olio nuovo sopra! | I'll save you a portion, with the new oil on top!} {Arrivederci e buona giornata! | Goodbye and have a good day!}\",\"en\":\"Then come see me again on Saturday, when I make the Lucca-style farro soup. I'll save you a portion, with the new oil on top! Goodbye and have a good day!\",\"answers\":[{\"text\":\"Grazie mille, torno sabato! Arrivederci!\",\"en\":\"Thank you so much, I'll come back Saturday! Goodbye!\"},{\"text\":\"Che bella idea, grazie! Buona giornata!\",\"en\":\"What a lovely idea, thank you! Have a good day!\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Grazie mille, torno sabato! Arrivederci!",
+     "Che bella idea, grazie! Buona giornata!"
+    ],
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "A sabato, allora! Buona giornata, e a presto! Have a good day, and see you soon!",
+    "en": "See you Saturday, then! Have a good day, and see you soon!",
+    "raw": "{\"line\":\"{A sabato, allora! | See you Saturday, then!} {*Buona giornata*, e a presto! | Have *a good day*, and see you soon!}\",\"en\":\"See you Saturday, then! Have a good day, and see you soon!\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": true
+   }
+  ],
+  "person": "Beatrice Angeli",
+  "arm": "header",
+  "culture": [
+   "Torta di verdure is a Lucca specialty made with seasonal greens",
+   "Farro alla lucchese is a typical Lucca soup of farro, beans, onion and celery",
+   "Farro soup is cooked slowly and finished with a drizzle of new olive oil",
+   "Olive oil is hugely important in Lucca",
+   "November is the best season for farro soup and the time of new olive oil (olio nuovo)",
+   "New olive oil is green, peppery and strong-tasting, a sign that it is fresh and good",
+   "New oil is tasted on bread",
+   "Olive oil comes from local olive mills (frantoi) in the hills around Lucca",
+   "Recipes are often passed down through families, like a grandmother's",
+   "Italian shopkeepers offer free tastings of food",
+   "Gastronomia is a shop selling prepared foods",
+   "Italians use formal 'lei' with customers",
+   "Common greetings: Buongiorno, Arrivederci, Buona giornata, A presto, A sabato",
+   "Shopkeepers may set aside a portion for a returning customer"
+  ]
+ },
+ {
+  "step": 4,
+  "city": "siracusa",
+  "place": "piazza-archimede",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Buongiorno! Sono seduto qui in piazza come ogni mattina. Good morning! I'm sitting here in the piazza like every morning. Questa è la piazza di Archimede, con la fontana di Diana. Le piace questa piazza? Do you like this square?",
+    "en": "Good morning! I'm sitting here in the piazza like every morning. This is Archimedes' square, with Diana's fountain. Do you like this square?",
+    "raw": "{\"line\":\"{*Buongiorno*! Sono seduto qui in piazza come ogni mattina. | *Good morning*! I'm sitting here in the piazza like every morning.} {Questa è *la piazza di Archimede*, con la fontana di Diana. | This is *Archimedes' square*, with Diana's fountain.} {Le piace *questa piazza*? | Do you like *this square*?}\",\"en\":\"Good morning! I'm sitting here in the piazza like every morning. This is Archimedes' square, with Diana's fountain. Do you like this square?\",\"answers\":[{\"text\":\"Sì, è molto bella. Mi piace la fontana.\",\"en\":\"Yes, it's very beautiful. I like the fountain.\"},{\"text\":\"Buongiorno! Mi chiamo … Come si chiama Lei?\",\"en\":\"Good morning! My name is … What is your name?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sì, è molto bella. Mi piace la fontana.",
+     "Buongiorno! Mi chiamo … Come si chiama Lei?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Ah, la fontana è il cuore di Ortigia. Ci sono Diana, le ninfe e i tritoni, e io li guardo da una vita. Lei ha già visto il resto di Ortigia? Have you already seen the rest of Ortigia?",
+    "en": "Ah, the fountain is the heart of Ortigia. There are Diana, the nymphs and the tritons, and I've been watching them for a lifetime. Have you already seen the rest of Ortigia?",
+    "raw": "{\"line\":\"{Ah, *la fontana* è il cuore di Ortigia. | Ah, *the fountain* is the heart of Ortigia.} {Ci sono Diana, le ninfe e i tritoni, e io li guardo da una vita. | There are Diana, the nymphs and the tritons, and I've been watching them for a lifetime.} {Lei ha già *visto* il resto di Ortigia? | Have you already *seen* the rest of Ortigia?}\",\"en\":\"Ah, the fountain is the heart of Ortigia. There are Diana, the nymphs and the tritons, and I've been watching them for a lifetime. Have you already seen the rest of Ortigia?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "ask-en",
+    "line": "Bene! Allora conosce il Duomo, qui accanto. Good! Then you know the Cathedral, right next door. Il Duomo è un antico tempio greco, con le colonne dentro i muri. Ogni mattina io faccio due passi fino al mare, poi torno qui su questa panchina. Every morning I take a short walk to the sea, then come back to this bench.",
+    "en": "Good! Then you know the Cathedral, right next door. The Cathedral is an ancient Greek temple, with the columns inside the walls. Every morning I take a short walk to the sea, then come back to this bench.",
+    "raw": "{\"line\":\"{Bene! Allora conosce *il Duomo*, qui accanto. | Good! Then you know *the Cathedral*, right next door.} {Il Duomo è un antico tempio greco, con le colonne dentro i muri. | The Cathedral is an ancient Greek temple, with the columns inside the walls.} {Ogni mattina io faccio due passi fino al mare, poi torno qui su questa panchina. | Every morning I take a short walk to the sea, then come back to this bench.}\",\"en\":\"Good! Then you know the Cathedral, right next door. The Cathedral is an ancient Greek temple, with the columns inside the walls. Every morning I take a short walk to the sea, then come back to this bench.\",\"answers\":[{\"text\":\"Davvero? Un tempio greco?\",\"en\":\"Really? A Greek temple?\"},{\"text\":\"Dove va al mare, di preciso?\",\"en\":\"Where exactly do you go to the sea?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Davvero? Un tempio greco?",
+     "Dove va al mare, di preciso?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Sì, davvero! Era il tempio di Atena, più di duemila anni fa. Le colonne dorate sono ancora lì, dentro il Duomo. The golden columns are still there, inside the Cathedral. Lei ha già visto l'interno? Have you already seen the inside?",
+    "en": "Yes, really! It was the temple of Athena, more than two thousand years ago. The golden columns are still there, inside the Cathedral. Have you already seen the inside?",
+    "raw": "{\"line\":\"{Sì, *davvero*! Era il tempio di Atena, più di duemila anni fa. | Yes, *really*! It was the temple of Athena, more than two thousand years ago.} {Le colonne dorate sono ancora lì, dentro il Duomo. | The golden columns are still there, inside the Cathedral.} {Lei ha già visto *l'interno*? | Have you already seen *the inside*?}\",\"en\":\"Yes, really! It was the temple of Athena, more than two thousand years ago. The golden columns are still there, inside the Cathedral. Have you already seen the inside?\",\"answers\":[{\"text\":\"Sì, è stato incredibile. Le colonne sono molto antiche.\",\"en\":\"Yes, it was incredible. The columns are very old.\"},{\"text\":\"Non ancora. Che cosa significa \\\"l'interno\\\"?\",\"en\":\"Not yet. What does \\\"l'interno\\\" (the inside) mean?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sì, è stato incredibile. Le colonne sono molto antiche.",
+     "Non ancora. Che cosa significa \"l'interno\"?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Sono antichissime, e il Duomo è ancora in piedi. Da bambino ci giocavo davanti, con la palla. As a boy I played in front of it, with a ball. Per me questa piazza è come casa. For me this square is like home.",
+    "en": "They are extremely ancient, and the Cathedral is still standing. As a boy I played in front of it, with a ball. For me this square is like home.",
+    "raw": "{\"line\":\"{Sono *antichissime*, e il Duomo è ancora in piedi. | They are *extremely ancient*, and the Cathedral is still standing.} {Da bambino ci giocavo davanti, *con la palla*. | As a boy I played in front of it, *with a ball*.} {Per me questa piazza è *come casa*. | For me this square is *like home*.}\",\"en\":\"They are extremely ancient, and the Cathedral is still standing. As a boy I played in front of it, with a ball. For me this square is like home.\",\"answers\":[{\"text\":\"Che bello! Anche io mi sento bene qui.\",\"en\":\"How lovely! I feel good here too.\"},{\"text\":\"Giocava qui? Com'era Ortigia allora?\",\"en\":\"You played here? What was Ortigia like then?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Che bello! Anche io mi sento bene qui.",
+     "Giocava qui? Com'era Ortigia allora?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Che bello, mi fa piacere! Qui a Ortigia il mare è sempre vicino, e a novembre c'è meno gente. Oggi cosa fa di bello in piazza? What are you doing of nice today in the square?",
+    "en": "How nice, I'm glad! Here in Ortigia the sea is always close, and in November there are fewer people. What are you doing of nice today in the square?",
+    "raw": "{\"line\":\"{*Che bello*, mi fa piacere! | *How nice*, I'm glad!} {Qui a Ortigia *il mare* è sempre vicino, e a novembre c'è meno gente. | Here in Ortigia *the sea* is always close, and in November there are fewer people.} {Oggi *cosa fa* di bello in piazza? | What are you *doing* of nice today in the square?}\",\"en\":\"How nice, I'm glad! Here in Ortigia the sea is always close, and in November there are fewer people. What are you doing of nice today in the square?\",\"answers\":[{\"text\":\"Faccio una passeggiata. Voglio vedere il mare.\",\"en\":\"I'm taking a walk. I want to see the sea.\"},{\"text\":\"Non capisco \\\"meno gente\\\". Può ripetere, per favore?\",\"en\":\"I don't understand \\\"meno gente\\\". Can you repeat it, please?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Faccio una passeggiata. Voglio vedere il mare.",
+     "Non capisco \"meno gente\". Può ripetere, per favore?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Bella idea! Dalla piazza prenda via Maestranza e arrivi al lungomare: il mare di Ortigia è bellissimo. A novembre il sole è dolce e c'è poco vento. Le piacciono le passeggiate al mare? Do you like walks by the sea?",
+    "en": "Nice idea! From the piazza take Via Maestranza and get to the seafront: the sea of Ortigia is beautiful. In November the sun is mild and there is little wind. Do you like walks by the sea?",
+    "raw": "{\"line\":\"Bella idea! Dalla piazza prenda via Maestranza e arrivi al lungomare: il mare di Ortigia è bellissimo. A novembre il sole è dolce e c'è poco vento. Le piacciono le passeggiate al mare?\",\"en\":\"Nice idea! From the piazza take Via Maestranza and get to the seafront: the sea of Ortigia is beautiful. In November the sun is mild and there is little wind. Do you like walks by the sea?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Allora buona passeggiata! So enjoy your walk! Domani mattina sono di nuovo qui, torni a trovarmi: le racconto la storia di Archimede. Tomorrow morning I'm here again, come and see me again: I'll tell you the story of Archimedes.",
+    "en": "So enjoy your walk! Tomorrow morning I'm here again, come and see me again: I'll tell you the story of Archimedes.",
+    "raw": "{\"line\":\"{Allora buona passeggiata! | So *enjoy your walk*!} {Domani mattina sono di nuovo qui, *torni a trovarmi*: le racconto la storia di Archimede. | Tomorrow morning I'm here again, *come and see me again*: I'll tell you the story of Archimedes.}\",\"en\":\"So enjoy your walk! Tomorrow morning I'm here again, come and see me again: I'll tell you the story of Archimedes.\",\"answers\":[{\"text\":\"Grazie, a domani! Volentieri.\",\"en\":\"Thank you, see you tomorrow! Gladly.\"},{\"text\":\"Arrivederci, Alberto, e buona giornata!\",\"en\":\"Goodbye, Alberto, and have a nice day!\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Grazie, a domani! Volentieri.",
+     "Arrivederci, Alberto, e buona giornata!"
+    ],
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "A domani, allora! Buona passeggiata e saluti al mare!",
+    "en": "See you tomorrow, then! Enjoy your walk and say hello to the sea!",
+    "raw": "{\"line\":\"A domani, allora! Buona passeggiata e saluti al mare!\",\"en\":\"See you tomorrow, then! Enjoy your walk and say hello to the sea!\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": true
+   }
+  ],
+  "person": "Alberto Messina",
+  "arm": "header",
+  "culture": [
+   "Piazza Archimede in Ortigia (Syracuse) features the Fountain of Diana, with Diana, nymphs and tritons",
+   "The fountain is considered the heart of Ortigia",
+   "Ortigia's Cathedral (Duomo) stands right next to the square",
+   "The Duomo is built into an ancient Greek temple, with the columns embedded in its walls",
+   "The temple was dedicated to Athena and is over 2,000 years old",
+   "The ancient golden columns can still be seen inside the Cathedral",
+   "Ortigia is an island where the sea is always close",
+   "In November Ortigia has fewer people, gentle sun and little wind",
+   "Via Maestranza leads from the piazza to the seafront (lungomare)",
+   "Locals take a daily short walk (due passi) to the sea and sit on a bench in the piazza",
+   "Archimedes is the famous ancient scholar of Syracuse, and his story is tied to the piazza",
+   "Italian phrases: Buongiorno (good morning), A domani (see you tomorrow), Buona passeggiata (enjoy your walk), mi fa piacere (I'm glad), Le piace...? (formal: do you like...?)",
+   "Italian uses formal 'Lei' with strangers"
+  ]
+ }
+]
