@@ -1,5 +1,15 @@
 # Fuori Development Progress
 
+## 2026-11-17 (laptop, with Josh), night: the random-sample trial rerun on 4 people a country, for the mini
+
+- **Josh:** "rerun the test beginner 4, full run till goodbye, 4 characters 2 countries". Step 4, a long visit played to the close (9 turns), the same production-against-header-only comparison, 4 a country. **Which four:** the first four of each country from the earlier draw (seed 17, `random-picks-2026-11-17.json`), so each is a second visit of the same person and the run shows how much a repeat varies: Italy Dott.ssa Silvia Bruni, Stefano Barone, Lorenzo Carampane, Franco Melodia; Mexico Chema Rosales, Doña Chayo Molina, Nacho Robles, Doña Lupe Arredondo. 16 visits in all (4 people, 2 arms, 2 countries), about 6 minutes.
+- **For the mini** (local test database, from a checkout of `main`; all four from one checkout, arm B is `TRIAL_NO_HERE=1`); commit the four JSONs by path, push, say here it's done:
+  `TRIAL_SPOTS=roma-nuova/farmacia-prati,taormina/ristorante-baronessa,venezia/ristorante-antiche-carampane,bologna/piazza-maggiore TRIAL_STEPS=4 TRIAL_KINDS=long TRIAL_REPEAT=1 npx tsx --env-file=.env.local tests/experiments/rewrite-trial.mts --out=tests/experiments/results/rerun4-it-a-2026-11-17.json`
+  `TRIAL_NO_HERE=1 TRIAL_SPOTS=roma-nuova/farmacia-prati,taormina/ristorante-baronessa,venezia/ristorante-antiche-carampane,bologna/piazza-maggiore TRIAL_STEPS=4 TRIAL_KINDS=long TRIAL_REPEAT=1 npx tsx --env-file=.env.local tests/experiments/rewrite-trial.mts --out=tests/experiments/results/rerun4-it-b-2026-11-17.json`
+  `COUNTRY=es-mx TRIAL_SPOTS=ciudad-de-mexico/tacos-el-trompo-rojo,san-cristobal-de-las-casas/templo-de-guadalupe-sancris,guadalajara/tacos-el-compa-nacho,guanajuato/enchiladas-baratillo TRIAL_STEPS=4 TRIAL_KINDS=long TRIAL_REPEAT=1 npx tsx --env-file=.env.local tests/experiments/rewrite-trial.mts --out=tests/experiments/results/rerun4-mx-a-2026-11-17.json`
+  `COUNTRY=es-mx TRIAL_NO_HERE=1 TRIAL_SPOTS=ciudad-de-mexico/tacos-el-trompo-rojo,san-cristobal-de-las-casas/templo-de-guadalupe-sancris,guadalajara/tacos-el-compa-nacho,guanajuato/enchiladas-baratillo TRIAL_STEPS=4 TRIAL_KINDS=long TRIAL_REPEAT=1 npx tsx --env-file=.env.local tests/experiments/rewrite-trial.mts --out=tests/experiments/results/rerun4-mx-b-2026-11-17.json`
+- **Read with:** `read-trial.mts` on the `rerun4-*` files (then `--repeats`, `--person`, `--full`); the earlier visits of the same people are in `random-*-2026-11-17.json`.
+
 ## 2026-11-17 (laptop, with Josh), night: a random-sample trial, production against header only: built, not yet run
 
 - **Josh's ask:** a test large enough to mean something but not too large; random Italian and Mexican people, equal from each country, all from different cities; the production prompt against the header only (no `here` line); both standard and custom measures, and a way to ask about one person or compare turns across the transcripts. Josh chose 8 a country; step 4, one visit each, 10 turns at most (a visit closes on its own by the 9th).
