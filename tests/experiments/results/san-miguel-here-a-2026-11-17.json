@@ -1,0 +1,1477 @@
+[
+ {
+  "step": 4,
+  "city": "san-miguel-de-allende",
+  "place": "parroquia-san-miguel-arcangel",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Buenos días, bienvenido. Good morning, welcome. Estoy preparando la iglesia para la misa de hoy. ¿Le gusta la fachada rosa? Do you like the pink façade?",
+    "en": "Good morning, welcome. I'm getting the church ready for today's Mass. Do you like the pink façade?",
+    "raw": "{\"line\":\"{Buenos días, bienvenido. | Good morning, welcome.} {Estoy preparando *la iglesia* para la misa de hoy. | I'm getting *the church* ready for today's Mass.} {¿Le gusta *la fachada* rosa? | Do you like the pink *façade*?}\",\"en\":\"Good morning, welcome. I'm getting the church ready for today's Mass. Do you like the pink façade?\",\"answers\":[{\"text\":\"Sí, me gusta mucho. Es muy bonita.\",\"en\":\"Yes, I like it a lot. It's very pretty.\"},{\"text\":\"Es hermosa. ¿Quién la construyó?\",\"en\":\"It's beautiful. Who built it?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, me gusta mucho. Es muy bonita.",
+     "Es hermosa. ¿Quién la construyó?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Gracias, es de cantera rosa, la piedra de aquí. Thank you, it's made of pink quarry stone, the stone from here. La diseñó Zeferino Gutiérrez, un constructor de San Miguel. ¿Ya entró a ver el interior? Have you already gone in to see the inside?",
+    "en": "Thank you, it's made of pink quarry stone, the stone from here. Zeferino Gutiérrez designed it, a builder from San Miguel. Have you already gone in to see the inside?",
+    "raw": "{\"line\":\"{Gracias, *es de cantera rosa*, la piedra de aquí. | Thank you, *it's made of pink quarry stone*, the stone from here.} {La diseñó Zeferino Gutiérrez, un constructor de San Miguel. | Zeferino Gutiérrez designed it, a builder from San Miguel.} {¿Ya entró a ver *el interior*? | Have you already gone in to see *the inside*?}\",\"en\":\"Thank you, it's made of pink quarry stone, the stone from here. Zeferino Gutiérrez designed it, a builder from San Miguel. Have you already gone in to see the inside?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "ask-en",
+    "line": "Qué bueno. Entonces ya vio el altar, ¿verdad? How nice. Then you've already seen the altar, right? Cada septiembre hacemos La Alborada, con cohetes antes de que salga el sol, para San Miguel Arcángel. Las campanas también suenan al amanecer en los días de fiesta. The bells also ring at dawn on feast days.",
+    "en": "How nice. Then you've already seen the altar, right? Every September we have La Alborada, with fireworks before the sun comes up, for San Miguel Arcángel. The bells also ring at dawn on feast days.",
+    "raw": "{\"line\":\"{Qué bueno. Entonces ya vio *el altar*, ¿verdad? | How nice. Then you've already seen *the altar*, right?} {Cada septiembre hacemos *La Alborada*, con cohetes antes de que salga el sol, para San Miguel Arcángel. | Every September we have *La Alborada*, with fireworks before the sun comes up, for San Miguel Arcángel.} {Las campanas también suenan al amanecer en los días de fiesta. | The bells also ring at dawn on feast days.}\",\"en\":\"How nice. Then you've already seen the altar, right? Every September we have La Alborada, with fireworks before the sun comes up, for San Miguel Arcángel. The bells also ring at dawn on feast days.\",\"answers\":[{\"text\":\"¿Qué es La Alborada?\",\"en\":\"What is La Alborada?\"},{\"text\":\"¿A qué hora suenan las campanas?\",\"en\":\"What time do the bells ring?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "¿Qué es La Alborada?",
+     "¿A qué hora suenan las campanas?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "idiom",
+    "line": "La Alborada es una fiesta antes del amanecer, con cohetes y música para San Miguel. Todo el pueblo sale a la calle a verla. The whole town comes out to the street to see it. Y aquí en la iglesia, cuando alguien pide la feria, no es una fiesta; la feria significa «the fair». ¿Qué cree que significa? And here at the church, when someone asks for la feria, it's not a party; la feria literally means «the fair». What do you think it means? What do you think it means?",
+    "en": "La Alborada is a festival before dawn, with fireworks and music for San Miguel. The whole town comes out to the street to see it. And here at the church, when someone asks for la feria, it's not a party; la feria literally means «the fair». What do you think it means?",
+    "raw": "{\"line\":\"{*La Alborada* es una fiesta antes del amanecer, con cohetes y música para San Miguel. | *La Alborada* is a festival before dawn, with fireworks and music for San Miguel.} {Todo el pueblo sale a la calle a verla. | The whole town comes out to the street to see it.} {Y aquí en la iglesia, cuando alguien pide *la feria*, no es una fiesta; *la feria* significa «the fair». ¿Qué cree que significa? | And here at the church, when someone asks for *la feria*, it's not a party; *la feria* literally means «the fair». What do you think it means?}\",\"en\":\"La Alborada is a festival before dawn, with fireworks and music for San Miguel. The whole town comes out to the street to see it. And here at the church, when someone asks for la feria, it's not a party; la feria literally means «the fair». What do you think it means?\",\"answers\":[{\"text\":\"Creo que significa el cambio, el dinero chico.\",\"en\":\"I think it means small change, little money.\"},{\"text\":\"Creo que significa una fiesta con juegos.\",\"en\":\"I think it means a party with games.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Creo que significa el cambio, el dinero chico.",
+     "Creo que significa una fiesta con juegos."
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "¡Exacto! La feria es el cambio, las monedas chicas. Mucha gente deja la feria en la alcancía de la iglesia. Many people leave their small change in the church's donation box. A mí me gusta oír las monedas caer, es como una campanita pequeña. I like hearing the coins drop, it's like a tiny little bell.",
+    "en": "Exactly! La feria is the change, the small coins. Many people leave their small change in the church's donation box. I like hearing the coins drop, it's like a tiny little bell.",
+    "raw": "{\"line\":\"{¡Exacto! *La feria* es el cambio, las monedas chicas. | Exactly! *La feria* is the change, the small coins.} {Mucha gente deja la feria en la alcancía de la iglesia. | Many people leave their small change in the church's donation box.} {A mí me gusta oír las monedas caer, es como una campanita pequeña. | I like hearing the coins drop, it's like a tiny little bell.}\",\"en\":\"Exactly! La feria is the change, the small coins. Many people leave their small change in the church's donation box. I like hearing the coins drop, it's like a tiny little bell.\",\"answers\":[{\"text\":\"Qué bonito. Yo también quiero dejar una moneda.\",\"en\":\"How lovely. I also want to leave a coin.\"},{\"text\":\"¿Las campanas de verdad suenan muy temprano?\",\"en\":\"Do the bells really ring very early?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Qué bonito. Yo también quiero dejar una moneda.",
+     "¿Las campanas de verdad suenan muy temprano?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Con mucho gusto, la alcancía está junto a la puerta. Cada moneda ayuda con las velas y las flores del altar. ¿Le gustaría ver las campanas de cerca? Would you like to see the bells up close?",
+    "en": "With pleasure, the donation box is next to the door. Every coin helps pay for the candles and the flowers on the altar. Would you like to see the bells up close?",
+    "raw": "{\"line\":\"{*Con mucho gusto*, la alcancía está junto a la puerta. | *With pleasure*, the donation box is next to the door.} {Cada moneda ayuda con las velas y las flores del altar. | Every coin helps pay for the candles and the flowers on the altar.} {¿Le gustaría ver *las campanas* de cerca? | Would you like to see *the bells* up close?}\",\"en\":\"With pleasure, the donation box is next to the door. Every coin helps pay for the candles and the flowers on the altar. Would you like to see the bells up close?\",\"answers\":[{\"text\":\"Sí, me gustaría mucho. ¿Dónde están las campanas?\",\"en\":\"Yes, I'd like that a lot. Where are the bells?\"},{\"text\":\"Gracias, pero hoy no. ¿Qué flores pone usted en el altar?\",\"en\":\"Thanks, but not today. What flowers do you put on the altar?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, me gustaría mucho. ¿Dónde están las campanas?",
+     "Gracias, pero hoy no. ¿Qué flores pone usted en el altar?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Las campanas están arriba, en la torre. The bells are up in the tower. Se sube por una escalera de caracol, y se ve toda la plaza. ¿Le gustan las escaleras? Do you like stairs?",
+    "en": "The bells are up in the tower. You go up a spiral staircase, and you can see the whole square. Do you like stairs?",
+    "raw": "{\"line\":\"{Las campanas están *arriba, en la torre*. | The bells are *up in the tower*.} {Se sube por una escalera de caracol, y se ve toda la plaza. | You go up a spiral staircase, and you can see the whole square.} {¿Le gustan *las escaleras*? | Do you like *stairs*?}\",\"en\":\"The bells are up in the tower. You go up a spiral staircase, and you can see the whole square. Do you like stairs?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "¡Qué bien! Es un buen día, el cielo está despejado. How good! It's a nice day, the sky is clear. Vuelva el domingo, cuando tocan las campanas para la misa de doce, y yo lo llevo a la torre. Come back on Sunday, when the bells ring for the noon Mass, and I'll take you up the tower. Hasta pronto, amigo. See you soon, friend.",
+    "en": "How good! It's a nice day, the sky is clear. Come back on Sunday, when the bells ring for the noon Mass, and I'll take you up the tower. See you soon, friend.",
+    "raw": "{\"line\":\"{¡Qué bien! Es un buen día, el cielo está despejado. | How good! It's a nice day, the sky is clear.} {Vuelva *el domingo*, cuando tocan las campanas para la misa de doce, y yo lo llevo a la torre. | Come back *on Sunday*, when the bells ring for the noon Mass, and I'll take you up the tower.} {Hasta pronto, amigo. | See you soon, friend.}\",\"en\":\"How good! It's a nice day, the sky is clear. Come back on Sunday, when the bells ring for the noon Mass, and I'll take you up the tower. See you soon, friend.\",\"answers\":[{\"text\":\"Gracias, don Aurelio. Vuelvo el domingo.\",\"en\":\"Thank you, don Aurelio. I'll come back on Sunday.\"},{\"text\":\"Hasta luego. Que tenga buen día.\",\"en\":\"See you later. Have a good day.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Gracias, don Aurelio. Vuelvo el domingo.",
+     "Hasta luego. Que tenga buen día."
+    ],
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "¡Aquí lo espero! Que le vaya muy bien, y hasta el domingo. I'll be here waiting for you! Take care, and see you Sunday.",
+    "en": "I'll be here waiting for you! Take care, and see you Sunday.",
+    "raw": "{\"line\":\"¡Aquí lo espero! Que le vaya muy bien, y hasta el domingo. I'll be here waiting for you! Take care, and see you Sunday.\",\"en\":\"I'll be here waiting for you! Take care, and see you Sunday.\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": true
+   }
+  ],
+  "culture": [
+   "Many Mexican churches, like the parish in San Miguel de Allende, have pink façades made of local pink quarry stone (cantera rosa)",
+   "The pink parish church was designed by Zeferino Gutiérrez, a local builder from San Miguel",
+   "La Alborada is a September festival with fireworks and music before sunrise to honor San Miguel Arcángel (Saint Michael the Archangel)",
+   "Whole towns come out into the streets to watch La Alborada",
+   "Church bells ring at dawn on feast days",
+   "\"La feria\" can mean small change or coins, not just a fair or party",
+   "People leave their small change (la feria) in the church donation box (alcancía)",
+   "Donations help pay for candles and altar flowers",
+   "Church bell towers can be climbed by spiral staircase (escalera de caracol), offering views over the plaza",
+   "Bells ring for the noon Mass (misa de doce) on Sundays",
+   "Mexican hospitality: warm greetings like \"Buenos días, bienvenido\", \"amigo\", and \"Que le vaya muy bien\" as a farewell",
+   "Polite formal address using \"usted\" forms with visitors, and \"Don\" as a respectful title for an older man"
+  ]
+ },
+ {
+  "step": 4,
+  "city": "san-miguel-de-allende",
+  "place": "el-mirador-san-miguel",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "¡Buenas tardes! Aquí vengo cada tarde a ver el atardecer. Mire la Parroquia, cómo se pone rosada con la luz. ¿Le gusta la vista? Do you like the view?",
+    "en": "Good evening! I come here every afternoon to watch the sunset. Look at the Parroquia, how it turns pink in the light. Do you like the view?",
+    "raw": "{\"line\":\"{¡Buenas tardes! Aquí vengo cada tarde a ver *el atardecer*. | Good evening! I come here every afternoon to watch *the sunset*.} {Mire *la Parroquia*, cómo se pone rosada con la luz. | Look at *the Parroquia*, how it turns pink in the light.} {¿Le gusta la vista? | Do you like the view?}\",\"en\":\"Good evening! I come here every afternoon to watch the sunset. Look at the Parroquia, how it turns pink in the light. Do you like the view?\",\"answers\":[{\"text\":\"Sí, es muy bonita. Me gusta el color rosa.\",\"en\":\"Yes, it's very pretty. I like the pink color.\"},{\"text\":\"¿Cuándo es el mejor momento para ver el atardecer?\",\"en\":\"When is the best time to see the sunset?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, es muy bonita. Me gusta el color rosa.",
+     "¿Cuándo es el mejor momento para ver el atardecer?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Sí, es muy bonita. Yes, it's very pretty. A mí también me gusta la cantera rosa, la piedra de la Parroquia. I like it too, the pink quarry stone of the Parroquia. Un albañil de aquí, Zeferino Gutiérrez, hizo las torres. ¿Quiere sentarse conmigo a ver el sol? Do you want to sit down with me and watch the sun?",
+    "en": "Yes, it's very pretty. I like it too, the pink quarry stone of the Parroquia. A mason from here, Zeferino Gutiérrez, built the towers. Do you want to sit down with me and watch the sun?",
+    "raw": "{\"line\":\"{Sí, es *muy bonita*. | Yes, it's *very pretty*.} {A mí también me gusta *la cantera rosa*, la piedra de la Parroquia. | I like it too, *the pink quarry stone* of the Parroquia.} {Un albañil de aquí, Zeferino Gutiérrez, hizo las torres. | A mason from here, Zeferino Gutiérrez, built the towers.} {¿Quiere *sentarse* conmigo a ver el sol? | Do you want to *sit down* with me and watch the sun?}\",\"en\":\"Yes, it's very pretty. I like it too, the pink quarry stone of the Parroquia. A mason from here, Zeferino Gutiérrez, built the towers. Do you want to sit down with me and watch the sun?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "ask-en",
+    "line": "Siéntese, aquí hay lugar. Mire cómo baja el sol detrás de las casas. Look how the sun goes down behind the houses. Mi abuelo decía que Zeferino dibujaba las torres en la tierra con un palo. My grandfather used to say Zeferino drew the towers in the dirt with a stick.",
+    "en": "Sit down, there's room here. Look how the sun goes down behind the houses. My grandfather used to say Zeferino drew the towers in the dirt with a stick.",
+    "raw": "{\"line\":\"{*Siéntese*, aquí hay lugar. | *Sit down*, there's room here.} {Mire cómo baja el sol detrás de las casas. | Look how the sun goes down behind the houses.} {Mi abuelo decía que Zeferino dibujaba las torres en la tierra con un palo. | My grandfather used to say Zeferino drew the towers in the dirt with a stick.}\",\"en\":\"Sit down, there's room here. Look how the sun goes down behind the houses. My grandfather used to say Zeferino drew the towers in the dirt with a stick.\",\"answers\":[{\"text\":\"¿De verdad dibujaba con un palo?\",\"en\":\"Did he really draw with a stick?\"},{\"text\":\"¿Qué es la cantera rosa?\",\"en\":\"What is the cantera rosa (pink quarry stone)?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "¿De verdad dibujaba con un palo?",
+     "¿Qué es la cantera rosa?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Sí, de verdad, eso cuenta la gente de aquí. Zeferino no estudió; era albañil y miraba catedrales en postales. ¿Ve esas campanas en la torre? Do you see those bells in the tower?",
+    "en": "Yes, really, that's what the people here say. Zeferino never studied; he was a mason and looked at cathedrals on postcards. Do you see those bells in the tower?",
+    "raw": "{\"line\":\"{Sí, *de verdad*, eso cuenta la gente de aquí. | Yes, *really*, that's what the people here say.} {Zeferino no estudió; era albañil y miraba catedrales en postales. | Zeferino never studied; he was a mason and looked at cathedrals on postcards.} {¿Ve esas *campanas* en la torre? | Do you see those *bells* in the tower?}\",\"en\":\"Yes, really, that's what the people here say. Zeferino never studied; he was a mason and looked at cathedrals on postcards. Do you see those bells in the tower?\",\"answers\":[{\"text\":\"Sí, las veo. Son muy grandes.\",\"en\":\"Yes, I see them. They are very big.\"},{\"text\":\"Qué interesante. ¿Suenan todas las tardes?\",\"en\":\"How interesting. Do they ring every afternoon?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, las veo. Son muy grandes.",
+     "Qué interesante. ¿Suenan todas las tardes?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Sí, son muy grandes, y suenan fuerte al atardecer. Yes, they're very big, and they ring loudly at sunset. Desde niño las escucho cada tarde aquí mismo. Para mí, ese sonido es la señal de que el día terminó. For me, that sound is the sign that the day is over.",
+    "en": "Yes, they're very big, and they ring loudly at sunset. I've listened to them every afternoon since I was a boy, right here. For me, that sound is the sign that the day is over.",
+    "raw": "{\"line\":\"{Sí, son muy grandes, y *suenan fuerte* al atardecer. | Yes, they're very big, and they *ring loudly* at sunset.} {Desde niño las escucho cada tarde aquí mismo. | I've listened to them every afternoon since I was a boy, right here.} {Para mí, *ese sonido* es la señal de que el día terminó. | For me, *that sound* is the sign that the day is over.}\",\"en\":\"Yes, they're very big, and they ring loudly at sunset. I've listened to them every afternoon since I was a boy, right here. For me, that sound is the sign that the day is over.\",\"answers\":[{\"text\":\"Qué bonito sonido. Me gusta escuchar las campanas.\",\"en\":\"What a lovely sound. I like listening to the bells.\"},{\"text\":\"¿A qué hora suenan las campanas? ¿Suenan todos los días?\",\"en\":\"What time do the bells ring? Do they ring every day?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Qué bonito sonido. Me gusta escuchar las campanas.",
+     "¿A qué hora suenan las campanas? ¿Suenan todos los días?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Qué bueno que le gustan. I'm glad you like them. Después de las campanas, la gente baja a la plaza a pasear. ¿Quiere bajar a la plaza cuando se vaya el sol? Do you want to go down to the plaza when the sun goes?",
+    "en": "I'm glad you like them. After the bells, people go down to the plaza to stroll. Do you want to go down to the plaza when the sun goes?",
+    "raw": "{\"line\":\"{Qué bueno que le gustan. | I'm glad you like them.} {Después de las campanas, la gente baja a *la plaza* a pasear. | After the bells, people go down to *the plaza* to stroll.} {¿Quiere bajar a *la plaza* cuando se vaya el sol? | Do you want to go down to *the plaza* when the sun goes?}\",\"en\":\"I'm glad you like them. After the bells, people go down to the plaza to stroll. Do you want to go down to the plaza when the sun goes?\",\"answers\":[{\"text\":\"Sí, vamos a la plaza. Me gusta pasear.\",\"en\":\"Yes, let's go to the plaza. I like to stroll.\"},{\"text\":\"Todavía no. ¿Qué hace usted después?\",\"en\":\"Not yet. What do you do afterwards?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, vamos a la plaza. Me gusta pasear.",
+     "Todavía no. ¿Qué hace usted después?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Vamos pues, ya casi se va el sol. En la plaza hay mariachis y los globos de los niños. In the plaza there are mariachis and the children's balloons. ¿Qué le gusta más de pasear en el Centro? What do you like most about strolling in the Centro?",
+    "en": "Let's go, then, the sun is almost gone. In the plaza there are mariachis and the children's balloons. What do you like most about strolling in the Centro?",
+    "raw": "{\"line\":\"{*Vamos pues*, ya casi se va el sol. | *Let's go, then*, the sun is almost gone.} {En la plaza hay mariachis y *los globos* de los niños. | In the plaza there are mariachis and the children's *balloons*.} {¿Qué le gusta más de pasear en el Centro? | What do you like most about strolling in the Centro?}\",\"en\":\"{Let's go, then, the sun is almost gone.} {In the plaza there are mariachis and the children's balloons.} {What do you like most about strolling in the Centro?}\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Ya se fue el sol, qué rápido. Vengo aquí todas las tardes, así que venga mañana, que dicen que el cielo va a estar rojo. I'm here every afternoon, so come back tomorrow, they say the sky will be red. Me dio mucho gusto platicar con usted. It was a real pleasure chatting with you.",
+    "en": "The sun is gone already, how fast. I'm here every afternoon, so come back tomorrow, they say the sky will be red. It was a real pleasure chatting with you.",
+    "raw": "{\"line\":\"{Ya se fue el sol, qué rápido. | The sun is gone already, how fast.} {Vengo aquí todas las tardes, así que *venga mañana*, que dicen que el cielo va a estar rojo. | I'm here every afternoon, so *come back tomorrow*, they say the sky will be red.} {Me dio mucho gusto platicar con usted. | It was a real pleasure chatting with you.}\",\"en\":\"The sun is gone already, how fast. I'm here every afternoon, so come back tomorrow, they say the sky will be red. It was a real pleasure chatting with you.\",\"answers\":[{\"text\":\"Gracias, don Ramón. Mañana vengo.\",\"en\":\"Thank you, don Ramón. I'll come tomorrow.\"},{\"text\":\"Me dio gusto conocerlo. Hasta mañana.\",\"en\":\"It was nice to meet you. See you tomorrow.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Gracias, don Ramón. Mañana vengo.",
+     "Me dio gusto conocerlo. Hasta mañana."
+    ],
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "Aquí lo espero, ¡hasta mañana, que le vaya bien! I'll be waiting for you here, see you tomorrow, take care!",
+    "en": "I'll be waiting for you here, see you tomorrow, take care!",
+    "raw": "{\"line\":\"Aquí lo espero, ¡hasta mañana, que le vaya bien! I'll be waiting for you here, see you tomorrow, take care!\",\"en\":\"I'll be waiting for you here, see you tomorrow, take care!\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": true
+   }
+  ],
+  "culture": [
+   "The Parroquia de San Miguel Arcángel is a landmark church in San Miguel de Allende that turns pink in the evening light",
+   "The Parroquia is built of pink quarry stone (cantera rosa)",
+   "Local lore credits Zeferino Gutiérrez, a self-taught bricklayer (albañil), with building the Parroquia's towers",
+   "Legend says Zeferino sketched the towers in the dirt with a stick and took inspiration from postcards of cathedrals",
+   "Church bells ring at sunset and mark the end of the day",
+   "After the bells, locals head down to the plaza to stroll (pasear)",
+   "The plaza in the Centro has mariachis and vendors selling balloons to children",
+   "Watching the sunset from a viewpoint is a daily habit for locals",
+   "Mexicans use the polite usted form with strangers and elders (e.g. Siéntese, Mire)",
+   "\"Platicar\" is the Mexican word for chatting",
+   "\"Vamos pues\" and \"que le vaya bien\" are common friendly Mexican expressions",
+   "Saying \"Me dio mucho gusto\" is a courteous way to end a conversation"
+  ]
+ },
+ {
+  "step": 4,
+  "city": "san-miguel-de-allende",
+  "place": "parque-juarez",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Buenas tardes, joven, siéntese aquí en la sombra. Esta es la banca donde paso mis tardes, en el Parque Juárez. ¿Le gusta el parque? Do you like the park?",
+    "en": "Good afternoon, young person, sit here in the shade. This is the bench where I spend my afternoons, in Parque Juárez. Do you like the park?",
+    "raw": "{\"line\":\"{*Buenas tardes*, joven, siéntese aquí en la sombra. | *Good afternoon*, young person, sit here in the shade.} {Esta es *la banca* donde paso mis tardes, en el Parque Juárez. | This is *the bench* where I spend my afternoons, in Parque Juárez.} {¿Le gusta *el parque*? | Do you like *the park*?}\",\"en\":\"Good afternoon, young person, sit here in the shade. This is the bench where I spend my afternoons, in Parque Juárez. Do you like the park?\",\"answers\":[{\"text\":\"Buenas tardes, gracias. Sí, es muy bonito.\",\"en\":\"Good afternoon, thank you. Yes, it's very pretty.\"},{\"text\":\"¿Qué significa \\\"banca\\\"? Más despacio, por favor.\",\"en\":\"What does \\\"banca\\\" mean? Slower, please.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Buenas tardes, gracias. Sí, es muy bonito.",
+     "¿Qué significa \"banca\"? Más despacio, por favor."
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Me alegra que le guste. Los laureles nos dan sombra todo el año, y por las tardes se llena de gente. The laurel trees give us shade all year, and in the afternoons it fills with people. ¿Ya conoce la Parroquia, la iglesia rosada de allá? Have you seen the Parroquia, the pink church over there?",
+    "en": "I'm glad you like it. The laurel trees give us shade all year, and in the afternoons it fills with people. Have you seen the Parroquia, the pink church over there?",
+    "raw": "{\"line\":\"{Me alegra que le guste. | I'm glad you like it.} {Los *laureles* nos dan sombra todo el año, y por las tardes se llena de gente. | The *laurel trees* give us shade all year, and in the afternoons it fills with people.} {¿Ya conoce *la Parroquia*, la iglesia rosada de allá? | Have you seen *the Parroquia*, the pink church over there?}\",\"en\":\"I'm glad you like it. The laurel trees give us shade all year, and in the afternoons it fills with people. Have you seen the Parroquia, the pink church over there?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "ask-en",
+    "line": "Qué bueno, entonces ya vio la torre rosada. La diseñó un albañil de aquí, don Zeferino Gutiérrez, sin ser arquitecto. Y por las tardes, desde esta banca, yo la veo cambiar de color con el sol. And in the afternoons, from this bench, I watch it change color with the sun.",
+    "en": "Good, then you've already seen the pink tower. A mason from here designed it, don Zeferino Gutiérrez, without being an architect. And in the afternoons, from this bench, I watch it change color with the sun.",
+    "raw": "{\"line\":\"{Qué bueno, entonces ya vio *la torre rosada*. | Good, then you've already seen *the pink tower*.} {La diseñó *un albañil* de aquí, don Zeferino Gutiérrez, sin ser arquitecto. | *A mason* from here designed it, don Zeferino Gutiérrez, without being an architect.} {Y por las tardes, desde esta banca, yo la veo cambiar de color con el sol. | And in the afternoons, from this bench, I watch it change color with the sun.}\",\"en\":\"Good, then you've already seen the pink tower. A mason from here designed it, don Zeferino Gutiérrez, without being an architect. And in the afternoons, from this bench, I watch it change color with the sun.\",\"answers\":[{\"text\":\"¿De verdad era albañil? ¿Cómo aprendió a hacerla?\",\"en\":\"Was he really a mason? How did he learn to build it?\"},{\"text\":\"¿De qué color la ve con el sol de la tarde?\",\"en\":\"What color do you see it with the afternoon sun?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "¿De verdad era albañil? ¿Cómo aprendió a hacerla?",
+     "¿De qué color la ve con el sol de la tarde?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "De verdad, era albañil, de los de mano y de ojo. Really, he was a mason, the kind who worked by hand and by eye. Dicen que veía postales de iglesias de Francia y las dibujaba en la arena con un palo. ¿Ya probó los helados de aquí en el parque? Have you tried the ice cream here in the park yet?",
+    "en": "Really, he was a mason, the kind who worked by hand and by eye. They say he looked at postcards of churches from France and drew them in the sand with a stick. Have you tried the ice cream here in the park yet?",
+    "raw": "{\"line\":\"{*De verdad*, era albañil, de los de mano y de ojo. | *Really*, he was a mason, the kind who worked by hand and by eye.} {Dicen que veía postales de iglesias de Francia y las dibujaba en la arena con un palo. | They say he looked at postcards of churches from France and drew them in the sand with a stick.} {¿Ya probó *los helados* de aquí en el parque? | Have you tried *the ice cream* here in the park yet?}\",\"en\":\"Really, he was a mason, the kind who worked by hand and by eye. They say he looked at postcards of churches from France and drew them in the sand with a stick. Have you tried the ice cream here in the park yet?\",\"answers\":[{\"text\":\"Todavía no. ¿Cuál me recomienda?\",\"en\":\"Not yet. Which one do you recommend?\"},{\"text\":\"Sí, ya probé uno. Estaba muy rico.\",\"en\":\"Yes, I already tried one. It was very tasty.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Todavía no. ¿Cuál me recomienda?",
+     "Sí, ya probé uno. Estaba muy rico."
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Le recomiendo el helado de limón, es muy fresco con este calor. I recommend the lemon ice cream, it's very refreshing in this heat. Yo siempre pido una nieve de rosas, como mi esposa, que en paz descanse. Aquí en San Miguel, las nieves se hacen a mano, igual que antes. Here in San Miguel, the sorbets are made by hand, just like before.",
+    "en": "I recommend the lemon ice cream, it's very refreshing in this heat. I always order a rose sorbet, like my wife, may she rest in peace. Here in San Miguel, the sorbets are made by hand, just like before.",
+    "raw": "{\"line\":\"{Le recomiendo *el helado de limón*, es muy fresco con este calor. | I recommend *the lemon ice cream*, it's very refreshing in this heat.} {Yo siempre pido *una nieve de rosas*, como mi esposa, que en paz descanse. | I always order *a rose sorbet*, like my wife, may she rest in peace.} {Aquí en San Miguel, *las nieves* se hacen a mano, igual que antes. | Here in San Miguel, *the sorbets* are made by hand, just like before.}\",\"en\":\"I recommend the lemon ice cream, it's very refreshing in this heat. I always order a rose sorbet, like my wife, may she rest in peace. Here in San Miguel, the sorbets are made by hand, just like before.\",\"answers\":[{\"text\":\"Qué bonito recuerdo. Voy a probar la de rosas.\",\"en\":\"What a lovely memory. I'm going to try the rose one.\"},{\"text\":\"¿Qué es una nieve? ¿Es diferente al helado?\",\"en\":\"What is a nieve (a handmade fruit sorbet)? Is it different from ice cream?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Qué bonito recuerdo. Voy a probar la de rosas.",
+     "¿Qué es una nieve? ¿Es diferente al helado?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Muy buena idea, la nieve de rosas sabe a jardín. Great idea, the rose sorbet tastes like a garden. Los heladeros están junto a la fuente, cerca de la entrada. The ice cream sellers are by the fountain, near the entrance. ¿Qué piensa hacer hoy en San Miguel? What are you planning to do today in San Miguel?",
+    "en": "Great idea, the rose sorbet tastes like a garden. The ice cream sellers are by the fountain, near the entrance. What are you planning to do today in San Miguel?",
+    "raw": "{\"line\":\"{Muy buena idea, la *nieve de rosas* sabe a jardín. | Great idea, the *rose sorbet* tastes like a garden.} {Los heladeros están junto a la fuente, cerca de la entrada. | The ice cream sellers are by the fountain, near the entrance.} {¿Qué piensa hacer hoy en San Miguel? | What are you planning to do today in San Miguel?}\",\"en\":\"Great idea, the rose sorbet tastes like a garden. The ice cream sellers are by the fountain, near the entrance. What are you planning to do today in San Miguel?\",\"answers\":[{\"text\":\"Gracias por la recomendación. Quiero caminar por el centro.\",\"en\":\"Thanks for the recommendation. I want to walk around the center.\"},{\"text\":\"¿Qué quiere decir \\\"nieve\\\"? ¿Puede decirlo más despacio?\",\"en\":\"What does \\\"nieve\\\" mean? Can you say it more slowly?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Gracias por la recomendación. Quiero caminar por el centro.",
+     "¿Qué quiere decir \"nieve\"? ¿Puede decirlo más despacio?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Caminar por el centro es lo mejor, joven. Las calles de piedra suben y bajan, y cada esquina tiene un patio escondido. The cobblestone streets go up and down, and every corner has a hidden patio. ¿Le gustan los murales? Do you like murals?",
+    "en": "Walking through the center is the best, young one. The cobblestone streets go up and down, and every corner has a hidden patio. Do you like murals?",
+    "raw": "{\"line\":\"{*Caminar por el centro* es lo mejor, joven. | *Walking through the center* is the best, young one.} {Las calles de piedra suben y bajan, y cada esquina tiene un patio escondido. | The cobblestone streets go up and down, and every corner has a hidden patio.} {¿Le gustan los murales? | Do you like murals?}\",\"en\":\"Walking through the center is the best, young one. The cobblestone streets go up and down, and every corner has a hidden patio. Do you like murals?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Entonces vaya a Bellas Artes, tiene un mural de Siqueiros que nunca se terminó. Then go to Bellas Artes, it has a Siqueiros mural that was never finished. Yo estoy aquí todas las tardes, en esta banca. Venga mañana y me cuenta si le gustó. I'm here every afternoon, on this bench. Come tomorrow and tell me if you liked it.",
+    "en": "Then go to Bellas Artes, it has a Siqueiros mural that was never finished. I'm here every afternoon, on this bench. Come tomorrow and tell me if you liked it.",
+    "raw": "{\"line\":\"Entonces vaya a Bellas Artes, tiene un mural de Siqueiros que nunca se terminó. Then go to Bellas Artes, it has a Siqueiros mural that was never finished. Yo estoy aquí todas las tardes, en esta banca. Venga mañana y me cuenta si le gustó. I'm here every afternoon, on this bench. Come tomorrow and tell me if you liked it.\",\"en\":\"Then go to Bellas Artes, it has a Siqueiros mural that was never finished. I'm here every afternoon, on this bench. Come tomorrow and tell me if you liked it.\",\"answers\":[{\"text\":\"Muchas gracias, don Víctor. Mañana vengo y le cuento.\",\"en\":\"Thank you very much, don Víctor. Tomorrow I'll come and tell you.\"},{\"text\":\"Hasta mañana, que tenga buena tarde.\",\"en\":\"See you tomorrow, have a good afternoon.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Muchas gracias, don Víctor. Mañana vengo y le cuento.",
+     "Hasta mañana, que tenga buena tarde."
+    ],
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "¡Hasta mañana, joven! Que le vaya muy bien y que disfrute del mural. Until tomorrow, young one! Take care and enjoy the mural.",
+    "en": "Until tomorrow, young one! Take care and enjoy the mural.",
+    "raw": "{\"line\":\"¡Hasta mañana, joven! Que le vaya muy bien y que disfrute del mural. Until tomorrow, young one! Take care and enjoy the mural.\",\"en\":\"Until tomorrow, young one! Take care and enjoy the mural.\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": true
+   }
+  ],
+  "culture": [
+   "Parque Juárez in San Miguel de Allende is a public park where people gather in the afternoons",
+   "Laurel trees give year-round shade in the park",
+   "The Parroquia is San Miguel's famous pink church",
+   "The Parroquia's pink tower changes color with the sun",
+   "The Parroquia's tower was designed by Zeferino Gutiérrez, a local mason who was not an architect",
+   "Zeferino Gutiérrez reportedly drew church designs in the sand with a stick, inspired by postcards of French churches",
+   "Ice cream and sorbets (nieves) are sold in the park, with lemon being refreshing in the heat",
+   "Nieves (sorbets) in San Miguel are traditionally made by hand",
+   "Rose-flavored nieve (nieve de rosas) is a traditional flavor",
+   "Ice cream vendors (heladeros) gather by the fountain near the park entrance",
+   "San Miguel's downtown has cobblestone streets that go up and down",
+   "San Miguel's corners hide patios",
+   "Bellas Artes in San Miguel has an unfinished Siqueiros mural",
+   "Older Mexicans commonly address young people politely as \"joven\" and use \"usted\"",
+   "\"Que en paz descanse\" is a customary phrase said after mentioning a deceased person",
+   "Locals often spend afternoons on a favorite park bench"
+  ]
+ },
+ {
+  "step": 4,
+  "city": "san-miguel-de-allende",
+  "place": "la-cucaracha",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Buenas tardes, bienvenido a La Cucaracha. Good afternoon, welcome to La Cucaracha. Hoy es martes y está tranquilo, así que hay buen lugar en la barra. Today is Tuesday and it's quiet, so there's a good spot at the bar. ¿Le sirvo un mezcal o prefiere una cerveza? Can I pour you a mezcal or would you rather have a beer?",
+    "en": "Good afternoon, welcome to La Cucaracha. Today is Tuesday and it's quiet, so there's a good spot at the bar. Can I pour you a mezcal or would you rather have a beer?",
+    "raw": "{\"line\":\"{*Buenas tardes*, bienvenido a La Cucaracha. | *Good afternoon*, welcome to La Cucaracha.} {Hoy es martes y *está tranquilo*, así que hay buen lugar en la barra. | Today is Tuesday and *it's quiet*, so there's a good spot at the bar.} {¿Le sirvo *un mezcal* o prefiere una cerveza? | Can I pour you *a mezcal* or would you rather have a beer?}\",\"en\":\"Good afternoon, welcome to La Cucaracha. Today is Tuesday and it's quiet, so there's a good spot at the bar. Can I pour you a mezcal or would you rather have a beer?\",\"answers\":[{\"text\":\"Un mezcal, por favor. Me gusta su cantina.\",\"en\":\"A mezcal, please. I like your cantina.\"},{\"text\":\"Una cerveza, por favor. ¿Qué es lo mejor de la casa?\",\"en\":\"A beer, please. What's the best thing in the house?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Un mezcal, por favor. Me gusta su cantina.",
+     "Una cerveza, por favor. ¿Qué es lo mejor de la casa?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "ask-en",
+    "line": "Con gusto, ahorita se lo sirvo. With pleasure, I'll pour it right now. Esta cantina es vieja, y aquí se toma el mezcal despacito, con naranja y sal de gusano. This cantina is old, and here the mezcal is sipped slowly, with orange and worm salt. Mis clientes vienen cada tarde, y a algunos los conozco desde hace veinte años. My regulars come every afternoon, and some I've known for twenty years.",
+    "en": "With pleasure, I'll pour it right now. This cantina is old, and here the mezcal is sipped slowly, with orange and worm salt. My regulars come every afternoon, and some I've known for twenty years.",
+    "raw": "{\"line\":\"{*Con gusto*, ahorita se lo sirvo. | *With pleasure*, I'll pour it right now.} {Esta cantina es vieja, y aquí se toma el mezcal despacito, con *naranja y sal de gusano*. | This cantina is old, and here the mezcal is sipped slowly, with *orange and worm salt*.} {Mis clientes vienen cada tarde, y a algunos los conozco desde hace veinte años. | My regulars come every afternoon, and some I've known for twenty years.}\",\"en\":\"With pleasure, I'll pour it right now. This cantina is old, and here the mezcal is sipped slowly, with orange and worm salt. My regulars come every afternoon, and some I've known for twenty years.\",\"answers\":[{\"text\":\"¿Qué es la sal de gusano?\",\"en\":\"What is sal de gusano (a salt ground with dried agave worms and chili)?\"},{\"text\":\"¿Quiénes son sus clientes de siempre?\",\"en\":\"Who are your longtime regulars?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "¿Qué es la sal de gusano?",
+     "¿Quiénes son sus clientes de siempre?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "La sal de gusano es sal molida con chile y gusanitos de maguey, secos y tostados. Worm salt is salt ground with chile and little maguey worms, dried and toasted. Se come con una rodaja de naranja, y le da un sabor ahumado al mezcal. ¿Quiere probarla con su mezcal? Do you want to try it with your mezcal?",
+    "en": "Worm salt is salt ground with chile and little maguey worms, dried and toasted. You eat it with an orange slice, and it gives the mezcal a smoky taste. Do you want to try it with your mezcal?",
+    "raw": "{\"line\":\"{La *sal de gusano* es sal molida con chile y gusanitos de maguey, secos y tostados. | *Worm salt* is salt ground with chile and little maguey worms, dried and toasted.} {Se come con una rodaja de naranja, y le da un sabor ahumado al mezcal. | You eat it with an orange slice, and it gives the mezcal a smoky taste.} {¿Quiere probarla con su mezcal? | Do you want to try it with your mezcal?}\",\"en\":\"Worm salt is salt ground with chile and little maguey worms, dried and toasted. You eat it with an orange slice, and it gives the mezcal a smoky taste. Do you want to try it with your mezcal?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Aquí tiene, su mezcal con naranja y sal de gusano. Primero se moja la naranja en la sal, luego se da un traguito. ¿Ya conoce la Parroquia, esa iglesia rosa de aquí cerca? Do you know the Parroquia, the pink church nearby?",
+    "en": "Here you are, your mezcal with orange and worm salt. First you dip the orange in the salt, then you take a little sip. Do you know the Parroquia, the pink church nearby?",
+    "raw": "{\"line\":\"{*Aquí tiene*, su mezcal con naranja y sal de gusano. | *Here you are*, your mezcal with orange and worm salt.} {Primero se moja la naranja en la sal, luego se da un traguito. | First you dip the orange in the salt, then you take a little sip.} {¿Ya conoce *la Parroquia*, esa iglesia rosa de aquí cerca? | Do you know *the Parroquia*, the pink church nearby?}\",\"en\":\"{*Here you are*, your mezcal with orange and worm salt. | *Here you are*, your mezcal with orange and worm salt.} {First you dip the orange in the salt, then you take a little sip. | First you dip the orange in the salt, then you take a little sip.} {Do you know *the Parroquia*, the pink church nearby? | Do you know *the Parroquia*, the pink church nearby?}\",\"answers\":[{\"text\":\"Sí, es muy bonita. Quiero verla de noche.\",\"en\":\"Yes, it's very pretty. I want to see it at night.\"},{\"text\":\"Todavía no. ¿Qué es la Parroquia?\",\"en\":\"Not yet. What is the Parroquia?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, es muy bonita. Quiero verla de noche.",
+     "Todavía no. ¿Qué es la Parroquia?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "De noche las luces hacen que la piedra rosa se vea dorada. Muchos clientes pasan por aquí después de verla y piden otro mezcal. Many customers stop by here after seeing it and order another mezcal. Yo la veo cada día, y todavía me gusta mucho. I see it every day, and I still like it a lot.",
+    "en": "At night the lights make the pink stone look golden. Many customers stop by here after seeing it and order another mezcal. I see it every day, and I still like it a lot.",
+    "raw": "{\"line\":\"{De noche *las luces* hacen que la piedra rosa se vea dorada. | At night *the lights* make the pink stone look golden.} {Muchos clientes pasan por aquí después de verla y piden otro mezcal. | Many customers stop by here after seeing it and order another mezcal.} {Yo la veo cada día, y todavía me gusta mucho. | I see it every day, and I still like it a lot.}\",\"en\":\"At night the lights make the pink stone look golden. Many customers stop by here after seeing it and order another mezcal. I see it every day, and I still like it a lot.\",\"answers\":[{\"text\":\"Qué suerte, yo también quiero verla todos los días.\",\"en\":\"How lucky, I want to see it every day too.\"},{\"text\":\"¿A qué hora es mejor verla de noche?\",\"en\":\"What time is best to see it at night?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Qué suerte, yo también quiero verla todos los días.",
+     "¿A qué hora es mejor verla de noche?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Pues aquí siempre hay lugar en la barra para usted. En septiembre, la Alborada llena el cielo de fuegos artificiales al amanecer. In September, the Alborada fills the sky with fireworks at dawn. ¿Le gustaría ver los cohetes algún día? Would you like to see the fireworks some day?",
+    "en": "Well, there's always a spot at the bar for you. In September, the Alborada fills the sky with fireworks at dawn. Would you like to see the fireworks some day?",
+    "raw": "{\"line\":\"{Pues aquí *siempre hay lugar* en la barra para usted. | Well, there's *always a spot* at the bar for you.} {En septiembre, la Alborada llena el cielo de fuegos artificiales al amanecer. | In September, the Alborada fills the sky with fireworks at dawn.} {¿Le gustaría ver *los cohetes* algún día? | Would you like to see *the fireworks* some day?}\",\"en\":\"Well, there's always a spot at the bar for you. In September, the Alborada fills the sky with fireworks at dawn. Would you like to see the fireworks some day?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "La Alborada es el 29 de septiembre, para la fiesta de San Miguel. The Alborada is on September 29th, for the feast of San Miguel. Los cohetes truenan antes del amanecer, y toda la gente sale a la calle. ¿Quiere otro mezcal mientras platicamos? Do you want another mezcal while we chat?",
+    "en": "The Alborada is on September 29th, for the feast of San Miguel. The rockets thunder before dawn, and everybody comes out into the street. Do you want another mezcal while we chat?",
+    "raw": "{\"line\":\"{*La Alborada* es el 29 de septiembre, para la fiesta de San Miguel. | *The Alborada* is on September 29th, for the feast of San Miguel.} {Los cohetes truenan antes del amanecer, y toda la gente sale a la calle. | The rockets thunder before dawn, and everybody comes out into the street.} {¿Quiere *otro mezcal* mientras platicamos? | Do you want *another mezcal* while we chat?}\",\"en\":\"The Alborada is on September 29th, for the feast of San Miguel. The rockets thunder before dawn, and everybody comes out into the street. Do you want another mezcal while we chat?\",\"answers\":[{\"text\":\"Sí, otro mezcal, por favor. Me gusta mucho.\",\"en\":\"Yes, another mezcal, please. I like it a lot.\"},{\"text\":\"¿Qué significa \\\"platicamos\\\"? Más despacio, por favor.\",\"en\":\"What does \\\"platicamos\\\" mean? Slower, please.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, otro mezcal, por favor. Me gusta mucho.",
+     "¿Qué significa \"platicamos\"? Más despacio, por favor."
+    ],
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Aquí tiene, otro mezcal, con su naranja. Here you are, another mezcal, with your orange. Me alegra que le guste, y vuelva pronto para ver la Parroquia de noche. Aquí lo espero cualquier tarde, y le guardo su lugar en la barra. I'll be here any afternoon, and I'll save your spot at the bar.",
+    "en": "Here you are, another mezcal, with your orange. I'm glad you like it, and come back soon to see the Parroquia at night. I'll be here any afternoon, and I'll save your spot at the bar.",
+    "raw": "{\"line\":\"{Aquí tiene, *otro mezcal*, con su naranja. | Here you are, *another mezcal*, with your orange.} {Me alegra que le guste, y *vuelva pronto* para ver la Parroquia de noche. | I'm glad you like it, and *come back soon* to see the Parroquia at night.} {Aquí lo espero cualquier tarde, y le guardo su lugar en la barra. | I'll be here any afternoon, and I'll save your spot at the bar.}\",\"en\":\"Here you are, another mezcal, with your orange. I'm glad you like it, and come back soon to see the Parroquia at night. I'll be here any afternoon, and I'll save your spot at the bar.\",\"answers\":[{\"text\":\"Muchas gracias, Tomás. Voy a volver pronto.\",\"en\":\"Thank you very much, Tomás. I'm going to come back soon.\"},{\"text\":\"Hasta luego. Quiero ver la Parroquia de noche.\",\"en\":\"See you later. I want to see the Parroquia at night.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Muchas gracias, Tomás. Voy a volver pronto.",
+     "Hasta luego. Quiero ver la Parroquia de noche."
+    ],
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "¡Con mucho gusto! Que le vaya muy bien, y aquí lo espero. Take care, and I'll be waiting for you here. ¡Hasta pronto!",
+    "en": "My pleasure! Take care, and I'll be waiting for you here. See you soon!",
+    "raw": "{\"line\":\"¡Con mucho gusto! Que le vaya muy bien, y aquí lo espero. Take care, and I'll be waiting for you here. ¡Hasta pronto!\",\"en\":\"My pleasure! Take care, and I'll be waiting for you here. See you soon!\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": true
+   }
+  ],
+  "culture": [
+   "Cantinas are old traditional bars where regulars gather every afternoon",
+   "Mezcal is sipped slowly, not shot, in Mexican cantinas",
+   "Mezcal is served with orange slices and worm salt",
+   "Sal de gusano is salt ground with chile and dried, toasted maguey worms",
+   "You dip the orange in the worm salt, then take a small sip of mezcal",
+   "Worm salt gives mezcal a smoky flavor",
+   "The Parroquia is a pink church (in San Miguel de Allende)",
+   "The Parroquia's pink stone looks golden under night lighting",
+   "The Alborada fills the sky with fireworks at dawn",
+   "The Alborada is held on September 29 for the feast of San Miguel",
+   "Rockets (cohetes) thunder before sunrise and people go out into the street",
+   "Ahorita means right now / in a moment",
+   "Platicar means to chat",
+   "Cerveza (beer) is an alternative drink in a cantina",
+   "Usted is the polite form of address used with customers"
+  ]
+ },
+ {
+  "step": 4,
+  "city": "san-miguel-de-allende",
+  "place": "casa-del-tumbagon",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Buenas tardes, bienvenido a la Casa del Tumbagón. Good afternoon, welcome to Casa del Tumbagón. Estoy sacando los tumbagones del horno, son los dulces de San Miguel. ¿Quiere probar uno? Would you like to try one?",
+    "en": "Good afternoon, welcome to Casa del Tumbagón. I'm taking the tumbagones out of the oven, they're San Miguel's own sweets. Would you like to try one?",
+    "raw": "{\"line\":\"{*Buenas tardes*, bienvenido a la Casa del Tumbagón. | *Good afternoon*, welcome to Casa del Tumbagón.} {Estoy sacando *los tumbagones* del horno, son los dulces de San Miguel. | I'm taking *the tumbagones* out of the oven, they're San Miguel's own sweets.} {¿Quiere probar uno? | Would you like to try one?}\",\"en\":\"Good afternoon, welcome to Casa del Tumbagón. I'm taking the tumbagones out of the oven, they're San Miguel's own sweets. Would you like to try one?\",\"answers\":[{\"text\":\"Sí, por favor. Huele muy rico.\",\"en\":\"Yes, please. It smells very good.\"},{\"text\":\"¿Qué es un tumbagón? ¿Me lo puede explicar?\",\"en\":\"What is a tumbagón (a traditional San Miguel sweet)? Can you explain it to me?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, por favor. Huele muy rico.",
+     "¿Qué es un tumbagón? ¿Me lo puede explicar?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Gracias, qué amable. Aquí tiene su tumbagón, todavía está calientito. Here's your tumbagón, it's still warm. ¿Qué le parece el sabor? What do you think of the flavor?",
+    "en": "Thank you, how kind. Here's your tumbagón, it's still warm. What do you think of the flavor?",
+    "raw": "{\"line\":\"{*Gracias*, qué amable. | *Thank you*, how kind.} {Aquí tiene su tumbagón, todavía está calientito. | Here's your tumbagón, it's still warm.} {¿Qué le parece *el sabor*? | What do you think of *the flavor*?}\",\"en\":\"Thank you, how kind. Here's your tumbagón, it's still warm. What do you think of the flavor?\",\"answers\":[{\"text\":\"Está muy rico y dulce. ¿Qué lleva?\",\"en\":\"It's very tasty and sweet. What's in it?\"},{\"text\":\"Me gusta mucho. ¿Lo hace usted todos los días?\",\"en\":\"I like it a lot. Do you make it every day?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Está muy rico y dulce. ¿Qué lleva?",
+     "Me gusta mucho. ¿Lo hace usted todos los días?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Lleva azúcar, huevo y harina, y se hornea despacito. Es un dulce muy de San Miguel, mi familia lo hace así desde hace años. It's a sweet very much from San Miguel, my family has made it this way for years. ¿Ya conoce la Parroquia, aquí cerquita? Have you seen the Parroquia yet, right nearby?",
+    "en": "It has sugar, egg and flour, and it bakes nice and slow. It's a sweet very much from San Miguel, my family has made it this way for years. Have you seen the Parroquia yet, right nearby?",
+    "raw": "{\"line\":\"{Lleva *azúcar*, huevo y harina, y se hornea despacito. | It has *sugar*, egg and flour, and it bakes nice and slow.} {Es un dulce muy de San Miguel, mi familia lo hace así desde hace años. | It's a sweet very much from San Miguel, my family has made it this way for years.} {¿Ya conoce *la Parroquia*, aquí cerquita? | Have you seen *the Parroquia* yet, right nearby?}\",\"en\":\"It has sugar, egg and flour, and it bakes nice and slow. It's a sweet very much from San Miguel, my family has made it this way for years. Have you seen the Parroquia yet, right nearby?\",\"answers\":[{\"text\":\"Sí, la Parroquia es muy bonita. ¿Quién la diseñó?\",\"en\":\"Yes, the Parroquia is very pretty. Who designed it?\"},{\"text\":\"Todavía no, pero quiero verla. ¿Está lejos de aquí?\",\"en\":\"Not yet, but I want to see it. Is it far from here?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, la Parroquia es muy bonita. ¿Quién la diseñó?",
+     "Todavía no, pero quiero verla. ¿Está lejos de aquí?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "La diseñó Zeferino Gutiérrez, un albañil de aquí de San Miguel. It was designed by Zeferino Gutiérrez, a bricklayer from right here in San Miguel. Su fachada de cantera rosa es mi parte favorita del Centro. Its pink-stone façade is my favorite part of the Centro.",
+    "en": "It was designed by Zeferino Gutiérrez, a bricklayer from right here in San Miguel. Its pink-stone façade is my favorite part of the Centro.",
+    "raw": "{\"line\":\"{La diseñó *Zeferino Gutiérrez*, un albañil de aquí de San Miguel. | It was designed by *Zeferino Gutiérrez*, a bricklayer from right here in San Miguel.} {Su fachada de cantera rosa es mi parte favorita del Centro. | Its pink-stone façade is my favorite part of the Centro.}\",\"en\":\"It was designed by Zeferino Gutiérrez, a bricklayer from right here in San Miguel. Its pink-stone façade is my favorite part of the Centro.\",\"answers\":[{\"text\":\"Qué increíble que fue un albañil. Me gusta mucho el color rosa.\",\"en\":\"How incredible that it was a bricklayer. I really like the pink color.\"},{\"text\":\"¿Cuál es su rincón favorito del Centro? Quiero conocer más.\",\"en\":\"What is your favorite corner of the Centro? I want to see more.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Qué increíble que fue un albañil. Me gusta mucho el color rosa.",
+     "¿Cuál es su rincón favorito del Centro? Quiero conocer más."
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Sí, un albañil sin estudios de arquitectura, ¿verdad? Yes, a bricklayer with no architecture training, right? Con el sol de la tarde, la cantera se pone más rosa todavía. ¿Quiere llevar unos tumbagones para el paseo? Would you like to take some tumbagones for your walk?",
+    "en": "Yes, a bricklayer with no architecture training, right? In the afternoon sun, the stone turns even pinker. Would you like to take some tumbagones for your walk?",
+    "raw": "{\"line\":\"{Sí, *un albañil* sin estudios de arquitectura, ¿verdad? | Yes, *a bricklayer* with no architecture training, right?} {Con el sol de la tarde, la cantera se pone *más rosa* todavía. | In the afternoon sun, the stone turns *even pinker*.} {¿Quiere llevar *unos tumbagones* para el paseo? | Would you like to take *some tumbagones* for your walk?}\",\"en\":\"Yes, a bricklayer with no architecture training, right? In the afternoon sun, the stone turns even pinker. Would you like to take some tumbagones for your walk?\",\"answers\":[{\"text\":\"Sí, me encanta el rosa. Sí, quiero unos tumbagones, por favor.\",\"en\":\"Yes, I love the pink. Yes, I'd like some tumbagones, please.\"},{\"text\":\"¿Cuánto cuestan? ¿Cuántos vienen en una bolsa?\",\"en\":\"How much are they? How many come in a bag?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, me encanta el rosa. Sí, quiero unos tumbagones, por favor.",
+     "¿Cuánto cuestan? ¿Cuántos vienen en una bolsa?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "¡Qué bueno! Ahorita le preparo una bolsita con tumbagones. Los acomodo bien para que no se rompan en el camino. I'll pack them well so they don't break on the way. A mí me encanta abrir el horno temprano, cuando todo el Centro huele a dulce. I love opening the oven early, when the whole Centro smells sweet.",
+    "en": "Great! I'll get you a little bag of tumbagones right now. I'll pack them well so they don't break on the way. I love opening the oven early, when the whole Centro smells sweet.",
+    "raw": "{\"line\":\"{¡Qué bueno! Ahorita le preparo *una bolsita* con tumbagones. | Great! I'll get you *a little bag* of tumbagones right now.} {Los acomodo bien para que no se rompan en el camino. | I'll pack them well so they don't break on the way.} {A mí me encanta *abrir el horno* temprano, cuando todo el Centro huele a dulce. | I love *opening the oven* early, when the whole Centro smells sweet.}\",\"en\":\"Great! I'll get you a little bag of tumbagones right now. I'll pack them well so they don't break on the way. I love opening the oven early, when the whole Centro smells sweet.\",\"answers\":[{\"text\":\"Qué bonito suena eso. Debe oler delicioso en la mañana.\",\"en\":\"That sounds lovely. It must smell delicious in the morning.\"},{\"text\":\"¿A qué hora abre usted el horno? ¿Hay tumbagones frescos todo el día?\",\"en\":\"What time do you open the oven? Are there fresh tumbagones all day?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Qué bonito suena eso. Debe oler delicioso en la mañana.",
+     "¿A qué hora abre usted el horno? ¿Hay tumbagones frescos todo el día?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Sí, huele delicioso desde las siete, y los vecinos ya saben cuándo salen. Yes, it smells delicious from seven o'clock, and the neighbors already know when they come out. Aquí tiene su bolsita, bien cerrada. Here's your little bag, nicely closed. Ese olor a azúcar tostada es mi mejor propaganda. That smell of toasted sugar is my best advertising.",
+    "en": "Yes, it smells delicious from seven o'clock, and the neighbors already know when they come out. Here's your little bag, nicely closed. That smell of toasted sugar is my best advertising.",
+    "raw": "{\"line\":\"Sí, huele delicioso desde las siete, y los vecinos ya saben cuándo salen. Yes, it smells delicious from seven o'clock, and the neighbors already know when they come out. Aquí tiene su bolsita, bien cerrada. Here's your little bag, nicely closed. Ese olor a azúcar tostada es mi mejor propaganda. That smell of toasted sugar is my best advertising.\",\"en\":\"Yes, it smells delicious from seven o'clock, and the neighbors already know when they come out. Here's your little bag, nicely closed. That smell of toasted sugar is my best advertising.\",\"answers\":[{\"text\":\"Tiene razón, el olor invita a pasar. Yo entré por eso.\",\"en\":\"You're right, the smell invites you in. That's why I came in.\"},{\"text\":\"¿Cuánto tiempo se hornean los tumbagones? ¿Se hacen todos los días?\",\"en\":\"How long do the tumbagones bake? Are they made every day?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Tiene razón, el olor invita a pasar. Yo entré por eso.",
+     "¿Cuánto tiempo se hornean los tumbagones? ¿Se hacen todos los días?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "¡Qué gusto que entró! Vuelva el viernes, que ese día hago una hornada más grande y salen bien calientitos. Come back Friday, that's the day I make a bigger batch and they come out nice and warm. Fue un placer platicar con usted. It was a pleasure chatting with you.",
+    "en": "I'm so glad you came in! Come back Friday, that's the day I make a bigger batch and they come out nice and warm. It was a pleasure chatting with you.",
+    "raw": "{\"line\":\"¡Qué gusto que entró! Vuelva el viernes, que ese día hago una hornada más grande y salen bien calientitos. Come back Friday, that's the day I make a bigger batch and they come out nice and warm. Fue un placer platicar con usted. It was a pleasure chatting with you.\",\"en\":\"I'm so glad you came in! Come back Friday, that's the day I make a bigger batch and they come out nice and warm. It was a pleasure chatting with you.\",\"answers\":[{\"text\":\"Gracias por todo, Rocío. Vuelvo el viernes.\",\"en\":\"Thanks for everything, Rocío. I'll be back Friday.\"},{\"text\":\"Qué amable. Hasta luego y que le vaya bien.\",\"en\":\"How kind. See you later and take care.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Gracias por todo, Rocío. Vuelvo el viernes.",
+     "Qué amable. Hasta luego y que le vaya bien."
+    ],
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "¡Hasta el viernes, que le vaya muy bien! See you Friday, take care!",
+    "en": "See you Friday, take care!",
+    "raw": "{\"line\":\"¡Hasta el viernes, que le vaya muy bien! See you Friday, take care!\",\"en\":\"See you Friday, take care!\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": true
+   }
+  ],
+  "culture": [
+   "Tumbagones are traditional sweets from San Miguel (de Allende)",
+   "Tumbagones are made with sugar, egg and flour and baked slowly",
+   "The Parroquia (parish church) in San Miguel's Centro was designed by Zeferino Gutiérrez",
+   "Zeferino Gutiérrez was a local bricklayer with no architectural training",
+   "The Parroquia's façade is made of pink quarry stone (cantera rosa)",
+   "The cantera looks pinker in the afternoon sun",
+   "Sweets and baked goods are often made in family recipes passed down for years",
+   "The word \"calientito\" (diminutive) means nice and warm",
+   "Diminutives like \"ahorita\", \"cerquita\", \"despacito\" and \"bolsita\" are common in Mexican Spanish",
+   "Mexican Spanish uses polite \"usted\" with customers and strangers",
+   "\"Platicar\" means to chat in Mexico"
+  ]
+ },
+ {
+  "step": 4,
+  "city": "san-miguel-de-allende",
+  "place": "jardin-allende",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "¡Buenas tardes! Aquí en el sitio, esperando pasaje. Good afternoon! Here at the taxi stand, waiting for a fare. Hoy está despejado, y en la tarde el Jardín se llena. Today it's clear, and in the evening the Jardín fills up. ¿Va a dar un paseo por el Centro? Are you going to take a stroll through the Centro?",
+    "en": "Good afternoon! Here at the taxi stand, waiting for a fare. Today it's clear, and in the evening the Jardín fills up. Are you going to take a stroll through the Centro?",
+    "raw": "{\"line\":\"{¡Buenas tardes! Aquí en *el sitio*, esperando pasaje. | Good afternoon! Here at *the taxi stand*, waiting for a fare.} {Hoy está *despejado*, y en la tarde el Jardín se llena. | Today it's *clear*, and in the evening the Jardín fills up.} {¿Va a *dar un paseo* por el Centro? | Are you going to *take a stroll* through the Centro?}\",\"en\":\"Good afternoon! Here at the taxi stand, waiting for a fare. Today it's clear, and in the evening the Jardín fills up. Are you going to take a stroll through the Centro?\",\"answers\":[{\"text\":\"Sí, quiero pasear. Me gusta el Jardín.\",\"en\":\"Yes, I want to stroll. I like the Jardín.\"},{\"text\":\"Buenas tardes. ¿Qué hay para ver aquí?\",\"en\":\"Good afternoon. What is there to see here?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, quiero pasear. Me gusta el Jardín.",
+     "Buenas tardes. ¿Qué hay para ver aquí?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "¡Qué bueno! El Jardín es el corazón del pueblo. Los domingos y en las tardes se llena de familias y mariachis. ¿Quiere que lo lleve a ver las calles empedradas de arriba? Do you want me to take you to see the cobbled streets up the hill?",
+    "en": "Great! The Jardín is the heart of town. On Sundays and in the evenings it fills with families and mariachis. Do you want me to take you to see the cobbled streets up the hill?",
+    "raw": "{\"line\":\"{¡Qué bueno! *El Jardín* es el corazón del pueblo. | Great! *The Jardín* is the heart of town.} {Los domingos y en las tardes se llena de familias y *mariachis*. | On Sundays and in the evenings it fills with families and *mariachis*.} {¿Quiere que lo lleve a ver *las calles empedradas* de arriba? | Do you want me to take you to see the *cobbled streets* up the hill?}\",\"en\":\"Great! The Jardín is the heart of town. On Sundays and in the evenings it fills with families and mariachis. Do you want me to take you to see the cobbled streets up the hill?\",\"answers\":[{\"text\":\"Sí, quiero ver las calles. ¿Es lejos?\",\"en\":\"Yes, I want to see the streets. Is it far?\"},{\"text\":\"Hoy solo quiero caminar. ¿Dónde hay mariachis?\",\"en\":\"Today I just want to walk. Where are there mariachis?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, quiero ver las calles. ¿Es lejos?",
+     "Hoy solo quiero caminar. ¿Dónde hay mariachis?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "No, no es lejos. No, it's not far. Son cinco minutos en taxi, pero la subida es empinada. ¿Le gustaría ver el Mirador, donde se ve todo el pueblo? Would you like to see the Mirador, where you can see the whole town?",
+    "en": "No, it's not far. It's five minutes by taxi, but the climb is steep. Would you like to see the Mirador, where you can see the whole town?",
+    "raw": "{\"line\":\"{No, *no es lejos*. | No, *it's not far*.} {Son cinco minutos en taxi, pero la subida es empinada. | It's five minutes by taxi, but the climb is steep.} {¿Le gustaría ver *el Mirador*, donde se ve todo el pueblo? | Would you like to see *the Mirador*, where you can see the whole town?}\",\"en\":\"No, it's not far. It's five minutes by taxi, but the climb is steep. Would you like to see the Mirador, where you can see the whole town?\",\"answers\":[{\"text\":\"Sí, quiero ver el Mirador. ¿Cuánto cuesta?\",\"en\":\"Yes, I want to see the Mirador. How much does it cost?\"},{\"text\":\"Me gustan las calles empedradas. ¿Son muy antiguas?\",\"en\":\"I like the cobbled streets. Are they very old?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, quiero ver el Mirador. ¿Cuánto cuesta?",
+     "Me gustan las calles empedradas. ¿Son muy antiguas?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Hasta el Mirador son cien pesos. To the Mirador it's a hundred pesos. Es un precio fijo, y yo lo espero para las fotos. ¿Nos vamos ahorita? Shall we go right now?",
+    "en": "To the Mirador it's a hundred pesos. It's a fixed price, and I'll wait for you while you take photos. Shall we go right now?",
+    "raw": "{\"line\":\"{Hasta el Mirador son *cien pesos*. | To the Mirador it's *a hundred pesos*.} {Es un precio fijo, y yo lo espero para las fotos. | It's a fixed price, and I'll wait for you while you take photos.} {¿Nos vamos ahorita? | Shall we go right now?}\",\"en\":\"To the Mirador it's a hundred pesos. It's a fixed price, and I'll wait for you while you take photos. Shall we go right now?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "¡Perfecto, súbase! Perfect, hop in! Vamos por la calle Umarán, y tiene unas vistas muy bonitas. We'll go along Umarán street, and it has some very pretty views. ¿Va a tomar muchas fotos? Are you going to take lots of photos?",
+    "en": "Perfect, hop in! We'll go along Umarán street, and it has some very pretty views. Are you going to take lots of photos?",
+    "raw": "{\"line\":\"¡Perfecto, súbase! Perfect, hop in! Vamos por la calle Umarán, y tiene unas vistas muy bonitas. We'll go along Umarán street, and it has some very pretty views. ¿Va a tomar muchas fotos?\",\"en\":\"Perfect, hop in! We'll go along Umarán street, and it has some very pretty views. Are you going to take lots of photos?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Qué bueno, el pueblo es muy fotogénico. Las casas de colores se ven bonitas con el sol de la tarde. The colorful houses look pretty in the afternoon sun. ¿Quiere que pare en una esquina bonita para una foto? Do you want me to stop at a pretty corner for a photo?",
+    "en": "How great, the town is very photogenic. The colorful houses look pretty in the afternoon sun. Do you want me to stop at a pretty corner for a photo?",
+    "raw": "{\"line\":\"{*Qué bueno*, el pueblo es muy fotogénico. | *How great*, the town is very photogenic.} {Las casas de colores se ven bonitas con el sol de la tarde. | The colorful houses look pretty in the afternoon sun.} {¿Quiere que pare en *una esquina bonita* para una foto? | Do you want me to stop at *a pretty corner* for a photo?}\",\"en\":\"How great, the town is very photogenic. The colorful houses look pretty in the afternoon sun. Do you want me to stop at a pretty corner for a photo?\",\"answers\":[{\"text\":\"Sí, pare aquí, por favor. Me gustan las casas.\",\"en\":\"Yes, stop here, please. I like the houses.\"},{\"text\":\"¿Cómo se llama esta calle? Es muy bonita.\",\"en\":\"What is this street called? It's very pretty.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, pare aquí, por favor. Me gustan las casas.",
+     "¿Cómo se llama esta calle? Es muy bonita."
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Aquí me paro siempre, es mi esquina favorita. I always stop here, it's my favorite corner. Las casas son de cantera rosa, la piedra de la región. Cuando les da el sol de la tarde, se ven como de oro. When the afternoon sun hits them, they look like gold.",
+    "en": "I always stop here, it's my favorite corner. The houses are made of pink quarry stone, the stone of the region. When the afternoon sun hits them, they look like gold.",
+    "raw": "{\"line\":\"{*Aquí* me paro siempre, es mi esquina favorita. | I always stop *here*, it's my favorite corner.} {Las casas son de *cantera rosa*, la piedra de la región. | The houses are made of *pink quarry stone*, the stone of the region.} {Cuando les da el sol de la tarde, se ven como de oro. | When the afternoon sun hits them, they look like gold.}\",\"en\":\"I always stop here, it's my favorite corner. The houses are made of pink quarry stone, the stone of the region. When the afternoon sun hits them, they look like gold.\",\"answers\":[{\"text\":\"Sí, se ven muy bonitas con el sol.\",\"en\":\"Yes, they look very pretty in the sun.\"},{\"text\":\"¿La cantera rosa es de aquí?\",\"en\":\"Is the pink quarry stone from here?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, se ven muy bonitas con el sol.",
+     "¿La cantera rosa es de aquí?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Sí, con el sol de la tarde se ve todo más bonito. Yes, everything looks prettier in the afternoon sun. Fue un gusto llevarlo, y mañana en la noche hay mariachis en el Jardín. Búsqueme aquí en el sitio y lo llevo otra vez. Look for me here at the stand and I'll take you again.",
+    "en": "Yes, everything looks prettier in the afternoon sun. It was a pleasure driving you, and tomorrow night there are mariachis in the Jardín. Look for me here at the stand and I'll take you again.",
+    "raw": "{\"line\":\"{Sí, *con el sol de la tarde* se ve todo más bonito. | Yes, everything looks prettier *in the afternoon sun*.} {Fue un gusto llevarlo, y mañana en la noche hay *mariachis en el Jardín*. | It was a pleasure driving you, and tomorrow night there are *mariachis in the Jardín*.} {Búsqueme aquí en el sitio y lo llevo otra vez. | Look for me here at the stand and I'll take you again.}\",\"en\":\"Yes, everything looks prettier in the afternoon sun. It was a pleasure driving you, and tomorrow night there are mariachis in the Jardín. Look for me here at the stand and I'll take you again.\",\"answers\":[{\"text\":\"Gracias, Beto. Fue un paseo muy bonito.\",\"en\":\"Thanks, Beto. It was a very nice ride.\"},{\"text\":\"Hasta mañana. Lo busco en el sitio.\",\"en\":\"See you tomorrow. I'll look for you at the stand.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Gracias, Beto. Fue un paseo muy bonito.",
+     "Hasta mañana. Lo busco en el sitio."
+    ],
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "¡Con gusto! Cuídese mucho y nos vemos pronto. ¡Hasta luego!",
+    "en": "My pleasure! Take care and see you soon. See you later!",
+    "raw": "{\"line\":\"¡Con gusto! Cuídese mucho y nos vemos pronto. ¡Hasta luego!\",\"en\":\"My pleasure! Take care and see you soon. See you later!\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": true
+   }
+  ],
+  "culture": [
+   "Taxi drivers wait for fares at a taxi stand called a \"sitio\"",
+   "The Jardín (main garden/plaza) is the heart of a Mexican town",
+   "Families and mariachis gather in the Jardín in the evenings and on Sundays",
+   "Many Mexican towns have cobbled streets (calles empedradas) on hillsides",
+   "A Mirador is a lookout point with views over the whole town",
+   "Taxi rides to tourist spots can have a fixed price (e.g., 100 pesos), and drivers may wait while you take photos",
+   "\"Ahorita\" means right now (or soon) in Mexican Spanish",
+   "\"Súbase\" is the polite way to tell someone to hop into the car",
+   "Colorful houses are typical of Mexican colonial towns and look especially pretty in afternoon sun",
+   "Pink quarry stone (cantera rosa) is a regional building material that glows golden in afternoon light",
+   "Mariachis play in the Jardín at night",
+   "Polite farewell phrases such as \"Con gusto\", \"Cuídese mucho\", and \"Hasta luego\" are common",
+   "Locals address visitors formally with \"usted\" (e.g., \"lo llevo\", \"¿Quiere...?\")",
+   "Calle Umarán is a street with pretty views in the town"
+  ]
+ },
+ {
+  "step": 4,
+  "city": "san-miguel-de-allende",
+  "place": "parroquia-san-miguel-arcangel",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Buenos días, bienvenido a la parroquia. Good morning, welcome to the parish church. Estoy preparando las flores para la misa de hoy. ¿Le gusta la fachada rosa? Do you like the pink façade?",
+    "en": "Good morning, welcome to the parish church. I'm getting the flowers ready for today's Mass. Do you like the pink façade?",
+    "raw": "{\"line\":\"{*Buenos días*, bienvenido a la parroquia. | *Good morning*, welcome to the parish church.} {Estoy preparando *las flores* para la misa de hoy. | I'm getting *the flowers* ready for today's Mass.} {¿Le gusta *la fachada* rosa? | Do you like the pink *façade*?}\",\"en\":\"Good morning, welcome to the parish church. I'm getting the flowers ready for today's Mass. Do you like the pink façade?\",\"answers\":[{\"text\":\"Sí, me gusta mucho. Es muy bonita.\",\"en\":\"Yes, I like it a lot. It's very pretty.\"},{\"text\":\"¿Usted trabaja aquí todos los días?\",\"en\":\"Do you work here every day?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, me gusta mucho. Es muy bonita.",
+     "¿Usted trabaja aquí todos los días?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "ask-en",
+    "line": "Me alegra mucho. La piedra rosa viene de canteras de la región, y cambia de color con el sol. The pink stone comes from quarries in the region, and it changes color with the sun. La fachada la diseñó Zeferino Gutiérrez, un constructor de aquí que aprendió solo. Zeferino Gutiérrez designed the façade, a local builder who taught himself.",
+    "en": "I'm glad. The pink stone comes from quarries in the region, and it changes color with the sun. Zeferino Gutiérrez designed the façade, a local builder who taught himself.",
+    "raw": "{\"line\":\"{Me alegra mucho. | I'm glad.} {*La piedra rosa* viene de canteras de la región, y cambia de color con el sol. | The *pink stone* comes from quarries in the region, and it changes color with the sun.} {La fachada la diseñó *Zeferino Gutiérrez*, un constructor de aquí que aprendió solo. | *Zeferino Gutiérrez* designed the façade, a local builder who taught himself.}\",\"en\":\"I'm glad. The pink stone comes from quarries in the region, and it changes color with the sun. Zeferino Gutiérrez designed the façade, a local builder who taught himself.\",\"answers\":[{\"text\":\"¿De qué color se ve en la tarde?\",\"en\":\"What color does it look in the afternoon?\"},{\"text\":\"¿Cómo aprendió a construir solo?\",\"en\":\"How did he learn to build on his own?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "¿De qué color se ve en la tarde?",
+     "¿Cómo aprendió a construir solo?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "En la tarde se ve más dorada, casi color naranja. In the afternoon it looks more golden, almost orange. Con el sol bajo, la piedra parece que brilla. With the low sun, the stone seems to glow. ¿Usted va a entrar a ver la iglesia por dentro? Are you going to go in and see the church inside?",
+    "en": "In the afternoon it looks more golden, almost orange. With the low sun, the stone seems to glow. Are you going to go in and see the church inside?",
+    "raw": "{\"line\":\"{En la tarde se ve *más dorada*, casi color naranja. | In the afternoon it looks *more golden*, almost orange.} {Con el sol bajo, la piedra parece que brilla. | With the low sun, the stone seems to glow.} {¿Usted va a entrar a ver la iglesia por dentro? | Are you going to go in and see the church inside?}\",\"en\":\"In the afternoon it looks more golden, almost orange. With the low sun, the stone seems to glow. Are you going to go in and see the church inside?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Qué bueno, pase con calma. How nice, go in and take your time. Hoy hace sol y el aire está seco, ideal para ver los vitrales. ¿Quiere que le cuente algo de las campanas? Would you like me to tell you something about the bells?",
+    "en": "How nice, go in and take your time. Today is sunny and the air is dry, perfect for seeing the stained-glass windows. Would you like me to tell you something about the bells?",
+    "raw": "{\"line\":\"{*Qué bueno*, pase con calma. | *How nice*, go in and take your time.} {Hoy hace sol y el aire está seco, ideal para ver los vitrales. | Today is sunny and the air is dry, perfect for seeing the *stained-glass windows*.} {¿Quiere que le cuente algo de las campanas? | Would you like me to tell you something about the *bells*?}\",\"en\":\"How nice, go in and take your time. Today is sunny and the air is dry, perfect for seeing the stained-glass windows. Would you like me to tell you something about the bells?\",\"answers\":[{\"text\":\"Sí, me gustaría. Me gustan mucho las campanas.\",\"en\":\"Yes, I'd like that. I really like bells.\"},{\"text\":\"Gracias, Don Aurelio. ¿Qué significa «vitrales»?\",\"en\":\"Thank you, Don Aurelio. What does «vitrales» mean?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, me gustaría. Me gustan mucho las campanas.",
+     "Gracias, Don Aurelio. ¿Qué significa «vitrales»?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Me alegra, a mí también. I'm glad, me too. Las campanas suenan al amanecer en los días de santos, junto con los cohetones. Cada septiembre, en La Alborada, el cielo se llena de luz antes de que salga el sol. Each September, at La Alborada, the sky fills with light before the sun comes up. Para mí, ese es el día más bonito del año. For me, that is the most beautiful day of the year.",
+    "en": "I'm glad, me too. The bells ring at dawn on saints' days, along with the fireworks. Each September, at La Alborada, the sky fills with light before the sun comes up. For me, that is the most beautiful day of the year.",
+    "raw": "{\"line\":\"{Me alegra, a mí también. | I'm glad, me too.} {Las campanas suenan al amanecer en los días de santos, junto con *los cohetones*. | The bells ring at dawn on saints' days, along with *the fireworks*.} {Cada septiembre, en *La Alborada*, el cielo se llena de luz antes de que salga el sol. | Each September, at *La Alborada*, the sky fills with light before the sun comes up.} {Para mí, ese es el día más bonito del año. | For me, that is the most beautiful day of the year.}\",\"en\":\"I'm glad, me too. The bells ring at dawn on saints' days, along with the fireworks. Each September, at La Alborada, the sky fills with light before the sun comes up. For me, that is the most beautiful day of the year.\",\"answers\":[{\"text\":\"Qué bonito. Me gustaría verlo algún día.\",\"en\":\"How lovely. I'd like to see it some day.\"},{\"text\":\"¿Qué son los cohetones?\",\"en\":\"What are the cohetones (loud skyrockets)?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Qué bonito. Me gustaría verlo algún día.",
+     "¿Qué son los cohetones?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Ojalá que venga en septiembre, vale la pena. La gente se junta en el Jardín desde muy temprano, con los cohetones y mucha alegría. ¿Usted ya conoce el Jardín? Do you already know the Jardín?",
+    "en": "I hope you come in September, it's worth it. People gather in the Jardín very early, with the fireworks and lots of joy. Do you already know the Jardín?",
+    "raw": "{\"line\":\"{Ojalá que venga *en septiembre*, vale la pena. | I hope you come *in September*, it's worth it.} {La gente se junta en el Jardín desde muy temprano, con *los cohetones* y mucha alegría. | People gather in the Jardín very early, with *the fireworks* and lots of joy.} {¿Usted ya conoce *el Jardín*? | Do you already know *the Jardín*?}\",\"en\":\"I hope you come in September, it's worth it. People gather in the Jardín very early, with the fireworks and lots of joy. Do you already know the Jardín?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Qué bueno, el Jardín está justo enfrente de la iglesia. Por las tardes, las familias se sientan en las bancas a platicar. In the afternoons, families sit on the benches to chat. ¿Le gustaría ver los vitrales por dentro? Would you like to see the stained-glass windows inside?",
+    "en": "How nice, the Jardín is right in front of the church. In the afternoons, families sit on the benches to chat. Would you like to see the stained-glass windows inside?",
+    "raw": "{\"line\":\"{Qué bueno, el Jardín está justo enfrente de la iglesia. | How nice, the Jardín is right in front of the church.} {Por las tardes, las familias se sientan en las bancas a platicar. | In the afternoons, families sit on the benches to chat.} {¿Le gustaría ver *los vitrales* por dentro? | Would you like to see *the stained-glass windows* inside?}\",\"en\":\"How nice, the Jardín is right in front of the church. In the afternoons, families sit on the benches to chat. Would you like to see the stained-glass windows inside?\",\"answers\":[{\"text\":\"Sí, me gustaría mucho. Voy a entrar ahora.\",\"en\":\"Yes, I would like that a lot. I'm going in now.\"},{\"text\":\"Me gusta el Jardín. ¿Qué significa \\\"vitrales\\\"?\",\"en\":\"I like the Jardín. What does \\\"vitrales\\\" mean?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, me gustaría mucho. Voy a entrar ahora.",
+     "Me gusta el Jardín. ¿Qué significa \"vitrales\"?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Pase, pase, y vea los vitrales con calma. Go in, go in, and see the windows at your leisure. Vuelva en septiembre, para La Alborada; yo le guardo un buen lugar. Fue un gusto platicar con usted. It was a pleasure chatting with you.",
+    "en": "Go in, go in, and see the windows at your leisure. Come back in September, for La Alborada; I'll save you a good spot. It was a pleasure chatting with you.",
+    "raw": "{\"line\":\"{Pase, pase, y vea los vitrales con calma. | Go in, go in, and see the windows at your leisure.} {Vuelva en *septiembre*, para La Alborada; yo le guardo un buen lugar. | Come back in *September*, for La Alborada; I'll save you a good spot.} {Fue un gusto platicar con usted. | It was a pleasure chatting with you.}\",\"en\":\"Go in, go in, and see the windows at your leisure. Come back in September, for La Alborada; I'll save you a good spot. It was a pleasure chatting with you.\",\"answers\":[{\"text\":\"Muchas gracias, Don Aurelio. Volveré en septiembre.\",\"en\":\"Thank you very much, Don Aurelio. I'll come back in September.\"},{\"text\":\"Fue un gusto. Hasta luego.\",\"en\":\"It was a pleasure. See you later.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Muchas gracias, Don Aurelio. Volveré en septiembre.",
+     "Fue un gusto. Hasta luego."
+    ],
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "¡Que le vaya muy bien! Here's to September, then. ¡Hasta pronto, que Dios lo bendiga! Until soon, God bless you!",
+    "en": "Take care, and go well! Here's to September, then. Until soon, God bless you!",
+    "raw": "{\"line\":\"¡Que le vaya muy bien! Here's to September, then. ¡Hasta pronto, que Dios lo bendiga! Until soon, God bless you!\",\"en\":\"Take care, and go well! Here's to September, then. Until soon, God bless you!\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": true
+   }
+  ],
+  "culture": [
+   "Parish churches are community hubs, with locals like Don Aurelio preparing flowers for daily Mass",
+   "Pink quarry stone (cantera rosa) is a regional building material that changes color with the sun, looking golden or orange in the afternoon",
+   "Local self-taught builders often designed churches and façades",
+   "Church bells ring at dawn on saints' days",
+   "Cohetones (loud firecrackers/rockets) are set off to celebrate festivals and saints' days",
+   "La Alborada is a September dawn celebration when the sky fills with light before sunrise",
+   "People gather early in the Jardín (town central garden/plaza) for festivities",
+   "The Jardín is the town's main square, located right in front of the church",
+   "Families sit on the benches in the Jardín in the afternoons to chat (platicar)",
+   "Stained-glass windows (vitrales) are a feature of the church interior",
+   "The word 'platicar' means to chat",
+   "Common farewell: 'que Dios lo bendiga' (God bless you)",
+   "Locals warmly invite visitors to return and offer to save them a good spot"
+  ]
+ },
+ {
+  "step": 4,
+  "city": "san-miguel-de-allende",
+  "place": "el-mirador-san-miguel",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "¡Buenas tardes! Aquí vengo cada tarde a ver el atardecer. Mire, la Parroquia se pone rosa con el sol. ¿Le gusta la vista? Do you like the view?",
+    "en": "Good evening! I come here every afternoon to watch the sunset. Look, the Parroquia turns pink in the sun. Do you like the view?",
+    "raw": "{\"line\":\"{¡Buenas tardes! Aquí vengo cada tarde a ver *el atardecer*. | Good evening! I come here every afternoon to watch *the sunset*.} {Mire, *la Parroquia* se pone rosa con el sol. | Look, *the Parroquia* turns pink in the sun.} {¿Le gusta *la vista*? | Do you like *the view*?}\",\"en\":\"Good evening! I come here every afternoon to watch the sunset. Look, the Parroquia turns pink in the sun. Do you like the view?\",\"answers\":[{\"text\":\"Sí, es muy bonita. Me gusta el color rosa.\",\"en\":\"Yes, it's very pretty. I like the pink color.\"},{\"text\":\"¿Qué significa \\\"atardecer\\\"? ¿Puede repetir más despacio?\",\"en\":\"What does \\\"atardecer\\\" mean? Can you repeat it more slowly?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, es muy bonita. Me gusta el color rosa.",
+     "¿Qué significa \"atardecer\"? ¿Puede repetir más despacio?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Me alegra que le guste, qué bueno. I'm glad you like it, how nice. La Parroquia la hizo Zeferino Gutiérrez, un albañil de aquí. Yo la veo así desde niño, y todavía me emociona. I've seen it like this since I was a boy, and it still moves me.",
+    "en": "I'm glad you like it, how nice. Zeferino Gutiérrez, a mason from here, built the Parroquia. I've seen it like this since I was a boy, and it still moves me.",
+    "raw": "{\"line\":\"{Me alegra que le guste, *qué bueno*. | I'm glad you like it, *how nice*.} {La Parroquia la hizo *Zeferino Gutiérrez*, un albañil de aquí. | *Zeferino Gutiérrez*, a mason from here, built the Parroquia.} {Yo la veo así desde niño, y todavía me emociona. | I've seen it like this since I was a boy, and it still moves me.}\",\"en\":\"I'm glad you like it, how nice. Zeferino Gutiérrez, a mason from here, built the Parroquia. I've seen it like this since I was a boy, and it still moves me.\",\"answers\":[{\"text\":\"Qué bonito. Se ve que le gusta mucho.\",\"en\":\"How lovely. You can tell you like it a lot.\"},{\"text\":\"¿Un albañil la hizo? ¿Cómo aprendió?\",\"en\":\"A mason built it? How did he learn?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Qué bonito. Se ve que le gusta mucho.",
+     "¿Un albañil la hizo? ¿Cómo aprendió?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Sí, me gusta mucho. Yo vengo aquí casi todas las tardes. Yes, I like it a lot. I come here almost every afternoon. Con los años, uno aprecia más lo sencillo. Este pueblo era muy tranquilo cuando yo nací. This town was very quiet when I was born.",
+    "en": "Yes, I like it a lot. I come here almost every afternoon. With the years, one appreciates simple things more. This town was very quiet when I was born.",
+    "raw": "{\"line\":\"{Sí, *me gusta mucho*. Yo vengo aquí casi todas las tardes. | Yes, *I like it a lot*. I come here almost every afternoon.} {Con los años, uno aprecia más lo sencillo. | With the years, one appreciates simple things more.} {Este pueblo era muy tranquilo cuando yo nací. | This town was very quiet when I was born.}\",\"en\":\"Yes, I like it a lot. I come here almost every afternoon. With the years, one appreciates simple things more. This town was very quiet when I was born.\",\"answers\":[{\"text\":\"Sí, es un lugar muy tranquilo. Quiero venir otra vez.\",\"en\":\"Yes, it's a very peaceful place. I want to come again.\"},{\"text\":\"¿Cómo era antes el pueblo? ¿Era muy diferente?\",\"en\":\"What was the town like before? Was it very different?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, es un lugar muy tranquilo. Quiero venir otra vez.",
+     "¿Cómo era antes el pueblo? ¿Era muy diferente?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "¡Qué bueno! Aquí lo espero cuando quiera. Antes solo había familias del pueblo, pero después llegaron los artistas. ¿Qué es lo que más le gusta de San Miguel? What do you like most about San Miguel?",
+    "en": "How nice! I'll be here waiting whenever you like. Before there were only local families, but later the artists arrived. What do you like most about San Miguel?",
+    "raw": "{\"line\":\"{¡Qué bueno! *Aquí lo espero* cuando quiera. | How nice! *I'll be here waiting* whenever you like.} {Antes solo había familias del pueblo, pero después llegaron *los artistas*. | Before there were only local families, but later *the artists* arrived.} {¿Qué es lo que más le gusta de San Miguel? | What do you like most about San Miguel?}\",\"en\":\"How nice! I'll be here waiting whenever you like. Before there were only local families, but later the artists arrived. What do you like most about San Miguel?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Ja, ja, qué bueno. Aquí todo es bonito, ¿verdad? Mire las luces del pueblo, ya se están prendiendo. ¿Qué le parece más bonito: la Parroquia o las calles de piedra? Which do you find prettier: the Parroquia or the stone streets?",
+    "en": "Ha ha, how nice. Everything here is pretty, right? Look at the lights of the town, they're turning on now. Which do you find prettier: the Parroquia or the stone streets?",
+    "raw": "{\"line\":\"Ja, ja, qué bueno. Aquí todo es bonito, ¿verdad? Mire las luces del pueblo, ya se están prendiendo. ¿Qué le parece más bonito: la Parroquia o las calles de piedra?\",\"en\":\"Ha ha, how nice. Everything here is pretty, right? Look at the lights of the town, they're turning on now. Which do you find prettier: the Parroquia or the stone streets?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Ja, ja, creo que no me entendió bien. Ha ha, I think you didn't quite catch that. No se preocupe, mire el atardecer, ya casi se acaba. ¿Prefiere la Parroquia o las calles de piedra? Do you prefer the Parroquia or the stone streets?",
+    "en": "Ha ha, I think you didn't quite catch that. Don't worry, look at the sunset, it's almost over. Do you prefer the Parroquia or the stone streets?",
+    "raw": "{\"line\":\"{Ja, ja, creo que no me entendió bien. | Ha ha, I think you didn't quite catch that.} {No se preocupe, mire *el atardecer*, ya casi se acaba. | Don't worry, look at *the sunset*, it's almost over.} {¿Prefiere *la Parroquia* o *las calles de piedra*? | Do you prefer *the Parroquia* or *the stone streets*?}\",\"en\":\"Ha ha, I think you didn't quite catch that. Don't worry, look at the sunset, it's almost over. Do you prefer the Parroquia or the stone streets?\",\"answers\":[{\"text\":\"Me gusta la Parroquia. Es muy bonita.\",\"en\":\"I like the Parroquia. It's very pretty.\"},{\"text\":\"No entiendo. ¿Puede hablar más despacio?\",\"en\":\"I don't understand. Can you speak more slowly?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Me gusta la Parroquia. Es muy bonita.",
+     "No entiendo. ¿Puede hablar más despacio?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Yo también, la Parroquia es mi favorita. Me too, the Parroquia is my favorite. Desde aquí se ve mejor cuando cae el sol. ¿Ya conoce el jardín, aquí abajo? Do you know the garden down there yet?",
+    "en": "Me too, the Parroquia is my favorite. From here you see it best when the sun goes down. Do you know the garden down there yet?",
+    "raw": "{\"line\":\"{Yo también, *la Parroquia* es mi favorita. | Me too, *the Parroquia* is my favorite.} {Desde aquí se ve mejor cuando cae el sol. | From here you see it best when the sun goes down.} {¿Ya conoce *el jardín*, aquí abajo? | Do you know *the garden* down there yet?}\",\"en\":\"Me too, the Parroquia is my favorite. From here you see it best when the sun goes down. Do you know the garden down there yet?\",\"answers\":[{\"text\":\"Todavía no conozco el jardín. Es muy bonito?\",\"en\":\"I don't know the garden yet. Is it very pretty?\"},{\"text\":\"Sí, ya lo conozco. Me gusta mucho.\",\"en\":\"Yes, I already know it. I like it a lot.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Todavía no conozco el jardín. Es muy bonito?",
+     "Sí, ya lo conozco. Me gusta mucho."
+    ],
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Sí, es muy bonito, y está a pocos pasos de aquí. Hay árboles y bancas, y la Parroquia se ve enfrente. There are trees and benches, and the Parroquia is right in front. Vuelva mañana por la tarde, y vemos juntos el atardecer. Come back tomorrow afternoon, and we'll watch the sunset together.",
+    "en": "Yes, it's very pretty, and it's just a few steps from here. There are trees and benches, and the Parroquia is right in front. Come back tomorrow afternoon, and we'll watch the sunset together.",
+    "raw": "{\"line\":\"{Sí, es muy bonito, y está a pocos pasos de aquí. | Yes, it's very pretty, and it's just a few steps from here.} {Hay árboles y bancas, y la Parroquia se ve enfrente. | There are trees and benches, and the Parroquia is right in front.} {Vuelva *mañana por la tarde*, y vemos juntos el atardecer. | Come back *tomorrow afternoon*, and we'll watch the sunset together.}\",\"en\":\"Yes, it's very pretty, and it's just a few steps from here. There are trees and benches, and the Parroquia is right in front. Come back tomorrow afternoon, and we'll watch the sunset together.\",\"answers\":[{\"text\":\"Sí, vengo mañana. Hasta luego, don Ramón.\",\"en\":\"Yes, I'll come tomorrow. See you later, Don Ramón.\"},{\"text\":\"Muchas gracias por todo. Que pase buena noche.\",\"en\":\"Thank you very much for everything. Have a good evening.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, vengo mañana. Hasta luego, don Ramón.",
+     "Muchas gracias por todo. Que pase buena noche."
+    ],
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "¡Hasta mañana, amigo! Que le vaya muy bien. See you tomorrow, friend! Take care.",
+    "en": "See you tomorrow, friend! Take care.",
+    "raw": "{\"line\":\"¡Hasta mañana, amigo! Que le vaya muy bien. See you tomorrow, friend! Take care.\",\"en\":\"See you tomorrow, friend! Take care.\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": true
+   }
+  ],
+  "culture": [
+   "The Parroquia de San Miguel Arcángel in San Miguel de Allende glows pink at sunset",
+   "The Parroquia was built by Zeferino Gutiérrez, a local stonemason (albañil)",
+   "San Miguel de Allende was a quiet town of local families before artists arrived",
+   "San Miguel has cobblestone (stone) streets and a garden (the Jardín) with trees and benches facing the Parroquia",
+   "Locals gather in the evening to watch the sunset and the town lights come on",
+   "Older Mexicans address people politely with usted (e.g., 'le gusta', 'mire')",
+   "'¡Qué bueno!' is a common expression of approval or gladness",
+   "Farewell phrases like 'Hasta mañana' and 'Que le vaya muy bien'",
+   "'Amigo' is used as a friendly term of address"
+  ]
+ },
+ {
+  "step": 4,
+  "city": "san-miguel-de-allende",
+  "place": "parque-juarez",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Buenas tardes, joven. Siéntese, aquí hay buena sombra. Yo vengo todas las tardes a Parque Juárez. ¿Le gusta este parque? Do you like this park?",
+    "en": "Good afternoon, young man. Sit down, there's good shade here. I come to Parque Juárez every afternoon. Do you like this park?",
+    "raw": "{\"line\":\"{*Buenas tardes*, joven. Siéntese, aquí hay buena sombra. | *Good afternoon*, young man. Sit down, there's good shade here.} {Yo vengo todas las tardes a *Parque Juárez*. | I come to *Parque Juárez* every afternoon.} {¿Le gusta *este parque*? | Do you like *this park*?}\",\"en\":\"Good afternoon, young man. Sit down, there's good shade here. I come to Parque Juárez every afternoon. Do you like this park?\",\"answers\":[{\"text\":\"Sí, me gusta mucho. Hay mucha sombra.\",\"en\":\"Yes, I like it a lot. There's a lot of shade.\"},{\"text\":\"Gracias, don Víctor. ¿Qué hace usted aquí?\",\"en\":\"Thank you, don Víctor. What do you do here?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, me gusta mucho. Hay mucha sombra.",
+     "Gracias, don Víctor. ¿Qué hace usted aquí?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Sí, hay mucha sombra aquí, por los árboles viejos. Yes, there's a lot of shade here, because of the old trees. Yo me siento aquí casi todas las tardes, desde que soy jubilado. Me gusta ver pasar la gente. I like watching the people go by.",
+    "en": "Yes, there's a lot of shade here, because of the old trees. I sit here almost every afternoon, since I became a retiree. I like watching the people go by.",
+    "raw": "{\"line\":\"{Sí, *hay mucha sombra* aquí, por los árboles viejos. | Yes, *there's a lot of shade* here, because of the old trees.} {Yo me siento aquí casi todas las tardes, desde que soy jubilado. | I sit here almost every afternoon, since I became a retiree.} {Me gusta ver pasar la gente. | I like watching the people go by.}\",\"en\":\"Yes, there's a lot of shade here, because of the old trees. I sit here almost every afternoon, since I became a retiree. I like watching the people go by.\",\"answers\":[{\"text\":\"Qué bonito. Yo también quiero ver pasar la gente.\",\"en\":\"How nice. I also want to watch the people go by.\"},{\"text\":\"¿Qué es un jubilado? ¿Puede repetirlo más despacio?\",\"en\":\"What is a jubilado (retiree)? Can you say it again more slowly?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Qué bonito. Yo también quiero ver pasar la gente.",
+     "¿Qué es un jubilado? ¿Puede repetirlo más despacio?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Pues quédese conmigo, aquí se ve todo. Then stay with me, you can see everything from here. Mire, aquella es la Parroquia, con su torre rosa. La hizo un albañil de aquí, don Zeferino. A mason from here built it, don Zeferino.",
+    "en": "Then stay with me, you can see everything from here. Look, that's the Parroquia, with its pink spire. A mason from here built it, don Zeferino.",
+    "raw": "{\"line\":\"{Pues *quédese conmigo*, aquí se ve todo. | Then *stay with me*, you can see everything from here.} {Mire, aquella es *la Parroquia*, con su torre rosa. | Look, that's *the Parroquia*, with its pink spire.} {La hizo un albañil de aquí, don Zeferino. | A mason from here built it, don Zeferino.}\",\"en\":\"Then stay with me, you can see everything from here. Look, that's the Parroquia, with its pink spire. A mason from here built it, don Zeferino.\",\"answers\":[{\"text\":\"Es muy bonita. Me gusta el color rosa.\",\"en\":\"It's very pretty. I like the pink color.\"},{\"text\":\"¿Un albañil la hizo? ¿Cómo aprendió?\",\"en\":\"A mason built it? How did he learn?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Es muy bonita. Me gusta el color rosa.",
+     "¿Un albañil la hizo? ¿Cómo aprendió?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "ask-en",
+    "line": "Sí, el color rosa es de la cantera de aquí. Y de noche, con las luces, se ve todavía más bonita. And at night, with the lights, it looks even prettier.",
+    "en": "Yes, the pink color comes from the local quarry stone. And at night, with the lights, it looks even prettier.",
+    "raw": "{\"line\":\"{Sí, *el color rosa* es de la cantera de aquí. | Yes, *the pink color* comes from the local quarry stone.} {Y de noche, con las luces, se ve todavía más bonita. | And at night, with the lights, it looks even prettier.}\",\"en\":\"Yes, the pink color comes from the local quarry stone. And at night, with the lights, it looks even prettier.\",\"answers\":[{\"text\":\"¿Usted conoció a don Zeferino?\",\"en\":\"Did you know don Zeferino?\"},{\"text\":\"¿Cuándo se hizo la Parroquia?\",\"en\":\"When was the Parroquia built?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "¿Usted conoció a don Zeferino?",
+     "¿Cuándo se hizo la Parroquia?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Ay, no, joven, ese señor vivió hace mucho tiempo. Oh, no, young man, that man lived a very long time ago. Yo solo conozco su torre, ¡pero la veo todos los días! ¿Ya entró usted a la Parroquia? Have you gone inside the Parroquia yet?",
+    "en": "Oh, no, young man, that man lived a very long time ago. I only know his spire, but I see it every day! Have you gone inside the Parroquia yet?",
+    "raw": "{\"line\":\"{*Ay, no*, joven, ese señor vivió hace mucho tiempo. | *Oh, no*, young man, that man lived a very long time ago.} {Yo solo conozco su torre, ¡pero la veo todos los días! | I only know his spire, but I see it every day!} {¿Ya entró usted a la Parroquia? | Have you gone inside the Parroquia yet?}\",\"en\":\"Oh, no, young man, that man lived a very long time ago. I only know his spire, but I see it every day! Have you gone inside the Parroquia yet?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Qué bueno, ¿verdad? Por dentro es muy tranquila. Aquí cerca está Bellas Artes, con un mural de Siqueiros sin terminar. Close by is Bellas Artes, with an unfinished mural by Siqueiros. ¿Ya conoce Bellas Artes? Do you know Bellas Artes yet?",
+    "en": "How nice, right? Inside it's very peaceful. Close by is Bellas Artes, with an unfinished mural by Siqueiros. Do you know Bellas Artes yet?",
+    "raw": "{\"line\":\"{*Qué bueno*, ¿verdad? Por dentro es muy tranquila. | *How nice*, right? Inside it's very peaceful.} {Aquí cerca está *Bellas Artes*, con un mural de Siqueiros sin terminar. | Close by is *Bellas Artes*, with an unfinished mural by Siqueiros.} {¿Ya conoce *Bellas Artes*? | Do you know *Bellas Artes* yet?}\",\"en\":\"How nice, right? Inside it's very peaceful. Close by is Bellas Artes, with an unfinished mural by Siqueiros. Do you know Bellas Artes yet?\",\"answers\":[{\"text\":\"Todavía no. ¿Está lejos de aquí?\",\"en\":\"Not yet. Is it far from here?\"},{\"text\":\"Sí, ya fui. Me gustó mucho el mural.\",\"en\":\"Yes, I already went. I liked the mural a lot.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Todavía no. ¿Está lejos de aquí?",
+     "Sí, ya fui. Me gustó mucho el mural."
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "No, no está lejos. Se llega caminando en unos diez minutos. El mural de Siqueiros nunca se terminó, y eso lo hace famoso. ¿Le gusta el arte? Do you like art?",
+    "en": "No, it's not far. You can get there walking in about ten minutes. Siqueiros's mural was never finished, and that's what makes it famous. Do you like art?",
+    "raw": "{\"line\":\"{No, *no está lejos*. Se llega caminando en unos diez minutos. | No, *it's not far*. You can get there walking in about ten minutes.} {El mural de Siqueiros nunca se terminó, y eso lo hace famoso. | Siqueiros's mural was never finished, and that's what makes it famous.} {¿Le gusta el arte? | Do you like art?}\",\"en\":\"No, it's not far. You can get there walking in about ten minutes. Siqueiros's mural was never finished, and that's what makes it famous. Do you like art?\",\"answers\":[{\"text\":\"Sí, me gusta mucho el arte. Quiero ver el mural.\",\"en\":\"Yes, I like art a lot. I want to see the mural.\"},{\"text\":\"Un poco. ¿Qué significa \\\"caminando\\\"?\",\"en\":\"A little. What does \\\"caminando\\\" mean?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, me gusta mucho el arte. Quiero ver el mural.",
+     "Un poco. ¿Qué significa \"caminando\"?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Qué bueno, joven, vaya a Bellas Artes mañana por la mañana. Luego venga a Parque Juárez y me cuenta si le gustó el mural. Then come to Parque Juárez and tell me if you liked the mural. Aquí estoy casi todas las tardes. I'm here almost every afternoon.",
+    "en": "How good, young man, go to Bellas Artes tomorrow morning. Then come to Parque Juárez and tell me if you liked the mural. I'm here almost every afternoon.",
+    "raw": "{\"line\":\"{Qué bueno, joven, vaya *a Bellas Artes* mañana por la mañana. | How good, young man, go *to Bellas Artes* tomorrow morning.} {Luego venga a *Parque Juárez* y me cuenta si le gustó el mural. | Then come to *Parque Juárez* and tell me if you liked the mural.} {Aquí estoy casi todas las tardes. | I'm here almost every afternoon.}\",\"en\":\"How good, young man, go to Bellas Artes tomorrow morning. Then come to Parque Juárez and tell me if you liked the mural. I'm here almost every afternoon.\",\"answers\":[{\"text\":\"Sí, mañana voy. Hasta pronto, don Víctor.\",\"en\":\"Yes, I'll go tomorrow. See you soon, don Víctor.\"},{\"text\":\"Gracias por todo. Adiós, y que le vaya bien.\",\"en\":\"Thanks for everything. Goodbye, and take care.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, mañana voy. Hasta pronto, don Víctor.",
+     "Gracias por todo. Adiós, y que le vaya bien."
+    ],
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "¡Hasta pronto, joven! Que le vaya muy bien. See you soon, young man! Take care.",
+    "en": "See you soon, young man! Take care.",
+    "raw": "{\"line\":\"¡Hasta pronto, joven! Que le vaya muy bien. See you soon, young man! Take care.\",\"en\":\"See you soon, young man! Take care.\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": true
+   }
+  ],
+  "culture": [
+   "Parque Juárez is a shaded park where retirees spend their afternoons watching people go by",
+   "The Parroquia (parish church) has a distinctive pink tower",
+   "The pink color comes from local pink quarry stone (cantera)",
+   "The Parroquia tower was built by a local mason, don Zeferino",
+   "Churches and public buildings are lit up at night, making them look prettier",
+   "Bellas Artes has an unfinished mural by Siqueiros, which is what makes it famous",
+   "Bellas Artes is about a ten-minute walk from the park",
+   "Older men are addressed respectfully as \"Don\" plus first name",
+   "Older Mexicans address young men politely as \"joven\" and use formal \"usted\"",
+   "Polite phrases and farewells like \"Que le vaya muy bien\" and \"Hasta pronto\"",
+   "Spanish word \"jubilado\" means retiree",
+   "Spanish word \"cantera\" means quarry stone"
+  ]
+ },
+ {
+  "step": 4,
+  "city": "san-miguel-de-allende",
+  "place": "la-cucaracha",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Buenas tardes, bienvenido a La Cucaracha. Good afternoon, welcome to La Cucaracha. Hoy es martes y está tranquilo, ideal para un mezcal. Today is Tuesday and it's quiet, perfect for a mezcal. ¿Le sirvo un mezcal o prefiere una cerveza? Shall I pour you a mezcal or would you rather have a beer?",
+    "en": "Good afternoon, welcome to La Cucaracha. Today is Tuesday and it's quiet, perfect for a mezcal. Shall I pour you a mezcal or would you rather have a beer?",
+    "raw": "{\"line\":\"{*Buenas tardes*, bienvenido a La Cucaracha. | *Good afternoon*, welcome to La Cucaracha.} {Hoy es martes y está tranquilo, ideal para *un mezcal*. | Today is Tuesday and it's quiet, perfect for *a mezcal*.} {¿Le sirvo *un mezcal* o prefiere *una cerveza*? | Shall I pour you *a mezcal* or would you rather have *a beer*?}\",\"en\":\"Good afternoon, welcome to La Cucaracha. Today is Tuesday and it's quiet, perfect for a mezcal. Shall I pour you a mezcal or would you rather have a beer?\",\"answers\":[{\"text\":\"Un mezcal, por favor. Me gusta el humo.\",\"en\":\"A mezcal, please. I like the smokiness.\"},{\"text\":\"Una cerveza, por favor. ¿Qué mezcal recomienda?\",\"en\":\"A beer, please. Which mezcal do you recommend?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Un mezcal, por favor. Me gusta el humo.",
+     "Una cerveza, por favor. ¿Qué mezcal recomienda?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Con gusto, ahorita se lo sirvo. Este mezcal es artesanal, bien ahumado, como a usted le gusta. This mezcal is handmade, nice and smoky, just how you like it. ¿Ya conoce la Parroquia, las torres rosas aquí cerquita? Have you seen the Parroquia, the pink towers right nearby?",
+    "en": "My pleasure, I'll pour it right now. This mezcal is handmade, nice and smoky, just how you like it. Have you seen the Parroquia, the pink towers right nearby?",
+    "raw": "{\"line\":\"{*Con gusto*, ahorita se lo sirvo. | *My pleasure*, I'll pour it right now.} {Este mezcal es artesanal, bien *ahumado*, como a usted le gusta. | This mezcal is handmade, nice and *smoky*, just how you like it.} {¿Ya conoce *la Parroquia*, las torres rosas aquí cerquita? | Have you seen *the Parroquia*, the pink towers right nearby?}\",\"en\":\"My pleasure, I'll pour it right now. This mezcal is handmade, nice and smoky, just how you like it. Have you seen the Parroquia, the pink towers right nearby?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Aquí tiene, salud. Here you go, cheers. Esas torres se ven bonitas cuando se ponen rosas al atardecer. Those towers look beautiful when they turn pink at sunset. ¿Ya probó el mezcal con naranja y sal de gusano? Have you tried mezcal with orange and worm salt yet?",
+    "en": "Here you go, cheers. Those towers look beautiful when they turn pink at sunset. Have you tried mezcal with orange and worm salt yet?",
+    "raw": "{\"line\":\"{Aquí tiene, *salud*. | Here you go, *cheers*.} {Esas torres se ven bonitas cuando se ponen rosas al atardecer. | Those towers look beautiful when they turn pink at sunset.} {¿Ya probó *el mezcal* con naranja y sal de gusano? | Have you tried *mezcal* with orange and worm salt yet?}\",\"en\":\"Here you go, cheers. Those towers look beautiful when they turn pink at sunset. Have you tried mezcal with orange and worm salt yet?\",\"answers\":[{\"text\":\"No, todavía no. ¿Es rico?\",\"en\":\"No, not yet. Is it good?\"},{\"text\":\"Sí, me gusta mucho. ¿Qué es la sal de gusano?\",\"en\":\"Yes, I like it a lot. What is sal de gusano (a salt made with ground agave worms and chile)?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "No, todavía no. ¿Es rico?",
+     "Sí, me gusta mucho. ¿Qué es la sal de gusano?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Sí, es muy rico, sobre todo con el mezcal ahumado. Yes, it's very good, especially with smoky mezcal. La sal de gusano es de maguey, un poco picosa, y la naranja la refresca. Aquí en la cantina siempre la sirvo así, en un platito, y a mis clientes les encanta. Here at the cantina I always serve it that way, on a little plate, and my customers love it.",
+    "en": "Yes, it's very good, especially with smoky mezcal. The worm salt comes from the agave plant, a little spicy, and the orange cools it down. Here at the cantina I always serve it that way, on a little plate, and my customers love it.",
+    "raw": "{\"line\":\"{*Sí, es muy rico*, sobre todo con el mezcal ahumado. | *Yes, it's very good*, especially with smoky mezcal.} {La sal de gusano es de maguey, un poco picosa, y la naranja la refresca. | The worm salt comes from the agave plant, a little spicy, and the orange cools it down.} {Aquí en la cantina siempre la sirvo así, en un platito, y a mis clientes les encanta. | Here at the cantina I always serve it that way, on a little plate, and my customers love it.}\",\"en\":\"Yes, it's very good, especially with smoky mezcal. The worm salt comes from the agave plant, a little spicy, and the orange cools it down. Here at the cantina I always serve it that way, on a little plate, and my customers love it.\",\"answers\":[{\"text\":\"Entonces quiero probarla. Se ve muy rica.\",\"en\":\"Then I want to try it. It looks very good.\"},{\"text\":\"¿Qué es la sal de gusano? ¿Me lo explica más despacio?\",\"en\":\"What is worm salt (sal de gusano, a spicy salt made with dried agave worms and chili)? Can you explain it more slowly?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Entonces quiero probarla. Se ve muy rica.",
+     "¿Qué es la sal de gusano? ¿Me lo explica más despacio?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "¡Qué bueno! Ahorita se la traigo, con su naranja. Aquí el mezcal siempre se toma despacito, sin prisa. Here mezcal is always sipped slowly, with no rush. ¿Quiere también algo de botana, unos cacahuates o un chicharrón? Would you like a little snack too, some peanuts or a pork rind?",
+    "en": "Great! I'll bring it right over, with its orange. Here mezcal is always sipped slowly, with no rush. Would you like a little snack too, some peanuts or a pork rind?",
+    "raw": "{\"line\":\"{¡Qué bueno! *Ahorita se la traigo*, con su naranja. | Great! *I'll bring it right over*, with its orange.} {Aquí el mezcal siempre se toma despacito, sin prisa. | Here mezcal is always sipped slowly, with no rush.} {¿Quiere también algo de botana, unos cacahuates o un chicharrón? | Would you like a little snack too, some peanuts or a pork rind?}\",\"en\":\"Great! I'll bring it right over, with its orange. Here mezcal is always sipped slowly, with no rush. Would you like a little snack too, some peanuts or a pork rind?\",\"answers\":[{\"text\":\"Sí, unos cacahuates, por favor. Me gusta mucho la botana.\",\"en\":\"Yes, some peanuts, please. I really like snacks (botana, bar snacks).\"},{\"text\":\"Gracias, no tengo hambre. ¿Qué mezcal me recomienda?\",\"en\":\"Thanks, I'm not hungry. Which mezcal do you recommend?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, unos cacahuates, por favor. Me gusta mucho la botana.",
+     "Gracias, no tengo hambre. ¿Qué mezcal me recomienda?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "ask-en",
+    "line": "Aquí tiene los cacahuates, recién tostados. En una cantina, la botana no puede faltar, es parte de la tradición. In a cantina, the botana (the snack that comes with your drinks) is a must, it's part of the tradition. Mucha gente viene aquí a platicar con calma, con su mezcal y su botana. Lots of people come here to chat in no rush, with their mezcal and their botana.",
+    "en": "Here are the peanuts, freshly roasted. In a cantina, the botana (the snack that comes with your drinks) is a must, it's part of the tradition. Lots of people come here to chat in no rush, with their mezcal and their botana.",
+    "raw": "{\"line\":\"{Aquí tiene *los cacahuates*, recién tostados. | Here are *the peanuts*, freshly roasted.} {En una cantina, *la botana* no puede faltar, es parte de la tradición. | In a cantina, *the botana* (the snack that comes with your drinks) is a must, it's part of the tradition.} {Mucha gente viene aquí a platicar con calma, con su mezcal y su botana. | Lots of people come here to chat in no rush, with their mezcal and their botana.}\",\"en\":\"Here are the peanuts, freshly roasted. In a cantina, the botana (the snack that comes with your drinks) is a must, it's part of the tradition. Lots of people come here to chat in no rush, with their mezcal and their botana.\",\"answers\":[{\"text\":\"¿Qué otra botana tiene?\",\"en\":\"What other snacks do you have?\"},{\"text\":\"¿Quién viene más a la cantina?\",\"en\":\"Who comes to the cantina the most?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "¿Qué otra botana tiene?",
+     "¿Quién viene más a la cantina?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Tengo chicharrón, tostadas con frijoles y queso fresco con chile. Todo lo preparamos aquí en la cantina. ¿Cuál le gustaría probar? Which one would you like to try?",
+    "en": "I have chicharrón (fried pork rind), tostadas with beans, and fresh cheese with chile. We make everything here in the cantina. Which one would you like to try?",
+    "raw": "{\"line\":\"{Tengo *chicharrón*, tostadas con frijoles y queso fresco con chile. | I have *chicharrón* (fried pork rind), tostadas with beans, and fresh cheese with chile.} {Todo lo preparamos aquí en la cantina. | We make everything here in the cantina.} {¿Cuál le gustaría probar? | Which one would you like to try?}\",\"en\":\"I have chicharrón (fried pork rind), tostadas with beans, and fresh cheese with chile. We make everything here in the cantina. Which one would you like to try?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Ahorita le llevo un poco de todo, para que pruebe. Vuelva el viernes, cuando hay música en vivo y la cantina se llena de gente. Come back on Friday, when there's live music and the cantina fills up with people.",
+    "en": "I'll bring you a little of everything so you can try it. Come back on Friday, when there's live music and the cantina fills up with people.",
+    "raw": "{\"line\":\"{Ahorita le llevo *un poco de todo*, para que pruebe. | I'll bring you *a little of everything* so you can try it.} {Vuelva el *viernes*, cuando hay música en vivo y la cantina se llena de gente. | Come back on *Friday*, when there's live music and the cantina fills up with people.}\",\"en\":\"I'll bring you a little of everything so you can try it. Come back on Friday, when there's live music and the cantina fills up with people.\",\"answers\":[{\"text\":\"Gracias, Tomás. Vuelvo el viernes.\",\"en\":\"Thank you, Tomás. I'll be back on Friday.\"},{\"text\":\"Me voy ya. ¡Hasta luego!\",\"en\":\"I'm heading out now. See you later!\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Gracias, Tomás. Vuelvo el viernes.",
+     "Me voy ya. ¡Hasta luego!"
+    ],
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "¡Hasta el viernes, amigo! Que le vaya muy bien. Until Friday, friend! Take care.",
+    "en": "Until Friday, friend! Take care.",
+    "raw": "{\"line\":\"¡Hasta el viernes, amigo! Que le vaya muy bien. Until Friday, friend! Take care.\",\"en\":\"Until Friday, friend! Take care.\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": true
+   }
+  ],
+  "culture": [
+   "Mezcal is a traditional Mexican spirit, often handmade (artesanal) and smoky",
+   "Cantinas are traditional Mexican bars where drinks come with food",
+   "Botana is the snack served with drinks in a cantina, and it is part of the tradition",
+   "Common botanas include peanuts, chicharrón (pork rind), tostadas with beans, and fresh cheese with chile",
+   "Mezcal is traditionally sipped slowly, with no rush",
+   "Mezcal is commonly served with orange slices and sal de gusano (worm salt)",
+   "Sal de gusano is a slightly spicy salt made with maguey and worm, and the orange refreshes it",
+   "Cantinas are places to chat and socialize unhurriedly",
+   "The Parroquia is a landmark church with pink towers that look beautiful at sunset",
+   "Cantinas often have live music on Fridays and fill up with people",
+   "Ahorita is a Mexican word meaning 'right now' or 'in a moment'",
+   "Cerquita is a diminutive meaning 'very close by', and diminutives like despacito (very slowly) are common in Mexican Spanish",
+   "Usted is the formal 'you' used politely with customers",
+   "Salud is the toast for 'cheers'"
+  ]
+ },
+ {
+  "step": 4,
+  "city": "san-miguel-de-allende",
+  "place": "casa-del-tumbagon",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Buenas tardes, bienvenida, bienvenido. Good afternoon, welcome. Esta es la Casa del Tumbagón, aquí hacemos los tumbagones, el dulce de San Miguel. ¿Quiere probar uno? Would you like to try one?",
+    "en": "Good afternoon, welcome. This is Casa del Tumbagón, we make tumbagones here, San Miguel's own sweet. Would you like to try one?",
+    "raw": "{\"line\":\"{*Buenas tardes*, bienvenida, bienvenido. | *Good afternoon*, welcome. } {Esta es la Casa del Tumbagón, aquí hacemos *los tumbagones*, el dulce de San Miguel. | This is Casa del Tumbagón, we make *tumbagones* here, San Miguel's own sweet. } {¿Quiere *probar uno*? | Would you like to *try one*?}\",\"en\":\"Good afternoon, welcome. This is Casa del Tumbagón, we make tumbagones here, San Miguel's own sweet. Would you like to try one?\",\"answers\":[{\"text\":\"Sí, quiero probar uno, por favor. Se ve muy rico.\",\"en\":\"Yes, I want to try one, please. It looks very tasty.\"},{\"text\":\"¿Qué es un tumbagón? ¿De qué está hecho?\",\"en\":\"What is a tumbagón? What is it made of?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, quiero probar uno, por favor. Se ve muy rico.",
+     "¿Qué es un tumbagón? ¿De qué está hecho?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Aquí tiene, pruébelo. Here you go, try it. Es de cacahuate y piloncillo, y se hace aquí mismo, en la tienda. It's made of peanut and raw cane sugar, and we make it right here in the shop. ¿Qué le parece? What do you think of it?",
+    "en": "Here you go, try it. It's made of peanut and raw cane sugar, and we make it right here in the shop. What do you think of it?",
+    "raw": "{\"line\":\"{Aquí tiene, *pruébelo*. | Here you go, *try it*.} {Es de *cacahuate* y piloncillo, y se hace aquí mismo, en la tienda. | It's made of *peanut* and raw cane sugar, and we make it right here in the shop.} {¿Qué le parece? | What do you think of it?}\",\"en\":\"Here you go, try it. It's made of peanut and raw cane sugar, and we make it right here in the shop. What do you think of it?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Me da gusto, es una receta de aquí de San Miguel. I'm glad, it's a recipe from right here in San Miguel. La iglesia rosada de enfrente se llama la Parroquia. ¿Ya conoce la Parroquia por dentro? Have you seen the Parroquia from the inside yet?",
+    "en": "I'm glad, it's a recipe from right here in San Miguel. The pink church across the way is called the Parroquia. Have you seen the Parroquia from the inside yet?",
+    "raw": "{\"line\":\"{*Me da gusto*, es una receta de aquí de San Miguel. | *I'm glad*, it's a recipe from right here in San Miguel.} {La iglesia rosada de enfrente se llama *la Parroquia*. | The pink church across the way is called *the Parroquia*.} {¿Ya conoce *la Parroquia* por dentro? | Have you seen *the Parroquia* from the inside yet?}\",\"en\":\"I'm glad, it's a recipe from right here in San Miguel. The pink church across the way is called the Parroquia. Have you seen the Parroquia from the inside yet?\",\"answers\":[{\"text\":\"Todavía no la conozco por dentro. Me gustaría verla.\",\"en\":\"I haven't seen it from the inside yet. I'd like to see it.\"},{\"text\":\"Está muy bonita. ¿Quién la diseñó?\",\"en\":\"It's very pretty. Who designed it?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Todavía no la conozco por dentro. Me gustaría verla.",
+     "Está muy bonita. ¿Quién la diseñó?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Vale la pena, es muy bonita por dentro. La fachada la diseñó Zeferino Gutiérrez, un albañil de aquí de San Miguel. The façade was designed by Zeferino Gutiérrez, a bricklayer from right here in San Miguel. Yo la veo todos los días desde la tienda, y nunca me canso de ella. I see it every day from the shop, and I never get tired of it.",
+    "en": "It's worth it, it's very pretty inside. The façade was designed by Zeferino Gutiérrez, a bricklayer from right here in San Miguel. I see it every day from the shop, and I never get tired of it.",
+    "raw": "{\"line\":\"{*Vale la pena*, es muy bonita por dentro. | It's *worth it*, it's very pretty inside.} {La fachada la diseñó Zeferino Gutiérrez, un albañil de aquí de San Miguel. | The façade was designed by Zeferino Gutiérrez, a bricklayer from right here in San Miguel.} {Yo la veo todos los días desde la tienda, y nunca me canso de ella. | I see it every day from the shop, and I never get tired of it.}\",\"en\":\"It's worth it, it's very pretty inside. The façade was designed by Zeferino Gutiérrez, a bricklayer from right here in San Miguel. I see it every day from the shop, and I never get tired of it.\",\"answers\":[{\"text\":\"Qué suerte verla todos los días. Debe ser muy bonito.\",\"en\":\"How lucky to see it every day. It must be very beautiful.\"},{\"text\":\"¿Un albañil la diseñó? ¡Qué increíble!\",\"en\":\"A bricklayer designed it? How incredible!\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Qué suerte verla todos los días. Debe ser muy bonito.",
+     "¿Un albañil la diseñó? ¡Qué increíble!"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Sí, es una suerte, sobre todo en la tarde, cuando la piedra se pone más rosada. Aquí en el Centro todo está cerca, y casi siempre hay gente en el jardín. Here in the Centro everything is close by, and there are almost always people in the garden. ¿Le gustaría llevar una bolsita de tumbagones? Would you like to take a little bag of tumbagones?",
+    "en": "Yes, it's a lucky thing, especially in the afternoon, when the stone turns even pinker. Here in the Centro everything is close by, and there are almost always people in the garden. Would you like to take a little bag of tumbagones?",
+    "raw": "{\"line\":\"{*Sí, es una suerte*, sobre todo en la tarde, cuando la piedra se pone más rosada. | *Yes, it's a lucky thing*, especially in the afternoon, when the stone turns even pinker.} {Aquí en el Centro todo está cerca, y casi siempre hay gente en *el jardín*. | Here in the Centro everything is close by, and there are almost always people in *the garden*.} {¿Le gustaría llevar *una bolsita* de tumbagones? | Would you like to take *a little bag* of tumbagones?}\",\"en\":\"Yes, it's a lucky thing, especially in the afternoon, when the stone turns even pinker. Here in the Centro everything is close by, and there are almost always people in the garden. Would you like to take a little bag of tumbagones?\",\"answers\":[{\"text\":\"Sí, me gustaría llevar una bolsita. ¿Cuánto cuesta?\",\"en\":\"Yes, I'd like to take a little bag. How much is it?\"},{\"text\":\"Por ahora no, gracias. ¿Qué otras cosas hay que ver en el Centro?\",\"en\":\"Not for now, thank you. What other things are there to see in the Centro?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, me gustaría llevar una bolsita. ¿Cuánto cuesta?",
+     "Por ahora no, gracias. ¿Qué otras cosas hay que ver en el Centro?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "La bolsita cuesta cuarenta pesos. The little bag costs forty pesos. Lleva ocho tumbagones, todos hechos hoy. ¿Ya conoce el jardín de enfrente? Do you know the garden across the way yet?",
+    "en": "The little bag costs forty pesos. It has eight tumbagones, all made today. Do you know the garden across the way yet?",
+    "raw": "{\"line\":\"{La bolsita cuesta *cuarenta pesos*. | The little bag costs *forty pesos*.} {Lleva ocho tumbagones, todos hechos hoy. | It has eight tumbagones, all made today.} {¿Ya conoce *el jardín* de enfrente? | Do you know *the garden* across the way yet?}\",\"en\":\"The little bag costs forty pesos. It has eight tumbagones, all made today. Do you know the garden across the way yet?\",\"answers\":[{\"text\":\"Aquí tiene los cuarenta pesos. Muchas gracias.\",\"en\":\"Here are the forty pesos. Thank you very much.\"},{\"text\":\"Todavía no conozco el jardín. ¿Qué hay allí?\",\"en\":\"I don't know the garden yet. What is there?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Aquí tiene los cuarenta pesos. Muchas gracias.",
+     "Todavía no conozco el jardín. ¿Qué hay allí?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Gracias a usted, aquí tiene su bolsita. Thank you, here is your little bag. Los tumbagones duran varios días si los guarda bien cerrados. They keep for several days if you store them well sealed. ¿Va a ir a la Parroquia ahora? Are you going to the Parroquia now?",
+    "en": "Thank you, here is your little bag. The tumbagones keep for several days if you store them well sealed. Are you going to the Parroquia now?",
+    "raw": "{\"line\":\"Gracias a usted, aquí tiene su bolsita. Thank you, here is your little bag. Los tumbagones duran varios días si los guarda bien cerrados. They keep for several days if you store them well sealed. ¿Va a ir a la Parroquia ahora? Are you going to the Parroquia now?\",\"en\":\"Thank you, here is your little bag. The tumbagones keep for several days if you store them well sealed. Are you going to the Parroquia now?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Qué bueno, que le guste mucho por dentro. I hope you like it a lot inside. Si le gustan los tumbagones, regrese mañana: los hacemos recién salidos en la mañana. If you like the tumbagones, come back tomorrow: we make them fresh out of the pan in the morning. ¡Aquí la espero! I'll be here waiting for you!",
+    "en": "I hope you like it a lot inside. If you like the tumbagones, come back tomorrow: we make them fresh in the morning. I'll be here waiting for you!",
+    "raw": "{\"line\":\"Qué bueno, que le guste mucho por dentro. I hope you like it a lot inside. Si le gustan los tumbagones, regrese mañana: los hacemos recién salidos en la mañana. If you like the tumbagones, come back tomorrow: we make them fresh out of the pan in the morning. ¡Aquí la espero! I'll be here waiting for you!\",\"en\":\"I hope you like it a lot inside. If you like the tumbagones, come back tomorrow: we make them fresh in the morning. I'll be here waiting for you!\",\"answers\":[{\"text\":\"Muchas gracias, Rocío. Mañana vengo por más.\",\"en\":\"Thank you very much, Rocío. I'll come back tomorrow for more.\"},{\"text\":\"Hasta mañana. Que tenga buen día.\",\"en\":\"See you tomorrow. Have a good day.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Muchas gracias, Rocío. Mañana vengo por más.",
+     "Hasta mañana. Que tenga buen día."
+    ],
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "¡Con mucho gusto! Hasta mañana, que le vaya muy bien. With pleasure! See you tomorrow, take care.",
+    "en": "With pleasure! See you tomorrow, take care.",
+    "raw": "{\"line\":\"¡Con mucho gusto! Hasta mañana, que le vaya muy bien. With pleasure! See you tomorrow, take care.\",\"en\":\"With pleasure! See you tomorrow, take care.\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": true
+   }
+  ],
+  "culture": [
+   "Tumbagones are a traditional sweet of San Miguel de Allende",
+   "Tumbagones are made from peanuts and piloncillo (raw cane sugar)",
+   "Piloncillo is unrefined raw cane sugar",
+   "The Parroquia is the pink church in San Miguel's central garden",
+   "The Parroquia's façade was designed by Zeferino Gutiérrez, a local bricklayer",
+   "The Parroquia's pink stone looks rosier in the late afternoon",
+   "The Centro of San Miguel is compact, with everything close by",
+   "The garden (jardín) in front of the Parroquia is a gathering place where people are almost always present",
+   "Shops make sweets fresh on site, and tumbagones are freshest in the morning",
+   "Sweets are sold in small bags (bolsitas) priced in pesos, e.g. forty pesos for eight tumbagones",
+   "Tumbagones keep for several days if stored well sealed",
+   "Shopkeepers offer free samples to invite customers to try the food",
+   "Polite formal Spanish uses usted, as in 'pruébelo' and '¿Qué le parece?'",
+   "Common courteous phrases: 'Con mucho gusto', 'Me da gusto', 'Que le vaya muy bien'",
+   "'Aquí tiene' means 'Here you go' when handing something over",
+   "'Vale la pena' means 'it's worth it'"
+  ]
+ },
+ {
+  "step": 4,
+  "city": "san-miguel-de-allende",
+  "place": "jardin-allende",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "¡Buenas tardes! Aquí es el sitio de taxis del Jardín. Good afternoon! This is the taxi stand by the Jardín. Hoy el cielo está despejado, y en la tarde el Jardín se llena de gente. Today the sky is clear, and in the evening the Jardín fills with people. ¿Va a algún lado, o solo está paseando? Are you going somewhere, or just strolling?",
+    "en": "Good afternoon! This is the taxi stand by the Jardín. Today the sky is clear, and in the evening the Jardín fills with people. Are you going somewhere, or just strolling?",
+    "raw": "{\"line\":\"{¡Buenas tardes! Aquí *es el sitio de taxis* del Jardín. | Good afternoon! This is *the taxi stand* by the Jardín.} {Hoy *el cielo está despejado*, y en la tarde el Jardín se llena de gente. | Today *the sky is clear*, and in the evening the Jardín fills with people.} {¿Va *a algún lado*, o solo está paseando? | Are you going *somewhere*, or just strolling?}\",\"en\":\"Good afternoon! This is the taxi stand by the Jardín. Today the sky is clear, and in the evening the Jardín fills with people. Are you going somewhere, or just strolling?\",\"answers\":[{\"text\":\"Buenas tardes. Quiero ir a un lugar.\",\"en\":\"Good afternoon. I want to go to a place.\"},{\"text\":\"Solo estoy paseando. El Jardín es muy bonito.\",\"en\":\"I'm just strolling. The Jardín is very pretty.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Buenas tardes. Quiero ir a un lugar.",
+     "Solo estoy paseando. El Jardín es muy bonito."
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Claro que sí, suba con confianza. Las calles del Centro son de piedra, y el taxi sube despacito. The streets in the Centro are cobblestone, and the taxi goes up slowly. ¿A qué lugar quiere ir? What place do you want to go to?",
+    "en": "Of course, hop in. The streets in the Centro are cobblestone, and the taxi goes up slowly. What place do you want to go to?",
+    "raw": "{\"line\":\"{*Claro que sí*, suba con confianza. | *Of course*, hop in.} {Las calles del Centro son de piedra, y el taxi sube despacito. | The streets in the Centro are cobblestone, and the taxi goes up slowly.} {¿A *qué lugar* quiere ir? | *What place* do you want to go to?}\",\"en\":\"Of course, hop in. The streets in the Centro are cobblestone, and the taxi goes up slowly. What place do you want to go to?\",\"answers\":[{\"text\":\"Quiero ir a la Parroquia. Está cerca, ¿verdad?\",\"en\":\"I want to go to the Parroquia (the main church). It's close, right?\"},{\"text\":\"Quiero ir a ….\",\"en\":\"I want to go to ….\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Quiero ir a la Parroquia. Está cerca, ¿verdad?",
+     "Quiero ir a …."
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Sí, está muy cerca, a dos cuadras del Jardín. Yes, it's very close, two blocks from the Jardín. Es la iglesia rosada con las torres altas, la más famosa del pueblo. ¿Ya conoce la Parroquia por dentro? Have you seen the Parroquia from the inside yet?",
+    "en": "Yes, it's very close, two blocks from the Jardín. It's the pink church with the tall towers, the most famous in town. Have you seen the Parroquia from the inside yet?",
+    "raw": "{\"line\":\"{Sí, *está muy cerca*, a dos cuadras del Jardín. | Yes, *it's very close*, two blocks from the Jardín.} {Es la iglesia rosada con las torres altas, la más famosa del pueblo. | It's the pink church with the tall towers, the most famous in town.} {¿Ya conoce *la Parroquia* por dentro? | Have you seen *the Parroquia* from the inside yet?}\",\"en\":\"Yes, it's very close, two blocks from the Jardín. It's the pink church with the tall towers, the most famous in town. Have you seen the Parroquia from the inside yet?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "¡Qué bueno! Por dentro es muy bonita, con sus vitrales de colores. How nice! Inside it's very pretty, with its colorful stained glass windows. Yo paso por la Parroquia todos los días con mis pasajeros. Es mi parte favorita del Centro, sobre todo cuando se prenden las luces en la noche. It's my favorite part of the Centro, especially when the lights come on at night.",
+    "en": "How nice! Inside it's very pretty, with its colorful stained glass windows. I pass by the Parroquia every day with my passengers. It's my favorite part of the Centro, especially when the lights come on at night.",
+    "raw": "{\"line\":\"{¡Qué bueno! Por dentro es muy bonita, con *sus vitrales* de colores. | How nice! Inside it's very pretty, with its colorful *stained glass windows*.} {Yo paso por *la Parroquia* todos los días con mis pasajeros. | I pass by *the Parroquia* every day with my passengers.} {Es mi parte favorita del Centro, sobre todo cuando se prenden las luces en la noche. | It's my favorite part of the Centro, especially when the lights come on at night.}\",\"en\":\"How nice! Inside it's very pretty, with its colorful stained glass windows. I pass by the Parroquia every day with my passengers. It's my favorite part of the Centro, especially when the lights come on at night.\",\"answers\":[{\"text\":\"Debe ser bonito verla de noche.\",\"en\":\"It must be pretty to see it at night.\"},{\"text\":\"¿Cuántos vitrales tiene la Parroquia?\",\"en\":\"How many stained glass windows does the Parroquia have?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Debe ser bonito verla de noche.",
+     "¿Cuántos vitrales tiene la Parroquia?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Sí, es muy bonita, con las luces doradas en las torres. En la noche el Jardín se llena de familias y mariachis. At night the Jardín fills with families and mariachis. ¿Quiere que lo lleve ahorita a la Parroquia? Do you want me to take you to the Parroquia now?",
+    "en": "Yes, it's very pretty, with golden lights on the towers. At night the Jardín fills with families and mariachis. Do you want me to take you to the Parroquia now?",
+    "raw": "{\"line\":\"{*Sí, es muy bonita*, con las luces doradas en las torres. | Yes, *it's very pretty*, with golden lights on the towers.} {En la noche el Jardín se llena de familias y mariachis. | At night the Jardín fills with families and mariachis.} {¿Quiere que *lo lleve* ahorita a la Parroquia? | Do you want me *to take you* to the Parroquia now?}\",\"en\":\"Yes, it's very pretty, with golden lights on the towers. At night the Jardín fills with families and mariachis. Do you want me to take you to the Parroquia now?\",\"answers\":[{\"text\":\"Sí, vámonos ahorita. Gracias.\",\"en\":\"Yes, let's go now. Thank you.\"},{\"text\":\"¿Qué canciones tocan los mariachis?\",\"en\":\"What songs do the mariachis play?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sí, vámonos ahorita. Gracias.",
+     "¿Qué canciones tocan los mariachis?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "¡Muy bien, vámonos! Suba y póngase cómodo. Con este clima tan despejado, el paseo va a estar bonito. ¿Le gusta caminar por el Centro? Do you like walking around the Centro?",
+    "en": "Very good, let's go! Get in and make yourself comfortable. With this clear weather, the ride will be nice. Do you like walking around the Centro?",
+    "raw": "{\"line\":\"¡Muy bien, vámonos! Suba y póngase cómodo. Con este clima tan despejado, el paseo va a estar bonito. ¿Le gusta caminar por el Centro?\",\"en\":\"Very good, let's go! Get in and make yourself comfortable. With this clear weather, the ride will be nice. Do you like walking around the Centro?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "ask-en",
+    "line": "Ya llegamos, aquí está la Parroquia. We're here, this is the Parroquia. Las calles del Centro son de piedra, por eso el taxi va despacito. The streets in the Centro are cobblestone, that's why the taxi goes slowly.",
+    "en": "We're here, this is the Parroquia. The streets in the Centro are cobblestone, that's why the taxi goes slowly.",
+    "raw": "{\"line\":\"{*Ya llegamos*, aquí está la Parroquia. | *We're here*, this is the Parroquia.} {Las calles del Centro son *de piedra*, por eso el taxi va despacito. | The streets in the Centro are *cobblestone*, that's why the taxi goes slowly.}\",\"en\":\"We're here, this is the Parroquia. The streets in the Centro are cobblestone, that's why the taxi goes slowly.\",\"answers\":[{\"text\":\"¿Por qué las calles son de piedra?\",\"en\":\"Why are the streets made of stone?\"},{\"text\":\"¿Qué más hay cerca de la Parroquia?\",\"en\":\"What else is there near the Parroquia?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "¿Por qué las calles son de piedra?",
+     "¿Qué más hay cerca de la Parroquia?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Las calles son de piedra porque así las hicieron hace mucho, en la época colonial. The streets are made of stone because they were built that way long ago, in colonial times. Por eso el Centro se ve tan bonito y tan antiguo. Me dio gusto llevarlo; vuelva esta noche al Jardín, y lo llevo a ver la Parroquia con sus luces. It was a pleasure driving you; come back tonight to the Jardín, and I'll take you to see the Parroquia with its lights.",
+    "en": "The streets are made of stone because they were built that way long ago, in colonial times. That's why the Centro looks so pretty and so old. It was a pleasure driving you; come back tonight to the Jardín, and I'll take you to see the Parroquia with its lights.",
+    "raw": "{\"line\":\"{Las calles son *de piedra* porque así las hicieron hace mucho, en la época colonial. | The streets are *made of stone* because they were built that way long ago, in colonial times.} {Por eso el Centro se ve tan bonito y tan antiguo. | That's why the Centro looks so pretty and so old.} {Me dio gusto llevarlo; *vuelva esta noche* al Jardín, y lo llevo a ver la Parroquia con sus luces. | It was a pleasure driving you; *come back tonight* to the Jardín, and I'll take you to see the Parroquia with its lights.}\",\"en\":\"The streets are made of stone because they were built that way long ago, in colonial times. That's why the Centro looks so pretty and so old. It was a pleasure driving you; come back tonight to the Jardín, and I'll take you to see the Parroquia with its lights.\",\"answers\":[{\"text\":\"Muchas gracias, Beto. Nos vemos esta noche.\",\"en\":\"Thank you very much, Beto. See you tonight.\"},{\"text\":\"Qué buena idea. Hasta luego, que le vaya bien.\",\"en\":\"What a good idea. See you later, take care.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Muchas gracias, Beto. Nos vemos esta noche.",
+     "Qué buena idea. Hasta luego, que le vaya bien."
+    ],
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "¡Hasta la noche, amigo! Que le vaya muy bien. See you tonight, friend! Take care.",
+    "en": "See you tonight, friend! Take care.",
+    "raw": "{\"line\":\"¡Hasta la noche, amigo! Que le vaya muy bien. See you tonight, friend! Take care.\",\"en\":\"See you tonight, friend! Take care.\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": true
+   }
+  ],
+  "culture": [
+   "The Jardín is the central town square, where people gather, especially in the evening",
+   "Taxi stands are often located by the main square (Jardín)",
+   "The streets of the Centro are cobblestone, so taxis go slowly uphill",
+   "The Parroquia is a famous pink church with tall towers, two blocks from the Jardín",
+   "The Parroquia has colorful stained glass windows inside",
+   "The Parroquia's towers are lit with golden lights at night",
+   "In the evening the Jardín fills with families and mariachis",
+   "Cobblestone streets date from the colonial era, giving the Centro an old, beautiful look",
+   "Common polite phrases: \"suba con confianza\" (get in, don't hesitate), \"Me dio gusto\" (it was a pleasure), \"Que le vaya muy bien\" (take care)",
+   "\"ahorita\" means right now / in a little while",
+   "\"cuadras\" are city blocks, used for giving distances",
+   "\"vámonos\" means let's go",
+   "\"despacito\" means nice and slowly",
+   "\"pueblo\" refers to a town, and locals take pride in its most famous landmark"
+  ]
+ }
+]

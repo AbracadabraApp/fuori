@@ -7,6 +7,7 @@
 - **For the mini:** six people twice at step 4 on each arm, 24 visits.
   Arm A, from main: `COUNTRY=es-mx TRIAL_SPOTS=san-miguel-de-allende/parroquia-san-miguel-arcangel,san-miguel-de-allende/el-mirador-san-miguel,san-miguel-de-allende/parque-juarez,san-miguel-de-allende/la-cucaracha,san-miguel-de-allende/casa-del-tumbagon,san-miguel-de-allende/jardin-allende TRIAL_STEPS=4 TRIAL_KINDS=long TRIAL_REPEAT=2 npx tsx --env-file=.env.local tests/experiments/rewrite-trial.mts --out=tests/experiments/results/san-miguel-here-a-2026-11-17.json`
   Arm B, from a checkout of `here-san-miguel-trial`: the same command with `--out=…/san-miguel-here-b-2026-11-17.json`. Commit both JSON files to main by path and push.
+- **Done (laptop, 2026-11-17, 20:07):** both arms finished: 12 visits an arm, 24 in all, six people twice at step 4, 0 failed turns. Arm A from main (a745432c), arm B from `here-san-miguel-trial` (4670deb9), run one after the other on the local test database. Results: `tests/experiments/results/san-miguel-here-a-2026-11-17.json` and `…-b-…`. Not read: that's the cloud session's step.
 - **Then (cloud):** read the 24. What to look for: does Zeferino come from one person, not three; does each of the six say something the other five couldn't; what is repeated between a person's two visits; what the model invents on top. If the gap can be shown in three or four exchanges, Josh sees those and decides whether the lines go to main. If not, the branch is deleted.
 
 ## 2026-11-17 (cloud), night: Mexico's bare / fact-list / with-a-life run read
