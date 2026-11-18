@@ -9,6 +9,7 @@
   32 visits. Commit the JSON and push; say here that it's done.
 - **Then (cloud):** read all 32 and report what each group's visits contain: what was said that only that person could say, what was recited from the line, what is general. If the gap can't be shown in three or four quoted exchanges, the answer is "no difference" and the lines stay.
 - **Limits:** two different people differ in more than their line (job, place, traits), and the trial's learner only says the first offered answer. The TRIAL_SPOTS change is type-checked, **not run** (no keys here).
+- **Done (laptop, 2026-11-17, 19:43):** the run finished: 32 visits, eight people, 0 failed turns. Results: `tests/experiments/results/here-bare-vs-life-it-2026-11-17.json`. Not read: that's the cloud session's step.
 
 ## 2026-11-17 (cloud): every reachable character ranked by richness
 
