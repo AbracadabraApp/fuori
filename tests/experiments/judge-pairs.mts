@@ -1,8 +1,8 @@
-// Grok reads pairs of conversations and picks the more culturally rich one (Josh, 2026-11-17). A reading aid for a trial's
-// results (rewrite-trial.mts), never a verdict: Grok is uncalibrated (Josh, 2026-11-08, "I am skeptical of grok": it misread
-// facts and its verdicts swung between runs), so every pair is judged in BOTH orders; a pair counts for an arm only when the two
-// readings agree, and the position bias is printed. Test scripts only: the game never calls Grok.
-//   npx tsx --env-file=.env.local tests/experiments/judge-pairs.mts --a=a-it.json,a-mx.json --b=b-it.json,b-mx.json [--out=judged.json] [--only=Sara] [--limit=1]
+// Grok reads pairs of conversations and picks the more culturally rich one (Josh, 2026-11-17: "just a binary score -
+// alternating sequence A/B if possible"). One reading a pair, a bare 1 or 2, no reasons; the order alternates (A first on
+// the 1st, 3rd, 5th pair, B first on the others) so any liking for the conversation shown first cancels across the pairs.
+// A reading aid, never a verdict: Grok is uncalibrated (Josh, 2026-11-08, "I am skeptical of grok"). Test scripts only.
+//   npx tsx --env-file=.env.local tests/experiments/judge-pairs.mts --a=a-it.json,a-mx.json --b=b-it.json,b-mx.json [--out=judged.json] [--only=Sara] [--limit=2]
 import { readFileSync, writeFileSync } from 'fs';
 import { askGrok } from './common.mjs';
 import type { Visit } from './trial-measures.mjs';
@@ -19,28 +19,27 @@ if (arg('only')) pairs = pairs.filter((p) => new RegExp(arg('only')!, 'i').test(
 if (arg('limit')) pairs = pairs.slice(0, Number(arg('limit')));
 
 const text = (v: Visit) => v.turns.map((t, i) => `${i + 1}. ${t.en}`).join('\n');
-const SCHEMA = { type: 'object', additionalProperties: false, required: ['richer', 'why'], properties: { richer: { type: 'integer', enum: [1, 2] }, why: { type: 'string' } } };
-const ask = (first: Visit, second: Visit) => askGrok<{ richer: 1 | 2; why: string }>(
+const SCHEMA = { type: 'object', additionalProperties: false, required: ['richer'], properties: { richer: { type: 'integer', enum: [1, 2] } } };
+const ask = (first: Visit, second: Visit) => askGrok<{ richer: 1 | 2 }>(
   `Two conversations between a language learner and the same character, each from the character's side only (English translation of what the character said). ` +
   `The learner is learning a country, its language and its culture: food, traditions, history, geography, customs, how people really live and talk. ` +
   `Which conversation is more culturally rich, meaning it teaches more real, specific, correct things about the country and its culture? ` +
-  `Judge what is said, not length or warmth. You must pick one. Answer richer = 1 or 2 and one sentence saying what made it richer, naming the things.\n\n` +
+  `Judge what is said, not length or warmth. You must pick one. Answer richer = 1 or 2.\n\n` +
   `CONVERSATION 1\n${text(first)}\n\nCONVERSATION 2\n${text(second)}`, SCHEMA, GROK);
 
-const results: { id: string; person?: string; aFirst: { richer: 'A' | 'B'; why: string }; bFirst: { richer: 'A' | 'B'; why: string }; agree: boolean; winner?: 'A' | 'B' }[] = [];
+const results: { id: string; person?: string; shownFirst: 'A' | 'B'; richer: 'A' | 'B' }[] = [];
 for (let i = 0; i < pairs.length; i += 4) {
-  await Promise.all(pairs.slice(i, i + 4).map(async (p) => {
-    const [x, y] = await Promise.all([ask(p.a, p.b), ask(p.b, p.a)]);
-    const aFirst = { richer: (x.richer === 1 ? 'A' : 'B') as 'A' | 'B', why: x.why };
-    const bFirst = { richer: (y.richer === 1 ? 'B' : 'A') as 'A' | 'B', why: y.why };
-    const agree = aFirst.richer === bFirst.richer;
-    results.push({ id: p.id, person: p.a.person, aFirst, bFirst, agree, winner: agree ? aFirst.richer : undefined });
+  await Promise.all(pairs.slice(i, i + 4).map(async (p, j) => {
+    const aFirst = (i + j) % 2 === 0;
+    const r = await (aFirst ? ask(p.a, p.b) : ask(p.b, p.a));
+    const pickedFirst = r.richer === 1;
+    results.push({ id: p.id, person: p.a.person, shownFirst: aFirst ? 'A' : 'B', richer: (pickedFirst === aFirst ? 'A' : 'B') });
   }));
 }
 results.sort((r, s) => r.id.localeCompare(s.id));
-for (const r of results) console.log(`${(r.person ?? r.id).padEnd(28)} ${r.agree ? `richer: ${r.winner}` : 'the two readings disagree'}\n   A first: ${r.aFirst.richer} (${r.aFirst.why})\n   B first: ${r.bFirst.richer} (${r.bFirst.why})`);
-const n = results.length, ag = results.filter((r) => r.agree);
-const firstPicks = results.length * 2, slot1 = results.filter((r) => r.aFirst.richer === 'A').length + results.filter((r) => r.bFirst.richer === 'B').length;
-console.log(`\n${n} pairs, each read in both orders. Readings agree on ${ag.length}: A richer ${ag.filter((r) => r.winner === 'A').length}, B richer ${ag.filter((r) => r.winner === 'B').length}; disagree on ${n - ag.length}.`);
-console.log(`Position bias: Grok picked the conversation shown first in ${slot1} of ${firstPicks} readings (50% if it has none).`);
+for (const r of results) console.log(`${(r.person ?? r.id).padEnd(28)} ${r.id.padEnd(48)} richer: ${r.richer}   (${r.shownFirst} shown first)`);
+const n = results.length, a = results.filter((r) => r.richer === 'A').length;
+const first = results.filter((r) => r.richer === r.shownFirst).length;
+console.log(`\n${n} pairs, one reading each, alternating order. A richer ${a}, B richer ${n - a}.`);
+console.log(`The conversation shown first was picked in ${first} of ${n} (about half if there is no liking for the first).`);
 if (arg('out')) writeFileSync(arg('out')!, JSON.stringify({ model: GROK, results }, null, 1));
