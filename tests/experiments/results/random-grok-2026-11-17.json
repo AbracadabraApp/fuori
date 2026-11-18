@@ -1,0 +1,101 @@
+{
+ "model": "grok-4.20-0309-non-reasoning",
+ "results": [
+  {
+   "id": "bologna/piazza-maggiore#1",
+   "person": "Franco Melodia",
+   "shownFirst": "B",
+   "richer": "B"
+  },
+  {
+   "id": "ciudad-de-mexico/tacos-el-trompo-rojo#1",
+   "person": "Chema Rosales",
+   "shownFirst": "A",
+   "richer": "A"
+  },
+  {
+   "id": "guadalajara/tacos-el-compa-nacho#1",
+   "person": "Nacho Robles",
+   "shownFirst": "A",
+   "richer": "A"
+  },
+  {
+   "id": "guanajuato/enchiladas-baratillo#1",
+   "person": "Doña Lupe Arredondo",
+   "shownFirst": "B",
+   "richer": "B"
+  },
+  {
+   "id": "lucca/gastronomia-angeli#1",
+   "person": "Beatrice Angeli",
+   "shownFirst": "A",
+   "richer": "A"
+  },
+  {
+   "id": "monterrey/horno-3-parque-fundidora#1",
+   "person": "Don Eleazar Cantú",
+   "shownFirst": "B",
+   "richer": "B"
+  },
+  {
+   "id": "napoli/presepi-san-gregorio#1",
+   "person": "Maestro Gennaro Capuano",
+   "shownFirst": "A",
+   "richer": "B"
+  },
+  {
+   "id": "roma-nuova/farmacia-prati#1",
+   "person": "Dott.ssa Silvia Bruni",
+   "shownFirst": "A",
+   "richer": "A"
+  },
+  {
+   "id": "san-cristobal-de-las-casas/templo-de-guadalupe-sancris#1",
+   "person": "Doña Chayo Molina",
+   "shownFirst": "B",
+   "richer": "B"
+  },
+  {
+   "id": "siracusa/piazza-archimede#1",
+   "person": "Alberto Messina",
+   "shownFirst": "B",
+   "richer": "B"
+  },
+  {
+   "id": "taormina/ristorante-baronessa#1",
+   "person": "Stefano Barone",
+   "shownFirst": "B",
+   "richer": "B"
+  },
+  {
+   "id": "tijuana/taller-de-serigrafia-pasaje-rodriguez#1",
+   "person": "Emilio Carrillo Luna",
+   "shownFirst": "B",
+   "richer": "A"
+  },
+  {
+   "id": "torino/bicerin-dal-1763#1",
+   "person": "Franca Cavallo",
+   "shownFirst": "B",
+   "richer": "B"
+  },
+  {
+   "id": "venezia/ristorante-antiche-carampane#1",
+   "person": "Lorenzo Carampane",
+   "shownFirst": "A",
+   "richer": "A"
+  },
+  {
+   "id": "veracruz/gran-cafe-de-la-parroquia#1",
+   "person": "Don Arturo Lagunes",
+   "shownFirst": "A",
+   "richer": "A"
+  },
+  {
+   "id": "zacatecas/gorditas-dona-cata#1",
+   "person": "Doña Cata Esquivel",
+   "shownFirst": "A",
+   "richer": "A"
+  }
+ ]
+}
