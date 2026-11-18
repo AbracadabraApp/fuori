@@ -40,7 +40,10 @@ async function run() {
   const REPEAT = Number(process.env.TRIAL_REPEAT ?? 1);
   const LEAVE_AFTER = 4; // the learner says goodbye after the character's 4th turn
   const MAX_TURNS = 10; // the close is due on the 8th; past 10 is a failure to end
-  const goodbye = pack.id === 'it' ? 'Bene, devo andare. Grazie, arrivederci.' : 'Bueno, me tengo que ir. Gracias, adiós.';
+  // TRIAL_LEAVE=go: they say only that they have to go, no goodbye word (the shared rule lost "or that they have to go", 2026-11-17)
+  const goodbye = process.env.TRIAL_LEAVE === 'go'
+    ? (pack.id === 'it' ? 'Scusi, devo andare.' : 'Perdón, me tengo que ir.')
+    : pack.id === 'it' ? 'Bene, devo andare. Grazie, arrivederci.' : 'Bueno, me tengo que ir. Gracias, adiós.';
 
   // Four characters a country Josh knows, one of each kind of visit: food, a sight, a person in a public place, work
   // or a ride (Josh, 2026-11-16: yes to naming them; the same four every run, so runs compare)
