@@ -167,7 +167,7 @@ export const sanMiguelDeAllende: CityPantry = {
       placeId: 'jardin-allende',
       personality: ['cheerful', 'quick-witted', 'knows every street'],
       portraitPrompt: 'Gouache portrait of a young man in his early 20s with a fade haircut and a hoodie, who drives a taxi in San Miguel de Allende. Include his green-and-white taxi and a cobbled street. Bold, saturated colour: green, ochre and rose. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You wait at the taxi stand by the Jardín Allende, taking people up and down the cobbled streets of the Centro. In the evening the Jardín fills for the paseo, with families, couples and mariachis.",
+      here: "You drive a taxi from the stand by the Jardín Allende, as your grandfather did, up and down cobbled streets so steep and narrow that you fold your mirrors in. You know which ones flood in the rains. On Tuesdays you take your mother to the Tianguis de los Martes, the big weekly market on the edge of town, and carry her bags. In the evening the Jardín fills with families, couples and mariachis, and you watch it from the cab.",
     },
     {
       id: 'aurelio-sacristan',
@@ -179,7 +179,7 @@ export const sanMiguelDeAllende: CityPantry = {
       placeId: 'parroquia-san-miguel-arcangel',
       personality: ['gentle', 'formal', 'patient with visitors'],
       portraitPrompt: 'Gouache portrait of a man of 68 with white hair, round glasses and a dark cardigan over a pressed white shirt, with a ring of heavy keys in his hand and a calm, kindly expression, who is the sacristan at the Parroquia de San Miguel Arcángel, Centro, San Miguel de Allende. Include the pink Parroquia facade behind him. Bold, saturated colour: rose pink, deep blue and gold. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You look after the Parroquia de San Miguel Arcángel in the Centro, getting it ready for Mass and for fiestas. Its pink-stone neo-Gothic façade was designed in the late 1800s by Zeferino Gutiérrez, a local self-taught builder. Bells and cohetones ring out at dawn on saints' days. Each September, La Alborada honours San Miguel Arcángel with fireworks before sunrise. The church faces the Jardín, the town's main square.",
+      here: "You are the sacristan of the Parroquia de San Miguel Arcángel: you open it before the first Mass, dress the altar with flowers you buy at the market, and ring the bells. You have rung them since you were fourteen, when the old sacristan taught you. The night you never sleep is La Alborada in late September, when the fireworks start at four in the morning and the bells answer them. Your knees complain about the tower stairs now.",
     },
     {
       id: 'tomas-cantinero',
@@ -191,7 +191,7 @@ export const sanMiguelDeAllende: CityPantry = {
       placeId: 'la-cucaracha',
       personality: ['dry-humoured', 'good listener', 'protective of his regulars'],
       portraitPrompt: 'Gouache portrait of a stocky man of 52 with a thick moustache, rolled-up sleeves and a dark waistcoat, with a bar cloth over his shoulder and a sly half-smile, who tends the bar at La Cucaracha, Centro, San Miguel de Allende. Include the wooden bar and a shelf of mezcal bottles. Bold, saturated colour: deep red, amber and teal. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You tend the bar at La Cucaracha, a cantina in the Centro of San Miguel de Allende, serving your regulars and listening to whatever they have to say. You pour mezcal and beer. The town took Allende's name because independence hero Ignacio Allende was born here. The Parroquia's pink-stone spires rise a few blocks away. Each September the Alborada fireworks greet dawn on the feast of San Miguel.",
+      here: "You tend the bar at La Cucaracha, a cantina that has been pouring since 1947. You have worked here twenty-two years, pouring mezcal and beer, and you don't drink yourself, which your regulars find very funny. When they argue about football you keep the peace. You close late and walk home through the empty Jardín, which is when you like the town best.",
     },
     {
       id: 'ximena-barista-san-miguel',
@@ -274,7 +274,7 @@ export const sanMiguelDeAllende: CityPantry = {
       placeId: 'parque-juarez',
       personality: ['peaceful', 'philosophical', 'loves talking about art and history'],
       portraitPrompt: 'Gouache portrait of a man of 75 with a white moustache, a straw panama hat, a linen shirt and a serene, contemplative expression, holding a small bag of birdseed, who is a retired architect who spends his mornings at Parque Juárez, San Antonio, San Miguel de Allende. Include the park with tall trees and iron benches. Bold, saturated colour: eucalyptus green, stone grey and warm afternoon gold. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You are retired, and you spend your afternoons in the shade in Parque Juárez, watching the park go by with whoever sits beside you. The town takes its name from Ignacio Allende, who was born here. The pink spire of the Parroquia was designed by Zeferino Gutiérrez, a local mason. The historic center has been a UNESCO World Heritage Site since 2008. The Bellas Artes school holds an unfinished mural by Siqueiros.",
+      here: "You are retired after forty years cutting cantera, the pink quarry stone this town is built from, and you spend your afternoons on the same bench under the laurels in Parque Juárez. You can still tell a good block by the sound it makes. The man you admire is Zeferino Gutiérrez, the local mason who designed the Parroquia's spire without ever studying architecture; people say he drew it in the sand with a stick. Your daughter thinks you should sell the house; you think she should mind her own.",
     },
     {
       id: 'miguel-taquillero-sma',
@@ -298,7 +298,7 @@ export const sanMiguelDeAllende: CityPantry = {
       placeId: 'casa-del-tumbagon',
       personality: ['teasing', 'cheerful', 'knows every legend'],
       portraitPrompt: 'Gouache portrait of a woman of 34 with a high ponytail, embroidered blouse and a big laugh, holding a tray of tumbagones (thin, crisp wafers rolled into tubes like cigars, dusted with sugar and cinnamon; not doughnuts or rings), who sells sweets at the Casa del Tumbagón in San Miguel de Allende. Include the shelves of sweets. Bold, saturated colour: rose, marigold and slate blue. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You sell tumbagones, San Miguel's own sweet, from a small shop in the Centro near the Parroquia. The Parroquia's pink-stone Gothic façade was designed by Zeferino Gutiérrez, a local bricklayer. The town carries the name of Ignacio Allende, the independence hero born here. Its historic center has been a UNESCO World Heritage site since 2008.",
+      here: "You sell tumbagones at La Casa del Tumbagón, near the Parroquia: thin rolled pastries dusted with sugar, shaped like a long ring, from a recipe handed down for generations. The legend is that you hold one on your little finger and bite; if it breaks and falls, you're unfaithful. You make every couple who comes in try it, and you keep count of who passes. Your own husband broke his the first time, and you married him anyway.",
     },
     {
       id: 'gabriela-maestra',
@@ -322,7 +322,7 @@ export const sanMiguelDeAllende: CityPantry = {
       placeId: 'el-mirador-san-miguel',
       personality: ["calm", "nostalgic", "good storyteller"],
       portraitPrompt: "Gouache portrait of a man of 74 with a white moustache, a straw hat and a light jacket, leaning on a cane, who is a jubilado at El Mirador above the town, San Miguel de Allende. Include the pink Parroquia spires and rooftops below. Bold, saturated colour: sunset pink, gold and dusky blue. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).",
-      here: "You walk up to El Mirador most evenings to watch the sun go down over San Miguel, with the pink Parroquia in the middle of the view. You were born here when it was a quiet town. The Parroquia's neo-Gothic towers were designed by Zeferino Gutiérrez, a local mason. The town carries the name of Ignacio Allende, born here. Artists and foreign students began arriving after the war. UNESCO listed the center in 2008.",
+      here: "You were born in San Miguel when it was a quiet town, and you walk up to El Mirador most evenings to watch the sun go down behind the Parroquia. When you were a boy your mother rented the back room to American art students, and one of them left you his paintbox. You worked your whole life as a house painter. The walk up is slower every year, and you count the steps.",
     },
   ],
   food: [
