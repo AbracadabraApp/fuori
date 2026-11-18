@@ -7,7 +7,7 @@
 - **Run against production** (docs/prompt-trials.md → The Beginner ending against production): "back to work" Italy 16 → 2, Mexico 12 → 0 visits of 16; line 9 median 42 → 14 and 54 → 20 words; line 8 invites back with a reason in every visit, never repeated on line 9; "I have to go" alone still ends the visit 8/8.
 - **B40 closed, won't fix** (Josh: "i think this is what we live with for now - close it"). scaffolding.md 17a: six unread sections out, header fixed.
 - **Released** (live 35a8e48, smoke both OK, no new errors in the logs); **build 18** installed on Josh's iPhone 16 Pro with devicectl (Josh: "release to server and phone"). The walk: Italy ok; Mexico failed B35's check at step 4 → 5 and Intermediate → Advanced (open, not the ending).
-- **Next:** Josh plays the ending. Open: the last word to the learner (no line 9; needs an app change; Josh's (a)/(b) for a non-goodbye reply 8 not answered); the Intermediate Close note still says "you have to get back to what you're doing"; B28, B33, B37 status questions.
+- **Next:** Josh plays the ending. Settled: the learner having the last word (no line 9) isn't needed; Josh solved the ending in the prompt (Claude had made the app change sound bigger than it was). Open: the Intermediate Close note still says "you have to get back to what you're doing"; B28, B33, B37 status questions.
 
 ## 2026-11-17 (Mac laptop): four portrait candidates for Sandra Mugnai, for the cloud session to judge
 
