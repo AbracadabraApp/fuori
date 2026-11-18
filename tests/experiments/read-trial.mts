@@ -3,6 +3,7 @@
 //   ... --count="Zeferino|Alborada"        visits and mentions of a pattern, per arm (one-off custom measure)
 //   ... --person=Sara                       one person's visits side by side, turn by turn (English)
 //   ... --turn=4                            everyone's 4th turn, A against B
+//   ... --full                             with --person, --turn or --blind: not just the English but the whole turn (the line as the character says it, with the language and its glosses, the English, the answers offered, the step's setup)
 //   ... --blind[=seed]                      every visit shuffled, arm hidden, for reading; add --reveal for the key
 // Custom measures live in trial-measures.mts (CUSTOM) and show in the paired table and the totals.
 import { readFileSync } from 'fs';
@@ -20,7 +21,12 @@ const pairs = KA.map((a) => ({ id: a.id, a: a.v, b: KB.find((x) => x.id === a.id
 const name = (v: Visit) => v.person ?? v.place;
 const num = (x: number) => (Number.isNaN(x) ? 'n/a' : Number.isInteger(x) ? String(x) : x.toFixed(1));
 const mean = (xs: number[]) => { const k = xs.filter((x) => !Number.isNaN(x)); return k.length ? k.reduce((a, b) => a + b, 0) / k.length : NaN; };
-const turnText = (v: Visit | undefined, i: number) => v?.turns[i]?.en ?? '(none)';
+const full = process.argv.includes('--full');
+const turnText = (v: Visit | undefined, i: number) => {
+  const t = v?.turns[i];
+  if (!t) return '(none)';
+  return full ? `[${t.setup ?? '-'}${t.done ? ', done' : ''}]\n    LINE: ${t.line}\n    EN:   ${t.en}${t.answerTexts?.length ? `\n    ANSWERS: ${t.answerTexts.join('  /  ')}` : ''}` : t.en;
+};
 
 const person = arg('person'), turn = arg('turn'), pattern = arg('count'), blind = arg('blind');
 
@@ -36,7 +42,7 @@ if (person) {
   let s = Number(blind === '1' ? 7 : blind) || 7;
   const rnd = () => { s = (s * 1664525 + 1013904223) % 4294967296; return s / 4294967296; };
   const all = [...KA.map((x) => ({ ...x, arm: 'A' })), ...KB.map((x) => ({ ...x, arm: 'B' }))].sort(() => rnd() - 0.5);
-  all.forEach((x, n) => { console.log(`\n##### visit ${n + 1}: ${name(x.v)}\n${x.v.turns.map((t, i) => `${i + 1}. ${t.en}`).join('\n')}`); });
+  all.forEach((x, n) => { console.log(`\n##### visit ${n + 1}: ${name(x.v)}\n${x.v.turns.map((_, i) => `${i + 1}. ${turnText(x.v, i)}`).join('\n')}`); });
   if (arg('reveal')) { console.log('\nKey:'); all.forEach((x, n) => console.log(`visit ${n + 1}: arm ${x.arm}, ${x.id}`)); }
 } else {
   const rows = (vs: Visit[]) => summary(vs);
