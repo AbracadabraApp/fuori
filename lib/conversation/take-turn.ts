@@ -18,7 +18,8 @@ import { tutor } from '@/content';
 import { onboardingState } from '@/lib/onboarding';
 import { runBeginnerTurn } from '@/lib/beginner';
 import { assemblePieces, saySentences, englishOf, seedOf, SETTINGS } from '@/lib/dialogue/pieces';
-import { closeNote, helpNote } from '@/lib/dialogue/rules';
+import { closeNote, helpNote, windDownNote } from '@/lib/dialogue/rules';
+import { endingTurn } from '@/lib/dialogue/ending';
 import { idiomTurn, pickIdiom, recentIdioms, usedIdiom, idiomSaidNote, type Idiom } from '@/lib/idioms';
 import { CLOSE_AT_INTERMEDIATE, CLUSTER_1, IDIOM, GOODBYE, CLOSE, pickSetup, setupLine, turnSteps, beginner2Version, type Setup, type TurnSteps, frameBrief, lineWithAnswers } from '@/lib/beginner-2';
 import { pickShapes, noteOf, shapeIds } from '@/lib/shapes';
@@ -212,7 +213,9 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
   // They asked for help or said it's hard earlier in this visit (a character turn saved with hard; D12): keep it easy from here on
   const helped = [transcript.some((t) => t.who === 'npc' && t.hard) ? helpNote() : undefined, idiomSaid].filter(Boolean).join(' ') || undefined;
   // An ordinary Intermediate or Advanced visit that has run long: the character closes it (Beginner: pickSetup → CLOSE)
-  const closing = shaped && setup === null && npcTurns >= CLOSE_AT_INTERMEDIATE;
+  const ending = shaped && setup === null ? endingTurn(npcTurns, false) : null;
+  const closing = ending === 'close';
+  const endingNote = closing ? closeNote() : ending === 'wind-down' ? windDownNote() : undefined;
   const shape = shapes.length ? shapes : null;
   const shapeId = shapeIds(shapes);
   // How this turn's line is put together: at Beginner steps 1 to 3 by the step's setting, the same way for the early
@@ -269,8 +272,8 @@ export async function takeTurn(p: TakeTurnParams): Promise<TakeTurnResult> {
     firstTurn: tutorPrompt?.firstTurn,
     level,
     // Intermediate: this turn's shape, when a signal fired (lib/shapes.ts); nothing otherwise
-    // A long visit's close (after the 10th reply; Josh, 2026-11-17, was the 15th): the character closes it itself
-    note: noteOf(shape, closing ? closeNote() : undefined),
+    // The visit's wind-down and close (lib/dialogue/ending.ts; the same words as Beginner's, Josh 2026-11-17)
+    note: noteOf(shape, endingNote),
     help: helped,
     // An ordinary Intermediate or Advanced visit: what the character knows of their language (character.md → Learner: …)
     ...(shaped && setup === null && (learnerLevel === 'intermediate' || learnerLevel === 'advanced') ? { learnerLevel } : {}),

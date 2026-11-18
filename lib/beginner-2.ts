@@ -15,6 +15,8 @@
  */
 import { fill, readPromptFile } from '@/lib/prompts/template';
 import { language } from '@/content';
+import { ENDING_AT, endingTurn } from '@/lib/dialogue/ending';
+import { closeNote, windDownNote } from '@/lib/dialogue/rules';
 import { SCAFFOLDING_FILE, type Part } from '@/lib/beginner';
 
 export interface Setup {
@@ -55,12 +57,11 @@ const R = (id: string) => RUNGS.find((r) => r.id === id)!;
  * said. Their goodbye, whenever it comes, ends the conversation through the reply's done flag
  */
 export const GOODBYE: Setup = { id: 'goodbye', block: 'Setup: goodbye', maxAnswers: 2, english: true };
-export const GOODBYE_AFTER = 7;
-/** If the visit carries on past the goodbye, the character closes it itself: on the 8th turn at Beginner (the goodbye was
- * offered on the 7th), after the 10th reply at Intermediate and Advanced (take-turn; Josh, 2026-11-17: "Change Intermediate to 10"; it was the 15th). Josh, 2026-11-13: "lets keep 8 for begginer; 15
- * for intermediate"; Josué and Isidro had run to 20 and 24 replies ("Don Insidro, I must insist we stop") */
-export const CLOSE_AT = 8;
-export const CLOSE_AT_INTERMEDIATE = 10;
+export const GOODBYE_AFTER = ENDING_AT.beginner.windDown;
+/** If the visit carries on past the wind-down, the character closes it itself (lib/dialogue/ending.ts, the same at every
+ * level since 2026-11-17). Josué and Isidro had run to 20 and 24 replies ("Don Insidro, I must insist we stop") */
+export const CLOSE_AT = ENDING_AT.beginner.close;
+export const CLOSE_AT_INTERMEDIATE = ENDING_AT.intermediate.close;
 export const CLOSE: Setup = { id: 'close', block: 'Setup: close', maxAnswers: 0, english: false };
 
 /** The idiom turn (D13; lib/idioms.ts): put in by take-turn in place of the drawn setup, with the idiom as vars */
@@ -136,8 +137,8 @@ function weighted(cluster: Setup[], key: string, not?: string): Setup {
 }
 
 export function pickSetup(p: { conversationId?: string | null; turn: number; learnerId?: string | null; characterId: string; now?: Date; /** what the learner just said: after their own question, no invitation (the character follows it up) */ learnerSaid?: string }, cluster: Setup[] = CLUSTER_1): Setup {
-  if (p.turn === GOODBYE_AFTER) return GOODBYE;
-  if (p.turn >= CLOSE_AT) return CLOSE;
+  const ending = endingTurn(p.turn, true);
+  if (ending) return ending === 'close' ? CLOSE : GOODBYE;
   // The opener is two answers to read when the cluster has them (Arturo, 2026-11-09: an invited-English opener set a pattern the character copied all visit)
   if (p.turn === 0 && cluster.some((s) => s.id === 'two-en')) return OPENER;
   // A step with no answers to offer (step 6) opens on its own turn: the opener gives two answers. Without this the
@@ -182,7 +183,11 @@ export function setupLine(setup: Setup): string {
   const f = readPromptFile(SCAFFOLDING_FILE);
   // Every turn's note gives way when they're leaving (2026-11-13): in the system prompt alone, the note next to their
   // message won ("Before you go, look at the church's front door…" after "I must see the dentist")
-  const leaving = [OPENER.id, GOODBYE.id, CLOSE.id].includes(setup.id) ? '' : ' ' + f.block('Setup: if they are leaving');
+  // The ending's words are dialogue.md's, the same at every level (lib/dialogue/ending.ts); Beginner adds what its
+  // answers are on the wind-down (scaffolding.md → Setup: goodbye)
+  if (setup.id === CLOSE.id) return fill(closeNote(), { language: language.name }).trim();
+  if (setup.id === GOODBYE.id) return fill(`${windDownNote()} ${f.block(setup.block)}`, { language: language.name }).trim();
+  const leaving = setup.id === OPENER.id ? '' : ' ' + f.block('Setup: if they are leaving');
   return fill(f.block(setup.block) + leaving, { language: language.name, ...(setup.vars ?? {}) }).trim();
 }
 

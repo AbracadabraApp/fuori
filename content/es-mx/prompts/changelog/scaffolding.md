@@ -2,6 +2,11 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
 
+### 2026-11-17g: the ending's words moved to dialogue.md
+- **Changed, Setup: goodbye:** now only "Their two answers are goodbyes.", added after dialogue.md's Wind down; the Beginner line 8 the character gets is word for word 17e's.
+- **Removed, Setup: close:** line 9 is dialogue.md's Close, word for word 17f's.
+- **Why:** one place for the ending at every level (dialogue.md 17b; Josh, 2026-11-17: "yes"). What a Beginner turn sends is unchanged.
+
 ### 2026-11-17f: line 9 in Josh's words: a colloquial goodbye, then stop
 - **Changed, Setup: close** (the character's 9th line, after the learner's 8th reply): "Say goodbye in a few words; this reply ends the conversation." → "In a colloquial phrase say goodbye and stop, this ends the conversation."
 - **Why:** with 17e's line 8 inviting them back, line 9 is the goodbye alone; in the 17d run line 9 said "next time" again in 7 and 12 of 16 visits.

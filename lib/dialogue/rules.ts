@@ -16,7 +16,12 @@ export function withDialogueRules(system: string): string {
   return `${system}\n\n${readPromptFile('dialogue.md').block('Every conversation')}`;
 }
 
-/** The note for the turn where the character closes a long visit itself (after the 10th reply at Intermediate and Advanced; Beginner's close is scaffolding.md → Setup: close) */
+/** The note for the visit's wind-down, at every level (lib/dialogue/ending.ts says which turn) */
+export function windDownNote(): string {
+  return readPromptFile('dialogue.md').block('Wind down');
+}
+
+/** The note for the turn where the character closes the visit itself, at every level (lib/dialogue/ending.ts) */
 export function closeNote(): string {
   return readPromptFile('dialogue.md').block('Close');
 }

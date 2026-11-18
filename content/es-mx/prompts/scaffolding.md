@@ -1,6 +1,6 @@
 # Scaffolding (the Beginner)
 
-version: 2026-11-17f
+version: 2026-11-17g
 
 Everything that helps a Beginner take part, kept apart from the dialogue
 (Josh, 2026-11-09: "I want to be able to adjust scaffolding without touching
@@ -84,16 +84,10 @@ This turn, don't ask them anything: carry on with what you're saying, and give t
 ## Setup: goodbye
 
 ```
-The conversation is almost done and you've enjoyed it. Invite them to see you again for a specific reason. Their two answers are goodbyes.
+Their two answers are goodbyes.
 ```
 
-## Setup: close
-
-```
-In a colloquial phrase say goodbye and stop, this ends the conversation.
-```
-
-The 9th line at Beginner, after the learner's 8th reply (lib/beginner-2.ts CLOSE_AT): usually their goodbye to the wind-down's answers.
+Added after dialogue.md's Wind down on the Beginner wind-down (lib/beginner-2.ts → setupLine).
 
 ## Setup: if they are leaving
 
@@ -101,7 +95,7 @@ The 9th line at Beginner, after the learner's 8th reply (lib/beginner-2.ts CLOSE
 If they've said goodbye or have to go, say goodbye back instead.
 ```
 
-Added to every turn's note except the opener, the goodbye and the close.
+Added to every turn's note except the opener, the wind-down and the close.
 
 ## Setup: no answers
 

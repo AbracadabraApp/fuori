@@ -2,6 +2,12 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../dialogue.md`.
 
+### 2026-11-17b: the ending in one place, the same words at every level
+- **Added, Wind down:** "The conversation is almost done and you've enjoyed it. Invite them to see you again for a specific reason." (Josh's line 8, scaffolding.md 17e, without Beginner's "Their two answers are goodbyes.").
+- **Changed, Close:** "This turn, close the visit yourself, warmly, in a sentence or two: you've enjoyed it, and you have to get back to what you're doing. If there's something of yours you'd like to show them, do with them or tell them next time, say so. Say goodbye; this reply ends the conversation." → "In a colloquial phrase say goodbye and stop, this ends the conversation." (Josh's line 9, 17f).
+- **Why:** Josh, 2026-11-17, asked whether there was any reason not to use exactly the same language and code for Intermediate as for Beginner; then "yes". Intermediate's close still said "you have to get back to what you're doing" (B31's line). Which turn is which is lib/dialogue/ending.ts: Beginner wind-down after the 7th reply and close after the 8th (unchanged); Intermediate and Advanced wind-down after the 9th (new) and close after the 10th.
+- **Prompted by:** Josh, 2026-11-17. Not released.
+
 ### 2026-11-17a: the goodbye rule in Josh's words, with no invitation in it
 - **Changed, Every conversation:** "When they say goodbye or that they have to go, in any words, say goodbye back, briefly and warmly; that's your whole turn, and it ends the conversation. You can tell them something you'd show them or do with them next time." → "When they say goodbye, say goodbye back, briefly and warmly; that's your whole turn, and it ends the conversation."
 - **Why:** at Beginner, line 8 now invites them back (scaffolding.md 17e) and line 9 is a short goodbye (17f); on line 9, after the learner's goodbye, this rule's "You can tell them something you'd show them or do with them next time" invited the invitation a second time (the 17d run: "next time" twice in 7 and 12 of 16 visits). Every level and every kind reads this rule, so an early leaver at Intermediate no longer gets the invitation (D1).

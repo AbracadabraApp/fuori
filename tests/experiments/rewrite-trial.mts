@@ -39,7 +39,7 @@ async function run() {
   const KINDS = (process.env.TRIAL_KINDS?.split(',') ?? ['leave', 'long']) as ('leave' | 'long')[];
   const REPEAT = Number(process.env.TRIAL_REPEAT ?? 1);
   const LEAVE_AFTER = 4; // the learner says goodbye after the character's 4th turn
-  const MAX_TURNS = 10; // the close is due on the 8th; past 10 is a failure to end
+  const MAX_TURNS = Number(process.env.TRIAL_MAX_TURNS ?? 10); // the close is due on the 8th (Intermediate: the 10th reply, so 12); past it is a failure to end
   // TRIAL_LEAVE=go: they say only that they have to go, no goodbye word (the shared rule lost "or that they have to go", 2026-11-17)
   const goodbye = process.env.TRIAL_LEAVE === 'go'
     ? (pack.id === 'it' ? 'Scusi, devo andare.' : 'Perdón, me tengo que ir.')

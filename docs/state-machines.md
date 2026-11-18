@@ -24,7 +24,7 @@ Made 2026-11-15 from a review of the whole app (two agents read the iPhone app a
 
 ### 3. The Beginner turn's setup
 - **State:** none stored; derived each request from the number of character turns, the step's cluster and a seed (`pickSetup`, lib/beginner-2.ts).
-- **Moves:** turn 0 the opener (or, at a step with no answers, the step's own turn: fixed 2026-11-15, step 6 failed to open); turn 7 the goodbye; turn 8 on the close (take-turn ends the visit); between, a weighted draw with rules (no three in a row, no invitation after an invitation, none after the learner's own question; Notice left the draw 2026-11-16). About one visit in three an idiom replaces turn 3 (lib/idioms.ts). After the learner asks for help, every later turn carries the Help asked note (`hard` on a saved character turn).
+- **Moves:** turn 0 the opener (or, at a step with no answers, the step's own turn: fixed 2026-11-15, step 6 failed to open); turn 7 the wind-down and turn 8 on the close (`endingTurn`, lib/dialogue/ending.ts, which also gives Intermediate and Advanced their wind-down at turn 9 and close from turn 10, with the same dialogue.md notes; take-turn ends the visit on the close); between, a weighted draw with rules (no three in a row, no invitation after an invitation, none after the learner's own question; Notice left the draw 2026-11-16). About one visit in three an idiom replaces turn 3 (lib/idioms.ts). After the learner asks for help, every later turn carries the Help asked note (`hard` on a saved character turn).
 - **Must hold:** every step can open a visit.
 - **Tests:** test:beginner-2, test:idioms, test:help-asked.
 - **Known:** the draw's chain doesn't know the idiom replaced turn 3.

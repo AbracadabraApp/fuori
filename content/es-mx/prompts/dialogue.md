@@ -1,6 +1,6 @@
 # Dialogue rules: every conversation
 
-version: 2026-11-17a
+version: 2026-11-17b
 
 The rules that hold in every conversation, whoever the character and whatever
 the kind (town, the welcome, Magda's lessons, cultural stories), at every
@@ -46,10 +46,18 @@ The note on every turn after the learner asked for help or said it's hard, for t
 
 The changelog is in `changelog/dialogue.md`.
 
+## Wind down
+
+```
+The conversation is almost done and you've enjoyed it. Invite them to see you again for a specific reason.
+```
+
+The note on the visit's wind-down, at every level (lib/dialogue/ending.ts: after the learner's 7th reply at Beginner, their 9th at Intermediate and Advanced). Beginner adds what its answers are (scaffolding.md → Setup: goodbye).
+
 ## Close
 
 ```
-This turn, close the visit yourself, warmly, in a sentence or two: you've enjoyed it, and you have to get back to what you're doing. If there's something of yours you'd like to show them, do with them or tell them next time, say so. Say goodbye; this reply ends the conversation.
+In a colloquial phrase say goodbye and stop, this ends the conversation.
 ```
 
-The note on the turn where the character closes a long visit itself (Intermediate and Advanced only; Beginner closes with scaffolding.md → Setup: close; after the 10th reply at Intermediate and Advanced, CLOSE_AT_INTERMEDIATE).
+The note on the turn where the character closes the visit itself, at every level (lib/dialogue/ending.ts: after the learner's 8th reply at Beginner, their 10th at Intermediate and Advanced).

@@ -29,7 +29,7 @@ check(GOODBYE_AFTER === 7, 'the goodbye is offered on the 7th turn');
 // The turn wiring: shapes on both paths, Beginner 1 untouched
 const tt = readFileSync('lib/conversation/take-turn.ts', 'utf8');
 check(/const shaped = !isTutor && !p\.lesson && !welcome && \(setup !== null \|\| !isBeginner\)/.test(tt), 'shapes: ordinary visits only, at Beginner or above (never the welcome, lessons or Magda)');
-check(/brief: frameBrief\(cluster\), note: noteOf\(shape, setupLine\(setup\)\)/.test(tt) && !/turnNote: noteOf/.test(tt) && /note: noteOf\(shape(, closing \? closeNote\(\) : undefined)?\),/.test(tt) && !/beats|runIntro/.test(tt), 'the shape note reaches the Beginner reply (every step, the one-line reply) and the Intermediate reply; nothing of the intro or of the Beginner parts branch is left in the turn');
+check(/brief: frameBrief\(cluster\), note: noteOf\(shape, setupLine\(setup\)\)/.test(tt) && !/turnNote: noteOf/.test(tt) && /note: noteOf\(shape(, closing \? closeNote\(\) : undefined|, endingNote)?\),/.test(tt) && !/beats|runIntro/.test(tt), 'the shape note reaches the Beginner reply (every step, the one-line reply) and the Intermediate reply; nothing of the intro or of the Beginner parts branch is left in the turn');
 
 if (problems.length) {
   console.error(`check-shapes: ${problems.length} problem(s)\n- ${problems.join('\n- ')}`);

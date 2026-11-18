@@ -9,6 +9,7 @@ import { pickSetup, GOODBYE_AFTER, CLOSE_AT, CLOSE_AT_INTERMEDIATE, CLOSE, setup
 import { fullerGlosses, shownParts, shapeParts, questionEcho } from './experiments/parts-shaping';
 import { stageInVersion } from '@/lib/conversation-record';
 import { lineFromParts, type Part } from '@/lib/beginner';
+import { endingTurn } from '@/lib/dialogue/ending';
 import { buildBeginnerPrompt, SCAFFOLDING_FILE, dialogueWithoutFormat } from '@/lib/beginner';
 import { readPromptFile } from '@/lib/prompts/template';
 import { exchangeTurns } from '@/lib/recording';
@@ -102,7 +103,8 @@ const twice = shownParts([{ kind: 'question', text: '¿Quiere saber algo del bar
 check(!twice.some((x) => x.kind === 'english' && /^You can ask me in English or/.test(x.text)), 'the invitation isn\'t added when the character already gave it');
 check(pickSetup({ conversationId: 'c', turn: 7, characterId: 'x' }).id === 'goodbye' && pickSetup({ conversationId: 'c', turn: 6, characterId: 'x' }).id !== 'goodbye' && pickSetup({ conversationId: 'c', turn: 8, characterId: 'x' }).id !== 'goodbye' && pickSetup({ conversationId: 'c', turn: 12, characterId: 'x' }).id !== 'goodbye', 'the goodbye is offered once, on the 7th turn (Josh, 2026-11-12), not on every turn after it (Chuy)');
 check(setupText(GOODBYE).includes(readPromptFile(SCAFFOLDING_FILE).block('Setup: goodbye').trim()), 'the goodbye setup line comes from scaffolding.md');
-check(setupLine(CLOSE) === readPromptFile(SCAFFOLDING_FILE).block('Setup: close').trim(), 'Beginner\'s close is scaffolding.md\'s short goodbye, not dialogue.md\'s Close note (Josh, 2026-11-17)');
+check(setupLine(CLOSE) === readPromptFile('dialogue.md').block('Close').trim() && setupLine(GOODBYE).startsWith(readPromptFile('dialogue.md').block('Wind down').trim()), 'the Beginner wind-down and close are dialogue.md\'s, the same words as every level (Josh, 2026-11-17)');
+check(!/get back to/.test(readPromptFile('dialogue.md').block('Close')), 'the close no longer gives "I have to get back to…" as the reason to go (B31)');
 const noAsk = shownParts([{ kind: 'question', text: '¿De dónde es usted?', en: 'Where are you from?', gloss: '' }], RUNGS.find((r) => r.id === 'ask-en')!, CLUSTER_1);
 check(noAsk.some((x) => x.kind === 'english' && /ask me in English or/.test(x.text)), 'questions to ask with none given becomes an invitation to ask');
 // The four of 2026-11-09 evening
@@ -229,6 +231,10 @@ check(firstHeard === 'Pase, pase, come in, sit here. ' && lineHeard === 'Pase, p
 
 // Visits that end (2026-11-13, bugs.md B3): the goodbye on the 7th turn, the close from the 8th; Intermediate closes after the 10th reply (take-turn; Josh, 2026-11-17)
 check(CLOSE_AT === 8 && pickSetup({ conversationId: 'c', turn: CLOSE_AT, characterId: 'x' }).id === 'close' && pickSetup({ conversationId: 'c', turn: CLOSE_AT + 2, characterId: 'x' }).id === 'close', 'Beginner: goodbye offered on the 7th turn, the close from the 8th (Josh: "8 for begginer")');
+{
+  check(endingTurn(6, true) === null && endingTurn(7, true) === 'wind-down' && endingTurn(8, true) === 'close' && endingTurn(9, true) === 'close', 'Beginner: the wind-down after the 7th reply, the close from the 8th');
+  check(endingTurn(8, false) === null && endingTurn(9, false) === 'wind-down' && endingTurn(10, false) === 'close' && endingTurn(12, false) === 'close', 'Intermediate and Advanced: the wind-down after the 9th reply, the close from the 10th (Josh, 2026-11-17)');
+}
 check(CLOSE_AT_INTERMEDIATE === 10, 'Intermediate and Advanced: the character closes the visit after the 10th reply (Josh, 2026-11-17: "Change Intermediate to 10")');
 check(setupText(CLOSE).includes('goodbye') && CLOSE.maxAnswers === 0, 'the close says goodbye itself and offers no answers');
 // Notice is out of the draw (2026-11-16b, Josh: "do you like the kiosk"; it was once a visit since 2026-11-13)
