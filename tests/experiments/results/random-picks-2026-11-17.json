@@ -1,0 +1,126 @@
+{
+ "seed": 17,
+ "n": 8,
+ "eligibleCities": {
+  "it": 20,
+  "es-mx": 14
+ },
+ "picks": {
+  "it": [
+   {
+    "city": "roma-nuova",
+    "place": "farmacia-prati",
+    "person": "Dott.ssa Silvia Bruni",
+    "role": "farmacista",
+    "hereWords": 83
+   },
+   {
+    "city": "taormina",
+    "place": "ristorante-baronessa",
+    "person": "Stefano Barone",
+    "role": "chef",
+    "hereWords": 20
+   },
+   {
+    "city": "venezia",
+    "place": "ristorante-antiche-carampane",
+    "person": "Lorenzo Carampane",
+    "role": "chef e proprietario",
+    "hereWords": 69
+   },
+   {
+    "city": "bologna",
+    "place": "piazza-maggiore",
+    "person": "Franco Melodia",
+    "role": "musicista di strada",
+    "hereWords": 29
+   },
+   {
+    "city": "napoli",
+    "place": "presepi-san-gregorio",
+    "person": "Maestro Gennaro Capuano",
+    "role": "artigiano del presepe",
+    "hereWords": 27
+   },
+   {
+    "city": "torino",
+    "place": "bicerin-dal-1763",
+    "person": "Franca Cavallo",
+    "role": "proprietaria",
+    "hereWords": 72
+   },
+   {
+    "city": "lucca",
+    "place": "gastronomia-angeli",
+    "person": "Beatrice Angeli",
+    "role": "proprietaria",
+    "hereWords": 36
+   },
+   {
+    "city": "siracusa",
+    "place": "piazza-archimede",
+    "person": "Alberto Messina",
+    "role": "pensionato",
+    "hereWords": 34
+   }
+  ],
+  "es-mx": [
+   {
+    "city": "ciudad-de-mexico",
+    "place": "tacos-el-trompo-rojo",
+    "person": "Chema Rosales",
+    "role": "taquero",
+    "hereWords": 46
+   },
+   {
+    "city": "san-cristobal-de-las-casas",
+    "place": "templo-de-guadalupe-sancris",
+    "person": "Doña Chayo Molina",
+    "role": "vecina del barrio",
+    "hereWords": 78
+   },
+   {
+    "city": "guadalajara",
+    "place": "tacos-el-compa-nacho",
+    "person": "Nacho Robles",
+    "role": "taquero",
+    "hereWords": 37
+   },
+   {
+    "city": "guanajuato",
+    "place": "enchiladas-baratillo",
+    "person": "Doña Lupe Arredondo",
+    "role": "cocinera",
+    "hereWords": 84
+   },
+   {
+    "city": "veracruz",
+    "place": "gran-cafe-de-la-parroquia",
+    "person": "Don Arturo Lagunes",
+    "role": "mesero",
+    "hereWords": 84
+   },
+   {
+    "city": "monterrey",
+    "place": "horno-3-parque-fundidora",
+    "person": "Don Eleazar Cantú",
+    "role": "obrero jubilado",
+    "hereWords": 100
+   },
+   {
+    "city": "zacatecas",
+    "place": "gorditas-dona-cata",
+    "person": "Doña Cata Esquivel",
+    "role": "cocinera",
+    "hereWords": 91
+   },
+   {
+    "city": "tijuana",
+    "place": "taller-de-serigrafia-pasaje-rodriguez",
+    "person": "Emilio Carrillo Luna",
+    "role": "serigrafista",
+    "hereWords": 89
+   }
+  ]
+ }
+}

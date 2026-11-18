@@ -7,11 +7,7 @@
 //   COUNTRY=es-mx npx tsx --env-file=.env.local tests/experiments/rewrite-trial.mts --out=/tmp/trial/es-mx-a.json
 //   npx tsx tests/experiments/rewrite-trial.mts --compare /tmp/trial/es-mx-a.json /tmp/trial/es-mx-b.json
 import { readFileSync, writeFileSync } from 'fs';
-import { languageShare } from '@/lib/dialogue/share';
-
-type T = { setup?: string; line: string; en: string; raw?: string; answers: number; answerTexts?: string[]; done: boolean; error?: string };
-// step 0 is Intermediate (no Beginner step: character.md and dialogue.md as every Intermediate visit reads them)
-type Visit = { step: number; city: string; place: string; kind: 'leave' | 'long'; turns: T[]; culture?: string[] };
+import { summary, type T, type Visit } from './trial-measures.mjs';
 
 const args = process.argv.slice(2);
 if (args[0] === '--compare') compare(args[1], args[2]);
@@ -61,6 +57,9 @@ async function run() {
       { city: 'palermo', place: 'teatro-massimo' },
     ],
   };
+  // TRIAL_NO_HERE=1: the header only, no `here` line (arm B of the production-against-header trials, 2026-11-17).
+  // It is a switch, not a branch, so both arms run from one checkout
+  const NO_HERE = process.env.TRIAL_NO_HERE === '1';
   // TRIAL_SPOTS=city/place,city/place plays other people than the usual four (2026-11-17: bare `here` lines against
   // lines with a life in them, read side by side)
   const wanted = process.env.TRIAL_SPOTS
@@ -71,7 +70,17 @@ async function run() {
   const jobs: Visit[] = Array.from({ length: REPEAT }).flatMap(() => STEPS.flatMap((step) => spots.flatMap((s) => KINDS.map((kind) => ({ step, ...s, kind, turns: [] as T[] })))));
 
   async function play(v: Visit) {
-    const character = characterForVisit(v.city, v.place)!;
+    let character = characterForVisit(v.city, v.place)!;
+    if (NO_HERE) {
+      const city = cities.find((c) => c.id === v.city)!;
+      const person = city.characters?.find((c) => c.id === city.places.find((p) => p.id === v.place)?.characterId);
+      const setting = character.appearance?.setting ?? '';
+      const bare = person?.here ? setting.replace(`. ${person.here}`, '') : setting;
+      if (person?.here && bare === setting) throw new Error(`TRIAL_NO_HERE could not remove the here line for ${person.name}`);
+      character = { ...character, appearance: { ...character.appearance, setting: bare } } as typeof character;
+    }
+    v.person = character.name;
+    v.arm = NO_HERE ? 'header' : 'production';
     const transcript: { who: 'npc' | 'learner'; transcript: string; translation?: string }[] = [];
     let said: string | undefined;
     let raw = '';
@@ -107,43 +116,6 @@ async function run() {
   await query('DELETE FROM conversations WHERE learner_id = $1', [intermediateId]);
   await query('DELETE FROM learners WHERE id = ANY($1)', [[learnerId, intermediateId]]);
   console.log(`\n${jobs.length} visits → ${out}`);
-}
-
-function summary(vs: Visit[]) {
-  const words = (s: string) => s.trim().split(/\s+/).filter(Boolean).length;
-  const rows: Record<string, string> = {};
-  const label = (step: number) => (step === 0 ? 'intermediate' : `step ${step}`);
-  for (const step of [...new Set(vs.map((v) => v.step))]) {
-    const at = vs.filter((v) => v.step === step);
-    const shares = at.map((v) => languageShare(v.turns.filter((t) => t.line).map((t) => ({ line: t.line, en: t.en }))) ?? 0);
-    const mean = shares.reduce((a, b) => a + b, 0) / shares.length;
-    const sd = Math.sqrt(shares.reduce((a, b) => a + (b - mean) ** 2, 0) / shares.length);
-    rows[`${label(step)} · language share, mean (spread)`] = `${Math.round(mean)}% (±${Math.round(sd)}, ${Math.min(...shares)}–${Math.max(...shares)})`;
-    const ts = at.flatMap((v) => v.turns).filter((t) => t.line);
-    rows[`${label(step)} · words a turn`] = String(Math.round(ts.reduce((n, t) => n + words(t.line), 0) / ts.length));
-    rows[`${label(step)} · turns with 2+ questions (English)`] = `${ts.filter((t) => (t.en.match(/\?/g) ?? []).length > 1).length}/${ts.length}`;
-    const asks = ts.filter((t) => !['comment', 'close', 'goodbye'].includes(t.setup ?? ''));
-    rows[`${label(step)} · question last (turns meant to ask)`] = `${asks.filter((t) => /\?["'»”)]*\s*$/.test(t.en.trim())).length}/${asks.length}`;
-    // Each answer a reply and then something that keeps the talk going: two sentences (Josh's bubble rule, 2026-11-16)
-    const answers = ts.flatMap((t) => t.answerTexts ?? []);
-    if (answers.length) rows[`${label(step)} · answers in two parts`] = `${answers.filter((a) => (a.match(/[.!?…]+(\s|$)/g) ?? []).length >= 2).length}/${answers.length}`;
-  }
-  const leave = vs.filter((v) => v.kind === 'leave');
-  rows['endings · goodbye ends the visit at once'] = `${leave.filter((v) => v.turns.length === 5 && v.turns[4].done).length}/${leave.length}`;
-  rows['endings · the goodbye back asks nothing'] = `${leave.filter((v) => v.turns[4] && !/\?/.test(v.turns[4].en)).length}/${leave.length}`;
-  const long = vs.filter((v) => v.kind === 'long');
-  // The close is the 9th character turn (the learner's 8th), as designed; counted off by one before 2026-11-16
-  rows['endings · long visit closes by the learner\'s 8th turn'] = `${long.filter((v) => v.turns.some((t, i) => t.done && i <= 8)).length}/${long.length} (turns: ${long.map((v) => v.turns.length).join(' ')})`;
-  const all = vs.flatMap((v) => v.turns);
-  rows['plumbing · turns that failed'] = `${all.filter((t) => t.error).length}/${all.length}`;
-  const written = all.filter((t) => t.raw);
-  const outside = (raw: string) => raw.replace(/^[\s\S]*?"line"\s*:\s*"/, '').replace(/"\s*,\s*"en"[\s\S]*$/, '').replace(/\{[^{}]*\}/g, '').replace(/[\s.,!?…\\n]/g, '');
-  rows['plumbing · format kept (all in braces)'] = `${written.filter((t) => /\{[^{}]*\|[^{}]*\}/.test(t.raw!) && !outside(t.raw!)).length}/${written.length}`;
-  const wantAnswers = all.filter((t) => !t.error && !['close', 'free'].includes(t.setup ?? '') && !t.done);
-  rows['plumbing · two answers where the turn offers them'] = `${wantAnswers.filter((t) => t.answers === 2).length}/${wantAnswers.length}`;
-  const cult = long.filter((v) => v.culture);
-  rows['culture · things taught a long visit (judge)'] = cult.length ? (cult.reduce((n, v) => n + v.culture!.length, 0) / cult.length).toFixed(1) : 'n/a';
-  return rows;
 }
 
 function compare(a: string, b: string) {
