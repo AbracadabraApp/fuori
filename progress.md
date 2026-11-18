@@ -1,5 +1,16 @@
 # Fuori Development Progress
 
+## 2026-11-17 (cloud), night: the whole of San Miguel, today's lines against one sentence each: for the mini
+
+- **The question:** are simple, direct lines as good as today's longer ones, and what does a learner who visits all of San Miguel hear from each? (Josh: "crafted longer lines are rarely better than the simpler direct ones"; "dialogue quality is less problem than repetition".)
+- **Design, after Josh's corrections** ("i don't think you are maximizing information here"; "why 3 and not 2"; "I dont feel great that i have to help design the test"): the whole city, all 13 people, one visit each, two arms at the ends. The cloud session's first design played six people twice, two of them with unchanged lines, and left five changed people unplayed.
+- **Arm A:** main, today's lines. **Arm B:** branch `san-miguel-one-sentence`, each line one sentence, job and place only ("You tend the bar at La Cucaracha, a cantina in the Centro."). Not for main.
+- **For the mini**, 13 visits an arm, 26 in all:
+  From main: `COUNTRY=es-mx TRIAL_SPOTS=san-miguel-de-allende/mercado-ignacio-ramirez,san-miguel-de-allende/jardin-allende,san-miguel-de-allende/parroquia-san-miguel-arcangel,san-miguel-de-allende/la-cucaracha,san-miguel-de-allende/cafe-de-la-calzada,san-miguel-de-allende/fabrica-la-aurora,san-miguel-de-allende/miscelanea-los-arcos,san-miguel-de-allende/fonda-la-palmita,san-miguel-de-allende/tacos-el-pastor-atascadero,san-miguel-de-allende/parque-juarez,san-miguel-de-allende/casa-del-tumbagon,san-miguel-de-allende/casa-de-allende,san-miguel-de-allende/el-mirador-san-miguel TRIAL_STEPS=4 TRIAL_KINDS=long TRIAL_REPEAT=1 npx tsx --env-file=.env.local tests/experiments/rewrite-trial.mts --out=tests/experiments/results/san-miguel-city-a-2026-11-17.json`
+  From a worktree of `san-miguel-one-sentence`: the same, `--out=…/san-miguel-city-b-2026-11-17.json`. Commit both to main by path, push, and say here it's done.
+- **Read for (cloud):** by code, how many of the 13 say Allende, UNESCO, Zeferino Gutiérrez, the Alborada and the Parroquia in each arm. By reading: what each person talks about with one sentence; whether the two retired men give the same visit; where one sentence is too little (Rocío's sweet).
+- **Branches:** `here-san-miguel-trial` (six crafted lines) deleted: its run showed the invented lives recited every visit and nothing better. `san-miguel-trim` (repeated facts cut to one owner each) kept, not run, in case one sentence proves too little. Main's San Miguel lines are unchanged.
+
 ## 2026-11-17 (cloud), night: San Miguel's two arms read; Josh's three hypotheses
 
 - **Read:** `san-miguel-here-a-2026-11-17.json` (main) and `-b-` (branch `here-san-miguel-trial`), 12 visits each, six people twice at step 4.
