@@ -1,0 +1,499 @@
+[
+ {
+  "step": 4,
+  "city": "roma-nuova",
+  "place": "piazza-navona",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Buongiorno! Dipingo Piazza Navona con l'acquerello. Good morning! I'm painting Piazza Navona in watercolor. Oggi la luce di novembre è bellissima. Le piace questo quadro? Do you like this painting?",
+    "en": "Good morning! I'm painting Piazza Navona in watercolor. Today the November light is beautiful. Do you like this painting?",
+    "raw": "{\"line\":\"{*Buongiorno*! Dipingo *Piazza Navona* con l'acquerello. | *Good morning*! I'm painting *Piazza Navona* in watercolor.} {Oggi *la luce* di novembre è bellissima. | Today the November *light* is beautiful.} {Le piace *questo quadro*? | Do you like *this painting*?}\",\"en\":\"Good morning! I'm painting Piazza Navona in watercolor. Today the November light is beautiful. Do you like this painting?\",\"answers\":[{\"text\":\"Sì, mi piace molto. I colori sono belli.\",\"en\":\"Yes, I like it a lot. The colors are beautiful.\"},{\"text\":\"Dipinge qui ogni giorno?\",\"en\":\"Do you paint here every day?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sì, mi piace molto. I colori sono belli.",
+     "Dipinge qui ogni giorno?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Grazie mille! Uso i colori caldi per i palazzi di Roma. Qual è il suo colore preferito? What is your favorite color?",
+    "en": "Thank you very much! I use warm colors for the buildings of Rome. What is your favorite color?",
+    "raw": "{\"line\":\"{*Grazie mille*! | *Thank you very much*!} {Uso *i colori caldi* per i palazzi di Roma. | I use *warm colors* for the buildings of Rome.} {Qual è *il suo colore preferito*? | What is *your favorite color*?}\",\"en\":\"Thank you very much! I use warm colors for the buildings of Rome. What is your favorite color?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Ah, va bene! Ah, all right! Qui in piazza dipingo ogni mattina, con il fresco di novembre. Vuole vedere la fontana nel mio quadro? Do you want to see the fountain in my painting?",
+    "en": "Ah, all right! Here in the piazza I paint every morning, in the cool of November. Do you want to see the fountain in my painting?",
+    "raw": "{\"line\":\"{Ah, *va bene*! | Ah, *all right*!} {Qui in piazza dipingo *ogni mattina*, con il fresco di novembre. | Here in the piazza I paint *every morning*, in the cool of November.} {Vuole vedere *la fontana* nel mio quadro? | Do you want to see *the fountain* in my painting?}\",\"en\":\"Ah, all right! Here in the piazza I paint every morning, in the cool of November. Do you want to see the fountain in my painting?\",\"answers\":[{\"text\":\"Sì, voglio vedere la fontana. Che bella piazza!\",\"en\":\"Yes, I want to see the fountain. What a beautiful piazza!\"},{\"text\":\"Il mio colore preferito è il blu. E il suo?\",\"en\":\"My favorite color is blue. And yours?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sì, voglio vedere la fontana. Che bella piazza!",
+     "Il mio colore preferito è il blu. E il suo?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Ecco, la fontana dei Quattro Fiumi, nel mio quadro. È l'opera del Bernini, e a me piace tanto. Ogni mattina la luce sull'acqua è diversa. Every morning the light on the water is different.",
+    "en": "Here, the fountain of the Four Rivers, in my painting. It is Bernini's work, and I like it very much. Every morning the light on the water is different.",
+    "raw": "{\"line\":\"{Ecco, *la fontana* dei Quattro Fiumi, nel mio quadro. | Here, *the fountain* of the Four Rivers, in my painting.} {È l'opera del Bernini, e a me piace tanto. | It is Bernini's work, and I like it very much.} {Ogni mattina *la luce* sull'acqua è diversa. | Every morning *the light* on the water is different.}\",\"en\":\"Here, the fountain of the Four Rivers, in my painting. It is Bernini's work, and I like it very much. Every morning the light on the water is different.\",\"answers\":[{\"text\":\"Sì, è molto bella. Il Bernini è un grande artista.\",\"en\":\"Yes, it is very beautiful. Bernini is a great artist.\"},{\"text\":\"Che cosa significa \\\"la luce\\\"? Può ripetere, più lentamente?\",\"en\":\"What does \\\"la luce\\\" mean? Can you repeat it more slowly?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sì, è molto bella. Il Bernini è un grande artista.",
+     "Che cosa significa \"la luce\"? Può ripetere, più lentamente?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Verissimo, Bernini è un maestro! Qui in piazza ci sono molti pittori ogni giorno. Here in the piazza there are many painters every day. Le piace dipingere anche a lei? Do you like painting too?",
+    "en": "Very true, Bernini is a master! Here in the piazza there are many painters every day. Do you like painting too?",
+    "raw": "{\"line\":\"{*Verissimo*, Bernini è un maestro! | *Very true*, Bernini is a master!} {Qui in piazza ci sono *molti pittori* ogni giorno. | Here in the piazza there are *many painters* every day.} {Le piace *dipingere* anche a lei? | Do you like *painting* too?}\",\"en\":\"Very true, Bernini is a master! Here in the piazza there are many painters every day. Do you like painting too?\",\"answers\":[{\"text\":\"Sì, mi piace dipingere. Dipingo i paesaggi.\",\"en\":\"Yes, I like painting. I paint landscapes.\"},{\"text\":\"No, non dipingo. Che cosa vuol dire \\\"paesaggio\\\"?\",\"en\":\"No, I don't paint. What does \\\"paesaggio\\\" mean?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sì, mi piace dipingere. Dipingo i paesaggi.",
+     "No, non dipingo. Che cosa vuol dire \"paesaggio\"?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "ask-en",
+    "line": "I paesaggi, che bello! Landscapes, how nice! Io dipingo a mano libera, senza disegno prima. Poi, quando il quadro è asciutto, lo vendo ai turisti qui in piazza. Then, when the painting is dry, I sell it to tourists here in the piazza.",
+    "en": "Landscapes, how nice! I paint freehand, with no drawing first. Then, when the painting is dry, I sell it to tourists here in the piazza.",
+    "raw": "{\"line\":\"{*I paesaggi*, che bello! | *Landscapes*, how nice!} {Io dipingo *a mano libera*, senza disegno prima. | I paint *freehand*, with no drawing first.} {Poi, quando *il quadro* è asciutto, lo vendo ai turisti qui in piazza. | Then, when *the painting* is dry, I sell it to tourists here in the piazza.}\",\"en\":\"Landscapes, how nice! I paint freehand, with no drawing first. Then, when the painting is dry, I sell it to tourists here in the piazza.\",\"answers\":[{\"text\":\"Quanto tempo ci vuole per un quadro? Mi piace guardare.\",\"en\":\"How long does a painting take? I like watching.\"},{\"text\":\"Posso vedere gli altri quadri? Sono molto belli.\",\"en\":\"Can I see the other paintings? They are very beautiful.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Quanto tempo ci vuole per un quadro? Mi piace guardare.",
+     "Posso vedere gli altri quadri? Sono molto belli."
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Per un quadro piccolo ci vuole circa un'ora. Con l'acquerello bisogna aspettare, perché la carta deve asciugare. Vuole guardare mentre dipingo un angolo della piazza? Do you want to watch while I paint a corner of the piazza?",
+    "en": "For a small painting it takes about an hour. With watercolor you have to wait, because the paper has to dry. Do you want to watch while I paint a corner of the piazza?",
+    "raw": "{\"line\":\"{Per un quadro piccolo ci vuole *circa un'ora*. | For a small painting it takes *about an hour*.} {Con l'acquerello bisogna aspettare, perché *la carta* deve asciugare. | With watercolor you have to wait, because *the paper* has to dry.} {Vuole guardare mentre dipingo *un angolo della piazza*? | Do you want to watch while I paint *a corner of the piazza*?}\",\"en\":\"For a small painting it takes about an hour. With watercolor you have to wait, because the paper has to dry. Do you want to watch while I paint a corner of the piazza?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Perfetto, allora prendo il pennello! Sono qui ogni mattina, torni domani con la luce, è la migliore. Così le dipingo un angolo con la fontana. Then I'll paint you a corner with the fountain.",
+    "en": "Perfect, then I'll pick up my brush! I'm here every morning, come back tomorrow in the light, it's the best. Then I'll paint you a corner with the fountain.",
+    "raw": "{\"line\":\"{*Perfetto*, allora prendo il pennello! | *Perfect*, then I'll pick up my brush!} {Sono qui ogni mattina, torni *domani con la luce*, è la migliore. | I'm here every morning, come back *tomorrow in the light*, it's the best.} {Così le dipingo *un angolo con la fontana*. | Then I'll paint you *a corner with the fountain*.}\",\"en\":\"Perfect, then I'll pick up my brush! I'm here every morning, come back tomorrow in the light, it's the best. Then I'll paint you a corner with the fountain.\",\"answers\":[{\"text\":\"Grazie, torno domani! Arrivederci, Tommaso.\",\"en\":\"Thank you, I'll come back tomorrow! Goodbye, Tommaso.\"},{\"text\":\"Che bella idea! A domani e buon lavoro.\",\"en\":\"What a nice idea! See you tomorrow and enjoy your work.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Grazie, torno domani! Arrivederci, Tommaso.",
+     "Che bella idea! A domani e buon lavoro."
+    ],
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "Arrivederci, a domani! Buona giornata!",
+    "en": "Goodbye, see you tomorrow! Have a nice day!",
+    "raw": "{\"line\":\"Arrivederci, a domani! Buona giornata!\",\"en\":\"Goodbye, see you tomorrow! Have a nice day!\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": true
+   }
+  ],
+  "culture": [
+   "Piazza Navona is a famous piazza in Rome where painters work and sell paintings to tourists",
+   "Fountain of the Four Rivers (Fontana dei Quattro Fiumi) in Piazza Navona is a work by Bernini",
+   "Bernini is celebrated as a master artist of Rome",
+   "Many painters gather daily in Rome's piazzas to paint and sell watercolors to tourists",
+   "Roman buildings are often painted in warm colors",
+   "Greeting: Buongiorno = good morning",
+   "Arrivederci = goodbye",
+   "A domani = see you tomorrow",
+   "Buona giornata = have a nice day",
+   "Grazie mille = thanks a lot (a thousand thanks)",
+   "Va bene = all right",
+   "Formal address in Italian uses 'lei' (e.g., Le piace...? Vuole...?)",
+   "Le piace questo quadro? = Do you like this painting?",
+   "Qual è il suo colore preferito? = What is your favorite color?",
+   "Quadro = painting; acquerello = watercolor; pennello = paintbrush; fontana = fountain; piazza = square",
+   "Words: luce = light, carta = paper, palazzi = buildings, mattina = morning, paesaggi = landscapes",
+   "November in Rome is cool (fresco) with beautiful light",
+   "Verissimo = very true, absolutely"
+  ]
+ },
+ {
+  "step": 4,
+  "city": "bologna",
+  "place": "sorbetteria-castiglione",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Buongiorno! Benvenuti alla Sorbetteria Castiglione. Sto preparando il gelato alla nocciola, è il mio preferito. Le piace la nocciola? Do you like hazelnut?",
+    "en": "Good morning! Welcome to Sorbetteria Castiglione. I'm making hazelnut gelato right now, it's my favorite. Do you like hazelnut?",
+    "raw": "{\"line\":\"{Buongiorno! *Benvenuti* alla Sorbetteria Castiglione. | Good morning! *Welcome* to Sorbetteria Castiglione.} {Sto preparando *il gelato alla nocciola*, è il mio preferito. | I'm making *hazelnut gelato* right now, it's my favorite.} {Le piace *la nocciola*? | Do you like *hazelnut*?}\",\"en\":\"Good morning! Welcome to Sorbetteria Castiglione. I'm making hazelnut gelato right now, it's my favorite. Do you like hazelnut?\",\"answers\":[{\"text\":\"Sì, mi piace molto. Che profumo!\",\"en\":\"Yes, I like it a lot. What a smell!\"},{\"text\":\"Che cosa significa \\\"nocciola\\\"?\",\"en\":\"What does \\\"nocciola\\\" mean?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sì, mi piace molto. Che profumo!",
+     "Che cosa significa \"nocciola\"?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Grazie, che bello sentirlo! La nocciola la tostiamo qui ogni mattina, per questo profuma così. We toast the hazelnuts here every morning, that's why it smells like this. Il profumo è la mia pubblicità migliore, in questa via. The smell is my best advertising on this street.",
+    "en": "Thank you, how nice to hear that! We toast the hazelnuts here every morning, that's why it smells like this. The smell is my best advertising on this street.",
+    "raw": "{\"line\":\"{*Grazie*, che bello sentirlo! | *Thank you*, how nice to hear that!} {La nocciola la tostiamo qui ogni mattina, per questo profuma così. | We toast the hazelnuts here every morning, that's why it smells like this.} {*Il profumo* è la mia pubblicità migliore, in questa via. | *The smell* is my best advertising on this street.}\",\"en\":\"Thank you, how nice to hear that! We toast the hazelnuts here every morning, that's why it smells like this. The smell is my best advertising on this street.\",\"answers\":[{\"text\":\"Davvero! Funziona bene con me.\",\"en\":\"Really! It works well on me.\"},{\"text\":\"Che bello! Posso assaggiare la nocciola?\",\"en\":\"How lovely! Can I taste the hazelnut?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Davvero! Funziona bene con me.",
+     "Che bello! Posso assaggiare la nocciola?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Ah, funziona sempre! Dopo il profumo, la gente entra e non resiste. Qui a Santo Stefano, la nocciola è la regina d'autunno. Here in Santo Stefano, hazelnut is the queen of autumn.",
+    "en": "Ah, it always works! After the smell, people come in and can't resist. Here in Santo Stefano, hazelnut is the queen of autumn.",
+    "raw": "{\"line\":\"{Ah, *funziona sempre*! | Ah, *it always works*!} {Dopo il profumo, la gente entra e non resiste. | After the smell, people come in and can't resist.} {Qui a Santo Stefano, *la nocciola* è la regina d'autunno. | Here in Santo Stefano, *hazelnut* is the queen of autumn.}\",\"en\":\"Ah, it always works! After the smell, people come in and can't resist. Here in Santo Stefano, hazelnut is the queen of autumn.\",\"answers\":[{\"text\":\"Capisco, non resisto neanch'io!\",\"en\":\"I understand, I can't resist either!\"},{\"text\":\"Perché la nocciola è la regina d'autunno?\",\"en\":\"Why is hazelnut the queen of autumn?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Capisco, non resisto neanch'io!",
+     "Perché la nocciola è la regina d'autunno?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "ask-en",
+    "line": "Ah, allora siamo d'accordo! Ah, then we agree! La nostra nocciola arriva dal Piemonte, e la tostiamo piano, ogni mattina. Il segreto è il tempo: senza fretta, il gelato viene più buono. The secret is time: without hurry, the gelato comes out better.",
+    "en": "Ah, then we agree! Our hazelnuts come from Piedmont, and we toast them slowly, every morning. The secret is time: without hurry, the gelato comes out better.",
+    "raw": "{\"line\":\"{Ah, allora *siamo d'accordo*! | Ah, then *we agree*!} {La nostra nocciola arriva dal Piemonte, e la tostiamo piano, *ogni mattina*. | Our hazelnuts come from Piedmont, and we toast them slowly, *every morning*.} {Il segreto è il tempo: *senza fretta*, il gelato viene più buono. | The secret is time: *without hurry*, the gelato comes out better.}\",\"en\":\"Ah, then we agree! Our hazelnuts come from Piedmont, and we toast them slowly, every morning. The secret is time: without hurry, the gelato comes out better.\",\"answers\":[{\"text\":\"Davvero? Quanto tempo ci vuole?\",\"en\":\"Really? How long does it take?\"},{\"text\":\"E lei, che gusto preferisce d'inverno?\",\"en\":\"And you, what flavor do you prefer in winter?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Davvero? Quanto tempo ci vuole?",
+     "E lei, che gusto preferisce d'inverno?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Ci vuole quasi una giornata intera. La nocciola si tosta la mattina, poi riposa, e la sera il gelato è pronto. The hazelnut is toasted in the morning, then it rests, and in the evening the gelato is ready. Vuole assaggiare un cucchiaino? Would you like to taste a little spoonful?",
+    "en": "It takes almost a whole day. The hazelnut is toasted in the morning, then it rests, and in the evening the gelato is ready. Would you like to taste a little spoonful?",
+    "raw": "{\"line\":\"{Ci vuole *quasi una giornata intera*. | It takes *almost a whole day*.} {La nocciola si tosta la mattina, poi riposa, e la sera il gelato è pronto. | The hazelnut is toasted in the morning, then it rests, and in the evening the gelato is ready.} {Vuole assaggiare *un cucchiaino*? | Would you like to taste *a little spoonful*?}\",\"en\":\"It takes almost a whole day. The hazelnut is toasted in the morning, then it rests, and in the evening the gelato is ready. Would you like to taste a little spoonful?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Ecco il cucchiaino, assaggi pure! È la nocciola di stamattina, ancora tiepida di tostatura. It's this morning's hazelnut, still warm from the toasting. Le piace anche il cioccolato, o preferisce i gusti di frutta? Do you also like chocolate, or do you prefer fruit flavors?",
+    "en": "Here is the spoon, go ahead and taste! It's this morning's hazelnut, still warm from the toasting. Do you also like chocolate, or do you prefer fruit flavors?",
+    "raw": "{\"line\":\"{*Ecco* il cucchiaino, assaggi pure! | Here is the spoon, *go ahead and taste*!} {È la nocciola di stamattina, ancora tiepida di tostatura. | It's this morning's hazelnut, still warm from the toasting.} {Le piace anche il *cioccolato*, o preferisce i gusti di frutta? | Do you also like *chocolate*, or do you prefer fruit flavors?}\",\"en\":\"Here is the spoon, go ahead and taste! It's this morning's hazelnut, still warm from the toasting. Do you also like chocolate, or do you prefer fruit flavors?\",\"answers\":[{\"text\":\"Buonissima! Mi piace anche il cioccolato.\",\"en\":\"Delicious! I like chocolate too.\"},{\"text\":\"Cosa vuol dire \\\"tiepida\\\"?\",\"en\":\"What does \\\"tiepida\\\" (lukewarm) mean?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Buonissima! Mi piace anche il cioccolato.",
+     "Cosa vuol dire \"tiepida\"?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Che bello, sono contenta! Allora il cioccolato fondente è perfetto per lei: è fatto con cacao amaro, intenso. It's made with bitter cacao, intense. Oggi lo preparo con l'arancia, un abbinamento classico da noi. Vuole provare anche quello? Do you want to try that one too?",
+    "en": "How nice, I'm glad! Then the dark chocolate is perfect for you: it's made with bitter cacao, intense. Today I'm making it with orange, a classic pairing here. Do you want to try that one too?",
+    "raw": "{\"line\":\"Che bello, sono contenta! Allora il cioccolato fondente è perfetto per lei: è fatto con cacao amaro, intenso. It's made with bitter cacao, intense. Oggi lo preparo con l'arancia, un abbinamento classico da noi. Vuole provare anche quello? Do you want to try that one too?\",\"en\":\"How nice, I'm glad! Then the dark chocolate is perfect for you: it's made with bitter cacao, intense. Today I'm making it with orange, a classic pairing here. Do you want to try that one too?\",\"answers\":[{\"text\":\"Sì, grazie! Mi piace l'arancia.\",\"en\":\"Yes, thank you! I like orange.\"},{\"text\":\"Che cosa significa \\\"abbinamento\\\"?\",\"en\":\"What does \\\"abbinamento\\\" (pairing) mean?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sì, grazie! Mi piace l'arancia.",
+     "Che cosa significa \"abbinamento\"?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Ecco il cioccolato all'arancia, assaggi pure! Here is the chocolate with orange, go ahead and taste! Mi ha fatto piacere parlare con lei. Torni a trovarci venerdì: faccio il gelato al marrone, la castagna d'autunno! Come back and see us on Friday: I'm making the chestnut gelato, the autumn chestnut!",
+    "en": "Here is the chocolate with orange, go ahead and taste! It was a pleasure talking with you. Come back and see us on Friday: I'm making the chestnut gelato, the autumn chestnut!",
+    "raw": "{\"line\":\"{Ecco il cioccolato all'arancia, *assaggi pure*! | Here is the chocolate with orange, *go ahead and taste*!} {Mi ha fatto piacere parlare con lei. | It was a pleasure talking with you.} {*Torni a trovarci* venerdì: faccio il gelato al marrone, la castagna d'autunno! | *Come back and see us* on Friday: I'm making the chestnut gelato, the autumn chestnut!}\",\"en\":\"Here is the chocolate with orange, go ahead and taste! It was a pleasure talking with you. Come back and see us on Friday: I'm making the chestnut gelato, the autumn chestnut!\",\"answers\":[{\"text\":\"Grazie mille, a venerdì! Arrivederci!\",\"en\":\"Thank you so much, see you Friday! Goodbye!\"},{\"text\":\"Volentieri, grazie di tutto. Buona giornata!\",\"en\":\"Gladly, thanks for everything. Have a good day!\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Grazie mille, a venerdì! Arrivederci!",
+     "Volentieri, grazie di tutto. Buona giornata!"
+    ],
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "A venerdì, allora! Buona giornata e arrivederci! See you Friday, then! Have a nice day and goodbye!",
+    "en": "See you Friday, then! Have a nice day and goodbye!",
+    "raw": "{\"line\":\"A venerdì, allora! Buona giornata e arrivederci! See you Friday, then! Have a nice day and goodbye!\",\"en\":\"See you Friday, then! Have a nice day and goodbye!\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": true
+   }
+  ],
+  "culture": [
+   "Gelato shops (sorbetterie/gelaterie) make gelato fresh on site, often daily",
+   "Nocciola (hazelnut) is a classic Italian gelato flavor",
+   "Hazelnuts are toasted fresh each morning for flavor and aroma",
+   "Piedmont (Piemonte) is famous for its high-quality hazelnuts",
+   "Hazelnut is considered the queen of autumn flavors in Santo Stefano",
+   "Good gelato takes time and patience; the secret is not hurrying",
+   "Santo Stefano is a place/neighborhood where this shop is located",
+   "Cioccolato fondente (dark chocolate) is made with intense bitter cacao",
+   "Chocolate with orange is a classic Italian pairing",
+   "Marrone/castagna (chestnut) is an autumn flavor",
+   "Italian shopkeepers offer a free taste (assaggio) on a little spoon",
+   "Italian greetings and farewells: Buongiorno, Benvenuti, Arrivederci, A venerdì, Buona giornata",
+   "Gelato flavors vary by season (chestnut in autumn)",
+   "Italian vocabulary: gusti (flavors), assaggiare (to taste), profumo (aroma/scent), tostare (to toast)"
+  ]
+ },
+ {
+  "step": 4,
+  "city": "roma-nuova",
+  "place": "piazza-navona",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Buongiorno! Io dipingo qui, in piazza, da tanti anni. Good morning! I paint here, in the square, for many years. Oggi dipingo la fontana dei Quattro Fiumi. Le piace il mio quadro? Do you like my painting?",
+    "en": "Good morning! I paint here, in the square, for many years. Today I'm painting the fountain of the Four Rivers. Do you like my painting?",
+    "raw": "{\"line\":\"{Buongiorno! Io *dipingo* qui, in piazza, da tanti anni. | Good morning! I *paint* here, in the square, for many years.} {Oggi dipingo *la fontana* dei Quattro Fiumi. | Today I'm painting *the fountain* of the Four Rivers.} {Le piace *il mio quadro*? | Do you like *my painting*?}\",\"en\":\"Good morning! I paint here in the square, for many years. Today I'm painting the fountain of the Four Rivers. Do you like my painting?\",\"answers\":[{\"text\":\"Sì, è molto bello. I colori sono bellissimi.\",\"en\":\"Yes, it's very beautiful. The colors are gorgeous.\"},{\"text\":\"Dipinge ogni giorno? Che cosa dipinge di solito?\",\"en\":\"Do you paint every day? What do you usually paint?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sì, è molto bello. I colori sono bellissimi.",
+     "Dipinge ogni giorno? Che cosa dipinge di solito?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Grazie mille! Sono contento. Thank you very much! I'm glad. Novembre ha una luce dorata, perfetta per i colori. Le piace dipingere o disegnare anche a lei? Do you like to paint or draw too?",
+    "en": "Thank you very much! I'm glad. November has a golden light, perfect for colors. Do you like to paint or draw too?",
+    "raw": "{\"line\":\"{*Grazie mille*! Sono contento. | *Thank you very much*! I'm glad.} {Novembre ha una luce *dorata*, perfetta per i colori. | November has a *golden* light, perfect for colors.} {Le piace dipingere o disegnare anche a lei? | Do you like to paint or draw too?}\",\"en\":\"Thank you very much! I'm glad. November has a golden light, perfect for colors. Do you like to paint or draw too?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Che bello! Allora capisce la fatica di un quadro. Qui in piazza i turisti guardano sempre la fontana. Lei dipinge paesaggi o ritratti? Do you paint landscapes or portraits?",
+    "en": "How nice! Then you understand the effort of a painting. Here in the square the tourists always look at the fountain. Do you paint landscapes or portraits?",
+    "raw": "{\"line\":\"{*Che bello*! Allora capisce la fatica di un quadro. | *How nice*! Then you understand the effort of a painting.} {Qui in piazza *i turisti* guardano sempre la fontana. | Here in the square *the tourists* always look at the fountain.} {Lei *dipinge* paesaggi o ritratti? | Do you paint landscapes or portraits?}\",\"en\":\"How nice! Then you understand the effort of a painting. Here in the square the tourists always look at the fountain. Do you paint landscapes or portraits?\",\"answers\":[{\"text\":\"Dipingo paesaggi. Mi piace la natura.\",\"en\":\"I paint landscapes. I like nature.\"},{\"text\":\"Questa piazza è bellissima. Dipinge qui ogni giorno?\",\"en\":\"This square is beautiful. Do you paint here every day?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Dipingo paesaggi. Mi piace la natura.",
+     "Questa piazza è bellissima. Dipinge qui ogni giorno?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "I paesaggi sono bellissimi! Anch'io amo la natura, ma qui a Roma dipingo le piazze e le fontane. I love nature too, but here in Rome I paint the squares and the fountains. Piazza Navona è la mia musa, ogni giorno ha una luce diversa. Piazza Navona is my muse, every day it has a different light.",
+    "en": "Landscapes are beautiful! I love nature too, but here in Rome I paint the squares and the fountains. Piazza Navona is my muse, every day it has a different light.",
+    "raw": "{\"line\":\"{*I paesaggi* sono bellissimi! | *Landscapes* are beautiful!} {Anch'io amo la natura, ma qui a Roma dipingo *le piazze* e le fontane. | I love nature too, but here in Rome I paint *the squares* and the fountains.} {Piazza Navona è la mia musa, ogni giorno ha una luce diversa. | Piazza Navona is my muse, every day it has a different light.}\",\"en\":\"Landscapes are beautiful! I love nature too, but here in Rome I paint the squares and the fountains. Piazza Navona is my muse, every day it has a different light.\",\"answers\":[{\"text\":\"La luce di Roma è speciale. Mi piace molto.\",\"en\":\"The light of Rome is special. I like it a lot.\"},{\"text\":\"Quale colore usa di più? Mi piace il giallo.\",\"en\":\"Which color do you use the most? I like yellow.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "La luce di Roma è speciale. Mi piace molto.",
+     "Quale colore usa di più? Mi piace il giallo."
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Vero, la luce di Roma è unica, soprattutto al tramonto. True, the light of Rome is unique, especially at sunset. I pittori di strada stanno in questa piazza da secoli. Vuole vedere gli altri miei quadri? Do you want to see my other paintings?",
+    "en": "True, the light of Rome is unique, especially at sunset. Street painters have been in this square for centuries. Do you want to see my other paintings?",
+    "raw": "{\"line\":\"{Vero, *la luce di Roma* è unica, soprattutto al tramonto. | True, *the light of Rome* is unique, especially at sunset.} {I pittori di strada stanno in questa piazza da secoli. | Street painters have been in this square for centuries.} {Vuole vedere gli altri miei quadri? | Do you want to see my other paintings?}\",\"en\":\"True, the light of Rome is unique, especially at sunset. Street painters have been in this square for centuries. Do you want to see my other paintings?\",\"answers\":[{\"text\":\"Sì, volentieri. Mi piacciono molto le fontane.\",\"en\":\"Yes, gladly. I like the fountains very much.\"},{\"text\":\"Cosa significa «tramonto»? Può ripetere più lentamente?\",\"en\":\"What does \\\"tramonto\\\" (sunset) mean? Can you repeat more slowly?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sì, volentieri. Mi piacciono molto le fontane.",
+     "Cosa significa «tramonto»? Può ripetere più lentamente?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "ask-en",
+    "line": "Ecco, guardi qui! Here you go, look here! Questa è la fontana di Trevi, e questa è il Moro, qui vicino. A Piazza Navona ci sono tre fontane, e i romani le amano tutte. In Piazza Navona there are three fountains, and Romans love them all.",
+    "en": "Here you go, look here! This is the Trevi Fountain, and this is the Moro, right nearby. In Piazza Navona there are three fountains, and Romans love them all.",
+    "raw": "{\"line\":\"{*Ecco*, guardi qui! | Here you go, look here!} {Questa è *la fontana di Trevi*, e questa è *il Moro*, qui vicino. | This is *the Trevi Fountain*, and this is *the Moro*, right nearby.} {A Piazza Navona ci sono *tre fontane*, e i romani le amano tutte. | In Piazza Navona there are *three fountains*, and Romans love them all.}\",\"en\":\"Here you go, look here! This is the Trevi Fountain, and this is the Moro, right nearby. In Piazza Navona there are three fountains, and Romans love them all.\",\"answers\":[{\"text\":\"Qual è la sua fontana preferita? Perché?\",\"en\":\"Which is your favorite fountain? Why?\"},{\"text\":\"Quanto tempo ci vuole per fare un quadro?\",\"en\":\"How long does it take to make a painting?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Qual è la sua fontana preferita? Perché?",
+     "Quanto tempo ci vuole per fare un quadro?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "La mia preferita è la fontana del Moro. Mi piace perché è meno famosa, ma ha un'anima potente. E a lei, quale fontana piace di più? And you, which fountain do you like most?",
+    "en": "My favorite is the Fountain of the Moor. I like it because it is less famous, but it has a powerful soul. And you, which fountain do you like most?",
+    "raw": "{\"line\":\"{La mia preferita è *la fontana del Moro*. | My favorite is *the Fountain of the Moor*.} {Mi piace perché è meno famosa, ma ha un'anima potente. | I like it because it is less famous, but it has a powerful soul.} {E a lei, *quale fontana* piace di più? | And you, *which fountain* do you like most?}\",\"en\":\"My favorite is the Fountain of the Moor. I like it because it is less famous, but it has a powerful soul. And you, which fountain do you like most?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Ah, si diverte con le fontane, vedo! Venga a trovarmi domani pomeriggio: dipingo la fontana del Moro al tramonto. Come see me tomorrow afternoon: I'm painting the Fountain of the Moor at sunset. Le faccio vedere i colori giusti! I'll show you the right colors!",
+    "en": "Ah, I see you're having fun with the fountains! Come see me tomorrow afternoon: I'm painting the Fountain of the Moor at sunset. I'll show you the right colors!",
+    "raw": "{\"line\":\"{Ah, *si diverte* con le fontane, vedo! | Ah, I see you're *having fun* with the fountains!} {Venga a trovarmi *domani pomeriggio*: dipingo la fontana del Moro al tramonto. | Come see me *tomorrow afternoon*: I'm painting the Fountain of the Moor at sunset.} {Le faccio vedere *i colori giusti*! | I'll show you *the right colors*!}\",\"en\":\"Ah, I see you're having fun with the fountains! Come see me tomorrow afternoon: I'm painting the Fountain of the Moor at sunset. I'll show you the right colors!\",\"answers\":[{\"text\":\"Grazie, domani vengo volentieri. Arrivederci!\",\"en\":\"Thank you, I'll gladly come tomorrow. Goodbye!\"},{\"text\":\"Che bella idea! Buona giornata, a domani!\",\"en\":\"What a lovely idea! Have a good day, see you tomorrow!\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Grazie, domani vengo volentieri. Arrivederci!",
+     "Che bella idea! Buona giornata, a domani!"
+    ],
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "A domani, allora! See you tomorrow, then! Arrivederci e buona giornata! Goodbye and have a good day!",
+    "en": "See you tomorrow, then! Goodbye and have a good day!",
+    "raw": "{\"line\":\"{*A domani*, allora! | *See you tomorrow*, then!} {Arrivederci e buona giornata! | Goodbye and have a good day!}\",\"en\":\"See you tomorrow, then! Goodbye and have a good day!\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": true
+   }
+  ],
+  "culture": [
+   "Piazza Navona in Rome is a famous square where street painters have worked for centuries",
+   "The Fountain of the Four Rivers (Fontana dei Quattro Fiumi) is in Piazza Navona",
+   "Piazza Navona has three fountains, including the Fountain of the Moor (Fontana del Moro), which Romans love",
+   "The Trevi Fountain is another famous fountain in Rome",
+   "Rome's light is considered unique, especially at sunset",
+   "Tourists flock to look at the fountains in Rome's squares",
+   "Buongiorno means good morning",
+   "Grazie mille means thank you very much",
+   "Arrivederci means goodbye",
+   "A domani means see you tomorrow",
+   "Buona giornata means have a good day",
+   "Italian polite address uses the formal 'lei' with strangers (e.g. 'Le piace...?', 'Venga a trovarmi')",
+   "Mi piace / Le piace means I like / do you like",
+   "Dipingere means to paint; paesaggi are landscapes and ritratti are portraits",
+   "Che bello! is an expression meaning how nice!"
+  ]
+ },
+ {
+  "step": 4,
+  "city": "bologna",
+  "place": "sorbetteria-castiglione",
+  "kind": "long",
+  "turns": [
+   {
+    "setup": "opener",
+    "line": "Buongiorno! Benvenuto alla Sorbetteria Castiglione. Sto preparando il gelato alla nocciola, è appena fatto. Vuole assaggiare qualcosa? Would you like to taste something?",
+    "en": "Good morning! Welcome to Sorbetteria Castiglione. I'm making hazelnut gelato, it's just been made. Would you like to taste something?",
+    "raw": "{\"line\":\"{*Buongiorno*! Benvenuto alla Sorbetteria Castiglione. | *Good morning*! Welcome to Sorbetteria Castiglione.} {Sto preparando *il gelato alla nocciola*, è appena fatto. | I'm making *hazelnut gelato*, it's just been made.} {Vuole *assaggiare* qualcosa? | Would you like to *taste* something?}\",\"en\":\"Good morning! Welcome to Sorbetteria Castiglione. I'm making hazelnut gelato, it's just been made. Would you like to taste something?\",\"answers\":[{\"text\":\"Sì, grazie. Vorrei assaggiare la nocciola.\",\"en\":\"Yes, thank you. I'd like to taste the hazelnut.\"},{\"text\":\"Che buon profumo! Cosa significa \\\"assaggiare\\\"?\",\"en\":\"What a good smell! What does \\\"assaggiare\\\" mean?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sì, grazie. Vorrei assaggiare la nocciola.",
+     "Che buon profumo! Cosa significa \"assaggiare\"?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Ecco, un assaggio di nocciola. Lo faccio ogni mattina con le nocciole piemontesi. I make it every morning with Piedmontese hazelnuts. Le piace la nocciola, o preferisce qualcosa di più fresco? Do you like hazelnut, or do you prefer something fresher?",
+    "en": "Here you go, a taste of hazelnut. I make it every morning with Piedmontese hazelnuts. Do you like hazelnut, or do you prefer something fresher?",
+    "raw": "{\"line\":\"{*Ecco*, un assaggio di nocciola. | *Here you go*, a taste of hazelnut.} {Lo faccio ogni mattina con *le nocciole piemontesi*. | I make it every morning with *Piedmontese hazelnuts*.} {Le piace *la nocciola*, o preferisce qualcosa di più fresco? | Do you like *hazelnut*, or do you prefer something fresher?}\",\"en\":\"Here you go, a taste of hazelnut. I make it every morning with Piedmontese hazelnuts. Do you like hazelnut, or do you prefer something fresher?\",\"answers\":[{\"text\":\"È buonissima! Mi piace molto.\",\"en\":\"It's delicious! I like it a lot.\"},{\"text\":\"Cosa mi consiglia? Che gusti avete?\",\"en\":\"What do you recommend? What flavors do you have?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "È buonissima! Mi piace molto.",
+     "Cosa mi consiglia? Che gusti avete?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "two-en",
+    "line": "Che bello, mi fa piacere! In autunno vanno molto i gusti con le castagne e la zucca. Vuole provare anche il gusto della stagione? Would you like to try the flavor of the season too?",
+    "en": "How nice, I'm glad! In autumn, flavors with chestnuts and pumpkin are very popular. Would you like to try the flavor of the season too?",
+    "raw": "{\"line\":\"{Che bello, *mi fa piacere*! | How nice, *I'm glad*!} {In autunno vanno molto i gusti con *le castagne* e la zucca. | In autumn, flavors with *chestnuts* and pumpkin are very popular.} {Vuole provare anche *il gusto della stagione*? | Would you like to try *the flavor of the season* too?}\",\"en\":\"How nice, I'm glad! In autumn, flavors with chestnuts and pumpkin are very popular. Would you like to try the flavor of the season too?\",\"answers\":[{\"text\":\"Sì, volentieri! Cos'è il gusto della stagione?\",\"en\":\"Yes, gladly! What is the flavor of the season?\"},{\"text\":\"No, grazie. Vorrei un cono con la nocciola.\",\"en\":\"No, thank you. I'd like a cone with hazelnut.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sì, volentieri! Cos'è il gusto della stagione?",
+     "No, grazie. Vorrei un cono con la nocciola."
+    ],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Il gusto della stagione è la castagna, con un po' di miele. A Bologna, a novembre, le castagne sono dappertutto. Gliene preparo un assaggio? Shall I get you a taste?",
+    "en": "The flavor of the season is the chestnut, with a little honey. In Bologna, in November, chestnuts are everywhere. Shall I get you a taste?",
+    "raw": "{\"line\":\"{Il gusto della stagione è *la castagna*, con un po' di miele. | The flavor of the season is *the chestnut*, with a little honey.} {A Bologna, a novembre, le castagne sono dappertutto. | In Bologna, in November, chestnuts are everywhere.} {Gliene preparo un assaggio? | Shall I get you a taste?}\",\"en\":\"The flavor of the season is the chestnut, with a little honey. In Bologna, in November, chestnuts are everywhere. Shall I get you a taste?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "free",
+    "line": "Ecco, un assaggio di castagna. Qui sotto i portici, d'inverno, si sente l'odore delle caldarroste. Com'è, le piace? Is it to your liking?",
+    "en": "Here you go, a taste of chestnut. Here under the porticoes, in winter, you can smell the roasted chestnuts. How is it, do you like it?",
+    "raw": "{\"line\":\"Ecco, un assaggio di castagna. Qui sotto i portici, d'inverno, si sente l'odore delle caldarroste. Com'è, le piace? Is it to your liking?\",\"en\":\"Here you go, a taste of chestnut. Here under the porticoes, in winter, you can smell the roasted chestnuts. How is it, do you like it?\",\"done\":false,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Che bello, ne sono contenta! La castagna è il mio gusto preferito d'autunno. Chestnut is my favorite flavor in autumn.",
+    "en": "How nice, I'm glad! Chestnut is my favorite flavor in autumn.",
+    "raw": "{\"line\":\"{*Che bello*, ne sono contenta! | *How nice*, I'm glad!} {La castagna è il mio gusto preferito d'autunno. | Chestnut is my favorite flavor in autumn.}\",\"en\":\"How nice, I'm glad! Chestnut is my favorite flavor in autumn.\",\"answers\":[{\"text\":\"Anche per me è molto buona!\",\"en\":\"For me too, it's very good!\"},{\"text\":\"Qual è il gusto più popolare qui?\",\"en\":\"What is the most popular flavor here?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Anche per me è molto buona!",
+     "Qual è il gusto più popolare qui?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "comment",
+    "line": "Allora abbiamo gusti simili! Io la mangio sempre con un po' di panna sopra. I always eat it with a little cream on top.",
+    "en": "Then we have similar tastes! I always eat it with a little cream on top.",
+    "raw": "{\"line\":\"{Allora abbiamo gusti simili! | Then we have *similar tastes*!} {Io la mangio sempre con un po' di panna sopra. | I always eat it with a little *cream on top*.}\",\"en\":\"Then we have similar tastes! I always eat it with a little cream on top.\",\"answers\":[{\"text\":\"Che bella idea! Voglio provare anche io.\",\"en\":\"What a nice idea! I want to try it too.\"},{\"text\":\"Che cos'è la panna?\",\"en\":\"What is 'panna' (cream)?\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Che bella idea! Voglio provare anche io.",
+     "Che cos'è la panna?"
+    ],
+    "done": false
+   },
+   {
+    "setup": "goodbye",
+    "line": "Volentieri, la panna è fatta qui, fresca. Torni venerdì, preparo il gusto nuovo con la zucca. Le va di passare a provarlo? Would you like to stop by and try it?",
+    "en": "Gladly, the cream is made here, fresh. Come back on Friday, I'm making the new pumpkin flavor. Would you like to stop by and try it?",
+    "raw": "{\"line\":\"{*Volentieri*, la panna è fatta qui, fresca. | *Gladly*, the cream is made here, fresh.} {Torni *venerdì*, preparo il gusto nuovo con la zucca. | Come back *on Friday*, I'm making the new pumpkin flavor.} {Le va di passare a provarlo? | Would you like to stop by and try it?}\",\"en\":\"Gladly, the cream is made here, fresh. Come back on Friday, I'm making the new pumpkin flavor. Would you like to stop by and try it?\",\"answers\":[{\"text\":\"Sì, torno venerdì! Grazie di tutto.\",\"en\":\"Yes, I'll come back on Friday! Thanks for everything.\"},{\"text\":\"Grazie mille, a venerdì! Arrivederci.\",\"en\":\"Thanks a lot, see you Friday! Goodbye.\"}],\"done\":false,\"hard\":false}",
+    "answers": 2,
+    "answerTexts": [
+     "Sì, torno venerdì! Grazie di tutto.",
+     "Grazie mille, a venerdì! Arrivederci."
+    ],
+    "done": false
+   },
+   {
+    "setup": "close",
+    "line": "Perfetto, ci vediamo venerdì! Buona giornata e a presto!",
+    "en": "Perfect, see you Friday! Have a nice day and see you soon!",
+    "raw": "{\"line\":\"Perfetto, ci vediamo venerdì! Buona giornata e a presto!\",\"en\":\"Perfect, see you Friday! Have a nice day and see you soon!\",\"done\":true,\"hard\":false}",
+    "answers": 0,
+    "answerTexts": [],
+    "done": true
+   }
+  ],
+  "culture": [
+   "Gelato shops in Italy make hazelnut (nocciola) gelato fresh each morning",
+   "Piedmont is famous for its hazelnuts (nocciole piemontesi)",
+   "Chestnut (castagna) with honey is an autumn flavor, and pumpkin (zucca) gelato is another seasonal flavor",
+   "Italian gelato flavors follow the seasons",
+   "In Bologna in November chestnuts are everywhere",
+   "Bologna has porticoes (portici) along its streets",
+   "Roasted chestnuts (caldarroste) are sold in winter and their smell fills the streets",
+   "Gelato is often topped with fresh whipped cream (panna)",
+   "Italian greetings and phrases: Buongiorno, Buona giornata, A presto, Ci vediamo venerdì",
+   "Shopkeepers use formal 'Lei' with customers and offer free tastings (assaggio)",
+   "Sorbetteria means a gelato/sorbet shop"
+  ]
+ }
+]

@@ -9,6 +9,7 @@
   `TRIAL_SPOTS=roma-nuova/piazza-navona,bologna/sorbetteria-castiglione TRIAL_STEPS=4 TRIAL_KINDS=long TRIAL_REPEAT=2 npx tsx --env-file=.env.local tests/experiments/rewrite-trial.mts --out=tests/experiments/results/longest-it-a-2026-11-17.json`
   `COUNTRY=es-mx TRIAL_SPOTS=guadalajara/hospicio-cabanas,patzcuaro/plaza-vasco-de-quiroga TRIAL_STEPS=4 TRIAL_KINDS=long TRIAL_REPEAT=2 npx tsx --env-file=.env.local tests/experiments/rewrite-trial.mts --out=tests/experiments/results/longest-mx-a-2026-11-17.json`
   Commit the four JSON files to main by path, push, and say here it's done.
+- **Done (laptop, 2026-11-17):** all four finished: 4 visits each, 8 an arm, 16 in all, 0 failed turns. Arm A from main (0a61bc08), arm B from `here-none-four` (fdf5405a, its own worktree; each run printed its commit first), one after the other on the local test database. Results: `tests/experiments/results/longest-it-a-…`, `longest-mx-a-…`, `longest-it-b-…`, `longest-mx-b-…` (all `-2026-11-17.json`). Not read: that's the cloud session's step.
 - **Read for (cloud):** counts first (the run's culture count and words a visit, per person per arm; names said), then, side by side with equal weight, what each arm said that the other didn't. No verdict on which list is worth more: that is Josh's.
 
 ## 2026-11-17 (cloud), night: the whole-city San Miguel run read: one sentence ends the repeats and loses the town
