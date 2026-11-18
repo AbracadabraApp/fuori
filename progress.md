@@ -1,5 +1,12 @@
 # Fuori Development Progress
 
+## 2026-11-17 (cloud chat session), evening: the two portrait picks
+
+- **Picked, from the laptop's candidates:** Florence's guard, Sandra Mugnai (`firenze / carlo-guida`): **`sketches/portraits/sandra-mugnai/1.jpg`**. Venice's gondolier (`venezia / carlo-gondoliere`): **`sketches/portraits/carlo-gondoliere/2.jpg`**.
+- **Why these:** all eight were clean (face clear, no lettering, nobody in costume). Sandra's 1 has the dry, seen-it-all look her traits call for, one hand on the radio and one in her pocket, where 4 stands square to the viewer like a posed photo and 2 and 3 read warmer than she is. Carlo's 2 has the easy half-smile and looks like a man at work; 3 is closer to a magazine model.
+- **Next (laptop or mini):** upload those two as the portraits for their ids, run the masters step, commit `content/it/images.json`. Then the candidate folders in `sketches/portraits/` can go. **Neither change is live:** `live` is at 35a8e48, from before both. Release only after the upload, or Sandra's words appear under the drummer's picture.
+- Josh has been shown the two picks in the chat; he hasn't said yes to them yet.
+
 ## 2026-11-17 (Mac laptop), evening: four portrait candidates for the Venice gondolier, for the cloud session to judge
 
 - Four candidates for the Venice gondolier (`venezia/carlo-gondoliere`, now on the traghetto at Ponte di Rialto, no paper cup) are in `sketches/portraits/carlo-gondoliere/` (1.jpg to 4.jpg, each under 400 KB, committed with `git add -f`), from the new prompt unchanged at 2:3, 2k; not uploaded, `content/it/images.json` untouched. Sandra Mugnai's four (Florence, `carlo-guida`) were already pushed to `sketches/portraits/sandra-mugnai/` earlier today; her prompt is unchanged since, so they weren't regenerated. The cloud session judges both sets; then the laptop uploads the picks, runs the masters step and commits `images.json`.
