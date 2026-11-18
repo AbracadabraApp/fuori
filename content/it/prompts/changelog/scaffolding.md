@@ -2,6 +2,11 @@
 
 Newest first. One entry per version: what changed, why, what prompted it. The prompt is `../scaffolding.md` (called beginner-2.md until 2026-11-10b).
 
+### 2026-11-17f: line 9 in Josh's words: a colloquial goodbye, then stop
+- **Changed, Setup: close** (the character's 9th line, after the learner's 8th reply): "Say goodbye in a few words; this reply ends the conversation." → "In a colloquial phrase say goodbye and stop, this ends the conversation."
+- **Why:** with 17e's line 8 inviting them back, line 9 is the goodbye alone; in the 17d run line 9 said "next time" again in 7 and 12 of 16 visits.
+- **Prompted by:** Josh, 2026-11-17, who wrote the line. Not released.
+
 ### 2026-11-17e: line 8 in Josh's words: almost done, enjoyed it, an invitation with a reason
 - **Changed, Setup: goodbye** (the character's 8th line): "This turn, start to wrap up, maybe with something you could show them next time. Their two answers are goodbyes." → "The conversation is almost done and you've enjoyed it. Invite them to see you again for a specific reason. Their two answers are goodbyes."
 - **Why:** the 17d run (docs/prompt-trials.md → The Beginner ending), per visit: "I have to get back to…" moved to line 8 in Italy (10 of 16 visits), likely from "start to wrap up"; "next time" said twice in 7 and 12 of 16.

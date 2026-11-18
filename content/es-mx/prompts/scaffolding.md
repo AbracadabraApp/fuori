@@ -1,6 +1,6 @@
 # Scaffolding (the Beginner)
 
-version: 2026-11-17e
+version: 2026-11-17f
 
 Everything that helps a Beginner take part, kept apart from the dialogue
 (Josh, 2026-11-09: "I want to be able to adjust scaffolding without touching
@@ -90,7 +90,7 @@ The conversation is almost done and you've enjoyed it. Invite them to see you ag
 ## Setup: close
 
 ```
-Say goodbye in a few words; this reply ends the conversation.
+In a colloquial phrase say goodbye and stop, this ends the conversation.
 ```
 
 The 9th line at Beginner, after the learner's 8th reply (lib/beginner-2.ts CLOSE_AT): usually their goodbye to the wind-down's answers.
