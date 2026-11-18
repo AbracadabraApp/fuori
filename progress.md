@@ -1,5 +1,14 @@
 # Fuori Development Progress
 
+## 2026-11-17 (laptop, with Josh), evening: the visit's ending rewritten; released; build 18 on his phone
+
+- **Intermediate and Advanced close after the 10th reply**, not the 15th (Josh: "Change Intermediate to 10"; 347f2a3c).
+- **The Beginner ending** (Josh's words, worked out line by line): line 8 (scaffolding.md 17e) "The conversation is almost done and you've enjoyed it. Invite them to see you again for a specific reason. Their two answers are goodbyes."; line 9 (17f) "In a colloquial phrase say goodbye and stop, this ends the conversation." (Beginner no longer uses dialogue.md's Close note); the shared rule (dialogue.md 17a) "When they say goodbye, say goodbye back, briefly and warmly; that's your whole turn, and it ends the conversation." (its next-time sentence and "or that they have to go" gone).
+- **Run against production** (docs/prompt-trials.md → The Beginner ending against production): "back to work" Italy 16 → 2, Mexico 12 → 0 visits of 16; line 9 median 42 → 14 and 54 → 20 words; line 8 invites back with a reason in every visit, never repeated on line 9; "I have to go" alone still ends the visit 8/8.
+- **B40 closed, won't fix** (Josh: "i think this is what we live with for now - close it"). scaffolding.md 17a: six unread sections out, header fixed.
+- **Released** (live 35a8e48, smoke both OK, no new errors in the logs); **build 18** installed on Josh's iPhone 16 Pro with devicectl (Josh: "release to server and phone"). The walk: Italy ok; Mexico failed B35's check at step 4 → 5 and Intermediate → Advanced (open, not the ending).
+- **Next:** Josh plays the ending. Open: the last word to the learner (no line 9; needs an app change; Josh's (a)/(b) for a non-goodbye reply 8 not answered); the Intermediate Close note still says "you have to get back to what you're doing"; B28, B33, B37 status questions.
+
 ## 2026-11-17 (Mac laptop): four portrait candidates for Sandra Mugnai, for the cloud session to judge
 
 - Four candidates for Sandra Mugnai (Florence, Piazza della Signoria, `carlo-guida`) are in `sketches/portraits/sandra-mugnai/` (1.jpg to 4.jpg, each under 400 KB, committed with `git add -f`), from the new prompt unchanged at 2:3, 2k; not uploaded, `content/it/images.json` untouched. The cloud session picks one against Josh's rules (face clearly visible, no lettering, not posed, not a caricature, a guard and not a tourist); then the laptop uploads the pick, runs the masters step and commits `images.json`.
