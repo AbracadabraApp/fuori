@@ -1,5 +1,15 @@
 # Fuori Development Progress
 
+## 2026-11-17 (cloud), night: four of the longest lines, production against header only: read
+
+- **Read:** `longest-it-a/b` and `longest-mx-a/b-2026-11-17.json`: Tommaso Ricci, Sara Bertolini, Andrés Ochoa, Profe Gerardo, each twice at step 4, on main and on `here-none-four` (no `here` line). No errors in 16 visits.
+- **Counts (code, and the run's own culture count):** words a visit 242 production, 221 header only. Culture a visit 12.2 and 12.8. By person, production then header only: Tommaso 11, 14 and 18, 15; Sara 12, 12 and 14, 11; Andrés 10, 10 and 6, 10; Gerardo 16, 13 and 12, 16. Within that count's noise (about 2.3 a visit, C11).
+- **Said only on production lines (and how often of 2 visits):** Tommaso: the river-god legend 2, Borromini's church 1, the Stadium of Domitian 1, the Befana market 1. Sara: the house flavours Dolce Emma 2 and Michelangelo 2, hazelnut as the test of a gelateria 2, since 1994 1. Andrés: Orozco painting with one hand 2, the children on the benches 2, the portfolio 2, his sister Ximena 2. Gerardo: Tata Vasco and a craft for each lake town (copper, guitars, pottery, lacquer) 2, Cárdenas and the Morelos statue 1.
+- **Said only with header only:** Tommaso: watercolour, the Fountain of the Moor and the square's three fountains, street painters here for centuries. Sara: chestnut and pumpkin as the season's flavours, chocolate with orange, roasted chestnuts under the porticoes. Andrés: the columns and the courtyard he draws; a mirror under the dome (not checked). Gerardo: the Basilica and its corn-cane Virgin, milk and pumpkin sweets, pan de muerto with hot chocolate, "qué hueva", his wife.
+- **In both:** Bernini's fountain, Piedmont hazelnuts toasted in the shop, Orozco's Man of Fire in the dome, Vasco de Quiroga the bishop, the arcades and their crafts.
+- **Between a person's two visits:** production lines gave the same items both times (the counts above are mostly 2 of 2); header-only visits differed more from each other.
+- No verdict from the cloud session on which list is worth more. Main unchanged.
+
 ## 2026-11-17 (cloud), night: four of the longest lines, production against header only: for the mini
 
 - **Josh:** "lets test … as in production vs edited prompts"; Nino is out ("he runs a restaurant not an inn"; "nino was a test case"); "nexr longest italian"; "for the test prompt, use only the header". So: the two longest Italian lines after Nino and the two longest Mexican ones, each with its line as it ships against no line at all.
