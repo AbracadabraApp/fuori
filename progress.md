@@ -9,6 +9,7 @@
 - **Only Italy was run** (Josh: "Did you only do Italy"). Mexico's question is different, since it has 3 bare people: do the fact-list lines (San Miguel) play differently from bare ones and from ones with a life? **For the mini, on Josh's word**, 11 people twice at step 4, 22 visits:
   `COUNTRY=es-mx TRIAL_SPOTS=guadalajara/abarrotes-la-esquinita,san-miguel-de-allende/jardin-allende,puebla/cafe-cielo-rojo,san-miguel-de-allende/parroquia-san-miguel-arcangel,san-miguel-de-allende/el-mirador-san-miguel,san-miguel-de-allende/parque-juarez,san-miguel-de-allende/mercado-ignacio-ramirez,guadalajara/hospicio-cabanas,merida/gran-museo-mundo-maya,tijuana/parque-teniente-guerrero,veracruz/malecon-de-veracruz TRIAL_STEPS=4 TRIAL_KINDS=long TRIAL_REPEAT=2 npx tsx --env-file=.env.local tests/experiments/rewrite-trial.mts --out=tests/experiments/results/here-bare-fact-life-mx-2026-11-17.json`
   (bare: Doña Mari, Beto Rangel, Mateo Lozano; facts: Don Aurelio, Don Ramón, Don Víctor, Doña Rosa; a life: Andrés Ochoa, Doña Hilaria, Don Fermín, Don Chema.)
+- **Done (laptop, 2026-11-17, 19:53):** Mexico's run finished: 22 visits, eleven people, 0 failed turns. Results: `tests/experiments/results/here-bare-fact-life-mx-2026-11-17.json`. Not read: that's the cloud session's step.
 
 ## 2026-11-17 (cloud), night: a run for the mini: bare `here` lines against lines with a life, to be read
 
