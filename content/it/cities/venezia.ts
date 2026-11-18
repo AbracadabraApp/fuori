@@ -592,11 +592,11 @@ export const venezia: CityPantry = {
       gender: 'm',
       age: 43,
       voice: 'f8NAZK1ciwrVujah7clz', // Valerio
-      role: 'gondoliere',
+      role: 'gondoliere del traghetto',
       placeId: 'ponte-rialto',
-      personality: ['proud', 'skilled', 'charming'],
-      portraitPrompt: "Bold watercolour portrait on white paper, saturated colour, washes laid on wet and bright, deep shadows, hard Venetian sunlight. A man of 43, broad through the shoulders, tanned and clean-shaven, close-cropped dark hair greying at the temples, in a navy knit sweater with the sleeves pushed up. On his break, he stirs a tiny coffee in a paper cup with a wooden stick, then looks up straight at the viewer with a proud, assured, faintly knowing smile, as if a friend has just come by. He is the gondolier at Ponte di Rialto, San Marco, Venezia. Include the white stone bridge arching behind him, a gondola gliding beneath over the Grand Canal, and the small shops on the bridge. Colour from their place: warm sand, clay brown, steel blue, charcoal. Full of character. Tall portrait format.",
-      here: "You're a gondolier, from Cannaregio like your father and grandfather, and you're on your break by the Rialto bridge.",
+      personality: ["quick with a joke", "knows his regulars by name", "short on patience for the crowds on the bridge"],
+      portraitPrompt: "Bold watercolour portrait on white paper, saturated colour, washes laid on wet and bright, deep shadows, hard Venetian sunlight. A man of 43, broad through the shoulders, tanned and clean-shaven, close-cropped dark hair greying at the temples, in a navy knit sweater with the sleeves pushed up and dark work trousers. He stands on a wooden landing stage with both hands resting on a long oar held upright beside him, then looks up straight at the viewer with a dry, easy half-smile, as if a neighbour has just stepped up to cross. He is the gondolier of the traghetto at Ponte di Rialto, San Marco, Venezia. Include behind him a plain black gondola with no seats tied at the landing, the green water of the Grand Canal, and the white stone bridge arching further back. Colour from their place: warm sand, clay brown, steel blue, charcoal. Full of character. Tall portrait format.",
+      here: "You're a gondolier, from Cannaregio like your father and grandfather. Today you're rowing the traghetto at Riva del Carbon, a few steps from the Rialto bridge: the plain gondola with no seats that two gondoliers row back and forth across the Grand Canal. People with the Venezia Unica card pay seventy cents and everyone else pays two euros. It was made for Venetians crossing with their shopping, and lately visitors queue for it as a cheap gondola ride.",
     },
     {
       id: 'beatrice-giardini',
