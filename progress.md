@@ -1,5 +1,14 @@
 # Fuori Development Progress
 
+## 2026-11-17 (cloud), night: San Miguel's two arms read; Josh's three hypotheses
+
+- **Read:** `san-miguel-here-a-2026-11-17.json` (main) and `-b-` (branch `here-san-miguel-trial`), 12 visits each, six people twice at step 4.
+- **Counted in code, on the English:** Zeferino Gutiérrez in 8 of 12 visits from 4 people on main, 2 of 12 from 1 person on the branch. The Alborada 3 of 12 (2 people) against 1 of 12. The Parroquia or its pink stone 12 of 12 against 7 of 12. Words a visit 252 against 241.
+- **Read:** on main the two retired men (Don Ramón, Don Víctor) gave the same visit: Zeferino, the stick in the sand, the pink spire. On main Rocío, whose line says only that she sells tumbagones, made the sweet up twice and differently ("sugar, egg and flour", then "peanut and raw cane sugar"). On the branch each person said their written thing, in both visits, nearly word for word (the bells since fourteen and the knees; the paintbox; the block that rings; 1947 and not drinking; the little finger; the grandfather's taxi).
+- **So:** giving each town fact one owner works as expected. The invented lives are said every visit like anything else written; whether they are better is not something the run shows.
+- **Josh's hypotheses (2026-11-17):** "crafted longer lines are rarely better than the simpler direct ones, and duplicate jobs in one city may repeat, and in general, duplicate jobs anywhere may repeat (less evidence)". For the first: Italy's bare-against-life run and C9 to C11; against it only that a direct line has to carry the true fact when the thing is obscure (Rocío). For the second: one pair, San Miguel's two jubilados. For the third: nothing run yet. Counted: the same job twice in one city happens in 7 cities (Rome's two baristas, Matera's and Siracusa's two pensioners, Naples's two pizzaioli, Lucca's two owners, San Miguel's two jubilados, Mérida's two cooks); across a country Italy has 12 baristas, 11 owners, 10 chefs, and 7 each of priests, gardeners, fruit sellers and street musicians; Mexico 9 cooks, 6 retirees, 6 cantineros.
+- **The branch is not merged.** Josh decides.
+
 ## 2026-11-17 (cloud), night: next step: six San Miguel lines rewritten on a branch, both arms for the mini
 
 - **Josh: "Next step".** The two runs gave a hypothesis worth a same-person check: a line that names one thing only that person has gives a visit nobody else could give, and a list of town facts gives a town saying the same thing. San Miguel is where that shows most.
