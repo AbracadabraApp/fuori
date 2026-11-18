@@ -1,5 +1,14 @@
 # Fuori Development Progress
 
+## 2026-11-17 (cloud), night: next step: six San Miguel lines rewritten on a branch, both arms for the mini
+
+- **Josh: "Next step".** The two runs gave a hypothesis worth a same-person check: a line that names one thing only that person has gives a visit nobody else could give, and a list of town facts gives a town saying the same thing. San Miguel is where that shows most.
+- **Arm B is branch `here-san-miguel-trial`** (not for main): six `here` lines rewritten by the cloud session, each the person and one thing of theirs, each town fact with one owner. Don Aurelio: the bells he has rung since he was fourteen, the Alborada at four in the morning. Don Víctor: forty years cutting cantera; Zeferino Gutiérrez is his alone now. Don Ramón: the American art students his mother rented a room to, and the paintbox one left him. Tomás: La Cucaracha since 1947, the barman who doesn't drink. Rocío: the tumbagón on the little finger, and who breaks it. Beto: his grandfather's taxi, his mother and the Tuesday market. Facts checked (the tumbagón and its legend, 1947, the Tianguis de los Martes); the lives are invented.
+- **For the mini:** six people twice at step 4 on each arm, 24 visits.
+  Arm A, from main: `COUNTRY=es-mx TRIAL_SPOTS=san-miguel-de-allende/parroquia-san-miguel-arcangel,san-miguel-de-allende/el-mirador-san-miguel,san-miguel-de-allende/parque-juarez,san-miguel-de-allende/la-cucaracha,san-miguel-de-allende/casa-del-tumbagon,san-miguel-de-allende/jardin-allende TRIAL_STEPS=4 TRIAL_KINDS=long TRIAL_REPEAT=2 npx tsx --env-file=.env.local tests/experiments/rewrite-trial.mts --out=tests/experiments/results/san-miguel-here-a-2026-11-17.json`
+  Arm B, from a checkout of `here-san-miguel-trial`: the same command with `--out=…/san-miguel-here-b-2026-11-17.json`. Commit both JSON files to main by path and push.
+- **Then (cloud):** read the 24. What to look for: does Zeferino come from one person, not three; does each of the six say something the other five couldn't; what is repeated between a person's two visits; what the model invents on top. If the gap can be shown in three or four exchanges, Josh sees those and decides whether the lines go to main. If not, the branch is deleted.
+
 ## 2026-11-17 (cloud), night: Mexico's bare / fact-list / with-a-life run read
 
 - **Read:** all 22 visits of `tests/experiments/results/here-bare-fact-life-mx-2026-11-17.json` (11 people twice, step 4). A reading; the learner taps the first answer.
