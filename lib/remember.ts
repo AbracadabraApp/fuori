@@ -15,7 +15,7 @@
 
 import { tutorSheet } from '@/lib/tutor';
 import { z } from 'zod';
-import { anthropic, CLAUDE_MODEL, replyText } from './claude';
+import { anthropic, CLAUDE_MODEL, logUsage, replyText } from './claude';
 import { buildMemoryPrompt, memoryPromptVersion, type MemoryPromptInput } from './prompts/build-memory-prompt';
 import { memoryOutputJsonSchema } from './prompts/memory-output-schema';
 import { claimForMemory, releaseMemoryClaim, saveConversationMemory, loadCharacterMemory } from './memory';
@@ -59,6 +59,7 @@ export const summarizeWithClaude: Summarizer = async (input) => {
     messages: [{ role: 'user', content: prompt.user }],
     output_config: { format: { type: 'json_schema', schema: memoryOutputJsonSchema } },
   });
+  logUsage('memory', response);
   if (response.stop_reason === 'max_tokens') throw new Error(`Memory call hit max_tokens (${response.usage.output_tokens} tokens)`);
   const out = MemoryOutputSchema.parse(JSON.parse(replyText(response)));
   // The prompt asks for at most 10 short notes; hold to it so the character prompt stays short

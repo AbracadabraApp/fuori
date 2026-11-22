@@ -69,6 +69,7 @@
     "test:parts-off": "tsx tests/check-parts-off.ts",
     "test:reply-deadline": "tsx tests/check-reply-deadline.ts",
     "test:claude-limits": "tsx tests/check-claude-limits.ts",
+    "test:claude-usage-log": "tsx tests/check-claude-usage-log.ts",
     "test:in-flight": "tsx tests/check-in-flight.ts",
     "test:learn-ahead": "tsx tests/check-learn-ahead.ts",
     "test:stats": "tsx tests/check-dialogue-stats.ts",

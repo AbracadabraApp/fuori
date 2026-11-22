@@ -11,7 +11,7 @@
  */
 
 import { z } from 'zod';
-import { anthropic, CLAUDE_MODEL, replyText } from './claude';
+import { anthropic, CLAUDE_MODEL, logUsage, replyText } from './claude';
 import { query } from './db';
 import { readPromptFile, fill } from './prompts/template';
 import { language, tutor } from '@/content';
@@ -101,6 +101,7 @@ export const writeStudyFileWithClaude: StudyFileWriter = async (input) => {
     messages: [{ role: 'user', content: prompt.user }],
     output_config: { format: { type: 'json_schema', schema: outputSchema } },
   });
+  logUsage('study-file', response);
   if (response.stop_reason === 'max_tokens') throw new Error(`Study file call hit max_tokens (${response.usage.output_tokens} tokens)`);
   const { notes } = Output.parse(JSON.parse(replyText(response)));
   return notes.map((n) => n.trim()).filter(Boolean).slice(0, STUDY_FILE_LINES);

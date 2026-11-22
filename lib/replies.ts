@@ -10,7 +10,7 @@
  */
 
 import { z } from 'zod';
-import { anthropic, CLAUDE_MODEL, replyText, WAITING } from './claude';
+import { anthropic, CLAUDE_MODEL, logUsage, replyText, WAITING } from './claude';
 import { readPromptFile, fill } from './prompts/template';
 import { language } from '@/content';
 import type { CharacterSheet, Turn } from './types';
@@ -68,6 +68,7 @@ export async function writeReplies(character: CharacterSheet, transcript: Turn[]
     messages: [{ role: 'user', content: prompt.user }],
     output_config: { format: { type: 'json_schema', schema: outputSchema } },
   }, WAITING);
+  logUsage('reply-buttons', response);
   if (response.stop_reason === 'max_tokens') throw new Error(`Reply buttons hit max_tokens (${response.usage.output_tokens} tokens)`);
   return RepliesSchema.parse(JSON.parse(replyText(response)));
 }
@@ -85,6 +86,7 @@ export async function writeChoice(character: CharacterSheet, transcript: Turn[],
     messages: [{ role: 'user', content: prompt.user }],
     output_config: { format: { type: 'json_schema', schema: choiceSchema } },
   }, WAITING);
+  logUsage('reply-buttons-choose', response);
   if (response.stop_reason === 'max_tokens') throw new Error(`Reply buttons (choose) hit max_tokens (${response.usage.output_tokens} tokens)`);
   return shuffleChoice(ChoiceSchema.parse(JSON.parse(replyText(response))), random);
 }

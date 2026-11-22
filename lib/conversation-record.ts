@@ -23,7 +23,7 @@
  * first time it's written. Read at /api/admin/conversations?format=records.
  */
 import { z } from 'zod';
-import { anthropic, TURN_MODEL, replyText, WAITING } from '@/lib/claude';
+import { anthropic, TURN_MODEL, logUsage, replyText, WAITING } from '@/lib/claude';
 import { cities, country, language, tutor } from '@/content';
 import { query } from '@/lib/db';
 import { readPromptFile, fill } from '@/lib/prompts/template';
@@ -212,6 +212,7 @@ export async function labelLines(turns: StoredTurn[], name: string): Promise<Lab
     } as Parameters<typeof anthropic.messages.create>[0],
     WAITING
   );
+  logUsage('record-labels', response as Parameters<typeof logUsage>[1]);
   const labels = Labels.parse(JSON.parse(replyText(response as Parameters<typeof replyText>[0]))).lines;
   const out: LabelledLine[] = [];
   let offered: string[] = [];

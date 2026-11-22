@@ -5,7 +5,7 @@
 
 import { fixMojibake } from '@/lib/mojibake';
 import { z } from 'zod';
-import { anthropic, TURN_MODEL, replyText, finalWithDeadline } from '@/lib/claude';
+import { anthropic, TURN_MODEL, logUsage, replyText, finalWithDeadline } from '@/lib/claude';
 import { turnOutputJsonSchema, turnOutputWithAnswersJsonSchema, turnOutputWithDoneJsonSchema } from '@/lib/prompts/turn-output-schema';
 import { buildTurnPrompt, type RememberedLearner } from '@/lib/prompts/build-turn-prompt';
 import type { CharacterSheet, Gender, Turn } from '@/lib/types';
@@ -102,6 +102,7 @@ export async function runTurn(params: {
   }
 
   // Cut off mid-JSON: say so, rather than "invalid JSON"
+  logUsage('turn', response);
   if (response.stop_reason === 'max_tokens') {
     throw new Error(`Reply hit max_tokens (${response.usage.output_tokens} tokens)`);
   }

@@ -13,7 +13,7 @@
  */
 import { z } from 'zod';
 import { query } from '@/lib/db';
-import { anthropic, CLAUDE_MODEL, replyText } from '@/lib/claude';
+import { anthropic, CLAUDE_MODEL, logUsage, replyText } from '@/lib/claude';
 import { fill, readPromptFile } from '@/lib/prompts/template';
 import { turnOutputJsonSchema } from '@/lib/prompts/turn-output-schema';
 import { cities, language, onboarding } from '@/content';
@@ -215,6 +215,7 @@ export async function rewriteAtStep(p: { character: { name: string; role: string
     messages: [{ role: 'user', content: rewritePrompt(p) }],
     output_config: { format: { type: 'json_schema', schema: turnOutputJsonSchema } },
   });
+  logUsage('level-up-rewrite', response);
   if (response.stop_reason === 'max_tokens') throw new Error(`Level-up rewrite hit max_tokens (${response.usage.output_tokens} tokens)`);
   return previewAtSetting(Rewritten.parse(JSON.parse(replyText(response))), p.setting, seedOf(p.line));
 }

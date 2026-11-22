@@ -16,7 +16,7 @@
 import { doneField, hardField } from '@/lib/prompts/turn-output-schema';
 import { buildTurnPrompt } from '@/lib/prompts/build-turn-prompt';
 import { z } from 'zod';
-import { anthropic, TURN_MODEL, replyText, finalWithDeadline, noThinkingFor } from '@/lib/claude';
+import { anthropic, TURN_MODEL, logUsage, replyText, finalWithDeadline, noThinkingFor } from '@/lib/claude';
 import { readPromptFile, fill } from '@/lib/prompts/template';
 import { loadTemplate, relationshipLine, personLine, type RememberedLearner } from '@/lib/prompts/build-turn-prompt';
 import { cities, language } from '@/content';
@@ -339,6 +339,7 @@ export async function runBeginnerTurn(p: Parameters<typeof buildBeginnerPrompt>[
   if (p.onText) stream.on('text', (_delta, snapshot) => p.onText!(fixMojibake(snapshot)));
   return stream;
   }, undefined, undefined, { canRetry: p.canRetry });
+  logUsage('beginner-turn', response);
   if (response.stop_reason === 'max_tokens') {
     // Beginner 2: a reply that runs past the limit (about 3% of turns in automated runs, 2026-11-10; intermittent:
     // the same turn replayed came back at 137 tokens) is written once more instead of failing. Beginner 1 unchanged

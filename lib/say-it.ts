@@ -6,7 +6,7 @@
  * POST /v1/say-it. Server-side only.
  */
 import { z } from 'zod';
-import { anthropic, CLAUDE_MODEL, replyText, WAITING } from './claude';
+import { anthropic, CLAUDE_MODEL, logUsage, replyText, WAITING } from './claude';
 import { readPromptFile, fill } from './prompts/template';
 import { language } from '@/content';
 import type { Level } from './onboarding';
@@ -55,6 +55,7 @@ export async function writeSayIt(character: CharacterSheet, transcript: Turn[], 
     messages: [{ role: 'user', content: prompt.user }],
     output_config: { format: { type: 'json_schema', schema } },
   }, WAITING);
+  logUsage('say-it', response);
   if (response.stop_reason === 'max_tokens') throw new Error(`Say it hit max_tokens (${response.usage.output_tokens} tokens)`);
   return Line.parse(JSON.parse(replyText(response)));
 }

@@ -32,6 +32,37 @@ export const WAITING = { timeout: 20_000, maxRetries: 1 } as const;
 /** The Learn page writes more (up to 8000 tokens) */
 export const WAITING_LONG = { timeout: 45_000, maxRetries: 1 } as const;
 
+/**
+ * One log line per Claude call, with what it used (2026-11-22, Josh: "make the per-call logging change"; the
+ * cost question: Fuori's turns were logged but the other 16 calls weren't, and caching wasn't visible). Read the
+ * lines with `railway logs --service Fuori|Afuera` (one service a country) and filter on `claude-usage`. `call` names the call site; tokens only, no dollars, so a
+ * price change never makes old lines wrong. `inputTokens` is the uncached input; with caching on, the whole
+ * prompt is inputTokens + cacheReadTokens + cacheWriteTokens.
+ * tests/check-claude-usage-log.ts: every call site calls this.
+ */
+export function logUsage(
+  call: string,
+  response: {
+    model: string;
+    stop_reason?: string | null;
+    usage: { input_tokens: number; output_tokens: number; cache_creation_input_tokens?: number | null; cache_read_input_tokens?: number | null };
+  }
+): void {
+  console.log(
+    JSON.stringify({
+      level: 'info',
+      event: 'claude-usage',
+      call,
+      model: response.model,
+      inputTokens: response.usage.input_tokens,
+      outputTokens: response.usage.output_tokens,
+      cacheReadTokens: response.usage.cache_read_input_tokens ?? 0,
+      cacheWriteTokens: response.usage.cache_creation_input_tokens ?? 0,
+      stop: response.stop_reason ?? null,
+    })
+  );
+}
+
 /** A character's reply takes 2–5 s; past this it has stalled */
 export const REPLY_DEADLINE_MS = 15_000;
 

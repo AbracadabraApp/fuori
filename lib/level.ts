@@ -7,7 +7,7 @@
  */
 
 import { z } from 'zod';
-import { anthropic, CLAUDE_MODEL, replyText } from '@/lib/claude';
+import { anthropic, CLAUDE_MODEL, logUsage, replyText } from '@/lib/claude';
 import { readPromptFile, fill } from '@/lib/prompts/template';
 import { language } from '@/content';
 import type { ScoredTurn } from '@/lib/quality';
@@ -41,6 +41,7 @@ export async function beginnerKnows(line: string): Promise<number> {
     messages: [{ role: 'user', content: buildLevelPrompt(line) }],
     output_config: { format: { type: 'json_schema', schema: wordsJsonSchema } },
   });
+  logUsage('level-judge', response);
   if (response.stop_reason === 'max_tokens') throw new Error(`Level judge hit max_tokens (${response.usage.output_tokens} tokens)`);
   const { words } = Words.parse(JSON.parse(replyText(response)));
   return words.filter((x) => x.n <= 2).length / words.length;

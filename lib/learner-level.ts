@@ -13,7 +13,7 @@
 import { setLevel } from '@/lib/onboarding';
 import { tutorSheet } from '@/lib/tutor';
 import { z } from 'zod';
-import { anthropic, CLAUDE_MODEL, replyText } from '@/lib/claude';
+import { anthropic, CLAUDE_MODEL, logUsage, replyText } from '@/lib/claude';
 import { readPromptFile, fill } from '@/lib/prompts/template';
 import { characterForPlace } from '@/lib/characters/for-place';
 import { cities, language, tutor } from '@/content';
@@ -96,6 +96,7 @@ export const judgeLearnerLevel: LevelJudge = async (onboardingAnswers, conversat
     messages: [{ role: 'user', content: prompt.user }],
     output_config: { format: { type: 'json_schema', schema: judgedJsonSchema } },
   });
+  logUsage('level-check', response);
   if (response.stop_reason === 'max_tokens') throw new Error(`Level check hit max_tokens (${response.usage.output_tokens} tokens)`);
   return Judged.parse(JSON.parse(replyText(response)));
 };

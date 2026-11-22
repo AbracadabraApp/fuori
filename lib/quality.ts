@@ -16,7 +16,7 @@
  */
 
 import { z } from 'zod';
-import { anthropic, CLAUDE_MODEL, replyText } from './claude';
+import { anthropic, CLAUDE_MODEL, logUsage, replyText } from './claude';
 import { readPromptFile, fill } from './prompts/template';
 import { qualityOutputJsonSchema, characterOutputJsonSchema } from './prompts/quality-output-schema';
 import { turnStats, wordCount, learnerStats, repeatsFromEarlier, type TurnStats } from './dialogue-stats';
@@ -174,6 +174,7 @@ const judgeOnce: Judge = async (character, turns, opts = {}) => {
     messages: [{ role: 'user', content: prompt.user }],
     output_config: { format: { type: 'json_schema', schema: qualityOutputJsonSchema } },
   });
+  logUsage('quality-judge', response);
   if (response.stop_reason === 'max_tokens') throw new Error(`Quality judge hit max_tokens (${response.usage.output_tokens} tokens)`);
   return JudgeSchema.parse(JSON.parse(replyText(response)));
 };
@@ -199,6 +200,7 @@ export const characterWithClaude: CharacterJudge = async (character, turns) => {
     messages: [{ role: 'user', content: prompt.user }],
     output_config: { format: { type: 'json_schema', schema: characterOutputJsonSchema } },
   });
+  logUsage('character-judge', response);
   if (response.stop_reason === 'max_tokens') throw new Error(`Character judge hit max_tokens (${response.usage.output_tokens} tokens)`);
   return CharacterSchema.parse(JSON.parse(replyText(response)));
 };
