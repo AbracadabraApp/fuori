@@ -110,7 +110,7 @@ Tying cards to the visit is also what keeps them fresh (Josh, 2026-11-23: "if a 
 
 ### 6. The phone
 
-- `PersonView`: at `.finished` (where it now waits 1.5 s and dismisses, `PersonView.swift:72-78`), ask `GET /v1/learn/card?conversation=<id>`; it returns the ready card or 204 at once (never waits on Claude). Card → present the sheet; 204 or slower than the existing 1.5 s → dismiss as today. Closing the sheet dismisses through the same leave path; `POST` the close time.
+- `PersonView`: at `.finished` (where it now waits 1.5 s and dismisses, `PersonView.swift:72-78`), ask `GET /v1/learn/card?conversation=<id>`; it returns the ready card or 204 at once (never waits on Claude). Card → present the sheet; 204 or slower than the existing 1.5 s → dismiss as today. **The visit is saved at the goodbye**, when the sheet appears (the leave function's save, which today runs when the person screen closes), so the end call, memories and record don't wait on the sheet or depend on how it's closed. Every exit (✕, slide down, a tap off the sheet; no timer) closes the sheet and the person screen together, back to the place list, and `POST`s the close time; the full list is in the design, The moment.
 - One new view, `LearnCardSheet` (FuoriFeatures/Learn), drawing `LearnCard`. Sage becomes a token in `design/tokens.json`. `lang`-tagged rows get the learned language's tag.
 - `docs/state-machines.md` updated in the same commit (the conversation's end gains a state).
 - Josh sees one screenshot of the real sheet before it's built out (rule).

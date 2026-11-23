@@ -22,6 +22,17 @@ Josh: "the sheet is to instruct"; "the learn page is only about reinforcing voca
 2. That screen stays exactly as it is: the back button, the settings button, the name band, the portrait. The sheet slides up over its lower part.
 3. Closing the sheet returns to the place list.
 
+**Leaving the sheet** (Josh, 2026-11-23: "yes"). The conversation is over, so every way out ends on the place list, never on the person screen:
+
+| Exit | Goes to |
+|---|---|
+| ✕ close | the place list |
+| Sliding the sheet down (the standard gesture, kept) | the place list |
+| A tap off the sheet, on the dimmed person screen, the back button included | the place list |
+| The back swipe from the edge | not available while the sheet is up; slide or tap it away first |
+| A timer | none: a card doesn't close itself mid-read |
+| Backgrounding or locking the phone | the sheet is still there on return |
+
 ## The card is the sheet
 
 One sheet, one card (Josh: "the card is the sheet. 1:1"). There is never a second card under the first, and no footer.
