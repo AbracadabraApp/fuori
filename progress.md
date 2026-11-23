@@ -1,5 +1,13 @@
 # Fuori Development Progress
 
+## 2026-11-23 (cloud): Learn sheet 2.0 picked up again: six card types, one card to a sheet
+
+- Josh resumed the design ("work creatively and productively - not shitting on an idea when its still in development"). Mock-ups only; nothing built. Notes: `docs/learn-sheet-2.md` → 23 November; pictures at the top of the "Lesson Door Sheet" page.
+- **Types:** the closed three (When you…, Formal and informal, About this place) unchanged, plus Josh's three: **Vocabulary: things** (five nouns), **Vocabulary: actions** (three verbs), **Culture** (one fact). He asked for five; six are drawn and he hasn't cut one.
+- **Rules he added by correcting the drawings:** one card to a sheet; card types are never combined; one card style for every type (no white tiles); the person screen behind the sheet is left exactly as it is.
+- Colors unchanged (sage #e2e8d2), checked after he asked.
+- **Open:** which five; the pick and each type's content source; the footer; the older sections of the page still show two cards a sheet.
+
 ## 2026-11-23 (laptop, with Josh): header only: `here` lines out of the prompt, one switch to bring them back
 
 - **Josh:** "We are going to go with just the here headers = but make it easily reeversible to replace with existing verbose descriptions".

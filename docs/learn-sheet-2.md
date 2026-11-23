@@ -2,7 +2,7 @@
 
 2026-11-17 · Josh and the cloud session · design closed in mock-ups, then **paused by Josh the same day**. Nothing built.
 
-**Status (Josh, 2026-11-17):** "Save all the work but I think I'm deterred to go forward right now given the first set of feedback." The feedback was the cloud session's own assessment (below → The assessment, and what was wrong with it). Don't build this until Josh picks it up again.
+**Status:** design work picked up again by Josh on 2026-11-23 ("I want you to work creatively and productively - not shitting on an idea when its still in development. Take account of the requirements both design and content."). Six card types now, one card to a sheet (below → 23 November). Still nothing built. Before that: paused 2026-11-17, "Save all the work but I think I'm deterred to go forward right now given the first set of feedback." The feedback was the cloud session's own assessment (below → The assessment, and what was wrong with it). Don't build this until Josh picks it up again.
 
 Mock-ups: the page "Lesson Door Sheet" (https://claude.ai/artifact/XVeopuYsxXoP2ibkiSwunm), private to Josh. The closed design is at the top; the rounds that were rejected are kept below it, marked as out. A copy of the page without its pictures is in `design/learn-sheet-2/learn-sheet-2.html`. Earlier thinking: [after-conversation.md](after-conversation.md) (2026-11-10), which this replaces for the Learn page; level up there is unchanged.
 
@@ -96,6 +96,36 @@ Josh asked the cloud session to "assess the design/card/idea so far". It led wit
 | It's a Beginner's sheet. | Stands; Beginners are who the game is being built for now. |
 
 **The session's verdict, given when Josh asked:** worth doing. The lessons are written and judged, the app has a sheet and a goodbye that ends the visit, showing the proper phrases right after they were used is how immersion works, and it is Josh's lesson mapping ("you ordered coffee - want to learn more about ordering") in its simplest form. Smaller points it raised that were not discussed: each character has one `here` line, so About this place would repeat on a second visit; a sheet after every goodbye is ceremony unless it sometimes stays away (learn.md: "no ceremony"); the book mid-conversation still opens the old sheet, which has corrections and words this one doesn't.
+
+## 23 November: six card types, one card to a sheet
+
+Drawn at the top of the "Lesson Door Sheet" page, with jump links to the closed design, the color study, the rules and what's open.
+
+**Three new types (Josh):** asked to go from three types to five, he offered "vocab - 5 nouns; verbs - 3 verbs - culture fact", then named the first two "Vocabulary: things and Vocabulary: actions".
+
+| Type | What it holds | Example headline |
+|---|---|---|
+| When you… (closed) | one lesson's phrases under the situation | When you introduce yourself |
+| Formal and informal (closed) | the two forms, one above the other | Formal and informal |
+| About this place (closed) | one fact about where you were | About this garden |
+| Vocabulary: things (new) | five nouns, each with its article, English under each | Vocabulary: things |
+| Vocabulary: actions (new) | three verbs, English under each | Vocabulary: actions |
+| Culture (new) | one culture fact | Culture |
+
+That is six; Josh asked for five and has not said which five, or whether six stands.
+
+**Rules added today (Josh, each a correction of the cloud session's drawings):**
+
+- **One card to a sheet.** "you put multiple cards on one page". The 17 November sheets held two; this replaces that, and settles "how many cards a sheet holds" at one.
+- **Card types stay separate.** "do not combine card types". The session had folded About this place and "Something she mentioned" into one Culture card.
+- **One style for every type.** "do not diverge from styles *weird white boxes*". The session had drawn nouns and verbs as white tiles inside the sage card. Every card is the closed one: sage, the headline, rows with the English under each.
+- **The person screen stays as it is** behind the sheet, settings button included (the session had dropped it).
+
+**Unchanged:** sage #e2e8d2 for the card and the close button (measured in the new pictures after Josh asked whether the colors had changed), the headline level with the close button, no Done, no picture in the sheet, closing returns to the place list.
+
+**The session's own notes, not Josh's decisions:** Culture is drawn as a fact about how people live there (families speaking Tsotsil at home; the passeggiata), About this place as a fact about where you stood. Each city file already has `food`, `customs` and `localTouches` lists that nothing in `lib/` reads; they could supply Culture cards. The vocabulary cards hold bare words, which the "whole sentences" rule (written for phrase cards) does not cover; Josh has not ruled on that.
+
+**Open now:** which five (or all six); where each type's content comes from and how a card is picked, now that a sheet shows one; the footer candidates (Try it, Open the lesson); whether Words and "Something she mentioned" from 15 November are retired by the new types; the Rules and "Three card types" sections lower on the page still describe 17 November.
 
 ## Still open
 
