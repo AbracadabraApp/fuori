@@ -79,7 +79,13 @@ Re-running the script per source adds cards; ids are stable, so a re-run doesn't
 One call per visit, **replacing Learn 1.0's page call** (same moment, `lib/learn-ahead.ts`, kicked off from `/v1/turn` after each learner turn from the 2nd on, cached by conversation id + turn count). New prompt `content/<country>/prompts/learn-card.md`, new `lib/learn-card.ts`:
 
 1. **Shortlist by code** (no Claude, no word lists): bank cards at or below the learner's level, ranked by key overlap with the visit's own keys (city, place, place kind, the units of lessons done, the idiom said). About 30 headlines + ids.
-2. **The writer** gets the transcript, the shortlist, and the models. A picked bank card may come back redrafted for this visit (its lines swapped for ones the character actually said, its headline fitted), keeping its id. It returns one of:
+2. **The writer** gets the transcript, the shortlist, the models, and two things about the learner that aren't corrections:
+   - **Magda's study file, its *Next* and *Try in town* lines** (`lib/study-file.ts`, ready before the visit starts): what she plans to work on with this learner. The writer may lean to a card on it.
+   - **What the character said that the learner should take away:** the phrases the character used well and the ones the learner didn't understand (what the end-of-visit review calls `items` and `missed`). The review itself is written after the screen has gone, so the writer finds these in the transcript itself. These are the character's own lines, so they're reliable where a detected mistake isn't.
+
+   Left out on purpose (Josh, 2026-11-23: "not interested in English - one issue with corrections is we often give bad answers"): the moments the learner fell back on English, the review's mistakes, and the study file's *Recurring* line, which is built from the same mistake detection. Mishearings make bad corrections, and a card built on one would teach the wrong thing.
+
+   The writer A picked bank card may come back redrafted for this visit (its lines swapped for ones the character actually said, its headline fitted), keeping its id. It returns one of:
    - `{ pick: <bank card id>, because }`: a bank card this visit actually involved;
    - `{ make: LearnCard }`: a visit card (vocabulary from what was said, the saying used, or a new kind with the same shape);
    - `{ none }`: the visit gives nothing worth a card.
