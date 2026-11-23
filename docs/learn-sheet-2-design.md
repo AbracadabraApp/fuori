@@ -145,7 +145,7 @@ One little word that does a lot of work. The headline names it: "A small word: a
 
 ## Not decided in the design
 
-- **A footer.** Two candidates so far, neither on the sheet: Try it (something to say to the next person you meet) and Open the lesson. Open the lesson waits for an overhaul of the lessons (Josh, 2026-11-23: "the lesson link is part of why i added the footnote. I think lessons needs an overhaul before we link to them"); each card's source footnote names its lesson, ready for it.
+- **A footer.** Two candidates so far, neither on the sheet: Try it (something to say to the next person you meet) and Open the lesson. Open the lesson waits for an overhaul of the lessons (Josh, 2026-11-23: "the lesson link is part of why i added the footnote. I think lessons needs an overhaul before we link to them"); each card's source footnote names its lesson, ready for it (Josh, then: "i don't think the lessons change - I think the presenttion of the lesson material doees"; so lesson-cut cards stay valid and lessons stay a first-pass source).
 - **Which card shows** after a given visit, and what happens when a visit gives nothing to pick from.
 - **Whether the sheet shows after every visit,** and after one that ends without a goodbye (the back button).
 - ~~The old Learn sheet~~ **Settled (Josh, 2026-11-23):** when Learn 2.0 is finished it replaces the Learn link (the book) and the Learn 1.0 sheet; see the scope note in [learn-sheet-2.md](learn-sheet-2.md). Learn 1.0's corrections are not carried over: cards don't make corrections (rule 11).
