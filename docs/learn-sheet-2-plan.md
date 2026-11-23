@@ -78,7 +78,7 @@ Re-running the script per source adds cards; ids are stable, so a re-run doesn't
 
 One call per visit, **replacing Learn 1.0's page call** (same moment, `lib/learn-ahead.ts`, kicked off from `/v1/turn` after each learner turn from the 2nd on, cached by conversation id + turn count). New prompt `content/<country>/prompts/learn-card.md`, new `lib/learn-card.ts`:
 
-1. **Shortlist by code** (no Claude, no word lists): bank cards at or below the learner's level, not shown to this learner, ranked by key overlap with the visit's own keys (city, place, place kind, the units of lessons done, the idiom said). About 30 headlines + ids.
+1. **Shortlist by code** (no Claude, no word lists): bank cards at or below the learner's level, ranked by key overlap with the visit's own keys (city, place, place kind, the units of lessons done, the idiom said). About 30 headlines + ids.
 2. **The writer** gets the transcript, the shortlist, and the models. A picked bank card may come back redrafted for this visit (its lines swapped for ones the character actually said, its headline fitted), keeping its id. It returns one of:
    - `{ pick: <bank card id>, because }`: a bank card this visit actually involved;
    - `{ make: LearnCard }`: a visit card (vocabulary from what was said, the saying used, or a new kind with the same shape);
@@ -87,11 +87,13 @@ One call per visit, **replacing Learn 1.0's page call** (same moment, `lib/learn
 3. **Backfill** when the writer says none: a bank card that stands by itself (About this place for where you stood, Culture or A word from here for the city, A saying at the level), chosen by code from the shortlist.
 4. **Whether the sheet shows** (by code, at the goodbye): show a relevant card (pick or make) whenever there is one; show a backfill card only if no sheet appeared in the last 3 visits (Josh, 2026-11-23); never after the welcome, a Magda lesson, or a visit that ended by back or swipe; never when level up is being offered that visit (level up wins, as `docs/after-conversation.md` already says). So most visits get a card that is about them, and the sheet doesn't become a ceremony.
 
-Variety by code: the shortlist drops kinds shown in the learner's last two cards, so the types rotate without a rule in the prompt.
+Repeats and rotation are left until play shows them (below).
 
 ### 4. Remembering what was shown
 
-New table `learn_cards_shown` (learner_id, conversation_id, card_id, kind, card jsonb, how 'pick'|'make'|'backfill', shown_at, closed_at). Migration in `scripts/db-migrate.mjs` first, code after (CLAUDE.md). It feeds the shortlist (no repeats), the rotation, the "last few visits" rule, and the growth loop below. `closed_at − shown_at` is the only signal of whether a card was read.
+New table `learn_cards_shown` (learner_id, conversation_id, card_id, kind, card jsonb, how 'pick'|'make'|'backfill', shown_at, closed_at). Migration in `scripts/db-migrate.mjs` first, code after (CLAUDE.md). It is a log, not memory: it serves the "last 3 visits" rule, the source footnote and the growth loop below. `closed_at − shown_at` is the only signal of whether a card was read.
+
+**Memory is a nice-to-have, built when play shows the need** (Josh, 2026-11-23: "memory is a nice to have but not sure it would be needed unttil we see the issue - not a design decision - just input"). So the first version doesn't skip cards already shown or rotate kinds. With a bank of hundreds of cards per country and a writer reading each visit, repeats may be rare; if Josh sees one in play, the log already holds what's needed to filter shown cards out of the shortlist.
 
 ### 5. How the set grows
 
