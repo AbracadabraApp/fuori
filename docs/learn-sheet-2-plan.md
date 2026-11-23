@@ -85,7 +85,7 @@ One call per visit, **replacing Learn 1.0's page call** (same moment, `lib/learn
 
    Left out on purpose (Josh, 2026-11-23: "not interested in English - one issue with corrections is we often give bad answers"): the moments the learner fell back on English, the review's mistakes, and the study file's *Recurring* line, which is built from the same mistake detection. Mishearings make bad corrections, and a card built on one would teach the wrong thing.
 
-   The writer A picked bank card may come back redrafted for this visit (its lines swapped for ones the character actually said, its headline fitted), keeping its id. It returns one of:
+   A picked bank card may come back redrafted for this visit (its lines swapped for ones the character actually said, its headline fitted), keeping its id. It returns one of:
    - `{ pick: <bank card id>, because }`: a bank card this visit actually involved;
    - `{ make: LearnCard }`: a visit card (vocabulary from what was said, the saying used, or a new kind with the same shape);
    - `{ none }`: the visit gives nothing worth a card.
