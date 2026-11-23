@@ -16,6 +16,20 @@ Voice-first Italian learning game. **The goal is to learn the country, Italy or 
 - Keep other languages possible without building them: nothing Italian-specific hard-coded in code or prompt templates (language name, speech-to-text code, voices, UI words and prompt examples come from `content/it/language.ts`), and all Claude calls go through `lib/claude.ts`. See "Keeping other languages possible" in `docs/05-architecture.md`; `npm run test:language` enforces it.
 - Don't build on predicting what learners or characters will say: no phrase lists or keyword filters; prefer signals that work in any language (recording length, silence, a judge call).
 
+## Commands
+- Server: `npm run dev` (Next.js; the web UI is off, only `/v1`, `/api/admin`, `/healthz` answer), `npx tsc --noEmit`, `npm run lint`. `AGENTS.md`: this Next.js differs from what you know; read `node_modules/next/dist/docs/` before touching Next APIs.
+- Tests are one script per check, named `npm run test:<name>` (`package.json` lists them); there is no single runner. Run one with `npm run test:memory`; the ones that call Claude load `.env.local` (`test:conversations`, `test:level`, `test:learner-level`). Country-aware checks run twice: `COUNTRY=es-mx npm run test:<name>`. `npm run test:language` (nothing language-specific in code) and `test:prompt` (changelog/version) are the ones most often tripped.
+- Live check: `npm run smoke:live` (`COUNTRY=es-mx` for Mexico); release: `npm run release`.
+- iPhone: `cd ios && make build | test | archive | upload` (`make project` generates the Xcode project from `project.yml`). Package tests in `ios/FuoriKit`.
+- Prompt trials: scripts in `tests/experiments/` (`*.mts`, started through `startTest` in `common.mts`); results in `tests/experiments/results/`.
+- Claude spend: every Claude call logs a `claude-usage` JSON line (`logUsage` in `lib/claude.ts`); read with `railway logs --service Fuori|Afuera`. `npm run test:claude-usage-log` fails if a new call site skips it. Speech (Whisper, ElevenLabs) isn't logged for cost.
+
+## Architecture
+- One server, two countries: `COUNTRY` (`it` default, `es-mx`) selects `content/<country>/` (language, cities, characters, prompts, level rules). Railway services Fuori (Italy) and Afuera (Mexico) run the same code.
+- `app/v1/*` routes are thin; the work is in `lib/`. A conversation turn goes `app/v1/turn` → `lib/turn.ts` (character prompt from `content/<country>/prompts/`, level-specific paths in `lib/beginner.ts`/`lib/beginner-2.ts`) → `lib/claude.ts`. Around it: `lib/replies.ts` (reply buttons), `lib/draft-turns.ts` (replies drafted during learner silence), `lib/remember.ts`/`lib/memory.ts` (what characters remember), `lib/quality.ts`/`lib/level*.ts` (judges and level-up), `lib/learn*.ts`/`lib/tutor.ts`/`lib/lesson*.ts` (Learn and Magda). Speech in/out: `lib/speech/` (Whisper on Groq), `lib/voice/` (ElevenLabs).
+- State is Postgres (`lib/db.ts`, `migrations/`); a column's code must not ship before its migration runs.
+- `ios/` holds the SwiftUI app (`FuoriKit` package for logic, UI over it); it fetches words, cities and defaults from `/v1/content`. State machines are mapped in `docs/state-machines.md`.
+
 ## Testing
 - Run `npx tsc --noEmit` after editing TypeScript or content files. Never claim a task is done until type checking passes.
 - Check the dev server compiles without errors before showing work.
