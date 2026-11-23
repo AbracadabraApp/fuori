@@ -114,6 +114,19 @@ Drawn at the top of the "Lesson Door Sheet" page, with jump links to the closed 
 
 That is six; Josh asked for five and has not said which five, or whether six stands.
 
+**Four more, later the same day.** Asked for suggestions, the cloud session offered eight; Josh: "these are good", of four. All drawn on full person screens, one card each.
+
+| Type | What it holds | Example | Where content already exists |
+|---|---|---|---|
+| A saying | one idiom, its literal words, what it means | *A falta de pan, tortillas.* / No bread, then tortillas. / You make do with what you have. | `content/<country>/idioms.json` (120 each) |
+| A word from here | one local word | *kolaval* / thank you, in Tsotsil | each city file's `localTouches` |
+| This or that | a choice of two that isn't formal and informal | *Buongiorno!* until the afternoon / *Buonasera!* from about four | about 19 lessons |
+| A small word | one little word, shown in a sentence or two; the headline names it ("A small word: allora") | *Allora, due cappuccini e due cornetti?* | about 12 lessons |
+
+Not picked from the eight: Vocabulary: descriptions, Numbers, Unlike English, What you'll hear. Ten types are now drawn.
+
+**"When you…" examples from the lessons.** Josh asked for a sublist; 18 were pulled, each two or three of the lesson's own example lines in spoken order (hello, how are you, introduce yourself, where you're from, don't understand, need a word, order, ask the price, pay; Mexico: goodbye, someone calls you, get past, walk into a shop, order, "with everything?", something small; later Italy: is it allowed, ask about a building). Most lessons hold four examples as two short exchanges, so a two-line card lifts whole. Mexico has a goodbye lesson and no paying lesson; Italy's first set the reverse.
+
 **Rules added today (Josh, each a correction of the cloud session's drawings):**
 
 - **One card to a sheet.** "you put multiple cards on one page". The 17 November sheets held two; this replaces that, and settles "how many cards a sheet holds" at one.
