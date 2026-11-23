@@ -2,6 +2,8 @@
 
 2026-11-17 · Josh and the cloud session · design closed in mock-ups, then **paused by Josh the same day**. Nothing built.
 
+**Scope (Josh, 2026-11-23):** "we are working on updating learn - learn 2.0 - this will be an interstitial sheet wheen a converssation ends.  When finished it will replace the dropping icon and lern 1.0 implementation". So when Learn 2.0 is done, the Learn link in the bottom bar (the book, which opens `LearnSheet` mid-conversation from `PersonView`) and the Learn 1.0 sheet itself go away. That settles "The old Learn sheet behind the book" under Still open.
+
 **Status:** design work picked up again by Josh on 2026-11-23 ("I want you to work creatively and productively - not shitting on an idea when its still in development. Take account of the requirements both design and content."). Six card types now, one card to a sheet (below → 23 November). Still nothing built. Before that: paused 2026-11-17, "Save all the work but I think I'm deterred to go forward right now given the first set of feedback." The feedback was the cloud session's own assessment (below → The assessment, and what was wrong with it). Don't build this until Josh picks it up again.
 
 Mock-ups: the page "Lesson Door Sheet" (https://claude.ai/artifact/XVeopuYsxXoP2ibkiSwunm), private to Josh. The closed design is at the top; the rounds that were rejected are kept below it, marked as out. A copy of the page without its pictures is in `design/learn-sheet-2/learn-sheet-2.html`. Earlier thinking: [after-conversation.md](after-conversation.md) (2026-11-10), which this replaces for the Learn page; level up there is unchanged.
