@@ -37,9 +37,18 @@ type LearnCard = {
   level: 'A1'|'A2'|'B1'|'B2'|'C1'
   keys: string[]             // what it's about: "unit:a1-07", "lesson:a1-03-2", "city:palermo",
                              // "place:palermo/orto-botanico", "kind:bar", "idiom:<text>", "theme:<csv theme>"
-  source: string             // where it was cut from, for checking
+  source: {                  // the footnote: where the card came from. Never shown to the learner
+    from: string             // "lesson", "syllabus", "grammar-help", "idioms", "culture", "city", "here", "visit"
+    ref: string              // the exact place: "it/lessons.json#meeting-people-2/examples[0,1]",
+                             // "es-mx/syllabus.json#a1-03/common_errors[2]", "it/cities/palermo.ts#orto-botanico/here",
+                             // "conversation:<id>#turns[5,7]"
+    redrafted: boolean       // true when the wording isn't the source's own
+    by?: string              // what wrote it: "learn-cards.mts@<prompt version>" or "learn-card@<prompt version>"
+  }
 }
 ```
+
+**The footnote is for building, not for learners** (Josh, 2026-11-23: "for building it would be good to have a footnote to trace the source of card if it was coming froma lesson, syllalbus, etc - not shown to user"). `GET /v1/learn/card` leaves `source` out of what it sends the app. It is kept in the bank file, in `learn_cards_shown.card`, and is printed on the sample page, the replay run and the growth script, so any card can be traced back to the lesson line, syllabus entry or turn it came from. A picked card redrafted for a visit keeps its bank `ref` and adds the turns it borrowed (`ref` gains `; conversation:<id>#turns[...]`).
 
 The app draws every card with one view (headline + ✕, sage block, rows, optional note); `kind` is never switched on in Swift. A new kind is new data, not new screen work. The ten drawn types are the first ten values of `kind`, not a list the code knows.
 
