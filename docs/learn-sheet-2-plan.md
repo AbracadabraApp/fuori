@@ -43,11 +43,13 @@ type LearnCard = {
 
 The app draws every card with one view (headline + ✕, sage block, rows, optional note); `kind` is never switched on in Swift. A new kind is new data, not new screen work. The ten drawn types are the first ten values of `kind`, not a list the code knows.
 
+**The ten drawn cards are models, not content** (Josh, 2026-11-23: "the 10 examples do not need to be complete example even for the 10 cards - the writer could redraft them - but the 10 are models"). They live in one file, `content/<country>/prompts/learn-card-models.md` (each: kind, headline, rows, note, and one line on what makes it a good card), and are shown to both the bank cutter and the visit writer as the standard to write to. They are not themselves cards in the bank, they don't fix what a kind must hold, and a card of the same kind can be redrafted freely: a When you… with two lines or three, a Culture fact phrased differently, a This or that on any choice. A new kind is judged against the models' qualities (one topic, plain, short, English under each line), not their exact layout.
+
 `keys` is the shared topic key the survey found missing. It doesn't need one vocabulary: the syllabus unit id is the spine (it already joins syllabus, words, grammar-help, flashcard deck and Mexico's lessons); Italy's lesson steps get their unit by a one-off mapping in the bank build; places and cities are their ids; anything else is a free key that the picker reads as text, not matches.
 
 ### 2. Two places cards come from
 
-**The bank** (`content/<country>/learn-cards.json`, hand-written content as data, checked in): cards cut once from the sources above by a build script, `scripts/learn-cards.mts`, which calls Claude through `lib/claude.ts` with `logUsage`, one source at a time, and writes cards with their `keys`, `level`, `source`. Rules the cutter enforces by code: row counts (≤3 phrases, ≤5 things, ≤3 actions), English under every row, no blanks. Per source, roughly:
+**The bank** (`content/<country>/learn-cards.json`, hand-written content as data, checked in): cards cut once from the sources above by a build script, `scripts/learn-cards.mts`, which calls Claude through `lib/claude.ts` with `logUsage`, one source at a time, with the models as its standard; it redrafts from the source (not a copy of the lesson lines or the city list), and writes cards with their `keys`, `level`, `source`. Rules the cutter enforces by code: row counts (≤3 phrases, ≤5 things, ≤3 actions), English under every row, no blanks. Per source, roughly:
 
 | Source | Kinds it yields (examples, not a limit) |
 |---|---|
@@ -68,7 +70,7 @@ Re-running the script per source adds cards; ids are stable, so a re-run doesn't
 One call per visit, **replacing Learn 1.0's page call** (same moment, `lib/learn-ahead.ts`, kicked off from `/v1/turn` after each learner turn from the 2nd on, cached by conversation id + turn count). New prompt `content/<country>/prompts/learn-card.md`, new `lib/learn-card.ts`:
 
 1. **Shortlist by code** (no Claude, no word lists): bank cards at or below the learner's level, not shown to this learner, ranked by key overlap with the visit's own keys (city, place, place kind, the units of lessons done, the idiom said). About 30 headlines + ids.
-2. **The writer** gets the transcript, the shortlist, and the kinds seen so far as examples. It returns one of:
+2. **The writer** gets the transcript, the shortlist, and the models. A picked bank card may come back redrafted for this visit (its lines swapped for ones the character actually said, its headline fitted), keeping its id. It returns one of:
    - `{ pick: <bank card id>, because }`: a bank card this visit actually involved;
    - `{ make: LearnCard }`: a visit card (vocabulary from what was said, the saying used, or a new kind with the same shape);
    - `{ none }`: the visit gives nothing worth a card.
