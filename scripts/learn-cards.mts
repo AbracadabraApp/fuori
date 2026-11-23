@@ -23,11 +23,16 @@ const factsJudge = readPromptFile('culture.md').block('Facts');
 const by = `learn-cards.mts@${cut.version}`;
 const system = fill(cut.block('Cut'), { language: language.name, models: models.block('Models') });
 
+/** What this run used, printed at the end (development calls aren't in the live logs) */
+const spent = { calls: 0, input: 0, output: 0 };
+
 async function ask<T>(system: string, content: string, schema: object, max = 6000): Promise<T> {
   for (let attempt = 0; ; attempt++) {
     try {
       const r = await anthropic.messages.create({ model: CLAUDE_MODEL, max_tokens: max, system, messages: [{ role: 'user', content }], output_config: { format: { type: 'json_schema', schema } } } as Parameters<typeof anthropic.messages.create>[0]);
       logUsage('learn-cards', r as Parameters<typeof logUsage>[1]);
+      const u = (r as { usage: { input_tokens: number; output_tokens: number } }).usage;
+      spent.calls++; spent.input += u.input_tokens; spent.output += u.output_tokens;
       return JSON.parse(replyText(r as Parameters<typeof replyText>[0])) as T;
     } catch (e) {
       const status = (e as { status?: number }).status ?? 0;
@@ -207,4 +212,5 @@ const cards = [...kept, ...made].filter((c) => (ids.has(c.id) ? false : (ids.add
 const bank: LearnCardBank = { version: new Date().toISOString().slice(0, 10), prompt: cut.version, models: models.version, cards };
 writeFileSync(out, JSON.stringify(bank, null, 2) + '\n');
 console.log(`[${pack.id}]${pilot ? ' pilot' : ''} ${log.join(' · ')}\n${cards.length} cards in the bank`);
+console.log(`Claude: ${spent.calls} calls, ${spent.input} input tokens, ${spent.output} output tokens`);
 if (droppedLog.length) console.log(`dropped:\n  ${droppedLog.join('\n  ')}`);
