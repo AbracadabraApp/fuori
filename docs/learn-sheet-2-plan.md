@@ -76,7 +76,7 @@ Re-running the script per source adds cards; ids are stable, so a re-run doesn't
 
 ### 3. Picking: relevant first, backfill second, sometimes nothing
 
-One call per visit, **replacing Learn 1.0's page call** (same moment, `lib/learn-ahead.ts`, kicked off from `/v1/turn` after each learner turn from the 2nd on, cached by conversation id + turn count). New prompt `content/<country>/prompts/learn-card.md`, new `lib/learn-card.ts`:
+One Claude call per visit, **replacing Learn 1.0's page call**, started once: when `/v1/turn` writes the character's goodbye (the reply marked `done`), it starts the writer in the background and keeps the result in memory by conversation id. It runs while the goodbye is spoken and the screen's existing 1.5 s wait; a Learn page without thinking took about 5 s (Josh's Memo conversation). Not rerun after every turn as Learn 1.0 is, which spends several calls a visit and throws most away (Josh, 2026-11-23: "sure"). New prompt `content/<country>/prompts/learn-card.md`, new `lib/learn-card.ts`:
 
 1. **Shortlist by code** (no Claude, no word lists): bank cards at or below the learner's level, ranked by key overlap with the visit's own keys (city, place, place kind, the units of lessons done, the idiom said). About 30 headlines + ids.
 2. **The writer** gets the transcript, the shortlist, the models, the learner's level, and one thing about the visit that isn't a correction:
@@ -122,7 +122,7 @@ Remove the book from `ConversationControls`, `LearnSheet.swift`, `LearnSource`, 
 ## Build order
 
 1. **Bank first, Italy and Mexico:** `LearnCard` type in `lib/learn-card.ts`, `scripts/learn-cards.mts` cutting lessons, idioms, culture.json, city lists and `here` lines; the cards checked in. Josh reads a sample page of cards (an artifact) before anything else is built.
-2. **Server:** migration for `learn_cards_shown`; the writer prompt + `lib/learn-card.ts` (shortlist, call, backfill, show rule) run ahead from `/v1/turn`; `GET /v1/learn/card` and the close `POST`; `/v1/content` untouched.
+2. **Server:** migration for `learn_cards_shown`; the writer prompt + `lib/learn-card.ts` (shortlist, call, backfill, show rule) started from `/v1/turn` at the goodbye; `GET /v1/learn/card` and the close `POST`; `/v1/content` untouched.
 3. **App:** `LearnCardSheet`, the `PersonView` change, the token; one screenshot to Josh; build + CI.
 4. **Josh plays** on his phone (after his yes to install), both countries.
 5. **Growth script** (`learn-cards-made.mts`) once there are visits to read.
