@@ -47,6 +47,7 @@ No picture inside the sheet: the person is on the screen behind it. The sheet ma
 8. **Bite-sized.** Two or three lines for phrases, five for things, three for actions, one fact. Earlier, fuller cards were "too dense" and one-line pointers "too compact".
 9. **Cards are often picked by what the conversation involved, but not always.** A card can stand by itself.
 10. **The person screen behind the sheet is not changed.**
+11. **Cards don't make corrections** (Josh, 2026-11-23: "i don't know if it made it into the design doc - but cards don't make corrections"). A card shows the right way to say things; it never shows what the learner got wrong or a wrong form beside the right one.
 
 ## The ten card types
 
@@ -147,7 +148,7 @@ One little word that does a lot of work. The headline names it: "A small word: a
 - **A footer.** Two candidates so far, neither on the sheet: Try it (something to say to the next person you meet) and Open the lesson.
 - **Which card shows** after a given visit, and what happens when a visit gives nothing to pick from.
 - **Whether the sheet shows after every visit,** and after one that ends without a goodbye (the back button).
-- ~~The old Learn sheet~~ **Settled (Josh, 2026-11-23):** when Learn 2.0 is finished it replaces the Learn link (the book) and the Learn 1.0 sheet; see the scope note in [learn-sheet-2.md](learn-sheet-2.md). What happens to Learn 1.0's corrections is not decided.
+- ~~The old Learn sheet~~ **Settled (Josh, 2026-11-23):** when Learn 2.0 is finished it replaces the Learn link (the book) and the Learn 1.0 sheet; see the scope note in [learn-sheet-2.md](learn-sheet-2.md). Learn 1.0's corrections are not carried over: cards don't make corrections (rule 11).
 - **The close button's exact look.**
 - Four suggested types Josh did not pick: Vocabulary: descriptions, Numbers, Unlike English, What you'll hear.
 
@@ -234,7 +235,7 @@ A first version could be very plain: prefer a card tied to the visit, never repe
 - Whether cards are stored content, made per visit, or both.
 - How a visit is matched to a lesson.
 - What to record about cards shown, and where.
-- What becomes of the old Learn sheet's corrections (the sheet and the book go, per Josh).
+- ~~What becomes of the old Learn sheet's corrections~~ None carry over: cards don't make corrections (rule 11).
 - Whether the sheet is skipped sometimes, so it doesn't become a ceremony after every goodbye.
 - How card content is checked. Lesson lines are already judged; facts cut from `here` lines and city lists would want the same fact check those lines had.
 

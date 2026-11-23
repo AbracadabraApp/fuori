@@ -63,7 +63,7 @@ The app draws every card with one view (headline + ✕, sage block, rows, option
 | Source | Kinds it yields (examples, not a limit) |
 |---|---|
 | lessons' `examples` + `how_to` | When you…, Formal and informal, This or that, A small word |
-| syllabus `frames`/`model_exchanges`/`common_errors`/`culture` | When you…, This or that, Culture, (new) "Not X but Y" from common errors |
+| syllabus `frames`/`model_exchanges`/`culture` | When you…, This or that, Culture |
 | grammar-help (Italy) | Formal and informal, short Q&A cards |
 | idioms.json | A saying |
 | culture.json, city `food`/`customs` | Culture |
@@ -112,7 +112,7 @@ Tying cards to the visit is also what keeps them fresh (Josh, 2026-11-23: "if a 
 
 ### 7. Retiring Learn 1.0 (last, after Josh has played 2.0)
 
-Remove the book from `ConversationControls`, `LearnSheet.swift`, `LearnSource`, `/v1/learn`, `prompts/learn.md`, and the ahead page. Learn 1.0's corrections are not carried over (undecided; `review.mistakes` still reaches Magda's study file).
+Remove the book from `ConversationControls`, `LearnSheet.swift`, `LearnSource`, `/v1/learn`, `prompts/learn.md`, and the ahead page. Learn 1.0's corrections are not carried over: **cards don't make corrections** (Josh, 2026-11-23; rule 11 in the design). `review.mistakes` still reaches Magda's study file.
 
 ## Build order
 
@@ -123,11 +123,11 @@ Remove the book from `ConversationControls`, `LearnSheet.swift`, `LearnSource`, 
 5. **Growth script** (`learn-cards-made.mts`) once there are visits to read.
 6. **Retire Learn 1.0.**
 
-Syllabus `frames`/`common_errors` and grammar-help join the bank in a second pass, once the first sources have been played.
+Syllabus `frames` and grammar-help (its Q&A and recipes, not its recasts) join the bank in a second pass, once the first sources have been played.
 
 ## Rules this keeps
 
-Nothing language-specific in code (cards and prompt live in `content/<country>/`; `npm run test:language`); every Claude call through `lib/claude.ts` with `logUsage` (`test:claude-usage-log`); no phrase lists: relevance is the writer's judgement, the rest is ids and levels; Josh's card rules (one card, plain, whole sentences, English under, spoken order, no audio, no next visit, no city or day) are enforced by the cutter and the writer's output schema.
+Nothing language-specific in code (cards and prompt live in `content/<country>/`; `npm run test:language`); every Claude call through `lib/claude.ts` with `logUsage` (`test:claude-usage-log`); no phrase lists: relevance is the writer's judgement, the rest is ids and levels; Josh's card rules (no corrections: no wrong forms and nothing about the learner's mistakes, so `common_errors`, recasts and `review.mistakes` are never card sources; one card, plain, whole sentences, English under, spoken order, no audio, no next visit, no city or day) are enforced by the cutter and the writer's output schema.
 
 ## Verification
 
