@@ -1,0 +1,614 @@
+{
+  "version": "2026-11-23",
+  "prompt": "2026-11-23",
+  "models": "2026-11-23",
+  "cards": [
+    {
+      "id": "lesson:a1-01-4:1",
+      "kind": "when-you",
+      "headline": "When you greet a group",
+      "rows": [
+        {
+          "text": "Buenas tardes a todos.",
+          "en": "Good afternoon, everyone."
+        },
+        {
+          "text": "¿Cómo están?",
+          "en": "How are you?"
+        },
+        {
+          "text": "Que les vaya bien.",
+          "en": "Have a good day."
+        }
+      ],
+      "note": "For two or more people, you say «están» and «les». Mexicans do this even with friends and children.",
+      "level": "A1",
+      "keys": [
+        "lesson:a1-01-4",
+        "unit:a1-01",
+        "kind:shop",
+        "kind:café",
+        "kind:plaza",
+        "kind:pharmacy"
+      ],
+      "source": {
+        "from": "lesson",
+        "ref": "es-mx/lessons.json#a1-01-4/examples 1, 2, 4; notice",
+        "redrafted": false,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "lesson:a1-01-1:1",
+      "kind": "formal-informal",
+      "headline": "Formal and informal",
+      "rows": [
+        {
+          "text": "¿Cómo está?",
+          "en": "How are you? · formal"
+        },
+        {
+          "text": "¿Cómo estás?",
+          "en": "How are you? · informal"
+        }
+      ],
+      "level": "A1",
+      "keys": [
+        "lesson:a1-01-1",
+        "unit:a1-01",
+        "kind:shop",
+        "kind:plaza"
+      ],
+      "source": {
+        "from": "lesson",
+        "ref": "es-mx/lessons.json#a1-01-1/examples 1, 3; notice",
+        "redrafted": false,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "lesson:a1-01-1:2",
+      "kind": "culture",
+      "headline": "Culture",
+      "rows": [],
+      "note": "In Mexico, using usted is a sign of respect, not distance.",
+      "level": "A1",
+      "keys": [
+        "lesson:a1-01-1",
+        "unit:a1-01",
+        "kind:shop",
+        "kind:plaza"
+      ],
+      "source": {
+        "from": "lesson",
+        "ref": "es-mx/lessons.json#a1-01-1/context",
+        "redrafted": false,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "lesson:a1-01-2:1",
+      "kind": "when-you",
+      "headline": "When you're asked how you are",
+      "rows": [
+        {
+          "text": "¿Cómo está, señor?",
+          "en": "How are you, sir?"
+        },
+        {
+          "text": "Estoy bien, gracias.",
+          "en": "I'm fine, thanks."
+        }
+      ],
+      "level": "A1",
+      "keys": [
+        "lesson:a1-01-2",
+        "unit:a1-01",
+        "kind:café",
+        "kind:plaza"
+      ],
+      "source": {
+        "from": "lesson",
+        "ref": "es-mx/lessons.json#a1-01-2/examples 1, 2",
+        "redrafted": false,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "lesson:a1-01-2:2",
+      "kind": "formal-informal",
+      "headline": "Formal and informal",
+      "rows": [
+        {
+          "text": "¿Cómo está?",
+          "en": "How are you? · formal"
+        },
+        {
+          "text": "¿Cómo estás?",
+          "en": "How are you? · informal"
+        }
+      ],
+      "level": "A1",
+      "keys": [
+        "lesson:a1-01-2",
+        "unit:a1-01",
+        "kind:café",
+        "kind:plaza"
+      ],
+      "source": {
+        "from": "lesson",
+        "ref": "es-mx/lessons.json#a1-01-2/example 1, notice, practice 1",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "lesson:a1-01-3:1",
+      "kind": "when-you",
+      "headline": "Hello at any hour",
+      "rows": [
+        {
+          "text": "¡Buenos días!",
+          "en": "Good morning!"
+        },
+        {
+          "text": "¡Buenas tardes!",
+          "en": "Good afternoon!"
+        },
+        {
+          "text": "¡Buenas noches!",
+          "en": "Good evening!"
+        }
+      ],
+      "note": "Días lasts until about noon, tardes from noon until dark, and noches once it's dark.",
+      "level": "A1",
+      "keys": [
+        "lesson:a1-01-3",
+        "unit:a1-01",
+        "kind:shop",
+        "kind:pharmacy",
+        "kind:taquería"
+      ],
+      "source": {
+        "from": "lesson",
+        "ref": "es-mx/lessons.json#a1-01-3/examples 1, 2, 3, notice",
+        "redrafted": false,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "lesson:a1-01-3:2",
+      "kind": "a-small-word",
+      "headline": "A small word",
+      "term": "Buenas",
+      "rows": [
+        {
+          "text": "Buenas.",
+          "en": "Hi."
+        }
+      ],
+      "note": "It works at any hour, and it's enough when you walk into a small shop.",
+      "level": "A1",
+      "keys": [
+        "lesson:a1-01-3",
+        "unit:a1-01",
+        "kind:shop",
+        "kind:pharmacy",
+        "kind:taquería"
+      ],
+      "source": {
+        "from": "lesson",
+        "ref": "es-mx/lessons.json#a1-01-3/example 4, notice, context",
+        "redrafted": false,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "idiom:al-buen-entendedor-pocas-palabras-bastan",
+      "kind": "a-saying",
+      "headline": "A saying",
+      "rows": [
+        {
+          "text": "al buen entendedor, pocas palabras (bastan)",
+          "en": "to a good understander, few words"
+        }
+      ],
+      "note": "A sharp person gets the hint; no need to spell it out.",
+      "level": "B1",
+      "keys": [
+        "idiom:al buen entendedor, pocas palabras (bastan)",
+        "group:dicho"
+      ],
+      "source": {
+        "from": "idioms",
+        "ref": "es-mx/idioms.json#0",
+        "redrafted": false,
+        "by": "learn-cards.mts (no call)"
+      }
+    },
+    {
+      "id": "idiom:a-falta-de-pan-tortillas",
+      "kind": "a-saying",
+      "headline": "A saying",
+      "rows": [
+        {
+          "text": "A falta de pan, tortillas",
+          "en": "no bread, then tortillas"
+        }
+      ],
+      "note": "Make do with what's available.",
+      "level": "A2",
+      "keys": [
+        "idiom:A falta de pan, tortillas",
+        "group:dicho"
+      ],
+      "source": {
+        "from": "idioms",
+        "ref": "es-mx/idioms.json#1",
+        "redrafted": false,
+        "by": "learn-cards.mts (no call)"
+      }
+    },
+    {
+      "id": "idiom:dando-y-dando-pajarito-volando",
+      "kind": "a-saying",
+      "headline": "A saying",
+      "rows": [
+        {
+          "text": "dando y dando, pajarito volando",
+          "en": "giving and giving, little bird flying"
+        }
+      ],
+      "note": "Pay first, then you get it; a fair swap on the spot.",
+      "level": "B1",
+      "keys": [
+        "idiom:dando y dando, pajarito volando",
+        "group:dicho"
+      ],
+      "source": {
+        "from": "idioms",
+        "ref": "es-mx/idioms.json#2",
+        "redrafted": false,
+        "by": "learn-cards.mts (no call)"
+      }
+    },
+    {
+      "id": "idiom:dar-atole-con-el-dedo",
+      "kind": "a-saying",
+      "headline": "A saying",
+      "rows": [
+        {
+          "text": "Dar atole con el dedo",
+          "en": "feed atole with a finger"
+        }
+      ],
+      "note": "Fool someone with empty promises.",
+      "level": "B2",
+      "keys": [
+        "idiom:Dar atole con el dedo",
+        "group:dicho"
+      ],
+      "source": {
+        "from": "idioms",
+        "ref": "es-mx/idioms.json#3",
+        "redrafted": false,
+        "by": "learn-cards.mts (no call)"
+      }
+    },
+    {
+      "id": "idiom:de-lengua-me-como-un-taco",
+      "kind": "a-saying",
+      "headline": "A saying",
+      "rows": [
+        {
+          "text": "de lengua me como un taco",
+          "en": "I'll eat a tongue taco out of words"
+        }
+      ],
+      "note": "Talk is cheap; prove it.",
+      "level": "B1",
+      "keys": [
+        "idiom:de lengua me como un taco",
+        "group:dicho"
+      ],
+      "source": {
+        "from": "idioms",
+        "ref": "es-mx/idioms.json#4",
+        "redrafted": false,
+        "by": "learn-cards.mts (no call)"
+      }
+    },
+    {
+      "id": "culture:ciudad-de-mexico-the-cathedral-that-sinks",
+      "kind": "about-this-place",
+      "headline": "About this church",
+      "rows": [],
+      "note": "The Catedral Metropolitana stands on the soft lakebed of Lake Texcoco, and over the centuries it has sunk unevenly, so parts of it lean. In the 1990s engineers carefully removed soil from under the higher parts to even it out and slow the problem.",
+      "level": "A1",
+      "keys": [
+        "city:ciudad-de-mexico",
+        "place:ciudad-de-mexico/catedral-metropolitana",
+        "topic:history",
+        "kind:church"
+      ],
+      "source": {
+        "from": "culture",
+        "ref": "es-mx/culture.json#ciudad-de-mexico-the-cathedral-that-sinks/story 1",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "culture:ciudad-de-mexico-guajolota-for-breakfast",
+      "kind": "culture",
+      "headline": "Culture",
+      "rows": [],
+      "note": "In Mexico City, many people eat a guajolota for a quick breakfast: a tamal tucked inside a bolillo, the crusty white roll. It is cheap and filling, and it often comes with a cup of warm, thick atole.",
+      "level": "A1",
+      "keys": [
+        "city:ciudad-de-mexico",
+        "place:ciudad-de-mexico/tamales-oaxaquenos-bici",
+        "topic:food",
+        "kind:street-food"
+      ],
+      "source": {
+        "from": "culture",
+        "ref": "es-mx/culture.json#ciudad-de-mexico-guajolota-for-breakfast/1",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "city:ciudad-de-mexico:a-word-from-here-provecho",
+      "kind": "a-word-from-here",
+      "headline": "A word from here",
+      "rows": [
+        {
+          "text": "Provecho.",
+          "en": "Enjoy your meal."
+        }
+      ],
+      "level": "A1",
+      "keys": [
+        "city:ciudad-de-mexico"
+      ],
+      "source": {
+        "from": "city",
+        "ref": "es-mx/cities/ciudad-de-mexico.ts#lists/local words 12",
+        "redrafted": false,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "city:ciudad-de-mexico:a-word-from-here-mande-usted",
+      "kind": "a-word-from-here",
+      "headline": "A word from here",
+      "rows": [
+        {
+          "text": "Mande usted.",
+          "en": "Pardon? (a polite reply when someone calls you)"
+        }
+      ],
+      "level": "A1",
+      "keys": [
+        "city:ciudad-de-mexico"
+      ],
+      "source": {
+        "from": "city",
+        "ref": "es-mx/cities/ciudad-de-mexico.ts#lists/local words 7",
+        "redrafted": false,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "city:ciudad-de-mexico:culture-la-comida-is-the-main-meal-of-the-day-a",
+      "kind": "culture",
+      "headline": "Culture",
+      "rows": [],
+      "note": "La comida is the main meal of the day, and it is eaten in the middle of the afternoon.",
+      "level": "A1",
+      "keys": [
+        "city:ciudad-de-mexico"
+      ],
+      "source": {
+        "from": "city",
+        "ref": "es-mx/cities/ciudad-de-mexico.ts#lists/customs 19",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "city:ciudad-de-mexico:culture-people-tip-the-franelero-the-person-who",
+      "kind": "culture",
+      "headline": "Culture",
+      "rows": [],
+      "note": "People tip the franelero, the person who looks after your car on the street.",
+      "level": "A1",
+      "keys": [
+        "city:ciudad-de-mexico"
+      ],
+      "source": {
+        "from": "city",
+        "ref": "es-mx/cities/ciudad-de-mexico.ts#lists/customs 22",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "city:oaxaca:a-word-from-here-mi-reina-mi-rey",
+      "kind": "a-word-from-here",
+      "headline": "A word from here",
+      "term": "mi reina / mi rey",
+      "rows": [
+        {
+          "text": "mi reina / mi rey",
+          "en": "my queen / my king"
+        }
+      ],
+      "note": "A warm way for sellers to address their customers.",
+      "level": "A1",
+      "keys": [
+        "city:oaxaca"
+      ],
+      "source": {
+        "from": "city",
+        "ref": "es-mx/cities/oaxaca.ts#lists/local words 4",
+        "redrafted": false,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "city:oaxaca:culture-the-main-meal-of-the-day-is-eaten-betwee",
+      "kind": "culture",
+      "headline": "Culture",
+      "rows": [],
+      "note": "The main meal of the day is eaten between two and four in the afternoon. In the fondas it comes as the comida corrida.",
+      "level": "A1",
+      "keys": [
+        "city:oaxaca"
+      ],
+      "source": {
+        "from": "city",
+        "ref": "es-mx/cities/oaxaca.ts#lists/customs 15",
+        "redrafted": false,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "city:oaxaca:culture-buen-provecho",
+      "kind": "culture",
+      "headline": "Culture",
+      "rows": [
+        {
+          "text": "Buen provecho.",
+          "en": "Enjoy your meal."
+        }
+      ],
+      "note": "It is the custom to say buen provecho when you walk into a place where someone is eating.",
+      "level": "A1",
+      "keys": [
+        "city:oaxaca"
+      ],
+      "source": {
+        "from": "city",
+        "ref": "es-mx/cities/oaxaca.ts#lists/customs 16",
+        "redrafted": false,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "here:ciudad-de-mexico/quesadillas-dona-lupe:1",
+      "kind": "about-this-place",
+      "headline": "About this market",
+      "rows": [],
+      "note": "In Mexico City a quesadilla doesn't automatically come with cheese; it's \"con queso\" only if asked.",
+      "level": "A1",
+      "keys": [
+        "city:ciudad-de-mexico",
+        "place:ciudad-de-mexico/quesadillas-dona-lupe",
+        "kind:market stall"
+      ],
+      "source": {
+        "from": "here",
+        "ref": "es-mx/cities/ciudad-de-mexico.ts#quesadillas-dona-lupe/here/line 5",
+        "redrafted": false,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "here:ciudad-de-mexico/catedral-metropolitana:2",
+      "kind": "about-this-place",
+      "headline": "About this church",
+      "rows": [],
+      "note": "The Catedral Metropolitana, the largest cathedral in Latin America, stands on soft lake-bed clay over part of the old Aztec ceremonial precinct of Tenochtitlan. It has sunk unevenly over time, and plumb lines hang inside.",
+      "level": "A1",
+      "keys": [
+        "city:ciudad-de-mexico",
+        "place:ciudad-de-mexico/catedral-metropolitana",
+        "kind:church"
+      ],
+      "source": {
+        "from": "here",
+        "ref": "es-mx/cities/ciudad-de-mexico.ts#catedral-metropolitana/here/line 8",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "here:ciudad-de-mexico/alameda-central:3",
+      "kind": "about-this-place",
+      "headline": "About this plaza",
+      "rows": [],
+      "note": "The Alameda Central, laid out in 1592, is the oldest public park in the Americas. It is named for its álamos, the poplar trees.",
+      "level": "A1",
+      "keys": [
+        "city:ciudad-de-mexico",
+        "place:ciudad-de-mexico/alameda-central",
+        "kind:plaza"
+      ],
+      "source": {
+        "from": "here",
+        "ref": "es-mx/cities/ciudad-de-mexico.ts#alameda-central/here/line 10",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "here:oaxaca/tlayudas-mercado-20-de-noviembre:1",
+      "kind": "about-this-place",
+      "headline": "About this market",
+      "rows": [],
+      "note": "A tlayuda is a large, crisp corn tortilla spread with asiento (pork lard), beans and quesillo. Tasajo and cecina enchilada are grilled over charcoal, so smoke fills the aisle.",
+      "level": "A1",
+      "keys": [
+        "city:oaxaca",
+        "place:oaxaca/tlayudas-mercado-20-de-noviembre",
+        "kind:tlayuda grill"
+      ],
+      "source": {
+        "from": "here",
+        "ref": "es-mx/cities/oaxaca.ts#tlayudas-mercado-20-de-noviembre/here/line 1",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "here:oaxaca/fonda-dona-tere-reforma:2",
+      "kind": "about-this-place",
+      "headline": "About this fonda",
+      "rows": [],
+      "note": "Oaxaca is the land of seven moles: negro, coloradito, amarillo, rojo, verde, chichilo and manchamanteles. Mole negro gets its dark color from chiles chilhuacles and toasted seeds, and it takes days to make.",
+      "level": "A1",
+      "keys": [
+        "city:oaxaca",
+        "place:oaxaca/fonda-dona-tere-reforma",
+        "kind:fonda"
+      ],
+      "source": {
+        "from": "here",
+        "ref": "es-mx/cities/oaxaca.ts#fonda-dona-tere-reforma/here/line 5",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "here:oaxaca/monte-alban:3",
+      "kind": "about-this-place",
+      "headline": "About this ancient city",
+      "rows": [],
+      "note": "Monte Albán is a Zapotec city built on a levelled mountaintop above Oaxaca more than two thousand years ago. Its Gran Plaza is a vast levelled square with temples along its sides.",
+      "level": "A1",
+      "keys": [
+        "city:oaxaca",
+        "place:oaxaca/monte-alban",
+        "kind:landmark"
+      ],
+      "source": {
+        "from": "here",
+        "ref": "es-mx/cities/oaxaca.ts#monte-alban/here/line 13",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    }
+  ]
+}

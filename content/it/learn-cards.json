@@ -1,0 +1,699 @@
+{
+  "version": "2026-11-23",
+  "prompt": "2026-11-23",
+  "models": "2026-11-23",
+  "cards": [
+    {
+      "id": "lesson:meeting-people-2:1",
+      "kind": "when-you",
+      "headline": "When someone asks how you are",
+      "rows": [
+        {
+          "text": "Come stai?",
+          "en": "How are you?"
+        },
+        {
+          "text": "Sto bene, grazie. E tu?",
+          "en": "I'm well, thanks. And you?"
+        }
+      ],
+      "level": "A1",
+      "keys": [
+        "lesson:meeting-people-2",
+        "unit:meeting-people",
+        "kind:shop",
+        "kind:piazza"
+      ],
+      "source": {
+        "from": "lesson",
+        "ref": "it/lessons.json#meeting-people-2/examples 3, 4; practice 1, 3",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "lesson:meeting-people-2:2",
+      "kind": "formal-informal",
+      "headline": "Formal and informal",
+      "rows": [
+        {
+          "text": "Come sta?",
+          "en": "How are you? · formal"
+        },
+        {
+          "text": "Come stai?",
+          "en": "How are you? · informal"
+        }
+      ],
+      "note": "Answer either one with sto: Sto bene, grazie.",
+      "level": "A1",
+      "keys": [
+        "lesson:meeting-people-2",
+        "unit:meeting-people",
+        "kind:shop",
+        "kind:piazza"
+      ],
+      "source": {
+        "from": "lesson",
+        "ref": "it/lessons.json#meeting-people-2/examples 1, 3; notice",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "lesson:about-you-1:1",
+      "kind": "when-you",
+      "headline": "When you introduce yourself",
+      "rows": [
+        {
+          "text": "Mi chiamo Kate. E Lei, come si chiama?",
+          "en": "My name's Kate. And what's your name?"
+        },
+        {
+          "text": "Piacere, mi chiamo Rosa.",
+          "en": "Nice to meet you. My name's Rosa."
+        }
+      ],
+      "level": "A1",
+      "keys": [
+        "lesson:about-you-1",
+        "unit:about-you",
+        "kind:piazza",
+        "kind:bar"
+      ],
+      "source": {
+        "from": "lesson",
+        "ref": "it/lessons.json#about-you-1/examples 1, 2",
+        "redrafted": false,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "lesson:about-you-1:2",
+      "kind": "formal-informal",
+      "headline": "Formal and informal",
+      "rows": [
+        {
+          "text": "Come si chiama?",
+          "en": "What's your name? · formal"
+        },
+        {
+          "text": "Come ti chiami?",
+          "en": "What's your name? · informal"
+        }
+      ],
+      "level": "A1",
+      "keys": [
+        "lesson:about-you-1",
+        "unit:about-you",
+        "kind:piazza",
+        "kind:bar"
+      ],
+      "source": {
+        "from": "lesson",
+        "ref": "it/lessons.json#about-you-1/notice, practice 1, 3",
+        "redrafted": false,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "lesson:meeting-people-3:1",
+      "kind": "formal-informal",
+      "headline": "Formal and informal",
+      "rows": [
+        {
+          "text": "Come sta?",
+          "en": "How are you? · formal"
+        },
+        {
+          "text": "Come stai?",
+          "en": "How are you? · informal"
+        }
+      ],
+      "note": "Use the formal form with a shopkeeper or an older person, and the informal one with a friend.",
+      "level": "A1",
+      "keys": [
+        "lesson:meeting-people-3",
+        "unit:meeting-people",
+        "kind:shop",
+        "kind:piazza"
+      ],
+      "source": {
+        "from": "lesson",
+        "ref": "it/lessons.json#meeting-people-3/notice; practice 1, 3",
+        "redrafted": false,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "lesson:meeting-people-3:2",
+      "kind": "when-you",
+      "headline": "When you greet a shopkeeper",
+      "rows": [
+        {
+          "text": "Buongiorno, signor Rossi! Come sta?",
+          "en": "Good morning, Mr. Rossi! How are you?"
+        },
+        {
+          "text": "Benissimo, grazie. E Lei?",
+          "en": "Very well, thanks. And you?"
+        }
+      ],
+      "level": "A1",
+      "keys": [
+        "lesson:meeting-people-3",
+        "unit:meeting-people",
+        "kind:shop",
+        "kind:piazza"
+      ],
+      "source": {
+        "from": "lesson",
+        "ref": "it/lessons.json#meeting-people-3/examples 1, 2",
+        "redrafted": false,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "lesson:meeting-people-1:1",
+      "kind": "this-or-that",
+      "headline": "Which greeting, when",
+      "rows": [
+        {
+          "text": "Buongiorno!",
+          "en": "Good morning! Until early afternoon."
+        },
+        {
+          "text": "Buonasera!",
+          "en": "Good evening! From about 3 or 4 p.m., even at 9 p.m."
+        },
+        {
+          "text": "Buonanotte, a domani!",
+          "en": "Good night, see you tomorrow! Only when someone is going to bed."
+        }
+      ],
+      "level": "A1",
+      "keys": [
+        "lesson:meeting-people-1",
+        "unit:meeting-people",
+        "kind:bar",
+        "kind:shop",
+        "kind:restaurant",
+        "kind:piazza"
+      ],
+      "source": {
+        "from": "lesson",
+        "ref": "it/lessons.json#meeting-people-1/how to, notice, context, examples 1, 2, 4",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "lesson:b1-sort-1:1",
+      "kind": "when-you",
+      "headline": "When you need something at an office",
+      "rows": [
+        {
+          "text": "Bisogna prendere il numero.",
+          "en": "You have to take a ticket."
+        },
+        {
+          "text": "Serve una marca da bollo da sedici euro.",
+          "en": "You need a sixteen-euro revenue stamp."
+        },
+        {
+          "text": "Servono due fototessere.",
+          "en": "You need two passport photos."
+        }
+      ],
+      "note": "Bisogna is followed by a verb. Serve and servono are followed by the thing you need, and servono is for more than one.",
+      "level": "B1",
+      "keys": [
+        "lesson:b1-sort-1",
+        "unit:b1-sort",
+        "kind:office"
+      ],
+      "source": {
+        "from": "lesson",
+        "ref": "it/lessons-b1.json#b1-sort-1/examples 1, 2, 3; notice",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "lesson:b1-sort-1:2",
+      "kind": "culture",
+      "headline": "Culture",
+      "rows": [],
+      "note": "Italian offices often want you to book an appointment online. You may also need to buy a marca da bollo beforehand at a tabaccheria.",
+      "level": "B1",
+      "keys": [
+        "lesson:b1-sort-1",
+        "unit:b1-sort",
+        "kind:office"
+      ],
+      "source": {
+        "from": "lesson",
+        "ref": "it/lessons-b1.json#b1-sort-1/context",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "lesson:b1-sort-2:1",
+      "kind": "a-small-word",
+      "headline": "A small word: basta",
+      "term": "basta",
+      "rows": [
+        {
+          "text": "Per il contratto basta la fotocopia?",
+          "en": "For the lease, is a photocopy enough?"
+        },
+        {
+          "text": "Sì, basta la fotocopia. E di fototessere ne bastano due.",
+          "en": "Yes, a photocopy is enough, and two passport photos are enough."
+        }
+      ],
+      "note": "Basta says something is enough. It becomes bastano when what follows is plural.",
+      "level": "B1",
+      "keys": [
+        "lesson:b1-sort-2",
+        "unit:b1-sort",
+        "kind:office"
+      ],
+      "source": {
+        "from": "lesson",
+        "ref": "it/lessons-b1.json#b1-sort-2/examples 1, 2; notice",
+        "redrafted": false,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "lesson:b1-sort-2:2",
+      "kind": "when-you",
+      "headline": "When you ask how long it takes",
+      "rows": [
+        {
+          "text": "Quanto tempo ci vuole?",
+          "en": "How long does it take?"
+        },
+        {
+          "text": "Ci vogliono alcune settimane.",
+          "en": "It takes a few weeks."
+        }
+      ],
+      "note": "Ci vuole says what something takes. It becomes ci vogliono when what follows is plural.",
+      "level": "B1",
+      "keys": [
+        "lesson:b1-sort-2",
+        "unit:b1-sort",
+        "kind:office"
+      ],
+      "source": {
+        "from": "lesson",
+        "ref": "it/lessons-b1.json#b1-sort-2/examples 3, 4; notice",
+        "redrafted": false,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "idiom:dare-i-numeri",
+      "kind": "a-saying",
+      "headline": "A saying",
+      "rows": [
+        {
+          "text": "dare i numeri",
+          "en": "to give out numbers"
+        }
+      ],
+      "note": "To talk nonsense, to lose it; a machine acting up.",
+      "level": "B1",
+      "keys": [
+        "idiom:dare i numeri",
+        "group:idiom"
+      ],
+      "source": {
+        "from": "idioms",
+        "ref": "it/idioms.json#0",
+        "redrafted": false,
+        "by": "learn-cards.mts (no call)"
+      }
+    },
+    {
+      "id": "idiom:andare-a-rotoli",
+      "kind": "a-saying",
+      "headline": "A saying",
+      "rows": [
+        {
+          "text": "andare a rotoli",
+          "en": "to go rolling"
+        }
+      ],
+      "note": "To go to ruin, fall apart.",
+      "level": "B1",
+      "keys": [
+        "idiom:andare a rotoli",
+        "group:idiom"
+      ],
+      "source": {
+        "from": "idioms",
+        "ref": "it/idioms.json#1",
+        "redrafted": false,
+        "by": "learn-cards.mts (no call)"
+      }
+    },
+    {
+      "id": "idiom:andare-in-fumo",
+      "kind": "a-saying",
+      "headline": "A saying",
+      "rows": [
+        {
+          "text": "andare in fumo",
+          "en": "to go up in smoke"
+        }
+      ],
+      "note": "To come to nothing (money, plans, work).",
+      "level": "B1",
+      "keys": [
+        "idiom:andare in fumo",
+        "group:idiom"
+      ],
+      "source": {
+        "from": "idioms",
+        "ref": "it/idioms.json#2",
+        "redrafted": false,
+        "by": "learn-cards.mts (no call)"
+      }
+    },
+    {
+      "id": "idiom:attaccare-bottone-con-qualcuno",
+      "kind": "a-saying",
+      "headline": "A saying",
+      "rows": [
+        {
+          "text": "attaccare bottone (con qualcuno)",
+          "en": "to sew on a button"
+        }
+      ],
+      "note": "To strike up a conversation, often with a stranger; sometimes to corner someone with chatter.",
+      "level": "B1",
+      "keys": [
+        "idiom:attaccare bottone (con qualcuno)",
+        "group:idiom"
+      ],
+      "source": {
+        "from": "idioms",
+        "ref": "it/idioms.json#3",
+        "redrafted": false,
+        "by": "learn-cards.mts (no call)"
+      }
+    },
+    {
+      "id": "idiom:avere-la-coda-di-paglia",
+      "kind": "a-saying",
+      "headline": "A saying",
+      "rows": [
+        {
+          "text": "avere la coda di paglia",
+          "en": "to have a tail of straw (it catches fire easily)"
+        }
+      ],
+      "note": "To have a guilty conscience, and so be touchy and take any remark as aimed at you.",
+      "level": "B2",
+      "keys": [
+        "idiom:avere la coda di paglia",
+        "group:idiom"
+      ],
+      "source": {
+        "from": "idioms",
+        "ref": "it/idioms.json#4",
+        "redrafted": false,
+        "by": "learn-cards.mts (no call)"
+      }
+    },
+    {
+      "id": "culture:roma-nuova-prati-built-for-ministries",
+      "kind": "about-this-place",
+      "headline": "About this pharmacy's neighbourhood",
+      "rows": [],
+      "note": "Prati means meadows. It was open, flood-prone land by the Tiber until Rome became capital of Italy in 1871. Then it was laid out on a regular grid from the 1880s to house officials and clerks, which is why it feels so different from the winding old centre.",
+      "level": "A1",
+      "keys": [
+        "city:roma-nuova",
+        "place:roma-nuova/farmacia-prati",
+        "topic:history",
+        "kind:pharmacy"
+      ],
+      "source": {
+        "from": "culture",
+        "ref": "it/culture.json#roma-nuova-prati-built-for-ministries/1",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "culture:roma-nuova-ceiling-that-spills-over",
+      "kind": "about-this-place",
+      "headline": "About this church",
+      "rows": [],
+      "note": "The ceiling of Il Gesù was painted by Baciccio and finished in 1679. Its painted figures seem to tumble out of the frame, and stucco figures are mixed in with them, so the eye can't tell where one ends and the other begins.",
+      "level": "A1",
+      "keys": [
+        "city:roma-nuova",
+        "place:roma-nuova/gesu-piazza",
+        "topic:art",
+        "kind:church"
+      ],
+      "source": {
+        "from": "culture",
+        "ref": "it/culture.json#roma-nuova-ceiling-that-spills-over/story 1",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "culture:roma-nuova-two-clubs-one-stadium",
+      "kind": "culture",
+      "headline": "Culture",
+      "rows": [],
+      "note": "Rome has two big football clubs, Lazio and Roma, and both play at the Stadio Olimpico. The match between them is the Derby della Capitale, and families in Rome are often split by it.",
+      "level": "A1",
+      "keys": [
+        "city:roma-nuova",
+        "place:roma-nuova/villa-borghese-nuova",
+        "topic:rivalry",
+        "kind:park"
+      ],
+      "source": {
+        "from": "culture",
+        "ref": "it/culture.json#roma-nuova-two-clubs-one-stadium/1",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "city:roma-nuova:a-word-from-here-daje",
+      "kind": "a-word-from-here",
+      "headline": "A word from here",
+      "rows": [
+        {
+          "text": "daje",
+          "en": "come on, let's go, in Roman dialect"
+        }
+      ],
+      "level": "A1",
+      "keys": [
+        "city:roma-nuova"
+      ],
+      "source": {
+        "from": "city",
+        "ref": "it/cities/roma-nuova.ts#lists/local words 1",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "city:roma-nuova:culture-in-many-roman-bars-you-pay-at-the-cassa",
+      "kind": "culture",
+      "headline": "Culture",
+      "rows": [],
+      "note": "In many Roman bars you pay at the cassa first, then take your receipt to the bar and order.",
+      "level": "A1",
+      "keys": [
+        "city:roma-nuova"
+      ],
+      "source": {
+        "from": "city",
+        "ref": "it/cities/roma-nuova.ts#lists/customs 6",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "city:roma-nuova:culture-standing-at-the-bar-is-cheaper-than-sitt",
+      "kind": "culture",
+      "headline": "Culture",
+      "rows": [],
+      "note": "Standing at the bar is cheaper than sitting at a table.",
+      "level": "A1",
+      "keys": [
+        "city:roma-nuova"
+      ],
+      "source": {
+        "from": "city",
+        "ref": "it/cities/roma-nuova.ts#lists/customs 8",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "city:matera:a-word-from-here-la-gravina",
+      "kind": "a-word-from-here",
+      "headline": "A word from here",
+      "rows": [
+        {
+          "text": "la gravina",
+          "en": "the ravine"
+        }
+      ],
+      "level": "A1",
+      "keys": [
+        "city:matera"
+      ],
+      "source": {
+        "from": "city",
+        "ref": "it/cities/matera.ts#lists/local words 5",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "city:matera:culture-the-festa-della-bruna-on-july-2nd-is-t",
+      "kind": "culture",
+      "headline": "Culture",
+      "rows": [],
+      "note": "The Festa della Bruna, on July 2nd, is the major religious festival.",
+      "level": "A1",
+      "keys": [
+        "city:matera"
+      ],
+      "source": {
+        "from": "city",
+        "ref": "it/cities/matera.ts#lists/customs 11",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "city:matera:culture-coffee-is-drunk-standing-at-the-bar-qui",
+      "kind": "culture",
+      "headline": "Culture",
+      "rows": [],
+      "note": "Coffee is drunk standing at the bar, quick and strong.",
+      "level": "A1",
+      "keys": [
+        "city:matera"
+      ],
+      "source": {
+        "from": "city",
+        "ref": "it/cities/matera.ts#lists/customs 15",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "here:roma-nuova/pantheon-rotonda:1",
+      "kind": "about-this-place",
+      "headline": "About this landmark",
+      "rows": [],
+      "note": "Every year at Pentecost, at the end of the morning Mass, Rome's firefighters drop thousands of red rose petals through the oculus of the Pantheon.",
+      "level": "A1",
+      "keys": [
+        "city:roma-nuova",
+        "place:roma-nuova/pantheon-rotonda",
+        "kind:landmark"
+      ],
+      "source": {
+        "from": "here",
+        "ref": "it/cities/roma-nuova.ts#pantheon-rotonda/here/line 3",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "here:roma-nuova/piazza-navona:2",
+      "kind": "about-this-place",
+      "headline": "About this piazza",
+      "rows": [],
+      "note": "Piazza Navona's long oval follows the shape of the Stadium of Domitian that once stood here.",
+      "level": "A1",
+      "keys": [
+        "city:roma-nuova",
+        "place:roma-nuova/piazza-navona",
+        "kind:piazza"
+      ],
+      "source": {
+        "from": "here",
+        "ref": "it/cities/roma-nuova.ts#piazza-navona/here/line 11",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "here:roma-nuova/stazione-termini-nuova:3",
+      "kind": "about-this-place",
+      "headline": "About this train station",
+      "rows": [],
+      "note": "Termini, Rome's main station, is named after the nearby Baths of Diocletian, the terme.",
+      "level": "A1",
+      "keys": [
+        "city:roma-nuova",
+        "place:roma-nuova/stazione-termini-nuova",
+        "kind:train-station"
+      ],
+      "source": {
+        "from": "here",
+        "ref": "it/cities/roma-nuova.ts#stazione-termini-nuova/here/line 8",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "here:matera/caffe-schiuma:1",
+      "kind": "about-this-place",
+      "headline": "About this bar",
+      "rows": [],
+      "note": "In a bar like this one, carved into the tufa rock of the Sassi, people drink their coffee standing at the counter, quick and strong.",
+      "level": "A1",
+      "keys": [
+        "city:matera",
+        "place:matera/caffe-schiuma",
+        "kind:bar"
+      ],
+      "source": {
+        "from": "here",
+        "ref": "it/cities/matera.ts#caffe-schiuma/here/line 1",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "here:matera/piazza-duomo:3",
+      "kind": "about-this-place",
+      "headline": "About this cathedral square",
+      "rows": [],
+      "note": "The cathedral is dedicated to the Madonna della Bruna, patron saint of the city. Her festa is on 2 July: a decorated papier-mâché carriage is pulled through the streets, and at the end the crowd tears it apart.",
+      "level": "A1",
+      "keys": [
+        "city:matera",
+        "place:matera/piazza-duomo",
+        "kind:piazza"
+      ],
+      "source": {
+        "from": "here",
+        "ref": "it/cities/matera.ts#piazza-duomo/here/line 8",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    }
+  ]
+}
