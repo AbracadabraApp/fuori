@@ -155,6 +155,8 @@ One little word that does a lot of work. The headline names it: "A small word: a
 
 ## How it might be built (open)
 
+**Superseded by the approved plan, [learn-sheet-2-plan.md](learn-sheet-2-plan.md)** (2026-11-23): a card bank cut from the content plus cards made from the visit, one writer call per visit that picks or makes a card or says none, backfill only after 3 visits without a sheet, and an open set of kinds that grows from play. The sketch below is kept as it was.
+
 Everything from here down is the cloud session's sketch, not a decision. It is here to show that each card type can be supplied from content the game already holds, and to name the choices a build would have to make.
 
 ### What already exists
