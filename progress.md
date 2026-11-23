@@ -5,8 +5,8 @@
 - **Josh:** "We are going to go with just the here headers = but make it easily reeversible to replace with existing verbose descriptions".
 - **Done:** `HERE_LINES = false` in `lib/characters/for-place.ts`, the one place a `here` line entered the prompt. Characters now get name, age, role, traits and the place's name, kind and neighbourhood. The lines stay in the city files (portrait prompts still use them); to go back, set `HERE_LINES = true`. `test:turn-request` checks every person in both countries against the switch. docs/prompt-trials.md → Header only; docs/dialogue-now.md row 1.
 - **Trial script:** `rewrite-trial.mts` arm A (labelled "production") now plays header only too, since it reads the same code; `TRIAL_NO_HERE=1` is a no-op while the switch is off.
-- **Not live, not played.** On `main` only; goes out with the next phone build (`npm run release`), then the walk in both countries. The random-sample results (`random-*`, `rerun4-*`) were not read before the decision.
-- **Still open from 2026-11-17:** the two portrait uploads (Sandra Mugnai `1.jpg`, the gondolier `2.jpg`) must happen before any release.
+- **Not live, not played.** On `main` only; goes out with the next phone build (`npm run release`). **No further testing of the header-only change (Josh: "drop work on testing here changes"):** no walk for it, and the random-sample results (`random-*`, `rerun4-*`) stay unread.
+- **Portraits uploaded:** Sandra Mugnai (`firenze/carlo-guida`, the cloud session's pick `1.jpg`) and the gondolier (`venezia/carlo-gondoliere`, `2.jpg`), both with Josh's ok of 2026-11-17. Masters replaced and backed up to R2, `content/it/images.json` committed, both fetched from R2 and looked at. The candidate folders in `sketches/portraits/` removed. Not live until the next release; nothing now blocks one.
 
 ## 2026-11-17 (laptop, with Josh), night: the random-sample trial rerun on 4 people a country, for the mini
 
