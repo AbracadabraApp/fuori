@@ -93,6 +93,8 @@ Repeats and rotation are left until play shows them (below).
 
 New table `learn_cards_shown` (learner_id, conversation_id, card_id, kind, card jsonb, how 'pick'|'make'|'backfill', shown_at, closed_at). Migration in `scripts/db-migrate.mjs` first, code after (CLAUDE.md). It is a log, not memory: it serves the "last 3 visits" rule, the source footnote and the growth loop below. `closed_at − shown_at` is the only signal of whether a card was read.
 
+Tying cards to the visit is also what keeps them fresh (Josh, 2026-11-23: "if a card is tied to the conversation it will feel unique"): a picked card redrafted with the lines the character actually said is a different card each time, even on a topic seen before. So the writer leans to cards made or redrafted from the visit, and the bank's own wording is mostly what backfill shows.
+
 **Memory is a nice-to-have, built when play shows the need** (Josh, 2026-11-23: "memory is a nice to have but not sure it would be needed unttil we see the issue - not a design decision - just input"). So the first version doesn't skip cards already shown or rotate kinds. With a bank of hundreds of cards per country and a writer reading each visit, repeats may be rare; if Josh sees one in play, the log already holds what's needed to filter shown cards out of the shortlist.
 
 ### 5. How the set grows
