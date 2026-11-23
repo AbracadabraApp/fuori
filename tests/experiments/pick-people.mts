@@ -1,7 +1,7 @@
 // A random sample of people for a trial: the same number from each country, one per city, never a hidden city or place,
 // a ticket seller, or Magda. Seeded, so the pick can be repeated and the seed is on record (picks.json).
 //   npx tsx tests/experiments/pick-people.mts --seed=17 --n=8 --out=tests/experiments/results/picks-2026-11-17.json
-// It prints the four commands for the mini: each country, production (A) and header only (B, TRIAL_NO_HERE=1).
+// It prints the command for the mini for each country.
 import { writeFileSync } from 'fs';
 import { packs } from '@/content';
 
@@ -36,6 +36,6 @@ for (const [id, rows] of Object.entries(picks)) {
 const spots = (id: string) => picks[id].map((r) => `${r.city}/${r.place}`).join(',');
 const stem = `TRIAL_STEPS=4 TRIAL_KINDS=long TRIAL_REPEAT=1 npx tsx --env-file=.env.local tests/experiments/rewrite-trial.mts`;
 console.log('\nFor the mini (local test database, from a checkout of main):');
-for (const [id, tag] of [['it', 'it'], ['es-mx', 'mx']]) for (const [arm, flag] of [['a', ''], ['b', 'TRIAL_NO_HERE=1 ']]) {
-  console.log(`${id === 'es-mx' ? 'COUNTRY=es-mx ' : ''}${flag}TRIAL_SPOTS=${spots(id)} ${stem} --out=tests/experiments/results/random-${tag}-${arm}-${date}.json`);
+for (const [id, tag] of [['it', 'it'], ['es-mx', 'mx']]) {
+  console.log(`${id === 'es-mx' ? 'COUNTRY=es-mx ' : ''}TRIAL_SPOTS=${spots(id)} ${stem} --out=tests/experiments/results/random-${tag}-${date}.json`);
 }

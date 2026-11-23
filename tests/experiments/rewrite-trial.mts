@@ -57,9 +57,6 @@ async function run() {
       { city: 'palermo', place: 'teatro-massimo' },
     ],
   };
-  // TRIAL_NO_HERE=1: the header only, no `here` line (arm B of the production-against-header trials, 2026-11-17).
-  // It is a switch, not a branch, so both arms run from one checkout
-  const NO_HERE = process.env.TRIAL_NO_HERE === '1';
   // TRIAL_SPOTS=city/place,city/place plays other people than the usual four (2026-11-17: bare `here` lines against
   // lines with a life in them, read side by side)
   const wanted = process.env.TRIAL_SPOTS
@@ -70,17 +67,8 @@ async function run() {
   const jobs: Visit[] = Array.from({ length: REPEAT }).flatMap(() => STEPS.flatMap((step) => spots.flatMap((s) => KINDS.map((kind) => ({ step, ...s, kind, turns: [] as T[] })))));
 
   async function play(v: Visit) {
-    let character = characterForVisit(v.city, v.place)!;
-    if (NO_HERE) {
-      const city = cities.find((c) => c.id === v.city)!;
-      const person = city.characters?.find((c) => c.id === city.places.find((p) => p.id === v.place)?.characterId);
-      const setting = character.appearance?.setting ?? '';
-      const bare = person?.here ? setting.replace(`. ${person.here}`, '') : setting;
-      if (person?.here && setting.includes(person.here) && bare === setting) throw new Error(`TRIAL_NO_HERE could not remove the here line for ${person.name}`);
-      character = { ...character, appearance: { ...character.appearance, setting: bare } } as typeof character;
-    }
+    const character = characterForVisit(v.city, v.place)!;
     v.person = character.name;
-    v.arm = NO_HERE ? 'header' : 'production';
     const transcript: { who: 'npc' | 'learner'; transcript: string; translation?: string }[] = [];
     let said: string | undefined;
     let raw = '';

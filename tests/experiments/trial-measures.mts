@@ -6,7 +6,7 @@ import { languageShare } from '@/lib/dialogue/share';
 
 export type T = { setup?: string; line: string; en: string; raw?: string; answers: number; answerTexts?: string[]; done: boolean; error?: string };
 // step 0 is Intermediate (no Beginner step: character.md and dialogue.md as every Intermediate visit reads them)
-// arm: 'production' (the line as shipped) or 'header' (TRIAL_NO_HERE=1: no `here` line); person is the character's name
+// arm: set on the 2026-11-17 production-against-header results (TRIAL_NO_HERE, removed 2026-11-23 with the here lines); person is the character's name
 export type Visit = { step: number; city: string; place: string; kind: 'leave' | 'long'; turns: T[]; culture?: string[]; arm?: string; person?: string };
 
 export const words = (s: string) => s.trim().split(/\s+/).filter(Boolean).length;
