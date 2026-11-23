@@ -76,7 +76,7 @@ async function run() {
       const person = city.characters?.find((c) => c.id === city.places.find((p) => p.id === v.place)?.characterId);
       const setting = character.appearance?.setting ?? '';
       const bare = person?.here ? setting.replace(`. ${person.here}`, '') : setting;
-      if (person?.here && bare === setting) throw new Error(`TRIAL_NO_HERE could not remove the here line for ${person.name}`);
+      if (person?.here && setting.includes(person.here) && bare === setting) throw new Error(`TRIAL_NO_HERE could not remove the here line for ${person.name}`);
       character = { ...character, appearance: { ...character.appearance, setting: bare } } as typeof character;
     }
     v.person = character.name;

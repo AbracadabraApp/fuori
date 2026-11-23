@@ -1,5 +1,13 @@
 # Fuori Development Progress
 
+## 2026-11-23 (laptop, with Josh): header only: `here` lines out of the prompt, one switch to bring them back
+
+- **Josh:** "We are going to go with just the here headers = but make it easily reeversible to replace with existing verbose descriptions".
+- **Done:** `HERE_LINES = false` in `lib/characters/for-place.ts`, the one place a `here` line entered the prompt. Characters now get name, age, role, traits and the place's name, kind and neighbourhood. The lines stay in the city files (portrait prompts still use them); to go back, set `HERE_LINES = true`. `test:turn-request` checks every person in both countries against the switch. docs/prompt-trials.md → Header only; docs/dialogue-now.md row 1.
+- **Trial script:** `rewrite-trial.mts` arm A (labelled "production") now plays header only too, since it reads the same code; `TRIAL_NO_HERE=1` is a no-op while the switch is off.
+- **Not live, not played.** On `main` only; goes out with the next phone build (`npm run release`), then the walk in both countries. The random-sample results (`random-*`, `rerun4-*`) were not read before the decision.
+- **Still open from 2026-11-17:** the two portrait uploads (Sandra Mugnai `1.jpg`, the gondolier `2.jpg`) must happen before any release.
+
 ## 2026-11-17 (laptop, with Josh), night: the random-sample trial rerun on 4 people a country, for the mini
 
 - **Josh:** "rerun the test beginner 4, full run till goodbye, 4 characters 2 countries". Step 4, a long visit played to the close (9 turns), the same production-against-header-only comparison, 4 a country. **Which four:** the first four of each country from the earlier draw (seed 17, `random-picks-2026-11-17.json`), so each is a second visit of the same person and the run shows how much a repeat varies: Italy Dott.ssa Silvia Bruni, Stefano Barone, Lorenzo Carampane, Franco Melodia; Mexico Chema Rosales, Doña Chayo Molina, Nacho Robles, Doña Lupe Arredondo. 16 visits in all (4 people, 2 arms, 2 countries), about 6 minutes.

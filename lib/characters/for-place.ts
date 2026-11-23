@@ -10,6 +10,10 @@ import { tutorSheet } from '@/lib/tutor';
 import { tutor } from '@/content';
 import type { CharacterSheet, CityCharacter, CityPantry, Place } from '@/lib/types';
 
+// Header only (Josh, 2026-11-23: "We are going to go with just the here headers"): the prompt gets
+// name, age, role, traits and the place's name, kind and neighbourhood, not the person's `here` line.
+// The lines stay in the city files (portraits still use them); set this to true to bring them back.
+export const HERE_LINES = false;
 
 export function cityCharacterToSheet(
   person: CityCharacter,
@@ -19,7 +23,7 @@ export function cityCharacterToSheet(
   // The kind of place goes with its name ("Pizzeria Da Gigi" is pizza by the
   // slice), and why they're there, so nobody is handed an invented job
   const where = place ? `${place.name} (${place.kind.replace(/-/g, ' ')}), ${place.neighbourhood}` : city.name;
-  const setting = person.here ? `${where}. ${person.here}` : where;
+  const setting = HERE_LINES && person.here ? `${where}. ${person.here}` : where;
   return {
     id: person.id,
     name: person.name,

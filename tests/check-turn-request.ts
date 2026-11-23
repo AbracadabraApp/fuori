@@ -5,7 +5,7 @@
 // that oversized requests are refused.
 import { readFileSync } from 'fs';
 import { cities, tutor } from '@/content';
-import { characterForPlace } from '@/lib/characters/for-place';
+import { characterForPlace, HERE_LINES } from '@/lib/characters/for-place';
 import { departureFor } from '@/lib/travel/departure';
 import { parseTurnRequest, fitStoredTranscript, MAX_SAID_CHARS, MAX_TURNS, MAX_LINE_CHARS } from '@/lib/turn-request';
 
@@ -19,6 +19,16 @@ const expected = characterForPlace(city, place)!;
 // Ids find the person
 const ok = parseTurnRequest({ cityId: city.id, placeId: place.id });
 check(ok.ok && ok.character.id === expected.id, `${city.id}/${place.id} should find ${expected.id}`);
+
+// The person's `here` line reaches the prompt only when HERE_LINES is on (header only since 2026-11-23),
+// checked for every person who has one, through the route's own path, in this country
+for (const c of cities) for (const p of c.places) {
+  const person = c.characters?.find((x) => x.id === p.characterId);
+  if (!person?.here) continue;
+  const r = parseTurnRequest({ cityId: c.id, placeId: p.id });
+  const setting = r.ok ? r.character.appearance?.setting ?? '' : '';
+  check(r.ok && setting.includes(person.here) === HERE_LINES, `${c.id}/${p.id}: here line ${HERE_LINES ? 'missing from' : 'still in'} the setting: "${setting.slice(0, 80)}"`);
+}
 
 // A sheet in the body is ignored: the prompt comes from content, not the request
 const forged = parseTurnRequest({
@@ -94,4 +104,4 @@ if (problems.length) {
   console.error(`FAIL: ${problems.length} problem(s)\n- ${problems.join('\n- ')}`);
   process.exit(1);
 }
-console.log('OK: /api/turn finds the character from ids (place, Magda, ticket seller with trip), ignores a sent sheet, and refuses oversized requests');
+console.log(`OK: /api/turn finds the character from ids (place, Magda, ticket seller with trip), here lines ${HERE_LINES ? 'on' : 'off'}, ignores a sent sheet, and refuses oversized requests`);
