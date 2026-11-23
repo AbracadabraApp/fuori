@@ -35,7 +35,7 @@ export const WAITING_LONG = { timeout: 45_000, maxRetries: 1 } as const;
 /**
  * One log line per Claude call, with what it used (2026-11-22, Josh: "make the per-call logging change"; the
  * cost question: Fuori's turns were logged but the other 16 calls weren't, and caching wasn't visible). Read the
- * lines with `railway logs --service Fuori|Afuera` (one service a country) and filter on `claude-usage`. `call` names the call site; tokens only, no dollars, so a
+ * lines with `railway logs --service Fuori|Afuera` (one service a country) and filter on `claude-usage`. `call` names the call site; tokens only, no dollars (the turn's timing line also carries input/output tokens; don't add the two together), so a
  * price change never makes old lines wrong. `inputTokens` is the uncached input; with caching on, the whole
  * prompt is inputTokens + cacheReadTokens + cacheWriteTokens.
  * tests/check-claude-usage-log.ts: every call site calls this.

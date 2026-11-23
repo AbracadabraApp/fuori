@@ -101,8 +101,8 @@ export async function runTurn(params: {
     laps.facts.thought = response.content.some((b) => b.type === 'thinking' || b.type === 'redacted_thinking') ? 'yes' : 'no';
   }
 
-  // Cut off mid-JSON: say so, rather than "invalid JSON"
   logUsage('turn', response);
+  // Cut off mid-JSON: say so, rather than "invalid JSON"
   if (response.stop_reason === 'max_tokens') {
     throw new Error(`Reply hit max_tokens (${response.usage.output_tokens} tokens)`);
   }
