@@ -1,5 +1,14 @@
 # Fuori Development Progress
 
+## 2026-11-23 (cloud): the learn sheet's design document and ten example cards
+
+- Josh: "supply a written design document and the 10 example cards - go into any depth you choose on how you might implement them but be clear the tech design is open. Commit when done."
+- **`docs/learn-sheet-2-design.md`:** what the sheet is, the moment, "the card is the sheet. 1:1" (his answer when asked how many cards a sheet holds), the ten rules, the ten card types each with what it holds and an example, what the design leaves undecided, and a sketch of how it might be built, marked open throughout.
+- **Ten types:** When you…, Formal and informal, About this place (closed 17 November); Vocabulary: things, Vocabulary: actions, Culture (his, today); A saying, A word from here, This or that, A small word (picked by him from eight suggested).
+- **`design/learn-sheet-2/cards/`:** the ten examples as pictures, each a full person screen with the sheet up (Nunzio Palmeri, Palermo; Doña Juana, San Cristóbal), and `all-ten.jpg`. The portraits were fetched from the game's picture store to draw them.
+- **The sketch's main point:** every type can be supplied from what the game already has: lessons, the conversation's word list (`lib/learn.ts`), `idioms.json`, each city's `food`, `customs` and `localTouches`, and the people's `here` lines, which left the conversation prompt today. Picking the card is the main open question.
+- Nothing built. `docs/learn-sheet-2.md` stays as the history and points to the new file.
+
 ## 2026-11-23 (cloud): Learn sheet 2.0 picked up again: six card types, one card to a sheet
 
 - Josh resumed the design ("work creatively and productively - not shitting on an idea when its still in development"). Mock-ups only; nothing built. Notes: `docs/learn-sheet-2.md` → 23 November; pictures at the top of the "Lesson Door Sheet" page.

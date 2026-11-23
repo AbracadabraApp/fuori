@@ -1,5 +1,7 @@
 # Learn sheet 2.0: the sheet after a visit
 
+**The design as it stands is in [learn-sheet-2-design.md](learn-sheet-2-design.md)** (2026-11-23: ten card types, one card to a sheet, the ten example cards, and an open sketch of how it could be built). This file is the history: each round, Josh's words, and what was tried and dropped.
+
 2026-11-17 · Josh and the cloud session · design closed in mock-ups, then **paused by Josh the same day**. Nothing built.
 
 **Scope (Josh, 2026-11-23):** "we are working on updating learn - learn 2.0 - this will be an interstitial sheet wheen a converssation ends.  When finished it will replace the dropping icon and lern 1.0 implementation". So when Learn 2.0 is done, the Learn link in the bottom bar (the book, which opens `LearnSheet` mid-conversation from `PersonView`) and the Learn 1.0 sheet itself go away. That settles "The old Learn sheet behind the book" under Still open.
@@ -131,7 +133,7 @@ Not picked from the eight: Vocabulary: descriptions, Numbers, Unlike English, Wh
 
 **Rules added today (Josh, each a correction of the cloud session's drawings):**
 
-- **One card to a sheet.** "you put multiple cards on one page". The 17 November sheets held two; this replaces that, and settles "how many cards a sheet holds" at one.
+- **One card to a sheet.** "you put multiple cards on one page"; and, asked directly how many cards a sheet holds: "the card is the sheet. 1:1". The 17 November sheets held two; this replaces that, and settles "how many cards a sheet holds" at one.
 - **Card types stay separate.** "do not combine card types". The session had folded About this place and "Something she mentioned" into one Culture card.
 - **One style for every type.** "do not diverge from styles *weird white boxes*". The session had drawn nouns and verbs as white tiles inside the sage card. Every card is the closed one: sage, the headline, rows with the English under each.
 - **The person screen stays as it is** behind the sheet, settings button included (the session had dropped it).
