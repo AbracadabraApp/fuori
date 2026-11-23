@@ -119,6 +119,20 @@ Tying cards to the visit is also what keeps them fresh (Josh, 2026-11-23: "if a 
 
 Remove the book from `ConversationControls`, `LearnSheet.swift`, `LearnSource`, `/v1/learn`, `prompts/learn.md`, and the ahead page. Learn 1.0's corrections are not carried over: **cards don't make corrections** (Josh, 2026-11-23; rule 11 in the design). `review.mistakes` still reaches Magda's study file.
 
+## Edge cases and integration (gone through with Josh, 2026-11-23)
+
+| # | Issue | Decision |
+|---|---|---|
+| 1 | Old app builds pay for writer calls they never show; retiring `/v1/learn` breaks their book | Not handled. Josh: "not enough users to worry about." |
+| 2 | Saving at the goodbye, then again when the person screen closes, could run the record and follow-ups twice | Save once per conversation in the app; a second end call does nothing. Josh: "agreed". |
+| 3 | The leave function also stops the voice and mic | At the goodbye only the save runs; stopping audio stays with the screen closing. Josh: "agreed". |
+| 4 | Learner levels (Beginner/Intermediate/Advanced + step) vs card levels (A1–C1) | A mapping on the server, per country with the level rules. Josh: "backend fix". |
+| 5 | The server's "level up this visit" must match level up's own count | Use `lib/level-up.ts`'s count, not a copy. Josh: "ok". |
+| 6 | Short visits give the writer little to read | Josh's idea: "cardss only build on 7th/8th turn? just an idea?" A threshold of learner turns below which there's no writer call (backfill can still show). Starting guess 7; set from a count of learner turns per real visit before building. |
+| 7 | The card not ready in time (slow call, restart, no network) means no sheet | Wait for evidence. Josh: "wait for evidence". Logged, and counted in the replay run. |
+| 8 | Headlines that mix English with a word in the language ("A small word: allora") | The word is carried separately so it gets its language tag. Josh: "ok". |
+| 9 | The end of a conversation gains a state | `docs/state-machines.md` updated in the same commit. Josh: "ok". |
+
 ## Build order
 
 1. **Bank first, Italy and Mexico:** `LearnCard` type in `lib/learn-card.ts`, `scripts/learn-cards.mts` cutting lessons, idioms, culture.json, city lists and `here` lines; the cards checked in. Josh reads a sample page of cards (an artifact) before anything else is built.
