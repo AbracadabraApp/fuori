@@ -69,7 +69,7 @@ No picture inside the sheet: the person is on the screen behind it. The sheet ma
 
 **The six visits, both versions:**
 
-| Visit | Learn 2.0 card shown | Learn 1.0 page (three phrases each) |
+| Visit | Learn 2.0 card shown | End-of-visit learning notes (three phrases each; not the Learn 1.0 page, see the correction below) |
 |---|---|---|
 | Regina, Macroplaza | About this plaza: opened 1984, 40 hectares, Barragán's lighthouse (a bank fact; no language) | *Venga otro lunes y le enseño el dibujo terminado* · *Todavía no lo termino* · *Que le vaya muy bien* |
 | Baldemar, cabrito | A saying: *no hay bronca*, "there's no fight", note "No problem." | *no hay bronca* · *Ahorita le sirvo* · *Vuelva el domingo* |
@@ -77,6 +77,8 @@ No picture inside the sheet: the person is on the screen behind it. The sheet ma
 | Ismael, Morismas | When someone offers to show you something: *¿Le gustaría ver el traje?* / *Sí, me gustaría verlo.* / *No, gracias.* (made from the visit) | *vuelva a verme* · *se hace con paciencia* · *sirve para* |
 | Abel, tamborazo | none (the writer chose none; the bank fill-in was blocked by the three-visit rule) | *una sopa de su propio chocolate* · *¿Le gustaría escuchar…?* · *Llevo veinte años tocando* |
 | Refugio, cantera | none (a level-up visit; the offer was then lost, docs/bugs.md B62–B63) | *¿Quiere tocar la piedra?* · *Venga otro día* · *Fue un gusto platicar con usted* |
+
+**Correction (2026-11-24, later the same day).** The third column is not the Learn 1.0 page. It is the learning notes the end of every visit writes for the study file and the Learn area (`conversations.review.items`, lib/memory.ts), which the learner never sees. The Learn 1.0 page (the Learn link, lib/learn.ts) holds corrections, the visit's words (things and actions) and one "good to know", and it isn't stored, so what it showed on these visits can't be read back. What follows compares the cards with those notes; the notes are still written for every visit and are visit-tied raw material.
 
 **What each does better.**
 - **1.0:** everything comes from the visit, the why is about the learner ("Joshua already uses todavía no"; "they answered it with 'me gustaría', so it's worth reusing"), and it is always language. But it is dense (three phrases and a grammar note each, every time) and predictable: "come back on [day]" with "formal command form" in 5 of the 6 pages, because every wind-down now says it.
