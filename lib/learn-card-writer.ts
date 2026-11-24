@@ -53,15 +53,24 @@ export function visitKeys(cityId: string, placeId: string, transcript: Turn[]): 
   return [`city:${cityId}`, `place:${cityId}/${placeId}`, ...(place ? [`kind:${place.kind}`] : []), ...transcript.flatMap((t) => (t.idiom ? [`idiom:${t.idiom}`] : []))];
 }
 
-/** Bank cards at the learner's levels, most keys in common with the visit first (ties in bank order) */
+/** Language cards (from lessons and the syllabus) as against facts and sayings: the shortlist is mostly language */
+const LANGUAGE_FROM = new Set(['lesson', 'syllabus']);
+/** At most this many cards about the visit's place and city on the shortlist; the rest is language
+ *  (the first replay picked a place fact every time: only facts carry place keys) */
+export const PLACE_CARDS = 8;
+
+/** Bank cards at the learner's levels: a few about the visit's place and city, then language cards, most
+ *  keys in common with the visit first (ties in bank order) */
 export function shortlist(cards: LearnCard[], levels: readonly CardLevel[], keys: string[], n = SHORTLIST): LearnCard[] {
   const want = new Set(keys);
-  return cards
-    .filter((c) => levels.includes(c.level))
+  const ranked = (list: LearnCard[]) => list
     .map((c, i) => ({ c, i, score: c.keys.filter((k) => want.has(k)).length }))
     .sort((a, b) => b.score - a.score || a.i - b.i)
-    .slice(0, n)
     .map((x) => x.c);
+  const atLevel = cards.filter((c) => levels.includes(c.level));
+  const local = ranked(atLevel.filter((c) => !LANGUAGE_FROM.has(c.source.from) && c.keys.some((k) => want.has(k)))).slice(0, PLACE_CARDS);
+  const language = ranked(atLevel.filter((c) => LANGUAGE_FROM.has(c.source.from)));
+  return [...local, ...language].slice(0, n);
 }
 
 /** A card that stands by itself for this visit: about its place first, then its city, then a saying */

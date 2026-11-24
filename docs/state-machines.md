@@ -33,6 +33,7 @@ Made 2026-11-15 from a review of the whole app (two agents read the iPhone app a
 - **State:** `conversations` columns: `started_at`, `prompt_version` (opening only), `turns`, `ended_at`, `memory_turns`, `memory_at_start`; an in-memory save queue (`saveLater`, `savesDone`, lib/recording.ts).
 - **Moves:** each turn appends (and reopens an ended conversation); the app's end → `markConversationEnded`, memory written once per new stretch (`claimForMemory`), the record written or rewritten (`recordAction`).
 - **Known:** the server never refuses a turn after `done`; `claimForMemory` and `recordConversation` untested.
+- **Learn 2.0's card (2026-11-23, lib/learn-card-writer.ts):** in memory by conversation id: none → started (at the wind-down reply, once; not for the welcome, lessons or Magda) → a card, or no card (level up due, the writer said none and a sheet showed in the last 3 visits, or a failure) → shown (the app's GET; a row in `learn_cards_shown`) → closed (`closed_at`). Not ready when the app asks = not shown. Kept 30 minutes; a server restart forgets it. Tests: tests/check-learn-card.ts (the wind-down guard, the writer's answers).
 
 ### 5. Onboarding and the welcome
 - **State:** `learners.onboarding` (welcomed, path, startStep, placedAt), `onboarded_at`; the welcome's step derived from the learner's line count (lib/welcome.ts).
@@ -55,7 +56,8 @@ Made 2026-11-15 from a review of the whole app (two agents read the iPhone app a
 ### 1. A conversation turn (`ConversationModel.phase`)
 - **States:** starting, speaking, listening, hearing, thinking, tapToTalk, choosing, micDenied, finished; with flags on top (`interrupted`, `awaitingQuestion`, `hearingLine`, `hearingAnswer`, `finishing`, `openingMic` and more).
 - **Moves:** the opening reply → speaking → the voice ends → `openTurn` (listening, choosing, tapToTalk or finished); silence or a tap → thinking → the next reply; `interrupt()` on calls, Siri, route changes, sheets, backgrounding. Guard against stale work: `generation`, bumped by `interrupt`, the ending and `leave`.
-- **Must hold:** the mic never reopens by itself after an interruption (CLAUDE.md); every exit saves through one leave, once (2026-11-15).
+- **Must hold:** the mic never reopens by itself after an interruption (CLAUDE.md); every exit saves through one leave, once (2026-11-15). The goodbye saves at `finished` (`saveAtGoodbye`, 2026-11-23), and `leave` then doesn't save again.
+- **After `finished` (PersonView, Learn 2.0, 2026-11-23):** save → ask for the card while the 1.5 s wait runs → a card: its sheet over the person screen → closed by ✕, sliding down or a tap off it → the place list; no card: the place list as before. The welcome and lessons (`endButton`) keep their own ending.
 - **Tests:** CharacterBubbleTests (what the bubble shows, from the flags); nothing drives transitions.
 - **Known (Josh, 2026-11-15: skip for now):** an interruption while thinking is lost (the reply is spoken and the mic reopens under a sheet); hear-it and the answer bubble's speaker reopen the mic after an interruption (they don't bump `generation`).
 
