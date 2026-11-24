@@ -169,7 +169,7 @@ export const patzcuaro: CityPantry = {
       role: 'bióloga',
       placeId: 'basilica-de-la-salud',
       personality: ['serene', 'funny', 'devoted to her achoques'],
-      portraitPrompt: 'Gouache portrait of a woman of 60 with short grey hair, round glasses and a merry smile, in a field vest over a blue shirt with her sleeves rolled up, holding a small net, who is a biologist breeding salamanders in the convent courtyard beside the Basílica de la Salud, Pátzcuaro. Include the shallow water tanks with small pale salamanders. Bold, saturated colour: habit white, water green and stone ochre. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      portraitPrompt: 'Gouache portrait of a woman of 60 with short grey hair, round glasses and a merry smile, in a field vest over a blue shirt with her sleeves rolled up, holding a small net, who is a biologist breeding salamanders in the convent courtyard beside the Basílica de la Salud, Pátzcuaro. Include the shallow water tanks with small pale salamanders. Bold, saturated colour: linen white, water green and stone ochre. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
       here: "You are a biologist who works in the convent courtyard beside the Basílica of Our Lady of Health, breeding achoques, the salamander of Lake Pátzcuaro, a relative of the axolotl found nowhere else. For generations the Dominican nuns here have kept them and made a syrup from them for coughs; now you and the nuns breed them together to save them from extinction. In the basilica, the Virgin of Health is a statue made of pasta de caña, a light paste of corn stalks, a Purépecha technique from the sixteenth century.",
     },
     {
