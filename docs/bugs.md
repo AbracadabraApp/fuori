@@ -259,6 +259,10 @@ He raised the same on 2026-10-21, and `PolaroidCard.swift` has asked for 1.1 tim
 
 **Fix on main, 2026-11-16 (Josh: "done"; not released, not seen on a phone).** With the card look he chose in the studies: `PolaroidCard` is a polaroid (a 12 pt white frame around the picture, 3 pt corners, a thin shadow plus a deeper one under the two lower corners, as curled corners throw); the name's line height is 1.0 times the point size (was 1.1); the visited stamp sits beside the name as ink (`VisitStamp(paper: .ink)`), nothing over the picture; the chalk menu is placed inside the frame. If 1.0 still reads loose on a phone, `.multiple(factor:)` is not doing what its comment says and the next step is a fixed line height or another face (his: "or look to different font"). Checks for whoever has a Mac: docs/archive/cards-and-level-up-recipe.md.
 
+### B54. The learner's name said twice, in the language and again in the English
+Josh, 2026-11-23: "characters repeat my name in spanish then english". Regina at the Macroplaza (4335c671, Monterrey): "¡Qué bueno, Joshua! Mucho gusto, yo soy Regina. How nice, Joshua! Nice to meet you, I'm Regina." In the last 40 Mexican visits, 7 of 157 character lines say the name twice this way, 5 of them in that one visit; Lupita (b24f11d4): "Buenas tardes, Joshua. Good afternoon, Joshua." It comes from the Beginner shape, each sentence followed by its English, when the sentence carries the name.
+**Status:** open.
+
 ## Kept: what play says works
 
 Not bugs; recorded so a fix doesn't undo them.
