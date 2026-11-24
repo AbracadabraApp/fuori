@@ -266,3 +266,13 @@ Josh: "take an easy enough phrase - working for forty years - drawing the museum
 **Why:** the one moment in a Beginner visit where the learner has to understand the language with nothing to lean on: textbook listening comprehension, in role, and short.
 
 **Not decided:** how often (once a visit, like the idiom turn's spacing?); which steps of scaffolding answer in English and which in the language; whether the character asks or the bubble does. Would be a new setup beside the question, the idiom and the goodbye (lib/beginner-2.ts).
+
+## A pointer, not a correction: how people here say it (Josh, 2026-11-23; above Beginner step 1)
+
+Josh: "as you move up from beginner 1 - the character could softly correct or point something out about spanish - i said much gusto after introducing myself -- and I said it again as goodbye - i don't know if that is right - but he could hve told me this is how we say nice to meet you we met. . . i don't have a great example".
+
+His example: *mucho gusto* at the goodbye is fine in Mexico; the more usual parting is *fue un gusto* or *un gusto*. So the character could say, in passing: *¡Igualmente! Y al despedirnos también decimos "fue un gusto".*
+
+**Shape:** from step 2 up, at most once a visit, when something the learner said gives a natural hook (a greeting, a goodbye, a word reached for). The character adds how people here say it, in role and in passing, then carries on. It doesn't judge the learner's words (mishearings make bad corrections; bugs.md B26), it only adds one. A pointer like this is a natural card for the visit's Learn sheet ("When you say goodbye").
+
+**Not decided:** which steps; how the hook is found (a judge on the learner's last line, or the character's own choice); whether the English of the pointer shows.
