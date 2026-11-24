@@ -42,7 +42,7 @@ One sheet, one card (Josh: "the card is the sheet. 1:1"). There is never a secon
 | Headline | At the top of the sheet, level with the close button. It names the card: "When you introduce yourself", "Vocabulary: things". |
 | Close button | Small and round, top right. The only control. No Done at the bottom. |
 | Body | One sage green block (#e2e8d2) under the headline, holding the card's lines. |
-| Lines | The language line in ink, semibold; the English under it, smaller and muted. Fact cards hold one short paragraph instead. |
+| Lines | The language line in ink, semibold; the English under it, smaller and muted. Fact cards hold one short paragraph instead. Some cards add one plain line in English: a saying's meaning, what a small word does. |
 
 No picture inside the sheet: the person is on the screen behind it. The sheet may cover the face when a card is tall; the name band still shows (Josh: "you haven't lost context").
 
@@ -55,7 +55,7 @@ No picture inside the sheet: the person is on the screen behind it. The sheet ma
 5. **The English goes under each line**, not beside it.
 6. **Lines run in the order they're said:** the question, then the answer.
 7. **Plain.** No audio, no replayed moments, nothing about the next visit, no city or day of the week, no red.
-8. **Bite-sized.** Two or three lines for phrases, five for things, three for actions, one fact. Earlier, fuller cards were "too dense" and one-line pointers "too compact".
+8. **Bite-sized, but not sparse.** About three lines to a card: two or three phrases, five things, three actions, a fact of two or three sentences. Josh, of the first drawings of Culture, A saying, A word from here, This or that and A small word, which held one or two lines: "the bottom row of 10 is sparse"; they were filled out to match. Earlier, fuller cards were "too dense" and one-line pointers "too compact".
 9. **Cards are often picked by what the conversation involved, but not always.** A card can stand by itself.
 10. **The person screen behind the sheet is not changed.**
 11. **Cards don't make corrections** (Josh, 2026-11-23: "i don't know if it made it into the design doc - but cards don't make corrections"). A card shows the right way to say things; it never shows what the learner got wrong or a wrong form beside the right one.
@@ -111,8 +111,8 @@ One fact about where you were. It doesn't have to come from the conversation. Th
 
 One culture fact: how people live there. (About this place is about where you stood; Culture is about the people. They are two types.)
 
-- **Holds:** one or two sentences.
-- **Example:** At home many families speak Tsotsil or Tseltal, and Spanish in town.
+- **Holds:** two or three sentences.
+- **Example:** At home many families here speak Tsotsil or Tseltal, and Spanish in town. Both are Maya languages, heard across the highlands of Chiapas.
 
 ![Culture](../design/learn-sheet-2/cards/06-culture.jpg)
 
@@ -120,8 +120,8 @@ One culture fact: how people live there. (About this place is about where you st
 
 One idiom, its literal words, and what it means.
 
-- **Holds:** the saying; its word-for-word English under it; one plain line with the meaning. The only type with a third kind of line.
-- **Example:** *A falta de pan, tortillas.* No bread, then tortillas. You make do with what you have.
+- **Holds:** the saying, its word-for-word English under it; one plain line with the meaning; then the saying used in a sentence, with its English.
+- **Example:** *A falta de pan, tortillas.* No bread, then tortillas. You make do with what you have. / *No hay atole. A falta de pan, tortillas: un café.* There's no atole. No bread, then tortillas: a coffee.
 
 ![A saying](../design/learn-sheet-2/cards/07-a-saying.jpg)
 
@@ -129,8 +129,8 @@ One idiom, its literal words, and what it means.
 
 One local word.
 
-- **Holds:** the word and what it means, with the language it comes from when that isn't the one being learned.
-- **Example:** *amuninni* let's go, in Sicilian. (San Cristóbal: *kolaval*, thank you, in Tsotsil.)
+- **Holds:** the word and what it means, with the language it comes from when that isn't the one being learned; a sentence that uses it; one plain line on where you hear it.
+- **Example:** *amuninni* let's go, in Sicilian / *Amuninni, è tardi!* Let's go, it's late! / You hear it all over Palermo, even from people speaking Italian. (San Cristóbal: *kolaval*, thank you, in Tsotsil.)
 
 ![A word from here](../design/learn-sheet-2/cards/08-a-word-from-here.jpg)
 
@@ -138,8 +138,8 @@ One local word.
 
 A choice of two that isn't formal and informal.
 
-- **Holds:** the two, each in a short sentence, the English under each.
-- **Example:** *¿Con leche?* With milk? / *Un café sin azúcar.* A coffee without sugar. (Italy: *Buongiorno!* until the afternoon / *Buonasera!* from about four.)
+- **Holds:** the question that offers the choice, then each answer, built alike so the two read as a pair.
+- **Example:** *¿Con leche o sin leche?* With milk or without? / *Con leche, por favor.* With milk, please. / *Sin azúcar, por favor.* Without sugar, please. (Italy: *Buongiorno!* until the afternoon / *Buonasera!* from about four.)
 - **Supply:** about 19 lessons teach a choice like this.
 
 ![This or that](../design/learn-sheet-2/cards/09-this-or-that.jpg)
@@ -148,8 +148,8 @@ A choice of two that isn't formal and informal.
 
 One little word that does a lot of work. The headline names it: "A small word: allora".
 
-- **Holds:** two sentences that use it, the English under each.
-- **Example:** *Allora, due cappuccini e due cornetti?* So, two cappuccinos and two croissants? / *Ah, ho capito! Un caffè, allora.* Oh, got it! An espresso, then.
+- **Holds:** two sentences that use it, the English under each; one plain line saying what the word does.
+- **Example:** *Allora, due cappuccini e due cornetti?* So, two cappuccinos and two croissants? / *Ah, ho capito! Un caffè, allora.* Oh, got it! An espresso, then. / It opens a thought or wraps one up: so, then, well.
 - **Supply:** about 12 lessons are about one.
 
 ![A small word](../design/learn-sheet-2/cards/10-a-small-word.jpg)
