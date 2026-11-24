@@ -250,3 +250,19 @@ Reading Don Anselmo's background (`here`, content/es-mx/cities/mazatlan.ts) whil
 ## Hearing more of the language than you can read (Josh, 2026-11-16)
 
 After his first visits at step 2 (every sentence echoed; Chuy, Memo, Valeria in Guadalajara, f71312f9 and two more that morning): "it felt strange to hear more spanish but not read it - not trying to change the design". The app prints only the question and its English (his 2026-11-11 call), so the step that adds the language adds it to the ear only. Then: "once i was on level 2 - 40% was bin spanish - but only questio printed". The debug panel's share for his step 2 turns that morning was 45–48% (the ratings' context, f71312f9). An observation, not a request; nothing changed.
+
+## Did you catch it: a sentence heard, a question about it (Josh, 2026-11-23; Beginner)
+
+Josh: "take an easy enough phrase - working for forty years - drawing the museum - said in spanish -- no question or translation - bubble is - what is she drawing - how long has he been cooking"; then "the answer can be english in early beginner - maybe spanish with the spanish bubble but no english showing - question is in english - the character could even ask".
+
+**How it plays:**
+1. The character says one easy sentence in the language, about their own work or place, with no English and no question: *Cocino aquí desde hace cuarenta años.* / *Estoy dibujando el museo.*
+2. Then a question about it, in English: on the learner's bubble ("How long has he been cooking here?") or asked by the character ("Did you catch it? How long have I been cooking here?").
+3. The learner answers:
+   - **Early Beginner:** in English ("Forty years").
+   - **Later:** in the language, from an answer bubble that shows only the language, no English (*Cuarenta años*).
+4. The character carries on in character: confirms (*¡Eso, cuarenta años!*), or says it again slower if it was missed.
+
+**Why:** the one moment in a Beginner visit where the learner has to understand the language with nothing to lean on: textbook listening comprehension, in role, and short.
+
+**Not decided:** how often (once a visit, like the idiom turn's spacing?); which steps of scaffolding answer in English and which in the language; whether the character asks or the bubble does. Would be a new setup beside the question, the idiom and the goodbye (lib/beginner-2.ts).
