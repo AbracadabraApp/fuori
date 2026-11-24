@@ -10,23 +10,8 @@ Everything that plays wrong: what Josh (or anyone) reports from play, and what a
 
 ## Open
 
-### B4. Repeats within a visit (on the version that should stop them)
-Josh, 2026-11-13: "Don Insidro, ¿usted me preguntó esto antes?" (Isidro asked about the altars three times, d335b204). Earlier: Raymundo's back door three times, "Mire" every turn (45764841, 2026-11-12).
-ed467dd (character.md 12b, "no repeats within a visit") was already live for d335b204. **Status: open; mostly a symptom of B3 (Isidro ran out of material past the visit's end); recheck after 13c is played. The richer first turn (saved beats) should also help.**
-Again on the live version, inside the visit's eight turns (2026-11-14, Totò, Palermo, f23f7b64, 11-14e): he asked about the panella on three turns running ("Lo vuole con una panella?", "Ne vuole una?", "Vuole una panella con il panino?"), after the learner had asked how it's made and been told. So not only a symptom of B3. **Still open.**
-Also 2026-11-14 night: Mariano asked "¿Quiere entrar a ver?" and three turns later "¿Quiere entrar a la iglesia?", and offered the answer "¿Cuántas ramas lleva usted hoy?" on two turns running (dbcd73fe); Davide asked "Vuole sentire una canzone?" then "Vuoi sentire una canzone?" three turns later, the song never played (db79bb48).
-
-**2026-11-24 review of commits and of Josh's play on 2026-11-23** (Mexico, live beginner-2-2026-11-17g, steps 2–3, header only; seven visits past the opener: Regina 4335c671, Baldemar 78e59d51, Adrián 9a714451, Ismael 63afafc2, Abel 4955c6e5, Refugio d2e77f56, Lupita b24f11d4): Refugio's answers offered "¿Qué es la cantera?" on three turns ("¿Qué es la cantera?", "¿Qué es la cantera rosa?", "¿Qué significa «cantera»?"), after he had said what it is (see B25); Adrián asked "¿Quiere escuchar un disco en el tocadiscos?" and two turns later "¿Quiere escuchar también ese disco en el tocadiscos?" (a second record, so it follows). **Still open.**
-
-### B6. Strange or ignored questions: the character doesn't take up what the learner said
-Josh, 2026-11-13: "Hey, that is a strange question." (Raymundo asked if he likes walking the callejones, which he did last visit; 2008220a); "Are you not interested in the Fontana de los Cimbales?" (Don Chucho skipped Josh's walk to point at his brush; 499b9774).
-Same family as dialogue-ideas.md "The character asks and carries on, as if answered" (character.md 12a, "take up what they just said", live). **Status: open.**
-
 ### B7. Too fast, too much Spanish at Beginner step 1
 Josh, 2026-11-13: "mucho mucho inglés por favor" (Raymundo 2008220a); "puede hablar más despacio?", "¿hablo più inglés?" (Ofelia 71dc1d3b); "Perdón, puede hablar más despacio, por favor?" (Josué 8814eb6f). See B1(b). **Status: open.**
-
-### B11. Asked for help in English, answered only in the language (Intermediate)
-Josh, 2026-11-13: "Excuse me, Elena. I don't speak Italian perfectly… What do I want to see before?" Elena answered in Italian only (252960a4). CLAUDE.md: a character helps in English when asked. Nunzio did it right the same morning (67edfe03). **Status: watching, likely a one-off.** Josh, 2026-11-13: "intermediate does help in english when asked" (as CLAUDE.md says: it works in play without being in the prompt). The gap is B13: help that doesn't last.
 
 ### B12. The character's bubble stays on screen too long
 Josh, 2026-11-13, in play: "el personaje bubble está en la pantalla demasiado largo" (Ofelia 71dc1d3b). Which bubble and when, to ask. Josh, 2026-11-14, what he meant: "when the reply is given, the reply bubbles disaappear. The revious character bubble hanges there until new dialogue arrives -- they should both go afteer reply". **Status: fix in the app** (059fc9f, D21: the character's bubble and the answers go when the reply is sent, at every level; in build 16, TestFlight, 2026-11-14, and every build since, now 19). Closes when Josh sees it on the phone.
@@ -53,9 +38,6 @@ Recounted on the eight Beginner visits of 2026-11-14 night (56 pairs, goodbyes l
 ### B26. The Learn page corrects lines the learner read from an offered answer, or that were misheard
 Found 2026-11-14 by running the live Learn writer on four of Josh's Beginner visits (read-only): every page is full (2–3 fixes, 5–7 words, 3–4 verbs, a culture note), but about half the fixes are not the learner's mistakes. "No quiero ver más el mural" was the offered answer "No, quiero ver más el mural", and the page called it rude to a guide (Renata 35f9fa93); "Todavia no vale la pena" was the answer "Todavía no. ¿Vale la pena?" (Carmen 09978a29); "mejor me cuento aquí" was "me quedo" misheard (Isidro d335b204); "pinto" for "pintó" is a spelling the learner can't make in speech. Real ones on the same pages: "Come fate la panella?" → "Come fa…", "la más popular pregunta" → "la pregunta más popular". Same family as B19. The writer isn't given the answers that were offered. **Status: open** (dialogue-plan.md D51: at most one fix, never from a line that matches an offered answer).
 
-### B27. An idiom turn used "gringo", about the learner
-2026-11-14 night, Juana, San Cristóbal (c7c75e92): "Some people here would look at you and say gringo, American, but I just say come eat. ¿Qué cree que significa «gringo»?" with the answers "Es un extranjero de Estados Unidos." / "Es un tipo de tamal." Not raised by Josh. Two things: "gringo" is in the idiom store though it is a word, not a saying, and the character applied it to the learner, which assumes where they are from (CLAUDE.md: the game assumes nothing about where the learner is from). **Status: open.** 2026-11-24: "gringo" is still in content/es-mx/idioms.json; no fix committed.
-
 ### B28. Reading an offered "what is…?" answer marks the learner as finding it hard
 2026-11-14 night: Juana's turn after the offered answer "¿Qué es un coleto?" was saved `hard` (c7c75e92), and Davide's after the offered "Cosa significa 'O sole mio?" (db79bb48), so every later turn of those visits got the Help asked note (D12). After it Davide's turns went short and he repeated his question about the song. The help answer (D25) and help that lasts (D12) were built the same day; together, taking an answer the game itself offered counts as asking for help. **Status: open.** Proposed 2026-11-16; Josh: "skip" (progress.md, 53098286). Not fixed.
 
@@ -64,9 +46,6 @@ Josh, 2026-11-14 night, to Giuseppe in Lecce (6ee0e530): "I also have to notice 
 2026-11-16, step 1 on the new settings (the mixed sentence: an English sentence with the marked phrase in Spanish, then its English). Where the marked phrase is a noun it reads well ("I shine shoes en mi cajón, at my stand", "we go see los Venados, the baseball team"). Where it is a verb, an adjective or the start of the sentence it breaks: Anselmo "It's Es el corazón, the heart of old Mazatlán" and "Yes, it's very bonito, pretty"; Andrés "El rojo, Red is a strong color", "Un boceto, a sketch is a quick drawing", "I draw las llamas, the flames with black pencil"; Lalo "the children juegan, play there", "Right now I'm puliendo, buffing your shoe". Seven of the three step 1 visits' lines. **Not a bug (Josh, the same day, shown these three):** "This is actually nice on the ear - like practical vocab pointer". Claude had read them on the page as broken; heard, a verb or adjective said in Spanish and then in English is a pointer to the word. Moved to Kept, below.
 
 2026-11-17, nine Italy Beginner visits on Josh's learner (steps 1–3, prompt beginner-2-2026-11-16h), step 3 (half echoed, half glossed): "Qui a Testaccio la gricia, gricia è più antica" and "la coda alla vaccinara, coda alla vaccinara (oxtail stew)" (Claudio a7dade72: a phrase glossed with itself); "Poi c'è la piazza, the square con il mercato" (the gloss mid-sentence); "Allora vada avanti, ahead," (Don Paolo f6a9ee39); "Attaccare bottone, to strike up a conversation Letteralmente" (no stop between them; Dante 1c830aca).
-
-### B30. A date in the notes stays "tomorrow"
-2026-11-14 night, Elena, Palermo (5279b94e): she opened on the plan made on 2026-11-13 ("Domani alle nove e mezza ci vediamo davanti al Massimo, vero?"), which is the thread kept (dialogue-plan.md D2). But it was still "tomorrow" a day later, and when Josh asked why she hadn't come on Thursday she said they had only met in the workshop and "domani andiamo a Ballarò per la prima volta". The notes have no dates, so a plan for "tomorrow" never arrives. **Status: open.**
 
 ### B32. Too much English at Beginner (the mix)
 Josh, 2026-11-14 night, after eight Beginner visits at step 1 on 11-14e: "My greatest dissapointment is that mix of spanish english is still not where I want it. It is good, but not enough spanish, the challenge is it has to approach echoing to be the right balance, but echoing is not as good to the ear as what we have now. Bpottom line though - too much english". An opener from the night, about a quarter in the language: "Buenos días, pase, pase, good morning, come in, it's cold today, sit by the stove. I have tamales de chipilín, tamales with a green herb in the dough steaming right now, and hot atole, warm corn drink. ¿Gusta un tamal? Would you like a tamal?" (Juana, c7c75e92). All eight visits played at step 1, on both of Josh's learners. The other side of B7 (2026-11-13: too much Spanish, too fast), which the mostly-English step 1 of 13a–13b answered. docs/mix.md has the design and the measures. **Status: open; his largest complaint about the release.**
@@ -258,6 +237,37 @@ Not bugs; recorded so a fix doesn't undo them.
 - **A Beginner character asked for more English adapts.** Josh, 2026-11-13: "Some character adapted to use more English." Ofelia, asked "¿hablo più inglés?", answered "Sure, mi reina, I'll use more English" and did (71dc1d3b); Carmen, told "that was a lot of Spanish with no English", said "I'll go slower" (09978a29).
 
 ## Closed
+
+### B4. Repeats within a visit (on the version that should stop them)
+Josh, 2026-11-13: "Don Insidro, ¿usted me preguntó esto antes?" (Isidro asked about the altars three times, d335b204). Earlier: Raymundo's back door three times, "Mire" every turn (45764841, 2026-11-12).
+ed467dd (character.md 12b, "no repeats within a visit") was already live for d335b204. **Status: open; mostly a symptom of B3 (Isidro ran out of material past the visit's end); recheck after 13c is played. The richer first turn (saved beats) should also help.**
+Again on the live version, inside the visit's eight turns (2026-11-14, Totò, Palermo, f23f7b64, 11-14e): he asked about the panella on three turns running ("Lo vuole con una panella?", "Ne vuole una?", "Vuole una panella con il panino?"), after the learner had asked how it's made and been told. So not only a symptom of B3. **Still open.**
+Also 2026-11-14 night: Mariano asked "¿Quiere entrar a ver?" and three turns later "¿Quiere entrar a la iglesia?", and offered the answer "¿Cuántas ramas lleva usted hoy?" on two turns running (dbcd73fe); Davide asked "Vuole sentire una canzone?" then "Vuoi sentire una canzone?" three turns later, the song never played (db79bb48).
+
+**2026-11-24 review of commits and of Josh's play on 2026-11-23** (Mexico, live beginner-2-2026-11-17g, steps 2–3, header only; seven visits past the opener: Regina 4335c671, Baldemar 78e59d51, Adrián 9a714451, Ismael 63afafc2, Abel 4955c6e5, Refugio d2e77f56, Lupita b24f11d4): Refugio's answers offered "¿Qué es la cantera?" on three turns ("¿Qué es la cantera?", "¿Qué es la cantera rosa?", "¿Qué significa «cantera»?"), after he had said what it is (see B25); Adrián asked "¿Quiere escuchar un disco en el tocadiscos?" and two turns later "¿Quiere escuchar también ese disco en el tocadiscos?" (a second record, so it follows). **Still open.**
+
+**Status: closed, no fix** (Josh, 2026-11-24: "B4, B6, B11, B27 - fine; B30 skip"; this one "fine").
+
+### B6. Strange or ignored questions: the character doesn't take up what the learner said
+Josh, 2026-11-13: "Hey, that is a strange question." (Raymundo asked if he likes walking the callejones, which he did last visit; 2008220a); "Are you not interested in the Fontana de los Cimbales?" (Don Chucho skipped Josh's walk to point at his brush; 499b9774).
+Same family as dialogue-ideas.md "The character asks and carries on, as if answered" (character.md 12a, "take up what they just said", live). **Status: open.**
+
+**Status: closed, no fix** (Josh, 2026-11-24: "B4, B6, B11, B27 - fine; B30 skip"; this one "fine").
+
+### B11. Asked for help in English, answered only in the language (Intermediate)
+Josh, 2026-11-13: "Excuse me, Elena. I don't speak Italian perfectly… What do I want to see before?" Elena answered in Italian only (252960a4). CLAUDE.md: a character helps in English when asked. Nunzio did it right the same morning (67edfe03). **Status: watching, likely a one-off.** Josh, 2026-11-13: "intermediate does help in english when asked" (as CLAUDE.md says: it works in play without being in the prompt). The gap is B13: help that doesn't last.
+
+**Status: closed, no fix** (Josh, 2026-11-24: "B4, B6, B11, B27 - fine; B30 skip"; this one "fine").
+
+### B27. An idiom turn used "gringo", about the learner
+2026-11-14 night, Juana, San Cristóbal (c7c75e92): "Some people here would look at you and say gringo, American, but I just say come eat. ¿Qué cree que significa «gringo»?" with the answers "Es un extranjero de Estados Unidos." / "Es un tipo de tamal." Not raised by Josh. Two things: "gringo" is in the idiom store though it is a word, not a saying, and the character applied it to the learner, which assumes where they are from (CLAUDE.md: the game assumes nothing about where the learner is from). **Status: open.** 2026-11-24: "gringo" is still in content/es-mx/idioms.json; no fix committed.
+
+**Status: closed, no fix** (Josh, 2026-11-24: "B4, B6, B11, B27 - fine; B30 skip"; this one "fine").
+
+### B30. A date in the notes stays "tomorrow"
+2026-11-14 night, Elena, Palermo (5279b94e): she opened on the plan made on 2026-11-13 ("Domani alle nove e mezza ci vediamo davanti al Massimo, vero?"), which is the thread kept (dialogue-plan.md D2). But it was still "tomorrow" a day later, and when Josh asked why she hadn't come on Thursday she said they had only met in the workshop and "domani andiamo a Ballarò per la prima volta". The notes have no dates, so a plan for "tomorrow" never arrives. **Status: open.**
+
+**Status: closed, no fix** (Josh, 2026-11-24: "B4, B6, B11, B27 - fine; B30 skip"; this one "skip").
 
 ### B5. Double goodbye
 The character says goodbye, the learner says goodbye, the character says it again: every 11-12i Beginner visit that ended on a goodbye (e.g. 2008220a, 35f9fa93, 09978a29). ed467dd ("the goodbye left to the learner") was live for all of them. **Status: probably fine; the visits that ended went: the character winds down, the learner says goodbye, the character says it back (one each). Some wind-downs still sound like a farewell; Josh to judge by ear.**
