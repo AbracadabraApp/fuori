@@ -263,8 +263,8 @@ He raised the same on 2026-10-21, and `PolaroidCard.swift` has asked for 1.1 tim
 Josh, 2026-11-23: "characters repeat my name in spanish then english". Regina at the Macroplaza (4335c671, Monterrey): "¡Qué bueno, Joshua! Mucho gusto, yo soy Regina. How nice, Joshua! Nice to meet you, I'm Regina." In the last 40 Mexican visits, 7 of 157 character lines say the name twice this way, 5 of them in that one visit; Lupita (b24f11d4): "Buenas tardes, Joshua. Good afternoon, Joshua." It comes from the Beginner shape, each sentence followed by its English, when the sentence carries the name.
 **Status:** open.
 
-### B55. Introductions stopped: nobody offers names any more
-Josh, 2026-11-23: "people never introduce themselves though unless i go first - this use to be commu=on that the bubbles would lead to introductions". Counted (visits with an answer bubble that carries the learner's name, e.g. *Me llamo Joshua*): Oct 12–20 0 of 44; Oct 21–31 1 of 42; **Nov 1–10 13 of 90**; Nov 11–14 0 of 33; Nov 15–24 0 of about 200 (archive and admin route). A character saying their own name in their first three turns was rare throughout (0–2 a period). It stopped around Nov 11–12: the Beginner 2 cut-over (Nov 12), two days after "the first turn: the place, not the person" (Doña Carmen, Nov 10) and the end of the newcomer persona. Not yet read which of them did it.
+### B55. Introductions stopped: the bubbles no longer lead to them
+Josh, 2026-11-23: "people never introduce themselves though unless i go first - this use to be commu=on that the bubbles would lead to introductions". Counted (visits whose answer bubbles offer an introduction: *Me llamo…*, *Mi chiamo…*, *¿Cómo se llama?*; archive plus admin route): Oct 12–20 0 of 44; Oct 21–31 2 of 42; **Nov 1–10 24 of 90**; Nov 12–18 13 of 211 (test runs mixed in); Nov 24 0 of 13. Common in early November, down with the Beginner 2 cut-over (Nov 12), none today. (A first count, since corrected, looked at the character saying the learner's name, not the bubbles.) Not yet read what in Beginner 2's setups stopped them.
 **Status:** open.
 
 ## Kept: what play says works
