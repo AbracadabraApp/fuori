@@ -281,6 +281,8 @@ Josh: "take an easy enough phrase - working for forty years - drawing the museum
 
 **Not decided:** which of these, or both; how often; whether it replaces the no-answers turn at step 3 or sits beside it.
 
+**Josh, the same day, the root of it:** "the open questions require you have some vocabulary or phrases - but we haven't focused there". An open question is answered from phrases the learner owns, and nothing so far gives them any: up to step 3 every answer is read off a bubble, which is reading aloud, not retrieving. The same gap ideas.md → A new Intermediate names (Claude, 2026-11-14: "Beginner leaves no phrases the learner can produce alone"), with the same starting points there: a small stock of phrases that recur across visits (*Me gusta… porque…*, *¿Qué es…?*, *Quisiera…*, *Más despacio, por favor*), each bubble fading for a phrase once it has been said back a few times, and Learn cards that drill them. Josh's "did you hear how to say" question is one way in: it hands the learner a phrase from the visit and has them say it from memory, a step before using it in their own answer. So the open question may belong after that stock exists, not at step 3.
+
 ## A pointer, not a correction: how people here say it (Josh, 2026-11-23; above Beginner step 1)
 
 Josh: "as you move up from beginner 1 - the character could softly correct or point something out about spanish - i said much gusto after introducing myself -- and I said it again as goodbye - i don't know if that is right - but he could hve told me this is how we say nice to meet you we met. . . i don't have a great example".
