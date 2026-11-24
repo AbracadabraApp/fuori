@@ -26,7 +26,7 @@ const system = fill(cut.block('Cut'), { language: language.name, models: models.
 /** What this run used, printed at the end (development calls aren't in the live logs) */
 const spent = { calls: 0, input: 0, output: 0 };
 
-async function ask<T>(system: string, content: string, schema: object, max = 6000): Promise<T> {
+async function ask<T>(system: string, content: string, schema: object, max = 8000): Promise<T> {
   for (let attempt = 0; ; attempt++) {
     try {
       const r = await anthropic.messages.create({ model: CLAUDE_MODEL, max_tokens: max, system, messages: [{ role: 'user', content }], output_config: { format: { type: 'json_schema', schema } } } as Parameters<typeof anthropic.messages.create>[0]);
@@ -35,8 +35,10 @@ async function ask<T>(system: string, content: string, schema: object, max = 600
       spent.calls++; spent.input += u.input_tokens; spent.output += u.output_tokens;
       return JSON.parse(replyText(r as Parameters<typeof replyText>[0])) as T;
     } catch (e) {
+      // A busy or failed call, an empty reply or JSON cut off are tried again; a bad request isn't
       const status = (e as { status?: number }).status ?? 0;
       if (attempt >= 3 || (status && status !== 429 && status < 500)) throw e;
+      max = Math.round(max * 1.5);
       await new Promise((res) => setTimeout(res, 3000 * (attempt + 1)));
     }
   }
@@ -78,7 +80,9 @@ function card(c: Cut, id: string, level: CardLevel, keys: string[], from: string
 async function factChecked(cards: LearnCard[]): Promise<{ kept: LearnCard[]; dropped: { card: LearnCard; doubts: string[] }[] }> {
   if (!cards.length) return { kept: [], dropped: [] };
   const items = cards.map((c) => ({ chip: c.id, facts: [c.headline + (c.term ? `: ${c.term}` : ''), ...c.rows.map((r) => `${r.text} (${r.en})`), c.note ?? ''].filter(Boolean).join('. ') }));
-  const verdicts = (await ask<{ items: { chip: string; pass: boolean; doubts: string[] }[] }>(factsJudge, JSON.stringify(items), factSchema, 4000)).items;
+  // In batches, so a long run's answer isn't cut off
+  const batches = Array.from({ length: Math.ceil(items.length / 12) }, (_, i) => items.slice(i * 12, i * 12 + 12));
+  const verdicts = (await pool(batches, 4, async (batch) => (await ask<{ items: { chip: string; pass: boolean; doubts: string[] }[] }>(factsJudge, JSON.stringify(batch), factSchema, 4000)).items)).flat();
   const kept: LearnCard[] = [];
   const dropped: { card: LearnCard; doubts: string[] }[] = [];
   for (const c of cards) {
