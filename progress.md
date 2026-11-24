@@ -1,5 +1,13 @@
 # Fuori Development Progress
 
+## 2026-11-23 (cloud), late afternoon: five of the ten model cards filled out
+
+- Josh, looking at `design/learn-sheet-2/cards/all-ten.jpg`: "the bottom roww of 10 is sparse". Culture, A saying, A word from here, This or that and A small word held one or two lines each.
+- **Redrawn at about three lines each** (pictures 06 to 10 and `all-ten.jpg`; the design document's examples and rule 8, now "bite-sized, but not sparse"): Culture gains a second sentence; A saying shows the saying used in a sentence; A word from here gains a sentence and a line on where you hear it; This or that is the question and its two answers, built alike (*¿Con leche o sin leche?* / *Con leche, por favor.* / *Sin azúcar, por favor.*); A small word gains a plain line on what the word does.
+- **For whoever writes `learn-card-models.md`** (the plan's model cards): take these five from the design document as it is now, not from the first drawings. Cards 01 to 05 are unchanged.
+- The new Spanish and Sicilian lines are the cloud session's own (*No hay atole. A falta de pan, tortillas: un café.*; *Amuninni, è tardi!*) and have not been through a language check.
+- The "Lesson Door Sheet" page still shows the first, shorter versions of these five.
+
 ## 2026-11-23 (cloud): the learn sheet's design document and ten example cards
 
 - Josh: "supply a written design document and the 10 example cards - go into any depth you choose on how you might implement them but be clear the tech design is open. Commit when done."
