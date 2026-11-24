@@ -60,7 +60,7 @@ export const language = {
       barNow: 'Now',
       barNext: 'Next',
       barLabel: 'Step {now} of {total} now. Step {next} is next.',
-      stay: 'Stay',
+      stay: 'Stay for now',
       go: 'Next',
       /** The line under the cards, by the step being offered: what changes there (lib/dialogue/pieces.ts → SETTINGS). `answers` above is the fallback */
       steps: {
