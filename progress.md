@@ -1,5 +1,15 @@
 # Fuori Development Progress
 
+## 2026-11-23 (laptop): Learn 2.0, the card after the goodbye, built (not released)
+
+- **What:** after a visit's goodbye one card slides up over the person screen (Josh's design, docs/learn-sheet-2-design.md; plan docs/learn-sheet-2-plan.md). On `main`, not live: needs `npm run release` and a phone build, both on Josh's word.
+- **Bank:** `content/<country>/learn-cards.json`, Italy 422 and Mexico 454 cards, cut by `scripts/learn-cards.mts` from lessons, idioms, culture stories, city lists, here lines, landmarks (one fact each) and comparisons, written to the ten models (`prompts/learn-card-models.md`). Each card has a source footnote the app never gets. Facts are dropped only when a judge can say what's wrong (Josh's rule; 5 of ~500).
+- **Server:** `lib/learn-card-writer.ts`, one call a visit at the wind-down turn: pick a bank card, make one from the visit, or none; none fills in only when no sheet showed in the last 3 visits; no card when level up is due. `GET/POST /v1/learn/card`; table `learn_cards_shown`.
+- **App:** `LearnCardSheet`; PersonView saves at the goodbye, asks for the card in the existing 1.5 s, shows it or closes as before; every exit goes to the place list.
+- **Checked:** test:learn-card both countries, test:language, test:claude-usage-log, tsc, ios make build; the writer on 16 real visits (`scripts/learn-card-replay.mts`): picks still lean to place facts about half the time. **Not checked:** a live end-to-end run, the phone.
+- **Also today:** the live app was down since Nov 21 (the only API key expired); Josh made fuori-live (Railway) and a dev key (laptop, mini); both countries pass smoke:live.
+- **Next:** Josh's yes to release and install, then play. Later: language cards from the syllabus (Mexico has few), and the bank's leftovers (notes under phrase cards, the same fact twice, one-off kinds). Learn 1.0 and the book stay until 2.0 has been played.
+
 ## 2026-11-23 (cloud), evening: place sounds trial, needs one run on the mini
 
 - **Josh:** "do you want to test church bells at Lupitas opening and kids in the squarre while she talksks", then "try 11 labs".
