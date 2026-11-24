@@ -13,25 +13,9 @@
 - **Now** (Working across sessions): any proposal or ranking says first what the learner would hear or see differently and what could go wrong in play; effort comes last and never decides the order.
 - **Lessons, talked through, nothing built:** two changes look worth trying, both in `content/<country>/prompts/lesson-flow.md`: a twist in the third practice scene, and the third scene with no answers handed over. Carrying a lesson into the next visits is out (every character would push the phrase).
 
-## PICTURES NEEDED: seven portraits and one place, for the laptop or mini (cloud, 2026-11-23)
+## 2026-11-23 (laptop): the seven portraits and the basilica picture made
 
-The cloud session can't make or upload pictures, and can't message another session; this entry is the only notice. Seven people changed jobs today and their pictures in R2 show the old ones. Each one's new `portraitPrompt` is in its city file. Generate candidates, Josh picks, upload (`npm run images:upload`), masters step, commit the images file. Delete this entry when done.
-
-| Country | City | Character id | Name | Now | Picture shows |
-|---|---|---|---|---|---|
-| it | bologna | `street-musician-franco` | Franco Melodia, 42 | restauratore | a guitar |
-| it | lucca | `matteo-fabbri` | Matteo Fabbri, 26 | imbianchino | a guitar |
-| it | torino | `luca-musicista` | Diego Quispe, 27 | tranviere | a guitar |
-| it | matera | `elena-laterza` | Elena Laterza, 17 | liceale | a guitar, a woman of 26 |
-| it | palermo | `grazia-salamone` | Yasmine Trabelsi, 70 | professoressa in pensione | a sketchbook, a woman of 27 |
-| es-mx | puebla | `padre-tomas-santo-domingo` | Don Tomás Herrera | restaurador | a priest |
-| es-mx | patzcuaro | `sor-guadalupe-achoques` | Guadalupe Mendoza | bióloga | a nun |
-
-**And one place picture:** `es-mx / patzcuaro / basilica-de-la-salud` shows a nun in a white habit at the salamander tanks; its `imagePrompt` now has a woman in a field vest. Regenerate it with Guadalupe's portrait.
-
-All seven portrait prompts were checked for their style lines (medium, light, "Colour from their place", format) and `test:image-prompts` passes in both countries.
-
-Not needed: Lupita Barajas (her picture fits a catechism teacher), and the two places swapped in (Villa Floridiana, the Funicolare), which have their pictures.
+- The notice the cloud session left (seven people who changed jobs, and Pátzcuaro's basilica with a nun in it): four candidates each from the new prompts, Josh picked ("1,1,1,1,1,3,2,1"): Franco, Matteo, Diego, Elena, Yasmine candidate 1; Don Tomás 3; Guadalupe 2; the basilica 1. Masters replaced and backed up to R2, uploaded as WebP, `images.json` updated in both countries; `test:image-list` passes; two fetched from R2. Not live until the next release.
 
 ## 2026-11-23 (cloud), evening: Italy's street musicians cleaned up
 
