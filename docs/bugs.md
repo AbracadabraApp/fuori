@@ -36,6 +36,12 @@ Josh, 2026-11-13: "mucho mucho inglés por favor" (Raymundo 2008220a); "puede ha
 
 **Status: open.** Whether it is a fault or a perception is the question above: the text gets easier, the voice and the next visit don't.
 
+**Does it work? (counted 2026-11-24, every visit since the 11-14 release with the flag set: 16; Josh: "do they work?")** Words per character line before the flag and after it, the goodbye and close left out:
+- **The trigger** catches a word question every time it was asked, and misfired on 3 scripted walk visits on "Sì, mi piace molto. E Lei?" / "Sí, me gusta mucho. ¿Y a usted?" (1e934d15, b08e6a17, 1130c91a), which asks for nothing.
+- **Beginner (11 visits):** in 5 the flag came on the last turns, so nothing followed it. In the other 6 the lines barely changed: 42→33, 44→27, 33→35, 41→43, 56→50, 69→56, 54→42. A Beginner turn's length is set by its step (two sentences and a question, each with its English), so the note has little to work on.
+- **Intermediate (2 real visits):** Elena 32→14 words a line (5279b94e), Nunzio 26→24 (bbb5a0f5). Josh's ear on both: not easier.
+So: it switches on, mostly for the wrong reason, and changes little that can be heard.
+
 ### B24. The character's closing questions are a few kinds, over and over (Beginner)
 Josh, 2026-11-14, on the closing question of every character turn in five Mexico Beginner visits (Carmen 09978a29, Don Chucho 499b9774, Renata 35f9fa93, Vale ba340097, Isidro d335b204; all on 11-12i, before the 2026-11-13 release): "These questions in the game are very repetitive".
 The 43 questions, tagged by what they ask (his ask: "be specific but use least number of tags"): **Do you want…?** 17 (to see something 12, to know or hear 3, other 2; "¿Quiere ver los detalles de cerca?"); **Do you see it?** 9 (B2); **A or B?** 6 (every visit's opener, and once more); **Do you like…?** 4; **What do you think of…?** 3; **Have you…?** 2; **What / which…?**, open, 2. So 35 of 43 can be answered sí or no, and "Do you want to see…" with "Do you see it?" is 21 of 43. By setup: the opener is always A or B, Notice is always "¿Lo ve?", and the two-answers turn is where "¿Quiere ver…?" comes from. 15 turns of 58 closed on no question (the questions-to-ask turns and goodbyes). **Status: open. Counted before 13b–13d went live (Notice once a visit and about the thing, the intro cut, visits closing on the 8th turn); recount on the first Mexico Beginner visits played on the live version before changing anything.**
