@@ -202,7 +202,7 @@ Found by the code reviews of layout A (2026-11-23). At large text sizes or on a 
 
 ### B61. No sign that the level-up answer was tapped
 Found by the code review of layout A (2026-11-23): while the answer is sent (a few seconds) the plain buttons look the same. Dimming them while sending is a visual change, waiting on Josh.
-**Status:** open.
+**Status: fix on main** (both buttons dim to 50% while the answer is sent, `LevelUpView.choices`; Josh asked for the fix 2026-11-24, not seen on a phone, not released).
 
 ### B62. A level-up offer built after the visit but never shown
 Josh, 2026-11-24, asked whether a level-up page came up after his last visit of 2026-11-23 (Refugio, Zacatecas, d2e77f56, step 3, goodbye at 06:49:09 UTC): "no".

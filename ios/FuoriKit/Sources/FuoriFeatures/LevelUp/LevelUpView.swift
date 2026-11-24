@@ -115,6 +115,9 @@ struct LevelUpView: View {
                 .accessibilityValue(stepReading)
         }
         .disabled(answering)
+        // B61: the answer takes a few seconds to send; the buttons dim so the tap shows
+        .opacity(answering ? 0.5 : 1)
+        .animation(.easeOut(duration: 0.15), value: answering)
     }
 
     private var stepReading: String {
