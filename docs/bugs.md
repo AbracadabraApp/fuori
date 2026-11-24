@@ -211,6 +211,14 @@ Not known: whether the app got the offer and lost it (the app closed, locked or 
 Josh, 2026-11-24: "app closed" (right after the visit). So the first case: the offer arrived in the 15 s after the goodbye, after or while the app closed, and it lives only in the app's memory. A learner who closes the app at the goodbye, which the last visit of a session invites, never sees that offer until the next visit is saved.
 **Status:** open.
 
+### B63. The level-up offer takes 15 s to arrive for a page that is static
+Josh, 2026-11-24: "why a 15 second wait - why not build at steps 1-7 and show at 9"; "but what could possibly take 15 seconds - it has basically static content".
+The page's words, buttons and step bar come from content (`levelUp` in each country's language.ts), but two things stand in front of it (Refugio, d2e77f56, 2026-11-23: goodbye 06:49:09 UTC, offer built 06:49:24):
+- **About 7 s:** the app asks for the offer only after the end call has written the character's memory and the visit's record (AppModel.save: endConversation, then levelUp).
+- **About 8 s:** `levelUpOffer` (lib/level-up.ts) awaits `rewriteAtStep`, a Claude call (769 output tokens that night) that rewrites the last line for the old page's Now / Next step boxes. The page since build 17 doesn't draw them; they're sent for older builds (B42: "it can go once the new build is on every phone").
+Without them the offer is a few database reads. The cost in play is B62: an app closed at the goodbye loses the offer. Josh's direction: decide it during the visit (the Learn card is decided at the wind-down and already checks whether level up is coming) and show it at the goodbye.
+**Status:** open.
+
 ## Kept: what play says works
 
 Not bugs; recorded so a fix doesn't undo them.
