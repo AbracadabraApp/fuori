@@ -15,7 +15,8 @@ struct LearnCardSheet: View {
     /// The card's full height, for the sheet's one detent
     @Binding var height: CGFloat
     @Environment(\.dismiss) private var dismiss
-    @ScaledMetric(relativeTo: .body) private var closeSize: CGFloat = 28
+    /// The drawings' close button, about 35 pt across on a 390 pt screen (Josh, 2026-11-24: "yes" to matching it; was 28)
+    @ScaledMetric(relativeTo: .body) private var closeSize: CGFloat = 35
     // The drawn cards' type (design/learn-sheet-2/cards, Josh: "These look much better"): a plain sans at
     // their sizes. The drawings use Public Sans, which the app doesn't have; the system font is the nearest
     @ScaledMetric(relativeTo: .headline) private var headSize: CGFloat = 18
