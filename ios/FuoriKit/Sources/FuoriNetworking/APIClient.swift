@@ -383,6 +383,40 @@ public actor APIClient {
         return try await send(post("v1/learn", json: Body(cityId: cityId, placeId: placeId, tripTo: tripTo, conversationId: conversationId)), signedIn: true)
     }
 
+    /// The card on the sheet after a visit's goodbye (Learn 2.0, docs/learn-sheet-2-design.md): one
+    /// shape for every kind, a headline, lines in the language with the English under each, and an
+    /// optional plain line. `kind` is a free word the app never switches on.
+    public struct LearnCard: Codable, Sendable, Equatable, Identifiable {
+        public struct Row: Codable, Sendable, Equatable {
+            public let text: String
+            public let en: String
+            public init(text: String, en: String) { self.text = text; self.en = en }
+        }
+        public let id: String
+        public let kind: String
+        public let headline: String
+        /// A word in the language finishing the headline ("A small word: allora"), tagged with its language
+        public let term: String?
+        public let rows: [Row]
+        public let note: String?
+        public init(id: String, kind: String, headline: String, term: String? = nil, rows: [Row], note: String? = nil) {
+            self.id = id; self.kind = kind; self.headline = headline; self.term = term; self.rows = rows; self.note = note
+        }
+    }
+
+    /// GET /v1/learn/card?conversation=…: the card for this visit if it's ready, nil when there's none
+    /// (the server never waits on it)
+    public func learnCard(conversationId: String) async throws -> LearnCard? {
+        let data = try await sendData(request("v1/learn/card", query: [URLQueryItem(name: "conversation", value: conversationId)]), signedIn: true)
+        return data.isEmpty ? nil : try JSONDecoder().decode(LearnCard.self, from: data)
+    }
+
+    /// POST /v1/learn/card: the learner closed the sheet
+    public func learnCardClosed(conversationId: String) async throws {
+        struct Body: Encodable { let conversationId: String }
+        _ = try await sendData(post("v1/learn/card", json: Body(conversationId: conversationId)), signedIn: true)
+    }
+
     /// target: the language being learned; en: English; any: Whisper detects
     /// it (onboarding answers can be either)
     /// target: the learned language; en: English; any: either, detected

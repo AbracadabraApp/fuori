@@ -1,6 +1,6 @@
 # Learn card models
 
-version: 2026-11-23b
+version: 2026-11-23c
 
 The ten cards Josh drew for the sheet after a visit (docs/learn-sheet-2-design.md), as models: the
 standard every card is written to, not a list of the only kinds there are, and not cards in the
@@ -56,7 +56,7 @@ Why it works: three verbs in the form you'd look up.
 
 6. culture
 Headline: Culture
-Note: At home many families here speak Tsotsil or Tseltal, and Spanish in town. Both are Maya languages, heard across the highlands of Chiapas.
+Note: At home many families here speak Tsotsil or Tseltal, and {language} in town. Both are Maya languages, heard across the highlands of Chiapas.
 Why it works: one fact about how people live there, not about a building, in two or three sentences.
 
 7. a-saying
@@ -71,7 +71,7 @@ Headline: A word from here
 kolaval | thank you, in Tsotsil
 Kolaval, doña. | Thank you, ma'am.
 Note: You hear it in the markets of San Cristóbal, from people who speak Tsotsil at home.
-Why it works: one local word, the language it comes from when that isn't Spanish, a sentence that uses it, and where you hear it.
+Why it works: one local word, the language it comes from when that isn't {language}, a sentence that uses it, and where you hear it.
 
 9. this-or-that
 Headline: This or that

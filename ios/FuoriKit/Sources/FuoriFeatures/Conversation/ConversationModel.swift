@@ -1182,7 +1182,36 @@ public final class ConversationModel {
         for o in observers { NotificationCenter.default.removeObserver(o) }
         observers = []
         AudioSession.deactivate()
-        if let conversationId { onSave(conversationId) }
+        if let conversationId, !savedAtGoodbye { onSave(conversationId) }
+    }
+
+    /// Saved when the goodbye ended the visit, so the Learn card's sheet can stay up without holding the save
+    /// (docs/learn-sheet-2-plan.md → The phone); leave() then doesn't save it again
+    private var savedAtGoodbye = false
+
+    /// The goodbye ended the visit: save now, once. The voice and the mic are left to leave()
+    public func saveAtGoodbye() {
+        guard !savedAtGoodbye, let conversationId else { return }
+        savedAtGoodbye = true
+        onSave(conversationId)
+    }
+
+    /// Learn 2.0: the card for this visit, if the server has one ready; nil otherwise or on any failure
+    /// (no card is no loss: the screen closes as it did before)
+    public func learnCard() async -> APIClient.LearnCard? {
+        guard let conversationId, !welcome, lesson == nil else { return nil }
+        do { return try await api.learnCard(conversationId: conversationId) } catch {
+            report(error, step: "learn card")
+            return nil
+        }
+    }
+
+    /// The learner closed the card's sheet: logged for whether cards are read (a failure is reported, not shown)
+    public func learnCardClosed() {
+        guard let conversationId else { return }
+        Task {
+            do { try await api.learnCardClosed(conversationId: conversationId) } catch { report(error, step: "learn card closed") }
+        }
     }
 
     /// The app went to the background: stop, and save in case it never comes back

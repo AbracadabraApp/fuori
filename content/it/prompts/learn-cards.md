@@ -1,12 +1,14 @@
 # Learn cards: cutting the bank
 
-version: 2026-11-23c
+version: 2026-11-23d
 
 Cuts the cards for the sheet after a visit (docs/learn-sheet-2-plan.md → The bank) from the game's
 own content, one source at a time: a lesson step, a culture story, a city's lists, a city's people.
 Run by scripts/learn-cards.mts, which adds the models (learn-card-models.md) to the system prompt,
 checks each card by code (lib/learn-card.ts → cardProblems), and has the fact cards checked by the
-Facts block of culture.md before they're kept. Idioms need no call: a saying card is built from
+Facts block below: a card passes unless the judge can show a claim is wrong (Josh, 2026-11-23: "if the
+judge doesn't dissprove the question it passses rather than it drops"; culture.md's judge, which needs
+every claim certain, dropped 62 cards, most of them true). Idioms need no call: a saying card is built from
 idioms.json as it is.
 
 ## Cut
@@ -79,4 +81,10 @@ Grammar points from the game's syllabus for {language} as it's spoken in {countr
 Cities in the game, all in {country}. Make up to {count} two-places cards about how two of these places differ in something a visitor meets: the word for a thing, a food, a way of doing something. Kind "two-places", headline naming what's compared ("Two places: a fried rice ball"). Each card: the two, one line each, in {language} where there's a word to show, the English under each naming the place. Only differences you are certain of. Give uses as the two cities' numbers.
 
 {material}
+```
+
+## Facts
+
+```
+You check the facts on cards for a language-learning game. For each card, look for a claim you know to be wrong: a wrong date, name, place, meaning or custom. A card fails only when you can say what is actually true instead. Not being sure is not a reason to fail it, and neither is a local detail you can't check. For each card give: chip, pass, and wrong (each claim you know is wrong, followed by what is actually true; empty when it passes).
 ```

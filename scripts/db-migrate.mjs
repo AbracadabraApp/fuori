@@ -147,6 +147,18 @@ CREATE TABLE IF NOT EXISTS say_it_log (
   prompt_version  text
 );
 CREATE INDEX IF NOT EXISTS idx_say_it_log_at ON say_it_log(at DESC);
+-- Learn 2.0: the card shown after each visit (lib/learn-card-writer.ts; docs/learn-sheet-2-plan.md)
+CREATE TABLE IF NOT EXISTS learn_cards_shown (
+  conversation_id uuid PRIMARY KEY,
+  learner_id      uuid NOT NULL,
+  card_id         text NOT NULL,
+  kind            text NOT NULL,
+  card            jsonb NOT NULL,
+  how             text NOT NULL,
+  shown_at        timestamptz NOT NULL DEFAULT now(),
+  closed_at       timestamptz
+);
+CREATE INDEX IF NOT EXISTS idx_learn_cards_shown_learner ON learn_cards_shown(learner_id, shown_at DESC);
 
 -- Nothing is deleted with a learner (Josh, 2026-11-10: "we shouldn't delete"): a learner who has conversations
 -- or character memories can't be deleted until those are removed on purpose. Sign-in tokens still go with the learner.

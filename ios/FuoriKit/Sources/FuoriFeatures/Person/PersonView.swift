@@ -1,6 +1,7 @@
 import SwiftUI
 import FuoriCore
 import FuoriDesign
+import FuoriNetworking
 #if canImport(UIKit)
 import UIKit
 #endif
@@ -20,6 +21,8 @@ struct PersonView: View {
     @AppStorage(SettingsKey.english) private var english = false
     @AppStorage(SettingsKey.debug) private var debug = false
     @State private var showingLearn = false
+    /// Learn 2.0: the card on the sheet after the goodbye (docs/learn-sheet-2-design.md)
+    @State private var learnCard: APIClient.LearnCard?
     @Environment(AppModel.self) private var appModel
     @Environment(\.dismiss) private var dismiss
 
@@ -57,6 +60,15 @@ struct PersonView: View {
         .sheet(isPresented: $showingLearn, onDismiss: { model.closeLearn() }) {
             LearnSheet(model: model)
         }
+        // Every way out of the card (close, slide down, a tap off it) goes back to the place list
+        .sheet(item: $learnCard, onDismiss: {
+            model.learnCardClosed()
+            dismiss()
+        }) { card in
+            LearnCardSheet(card: card, speechLanguage: model.speechLanguage)
+                .presentationDetents([.medium, .large])
+                .presentationDragIndicator(.visible)
+        }
         .settingsToolbar()
         .task { await model.start() }
         // Hands-free means no taps, so without this the phone auto-locks
@@ -69,11 +81,15 @@ struct PersonView: View {
         }
         // Their goodbye, said back, ends it (docs/beginner-scaffolding.md 11b):
         // once it's been said, back to the place, saving as every exit does
+        // Learn 2.0: the visit is saved at the goodbye, and its card, if the server has one ready in the
+        // same 1.5 s, slides up over this screen; otherwise back to the place as before
         .onChange(of: model.phase) { _, phase in
             guard phase == .finished, model.endButton == nil else { return }
+            model.saveAtGoodbye()
             Task {
+                async let card = model.learnCard()
                 try? await Task.sleep(for: .seconds(1.5))
-                dismiss()
+                if let ready = await card { learnCard = ready } else { dismiss() }
             }
         }
     }

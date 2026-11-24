@@ -30,6 +30,7 @@ public enum Tokens {
         public static let flapInk = Color(red: 0.9608, green: 0.9451, blue: 0.9294) // #f5f1ed
         public static let flapHinge = Color(red: 0.3020, green: 0.2824, blue: 0.2706) // #4d4845
         public static let cultureChip = Color(red: 0.9098, green: 0.9255, blue: 0.9059) // #e8ece7
+        public static let learnCard = Color(red: 0.8863, green: 0.9098, blue: 0.8235) // #e2e8d2
         public static let cultureEdge = Color(red: 0.6784, green: 0.7373, blue: 0.6980) // #adbcb2
         public static let cultureInk = Color(red: 0.1725, green: 0.2392, blue: 0.2118) // #2c3d36
         public static let cultureDone = Color(red: 0.2941, green: 0.3882, blue: 0.3451) // #4b6358

@@ -1,6 +1,6 @@
 {
   "version": "2026-11-24",
-  "prompt": "2026-11-23c",
+  "prompt": "2026-11-23d",
   "models": "2026-11-23b",
   "cards": [
     {
@@ -5834,9 +5834,9 @@
     {
       "id": "culture:roma-nuova-prati-built-for-ministries",
       "kind": "about-this-place",
-      "headline": "About this district",
+      "headline": "About this neighborhood",
       "rows": [],
-      "note": "Prati means meadows. It was open, flood-prone land by the Tiber until Rome became Italy's capital in 1871. Then it was laid out on a regular grid from the 1880s, so it feels unlike the winding old centre.",
+      "note": "Prati means meadows. It was open, flood-prone land by the Tiber until Rome became Italy's capital in 1871. The district was then laid out on a regular grid from the 1880s, housing officials and clerks.",
       "level": "A1",
       "keys": [
         "city:roma-nuova",
@@ -5848,7 +5848,7 @@
         "from": "culture",
         "ref": "it/culture.json#roma-nuova-prati-built-for-ministries/1",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -5856,7 +5856,7 @@
       "kind": "about-this-place",
       "headline": "About this church",
       "rows": [],
-      "note": "The ceiling of Il Gesù, finished in 1679 by Baciccio, mixes stucco figures with painted ones. The eye cannot tell where one ends and the other begins, so the figures seem to tumble out of the frame.",
+      "note": "The ceiling of Il Gesù, finished in 1679, shows painted figures tumbling out of their frame. Stucco figures are mixed with painted ones, so the eye cannot tell where one ends and the other begins.",
       "level": "A1",
       "keys": [
         "city:roma-nuova",
@@ -5868,7 +5868,7 @@
         "from": "culture",
         "ref": "it/culture.json#roma-nuova-ceiling-that-spills-over/1",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -5886,9 +5886,9 @@
       ],
       "source": {
         "from": "culture",
-        "ref": "it/culture.json#roma-nuova-two-clubs-one-stadium/1",
+        "ref": "it/culture.json#roma-nuova-two-clubs-one-stadium/part 1",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -5896,7 +5896,7 @@
       "kind": "about-this-place",
       "headline": "About this deli",
       "rows": [],
-      "note": "Testaccio grew up around Rome's slaughterhouse. The best beef went to the wealthy, while workers were often paid partly in leftovers: tripe, tail, offal. These are called the quinto quarto, the fifth quarter, and became classic Roman dishes.",
+      "note": "Testaccio grew up around Rome's slaughterhouse. Workers were often paid partly in leftovers like tripe, tail and offal, called the quinto quarto, the fifth quarter. Local cooks turned them into dishes still cooked in the neighbourhood today.",
       "level": "A1",
       "keys": [
         "city:roma-nuova",
@@ -5908,7 +5908,7 @@
         "from": "culture",
         "ref": "it/culture.json#roma-nuova-testaccio-s-fifth-quarter/1",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -5916,7 +5916,7 @@
       "kind": "about-this-place",
       "headline": "About this market",
       "rows": [],
-      "note": "Peperoni cruschi are sweet red peppers dried in the sun, a way to keep them through the winter when fresh food was scarce. Fried for seconds in hot oil, they turn crisp and crackle.",
+      "note": "Peperoni cruschi are sweet red peppers dried in the sun, a way to keep them through the winter when fresh food was scarce. Fried for a few seconds in hot oil, they turn crisp and crackle.",
       "level": "A1",
       "keys": [
         "city:matera",
@@ -5928,7 +5928,47 @@
         "from": "culture",
         "ref": "it/culture.json#matera-crunchy-dried-peppers/1",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "culture:matera-from-shame-to-heritage",
+      "kind": "about-this-place",
+      "headline": "About this bookshop",
+      "rows": [],
+      "note": "Until the 1950s, poor families lived in the Sassi cave homes, often with their animals and little water or light. Politician Palmiro Togliatti called them a national shame. Restored, the Sassi became a UNESCO World Heritage Site in 1993.",
+      "level": "A1",
+      "keys": [
+        "city:matera",
+        "place:matera/libreria-matera",
+        "topic:history",
+        "kind:bookshop"
+      ],
+      "source": {
+        "from": "culture",
+        "ref": "it/culture.json#matera-from-shame-to-heritage/1",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "culture:matera-the-rooster-whistle",
+      "kind": "about-this-place",
+      "headline": "About this artisan shop",
+      "rows": [],
+      "note": "The cucù is a small terracotta whistle shaped like a rooster, made by hand and painted in bright colours. In Matera people give it as a gift for good luck, at weddings or when someone starts a new life.",
+      "level": "A1",
+      "keys": [
+        "city:matera",
+        "place:matera/bottega-artigiana",
+        "topic:art",
+        "kind:artisan_shop"
+      ],
+      "source": {
+        "from": "culture",
+        "ref": "it/culture.json#matera-the-rooster-whistle/part 1",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -5936,7 +5976,7 @@
       "kind": "culture",
       "headline": "Culture",
       "rows": [],
-      "note": "Every year a new papier-mâché cart is built for the patron saint's festival. When it reaches the square, the crowd rushes in and tears it to pieces. Everyone wants a piece to take home for good luck.",
+      "note": "On 2 July, a huge papier-mâché cart for the Madonna della Bruna is paraded. In the square the crowd rushes in and tears it apart, and everyone wants a piece for good luck.",
       "level": "A1",
       "keys": [
         "city:matera",
@@ -5948,7 +5988,7 @@
         "from": "culture",
         "ref": "it/culture.json#matera-the-tearing-of-the-cart/1",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -5966,9 +6006,9 @@
       ],
       "source": {
         "from": "culture",
-        "ref": "it/culture.json#firenze-lampredotto-dipped-bread/1",
+        "ref": "it/culture.json#firenze-lampredotto-dipped-bread/story 1",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -5988,27 +6028,7 @@
         "from": "culture",
         "ref": "it/culture.json#firenze-viola-against-juventus/1",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
-      }
-    },
-    {
-      "id": "culture:firenze-santo-spirito-s-plain-facade",
-      "kind": "about-this-place",
-      "headline": "About this church",
-      "rows": [],
-      "note": "Brunelleschi designed Santo Spirito but died in 1446, before it was built, and work carried on without him. Its facade was never decorated, and still stands smooth and pale above the square.",
-      "level": "A1",
-      "keys": [
-        "city:firenze",
-        "place:firenze/santo-spirito-scalini",
-        "topic:art",
-        "kind:church"
-      ],
-      "source": {
-        "from": "culture",
-        "ref": "it/culture.json#firenze-santo-spirito-s-plain-facade/1",
-        "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -6026,9 +6046,9 @@
       ],
       "source": {
         "from": "culture",
-        "ref": "it/culture.json#siena-the-painted-drappellone/part 1",
+        "ref": "it/culture.json#siena-the-painted-drappellone/1",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -6036,7 +6056,7 @@
       "kind": "about-this-place",
       "headline": "About this piazza",
       "rows": [],
-      "note": "Palazzo Salimbeni is the seat of Monte dei Paschi di Siena, which began in 1472 as a public fund lending to poor people at fair terms. It is among the oldest banks in the world still operating.",
+      "note": "Palazzo Salimbeni is the seat of Monte dei Paschi di Siena, which began in 1472 as a public fund to lend money to poor people on fair terms. It is among the world's oldest banks still operating.",
       "level": "A1",
       "keys": [
         "city:siena",
@@ -6048,7 +6068,7 @@
         "from": "culture",
         "ref": "it/culture.json#siena-the-bank-of-siena/1",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -6068,7 +6088,7 @@
         "from": "culture",
         "ref": "it/culture.json#venezia-sarde-in-saor/1",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -6076,7 +6096,7 @@
       "kind": "about-this-place",
       "headline": "About this piazza",
       "rows": [],
-      "note": "One statue in Campo dei Mori is known as Sior Rioba. By tradition his nose is made of iron, said to replace a stone nose he lost. Venetians still call the figures by name, like old neighbours.",
+      "note": "One statue in Campo dei Mori is called Sior Rioba. By tradition his nose is iron, said to replace a stone nose he lost. Venetians still call the figures by name, as if they were old neighbours.",
       "level": "A1",
       "keys": [
         "city:venezia",
@@ -6088,7 +6108,7 @@
         "from": "culture",
         "ref": "it/culture.json#venezia-sior-rioba-s-iron-nose/1",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -6096,7 +6116,7 @@
       "kind": "about-this-place",
       "headline": "About this gondola workshop",
       "rows": [],
-      "note": "A gondola's hull is deliberately asymmetrical, wider on the left. That way a gondolier rowing from just one side can still move in a straight line. It's built by hand from around 280 pieces of wood.",
+      "note": "A gondola's hull is deliberately asymmetrical, wider on the left. That way a gondolier rowing from one side can still move in a straight line. It is built by hand from around 280 pieces of several woods.",
       "level": "A1",
       "keys": [
         "city:venezia",
@@ -6108,7 +6128,7 @@
         "from": "culture",
         "ref": "it/culture.json#venezia-a-gondola-of-eight-woods/part 1",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -6116,7 +6136,7 @@
       "kind": "culture",
       "headline": "Culture",
       "rows": [],
-      "note": "When Neapolitans are happy about a win, a birth or some luck, they may pay for two coffees and drink one. The second is the caffè sospeso, left for the next person who can't afford it.",
+      "note": "When a Neapolitan is happy, after a win or a birth, he may pay for two coffees and drink one. The second is a caffè sospeso, left at the bar for whoever can't afford one.",
       "level": "A1",
       "keys": [
         "city:napoli",
@@ -6128,7 +6148,7 @@
         "from": "culture",
         "ref": "it/culture.json#napoli-the-suspended-coffee/1",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -6148,7 +6168,7 @@
         "from": "culture",
         "ref": "it/culture.json#napoli-greek-walls-under-piazza/1",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -6156,7 +6176,7 @@
       "kind": "culture",
       "headline": "Culture",
       "rows": [],
-      "note": "Every Neapolitan has a favourite sfogliatella. The riccia has many thin crisp layers shaped like a shell; the frolla is rounder and softer, made of shortcrust pastry. Both are best eaten warm, straight from the oven.",
+      "note": "The sfogliatella comes in two kinds, and every Neapolitan has a favourite. The riccia has many thin crisp layers, while the frolla is rounder and softer, made of shortcrust pastry. Locals say to eat them warm from the oven.",
       "level": "A1",
       "keys": [
         "city:napoli",
@@ -6166,29 +6186,9 @@
       ],
       "source": {
         "from": "culture",
-        "ref": "it/culture.json#napoli-riccia-or-frolla/story 1",
+        "ref": "it/culture.json#napoli-riccia-or-frolla/1",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
-      }
-    },
-    {
-      "id": "culture:napoli-puffy-crust-versus-roman-thin",
-      "kind": "culture",
-      "headline": "Culture",
-      "rows": [],
-      "note": "Neapolitans and Romans love to tease each other about pizza. Rome often likes a thin, crisp base; Naples makes it soft and elastic, with an edge that puffs up in the hot oven, a sign of dough that rose slowly.",
-      "level": "A1",
-      "keys": [
-        "city:napoli",
-        "place:napoli/pizzeria-sorbillo",
-        "topic:rivalry",
-        "kind:pizzeria"
-      ],
-      "source": {
-        "from": "culture",
-        "ref": "it/culture.json#napoli-puffy-crust-versus-roman-thin/1",
-        "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -6208,7 +6208,7 @@
         "from": "culture",
         "ref": "it/culture.json#bologna-ragu-belongs-on-tagliatelle/1",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -6228,7 +6228,7 @@
         "from": "culture",
         "ref": "it/culture.json#bologna-gelato-under-the-porticoes/1",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -6236,7 +6236,7 @@
       "kind": "culture",
       "headline": "Culture",
       "rows": [],
-      "note": "Bologna and Modena have a famous old rivalry. In 1325 Modena won the battle of Zappolino and carried off a wooden bucket from a Bolognese well as a trophy. Modena still keeps it as a symbol.",
+      "note": "In 1325 Modena beat Bologna at the battle of Zappolino and carried off a wooden bucket from a Bolognese well as a trophy. Modena still keeps it as a symbol. The rivalry lives on in teasing.",
       "level": "A1",
       "keys": [
         "city:bologna",
@@ -6248,7 +6248,7 @@
         "from": "culture",
         "ref": "it/culture.json#bologna-the-stolen-bucket/1",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -6256,7 +6256,7 @@
       "kind": "culture",
       "headline": "Culture",
       "rows": [],
-      "note": "At a pani ca' meusa stall you must choose: schietta, plain with a squeeze of lemon, or maritata, \"married\" with ricotta and caciocavallo. People eat it standing, with their hands, and each has a firm opinion.",
+      "note": "At a pani ca' meusa stall you must choose: schietta, plain with lemon, or maritata, \"married\" with ricotta and caciocavallo. People eat it standing, with their hands, and each has a firm opinion on the right version.",
       "level": "A1",
       "keys": [
         "city:palermo",
@@ -6268,7 +6268,7 @@
         "from": "culture",
         "ref": "it/culture.json#palermo-schietta-or-maritata/story 1",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -6288,7 +6288,7 @@
         "from": "culture",
         "ref": "it/culture.json#palermo-the-leopard-s-palermo/1",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -6296,7 +6296,7 @@
       "kind": "culture",
       "headline": "Culture",
       "rows": [],
-      "note": "Here it's arancina, feminine, like the orange (arancia) it's named after: round, golden, filled with ragù and peas. On the other side of Sicily it's arancino, cone-shaped like Mount Etna. The argument never ends.",
+      "note": "Here it's arancina, feminine, like the orange (arancia) it's named after: round and golden. On the other side of Sicily they say arancino and make it cone-shaped, like Mount Etna.",
       "level": "A1",
       "keys": [
         "city:palermo",
@@ -6308,27 +6308,7 @@
         "from": "culture",
         "ref": "it/culture.json#palermo-arancina-not-arancino/1",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
-      }
-    },
-    {
-      "id": "culture:siena-osteria-trattoria-ristorante",
-      "kind": "about-this-place",
-      "headline": "About this osteria",
-      "rows": [],
-      "note": "An osteria was historically a tavern where people came mainly to drink wine. The host, the oste, served a few simple local dishes from a short menu to go with it. Today many osterie serve full meals.",
-      "level": "A1",
-      "keys": [
-        "city:siena",
-        "place:siena/osteria-le-logge",
-        "topic:food",
-        "kind:osteria"
-      ],
-      "source": {
-        "from": "culture",
-        "ref": "it/culture.json#siena-osteria-trattoria-ristorante/1",
-        "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -6336,7 +6316,7 @@
       "kind": "about-this-place",
       "headline": "About this market",
       "rows": [],
-      "note": "Slow Food began in Bra, a small Piedmont town near Turin, in the 1980s. It stands for food that is good, clean and fair, and it asks people to eat local food in season.",
+      "note": "Slow Food began in the 1980s in Bra, near Turin, and took off after 1986 protests against a fast-food restaurant by Rome's Spanish Steps. It stands for food that is good, clean and fair.",
       "level": "A1",
       "keys": [
         "city:torino",
@@ -6348,7 +6328,7 @@
         "from": "culture",
         "ref": "it/culture.json#torino-slow-food/1",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -6356,7 +6336,7 @@
       "kind": "about-this-place",
       "headline": "About this salumeria",
       "rows": [],
-      "note": "A food labelled DOP must come from its own area and be made by set rules. Real Parmigiano Reggiano can only come from a small area including Parma, Reggio Emilia, Modena and part of the province of Bologna.",
+      "note": "DOP means a food must come from its own area and be made by set rules. Real Parmigiano Reggiano can only come from a small area including Parma, Reggio Emilia, Modena and part of the province of Bologna.",
       "level": "A1",
       "keys": [
         "city:bologna",
@@ -6368,24 +6348,25 @@
         "from": "culture",
         "ref": "it/culture.json#bologna-dop-and-doc/1",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
       "id": "city:roma-nuova:a-word-from-here-daje",
       "kind": "a-word-from-here",
       "headline": "A word from here",
+      "term": "daje",
       "rows": [
         {
           "text": "daje",
           "en": "come on, in Roman dialect"
         },
         {
-          "text": "Daje, è tardi!",
-          "en": "Come on, it's late!"
+          "text": "Daje, andiamo!",
+          "en": "Come on, let's go!"
         }
       ],
-      "note": "You hear it all over Rome, to cheer someone on or to get moving.",
+      "note": "Romans use it to cheer someone on or to hurry them up.",
       "level": "A1",
       "keys": [
         "city:roma-nuova"
@@ -6394,24 +6375,25 @@
         "from": "city",
         "ref": "it/cities/roma-nuova.ts#lists/local words 1",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "city:roma-nuova:a-word-from-here-anvedi",
+      "id": "city:roma-nuova:a-word-from-here-ao",
       "kind": "a-word-from-here",
       "headline": "A word from here",
+      "term": "aò",
       "rows": [
         {
-          "text": "anvedi",
-          "en": "look at that, in Roman dialect"
+          "text": "aò",
+          "en": "hey, in Roman dialect"
         },
         {
-          "text": "Anvedi, che bella piazza!",
-          "en": "Look at that, what a lovely square!"
+          "text": "Aò, aspetta un attimo!",
+          "en": "Hey, wait a moment!"
         }
       ],
-      "note": "A Roman exclamation of surprise.",
+      "note": "Romans use it to get someone's attention.",
       "level": "A1",
       "keys": [
         "city:roma-nuova"
@@ -6420,32 +6402,32 @@
         "from": "city",
         "ref": "it/cities/roma-nuova.ts#lists/local words 2",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "city:roma-nuova:culture-at-the-bar-in-rome-pay-at-the-cassa-fir",
+      "id": "city:roma-nuova:culture-cappuccino-is-a-morning-drink-in-rome-a",
       "kind": "culture",
       "headline": "Culture",
       "rows": [],
-      "note": "At the bar in Rome, pay at the cassa first. Then take your receipt to the bar and order.",
+      "note": "Cappuccino is a morning drink in Rome. After about 11am most Romans switch to caffè.",
       "level": "A1",
       "keys": [
         "city:roma-nuova"
       ],
       "source": {
         "from": "city",
-        "ref": "it/cities/roma-nuova.ts#lists/customs 6",
+        "ref": "it/cities/roma-nuova.ts#lists/customs 7",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "city:roma-nuova:culture-in-rome-standing-at-the-bar-is-cheaper",
+      "id": "city:roma-nuova:culture-standing-at-the-bar-for-your-coffee-is-c",
       "kind": "culture",
       "headline": "Culture",
       "rows": [],
-      "note": "In Rome, standing at the bar is cheaper than sitting at a table.",
+      "note": "Standing at the bar for your coffee is cheaper than sitting at a table.",
       "level": "A1",
       "keys": [
         "city:roma-nuova"
@@ -6454,7 +6436,7 @@
         "from": "city",
         "ref": "it/cities/roma-nuova.ts#lists/customs 8",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -6462,7 +6444,7 @@
       "kind": "culture",
       "headline": "Culture",
       "rows": [],
-      "note": "Dinner in Rome typically starts around 8-9pm, not earlier.",
+      "note": "Dinner in Rome typically starts around 8 to 9pm, not earlier.",
       "level": "A1",
       "keys": [
         "city:roma-nuova"
@@ -6471,19 +6453,14 @@
         "from": "city",
         "ref": "it/cities/roma-nuova.ts#lists/customs 9",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "city:roma-nuova:culture-buongiorno",
+      "id": "city:roma-nuova:culture-when-you-enter-a-shop-in-rome-greet-the",
       "kind": "culture",
       "headline": "Culture",
-      "rows": [
-        {
-          "text": "Buongiorno.",
-          "en": "Good morning."
-        }
-      ],
+      "rows": [],
       "note": "When you enter a shop in Rome, greet the shopkeeper with \"Buongiorno\".",
       "level": "A1",
       "keys": [
@@ -6493,15 +6470,32 @@
         "from": "city",
         "ref": "it/cities/roma-nuova.ts#lists/customs 10",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "city:roma-nuova:culture-in-august-many-locals-leave-rome-and-so",
+      "id": "city:roma-nuova:culture-on-sunday-morning-the-city-slows-down-a",
       "kind": "culture",
       "headline": "Culture",
       "rows": [],
-      "note": "In August many locals leave Rome, and some restaurants and shops close.",
+      "note": "On Sunday morning the city slows down, and many small shops are closed.",
+      "level": "A1",
+      "keys": [
+        "city:roma-nuova"
+      ],
+      "source": {
+        "from": "city",
+        "ref": "it/cities/roma-nuova.ts#lists/customs 11",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "city:roma-nuova:culture-in-august-many-locals-leave-the-city-an",
+      "kind": "culture",
+      "headline": "Culture",
+      "rows": [],
+      "note": "In August many locals leave the city, and some restaurants and shops close.",
       "level": "A1",
       "keys": [
         "city:roma-nuova"
@@ -6510,7 +6504,30 @@
         "from": "city",
         "ref": "it/cities/roma-nuova.ts#lists/customs 12",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "city:matera:a-word-from-here-u-sasse",
+      "kind": "a-word-from-here",
+      "headline": "A word from here",
+      "term": "u sasse",
+      "rows": [
+        {
+          "text": "U sasse",
+          "en": "the Sassi, in local dialect"
+        }
+      ],
+      "note": "It's the dialect way of saying the Sassi, the old cave districts.",
+      "level": "A1",
+      "keys": [
+        "city:matera"
+      ],
+      "source": {
+        "from": "city",
+        "ref": "it/cities/matera.ts#lists/local words 2, 4",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -6520,11 +6537,11 @@
       "term": "materani",
       "rows": [
         {
-          "text": "Siamo materani!",
-          "en": "We're from here!"
+          "text": "Siamo materani.",
+          "en": "We're Materani."
         }
       ],
-      "note": "It's the name the people of this town use for themselves, and they say it with pride.",
+      "note": "Locals call themselves materani, and they say it with pride.",
       "level": "A1",
       "keys": [
         "city:matera"
@@ -6533,7 +6550,36 @@
         "from": "city",
         "ref": "it/cities/matera.ts#lists/local words 1",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "city:matera:vocabulary-things-la-gravina",
+      "kind": "vocabulary-things",
+      "headline": "Vocabulary: the landscape",
+      "rows": [
+        {
+          "text": "la gravina",
+          "en": "the ravine"
+        },
+        {
+          "text": "il tufo",
+          "en": "the local limestone"
+        },
+        {
+          "text": "la casa grotta",
+          "en": "the cave house"
+        }
+      ],
+      "level": "A1",
+      "keys": [
+        "city:matera"
+      ],
+      "source": {
+        "from": "city",
+        "ref": "it/cities/matera.ts#lists/local words 4, 5, 8",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -6541,7 +6587,7 @@
       "kind": "culture",
       "headline": "Culture",
       "rows": [],
-      "note": "The Festa della Bruna, on July 2nd, is the major religious festival of the year here.",
+      "note": "The Festa della Bruna, on July 2nd, is the town's major religious festival.",
       "level": "A1",
       "keys": [
         "city:matera"
@@ -6550,15 +6596,15 @@
         "from": "city",
         "ref": "it/cities/matera.ts#lists/customs 11",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "city:matera:culture-all-through-the-summer-towns-hold-sagre",
+      "id": "city:matera:culture-all-through-the-summer-sagre-are-held",
       "kind": "culture",
       "headline": "Culture",
       "rows": [],
-      "note": "All through the summer, towns hold sagre, local food festivals that celebrate regional products.",
+      "note": "All through the summer, sagre are held: local festivals that celebrate the area's own products.",
       "level": "A1",
       "keys": [
         "city:matera"
@@ -6567,15 +6613,32 @@
         "from": "city",
         "ref": "it/cities/matera.ts#lists/customs 12",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "city:matera:culture-coffee-is-taken-standing-at-the-bar-it",
+      "id": "city:matera:culture-people-take-the-passeggiata-a-stroll-i",
       "kind": "culture",
       "headline": "Culture",
       "rows": [],
-      "note": "Coffee is taken standing at the bar. It's quick and strong, a short stop rather than a long sit-down.",
+      "note": "People take the passeggiata, a stroll, in Piazza Vittorio Veneto.",
+      "level": "A1",
+      "keys": [
+        "city:matera"
+      ],
+      "source": {
+        "from": "city",
+        "ref": "it/cities/matera.ts#lists/customs 13",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "city:matera:culture-coffee-is-taken-standing-at-the-bar-qui",
+      "kind": "culture",
+      "headline": "Culture",
+      "rows": [],
+      "note": "Coffee is taken standing at the bar: quick and strong.",
       "level": "A1",
       "keys": [
         "city:matera"
@@ -6584,68 +6647,36 @@
         "from": "city",
         "ref": "it/cities/matera.ts#lists/customs 15",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "city:matera:culture-aperitivo-hour-is-a-regular-part-of-the",
-      "kind": "culture",
-      "headline": "Culture",
-      "rows": [],
-      "note": "Aperitivo hour is a regular part of the day here, and it's often enjoyed with local wines.",
-      "level": "A1",
-      "keys": [
-        "city:matera"
-      ],
-      "source": {
-        "from": "city",
-        "ref": "it/cities/matera.ts#lists/customs 16",
-        "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
-      }
-    },
-    {
-      "id": "city:matera:culture-the-local-bread-pane-di-matera-carries",
-      "kind": "culture",
-      "headline": "Culture",
-      "rows": [],
-      "note": "The local bread, pane di Matera, carries the IGP label, a protected geographical indication.",
-      "level": "A1",
-      "keys": [
-        "city:matera"
-      ],
-      "source": {
-        "from": "city",
-        "ref": "it/cities/matera.ts#lists/food 20",
-        "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
-      }
-    },
-    {
-      "id": "city:firenze:a-word-from-here-mi-garba",
-      "kind": "a-word-from-here",
-      "headline": "A word from here",
-      "term": "mi garba",
+      "id": "city:matera:local-food-le-orecchiette-con-cime-di-rapa",
+      "kind": "local-food",
+      "headline": "Local food",
       "rows": [
         {
-          "text": "mi garba",
-          "en": "I like it, in Florentine"
+          "text": "le orecchiette con cime di rapa",
+          "en": "orecchiette with turnip tops"
         },
         {
-          "text": "Mi garba molto!",
-          "en": "I like it a lot!"
+          "text": "la lucanica",
+          "en": "Lucanian sausage"
+        },
+        {
+          "text": "i taralli",
+          "en": "taralli"
         }
       ],
-      "note": "Florentines say mi garba where other Italians say mi piace.",
       "level": "A1",
       "keys": [
-        "city:firenze"
+        "city:matera"
       ],
       "source": {
         "from": "city",
-        "ref": "it/cities/firenze.ts#lists/local words 10",
+        "ref": "it/cities/matera.ts#lists/food 23, 25, 29",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -6659,11 +6690,11 @@
           "en": "dad, in Florentine"
         },
         {
-          "text": "Ciao, babbo!",
-          "en": "Hi, dad!"
+          "text": "Babbo, vieni a cena?",
+          "en": "Dad, are you coming to dinner?"
         }
       ],
-      "note": "In Florence people say babbo instead of papà.",
+      "note": "Florentines say babbo where other Italians say papà.",
       "level": "A1",
       "keys": [
         "city:firenze"
@@ -6672,14 +6703,75 @@
         "from": "city",
         "ref": "it/cities/firenze.ts#lists/local words 5",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "city:firenze:a-word-from-here-un-bel-niente",
+      "id": "city:firenze:a-word-from-here-mi-garba",
       "kind": "a-word-from-here",
       "headline": "A word from here",
-      "term": "un bel niente",
+      "term": "mi garba",
+      "rows": [
+        {
+          "text": "mi garba",
+          "en": "I like it, in Florentine"
+        },
+        {
+          "text": "Mi garba molto questo vino!",
+          "en": "I like this wine a lot!"
+        },
+        {
+          "text": "Ti garba?",
+          "en": "Do you like it?"
+        }
+      ],
+      "note": "Florentines say it instead of mi piace.",
+      "level": "A1",
+      "keys": [
+        "city:firenze"
+      ],
+      "source": {
+        "from": "city",
+        "ref": "it/cities/firenze.ts#lists/local words 10",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "city:firenze:a-word-from-here-icche",
+      "kind": "a-word-from-here",
+      "headline": "A word from here",
+      "term": "icché",
+      "rows": [
+        {
+          "text": "icché",
+          "en": "what, in Florentine"
+        },
+        {
+          "text": "Icché vuoi?",
+          "en": "What do you want?"
+        },
+        {
+          "text": "Icché fai?",
+          "en": "What are you doing?"
+        }
+      ],
+      "note": "Florentines say it instead of che cosa.",
+      "level": "A1",
+      "keys": [
+        "city:firenze"
+      ],
+      "source": {
+        "from": "city",
+        "ref": "it/cities/firenze.ts#lists/local words 6",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "city:firenze:a-word-from-here-che-fai",
+      "kind": "a-word-from-here",
+      "headline": "A local answer",
       "rows": [
         {
           "text": "Che fai?",
@@ -6687,10 +6779,10 @@
         },
         {
           "text": "Un bel niente.",
-          "en": "Nothing at all."
+          "en": "A beautiful nothing."
         }
       ],
-      "note": "Literally \"a beautiful nothing\": a Florentine way to answer when someone asks what you're doing.",
+      "note": "A playful local answer when someone asks what you're up to: a beautiful nothing.",
       "level": "A1",
       "keys": [
         "city:firenze"
@@ -6699,15 +6791,15 @@
         "from": "city",
         "ref": "it/cities/firenze.ts#lists/local words 1",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "city:firenze:culture-florentines-often-stand-at-the-bar-to-dr",
+      "id": "city:firenze:culture-locals-usually-drink-their-coffee-standi",
       "kind": "culture",
-      "headline": "Culture",
+      "headline": "Culture: coffee at the bar",
       "rows": [],
-      "note": "Florentines often stand at the bar to drink their coffee rather than sitting down, because it's cheaper.",
+      "note": "Locals usually drink their coffee standing at the bar instead of sitting down. It's the cheaper way to have it.",
       "level": "A1",
       "keys": [
         "city:firenze"
@@ -6716,32 +6808,15 @@
         "from": "city",
         "ref": "it/cities/firenze.ts#lists/customs 19",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "city:firenze:culture-after-dinner-florentines-dunk-cantuccin",
+      "id": "city:firenze:culture-when-you-walk-into-any-store-you-greet",
       "kind": "culture",
-      "headline": "Culture",
+      "headline": "Culture: greeting in shops",
       "rows": [],
-      "note": "After dinner, Florentines dunk cantuccini, the hard almond biscuits, in vin santo, a sweet dessert wine.",
-      "level": "A1",
-      "keys": [
-        "city:firenze"
-      ],
-      "source": {
-        "from": "city",
-        "ref": "it/cities/firenze.ts#lists/customs 29; food 41, 50",
-        "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
-      }
-    },
-    {
-      "id": "city:firenze:culture-when-you-walk-into-any-shop-in-florence",
-      "kind": "culture",
-      "headline": "Culture",
-      "rows": [],
-      "note": "When you walk into any shop in Florence, you greet the shopkeeper. It's a normal courtesy, whether you're buying something or just looking.",
+      "note": "When you walk into any store, you greet the shopkeeper. It's a normal part of shopping.",
       "level": "A1",
       "keys": [
         "city:firenze"
@@ -6750,7 +6825,41 @@
         "from": "city",
         "ref": "it/cities/firenze.ts#lists/customs 23",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "city:firenze:culture-after-dinner-people-dunk-cantuccini-ha",
+      "kind": "culture",
+      "headline": "Culture: after dinner",
+      "rows": [],
+      "note": "After dinner, people dunk cantuccini, hard almond biscuits, in vin santo, a sweet dessert wine.",
+      "level": "A1",
+      "keys": [
+        "city:firenze"
+      ],
+      "source": {
+        "from": "city",
+        "ref": "it/cities/firenze.ts#lists/customs 29, food 41, 50",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "city:firenze:culture-many-people-grab-a-quick-lunch-of-lampre",
+      "kind": "culture",
+      "headline": "Culture: a quick lunch",
+      "rows": [],
+      "note": "Many people grab a quick lunch of lampredotto from street vendors.",
+      "level": "A1",
+      "keys": [
+        "city:firenze"
+      ],
+      "source": {
+        "from": "city",
+        "ref": "it/cities/firenze.ts#lists/customs 17, food 32",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -6761,18 +6870,14 @@
       "rows": [
         {
           "text": "babbo",
-          "en": "dad, the Tuscan way"
+          "en": "dad"
         },
         {
-          "text": "Il mio babbo è qui.",
-          "en": "My dad is here."
-        },
-        {
-          "text": "Ciao, babbo!",
-          "en": "Hi, Dad!"
+          "text": "Babbo, vieni a cena?",
+          "en": "Dad, are you coming to dinner?"
         }
       ],
-      "note": "Here people often say babbo instead of papà for father.",
+      "note": "Here people say babbo instead of papà for father.",
       "level": "A1",
       "keys": [
         "city:siena"
@@ -6781,7 +6886,7 @@
         "from": "city",
         "ref": "it/cities/siena.ts#lists/local words 8",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -6792,27 +6897,50 @@
       "rows": [
         {
           "text": "il Campo",
-          "en": "the Campo, just like that"
+          "en": "the Campo"
         },
         {
           "text": "Ci vediamo al Campo.",
           "en": "See you at the Campo."
-        },
-        {
-          "text": "Andiamo al Campo?",
-          "en": "Shall we go to the Campo?"
         }
       ],
-      "note": "People simply call the square il Campo, without the rest of its name.",
+      "note": "People simply call the main square il Campo.",
       "level": "A1",
       "keys": [
         "city:siena"
       ],
       "source": {
         "from": "city",
-        "ref": "it/cities/siena.ts#lists/local words 10, customs 14",
+        "ref": "it/cities/siena.ts#lists/local words 10",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "city:siena:a-word-from-here-evviva",
+      "kind": "a-word-from-here",
+      "headline": "A word from here",
+      "term": "Evviva!",
+      "rows": [
+        {
+          "text": "Evviva!",
+          "en": "Hooray!"
+        },
+        {
+          "text": "Evviva, abbiamo vinto!",
+          "en": "Hooray, we won!"
+        }
+      ],
+      "note": "You hear it during the Palio celebrations.",
+      "level": "A1",
+      "keys": [
+        "city:siena"
+      ],
+      "source": {
+        "from": "city",
+        "ref": "it/cities/siena.ts#lists/local words 3",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -6822,15 +6950,15 @@
       "term": "un po'",
       "rows": [
         {
-          "text": "Un po' di pane, per favore.",
-          "en": "A little bread, please."
+          "text": "Un po' di pane, grazie.",
+          "en": "A little bread, thanks."
         },
         {
           "text": "Aspetta un po'.",
-          "en": "Wait a bit."
+          "en": "Wait a little."
         }
       ],
-      "note": "Un po' means a little bit, and you hear it very often.",
+      "note": "People say it all the time: a little bit.",
       "level": "A1",
       "keys": [
         "city:siena"
@@ -6839,7 +6967,7 @@
         "from": "city",
         "ref": "it/cities/siena.ts#lists/local words 9",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -6847,67 +6975,50 @@
       "kind": "culture",
       "headline": "Culture",
       "rows": [],
-      "note": "The Palio is a historic horse race held twice a year in the Campo.",
+      "note": "The Palio is a historic horse race held twice a year in the Campo. Before the race, the horses are blessed.",
       "level": "A1",
       "keys": [
         "city:siena"
       ],
       "source": {
         "from": "city",
-        "ref": "it/cities/siena.ts#lists/customs 11",
+        "ref": "it/cities/siena.ts#lists/customs 11, 15",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "city:siena:culture-people-feel-a-deep-loyalty-to-their-cont",
+      "id": "city:siena:culture-in-the-evening-people-stroll-along-via-d",
       "kind": "culture",
       "headline": "Culture",
       "rows": [],
-      "note": "People feel a deep loyalty to their contrada, their neighborhood. It is a big part of who they are.",
+      "note": "In the evening people stroll along Via di Città for the passeggiata. Before dinner comes the aperitivo, often in Piazza del Campo.",
       "level": "A1",
       "keys": [
         "city:siena"
       ],
       "source": {
         "from": "city",
-        "ref": "it/cities/siena.ts#lists/customs 12",
+        "ref": "it/cities/siena.ts#lists/customs 13, 14",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "city:siena:culture-before-the-palio-the-horses-are-blessed",
+      "id": "city:siena:culture-people-feel-a-deep-identity-with-their-n",
       "kind": "culture",
       "headline": "Culture",
       "rows": [],
-      "note": "Before the Palio, the horses are blessed.",
+      "note": "People feel a deep identity with their neighborhood, called a contrada. They mention it with pride, using names like Oca or Drago.",
       "level": "A1",
       "keys": [
         "city:siena"
       ],
       "source": {
         "from": "city",
-        "ref": "it/cities/siena.ts#lists/customs 15",
+        "ref": "it/cities/siena.ts#lists/customs 12; local words 2",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
-      }
-    },
-    {
-      "id": "city:siena:culture-many-people-take-their-morning-coffee-st",
-      "kind": "culture",
-      "headline": "Culture",
-      "rows": [],
-      "note": "Many people take their morning coffee standing at the bar.",
-      "level": "A1",
-      "keys": [
-        "city:siena"
-      ],
-      "source": {
-        "from": "city",
-        "ref": "it/cities/siena.ts#lists/customs 20",
-        "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -6918,23 +7029,23 @@
       "rows": [
         {
           "text": "ombra",
-          "en": "a small glass of wine, in Venetian"
+          "en": "a small glass of wine"
         },
         {
           "text": "Àndiamo per un'ombra?",
-          "en": "Shall we go for an ombra?"
+          "en": "Shall we go for a small glass of wine?"
         }
       ],
-      "note": "You buy an ombra at the bacari.",
+      "note": "In Venice you buy an ombra at the bacari.",
       "level": "A1",
       "keys": [
         "city:venezia"
       ],
       "source": {
         "from": "city",
-        "ref": "it/cities/venezia.ts#lists/local words 2, customs 10",
+        "ref": "it/cities/venezia.ts#lists/local words 2; customs 10",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -6945,13 +7056,14 @@
       "rows": [
         {
           "text": "ciacole",
-          "en": "gossip, chat, in Venetian"
+          "en": "gossip, chat"
         },
         {
           "text": "Facciamo due ciacole?",
           "en": "Shall we have a chat?"
         }
       ],
+      "note": "You can use it for a friendly chat as well as for gossip.",
       "level": "A1",
       "keys": [
         "city:venezia"
@@ -6960,32 +7072,93 @@
         "from": "city",
         "ref": "it/cities/venezia.ts#lists/local words 6",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "city:venezia:culture-aperitivo-hour-is-when-people-gather-for",
-      "kind": "culture",
-      "headline": "Culture",
-      "rows": [],
-      "note": "Aperitivo hour is when people gather for cicchetti and a spritz.",
+      "id": "city:venezia:a-word-from-here-calli",
+      "kind": "a-word-from-here",
+      "headline": "A word from here",
+      "term": "calli",
+      "rows": [
+        {
+          "text": "In giro per calli",
+          "en": "wandering the streets"
+        },
+        {
+          "text": "Siamo in giro per calli.",
+          "en": "We're wandering the streets."
+        }
+      ],
+      "note": "Calli is how Venice talks about its streets.",
       "level": "A1",
       "keys": [
         "city:venezia"
       ],
       "source": {
         "from": "city",
-        "ref": "it/cities/venezia.ts#lists/customs 9, food 27, 29",
+        "ref": "it/cities/venezia.ts#lists/local words 7",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "city:venezia:culture-the-festa-del-redentore-is-celebrated-wi",
+      "id": "city:venezia:culture-aperitivo-hour-in-venice-goes-with-cicch",
       "kind": "culture",
       "headline": "Culture",
       "rows": [],
-      "note": "The Festa del Redentore is celebrated with boats and fireworks.",
+      "note": "Aperitivo hour in Venice goes with cicchetti and a spritz.",
+      "level": "A1",
+      "keys": [
+        "city:venezia"
+      ],
+      "source": {
+        "from": "city",
+        "ref": "it/cities/venezia.ts#lists/customs 9; food 27, 29",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "city:venezia:culture-many-venetians-shop-daily-at-the-rialto",
+      "kind": "culture",
+      "headline": "Culture",
+      "rows": [],
+      "note": "Many Venetians shop daily at the Rialto market.",
+      "level": "A1",
+      "keys": [
+        "city:venezia"
+      ],
+      "source": {
+        "from": "city",
+        "ref": "it/cities/venezia.ts#lists/customs 11",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "city:venezia:culture-in-the-evening-people-go-out-for-a-passe",
+      "kind": "culture",
+      "headline": "Culture",
+      "rows": [],
+      "note": "In the evening people go out for a passeggiata, a walk, in the campi of Venice.",
+      "level": "A1",
+      "keys": [
+        "city:venezia"
+      ],
+      "source": {
+        "from": "city",
+        "ref": "it/cities/venezia.ts#lists/customs 12",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "city:venezia:culture-the-festa-del-redentore-is-celebrated-in",
+      "kind": "culture",
+      "headline": "Culture",
+      "rows": [],
+      "note": "The Festa del Redentore is celebrated in Venice with boats and fireworks.",
       "level": "A1",
       "keys": [
         "city:venezia"
@@ -6994,7 +7167,7 @@
         "from": "city",
         "ref": "it/cities/venezia.ts#lists/customs 14",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -7005,14 +7178,13 @@
       "rows": [
         {
           "text": "Jammo!",
-          "en": "Let's go! (in Neapolitan)"
+          "en": "Let's go, in Neapolitan"
         },
         {
           "text": "Jammo, è tardi!",
           "en": "Let's go, it's late!"
         }
       ],
-      "note": "It's the Neapolitan way to say let's go. In standard Italian you would say andiamo.",
       "level": "A1",
       "keys": [
         "city:napoli"
@@ -7021,34 +7193,33 @@
         "from": "city",
         "ref": "it/cities/napoli.ts#lists/local words 2",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "city:napoli:a-word-from-here-ue",
+      "id": "city:napoli:a-word-from-here-comme-staje",
       "kind": "a-word-from-here",
       "headline": "A word from here",
-      "term": "Uè",
+      "term": "Comme staje?",
       "rows": [
         {
-          "text": "Uè!",
-          "en": "Hey! (in Neapolitan)"
+          "text": "Comme staje?",
+          "en": "How are you? in Neapolitan"
         },
         {
-          "text": "Uè, come stai?",
-          "en": "Hey, how are you?"
+          "text": "Sto bene, grazie.",
+          "en": "I'm fine, thanks."
         }
       ],
-      "note": "A Neapolitan call to get someone's attention or greet them.",
       "level": "A1",
       "keys": [
         "city:napoli"
       ],
       "source": {
         "from": "city",
-        "ref": "it/cities/napoli.ts#lists/local words 1",
+        "ref": "it/cities/napoli.ts#lists/local words 15",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -7059,14 +7230,13 @@
       "rows": [
         {
           "text": "Aggio capito!",
-          "en": "I understood! (in Neapolitan)"
+          "en": "I got it, in Neapolitan"
         },
         {
-          "text": "Ho capito!",
-          "en": "I understood! (in Italian)"
+          "text": "Ah, aggio capito! Grazie.",
+          "en": "Oh, I got it! Thanks."
         }
       ],
-      "note": "The Neapolitan form of ho capito, said when you've got it.",
       "level": "A1",
       "keys": [
         "city:napoli"
@@ -7075,42 +7245,68 @@
         "from": "city",
         "ref": "it/cities/napoli.ts#lists/local words 12",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "city:napoli:a-word-from-here-comme-staje",
+      "id": "city:napoli:a-word-from-here-statt-accuort",
       "kind": "a-word-from-here",
       "headline": "A word from here",
-      "term": "Comme staje",
+      "term": "Statt accuort",
       "rows": [
         {
-          "text": "Comme staje?",
-          "en": "How are you? (in Neapolitan)"
+          "text": "Statt accuort!",
+          "en": "Be careful, in Neapolitan"
         },
         {
-          "text": "Come stai?",
-          "en": "How are you? (in Italian)"
+          "text": "Statt accuort, è scivoloso!",
+          "en": "Be careful, it's slippery!"
         }
       ],
-      "note": "The same question in the two languages, side by side.",
       "level": "A1",
       "keys": [
         "city:napoli"
       ],
       "source": {
         "from": "city",
-        "ref": "it/cities/napoli.ts#lists/local words 15",
+        "ref": "it/cities/napoli.ts#lists/local words 4",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "city:napoli:culture-a-caffe-sospeso-is-a-coffee-paid-for-in",
+      "id": "city:napoli:a-word-from-here-guaglione",
+      "kind": "a-word-from-here",
+      "headline": "A word from here",
+      "term": "guaglione",
+      "rows": [
+        {
+          "text": "guaglione",
+          "en": "boy, lad, in Neapolitan"
+        },
+        {
+          "text": "guagliona",
+          "en": "girl, in Neapolitan"
+        }
+      ],
+      "note": "The word changes its ending for a boy or a girl.",
+      "level": "A1",
+      "keys": [
+        "city:napoli"
+      ],
+      "source": {
+        "from": "city",
+        "ref": "it/cities/napoli.ts#lists/local words 6",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "city:napoli:culture-a-caffe-sospeso-is-a-suspended-coffee-s",
       "kind": "culture",
       "headline": "Culture",
       "rows": [],
-      "note": "A caffè sospeso is a coffee paid for in advance, so that someone in need can have one later. It's a Neapolitan tradition of quiet generosity.",
+      "note": "A caffè sospeso is a suspended coffee. Someone pays for a coffee in advance so that a person in need can have one later. It is a long-standing local tradition.",
       "level": "A1",
       "keys": [
         "city:napoli"
@@ -7119,15 +7315,32 @@
         "from": "city",
         "ref": "it/cities/napoli.ts#lists/customs 17",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "city:napoli:culture-presepi-or-nativity-scenes-are-made-ye",
+      "id": "city:napoli:culture-sunday-pranzo-is-a-big-family-occasion",
       "kind": "culture",
       "headline": "Culture",
       "rows": [],
-      "note": "Presepi, or nativity scenes, are made year-round on Via San Gregorio Armeno, not only at Christmas.",
+      "note": "Sunday pranzo is a big family occasion. Lunch is shared with the entire extended family, not only parents and children.",
+      "level": "A1",
+      "keys": [
+        "city:napoli"
+      ],
+      "source": {
+        "from": "city",
+        "ref": "it/cities/napoli.ts#lists/customs 18",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "city:napoli:culture-presepi-or-nativity-scenes-are-made-al",
+      "kind": "culture",
+      "headline": "Culture",
+      "rows": [],
+      "note": "Presepi, or nativity scenes, are made all year round on Via San Gregorio Armeno. They are not only a Christmas custom there.",
       "level": "A1",
       "keys": [
         "city:napoli"
@@ -7136,41 +7349,21 @@
         "from": "city",
         "ref": "it/cities/napoli.ts#lists/customs 20",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "city:napoli:culture-many-people-drink-their-espresso-standin",
-      "kind": "culture",
-      "headline": "Culture",
-      "rows": [],
-      "note": "Many people drink their espresso standing at the bar counter instead of sitting down at a table.",
-      "level": "A1",
-      "keys": [
-        "city:napoli"
-      ],
-      "source": {
-        "from": "city",
-        "ref": "it/cities/napoli.ts#lists/customs 16",
-        "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
-      }
-    },
-    {
-      "id": "city:bologna:a-word-from-here-la-dotta-la-grassa-la-rossa",
+      "id": "city:bologna:a-word-from-here-la-grassa",
       "kind": "a-word-from-here",
       "headline": "A word from here",
+      "term": "la grassa",
       "rows": [
         {
           "text": "La dotta, la grassa, la rossa.",
           "en": "The learned, the fat, the red."
-        },
-        {
-          "text": "La grassa è per la cucina ricca.",
-          "en": "\"The fat one\" is for the rich cuisine."
         }
       ],
-      "note": "Three nicknames for the city. \"La grassa\" is about its rich food.",
+      "note": "Three nicknames for the city. \"La grassa\" is for its rich cuisine.",
       "level": "A1",
       "keys": [
         "city:bologna"
@@ -7178,14 +7371,15 @@
       "source": {
         "from": "city",
         "ref": "it/cities/bologna.ts#lists/local words 1, 2",
-        "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "redrafted": false,
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
       "id": "city:bologna:a-word-from-here-tirare-la-sfoglia",
       "kind": "a-word-from-here",
-      "headline": "A word from here",
+      "headline": "A phrase from here",
+      "term": "tirare la sfoglia",
       "rows": [
         {
           "text": "tirare la sfoglia",
@@ -7196,7 +7390,7 @@
           "en": "The sfoglina rolls the dough by hand."
         }
       ],
-      "note": "Rolling the dough is an art here, and fresh pasta is made by hand.",
+      "note": "Rolling the dough is an art here. Fresh pasta is made by hand with the sfoglina.",
       "level": "A1",
       "keys": [
         "city:bologna"
@@ -7205,17 +7399,18 @@
         "from": "city",
         "ref": "it/cities/bologna.ts#lists/local words 5; customs 14",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "city:bologna:a-word-from-here-fare-quattro-passi-sotto-i-port",
+      "id": "city:bologna:a-word-from-here-quattro-passi",
       "kind": "a-word-from-here",
-      "headline": "A word from here",
+      "headline": "A phrase from here",
+      "term": "quattro passi",
       "rows": [
         {
-          "text": "Fare quattro passi sotto i portici.",
-          "en": "Taking a walk under the porticoes."
+          "text": "fare quattro passi sotto i portici",
+          "en": "to take a walk under the porticoes"
         },
         {
           "text": "Facciamo quattro passi sotto i portici?",
@@ -7231,15 +7426,42 @@
         "from": "city",
         "ref": "it/cities/bologna.ts#lists/local words 6; customs 11",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "city:bologna:culture-coffee-is-drunk-standing-at-the-bar-not",
+      "id": "city:bologna:a-word-from-here-crescentina",
+      "kind": "a-word-from-here",
+      "headline": "A word from here",
+      "term": "crescentina",
+      "rows": [
+        {
+          "text": "la crescentina",
+          "en": "traditional fried bread"
+        },
+        {
+          "text": "la tigella",
+          "en": "the same bread, by its other name"
+        }
+      ],
+      "note": "The fried bread goes by either name here.",
+      "level": "A1",
+      "keys": [
+        "city:bologna"
+      ],
+      "source": {
+        "from": "city",
+        "ref": "it/cities/bologna.ts#lists/local words 9",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "city:bologna:culture-locals-drink-their-coffee-standing-at-th",
       "kind": "culture",
       "headline": "Culture",
       "rows": [],
-      "note": "Coffee is drunk standing at the bar, not sitting down.",
+      "note": "Locals drink their coffee standing at the bar, not sitting down.",
       "level": "A1",
       "keys": [
         "city:bologna"
@@ -7248,24 +7470,41 @@
         "from": "city",
         "ref": "it/cities/bologna.ts#lists/customs 19",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "city:bologna:culture-there-is-a-pilgrimage-walk-up-the-portic",
+      "id": "city:bologna:culture-aperitivo-hour-is-a-local-custom-and-it",
       "kind": "culture",
       "headline": "Culture",
       "rows": [],
-      "note": "There is a pilgrimage walk up the Portico di San Luca. It is a custom to make the climb on foot.",
+      "note": "Aperitivo hour is a local custom, and it comes with wine and mortadella.",
       "level": "A1",
       "keys": [
         "city:bologna"
       ],
       "source": {
         "from": "city",
-        "ref": "it/cities/bologna.ts#lists/customs 20",
+        "ref": "it/cities/bologna.ts#lists/customs 13; food 24",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "city:bologna:culture-in-the-evening-people-go-for-a-stroll-t",
+      "kind": "culture",
+      "headline": "Culture",
+      "rows": [],
+      "note": "In the evening, people go for a stroll to see the illuminated towers.",
+      "level": "A1",
+      "keys": [
+        "city:bologna"
+      ],
+      "source": {
+        "from": "city",
+        "ref": "it/cities/bologna.ts#lists/customs 18",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -7282,7 +7521,6 @@
           "en": "Let's go, it's late!"
         }
       ],
-      "note": "A Sicilian way to say let's go, and one of Palermo's local words.",
       "level": "A1",
       "keys": [
         "city:palermo"
@@ -7290,8 +7528,8 @@
       "source": {
         "from": "city",
         "ref": "it/cities/palermo.ts#lists/local words 5",
-        "redrafted": false,
-        "by": "learn-cards.mts@2026-11-23c"
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -7301,14 +7539,13 @@
       "rows": [
         {
           "text": "trasi",
-          "en": "come in"
+          "en": "come in, in Sicilian"
         },
         {
-          "text": "Trasi, è aperto!",
-          "en": "Come in, it's open!"
+          "text": "Trasi, la porta è aperta!",
+          "en": "Come in, the door is open!"
         }
       ],
-      "note": "A local word from Palermo for welcoming someone inside.",
       "level": "A1",
       "keys": [
         "city:palermo"
@@ -7317,7 +7554,29 @@
         "from": "city",
         "ref": "it/cities/palermo.ts#lists/local words 10",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "city:palermo:a-word-from-here-taliare",
+      "kind": "a-word-from-here",
+      "headline": "A word from here",
+      "rows": [
+        {
+          "text": "taliare",
+          "en": "to look, in Sicilian"
+        }
+      ],
+      "note": "This is the Sicilian verb for looking, the form you would look up.",
+      "level": "A1",
+      "keys": [
+        "city:palermo"
+      ],
+      "source": {
+        "from": "city",
+        "ref": "it/cities/palermo.ts#lists/local words 7",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -7327,14 +7586,13 @@
       "rows": [
         {
           "text": "bedda matri",
-          "en": "good heavens!"
+          "en": "good heavens!, in Sicilian"
         },
         {
-          "text": "Bedda matri, è tardi!",
-          "en": "Good heavens, it's late!"
+          "text": "Bedda matri, che bello!",
+          "en": "Good heavens, how lovely!"
         }
       ],
-      "note": "A local exclamation from Palermo for when you're surprised.",
       "level": "A1",
       "keys": [
         "city:palermo"
@@ -7343,58 +7601,32 @@
         "from": "city",
         "ref": "it/cities/palermo.ts#lists/local words 8",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "city:palermo:a-word-from-here-schifiu",
-      "kind": "a-word-from-here",
-      "headline": "A word from here",
-      "rows": [
-        {
-          "text": "schifiu",
-          "en": "disgusting, in Sicilian"
-        },
-        {
-          "text": "Che schifiu!",
-          "en": "How disgusting!"
-        }
-      ],
-      "note": "A Sicilian word for something disgusting, from Palermo's local words.",
+      "id": "city:palermo:culture-many-people-stand-at-the-bar-for-their-m",
+      "kind": "culture",
+      "headline": "Culture",
+      "rows": [],
+      "note": "Many people stand at the bar for their morning coffee. Coffee rituals continue through the rest of the day too.",
       "level": "A1",
       "keys": [
         "city:palermo"
       ],
       "source": {
         "from": "city",
-        "ref": "it/cities/palermo.ts#lists/local words 3",
+        "ref": "it/cities/palermo.ts#lists/customs 13, 20",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "city:palermo:culture-in-palermo-people-often-stand-at-the-ba",
+      "id": "city:palermo:culture-in-the-evening-people-take-a-passeggiat",
       "kind": "culture",
       "headline": "Culture",
       "rows": [],
-      "note": "In Palermo, people often stand at the bar for their morning coffee.",
-      "level": "A1",
-      "keys": [
-        "city:palermo"
-      ],
-      "source": {
-        "from": "city",
-        "ref": "it/cities/palermo.ts#lists/customs 13",
-        "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
-      }
-    },
-    {
-      "id": "city:palermo:culture-in-palermo-people-take-an-evening-passe",
-      "kind": "culture",
-      "headline": "Culture",
-      "rows": [],
-      "note": "In Palermo, people take an evening passeggiata, a stroll, in the city's piazzas.",
+      "note": "In the evening, people take a passeggiata in the piazzas.",
       "level": "A1",
       "keys": [
         "city:palermo"
@@ -7403,68 +7635,49 @@
         "from": "city",
         "ref": "it/cities/palermo.ts#lists/customs 12",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "city:palermo:culture-street-food-is-part-of-life-in-palermo",
+      "id": "city:palermo:culture-many-people-shop-daily-at-their-neighbor",
       "kind": "culture",
       "headline": "Culture",
       "rows": [],
-      "note": "Street food is part of life in Palermo, and people eat it while walking.",
+      "note": "Many people shop daily at their neighborhood markets. There, haggling and the calls of the vendors are loud.",
       "level": "A1",
       "keys": [
         "city:palermo"
       ],
       "source": {
         "from": "city",
-        "ref": "it/cities/palermo.ts#lists/customs 18",
+        "ref": "it/cities/palermo.ts#lists/customs 11, 15",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "city:palermo:culture-sunday-family-gatherings-are-a-custom-in",
+      "id": "city:palermo:culture-family-meals-often-bring-several-generat",
       "kind": "culture",
       "headline": "Culture",
       "rows": [],
-      "note": "Sunday family gatherings are a custom in Palermo.",
+      "note": "Family meals often bring several generations together. Sunday is a regular day for family gatherings.",
       "level": "A1",
       "keys": [
         "city:palermo"
       ],
       "source": {
         "from": "city",
-        "ref": "it/cities/palermo.ts#lists/customs 19",
+        "ref": "it/cities/palermo.ts#lists/customs 14, 19",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "here:roma-nuova/pantheon-rotonda:1",
-      "kind": "about-this-place",
-      "headline": "About this landmark",
-      "rows": [],
-      "note": "Every year at Pentecost, at the end of the morning Mass, Rome's firefighters drop thousands of red rose petals through the Pantheon's oculus, for the Holy Spirit coming down.",
-      "level": "A1",
-      "keys": [
-        "city:roma-nuova",
-        "place:roma-nuova/pantheon-rotonda",
-        "kind:landmark"
-      ],
-      "source": {
-        "from": "here",
-        "ref": "it/cities/roma-nuova.ts#pantheon-rotonda/here/3",
-        "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
-      }
-    },
-    {
-      "id": "here:roma-nuova/gesu-piazza:2",
+      "id": "here:roma-nuova/gesu-piazza:1",
       "kind": "about-this-place",
       "headline": "About this church",
       "rows": [],
-      "note": "Baciccio painted the ceiling of Il Gesù in the late 1600s. The figures in the fresco seem to spill out of the frame into the nave.",
+      "note": "The ceiling, painted by Baciccio in the late 1600s, is a fresco whose figures seem to spill out of the frame into the nave. Entry is free.",
       "level": "A1",
       "keys": [
         "city:roma-nuova",
@@ -7473,17 +7686,17 @@
       ],
       "source": {
         "from": "here",
-        "ref": "it/cities/roma-nuova.ts#gesu-piazza/here/4",
+        "ref": "it/cities/roma-nuova.ts#gesu-piazza/here/line 4",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "here:roma-nuova/piazza-navona:3",
+      "id": "here:roma-nuova/piazza-navona:2",
       "kind": "about-this-place",
       "headline": "About this piazza",
       "rows": [],
-      "note": "Piazza Navona's long oval follows the shape of the Stadium of Domitian that once stood here. At its centre is Bernini's Fountain of the Four Rivers.",
+      "note": "Piazza Navona's long oval follows the shape of the Stadium of Domitian that once stood here. At its centre is Bernini's Fountain of the Four Rivers, facing Borromini's church of Sant'Agnese in Agone.",
       "level": "A1",
       "keys": [
         "city:roma-nuova",
@@ -7492,9 +7705,28 @@
       ],
       "source": {
         "from": "here",
-        "ref": "it/cities/roma-nuova.ts#piazza-navona/here/11",
+        "ref": "it/cities/roma-nuova.ts#piazza-navona/here/line 11",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "here:roma-nuova/pantheon-rotonda:3",
+      "kind": "about-this-place",
+      "headline": "About this landmark",
+      "rows": [],
+      "note": "Every year at Pentecost, at the end of the morning Mass, Rome's firefighters drop thousands of red rose petals through the oculus, for the Holy Spirit coming down.",
+      "level": "A1",
+      "keys": [
+        "city:roma-nuova",
+        "place:roma-nuova/pantheon-rotonda",
+        "kind:landmark"
+      ],
+      "source": {
+        "from": "here",
+        "ref": "it/cities/roma-nuova.ts#pantheon-rotonda/here/line 3",
+        "redrafted": false,
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -7502,7 +7734,7 @@
       "kind": "about-this-place",
       "headline": "About this church",
       "rows": [],
-      "note": "Santa Maria in Trastevere is one of Rome's oldest churches, its apse covered in medieval gold mosaics. Near the altar, fons olei marks where an old story says a spring of oil once flowed.",
+      "note": "An old story says a spring of oil once flowed from the ground at Santa Maria in Trastevere. The spot is still marked fons olei, near the altar.",
       "level": "A1",
       "keys": [
         "city:roma-nuova",
@@ -7511,17 +7743,36 @@
       ],
       "source": {
         "from": "here",
-        "ref": "it/cities/roma-nuova.ts#basilica-santa-maria/here/13",
+        "ref": "it/cities/roma-nuova.ts#basilica-santa-maria/here/line 13",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "here:roma-nuova/farmacia-prati:5",
+      "id": "here:roma-nuova/sapienza-scalinata:5",
       "kind": "about-this-place",
-      "headline": "About this neighbourhood",
+      "headline": "About this university",
       "rows": [],
-      "note": "Until Rome became Italy's capital in 1871, Prati was open meadow below Castel Sant'Angelo. The district was built for the new state, with straight streets and squares named after heroes like Cavour.",
+      "note": "San Lorenzo, the neighbourhood around the university, was bombed in July 1943, the first bombing of Rome in the war. Plaques on its walls still mark it.",
+      "level": "A1",
+      "keys": [
+        "city:roma-nuova",
+        "place:roma-nuova/sapienza-scalinata",
+        "kind:university"
+      ],
+      "source": {
+        "from": "here",
+        "ref": "it/cities/roma-nuova.ts#sapienza-scalinata/here/line 15",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "here:roma-nuova/farmacia-prati:6",
+      "kind": "about-this-place",
+      "headline": "About this district",
+      "rows": [],
+      "note": "Until Rome became Italy's capital in 1871, Prati was open meadow below Castel Sant'Angelo. The new district was built with straight streets and squares named after unification heroes like Cavour and Mazzini.",
       "level": "A1",
       "keys": [
         "city:roma-nuova",
@@ -7530,13 +7781,13 @@
       ],
       "source": {
         "from": "here",
-        "ref": "it/cities/roma-nuova.ts#farmacia-prati/here/7",
+        "ref": "it/cities/roma-nuova.ts#farmacia-prati/here/line 7",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "here:roma-nuova/volpetti-testaccio:6",
+      "id": "here:roma-nuova/volpetti-testaccio:7",
       "kind": "about-this-place",
       "headline": "About this deli",
       "rows": [],
@@ -7549,13 +7800,13 @@
       ],
       "source": {
         "from": "here",
-        "ref": "it/cities/roma-nuova.ts#volpetti-testaccio/here/16",
+        "ref": "it/cities/roma-nuova.ts#volpetti-testaccio/here/line 16",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "here:roma-nuova/trattoria-garbatella:7",
+      "id": "here:roma-nuova/trattoria-garbatella:8",
       "kind": "about-this-place",
       "headline": "About this osteria",
       "rows": [],
@@ -7568,17 +7819,17 @@
       ],
       "source": {
         "from": "here",
-        "ref": "it/cities/roma-nuova.ts#trattoria-garbatella/here/2",
+        "ref": "it/cities/roma-nuova.ts#trattoria-garbatella/here/line 2",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "here:roma-nuova/forno-trastevere:8",
+      "id": "here:roma-nuova/forno-trastevere:9",
       "kind": "about-this-place",
       "headline": "About this bakery",
       "rows": [],
-      "note": "Romans buy pizza bianca and pizza rossa by weight, cut with scissors. They eat it warm on the way to work, sometimes filled with mortadella.",
+      "note": "Pizza bianca and pizza rossa come out of the wood oven before dawn and are sold by weight, cut with scissors. Romans eat it warm on the way to work, sometimes filled with mortadella.",
       "level": "A1",
       "keys": [
         "city:roma-nuova",
@@ -7587,32 +7838,70 @@
       ],
       "source": {
         "from": "here",
-        "ref": "it/cities/roma-nuova.ts#forno-trastevere/here/10",
+        "ref": "it/cities/roma-nuova.ts#forno-trastevere/here/line 10",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "here:matera/ristorante-francesca:2",
+      "id": "here:matera/caffe-schiuma:1",
       "kind": "about-this-place",
-      "headline": "About this restaurant",
+      "headline": "About this bar",
       "rows": [],
-      "note": "Pane di Matera is made with durum wheat semolina and has its own IGP label.",
+      "note": "This bar is carved into the tufa of the Sassi. People drink their coffee standing at the counter, quick and strong, then look out over the ravine from the outside tables.",
       "level": "A1",
       "keys": [
         "city:matera",
-        "place:matera/ristorante-francesca",
-        "kind:ristorante"
+        "place:matera/caffe-schiuma",
+        "kind:bar"
       ],
       "source": {
         "from": "here",
-        "ref": "it/cities/matera.ts#ristorante-francesca/here/line 3",
+        "ref": "it/cities/matera.ts#caffe-schiuma/here/line 1",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "here:matera/casa-grotta:3",
+      "id": "here:matera/mercato-piccianello:2",
+      "kind": "about-this-place",
+      "headline": "About this market",
+      "rows": [],
+      "note": "Peperoni cruschi are dried peppers fried until crisp. Vegetable sellers here also offer wild greens like cime di rapa, which go into orecchiette.",
+      "level": "A1",
+      "keys": [
+        "city:matera",
+        "place:matera/mercato-piccianello",
+        "kind:market"
+      ],
+      "source": {
+        "from": "here",
+        "ref": "it/cities/matera.ts#mercato-piccianello/here/line 2",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "here:matera/piazza-duomo:3",
+      "kind": "about-this-place",
+      "headline": "About this piazza",
+      "rows": [],
+      "note": "The cathedral honors the Madonna della Bruna, patron saint of the city. At her festa on 2 July, a decorated papier-mâché carriage is pulled through the streets, then torn apart by the crowd.",
+      "level": "A1",
+      "keys": [
+        "city:matera",
+        "place:matera/piazza-duomo",
+        "kind:piazza"
+      ],
+      "source": {
+        "from": "here",
+        "ref": "it/cities/matera.ts#piazza-duomo/here/line 8",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "here:matera/casa-grotta:4",
       "kind": "about-this-place",
       "headline": "About this museum",
       "rows": [],
@@ -7627,26 +7916,7 @@
         "from": "here",
         "ref": "it/cities/matera.ts#casa-grotta/here/line 5",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
-      }
-    },
-    {
-      "id": "here:matera/piazza-duomo:4",
-      "kind": "about-this-place",
-      "headline": "About this piazza",
-      "rows": [],
-      "note": "The Madonna della Bruna is the city's patron saint. On her festa, 2 July, a decorated papier-mâché carriage is pulled through the streets, and the crowd tears it apart at the end.",
-      "level": "A1",
-      "keys": [
-        "city:matera",
-        "place:matera/piazza-duomo",
-        "kind:piazza"
-      ],
-      "source": {
-        "from": "here",
-        "ref": "it/cities/matera.ts#piazza-duomo/here/line 8",
-        "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -7654,7 +7924,7 @@
       "kind": "about-this-place",
       "headline": "About this workshop",
       "rows": [],
-      "note": "The cucù is a little clay whistle shaped like a rooster. It is a symbol of Matera and a gift for good luck.",
+      "note": "The cucù is a little clay whistle shaped like a rooster. It's a symbol of Matera and a gift for good luck.",
       "level": "A1",
       "keys": [
         "city:matera",
@@ -7665,26 +7935,26 @@
         "from": "here",
         "ref": "it/cities/matera.ts#bottega-artigiana/here/line 11",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "here:matera/parco-murgia:6",
+      "id": "here:matera/piazza-vittorio:6",
       "kind": "about-this-place",
-      "headline": "About this park",
+      "headline": "About this piazza",
       "rows": [],
-      "note": "The Parco della Murgia Materana is the rocky plateau across the ravine from the Sassi, dotted with cave churches and their old frescoes.",
+      "note": "In the evening the whole town does the passeggiata in this main square, strolling up and down and stopping to chat.",
       "level": "A1",
       "keys": [
         "city:matera",
-        "place:matera/parco-murgia",
-        "kind:park"
+        "place:matera/piazza-vittorio",
+        "kind:piazza"
       ],
       "source": {
         "from": "here",
-        "ref": "it/cities/matera.ts#parco-murgia/here/line 6",
+        "ref": "it/cities/matera.ts#piazza-vittorio/here/line 7",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -7692,7 +7962,7 @@
       "kind": "about-this-place",
       "headline": "About this bridge",
       "rows": [],
-      "note": "The Ponte Vecchio is known as the bridge of the goldsmiths. Jewellers make and repair jewellery in tiny family workshops on it.",
+      "note": "The Ponte Vecchio is known as the bridge of the goldsmiths. Jewellers still work in tiny family workshops on it, making and repairing jewellery.",
       "level": "A1",
       "keys": [
         "city:firenze",
@@ -7701,17 +7971,36 @@
       ],
       "source": {
         "from": "here",
-        "ref": "it/cities/firenze.ts#ponte-vecchio/here/examples 1",
+        "ref": "it/cities/firenze.ts#ponte-vecchio/here/line 1",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "here:firenze/piazza-signoria:2",
+      "id": "here:firenze/giardino-boboli:2",
       "kind": "about-this-place",
-      "headline": "About this piazza",
+      "headline": "About this garden",
       "rows": [],
-      "note": "The Loggia dei Lanzi is an open arcade of statues, free to walk into. Built between 1376 and 1382, it has held Cellini's bronze Perseus since 1554.",
+      "note": "The Giardino di Boboli is the Medici garden behind Palazzo Pitti. It was laid out in the 1500s.",
+      "level": "A1",
+      "keys": [
+        "city:firenze",
+        "place:firenze/giardino-boboli",
+        "kind:park"
+      ],
+      "source": {
+        "from": "here",
+        "ref": "it/cities/firenze.ts#giardino-boboli/here/line 2",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "here:firenze/piazza-signoria:3",
+      "kind": "about-this-place",
+      "headline": "About this arcade",
+      "rows": [],
+      "note": "The Loggia dei Lanzi is an open arcade of statues, built between 1376 and 1382, and it's free to walk into. Cellini's bronze Perseus, holding up Medusa's head, has stood at the front since 1554.",
       "level": "A1",
       "keys": [
         "city:firenze",
@@ -7720,28 +8009,9 @@
       ],
       "source": {
         "from": "here",
-        "ref": "it/cities/firenze.ts#piazza-signoria/here/examples 3",
+        "ref": "it/cities/firenze.ts#piazza-signoria/here/line 3",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
-      }
-    },
-    {
-      "id": "here:firenze/ditta-artigianale-nuova:3",
-      "kind": "about-this-place",
-      "headline": "About this bar",
-      "rows": [],
-      "note": "It serves speciality coffee: single-origin beans, roasted lighter, made slowly as an espresso or a filter coffee. It tastes quite different from the usual bar coffee.",
-      "level": "A1",
-      "keys": [
-        "city:firenze",
-        "place:firenze/ditta-artigianale-nuova",
-        "kind:bar"
-      ],
-      "source": {
-        "from": "here",
-        "ref": "it/cities/firenze.ts#ditta-artigianale-nuova/here/examples 4",
-        "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -7758,9 +8028,28 @@
       ],
       "source": {
         "from": "here",
-        "ref": "it/cities/firenze.ts#lampredotto-pollini/here/examples 5",
+        "ref": "it/cities/firenze.ts#lampredotto-pollini/here/line 5",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "here:firenze/trattoria-mario-nuova:5",
+      "kind": "about-this-place",
+      "headline": "About this trattoria",
+      "rows": [],
+      "note": "At a lunch-only trattoria by the San Lorenzo market, strangers share tables. The classics are ribollita, trippa alla fiorentina and bistecca alla fiorentina, served rare or not at all.",
+      "level": "A1",
+      "keys": [
+        "city:firenze",
+        "place:firenze/trattoria-mario-nuova",
+        "kind:trattoria"
+      ],
+      "source": {
+        "from": "here",
+        "ref": "it/cities/firenze.ts#trattoria-mario-nuova/here/line 6",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -7768,7 +8057,7 @@
       "kind": "about-this-place",
       "headline": "About this piazza",
       "rows": [],
-      "note": "Every June the Calcio Storico, a rough old football game, is played in this square on sand. A statue of Dante stands in the square.",
+      "note": "Every June the Calcio Storico, the rough old Florentine football game, is played on sand in Piazza Santa Croce.",
       "level": "A1",
       "keys": [
         "city:firenze",
@@ -7777,36 +8066,17 @@
       ],
       "source": {
         "from": "here",
-        "ref": "it/cities/firenze.ts#santa-croce-piazza/here/examples 8",
+        "ref": "it/cities/firenze.ts#santa-croce-piazza/here/line 8",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "here:siena/piazza-del-campo:1",
-      "kind": "about-this-place",
-      "headline": "About this piazza",
-      "rows": [],
-      "note": "The square is shell-shaped, its paving divided into nine sections. The Palio is run here twice a year, on 2 July and 16 August, on earth laid over the paving.",
-      "level": "A1",
-      "keys": [
-        "city:siena",
-        "place:siena/piazza-del-campo",
-        "kind:piazza"
-      ],
-      "source": {
-        "from": "here",
-        "ref": "it/cities/siena.ts#piazza-del-campo/here/line 5",
-        "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
-      }
-    },
-    {
-      "id": "here:siena/pasticceria-bini:2",
+      "id": "here:siena/pasticceria-bini:1",
       "kind": "about-this-place",
       "headline": "About this bakery",
       "rows": [],
-      "note": "Ricciarelli are soft almond biscuits dusted with icing sugar, and panforte is a dense cake of candied fruit, nuts and spices. Both are Sienese Christmas sweets with medieval roots.",
+      "note": "Ricciarelli are soft almond biscuits dusted with icing sugar, and panforte is a dense cake of candied fruit, nuts and spices. Both are Christmas sweets with medieval roots.",
       "level": "A1",
       "keys": [
         "city:siena",
@@ -7815,17 +8085,17 @@
       ],
       "source": {
         "from": "here",
-        "ref": "it/cities/siena.ts#pasticceria-bini/here/line 2",
+        "ref": "it/cities/siena.ts#pasticceria-bini/here/part 2",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "here:siena/osteria-le-logge:3",
+      "id": "here:siena/osteria-le-logge:2",
       "kind": "about-this-place",
       "headline": "About this osteria",
       "rows": [],
-      "note": "Pici are thick hand-rolled spaghetti of flour and water, no egg, typical of Siena. They come with cacio e pepe or with aglione, a big garlic from the Val di Chiana.",
+      "note": "Pici are thick hand-rolled spaghetti of flour and water, with no egg. They're dressed with cacio e pepe or with aglione, a big garlic from the Val di Chiana.",
       "level": "A1",
       "keys": [
         "city:siena",
@@ -7834,28 +8104,85 @@
       ],
       "source": {
         "from": "here",
-        "ref": "it/cities/siena.ts#osteria-le-logge/here/line 4",
+        "ref": "it/cities/siena.ts#osteria-le-logge/here/part 4",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "here:siena/piazza-salimbeni:5",
+      "id": "here:siena/piazza-del-campo:3",
       "kind": "about-this-place",
       "headline": "About this piazza",
       "rows": [],
-      "note": "Palazzo Salimbeni, on this quiet square, is the seat of the Monte dei Paschi bank, among the oldest banks in the world.",
+      "note": "The square is shell-shaped, its paving divided into nine sections. The Palazzo Pubblico stands at the bottom of the slope, under the Torre del Mangia.",
       "level": "A1",
       "keys": [
         "city:siena",
-        "place:siena/piazza-salimbeni",
+        "place:siena/piazza-del-campo",
         "kind:piazza"
       ],
       "source": {
         "from": "here",
-        "ref": "it/cities/siena.ts#piazza-salimbeni/here/line 6",
+        "ref": "it/cities/siena.ts#piazza-del-campo/here/part 5",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "here:siena/bottega-del-palio:4",
+      "kind": "about-this-place",
+      "headline": "About this shop",
+      "rows": [],
+      "note": "The Palio's prize is the drappellone, a banner painted anew by a different artist for each race.",
+      "level": "A1",
+      "keys": [
+        "city:siena",
+        "place:siena/bottega-del-palio",
+        "kind:shop"
+      ],
+      "source": {
+        "from": "here",
+        "ref": "it/cities/siena.ts#bottega-del-palio/here/part 9",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "here:siena/mercato-della-terra:5",
+      "kind": "about-this-place",
+      "headline": "About this market",
+      "rows": [],
+      "note": "Stalls here sell cavolo nero for ribollita, beans for fagioli all'uccelletto, and tomatoes to go with stale pane toscano in a panzanella.",
+      "level": "A1",
+      "keys": [
+        "city:siena",
+        "place:siena/mercato-della-terra",
+        "kind:market"
+      ],
+      "source": {
+        "from": "here",
+        "ref": "it/cities/siena.ts#mercato-della-terra/here/part 3",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "here:siena/pizzicheria-de-miccoli:6",
+      "kind": "about-this-place",
+      "headline": "About this deli",
+      "rows": [],
+      "note": "The salami here is made from cinta senese, the black-and-white local pig. There's also pecorino, and porchetta panini filled while people wait in the street.",
+      "level": "A1",
+      "keys": [
+        "city:siena",
+        "place:siena/pizzicheria-de-miccoli",
+        "kind:deli"
+      ],
+      "source": {
+        "from": "here",
+        "ref": "it/cities/siena.ts#pizzicheria-de-miccoli/here/part 11",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -7863,7 +8190,7 @@
       "kind": "about-this-place",
       "headline": "About this café",
       "rows": [],
-      "note": "Open since 1720 under the arcades of Piazza San Marco. A coffee at a table costs far more than an espresso at the bar, and a music charge is added when the orchestra plays.",
+      "note": "A coffee at a table costs far more than an espresso drunk standing at the bar, and when the orchestra plays on the piazza, a music charge is added to the bill.",
       "level": "A1",
       "keys": [
         "city:venezia",
@@ -7874,7 +8201,7 @@
         "from": "here",
         "ref": "it/cities/venezia.ts#caffe-florian/here/line 2",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -7882,7 +8209,7 @@
       "kind": "about-this-place",
       "headline": "About this market",
       "rows": [],
-      "note": "Locals shop early at the Rialto market for sarde, seppie and moleche. Moleche are lagoon crabs caught just as they shed their shell, only in certain seasons.",
+      "note": "Moleche are lagoon crabs caught just as they shed their shell, and only in certain seasons. Locals shop here early for sarde, seppie and moleche.",
       "level": "A1",
       "keys": [
         "city:venezia",
@@ -7893,7 +8220,26 @@
         "from": "here",
         "ref": "it/cities/venezia.ts#mercato-rialto/here/line 3",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "here:venezia/ponte-rialto:3",
+      "kind": "about-this-place",
+      "headline": "About this landmark",
+      "rows": [],
+      "note": "The traghetto is a plain gondola with no seats, rowed by two gondoliers back and forth across the Grand Canal. It costs two euros, or seventy cents with the Venezia Unica card.",
+      "level": "A1",
+      "keys": [
+        "city:venezia",
+        "place:venezia/ponte-rialto",
+        "kind:landmark"
+      ],
+      "source": {
+        "from": "here",
+        "ref": "it/cities/venezia.ts#ponte-rialto/here/line 5",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -7901,7 +8247,7 @@
       "kind": "about-this-place",
       "headline": "About this square",
       "rows": [],
-      "note": "The walls hold statues of merchants in oriental dress, said to be the Mastelli brothers from the Morea. One, Sior Rioba, has an iron nose and counts among the city's 'talking statues'.",
+      "note": "Statues of merchants in oriental dress, said to be the Mastelli brothers from the Morea, stand on the walls. One, Sior Rioba, has an iron nose and counts as a \"talking statue\".",
       "level": "A1",
       "keys": [
         "city:venezia",
@@ -7912,15 +8258,15 @@
         "from": "here",
         "ref": "it/cities/venezia.ts#campo-dei-mori/here/line 7",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
       "id": "here:venezia/squero-san-trovaso:5",
       "kind": "about-this-place",
-      "headline": "About this boatyard",
+      "headline": "About this gondola workshop",
       "rows": [],
-      "note": "The Squero San Trovaso is one of the few boatyards still building and repairing gondolas by hand, from several kinds of wood. The yard looks like a mountain chalet on the canal.",
+      "note": "This is one of the few boatyards still building and repairing gondolas by hand, from several kinds of wood. The yard looks like a mountain chalet on the canal.",
       "level": "A1",
       "keys": [
         "city:venezia",
@@ -7931,7 +8277,7 @@
         "from": "here",
         "ref": "it/cities/venezia.ts#squero-san-trovaso/here/line 10",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -7939,7 +8285,7 @@
       "kind": "about-this-place",
       "headline": "About this bar",
       "rows": [],
-      "note": "Naples is where the caffè sospeso began: a coffee paid in advance for a stranger who can't afford one.",
+      "note": "Naples is where the caffè sospeso began: a coffee paid for in advance for a stranger who can't afford one.",
       "level": "A1",
       "keys": [
         "city:napoli",
@@ -7949,8 +8295,8 @@
       "source": {
         "from": "here",
         "ref": "it/cities/napoli.ts#bar-nilo/here/line 1",
-        "redrafted": false,
-        "by": "learn-cards.mts@2026-11-23c"
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -7958,7 +8304,7 @@
       "kind": "about-this-place",
       "headline": "About this pizzeria",
       "rows": [],
-      "note": "The pizza dough is leavened for many hours, then baked in a wood-fired oven in about a minute.",
+      "note": "Neapolitan pizza dough is leavened for many hours, then baked in a wood-fired oven in about a minute.",
       "level": "A1",
       "keys": [
         "city:napoli",
@@ -7969,7 +8315,7 @@
         "from": "here",
         "ref": "it/cities/napoli.ts#pizzeria-sorbillo/here/line 5",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -7977,7 +8323,7 @@
       "kind": "about-this-place",
       "headline": "About this piazza",
       "rows": [],
-      "note": "In the middle of Piazza Bellini, parts of the ancient Greek walls of Neapolis show above ground.",
+      "note": "Parts of the ancient Greek walls of Neapolis show in the middle of the square, with café tables all around.",
       "level": "A1",
       "keys": [
         "city:napoli",
@@ -7988,7 +8334,7 @@
         "from": "here",
         "ref": "it/cities/napoli.ts#piazza-bellini/here/line 7",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -7996,7 +8342,7 @@
       "kind": "about-this-place",
       "headline": "About this station",
       "rows": [],
-      "note": "The Circumvesuviana to Pompei and Sorrento is run by a separate company, EAV, with its own tickets. Regional paper tickets must be validated at the machines before boarding, or you risk a fine.",
+      "note": "The Circumvesuviana to Pompei and Sorrento is run by a separate company, EAV, with its own tickets. Regional paper tickets must be validated before boarding, or you risk a fine.",
       "level": "A1",
       "keys": [
         "city:napoli",
@@ -8007,7 +8353,7 @@
         "from": "here",
         "ref": "it/cities/napoli.ts#stazione-centrale-napoli/here/line 8",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -8015,7 +8361,7 @@
       "kind": "about-this-place",
       "headline": "About this chocolate shop",
       "rows": [],
-      "note": "Gay-Odin has made chocolate by hand in Naples since 1894, and the shop has an art nouveau interior. Its chocolates include the Vesuvio, shaped like the volcano.",
+      "note": "This Neapolitan firm has made chocolate by hand since 1894. Its chocolates include the Vesuvio, shaped like the volcano, and the famous Foresta.",
       "level": "A1",
       "keys": [
         "city:napoli",
@@ -8026,7 +8372,7 @@
         "from": "here",
         "ref": "it/cities/napoli.ts#gay-odin/here/line 10",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -8034,7 +8380,7 @@
       "kind": "about-this-place",
       "headline": "About this mozzarella shop",
       "rows": [],
-      "note": "Mozzarella di bufala campana is a protected product, made from buffalo milk. It is sold in its own whey and is best when very fresh.",
+      "note": "Mozzarella di bufala campana is a protected product made from buffalo milk. It is sold in its own whey and is best when very fresh.",
       "level": "A1",
       "keys": [
         "city:napoli",
@@ -8045,15 +8391,15 @@
         "from": "here",
         "ref": "it/cities/napoli.ts#mozzarella-spaccanapoli/here/line 12",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
       "id": "here:napoli/pizza-a-portafoglio-tribunali:7",
       "kind": "about-this-place",
-      "headline": "About this street food",
+      "headline": "About this street-food stop",
       "rows": [],
-      "note": "Pizza a portafoglio is a small margherita or marinara folded in four like a wallet and wrapped in paper. You eat it walking, for a couple of euros.",
+      "note": "Pizza a portafoglio is a small margherita or marinara folded in four like a wallet, wrapped in paper and eaten walking.",
       "level": "A1",
       "keys": [
         "city:napoli",
@@ -8064,15 +8410,15 @@
         "from": "here",
         "ref": "it/cities/napoli.ts#pizza-a-portafoglio-tribunali/here/line 13",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
       "id": "here:bologna/portici-san-luca:1",
       "kind": "about-this-place",
-      "headline": "About this landmark",
+      "headline": "About this portico",
       "rows": [],
-      "note": "The Portico di San Luca runs almost four kilometres under 666 arches, from Porta Saragozza up to the Madonna di San Luca sanctuary. It is the longest portico in the world.",
+      "note": "The Portico di San Luca runs almost four kilometres under 666 arches, from Porta Saragozza up the hill to the Madonna di San Luca sanctuary. It is the longest portico in the world.",
       "level": "A1",
       "keys": [
         "city:bologna",
@@ -8081,17 +8427,17 @@
       ],
       "source": {
         "from": "here",
-        "ref": "it/cities/bologna.ts#portici-san-luca/here/10",
+        "ref": "it/cities/bologna.ts#portici-san-luca/here/line 10",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
       "id": "here:bologna/salumeria-simoni:2",
       "kind": "about-this-place",
-      "headline": "About this salumeria",
+      "headline": "About this market",
       "rows": [],
-      "note": "The Quadrilatero is the old market streets off Piazza Maggiore, where stalls have sold food since the Middle Ages. Mortadella, Bologna's famous cold cut, is sliced to order and sold by weight.",
+      "note": "In the Quadrilatero, the old market streets off Piazza Maggiore, stalls have sold food since the Middle Ages. Mortadella, Bologna's famous cold cut, is sliced to order and sold by weight.",
       "level": "A1",
       "keys": [
         "city:bologna",
@@ -8100,17 +8446,36 @@
       ],
       "source": {
         "from": "here",
-        "ref": "it/cities/bologna.ts#salumeria-simoni/here/7",
+        "ref": "it/cities/bologna.ts#salumeria-simoni/here/line 7",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "here:bologna/santo-stefano:3",
+      "id": "here:bologna/due-torri:3",
+      "kind": "about-this-place",
+      "headline": "About this landmark",
+      "rows": [],
+      "note": "The Due Torri, the Asinelli and the leaning Garisenda, were built in the 1100s, when Bologna bristled with towers.",
+      "level": "A1",
+      "keys": [
+        "city:bologna",
+        "place:bologna/due-torri",
+        "kind:landmark"
+      ],
+      "source": {
+        "from": "here",
+        "ref": "it/cities/bologna.ts#due-torri/here/line 3",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "here:bologna/santo-stefano:4",
       "kind": "about-this-place",
       "headline": "About this church",
       "rows": [],
-      "note": "The Bolognese call this group of linked churches and cloisters Sette Chiese, the seven churches, though fewer remain. Its oldest parts are over a thousand years old, and the courtyard holds the Catino di Pilato.",
+      "note": "Santo Stefano is a group of linked churches and cloisters. The Bolognese call it Sette Chiese, though fewer remain. Its oldest parts are over a thousand years old, and visitors walk in freely.",
       "level": "A1",
       "keys": [
         "city:bologna",
@@ -8119,17 +8484,36 @@
       ],
       "source": {
         "from": "here",
-        "ref": "it/cities/bologna.ts#santo-stefano/here/4",
+        "ref": "it/cities/bologna.ts#santo-stefano/here/line 4",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "here:bologna/ristorante-pappagallo:4",
+      "id": "here:bologna/sorbetteria-castiglione:5",
+      "kind": "about-this-place",
+      "headline": "About this gelateria",
+      "rows": [],
+      "note": "This shop has its own house flavours: Dolce Emma, with ricotta and figs, and Michelangelo, with almonds. It has stood on Via Castiglione since 1994.",
+      "level": "A1",
+      "keys": [
+        "city:bologna",
+        "place:bologna/sorbetteria-castiglione",
+        "kind:gelateria"
+      ],
+      "source": {
+        "from": "here",
+        "ref": "it/cities/bologna.ts#sorbetteria-castiglione/here/line 8",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "here:bologna/ristorante-pappagallo:6",
       "kind": "about-this-place",
       "headline": "About this restaurant",
       "rows": [],
-      "note": "Bologna's classics include tagliatelle al ragù (never spaghetti bolognese), tortellini in brodo, lasagne verdi and cotoletta alla bolognese.",
+      "note": "Bologna's classic is tagliatelle al ragù, never spaghetti bolognese. Other local classics are tortellini in brodo, lasagne verdi and cotoletta alla bolognese.",
       "level": "A1",
       "keys": [
         "city:bologna",
@@ -8138,28 +8522,9 @@
       ],
       "source": {
         "from": "here",
-        "ref": "it/cities/bologna.ts#ristorante-pappagallo/here/2",
+        "ref": "it/cities/bologna.ts#ristorante-pappagallo/here/line 2",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
-      }
-    },
-    {
-      "id": "here:bologna/sfoglia-rina:5",
-      "kind": "about-this-place",
-      "headline": "About this pasta shop",
-      "rows": [],
-      "note": "Sfoglia, the fresh pasta dough, is flour and eggs, about one egg to a hundred grams. It is rolled by hand with a long mattarello until you can see through it.",
-      "level": "A1",
-      "keys": [
-        "city:bologna",
-        "place:bologna/sfoglia-rina",
-        "kind:pasta shop"
-      ],
-      "source": {
-        "from": "here",
-        "ref": "it/cities/bologna.ts#sfoglia-rina/here/11",
-        "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -8167,7 +8532,7 @@
       "kind": "about-this-place",
       "headline": "About this park",
       "rows": [],
-      "note": "The giant old Ficus magnolioides trees were brought from Australia in the 19th century. Their aerial roots hang down and spread into trunks, forming shapes like a cave.",
+      "note": "The giant old fig trees here came from Australia in the 19th century. Their aerial roots hang down from the branches and spread into trunks, forming something like a cave.",
       "level": "A1",
       "keys": [
         "city:palermo",
@@ -8178,34 +8543,15 @@
         "from": "here",
         "ref": "it/cities/palermo.ts#giardino-garibaldi/here/line 6",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "here:palermo/quattro-canti:2",
+      "id": "here:palermo/piazza-pretoria:2",
       "kind": "about-this-place",
-      "headline": "About this crossroads",
+      "headline": "About this piazza",
       "rows": [],
-      "note": "This baroque crossroads is at the heart of the old city. Its four corner facades show the four seasons, four Spanish kings and four of the city's patron saints.",
-      "level": "A1",
-      "keys": [
-        "city:palermo",
-        "place:palermo/quattro-canti",
-        "kind:piazza"
-      ],
-      "source": {
-        "from": "here",
-        "ref": "it/cities/palermo.ts#quattro-canti/here/line 8",
-        "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
-      }
-    },
-    {
-      "id": "here:palermo/piazza-pretoria:3",
-      "kind": "about-this-place",
-      "headline": "About this square",
-      "rows": [],
-      "note": "The great marble fountain here is nicknamed the Fontana della Vergogna, the fountain of shame, because of its nude statues.",
+      "note": "Palermitans call the great marble fountain of Piazza Pretoria the Fontana della Vergogna, the fountain of shame, because of its nude statues.",
       "level": "A1",
       "keys": [
         "city:palermo",
@@ -8216,7 +8562,26 @@
         "from": "here",
         "ref": "it/cities/palermo.ts#piazza-pretoria/here/line 7",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "here:palermo/quattro-canti:3",
+      "kind": "about-this-place",
+      "headline": "About this crossroads",
+      "rows": [],
+      "note": "The Quattro Canti is the baroque crossroads at the heart of the old city. Its four corner facades show the four seasons, four Spanish kings and four of the city's patron saints.",
+      "level": "A1",
+      "keys": [
+        "city:palermo",
+        "place:palermo/quattro-canti",
+        "kind:piazza"
+      ],
+      "source": {
+        "from": "here",
+        "ref": "it/cities/palermo.ts#quattro-canti/here/line 8",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -8224,7 +8589,7 @@
       "kind": "about-this-place",
       "headline": "About this chapel",
       "rows": [],
-      "note": "This was the royal chapel of the Norman kings. Gold Byzantine mosaics shine under a painted wooden ceiling made by Arab craftsmen.",
+      "note": "The Cappella Palatina was the royal chapel of Palermo's Norman kings. Gold Byzantine mosaics shine under a painted wooden ceiling made by Arab craftsmen.",
       "level": "A1",
       "keys": [
         "city:palermo",
@@ -8235,7 +8600,45 @@
         "from": "here",
         "ref": "it/cities/palermo.ts#cappella-palatina/here/line 11",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "here:palermo/bar-alba:5",
+      "kind": "about-this-place",
+      "headline": "About this bar",
+      "rows": [],
+      "note": "In Palermo the brioche col gelato is a classic, eaten at the bar or on the go. The brioche is the soft round one with a little \"tuppo\" on top.",
+      "level": "A1",
+      "keys": [
+        "city:palermo",
+        "place:palermo/bar-alba",
+        "kind:bar"
+      ],
+      "source": {
+        "from": "here",
+        "ref": "it/cities/palermo.ts#bar-alba/here/line 1",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "here:palermo/pani-ca-meusa-ballaro:6",
+      "kind": "about-this-place",
+      "headline": "About this street-food stall",
+      "rows": [],
+      "note": "Pani ca' meusa is spleen simmered in lard. The vendor asks \"schietta o maritata?\": plain with lemon, or \"married\" with ricotta and caciocavallo.",
+      "level": "A1",
+      "keys": [
+        "city:palermo",
+        "place:palermo/pani-ca-meusa-ballaro",
+        "kind:street-food"
+      ],
+      "source": {
+        "from": "here",
+        "ref": "it/cities/palermo.ts#pani-ca-meusa-ballaro/here/line 12",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -8243,7 +8646,7 @@
       "kind": "about-this-place",
       "headline": "About this landmark",
       "rows": [],
-      "note": "The Pantheon was rebuilt under Emperor Hadrian around 126 AD. Its dome is still the largest unreinforced concrete dome in the world, with an open oculus at the top, so rain falls straight inside.",
+      "note": "Hadrian rebuilt this Roman temple around 126 AD, and it has been a church since 609. Its dome, with an open oculus at the top, is still the largest unreinforced concrete dome in the world.",
       "level": "A1",
       "keys": [
         "city:roma-nuova",
@@ -8254,7 +8657,7 @@
         "from": "place",
         "ref": "it/cities/roma-nuova.ts#pantheon-rotonda",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -8262,7 +8665,7 @@
       "kind": "about-this-place",
       "headline": "About this church",
       "rows": [],
-      "note": "Il Gesù is the mother church of the Jesuits, finished in the 1500s. Ignatius of Loyola, who founded the order, is buried here in a richly decorated chapel.",
+      "note": "This is the mother church of the Jesuits, built in the late 1500s. Ignatius of Loyola, who founded the order, is buried here. The Baroque ceiling fresco seems to spill out of its frame.",
       "level": "A1",
       "keys": [
         "city:roma-nuova",
@@ -8273,7 +8676,7 @@
         "from": "place",
         "ref": "it/cities/roma-nuova.ts#gesu-piazza",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -8281,7 +8684,7 @@
       "kind": "about-this-place",
       "headline": "About this park",
       "rows": [],
-      "note": "Villa Borghese began in the 1600s as the gardens of Cardinal Scipione Borghese. His villa is now the Galleria Borghese, which holds famous sculptures by Bernini.",
+      "note": "Cardinal Scipione Borghese laid out these grounds in the early 1600s. The Borghese Gallery inside the park still holds his art collection, including sculptures by Bernini. The park became public in the early 1900s.",
       "level": "A1",
       "keys": [
         "city:roma-nuova",
@@ -8292,7 +8695,7 @@
         "from": "place",
         "ref": "it/cities/roma-nuova.ts#villa-borghese-nuova",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -8300,7 +8703,7 @@
       "kind": "about-this-place",
       "headline": "About this piazza",
       "rows": [],
-      "note": "Piazza Navona follows the shape of an ancient Roman stadium built by Emperor Domitian for athletic games. Its long oval is why the square is so unusually shaped. Bernini's Fountain of the Four Rivers stands at its center.",
+      "note": "The long oval shape follows the stadium that Emperor Domitian built here in the first century AD. Bernini's Fountain of the Four Rivers stands at its centre.",
       "level": "A1",
       "keys": [
         "city:roma-nuova",
@@ -8311,7 +8714,7 @@
         "from": "place",
         "ref": "it/cities/roma-nuova.ts#piazza-navona",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -8319,7 +8722,7 @@
       "kind": "about-this-place",
       "headline": "About this church",
       "rows": [],
-      "note": "Santa Maria in Trastevere is one of the oldest churches in Rome, with origins in the 200s. The present building dates from the 1100s, and its apse and facade glow with golden mosaics.",
+      "note": "This is one of the oldest churches in Rome, first built in the 200s and rebuilt in the 1100s. Its glittering medieval mosaics are the highlight.",
       "level": "A1",
       "keys": [
         "city:roma-nuova",
@@ -8330,7 +8733,7 @@
         "from": "place",
         "ref": "it/cities/roma-nuova.ts#basilica-santa-maria",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -8338,7 +8741,7 @@
       "kind": "about-this-place",
       "headline": "About this landmark",
       "rows": [],
-      "note": "The Colosseum opened in 80 AD and could hold around 50,000 spectators. Romans came to watch gladiator fights and other public spectacles. It is the largest amphitheater the Romans ever built.",
+      "note": "Emperor Titus opened the Colosseum in 80 AD. It held tens of thousands of spectators, who came to watch gladiator fights and public spectacles. It is the largest Roman amphitheatre ever built.",
       "level": "A1",
       "keys": [
         "city:roma-nuova",
@@ -8349,7 +8752,7 @@
         "from": "place",
         "ref": "it/cities/roma-nuova.ts#colosseo",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -8357,7 +8760,7 @@
       "kind": "about-this-place",
       "headline": "About this museum",
       "rows": [],
-      "note": "This cave home is furnished as peasant families lived in the Sassi, often sharing one space with their animals. People lived in these caves until the 1950s, when they were moved to new housing.",
+      "note": "This cave home is furnished as Sassi families lived until the 1950s, when the district was emptied. A whole family often shared one room with its animals.",
       "level": "A1",
       "keys": [
         "city:matera",
@@ -8368,7 +8771,7 @@
         "from": "place",
         "ref": "it/cities/matera.ts#casa-grotta",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -8376,7 +8779,7 @@
       "kind": "about-this-place",
       "headline": "About this park",
       "rows": [],
-      "note": "Across the ravine from the Sassi, this park protects a rocky plateau full of caves and rock-hewn churches, many with medieval frescoes.",
+      "note": "Across the gorge from the Sassi, this park holds many rock-cut churches, some with painted frescoes, carved into the cliffs centuries ago.",
       "level": "A1",
       "keys": [
         "city:matera",
@@ -8387,7 +8790,7 @@
         "from": "place",
         "ref": "it/cities/matera.ts#parco-murgia",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -8395,7 +8798,7 @@
       "kind": "about-this-place",
       "headline": "About this piazza",
       "rows": [],
-      "note": "Under this square lies the Palombaro Lungo, a huge underground cistern that once stored the town's water. It was forgotten for years and rediscovered in the 1990s.",
+      "note": "Under this piazza lies the Palombaro Lungo, a huge underground cistern cut into the rock that stored water for the town.",
       "level": "A1",
       "keys": [
         "city:matera",
@@ -8406,7 +8809,7 @@
         "from": "place",
         "ref": "it/cities/matera.ts#piazza-vittorio",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -8414,7 +8817,7 @@
       "kind": "about-this-place",
       "headline": "About this piazza",
       "rows": [],
-      "note": "The cathedral on this square dates from the 13th century. It stands on the highest point of the Civita, the ridge between the two Sassi.",
+      "note": "The cathedral on this piazza stands at the highest point of the Civita. Built in the 1200s in Apulian Romanesque style, it is dedicated to the Madonna della Bruna, Matera's patron.",
       "level": "A1",
       "keys": [
         "city:matera",
@@ -8425,7 +8828,7 @@
         "from": "place",
         "ref": "it/cities/matera.ts#piazza-duomo",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -8433,7 +8836,7 @@
       "kind": "about-this-place",
       "headline": "About this landmark",
       "rows": [],
-      "note": "Butchers once worked in the shops on this bridge. In 1593 Grand Duke Ferdinando I of the Medici replaced them with goldsmiths and jewelers, and jewelry shops still line the Ponte Vecchio today.",
+      "note": "Butchers once sold meat from the shops on this bridge. In 1593 Grand Duke Ferdinando I de' Medici replaced them with goldsmiths and jewellers, and jewellers still work here today.",
       "level": "A1",
       "keys": [
         "city:firenze",
@@ -8444,7 +8847,7 @@
         "from": "place",
         "ref": "it/cities/firenze.ts#ponte-vecchio",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -8452,7 +8855,7 @@
       "kind": "about-this-place",
       "headline": "About this park",
       "rows": [],
-      "note": "The Boboli Gardens lie behind Palazzo Pitti and were laid out for the Medici family from the 1500s. They became a model for the formal gardens of other European courts.",
+      "note": "Behind Palazzo Pitti, this was the garden of the Medici family, laid out from the 1500s. It became a model for formal gardens at royal courts across Europe.",
       "level": "A1",
       "keys": [
         "city:firenze",
@@ -8463,7 +8866,7 @@
         "from": "place",
         "ref": "it/cities/firenze.ts#giardino-boboli",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -8471,7 +8874,7 @@
       "kind": "about-this-place",
       "headline": "About this piazza",
       "rows": [],
-      "note": "Michelangelo's David stood here, at the door of Palazzo Vecchio, from 1504 until 1873. The statue you see there now is a copy; the original is indoors in the Accademia.",
+      "note": "It has been the political heart of Florence since the Middle Ages, in front of Palazzo Vecchio, the town hall. A copy of Michelangelo's David stands where the original was until 1873.",
       "level": "A1",
       "keys": [
         "city:firenze",
@@ -8482,7 +8885,26 @@
         "from": "place",
         "ref": "it/cities/firenze.ts#piazza-signoria",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "place:firenze/santo-spirito-scalini",
+      "kind": "about-this-place",
+      "headline": "About this church",
+      "rows": [],
+      "note": "Brunelleschi designed it in the 1400s, and it was finished after his death. The façade was left plain, and a wooden crucifix attributed to Michelangelo is kept inside.",
+      "level": "A1",
+      "keys": [
+        "city:firenze",
+        "place:firenze/santo-spirito-scalini",
+        "kind:church"
+      ],
+      "source": {
+        "from": "place",
+        "ref": "it/cities/firenze.ts#santo-spirito-scalini",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -8490,7 +8912,7 @@
       "kind": "about-this-place",
       "headline": "About this piazza",
       "rows": [],
-      "note": "Every June the square is covered in sand for calcio storico, a rough old Florentine ball game played by teams from the city's historic neighborhoods in costume.",
+      "note": "Every June the square is covered in sand for calcio storico, a rough historic football game played by teams from Florence's old neighbourhoods in Renaissance costume.",
       "level": "A1",
       "keys": [
         "city:firenze",
@@ -8501,7 +8923,7 @@
         "from": "place",
         "ref": "it/cities/firenze.ts#santa-croce-piazza",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -8509,7 +8931,7 @@
       "kind": "about-this-place",
       "headline": "About this park",
       "rows": [],
-      "note": "The name comes from the cascine, the dairy farms of the Medici estate that once stood here. The land later became a public park running along the Arno.",
+      "note": "Its name comes from cascine, the dairy farms of the Medici estate it once was. Today it is Florence's largest park, stretching for miles along the Arno river.",
       "level": "A1",
       "keys": [
         "city:firenze",
@@ -8520,7 +8942,7 @@
         "from": "place",
         "ref": "it/cities/firenze.ts#parco-cascine",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -8528,7 +8950,7 @@
       "kind": "about-this-place",
       "headline": "About this piazza",
       "rows": [],
-      "note": "The square slopes down like a shell, split into nine sections by lines of pale stone. Twice each summer, the Palio horse race is run around its edge on a track of packed earth.",
+      "note": "Twice each summer, the Palio horse race is run here. Riders from ten of the seventeen city districts race bareback around the shell-shaped square, which is covered with packed earth for the occasion.",
       "level": "A1",
       "keys": [
         "city:siena",
@@ -8539,7 +8961,7 @@
         "from": "place",
         "ref": "it/cities/siena.ts#piazza-del-campo",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -8547,7 +8969,7 @@
       "kind": "about-this-place",
       "headline": "About this piazza",
       "rows": [],
-      "note": "The Palazzo Salimbeni, on this square, is the headquarters of Monte dei Paschi, a bank founded in 1472 and often called the oldest bank still operating in the world.",
+      "note": "The Gothic palace on this square is the headquarters of Monte dei Paschi, a bank founded in 1472 and often called the oldest surviving bank in the world.",
       "level": "A1",
       "keys": [
         "city:siena",
@@ -8558,7 +8980,26 @@
         "from": "place",
         "ref": "it/cities/siena.ts#piazza-salimbeni",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "place:siena/torre-del-mangia",
+      "kind": "about-this-place",
+      "headline": "About this landmark",
+      "rows": [],
+      "note": "This 14th-century tower is named after its first bell ringer, nicknamed Mangiaguadagni, meaning \"profit-eater.\" Visitors can climb its roughly 400 steps for a view over the rooftops.",
+      "level": "A1",
+      "keys": [
+        "city:siena",
+        "place:siena/torre-del-mangia",
+        "kind:landmark"
+      ],
+      "source": {
+        "from": "place",
+        "ref": "it/cities/siena.ts#torre-del-mangia",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -8566,7 +9007,7 @@
       "kind": "about-this-place",
       "headline": "About this market",
       "rows": [],
-      "note": "Rialto has been the trading heart of Venice since the Middle Ages. Its fish market still sells the catch of the lagoon and the Adriatic, fresh each morning.",
+      "note": "Rialto has been the commercial heart of Venice for about a thousand years. Fresh fish and produce are still sold here in the morning, close to the Grand Canal.",
       "level": "A1",
       "keys": [
         "city:venezia",
@@ -8577,7 +9018,7 @@
         "from": "place",
         "ref": "it/cities/venezia.ts#mercato-rialto",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -8585,7 +9026,7 @@
       "kind": "about-this-place",
       "headline": "About this landmark",
       "rows": [],
-      "note": "Until 1854 this was the only bridge across the Grand Canal. The stone bridge was finished in 1591, and wooden bridges stood here before it.",
+      "note": "This stone bridge was finished in 1591 and designed by Antonio da Ponte. Until 1854 it was the only way to cross the Grand Canal on foot.",
       "level": "A1",
       "keys": [
         "city:venezia",
@@ -8596,7 +9037,7 @@
         "from": "place",
         "ref": "it/cities/venezia.ts#ponte-rialto",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -8604,7 +9045,7 @@
       "kind": "about-this-place",
       "headline": "About this piazza",
       "rows": [],
-      "note": "One of the largest squares in Venice, it fills with students in the evening because the university is close by. Cafés and bars spill out across it.",
+      "note": "It is one of the largest squares in Venice. Students from the nearby university fill its cafés and bars, so it stays lively into the evening.",
       "level": "A1",
       "keys": [
         "city:venezia",
@@ -8615,7 +9056,26 @@
         "from": "place",
         "ref": "it/cities/venezia.ts#campo-santa-margherita",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "place:venezia/campo-dei-mori",
+      "kind": "about-this-place",
+      "headline": "About this piazza",
+      "rows": [],
+      "note": "Statues of men in turbans line the square. Tradition says they show merchant brothers from the Morea in Greece, who settled in Venice in the 1100s.",
+      "level": "A1",
+      "keys": [
+        "city:venezia",
+        "place:venezia/campo-dei-mori",
+        "kind:piazza"
+      ],
+      "source": {
+        "from": "place",
+        "ref": "it/cities/venezia.ts#campo-dei-mori",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -8623,7 +9083,7 @@
       "kind": "about-this-place",
       "headline": "About this market",
       "rows": [],
-      "note": "Pignasecca is one of the oldest street markets in the city. Stalls of fish, vegetables, cheese and street food fill its narrow lanes, and locals have shopped here for generations.",
+      "note": "One of the oldest street markets in Naples, it has been running for centuries. Stalls sell fresh fish, fruit, vegetables and cheese, and you can eat street food as you walk.",
       "level": "A1",
       "keys": [
         "city:napoli",
@@ -8634,15 +9094,15 @@
         "from": "place",
         "ref": "it/cities/napoli.ts#mercato-pignasecca",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
       "id": "place:napoli/castel-ovo",
       "kind": "about-this-place",
-      "headline": "About this landmark",
+      "headline": "About this castle",
       "rows": [],
-      "note": "Castel dell'Ovo stands on a tiny islet in the bay and is the oldest castle in the city. Legend says the poet Virgil hid an egg in its foundations, which gave it its name.",
+      "note": "It stands on a tiny islet and is the oldest castle in Naples. Legend says the poet Virgil hid an egg in its foundations; if it breaks, the castle and the city will fall.",
       "level": "A1",
       "keys": [
         "city:napoli",
@@ -8653,7 +9113,7 @@
         "from": "place",
         "ref": "it/cities/napoli.ts#castel-ovo",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -8661,7 +9121,7 @@
       "kind": "about-this-place",
       "headline": "About this piazza",
       "rows": [],
-      "note": "In the middle of Piazza Bellini, a sunken excavation shows stretches of the ancient Greek city walls. They are more than 2,000 years old, and you can look down at them from the piazza.",
+      "note": "Pieces of the ancient Greek walls of Neapolis, from the 4th century BC, can be seen in a sunken area in the middle of the piazza.",
       "level": "A1",
       "keys": [
         "city:napoli",
@@ -8672,26 +9132,7 @@
         "from": "place",
         "ref": "it/cities/napoli.ts#piazza-bellini",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
-      }
-    },
-    {
-      "id": "place:bologna/due-torri",
-      "kind": "about-this-place",
-      "headline": "About this landmark",
-      "rows": [],
-      "note": "Bologna's two medieval towers, Asinelli and Garisenda, date from the 1100s. The Asinelli is about 97 metres tall and you can climb its 498 steps. The shorter Garisenda leans noticeably.",
-      "level": "A1",
-      "keys": [
-        "city:bologna",
-        "place:bologna/due-torri",
-        "kind:landmark"
-      ],
-      "source": {
-        "from": "place",
-        "ref": "it/cities/bologna.ts#due-torri",
-        "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -8699,7 +9140,7 @@
       "kind": "about-this-place",
       "headline": "About this church",
       "rows": [],
-      "note": "Santo Stefano is not one church but a cluster of linked churches and courtyards, known as the Sette Chiese, the Seven Churches. You walk from one ancient space into the next.",
+      "note": "It's a cluster of linked chapels and courtyards, often called the Sette Chiese, the Seven Churches. It was built to recall the holy sites of Jerusalem.",
       "level": "A1",
       "keys": [
         "city:bologna",
@@ -8710,7 +9151,7 @@
         "from": "place",
         "ref": "it/cities/bologna.ts#santo-stefano",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -8718,7 +9159,7 @@
       "kind": "about-this-place",
       "headline": "About this piazza",
       "rows": [],
-      "note": "Piazza Maggiore is Bologna's main square. The huge Basilica di San Petronio on one side has a front left unfinished: marble covers only the lower part, and plain brick shows above.",
+      "note": "The huge basilica of San Petronio on this square was never finished. Its facade is marble only on the lower part, and the upper part is still bare brick.",
       "level": "A1",
       "keys": [
         "city:bologna",
@@ -8729,7 +9170,26 @@
         "from": "place",
         "ref": "it/cities/bologna.ts#piazza-maggiore",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "place:bologna/piazza-verdi",
+      "kind": "about-this-place",
+      "headline": "About this piazza",
+      "rows": [],
+      "note": "It sits in front of the Teatro Comunale, Bologna's opera house, open since 1763. In the university quarter, it's also a place where students gather in the evening.",
+      "level": "A1",
+      "keys": [
+        "city:bologna",
+        "place:bologna/piazza-verdi",
+        "kind:piazza"
+      ],
+      "source": {
+        "from": "place",
+        "ref": "it/cities/bologna.ts#piazza-verdi",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -8737,7 +9197,7 @@
       "kind": "about-this-place",
       "headline": "About this landmark",
       "rows": [],
-      "note": "The Portici di San Luca form the longest covered arcade in the world, about 3.8 kilometres with 666 arches. It climbs from the edge of the city to the Sanctuary of the Madonna di San Luca.",
+      "note": "This is the longest portico in the world: about 3.8 kilometres and 666 arches. It leads from the city gate up the hill to the sanctuary of the Madonna di San Luca.",
       "level": "A1",
       "keys": [
         "city:bologna",
@@ -8748,7 +9208,7 @@
         "from": "place",
         "ref": "it/cities/bologna.ts#portici-san-luca",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -8756,7 +9216,7 @@
       "kind": "about-this-place",
       "headline": "About this landmark",
       "rows": [],
-      "note": "The Archiginnasio was the main building of the University of Bologna from 1563 until 1803. Inside is the Anatomical Theatre, a carved wooden lecture hall where anatomy was taught. Today it houses a library.",
+      "note": "Built in 1563 as the first permanent home of the University of Bologna. Its walls and vaults are covered with thousands of students' coats of arms. Inside is a carved wooden anatomy theatre.",
       "level": "A1",
       "keys": [
         "city:bologna",
@@ -8767,7 +9227,7 @@
         "from": "place",
         "ref": "it/cities/bologna.ts#archiginnasio",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -8775,7 +9235,7 @@
       "kind": "about-this-place",
       "headline": "About this market",
       "rows": [],
-      "note": "One of Palermo's oldest street markets, with roots in the Arab period. Vendors call out their goods in loud, singsong Sicilian, a habit known as abbanniare. It's also famous for street food.",
+      "note": "One of Palermo's oldest street markets, with roots in the Arab period. Stalls sell produce, fish and street food like panelle, and vendors still call out their wares.",
       "level": "A1",
       "keys": [
         "city:palermo",
@@ -8786,45 +9246,7 @@
         "from": "place",
         "ref": "it/cities/palermo.ts#mercato-ballaro",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
-      }
-    },
-    {
-      "id": "place:palermo/teatro-massimo",
-      "kind": "about-this-place",
-      "headline": "About this theatre",
-      "rows": [],
-      "note": "Teatro Massimo is the largest opera house in Italy, opened in 1897 after more than twenty years of building. Its steps are the setting for the final scene of The Godfather Part III.",
-      "level": "A1",
-      "keys": [
-        "city:palermo",
-        "place:palermo/teatro-massimo",
-        "kind:landmark"
-      ],
-      "source": {
-        "from": "place",
-        "ref": "it/cities/palermo.ts#teatro-massimo",
-        "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
-      }
-    },
-    {
-      "id": "place:palermo/giardino-garibaldi",
-      "kind": "about-this-place",
-      "headline": "About this park",
-      "rows": [],
-      "note": "Giardino Garibaldi is known for its giant ficus trees. Roots hang down from the branches and grow into thick extra trunks, so each tree looks like a small forest.",
-      "level": "A1",
-      "keys": [
-        "city:palermo",
-        "place:palermo/giardino-garibaldi",
-        "kind:park"
-      ],
-      "source": {
-        "from": "place",
-        "ref": "it/cities/palermo.ts#giardino-garibaldi",
-        "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -8832,7 +9254,7 @@
       "kind": "about-this-place",
       "headline": "About this piazza",
       "rows": [],
-      "note": "Its huge fountain was made in Florence in the 1500s and bought by Palermo. Because of its many nude statues, locals nicknamed the square the Piazza della Vergogna, the Square of Shame.",
+      "note": "The fountain was made in Florence in the 1500s and bought by Palermo. Its many nude statues scandalized locals, who nicknamed it the Fountain of Shame.",
       "level": "A1",
       "keys": [
         "city:palermo",
@@ -8843,7 +9265,7 @@
         "from": "place",
         "ref": "it/cities/palermo.ts#piazza-pretoria",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -8851,7 +9273,7 @@
       "kind": "about-this-place",
       "headline": "About this piazza",
       "rows": [],
-      "note": "Four curved Baroque facades from the early 1600s stand where Palermo's two main streets cross, dividing the old city into four districts. Each facade has a fountain, a season, a Spanish king and a patron saint.",
+      "note": "Four curved baroque facades, built in the early 1600s, meet where Palermo's two main streets cross, dividing the old centre into four districts. Each carries a fountain, a Spanish king and a patron saint.",
       "level": "A1",
       "keys": [
         "city:palermo",
@@ -8862,28 +9284,108 @@
         "from": "place",
         "ref": "it/cities/palermo.ts#quattro-canti",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "compare:language:il-panino-o-la-pizzetta-il-panino-lo-prendo-la-p",
+      "id": "compare:language:buongiorno-buonasera",
+      "kind": "this-or-that",
+      "headline": "This or that: hello",
+      "rows": [
+        {
+          "text": "Buongiorno!",
+          "en": "Good morning. Say it until early afternoon."
+        },
+        {
+          "text": "Buonasera!",
+          "en": "Good evening. Say it from mid-afternoon."
+        }
+      ],
+      "note": "Salve is a safe, neutral hello when you're unsure how formal to be.",
+      "level": "A1",
+      "keys": [
+        "unit:a1-01"
+      ],
+      "source": {
+        "from": "syllabus",
+        "ref": "it/syllabus.json#grammar_inventory/greeting-by-time-of-day-buongiorno-buonasera-buo",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "compare:language:come-stai-come-sta",
+      "kind": "this-or-that",
+      "headline": "This or that: how are you?",
+      "rows": [
+        {
+          "text": "Come stai?",
+          "en": "How are you? To a friend."
+        },
+        {
+          "text": "Come sta?",
+          "en": "How are you? To a stranger or shopkeeper."
+        }
+      ],
+      "note": "Use tu with friends, children and people your age; use Lei with strangers, shopkeepers and officials.",
+      "level": "A1",
+      "keys": [
+        "unit:a1-01"
+      ],
+      "source": {
+        "from": "syllabus",
+        "ref": "it/syllabus.json#grammar_inventory/tu-and-lei-as-two-sets-of-chunks-come-stai-come-",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "compare:language:mi-piace-il-te-anche-a-me-a-me-no",
+      "kind": "this-or-that",
+      "headline": "This or that: me too?",
+      "rows": [
+        {
+          "text": "Mi piace il tè.",
+          "en": "I like tea."
+        },
+        {
+          "text": "Anche a me!",
+          "en": "Me too, I like it as well."
+        },
+        {
+          "text": "A me no.",
+          "en": "Not me, I don't like it."
+        }
+      ],
+      "level": "A1",
+      "keys": [
+        "unit:a1-11"
+      ],
+      "source": {
+        "from": "syllabus",
+        "ref": "it/syllabus.json#grammar_inventory/ti-piace-le-piace-anche-a-me-neanche-a-me-a-me-n",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "compare:language:il-maglione-o-la-giacca-lo-prendo-grazie-la-pren",
       "kind": "this-or-that",
       "headline": "This or that: I'll take it",
       "rows": [
         {
-          "text": "Il panino o la pizzetta?",
-          "en": "The roll or the little pizza?"
+          "text": "Il maglione o la giacca?",
+          "en": "The sweater or the jacket?"
         },
         {
-          "text": "Il panino? Lo prendo.",
-          "en": "The roll? I'll take it."
+          "text": "Lo prendo, grazie.",
+          "en": "I'll take the sweater, thanks."
         },
         {
-          "text": "La pizzetta? La prendo.",
-          "en": "The little pizza? I'll take it."
+          "text": "La prendo, grazie.",
+          "en": "I'll take the jacket, thanks."
         }
       ],
-      "note": "Lo stands for a masculine thing and la for a feminine one.",
       "level": "A2",
       "keys": [
         "unit:a2-03"
@@ -8892,259 +9394,117 @@
         "from": "syllabus",
         "ref": "it/syllabus.json#grammar_inventory/lo-prendo-la-prendo-as-chunks",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "compare:language:quando-sei-libero-lunedi-il-lunedi",
+      "id": "compare:language:dove-abiti-abito-in-italia-abito-negli-stati-uni",
       "kind": "this-or-that",
-      "headline": "This or that: one day or every week",
+      "headline": "This or that: where you live",
       "rows": [
         {
-          "text": "Quando sei libero?",
-          "en": "When are you free?"
+          "text": "Dove abiti?",
+          "en": "Where do you live?"
         },
         {
-          "text": "Lunedì.",
-          "en": "This coming Monday."
+          "text": "Abito in Italia.",
+          "en": "I live in Italy."
         },
         {
-          "text": "Il lunedì.",
-          "en": "Every Monday, week after week."
+          "text": "Abito negli Stati Uniti.",
+          "en": "I live in the United States."
         }
       ],
-      "level": "A1",
-      "keys": [
-        "unit:a1-08"
-      ],
-      "source": {
-        "from": "syllabus",
-        "ref": "it/syllabus.json#grammar_inventory/days-need-no-preposition-lunedi-this-monday-il-l",
-        "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
-      }
-    },
-    {
-      "id": "compare:language:desidera-vorrei-un-po-di-pane-vorrei-del-pane",
-      "kind": "this-or-that",
-      "headline": "This or that: asking for some",
-      "rows": [
-        {
-          "text": "Desidera?",
-          "en": "What would you like?"
-        },
-        {
-          "text": "Vorrei un po' di pane.",
-          "en": "I'd like some bread."
-        },
-        {
-          "text": "Vorrei del pane.",
-          "en": "I'd like some bread, said another way."
-        }
-      ],
-      "note": "Un po' di is the easy way to say 'some'. Del and della also mean 'some'.",
-      "level": "A1",
-      "keys": [
-        "unit:a1-06"
-      ],
-      "source": {
-        "from": "syllabus",
-        "ref": "it/syllabus.json#grammar_inventory/un-po-di-for-some-del-della-as-a-chunk-vorrei-de",
-        "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
-      }
-    },
-    {
-      "id": "compare:language:quando-sei-arrivato-due-giorni-fa-la-settimana-s",
-      "kind": "this-or-that",
-      "headline": "This or that: how long ago",
-      "rows": [
-        {
-          "text": "Quando sei arrivato?",
-          "en": "When did you arrive?"
-        },
-        {
-          "text": "Due giorni fa.",
-          "en": "Two days ago."
-        },
-        {
-          "text": "La settimana scorsa.",
-          "en": "Last week."
-        }
-      ],
-      "note": "Fa after a time means 'ago'. Scorso means 'last'.",
-      "level": "A1",
-      "keys": [
-        "unit:a1-15"
-      ],
-      "source": {
-        "from": "syllabus",
-        "ref": "it/syllabus.json#grammar_inventory/time-words-ieri-sabato-scorso-due-giorni-fa-sequ",
-        "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
-      }
-    },
-    {
-      "id": "compare:language:com-e-il-caffe-secondo-me-e-buono-per-me-e-buono",
-      "kind": "this-or-that",
-      "headline": "This or that: giving your opinion",
-      "rows": [
-        {
-          "text": "Com'è il caffè?",
-          "en": "How's the coffee?"
-        },
-        {
-          "text": "Secondo me è buono.",
-          "en": "In my opinion, it's good."
-        },
-        {
-          "text": "Per me è buono.",
-          "en": "To me, it's good. Same meaning."
-        }
-      ],
+      "note": "Most countries just take in, but a plural one like the United States says negli.",
       "level": "A2",
       "keys": [
-        "unit:a2-10"
+        "unit:a2-14"
       ],
       "source": {
         "from": "syllabus",
-        "ref": "it/syllabus.json#grammar_inventory/secondo-me-per-me-indicative",
+        "ref": "it/syllabus.json#grammar_inventory/in-with-plural-countries-takes-the-article-negli",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "compare:language:telefoni-a-marco-o-a-giulia-a-marco-gli-telefono",
+      "id": "compare:language:dove-vai-vado-al-bar-vado-in-farmacia",
       "kind": "this-or-that",
-      "headline": "This or that: him or her",
+      "headline": "This or that: going places",
       "rows": [
         {
-          "text": "Telefoni a Marco o a Giulia?",
-          "en": "Are you phoning Marco or Giulia?"
+          "text": "Dove vai?",
+          "en": "Where are you going?"
         },
         {
-          "text": "A Marco? Gli telefono.",
-          "en": "Marco? I phone him."
+          "text": "Vado al bar.",
+          "en": "I'm going to the café."
         },
         {
-          "text": "A Giulia? Le telefono.",
-          "en": "Giulia? I phone her."
+          "text": "Vado in farmacia.",
+          "en": "I'm going to the pharmacy."
         }
       ],
-      "level": "A2",
-      "keys": [
-        "unit:a2-07"
-      ],
-      "source": {
-        "from": "syllabus",
-        "ref": "it/syllabus.json#grammar_inventory/indirect-object-pronouns-mi-ti-gli-to-him-le-to-",
-        "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
-      }
-    },
-    {
-      "id": "compare:language:di-chi-e-e-di-marco-e-mio",
-      "kind": "this-or-that",
-      "headline": "This or that: whose is it",
-      "rows": [
-        {
-          "text": "Di chi è?",
-          "en": "Whose is it?"
-        },
-        {
-          "text": "È di Marco.",
-          "en": "It's Marco's."
-        },
-        {
-          "text": "È mio.",
-          "en": "It's mine."
-        }
-      ],
-      "note": "The answer can use di with a name, or a possessive on its own.",
-      "level": "A2",
-      "keys": [
-        "unit:a2-01"
-      ],
-      "source": {
-        "from": "syllabus",
-        "ref": "it/syllabus.json#grammar_inventory/di-chi-e-for-whose",
-        "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
-      }
-    },
-    {
-      "id": "compare:language:sono-americano-sono-americana",
-      "kind": "this-or-that",
-      "headline": "This or that: saying your nationality",
-      "rows": [
-        {
-          "text": "Sono americano.",
-          "en": "I'm American, said by a man."
-        },
-        {
-          "text": "Sono americana.",
-          "en": "I'm American, said by a woman."
-        }
-      ],
-      "note": "Words ending in -e stay the same for both: sono inglese.",
-      "level": "A1",
-      "keys": [
-        "unit:a1-03"
-      ],
-      "source": {
-        "from": "syllabus",
-        "ref": "it/syllabus.json#grammar_inventory/nationality-adjectives-agree-americano-americana",
-        "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
-      }
-    },
-    {
-      "id": "compare:language:giro-a-destra-o-a-sinistra-a-destra-a-sinistra",
-      "kind": "this-or-that",
-      "headline": "This or that: which way to turn",
-      "rows": [
-        {
-          "text": "Giro a destra o a sinistra?",
-          "en": "Do I turn right or left?"
-        },
-        {
-          "text": "A destra.",
-          "en": "Turn right."
-        },
-        {
-          "text": "A sinistra.",
-          "en": "Turn left."
-        }
-      ],
+      "note": "Each kind of place has its own small word, so learn them as chunks: al bar, in farmacia, dal medico.",
       "level": "A1",
       "keys": [
         "unit:a1-07"
       ],
       "source": {
         "from": "syllabus",
-        "ref": "it/syllabus.json#grammar_inventory/place-words-vicino-a-accanto-a-davanti-a-di-fron",
+        "ref": "it/syllabus.json#grammar_inventory/places-with-a-in-da-as-chunks-al-bar-alla-stazio",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "compare:language:a-che-ora-all-una-a-mezzogiorno",
+      "id": "compare:language:come-vai-vado-in-treno-vado-a-piedi",
+      "kind": "this-or-that",
+      "headline": "This or that: getting there",
+      "rows": [
+        {
+          "text": "Come vai?",
+          "en": "How are you getting there?"
+        },
+        {
+          "text": "Vado in treno.",
+          "en": "I'm going by train."
+        },
+        {
+          "text": "Vado a piedi.",
+          "en": "I'm going on foot."
+        }
+      ],
+      "level": "A1",
+      "keys": [
+        "unit:a1-13"
+      ],
+      "source": {
+        "from": "syllabus",
+        "ref": "it/syllabus.json#grammar_inventory/in-transport-in-treno-in-autobus-but-a-piedi",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "compare:language:a-che-ora-ci-vediamo-alle-otto-all-una",
       "kind": "this-or-that",
       "headline": "This or that: at what time",
       "rows": [
         {
-          "text": "A che ora?",
-          "en": "At what time?"
+          "text": "A che ora ci vediamo?",
+          "en": "What time shall we meet?"
+        },
+        {
+          "text": "Alle otto.",
+          "en": "At eight."
         },
         {
           "text": "All'una.",
-          "en": "At one o'clock."
-        },
-        {
-          "text": "A mezzogiorno.",
-          "en": "At noon."
+          "en": "At one."
         }
       ],
+      "note": "For noon, say a mezzogiorno.",
       "level": "A1",
       "keys": [
         "unit:a1-08"
@@ -9153,7 +9513,7 @@
         "from": "syllabus",
         "ref": "it/syllabus.json#grammar_inventory/alle-hour-all-una-a-mezzogiorno-dalle-alle",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
@@ -9174,7 +9534,7 @@
           "en": "It's one o'clock."
         }
       ],
-      "note": "One o'clock, noon and midnight take è. Every other hour takes sono le.",
+      "note": "Noon and midnight also take è: è mezzogiorno, è mezzanotte.",
       "level": "A1",
       "keys": [
         "unit:a1-08"
@@ -9183,23 +9543,24 @@
         "from": "syllabus",
         "ref": "it/syllabus.json#grammar_inventory/sono-le-hour-but-e-l-una-e-mezzogiorno-e-mezzano",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
       "id": "compare:language:dov-e-il-bagno-dove-sono-i-bagni",
       "kind": "this-or-that",
-      "headline": "This or that: one thing or several",
+      "headline": "This or that: where is it?",
       "rows": [
         {
           "text": "Dov'è il bagno?",
-          "en": "Where's the bathroom? Just one."
+          "en": "Where's the bathroom? Asking about one."
         },
         {
           "text": "Dove sono i bagni?",
-          "en": "Where are the bathrooms? More than one."
+          "en": "Where are the bathrooms? Asking about several."
         }
       ],
+      "note": "Dov'è asks where one thing is, and dove sono asks where several things are.",
       "level": "A1",
       "keys": [
         "unit:a1-07"
@@ -9208,77 +9569,46 @@
         "from": "syllabus",
         "ref": "it/syllabus.json#grammar_inventory/dov-e-dove-sono",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "compare:language:come-vai-vado-in-treno-vado-a-piedi",
+      "id": "compare:language:di-chi-e-e-di-marco-e-mio",
       "kind": "this-or-that",
-      "headline": "This or that: how you get there",
+      "headline": "This or that: whose is it?",
       "rows": [
         {
-          "text": "Come vai?",
-          "en": "How do you get there?"
+          "text": "Di chi è?",
+          "en": "Whose is it?"
         },
         {
-          "text": "Vado in treno.",
-          "en": "I go by train."
+          "text": "È di Marco.",
+          "en": "It's Marco's."
         },
         {
-          "text": "Vado a piedi.",
-          "en": "I go on foot."
+          "text": "È mio.",
+          "en": "It's mine."
         }
       ],
-      "note": "Transport takes in with no article. On foot is a piedi.",
-      "level": "A1",
+      "level": "A2",
       "keys": [
-        "unit:a1-13"
+        "unit:a2-01"
       ],
       "source": {
         "from": "syllabus",
-        "ref": "it/syllabus.json#grammar_inventory/in-transport-in-treno-in-autobus-but-a-piedi",
+        "ref": "it/syllabus.json#grammar_inventory/di-chi-e-for-whose",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "compare:language:dove-vai-vado-al-bar-vado-in-farmacia",
+      "id": "compare:language:questo-o-quello-questo-grazie-quello-li-grazie",
       "kind": "this-or-that",
-      "headline": "This or that: where you're going",
+      "headline": "This or that: pointing",
       "rows": [
         {
-          "text": "Dove vai?",
-          "en": "Where are you going?"
-        },
-        {
-          "text": "Vado al bar.",
-          "en": "I'm going to the café."
-        },
-        {
-          "text": "Vado in farmacia.",
-          "en": "I'm going to the pharmacy."
-        }
-      ],
-      "note": "Each kind of place has its own little word. Learn them as chunks, like dal medico for the doctor's.",
-      "level": "A1",
-      "keys": [
-        "unit:a1-07"
-      ],
-      "source": {
-        "from": "syllabus",
-        "ref": "it/syllabus.json#grammar_inventory/places-with-a-in-da-as-chunks-al-bar-alla-stazio",
-        "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
-      }
-    },
-    {
-      "id": "compare:language:quale-vuole-questo-grazie-quello-li-grazie",
-      "kind": "this-or-that",
-      "headline": "This or that: pointing at it",
-      "rows": [
-        {
-          "text": "Quale vuole?",
-          "en": "Which one do you want?"
+          "text": "Questo o quello?",
+          "en": "This one or that one?"
         },
         {
           "text": "Questo, grazie.",
@@ -9289,7 +9619,7 @@
           "en": "That one over there, thanks."
         }
       ],
-      "note": "Handy when you don't know the word for it.",
+      "note": "Handy when you don't know the word for the thing.",
       "level": "A1",
       "keys": [
         "unit:a1-06"
@@ -9298,24 +9628,372 @@
         "from": "syllabus",
         "ref": "it/syllabus.json#grammar_inventory/questo-and-quello-as-pronouns-questo-quello-li-p",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "compare:places:roma-nuova-palermo:a-roma-il-suppli-a-palermo-l-arancina",
+      "id": "compare:language:vorrei-un-po-di-pane-vorrei-del-pane",
+      "kind": "this-or-that",
+      "headline": "This or that: some bread",
+      "rows": [
+        {
+          "text": "Vorrei un po' di pane.",
+          "en": "I'd like some bread."
+        },
+        {
+          "text": "Vorrei del pane.",
+          "en": "I'd like some bread. Same thing."
+        }
+      ],
+      "note": "Both mean 'some'. Un po' di is the easy way to say it.",
+      "level": "A1",
+      "keys": [
+        "unit:a1-06"
+      ],
+      "source": {
+        "from": "syllabus",
+        "ref": "it/syllabus.json#grammar_inventory/un-po-di-for-some-del-della-as-a-chunk-vorrei-de",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "compare:language:quanto-ne-vuole-un-chilo-di-pomodori-due-etti-di",
+      "kind": "this-or-that",
+      "headline": "This or that: how much",
+      "rows": [
+        {
+          "text": "Quanto ne vuole?",
+          "en": "How much do you want?"
+        },
+        {
+          "text": "Un chilo di pomodori.",
+          "en": "A kilo of tomatoes."
+        },
+        {
+          "text": "Due etti di prosciutto.",
+          "en": "Two hundred grams of ham."
+        }
+      ],
+      "note": "Di links the amount to the food.",
+      "level": "A1",
+      "keys": [
+        "unit:a1-09"
+      ],
+      "source": {
+        "from": "syllabus",
+        "ref": "it/syllabus.json#grammar_inventory/quantity-di-un-chilo-di-mezzo-chilo-di-un-etto-d",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "compare:language:cosa-prende-come-primo-la-pasta-per-dolce-un-gel",
+      "kind": "this-or-that",
+      "headline": "This or that: ordering by course",
+      "rows": [
+        {
+          "text": "Cosa prende?",
+          "en": "What will you have?"
+        },
+        {
+          "text": "Come primo, la pasta.",
+          "en": "For the first course, the pasta."
+        },
+        {
+          "text": "Per dolce, un gelato.",
+          "en": "For dessert, an ice cream."
+        }
+      ],
+      "level": "A2",
+      "keys": [
+        "unit:a2-03"
+      ],
+      "source": {
+        "from": "syllabus",
+        "ref": "it/syllabus.json#grammar_inventory/courses-as-fixed-phrases-come-primo-come-secondo",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "compare:language:vai-spesso-al-bar-si-vado-spesso-no-non-vado-mai",
+      "kind": "this-or-that",
+      "headline": "This or that: how often",
+      "rows": [
+        {
+          "text": "Vai spesso al bar?",
+          "en": "Do you often go to the café?"
+        },
+        {
+          "text": "Sì, vado spesso.",
+          "en": "Yes, I go often."
+        },
+        {
+          "text": "No, non vado mai.",
+          "en": "No, I never go."
+        }
+      ],
+      "level": "A2",
+      "keys": [
+        "unit:a2-02"
+      ],
+      "source": {
+        "from": "syllabus",
+        "ref": "it/syllabus.json#grammar_inventory/frequency-di-solito-spesso-ogni-tanto-non-mai",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "compare:language:sono-americano-sono-americana-sono-inglese",
+      "kind": "this-or-that",
+      "headline": "This or that: I'm American",
+      "rows": [
+        {
+          "text": "Sono americano.",
+          "en": "I'm American. A man speaking."
+        },
+        {
+          "text": "Sono americana.",
+          "en": "I'm American. A woman speaking."
+        },
+        {
+          "text": "Sono inglese.",
+          "en": "I'm English. Man or woman."
+        }
+      ],
+      "note": "Words ending in -e stay the same for men and women.",
+      "level": "A1",
+      "keys": [
+        "unit:a1-03"
+      ],
+      "source": {
+        "from": "syllabus",
+        "ref": "it/syllabus.json#grammar_inventory/nationality-adjectives-agree-americano-americana",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "compare:language:a-che-piano-abiti-abito-al-primo-piano-abito-al-",
+      "kind": "this-or-that",
+      "headline": "This or that: which floor",
+      "rows": [
+        {
+          "text": "A che piano abiti?",
+          "en": "Which floor do you live on?"
+        },
+        {
+          "text": "Abito al primo piano.",
+          "en": "I live on the first floor."
+        },
+        {
+          "text": "Abito al terzo piano.",
+          "en": "I live on the third floor."
+        }
+      ],
+      "level": "A1",
+      "keys": [
+        "unit:a1-10"
+      ],
+      "source": {
+        "from": "syllabus",
+        "ref": "it/syllabus.json#grammar_inventory/ordinal-numbers-for-floors-al-primo-al-terzo-pia",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "compare:language:e-piu-caro-di-quello-e-meno-caro-di-quello",
+      "kind": "this-or-that",
+      "headline": "This or that: comparing",
+      "rows": [
+        {
+          "text": "È più caro di quello.",
+          "en": "It's more expensive than that one."
+        },
+        {
+          "text": "È meno caro di quello.",
+          "en": "It's cheaper than that one."
+        }
+      ],
+      "note": "Più or meno, then di before the thing you compare it with.",
+      "level": "A2",
+      "keys": [
+        "unit:a2-10"
+      ],
+      "source": {
+        "from": "syllabus",
+        "ref": "it/syllabus.json#grammar_inventory/comparisons-piu-meno-di-cosi-come",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "compare:language:ti-piace-secondo-me-e-buono-per-me-e-buono",
+      "kind": "this-or-that",
+      "headline": "This or that: in my opinion",
+      "rows": [
+        {
+          "text": "Ti piace?",
+          "en": "Do you like it?"
+        },
+        {
+          "text": "Secondo me è buono.",
+          "en": "In my opinion, it's good."
+        },
+        {
+          "text": "Per me è buono.",
+          "en": "To me, it's good. Same thing."
+        }
+      ],
+      "level": "A2",
+      "keys": [
+        "unit:a2-10"
+      ],
+      "source": {
+        "from": "syllabus",
+        "ref": "it/syllabus.json#grammar_inventory/secondo-me-per-me-indicative",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "compare:language:un-caffe-o-uno-spritz-un-caffe-grazie-uno-spritz",
+      "kind": "this-or-that",
+      "headline": "This or that: a coffee or a spritz",
+      "rows": [
+        {
+          "text": "Un caffè o uno spritz?",
+          "en": "A coffee or a spritz?"
+        },
+        {
+          "text": "Un caffè, grazie.",
+          "en": "A coffee, thanks."
+        },
+        {
+          "text": "Uno spritz, grazie.",
+          "en": "A spritz, thanks."
+        }
+      ],
+      "note": "Uno is used before words that start with s plus a consonant, like spritz.",
+      "level": "A1",
+      "keys": [
+        "unit:a1-04"
+      ],
+      "source": {
+        "from": "syllabus",
+        "ref": "it/syllabus.json#grammar_inventory/noun-gender-and-the-indefinite-article-un-caffe-",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "compare:language:le-pesche-o-le-zucchine-le-pesche-per-favore-le-",
+      "kind": "this-or-that",
+      "headline": "This or that: peaches or courgettes",
+      "rows": [
+        {
+          "text": "Le pesche o le zucchine?",
+          "en": "The peaches or the courgettes?"
+        },
+        {
+          "text": "Le pesche, per favore.",
+          "en": "The peaches, please."
+        },
+        {
+          "text": "Le zucchine, per favore.",
+          "en": "The courgettes, please."
+        }
+      ],
+      "note": "Fruit and vegetables are usually asked for in the plural.",
+      "level": "A1",
+      "keys": [
+        "unit:a1-09"
+      ],
+      "source": {
+        "from": "syllabus",
+        "ref": "it/syllabus.json#grammar_inventory/plurals-of-produce-le-pesche-le-zucchine",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "compare:language:due-caffe-o-due-cappuccini-due-caffe-per-favore-",
+      "kind": "this-or-that",
+      "headline": "This or that: two coffees or two cappuccinos",
+      "rows": [
+        {
+          "text": "Due caffè o due cappuccini?",
+          "en": "Two coffees or two cappuccinos?"
+        },
+        {
+          "text": "Due caffè, per favore.",
+          "en": "Two coffees, please."
+        },
+        {
+          "text": "Due cappuccini, per favore.",
+          "en": "Two cappuccinos, please."
+        }
+      ],
+      "note": "Caffè stays the same for more than one; cappuccino becomes cappuccini.",
+      "level": "A1",
+      "keys": [
+        "unit:a1-04"
+      ],
+      "source": {
+        "from": "syllabus",
+        "ref": "it/syllabus.json#grammar_inventory/plurals-due-cappuccini-due-cornetti-words-ending",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "compare:language:mi-piace-questa-giacca-la-posso-provare-posso-pr",
+      "kind": "this-or-that",
+      "headline": "This or that: can I try it on?",
+      "rows": [
+        {
+          "text": "Mi piace questa giacca.",
+          "en": "I like this jacket."
+        },
+        {
+          "text": "La posso provare?",
+          "en": "Can I try it on?"
+        },
+        {
+          "text": "Posso provarla?",
+          "en": "Can I try it on? Same thing."
+        }
+      ],
+      "note": "Both are right: the little word la can go before the verbs or on the end.",
+      "level": "A2",
+      "keys": [
+        "unit:a2-13"
+      ],
+      "source": {
+        "from": "syllabus",
+        "ref": "it/syllabus.json#grammar_inventory/pronouns-with-modals-posso-cambiarla",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "compare:places:roma-nuova-palermo:il-suppli-l-arancina",
       "kind": "two-places",
       "headline": "Two places: a fried rice ball",
       "rows": [
         {
-          "text": "A Roma: il supplì.",
-          "en": "In Rome: the supplì."
+          "text": "Il supplì",
+          "en": "In Rome: the supplì"
         },
         {
-          "text": "A Palermo: l'arancina.",
-          "en": "In Palermo: the arancina."
+          "text": "L'arancina",
+          "en": "In Palermo: the arancina"
         }
       ],
-      "note": "Both are fried rice balls with a filling. The Roman supplì has tomato rice and a core of mozzarella.",
+      "note": "Both are fried rice balls. In Rome the filling is often mozzarella, which stretches like a telephone cord when you bite in.",
       "level": "A1",
       "keys": [
         "city:roma-nuova",
@@ -9325,50 +10003,24 @@
         "from": "compare",
         "ref": "it/cities#roma-nuova,palermo",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "compare:places:roma-nuova-bologna:a-roma-la-carbonara-a-bologna-le-tagliatelle-al-",
+      "id": "compare:places:firenze-palermo:il-panino-col-lampredotto-il-pane-con-la-milza",
       "kind": "two-places",
-      "headline": "Two places: a famous pasta",
+      "headline": "Two places: a street sandwich",
       "rows": [
         {
-          "text": "A Roma: la carbonara.",
-          "en": "In Rome: carbonara."
+          "text": "Il panino col lampredotto",
+          "en": "In Florence: the cow's stomach sandwich"
         },
         {
-          "text": "A Bologna: le tagliatelle al ragù.",
-          "en": "In Bologna: tagliatelle with ragù."
+          "text": "Il pane con la milza",
+          "en": "In Palermo: the spleen sandwich"
         }
       ],
-      "level": "A1",
-      "keys": [
-        "city:roma-nuova",
-        "city:bologna"
-      ],
-      "source": {
-        "from": "compare",
-        "ref": "it/cities#roma-nuova,bologna",
-        "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
-      }
-    },
-    {
-      "id": "compare:places:firenze-palermo:a-firenze-il-panino-al-lampredotto-a-palermo-il-",
-      "kind": "two-places",
-      "headline": "Two places: a street-food sandwich",
-      "rows": [
-        {
-          "text": "A Firenze: il panino al lampredotto.",
-          "en": "In Florence: the lampredotto sandwich."
-        },
-        {
-          "text": "A Palermo: il pane con la milza.",
-          "en": "In Palermo: the spleen sandwich."
-        }
-      ],
-      "note": "Lampredotto is cooked tripe, from a cow's fourth stomach. Both sandwiches are sold at street stalls.",
+      "note": "Both are old, traditional street foods made from offal, sold from stalls and small carts.",
       "level": "A1",
       "keys": [
         "city:firenze",
@@ -9378,50 +10030,78 @@
         "from": "compare",
         "ref": "it/cities#firenze,palermo",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "compare:places:siena-palermo:a-siena-il-panforte-a-palermo-la-cassata",
+      "id": "compare:places:bologna-siena:le-tagliatelle-al-ragu-i-pici",
       "kind": "two-places",
-      "headline": "Two places: a local sweet",
+      "headline": "Two places: a classic pasta",
       "rows": [
         {
-          "text": "A Siena: il panforte.",
-          "en": "In Siena: panforte."
+          "text": "Le tagliatelle al ragù",
+          "en": "In Bologna: ribbon pasta with meat sauce"
         },
         {
-          "text": "A Palermo: la cassata.",
-          "en": "In Palermo: cassata."
+          "text": "I pici",
+          "en": "In Siena: thick hand-rolled pasta"
         }
       ],
-      "note": "Panforte is a dense, spiced cake with nuts and candied fruit. Cassata is a sponge cake with ricotta.",
+      "note": "Bologna's tagliatelle are flat egg ribbons. Siena's pici are thick, long strands rolled by hand, a bit like fat spaghetti.",
       "level": "A1",
       "keys": [
-        "city:siena",
-        "city:palermo"
+        "city:bologna",
+        "city:siena"
       ],
       "source": {
         "from": "compare",
-        "ref": "it/cities#siena,palermo",
+        "ref": "it/cities#bologna,siena",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "compare:places:napoli-palermo:a-napoli-la-sfogliatella-a-palermo-il-cannolo",
+      "id": "compare:places:roma-nuova-napoli:la-pizza-al-taglio-la-pizza-a-portafoglio",
       "kind": "two-places",
-      "headline": "Two places: a classic pastry",
+      "headline": "Two places: pizza",
       "rows": [
         {
-          "text": "A Napoli: la sfogliatella.",
-          "en": "In Naples: the sfogliatella."
+          "text": "La pizza al taglio",
+          "en": "In Rome: pizza by the slice"
         },
         {
-          "text": "A Palermo: il cannolo.",
-          "en": "In Palermo: the cannolo."
+          "text": "La pizza a portafoglio",
+          "en": "In Naples: pizza folded like a wallet"
         }
       ],
+      "note": "In Rome you point at a slice and it is cut and sold by weight. In Naples a small pizza is folded in four to eat on the go.",
+      "level": "A1",
+      "keys": [
+        "city:roma-nuova",
+        "city:napoli"
+      ],
+      "source": {
+        "from": "compare",
+        "ref": "it/cities#roma-nuova,napoli",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "compare:places:napoli-palermo:la-sfogliatella-il-cannolo",
+      "kind": "two-places",
+      "headline": "Two places: a pastry",
+      "rows": [
+        {
+          "text": "La sfogliatella",
+          "en": "In Naples: the layered shell pastry"
+        },
+        {
+          "text": "Il cannolo",
+          "en": "In Palermo: the fried ricotta tube"
+        }
+      ],
+      "note": "Both are filled with sweet ricotta. The sfogliatella has many thin, crisp layers. The cannolo is a crunchy fried tube.",
       "level": "A1",
       "keys": [
         "city:napoli",
@@ -9431,87 +10111,115 @@
         "from": "compare",
         "ref": "it/cities#napoli,palermo",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     },
     {
-      "id": "compare:places:siena-bologna:a-siena-i-pici-a-bologna-le-tagliatelle",
+      "id": "compare:places:siena-firenze:il-panforte-la-schiacciata-alla-fiorentina",
       "kind": "two-places",
-      "headline": "Two places: a long pasta",
+      "headline": "Two places: a sweet to bring home",
       "rows": [
         {
-          "text": "A Siena: i pici.",
-          "en": "In Siena: pici."
+          "text": "Il panforte",
+          "en": "In Siena: the dense spiced fruit cake"
         },
         {
-          "text": "A Bologna: le tagliatelle.",
-          "en": "In Bologna: tagliatelle."
+          "text": "La schiacciata alla fiorentina",
+          "en": "In Florence: the flat orange sponge cake"
         }
       ],
-      "note": "Pici are thick, hand-rolled strands, like fat spaghetti. Tagliatelle are flat ribbons.",
+      "note": "Both are Tuscan sweets, but they differ. Panforte is chewy with nuts and candied fruit. The schiacciata alla fiorentina is a light, soft cake.",
       "level": "A1",
       "keys": [
         "city:siena",
+        "city:firenze"
+      ],
+      "source": {
+        "from": "compare",
+        "ref": "it/cities#siena,firenze",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "compare:places:matera-firenze:il-pane-di-matera-il-pane-sciocco",
+      "kind": "two-places",
+      "headline": "Two places: the bread",
+      "rows": [
+        {
+          "text": "Il pane di Matera",
+          "en": "In Matera: durum wheat bread"
+        },
+        {
+          "text": "Il pane sciocco",
+          "en": "In Florence: bread without salt"
+        }
+      ],
+      "note": "Matera's bread is made with durum wheat and has a thick, golden crust. Tuscan bread is traditionally baked without any salt.",
+      "level": "A1",
+      "keys": [
+        "city:matera",
+        "city:firenze"
+      ],
+      "source": {
+        "from": "compare",
+        "ref": "it/cities#matera,firenze",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "compare:places:bologna-venezia:i-tortellini-in-brodo-il-risi-e-bisi",
+      "kind": "two-places",
+      "headline": "Two places: a first course",
+      "rows": [
+        {
+          "text": "I tortellini in brodo",
+          "en": "In Bologna: stuffed pasta in broth"
+        },
+        {
+          "text": "Il risi e bisi",
+          "en": "In Venice: rice and peas"
+        }
+      ],
+      "note": "Both are comforting dishes. Bologna's are small stuffed pasta served in a clear broth. Venice's is a soft, thick rice and pea dish.",
+      "level": "A1",
+      "keys": [
+        "city:bologna",
+        "city:venezia"
+      ],
+      "source": {
+        "from": "compare",
+        "ref": "it/cities#bologna,venezia",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23d"
+      }
+    },
+    {
+      "id": "compare:places:firenze-bologna:la-bistecca-alla-fiorentina-la-mortadella",
+      "kind": "two-places",
+      "headline": "Two places: a famous meat",
+      "rows": [
+        {
+          "text": "La bistecca alla fiorentina",
+          "en": "In Florence: the thick T-bone steak"
+        },
+        {
+          "text": "La mortadella",
+          "en": "In Bologna: the pink sliced sausage"
+        }
+      ],
+      "note": "Florence is known for a thick steak cooked rare over a hot grill. Bologna is known for its mortadella, sliced very thin.",
+      "level": "A1",
+      "keys": [
+        "city:firenze",
         "city:bologna"
       ],
       "source": {
         "from": "compare",
-        "ref": "it/cities#siena,bologna",
+        "ref": "it/cities#firenze,bologna",
         "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
-      }
-    },
-    {
-      "id": "compare:places:venezia-bologna:a-venezia-i-risi-e-bisi-a-bologna-i-tortellini-i",
-      "kind": "two-places",
-      "headline": "Two places: a primo in the north",
-      "rows": [
-        {
-          "text": "A Venezia: i risi e bisi.",
-          "en": "In Venice: risi e bisi."
-        },
-        {
-          "text": "A Bologna: i tortellini in brodo.",
-          "en": "In Bologna: tortellini in broth."
-        }
-      ],
-      "note": "Risi e bisi is a Venetian dish of rice and peas.",
-      "level": "A1",
-      "keys": [
-        "city:venezia",
-        "city:bologna"
-      ],
-      "source": {
-        "from": "compare",
-        "ref": "it/cities#venezia,bologna",
-        "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
-      }
-    },
-    {
-      "id": "compare:places:venezia-roma-nuova:a-venezia-il-vaporetto-a-roma-la-metro",
-      "kind": "two-places",
-      "headline": "Two places: getting around",
-      "rows": [
-        {
-          "text": "A Venezia: il vaporetto.",
-          "en": "In Venice: the water bus."
-        },
-        {
-          "text": "A Roma: la metro.",
-          "en": "In Rome: the metro."
-        }
-      ],
-      "level": "A1",
-      "keys": [
-        "city:venezia",
-        "city:roma-nuova"
-      ],
-      "source": {
-        "from": "compare",
-        "ref": "it/cities#venezia,roma-nuova",
-        "redrafted": true,
-        "by": "learn-cards.mts@2026-11-23c"
+        "by": "learn-cards.mts@2026-11-23d"
       }
     }
   ]

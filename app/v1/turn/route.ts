@@ -38,6 +38,7 @@ import { Laps } from '@/lib/timing';
 import { scaffoldFacts, scaffoldStage } from '@/lib/scaffold';
 import { cities, tutor } from '@/content';
 import { writeLearnAhead } from '@/lib/learn-ahead';
+import { startLearnCard } from '@/lib/learn-card-writer';
 import { startEarlyVoice, DEFAULT_APP_SPEED, LineWatcher } from '@/lib/voice/early-voice';
 import { PartsWatcher, type Part } from '@/lib/beginner';
 import { DraftStore } from '@/lib/draft-turns';
@@ -240,6 +241,22 @@ export async function POST(request: Request) {
             ],
             onError: (err) => logServerError(request, 'v1 turn learn ahead', err),
           });
+          // Learn 2.0's card, once, at the wind-down turn (lib/learn-card-writer.ts); not for the welcome or a lesson
+          if (!body.data.welcome && !body.data.lesson) {
+            startLearnCard({
+              conversationId: result.conversationId,
+              learnerId,
+              character: parsed.character,
+              cityId: parsed.cityId,
+              placeId: body.data.placeId,
+              transcript: [
+                ...transcriptNow,
+                ...(saidNow ? [{ who: 'learner' as const, transcript: saidNow }] : []),
+                { who: 'npc' as const, transcript: result.reply.line, translation: result.reply.en, ...(result.reply.idiom ? { idiom: result.reply.idiom } : {}) },
+              ],
+              onError: (err) => logServerError(request, 'v1 turn learn card', err),
+            });
+          }
         };
         // A draft saves and writes the Learn page only when its turn is confirmed
         if (!draft) {

@@ -1,7 +1,7 @@
 // Learn 2.0's card bank (docs/learn-sheet-2-plan.md → The bank): cards cut from the game's own content,
 // one source at a time, written to the models (content/<country>/prompts/learn-card-models.md), checked
-// by code (lib/learn-card.ts → cardProblems) and, for facts, by culture.md's Facts judge; what fails is
-// dropped. Idioms need no call. Each card carries its source as a footnote the learner never sees.
+// by code (lib/learn-card.ts → cardProblems) and, for facts, by a judge that drops a card only when it
+// can show a claim is wrong (learn-cards.md → Facts). Idioms need no call. Each card carries its source as a footnote the learner never sees.
 // Writes content/<country>/learn-cards.json, replacing only the cards of the sources it ran.
 //   COUNTRY=it npx tsx --env-file=.env.local scripts/learn-cards.mts [--pilot] [--only lesson,idiom,culture,city,here,place,compare]
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
@@ -19,9 +19,9 @@ const runs = (s: string) => !only || only.has(s);
 
 const cut = readPromptFile('learn-cards.md');
 const models = readPromptFile('learn-card-models.md');
-const factsJudge = readPromptFile('culture.md').block('Facts');
+const factsJudge = cut.block('Facts');
 const by = `learn-cards.mts@${cut.version}`;
-const system = fill(cut.block('Cut'), { language: language.name, models: models.block('Models') });
+const system = fill(cut.block('Cut'), { language: language.name, models: fill(models.block('Models'), { language: language.name }) });
 
 /** What this run used, printed at the end (development calls aren't in the live logs) */
 const spent = { calls: 0, input: 0, output: 0 };
@@ -58,7 +58,7 @@ const str = { type: 'string' };
 const rowSchema = { type: 'object', additionalProperties: false, required: ['text', 'en'], properties: { text: str, en: str } };
 const cardSchema = { type: 'object', additionalProperties: false, required: ['kind', 'headline', 'term', 'rows', 'note', 'uses', 'redrafted'], properties: { kind: str, headline: str, term: str, rows: { type: 'array', items: rowSchema }, note: str, uses: str, redrafted: { type: 'boolean' } } };
 const cutSchema = { type: 'object', additionalProperties: false, required: ['cards'], properties: { cards: { type: 'array', items: cardSchema } } };
-const factSchema = { type: 'object', additionalProperties: false, required: ['items'], properties: { items: { type: 'array', items: { type: 'object', additionalProperties: false, required: ['chip', 'pass', 'doubts'], properties: { chip: str, pass: { type: 'boolean' }, doubts: { type: 'array', items: str } } } } } };
+const factSchema = { type: 'object', additionalProperties: false, required: ['items'], properties: { items: { type: 'array', items: { type: 'object', additionalProperties: false, required: ['chip', 'pass', 'wrong'], properties: { chip: str, pass: { type: 'boolean' }, wrong: { type: 'array', items: str } } } } } };
 
 type Cut = { kind: string; headline: string; term: string; rows: { text: string; en: string }[]; note: string; uses: string; redrafted: boolean };
 const slug = (s: string) => s.toLowerCase().normalize('NFD').replace(/\p{M}/gu, '').replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '').slice(0, 48);
@@ -82,12 +82,13 @@ async function factChecked(cards: LearnCard[]): Promise<{ kept: LearnCard[]; dro
   const items = cards.map((c) => ({ chip: c.id, facts: [c.headline + (c.term ? `: ${c.term}` : ''), ...c.rows.map((r) => `${r.text} (${r.en})`), c.note ?? ''].filter(Boolean).join('. ') }));
   // In batches, so a long run's answer isn't cut off
   const batches = Array.from({ length: Math.ceil(items.length / 12) }, (_, i) => items.slice(i * 12, i * 12 + 12));
-  const verdicts = (await pool(batches, 4, async (batch) => (await ask<{ items: { chip: string; pass: boolean; doubts: string[] }[] }>(factsJudge, JSON.stringify(batch), factSchema, 4000)).items)).flat();
+  const verdicts = (await pool(batches, 4, async (batch) => (await ask<{ items: { chip: string; pass: boolean; wrong: string[] }[] }>(factsJudge, JSON.stringify(batch), factSchema, 4000)).items)).flat();
   const kept: LearnCard[] = [];
   const dropped: { card: LearnCard; doubts: string[] }[] = [];
   for (const c of cards) {
     const v = verdicts.find((x) => x.chip === c.id);
-    if (v?.pass) kept.push(c); else dropped.push({ card: c, doubts: v?.doubts ?? ['no verdict'] });
+    // Passes unless shown wrong: a card the judge left out passes too
+    if (!v || v.pass || !v.wrong.length) kept.push(c); else dropped.push({ card: c, doubts: v.wrong });
   }
   return { kept, dropped };
 }
