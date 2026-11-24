@@ -18,22 +18,12 @@ Also 2026-11-14 night: Mariano asked "¿Quiere entrar a ver?" and three turns la
 
 **2026-11-24 review of commits and of Josh's play on 2026-11-23** (Mexico, live beginner-2-2026-11-17g, steps 2–3, header only; seven visits past the opener: Regina 4335c671, Baldemar 78e59d51, Adrián 9a714451, Ismael 63afafc2, Abel 4955c6e5, Refugio d2e77f56, Lupita b24f11d4): Refugio's answers offered "¿Qué es la cantera?" on three turns ("¿Qué es la cantera?", "¿Qué es la cantera rosa?", "¿Qué significa «cantera»?"), after he had said what it is (see B25); Adrián asked "¿Quiere escuchar un disco en el tocadiscos?" and two turns later "¿Quiere escuchar también ese disco en el tocadiscos?" (a second record, so it follows). **Still open.**
 
-### B5. Double goodbye
-The character says goodbye, the learner says goodbye, the character says it again: every 11-12i Beginner visit that ended on a goodbye (e.g. 2008220a, 35f9fa93, 09978a29). ed467dd ("the goodbye left to the learner") was live for all of them. **Status: probably fine; the visits that ended went: the character winds down, the learner says goodbye, the character says it back (one each). Some wind-downs still sound like a farewell; Josh to judge by ear.**
-
-2026-11-17, nine Italy Beginner visits on Josh's learner (steps 1–3, prompt beginner-2-2026-11-16h): at the goodbye turn the character often says goodbye itself ("È stato un piacere parlare con lei…"), then says it again at the close after Josh's goodbye: 5 of 9 (Claudio a7dade72, Don Paolo f6a9ee39, Carlo the gondolier 9ea5568e, Luigi 5b26f2c9, Dante 1c830aca). Josh rated Don Paolo's close **bug: "No need for 2 closer"**, and Claudio's goodbye turn **bad** three times: he had just asked about the quarter's church, monuments and squares, and the goodbye turn answered with one sentence and closed. **Status: open again.**
-
-**Fixed 2026-11-17, live (not recorded here until 2026-11-24):** 3c240eff (Josh: "leave 8 to wind down and next time - no goodbye and 9 is goodbye - short phrase"), then b6ea1773 (the ending in one place, every level: dialogue.md 17b Wind down "Invite them to see you again for a specific reason", Close "In a colloquial phrase say goodbye and stop") and c93a5e44 (the goodbye rule in Josh's words). **2026-11-24 review of commits and of Josh's play on 2026-11-23** (Mexico, live beginner-2-2026-11-17g, steps 2–3, header only; seven visits past the opener: Regina 4335c671, Baldemar 78e59d51, Adrián 9a714451, Ismael 63afafc2, Abel 4955c6e5, Refugio d2e77f56, Lupita b24f11d4): the closes are a few words ("¡Hasta el lunes, Joshua!", "Aquí lo espero, Joshua"), but 3 of 7 wind-downs still say "Fue un gusto / Qué gusto platicar con usted" before them (Adrián, Abel, Refugio). **Status: fix live, milder; Josh to judge by ear.**
-
 ### B6. Strange or ignored questions: the character doesn't take up what the learner said
 Josh, 2026-11-13: "Hey, that is a strange question." (Raymundo asked if he likes walking the callejones, which he did last visit; 2008220a); "Are you not interested in the Fontana de los Cimbales?" (Don Chucho skipped Josh's walk to point at his brush; 499b9774).
 Same family as dialogue-ideas.md "The character asks and carries on, as if answered" (character.md 12a, "take up what they just said", live). **Status: open.**
 
 ### B7. Too fast, too much Spanish at Beginner step 1
 Josh, 2026-11-13: "mucho mucho inglés por favor" (Raymundo 2008220a); "puede hablar más despacio?", "¿hablo più inglés?" (Ofelia 71dc1d3b); "Perdón, puede hablar más despacio, por favor?" (Josué 8814eb6f). See B1(b). **Status: open.**
-
-### B10. The learner addressed in the feminine
-Ofelia: "güerita", "mi reina", "qué gusto verla", "aquí la espero" to Josh (71dc1d3b, 2026-11-13). Not raised by Josh. Cause (2026-11-14): not his address (set to "a man" on both his learners), but Ofelia's notes from 2026-10-24, written before addresses existed: "Her name is Joshua; she…", "Ofelia calls her güerita and mi reina", copied forward every visit; Nonno Ettore's said "Name is Giosue; a woman". **Status: fix live** (memory.md 2026-11-14a, b1e1ab33: notes say "they" and never note what the character calls them; live, checked 2026-11-14 against origin/live ea5a4838) **and the two characters' notes corrected in the database** (Josh, 2026-11-14: "just change in db"). Closes when a visit to Ofelia is played without it. 2026-11-24: no visit to Ofelia since; the seven visits of 2026-11-23 address Josh as a man ("joven", "bienvenido").
 
 ### B11. Asked for help in English, answered only in the language (Intermediate)
 Josh, 2026-11-13: "Excuse me, Elena. I don't speak Italian perfectly… What do I want to see before?" Elena answered in Italian only (252960a4). CLAUDE.md: a character helps in English when asked. Nunzio did it right the same morning (67edfe03). **Status: watching, likely a one-off.** Josh, 2026-11-13: "intermediate does help in english when asked" (as CLAUDE.md says: it works in play without being in the prompt). The gap is B13: help that doesn't last.
@@ -120,11 +110,6 @@ Why: the step settings echo the turn's last sentence at steps 1–5, so the line
 
 **Status: fix live** (13b2f2f1; live at 42d920f7), not yet confirmed in play.
 
-### B39. A visit replays the last one with the same character
-Josh, 2026-11-16, to Andrés at the Hospicio Cabañas (step 1, 16:50 UTC): "I think you told me almost all the same things last time we talked." Andrés's notes from before already held the Man of Fire in the dome and Orozco; this visit was the flames of the Man of Fire again, on five of seven turns ("¿Quieres ver las llamas?", "las llamas son lo más bonito", "I draw las llamas", "the fire is red and orange"). Andrés: "You're right, sorry. I always draw lo mismo". Repeating a topic is fine (it helps learning); replaying a visit as if it were new is the fault. **Status: open.**
-
-2026-11-16 (46c6c95f, live; not recorded here until 2026-11-24): Andrés's background rewritten, his own life (a portfolio due in December, a family of potters in Tlaquepaque, a little sister he draws) in place of five sentences about the building (Josh: "Yes to Andres"). That fixes one character, not the cause; not replayed since.
-
 ### B41. A name or an exclamation said twice by the echo
 Josh, 2026-11-16, Chuy, Guadalajara (f71312f9, step 2, every sentence echoed), Bug on turn 5, "Repeats exclamation", and turn 6, "Repetitive character"; then: "he might say Ahhh! Joshua (in Spanish) and then Ahh! Joshua in English. When characters use my name its strange to here it repeated - because it isn't in 2 languages". From today's step 2 turns: "¡Ja! Sí, es muy grave… Ha! Yes, it's very deep…" (Chuy); "Gracias, Joshua. Aquí todos somos vecinos. Thank you, Joshua. Here we are all neighbors." (Lupita); "Mucho gusto, Joshua. Nice to meet you, Joshua." (Valeria); "¡Eso es, Joshua, lo entendió muy bien! That's it, Joshua, you got it just right!" (Memo). The echo repeats the whole sentence, so a name or an exclamation, which sound the same in both languages, comes twice. **Status: open; the fix would add a rule, so it waits in [rules-prevention.md](rules-prevention.md) (R1).**
 
@@ -167,11 +152,6 @@ Cause, from the code: the app asks for the offer only after the conversation jus
 
 **Status: fix live** (a22fd3eb; live at 42d920f7), not yet confirmed in play.
 
-### B45. Visits run too long
-Josh, 2026-11-17, in play: "Questa è una conversazione... scusa, scusa... questa conversazione è molto lunga, sì?" (Grazia, Palermo, 1c40d5aa); "Questa è una conversazione un po' lunga" (Alberto, Palermo, 38248284); "questo carattere Carlo Bencini ha bisogno di andare, è ridicoloso" (Carlo the drummer, Firenze, 08312ed6). Every one of the nine visits ran to the close on the learner's 8th reply (the goodbye offered on the 7th; lib/beginner-2.ts GOODBYE_AFTER, CLOSE_AT); none ended sooner. **Status: open.**
-
-2026-11-17 (347f2a3c, live; not recorded here until 2026-11-24): Josh, "Change Intermediate to 10": Intermediate and Advanced close after the 10th reply, not the 15th. Beginner unchanged at 8; all seven visits of 2026-11-23 ran to it. No Intermediate visit played since.
-
 ### B46. The character's questions are yes or no
 Josh, 2026-11-17, to Luigi in Venice (5b26f2c9): "E mi piace domanda che è più interessante, non sì o no. Forse farai una domanda più interessante?"; then "E anche una altra domanda, sì o no?"; "Oh, forse sì, forse no. Ogni domanda." Rated turn 3 **bug: "There is a clue here to avoid yes/no"**: the line where Luigi, after the first remark, asked "Secondo lei, perché i libri stanno nelle vasche?". Six of the nine openers ask "Le piace…?" (the fish, the fountain, the square, the drum, coffee, the book gondola). B24 counted the same in Mexico on 11-14. **Status: open.**
 
@@ -199,17 +179,6 @@ Josh, 2026-11-23: "the sound effects are way too subtle, quiet, and short on map
 Josh, 2026-11-23: "re visit stamps in mexico as you want them YA/Fuist/E on 3 lines?" The round stamp beside a place's or city's name. `VisitStamp` set the words in a fixed width with no limit on lines, so a word too wide for the ring was broken mid-word; `minimumScaleFactor` only shrinks text that has a line limit to fit. Italy's VISTO, a letter shorter than FUISTE, fit, so it showed only in Mexico.
 
 **Status: fix in the app** (40bee9e2; in build 19), not seen on a phone. One word to a line and no more lines than words, so the text shrinks to fit and a word is never broken (`VisitStamp.lines`, `lineCount`; a test in `VisitStageTests`; a Mexican stamp added to the preview). CI builds it. Closes when Josh sees YA / FUISTE on two lines.
-
-### B53. Lupita and the candles
-Josh, 2026-11-23, of Lupita Barajas (sacristana, Parroquia de San Pedro, Tlaquepaque): "she ALWAYS talks about candles". Her `here` line says "setting out candles", and the live game then still sent it.
-
-**Checked on the live game 2026-11-23, after the release to header only** (Afuera at 37b639c, `HERE_LINES = false`; seven fresh Beginner learners at step 1, the first six played five of her turns each): the opening names candles in 6 of 7 visits, nearly word for word ("I'm getting the candles ready for today's Mass"); the seventh has flowers for the altar in the same sentence. After the opening, candles come back in 4 of the 6 played visits (acb8831b, 27158a73, 9c24ca8c, 7f4eac62) and not in 2 (c737b8fe, 379fbde5); in one (7f4eac62) every turn is about them. Her header holds no candles: name, 49, sacristana, calm / devout / organised, the church, Tlaquepaque. Not checked: Josh's own learner, whose memory of earlier visits with her holds candles.
-
-**Status: open.** Header only did not end it for a new learner.
-
-**2026-11-23, later:** Josh: "Should we change her job?", then "Children's religion teacher". Her role is now `catequista` on main (same id, place, voice, traits and portrait). Not released. Closes when Josh plays her after the next release and the candles are gone; the same seven-visit run on live will count her openings.
-
-2026-11-24: the job change is live (released with 89096da, 2026-11-24 05:52 UTC). Josh's visit to her on 2026-11-23 (b24f11d4, 00:59 UTC: "Estoy acomodando las veladoras para la misa de hoy") came before it. **Status: fix live, not yet played.**
 
 ### B50b. Facts that don't agree inside one visit
 Numbered B50 by mistake on 2026-11-17, the same day as "A reply that doesn't follow"; called B50b from 2026-11-24 so each number names one bug.
@@ -289,6 +258,47 @@ Not bugs; recorded so a fix doesn't undo them.
 - **A Beginner character asked for more English adapts.** Josh, 2026-11-13: "Some character adapted to use more English." Ofelia, asked "¿hablo più inglés?", answered "Sure, mi reina, I'll use more English" and did (71dc1d3b); Carmen, told "that was a lot of Spanish with no English", said "I'll go slower" (09978a29).
 
 ## Closed
+
+### B5. Double goodbye
+The character says goodbye, the learner says goodbye, the character says it again: every 11-12i Beginner visit that ended on a goodbye (e.g. 2008220a, 35f9fa93, 09978a29). ed467dd ("the goodbye left to the learner") was live for all of them. **Status: probably fine; the visits that ended went: the character winds down, the learner says goodbye, the character says it back (one each). Some wind-downs still sound like a farewell; Josh to judge by ear.**
+
+2026-11-17, nine Italy Beginner visits on Josh's learner (steps 1–3, prompt beginner-2-2026-11-16h): at the goodbye turn the character often says goodbye itself ("È stato un piacere parlare con lei…"), then says it again at the close after Josh's goodbye: 5 of 9 (Claudio a7dade72, Don Paolo f6a9ee39, Carlo the gondolier 9ea5568e, Luigi 5b26f2c9, Dante 1c830aca). Josh rated Don Paolo's close **bug: "No need for 2 closer"**, and Claudio's goodbye turn **bad** three times: he had just asked about the quarter's church, monuments and squares, and the goodbye turn answered with one sentence and closed. **Status: open again.**
+
+**Fixed 2026-11-17, live (not recorded here until 2026-11-24):** 3c240eff (Josh: "leave 8 to wind down and next time - no goodbye and 9 is goodbye - short phrase"), then b6ea1773 (the ending in one place, every level: dialogue.md 17b Wind down "Invite them to see you again for a specific reason", Close "In a colloquial phrase say goodbye and stop") and c93a5e44 (the goodbye rule in Josh's words). **2026-11-24 review of commits and of Josh's play on 2026-11-23** (Mexico, live beginner-2-2026-11-17g, steps 2–3, header only; seven visits past the opener: Regina 4335c671, Baldemar 78e59d51, Adrián 9a714451, Ismael 63afafc2, Abel 4955c6e5, Refugio d2e77f56, Lupita b24f11d4): the closes are a few words ("¡Hasta el lunes, Joshua!", "Aquí lo espero, Joshua"), but 3 of 7 wind-downs still say "Fue un gusto / Qué gusto platicar con usted" before them (Adrián, Abel, Refugio). **Status: fix live, milder; Josh to judge by ear.**
+
+**Status: closed** (Josh, 2026-11-24: "Fixed: B5, B10, B39, B45, b53").
+
+### B10. The learner addressed in the feminine
+Ofelia: "güerita", "mi reina", "qué gusto verla", "aquí la espero" to Josh (71dc1d3b, 2026-11-13). Not raised by Josh. Cause (2026-11-14): not his address (set to "a man" on both his learners), but Ofelia's notes from 2026-10-24, written before addresses existed: "Her name is Joshua; she…", "Ofelia calls her güerita and mi reina", copied forward every visit; Nonno Ettore's said "Name is Giosue; a woman". **Status: fix live** (memory.md 2026-11-14a, b1e1ab33: notes say "they" and never note what the character calls them; live, checked 2026-11-14 against origin/live ea5a4838) **and the two characters' notes corrected in the database** (Josh, 2026-11-14: "just change in db"). Closes when a visit to Ofelia is played without it. 2026-11-24: no visit to Ofelia since; the seven visits of 2026-11-23 address Josh as a man ("joven", "bienvenido").
+
+**Status: closed** (Josh, 2026-11-24: "Fixed: B5, B10, B39, B45, b53").
+
+### B39. A visit replays the last one with the same character
+Josh, 2026-11-16, to Andrés at the Hospicio Cabañas (step 1, 16:50 UTC): "I think you told me almost all the same things last time we talked." Andrés's notes from before already held the Man of Fire in the dome and Orozco; this visit was the flames of the Man of Fire again, on five of seven turns ("¿Quieres ver las llamas?", "las llamas son lo más bonito", "I draw las llamas", "the fire is red and orange"). Andrés: "You're right, sorry. I always draw lo mismo". Repeating a topic is fine (it helps learning); replaying a visit as if it were new is the fault. **Status: open.**
+
+2026-11-16 (46c6c95f, live; not recorded here until 2026-11-24): Andrés's background rewritten, his own life (a portfolio due in December, a family of potters in Tlaquepaque, a little sister he draws) in place of five sentences about the building (Josh: "Yes to Andres"). That fixes one character, not the cause; not replayed since.
+
+**Status: closed** (Josh, 2026-11-24: "Fixed: B5, B10, B39, B45, b53").
+
+### B45. Visits run too long
+Josh, 2026-11-17, in play: "Questa è una conversazione... scusa, scusa... questa conversazione è molto lunga, sì?" (Grazia, Palermo, 1c40d5aa); "Questa è una conversazione un po' lunga" (Alberto, Palermo, 38248284); "questo carattere Carlo Bencini ha bisogno di andare, è ridicoloso" (Carlo the drummer, Firenze, 08312ed6). Every one of the nine visits ran to the close on the learner's 8th reply (the goodbye offered on the 7th; lib/beginner-2.ts GOODBYE_AFTER, CLOSE_AT); none ended sooner. **Status: open.**
+
+2026-11-17 (347f2a3c, live; not recorded here until 2026-11-24): Josh, "Change Intermediate to 10": Intermediate and Advanced close after the 10th reply, not the 15th. Beginner unchanged at 8; all seven visits of 2026-11-23 ran to it. No Intermediate visit played since.
+
+**Status: closed** (Josh, 2026-11-24: "Fixed: B5, B10, B39, B45, b53").
+
+### B53. Lupita and the candles
+Josh, 2026-11-23, of Lupita Barajas (sacristana, Parroquia de San Pedro, Tlaquepaque): "she ALWAYS talks about candles". Her `here` line says "setting out candles", and the live game then still sent it.
+
+**Checked on the live game 2026-11-23, after the release to header only** (Afuera at 37b639c, `HERE_LINES = false`; seven fresh Beginner learners at step 1, the first six played five of her turns each): the opening names candles in 6 of 7 visits, nearly word for word ("I'm getting the candles ready for today's Mass"); the seventh has flowers for the altar in the same sentence. After the opening, candles come back in 4 of the 6 played visits (acb8831b, 27158a73, 9c24ca8c, 7f4eac62) and not in 2 (c737b8fe, 379fbde5); in one (7f4eac62) every turn is about them. Her header holds no candles: name, 49, sacristana, calm / devout / organised, the church, Tlaquepaque. Not checked: Josh's own learner, whose memory of earlier visits with her holds candles.
+
+**Status: open.** Header only did not end it for a new learner.
+
+**2026-11-23, later:** Josh: "Should we change her job?", then "Children's religion teacher". Her role is now `catequista` on main (same id, place, voice, traits and portrait). Not released. Closes when Josh plays her after the next release and the candles are gone; the same seven-visit run on live will count her openings.
+
+2026-11-24: the job change is live (released with 89096da, 2026-11-24 05:52 UTC). Josh's visit to her on 2026-11-23 (b24f11d4, 00:59 UTC: "Estoy acomodando las veladoras para la misa de hoy") came before it. **Status: fix live, not yet played.**
+
+**Status: closed** (Josh, 2026-11-24: "Fixed: B5, B10, B39, B45, b53").
 
 ### B1. Turns with no English and no offered answers (Beginner)
 Josh, 2026-11-13: "I did not get a help bubble." / "No tengo burbujas de ayuda. Puede ayudarme?" (Josué 8814eb6f); "there is no translation in your bubble", "there is no bubble to read, so I will say…" (Isidro d335b204); "just a note that your bubble has no English" (Don Chucho 499b9774); "that was a lot of Spanish with no English" (Carmen 09978a29).
