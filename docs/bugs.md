@@ -174,6 +174,7 @@ He raised the same on 2026-10-21, and `PolaroidCard.swift` has asked for 1.1 tim
 **Status (2026-11-24): fix in the app** (32734158, then 5510136b for the reopened shadow and corners; 5510136b is in build 19, not 17). Closes when Josh sees the cards on the phone.
 
 ### B55. Introductions stopped: the bubbles no longer lead to them
+Josh, 2026-11-24: "the app use to teach you how to intrduce yourself *open bug* that was an example of same general idea": the general idea is dialogue-ideas.md → Step 3's open question (a phrase planted in the dialogue, said back, then used).
 Josh, 2026-11-23: "people never introduce themselves though unless i go first - this use to be commu=on that the bubbles would lead to introductions". Counted (visits whose answer bubbles offer an introduction: *Me llamo…*, *Mi chiamo…*, *¿Cómo se llama?*; archive plus admin route): Oct 12–20 0 of 44; Oct 21–31 2 of 42; **Nov 1–10 24 of 90**; Nov 12–18 13 of 211 (test runs mixed in); Nov 24 0 of 13. Common in early November, down with the Beginner 2 cut-over (Nov 12), none today. (A first count, since corrected, looked at the character saying the learner's name, not the bubbles.) Not yet read what in Beginner 2's setups stopped them.
 **Status:** open.
 
