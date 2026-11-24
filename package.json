@@ -51,6 +51,7 @@
     "test:tokens": "node scripts/tokens.mjs --check",
     "voice:failures": "tsx scripts/voice-failures.ts",
     "images:upload": "node --env-file-if-exists=.env.local scripts/upload-images.mjs",
+    "place-sounds": "node --env-file-if-exists=.env.local scripts/place-sounds.mjs",
     "voices": "node --env-file-if-exists=.env.local scripts/list-voices.mjs",
     "test:voices": "tsx tests/check-voices.ts",
     "test:travel-sounds": "node tests/check-travel-sounds.mjs",

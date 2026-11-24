@@ -1,5 +1,29 @@
 # Fuori Development Progress
 
+## 2026-11-23 (cloud), evening: place sounds trial, needs one run on the mini
+
+- **Josh:** "do you want to test church bells at Lupitas opening and kids in the squarre while she talksks", then "try 11 labs".
+- **For the mini or laptop (the cloud has no ElevenLabs key):** `git pull`, then `npm run place-sounds`. It calls ElevenLabs' sound-effects generator (`/v1/sound-generation`) and writes two takes each of `bells-parish` (8 s) and `kids-square` (20 s, looping) to `design/place-sounds/`. Commit the four MP3s and push, so Josh can listen and pick.
+- **Not built:** nothing in the app plays them. If Josh likes a take, the test is on Lupita Barajas only: bells as her card arrives, fading under her first words; the kids loop quiet under her voice and during the wait for her reply; silent while the mic is open. That is a Swift change in the audio code, judged on Josh's phone.
+- A scripted bell (sine partials, like the trip sounds) was also sent to Josh in chat for comparison; it isn't in the repo.
+
+## 2026-11-23 (cloud), evening: two rules added to CLAUDE.md
+
+- **A world, not an encyclopedia** (top of `CLAUDE.md`): the goal is a world in Italy and Mexico the learner can richly explore, not verifiable factual truth. No time spent checking fares or disputing food origins, and no raising them as problems. The language taught must still be correct. Josh's words are quoted in the rule. Prompted by this session disputing the mirror under the Hospicio Cabañas dome and being wrong.
+- **Decisions are settled** (Working across sessions): a session's earlier work carries no weight; judge by what the learner hears and sees; once Josh decides, no caveats; new evidence is labeled as such and shown once. Prompted by this session reopening header only through caveats about Lupita's candles.
+- Both apply to every session. Nothing else changed.
+
+## 2026-11-23 (cloud), evening: no priests or nuns in Mexico; two people rewritten, two portraits needed
+
+- **Josh:** of Lupita Barajas, the sacristana at Tlaquepaque's parish church, "she ALWAYS talks about candles" and "its kind of a weird job"; then "no priests or nuns in Mexico".
+- **Why the candles:** her `here` line says "setting out candles", and the live game (still 35a8e48, from the 17th) sends that line. Header only is on main, unreleased. It may not cure it: in last week's San Miguel runs the other sacristan, given one sentence and no mention of candles, said "candle" five times in a visit; on his full line, about the bells, 0 and 1. Sacristan looks like a job the model fills with candles.
+- **Done, on main, not released:** Mexico's two clergy are lay people now, same ids, places, voices and traits.
+  - Puebla, Templo de Santo Domingo: Padre Tomás Herrera, sacerdote → **Don Tomás Herrera, restaurador**, who restores the gilded plasterwork of the Capilla del Rosario.
+  - Pátzcuaro, Basílica de la Salud: Sor Guadalupe Mendoza, monja dominica → **Guadalupe Mendoza, bióloga**, who breeds the achoques with the convent's nuns.
+  - New `portraitPrompt` and `here` for each; `generation.json`'s old entry for Padre Tomás brought in line. Checked: tsc (only the standing LayoutProps error), and for es-mx test:content-api, voices, image-prompts, image-list, turn-request.
+- **For the laptop or mini: two portraits.** R2 still holds the priest in a clerical shirt and the nun in her habit under `padre-tomas-santo-domingo` and `sor-guadalupe-achoques`. Generate from the new prompts, Josh picks, upload, commit `content/es-mx/images.json`. Until then the faces don't match the jobs. The basilica's place picture also shows a nun at the tanks in the background; left as it is.
+- **Not changed, raised with Josh:** Mexico's six sacristans (Oaxaca, Guadalajara, San Miguel, Mérida, San Cristóbal, Mazatlán), the church's default job there. Italy: of 197 people who can be met, 8 are clergy (6 priests, 2 friars) and 4 others stand in a church (a retired teacher, a student, two restorers); the 13 nuns and the rest of the 29 written clergy are all in hidden places. The cloud session first gave Josh the written counts as if they were what's played.
+
 ## 2026-11-23 (cloud), evening: the trip's sounds remade louder and longer (B51); Mexico's stamp no longer breaks its word (B52)
 
 - **B51, Josh: "the sound effects are way too subtle, quiet, and short on map pages".** `rails.wav` and `road.wav` remade by `scripts/travel-sounds.py`: 5 s where they were 3.6, peak -1 dBFS where it was -8, average about -10 dBFS over the page's 3.5 s where it was -24 and -20, the energy moved up to where a phone speaker works, and each opens on a horn. `npm run test:travel-sounds` (new) fails on the old files, passes on the new. **Not heard by anyone**; the cloud session has no ears. They still play as a system sound, at the ringer's volume: if they're still quiet on the phone, that is the next thing to change, and it touches audio handling.
