@@ -1,6 +1,6 @@
 {
   "version": "2026-11-24",
-  "prompt": "2026-11-23",
+  "prompt": "2026-11-23b",
   "models": "2026-11-23",
   "cards": [
     {
@@ -722,6 +722,188 @@
         "ref": "es-mx/cities/oaxaca.ts#zocalo-oaxaca",
         "redrafted": true,
         "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "compare:language:nos-vemos-el-sabado-abren-los-sabados",
+      "kind": "this-or-that",
+      "headline": "This or that",
+      "rows": [
+        {
+          "text": "Nos vemos el sábado.",
+          "en": "See you this Saturday: one day."
+        },
+        {
+          "text": "Abren los sábados.",
+          "en": "Open on Saturdays: every week."
+        }
+      ],
+      "note": "El sábado means the coming one; los sábados means every week.",
+      "level": "A1",
+      "keys": [
+        "unit:a1-10"
+      ],
+      "source": {
+        "from": "syllabus",
+        "ref": "es-mx/syllabus.json#grammar_inventory/days-with-el-and-no-preposition-el-sabado-on-sat",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23b"
+      }
+    },
+    {
+      "id": "compare:language:me-la-puedo-probar-puedo-probarmela",
+      "kind": "this-or-that",
+      "headline": "This or that",
+      "rows": [
+        {
+          "text": "¿Me la puedo probar?",
+          "en": "Can I try it on? Pronoun first."
+        },
+        {
+          "text": "¿Puedo probármela?",
+          "en": "Can I try it on? Pronoun at the end."
+        }
+      ],
+      "note": "Both are right: the pronoun goes before the first verb or onto the infinitive.",
+      "level": "A2",
+      "keys": [
+        "unit:a2-04"
+      ],
+      "source": {
+        "from": "syllabus",
+        "ref": "es-mx/syllabus.json#grammar_inventory/pronoun-position-before-the-conjugated-verb-or-a",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23b"
+      }
+    },
+    {
+      "id": "compare:language:quiero-este-quiero-aquel",
+      "kind": "this-or-that",
+      "headline": "This or that",
+      "rows": [
+        {
+          "text": "Quiero este.",
+          "en": "I want this one, near me."
+        },
+        {
+          "text": "Quiero aquel.",
+          "en": "I want that one, far away."
+        }
+      ],
+      "note": "Ese sits in between: near you, or a bit away.",
+      "level": "A1",
+      "keys": [
+        "unit:a1-07"
+      ],
+      "source": {
+        "from": "syllabus",
+        "ref": "es-mx/syllabus.json#grammar_inventory/demonstratives-este-ese-aquel-and-neuter-esto-es",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23b"
+      }
+    },
+    {
+      "id": "compare:places:puebla-oaxaca:mole-poblano-por-favor-mole-negro-por-favor",
+      "kind": "this-or-that",
+      "headline": "This or that: two moles",
+      "rows": [
+        {
+          "text": "Mole poblano, por favor.",
+          "en": "Puebla: its signature mole."
+        },
+        {
+          "text": "Mole negro, por favor.",
+          "en": "Oaxaca: its signature black mole."
+        }
+      ],
+      "level": "A1",
+      "keys": [
+        "city:puebla",
+        "city:oaxaca"
+      ],
+      "source": {
+        "from": "compare",
+        "ref": "es-mx/cities#puebla,oaxaca",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23b"
+      }
+    },
+    {
+      "id": "compare:places:guadalajara-monterrey:una-torta-ahogada-por-favor-cabrito-por-favor",
+      "kind": "this-or-that",
+      "headline": "This or that: a local plate",
+      "rows": [
+        {
+          "text": "Una torta ahogada, por favor.",
+          "en": "Guadalajara: a sandwich soaked in sauce."
+        },
+        {
+          "text": "Cabrito, por favor.",
+          "en": "Monterrey: roast young goat."
+        }
+      ],
+      "level": "A1",
+      "keys": [
+        "city:guadalajara",
+        "city:monterrey"
+      ],
+      "source": {
+        "from": "compare",
+        "ref": "es-mx/cities#guadalajara,monterrey",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23b"
+      }
+    },
+    {
+      "id": "compare:places:oaxaca-san-cristobal-de-las-casas:un-tejate-por-favor-un-pozol-por-favor",
+      "kind": "this-or-that",
+      "headline": "This or that: a corn drink",
+      "rows": [
+        {
+          "text": "Un tejate, por favor.",
+          "en": "Oaxaca: cold corn and cacao drink."
+        },
+        {
+          "text": "Un pozol, por favor.",
+          "en": "San Cristóbal: cold corn drink."
+        }
+      ],
+      "level": "A1",
+      "keys": [
+        "city:oaxaca",
+        "city:san-cristobal-de-las-casas"
+      ],
+      "source": {
+        "from": "compare",
+        "ref": "es-mx/cities#oaxaca,san-cristobal-de-las-casas",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23b"
+      }
+    },
+    {
+      "id": "compare:places:merida-mazatlan:cochinita-pibil-por-favor-aguachile-por-favor",
+      "kind": "this-or-that",
+      "headline": "This or that: a regional dish",
+      "rows": [
+        {
+          "text": "Cochinita pibil, por favor.",
+          "en": "Mérida: slow-roasted pork in achiote."
+        },
+        {
+          "text": "Aguachile, por favor.",
+          "en": "Mazatlán: raw shrimp in chile and lime."
+        }
+      ],
+      "level": "A1",
+      "keys": [
+        "city:merida",
+        "city:mazatlan"
+      ],
+      "source": {
+        "from": "compare",
+        "ref": "es-mx/cities#merida,mazatlan",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23b"
       }
     }
   ]

@@ -1,6 +1,6 @@
 {
   "version": "2026-11-24",
-  "prompt": "2026-11-23",
+  "prompt": "2026-11-23b",
   "models": "2026-11-23",
   "cards": [
     {
@@ -826,6 +826,185 @@
         "ref": "it/cities/matera.ts#parco-murgia",
         "redrafted": true,
         "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "compare:language:lunedi-vado-al-mercato-il-lunedi-vado-al-mercato",
+      "kind": "this-or-that",
+      "headline": "This or that",
+      "rows": [
+        {
+          "text": "Lunedì vado al mercato.",
+          "en": "This coming Monday: the day on its own."
+        },
+        {
+          "text": "Il lunedì vado al mercato.",
+          "en": "Every Monday: the day with the article."
+        }
+      ],
+      "level": "A1",
+      "keys": [
+        "unit:a1-08"
+      ],
+      "source": {
+        "from": "syllabus",
+        "ref": "it/syllabus.json#grammar_inventory/days-need-no-preposition-lunedi-this-monday-il-l",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23b"
+      }
+    },
+    {
+      "id": "compare:language:la-posso-cambiare-posso-cambiarla",
+      "kind": "this-or-that",
+      "headline": "This or that",
+      "rows": [
+        {
+          "text": "La posso cambiare?",
+          "en": "Pronoun before the modal verb."
+        },
+        {
+          "text": "Posso cambiarla?",
+          "en": "Pronoun attached to the infinitive."
+        }
+      ],
+      "level": "A2",
+      "keys": [
+        "unit:a2-13"
+      ],
+      "source": {
+        "from": "syllabus",
+        "ref": "it/syllabus.json#grammar_inventory/pronouns-with-modals-posso-cambiarla",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23b"
+      }
+    },
+    {
+      "id": "compare:language:vorrei-un-po-di-pane-vorrei-del-pane",
+      "kind": "this-or-that",
+      "headline": "This or that",
+      "rows": [
+        {
+          "text": "Vorrei un po' di pane.",
+          "en": "Some: the easy way to say it."
+        },
+        {
+          "text": "Vorrei del pane.",
+          "en": "Some: del or della as one chunk."
+        }
+      ],
+      "level": "A1",
+      "keys": [
+        "unit:a1-06"
+      ],
+      "source": {
+        "from": "syllabus",
+        "ref": "it/syllabus.json#grammar_inventory/un-po-di-for-some-del-della-as-a-chunk-vorrei-de",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23b"
+      }
+    },
+    {
+      "id": "compare:places:bologna-napoli:le-tagliatelle-al-ragu-la-pizza-margherita",
+      "kind": "this-or-that",
+      "headline": "This or that: a local dish",
+      "rows": [
+        {
+          "text": "Le tagliatelle al ragù",
+          "en": "Bologna: ribbon pasta with meat sauce"
+        },
+        {
+          "text": "La pizza margherita",
+          "en": "Napoli: the classic pizza"
+        }
+      ],
+      "level": "A1",
+      "keys": [
+        "city:bologna",
+        "city:napoli"
+      ],
+      "source": {
+        "from": "compare",
+        "ref": "it/cities#bologna,napoli",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23b"
+      }
+    },
+    {
+      "id": "compare:places:roma-nuova-palermo:il-suppli-l-arancina",
+      "kind": "this-or-that",
+      "headline": "This or that: a street snack",
+      "rows": [
+        {
+          "text": "Il supplì",
+          "en": "Roma: fried rice ball with mozzarella"
+        },
+        {
+          "text": "L'arancina",
+          "en": "Palermo: fried rice ball, stuffed"
+        }
+      ],
+      "level": "A1",
+      "keys": [
+        "city:roma-nuova",
+        "city:palermo"
+      ],
+      "source": {
+        "from": "compare",
+        "ref": "it/cities#roma-nuova,palermo",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23b"
+      }
+    },
+    {
+      "id": "compare:places:firenze-matera:il-pane-sciocco-il-pane-di-matera",
+      "kind": "this-or-that",
+      "headline": "This or that: the local bread",
+      "rows": [
+        {
+          "text": "Il pane sciocco",
+          "en": "Firenze: Tuscan bread, made without salt"
+        },
+        {
+          "text": "Il pane di Matera",
+          "en": "Matera: bread from durum wheat"
+        }
+      ],
+      "level": "A1",
+      "keys": [
+        "city:firenze",
+        "city:matera"
+      ],
+      "source": {
+        "from": "compare",
+        "ref": "it/cities#firenze,matera",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23b"
+      }
+    },
+    {
+      "id": "compare:places:siena-palermo:il-panforte-il-cannolo",
+      "kind": "this-or-that",
+      "headline": "This or that: a local sweet",
+      "rows": [
+        {
+          "text": "Il panforte",
+          "en": "Siena: dense spiced fruit and nut cake"
+        },
+        {
+          "text": "Il cannolo",
+          "en": "Palermo: fried shell filled with ricotta"
+        }
+      ],
+      "level": "A1",
+      "keys": [
+        "city:siena",
+        "city:palermo"
+      ],
+      "source": {
+        "from": "compare",
+        "ref": "it/cities#siena,palermo",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23b"
       }
     }
   ]
