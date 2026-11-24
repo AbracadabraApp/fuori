@@ -149,32 +149,6 @@ export const showcase: Record<string, string[]> = {
   // Not on the first screen of the city list: reached through "Mostra altro" or
   // the station (Josh, 2026-10-14). 10 places each, same mix, plus the station
   // and language school where the city has them.
-  taormina: [
-    'bar-turrisi',
-    'pasticceria-etna', // a pastry shop with the city's own specialty, back (Josh, 2026-10-27)
-    'mercato-giardini',
-    'ristorante-baronessa',
-    'caffe-wunderbar',
-    'piazza-ix-aprile',
-    'stazione-taormina-giardini', // station (2026-10-14)
-    // Dialogue variety (Josh, 2026-11-06; docs/archive/conversation-variety.md): the city's own places in, generic businesses out
-    'teatro-greco',
-    'villa-comunale-taormina',
-    'terrazza-panoramica',
-  ],
-  lecce: [
-    'caffe-alvino',
-    'mercato-comunale',
-    'alle-due-corti',
-    'piazza-santoronzo',
-    'bottega-cartapesta',
-    'stazione-lecce',
-    // Dialogue variety (Josh, 2026-11-06; docs/archive/conversation-variety.md): the city's own places in, generic businesses out
-    'basilica-santa-croce-lecce',
-    'museo-faggiano',
-    'anfiteatro-romano',
-    'rusticceria-santa-croce', // a shop: 5 Beginner openings, none started selling (2026-11-06)
-  ],
   milano: [
     'pasticceria-marchesi',
     'mercato-di-porta-romana',
@@ -186,31 +160,6 @@ export const showcase: Record<string, string[]> = {
     // Dialogue variety (Josh, 2026-11-06; docs/archive/conversation-variety.md): the city's own places in, generic businesses out
     'duomo-milano',
     'galleria-vittorio-emanuele',
-  ],
-  verona: [
-    'caffe-wallner',
-    'mercato-piazza-erbe',
-    'ristorante-dodici-apostoli',
-    'piazza-bra',
-    'salumeria-albertini',
-    'stazione-porta-nuova',
-    // Dialogue variety (Josh, 2026-11-06; docs/archive/conversation-variety.md): the city's own places in, generic businesses out
-    'arena-verona',
-    'teatro-romano',
-    'piazza-signori',
-  ],
-  assisi: [
-    'caffe-duomo',
-    'mercato-coperto',
-    'ristorante-metastasio',
-    'piazza-comune',
-    'stazione-assisi', // station (2026-10-14)
-    // Dialogue variety (Josh, 2026-11-06; docs/archive/conversation-variety.md): the city's own places in, generic businesses out
-    'basilica-san-francesco',
-    'eremo-carceri',
-    'rocca-maggiore',
-    'piazza-san-rufino',
-    'laboratorio-ceramiche', // a shop: 5 Beginner openings, none started selling (2026-11-06)
   ],
   bergamo: [
     'caffe-del-tasso',
@@ -251,19 +200,6 @@ export const showcase: Record<string, string[]> = {
     'antica-giudecca',
     'fonte-aretusa',
     'parco-archeologico',
-  ],
-  genova: [
-    'pasticceria-liquorosa', // a pastry shop with the city's own specialty, back (Josh, 2026-10-27)
-    'mercato-orientale',
-    'trattoria-rosmarino',
-    'bar-boccadasse',
-    'piazza-ferrari',
-    'salumeria-fontana',
-    'stazione-principe',
-    // Dialogue variety (Josh, 2026-11-06; docs/archive/conversation-variety.md): the city's own places in, generic businesses out
-    'piazza-boccadasse',
-    'lanterna',
-    'via-garibaldi',
   ],
   lucca: [
     'caffe-di-simo',
@@ -318,6 +254,72 @@ export const homeCities = ['roma-nuova', 'matera', 'firenze', 'siena', 'venezia'
  * memories stay in the database, unread by the game.
  */
 export const hiddenForNow: Record<string, string[]> = {
+  // Hidden 2026-11-23 (Josh: "we should hide more places"; Italy keeps about Mexico's 14 cities:
+  // "id hide verona, leccce, assissi Taormina and Genoa"). Their shown places as they were
+  verona: [
+    'caffe-wallner',
+    'mercato-piazza-erbe',
+    'ristorante-dodici-apostoli',
+    'piazza-bra',
+    'salumeria-albertini',
+    'stazione-porta-nuova',
+    // Dialogue variety (Josh, 2026-11-06; docs/archive/conversation-variety.md): the city's own places in, generic businesses out
+    'arena-verona',
+    'teatro-romano',
+    'piazza-signori',
+  ],
+  lecce: [
+    'caffe-alvino',
+    'mercato-comunale',
+    'alle-due-corti',
+    'piazza-santoronzo',
+    'bottega-cartapesta',
+    'stazione-lecce',
+    // Dialogue variety (Josh, 2026-11-06; docs/archive/conversation-variety.md): the city's own places in, generic businesses out
+    'basilica-santa-croce-lecce',
+    'museo-faggiano',
+    'anfiteatro-romano',
+    'rusticceria-santa-croce', // a shop: 5 Beginner openings, none started selling (2026-11-06)
+  ],
+  assisi: [
+    'caffe-duomo',
+    'mercato-coperto',
+    'ristorante-metastasio',
+    'piazza-comune',
+    'stazione-assisi', // station (2026-10-14)
+    // Dialogue variety (Josh, 2026-11-06; docs/archive/conversation-variety.md): the city's own places in, generic businesses out
+    'basilica-san-francesco',
+    'eremo-carceri',
+    'rocca-maggiore',
+    'piazza-san-rufino',
+    'laboratorio-ceramiche', // a shop: 5 Beginner openings, none started selling (2026-11-06)
+  ],
+  taormina: [
+    'bar-turrisi',
+    'pasticceria-etna', // a pastry shop with the city's own specialty, back (Josh, 2026-10-27)
+    'mercato-giardini',
+    'ristorante-baronessa',
+    'caffe-wunderbar',
+    'piazza-ix-aprile',
+    'stazione-taormina-giardini', // station (2026-10-14)
+    // Dialogue variety (Josh, 2026-11-06; docs/archive/conversation-variety.md): the city's own places in, generic businesses out
+    'teatro-greco',
+    'villa-comunale-taormina',
+    'terrazza-panoramica',
+  ],
+  genova: [
+    'pasticceria-liquorosa', // a pastry shop with the city's own specialty, back (Josh, 2026-10-27)
+    'mercato-orientale',
+    'trattoria-rosmarino',
+    'bar-boccadasse',
+    'piazza-ferrari',
+    'salumeria-fontana',
+    'stazione-principe',
+    // Dialogue variety (Josh, 2026-11-06; docs/archive/conversation-variety.md): the city's own places in, generic businesses out
+    'piazza-boccadasse',
+    'lanterna',
+    'via-garibaldi',
+  ],
   firenze: [ // replaced 2026-10-23
     'caffe-rivoire',
     'forno-galli',
