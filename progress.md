@@ -1,5 +1,21 @@
 # Fuori Development Progress
 
+## PORTRAITS NEEDED: seven, for the laptop or mini (cloud, 2026-11-23)
+
+The cloud session can't make or upload pictures, and can't message another session; this entry is the only notice. Seven people changed jobs today and their pictures in R2 show the old ones. Each one's new `portraitPrompt` is in its city file. Generate candidates, Josh picks, upload (`npm run images:upload`), masters step, commit the images file. Delete this entry when done.
+
+| Country | City | Character id | Name | Now | Picture shows |
+|---|---|---|---|---|---|
+| it | bologna | `street-musician-franco` | Franco Melodia, 42 | restauratore | a guitar |
+| it | lucca | `matteo-fabbri` | Matteo Fabbri, 26 | imbianchino | a guitar |
+| it | torino | `luca-musicista` | Diego Quispe, 27 | tranviere | a guitar |
+| it | matera | `elena-laterza` | Elena Laterza, 17 | liceale | a guitar, a woman of 26 |
+| it | palermo | `grazia-salamone` | Yasmine Trabelsi, 70 | professoressa in pensione | a sketchbook, a woman of 27 |
+| es-mx | puebla | `padre-tomas-santo-domingo` | Don Tomás Herrera | restaurador | a priest |
+| es-mx | patzcuaro | `sor-guadalupe-achoques` | Guadalupe Mendoza | bióloga | a nun |
+
+Not needed: Lupita Barajas (her picture fits a catechism teacher), and the two places swapped in (Villa Floridiana, the Funicolare), which have their pictures.
+
 ## 2026-11-23 (cloud), evening: Italy's street musicians cleaned up
 
 - **Josh:** "lets clean up street musicians"; "Are any places to hide?"; "favor food vendors, kids, retired professors or tradesmen".
