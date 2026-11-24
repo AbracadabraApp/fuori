@@ -204,6 +204,12 @@ Found by the code reviews of layout A (2026-11-23). At large text sizes or on a 
 Found by the code review of layout A (2026-11-23): while the answer is sent (a few seconds) the plain buttons look the same. Dimming them while sending is a visual change, waiting on Josh.
 **Status:** open.
 
+### B62. A level-up offer built after the visit but never shown
+Josh, 2026-11-24, asked whether a level-up page came up after his last visit of 2026-11-23 (Refugio, Zacatecas, d2e77f56, step 3, goodbye at 06:49:09 UTC): "no".
+What the server shows: the visit saved (memory 06:49:15, record 06:49:16), then the offer was built (level-up-rewrite at 06:49:24), about 15 s after the goodbye: the app asks for it only once the end call (memories, record) has finished. His learner is still at step 3 since 04:03 UTC with `level_up_asked_at` empty, so he neither said yes nor not yet; no app error logged in the window. The same evening's earlier offer (after Adrián, about 04:00) was shown and taken.
+Not known: whether the app got the offer and lost it (the app closed, locked or killed within those 15 s: the offer lives only in memory, AppModel.levelUp, and isn't asked for again until the next visit is saved) or got it and didn't show it (the sheet waits while a conversation is on screen, B43's hold). Either way the offer is still due, so it should come after his next visit. Same family as B57 (the finished screen waits on calls that take seconds). Found by reading logs, not yet seen twice.
+**Status:** open.
+
 ## Kept: what play says works
 
 Not bugs; recorded so a fix doesn't undo them.
