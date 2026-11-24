@@ -267,6 +267,30 @@ Josh, 2026-11-23: "characters repeat my name in spanish then english". Regina at
 Josh, 2026-11-23: "people never introduce themselves though unless i go first - this use to be commu=on that the bubbles would lead to introductions". Counted (visits whose answer bubbles offer an introduction: *Me llamo…*, *Mi chiamo…*, *¿Cómo se llama?*; archive plus admin route): Oct 12–20 0 of 44; Oct 21–31 2 of 42; **Nov 1–10 24 of 90**; Nov 12–18 13 of 211 (test runs mixed in); Nov 24 0 of 13. Common in early November, down with the Beginner 2 cut-over (Nov 12), none today. (A first count, since corrected, looked at the character saying the learner's name, not the bubbles.) Not yet read what in Beginner 2's setups stopped them.
 **Status:** open.
 
+### B56. Intermediate and Advanced learners never get a Learn card
+Found by the code review of Learn 2.0 (2026-11-23), not yet seen in play. lib/learn-card-writer.ts starts the writer once at a Beginner's wind-down count (7 character lines), then returns no card because an Intermediate visit hasn't reached its own wind-down (9); every later turn skips it as already started. Sophia (Intermediate) would never see a card. The writer also starts one turn before the wind-down for Beginners (the count includes the new reply), so it never sees the goodbye.
+**Status:** open.
+
+### B57. A Learn card ready a moment after the goodbye isn't shown; a slow connection freezes the finished screen
+Found by the code review (2026-11-23). PersonView asks for the card at the goodbye, not after the 1.5 s wait, and the server answers at once, so a card finishing within the wait is missed. The request has no short time limit, so on weak signal the finished screen can stay up to a minute instead of closing.
+**Status:** open.
+
+### B58. Locking the phone while the Learn card is up saves the visit twice
+Found by the code review (2026-11-23). The visit is saved at the goodbye; backgrounded() saves again without checking, so the end call (memories) and the level-up request run twice. The goodbye save also bypasses the one leave function CLAUDE.md requires, and the phone may stay awake under the sheet.
+**Status:** open.
+
+### B59. Smaller Learn card faults
+Found by the code review (2026-11-23): another signed-in learner could fetch a card by conversation id and it is logged under them; one database error creating learn_cards_shown disables cards until a restart; "no sheet in the last 3 visits" counts lessons and the welcome; "level up is coming" copies only part of level up's rule, so a visit can get neither a card nor level up.
+**Status:** open.
+
+### B60. The level-up portrait shows the top of the picture when it's short
+Found by the code reviews of layout A (2026-11-23). At large text sizes or on a small phone the portrait shrinks to 140 pt and shows sky or hair, not the asker's face. A fix that framed the face moved the portrait at normal size too, so it was taken out.
+**Status:** open.
+
+### B61. No sign that the level-up answer was tapped
+Found by the code review of layout A (2026-11-23): while the answer is sent (a few seconds) the plain buttons look the same. Dimming them while sending is a visual change, waiting on Josh.
+**Status:** open.
+
 ## Kept: what play says works
 
 Not bugs; recorded so a fix doesn't undo them.
