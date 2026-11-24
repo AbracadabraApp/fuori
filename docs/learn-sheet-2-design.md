@@ -111,7 +111,7 @@ Josh, of the proposal below: "seems like a better design for the source". Not bu
 4. The bank (content/<country>/learn-cards.json), the fill-in and the three-visit rule go: there's nothing generic left to ration (Josh: "I think the \"card bank\" idea took it in a wrong direction"). Lessons may still lend checked phrases to a situation card; not decided.
 5. Level up wins (a level-up visit ends on the offer; needs B63).
 
-**Mock-ups:** all nine kinds made this way from Josh's 2026-11-23 Mexico visits, in the app's look (system font, 35 pt close): https://claude.ai/artifact/Hx3j3vT4U9sizfem6E2eJ7 (not yet judged).
+**Mock-ups:** all nine kinds made this way from Josh's 2026-11-23 Mexico visits, in the app's look (system font, 35 pt close): https://claude.ai/artifact/Hx3j3vT4U9sizfem6E2eJ7. Josh, 2026-11-24: "they are good".
 
 **What could go wrong in play:** a card that only repeats what was just heard, too thin to teach; a short visit giving only Vocabulary several times; a made example with an error.
 
