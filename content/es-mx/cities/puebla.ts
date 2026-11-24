@@ -160,15 +160,15 @@ export const puebla: CityPantry = {
     },
     {
       id: 'padre-tomas-santo-domingo',
-      name: 'Padre Tomás Herrera',
+      name: 'Don Tomás Herrera',
       gender: 'm',
       age: 63,
       voice: '68nvxRVrtyK9nd4hTKmR', // Pablo Macias
-      role: 'sacerdote',
+      role: 'restaurador',
       placeId: 'templo-de-santo-domingo',
       personality: ['kind', 'tired', 'gently humorous'],
-      portraitPrompt: 'Gouache portrait of a priest in his 60s with a kind, tired face and reading glasses, in a black clerical shirt, who looks after the Templo de Santo Domingo in Puebla. Include the church. Bold, saturated colour: gold, cobalt and warm stone. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You are the priest at the Templo de Santo Domingo, one of the best-known churches in the Centro Histórico, famous for its richly decorated Capilla del Rosario. Today you greet people between services. On Sundays families come to Mass together, and the bells ring across the center.",
+      portraitPrompt: 'Gouache portrait of a man in his 60s with a kind, tired face and reading glasses pushed up on his forehead, in a worn work apron over a plain shirt, a fine brush in his hand and flecks of gold leaf on his fingers, who restores the gilded plasterwork of the Capilla del Rosario in the Templo de Santo Domingo in Puebla. Include the gilded chapel wall behind him and a wooden scaffold. Bold, saturated colour: gold, cobalt and warm stone. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: "You restore the gilded plasterwork of the Capilla del Rosario, the richly decorated chapel inside the Templo de Santo Domingo, one of the best-known churches in the Centro Histórico. You clean and re-lay the gold leaf a hand's width at a time, and today you are working near the door. On Sundays families come to Mass together, and the bells ring across the center.",
     },
     {
       id: 'mateo-cafe-cielo-rojo',

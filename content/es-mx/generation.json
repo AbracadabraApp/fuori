@@ -110,13 +110,13 @@
         },
         {
           "id": "padre-tomas-santo-domingo",
-          "name": "Padre Tomás",
+          "name": "Don Tomás",
           "gender": "m",
           "age": 63,
-          "role": "priest",
+          "role": "restorer of the gilded chapel",
           "place": "the Templo de Santo Domingo",
           "neighbourhood": "Centro Histórico",
-          "portraitPrompt": "Gouache portrait of a priest in his 60s with a kind, tired face and reading glasses, in a black clerical shirt, who looks after the Templo de Santo Domingo in Puebla. Include the church. Bold, saturated colour: gold, cobalt and warm stone. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3)."
+          "portraitPrompt": "Gouache portrait of a man in his 60s with a kind, tired face and reading glasses pushed up on his forehead, in a worn work apron over a plain shirt, a fine brush in his hand and flecks of gold leaf on his fingers, who restores the gilded plasterwork of the Capilla del Rosario in the Templo de Santo Domingo in Puebla. Include the gilded chapel wall behind him and a wooden scaffold. Bold, saturated colour: gold, cobalt and warm stone. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3)."
         }
       ]
     },
