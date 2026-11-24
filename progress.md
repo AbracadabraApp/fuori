@@ -1,5 +1,13 @@
 # Fuori Development Progress
 
+## 2026-11-23 (laptop), late evening: Learn 2.0 and level up layout A released; build 19
+
+- **Released** server `89096da` (Learn 2.0 cards + level up layout A); smoke Italy OK, Mexico OK. The Learn 2.0 entry below ("not released") is now live. **iOS build 19** sent to App Store Connect (Josh: "build for app connect").
+- **Level up, layout A** (Josh's pick from the mock-ups): portrait fills the space left, question bubble and two pinned buttons always on screen (Stay for now / More Spanish or More Italian), no step bar (Josh: "id delete the timeline"). Was: buttons below the fold, no sign the page scrolled.
+- **Learn cards:** sheet opens at the card's height; plain English lines drawn in place (saying / literal / meaning / sentence; Learn it: <word> opens on its why); one Vocabulary card; bank rebuilt (Italy 522, Mexico 453; 120 sayings each with a sentence). Review fixes: headlines ending in a colon or repeating the term refused; DEBUG sample card removed. Old app builds show plain lines as a blank language line (Josh: few users).
+- **bugs.md:** B56–B61 logged from code reviews, none yet seen in play (B56 Intermediate/Advanced never get a card; B57 cards missed after goodbye / hang on weak signal; B58 visit saved twice when locking under the card; B59 smaller card faults; B60 short level-up portrait shows top of picture; B61 no sign the answer was tapped). B44 and B47 closed (Josh).
+- **Next:** Josh plays build 19 (cards after the goodbye, level up); fix B56–B61 as play confirms them. Place sounds (`docs/place-sounds-plan.md`) still waiting for a laptop session; `design/place-sounds/` is untracked in `~/fuori`.
+
 ## 2026-11-23 (laptop): Italy's places trimmed (not released)
 
 - **Cities:** Verona, Lecce, Assisi, Taormina and Genova hidden (Josh: Italy about Mexico's 14 cities, never smaller); every shown city on the first screen, no Mostra altro (Josh: "get rid of the more separator in Italy").
