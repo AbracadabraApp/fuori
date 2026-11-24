@@ -1,19 +1,19 @@
 # Learn card models
 
-version: 2026-11-23
+version: 2026-11-23b
 
 The ten cards Josh drew for the sheet after a visit (docs/learn-sheet-2-design.md), as models: the
 standard every card is written to, not a list of the only kinds there are, and not cards in the
 bank (Josh, 2026-11-23: "the 10 examples do not need to be complete example even for the 10 cards -
 the writer could redraft them - but the 10 are models"). Read by scripts/learn-cards.mts, and later
-by the visit writer. Mexico's file holds the same ten in Spanish.
+by the visit writer. Filled out on 2026-11-23 after Josh: "the bottom row of 10 is sparse" (docs/learn-sheet-2-design.md, rule 8). Mexico's file holds the same ten in Spanish.
 
 ## Models
 
 ```
 What every card is:
 - One topic. Nothing under it: no tip, no second topic, no "try this next time".
-- Short: two or three phrase lines, five things, three actions, or one fact of a sentence or two.
+- Bite-sized, but not sparse: about three lines. Two or three phrases, five things, three actions, a fact of two or three sentences. A saying, a local word or a small word may add one plain English line.
 - Lines in the language, each with its English under it. Whole sentences people really say, no blanks.
 - Lines in the order they're said: the question, then the answer.
 - Plain: what's right and useful to know. Never a mistake, a wrong form, or a correction.
@@ -57,32 +57,37 @@ Why it works: three verbs in the form you'd look up.
 
 6. culture
 Headline: Culture
-Note: In the early evening many people go out for the passeggiata, a slow walk along the main street to see friends and be seen.
-Why it works: one fact about how people live there, not about a building.
+Note: In the early evening many people go out for the passeggiata, a slow walk along the main street. It's for seeing friends and being seen, not for getting anywhere.
+Why it works: one fact about how people live there, not about a building, in two or three sentences.
 
 7. a-saying
 Headline: A saying
 Chi va piano va sano e va lontano. | Who goes slowly goes safely and goes far.
 Note: Slow and steady gets you there.
-Why it works: the saying, its words in English, then what it means.
+Con calma: chi va piano va sano e va lontano. | Take it easy: slow and steady gets you there.
+Why it works: the saying, its words in English, what it means, then the saying used in a sentence.
 
 8. a-word-from-here
 Headline: A word from here
 amuninni | let's go, in Sicilian
-Why it works: one local word, with the language it comes from when that isn't Italian.
+Amuninni, è tardi! | Let's go, it's late!
+Note: You hear it all over Palermo, even from people speaking Italian.
+Why it works: one local word, the language it comes from when that isn't Italian, a sentence that uses it, and where you hear it.
 
 9. this-or-that
 Headline: This or that
-Buongiorno! | Good morning! Until early afternoon.
-Buonasera! | Good evening! From about four.
-Why it works: a choice of two that isn't formal and informal, each in a short line.
+Al banco o al tavolo? | At the counter or at a table?
+Al banco, grazie. | At the counter, thanks.
+Al tavolo, per favore. | At a table, please.
+Why it works: the question that offers the choice, then the two answers, built alike so they read as a pair. A choice of two that isn't formal and informal.
 
 10. a-small-word
 Headline: A small word
 Term: allora
 Allora, due cappuccini e due cornetti? | So, two cappuccinos and two croissants?
 Ah, ho capito! Un caffè, allora. | Oh, got it! An espresso, then.
-Why it works: one little word doing a lot of work, shown in two sentences.
+Note: It opens a thought or wraps one up: so, then, well.
+Why it works: one little word doing a lot of work, shown in two sentences, then a line saying what it does.
 
 A card of a new kind is welcome when the material calls for one: give it a short kind name and a plain headline, and hold it to the same standard.
 ```

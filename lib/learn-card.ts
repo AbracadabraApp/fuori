@@ -60,9 +60,9 @@ export interface LearnCardBank {
 
 /** The longest a card gets: five rows (Vocabulary: things), a note of two short sentences */
 export const MAX_ROWS = 5;
-export const MAX_NOTE = 280;
-/** Word limits (Josh, 2026-11-23: "you may need word limits"): the models' notes run 15–25 words */
-export const MAX_NOTE_WORDS = 30;
+export const MAX_NOTE = 360;
+/** Word limits (Josh, 2026-11-23: "you may need word limits"): the models' notes run up to about 30 words (three sentences, rule 8) */
+export const MAX_NOTE_WORDS = 40;
 export const MAX_LINE_WORDS = 12;
 const words = (s: string) => s.trim().split(/\s+/).filter(Boolean).length;
 
