@@ -41,7 +41,6 @@ export const showcase: Record<string, string[]> = {
     'tram-porta-maggiore',
     'stazione-termini-nuova',
     // Dialogue variety (Josh, 2026-11-06): generic businesses out
-    'farmacia-prati', // kept: it hosts a cultural lesson (Josh, 2026-11-06: "leave them")
   ],
   matera: [
     'caffe-schiuma',
@@ -71,7 +70,6 @@ export const showcase: Record<string, string[]> = {
     'giardino-boboli',
     'piazza-signoria',
     'ponte-vecchio',
-    'tabaccheria-nesi', // kept: it hosts a cultural lesson (Josh, 2026-11-06: "leave them")
   ],
   siena: [
     'pasticceria-bini', // a pastry shop with the city's own specialty, back (Josh, 2026-10-27)
@@ -103,7 +101,6 @@ export const showcase: Record<string, string[]> = {
   napoli: [
     'bar-nilo',
     'pizza-a-portafoglio-tribunali', // street food only this city has (Josh, 2026-10-27)
-    'pasticceria-poppella', // a pastry shop with the city's own specialty, back (Josh, 2026-10-27)
     'mozzarella-spaccanapoli', // a deli for the city's own food (Josh, 2026-10-27)
     'mercato-pignasecca',
     'pizzeria-sorbillo',
@@ -255,6 +252,10 @@ export const homeCities = ['roma-nuova', 'matera', 'firenze', 'siena', 'venezia'
  * memories stay in the database, unread by the game.
  */
 export const hiddenForNow: Record<string, string[]> = {
+  // Hidden 2026-11-23 (Josh: "delete: Pharmacists, Tabaccherie, and Cafés and bars 1 in any city with 3"):
+  // the one pharmacy and the one tabaccheria (their cultural lessons aren't in the set), and Napoli's third café
+  'roma-nuova': ['farmacia-prati'],
+  napoli: ['pasticceria-poppella'],
   // Hidden 2026-11-23 (Josh: "we should hide more places"; Italy keeps about Mexico's 14 cities:
   // "id hide verona, leccce, assissi Taormina and Genoa"). Their shown places as they were
   verona: [
@@ -322,6 +323,7 @@ export const hiddenForNow: Record<string, string[]> = {
     'via-garibaldi',
   ],
   firenze: [ // replaced 2026-10-23
+    'tabaccheria-nesi', // hidden 2026-11-23 (above)
     'caffe-rivoire',
     'forno-galli',
     'mercato-centrale',
