@@ -7,6 +7,12 @@
 - **Not live:** goes out with the next release.
 - **Open:** test:pack fails on roma-nuova/cinema-pigneto (a shown place with nobody to talk to), on main before these changes too.
 
+## 2026-11-23 (cloud), evening: CLAUDE.md, "Proposals start with play"
+
+- **Josh:** "so the part in claude.md about user experience didn't work". The sentence "Judge by what the learner hears and sees in play" was a principle with no action; an hour after it was added this session ranked lesson ideas by build cost.
+- **Now** (Working across sessions): any proposal or ranking says first what the learner would hear or see differently and what could go wrong in play; effort comes last and never decides the order.
+- **Lessons, talked through, nothing built:** two changes look worth trying, both in `content/<country>/prompts/lesson-flow.md`: a twist in the third practice scene, and the third scene with no answers handed over. Carrying a lesson into the next visits is out (every character would push the phrase).
+
 ## PICTURES NEEDED: seven portraits and one place, for the laptop or mini (cloud, 2026-11-23)
 
 The cloud session can't make or upload pictures, and can't message another session; this entry is the only notice. Seven people changed jobs today and their pictures in R2 show the old ones. Each one's new `portraitPrompt` is in its city file. Generate candidates, Josh picks, upload (`npm run images:upload`), masters step, commit the images file. Delete this entry when done.
