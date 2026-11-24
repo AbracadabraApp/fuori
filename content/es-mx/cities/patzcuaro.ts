@@ -60,7 +60,7 @@ export const patzcuaro: CityPantry = {
       neighbourhood: 'Centro',
       real: true,
       characterId: 'sor-guadalupe-achoques',
-      imagePrompt: 'the Basílica de Nuestra Señora de la Salud in Pátzcuaro. A large stone church with a plain front and a bell tower, its atrium shaded by trees. Beside it, in a convent courtyard, a nun in a white habit leans over a row of shallow water tanks where small pale salamanders swim.',
+      imagePrompt: 'the Basílica de Nuestra Señora de la Salud in Pátzcuaro. A large stone church with a plain front and a bell tower, its atrium shaded by trees. Beside it, in a courtyard, a woman in a field vest leans over a row of shallow water tanks where small pale salamanders swim.',
     },
     {
       id: 'danza-de-los-viejitos',

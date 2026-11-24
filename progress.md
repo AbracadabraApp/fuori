@@ -1,6 +1,6 @@
 # Fuori Development Progress
 
-## PORTRAITS NEEDED: seven, for the laptop or mini (cloud, 2026-11-23)
+## PICTURES NEEDED: seven portraits and one place, for the laptop or mini (cloud, 2026-11-23)
 
 The cloud session can't make or upload pictures, and can't message another session; this entry is the only notice. Seven people changed jobs today and their pictures in R2 show the old ones. Each one's new `portraitPrompt` is in its city file. Generate candidates, Josh picks, upload (`npm run images:upload`), masters step, commit the images file. Delete this entry when done.
 
@@ -13,6 +13,10 @@ The cloud session can't make or upload pictures, and can't message another sessi
 | it | palermo | `grazia-salamone` | Yasmine Trabelsi, 70 | professoressa in pensione | a sketchbook, a woman of 27 |
 | es-mx | puebla | `padre-tomas-santo-domingo` | Don Tomás Herrera | restaurador | a priest |
 | es-mx | patzcuaro | `sor-guadalupe-achoques` | Guadalupe Mendoza | bióloga | a nun |
+
+**And one place picture:** `es-mx / patzcuaro / basilica-de-la-salud` shows a nun in a white habit at the salamander tanks; its `imagePrompt` now has a woman in a field vest. Regenerate it with Guadalupe's portrait.
+
+All seven portrait prompts were checked for their style lines (medium, light, "Colour from their place", format) and `test:image-prompts` passes in both countries.
 
 Not needed: Lupita Barajas (her picture fits a catechism teacher), and the two places swapped in (Villa Floridiana, the Funicolare), which have their pictures.
 
