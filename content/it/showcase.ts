@@ -99,7 +99,7 @@ export const showcase: Record<string, string[]> = {
     'ponte-rialto',
   ],
   napoli: [
-    'bar-nilo',
+    'pasticceria-poppella', // a pastry shop with the city's own specialty, back (Josh, 2026-10-27)
     'pizza-a-portafoglio-tribunali', // street food only this city has (Josh, 2026-10-27)
     'mozzarella-spaccanapoli', // a deli for the city's own food (Josh, 2026-10-27)
     'mercato-pignasecca',
@@ -253,9 +253,9 @@ export const homeCities = ['roma-nuova', 'matera', 'firenze', 'siena', 'venezia'
  */
 export const hiddenForNow: Record<string, string[]> = {
   // Hidden 2026-11-23 (Josh: "delete: Pharmacists, Tabaccherie, and Cafés and bars 1 in any city with 3"):
-  // the one pharmacy and the one tabaccheria (their cultural lessons aren't in the set), and Napoli's third café
+  // the one pharmacy and the one tabaccheria (their cultural lessons aren't in the set), and one of Napoli's two bars
   'roma-nuova': ['farmacia-prati'],
-  napoli: ['pasticceria-poppella'],
+  napoli: ['bar-nilo'], // Josh, after Poppella was hidden first: "this is a pasticceria - hide Nilo and bring this back"
   // Hidden 2026-11-23 (Josh: "we should hide more places"; Italy keeps about Mexico's 14 cities:
   // "id hide verona, leccce, assissi Taormina and Genoa"). Their shown places as they were
   verona: [
