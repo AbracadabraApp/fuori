@@ -1,5 +1,12 @@
 # Fuori Development Progress
 
+## 2026-11-23 (laptop): Italy's places trimmed (not released)
+
+- **Cities:** Verona, Lecce, Assisi, Taormina and Genova hidden (Josh: Italy about Mexico's 14 cities, never smaller); every shown city on the first screen, no Mostra altro (Josh: "get rid of the more separator in Italy").
+- **Places:** hidden Farmacia Prati, Tabaccheria Nesi, Bar Nilo (Poppella kept: "this is a pasticceria"), Gay-Odin, Pizzeria Sorbillo, Piazza Verdi, Ristorante I Carracci, Osteria Ballarò, the tram stop at Porta Maggiore; Basilica di Santa Maria in Trastevere hidden then brought back. All in `hiddenForNow` in content/it/showcase.ts, nothing deleted. With the cloud session's street-musician swap (47476ddd): Italy 15 cities, 160 places; Mexico 14 and 160.
+- **Not live:** goes out with the next release.
+- **Open:** test:pack fails on roma-nuova/cinema-pigneto (a shown place with nobody to talk to), on main before these changes too.
+
 ## PICTURES NEEDED: seven portraits and one place, for the laptop or mini (cloud, 2026-11-23)
 
 The cloud session can't make or upload pictures, and can't message another session; this entry is the only notice. Seven people changed jobs today and their pictures in R2 show the old ones. Each one's new `portraitPrompt` is in its city file. Generate candidates, Josh picks, upload (`npm run images:upload`), masters step, commit the images file. Delete this entry when done.
