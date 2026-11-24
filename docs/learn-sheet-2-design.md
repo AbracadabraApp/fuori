@@ -59,6 +59,8 @@ No picture inside the sheet: the person is on the screen behind it. The sheet ma
 9. **Cards are often picked by what the conversation involved, but not always.** A card can stand by itself.
 10. **The person screen behind the sheet is not changed.**
 11. **Cards don't make corrections** (Josh, 2026-11-23: "i don't know if it made it into the design doc - but cards don't make corrections"). A card shows the right way to say things; it never shows what the learner got wrong or a wrong form beside the right one.
+12. **No adornment** (Josh, 2026-11-23: "we can skip the adornment - for vocabulary - lose things/verbs/actions -- just translate Vocabulary"): no mark, label, badge or stamp for the kind of card; the plain card stands. Mock-ups of four treatments: https://claude.ai/artifact/KsCwLuDkhdeooz28zpkjDD.
+13. **One Vocabulary card**, headed "Vocabulary": the visit's words, each with its English, nouns and verbs in any mix; Vocabulary: things and Vocabulary: actions are folded into it (same words).
 
 ## The ten card types
 
@@ -93,18 +95,13 @@ One fact about where you were. It doesn't have to come from the conversation. Th
 
 ![About this place](../design/learn-sheet-2/cards/03-about-this-place.jpg)
 
-### 4. Vocabulary: things
+### 4. Vocabulary (5 folded in, 2026-11-23)
 
-- **Holds:** five nouns, each with its article, the English under each.
-- **Example:** *el tamal* the tamale / *el atole* warm corn drink / *el chipilín* a green herb / *la olla* the pot / *el frío* the cold.
+- **Holds:** about five words from the visit, each with its English under it: nouns with their article, verbs in the form you'd look up, in any mix. Headed just "Vocabulary" (rule 13).
+- **Example:** *el tamal* the tamale / *el atole* warm corn drink / *el chipilín* a green herb / *querer* to want / *dar* to give.
+- The two drawings below are from before the merge.
 
 ![Vocabulary: things](../design/learn-sheet-2/cards/04-vocabulary-things.jpg)
-
-### 5. Vocabulary: actions
-
-- **Holds:** three verbs in the form you'd look up, the English under each.
-- **Example:** *querer* to want / *dar* to give / *saber* to taste.
-
 ![Vocabulary: actions](../design/learn-sheet-2/cards/05-vocabulary-actions.jpg)
 
 ### 6. Culture

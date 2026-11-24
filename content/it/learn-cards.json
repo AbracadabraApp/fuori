@@ -6555,8 +6555,8 @@
     },
     {
       "id": "city:matera:vocabulary-things-la-gravina",
-      "kind": "vocabulary-things",
-      "headline": "Vocabulary: the landscape",
+      "kind": "vocabulary",
+      "headline": "Vocabulary",
       "rows": [
         {
           "text": "la gravina",

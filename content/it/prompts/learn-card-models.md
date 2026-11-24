@@ -1,19 +1,19 @@
 # Learn card models
 
-version: 2026-11-23c
+version: 2026-11-23d
 
 The ten cards Josh drew for the sheet after a visit (docs/learn-sheet-2-design.md), as models: the
 standard every card is written to, not a list of the only kinds there are, and not cards in the
 bank (Josh, 2026-11-23: "the 10 examples do not need to be complete example even for the 10 cards -
 the writer could redraft them - but the 10 are models"). Read by scripts/learn-cards.mts, and later
-by the visit writer. Filled out on 2026-11-23 after Josh: "the bottom row of 10 is sparse" (docs/learn-sheet-2-design.md, rule 8). Mexico's file holds the same ten in Spanish.
+by the visit writer. Filled out on 2026-11-23 after Josh: "the bottom row of 10 is sparse" (docs/learn-sheet-2-design.md, rule 8). One Vocabulary card in place of things and actions (Josh, 2026-11-23: "we can skip the adornment - for vocabulary - lose things/verbs/actions -- just translate Vocabulary"). Mexico's file holds the same ten in Spanish.
 
 ## Models
 
 ```
 What every card is:
 - One topic. Nothing under it: no tip, no second topic, no "try this next time".
-- Bite-sized, but not sparse: about three lines. Two or three phrases, five things, three actions, a fact of two or three sentences. A saying, a local word or a small word may add one plain English line.
+- Bite-sized, but not sparse: about three lines. Two or three phrases, about five words, a fact of two or three sentences. A saying, a local word or a small word may add one plain English line.
 - Lines in the language, each with its English under it. Whole sentences people really say, no blanks.
 - Lines in the order they're said: the question, then the answer.
 - Plain: what's right and useful to know. Never a mistake, a wrong form, or a correction.
@@ -39,21 +39,14 @@ Headline: About this garden
 Note: The giant fig trees came from Australia in the 1800s. Their roots hang down from the branches and grow into new trunks.
 Why it works: one fact about where you stood that you'd be glad to know, in plain English.
 
-4. vocabulary-things
-Headline: Vocabulary: things
+4. vocabulary
+Headline: Vocabulary
 il cannolo | the cannolo
 la ricotta | ricotta
 il banco | the counter
-lo scontrino | the receipt
-la pasticceria | the pastry shop
-Why it works: five nouns from one scene, each with its article.
-
-5. vocabulary-actions
-Headline: Vocabulary: actions
-volere | to want
 prendere | to take, to have
 pagare | to pay
-Why it works: three verbs in the form you'd look up.
+Why it works: the words from one scene, each with its English: nouns with their article, verbs in the form you'd look up, in any mix.
 
 6. culture
 Headline: Culture
