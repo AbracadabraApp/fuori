@@ -70,6 +70,8 @@ struct PersonView: View {
         }) { card in
             LearnCardSheet(card: card, speechLanguage: model.speechLanguage, height: $learnCardHeight)
                 .presentationDetents([.height(learnCardHeight)])
+                // The drawn cards' corners, not iOS's default (which follows the screen's and reads as too round)
+                .presentationCornerRadius(22)
                 .presentationDragIndicator(.visible)
         }
         .settingsToolbar()

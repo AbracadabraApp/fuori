@@ -15,14 +15,20 @@ struct LearnCardSheet: View {
     /// The card's full height, for the sheet's one detent
     @Binding var height: CGFloat
     @Environment(\.dismiss) private var dismiss
-    @ScaledMetric(relativeTo: .body) private var closeSize: CGFloat = 30
+    @ScaledMetric(relativeTo: .body) private var closeSize: CGFloat = 28
+    // The drawn cards' type (design/learn-sheet-2/cards, Josh: "These look much better"): a plain sans at
+    // their sizes. The drawings use Public Sans, which the app doesn't have; the system font is the nearest
+    @ScaledMetric(relativeTo: .headline) private var headSize: CGFloat = 18
+    @ScaledMetric(relativeTo: .subheadline) private var lineSize: CGFloat = 15
+    @ScaledMetric(relativeTo: .footnote) private var enSize: CGFloat = 13
+    @ScaledMetric(relativeTo: .subheadline) private var plainSize: CGFloat = 14
 
     var body: some View {
         ScrollView {
-            VStack(alignment: .leading, spacing: 14) {
-                HStack(alignment: .firstTextBaseline, spacing: 12) {
+            VStack(alignment: .leading, spacing: 12) {
+                HStack(alignment: .center, spacing: 12) {
                     Text(headline)
-                        .typeface(.label, 19, relativeTo: .title3, weight: .semibold)
+                        .font(.system(size: headSize, weight: .medium))
                         .foregroundStyle(Tokens.Colors.ink)
                         .fixedSize(horizontal: false, vertical: true)
                         .accessibilityAddTraits(.isHeader)
@@ -37,21 +43,21 @@ struct LearnCardSheet: View {
                     .buttonStyle(.plain)
                     .accessibilityLabel("Close")
                 }
-                VStack(alignment: .leading, spacing: 12) {
+                VStack(alignment: .leading, spacing: 9) {
                     ForEach(Array(card.rows.enumerated()), id: \.offset) { _, row in
                         if row.text.isEmpty {
                             // A plain English line, in its place among the lines
                             Text(row.en)
-                                .typeface(.label, 16, relativeTo: .body)
+                                .font(.system(size: plainSize))
                                 .foregroundStyle(Tokens.Colors.text)
                                 .fixedSize(horizontal: false, vertical: true)
                         } else {
-                            VStack(alignment: .leading, spacing: 2) {
+                            VStack(alignment: .leading, spacing: 1) {
                                 Text(tagged(row.text))
-                                    .typeface(.label, 17, relativeTo: .body, weight: .semibold)
+                                    .font(.system(size: lineSize, weight: .semibold))
                                     .foregroundStyle(Tokens.Colors.ink)
                                 Text(row.en)
-                                    .typeface(.label, 15, relativeTo: .subheadline)
+                                    .font(.system(size: enSize))
                                     .foregroundStyle(Tokens.Colors.muted)
                             }
                             .fixedSize(horizontal: false, vertical: true)
@@ -60,18 +66,20 @@ struct LearnCardSheet: View {
                     }
                     if let note = card.note, !note.isEmpty {
                         Text(note)
-                            .typeface(.label, 16, relativeTo: .body)
+                            .font(.system(size: plainSize))
                             .foregroundStyle(Tokens.Colors.text)
                             .fixedSize(horizontal: false, vertical: true)
                     }
                 }
                 .frame(maxWidth: .infinity, alignment: .leading)
-                .padding(14)
-                .background(Tokens.Colors.learnCard, in: RoundedRectangle(cornerRadius: 12, style: .continuous))
+                .padding(.horizontal, 12)
+                .padding(.vertical, 11)
+                .background(Tokens.Colors.learnCard, in: RoundedRectangle(cornerRadius: 10, style: .continuous))
             }
             .padding(.horizontal, Tokens.Space.gutter)
-            .padding(.top, 20)
-            .padding(.bottom, 12)
+            .padding(.top, 18)
+            // The sheet adds the home bar's room under this; the drawn cards sit close to the bottom
+            .padding(.bottom, 2)
             .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { height = $0 }
         }
         .scrollBounceBehavior(.basedOnSize)
