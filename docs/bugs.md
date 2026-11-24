@@ -217,6 +217,7 @@ The page's words, buttons and step bar come from content (`levelUp` in each coun
 - **About 7 s:** the app asks for the offer only after the end call has written the character's memory and the visit's record (AppModel.save: endConversation, then levelUp).
 - **About 8 s:** `levelUpOffer` (lib/level-up.ts) awaits `rewriteAtStep`, a Claude call (769 output tokens that night) that rewrites the last line for the old page's Now / Next step boxes. The page since build 17 doesn't draw them; they're sent for older builds (B42: "it can go once the new build is on every phone").
 Without them the offer is a few database reads. The cost in play is B62: an app closed at the goodbye loses the offer. Josh's direction: decide it during the visit (the Learn card is decided at the wind-down and already checks whether level up is coming) and show it at the goodbye.
+**It happens on every level-up visit, not by chance** (Josh, 2026-11-24: "so level up card building and displaying are killink 2 cards"; "this would likely always happen"). The card is held back for the offer ("Level up wins, no card"), the finished screen closes 1.5 s after the goodbye, and the offer comes about 15 s later. So every level-up visit ends on nothing at the goodbye; the offer shows later on the place list if the learner is still there (Adrián, 2026-11-23), waits behind the next conversation if they've opened one, or is lost if they closed the app (Refugio, B62). Of the 2026-11-23 visits with no card, two were level-up visits for this reason.
 **Status:** open.
 
 ## Kept: what play says works
