@@ -59,15 +59,6 @@ What the walk also showed, not fixed (one learner, read by Claude):
 
 **Status: fix live** (59e16f03; live at 42d920f7), not yet confirmed in play.
 
-### B35. The step 2 → 3 offer's preview is the same line, word for word
-Found 2026-11-15 evening by the levels check (docs/checks/levels.md), walking a test learner up every step on a local server with the local test database (scripts/walk-live.mjs, WALK_BASE local), once per country. Both walks failed the same check, "the offer's next line is the same as the line as said", at step 2 → 3 only:
-- Italy (main at 7f74c5f6, conversation 6971c2bb): Now and Next both "Un chilo, perfetto! One kilo, perfect! Le scelgo io, le più dolci. I'll pick them myself, the sweetest ones. Vuole anche i mandarini? Would you also like the mandarins?"
-- Mexico (main at 36c982de, conversation 342d1cc6): Now and Next both "Sí, los compañeros eran lo más importante. Yes, the coworkers were the most important thing. Cada día, antes de bajar, nos persignábamos juntos en esta iglesia. Every day, before going down, we crossed ourselves together in this church."
-
-Not chance: since steps became settings, step 2 echoes every sentence and step 3 echoes half and glosses half, and both echo the last sentence. On main at a6827f25 (lib/dialogue/pieces.ts → saySentences, both countries), step 3's rendering of a line equals step 2's for 500 of 1000 seeds on a two-sentence line and 118 of 1000 on three sentences. So B34's note that the settings answer the "Now and Next look the same" preview doesn't hold for this step. (The walks ran before 59e16f03, which changed which turn is previewed, not how it's rendered.) The other step previews showed a change (steps 3 → 4, 4 → 5, 5 → 6 take English off); step 6 → Intermediate and Intermediate → Advanced still change a word or two, as B34 says. **Status: open.**
-
-2026-11-17, the walk on live after the release (live 35a8e48, Mexico only; Italy passed every step): the same check failed at step 4 → 5 and at Intermediate → Advanced, steps B35 hadn't seen. The walk prints no line text, so the lines aren't recorded. The preview is the last turn that isn't the wind-down or the close, so the day's ending change (scaffolding.md 17e–17f) isn't in it. **Status: open.**
-
 ### B41. The echo says twice what is the same in both languages: a name, an exclamation, a word (B54 and B29 folded in)
 Josh, 2026-11-16, Chuy, Guadalajara (f71312f9, step 2, every sentence echoed), Bug on turn 5, "Repeats exclamation", and turn 6, "Repetitive character"; then: "he might say Ahhh! Joshua (in Spanish) and then Ahh! Joshua in English. When characters use my name its strange to here it repeated - because it isn't in 2 languages". From today's step 2 turns: "¡Ja! Sí, es muy grave… Ha! Yes, it's very deep…" (Chuy); "Gracias, Joshua. Aquí todos somos vecinos. Thank you, Joshua. Here we are all neighbors." (Lupita); "Mucho gusto, Joshua. Nice to meet you, Joshua." (Valeria); "¡Eso es, Joshua, lo entendió muy bien! That's it, Joshua, you got it just right!" (Memo). The echo repeats the whole sentence, so a name or an exclamation, which sound the same in both languages, comes twice. **Status: open; the fix would add a rule, so it waits in [rules-prevention.md](rules-prevention.md) (R1).**
 
@@ -117,14 +108,6 @@ Josh sent the cloud chat session two screenshots of the page at 08:54, with no w
 **Josh, 2026-11-16:** "do italy". Board 8 now has the agreed Mexico page and Italy three ways, with Luisa Cocco's portrait and "Italian" in the bubble and bar: awning green (Italy's level-up theme today), terracotta, slate (from her picture). **Waiting on his pick for Italy.**
 
 **Status: fix live** (525872e; live at 42d920f7), not yet confirmed in play.
-
-### B43. The level up page came up over a conversation that had already started
-Josh, 2026-11-16, on the build of 3d13c55: "this level up page deployed after a conversation had started and sat/spoke behind it"; "it wasn't interstitial". No conversation id given.
-Cause, from the code: the app asks for the offer only after the conversation just left has been saved (`AppModel.save`: end the conversation, refresh visits, then ask), which takes seconds, and shows the sheet whenever the answer arrives. A learner who has already opened the next person gets the sheet over that conversation, which goes on. **Status: fix on main, not on a phone** (AppModel.conversationOpen; an offer that arrives during a conversation waits and shows on the place list when it's left; LevelUpHoldTests). Left as it is: the offer still names the earlier person ("You're doing great with…"), now possibly two conversations back.
-
-2026-11-17, Dante (1c830aca, 18:56 UTC), rated **bug** on the opener: "Level up interrupts play continues old screens". The visit opened at step 2 and its turn 3 played at step 3, so the yes was taken mid-visit. The fix above is on main; whether his phone had it is to check.
-
-**Status: fix live** (a22fd3eb; live at 42d920f7), not yet confirmed in play.
 
 ### B46. The character's questions are yes or no
 Josh, 2026-11-17, to Luigi in Venice (5b26f2c9): "E mi piace domanda che è più interessante, non sì o no. Forse farai una domanda più interessante?"; then "E anche una altra domanda, sì o no?"; "Oh, forse sì, forse no. Ogni domanda." Rated turn 3 **bug: "There is a clue here to avoid yes/no"**: the line where Luigi, after the first remark, asked "Secondo lei, perché i libri stanno nelle vasche?". Six of the nine openers ask "Le piace…?" (the fish, the fountain, the square, the drum, coffee, the book gondola). B24 counted the same in Mexico on 11-14. **Status: open.**
@@ -206,6 +189,27 @@ Not bugs; recorded so a fix doesn't undo them.
 - **A Beginner character asked for more English adapts.** Josh, 2026-11-13: "Some character adapted to use more English." Ofelia, asked "¿hablo più inglés?", answered "Sure, mi reina, I'll use more English" and did (71dc1d3b); Carmen, told "that was a lot of Spanish with no English", said "I'll go slower" (09978a29).
 
 ## Closed
+
+### B35. The step 2 → 3 offer's preview is the same line, word for word
+Found 2026-11-15 evening by the levels check (docs/checks/levels.md), walking a test learner up every step on a local server with the local test database (scripts/walk-live.mjs, WALK_BASE local), once per country. Both walks failed the same check, "the offer's next line is the same as the line as said", at step 2 → 3 only:
+- Italy (main at 7f74c5f6, conversation 6971c2bb): Now and Next both "Un chilo, perfetto! One kilo, perfect! Le scelgo io, le più dolci. I'll pick them myself, the sweetest ones. Vuole anche i mandarini? Would you also like the mandarins?"
+- Mexico (main at 36c982de, conversation 342d1cc6): Now and Next both "Sí, los compañeros eran lo más importante. Yes, the coworkers were the most important thing. Cada día, antes de bajar, nos persignábamos juntos en esta iglesia. Every day, before going down, we crossed ourselves together in this church."
+
+Not chance: since steps became settings, step 2 echoes every sentence and step 3 echoes half and glosses half, and both echo the last sentence. On main at a6827f25 (lib/dialogue/pieces.ts → saySentences, both countries), step 3's rendering of a line equals step 2's for 500 of 1000 seeds on a two-sentence line and 118 of 1000 on three sentences. So B34's note that the settings answer the "Now and Next look the same" preview doesn't hold for this step. (The walks ran before 59e16f03, which changed which turn is previewed, not how it's rendered.) The other step previews showed a change (steps 3 → 4, 4 → 5, 5 → 6 take English off); step 6 → Intermediate and Intermediate → Advanced still change a word or two, as B34 says. **Status: open.**
+
+2026-11-17, the walk on live after the release (live 35a8e48, Mexico only; Italy passed every step): the same check failed at step 4 → 5 and at Intermediate → Advanced, steps B35 hadn't seen. The walk prints no line text, so the lines aren't recorded. The preview is the last turn that isn't the wind-down or the close, so the day's ending change (scaffolding.md 17e–17f) isn't in it. **Status: open.**
+
+**Status: closed** (Josh, 2026-11-24: "Close B35, B43"); obsolete: the level-up page since build 17 draws no example lines, so the identical preview is never seen.
+
+### B43. The level up page came up over a conversation that had already started
+Josh, 2026-11-16, on the build of 3d13c55: "this level up page deployed after a conversation had started and sat/spoke behind it"; "it wasn't interstitial". No conversation id given.
+Cause, from the code: the app asks for the offer only after the conversation just left has been saved (`AppModel.save`: end the conversation, refresh visits, then ask), which takes seconds, and shows the sheet whenever the answer arrives. A learner who has already opened the next person gets the sheet over that conversation, which goes on. **Status: fix on main, not on a phone** (AppModel.conversationOpen; an offer that arrives during a conversation waits and shows on the place list when it's left; LevelUpHoldTests). Left as it is: the offer still names the earlier person ("You're doing great with…"), now possibly two conversations back.
+
+2026-11-17, Dante (1c830aca, 18:56 UTC), rated **bug** on the opener: "Level up interrupts play continues old screens". The visit opened at step 2 and its turn 3 played at step 3, so the yes was taken mid-visit. The fix above is on main; whether his phone had it is to check.
+
+**Status: fix live** (a22fd3eb; live at 42d920f7), not yet confirmed in play.
+
+**Status: closed** (Josh, 2026-11-24: "Close B35, B43").
 
 ### B12. The character's bubble stays on screen too long
 Josh, 2026-11-13, in play: "el personaje bubble está en la pantalla demasiado largo" (Ofelia 71dc1d3b). Which bubble and when, to ask. Josh, 2026-11-14, what he meant: "when the reply is given, the reply bubbles disaappear. The revious character bubble hanges there until new dialogue arrives -- they should both go afteer reply". **Status: fix in the app** (059fc9f, D21: the character's bubble and the answers go when the reply is sent, at every level; in build 16, TestFlight, 2026-11-14, and every build since, now 19). Closes when Josh sees it on the phone.
