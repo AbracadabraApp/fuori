@@ -40,7 +40,7 @@ struct LevelUpView: View {
             GeometryReader { geo in
                 ScrollView {
                     VStack(spacing: 0) {
-                        Portrait(url: portrait, name: askerName, anchor: UnitPoint(x: 0.5, y: 0.3))
+                        Portrait(url: portrait, name: askerName)
                             .frame(height: max(portraitMin, geo.size.height - bubbleHeight))
                         question
                             .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { bubbleHeight = $0 }

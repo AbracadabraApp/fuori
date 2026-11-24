@@ -167,9 +167,6 @@ struct PersonView: View {
 struct Portrait: View {
     let url: URL?
     let name: String
-    /// Which part of the picture stays in a short window: the top (the person screen), or nearer the face
-    /// (the level up, whose portrait shrinks to fit the question and buttons under it)
-    var anchor: UnitPoint = .top
 
     var body: some View {
         GeometryReader { geo in
@@ -182,8 +179,7 @@ struct Portrait: View {
                 }
             }
             .frame(width: width, height: width * 3 / 2)
-            .frame(width: geo.size.width, height: geo.size.height, alignment: Alignment(horizontal: .center, vertical: anchor == .top ? .top : .center))
-            .offset(y: anchor == .top ? 0 : (width * 3 / 2 - geo.size.height) * (0.5 - anchor.y))
+            .frame(width: geo.size.width, height: geo.size.height, alignment: .top)
             .clipped()
         }
         .accessibilityElement()
