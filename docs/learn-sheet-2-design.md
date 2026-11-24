@@ -95,6 +95,23 @@ No picture inside the sheet: the person is on the screen behind it. The sheet ma
 
 Mock-ups of the card each of the six visits could have had, each a different kind: https://claude.ai/artifact/ExmhTxobHySwmFV1gWWFJ6 (not yet judged by Josh).
 
+## The source, redesigned (2026-11-24)
+
+Josh, of the proposal below: "seems like a better design for the source". Not built.
+
+**What the learner sees:** after every goodbye (a level-up visit ends on the offer instead), one light card about the visit just had, and a different kind from the last cards.
+
+**The source is the visit, and what Claude knows about the place.** No bank. The Learn 1.0 page already works this way: its "good to know" is written from the scene and the model's own knowledge ("one cultural or practical point from this scene … about life here", content/<country>/prompts/learn.md), nothing looked up. Facts aren't checked ("a world, not an encyclopedia", CLAUDE.md); the language is: a card's lines in the language are taken from the visit as said (the character's lines, the answers offered), so they are as right as the conversation; new language only for the one extra example a Learn it card needs.
+
+**How:**
+1. At the wind-down, one call (the existing writer) reads the visit and fills every kind the visit can support: a situation (When you…), a much-used word heard (Learn it), the saying if one was used, formal and informal if both came up, a word from here if one came up, the visit's words (Vocabulary), and About this place / Culture from the scene (Josh's type: "It doesn't have to come from the conversation").
+2. Code, not the model, picks the kind: not a kind shown in the learner's last two cards, then the first left in the order situation, Learn it, saying, formal and informal, word from here, place or culture, Vocabulary (Josh, 2026-11-24: "The situation cardds may be the best"). Variety by code, since an instruction to vary gets the same thing every time (B31).
+3. Every visit can fill Vocabulary, so a card is always there.
+4. The bank (content/<country>/learn-cards.json), the fill-in and the three-visit rule go: there's nothing generic left to ration (Josh: "I think the \"card bank\" idea took it in a wrong direction"). Lessons may still lend checked phrases to a situation card; not decided.
+5. Level up wins (a level-up visit ends on the offer; needs B63).
+
+**What could go wrong in play:** a card that only repeats what was just heard, too thin to teach; a short visit giving only Vocabulary several times; a made example with an error.
+
 ## The ten card types
 
 Each example below is drawn on the full person screen in `design/learn-sheet-2/cards/`.
