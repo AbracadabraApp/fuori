@@ -12,7 +12,8 @@ import FuoriNetworking
 /// from /v1/content).
 /// Layout A of the mock-ups Josh picked on 2026-11-23
 /// (https://claude.ai/artifact/A6HiWaZLucsAS5PrkZdPAv): the portrait takes the
-/// space left, so the question and the buttons are always on screen; no step
+/// space left; the buttons are always on screen, and at large text sizes the
+/// portrait and question scroll above them; no step
 /// bar (Josh: "id delete the timeline"). The page's colour comes from the
 /// words' theme, so nothing here assumes a country.
 struct LevelUpView: View {
@@ -30,23 +31,26 @@ struct LevelUpView: View {
     @ScaledMetric(relativeTo: .body) private var buttonHeight: CGFloat = 52
     /// The least of the portrait that stays in view: fixed, not scaled, so large text doesn't make it grow
     private let portraitMin: CGFloat = 140
-    @State private var bubbleHeight: CGFloat = 0
 
     var body: some View {
         VStack(spacing: 0) {
             band
-            // The portrait takes what the question leaves; at large text sizes the portrait and question
-            // scroll, and the buttons stay pinned under them either way
-            GeometryReader { geo in
+            // The portrait takes what the question leaves, with nothing measured; when even its floor
+            // doesn't fit (large text), the portrait and question scroll. The buttons stay pinned under
+            // them either way
+            ViewThatFits(in: .vertical) {
+                VStack(spacing: 0) {
+                    Portrait(url: portrait, name: askerName)
+                        .frame(minHeight: portraitMin, maxHeight: .infinity)
+                    question
+                }
                 ScrollView {
                     VStack(spacing: 0) {
                         Portrait(url: portrait, name: askerName)
-                            .frame(height: max(portraitMin, geo.size.height - bubbleHeight))
+                            .frame(height: portraitMin)
                         question
-                            .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { bubbleHeight = $0 }
                     }
                 }
-                .scrollBounceBehavior(.basedOnSize)
             }
             choices
                 .padding(.horizontal, Tokens.Space.gutter)
@@ -108,7 +112,7 @@ struct LevelUpView: View {
             choice(words.go ?? words.yesLabel, fill: Tokens.Colors.lemon) { answer(true) }
                 // Where the learner is and what's next, which the step bar used to say (the bar went:
                 // Josh, "id delete the timeline"; VoiceOver kept its reading)
-                .accessibilityHint(stepReading)
+                .accessibilityValue(stepReading)
         }
         .disabled(answering)
     }
