@@ -360,17 +360,24 @@ public final class AppModel {
         #endif
         Task {
             do {
+                // B63: the offer is a few database reads (the server skips its Claude rewrite for `lite`) and doesn't
+                // depend on the end call's memory and record writes, so it's asked for alongside them and shown the
+                // moment it arrives, not after them. A failure is reported, not swallowed: with `try?` the offer's
+                // 404 went unseen for three days (docs/bugs.md B33)
+                if conversationServer == server {
+                    Task {
+                        do {
+                            if let due = try await api.levelUp(conversationId: id) { levelUp = due }
+                        } catch {
+                            report(error, step: "level-up", context: ["conversationId": id], using: api)
+                        }
+                    }
+                }
                 try await api.endConversation(id)
                 UserDefaults.standard.set(Array(pending(key).subtracting([id])), forKey: key)
-                // Still in the same country: refresh the visit stamps, and ask whether a level up is due
+                // Still in the same country: refresh the visit stamps
                 if conversationServer == server {
                     visits = (try? await api.me().visits) ?? visits
-                    // A failure here is reported, not swallowed: with `try?` the offer's 404 went unseen for three days (docs/bugs.md B33)
-                    do {
-                        if let due = try await api.levelUp(conversationId: id) { levelUp = due }
-                    } catch {
-                        report(error, step: "level-up", context: ["conversationId": id], using: api)
-                    }
                 }
             } catch {
                 // Kept in the pending list and retried at the next launch

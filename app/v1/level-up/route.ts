@@ -18,7 +18,9 @@ export async function GET(request: Request) {
     // However the app wrote the address: builds up to 16 put the "?" in the path (lib/level-up-address.ts)
     const conversationId = levelUpConversationId(request);
     if (!z.string().uuid().safeParse(conversationId).success) return apiError('bad_request', 'conversationId must be a uuid');
-    const offer = await levelUpOffer(learnerId, conversationId);
+    // B63: builds from 17 ask for `lite` (no Claude rewrite of the preview, which their page doesn't draw); older ones get the full offer
+    const lite = new URL(request.url).searchParams.get('lite') === '1';
+    const offer = lite ? await levelUpOffer(learnerId, conversationId, { lite: true }) : await levelUpOffer(learnerId, conversationId);
     if (!offer) return Response.json({ due: false });
     return Response.json({ due: true, offer, words: offerWords(offer.to, offer.nextStep) });
   });

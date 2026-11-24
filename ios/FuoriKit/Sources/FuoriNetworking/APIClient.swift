@@ -352,7 +352,7 @@ public actor APIClient {
     public func levelUp(conversationId: String) async throws -> (offer: LevelUp, words: LevelUpWords)? {
         struct Reply: Decodable { let due: Bool; let offer: LevelUp?; let words: LevelUpWords? }
         // The id as a query item, not written into the path: see `address`
-        let r: Reply = try await send(request("v1/level-up", query: [URLQueryItem(name: "conversationId", value: conversationId)]), signedIn: true)
+        let r: Reply = try await send(request("v1/level-up", query: [URLQueryItem(name: "conversationId", value: conversationId), URLQueryItem(name: "lite", value: "1")]), signedIn: true)
         guard r.due, let offer = r.offer, let words = r.words else { return nil }
         return (offer, words)
     }

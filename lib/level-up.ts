@@ -253,7 +253,7 @@ async function levelAndStep(learnerId: string): Promise<{ level: Level | null; s
  * The offer for a learner who has just left this conversation, or null: not due, not their conversation, not an
  * ordinary visit at their level (the welcome, lessons and Magda don't count), or already at the top (Advanced).
  */
-export async function levelUpOffer(learnerId: string, conversationId: string): Promise<LevelUpOffer | null> {
+export async function levelUpOffer(learnerId: string, conversationId: string, opts: { lite?: boolean } = {}): Promise<LevelUpOffer | null> {
   const { level, s } = await levelAndStep(learnerId);
   if (!moveFrom({ level, step: s.step })) return null;
   await savesDone(conversationId);
@@ -272,7 +272,10 @@ export async function levelUpOffer(learnerId: string, conversationId: string): P
   if (!last || !character || character.placeId !== conv.place_id) return null;
   const nextStep = move.to === 'step' ? move.step : s.step;
   // The preview: her last line rewritten for the next step, or for the next level (character.md → Learner: …)
-  const next = await rewriteAtStep({ character: { name: character.name, role: character.role, city: character.city }, line: last.text, nextStep, level: moveLevelText(move), ...(move.to === 'step' ? { setting: SETTINGS[nextStep - 1] } : {}) });
+  // B63: builds from 17 draw a static page that never shows the preview, so they ask for `lite` and skip the Claude call (about 8 s)
+  const next = opts.lite
+    ? { line: last.text, en: last.en ?? '' }
+    : await rewriteAtStep({ character: { name: character.name, role: character.role, city: character.city }, line: last.text, nextStep, level: moveLevelText(move), ...(move.to === 'step' ? { setting: SETTINGS[nextStep - 1] } : {}) });
   const { cities } = await import('@/content');
   const city = cities.find((c) => c.id === conv.city_id);
   const place = city?.places.find((p) => p.id === conv.place_id);
