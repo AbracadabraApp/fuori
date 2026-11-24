@@ -4,17 +4,18 @@
 
 - **Josh:** "lets clean up street musicians"; "Are any places to hide?"; "favor food vendors, kids, retired professors or tradesmen".
 - **Was:** eight shown people standing in a piazza as a street musician (six) or a street artist who sketches (two). Mexico's ten musicians each play a named local music and are untouched.
-- **Five squares swapped** (`content/it/showcase.ts`; hidden ids in `hiddenForNow`), each for a hidden place in the same city that already has its person and pictures, so Italy stays at 159 places:
-  - Matera: Piazza Vittorio Veneto (Elena, guitar) → Salumeria dei Peperoni (Caterina Gallo, salumiera)
-  - Napoli: Piazza Bellini (Davide, guitar) → Villa Floridiana (Giulia Martino, giardiniera)
-  - Palermo: Piazza Pretoria (Yasmine, sketches) → Friggitoria Chiluzzo (Santo Lo Verde, friggitore)
-  - Torino: Piazza Castello (Diego) → Mercato del Balon (Riccardo Balon, antiquario)
-  - Orvieto: Piazza del Popolo (Lucia, sketches) → the Funicolare (Giuseppe Roscini, macchinista)
-- **Two squares kept, new jobs** (same ids, ages, voices, traits): Franco Melodia at Piazza Maggiore, Bologna, is a `restauratore`; Matteo Fabbri at Piazza Anfiteatro, Lucca, is a `fruttivendolo ambulante`. **Two portraits needed** (laptop or mini): theirs still show guitars; the portrait prompts are rewritten.
+- **Corrected the same evening** (Josh, of the first version, which swapped three more squares for a salumeria, a friggitoria and an antiques stall and made Matteo a fruit seller: "you brought back mostly people selling things"). Nobody new sells anything now.
+- **Two squares swapped** (`content/it/showcase.ts`; hidden ids in `hiddenForNow`) for a hidden place in the same city that has its person and pictures: Napoli, Piazza Bellini → Villa Floridiana (Giulia Martino, giardiniera); Orvieto, Piazza del Popolo → the Funicolare (Giuseppe Roscini, macchinista).
+- **Five squares kept, new jobs, same ids:**
+  - Bologna, Piazza Maggiore: Franco Melodia, 42, `restauratore`
+  - Lucca, Piazza Anfiteatro: Matteo Fabbri, 26, `imbianchino`
+  - Torino, Piazza Castello: Diego Quispe, 27, `tranviere`
+  - Matera, Piazza Vittorio Veneto: Elena Laterza, now 17, `liceale`
+  - Palermo, Piazza Pretoria: Yasmine Trabelsi, now 70, `professoressa in pensione`; her fixed voice line is removed so she gets one from the older women's pool
+- **Five portraits needed** (laptop or mini): Franco, Matteo, Diego, Elena, Yasmine. The pictures in R2 show guitars and a sketchbook, and Elena's and Yasmine's show the wrong age; the portrait prompts are rewritten.
 - **Kept:** Vincenzo Monteverdi, 71, violin, Piazza Sordello, Mantova: Italy's one musician.
 - **Goes with Piazza Bellini:** its cultural lesson (the Greek walls under the piazza) leaves Learn's set, as hidden places' lessons do.
-- No hidden place matched kids or retired professors; the picks are food vendors and tradespeople.
-- Checked: tsc, test:content-api (15 cities, 159 places, all with pictures), test:learn-card. test:pack and test:language fail on main without this change. Not released.
+- Checked: tsc, test:content-api, test:learn-card, test:voices. test:pack and test:language fail on main without this change. Not released.
 
 ## 2026-11-23 (cloud), evening: Lupita is a catechism teacher (B53)
 

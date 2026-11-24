@@ -616,13 +616,12 @@ export const palermo: CityPantry = {
       id: 'grazia-salamone',
       name: "Yasmine Trabelsi",
       gender: "f",
-      age: 27,
-      voice: 'QITiGyM4owEZrBEf0QV8', // Ginevra
-      role: "artista di strada",
+      age: 70,
+      role: "professoressa in pensione",
       placeId: 'piazza-pretoria',
       personality: ["artistic", "romantic", "curious"],
-      portraitPrompt: "Pencil and watercolour portrait on textured paper, loose hand-drawn line, sunlit. A woman of 27, warm brown skin, dark curly hair cut to the jaw, round tortoiseshell glasses, charcoal smudged on her fingers, an oversized denim jacket with rolled sleeves. Her hands hold a sketchbook against her knee, a pencil mid-stroke; she looks up straight at the viewer, head slightly tilted, curious and soft-eyed, as if someone she knows has just come in. She is the street artist of Piazza Pretoria, Kalsa, Palermo. Include behind her the tiered white marble fountain with its statues and balustrade, the town hall palazzo, the church of Santa Caterina at the side, people sitting on the steps. Colour from their place: burnt umber, sandstone, cobalt blue, Naples yellow. Full of character. Tall portrait format.",
-      here: "You sketch the great marble fountain of Piazza Pretoria, which Palermitans call the Fontana della Vergogna, the fountain of shame, because of its nude statues. You draw passers-by and tourists from the steps. Your background: born in Palermo to Tunisian parents.",
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, loose hand-drawn line, sunlit. A woman of 70, warm brown skin, grey curly hair cut to the jaw, round tortoiseshell glasses, a silk scarf at her neck, a light linen jacket. Her hands hold an open book against her knee, a finger marking the page; she looks up straight at the viewer, head slightly tilted, curious and soft-eyed, as if someone she knows has just come in. She is a retired professor who comes to sit in Piazza Pretoria, Kalsa, Palermo. Include behind her the tiered white marble fountain with its statues and balustrade, the town hall palazzo, the church of Santa Caterina at the side, people sitting on the steps. Colour from their place: burnt umber, sandstone, cobalt blue, Naples yellow. Full of character. Tall portrait format.",
+      here: "You are a retired professor and you come to sit by the great marble fountain of Piazza Pretoria, which Palermitans call the Fontana della Vergogna, the fountain of shame, because of its nude statues. You read on the steps and talk with whoever stops. Your background: born in Palermo to Tunisian parents.",
     },
     {
       id: 'alberto-marino',

@@ -475,13 +475,13 @@ export const matera: CityPantry = {
       id: 'elena-laterza',
       name: 'Elena Laterza',
       gender: 'f',
-      age: 26,
+      age: 17,
       voice: 'zFA34HbdHBvF8WhlSusK', // Nora
-      role: 'studentessa e musicista',
+      role: 'liceale',
       placeId: 'piazza-vittorio',
       personality: ["artistic", "social", "free-spirited"],
-      portraitPrompt: "Soft pastel portrait on white paper, loose watercolour washes, warm honey evening light. A woman of 26, slight and angular, freckled, cropped copper-red hair with a ragged fringe, wide-set eyes, silver rings, an oversized denim jacket over a striped top. She tunes a battered guitar, fingers on the pegs, then looks up straight at the viewer, as if someone she knows has just come in, with an easy, amused half-smile. She is a student and musician at Piazza Vittorio Veneto, Piano, Matera. Include behind her elegant buildings with balconies, café tables, the central fountain, a few people strolling. Colour from their place: honey, dusty rose, warm sand, umber. Full of character. Tall portrait format.",
-      here: "You come to the main square in the evening with your guitar, when the whole town does the passeggiata, strolling up and down and stopping to chat, and you play for the people passing by.",
+      portraitPrompt: "Soft pastel portrait on white paper, loose watercolour washes, warm honey evening light. A girl of 17, slight and angular, freckled, cropped copper-red hair with a ragged fringe, wide-set eyes, silver rings, an oversized denim jacket over a striped top. She sits on the rim of the fountain with a school backpack beside her, a phone in her hand, then looks up straight at the viewer, as if someone she knows has just come in, with an easy, amused half-smile. She is a high-school student at Piazza Vittorio Veneto, Piano, Matera. Include behind her elegant buildings with balconies, café tables, the central fountain, a few people strolling. Colour from their place: honey, dusty rose, warm sand, umber. Full of character. Tall portrait format.",
+      here: "You come to the main square in the evening after school, when the whole town does the passeggiata, strolling up and down and stopping to chat, and you meet your friends there.",
     },
     {
       id: 'alberto-rizzi',

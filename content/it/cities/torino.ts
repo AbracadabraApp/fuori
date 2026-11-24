@@ -530,11 +530,11 @@ export const torino: CityPantry = {
       gender: "m",
       age: 27,
       voice: 'o4b57JYAECRMJyCEXyIE', // Brando Vox
-      role: "musicista di strada",
+      role: "tranviere",
       placeId: 'piazza-castello',
       personality: ["artistic", "romantic", "free-spirited"],
-      portraitPrompt: "Soft pastel portrait on white paper, textured strokes, atmospheric light. A slender man of 27 with brown skin, high cheekbones and long straight black hair tied loosely at the nape, light stubble, in a worn denim jacket over a rust knitted sweater and a loose scarf. His hands rest on the strings of an acoustic guitar slung across him, and he looks up from it straight at the viewer with a dreamy, romantic, slightly amused expression, as if an old friend has just walked past. He is a man who is the street musician at Piazza Castello, Centro, Torino. Include behind him the grand baroque square, Palazzo Madama, the arcaded buildings and a few people strolling. Colour from their place: warm ochre, soft sand, muted grey-brown, pale sky. Full of character. Tall portrait format.",
-      here: "You play in Piazza Castello, in front of Palazzo Madama and the Palazzo Reale, where people cross the square on the Sunday stroll or on their way to the arcades; you know every café around it. Your background: born in Turin to Peruvian parents.",
+      portraitPrompt: "Soft pastel portrait on white paper, textured strokes, atmospheric light. A slender man of 27 with brown skin, high cheekbones and long straight black hair tied loosely at the nape, light stubble, in the dark blue jacket of a tram driver over a rust knitted sweater. He stands at a tram stop with his cap in his hand, and he looks up straight at the viewer with a dreamy, romantic, slightly amused expression, as if an old friend has just walked past. He is a tram driver on his break at Piazza Castello, Centro, Torino. Include behind him the grand baroque square, Palazzo Madama, the arcaded buildings and a few people strolling. Colour from their place: warm ochre, soft sand, muted grey-brown, pale sky. Full of character. Tall portrait format.",
+      here: "You drive the trams that cross Piazza Castello, in front of Palazzo Madama and the Palazzo Reale, where people cross the square on the Sunday stroll or on their way to the arcades; you know every café around it. Your background: born in Turin to Peruvian parents.",
     },
     {
       id: 'martina-artista',

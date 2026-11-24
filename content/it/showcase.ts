@@ -45,7 +45,7 @@ export const showcase: Record<string, string[]> = {
     'caffe-schiuma',
     'mercato-piccianello',
     'ristorante-francesca',
-    'salumeria-peperoni', // in for Piazza Vittorio Veneto and its street musician (Josh, 2026-11-23)
+    'piazza-vittorio',
     'bottega-artigiana',
     'piazza-duomo', // M2: bench character Alberto (pensionato)
     'stazione-fal', // M2: train station for travel
@@ -128,7 +128,7 @@ export const showcase: Record<string, string[]> = {
     'pani-ca-meusa-ballaro', // street food only this city has (Josh, 2026-10-27)
     'mercato-ballaro',
     'trattoria-ai-cascinari',
-    'friggitoria-chiluzzo', // in for Piazza Pretoria and its street artist (Josh, 2026-11-23)
+    'piazza-pretoria',
     'giardino-garibaldi',
     'stazione-centrale-palermo', // M2: train station for travel
     // Dialogue variety (Josh, 2026-11-06; docs/archive/conversation-variety.md): the city's own places in, generic businesses out
@@ -171,7 +171,7 @@ export const showcase: Record<string, string[]> = {
     'ristorante-del-cambio',
     'bicerin-dal-1763',
     'guido-gobino',
-    'balon-flea-market', // the antiques dealer, in for Piazza Castello and its street musician (Josh, 2026-11-23)
+    'piazza-castello',
     'casa-del-vermouth',
     'libreria-luxemburg',
     'stazione-porta-nuova-torino', // station (2026-10-14)
@@ -250,12 +250,12 @@ export const hiddenForNow: Record<string, string[]> = {
   // same square, a second sweet shop, a second pizzaiolo, a second piazza, a generic restaurant, a second
   // restaurant in Ballarò. Their cultural lessons (Sorbillo, I Carracci, Ballarò) aren't in the set.
   bologna: ['piazza-verdi', 'ristorante-pappagallo'],
-  palermo: ['osteria-ballarò', 'piazza-pretoria'],
+  palermo: ['osteria-ballarò'],
   // Hidden 2026-11-23 (Josh: "lets clean up street musicians"; "favor food vendors, kids, retired professors or
-  // tradesmen"): five squares whose person was a street musician or a street artist, each swapped for a hidden
-  // place in the same city, so the count holds. Piazza Bellini joins Napoli's list below.
-  matera: ['piazza-vittorio'],
-  torino: ['piazza-castello'],
+  // tradesmen"): two squares whose person was a street musician or a street artist, each swapped for a hidden
+  // place in the same city (a gardener, a funicular driver), so the count holds. Piazza Bellini joins Napoli's
+  // list below. The other squares stay and their people have new jobs (Josh, of three swaps that brought in
+  // shopkeepers: "you brought back mostly people selling things").
   orvieto: ['piazza-del-popolo'],
   // Hidden 2026-11-23 (Josh: "delete: Pharmacists, Tabaccherie, and Cafés and bars 1 in any city with 3"):
   // the one pharmacy and the one tabaccheria (their cultural lessons aren't in the set), and one of Napoli's two bars
