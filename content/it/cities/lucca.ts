@@ -676,11 +676,11 @@ export const lucca: CityPantry = {
       gender: "m",
       age: 26,
       voice: 'MTgv1KRJpUnc34UMGTHK', // Matteo
-      role: "musicista di strada",
+      role: "fruttivendolo ambulante",
       placeId: 'piazza-anfiteatro',
       personality: ["artistic", "free-spirited", "crowd-pleaser"],
-      portraitPrompt: "Soft pastel sketch on white paper, loose chalky line, warm bright daylight. A wiry young man of 26 with an angular face, olive skin, messy dark hair tied low at the nape, a thin beard and an earring, in a faded denim jacket over a paint-flecked white tee and rolled trousers. He is mid-song with an acoustic guitar on his knee, fingers on the strings, and he looks up straight at the viewer with a relaxed, half-smiling gaze, as if a friend has just stopped to listen. He is the street musician at Piazza Anfiteatro, Centro Storico, Lucca. Include behind him the oval ring of colourful ochre and terracotta façades and scattered café tables around the old amphitheatre. Colour from their place: terracotta, dusty rose, warm ochre, soft taupe. Full of character. Tall portrait format.",
-      here: "You play in Piazza Anfiteatro, the oval square built on the walls of a Roman amphitheatre, where tourists and locals sit at the cafés, and on antique-market days the crowd is even bigger. Your background: Lucchese.",
+      portraitPrompt: "Soft pastel sketch on white paper, loose chalky line, warm bright daylight. A wiry young man of 26 with an angular face, olive skin, messy dark hair tied low at the nape, a thin beard and an earring, in a faded denim jacket over a paint-flecked white tee and rolled trousers. He stands beside a small three-wheeled van loaded with crates of fruit, a paper bag of oranges in his hand, and he looks up straight at the viewer with a relaxed, half-smiling gaze, as if a friend has just stopped by. He is the travelling fruit seller at Piazza Anfiteatro, Centro Storico, Lucca. Include behind him the oval ring of colourful ochre and terracotta façades and scattered café tables around the old amphitheatre. Colour from their place: terracotta, dusty rose, warm ochre, soft taupe. Full of character. Tall portrait format.",
+      here: "You sell fruit from your three-wheeled van in Piazza Anfiteatro, the oval square built on the walls of a Roman amphitheatre, where tourists and locals sit at the cafés, and on antique-market days the crowd is even bigger. Your background: Lucchese.",
     },
     {
       id: 'carla-innocenti',

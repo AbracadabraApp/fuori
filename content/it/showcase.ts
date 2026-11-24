@@ -44,7 +44,7 @@ export const showcase: Record<string, string[]> = {
     'caffe-schiuma',
     'mercato-piccianello',
     'ristorante-francesca',
-    'piazza-vittorio',
+    'salumeria-peperoni', // in for Piazza Vittorio Veneto and its street musician (Josh, 2026-11-23)
     'bottega-artigiana',
     'piazza-duomo', // M2: bench character Alberto (pensionato)
     'stazione-fal', // M2: train station for travel
@@ -102,7 +102,7 @@ export const showcase: Record<string, string[]> = {
     'mozzarella-spaccanapoli', // a deli for the city's own food (Josh, 2026-10-27)
     'mercato-pignasecca',
     'caffe-gambrinus',
-    'piazza-bellini',
+    'villa-floridiana', // the gardener, in for Piazza Bellini and its street musician (Josh, 2026-11-23)
     'spaccanapoli-street', // M2: bench character Nonna Assunta (Via Spaccanapoli) (abitante del quartiere)
     'stazione-centrale-napoli', // M2: train station for travel
     // Dialogue variety (Josh, 2026-11-06; docs/archive/conversation-variety.md): the city's own places in, generic businesses out
@@ -127,7 +127,7 @@ export const showcase: Record<string, string[]> = {
     'pani-ca-meusa-ballaro', // street food only this city has (Josh, 2026-10-27)
     'mercato-ballaro',
     'trattoria-ai-cascinari',
-    'piazza-pretoria',
+    'friggitoria-chiluzzo', // in for Piazza Pretoria and its street artist (Josh, 2026-11-23)
     'giardino-garibaldi',
     'stazione-centrale-palermo', // M2: train station for travel
     // Dialogue variety (Josh, 2026-11-06; docs/archive/conversation-variety.md): the city's own places in, generic businesses out
@@ -170,7 +170,7 @@ export const showcase: Record<string, string[]> = {
     'ristorante-del-cambio',
     'bicerin-dal-1763',
     'guido-gobino',
-    'piazza-castello',
+    'balon-flea-market', // the antiques dealer, in for Piazza Castello and its street musician (Josh, 2026-11-23)
     'casa-del-vermouth',
     'libreria-luxemburg',
     'stazione-porta-nuova-torino', // station (2026-10-14)
@@ -208,7 +208,7 @@ export const showcase: Record<string, string[]> = {
     'caffe-montanucci',
     'mercato-coperto-orvieto',
     'ristorante-la-grotta',
-    'piazza-del-popolo',
+    'funicolare', // the funicular driver, in for Piazza del Popolo and its street artist (Josh, 2026-11-23)
     'bottega-michelangeli',
     'giardini-pubblici',
     'stazione-orvieto', // station (2026-10-14)
@@ -249,11 +249,17 @@ export const hiddenForNow: Record<string, string[]> = {
   // same square, a second sweet shop, a second pizzaiolo, a second piazza, a generic restaurant, a second
   // restaurant in Ballarò. Their cultural lessons (Sorbillo, I Carracci, Ballarò) aren't in the set.
   bologna: ['piazza-verdi', 'ristorante-pappagallo'],
-  palermo: ['osteria-ballarò'],
+  palermo: ['osteria-ballarò', 'piazza-pretoria'],
+  // Hidden 2026-11-23 (Josh: "lets clean up street musicians"; "favor food vendors, kids, retired professors or
+  // tradesmen"): five squares whose person was a street musician or a street artist, each swapped for a hidden
+  // place in the same city, so the count holds. Piazza Bellini joins Napoli's list below.
+  matera: ['piazza-vittorio'],
+  torino: ['piazza-castello'],
+  orvieto: ['piazza-del-popolo'],
   // Hidden 2026-11-23 (Josh: "delete: Pharmacists, Tabaccherie, and Cafés and bars 1 in any city with 3"):
   // the one pharmacy and the one tabaccheria (their cultural lessons aren't in the set), and one of Napoli's two bars
   'roma-nuova': ['farmacia-prati', 'basilica-santa-maria', 'tram-porta-maggiore'],
-  napoli: ['bar-nilo', 'gay-odin', 'pizzeria-sorbillo'], // Josh, after Poppella was hidden first: "this is a pasticceria - hide Nilo and bring this back"
+  napoli: ['bar-nilo', 'gay-odin', 'pizzeria-sorbillo', 'piazza-bellini'], // Josh, after Poppella was hidden first: "this is a pasticceria - hide Nilo and bring this back"
   // Hidden 2026-11-23 (Josh: "we should hide more places"; Italy keeps about Mexico's 14 cities:
   // "id hide verona, leccce, assissi Taormina and Genoa"). Their shown places as they were
   verona: [

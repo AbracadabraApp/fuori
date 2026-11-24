@@ -515,11 +515,11 @@ export const bologna: CityPantry = {
       gender: 'm',
       age: 42,
       voice: 'covxL85MSd0uUrktE45z', // Adriatico
-      role: 'musicista di strada',
+      role: 'restauratore',
       placeId: 'piazza-maggiore',
       personality: ["artistic", "free-spirited", "talented"],
-      portraitPrompt: "Pencil and watercolour portrait on textured paper, confident hand-drawn line, rich and warm, in warm late-afternoon light. A lean, sun-browned man of 42 with straight dark hair pulled back loosely, greying stubble along a bony jaw and creased eyes, in a worn denim jacket over a faded striped T-shirt, a leather cord at his wrist. His hands rest on an old acoustic guitar, fingers on the strings mid-chord. He looks up from it straight at the viewer, as if someone he knows has just come in, with a relaxed, faintly amused, unhurried gaze. He is a street musician at Piazza Maggiore, Centro Storico, Bologna. Include behind him the pink-and-white marble lower façade and rough brick of San Petronio, the dark bronze Neptune fountain, cyclists crossing the wide grey paving. Colour from their place: pale stone grey, burnt umber, ochre, brick rust. Full of character. Tall portrait format.",
-      here: "You play guitar in Piazza Maggiore, near the Neptune fountain, where Bolognese families come for the Sunday passeggiata and people sit on the steps of San Petronio to listen.",
+      portraitPrompt: "Pencil and watercolour portrait on textured paper, confident hand-drawn line, rich and warm, in warm late-afternoon light. A lean, sun-browned man of 42 with straight dark hair pulled back loosely, greying stubble along a bony jaw and creased eyes, in a worn denim jacket over a faded striped T-shirt, a leather cord at his wrist. He holds a small brush and a sponge, his hands dusted with marble powder. He looks up from his work straight at the viewer, as if someone he knows has just come in, with a relaxed, faintly amused, unhurried gaze. He is a restorer working on the stonework of Piazza Maggiore, Centro Storico, Bologna. Include behind him the pink-and-white marble lower façade and rough brick of San Petronio, the dark bronze Neptune fountain, cyclists crossing the wide grey paving. Colour from their place: pale stone grey, burnt umber, ochre, brick rust. Full of character. Tall portrait format.",
+      here: "You restore the stone and marble of Piazza Maggiore, at work on the façade of San Petronio and the Neptune fountain, where Bolognese families come for the Sunday passeggiata and people sit on the steps of the basilica.",
     },
     {
       id: 'student-clara',
