@@ -3,7 +3,7 @@
 // by code (lib/learn-card.ts → cardProblems) and, for facts, by culture.md's Facts judge; what fails is
 // dropped. Idioms need no call. Each card carries its source as a footnote the learner never sees.
 // Writes content/<country>/learn-cards.json, replacing only the cards of the sources it ran.
-//   COUNTRY=it npx tsx --env-file=.env.local scripts/learn-cards.mts [--pilot] [--only lesson,idiom,culture,city,here,place]
+//   COUNTRY=it npx tsx --env-file=.env.local scripts/learn-cards.mts [--pilot] [--only lesson,idiom,culture,city,here,place,compare]
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { anthropic, CLAUDE_MODEL, logUsage, replyText } from '@/lib/claude';
@@ -224,6 +224,30 @@ if (runs('place')) {
   kept.forEach((c) => keep(c, 'place'));
   dropped.forEach((d) => droppedLog.push(`${d.card.id} (facts): ${d.doubts.join('; ')}`));
   log.push(`places: ${cityRun.length} cities, ${cutOnes.length} cut, ${kept.length} passed facts`);
+}
+
+// This or that (Josh, 2026-11-23: "you could find versions of this or that -- comparisons"): two right choices
+// in the language, from Magda's grammar list in the syllabus, and how two of the game's cities differ
+if (runs('compare')) {
+  replaced.add('compare:');
+  const country = pack.id === 'es-mx' ? 'Mexico' : 'Italy';
+  const syllabus = JSON.parse(readFileSync(join(process.cwd(), 'content', pack.id, 'syllabus.json'), 'utf8')) as { grammar_inventory?: { parts_of_speech: { points?: { point: string; level: string; unit: string; explain: string }[] }[] } };
+  const points = (syllabus.grammar_inventory?.parts_of_speech ?? []).flatMap((p) => p.points ?? []).filter((p) => p.level === 'A1' || p.level === 'A2');
+  const lang = await cutCards('Compare: language', { country, count: pilot ? '5' : '25', material: points.map((p, i) => `${i + 1}. ${p.point}: ${p.explain}`).join('\n') });
+  const langCards = lang.map((c) => {
+    const pt = points[(numbers(c.uses)[0] ?? 0) - 1];
+    return card({ ...c, uses: '' }, `compare:language:${slug(c.term || c.rows.map((r) => r.text).join(' '))}`, (pt?.level as CardLevel) ?? 'A2', pt ? [`unit:${pt.unit}`] : [], 'syllabus', `${pack.id}/syllabus.json#grammar_inventory/${pt ? slug(pt.point) : 'unknown'}`);
+  });
+  const shownCities = shown.map((c, i) => `${i + 1}. ${c.name}${c.region ? ` (${c.region})` : ''}`).join('\n');
+  const places = await cutCards('Compare: places', { country, count: pilot ? '4' : '16', material: shownCities });
+  const placeCards = places.map((c) => {
+    const ids = numbers(c.uses).map((n) => shown[n - 1]?.id).filter(Boolean) as string[];
+    return card({ ...c, uses: '' }, `compare:places:${ids.join('-')}:${slug(c.rows.map((r) => r.text).join(' '))}`, 'A1', ids.map((id) => `city:${id}`), 'compare', `${pack.id}/cities#${ids.join(',')}`);
+  });
+  const { kept, dropped } = await factChecked([...langCards, ...placeCards]);
+  kept.forEach((c) => keep(c, 'compare'));
+  dropped.forEach((d) => droppedLog.push(`${d.card.id} (facts): ${d.doubts.join('; ')}`));
+  log.push(`compare: ${langCards.length} language, ${placeCards.length} places cut, ${kept.length} passed facts`);
 }
 
 // Write: the cards of the sources run replace their old ones; the rest stay

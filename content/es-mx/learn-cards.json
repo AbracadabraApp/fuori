@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-23",
+  "version": "2026-11-24",
   "prompt": "2026-11-23",
   "models": "2026-11-23",
   "cards": [
@@ -606,6 +606,120 @@
       "source": {
         "from": "here",
         "ref": "es-mx/cities/oaxaca.ts#monte-alban/here/line 13",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "place:ciudad-de-mexico/parque-mexico",
+      "kind": "about-this-place",
+      "headline": "About this plaza",
+      "rows": [],
+      "note": "Parque México was laid out in the 1920s on the site of a horse racetrack. Its oval path still follows the shape of the old track.",
+      "level": "A1",
+      "keys": [
+        "city:ciudad-de-mexico",
+        "place:ciudad-de-mexico/parque-mexico",
+        "kind:plaza"
+      ],
+      "source": {
+        "from": "place",
+        "ref": "es-mx/cities/ciudad-de-mexico.ts#parque-mexico",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "place:ciudad-de-mexico/catedral-metropolitana",
+      "kind": "about-this-place",
+      "headline": "About this church",
+      "rows": [],
+      "note": "The Catedral Metropolitana took about 240 years to build, from 1573 to 1813. That is why it mixes Renaissance, Baroque and Neoclassical styles.",
+      "level": "A1",
+      "keys": [
+        "city:ciudad-de-mexico",
+        "place:ciudad-de-mexico/catedral-metropolitana",
+        "kind:church"
+      ],
+      "source": {
+        "from": "place",
+        "ref": "es-mx/cities/ciudad-de-mexico.ts#catedral-metropolitana",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "place:ciudad-de-mexico/murales-palacio-nacional",
+      "kind": "about-this-place",
+      "headline": "About this landmark",
+      "rows": [],
+      "note": "Diego Rivera painted these murals on the stairway of the Palacio Nacional between 1929 and 1935. They tell the history of Mexico, from before the Spanish arrived to the 20th century.",
+      "level": "A1",
+      "keys": [
+        "city:ciudad-de-mexico",
+        "place:ciudad-de-mexico/murales-palacio-nacional",
+        "kind:landmark"
+      ],
+      "source": {
+        "from": "place",
+        "ref": "es-mx/cities/ciudad-de-mexico.ts#murales-palacio-nacional",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "place:oaxaca/jardin-conzatti-reforma",
+      "kind": "about-this-place",
+      "headline": "About this plaza",
+      "rows": [],
+      "note": "This garden is named after Cassiano Conzatti, an Italian-born botanist who spent his life studying the plants of Oaxaca.",
+      "level": "A1",
+      "keys": [
+        "city:oaxaca",
+        "place:oaxaca/jardin-conzatti-reforma",
+        "kind:plaza"
+      ],
+      "source": {
+        "from": "place",
+        "ref": "es-mx/cities/oaxaca.ts#jardin-conzatti-reforma",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "place:oaxaca/jardin-etnobotanico-oaxaca",
+      "kind": "about-this-place",
+      "headline": "About this botanical garden",
+      "rows": [],
+      "note": "It grows plants from Oaxaca state, on the grounds of the old Santo Domingo monastery. You visit it with a guided tour.",
+      "level": "A1",
+      "keys": [
+        "city:oaxaca",
+        "place:oaxaca/jardin-etnobotanico-oaxaca",
+        "kind:botanical garden"
+      ],
+      "source": {
+        "from": "place",
+        "ref": "es-mx/cities/oaxaca.ts#jardin-etnobotanico-oaxaca",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "place:oaxaca/zocalo-oaxaca",
+      "kind": "about-this-place",
+      "headline": "About this plaza",
+      "rows": [],
+      "note": "The Zócalo is the main square of the city. The cathedral stands on its north side and the Palacio de Gobierno on its south side, with arcades of cafés and restaurants around the edges.",
+      "level": "A1",
+      "keys": [
+        "city:oaxaca",
+        "place:oaxaca/zocalo-oaxaca",
+        "kind:plaza"
+      ],
+      "source": {
+        "from": "place",
+        "ref": "es-mx/cities/oaxaca.ts#zocalo-oaxaca",
         "redrafted": true,
         "by": "learn-cards.mts@2026-11-23"
       }

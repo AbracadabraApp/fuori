@@ -61,6 +61,10 @@ export interface LearnCardBank {
 /** The longest a card gets: five rows (Vocabulary: things), a note of two short sentences */
 export const MAX_ROWS = 5;
 export const MAX_NOTE = 280;
+/** Word limits (Josh, 2026-11-23: "you may need word limits"): the models' notes run 15–25 words */
+export const MAX_NOTE_WORDS = 30;
+export const MAX_LINE_WORDS = 12;
+const words = (s: string) => s.trim().split(/\s+/).filter(Boolean).length;
 
 /**
  * What's wrong with a card by the rules code can see (the design's Rules), or [] when nothing is.
@@ -80,8 +84,11 @@ export function cardProblems(card: LearnCard): string[] {
     if (!r.text.trim()) problems.push(`row ${i}: no text`);
     if (!r.en.trim()) problems.push(`row ${i}: no English`);
     if (blank.test(r.text)) problems.push(`row ${i}: a blank`);
+    if (words(r.text) > MAX_LINE_WORDS) problems.push(`row ${i}: ${words(r.text)} words`);
+    if (words(r.en) > MAX_LINE_WORDS) problems.push(`row ${i}: English ${words(r.en)} words`);
   });
   if (card.note && card.note.length > MAX_NOTE) problems.push(`note is ${card.note.length} characters`);
+  if (card.note && words(card.note) > MAX_NOTE_WORDS) problems.push(`note is ${words(card.note)} words`);
   if (!card.source.ref.trim()) problems.push('no source');
   return problems;
 }

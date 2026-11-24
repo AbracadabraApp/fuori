@@ -1,5 +1,5 @@
 {
-  "version": "2026-11-23",
+  "version": "2026-11-24",
   "prompt": "2026-11-23",
   "models": "2026-11-23",
   "cards": [
@@ -691,6 +691,139 @@
       "source": {
         "from": "here",
         "ref": "it/cities/matera.ts#piazza-duomo/here/line 8",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "place:roma-nuova/pantheon-rotonda",
+      "kind": "about-this-place",
+      "headline": "About this landmark",
+      "rows": [],
+      "note": "The Pantheon was built as a Roman temple almost 2,000 years ago. Its dome is still the largest unreinforced concrete dome in the world, and the round opening at the top, the oculus, is open to the sky.",
+      "level": "A1",
+      "keys": [
+        "city:roma-nuova",
+        "place:roma-nuova/pantheon-rotonda",
+        "kind:landmark"
+      ],
+      "source": {
+        "from": "place",
+        "ref": "it/cities/roma-nuova.ts#pantheon-rotonda",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "place:roma-nuova/gesu-piazza",
+      "kind": "about-this-place",
+      "headline": "About this church",
+      "rows": [],
+      "note": "Il Gesù is the mother church of the Jesuits, built in the 1500s. Its design became a model for many Baroque churches around the world.",
+      "level": "A1",
+      "keys": [
+        "city:roma-nuova",
+        "place:roma-nuova/gesu-piazza",
+        "kind:church"
+      ],
+      "source": {
+        "from": "place",
+        "ref": "it/cities/roma-nuova.ts#gesu-piazza",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "place:roma-nuova/villa-borghese-nuova",
+      "kind": "about-this-place",
+      "headline": "About this park",
+      "rows": [],
+      "note": "Villa Borghese began in the early 1600s as the gardens of Cardinal Scipione Borghese. His art collection is still shown in the Galleria Borghese, inside the park.",
+      "level": "A1",
+      "keys": [
+        "city:roma-nuova",
+        "place:roma-nuova/villa-borghese-nuova",
+        "kind:park"
+      ],
+      "source": {
+        "from": "place",
+        "ref": "it/cities/roma-nuova.ts#villa-borghese-nuova",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "place:roma-nuova/piazza-navona",
+      "kind": "about-this-place",
+      "headline": "About this piazza",
+      "rows": [],
+      "note": "Piazza Navona sits on the site of an ancient Roman stadium built by Emperor Domitian. Its long oval shape follows the old running track.",
+      "level": "A1",
+      "keys": [
+        "city:roma-nuova",
+        "place:roma-nuova/piazza-navona",
+        "kind:piazza"
+      ],
+      "source": {
+        "from": "place",
+        "ref": "it/cities/roma-nuova.ts#piazza-navona",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "place:matera/sassi-belvedere",
+      "kind": "about-this-place",
+      "headline": "About this landmark",
+      "rows": [],
+      "note": "The Sassi are the old cave dwellings carved into the rock of the ravine. They were named a UNESCO World Heritage site in 1993.",
+      "level": "A1",
+      "keys": [
+        "city:matera",
+        "place:matera/sassi-belvedere",
+        "kind:landmark"
+      ],
+      "source": {
+        "from": "place",
+        "ref": "it/cities/matera.ts#sassi-belvedere",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "place:matera/casa-grotta",
+      "kind": "about-this-place",
+      "headline": "About this museum",
+      "rows": [],
+      "note": "This is a cave dwelling furnished as families lived in it until the 1950s, when people were moved out of the Sassi. Whole households shared the one space.",
+      "level": "A1",
+      "keys": [
+        "city:matera",
+        "place:matera/casa-grotta",
+        "kind:museum"
+      ],
+      "source": {
+        "from": "place",
+        "ref": "it/cities/matera.ts#casa-grotta",
+        "redrafted": true,
+        "by": "learn-cards.mts@2026-11-23"
+      }
+    },
+    {
+      "id": "place:matera/parco-murgia",
+      "kind": "about-this-place",
+      "headline": "About this park",
+      "rows": [],
+      "note": "The park covers the rocky plateau across the gorge from the Sassi. It protects many churches cut into the rock, some with painted walls.",
+      "level": "A1",
+      "keys": [
+        "city:matera",
+        "place:matera/parco-murgia",
+        "kind:park"
+      ],
+      "source": {
+        "from": "place",
+        "ref": "it/cities/matera.ts#parco-murgia",
         "redrafted": true,
         "by": "learn-cards.mts@2026-11-23"
       }

@@ -1,6 +1,6 @@
 # Learn cards: cutting the bank
 
-version: 2026-11-23
+version: 2026-11-23b
 
 Cuts the cards for the sheet after a visit (docs/learn-sheet-2-plan.md → The bank) from the game's
 own content, one source at a time: a lesson step, a culture story, a city's lists, a city's people.
@@ -17,6 +17,8 @@ You write cards for a {language} learning game. After a conversation with someon
 Write to the models. They are the standard, not a menu: use one of their kinds when it fits, or a new kind when the material calls for one (a short kind name, a plain headline). Redraft freely, but keep to what the material says: {language} lines come from it or say exactly what it teaches; facts come only from it.
 
 For each card give: kind; headline (English); term (a {language} word that finishes the headline, as in "A small word: ahorita", or ""); rows (each a {language} line and its English); note (English, or ""); uses (which numbered parts it comes from, like "examples 1, 2"); redrafted (false only if every line is the material's own wording).
+
+Word limits: a note at most 25 words; a {language} line at most 10 words, and its English at most 10.
 
 Make only cards worth a learner's ten seconds. Fewer is fine; none is fine.
 
@@ -59,6 +61,22 @@ Lines the game gives to people who work or spend time at places in {city}, telli
 
 ```
 Real places in {city} that the game lets the learner visit. For each, write one about-this-place card: the single most interesting thing a visitor would be glad to know about it, from what you know for certain (its history, what it's for, a custom held there, what it's known for). Headline "About this" and the kind of place ("About this piazza", "About this church"). Give uses as the place's number. Skip a place you don't know well enough to be sure.
+
+{material}
+```
+
+## Compare: language
+
+```
+Grammar points from the game's syllabus for {language} as it's spoken in {country}, at A1 to A2. Pick up to {count} that are a choice between two right ways, and make a this-or-that card for each: the two, each in a short whole sentence someone would say, the English under each telling when you use it. Both lines are right; never show a wrong form. Give uses as the point's number.
+
+{material}
+```
+
+## Compare: places
+
+```
+Cities in the game, all in {country}. Make up to {count} this-or-that cards about how two of these places differ in something a visitor meets: the word for a thing, a food, a way of doing something. Each card: the two, one line each, in {language} where there's a word to show, the English under each naming the place. Only differences you are certain of. Give uses as the two cities' numbers.
 
 {material}
 ```
