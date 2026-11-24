@@ -1,5 +1,12 @@
 # Fuori Development Progress
 
+## 2026-11-23 (cloud), evening: place sounds trial, needs one run on the mini
+
+- **Josh:** "do you want to test church bells at Lupitas opening and kids in the squarre while she talksks", then "try 11 labs".
+- **For the mini or laptop (the cloud has no ElevenLabs key):** `git pull`, then `npm run place-sounds`. It calls ElevenLabs' sound-effects generator (`/v1/sound-generation`) and writes two takes each of `bells-parish` (8 s) and `kids-square` (20 s, looping) to `design/place-sounds/`. Commit the four MP3s and push, so Josh can listen and pick.
+- **Not built:** nothing in the app plays them. If Josh likes a take, the test is on Lupita Barajas only: bells as her card arrives, fading under her first words; the kids loop quiet under her voice and during the wait for her reply; silent while the mic is open. That is a Swift change in the audio code, judged on Josh's phone.
+- A scripted bell (sine partials, like the trip sounds) was also sent to Josh in chat for comparison; it isn't in the repo.
+
 ## 2026-11-23 (cloud), evening: two rules added to CLAUDE.md
 
 - **A world, not an encyclopedia** (top of `CLAUDE.md`): the goal is a world in Italy and Mexico the learner can richly explore, not verifiable factual truth. No time spent checking fares or disputing food origins, and no raising them as problems. The language taught must still be correct. Josh's words are quoted in the rule. Prompted by this session disputing the mirror under the Hospicio Cabañas dome and being wrong.
