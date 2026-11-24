@@ -230,6 +230,8 @@ Josh, 2026-11-23, of Lupita Barajas (sacristana, Parroquia de San Pedro, Tlaquep
 
 **Status: open.** Header only did not end it for a new learner.
 
+**2026-11-23, later:** Josh: "Should we change her job?", then "Children's religion teacher". Her role is now `catequista` on main (same id, place, voice, traits and portrait). Not released. Closes when Josh plays her after the next release and the candles are gone; the same seven-visit run on live will count her openings.
+
 ### Carried from progress.md's screen list (2026-11-12)
 ### B50. Facts that don't agree inside one visit
 2026-11-17, Italy on the live version (nine visits, Josh's play); found by reading, nothing reported by Josh. Dante (Campo dei Mori, Venice): places Abate Luigi "vicino a Palazzo Ducale" and then "vicino a San Marco" two turns later. Claudio (Volpetti, Testaccio): "un etto di guanciale basta per due persone", then offers "un etto di pecorino" for the guanciale, and reads "un etta per grigia" as a carbonara order before Josh corrected it. Carlo (Ponte di Rialto): says coffee is drunk standing at the bar in two minutes, then drinks his from a paper cup on a break, which Josh caught ("tu hai una coppa di carta… non è al banco"). (B47 is the same cup in his portrait.) Luigi (Libreria Acqua Alta): offers "la scala e la vista sul canale", Josh says "forse sì, forse no", and the staircase never comes back until the goodbye. Not many, each one small; what they share is that the character doesn't hold its own last two turns. **Status: open, a few examples; no fix until there are more.**

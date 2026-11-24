@@ -1,5 +1,12 @@
 # Fuori Development Progress
 
+## 2026-11-23 (cloud), evening: Lupita is a catechism teacher (B53)
+
+- **Josh:** "Should we change her job?", then "Children's religion teacher".
+- **Done, on main, not released:** `content/es-mx/cities/guadalajara.ts`, Lupita Barajas's role `sacristana` → `catequista`. Id (`lupita-sacristana`), place, voice, traits and picture unchanged; the portrait prompt and her unused `here` line now say she teaches the children's catechism class. tsc, test:content-api and test:learn-card (es-mx) pass.
+- **After the next release:** rerun the seven-visit count on live (B53) and Josh plays her.
+- Mexico's other five sacristans are unchanged.
+
 ## 2026-11-23 (cloud), evening: Lupita on the live game, header only (B53)
 
 - **Josh:** "review lupita for candles now theat here headers are on production". Live is `main` (37b639c), header only.

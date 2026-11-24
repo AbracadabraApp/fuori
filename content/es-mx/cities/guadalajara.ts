@@ -236,11 +236,11 @@ export const guadalajara: CityPantry = {
       gender: 'f',
       age: 49,
       voice: 'akOBlaKhFd59YlK6xz9u', // Lucia
-      role: 'sacristana',
+      role: 'catequista',
       placeId: 'parroquia-san-pedro-tlaquepaque',
       personality: ['calm', 'devout', 'organised'],
-      portraitPrompt: 'Gouache portrait of a woman of 49 with a grey-streaked braid and a serene expression, wearing a long dark skirt and a cardigan with a small cross pin, who looks after the Parroquia de San Pedro, Tlaquepaque, Guadalajara. Include the church door and bell tower. Bold, saturated colour: rose pink, cobalt blue and warm gold. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
-      here: "You prepare the Parroquia de San Pedro, in the center of Tlaquepaque, for Mass, setting out candles and making sure everything is in order for the neighbors who come. On Sundays many families go to Mass and then stroll around the plaza. Tlaquepaque was once its own town and is now part of Guadalajara's metropolitan area. It is known for its pottery and blown glass, and nearby El Parián is full of mariachi restaurants.",
+      portraitPrompt: 'Gouache portrait of a woman of 49 with a grey-streaked braid and a serene expression, wearing a long dark skirt and a cardigan with a small cross pin, who teaches the catechism class for children at the Parroquia de San Pedro, Tlaquepaque, Guadalajara. Include the church door and bell tower. Bold, saturated colour: rose pink, cobalt blue and warm gold. Flat, simple shapes, full of character. Tall portrait format, 1200 × 1800 pixels (2:3).',
+      here: "You teach the children's catechism class at the Parroquia de San Pedro, in the center of Tlaquepaque, and get them ready for their First Communion. On Sundays many families go to Mass and then stroll around the plaza. Tlaquepaque was once its own town and is now part of Guadalajara's metropolitan area. It is known for its pottery and blown glass, and nearby El Parián is full of mariachi restaurants.",
     },
     {
       id: 'chuy-cocinera',
