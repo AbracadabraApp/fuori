@@ -1,5 +1,15 @@
 # Fuori Development Progress
 
+## 2026-11-24 (laptop): bugs reviewed, Learn 2.0's source redesigned
+
+- **bugs.md reviewed with Josh:** fixes never recorded written in (B5, B31, B39, B45), stale statuses brought up to date, his 11-23 Mexico play counted under each. Closed on his word: B1, B2, B3, B4, B5, B6, B10, B11, B12, B18, B20, B21, B23, B27, B30, B31, B32, B35, B36, B37, B39, B43, B45, B48, B49, B52, B53. Folded: B54 and B29 into B41 (the echo says twice what's the same in both languages); B7 and B28 into B13 (getting easier when it's hard: counted, works little; set aside, idea in ideas.md). Second B50 renamed B50b.
+- **New bugs:** B62 (the level-up offer after Refugio lost: Josh closed the app before it arrived), B63 (the offer takes ~15 s: the app waits for the save, then a Claude rewrite of preview lines the page no longer draws; every level-up visit ends on nothing at the goodbye).
+- **Ideas logged** (dialogue-ideas.md): step 3's open question is too hard without phrases; Josh's "did you hear how to say…" question; planting a phrase in the dialogue; introductions (B55) as the first example.
+- **Learn 2.0 redesign** (learn-sheet-2-design.md): Josh: "the card bank idea took it in a wrong direction … the source was never a goal". New source: the visit plus what Claude knows (as Learn 1.0's good-to-know), one call at the wind-down fills every kind, code picks the kind for variety, situation first; bank, fill-in and three-visit rule go; level up wins stays. Josh: "seems like a better design for the source". Rule 15: "A word from here:" carries the word in its headline. Mock-ups: six visits (https://claude.ai/artifact/ExmhTxobHySwmFV1gWWFJ6), nine kinds (https://claude.ai/artifact/Hx3j3vT4U9sizfem6E2eJ7). Correction made: the three phrases with a why are the end-of-visit learning notes, not the Learn 1.0 page.
+- **App:** the Learn card's close button 35 pt (was 28; Josh "yes"), on main, builds; waits for the next phone build.
+- **Mini:** "Fuori on the mini" remote-control session restarted (tmux fuori-rc).
+- **Next:** Josh's look at the nine kinds; then build the new source and B63 together (server, plus an app change for the offer at the goodbye).
+
 ## 2026-11-23 (laptop), late evening: Learn 2.0 and level up layout A released; build 19
 
 - **Released** server `89096da` (Learn 2.0 cards + level up layout A); smoke Italy OK, Mexico OK. The Learn 2.0 entry below ("not released") is now live. **iOS build 19** sent to App Store Connect (Josh: "build for app connect").
