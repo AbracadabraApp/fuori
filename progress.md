@@ -1,5 +1,11 @@
 # Fuori Development Progress
 
+## 2026-11-23 (cloud), evening: place sounds, one owner and a plan
+
+- **Josh:** "i thnk this is impossible to coordate and there is no plan". He was right: the cloud session can't make the sounds (no key), build Swift or install, so it handed off pieces.
+- **Now:** `docs/place-sounds-plan.md`. The laptop does the whole Lupita test: make the sounds, bundle the picks, play bells at her opening and kids under her voice, silent while the mic is open, then Josh's phone. To start it, tell a laptop session: "do docs/place-sounds-plan.md".
+- The cloud session does nothing more on this.
+
 ## 2026-11-23 (laptop): Learn 2.0, the card after the goodbye, built (not released)
 
 - **What:** after a visit's goodbye one card slides up over the person screen (Josh's design, docs/learn-sheet-2-design.md; plan docs/learn-sheet-2-plan.md). On `main`, not live: needs `npm run release` and a phone build, both on Josh's word.
