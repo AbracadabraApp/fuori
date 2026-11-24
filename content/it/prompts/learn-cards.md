@@ -54,3 +54,11 @@ Lines the game gives to people who work or spend time at places in {city}, telli
 
 {material}
 ```
+
+## Place
+
+```
+Real places in {city} that the game lets the learner visit. For each, write one about-this-place card: the single most interesting thing a visitor would be glad to know about it, from what you know for certain (its history, what it's for, a custom held there, what it's known for). Headline "About this" and the kind of place ("About this piazza", "About this church"). Give uses as the place's number. Skip a place you don't know well enough to be sure.
+
+{material}
+```

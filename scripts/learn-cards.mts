@@ -3,7 +3,7 @@
 // by code (lib/learn-card.ts → cardProblems) and, for facts, by culture.md's Facts judge; what fails is
 // dropped. Idioms need no call. Each card carries its source as a footnote the learner never sees.
 // Writes content/<country>/learn-cards.json, replacing only the cards of the sources it ran.
-//   COUNTRY=it npx tsx --env-file=.env.local scripts/learn-cards.mts [--pilot] [--only lesson,idiom,culture,city,here]
+//   COUNTRY=it npx tsx --env-file=.env.local scripts/learn-cards.mts [--pilot] [--only lesson,idiom,culture,city,here,place]
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
 import { join } from 'node:path';
 import { anthropic, CLAUDE_MODEL, logUsage, replyText } from '@/lib/claude';
@@ -201,6 +201,29 @@ if (runs('here')) {
   kept.forEach((c) => keep(c, 'here'));
   dropped.forEach((d) => droppedLog.push(`${d.card.id} (facts): ${d.doubts.join('; ')}`));
   log.push(`here lines: ${cityRun.length} cities, ${cutOnes.length} cut, ${kept.length} passed facts`);
+}
+
+// Real landmarks (plazas, monuments, churches, parks, markets, museums): one fact each from Claude's own
+// knowledge, fact-checked (Josh, 2026-11-23: "you could take every plaza and monument or church and get a fact").
+// Bars, shops and restaurants are left out: facts about a business are less sure.
+const LANDMARK = /piazza|plaza|landmark|church|chiesa|cathedral|duomo|basilica|park|parco|garden|giardin|market|mercato|museum|museo|cemetery|monument/i;
+if (runs('place')) {
+  replaced.add('place:');
+  const cutOnes = (await pool(cityRun, 4, async (city) => {
+    const places = city.places.filter((p) => !p.hidden && p.real && LANDMARK.test(p.kind)).slice(0, pilot ? 4 : undefined);
+    if (!places.length) return [];
+    const material = places.map((p, i) => `${i + 1}. ${p.name} (${p.kind}, ${p.neighbourhood})`).join('\n');
+    const cards = await cutCards('Place', { city: city.name, material });
+    return cards.flatMap((c) => {
+      const place = places[(numbers(c.uses)[0] ?? 0) - 1];
+      if (!place) return [];
+      return [card({ ...c, uses: '' }, `place:${city.id}/${place.id}`, 'A1', [`city:${city.id}`, `place:${city.id}/${place.id}`, `kind:${place.kind}`], 'place', `${pack.id}/cities/${city.id}.ts#${place.id}`)];
+    });
+  })).flat();
+  const { kept, dropped } = await factChecked(cutOnes);
+  kept.forEach((c) => keep(c, 'place'));
+  dropped.forEach((d) => droppedLog.push(`${d.card.id} (facts): ${d.doubts.join('; ')}`));
+  log.push(`places: ${cityRun.length} cities, ${cutOnes.length} cut, ${kept.length} passed facts`);
 }
 
 // Write: the cards of the sources run replace their old ones; the rest stay
