@@ -1,5 +1,11 @@
 # Fuori Development Progress
 
+## 2026-11-23 (cloud), evening: the trip's sounds remade louder and longer (B51); Mexico's stamp no longer breaks its word (B52)
+
+- **B51, Josh: "the sound effects are way too subtle, quiet, and short on map pages".** `rails.wav` and `road.wav` remade by `scripts/travel-sounds.py`: 5 s where they were 3.6, peak -1 dBFS where it was -8, average about -10 dBFS over the page's 3.5 s where it was -24 and -20, the energy moved up to where a phone speaker works, and each opens on a horn. `npm run test:travel-sounds` (new) fails on the old files, passes on the new. **Not heard by anyone**; the cloud session has no ears. They still play as a system sound, at the ringer's volume: if they're still quiet on the phone, that is the next thing to change, and it touches audio handling.
+- **B52, Josh: "re visit stamps in mexico as you want them YA/Fuist/E on 3 lines?"** `VisitStamp` now sets one word to a line with no more lines than words, so "YA FUISTE" shrinks to fit and isn't broken. A test in `VisitStageTests`. **Swift not built here** (no Xcode in the cloud); CI builds and runs the package tests.
+- Both are in `docs/bugs.md`, on main, not released. They go out with the next phone build; each closes when Josh hears or sees it.
+
 ## 2026-11-23 (cloud), late afternoon: five of the ten model cards filled out
 
 - Josh, looking at `design/learn-sheet-2/cards/all-ten.jpg`: "the bottom roww of 10 is sparse". Culture, A saying, A word from here, This or that and A small word held one or two lines each.

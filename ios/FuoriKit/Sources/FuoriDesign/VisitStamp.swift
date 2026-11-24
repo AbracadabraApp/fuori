@@ -95,13 +95,17 @@ public struct VisitStamp: View {
             Circle().strokeBorder(ring, lineWidth: size * 0.04)
             Circle().strokeBorder(ring, lineWidth: size * 0.015).padding(size * 0.08)
             VStack(spacing: 0) {
-                Text(word.uppercased())
+                // One word to a line, and never more lines than words, so a word too wide for
+                // the ring shrinks the stamp's text and is not broken in two (B52: Mexico's
+                // "YA FUISTE" came out as YA / FUIST / E; Italy's VISTO, a letter shorter, fit)
+                Text(Self.lines(word))
                     .typeface(.label, Tokens.Size.stampWord, relativeTo: .caption2, weight: .bold)
                     .tracking(Tokens.Size.stampWord * 0.06)
                     .multilineTextAlignment(.center)
                     .lineSpacing(-2)
                     .foregroundStyle(ink)
-                    .minimumScaleFactor(0.6)
+                    .lineLimit(Self.lineCount(word))
+                    .minimumScaleFactor(0.5)
                 if stage == .regular {
                     // The small underline curve under di casa
                     Smile().stroke(ring, style: StrokeStyle(lineWidth: size * 0.02, lineCap: .round))
@@ -114,6 +118,16 @@ public struct VisitStamp: View {
         .frame(width: size, height: size)
         // Rubber-stamp ink is never solid
         .opacity(0.92)
+    }
+
+    /// The stamp's words as inked: capitals, one word to a line ("YA\nFUISTE")
+    public static func lines(_ word: String) -> String {
+        word.uppercased().split(whereSeparator: \.isWhitespace).joined(separator: "\n")
+    }
+
+    /// How many lines the stamp's words may take: one for each word, at least one
+    public static func lineCount(_ word: String) -> Int {
+        max(1, word.split(whereSeparator: \.isWhitespace).count)
     }
 
     /// Train tickets are torn along a perforated line: dots down the left edge
@@ -182,6 +196,7 @@ struct Smile: Shape {
         VisitStamp(paper: .receipt, stage: .regular, word: "di casa", label: "Regular", seed: "pizzeria")
         VisitStamp(paper: .ticket, stage: .visited, word: "già visto", label: "Visited", seed: "roma")
         VisitStamp(paper: .ink, stage: .visited, word: "già visto", label: "Visited", seed: "roma")
+        VisitStamp(paper: .ink, stage: .visited, word: "ya fuiste", label: "Visited", seed: "oaxaca")
     }
     .padding(40)
     .background(Tokens.Colors.sand)
