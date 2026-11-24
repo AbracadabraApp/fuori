@@ -266,6 +266,7 @@ Josh, 2026-11-23: "characters repeat my name in spanish then english". Regina at
 ## Kept: what play says works
 
 Not bugs; recorded so a fix doesn't undo them.
+- **Characters in character with the short here lines** (Josh, 2026-11-23, after playing Mexico: "people are very in character with short here lines"). The header-only change (d99fab09): the person's here line out of every conversation's prompt, the header only.
 - **The dialogue is improving** (Josh, 2026-11-13, after play).
 - **Today's eight visits** (Josh, 2026-11-16, Mazatlán, Guadalajara, Tlaquepaque, steps 1 and 2): "The dialogue of todays 8 sessions were mostly very good. Notice was an issue. Names repeated. Some open UI questions on level 2" (the issues: B2, B41, B42 and dialogue-ideas.md → Hearing more of the language).
 - **Step 1's mixed sentence with a verb or an adjective as the Spanish piece** (Josh, 2026-11-16: "This is actually nice on the ear - like practical vocab pointer"): "It's Es el corazón, the heart of old Mazatlán", "Yes, it's very bonito, pretty", "The children juegan, play there". Don't fix these from how they read on the page.
