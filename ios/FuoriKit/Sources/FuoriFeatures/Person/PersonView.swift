@@ -75,10 +75,7 @@ struct PersonView: View {
                 .presentationDragIndicator(.visible)
         }
         .settingsToolbar()
-        .task {
-            await model.start()
-            sampleLearnCard()
-        }
+        .task { await model.start() }
         // Hands-free means no taps, so without this the phone auto-locks
         // mid-conversation and backgrounding ends the learner's turn
         .onAppear { KeepAwake.hold() }
@@ -100,33 +97,6 @@ struct PersonView: View {
                 if let ready = await card { learnCard = ready } else { dismiss() }
             }
         }
-    }
-
-    /// Debug only: `-FuoriLearnCard saying|learnit|vocab` opens a sample card over this screen, for a screenshot
-    /// of the sheet without playing a visit to its goodbye (as -FuoriLevelUp does for the level up)
-    private func sampleLearnCard() {
-        #if DEBUG
-        guard let which = UserDefaults.standard.string(forKey: "FuoriLearnCard") else { return }
-        typealias Row = APIClient.LearnCard.Row
-        let cards: [String: APIClient.LearnCard] = [
-            "saying": .init(id: "sample-saying", kind: "a-saying", headline: "A saying", rows: [
-                Row(text: "No hay bronca.", en: "There's no fight."),
-                Row(text: "", en: "No problem, no trouble at all."),
-                Row(text: "¿Más tortillas? —No hay bronca.", en: "More tortillas? No problem."),
-            ]),
-            "learnit": .init(id: "sample-learnit", kind: "learn-it", headline: "Learn it", term: "ahorita", rows: [
-                Row(text: "", en: "Mexicans use it all the time: right now, or in a little while. The tone tells you which."),
-                Row(text: "Ahorita se lo traigo.", en: "I'll bring it right away."),
-                Row(text: "Ahorita no, gracias.", en: "Not just now, thanks."),
-            ]),
-            "vocab": .init(id: "sample-vocab", kind: "vocabulary", headline: "Vocabulary", rows: [
-                Row(text: "el cabrito", en: "roast young goat"), Row(text: "la parrilla", en: "the grill"),
-                Row(text: "el carbón", en: "the charcoal"), Row(text: "la tortilla de harina", en: "flour tortilla"),
-                Row(text: "la salsa", en: "the sauce"),
-            ]),
-        ]
-        learnCard = cards[which]
-        #endif
     }
 
     /// The bubbles or subtitles and the controls

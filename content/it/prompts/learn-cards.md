@@ -1,6 +1,6 @@
 # Learn cards: cutting the bank
 
-version: 2026-11-23e
+version: 2026-11-23f
 
 Cuts the cards for the sheet after a visit (docs/learn-sheet-2-plan.md → The bank) from the game's
 own content, one source at a time: a lesson step, a culture story, a city's lists, a city's people.
@@ -20,7 +20,7 @@ Write to the models. They are the standard, not a menu: use one of their kinds w
 
 Lines go in the order the card reads. A "Note:" line in the models is a plain English line: give it as a row with an empty {language} line, in its place. The note field is only for a fact card's paragraph.
 
-For each card give: kind; headline (English); term (a {language} word that finishes the headline, as in "A small word: allora", or ""); rows (each a {language} line and its English); note (English, or ""); uses (which numbered parts it comes from, like "examples 1, 2"); redrafted (false only if every line is the material's own wording).
+For each card give: kind; headline (English); term (a {language} word that finishes the headline, as in "Learn it: allora", or ""); rows (each a {language} line and its English); note (English, or ""); uses (which numbered parts it comes from, like "examples 1, 2"); redrafted (false only if every line is the material's own wording).
 
 Word limits: a note at most 35 words; a {language} line at most 10 words, and its English at most 10.
 

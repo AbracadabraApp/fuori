@@ -138,7 +138,7 @@ export async function writeCard(p: { character: CharacterSheet; cityName: string
   const f = readPromptFile('learn-card.md');
   const models = fill(readPromptFile('learn-card-models.md').block('Models'), { language: language.name });
   const lines = p.transcript.map((t) => `${t.who === 'learner' ? 'Learner' : p.character.name}: ${t.transcript}`).join('\n');
-  const options = p.options.map((c) => `${c.id} | ${c.kind} | ${c.headline}${c.term ? `: ${c.term}` : ''} | ${c.rows.map((r) => r.text).join(' / ')}${c.note ? ` | ${c.note}` : ''}`).join('\n');
+  const options = p.options.map((c) => `${c.id} | ${c.kind} | ${c.headline}${c.term ? `: ${c.term}` : ''} | ${c.rows.map((r) => r.text || r.en).join(' / ')}${c.note ? ` | ${c.note}` : ''}`).join('\n');
   const response = await anthropic.messages.create({
     model: CLAUDE_MODEL,
     max_tokens: 2000,
@@ -160,7 +160,7 @@ export function cardFrom(out: Out, options: LearnCard[], conversationId: string,
   if (out.choice !== 'make') return null;
   const card: LearnCard = {
     id: `visit:${conversationId}`, kind: out.kind.trim() || 'card', headline: out.headline.trim(),
-    ...(out.term.trim() ? { term: out.term.trim() } : {}), rows: out.rows.filter((r) => r.text.trim() || r.en.trim()),
+    ...(out.term.trim() ? { term: out.term.trim() } : {}), rows: out.rows.map((r) => ({ text: r.text.trim(), en: r.en.trim() })).filter((r) => r.text || r.en),
     ...(out.note.trim() ? { note: out.note.trim() } : {}), level: levels[0] ?? 'A1', keys: [],
     source: { from: 'visit', ref: `conversation:${conversationId}`, redrafted: true, by: `learn-card@${learnCardVersion()}` },
   };

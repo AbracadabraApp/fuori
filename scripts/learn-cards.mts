@@ -71,7 +71,7 @@ async function cutCards(block: string, values: Record<string, string>): Promise<
 function card(c: Cut, id: string, level: CardLevel, keys: string[], from: string, ref: string): LearnCard {
   return {
     id, kind: slug(c.kind) || 'card', headline: c.headline.trim(), ...(c.term.trim() ? { term: c.term.trim() } : {}),
-    rows: c.rows.filter((r) => r.text.trim() || r.en.trim()), ...(c.note.trim() ? { note: c.note.trim() } : {}),
+    rows: c.rows.map((r) => ({ text: r.text.trim(), en: r.en.trim() })).filter((r) => r.text || r.en), ...(c.note.trim() ? { note: c.note.trim() } : {}),
     level, keys: [...new Set(keys)], source: { from, ref: c.uses.trim() ? `${ref}/${c.uses.trim()}` : ref, redrafted: c.redrafted, by },
   };
 }
@@ -143,7 +143,9 @@ if (runs('idiom')) {
     let n = 0;
     for (const c of cards) {
       const i = batch[(numbers(c.uses)[0] ?? 0) - 1];
-      if (!i) continue;
+      // The card must be about the idiom its number names: its first line holds the saying
+      const norm = (t: string) => t.toLowerCase().normalize('NFD').replace(/\p{M}/gu, '').replace(/[^\p{L} ]/gu, '').trim();
+      if (!i || !norm(c.rows[0]?.text ?? '').includes(norm(i.text).split(' (')[0].split(' / ')[0].slice(0, 12))) { droppedLog.push(`saying ${c.uses}: card doesn't match its idiom`); continue; }
       const level = (CARD_LEVELS as readonly string[]).includes(i.level ?? '') ? (i.level as CardLevel) : 'B1';
       keep(card({ ...c, uses: '' }, `idiom:${slug(i.text)}`, level, [`idiom:${i.text}`, ...((i as { group?: string }).group ? [`group:${(i as { group?: string }).group}`] : [])], 'idioms', `${pack.id}/idioms.json#${all.indexOf(i)}`), i.text);
       n++;
@@ -183,7 +185,7 @@ if (runs('city')) {
     const food = n(city.food, 1 + city.localTouches.length + city.customs.length);
     const material = ['Local words:', ...words, 'Customs:', ...customs, 'Food:', ...food].join('\n');
     const cards = await cutCards('City', { city: city.name, count: pilot ? '4' : '8', material });
-    return cards.map((c) => card(c, `city:${city.id}:${slug(`${c.kind}-${c.term || c.rows[0]?.text || c.note.slice(0, 40)}`)}`, 'A1', [`city:${city.id}`], 'city', `${pack.id}/cities/${city.id}.ts#lists`));
+    return cards.map((c) => card(c, `city:${city.id}:${slug(`${c.kind}-${c.term || c.rows.find((r) => r.text)?.text || c.rows[0]?.en || c.note.slice(0, 40)}`)}`, 'A1', [`city:${city.id}`], 'city', `${pack.id}/cities/${city.id}.ts#lists`));
   })).flat();
   const { kept, dropped } = await factChecked(cutOnes);
   kept.forEach((c) => keep(c, 'city'));

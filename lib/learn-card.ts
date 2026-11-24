@@ -78,6 +78,8 @@ export function cardProblems(card: LearnCard): string[] {
   if (!card.id.trim()) problems.push('no id');
   if (!card.kind.trim()) problems.push('no kind');
   if (!card.headline.trim()) problems.push('no headline');
+  if (card.headline.trim().endsWith(':')) problems.push('headline ends in a colon');
+  if (card.term && card.headline.toLowerCase().includes(card.term.toLowerCase())) problems.push('headline repeats the term');
   if (!CARD_LEVELS.includes(card.level)) problems.push(`level ${card.level}`);
   if (!card.rows.length && !card.note?.trim()) problems.push('nothing on it');
   if (card.rows.length > MAX_ROWS) problems.push(`${card.rows.length} rows`);
