@@ -1,7 +1,7 @@
 // Learn 2.0's card bank (docs/learn-sheet-2-plan.md → The bank): cards cut from the game's own content,
 // one source at a time, written to the models (content/<country>/prompts/learn-card-models.md), checked
 // by code (lib/learn-card.ts → cardProblems) and, for facts, by a judge that drops a card only when it
-// can show a claim is wrong (learn-cards.md → Facts). Idioms need no call. Each card carries its source as a footnote the learner never sees.
+// can show a claim is wrong (learn-cards.md → Facts). Sayings are written in batches with a sentence each. Each card carries its source as a footnote the learner never sees.
 // Writes content/<country>/learn-cards.json, replacing only the cards of the sources it ran.
 //   COUNTRY=it npx tsx --env-file=.env.local scripts/learn-cards.mts [--pilot] [--only lesson,idiom,culture,city,here,place,compare]
 import { existsSync, readFileSync, writeFileSync } from 'node:fs';
@@ -71,7 +71,7 @@ async function cutCards(block: string, values: Record<string, string>): Promise<
 function card(c: Cut, id: string, level: CardLevel, keys: string[], from: string, ref: string): LearnCard {
   return {
     id, kind: slug(c.kind) || 'card', headline: c.headline.trim(), ...(c.term.trim() ? { term: c.term.trim() } : {}),
-    rows: c.rows.filter((r) => r.text.trim()), ...(c.note.trim() ? { note: c.note.trim() } : {}),
+    rows: c.rows.filter((r) => r.text.trim() || r.en.trim()), ...(c.note.trim() ? { note: c.note.trim() } : {}),
     level, keys: [...new Set(keys)], source: { from, ref: c.uses.trim() ? `${ref}/${c.uses.trim()}` : ref, redrafted: c.redrafted, by },
   };
 }
@@ -130,23 +130,27 @@ if (runs('lesson')) {
   log.push(`lessons: ${chosen.length} steps, ${results.reduce((a, b) => a + b, 0)} cards cut`);
 }
 
-// Idioms: built as they are, no call
+// Sayings: each written to the saying model, with a sentence that uses it (Josh, of the first bank's sayings:
+// "the bottom row of 10 is sparse"; design rule 8)
 if (runs('idiom')) {
   replaced.add('idiom:');
   const all = idioms();
   const chosen = pilot ? all.filter((i) => i.common?.startsWith('very')).slice(0, 5) : all;
-  for (const i of chosen) {
-    const at = all.indexOf(i);
-    const level = (CARD_LEVELS as readonly string[]).includes(i.level ?? '') ? (i.level as CardLevel) : 'B1';
-    const meaning = i.meaning.trim().replace(/^./, (ch) => ch.toUpperCase()).replace(/[.;,\s]*$/, '.');
-    keep({
-      id: `idiom:${slug(i.text)}`, kind: 'a-saying', headline: 'A saying',
-      rows: [{ text: i.text, en: i.picture }], note: meaning, level,
-      keys: [`idiom:${i.text}`, ...((i as { group?: string }).group ? [`group:${(i as { group?: string }).group}`] : [])],
-      source: { from: 'idioms', ref: `${pack.id}/idioms.json#${at}`, redrafted: false, by: 'learn-cards.mts (no call)' },
-    }, i.text);
-  }
-  log.push(`idioms: ${chosen.length} cards`);
+  const batches = Array.from({ length: Math.ceil(chosen.length / 12) }, (_, b) => chosen.slice(b * 12, b * 12 + 12));
+  const counts = await pool(batches, 4, async (batch) => {
+    const material = batch.map((i, n) => `${n + 1}. ${i.text} | literally: ${i.picture} | means: ${i.meaning}`).join('\n');
+    const cards = await cutCards('Sayings', { material });
+    let n = 0;
+    for (const c of cards) {
+      const i = batch[(numbers(c.uses)[0] ?? 0) - 1];
+      if (!i) continue;
+      const level = (CARD_LEVELS as readonly string[]).includes(i.level ?? '') ? (i.level as CardLevel) : 'B1';
+      keep(card({ ...c, uses: '' }, `idiom:${slug(i.text)}`, level, [`idiom:${i.text}`, ...((i as { group?: string }).group ? [`group:${(i as { group?: string }).group}`] : [])], 'idioms', `${pack.id}/idioms.json#${all.indexOf(i)}`), i.text);
+      n++;
+    }
+    return n;
+  });
+  log.push(`sayings: ${chosen.length} idioms, ${counts.reduce((a, b) => a + b, 0)} cards`);
 }
 
 // Culture stories: one fact card each, fact-checked

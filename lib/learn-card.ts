@@ -14,9 +14,10 @@ export const CARD_LEVELS = ['A1', 'A2', 'B1', 'B2', 'C1'] as const;
 export type CardLevel = (typeof CARD_LEVELS)[number];
 
 export interface LearnCardRow {
-  /** A line in the learned language */
+  /** A line in the learned language; empty for a plain English line (a saying's meaning, why a word matters),
+   *  so a plain line can sit anywhere among the lines, in the order the card reads */
   text: string;
-  /** Its English, shown under it */
+  /** Its English, shown under it; for a plain line, the line itself */
   en: string;
 }
 
@@ -58,8 +59,8 @@ export interface LearnCardBank {
   cards: LearnCard[];
 }
 
-/** The longest a card gets: five rows (Vocabulary: things), a note of two short sentences */
-export const MAX_ROWS = 5;
+/** The longest a card gets: six lines (five words, or a saying's four), a note of two or three sentences */
+export const MAX_ROWS = 6;
 export const MAX_NOTE = 360;
 /** Word limits (Josh, 2026-11-23: "you may need word limits"): the models' notes run up to about 30 words (three sentences, rule 8) */
 export const MAX_NOTE_WORDS = 40;
@@ -81,8 +82,12 @@ export function cardProblems(card: LearnCard): string[] {
   if (!card.rows.length && !card.note?.trim()) problems.push('nothing on it');
   if (card.rows.length > MAX_ROWS) problems.push(`${card.rows.length} rows`);
   card.rows.forEach((r, i) => {
-    if (!r.text.trim()) problems.push(`row ${i}: no text`);
     if (!r.en.trim()) problems.push(`row ${i}: no English`);
+    // A plain English line: held to the note's length
+    if (!r.text.trim()) {
+      if (words(r.en) > MAX_NOTE_WORDS) problems.push(`row ${i}: plain line ${words(r.en)} words`);
+      return;
+    }
     if (blank.test(r.text)) problems.push(`row ${i}: a blank`);
     if (words(r.text) > MAX_LINE_WORDS) problems.push(`row ${i}: ${words(r.text)} words`);
     if (words(r.en) > MAX_LINE_WORDS) problems.push(`row ${i}: English ${words(r.en)} words`);

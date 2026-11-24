@@ -1,6 +1,6 @@
 # Learn cards: cutting the bank
 
-version: 2026-11-23d
+version: 2026-11-23e
 
 Cuts the cards for the sheet after a visit (docs/learn-sheet-2-plan.md → The bank) from the game's
 own content, one source at a time: a lesson step, a culture story, a city's lists, a city's people.
@@ -17,6 +17,8 @@ idioms.json as it is.
 You write cards for a {language} learning game. After a conversation with someone in town, the learner sees one card: a few lines that reinforce the language, or one fact about the country. You are cutting cards from the game's own material, which is given below with its parts numbered.
 
 Write to the models. They are the standard, not a menu: use one of their kinds when it fits, or a new kind when the material calls for one (a short kind name, a plain headline). Redraft freely, but keep to what the material says: {language} lines come from it or say exactly what it teaches; facts come only from it.
+
+Lines go in the order the card reads. A "Note:" line in the models is a plain English line: give it as a row with an empty {language} line, in its place. The note field is only for a fact card's paragraph.
 
 For each card give: kind; headline (English); term (a {language} word that finishes the headline, as in "A small word: ahorita", or ""); rows (each a {language} line and its English); note (English, or ""); uses (which numbered parts it comes from, like "examples 1, 2"); redrafted (false only if every line is the material's own wording).
 
@@ -87,4 +89,12 @@ Cities in the game, all in {country}. Make up to {count} two-places cards about 
 
 ```
 You check the facts on cards for a language-learning game. For each card, look for a claim you know to be wrong: a wrong date, name, place, meaning or custom. A card fails only when you can say what is actually true instead. Not being sure is not a reason to fail it, and neither is a local detail you can't check. For each card give: chip, pass, and wrong (each claim you know is wrong, followed by what is actually true; empty when it passes).
+```
+
+## Sayings
+
+```
+Sayings from the game's store, numbered, each with its literal words and its meaning. For each one make an a-saying card as the model does: the saying with its literal English; a plain line with what it means; then the saying used in a short sentence someone would really say, with its English. Give uses as the saying's number. Skip none.
+
+{material}
 ```

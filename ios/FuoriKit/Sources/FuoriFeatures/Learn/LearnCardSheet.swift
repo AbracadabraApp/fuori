@@ -4,12 +4,16 @@ import FuoriNetworking
 
 /// Learn 2.0's sheet after a visit's goodbye (docs/learn-sheet-2-design.md): one card, the card is the
 /// sheet. The headline level with a small round close button, then one sage block of lines, each in
-/// the language with its English under it, and an optional plain line. No picture, no Done, no audio.
+/// the language with its English under it; a line with no language is a plain English line, drawn in its
+/// place (a saying's meaning, why a word matters). No picture, no Done, no audio, no mark for the kind
+/// (design rule 12). The sheet is sized to the card: it reports its height to PersonView.
 /// Every way out (the close button, sliding it down, a tap off it) ends on the place list: PersonView
 /// dismisses itself when the sheet goes.
 struct LearnCardSheet: View {
     let card: APIClient.LearnCard
     let speechLanguage: String
+    /// The card's full height, for the sheet's one detent
+    @Binding var height: CGFloat
     @Environment(\.dismiss) private var dismiss
     @ScaledMetric(relativeTo: .body) private var closeSize: CGFloat = 30
 
@@ -35,16 +39,24 @@ struct LearnCardSheet: View {
                 }
                 VStack(alignment: .leading, spacing: 12) {
                     ForEach(Array(card.rows.enumerated()), id: \.offset) { _, row in
-                        VStack(alignment: .leading, spacing: 2) {
-                            Text(tagged(row.text))
-                                .typeface(.label, 17, relativeTo: .body, weight: .semibold)
-                                .foregroundStyle(Tokens.Colors.ink)
+                        if row.text.isEmpty {
+                            // A plain English line, in its place among the lines
                             Text(row.en)
-                                .typeface(.label, 15, relativeTo: .subheadline)
-                                .foregroundStyle(Tokens.Colors.muted)
+                                .typeface(.label, 16, relativeTo: .body)
+                                .foregroundStyle(Tokens.Colors.text)
+                                .fixedSize(horizontal: false, vertical: true)
+                        } else {
+                            VStack(alignment: .leading, spacing: 2) {
+                                Text(tagged(row.text))
+                                    .typeface(.label, 17, relativeTo: .body, weight: .semibold)
+                                    .foregroundStyle(Tokens.Colors.ink)
+                                Text(row.en)
+                                    .typeface(.label, 15, relativeTo: .subheadline)
+                                    .foregroundStyle(Tokens.Colors.muted)
+                            }
+                            .fixedSize(horizontal: false, vertical: true)
+                            .accessibilityElement(children: .combine)
                         }
-                        .fixedSize(horizontal: false, vertical: true)
-                        .accessibilityElement(children: .combine)
                     }
                     if let note = card.note, !note.isEmpty {
                         Text(note)
@@ -60,6 +72,7 @@ struct LearnCardSheet: View {
             .padding(.horizontal, Tokens.Space.gutter)
             .padding(.top, 20)
             .padding(.bottom, 12)
+            .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { height = $0 }
         }
         .scrollBounceBehavior(.basedOnSize)
         .background(Tokens.Colors.card)

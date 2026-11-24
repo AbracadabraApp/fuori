@@ -1,6 +1,6 @@
 # Learn card: the card after a visit
 
-version: 2026-11-23
+version: 2026-11-23b
 
 The card on the sheet after a conversation's goodbye (docs/learn-sheet-2-design.md, docs/learn-sheet-2-plan.md
 → Picking). lib/learn-card-writer.ts calls it once a visit, at the wind-down turn, with the conversation, the
@@ -19,6 +19,8 @@ Choose one:
 - none: the conversation gave nothing worth a card.
 
 Prefer the language over facts. Never show a mistake, a wrong form or a correction: the learner's lines come through speech-to-text, so build only from what's right. Keep to the models' size.
+
+Lines go in the order the card reads. A "Note:" line in the models is a plain English line: give it as a row with an empty {language} line, in its place; note is only for a fact card's paragraph.
 
 For pick, give the id and leave the other fields empty. For make, give kind, headline, term ("" if none), rows and note ("" if none). For none, leave everything else empty.
 

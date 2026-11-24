@@ -160,7 +160,7 @@ export function cardFrom(out: Out, options: LearnCard[], conversationId: string,
   if (out.choice !== 'make') return null;
   const card: LearnCard = {
     id: `visit:${conversationId}`, kind: out.kind.trim() || 'card', headline: out.headline.trim(),
-    ...(out.term.trim() ? { term: out.term.trim() } : {}), rows: out.rows.filter((r) => r.text.trim()),
+    ...(out.term.trim() ? { term: out.term.trim() } : {}), rows: out.rows.filter((r) => r.text.trim() || r.en.trim()),
     ...(out.note.trim() ? { note: out.note.trim() } : {}), level: levels[0] ?? 'A1', keys: [],
     source: { from: 'visit', ref: `conversation:${conversationId}`, redrafted: true, by: `learn-card@${learnCardVersion()}` },
   };

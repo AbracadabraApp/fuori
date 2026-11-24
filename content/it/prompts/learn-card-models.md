@@ -1,12 +1,12 @@
 # Learn card models
 
-version: 2026-11-23d
+version: 2026-11-23e
 
 The ten cards Josh drew for the sheet after a visit (docs/learn-sheet-2-design.md), as models: the
 standard every card is written to, not a list of the only kinds there are, and not cards in the
 bank (Josh, 2026-11-23: "the 10 examples do not need to be complete example even for the 10 cards -
 the writer could redraft them - but the 10 are models"). Read by scripts/learn-cards.mts, and later
-by the visit writer. Filled out on 2026-11-23 after Josh: "the bottom row of 10 is sparse" (docs/learn-sheet-2-design.md, rule 8). One Vocabulary card in place of things and actions (Josh, 2026-11-23: "we can skip the adornment - for vocabulary - lose things/verbs/actions -- just translate Vocabulary"). Mexico's file holds the same ten in Spanish.
+by the visit writer. Filled out on 2026-11-23 after Josh: "the bottom row of 10 is sparse" (docs/learn-sheet-2-design.md, rule 8). The small word became Learn it, why first ("use \"Learn it:\" as the header followed by the word"). One Vocabulary card in place of things and actions (Josh, 2026-11-23: "we can skip the adornment - for vocabulary - lose things/verbs/actions -- just translate Vocabulary"). Mexico's file holds the same ten in Spanish.
 
 ## Models
 
@@ -19,7 +19,7 @@ What every card is:
 - Plain: what's right and useful to know. Never a mistake, a wrong form, or a correction.
 - Nothing about the next visit, no city name, no day of the week.
 
-The models (kind; headline; lines as "language | English"; note):
+The models (kind; headline; lines as "language | English"; a "Note:" line is a plain English line and stays in its place among the lines):
 
 1. when-you
 Headline: When you introduce yourself
@@ -74,13 +74,14 @@ Al banco, grazie. | At the counter, thanks.
 Al tavolo, per favore. | At a table, please.
 Why it works: the question that offers the choice, then the two answers, built alike so they read as a pair. A choice of two that isn't formal and informal.
 
-10. a-small-word
-Headline: A small word
-Term: allora
-Allora, due cappuccini e due cornetti? | So, two cappuccinos and two croissants?
-Ah, ho capito! Un caffè, allora. | Oh, got it! An espresso, then.
-Note: It opens a thought or wraps one up: so, then, well.
-Why it works: one little word doing a lot of work, shown in two sentences, then a line saying what it does.
+10. learn-it
+Headline: Learn it
+Term: ma dai
+Note: One phrase, several feelings: no way, I've had it, I can't believe it. The tone tells you which.
+Ma dai, davvero? | No way, really?
+Ma dai, basta! | Oh come on, I've had it!
+Ma dai, non ci credo! | I can't believe it!
+Why it works: a word or phrase people use all the time: first why it matters, then one example for each meaning people really use. One word per card.
 
 A card of a new kind is welcome when the material calls for one: give it a short kind name and a plain headline, and hold it to the same standard.
 ```
