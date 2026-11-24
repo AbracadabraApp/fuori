@@ -56,7 +56,7 @@ export const language = {
       line: 'Every few conversations we check to see if things are too easy.',
       question: 'Do you want to increase the amount of Italian you hear or are you comfortable now?',
       barFrom: 'More English',
-      barTo: 'All Italian',
+      barTo: 'More Italian',
       barNow: 'Now',
       barNext: 'Next',
       barLabel: 'Step {now} of {total} now. Step {next} is next.',
