@@ -35,7 +35,6 @@ export const showcase: Record<string, string[]> = {
     'gesu-piazza',
     'piazza-navona', // art: Tommaso, from roma.ts (Josh, 2026-11-03)
     'piazza-santa-maria-trastevere', // traditions: Gina, from roma.ts
-    'basilica-santa-maria', // art and history: Don Paolo, from roma.ts
     'colosseo', // history: Serena, archaeologist (new)
     'villa-borghese-nuova',
     'tram-porta-maggiore',
@@ -103,9 +102,7 @@ export const showcase: Record<string, string[]> = {
     'pizza-a-portafoglio-tribunali', // street food only this city has (Josh, 2026-10-27)
     'mozzarella-spaccanapoli', // a deli for the city's own food (Josh, 2026-10-27)
     'mercato-pignasecca',
-    'pizzeria-sorbillo',
     'caffe-gambrinus',
-    'gay-odin',
     'piazza-bellini',
     'spaccanapoli-street', // M2: bench character Nonna Assunta (Via Spaccanapoli) (abitante del quartiere)
     'stazione-centrale-napoli', // M2: train station for travel
@@ -121,12 +118,10 @@ export const showcase: Record<string, string[]> = {
     'santo-stefano', // city pass: replaces the pharmacy
     'piazza-maggiore',
     'salumeria-simoni',
-    'piazza-verdi', // M2: bench character Clara (studentessa)
     'stazione-centrale', // M2: train station for travel
     // Dialogue variety (Josh, 2026-11-06; docs/archive/conversation-variety.md): the city's own places in, generic businesses out
     'due-torri',
     'archiginnasio',
-    'ristorante-pappagallo', // kept: it hosts a cultural lesson (Josh, 2026-11-06: "leave them")
   ],
   palermo: [
     'bar-alba',
@@ -141,7 +136,6 @@ export const showcase: Record<string, string[]> = {
     'teatro-massimo',
     'quattro-canti',
     'libreria-del-mare', // kept: it hosts a cultural lesson (Josh, 2026-11-06: "leave them")
-    'osteria-ballarò', // kept: it hosts a cultural lesson (Josh, 2026-11-06: "leave them")
   ],
   // Not on the first screen of the city list: reached through "Mostra altro" or
   // the station (Josh, 2026-10-14). 10 places each, same mix, plus the station
@@ -252,10 +246,15 @@ export const homeCities = ['roma-nuova', 'matera', 'firenze', 'siena', 'venezia'
  * memories stay in the database, unread by the game.
  */
 export const hiddenForNow: Record<string, string[]> = {
+  // Hidden 2026-11-23 (Josh, from nominees to bring the big cities toward 10 places): a second place on the
+  // same square, a second sweet shop, a second pizzaiolo, a second piazza, a generic restaurant, a second
+  // restaurant in Ballarò. Their cultural lessons (Sorbillo, I Carracci, Ballarò) aren't in the set.
+  bologna: ['piazza-verdi', 'ristorante-pappagallo'],
+  palermo: ['osteria-ballarò'],
   // Hidden 2026-11-23 (Josh: "delete: Pharmacists, Tabaccherie, and Cafés and bars 1 in any city with 3"):
   // the one pharmacy and the one tabaccheria (their cultural lessons aren't in the set), and one of Napoli's two bars
-  'roma-nuova': ['farmacia-prati'],
-  napoli: ['bar-nilo'], // Josh, after Poppella was hidden first: "this is a pasticceria - hide Nilo and bring this back"
+  'roma-nuova': ['farmacia-prati', 'basilica-santa-maria'],
+  napoli: ['bar-nilo', 'gay-odin', 'pizzeria-sorbillo'], // Josh, after Poppella was hidden first: "this is a pasticceria - hide Nilo and bring this back"
   // Hidden 2026-11-23 (Josh: "we should hide more places"; Italy keeps about Mexico's 14 cities:
   // "id hide verona, leccce, assissi Taormina and Genoa"). Their shown places as they were
   verona: [
