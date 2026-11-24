@@ -84,6 +84,8 @@ No picture inside the sheet: the person is on the screen behind it. The sheet ma
 - **1.0:** everything comes from the visit, the why is about the learner ("Joshua already uses todavía no"; "they answered it with 'me gustaría', so it's worth reusing"), and it is always language. But it is dense (three phrases and a grammar note each, every time) and predictable: "come back on [day]" with "formal command form" in 5 of the 6 pages, because every wind-down now says it.
 - **2.0:** one light card, and a different kind each time. But one of the three came from the bank about the place, not from the visit. The best of the six was Ismael's, made from the visit: a phrase and how to answer it.
 
+**Josh, 2026-11-24, after a comparison of the Learn page and the card:** "I think the \"card bank\" idea took it in a wrong direction. In the table - the source was never a goal - the rest of them were." The goals of 2.0 were the form (after the goodbye, comes to you, light, one kind, varied, no corrections, read and close); where its content comes from was a build choice, and the bank was that choice.
+
 **The goal for the next version:**
 - **2.0's form:** one card after the goodbye, of one of the kinds above, light.
 - **1.0's source:** built from what was said in the visit. The Learn 1.0 page, already written during every visit (lib/learn-ahead.ts), is raw material, not the thing shown.
