@@ -267,6 +267,20 @@ Josh: "take an easy enough phrase - working for forty years - drawing the museum
 
 **Not decided:** how often (once a visit, like the idiom turn's spacing?); which steps of scaffolding answer in English and which in the language; whether the character asks or the bubble does. Would be a new setup beside the question, the idiom and the goodbye (lib/beginner-2.ts).
 
+## Step 3's open question, and what could stand in for it (Josh, 2026-11-24; Beginner step 3)
+
+**What prompted it:** Ismael, the Morismas costume maker (Zacatecas, 63afafc2, step 3), on a no-answers turn: "¿Usted tiene algún pasatiempo que requiera paciencia? Do you have a hobby that takes patience?" Josh answered in English ("It's called parenting"). Josh: "the open one is pretty wild for a beginner - we might need to give some scaffolding at this level". Step 3 is where the no-answers turn first appears (lib/beginner-2.ts CLUSTERS, weight 2 of 8, about a quarter of drawn turns; two in each of the three visits of 2026-11-23). Its whole instruction is "end on one short question in {language} they can answer in their own words" (scaffolding.md, Setup: no answers). An open question with no answers was tried at step 1 on 2026-11-11 and pulled (Josh: "difficult for this level").
+
+**Josh's idea: a question about the language just heard.** Josh: "A different idea for that ideas doc could be a question like, \"Did you hear how to say \"you want\"; did you hear the name for church\"". The character asks about something it has just said in the language, in this visit: a word (*la iglesia*, *la cantera*) or a way of saying something (*¿quiere…?*, *me gusta*). The learner answers with the words they heard: *Iglesia*, *Quiere*.
+- **Next to "Did you catch it"** (above): that one asks what a sentence meant (*How long has he been cooking?*, answered "forty years"); this one asks how a thing was said, so the learner says it back from their ear: noticing a form, not understanding a fact.
+- **What it gives at step 3:** a question with no bubbles that a beginner can still answer, because the answer was in the last few lines; and it pulls out the phrase the step marks in each sentence (the asterisked phrase in Level: sentences, pieces.ts), so what they're asked about is what the visit was teaching.
+- **How it could sound, in role:** Refugio, after the workshop line: "*¿Se fijó cómo le digo a la piedra? Did you catch what I call the stone?*" → *Cantera*. Abel: "*¿Oyó cómo se dice \"you want\"? Did you hear how to say \"you want\"?*" → *Quiere*.
+- **Ways it could grow:** the answer said in the language from step 3, with no bubble; a bubble that shows only the first letter, or the English, as a hint, for a learner who stalls; the word or phrase becomes the visit's Learn card.
+
+**The other direction raised the same day (Claude, building on Josh's "some scaffolding"):** keep the open question but scaffold it: a frame with a gap (*Sí, me gusta… porque…*) at step 3, only the first words (*Yo…*) at step 4, nothing at 5 and 6 (the fading ladder in ideas.md → A new Intermediate); or keep step 3's no-answers questions to ones answerable from the visit so far (yes or no, either/or, a preference) and leave "about you" questions to steps 5 and 6.
+
+**Not decided:** which of these, or both; how often; whether it replaces the no-answers turn at step 3 or sits beside it.
+
 ## A pointer, not a correction: how people here say it (Josh, 2026-11-23; above Beginner step 1)
 
 Josh: "as you move up from beginner 1 - the character could softly correct or point something out about spanish - i said much gusto after introducing myself -- and I said it again as goodbye - i don't know if that is right - but he could hve told me this is how we say nice to meet you we met. . . i don't have a great example".
