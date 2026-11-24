@@ -243,7 +243,8 @@ export const showcase: Record<string, string[]> = {
 };
 
 /** On the first screen of the city list, in this order; the rest come after "Mostra altro" */
-export const homeCities = ['roma-nuova', 'matera', 'firenze', 'siena', 'venezia', 'napoli', 'bologna', 'palermo'];
+// Every shown city on the first screen, no "Mostra altro" (Josh, 2026-11-23: "get rid of the more separator in Italy")
+export const homeCities = ['roma-nuova', 'matera', 'firenze', 'siena', 'venezia', 'napoli', 'bologna', 'palermo', 'milano', 'bergamo', 'torino', 'mantova', 'lucca', 'orvieto', 'siracusa'];
 
 /**
  * Hidden for now, not deleted (Josh, 2026-10-22: "hide old Rome for now,
