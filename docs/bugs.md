@@ -10,12 +10,31 @@ Everything that plays wrong: what Josh (or anyone) reports from play, and what a
 
 ## Open
 
-### B7. Too fast, too much Spanish at Beginner step 1
-Josh, 2026-11-13: "mucho mucho inglés por favor" (Raymundo 2008220a); "puede hablar más despacio?", "¿hablo più inglés?" (Ofelia 71dc1d3b); "Perdón, puede hablar más despacio, por favor?" (Josué 8814eb6f). See B1(b). **Status: open.**
-
-### B13. Intermediate doesn't back off when the learner says it's hard
+### B13. Getting easier when it's hard (B7 and B28 folded in)
 Josh, 2026-11-13, after play: "Intermediate didn't back off." In play: to Elena, "Excuse me, Elena. I don't speak Italian perfectly. It's a bit difficult for me." She reassured him in Italian and went on at the same length (252960a4; see B11). To Nunzio, "Mi piace parlare con lei… ma io non posso capire tutto. Forse un più facile parole"; Nunzio said "Va bene, Joshua, parlo più semplice" and kept it simple for two turns, then went back to new words ("corteccia", "scendono") until Josh ended with "questa conversazione è un po difficile… posso parlare con una topica più facile che i giardini" (67edfe03). The Beginner side of the same thing works: see "kept" below. Carried with dialogue-ideas.md's "Long replies in open-ended talk (Intermediate)". **Status: fix live** (32c601f, D12: the reply's `hard` flag is saved and every later turn of the visit gets dialogue.md's Help asked note; Nunzio replayed: "quercia (oak)" 6 of 6, median 29 words against 39; live, checked 2026-11-14). Closes when a visit where Josh says it's hard stays easy to the end.
 Played 2026-11-14 night: Nunzio (bbb5a0f5), asked on the second reply to speak more simply, kept to short sentences with a word of English where needed ("le foglie, le leaves", "spazio, space") through all 16 turns and closed with "La prossima volta ti faccio vedere le radici più vecchie"; Elena (5279b94e), asked to slow down, did ("Parlo piano. Domani mangiamo cose semplici. Il pane, le panelle (chickpea fritters)."). The Mac mini session read that as fixed from the text. **Josh, the same night, by ear: "I didn't feel like Elenas speech got any easier - Nunzio only a little -- the intermediate is Hard." So not fixed: open.** The note shortens the sentences on the page; it doesn't make them easy to follow at speed.
+
+**One bug with B7 and B28** (Josh, 2026-11-24: "I'd consolidate bugs about getting easier and find out what is in the code - it might be user perceptions").
+
+**What the code does when it's hard (read 2026-11-24, main at 6d4c32ca):**
+- **Inside a visit, one switch.** Each character reply carries a `hard` flag, set by the model when the learner's last line "asked for help, said they didn't understand, or said it's hard, in any words or language" (lib/prompts/turn-output-schema.ts). From the next turn to the end of the visit, the prompt carries dialogue.md's Help asked note: "Earlier in this visit they said it's hard for them. Keep it easy for the rest of the visit: short sentences, words they know, and when you use a new word, its English right after it." (lib/conversation/take-turn.ts). The same note at every level, both countries.
+- **The voice doesn't slow down.** The speed is set by the level only: Beginner 0.7, Intermediate and Advanced 0.9 (ConversationModel.speed). Nothing changes it when the flag is set.
+- **The Beginner step doesn't change.** How much English a turn has comes from the step (lib/dialogue/pieces.ts); the flag doesn't touch it.
+- **The next visit starts fresh.** The flag lives in the visit's turns; the next visit doesn't know.
+- **Nothing across visits.** Level up only goes up, on the learner's yes. The old rule that sent an Intermediate back after two hard visits (lib/path.ts RULES.backFromIntermediate) is unused since level up became the learner's choice. The only way down is Settings' hidden stepper.
+- **Always there:** Beginner, "If they ask for help in English, help as you would anyway" (scaffolding.md); Intermediate, "They're learning {language} and follow most of it" (character.md).
+
+**What sets it in play:** in Josh's 17 visits since 2026-11-17, 5 set the flag (0af99588, 1c40d5aa, 08312ed6, 9ea5568e, 1c830aca), every one by asking what a word means ("Mi puoi dire cosa significa broca", "Cosa vuol dire tramonto?", "cosa vuol dire veramente la parola attaccare bottone?"), one also asking to repeat more slowly. None by saying it's hard. So asking a word's meaning switches on "keep it easy" for the rest of the visit (B28), and saying it's hard changes the words on the page but not the speed of the voice. That matches Josh's ear on 2026-11-14 ("I didn't feel like Elenas speech got any easier - Nunzio only a little"): the sentences got shorter, the voice did not.
+
+The three entries as they were:
+
+#### (was B7) Too fast, too much Spanish at Beginner step 1
+Josh, 2026-11-13: "mucho mucho inglés por favor" (Raymundo 2008220a); "puede hablar más despacio?", "¿hablo più inglés?" (Ofelia 71dc1d3b); "Perdón, puede hablar más despacio, por favor?" (Josué 8814eb6f). See B1(b). **Status: open.**
+
+#### (was B28) Reading an offered "what is…?" answer marks the learner as finding it hard
+2026-11-14 night: Juana's turn after the offered answer "¿Qué es un coleto?" was saved `hard` (c7c75e92), and Davide's after the offered "Cosa significa 'O sole mio?" (db79bb48), so every later turn of those visits got the Help asked note (D12). After it Davide's turns went short and he repeated his question about the song. The help answer (D25) and help that lasts (D12) were built the same day; together, taking an answer the game itself offered counts as asking for help. **Status: open.** Proposed 2026-11-16; Josh: "skip" (progress.md, 53098286). Not fixed.
+
+**Status: open.** Whether it is a fault or a perception is the question above: the text gets easier, the voice and the next visit don't.
 
 ### B24. The character's closing questions are a few kinds, over and over (Beginner)
 Josh, 2026-11-14, on the closing question of every character turn in five Mexico Beginner visits (Carmen 09978a29, Don Chucho 499b9774, Renata 35f9fa93, Vale ba340097, Isidro d335b204; all on 11-12i, before the 2026-11-13 release): "These questions in the game are very repetitive".
@@ -34,9 +53,6 @@ Recounted on the eight Beginner visits of 2026-11-14 night (56 pairs, goodbyes l
 
 ### B26. The Learn page corrects lines the learner read from an offered answer, or that were misheard
 Found 2026-11-14 by running the live Learn writer on four of Josh's Beginner visits (read-only): every page is full (2–3 fixes, 5–7 words, 3–4 verbs, a culture note), but about half the fixes are not the learner's mistakes. "No quiero ver más el mural" was the offered answer "No, quiero ver más el mural", and the page called it rude to a guide (Renata 35f9fa93); "Todavia no vale la pena" was the answer "Todavía no. ¿Vale la pena?" (Carmen 09978a29); "mejor me cuento aquí" was "me quedo" misheard (Isidro d335b204); "pinto" for "pintó" is a spelling the learner can't make in speech. Real ones on the same pages: "Come fate la panella?" → "Come fa…", "la más popular pregunta" → "la pregunta más popular". Same family as B19. The writer isn't given the answers that were offered. **Status: open** (dialogue-plan.md D51: at most one fix, never from a line that matches an offered answer).
-
-### B28. Reading an offered "what is…?" answer marks the learner as finding it hard
-2026-11-14 night: Juana's turn after the offered answer "¿Qué es un coleto?" was saved `hard` (c7c75e92), and Davide's after the offered "Cosa significa 'O sole mio?" (db79bb48), so every later turn of those visits got the Help asked note (D12). After it Davide's turns went short and he repeated his question about the song. The help answer (D25) and help that lasts (D12) were built the same day; together, taking an answer the game itself offered counts as asking for help. **Status: open.** Proposed 2026-11-16; Josh: "skip" (progress.md, 53098286). Not fixed.
 
 ### B33. The level up was never offered to anyone
 Josh, 2026-11-14 night, after a night of play on two learners: "no step ups offered - but maybe i bounced araount countries/levels too much". It wasn't that. The app asked for the offer at `v1/level-up?conversationId=…` by appending that whole string as a path, which percent-encodes the "?", so the request went out as `/v1/level-up%3FconversationId=…`; no route matches, the server answered 404 (seen in the HTTP log for 5279b94e, 2026-11-15 06:31 UTC, 14 ms; the encoded address gives 404 with curl, the plain one 401), and the app dropped the error (`try?`). Since the level up shipped on 2026-11-11 every saved Beginner turn is at step 1, for all five learners who played (27 visits by Josh in Mexico, 10 in Italy). So every Beginner has heard only step 1, the most English there is: part of B32. **Status: fix on main, not released, not played.** In the app (after build 16): the id goes as a query item (`APIClient.address`, with a test), and a failed offer is reported, not swallowed. On the server: `proxy.ts` reads the id out of such a path and sends it to the route, so builds up to 16 get the offer too after the next release. Checked: the app builds; `test:proxy` (the function, and the proxy on such a request); how `appending(path:)` treats "?", run on the mini. Not checked: a local server wouldn't start in the worktree, so the rewrite hasn't been seen end to end, and the offer itself has never been shown to a player.
@@ -189,6 +205,12 @@ Not bugs; recorded so a fix doesn't undo them.
 - **A Beginner character asked for more English adapts.** Josh, 2026-11-13: "Some character adapted to use more English." Ofelia, asked "¿hablo più inglés?", answered "Sure, mi reina, I'll use more English" and did (71dc1d3b); Carmen, told "that was a lot of Spanish with no English", said "I'll go slower" (09978a29).
 
 ## Closed
+
+### B7. Too fast, too much Spanish at Beginner step 1
+**Folded into B13** (Josh, 2026-11-24).
+
+### B28. Reading an offered "what is…?" answer marks the learner as finding it hard
+**Folded into B13** (Josh, 2026-11-24).
 
 ### B35. The step 2 → 3 offer's preview is the same line, word for word
 Found 2026-11-15 evening by the levels check (docs/checks/levels.md), walking a test learner up every step on a local server with the local test database (scripts/walk-live.mjs, WALK_BASE local), once per country. Both walks failed the same check, "the offer's next line is the same as the line as said", at step 2 → 3 only:
