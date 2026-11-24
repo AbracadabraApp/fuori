@@ -63,6 +63,34 @@ No picture inside the sheet: the person is on the screen behind it. The sheet ma
 13. **One Vocabulary card**, headed "Vocabulary": the visit's words, each with its English, nouns and verbs in any mix; Vocabulary: things and Vocabulary: actions are folded into it (same words).
 14. **The card for a much-used word** (what was "A small word"; Josh, 2026-11-23: "id start the card explaining why its important and then give examples"; then, of *ma dai*: "no way, i've had it, i can't believe it"): first a plain line on why the word matters, then the word at work, one example for each meaning people really use. One word per card: *ma dai* and *dai* are two cards. Headline: "Learn it:" followed by the word, as in "Learn it: ma dai" (Josh, 2026-11-23: "use \"Learn it:\" as the header followed by the word"; drawn: https://claude.ai/artifact/Qg446dBRTF4WbwhsFTcTds). Josh, after the mock-ups: "i think the cards are improved enough".
 
+## Next version: the visit's own content, in this form (2026-11-24)
+
+**What prompted it.** Josh's six Mexico visits of 2026-11-23, the first evening with cards live (Regina 4335c671, Baldemar 78e59d51, Adrián 9a714451, Ismael 63afafc2, Abel 4955c6e5, Refugio d2e77f56). Three ended on a card, three on nothing. Josh: "it seems like learn 1.0 has superior form than 2.0"; then "a shortcoming of 1.0 is the content is dense and predictable - a goal of 2.0 was to lighten it up in design, and vary wwhat you see".
+
+**The six visits, both versions:**
+
+| Visit | Learn 2.0 card shown | Learn 1.0 page (three phrases each) |
+|---|---|---|
+| Regina, Macroplaza | About this plaza: opened 1984, 40 hectares, Barragán's lighthouse (a bank fact; no language) | *Venga otro lunes y le enseño el dibujo terminado* · *Todavía no lo termino* · *Que le vaya muy bien* |
+| Baldemar, cabrito | A saying: *no hay bronca*, "there's no fight", note "No problem." | *no hay bronca* · *Ahorita le sirvo* · *Vuelva el domingo* |
+| Adrián, records | none (a level-up visit) | *Le recomiendo* · *Ahorita lo pongo* · *Venga el sábado* |
+| Ismael, Morismas | When someone offers to show you something: *¿Le gustaría ver el traje?* / *Sí, me gustaría verlo.* / *No, gracias.* (made from the visit) | *vuelva a verme* · *se hace con paciencia* · *sirve para* |
+| Abel, tamborazo | none (the writer chose none; the bank fill-in was blocked by the three-visit rule) | *una sopa de su propio chocolate* · *¿Le gustaría escuchar…?* · *Llevo veinte años tocando* |
+| Refugio, cantera | none (a level-up visit; the offer was then lost, docs/bugs.md B62–B63) | *¿Quiere tocar la piedra?* · *Venga otro día* · *Fue un gusto platicar con usted* |
+
+**What each does better.**
+- **1.0:** everything comes from the visit, the why is about the learner ("Joshua already uses todavía no"; "they answered it with 'me gustaría', so it's worth reusing"), and it is always language. But it is dense (three phrases and a grammar note each, every time) and predictable: "come back on [day]" with "formal command form" in 5 of the 6 pages, because every wind-down now says it.
+- **2.0:** one light card, and a different kind each time. But one of the three came from the bank about the place, not from the visit. The best of the six was Ismael's, made from the visit: a phrase and how to answer it.
+
+**The goal for the next version:**
+- **2.0's form:** one card after the goodbye, of one of the kinds above, light.
+- **1.0's source:** built from what was said in the visit. The Learn 1.0 page, already written during every visit (lib/learn-ahead.ts), is raw material, not the thing shown.
+- **Variety by kind, across visits:** not the same kind as the last card or two. A place card only when the visit was about the place.
+- **The bank as a rare fill-in,** still under the three-visit rule (Josh, 2026-11-24: "do you think we should show 5 backup in a ro even when we have contextual cards").
+- **Level up wins** stays (a level-up visit ends on the offer, not a card); it depends on the offer being on screen at the goodbye (docs/bugs.md B63).
+
+Mock-ups of the card each of the six visits could have had, each a different kind: https://claude.ai/artifact/ExmhTxobHySwmFV1gWWFJ6 (not yet judged by Josh).
+
 ## The ten card types
 
 Each example below is drawn on the full person screen in `design/learn-sheet-2/cards/`.
