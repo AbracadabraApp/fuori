@@ -61,7 +61,7 @@ export const language = {
       barNext: 'Next',
       barLabel: 'Step {now} of {total} now. Step {next} is next.',
       stay: 'Stay for now',
-      go: 'Next',
+      go: 'More Spanish',
       /** The line under the cards, by the step being offered: what changes there (lib/dialogue/pieces.ts → SETTINGS). `answers` above is the fallback */
       steps: {
         2: 'Next: each sentence in Spanish, then in English.',
