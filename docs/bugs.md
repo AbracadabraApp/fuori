@@ -41,12 +41,6 @@ Found 2026-11-14 by running the live Learn writer on four of Josh's Beginner vis
 ### B28. Reading an offered "what is…?" answer marks the learner as finding it hard
 2026-11-14 night: Juana's turn after the offered answer "¿Qué es un coleto?" was saved `hard` (c7c75e92), and Davide's after the offered "Cosa significa 'O sole mio?" (db79bb48), so every later turn of those visits got the Help asked note (D12). After it Davide's turns went short and he repeated his question about the song. The help answer (D25) and help that lasts (D12) were built the same day; together, taking an answer the game itself offered counts as asking for help. **Status: open.** Proposed 2026-11-16; Josh: "skip" (progress.md, 53098286). Not fixed.
 
-### B29. A word glossed with itself, and a gloss dropped into the middle of an English sentence
-Josh, 2026-11-14 night, to Giuseppe in Lecce (6ee0e530): "I also have to notice that you are repeating an Italian word with another Italian word." His line before it had "il rustico, the rustico" twice. The same night: "A coleto, person from San Cristóbal is someone born here" and "Chipilín, a small leafy herb is the green herb in your tamal" (c7c75e92): the piece and its English, put together by code (docs/mix.md), land in the subject of an English sentence and break it. **Status: open.**
-2026-11-16, step 1 on the new settings (the mixed sentence: an English sentence with the marked phrase in Spanish, then its English). Where the marked phrase is a noun it reads well ("I shine shoes en mi cajón, at my stand", "we go see los Venados, the baseball team"). Where it is a verb, an adjective or the start of the sentence it breaks: Anselmo "It's Es el corazón, the heart of old Mazatlán" and "Yes, it's very bonito, pretty"; Andrés "El rojo, Red is a strong color", "Un boceto, a sketch is a quick drawing", "I draw las llamas, the flames with black pencil"; Lalo "the children juegan, play there", "Right now I'm puliendo, buffing your shoe". Seven of the three step 1 visits' lines. **Not a bug (Josh, the same day, shown these three):** "This is actually nice on the ear - like practical vocab pointer". Claude had read them on the page as broken; heard, a verb or adjective said in Spanish and then in English is a pointer to the word. Moved to Kept, below.
-
-2026-11-17, nine Italy Beginner visits on Josh's learner (steps 1–3, prompt beginner-2-2026-11-16h), step 3 (half echoed, half glossed): "Qui a Testaccio la gricia, gricia è più antica" and "la coda alla vaccinara, coda alla vaccinara (oxtail stew)" (Claudio a7dade72: a phrase glossed with itself); "Poi c'è la piazza, the square con il mercato" (the gloss mid-sentence); "Allora vada avanti, ahead," (Don Paolo f6a9ee39); "Attaccare bottone, to strike up a conversation Letteralmente" (no stop between them; Dante 1c830aca).
-
 ### B32. Too much English at Beginner (the mix)
 Josh, 2026-11-14 night, after eight Beginner visits at step 1 on 11-14e: "My greatest dissapointment is that mix of spanish english is still not where I want it. It is good, but not enough spanish, the challenge is it has to approach echoing to be the right balance, but echoing is not as good to the ear as what we have now. Bpottom line though - too much english". An opener from the night, about a quarter in the language: "Buenos días, pase, pase, good morning, come in, it's cold today, sit by the stove. I have tamales de chipilín, tamales with a green herb in the dough steaming right now, and hot atole, warm corn drink. ¿Gusta un tamal? Would you like a tamal?" (Juana, c7c75e92). All eight visits played at step 1, on both of Josh's learners. The other side of B7 (2026-11-13: too much Spanish, too fast), which the mostly-English step 1 of 13a–13b answered. docs/mix.md has the design and the measures. **Status: open; his largest complaint about the release.**
 
@@ -89,10 +83,26 @@ Why: the step settings echo the turn's last sentence at steps 1–5, so the line
 
 **Status: fix live** (13b2f2f1; live at 42d920f7), not yet confirmed in play.
 
-### B41. A name or an exclamation said twice by the echo
+### B41. The echo says twice what is the same in both languages: a name, an exclamation, a word (B54 and B29 folded in)
 Josh, 2026-11-16, Chuy, Guadalajara (f71312f9, step 2, every sentence echoed), Bug on turn 5, "Repeats exclamation", and turn 6, "Repetitive character"; then: "he might say Ahhh! Joshua (in Spanish) and then Ahh! Joshua in English. When characters use my name its strange to here it repeated - because it isn't in 2 languages". From today's step 2 turns: "¡Ja! Sí, es muy grave… Ha! Yes, it's very deep…" (Chuy); "Gracias, Joshua. Aquí todos somos vecinos. Thank you, Joshua. Here we are all neighbors." (Lupita); "Mucho gusto, Joshua. Nice to meet you, Joshua." (Valeria); "¡Eso es, Joshua, lo entendió muy bien! That's it, Joshua, you got it just right!" (Memo). The echo repeats the whole sentence, so a name or an exclamation, which sound the same in both languages, comes twice. **Status: open; the fix would add a rule, so it waits in [rules-prevention.md](rules-prevention.md) (R1).**
 
 2026-11-17, nine Italy Beginner visits on Josh's learner (steps 1–3, prompt beginner-2-2026-11-16h): Dante (1c830aca, step 3, turn 7): "Ma sì, spieghi pure! In inglese come si dice? But yes, go ahead and explain! How do you say it in English? How do you say it in English?" Josh rated it **bug: "Repeated English transaction in English"**: a sentence asked in English was echoed again in English.
+
+**One bug with B54 and B29** (Josh, 2026-11-24: "may all be one bug: B41, B54 and B29"). The same cause: each sentence is said in the language, then in English, so whatever is the same in both comes twice: a name ("Mucho gusto, Joshua. Nice to meet you, Joshua.", B54), an exclamation ("¡Ja!… Ha!"), a word with no English ("il rustico, the rustico", "la gricia, gricia", B29). B29's other half, a gloss set mid-sentence, is mostly what Josh heard as a vocab pointer (Kept); its broken cases stay as examples here. The two entries as they were:
+
+#### (was B54) The learner's name said twice, in the language and again in the English
+Josh, 2026-11-23: "characters repeat my name in spanish then english". Regina at the Macroplaza (4335c671, Monterrey): "¡Qué bueno, Joshua! Mucho gusto, yo soy Regina. How nice, Joshua! Nice to meet you, I'm Regina." In the last 40 Mexican visits, 7 of 157 character lines say the name twice this way, 5 of them in that one visit; Lupita (b24f11d4): "Buenas tardes, Joshua. Good afternoon, Joshua." It comes from the Beginner shape, each sentence followed by its English, when the sentence carries the name.
+**Status:** open.
+
+**2026-11-24 review of commits and of Josh's play on 2026-11-23** (Mexico, live beginner-2-2026-11-17g, steps 2–3, header only; seven visits past the opener: Regina 4335c671, Baldemar 78e59d51, Adrián 9a714451, Ismael 63afafc2, Abel 4955c6e5, Refugio d2e77f56, Lupita b24f11d4): in 6 of the 7, 11 lines ("Mucho gusto, Joshua. Nice to meet you, Joshua." in four visits; Regina three times). Same cause as B41, whose fix waits in rules-prevention.md (R1).
+
+#### (was B29) A word glossed with itself, and a gloss dropped into the middle of an English sentence
+Josh, 2026-11-14 night, to Giuseppe in Lecce (6ee0e530): "I also have to notice that you are repeating an Italian word with another Italian word." His line before it had "il rustico, the rustico" twice. The same night: "A coleto, person from San Cristóbal is someone born here" and "Chipilín, a small leafy herb is the green herb in your tamal" (c7c75e92): the piece and its English, put together by code (docs/mix.md), land in the subject of an English sentence and break it. **Status: open.**
+2026-11-16, step 1 on the new settings (the mixed sentence: an English sentence with the marked phrase in Spanish, then its English). Where the marked phrase is a noun it reads well ("I shine shoes en mi cajón, at my stand", "we go see los Venados, the baseball team"). Where it is a verb, an adjective or the start of the sentence it breaks: Anselmo "It's Es el corazón, the heart of old Mazatlán" and "Yes, it's very bonito, pretty"; Andrés "El rojo, Red is a strong color", "Un boceto, a sketch is a quick drawing", "I draw las llamas, the flames with black pencil"; Lalo "the children juegan, play there", "Right now I'm puliendo, buffing your shoe". Seven of the three step 1 visits' lines. **Not a bug (Josh, the same day, shown these three):** "This is actually nice on the ear - like practical vocab pointer". Claude had read them on the page as broken; heard, a verb or adjective said in Spanish and then in English is a pointer to the word. Moved to Kept, below.
+
+2026-11-17, nine Italy Beginner visits on Josh's learner (steps 1–3, prompt beginner-2-2026-11-16h), step 3 (half echoed, half glossed): "Qui a Testaccio la gricia, gricia è più antica" and "la coda alla vaccinara, coda alla vaccinara (oxtail stew)" (Claudio a7dade72: a phrase glossed with itself); "Poi c'è la piazza, the square con il mercato" (the gloss mid-sentence); "Allora vada avanti, ahead," (Don Paolo f6a9ee39); "Attaccare bottone, to strike up a conversation Letteralmente" (no stop between them; Dante 1c830aca).
+
+**Status: open.** The fix that waits in rules-prevention.md (R1) covers names and exclamations, not a word glossed with itself.
 
 ### B42. The level up page needs work
 Josh, 2026-11-16, after taking the offer from step 1 to 2 (after Lupita, ce527f6f): "i took the offer - that page needs some help"; with two screenshots of the step 1 → 2 offer (Andrés): "what is missing is just the basic \"what is happening?\" those boxes of text are baffling". The page shows two whole turns, Now and Next step (each five or more lines), and says what changes only in a small line under them ("Next: each sentence in Spanish, then in English."). **Status: open; a mockup to Josh first.**
@@ -191,12 +201,6 @@ He raised the same on 2026-10-21, and `PolaroidCard.swift` has asked for 1.1 tim
 
 **Status (2026-11-24): fix in the app** (32734158, then 5510136b for the reopened shadow and corners; 5510136b is in build 19, not 17). Closes when Josh sees the cards on the phone.
 
-### B54. The learner's name said twice, in the language and again in the English
-Josh, 2026-11-23: "characters repeat my name in spanish then english". Regina at the Macroplaza (4335c671, Monterrey): "¡Qué bueno, Joshua! Mucho gusto, yo soy Regina. How nice, Joshua! Nice to meet you, I'm Regina." In the last 40 Mexican visits, 7 of 157 character lines say the name twice this way, 5 of them in that one visit; Lupita (b24f11d4): "Buenas tardes, Joshua. Good afternoon, Joshua." It comes from the Beginner shape, each sentence followed by its English, when the sentence carries the name.
-**Status:** open.
-
-**2026-11-24 review of commits and of Josh's play on 2026-11-23** (Mexico, live beginner-2-2026-11-17g, steps 2–3, header only; seven visits past the opener: Regina 4335c671, Baldemar 78e59d51, Adrián 9a714451, Ismael 63afafc2, Abel 4955c6e5, Refugio d2e77f56, Lupita b24f11d4): in 6 of the 7, 11 lines ("Mucho gusto, Joshua. Nice to meet you, Joshua." in four visits; Regina three times). Same cause as B41, whose fix waits in rules-prevention.md (R1).
-
 ### B55. Introductions stopped: the bubbles no longer lead to them
 Josh, 2026-11-23: "people never introduce themselves though unless i go first - this use to be commu=on that the bubbles would lead to introductions". Counted (visits whose answer bubbles offer an introduction: *Me llamo…*, *Mi chiamo…*, *¿Cómo se llama?*; archive plus admin route): Oct 12–20 0 of 44; Oct 21–31 2 of 42; **Nov 1–10 24 of 90**; Nov 12–18 13 of 211 (test runs mixed in); Nov 24 0 of 13. Common in early November, down with the Beginner 2 cut-over (Nov 12), none today. (A first count, since corrected, looked at the character saying the learner's name, not the bubbles.) Not yet read what in Beginner 2's setups stopped them.
 **Status:** open.
@@ -237,6 +241,12 @@ Not bugs; recorded so a fix doesn't undo them.
 - **A Beginner character asked for more English adapts.** Josh, 2026-11-13: "Some character adapted to use more English." Ofelia, asked "¿hablo più inglés?", answered "Sure, mi reina, I'll use more English" and did (71dc1d3b); Carmen, told "that was a lot of Spanish with no English", said "I'll go slower" (09978a29).
 
 ## Closed
+
+### B29. A word glossed with itself
+**Folded into B41** (Josh, 2026-11-24).
+
+### B54. The learner's name said twice
+**Folded into B41** (Josh, 2026-11-24).
 
 ### B4. Repeats within a visit (on the version that should stop them)
 Josh, 2026-11-13: "Don Insidro, ¿usted me preguntó esto antes?" (Isidro asked about the altars three times, d335b204). Earlier: Raymundo's back door three times, "Mire" every turn (45764841, 2026-11-12).
