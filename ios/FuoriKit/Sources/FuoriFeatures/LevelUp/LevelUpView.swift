@@ -8,7 +8,8 @@ import FuoriNetworking
 /// character asks, the way the learner is used to being asked: the
 /// conversation screen's paper band ("Checking in!"), their portrait, their
 /// question in the game's own speech bubble, and two plain buttons pinned to
-/// the bottom, Stay for now on the left and More Spanish on the right.
+/// the bottom: stay on the left, the next step on the right (their words come
+/// from /v1/content).
 /// Layout A of the mock-ups Josh picked on 2026-11-23
 /// (https://claude.ai/artifact/A6HiWaZLucsAS5PrkZdPAv): the portrait takes the
 /// space left, so the question and the buttons are always on screen; no step
@@ -27,28 +28,29 @@ struct LevelUpView: View {
     @ScaledMetric(relativeTo: .body) private var lineSize: CGFloat = Tokens.Size.bubbleText
     @ScaledMetric(relativeTo: .body) private var buttonSize: CGFloat = 18
     @ScaledMetric(relativeTo: .body) private var buttonHeight: CGFloat = 52
-    /// The least of the portrait that stays in view when the text is large
-    @ScaledMetric(relativeTo: .body) private var portraitMin: CGFloat = 140
+    /// The least of the portrait that stays in view: fixed, not scaled, so large text doesn't make it grow
+    private let portraitMin: CGFloat = 140
+    @State private var bubbleHeight: CGFloat = 0
 
     var body: some View {
         VStack(spacing: 0) {
             band
-            // The portrait takes what's left; when even its least doesn't fit
-            // (the largest text sizes), the page scrolls instead
-            ViewThatFits(in: .vertical) {
-                VStack(spacing: 0) {
-                    Portrait(url: portrait, name: askerName)
-                        .frame(minHeight: portraitMin, maxHeight: .infinity)
-                    below
-                }
+            // The portrait takes what the question leaves; at large text sizes the portrait and question
+            // scroll, and the buttons stay pinned under them either way
+            GeometryReader { geo in
                 ScrollView {
                     VStack(spacing: 0) {
-                        Portrait(url: portrait, name: askerName)
-                            .frame(height: portraitMin)
-                        below
+                        Portrait(url: portrait, name: askerName, anchor: UnitPoint(x: 0.5, y: 0.3))
+                            .frame(height: max(portraitMin, geo.size.height - bubbleHeight))
+                        question
+                            .onGeometryChange(for: CGFloat.self) { $0.size.height } action: { bubbleHeight = $0 }
                     }
                 }
+                .scrollBounceBehavior(.basedOnSize)
             }
+            choices
+                .padding(.horizontal, Tokens.Space.gutter)
+                .padding(.bottom, 18)
         }
         .background(page.ignoresSafeArea())
     }
@@ -79,19 +81,15 @@ struct LevelUpView: View {
         .overlay(alignment: .bottom) { Divider() }
     }
 
-    /// The question, then the two buttons
-    private var below: some View {
-        VStack(alignment: .leading, spacing: 18) {
-            SpeechBubble(speaker: .her) {
-                Text(asked)
-                    .font(.system(size: lineSize))
-                    .foregroundStyle(Tokens.Colors.ink)
-            }
-            choices
+    /// The question in the character's bubble
+    private var question: some View {
+        SpeechBubble(speaker: .her) {
+            Text(asked)
+                .font(.system(size: lineSize))
+                .foregroundStyle(Tokens.Colors.ink)
         }
         .padding(.horizontal, Tokens.Space.gutter)
-        .padding(.top, 18)
-        .padding(.bottom, 18)
+        .padding(.vertical, 18)
     }
 
     /// What they say: the reason, then the question in bold
@@ -103,13 +101,24 @@ struct LevelUpView: View {
         return text
     }
 
-    /// Stay for now on the left, More Spanish on the right: plain words, no icons
+    /// Stay on the left, the next step on the right: plain words, no icons
     private var choices: some View {
         HStack(spacing: 12) {
             choice(words.stay ?? words.notYet, fill: Tokens.Colors.levelUpStay) { answer(false) }
             choice(words.go ?? words.yesLabel, fill: Tokens.Colors.lemon) { answer(true) }
+                // Where the learner is and what's next, which the step bar used to say (the bar went:
+                // Josh, "id delete the timeline"; VoiceOver kept its reading)
+                .accessibilityHint(stepReading)
         }
         .disabled(answering)
+    }
+
+    private var stepReading: String {
+        let total = max(offer.bar?.total ?? 0, offer.nextStep, 2)
+        return (words.barLabel ?? "")
+            .replacingOccurrences(of: "{now}", with: "\(offer.bar?.now ?? offer.step)")
+            .replacingOccurrences(of: "{total}", with: "\(total)")
+            .replacingOccurrences(of: "{next}", with: "\(offer.bar?.next ?? offer.nextStep)")
     }
 
     private func choice(_ title: String, fill: Color, action: @escaping () -> Void) -> some View {
