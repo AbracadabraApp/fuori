@@ -6,6 +6,15 @@ Ideas about how conversations go (when the learner speaks, characters stepping a
 
 **Adopted on 2026-10-09** and moved into the numbered docs: the open-ended world, Magda the tutor, dialect that grows with level, generated characters, and the Instagram-style interface (see [Game design](02-game-design.md)). Real photos for places and food are in [Visuals](07-visuals.md).
 
+## Getting easier when it's hard (set aside 2026-11-24)
+
+Josh, 2026-11-24, after the hard switch was counted (docs/bugs.md B13): "set it aside in a away we come back to the idea - but lets not fix anything for now". Nothing changed in the code: the switch is still live.
+
+- **What exists:** one flag a visit. The reply is marked `hard` when the learner asks for help, didn't understand or says it's hard; the rest of the visit gets dialogue.md's Help asked note (short sentences, words they know, English for a new word). The voice's speed, the Beginner step and the next visit don't change, and nothing steps a learner down.
+- **What the count showed (16 visits since 11-14):** it switches on for every "what does X mean?", and 3 times on a plain answer; Beginner lines barely shorten after it; Intermediate Elena 32→14 words a line, Nunzio 26→24; Josh by ear: not easier.
+- **The two needs it mixes up:** a word question wants the word explained and the visit carried on as it was; "it's hard / slower" wants something that can be heard: a slower voice, more English, the same in the next visit, or a way down a level.
+- **Claude's view (not decided):** take the switch out, since characters already help in role when asked (Kept in bugs.md), and answer "the intermediate is Hard" (Josh, 2026-11-14) with the voice's speed or a level between Beginner step 6 and Intermediate. See the entry below, A new Intermediate.
+
 ## A new Intermediate: Spanish-heavy, no bubbles, say it in English to learn how (Josh, 2026-11-14)
 
 Josh: "maybe our intermediate is our advanced level - and a new intermediate is in spanish heavy mix - and no bubbles for the learner - you speak spanish if you can or you say what you want in English and get back how to say it - maybe there is more drilling on intermediate wwith learn sheets -- just a few ideas". Not decided.
