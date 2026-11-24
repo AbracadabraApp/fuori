@@ -1,5 +1,12 @@
 # Fuori Development Progress
 
+## 2026-11-23 (cloud), evening: Lupita on the live game, header only (B53)
+
+- **Josh:** "review lupita for candles now theat here headers are on production". Live is `main` (37b639c), header only.
+- **Run:** seven fresh Beginner learners visited her on the live Mexico game through `/v1/turn` (the walk's way; six visits of five turns, one opening). Candles in the opening of 6 of 7, the same sentence each time; after the opening, in 4 of 6 visits. Counts and conversation ids in `docs/bugs.md` B53. Transcripts not committed.
+- **Also seen:** all seven openings share one shape (welcome to San Pedro, getting something ready for today's Mass, a question about the church). Flowers on the altar in 6 of 6 visits, Day of the Dead in 4.
+- The seven throwaway learners and their conversations are in the live database.
+
 ## 2026-11-23 (cloud), evening: place sounds, one owner and a plan
 
 - **Josh:** "i thnk this is impossible to coordate and there is no plan". He was right: the cloud session can't make the sounds (no key), build Swift or install, so it handed off pieces.

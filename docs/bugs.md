@@ -223,6 +223,13 @@ Josh, 2026-11-23: "re visit stamps in mexico as you want them YA/Fuist/E on 3 li
 
 **Status: fix on main, not built here, not seen on a phone.** One word to a line and no more lines than words, so the text shrinks to fit and a word is never broken (`VisitStamp.lines`, `lineCount`; a test in `VisitStageTests`; a Mexican stamp added to the preview). CI builds it. Closes when Josh sees YA / FUISTE on two lines.
 
+### B53. Lupita and the candles
+Josh, 2026-11-23, of Lupita Barajas (sacristana, Parroquia de San Pedro, Tlaquepaque): "she ALWAYS talks about candles". Her `here` line says "setting out candles", and the live game then still sent it.
+
+**Checked on the live game 2026-11-23, after the release to header only** (Afuera at 37b639c, `HERE_LINES = false`; seven fresh Beginner learners at step 1, the first six played five of her turns each): the opening names candles in 6 of 7 visits, nearly word for word ("I'm getting the candles ready for today's Mass"); the seventh has flowers for the altar in the same sentence. After the opening, candles come back in 4 of the 6 played visits (acb8831b, 27158a73, 9c24ca8c, 7f4eac62) and not in 2 (c737b8fe, 379fbde5); in one (7f4eac62) every turn is about them. Her header holds no candles: name, 49, sacristana, calm / devout / organised, the church, Tlaquepaque. Not checked: Josh's own learner, whose memory of earlier visits with her holds candles.
+
+**Status: open.** Header only did not end it for a new learner.
+
 ### Carried from progress.md's screen list (2026-11-12)
 ### B50. Facts that don't agree inside one visit
 2026-11-17, Italy on the live version (nine visits, Josh's play); found by reading, nothing reported by Josh. Dante (Campo dei Mori, Venice): places Abate Luigi "vicino a Palazzo Ducale" and then "vicino a San Marco" two turns later. Claudio (Volpetti, Testaccio): "un etto di guanciale basta per due persone", then offers "un etto di pecorino" for the guanciale, and reads "un etta per grigia" as a carbonara order before Josh corrected it. Carlo (Ponte di Rialto): says coffee is drunk standing at the bar in two minutes, then drinks his from a paper cup on a break, which Josh caught ("tu hai una coppa di carta… non è al banco"). (B47 is the same cup in his portrait.) Luigi (Libreria Acqua Alta): offers "la scala e la vista sul canale", Josh says "forse sì, forse no", and the staircase never comes back until the goodbye. Not many, each one small; what they share is that the character doesn't hold its own last two turns. **Status: open, a few examples; no fix until there are more.**
