@@ -61,6 +61,7 @@ No picture inside the sheet: the person is on the screen behind it. The sheet ma
 11. **Cards don't make corrections** (Josh, 2026-11-23: "i don't know if it made it into the design doc - but cards don't make corrections"). A card shows the right way to say things; it never shows what the learner got wrong or a wrong form beside the right one.
 12. **No adornment** (Josh, 2026-11-23: "we can skip the adornment - for vocabulary - lose things/verbs/actions -- just translate Vocabulary"): no mark, label, badge or stamp for the kind of card; the plain card stands. Mock-ups of four treatments: https://claude.ai/artifact/KsCwLuDkhdeooz28zpkjDD.
 13. **One Vocabulary card**, headed "Vocabulary": the visit's words, each with its English, nouns and verbs in any mix; Vocabulary: things and Vocabulary: actions are folded into it (same words).
+14. **The card for a much-used word** (what was "A small word"; Josh, 2026-11-23: "id start the card explaining why its important and then give examples"; then, of *ma dai*: "no way, i've had it, i can't believe it"): first a plain line on why the word matters, then the word at work, one example for each meaning people really use. One word per card: *ma dai* and *dai* are two cards. Headline not chosen ("Vocabolario: ma dai", "Learn it: ma dai", "Vocab: ma dai" were drawn: https://claude.ai/artifact/Qg446dBRTF4WbwhsFTcTds). Josh, after the mock-ups: "i think the cards are improved enough".
 
 ## The ten card types
 
