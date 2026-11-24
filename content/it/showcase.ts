@@ -37,7 +37,6 @@ export const showcase: Record<string, string[]> = {
     'piazza-santa-maria-trastevere', // traditions: Gina, from roma.ts
     'colosseo', // history: Serena, archaeologist (new)
     'villa-borghese-nuova',
-    'tram-porta-maggiore',
     'stazione-termini-nuova',
     // Dialogue variety (Josh, 2026-11-06): generic businesses out
   ],
@@ -253,7 +252,7 @@ export const hiddenForNow: Record<string, string[]> = {
   palermo: ['osteria-ballarò'],
   // Hidden 2026-11-23 (Josh: "delete: Pharmacists, Tabaccherie, and Cafés and bars 1 in any city with 3"):
   // the one pharmacy and the one tabaccheria (their cultural lessons aren't in the set), and one of Napoli's two bars
-  'roma-nuova': ['farmacia-prati', 'basilica-santa-maria'],
+  'roma-nuova': ['farmacia-prati', 'basilica-santa-maria', 'tram-porta-maggiore'],
   napoli: ['bar-nilo', 'gay-odin', 'pizzeria-sorbillo'], // Josh, after Poppella was hidden first: "this is a pasticceria - hide Nilo and bring this back"
   // Hidden 2026-11-23 (Josh: "we should hide more places"; Italy keeps about Mexico's 14 cities:
   // "id hide verona, leccce, assissi Taormina and Genoa"). Their shown places as they were
