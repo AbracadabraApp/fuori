@@ -52,12 +52,13 @@ def horn(at, length, notes):
     return env * tone / len(notes)
 
 
-def finish(x):
+def finish(x, press=0.42):
     """Fade in fast, hold, fade the tail; press the level up; peak at -1 dBFS"""
     env = np.minimum(1, t / 0.06) * np.clip((LENGTH - t) / (LENGTH - FULL_UNTIL), 0, 1) ** 1.5
     x = band(x, 180, 6000)
     x = x / np.sqrt(np.mean(x ** 2))           # the average at 1, whatever the peaks
-    x = np.tanh(0.42 * x)                      # soft limiter: holds the peaks so the average can be loud
+    x = np.tanh(press * x)                     # soft limiter: holds the peaks so the average can be loud;
+                                               # a lower press distorts less (the bus)
     return x / np.max(np.abs(x)) * env * 10 ** (-1 / 20)
 
 
@@ -78,18 +79,21 @@ def rails():
 
 
 def road():
-    rev = 92 + 20 * np.clip(t / 1.4, 0, 1)                       # pulls away, then holds
-    phase = 2 * np.pi * np.cumsum(rev) / RATE
-    engine = sum(np.sin(k * phase) * (1.0 if 3 <= k <= 9 else 0.4) / np.sqrt(k) for k in range(1, 14))
-    engine *= 0.8 + 0.2 * np.sin(2 * np.pi * 13 * t)             # the diesel's shake
-    tyres = noise(500, 2800) * (0.8 + 0.2 * np.sin(2 * np.pi * 0.6 * t))
-    brake = burst(0.0, 0.4, lambda s: np.exp(-s / 0.12)) * noise(2500, 5500)   # air brakes let go
+    # A diesel bus pulling out: slow, low and chugging. (The first try raised the pitch fast with
+    # bright, buzzy harmonics; Josh, 2026-11-23: "sounds like a racing motorcycle rather than a bus
+    # pulling out - the honk is good". So: no climbing whine. The engine is a clatter of knocks, 20
+    # a second rising to 27 as it gets going, over a low growl; the brakes and the honk are kept.)
+    knocks = 20 + 7 * np.clip((t - 1.0) / 3.0, 0, 1)             # knocks per second
+    turn = np.cumsum(knocks) / RATE
+    since = (turn % 1.0) / knocks                                # seconds since the last knock
+    clatter = np.exp(-since / 0.016) * noise(250, 1500)
+    growl = sum(np.sin(2 * np.pi * k * 2 * turn) / k for k in range(2, 9))   # 80 to 430 Hz, steady
+    growl *= 0.6 + 0.4 * np.exp(-since / 0.03)
+    tyres = noise(400, 1800) * np.clip((t - 1.2) / 2.0, 0, 1)    # the road comes in as it moves
+    brake = burst(0.0, 0.45, lambda s: np.exp(-s / 0.13)) * noise(2500, 5500)   # air brakes let go
     toots = horn(0.55, 0.2, (440, 554)) + horn(0.85, 0.32, (440, 554))
-    rattle = np.zeros(len(t))
-    for at in (1.75, 2.5, 2.62, 3.35, 4.1):                      # the road under the wheels
-        rattle += burst(at, 0.09, lambda s: np.exp(-s / 0.02)) * noise(900, 2600)
     n = lambda x: x / np.max(np.abs(x))
-    return finish(0.75 * n(engine) + 0.5 * n(tyres) + 0.7 * n(brake) + 0.8 * n(toots) + 0.6 * n(rattle))
+    return finish(1.0 * n(clatter) + 0.55 * n(growl) + 0.25 * n(tyres) + 0.6 * n(brake) + 0.8 * n(toots), press=0.3)
 
 
 def write(name, x):
