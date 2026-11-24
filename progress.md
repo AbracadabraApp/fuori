@@ -1,5 +1,11 @@
 # Fuori Development Progress
 
+## 2026-11-23 (cloud), evening: two rules added to CLAUDE.md
+
+- **A world, not an encyclopedia** (top of `CLAUDE.md`): the goal is a world in Italy and Mexico the learner can richly explore, not verifiable factual truth. No time spent checking fares or disputing food origins, and no raising them as problems. The language taught must still be correct. Josh's words are quoted in the rule. Prompted by this session disputing the mirror under the Hospicio Cabañas dome and being wrong.
+- **Decisions are settled** (Working across sessions): a session's earlier work carries no weight; judge by what the learner hears and sees; once Josh decides, no caveats; new evidence is labeled as such and shown once. Prompted by this session reopening header only through caveats about Lupita's candles.
+- Both apply to every session. Nothing else changed.
+
 ## 2026-11-23 (cloud), evening: no priests or nuns in Mexico; two people rewritten, two portraits needed
 
 - **Josh:** of Lupita Barajas, the sacristana at Tlaquepaque's parish church, "she ALWAYS talks about candles" and "its kind of a weird job"; then "no priests or nuns in Mexico".
