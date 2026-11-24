@@ -1,5 +1,19 @@
 # Fuori Development Progress
 
+## 2026-11-23 (cloud), evening: the trip's sounds remade louder and longer (B51); Mexico's stamp no longer breaks its word (B52)
+
+- **B51, Josh: "the sound effects are way too subtle, quiet, and short on map pages".** `rails.wav` and `road.wav` remade by `scripts/travel-sounds.py`: 5 s where they were 3.6, peak -1 dBFS where it was -8, average about -10 dBFS over the page's 3.5 s where it was -24 and -20, the energy moved up to where a phone speaker works, and each opens on a horn. `npm run test:travel-sounds` (new) fails on the old files, passes on the new. **Not heard by anyone**; the cloud session has no ears. They still play as a system sound, at the ringer's volume: if they're still quiet on the phone, that is the next thing to change, and it touches audio handling.
+- **B52, Josh: "re visit stamps in mexico as you want them YA/Fuist/E on 3 lines?"** `VisitStamp` now sets one word to a line with no more lines than words, so "YA FUISTE" shrinks to fit and isn't broken. A test in `VisitStageTests`. **Swift not built here** (no Xcode in the cloud); CI builds and runs the package tests.
+- Both are in `docs/bugs.md`, on main, not released. They go out with the next phone build; each closes when Josh hears or sees it.
+
+## 2026-11-23 (cloud), late afternoon: five of the ten model cards filled out
+
+- Josh, looking at `design/learn-sheet-2/cards/all-ten.jpg`: "the bottom roww of 10 is sparse". Culture, A saying, A word from here, This or that and A small word held one or two lines each.
+- **Redrawn at about three lines each** (pictures 06 to 10 and `all-ten.jpg`; the design document's examples and rule 8, now "bite-sized, but not sparse"): Culture gains a second sentence; A saying shows the saying used in a sentence; A word from here gains a sentence and a line on where you hear it; This or that is the question and its two answers, built alike (*¿Con leche o sin leche?* / *Con leche, por favor.* / *Sin azúcar, por favor.*); A small word gains a plain line on what the word does.
+- **For whoever writes `learn-card-models.md`** (the plan's model cards): take these five from the design document as it is now, not from the first drawings. Cards 01 to 05 are unchanged.
+- The new Spanish and Sicilian lines are the cloud session's own (*No hay atole. A falta de pan, tortillas: un café.*; *Amuninni, è tardi!*) and have not been through a language check.
+- The "Lesson Door Sheet" page still shows the first, shorter versions of these five.
+
 ## 2026-11-23 (cloud): the learn sheet's design document and ten example cards
 
 - Josh: "supply a written design document and the 10 example cards - go into any depth you choose on how you might implement them but be clear the tech design is open. Commit when done."

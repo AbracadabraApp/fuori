@@ -12,4 +12,15 @@ struct VisitStageTests {
         #expect(VisitStamp.Stage(visits: 3) == .regular)
         #expect(VisitStamp.Stage(visits: 12) == .regular)
     }
+
+    /// B52 (Josh, 2026-11-23: "YA/Fuist/E on 3 lines"): the stamp's words go one to a line and
+    /// may take no more lines than they have words, so a long word shrinks and is never broken
+    @Test func stampWordsGoOneToALine() {
+        #expect(VisitStamp.lines("ya fuiste") == "YA\nFUISTE")
+        #expect(VisitStamp.lineCount("ya fuiste") == 2)
+        #expect(VisitStamp.lines("già visto") == "GIÀ\nVISTO")
+        #expect(VisitStamp.lineCount("de casa") == 2)
+        #expect(VisitStamp.lines("visto") == "VISTO")
+        #expect(VisitStamp.lineCount("") == 1)
+    }
 }
