@@ -93,6 +93,11 @@ for (let step = 1; step <= STEPS + 1; step++) {
     else if (v === VISITS && !body.due && step <= STEPS + 1) fail(`${name}: no offer after visit ${VISITS}`);
     if (v === VISITS) {
       last = body;
+      // B63: builds from 17 ask for lite: due again, with no Claude rewrite, so well under the full offer's seconds
+      const t0 = Date.now();
+      const lite = await (await fetch(`${base}/v1/level-up?conversationId=${conv}&lite=1`, { headers: json })).json().catch(() => ({}));
+      if (!lite.due) fail(`${name}: the lite offer wasn't due when the full one was`);
+      else if (Date.now() - t0 > 3000) fail(`${name}: the lite offer took ${Date.now() - t0} ms`);
       // Builds up to 16 ask with the "?" encoded into the path (B33); the server rewrites it
       const old = await fetch(`${base}/v1/level-up%3FconversationId=${conv}`, { headers: json });
       if (old.status !== 200) fail(`${name}: the app's old address for the offer answered ${old.status}`);

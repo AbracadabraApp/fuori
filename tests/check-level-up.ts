@@ -59,6 +59,21 @@ check(/ADD COLUMN IF NOT EXISTS step int/.test(readFileSync('scripts/db-migrate.
   check(/asker: levelUpAsker\(\)/.test(readFileSync('lib/level-up.ts', 'utf8')) && /bar: levelUpBar\(s\.step, move\)/.test(readFileSync('lib/level-up.ts', 'utf8')), 'the offer carries the asker and the bar');
 }
 
+// B63: the app (build 17 and later) asks for `lite`, and a lite offer makes no Claude call: the page is static
+{
+  const lu = readFileSync('lib/level-up.ts', 'utf8');
+  const route = readFileSync('app/v1/level-up/route.ts', 'utf8');
+  const api = readFileSync('ios/FuoriKit/Sources/FuoriNetworking/APIClient.swift', 'utf8');
+  check(/opts\.lite\s*\?\s*\{[^}]*\}\s*:\s*await rewriteAtStep\(/.test(lu), 'a lite offer skips the rewrite (B63)');
+  check(/searchParams\.get\('lite'\) === '1'/.test(route) && /levelUpOffer\(learnerId, conversationId, \{ lite: true \}\)/.test(route), 'the route passes lite on (B63)');
+  check(/URLQueryItem\(name: "lite", value: "1"\)/.test(api), 'the app asks for lite (B63)');
+  const model = readFileSync('ios/FuoriKit/Sources/FuoriFeatures/AppModel.swift', 'utf8');
+  const save = model.slice(model.indexOf('public func save(conversationId'), model.indexOf('private func retryPendingSaves'));
+  check(save.indexOf('api.levelUp(') > -1 && save.indexOf('api.levelUp(') < save.indexOf('api.endConversation('), 'the app asks for the offer before it waits on the end call (B63)');
+  const person = readFileSync('ios/FuoriKit/Sources/FuoriFeatures/Person/PersonView.swift', 'utf8');
+  check(!/Task\.sleep\(for: \.seconds\(1\.5\)\)\s*\n\s*if let ready/.test(person) && /showingLevelUp = true/.test(person), 'the goodbye shows the card or the level up as soon as one is ready, with no fixed wait (B63)');
+}
+
 if (problems.length) {
   console.error(`check-level-up: ${problems.length} problem(s)\n- ${problems.join('\n- ')}`);
   process.exit(1);
