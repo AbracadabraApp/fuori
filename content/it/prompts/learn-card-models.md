@@ -1,6 +1,6 @@
 # Learn card models
 
-version: 2026-11-23e
+version: 2026-11-24a
 
 The ten cards Josh drew for the sheet after a visit (docs/learn-sheet-2-design.md), as models: the
 standard every card is written to, not a list of the only kinds there are, and not cards in the
@@ -62,10 +62,10 @@ Why it works: the saying, its words in English, what it means, then the saying u
 
 8. a-word-from-here
 Headline: A word from here
-amuninni | let's go, in Sicilian
+Term: amuninni
+Note: Let's go, in Sicilian. You hear it all over Palermo, even from people speaking {language}.
 Amuninni, è tardi! | Let's go, it's late!
-Note: You hear it all over Palermo, even from people speaking {language}.
-Why it works: one local word, the language it comes from when that isn't {language}, a sentence that uses it, and where you hear it.
+Why it works: the word in the headline; what it means, the language it comes from when that isn't {language}, and where you hear it; then the word in use.
 
 9. this-or-that
 Headline: This or that

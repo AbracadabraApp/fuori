@@ -183,6 +183,7 @@ Josh, 2026-11-23: "people never introduce themselves though unless i go first - 
 ### B56. Intermediate and Advanced learners never get a Learn card
 Found by the code review of Learn 2.0 (2026-11-23), not yet seen in play. lib/learn-card-writer.ts starts the writer once at a Beginner's wind-down count (7 character lines), then returns no card because an Intermediate visit hasn't reached its own wind-down (9); every later turn skips it as already started. Sophia (Intermediate) would never see a card. The writer also starts one turn before the wind-down for Beginners (the count includes the new reply), so it never sees the goodbye.
 **Status:** open.
+**Status (2026-11-24): fix on main** (the card source rebuild): the writer starts the turn before each level's own wind-down, and an Intermediate learner seen at Beginner's moment is let go to start later. Not released, not played.
 
 ### B57. A Learn card ready a moment after the goodbye isn't shown; a slow connection freezes the finished screen
 Found by the code review (2026-11-23). PersonView asks for the card at the goodbye, not after the 1.5 s wait, and the server answers at once, so a card finishing within the wait is missed. The request has no short time limit, so on weak signal the finished screen can stay up to a minute instead of closing.
@@ -195,6 +196,7 @@ Found by the code review (2026-11-23). The visit is saved at the goodbye; backgr
 ### B59. Smaller Learn card faults
 Found by the code review (2026-11-23): another signed-in learner could fetch a card by conversation id and it is logged under them; one database error creating learn_cards_shown disables cards until a restart; "no sheet in the last 3 visits" counts lessons and the welcome; "level up is coming" copies only part of level up's rule, so a visit can get neither a card nor level up.
 **Status:** open.
+**Status (2026-11-24): three of four fixed on main** (the card source rebuild): a card is only given to the learner whose visit it is; a failed table creation is retried, not kept; the three-visit rule that counted lessons and the welcome is gone with the bank. Left: "level up is coming" still copies only part of level up's rule. Not released.
 
 ### B60. The level-up portrait shows the top of the picture when it's short
 Found by the code reviews of layout A (2026-11-23). At large text sizes or on a small phone the portrait shrinks to 140 pt and shows sky or hair, not the asker's face. A fix that framed the face moved the portrait at normal size too, so it was taken out.
