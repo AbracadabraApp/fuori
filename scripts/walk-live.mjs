@@ -86,8 +86,10 @@ for (let step = 1; step <= STEPS + 1; step++) {
       if (rated.status !== 200) fail(`${name}: rating a turn answered ${rated.status}`);
     }
     await fetch(`${base}/v1/conversations/${conv}/end`, { method: 'POST', headers: json, body: '{}' });
+    const tFull = Date.now();
     const res = await fetch(`${base}/v1/level-up?conversationId=${conv}`, { headers: json });
     const body = await res.json().catch(() => ({}));
+    const tFullMs = Date.now() - tFull;
     if (res.status !== 200) fail(`${name}: the offer answered ${res.status} after visit ${v}`);
     else if (v < VISITS && body.due) fail(`${name}: the offer came after visit ${v}, before ${VISITS}`);
     else if (v === VISITS && !body.due && step <= STEPS + 1) fail(`${name}: no offer after visit ${VISITS}`);
@@ -96,6 +98,7 @@ for (let step = 1; step <= STEPS + 1; step++) {
       // B63: builds from 17 ask for lite: due again, with no Claude rewrite, so well under the full offer's seconds
       const t0 = Date.now();
       const lite = await (await fetch(`${base}/v1/level-up?conversationId=${conv}&lite=1`, { headers: json })).json().catch(() => ({}));
+      console.log(`  offer after visit ${v}: full ${tFullMs} ms, lite ${Date.now() - t0} ms`);
       if (!lite.due) fail(`${name}: the lite offer wasn't due when the full one was`);
       else if (Date.now() - t0 > 3000) fail(`${name}: the lite offer took ${Date.now() - t0} ms`);
       // Builds up to 16 ask with the "?" encoded into the path (B33); the server rewrites it
@@ -114,6 +117,8 @@ for (let step = 1; step <= STEPS + 1; step++) {
   if (!last?.due) break;
   rec.offer = last.offer;
   if (last.offer.now.line.trim() === last.offer.next.line.trim()) fail(`${name}: the offer's next line is the same as the line as said`);
+  // WALK_ONE_STEP=1: stop after step 1's visits and offer (a local run on a throwaway database, B63)
+  if (process.env.WALK_ONE_STEP) break;
   const ans = await (await fetch(`${base}/v1/level-up`, { method: 'POST', headers: json, body: JSON.stringify({ answer: 'yes' }) })).json();
   const want = step < STEPS ? { step: step + 1 } : step === STEPS ? { level: 'intermediate' } : { level: 'advanced' };
   if ((want.step && ans.step !== want.step) || (want.level && ans.level !== want.level)) fail(`${name}: a yes gave ${JSON.stringify(ans)}, expected ${JSON.stringify(want)}`);
