@@ -113,6 +113,8 @@ Josh, of the proposal below: "seems like a better design for the source". Not bu
 
 **Mock-ups:** all nine kinds made this way from Josh's 2026-11-23 Mexico visits, in the app's look (system font, 35 pt close): https://claude.ai/artifact/Hx3j3vT4U9sizfem6E2eJ7. Josh, 2026-11-24: "they are good".
 
+**Built 2026-11-24 (Josh: "start"), on main, not released:** lib/learn-card-writer.ts and content/<country>/prompts/learn-card.md 2026-11-24a. Two additions found in the replay of Josh's visits (scripts/learn-card-replay.mts, 6 Mexico and 6 Italy): a card about the same word or headline as one of the learner's last 20 isn't shown ("Learn it: ahorita" came twice in four visits), and code puts a Learn it card's why first and a saying's meaning second, as the models do. The writer starts the turn before the wind-down, as before, since writing every kind takes about 6 s. The bank file and scripts/learn-cards.mts stay in the repo, unused, until Josh says what becomes of them.
+
 **What could go wrong in play:** a card that only repeats what was just heard, too thin to teach; a short visit giving only Vocabulary several times; a made example with an error.
 
 ## The ten card types

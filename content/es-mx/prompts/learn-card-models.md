@@ -1,6 +1,6 @@
 # Learn card models
 
-version: 2026-11-23e
+version: 2026-11-24a
 
 The ten cards Josh drew for the sheet after a visit (docs/learn-sheet-2-design.md), as models: the
 standard every card is written to, not a list of the only kinds there are, and not cards in the
@@ -61,10 +61,10 @@ Why it works: the saying, its words in English, what it means, then the saying u
 
 8. a-word-from-here
 Headline: A word from here
-kolaval | thank you, in Tsotsil
+Term: kolaval
+Note: Thank you, in Tsotsil. You hear it in the markets of San Cristóbal, from people who speak Tsotsil at home.
 Kolaval, doña. | Thank you, ma'am.
-Note: You hear it in the markets of San Cristóbal, from people who speak Tsotsil at home.
-Why it works: one local word, the language it comes from when that isn't {language}, a sentence that uses it, and where you hear it.
+Why it works: the word in the headline; what it means, the language it comes from when that isn't {language}, and where you hear it; then the word in use.
 
 9. this-or-that
 Headline: This or that

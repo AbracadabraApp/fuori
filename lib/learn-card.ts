@@ -4,8 +4,10 @@
  * is new data, not new screen work. `kind` is a free string: the ten drawn kinds are models
  * (content/<country>/prompts/learn-card-models.md), not a list the code knows.
  *
- * The bank, content/<country>/learn-cards.json, is cut from the game's content by
- * scripts/learn-cards.mts. Cards made from a visit come later (plan, build step 2).
+ * Every card shown is made from the visit (lib/learn-card-writer.ts; docs/learn-sheet-2-design.md → The source,
+ * redesigned). The bank, content/<country>/learn-cards.json, cut by scripts/learn-cards.mts, is no longer shown
+ * (Josh, 2026-11-24: "I think the \"card bank\" idea took it in a wrong direction"); it stays in the repo until
+ * Josh says what becomes of it.
  *
  * Server-side only.
  */
