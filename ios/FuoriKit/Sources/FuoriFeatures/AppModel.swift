@@ -319,7 +319,8 @@ public final class AppModel {
     /// Advanced) changes it here as Settings does, so the next conversation
     /// and the level's defaults follow it; the sheet closes either way.
     public func answerLevelUp(yes: Bool) async {
-        defer { levelUpItem = nil }
+        // Cleared whether the sheet was over the place list or over the goodbye (B63), where `levelUpItem` can't clear it
+        defer { levelUp = nil }
         guard let api else { return }
         do {
             if let after = try await api.answerLevelUp(yes: yes), after != level {

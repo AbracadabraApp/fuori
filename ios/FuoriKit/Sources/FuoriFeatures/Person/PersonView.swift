@@ -26,6 +26,8 @@ struct PersonView: View {
     /// The card's height as drawn: the sheet opens at it, so a short card gets a short sheet
     /// (Josh, 2026-11-23, the mock-ups: plain, sized to the card); until measured, a guess
     @State private var learnCardHeight: CGFloat = 320
+    /// B63: a level up due after this visit takes the card's place at the goodbye
+    @State private var showingLevelUp = false
     @Environment(AppModel.self) private var appModel
     @Environment(\.dismiss) private var dismiss
 
@@ -74,6 +76,17 @@ struct PersonView: View {
                 .presentationCornerRadius(22)
                 .presentationDragIndicator(.visible)
         }
+        // The level up, when one is due, instead of a card (the server writes no card then: "Level up wins");
+        // the answer or a slide down goes back to the place list
+        .sheet(isPresented: $showingLevelUp, onDismiss: { dismiss() }) {
+            if let due = appModel.levelUp, let content = appModel.content {
+                let asker = content.character(due.offer.asker?.id) ?? content.character(due.offer.character.id)
+                LevelUpView(offer: due.offer, words: due.words, askerName: asker?.name ?? due.offer.asker?.name ?? due.offer.character.name, portrait: asker?.portrait) { yes in
+                    await appModel.answerLevelUp(yes: yes)
+                    showingLevelUp = false
+                }
+            }
+        }
         .settingsToolbar()
         .task { await model.start() }
         // Hands-free means no taps, so without this the phone auto-locks
@@ -87,15 +100,42 @@ struct PersonView: View {
         // Their goodbye, said back, ends it (docs/beginner-scaffolding.md 11b):
         // once it's been said, back to the place, saving as every exit does
         // Learn 2.0: the visit is saved at the goodbye, and its card, if the server has one ready in the
-        // same 1.5 s, slides up over this screen; otherwise back to the place as before
+        // same 1.5 s, slides up over this screen, the moment it's ready; a level up that's due comes instead (B63); otherwise back to the place as before
         .onChange(of: model.phase) { _, phase in
             guard phase == .finished, model.endButton == nil else { return }
             model.saveAtGoodbye()
-            Task {
-                async let card = model.learnCard()
-                try? await Task.sleep(for: .seconds(1.5))
-                if let ready = await card { learnCard = ready } else { dismiss() }
+            Task { await showAtGoodbye() }
+        }
+    }
+
+    /// B63: whichever is ready first at the goodbye, no fixed wait: the card, or the level up (the server writes no
+    /// card when one is due). Gives up after 1.5 s and goes back to the place, as before
+    private func showAtGoodbye() async {
+        enum Ready { case card(APIClient.LearnCard), levelUp, nothing }
+        let ready: Ready = await withTaskGroup(of: Ready.self) { group in
+            group.addTask { await model.learnCard().map(Ready.card) ?? .nothing }
+            group.addTask {
+                let deadline = ContinuousClock.now + .seconds(1.5)
+                while ContinuousClock.now < deadline {
+                    if await appModel.levelUp != nil { return .levelUp }
+                    try? await Task.sleep(for: .milliseconds(100))
+                }
+                return .nothing
             }
+            // A card found none is not the end: the level up may still come, so only a real result stops the wait
+            var first: Ready = .nothing
+            for await r in group {
+                if case .nothing = r { continue }
+                first = r
+                group.cancelAll()
+                break
+            }
+            return first
+        }
+        switch ready {
+        case .card(let card): learnCard = card
+        case .levelUp: showingLevelUp = true
+        case .nothing: dismiss()
         }
     }
 
